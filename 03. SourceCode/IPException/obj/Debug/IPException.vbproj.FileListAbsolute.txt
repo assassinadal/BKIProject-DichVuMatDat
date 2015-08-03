@@ -1,0 +1,12 @@
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPException\bin\IPException.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPException\bin\IPException.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPException\bin\IPException.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPException\obj\Debug\IPException.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPException\obj\Debug\IPException.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPException\obj\Debug\IPException.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPException\bin\IPException.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPException\bin\IPException.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPException\bin\IPException.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPException\obj\Debug\IPException.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPException\obj\Debug\IPException.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPException\obj\Debug\IPException.pdb

@@ -1,0 +1,30 @@
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\bin\IPBusinessService.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\bin\IPBusinessService.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\bin\IPBusinessService.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\bin\IPException.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\bin\IPException.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\bin\IPException.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.vbprojResolveAssemblyReference.cache
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\bin\IPBusinessService.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\bin\IPBusinessService.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\bin\IPBusinessService.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\bin\IPException.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\bin\IPException.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\bin\IPException.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.vbprojResolveAssemblyReference.cache
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPBusinessService\bin\IPBusinessService.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPBusinessService\bin\IPBusinessService.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPBusinessService\bin\IPBusinessService.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPBusinessService\bin\IPException.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPBusinessService\bin\IPException.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPBusinessService\bin\IPException.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.vbprojResolveAssemblyReference.cache
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.pdb

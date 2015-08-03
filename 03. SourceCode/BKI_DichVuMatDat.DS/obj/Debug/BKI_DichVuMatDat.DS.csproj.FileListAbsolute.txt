@@ -1,0 +1,6 @@
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\BKI_QLTTQuocAnh.DS\obj\Debug\BKI_DichVuMatDat.DS.csprojResolveAssemblyReference.cache
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\BKI_QLTTQuocAnh.DS\bin\Debug\BKI_DichVuMatDat.DS.dll.config
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\BKI_QLTTQuocAnh.DS\bin\Debug\BKI_DichVuMatDat.DS.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\BKI_QLTTQuocAnh.DS\bin\Debug\BKI_DichVuMatDat.DS.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\BKI_QLTTQuocAnh.DS\obj\Debug\BKI_DichVuMatDat.DS.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\BKI_QLTTQuocAnh.DS\obj\Debug\BKI_DichVuMatDat.DS.pdb

@@ -1,0 +1,96 @@
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPUserService.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPUserService.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPUserService.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\C1.Win.C1FlexGrid.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPBusinessService.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPCommon.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPData.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPException.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\C1.Win.C1FlexGrid.Classic.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\CrystalDecisions.Shared.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\CrystalDecisions.Windows.Forms.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\C1.Common.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\CrystalDecisions.ReportSource.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPBusinessService.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPBusinessService.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPCommon.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPCommon.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPData.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPData.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPException.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPException.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\obj\Debug\IPUserService.vbprojResolveAssemblyReference.cache
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\obj\Debug\IPUserService.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\obj\Debug\IPUserService.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\obj\Debug\IPUserService.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPUserService.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPUserService.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPUserService.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\C1.Win.C1FlexGrid.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPBusinessService.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPCommon.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPData.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPException.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\CrystalDecisions.Shared.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\CrystalDecisions.Windows.Forms.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\CrystalDecisions.CrystalReports.Engine.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\C1.Common.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\CrystalDecisions.ReportSource.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPBusinessService.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPBusinessService.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPCommon.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPCommon.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPData.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPData.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPException.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\bin\IPException.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\obj\Debug\IPUserService.vbprojResolveAssemblyReference.cache
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\obj\Debug\IPUserService.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\obj\Debug\IPUserService.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPUserService\obj\Debug\IPUserService.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\IPUserService.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\IPUserService.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\IPUserService.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\C1.Win.C1FlexGrid.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\IPBusinessService.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\IPCommon.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\IPData.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\IPException.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\C1.Common.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\IPBusinessService.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\IPBusinessService.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\IPCommon.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\IPCommon.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\IPData.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\IPData.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\IPException.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\bin\IPException.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\obj\Debug\IPUserService.vbprojResolveAssemblyReference.cache
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\obj\Debug\IPUserService.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\obj\Debug\IPUserService.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPUserService\obj\Debug\IPUserService.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\IPUserService.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\IPUserService.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\IPUserService.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\C1.Win.C1FlexGrid.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\IPBusinessService.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\IPCommon.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\IPData.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\IPException.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\C1.Common.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\IPBusinessService.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\IPBusinessService.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\IPCommon.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\IPCommon.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\IPData.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\IPData.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\IPException.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\bin\IPException.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\obj\Debug\IPUserService.vbprojResolveAssemblyReference.cache
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\obj\Debug\IPUserService.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\obj\Debug\IPUserService.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPUserService\obj\Debug\IPUserService.pdb

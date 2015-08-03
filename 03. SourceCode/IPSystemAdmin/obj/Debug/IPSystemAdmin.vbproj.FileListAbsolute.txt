@@ -1,0 +1,214 @@
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\C1.Common.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.Classic.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPCommon.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPData.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPException.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPUserService.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\SiSButton.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\SiSMenu.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.Shared.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.Windows.Forms.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.ReportSource.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPCommon.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPCommon.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPData.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPData.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPException.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPException.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPUserService.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPUserService.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbprojResolveAssemblyReference.cache
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f100_TuDien.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f101_Dang_Nhap.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f102_TuDien_DE.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f996_license.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbproj.GenerateResource.Cache
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll.licenses
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\C1.Common.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.Classic.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPCommon.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPData.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPException.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPUserService.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\SiSButton.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\SiSMenu.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.Shared.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.Windows.Forms.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.ReportSource.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPCommon.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPCommon.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPData.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPData.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPException.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPException.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPUserService.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPUserService.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbprojResolveAssemblyReference.cache
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f100_TuDien.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f101_Dang_Nhap.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f102_TuDien_DE.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f996_license.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbproj.GenerateResource.Cache
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll.licenses
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\C1.Common.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPCommon.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPData.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPException.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPUserService.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\SiSButton.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\SiSMenu.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.Shared.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.Windows.Forms.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.CrystalReports.Engine.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.ReportSource.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPCommon.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPCommon.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPData.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPData.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPException.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPException.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPUserService.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\bin\IPUserService.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbprojResolveAssemblyReference.cache
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f100_TuDien.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f101_Dang_Nhap.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f102_TuDien_DE.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f996_license.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbproj.GenerateResource.Cache
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll.licenses
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\C1.Common.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPCommon.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPData.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPException.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPUserService.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\SiSButton.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\SiSMenu.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.Shared.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.Windows.Forms.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.CrystalReports.Engine.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\CrystalDecisions.ReportSource.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPCommon.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPCommon.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPData.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPData.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPException.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPException.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPUserService.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPUserService.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbprojResolveAssemblyReference.cache
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f100_TuDien.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f101_Dang_Nhap.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f102_TuDien_DE.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f996_license.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbproj.GenerateResource.Cache
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll.licenses
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\C1.Common.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPCommon.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPData.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPException.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPUserService.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\SiSButton.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\SiSMenu.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPCommon.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPCommon.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPData.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPData.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPException.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPException.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPUserService.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\bin\IPUserService.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbprojResolveAssemblyReference.cache
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f100_TuDien.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f101_Dang_Nhap.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f102_TuDien_DE.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f996_license.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbproj.GenerateResource.Cache
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll.licenses
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPSystemAdmin.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\C1.Common.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPCommon.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPData.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPException.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPUserService.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\SiSButton.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\SiSMenu.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPBusinessService.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPCommon.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPCommon.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPData.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPData.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPException.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPException.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPUserService.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\bin\IPUserService.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbprojResolveAssemblyReference.cache
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f100_TuDien.resources
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f101_Dang_Nhap.resources
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f102_TuDien_DE.resources
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f996_license.resources
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbproj.GenerateResource.Cache
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll.licenses
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPSystemAdmin\obj\Debug\IPSystemAdmin.pdb

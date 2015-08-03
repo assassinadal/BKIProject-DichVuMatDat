@@ -1,0 +1,118 @@
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPExcelReport.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPExcelReport.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPExcelReport.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\Interop.Excel.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\Interop.Microsoft.Office.Core.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\Interop.Office.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPCommon.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.Classic.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\CrystalDecisions.Shared.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\CrystalDecisions.Windows.Forms.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\C1.Common.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\CrystalDecisions.ReportSource.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPCommon.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPCommon.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.vbprojResolveAssemblyReference.cache
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll.licenses
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPExcelReport.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPExcelReport.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPExcelReport.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\Interop.Excel.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\Interop.Microsoft.Office.Core.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\Interop.Office.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPCommon.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.Classic.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\CrystalDecisions.Shared.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\CrystalDecisions.Windows.Forms.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\C1.Common.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\CrystalDecisions.ReportSource.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPCommon.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPCommon.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.vbprojResolveAssemblyReference.cache
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll.licenses
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPExcelReport.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPExcelReport.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPExcelReport.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\Interop.Excel.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\Interop.Microsoft.Office.Core.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\Interop.Office.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPCommon.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\CrystalDecisions.Shared.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\CrystalDecisions.Windows.Forms.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\CrystalDecisions.CrystalReports.Engine.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\C1.Common.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\CrystalDecisions.ReportSource.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPCommon.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\bin\IPCommon.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.vbprojResolveAssemblyReference.cache
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll.licenses
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\IPExcelReport.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\IPExcelReport.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\IPExcelReport.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\Interop.Excel.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\Interop.Microsoft.Office.Core.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\Interop.Office.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\IPCommon.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\CrystalDecisions.Shared.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\CrystalDecisions.Windows.Forms.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\CrystalDecisions.CrystalReports.Engine.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\C1.Common.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\CrystalDecisions.ReportSource.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\IPCommon.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\IPCommon.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.vbprojResolveAssemblyReference.cache
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll.licenses
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\IPExcelReport.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\IPExcelReport.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\IPExcelReport.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\Interop.Excel.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\Interop.Microsoft.Office.Core.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\Interop.Office.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\IPCommon.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\C1.Common.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\IPCommon.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\bin\IPCommon.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.vbprojResolveAssemblyReference.cache
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll.licenses
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\bin\IPExcelReport.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\bin\IPExcelReport.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\bin\IPExcelReport.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\bin\Interop.Excel.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\bin\Interop.Microsoft.Office.Core.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\bin\Interop.Office.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\bin\IPCommon.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\bin\C1.Common.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\bin\IPCommon.pdb
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\bin\IPCommon.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.vbprojResolveAssemblyReference.cache
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll.licenses
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.xml
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.pdb

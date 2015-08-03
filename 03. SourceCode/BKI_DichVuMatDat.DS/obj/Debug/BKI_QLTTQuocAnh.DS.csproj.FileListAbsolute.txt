@@ -1,0 +1,24 @@
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\bin\Debug\BKI_QLTTQuocAnh.DS.dll.config
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\bin\Debug\BKI_QLTTQuocAnh.DS.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\bin\Debug\BKI_QLTTQuocAnh.DS.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\obj\Debug\BKI_QLTTQuocAnh.DS.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\obj\Debug\BKI_QLTTQuocAnh.DS.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\obj\Debug\BKI_QLTTQuocAnh.DS.csprojResolveAssemblyReference.cache
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\bin\Debug\BKI_QLTTQuocAnh.DS.dll.config
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\bin\Debug\BKI_QLTTQuocAnh.DS.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\bin\Debug\BKI_QLTTQuocAnh.DS.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\obj\Debug\BKI_QLTTQuocAnh.DS.csprojResolveAssemblyReference.cache
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\obj\Debug\BKI_QLTTQuocAnh.DS.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\obj\Debug\BKI_QLTTQuocAnh.DS.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\bin\Debug\BKI_QLTTQuocAnh.DS.dll.config
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\bin\Debug\BKI_QLTTQuocAnh.DS.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\bin\Debug\BKI_QLTTQuocAnh.DS.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\obj\Debug\BKI_QLTTQuocAnh.DS.csprojResolveAssemblyReference.cache
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\obj\Debug\BKI_QLTTQuocAnh.DS.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.DS\obj\Debug\BKI_QLTTQuocAnh.DS.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.DS\bin\Debug\BKI_QLTTQuocAnh.DS.dll.config
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.DS\bin\Debug\BKI_QLTTQuocAnh.DS.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.DS\bin\Debug\BKI_QLTTQuocAnh.DS.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.DS\obj\Debug\BKI_QLTTQuocAnh.DS.csprojResolveAssemblyReference.cache
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.DS\obj\Debug\BKI_QLTTQuocAnh.DS.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.DS\obj\Debug\BKI_QLTTQuocAnh.DS.pdb

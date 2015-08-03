@@ -1,0 +1,161 @@
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.US.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.US.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.DS.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPBusinessService.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPCommon.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPData.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPException.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPSystemAdmin.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPUserService.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\C1.Win.C1FlexGrid.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.Shared.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\SiSButton.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\C1.Common.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.DS.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPBusinessService.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPBusinessService.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPCommon.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPCommon.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPData.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPData.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPException.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPException.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPSystemAdmin.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPSystemAdmin.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPUserService.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPUserService.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\obj\Debug\BKI_QLTTQuocAnh.US.csprojResolveAssemblyReference.cache
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\obj\Debug\BKI_QLTTQuocAnh.US.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\obj\Debug\BKI_QLTTQuocAnh.US.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.US.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.US.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.DS.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPBusinessService.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPCommon.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPData.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPException.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPSystemAdmin.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPUserService.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\C1.Win.C1FlexGrid.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.Shared.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\SiSButton.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\C1.Common.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.DS.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPBusinessService.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPBusinessService.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPCommon.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPCommon.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPData.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPData.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPException.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPException.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPSystemAdmin.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPSystemAdmin.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPUserService.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPUserService.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\obj\Debug\BKI_QLTTQuocAnh.US.csprojResolveAssemblyReference.cache
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\obj\Debug\BKI_QLTTQuocAnh.US.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\obj\Debug\BKI_QLTTQuocAnh.US.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.US.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.US.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.DS.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPBusinessService.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPCommon.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPData.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPException.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPSystemAdmin.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPUserService.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\C1.Win.C1FlexGrid.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.Shared.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.Windows.Forms.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\SiSButton.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\C1.Common.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.ReportSource.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.DS.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPBusinessService.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPBusinessService.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPCommon.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPCommon.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPData.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPData.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPException.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPException.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPSystemAdmin.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPSystemAdmin.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPUserService.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPUserService.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\obj\Debug\BKI_QLTTQuocAnh.US.csprojResolveAssemblyReference.cache
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\obj\Debug\BKI_QLTTQuocAnh.US.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh.US\obj\Debug\BKI_QLTTQuocAnh.US.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.US.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.US.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.DS.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPBusinessService.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPCommon.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPData.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPException.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPSystemAdmin.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPUserService.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\C1.Win.C1FlexGrid.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.Shared.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.Windows.Forms.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\SiSButton.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\C1.Common.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\CrystalDecisions.ReportSource.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.DS.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPBusinessService.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPBusinessService.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPCommon.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPCommon.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPData.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPData.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPException.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPException.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPSystemAdmin.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPSystemAdmin.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPUserService.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPUserService.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\obj\Debug\BKI_QLTTQuocAnh.US.csprojResolveAssemblyReference.cache
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\obj\Debug\BKI_QLTTQuocAnh.US.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\obj\Debug\BKI_QLTTQuocAnh.US.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.US.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.US.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.DS.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPBusinessService.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPCommon.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPData.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPException.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPSystemAdmin.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPUserService.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\C1.Win.C1FlexGrid.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\SiSButton.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\C1.Common.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\BKI_QLTTQuocAnh.DS.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPBusinessService.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPBusinessService.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPCommon.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPCommon.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPData.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPData.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPException.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPException.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPSystemAdmin.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPSystemAdmin.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPUserService.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\bin\Debug\IPUserService.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\obj\Debug\BKI_QLTTQuocAnh.US.csprojResolveAssemblyReference.cache
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\obj\Debug\BKI_QLTTQuocAnh.US.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh.US\obj\Debug\BKI_QLTTQuocAnh.US.pdb

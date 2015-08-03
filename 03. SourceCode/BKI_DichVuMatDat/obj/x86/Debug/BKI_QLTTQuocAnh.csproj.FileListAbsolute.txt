@@ -1,0 +1,498 @@
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.exe.config
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.exe
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.DS.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.US.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Common.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Win.C1FlexGrid.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Win.C1Input.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevComponents.DotNetBar2.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPBusinessService.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPCommon.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPData.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelReport.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelWebReport.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPException.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPSystemAdmin.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPUserService.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\SiSButton.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\SiSMenu.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.Shared.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\Interop.Excel.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\Interop.Microsoft.Office.Core.dll
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.DS.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.US.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPBusinessService.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPBusinessService.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPCommon.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPCommon.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPData.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPData.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelReport.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelReport.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelWebReport.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelWebReport.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPException.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPException.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPSystemAdmin.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPSystemAdmin.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPUserService.pdb
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPUserService.xml
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.csprojResolveAssemblyReference.cache
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f410_bao_cao_tai_chinh_theo_lop_mon.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f415_bao_cao_hoc_sinh_chua_nop_tien_theo_lop_mon.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.F420_bao_cao_tien_phai_thu_theo_lop_mon_hoc_sinh.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f430_bao_cao_danh_sach_phai_thu_thuc_thu.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f440_bao_cao_tinh_hinh_di_hoc_theo_lop_mon_hs.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f450_bc_so_luong_hs_hien_nay.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f460_bc_tinh_hinh_bo_hoc.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f470_bao_cao_tinh_hinh_tai_chinh_theo_hoc_sinh.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f480_bao_cao_tinh_hinh_tai_chinh_theo_hs_lm.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f490_bc_thuc_thu_theo_nv.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.DanhMuc.f210_dm_lop_mon.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.DanhMuc.f211_dm_lop_mon_de.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.DanhMuc.f220_cap_nhat_thong_tin_hoc_sinh.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f230_danh_muc_hs_theo_lop.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f221_cap_nhat_thong_tin_hoc_sinh_de.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\Form_menu.f399_MainMenu.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f306_HT_USER_GROUP.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f306_HT_USER_GROUP_DE.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f308_DOI_MAT_KHAU_NGUOI_SD.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f990_ht_form.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f992_phan_quyen_he_thong_de.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f993_phan_quyen_he_thong.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f994_phan_quyen_detail.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f995_ht_phan_quyen_cho_nhom.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f400_Main.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f998_ht_nguoi_su_dung_de.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f999_ht_nguoi_su_dung.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f315_nhap_hoc.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f316_nghi_hoc.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f320_diem_danh.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f330_lap_phai_thu_hoc_vien.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f340_lap_phieu_thu.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f360_ban_giao_tien.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.Properties.Resources.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f388_main.resources
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.csproj.GenerateResource.Cache
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.exe.licenses
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.exe
+D:\03. Work\01. BKIndex\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.exe.config
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.exe
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.exe
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.DS.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.US.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Common.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Win.C1FlexGrid.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Win.C1Input.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevComponents.DotNetBar2.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPBusinessService.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPCommon.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPData.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelReport.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelWebReport.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPException.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPSystemAdmin.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPUserService.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\SiSButton.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\SiSMenu.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.Shared.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\Interop.Excel.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\Interop.Microsoft.Office.Core.dll
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.DS.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.US.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPBusinessService.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPBusinessService.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPCommon.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPCommon.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPData.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPData.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelReport.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelReport.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelWebReport.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelWebReport.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPException.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPException.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPSystemAdmin.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPSystemAdmin.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPUserService.pdb
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPUserService.xml
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.csprojResolveAssemblyReference.cache
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f410_bao_cao_tai_chinh_theo_lop_mon.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f415_bao_cao_hoc_sinh_chua_nop_tien_theo_lop_mon.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.F420_bao_cao_tien_phai_thu_theo_lop_mon_hoc_sinh.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f430_bao_cao_danh_sach_phai_thu_thuc_thu.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f440_bao_cao_tinh_hinh_di_hoc_theo_lop_mon_hs.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f450_bc_so_luong_hs_hien_nay.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f460_bc_tinh_hinh_bo_hoc.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f470_bao_cao_tinh_hinh_tai_chinh_theo_hoc_sinh.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f480_bao_cao_tinh_hinh_tai_chinh_theo_hs_lm.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f490_bc_thuc_thu_theo_nv.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.DanhMuc.f210_dm_lop_mon.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.DanhMuc.f211_dm_lop_mon_de.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.DanhMuc.f220_cap_nhat_thong_tin_hoc_sinh.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f230_danh_muc_hs_theo_lop.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f221_cap_nhat_thong_tin_hoc_sinh_de.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\Form_menu.f399_MainMenu.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f306_HT_USER_GROUP.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f306_HT_USER_GROUP_DE.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f308_DOI_MAT_KHAU_NGUOI_SD.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f990_ht_form.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f992_phan_quyen_he_thong_de.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f993_phan_quyen_he_thong.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f994_phan_quyen_detail.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f995_ht_phan_quyen_cho_nhom.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f400_Main.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f998_ht_nguoi_su_dung_de.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f999_ht_nguoi_su_dung.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f315_nhap_hoc.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f316_nghi_hoc.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f320_diem_danh.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f330_lap_phai_thu_hoc_vien.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f340_lap_phieu_thu.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f360_ban_giao_tien.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.Properties.Resources.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f388_main.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.csproj.GenerateResource.Cache
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.exe.licenses
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.BackupDB.resources
+D:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f300_import_ds_hoc_vien.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.exe.config
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.exe
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.DS.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.US.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Common.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Win.C1FlexGrid.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Win.C1Input.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevComponents.DotNetBar2.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPBusinessService.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPCommon.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPData.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelReport.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelWebReport.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPException.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPSystemAdmin.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPUserService.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\SiSButton.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\SiSMenu.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.Shared.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.Windows.Forms.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\Interop.Excel.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.ReportSource.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\Interop.Microsoft.Office.Core.dll
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.DS.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.US.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPBusinessService.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPBusinessService.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPCommon.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPCommon.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPData.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPData.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelReport.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelReport.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelWebReport.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelWebReport.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPException.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPException.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPSystemAdmin.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPSystemAdmin.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPUserService.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPUserService.xml
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.csprojResolveAssemblyReference.cache
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f410_bao_cao_tai_chinh_theo_lop_mon.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f415_bao_cao_hoc_sinh_chua_nop_tien_theo_lop_mon.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.F420_bao_cao_tien_phai_thu_theo_lop_mon_hoc_sinh.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f430_bao_cao_danh_sach_phai_thu_thuc_thu.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f440_bao_cao_tinh_hinh_di_hoc_theo_lop_mon_hs.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f450_bc_so_luong_hs_hien_nay.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f460_bc_tinh_hinh_bo_hoc.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f470_bao_cao_tinh_hinh_tai_chinh_theo_hoc_sinh.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f480_bao_cao_tinh_hinh_tai_chinh_theo_hs_lm.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f490_bc_thuc_thu_theo_nv.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.DanhMuc.f210_dm_lop_mon.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.DanhMuc.f211_dm_lop_mon_de.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.DanhMuc.f220_cap_nhat_thong_tin_hoc_sinh.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f230_danh_muc_hs_theo_lop.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f221_cap_nhat_thong_tin_hoc_sinh_de.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\Form_menu.f399_MainMenu.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f306_HT_USER_GROUP.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f306_HT_USER_GROUP_DE.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f308_DOI_MAT_KHAU_NGUOI_SD.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f990_ht_form.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f992_phan_quyen_he_thong_de.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f993_phan_quyen_he_thong.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f994_phan_quyen_detail.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f995_ht_phan_quyen_cho_nhom.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f400_Main.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f998_ht_nguoi_su_dung_de.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f999_ht_nguoi_su_dung.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.BackupDB.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f300_import_ds_hoc_vien.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f315_nhap_hoc.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f316_nghi_hoc.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f320_diem_danh.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f330_lap_phai_thu_hoc_vien.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f340_lap_phieu_thu.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f360_ban_giao_tien.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.Properties.Resources.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f388_main.resources
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.csproj.GenerateResource.Cache
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.exe.licenses
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.exe
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.pdb
+F:\03. Work\01. BKIndex\05. Project\00. Quan Ly Tai Chinh Trung Tam Quoc Anh\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f370_len_lop_cho_hoc_sinh.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.exe.config
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.exe
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.exe
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.DS.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.US.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Common.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Win.C1FlexGrid.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Win.C1Input.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevComponents.DotNetBar2.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPBusinessService.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPCommon.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPData.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelReport.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelWebReport.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPException.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPSystemAdmin.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPUserService.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\SiSButton.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\SiSMenu.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.Shared.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.Windows.Forms.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\Interop.Excel.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\CrystalDecisions.ReportSource.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\Interop.Microsoft.Office.Core.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.DS.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.US.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPBusinessService.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPBusinessService.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPCommon.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPCommon.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPData.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPData.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelReport.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelReport.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelWebReport.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelWebReport.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPException.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPException.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPSystemAdmin.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPSystemAdmin.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPUserService.pdb
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPUserService.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.csprojResolveAssemblyReference.cache
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f410_bao_cao_tai_chinh_theo_lop_mon.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f415_bao_cao_hoc_sinh_chua_nop_tien_theo_lop_mon.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.F420_bao_cao_tien_phai_thu_theo_lop_mon_hoc_sinh.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f430_bao_cao_danh_sach_phai_thu_thuc_thu.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f440_bao_cao_tinh_hinh_di_hoc_theo_lop_mon_hs.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f450_bc_so_luong_hs_hien_nay.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f460_bc_tinh_hinh_bo_hoc.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f470_bao_cao_tinh_hinh_tai_chinh_theo_hoc_sinh.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f480_bao_cao_tinh_hinh_tai_chinh_theo_hs_lm.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f490_bc_thuc_thu_theo_nv.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.DanhMuc.f210_dm_lop_mon.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.DanhMuc.f211_dm_lop_mon_de.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.DanhMuc.f220_cap_nhat_thong_tin_hoc_sinh.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f230_danh_muc_hs_theo_lop.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f221_cap_nhat_thong_tin_hoc_sinh_de.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\Form_menu.f399_MainMenu.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f306_HT_USER_GROUP.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f306_HT_USER_GROUP_DE.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f308_DOI_MAT_KHAU_NGUOI_SD.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f990_ht_form.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f992_phan_quyen_he_thong_de.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f993_phan_quyen_he_thong.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f994_phan_quyen_detail.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f995_ht_phan_quyen_cho_nhom.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f400_Main.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f998_ht_nguoi_su_dung_de.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f999_ht_nguoi_su_dung.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.BackupDB.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f300_import_ds_hoc_vien.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f315_nhap_hoc.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f316_nghi_hoc.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f320_diem_danh.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f330_lap_phai_thu_hoc_vien.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f340_lap_phieu_thu.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f360_ban_giao_tien.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f370_len_lop_cho_hoc_sinh.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.Properties.Resources.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f388_main.resources
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.csproj.GenerateResource.Cache
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.exe.licenses
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.exe.manifest
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.application
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.exe.manifest
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.application
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.Data.v14.1.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.Printing.v14.1.Core.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.Utils.v14.1.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.XtraBars.v14.1.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.XtraEditors.v14.1.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.Data.v14.1.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.Printing.v14.1.Core.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.Utils.v14.1.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.XtraBars.v14.1.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.XtraEditors.v14.1.xml
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\de\DevExpress.Data.v14.1.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\es\DevExpress.Data.v14.1.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ja\DevExpress.Data.v14.1.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ru\DevExpress.Data.v14.1.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\de\DevExpress.Printing.v14.1.Core.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\es\DevExpress.Printing.v14.1.Core.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ja\DevExpress.Printing.v14.1.Core.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ru\DevExpress.Printing.v14.1.Core.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\de\DevExpress.Utils.v14.1.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\es\DevExpress.Utils.v14.1.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ja\DevExpress.Utils.v14.1.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ru\DevExpress.Utils.v14.1.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\de\DevExpress.XtraBars.v14.1.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\es\DevExpress.XtraBars.v14.1.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ja\DevExpress.XtraBars.v14.1.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ru\DevExpress.XtraBars.v14.1.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\de\DevExpress.XtraEditors.v14.1.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\es\DevExpress.XtraEditors.v14.1.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ja\DevExpress.XtraEditors.v14.1.resources.dll
+F:\03. Work\02. Project\00.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ru\DevExpress.XtraEditors.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.exe.config
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.exe
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.csprojResolveAssemblyReference.cache
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f410_bao_cao_tai_chinh_theo_lop_mon.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f415_bao_cao_hoc_sinh_chua_nop_tien_theo_lop_mon.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.F420_bao_cao_tien_phai_thu_theo_lop_mon_hoc_sinh.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f430_bao_cao_danh_sach_phai_thu_thuc_thu.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f440_bao_cao_tinh_hinh_di_hoc_theo_lop_mon_hs.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f450_bc_so_luong_hs_hien_nay.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f460_bc_tinh_hinh_bo_hoc.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f470_bao_cao_tinh_hinh_tai_chinh_theo_hoc_sinh.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f480_bao_cao_tinh_hinh_tai_chinh_theo_hs_lm.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.BaoCao.f490_bc_thuc_thu_theo_nv.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.DanhMuc.f210_dm_lop_mon.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.DanhMuc.f211_dm_lop_mon_de.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.DanhMuc.f220_cap_nhat_thong_tin_hoc_sinh.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f230_danh_muc_hs_theo_lop.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f221_cap_nhat_thong_tin_hoc_sinh_de.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\Form_menu.f399_MainMenu.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f306_HT_USER_GROUP.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f306_HT_USER_GROUP_DE.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f308_DOI_MAT_KHAU_NGUOI_SD.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f990_ht_form.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f992_phan_quyen_he_thong_de.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f993_phan_quyen_he_thong.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f994_phan_quyen_detail.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.HeThong.f995_ht_phan_quyen_cho_nhom.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f400_Main.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f998_ht_nguoi_su_dung_de.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f999_ht_nguoi_su_dung.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.BackupDB.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f300_import_ds_hoc_vien.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f315_nhap_hoc.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f316_nghi_hoc.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f320_diem_danh.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f330_lap_phai_thu_hoc_vien.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f340_lap_phieu_thu.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.NghiepVu.f360_ban_giao_tien.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f370_len_lop_cho_hoc_sinh.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.Properties.Resources.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.f388_main.resources
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.csproj.GenerateResource.Cache
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.exe.licenses
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.exe.manifest
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.application
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.exe
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.DS.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.US.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Common.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Win.C1FlexGrid.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\C1.Win.C1Input.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevComponents.DotNetBar2.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.Data.v14.1.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.Printing.v14.1.Core.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.Utils.v14.1.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.XtraBars.v14.1.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.XtraEditors.v14.1.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPBusinessService.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPCommon.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPData.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelReport.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelWebReport.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPException.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPSystemAdmin.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPUserService.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\SiSButton.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\SiSMenu.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\Interop.Excel.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\Interop.Microsoft.Office.Core.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.DS.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.US.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPBusinessService.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPBusinessService.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPCommon.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPCommon.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPData.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPData.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelReport.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelReport.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelWebReport.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPExcelWebReport.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPException.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPException.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPSystemAdmin.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPSystemAdmin.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPUserService.pdb
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\IPUserService.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.Data.v14.1.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.Printing.v14.1.Core.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.Utils.v14.1.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.XtraBars.v14.1.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\DevExpress.XtraEditors.v14.1.xml
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\de\DevExpress.Data.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\es\DevExpress.Data.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ja\DevExpress.Data.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ru\DevExpress.Data.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\de\DevExpress.Printing.v14.1.Core.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\es\DevExpress.Printing.v14.1.Core.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ja\DevExpress.Printing.v14.1.Core.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ru\DevExpress.Printing.v14.1.Core.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\de\DevExpress.Utils.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\es\DevExpress.Utils.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ja\DevExpress.Utils.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ru\DevExpress.Utils.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\de\DevExpress.XtraBars.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\es\DevExpress.XtraBars.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ja\DevExpress.XtraBars.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ru\DevExpress.XtraBars.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\de\DevExpress.XtraEditors.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\es\DevExpress.XtraEditors.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ja\DevExpress.XtraEditors.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\ru\DevExpress.XtraEditors.v14.1.resources.dll
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.exe.manifest
+F:\03. Work\02. Project\01.QuanLyTTQuocAnh\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.application
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\BKI_QLTTQuocAnh\bin\Debug\BKI_QLTTQuocAnh.exe.config
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.exe
+F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\BKI_QLTTQuocAnh\obj\x86\Debug\BKI_QLTTQuocAnh.pdb

@@ -1,5 +1,5 @@
 using System;
-using BKI_QLTTQuocAnh.DS;
+using BKI_DichVuMatDat.DS;
 using IP.Core.IPCommon;
 using IP.Core.IPUserService;
 using System.Data.SqlClient;

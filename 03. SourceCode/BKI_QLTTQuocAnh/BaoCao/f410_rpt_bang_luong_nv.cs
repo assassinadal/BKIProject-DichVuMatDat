@@ -47,6 +47,13 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void set_initial_form_load()
         {
+            load_data_2_work_sheet();
+        }
+
+        private void load_data_2_work_sheet()
+        {
+            DataSet v_ds = new DataSet();
+
             
         }
 

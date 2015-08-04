@@ -91,21 +91,33 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Office.v14.1.Core, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.RichEdit.v14.1.Core, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Spreadsheet.v14.1.Core, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Utils.v14.1.UI, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Microsoft SQL Server\110\SDK\Assemblies\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
@@ -146,6 +158,12 @@
   <ItemGroup>
     <Compile Include="AddTab.cs" />
     <Compile Include="ApplicationControl.cs" />
+    <Compile Include="BaoCao\f410_rpt_bang_luong_nv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f410_rpt_bang_luong_nv.Designer.cs">
+      <DependentUpon>f410_rpt_bang_luong_nv.cs</DependentUpon>
+    </Compile>
     <Compile Include="CCommon.cs" />
     <Compile Include="NghiepVu\BackupDB.cs">
       <SubType>Form</SubType>
@@ -166,6 +184,9 @@
       <DependentUpon>f388_main.cs</DependentUpon>
     </Compile>
     <Compile Include="WinFormControls.cs" />
+    <EmbeddedResource Include="BaoCao\f410_rpt_bang_luong_nv.resx">
+      <DependentUpon>f410_rpt_bang_luong_nv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\BackupDB.resx">
       <DependentUpon>BackupDB.cs</DependentUpon>
     </EmbeddedResource>
@@ -633,7 +654,6 @@
     </PublishFile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BaoCao\" />
     <Folder Include="DanhMuc\" />
     <Folder Include="HeThong\" />
   </ItemGroup>

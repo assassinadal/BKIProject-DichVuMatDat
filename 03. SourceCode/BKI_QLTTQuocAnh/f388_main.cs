@@ -12,6 +12,7 @@ using BKI_DichVuMatDat.US;
 //using BKI_DichVuMatDat.HeThong;
 using BKI_DichVuMatDat.NghiepVu;
 using IP.Core.IPSystemAdmin;
+using BKI_DichVuMatDat.BaoCao;
 namespace BKI_DichVuMatDat
 {
     public partial class f388_main : DevExpress.XtraBars.Ribbon.RibbonForm
@@ -22,6 +23,7 @@ namespace BKI_DichVuMatDat
             format_control();
             MdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             ribbon.SelectedPage = ribbonPage3;
+            
         }
 
         public void display(ref IP.Core.IPCommon.IPConstants.HowUserWantTo_Exit_MainForm v_exitmode)
@@ -76,8 +78,9 @@ namespace BKI_DichVuMatDat
             //    m_cmd_nguoi_sd.Visibility = BarItemVisibility.Never;
             //    ribbonPageGroup2.Visible = false;
             //}
-            set_define_events();
+           set_define_events();
         }
+
         private bool IsExistFormName(Form ip_frm)
         {
             foreach (var child in MdiChildren)
@@ -110,6 +113,7 @@ namespace BKI_DichVuMatDat
         ///
         private void set_define_events()
         {
+            this.Load += f388_main_Load;
             //Nghiệp vụ
             
             //Hệ thống
@@ -122,7 +126,40 @@ namespace BKI_DichVuMatDat
             //Danh muc
             
             //Bao cao
-           
+            m_cmd_bang_luong_nv.ItemClick += m_cmd_bang_luong_nv_ItemClick;
+        }
+
+        void f388_main_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void set_initial_form_load()
+        {
+            format_control();
+        }
+
+        void m_cmd_bang_luong_nv_ItemClick(object sender, ItemClickEventArgs e)
+        {
+             try
+             {
+                 f410_rpt_bang_luong_nv v_frm = new f410_rpt_bang_luong_nv();
+                 if (IsExistFormName(v_frm)) return;
+
+                 v_frm.MdiParent = this;
+                 v_frm.Show();
+             }
+             catch (Exception v_e)
+             {
+                 CSystemLog_301.ExceptionHandle(v_e);
+             }
         }
 
 

@@ -196,5 +196,16 @@ namespace BKI_DichVuMatDat.DS.Properties {
                 return ((string)(this["QuanLyTTQuocAnh_FinalConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=TAQUANGNGOC-PC\\SQLEXPRESS;Initial Catalog=BKI_DVMD;Persist Security I" +
+            "nfo=True;User ID=sa;Password=sa")]
+        public string BKI_DVMDConnectionString {
+            get {
+                return ((string)(this["BKI_DVMDConnectionString"]));
+            }
+        }
     }
 }

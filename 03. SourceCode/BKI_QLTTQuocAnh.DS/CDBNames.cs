@@ -21,6 +21,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string MA_TU_DIEN = "MA_TU_DIEN";
         public const string ID_TU_DIEN = "ID_TU_DIEN";
     }
+
     public enum e_loai_tu_dien
     {
         PHAN_QUYEN = 1
@@ -190,7 +191,6 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string DESCRIPTION = "DESCRIPTION";
     }
 
-
     public class CM_COMPANY_INFO
     {
         public const string ID = "ID";
@@ -208,4 +208,18 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string EMAIL = "EMAIL";
         public const string TAX_CODE = "TAX_CODE";
     }
+
+    public class DM_LOAI_HOP_DONG
+    {
+        public const string ID = "ID";
+        public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
+        public const string MA_LOAI_HOP_DONG = "MA_LOAI_HOP_DONG";
+        public const string TI_LE = "TI_LE";
+        public const string SO_TIEN = "SO_TIEN";
+        public const string AN_CA_YN = "AN_CA_YN";
+        public const string HS_LNS_YN = "HS_LNS_YN";
+        public const string LCD_YN = "LCD_YN";
+    }
+
+
 }

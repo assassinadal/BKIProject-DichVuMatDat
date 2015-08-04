@@ -52,6 +52,7 @@
     <Compile Include="US_CM_DM_TU_DIEN.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="US_DM_LOAI_HOP_DONG.cs" />
     <Compile Include="US_HT_FORM.cs" />
     <Compile Include="US_HT_NHOM_NGUOI_SU_DUNG.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_CHO_NHOM.cs" />

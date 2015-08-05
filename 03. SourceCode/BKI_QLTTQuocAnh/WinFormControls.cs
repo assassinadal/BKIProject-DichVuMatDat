@@ -313,6 +313,14 @@ namespace BKI_DichVuMatDat
             v_cstore.addNVarcharInputParam("@str_query", p);
             v_cstore.fillDataSetByCommand(this, v_ds);
         }
+
+        public void FillBangLuong(DataSet ip_ds,decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam) {
+            CStoredProc v_cstore = new CStoredProc("PR_RPT_BANG_LUONG");
+            v_cstore.addDecimalInputParam("@ID_NHAN_VIEN", ip_dc_id_nhan_vien);
+            v_cstore.addDecimalInputParam("@THANG", ip_dc_thang);
+            v_cstore.addDecimalInputParam("@NAM", ip_dc_nam);
+            v_cstore.fillDataSetByCommand(this, ip_ds);
+        }            
     }
 
     public class iParameter

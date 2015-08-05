@@ -209,11 +209,11 @@
     <Compile Include="BaoCao\f410_rpt_bang_luong_nv.Designer.cs">
       <DependentUpon>f410_rpt_bang_luong_nv.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaoCao\f_spl_sc.cs">
+    <Compile Include="BaoCao\F_wait_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaoCao\f_spl_sc.Designer.cs">
-      <DependentUpon>f_spl_sc.cs</DependentUpon>
+    <Compile Include="BaoCao\F_wait_form.Designer.cs">
+      <DependentUpon>F_wait_form.cs</DependentUpon>
     </Compile>
     <Compile Include="CCommon.cs" />
     <Compile Include="NghiepVu\BackupDB.cs">
@@ -238,8 +238,8 @@
     <EmbeddedResource Include="BaoCao\f410_rpt_bang_luong_nv.resx">
       <DependentUpon>f410_rpt_bang_luong_nv.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\f_spl_sc.resx">
-      <DependentUpon>f_spl_sc.cs</DependentUpon>
+    <EmbeddedResource Include="BaoCao\F_wait_form.resx">
+      <DependentUpon>F_wait_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\BackupDB.resx">
       <DependentUpon>BackupDB.cs</DependentUpon>

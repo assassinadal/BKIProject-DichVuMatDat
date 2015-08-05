@@ -85,6 +85,7 @@ namespace BKI_DichVuMatDat.BaoCao
                     v_ws.Cells[m_index, i + 2].Value = _ip_dr.ItemArray[i].ToString();
                 }
             }
+            v_ws.Cells[m_index, 1].Value = m_index - 3;
             m_index += 1;
         }
 
@@ -116,7 +117,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 }
                 else
                 {
-                    SplashScreenManager.ShowForm(typeof(f_spl_sc));
+                    SplashScreenManager.ShowForm(typeof(F_wait_form));
                     m_bgwk.RunWorkerAsync();
                 }
             }
@@ -131,7 +132,7 @@ namespace BKI_DichVuMatDat.BaoCao
             try
             {
                 load_data_2_work_sheet();
-                m_bgwk.ReportProgress(100);
+                //m_bgwk.ReportProgress(100);
             }
             catch (Exception v_e)
             {

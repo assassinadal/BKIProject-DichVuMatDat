@@ -3,6 +3,16 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BKI_DichVuMatDat.US {
+
+    public class CONST_ID_LOAI_HOP_DONG
+    {
+        public const decimal HOP_DONG_HOC_VIEC = 4;
+        public const decimal HOP_DONG_THU_VIEC = 5;
+        public const decimal HOP_DONG_MOT_NAM = 6;
+        public const decimal HOP_DONG_3_VIEC = 7;
+        public const decimal HOP_DONG_KHONG_XAC_DINH = 8;
+    }
+
     public class CONST_TIEN_TO_SO_PHIEU {
         public const string PHAI_THU = "PT-";
         public const string THUC_THU = "TT-";

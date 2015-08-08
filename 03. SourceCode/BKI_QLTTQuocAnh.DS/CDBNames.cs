@@ -4,6 +4,7 @@ using System.Text;
 
 namespace BKI_DichVuMatDat.DS.CDBNames
 {
+    #region HE_THONG
     public class HT_FORM
     {
         public const string ID = "ID";
@@ -198,6 +199,9 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string COMPANY_ADDRESS = "COMPANY_ADDRESS";
     }
 
+    #endregion
+    
+    #region DANH_MUC
     public class DM_COMPANY_INFO
     {
         public const string ID = "ID";
@@ -221,5 +225,51 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string LCD_YN = "LCD_YN";
     }
 
+    public class DM_LOAI_NGAY_CONG
+    {
+        public const string ID = "ID";
+        public const string MA_NGAY_CONG = "MA_NGAY_CONG";
+        public const string TEN_NGAY_CONG = "TEN_NGAY_CONG";
+        public const string TI_LE_LNS = "TI_LE_LNS";
+        public const string TI_LE_LCD = "TI_LE_LCD";
+    }
+    #endregion
+
+    #region GIAO_DICH
+    public class GD_CHAM_CONG
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string NGAY_CHAM_CONG = "NGAY_CHAM_CONG";
+        public const string ID_LOAI_NGAY_CONG = "ID_LOAI_NGAY_CONG";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string NGUOI_SUA = "NGUOI_SUA";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string NGAY_SUA = "NGAY_SUA";
+        public const string DA_XOA = "DA_XOA";
+    }
+    #endregion
+
+
+    #region view
+    public class V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG
+    {
+        public const string ID = "ID";
+        public const string MA_NV = "MA_NV";
+        public const string HO_TEN = "HO_TEN";
+        public const string ID_HOP_DONG = "ID_HOP_DONG";
+        public const string ID_LOAI_HOP_DONG = "ID_LOAI_HOP_DONG";
+        public const string ID_LUONG_CHE_DO = "ID_LUONG_CHE_DO";
+        public const string ID_HE_SO_LNS = "ID_HE_SO_LNS";
+        public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string NGAY_SUA = "NGAY_SUA";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string NGUOI_SUA = "NGUOI_SUA";
+        public const string DA_XOA = "DA_XOA";
+    }
+
+    #endregion
 
 }

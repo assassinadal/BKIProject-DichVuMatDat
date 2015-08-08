@@ -53,6 +53,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="US_DM_LOAI_HOP_DONG.cs" />
+    <Compile Include="US_DM_LOAI_NGAY_CONG.cs" />
+    <Compile Include="US_GD_CHAM_CONG.cs" />
     <Compile Include="US_HT_FORM.cs" />
     <Compile Include="US_HT_NHOM_NGUOI_SU_DUNG.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_CHO_NHOM.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="US_HT_USER_GROUP.cs" />
     <Compile Include="US_V_HT_CONTROL_IN_FORM.cs" />
     <Compile Include="US_V_HT_NGUOI_SU_DUNG.cs" />
+    <Compile Include="US_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BKI_QLTTQuocAnh.DS\BKI_DichVuMatDat.DS.csproj">

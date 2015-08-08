@@ -138,5 +138,13 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=TAQUANGNGOC-PC\SQLEXPRESS;Initial Catalog=BKI_DVMD;Persist Security Info=True;User ID=sa;Password=sa</Value>
     </Setting>
+    <Setting Name="BKI_DVMDConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=27.118.16.97;Initial Catalog=BKI_DVMD;Persist Security Info=True;User ID=sa;Password=123@bcdE.!@#_ATT&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=27.118.16.97;Initial Catalog=BKI_DVMD;Persist Security Info=True;User ID=sa;Password=123@bcdE.!@#_ATT</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -143,6 +143,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\DevExpress.XtraGrid.v14.1.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\DevExpress.XtraNavBar.v14.1.dll</HintPath>
@@ -215,12 +216,23 @@
     <Compile Include="BaoCao\F_wait_form.Designer.cs">
       <DependentUpon>F_wait_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="BKI_DVMDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CCommon.cs" />
     <Compile Include="NghiepVu\BackupDB.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NghiepVu\BackupDB.Designer.cs">
       <DependentUpon>BackupDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\f310_cham_cong_theo_danh_sach_nhan_vien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f310_cham_cong_theo_danh_sach_nhan_vien.Designer.cs">
+      <DependentUpon>f310_cham_cong_theo_danh_sach_nhan_vien.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -244,6 +256,9 @@
     <EmbeddedResource Include="NghiepVu\BackupDB.resx">
       <DependentUpon>BackupDB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f310_cham_cong_theo_danh_sach_nhan_vien.resx">
+      <DependentUpon>f310_cham_cong_theo_danh_sach_nhan_vien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -255,6 +270,17 @@
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="BKI_DVMDDataSet.xsc">
+      <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BKI_DVMDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BKI_DVMDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BKI_DVMDDataSet.xss">
+      <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
     </None>
     <None Include="BKI_QLTTQuocAnh_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">

@@ -59,6 +59,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_LOAI_HOP_DONG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_LOAI_NGAY_CONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_LOAI_NGAY_CONG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_GD_CHAM_CONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_CHAM_CONG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_FORM.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,6 +109,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_HT_NGUOI_SU_DUNG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -132,6 +147,28 @@
     </None>
     <None Include="DS_DM_LOAI_HOP_DONG.xss">
       <DependentUpon>DS_DM_LOAI_HOP_DONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_LOAI_NGAY_CONG.xsc">
+      <DependentUpon>DS_DM_LOAI_NGAY_CONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_LOAI_NGAY_CONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_LOAI_NGAY_CONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_LOAI_NGAY_CONG.xss">
+      <DependentUpon>DS_DM_LOAI_NGAY_CONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_CHAM_CONG.xsc">
+      <DependentUpon>DS_GD_CHAM_CONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_CHAM_CONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_CHAM_CONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_CHAM_CONG.xss">
+      <DependentUpon>DS_GD_CHAM_CONG.xsd</DependentUpon>
     </None>
     <None Include="DS_HT_FORM.xsc">
       <DependentUpon>DS_HT_FORM.xsd</DependentUpon>
@@ -220,6 +257,17 @@
     </None>
     <None Include="DS_V_HT_NGUOI_SU_DUNG.xss">
       <DependentUpon>DS_V_HT_NGUOI_SU_DUNG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG.xsc">
+      <DependentUpon>DS_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG.xss">
+      <DependentUpon>DS_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

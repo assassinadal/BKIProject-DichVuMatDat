@@ -19,6 +19,7 @@ namespace BKI_DichVuMatDat.BaoCao
     public partial class f410_rpt_bang_luong_nv : Form
     {
         int m_index = 4;
+        bool m_b_luong_nhan_vien_yn = true;
         public f410_rpt_bang_luong_nv()
         {
             InitializeComponent();
@@ -26,9 +27,10 @@ namespace BKI_DichVuMatDat.BaoCao
         }
 
         #region Public Interface
-        public void display()
+        public void display(bool ip_b_luong_nhan_vien_yn)
         {
-            this.ShowDialog();
+            m_b_luong_nhan_vien_yn = ip_b_luong_nhan_vien_yn;
+            this.Show();
         }
         #endregion
 
@@ -51,8 +53,36 @@ namespace BKI_DichVuMatDat.BaoCao
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds, "SELECT distinct ID_NHAN_VIEN FROM GD_HOP_DONG AS ghd WHERE  ghd.ID_LOAI_HOP_DONG <> 4 AND DA_XOA = 'N' AND  ghd.NGAY_KET_THUC >= dbo.FN_GET_NGAY_DAU_THANG(6,2015)");
+            if (m_b_luong_nhan_vien_yn)
+            {
+                v_us.FillDatasetWithQuery(v_ds, "SELECT distinct ID_NHAN_VIEN FROM GD_HOP_DONG AS ghd WHERE ghd.ID_LOAI_HOP_DONG != 4 AND DA_XOA = 'N' AND  ghd.NGAY_KET_THUC >= dbo.FN_GET_NGAY_DAU_THANG(" + m_txt_thang.Text.Trim() + "," + m_txt_nam.Text + ")");
+            }
+            else
+            {
+                v_us.FillDatasetWithQuery(v_ds, "SELECT distinct ID_NHAN_VIEN FROM GD_HOP_DONG AS ghd WHERE ghd.ID_LOAI_HOP_DONG = 4 AND DA_XOA = 'N' AND  ghd.NGAY_KET_THUC >= dbo.FN_GET_NGAY_DAU_THANG(" + m_txt_thang.Text.Trim() + "," + m_txt_nam.Text + ")");
+            }
             load_bang_luong_nhan_vien(v_ds.Tables[0]);
+            
+        }
+
+        private void load_bang_luong_hoc_viec(DataTable ip_dt)
+        {
+            for (int i = 0; i < ip_dt.Rows.Count; i++)
+            {
+                DataRow v_dr = ip_dt.Rows[i];
+                DataRow v_dr_luong = get_luong_hoc_viec(CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"]), CIPConvert.ToDecimal(m_txt_thang.Text), CIPConvert.ToDecimal(m_txt_nam.Text));
+                DataRow2Grid(v_dr_luong);
+            }
+        }
+
+        private DataRow get_luong_hoc_viec(decimal ip_dc_id_nhan_vien, decimal ip_int_thang, decimal ip_int_nam)
+        {
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillBangLuongHocViec(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
+            DataRow v_dr = v_ds.Tables[0].Rows[0];
+            return v_dr;
         }
 
         private void load_bang_luong_nhan_vien(DataTable ip_dt)
@@ -60,7 +90,7 @@ namespace BKI_DichVuMatDat.BaoCao
             for (int i = 0; i < ip_dt.Rows.Count; i++)
             {
                 DataRow v_dr = ip_dt.Rows[i];
-                DataRow v_dr_luong = get_luong_nhan_vien(CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"]), 6, 2015);
+                DataRow v_dr_luong = get_luong_nhan_vien(CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"]), CIPConvert.ToDecimal(m_txt_thang.Text), CIPConvert.ToDecimal(m_txt_nam.Text));
                 DataRow2Grid(v_dr_luong);
             }
         }
@@ -94,7 +124,7 @@ namespace BKI_DichVuMatDat.BaoCao
             this.Invoke(new BindTextSpreadSheetControl(UpdateSpreadSheet), new object[] { ip_dr_luong});
         }
 
-        private DataRow get_luong_nhan_vien(decimal ip_dc_id_nhan_vien, int ip_int_thang, int ip_int_nam)
+        private DataRow get_luong_nhan_vien(decimal ip_dc_id_nhan_vien, decimal ip_int_thang, decimal ip_int_nam)
         {
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
@@ -166,20 +196,20 @@ namespace BKI_DichVuMatDat.BaoCao
             v_ws.Columns[1].WidthInCharacters = 5;
             v_ws.Columns[2].WidthInCharacters = 8;
             v_ws.Columns[3].WidthInCharacters = 25;
-            v_ws.Columns[4].WidthInCharacters = 12;
-            v_ws.Columns[5].WidthInCharacters = 12;
-            v_ws.Columns[6].WidthInCharacters = 12;
-            v_ws.Columns[7].WidthInCharacters = 12;
-            v_ws.Columns[8].WidthInCharacters = 12;
-            v_ws.Columns[9].WidthInCharacters = 12;
-            v_ws.Columns[10].WidthInCharacters = 12;
-            v_ws.Columns[11].WidthInCharacters = 12;
-            v_ws.Columns[12].WidthInCharacters = 12;
-            v_ws.Columns[13].WidthInCharacters = 12;
-            v_ws.Columns[14].WidthInCharacters = 12;
-            v_ws.Columns[15].WidthInCharacters = 12;
-            v_ws.Columns[16].WidthInCharacters = 12;
-            v_ws.Columns[17].WidthInCharacters = 12;
+            v_ws.Columns[4].WidthInCharacters = 25;
+            v_ws.Columns[5].WidthInCharacters = 25;
+            v_ws.Columns[6].WidthInCharacters = 25;
+            v_ws.Columns[7].WidthInCharacters = 25;
+            v_ws.Columns[8].WidthInCharacters = 25;
+            v_ws.Columns[9].WidthInCharacters = 25;
+            v_ws.Columns[10].WidthInCharacters = 25;
+            v_ws.Columns[11].WidthInCharacters = 25;
+            v_ws.Columns[12].WidthInCharacters = 25;
+            v_ws.Columns[13].WidthInCharacters = 25;
+            v_ws.Columns[14].WidthInCharacters = 25;
+            v_ws.Columns[15].WidthInCharacters = 25;
+            v_ws.Columns[16].WidthInCharacters = 25;
+            v_ws.Columns[17].WidthInCharacters = 25;
         }
         
         private void load_header_rpt()

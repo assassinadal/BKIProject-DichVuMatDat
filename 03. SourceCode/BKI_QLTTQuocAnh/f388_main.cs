@@ -154,7 +154,7 @@ namespace BKI_DichVuMatDat
                  if (IsExistFormName(v_frm)) return;
 
                  v_frm.MdiParent = this;
-                 v_frm.Show();
+                 v_frm.display(true);
              }
              catch (Exception v_e)
              {
@@ -162,6 +162,20 @@ namespace BKI_DichVuMatDat
              }
         }
 
+        private void m_bbt_luong_hoc_viec_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f410_rpt_bang_luong_nv v_frm = new f410_rpt_bang_luong_nv();
+                if (IsExistFormName(v_frm)) return;
+                v_frm.MdiParent = this;
+                v_frm.display(false);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         void m_cmd_cham_cong_nv_ItemClick(object sender, ItemClickEventArgs e)
         {

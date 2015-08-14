@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f310_cham_cong_theo_danh_sach_nhan_vien));
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList = new System.Windows.Forms.ImageList();
             this.m_dat_ngay_cham_cong = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_lbl_ngay_cham_cong = new System.Windows.Forms.Label();
@@ -43,25 +42,15 @@
             this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CHAM_CONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_gle_loai_ngay_cong = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.dMLOAINGAYCONGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dMLOAINGAYCONGBindingSource = new System.Windows.Forms.BindingSource();
             this.bKI_DVMDDataSet = new BKI_DichVuMatDat.BKI_DVMDDataSet();
-            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.m_cbo_loai_ngay_cong = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.m_sle_loai_ngay_cong = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
-            this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.m_le_loai_ngay_cong = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.dM_LOAI_NGAY_CONGTableAdapter = new BKI_DichVuMatDat.BKI_DVMDDataSetTableAdapters.DM_LOAI_NGAY_CONGTableAdapter();
+            this.m_le_loai_ngay_cong = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_gle_loai_ngay_cong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMLOAINGAYCONGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bKI_DVMDDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_cbo_loai_ngay_cong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_sle_loai_ngay_cong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_le_loai_ngay_cong)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,10 +144,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.m_cbo_loai_ngay_cong,
-            this.m_sle_loai_ngay_cong,
-            this.m_le_loai_ngay_cong,
-            this.m_gle_loai_ngay_cong});
+            this.m_le_loai_ngay_cong});
             this.gridControl1.Size = new System.Drawing.Size(1032, 328);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -215,24 +201,12 @@
             // CHAM_CONG
             // 
             this.CHAM_CONG.Caption = "Chấm công";
-            this.CHAM_CONG.ColumnEdit = this.m_gle_loai_ngay_cong;
+            this.CHAM_CONG.ColumnEdit = this.m_le_loai_ngay_cong;
             this.CHAM_CONG.FieldName = "CHAM_CONG";
             this.CHAM_CONG.Name = "CHAM_CONG";
             this.CHAM_CONG.Visible = true;
             this.CHAM_CONG.VisibleIndex = 3;
             this.CHAM_CONG.Width = 726;
-            // 
-            // m_gle_loai_ngay_cong
-            // 
-            this.m_gle_loai_ngay_cong.AutoHeight = false;
-            this.m_gle_loai_ngay_cong.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_gle_loai_ngay_cong.DataSource = this.dMLOAINGAYCONGBindingSource;
-            this.m_gle_loai_ngay_cong.DisplayMember = "MA_NGAY_CONG";
-            this.m_gle_loai_ngay_cong.Name = "m_gle_loai_ngay_cong";
-            this.m_gle_loai_ngay_cong.NullText = "";
-            this.m_gle_loai_ngay_cong.ValueMember = "ID";
-            this.m_gle_loai_ngay_cong.View = this.repositoryItemGridLookUpEdit1View;
             // 
             // dMLOAINGAYCONGBindingSource
             // 
@@ -244,53 +218,17 @@
             this.bKI_DVMDDataSet.DataSetName = "BKI_DVMDDataSet";
             this.bKI_DVMDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // repositoryItemGridLookUpEdit1View
+            // dM_LOAI_NGAY_CONGTableAdapter
             // 
-            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
-            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // m_cbo_loai_ngay_cong
-            // 
-            this.m_cbo_loai_ngay_cong.AutoHeight = false;
-            this.m_cbo_loai_ngay_cong.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_cbo_loai_ngay_cong.Name = "m_cbo_loai_ngay_cong";
-            // 
-            // m_sle_loai_ngay_cong
-            // 
-            this.m_sle_loai_ngay_cong.AutoHeight = false;
-            this.m_sle_loai_ngay_cong.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_sle_loai_ngay_cong.DataSource = this.dMLOAINGAYCONGBindingSource;
-            this.m_sle_loai_ngay_cong.DisplayMember = "MA_NGAY_CONG";
-            this.m_sle_loai_ngay_cong.Name = "m_sle_loai_ngay_cong";
-            this.m_sle_loai_ngay_cong.NullText = "";
-            this.m_sle_loai_ngay_cong.ValueMember = "ID";
-            this.m_sle_loai_ngay_cong.View = this.repositoryItemSearchLookUpEdit1View;
-            // 
-            // repositoryItemSearchLookUpEdit1View
-            // 
-            this.repositoryItemSearchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
-            this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.dM_LOAI_NGAY_CONGTableAdapter.ClearBeforeFill = true;
             // 
             // m_le_loai_ngay_cong
             // 
             this.m_le_loai_ngay_cong.AutoHeight = false;
             this.m_le_loai_ngay_cong.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_le_loai_ngay_cong.DataSource = this.bKI_DVMDDataSet;
-            this.m_le_loai_ngay_cong.DisplayMember = "DM_LOAI_NGAY_CONG.MA_NGAY_CONG";
             this.m_le_loai_ngay_cong.Name = "m_le_loai_ngay_cong";
             this.m_le_loai_ngay_cong.NullText = "";
-            this.m_le_loai_ngay_cong.ValueMember = "DM_LOAI_NGAY_CONG.ID";
-            // 
-            // dM_LOAI_NGAY_CONGTableAdapter
-            // 
-            this.dM_LOAI_NGAY_CONGTableAdapter.ClearBeforeFill = true;
             // 
             // f310_cham_cong_theo_danh_sach_nhan_vien
             // 
@@ -306,13 +244,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_gle_loai_ngay_cong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMLOAINGAYCONGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bKI_DVMDDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_cbo_loai_ngay_cong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_sle_loai_ngay_cong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_le_loai_ngay_cong)).EndInit();
             this.ResumeLayout(false);
 
@@ -326,7 +259,6 @@
         private System.Windows.Forms.DateTimePicker m_dat_ngay_cham_cong;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox m_cbo_loai_ngay_cong;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         internal System.Windows.Forms.ImageList ImageList;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
@@ -334,13 +266,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn HO_TEN;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
         private DevExpress.XtraGrid.Columns.GridColumn CHAM_CONG;
-        private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit m_sle_loai_ngay_cong;
-        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
         private BKI_DVMDDataSet bKI_DVMDDataSet;
         private System.Windows.Forms.BindingSource dMLOAINGAYCONGBindingSource;
         private BKI_DVMDDataSetTableAdapters.DM_LOAI_NGAY_CONGTableAdapter dM_LOAI_NGAY_CONGTableAdapter;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit m_le_loai_ngay_cong;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit m_gle_loai_ngay_cong;
-        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
     }
 }

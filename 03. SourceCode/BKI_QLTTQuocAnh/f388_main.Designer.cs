@@ -60,17 +60,19 @@
             this.m_cmd_ds_hs_theo_lm = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_import_excel = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_cho_hs_len_lop = new DevExpress.XtraBars.BarButtonItem();
-            this.m_bbt_luong_hoc_viec = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.m_cmd_lap_hop_dong = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -112,7 +114,7 @@
             this.m_cmd_ds_hs_theo_lm,
             this.m_cmd_import_excel,
             this.m_cmd_cho_hs_len_lop,
-            this.m_bbt_luong_hoc_viec});
+            this.m_cmd_lap_hop_dong});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 39;
             this.ribbon.Name = "ribbon";
@@ -390,15 +392,6 @@
             this.m_cmd_cho_hs_len_lop.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // m_bbt_luong_hoc_viec
-            // 
-            this.m_bbt_luong_hoc_viec.Caption = "Bảng lương học việc";
-            this.m_bbt_luong_hoc_viec.Glyph = ((System.Drawing.Image)(resources.GetObject("m_bbt_luong_hoc_viec.Glyph")));
-            this.m_bbt_luong_hoc_viec.Id = 38;
-            this.m_bbt_luong_hoc_viec.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_bbt_luong_hoc_viec.LargeGlyph")));
-            this.m_bbt_luong_hoc_viec.Name = "m_bbt_luong_hoc_viec";
-            this.m_bbt_luong_hoc_viec.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_bbt_luong_hoc_viec_ItemClick);
-            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -425,18 +418,26 @@
             // 
             // ribbonPage2
             // 
+            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup3});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "DANH MỤC";
             this.ribbonPage2.Visible = false;
             // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_hs);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            // 
             // ribbonPage3
             // 
-<<<<<<< .mine=======            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup4});
->>>>>>> .theirs            this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup4,
+            this.ribbonPageGroup5});
+            this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "NGHIỆP VỤ";
             // 
-<<<<<<< .mine=======            // ribbonPageGroup4
+            // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_nhap_hoc);
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_nghi_hoc);
@@ -444,7 +445,7 @@
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Chấm công";
             // 
->>>>>>> .theirs            // ribbonPage4
+            // ribbonPage4
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup11});
@@ -454,7 +455,6 @@
             // ribbonPageGroup11
             // 
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bang_luong_nv);
-            this.ribbonPageGroup11.ItemLinks.Add(this.m_bbt_luong_hoc_viec);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Báo cáo tổng";
             // 
@@ -469,6 +469,21 @@
             // 
             this.MdiManager.MdiParent = this;
             // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.m_cmd_lap_hop_dong);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "Hợp đồng";
+            // 
+            // m_cmd_lap_hop_dong
+            // 
+            this.m_cmd_lap_hop_dong.Caption = "Lập hợp đồng";
+            this.m_cmd_lap_hop_dong.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_lap_hop_dong.Glyph")));
+            this.m_cmd_lap_hop_dong.Id = 38;
+            this.m_cmd_lap_hop_dong.Name = "m_cmd_lap_hop_dong";
+            this.m_cmd_lap_hop_dong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // f388_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,14 +492,12 @@
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.InactiveGlowColor = System.Drawing.Color.White;
             this.IsMdiContainer = true;
             this.Name = "f388_main";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "PHẦN MỀM QUẢN LÝ TÀI CHÍNH TRUNG TÂM QUỐC ANH";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.f388_main_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).EndInit();
             this.ResumeLayout(false);
@@ -505,9 +518,10 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_phan_quyen_nhom;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
-<<<<<<< .mine=======        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
->>>>>>> .theirs        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_lop_mon;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_hs;
         private DevExpress.XtraBars.BarButtonItem m_cmd_nhap_hoc;
@@ -534,6 +548,7 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_ds_hs_theo_lm;
         private DevExpress.XtraBars.BarButtonItem m_cmd_import_excel;
         private DevExpress.XtraBars.BarButtonItem m_cmd_cho_hs_len_lop;
-        private DevExpress.XtraBars.BarButtonItem m_bbt_luong_hoc_viec;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_lap_hop_dong;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
     }
 }

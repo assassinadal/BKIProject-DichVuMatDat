@@ -9,7 +9,7 @@ namespace BKI_DichVuMatDat.US {
         public const decimal HOP_DONG_HOC_VIEC = 4;
         public const decimal HOP_DONG_THU_VIEC = 5;
         public const decimal HOP_DONG_MOT_NAM = 6;
-        public const decimal HOP_DONG_3_VIEC = 7;
+        public const decimal HOP_DONG_3_NAM = 7;
         public const decimal HOP_DONG_KHONG_XAC_DINH = 8;
     }
 
@@ -68,6 +68,7 @@ namespace BKI_DichVuMatDat.US {
         public const string LOAI_QUYET_DINH = "LOAI_QUYET_DINH";
         public const string DM_CA_HOC = "DM_CA_HOC";
     }
+
     public static class ID_LOAI_PHIEU_THU
     {
         public const decimal ID_PHIEU_PHAI_THU = 27;
@@ -75,18 +76,18 @@ namespace BKI_DichVuMatDat.US {
         public const decimal ID_PHIEU_GIAM_TRU = 54;
     }
 
-    public static class CONST_LOAI_TU_DIEN
+    public static class CONST_ID_LOAI_TU_DIEN
     {
-        public const decimal LOAI_PHIEU_THU = 5;
-        public const decimal TRANG_THAI_LOP_MON = 12;
-        public const decimal TRANG_THAI_HOC_SINH = 10;
+        public const int MA_HS_LNS = 1;
+        public const int MUC_HS_LNS = 2;
+        public const int MA_LCD = 3;
+        public const int MUC_LCD = 4;
+        public const int LOAI_PHU_CAP = 5;
+        public const int LOAI_LAO_DONG = 6;
     }
 
-    public static class CONST_TRANG_THAI_LOP_MON
-    {
-        public const decimal DANG_HOAT_DONG = 88;
-        public const decimal KHONG_HOAT_DONG = 89;
-    }
+  
+
     //public class TU_DIEN {
     //    public const string Q1 = "1";
     //    public const string Q2 = "2";

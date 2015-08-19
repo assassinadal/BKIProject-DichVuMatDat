@@ -54,6 +54,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="DS_DM_HE_SO_LUONG_NS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_HE_SO_LUONG_NS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_DM_LOAI_HOP_DONG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,10 +69,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_LOAI_NGAY_CONG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_LUONG_CHE_DO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_LUONG_CHE_DO.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_CHAM_CONG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_CHAM_CONG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_GD_HOP_DONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_GD_HS_LNS_LCD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_HS_LNS_LCD.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_HT_FORM.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -98,6 +118,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_DM_NHAN_VIEN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_DM_NHAN_VIEN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_F320_LAP_HOP_DONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_F320_LAP_HOP_DONG.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_HT_CONTROL_IN_FORM.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -137,6 +167,17 @@
     <None Include="DS_CM_DM_TU_DIEN.xss">
       <DependentUpon>DS_CM_DM_TU_DIEN.xsd</DependentUpon>
     </None>
+    <None Include="DS_DM_HE_SO_LUONG_NS.xsc">
+      <DependentUpon>DS_DM_HE_SO_LUONG_NS.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_HE_SO_LUONG_NS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_HE_SO_LUONG_NS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_HE_SO_LUONG_NS.xss">
+      <DependentUpon>DS_DM_HE_SO_LUONG_NS.xsd</DependentUpon>
+    </None>
     <None Include="DS_DM_LOAI_HOP_DONG.xsc">
       <DependentUpon>DS_DM_LOAI_HOP_DONG.xsd</DependentUpon>
     </None>
@@ -159,6 +200,17 @@
     <None Include="DS_DM_LOAI_NGAY_CONG.xss">
       <DependentUpon>DS_DM_LOAI_NGAY_CONG.xsd</DependentUpon>
     </None>
+    <None Include="DS_DM_LUONG_CHE_DO.xsc">
+      <DependentUpon>DS_DM_LUONG_CHE_DO.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_LUONG_CHE_DO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_LUONG_CHE_DO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_LUONG_CHE_DO.xss">
+      <DependentUpon>DS_DM_LUONG_CHE_DO.xsd</DependentUpon>
+    </None>
     <None Include="DS_GD_CHAM_CONG.xsc">
       <DependentUpon>DS_GD_CHAM_CONG.xsd</DependentUpon>
     </None>
@@ -169,6 +221,28 @@
     </None>
     <None Include="DS_GD_CHAM_CONG.xss">
       <DependentUpon>DS_GD_CHAM_CONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_HOP_DONG.xsc">
+      <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_HOP_DONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_HOP_DONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_HOP_DONG.xss">
+      <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_HS_LNS_LCD.xsc">
+      <DependentUpon>DS_GD_HS_LNS_LCD.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_HS_LNS_LCD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_HS_LNS_LCD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_HS_LNS_LCD.xss">
+      <DependentUpon>DS_GD_HS_LNS_LCD.xsd</DependentUpon>
     </None>
     <None Include="DS_HT_FORM.xsc">
       <DependentUpon>DS_HT_FORM.xsd</DependentUpon>
@@ -235,6 +309,28 @@
     </None>
     <None Include="DS_HT_USER_GROUP.xss">
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_NHAN_VIEN.xsc">
+      <DependentUpon>DS_V_DM_NHAN_VIEN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_NHAN_VIEN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_DM_NHAN_VIEN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_DM_NHAN_VIEN.xss">
+      <DependentUpon>DS_V_DM_NHAN_VIEN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F320_LAP_HOP_DONG.xsc">
+      <DependentUpon>DS_V_F320_LAP_HOP_DONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F320_LAP_HOP_DONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_F320_LAP_HOP_DONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_F320_LAP_HOP_DONG.xss">
+      <DependentUpon>DS_V_F320_LAP_HOP_DONG.xsd</DependentUpon>
     </None>
     <None Include="DS_V_HT_CONTROL_IN_FORM.xsc">
       <DependentUpon>DS_V_HT_CONTROL_IN_FORM.xsd</DependentUpon>

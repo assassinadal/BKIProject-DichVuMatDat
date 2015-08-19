@@ -115,6 +115,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\DevExpress.RichEdit.v14.1.Core.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Sparkline.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Spreadsheet.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\DevExpress.Spreadsheet.v14.1.Core.dll</HintPath>
@@ -181,6 +182,7 @@
       <HintPath>C:\Program Files\Microsoft SQL Server\110\SDK\Assemblies\Microsoft.SqlServer.SqlEnum.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
     <Reference Include="SiSButton, Version=1.0.1494.35082, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\SiSButton.dll</HintPath>
@@ -191,6 +193,9 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
@@ -200,6 +205,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddTab.cs" />
@@ -221,12 +227,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="BaoCao\SplashScreen1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCao\SplashScreen1.Designer.cs">
-      <DependentUpon>SplashScreen1.cs</DependentUpon>
-    </Compile>
     <Compile Include="CCommon.cs" />
     <Compile Include="NghiepVu\BackupDB.cs">
       <SubType>Form</SubType>
@@ -239,6 +239,12 @@
     </Compile>
     <Compile Include="NghiepVu\f310_cham_cong_theo_danh_sach_nhan_vien.Designer.cs">
       <DependentUpon>f310_cham_cong_theo_danh_sach_nhan_vien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\f320_lap_hop_dong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f320_lap_hop_dong.Designer.cs">
+      <DependentUpon>f320_lap_hop_dong.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -259,14 +265,14 @@
     <EmbeddedResource Include="BaoCao\F_wait_form.resx">
       <DependentUpon>F_wait_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\SplashScreen1.resx">
-      <DependentUpon>SplashScreen1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\BackupDB.resx">
       <DependentUpon>BackupDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f310_cham_cong_theo_danh_sach_nhan_vien.resx">
       <DependentUpon>f310_cham_cong_theo_danh_sach_nhan_vien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f320_lap_hop_dong.resx">
+      <DependentUpon>f320_lap_hop_dong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

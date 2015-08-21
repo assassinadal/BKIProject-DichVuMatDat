@@ -1,4 +1,4 @@
-namespace BKI_QLTTQuocAnh.US{
+namespace BKI_DichVuMatDat.US{
 
 public class US_<TABLE_NAME> : US_Object
 {

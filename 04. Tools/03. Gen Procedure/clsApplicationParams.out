@@ -24,12 +24,12 @@
 <m_bNETIncludeComments>true</m_bNETIncludeComments>
 <m_bSPIncludeNoCountStatements>false</m_bSPIncludeNoCountStatements>
 <m_bNETIncludeConnectionProviderSupport>true</m_bNETIncludeConnectionProviderSupport>
-<m_sSQLCatalog id="ref-3">QuanLyTTQuocAnh</m_sSQLCatalog>
-<m_sSQLServer id="ref-4">HAIHD\SQLEXPRESS</m_sSQLServer>
+<m_sSQLCatalog id="ref-3">BKI_DVMD</m_sSQLCatalog>
+<m_sSQLServer id="ref-4">27.118.16.97</m_sSQLServer>
 <m_sSQLUID id="ref-5">sa</m_sSQLUID>
-<m_sNETNamespace id="ref-6">QuanLyTTQuocAnhLLBL</m_sNETNamespace>
+<m_sNETNamespace id="ref-6">BKI_DVMDLLBL</m_sNETNamespace>
 <m_sSPNamePrefix id="ref-7">pr_</m_sSPNamePrefix>
-<m_sSPOutputPath id="ref-8">D:\</m_sSPOutputPath>
+<m_sSPOutputPath id="ref-8">F:\03. Work\02. Project\</m_sSPOutputPath>
 <m_sNETOutputPath id="ref-9">E:\6. PROJECT\PROJECT.34. INVESTORY\04. Tools\03. Gen Procedure\Classes\</m_sNETOutputPath>
 <m_sNETClassPrefix id="ref-10"></m_sNETClassPrefix>
 <m_iNETConnectionStringRetrieval>0</m_iNETConnectionStringRetrieval>

@@ -250,8 +250,80 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string ID_MUC_LCD = "ID_MUC_LCD";
         public const string SO_TIEN = "SO_TIEN";
     }
+    public class DM_BAO_HIEM
+    {
+        public const string ID = "ID";
+        public const string TEN_BH = "TEN_BH";
+        public const string MA_BH = "MA_BH";
+        public const string TI_LE = "TI_LE";
+    }
+    public class DM_DON_VI
+    {
+        public const string ID = "ID";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string MA_DON_VI = "MA_DON_VI";
+        public const string ID_LOAI_DON_VI = "ID_LOAI_DON_VI";
+        public const string ID_DON_VI_CAP_TREN = "ID_DON_VI_CAP_TREN";
+    }
+    public class DM_NHAN_VIEN
+    {
+        public const string ID = "ID";
+        public const string MA_NV = "MA_NV";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string GIOI_TINH = "GIOI_TINH";
+        public const string EMAIL = "EMAIL";
+        public const string SDT = "SDT";
+        public const string SO_TAI_KHOAN = "SO_TAI_KHOAN";
+        public const string NGAN_HANG = "NGAN_HANG";
+        public const string NGAY_CAP_THE = "NGAY_CAP_THE";
+        public const string NGAY_HET_HAN_THE = "NGAY_HET_HAN_THE";
+        public const string NGAY_SINH = "NGAY_SINH";
+        public const string HON_NHAN = "HON_NHAN";
+        public const string SO_CMT = "SO_CMT";
+        public const string NGAY_CAP = "NGAY_CAP";
+        public const string NOI_CAP = "NOI_CAP";
+        public const string QUOC_TICH = "QUOC_TICH";
+        public const string DAN_TOC = "DAN_TOC";
+        public const string TON_GIAO = "TON_GIAO";
+        public const string NOI_SINH = "NOI_SINH";
+        public const string QUE_QUAN = "QUE_QUAN";
+        public const string DIA_CHI_THUONG_TRU = "DIA_CHI_THUONG_TRU";
+        public const string DIA_CHI_TAM_TRU = "DIA_CHI_TAM_TRU";
+        public const string DIA_CHI_LIEN_LAC = "DIA_CHI_LIEN_LAC";
+        public const string MA_SO_THUE_CA_NHAN = "MA_SO_THUE_CA_NHAN";
+        public const string CHUYEN_MON = "CHUYEN_MON";
+        public const string TRINH_DO_VAN_HOA = "TRINH_DO_VAN_HOA";
+        public const string NAM_TOT_NGHIEP = "NAM_TOT_NGHIEP";
+        public const string TOT_NGHIEP_TAI = "TOT_NGHIEP_TAI";
+        public const string NGAY_VAO_HANG_KHONG = "NGAY_VAO_HANG_KHONG";
+        public const string NGAY_TIEP_NHAN_VAO_TCT = "NGAY_TIEP_NHAN_VAO_TCT";
+        public const string NGAY_CHINH_THUC_TIEP_NHAN = "NGAY_CHINH_THUC_TIEP_NHAN";
+    }
+    public class DM_PHU_CAP
+    {
+        public const string ID = "ID";
+        public const string ID_LOAI_PHU_CAP = "ID_LOAI_PHU_CAP";
+        public const string DOI_TUONG_HUONG_PHU_CAP = "DOI_TUONG_HUONG_PHU_CAP";
+        public const string TI_LE = "TI_LE";
+    }
+    public class DM_THAM_SO
+    {
+        public const string ID = "ID";
+        public const string LOAI = "LOAI";
+        public const string SO_TIEN = "SO_TIEN";
+    }
+    public class DM_THUE
+    {
+        public const string ID = "ID";
+        public const string CHAN_DUOI = "CHAN_DUOI";
+        public const string CHAN_TREN = "CHAN_TREN";
+        public const string TI_LE = "TI_LE";
+        public const string BU_TRU = "BU_TRU";
+    }
 
     #endregion
+
 
     #region GIAO_DICH
     public class GD_CHAM_CONG
@@ -290,6 +362,18 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string ID_HOP_DONG = "ID_HOP_DONG";
         public const string ID_HS_LNS = "ID_HS_LNS";
         public const string ID_LCD = "ID_LCD";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string NGAY_SUA = "NGAY_SUA";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string NGUOI_SUA = "NGUOI_SUA";
+        public const string DA_XOA = "DA_XOA";
+    }
+    public class GD_CONG_TAC
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string ID_QUYET_DINH = "ID_QUYET_DINH";
+        public const string ID_DON_VI = "ID_DON_VI";
         public const string NGAY_LAP = "NGAY_LAP";
         public const string NGAY_SUA = "NGAY_SUA";
         public const string NGUOI_LAP = "NGUOI_LAP";

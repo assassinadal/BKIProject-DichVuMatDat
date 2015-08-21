@@ -52,11 +52,18 @@
     <Compile Include="US_CM_DM_TU_DIEN.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="US_DM_BAO_HIEM.cs" />
+    <Compile Include="US_DM_DON_VI.cs" />
     <Compile Include="US_DM_HE_SO_LUONG_NS.cs" />
     <Compile Include="US_DM_LOAI_HOP_DONG.cs" />
     <Compile Include="US_DM_LOAI_NGAY_CONG.cs" />
     <Compile Include="US_DM_LUONG_CHE_DO.cs" />
+    <Compile Include="US_DM_NHAN_VIEN.cs" />
+    <Compile Include="US_DM_PHU_CAP.cs" />
+    <Compile Include="US_DM_THAM_SO.cs" />
+    <Compile Include="US_DM_THUE.cs" />
     <Compile Include="US_GD_CHAM_CONG.cs" />
+    <Compile Include="US_GD_CONG_TAC.cs" />
     <Compile Include="US_GD_HOP_DONG.cs" />
     <Compile Include="US_GD_HS_LNS_LCD.cs" />
     <Compile Include="US_HT_FORM.cs" />

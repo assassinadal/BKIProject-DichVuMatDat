@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_DM_NHAN_VIEN" targetNamespace="http://tempuri.org/DS_DM_NHAN_VIEN.xsd" xmlns:mstns="http://tempuri.org/DS_DM_NHAN_VIEN.xsd" xmlns="http://tempuri.org/DS_DM_NHAN_VIEN.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_DVMDConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_DVMDConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_DichVuMatDat.DS.Properties.Settings.GlobalReference.Default.BKI_DVMDConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DM_NHAN_VIENTableAdapter" GeneratorDataComponentClassName="DM_NHAN_VIENTableAdapter" Name="DM_NHAN_VIEN" UserDataComponentName="DM_NHAN_VIENTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BKI_DVMDConnectionString1 (Settings)" DbObjectName="BKI_DVMD.dbo.DM_NHAN_VIEN" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[DM_NHAN_VIEN] WHERE (([ID] = @Original_ID) AND ([MA_NV] = @Original_MA_NV) AND ([HO_DEM] = @Original_HO_DEM) AND ([TEN] = @Original_TEN) AND ((@IsNull_GIOI_TINH = 1 AND [GIOI_TINH] IS NULL) OR ([GIOI_TINH] = @Original_GIOI_TINH)) AND ((@IsNull_EMAIL = 1 AND [EMAIL] IS NULL) OR ([EMAIL] = @Original_EMAIL)) AND ((@IsNull_SDT = 1 AND [SDT] IS NULL) OR ([SDT] = @Original_SDT)) AND ((@IsNull_SO_TAI_KHOAN = 1 AND [SO_TAI_KHOAN] IS NULL) OR ([SO_TAI_KHOAN] = @Original_SO_TAI_KHOAN)) AND ((@IsNull_NGAN_HANG = 1 AND [NGAN_HANG] IS NULL) OR ([NGAN_HANG] = @Original_NGAN_HANG)) AND ((@IsNull_NGAY_CAP_THE = 1 AND [NGAY_CAP_THE] IS NULL) OR ([NGAY_CAP_THE] = @Original_NGAY_CAP_THE)) AND ((@IsNull_NGAY_HET_HAN_THE = 1 AND [NGAY_HET_HAN_THE] IS NULL) OR ([NGAY_HET_HAN_THE] = @Original_NGAY_HET_HAN_THE)) AND ((@IsNull_NGAY_SINH = 1 AND [NGAY_SINH] IS NULL) OR ([NGAY_SINH] = @Original_NGAY_SINH)) AND ((@IsNull_HON_NHAN = 1 AND [HON_NHAN] IS NULL) OR ([HON_NHAN] = @Original_HON_NHAN)) AND ((@IsNull_SO_CMT = 1 AND [SO_CMT] IS NULL) OR ([SO_CMT] = @Original_SO_CMT)) AND ((@IsNull_NGAY_CAP = 1 AND [NGAY_CAP] IS NULL) OR ([NGAY_CAP] = @Original_NGAY_CAP)) AND ((@IsNull_NOI_CAP = 1 AND [NOI_CAP] IS NULL) OR ([NOI_CAP] = @Original_NOI_CAP)) AND ((@IsNull_QUOC_TICH = 1 AND [QUOC_TICH] IS NULL) OR ([QUOC_TICH] = @Original_QUOC_TICH)) AND ((@IsNull_DAN_TOC = 1 AND [DAN_TOC] IS NULL) OR ([DAN_TOC] = @Original_DAN_TOC)) AND ((@IsNull_TON_GIAO = 1 AND [TON_GIAO] IS NULL) OR ([TON_GIAO] = @Original_TON_GIAO)) AND ((@IsNull_NOI_SINH = 1 AND [NOI_SINH] IS NULL) OR ([NOI_SINH] = @Original_NOI_SINH)) AND ((@IsNull_QUE_QUAN = 1 AND [QUE_QUAN] IS NULL) OR ([QUE_QUAN] = @Original_QUE_QUAN)) AND ((@IsNull_DIA_CHI_THUONG_TRU = 1 AND [DIA_CHI_THUONG_TRU] IS NULL) OR ([DIA_CHI_THUONG_TRU] = @Original_DIA_CHI_THUONG_TRU)) AND ((@IsNull_DIA_CHI_TAM_TRU = 1 AND [DIA_CHI_TAM_TRU] IS NULL) OR ([DIA_CHI_TAM_TRU] = @Original_DIA_CHI_TAM_TRU)) AND ((@IsNull_DIA_CHI_LIEN_LAC = 1 AND [DIA_CHI_LIEN_LAC] IS NULL) OR ([DIA_CHI_LIEN_LAC] = @Original_DIA_CHI_LIEN_LAC)) AND ((@IsNull_MA_SO_THUE_CA_NHAN = 1 AND [MA_SO_THUE_CA_NHAN] IS NULL) OR ([MA_SO_THUE_CA_NHAN] = @Original_MA_SO_THUE_CA_NHAN)) AND ((@IsNull_CHUYEN_MON = 1 AND [CHUYEN_MON] IS NULL) OR ([CHUYEN_MON] = @Original_CHUYEN_MON)) AND ((@IsNull_TRINH_DO_VAN_HOA = 1 AND [TRINH_DO_VAN_HOA] IS NULL) OR ([TRINH_DO_VAN_HOA] = @Original_TRINH_DO_VAN_HOA)) AND ((@IsNull_NAM_TOT_NGHIEP = 1 AND [NAM_TOT_NGHIEP] IS NULL) OR ([NAM_TOT_NGHIEP] = @Original_NAM_TOT_NGHIEP)) AND ((@IsNull_TOT_NGHIEP_TAI = 1 AND [TOT_NGHIEP_TAI] IS NULL) OR ([TOT_NGHIEP_TAI] = @Original_TOT_NGHIEP_TAI)) AND ((@IsNull_NGAY_VAO_HANG_KHONG = 1 AND [NGAY_VAO_HANG_KHONG] IS NULL) OR ([NGAY_VAO_HANG_KHONG] = @Original_NGAY_VAO_HANG_KHONG)) AND ((@IsNull_NGAY_TIEP_NHAN_VAO_TCT = 1 AND [NGAY_TIEP_NHAN_VAO_TCT] IS NULL) OR ([NGAY_TIEP_NHAN_VAO_TCT] = @Original_NGAY_TIEP_NHAN_VAO_TCT)) AND ((@IsNull_NGAY_CHINH_THUC_TIEP_NHAN = 1 AND [NGAY_CHINH_THUC_TIEP_NHAN] IS NULL) OR ([NGAY_CHINH_THUC_TIEP_NHAN] = @Original_NGAY_CHINH_THUC_TIEP_NHAN)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_MA_NV" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_NV" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_HO_DEM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HO_DEM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_TEN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TEN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GIOI_TINH" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GIOI_TINH" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_GIOI_TINH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="GIOI_TINH" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EMAIL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EMAIL" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_EMAIL" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMAIL" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SDT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SDT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SDT" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SDT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SO_TAI_KHOAN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SO_TAI_KHOAN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SO_TAI_KHOAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SO_TAI_KHOAN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAN_HANG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAN_HANG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NGAN_HANG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NGAN_HANG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAY_CAP_THE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAY_CAP_THE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAY_CAP_THE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_CAP_THE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAY_HET_HAN_THE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAY_HET_HAN_THE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAY_HET_HAN_THE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_HET_HAN_THE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAY_SINH" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAY_SINH" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAY_SINH" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_SINH" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_HON_NHAN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="HON_NHAN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_HON_NHAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HON_NHAN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SO_CMT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SO_CMT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SO_CMT" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SO_CMT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAY_CAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAY_CAP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAY_CAP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_CAP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NOI_CAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOI_CAP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NOI_CAP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NOI_CAP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_QUOC_TICH" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="QUOC_TICH" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_QUOC_TICH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="QUOC_TICH" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DAN_TOC" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DAN_TOC" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DAN_TOC" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DAN_TOC" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TON_GIAO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TON_GIAO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_TON_GIAO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TON_GIAO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NOI_SINH" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOI_SINH" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NOI_SINH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NOI_SINH" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_QUE_QUAN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="QUE_QUAN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_QUE_QUAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="QUE_QUAN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DIA_CHI_THUONG_TRU" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DIA_CHI_THUONG_TRU" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DIA_CHI_THUONG_TRU" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIA_CHI_THUONG_TRU" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DIA_CHI_TAM_TRU" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DIA_CHI_TAM_TRU" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DIA_CHI_TAM_TRU" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIA_CHI_TAM_TRU" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DIA_CHI_LIEN_LAC" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DIA_CHI_LIEN_LAC" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DIA_CHI_LIEN_LAC" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIA_CHI_LIEN_LAC" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MA_SO_THUE_CA_NHAN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MA_SO_THUE_CA_NHAN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_MA_SO_THUE_CA_NHAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_SO_THUE_CA_NHAN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CHUYEN_MON" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CHUYEN_MON" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_CHUYEN_MON" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CHUYEN_MON" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TRINH_DO_VAN_HOA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TRINH_DO_VAN_HOA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_TRINH_DO_VAN_HOA" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TRINH_DO_VAN_HOA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NAM_TOT_NGHIEP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NAM_TOT_NGHIEP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NAM_TOT_NGHIEP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAM_TOT_NGHIEP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TOT_NGHIEP_TAI" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TOT_NGHIEP_TAI" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_TOT_NGHIEP_TAI" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TOT_NGHIEP_TAI" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAY_VAO_HANG_KHONG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAY_VAO_HANG_KHONG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAY_VAO_HANG_KHONG" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_VAO_HANG_KHONG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAY_TIEP_NHAN_VAO_TCT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAY_TIEP_NHAN_VAO_TCT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAY_TIEP_NHAN_VAO_TCT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_TIEP_NHAN_VAO_TCT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAY_CHINH_THUC_TIEP_NHAN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAY_CHINH_THUC_TIEP_NHAN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAY_CHINH_THUC_TIEP_NHAN" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_CHINH_THUC_TIEP_NHAN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[DM_NHAN_VIEN] ([MA_NV], [HO_DEM], [TEN], [GIOI_TINH], [EMAIL], [SDT], [SO_TAI_KHOAN], [NGAN_HANG], [NGAY_CAP_THE], [NGAY_HET_HAN_THE], [NGAY_SINH], [HON_NHAN], [SO_CMT], [NGAY_CAP], [NOI_CAP], [QUOC_TICH], [DAN_TOC], [TON_GIAO], [NOI_SINH], [QUE_QUAN], [DIA_CHI_THUONG_TRU], [DIA_CHI_TAM_TRU], [DIA_CHI_LIEN_LAC], [MA_SO_THUE_CA_NHAN], [CHUYEN_MON], [TRINH_DO_VAN_HOA], [NAM_TOT_NGHIEP], [TOT_NGHIEP_TAI], [NGAY_VAO_HANG_KHONG], [NGAY_TIEP_NHAN_VAO_TCT], [NGAY_CHINH_THUC_TIEP_NHAN]) VALUES (@MA_NV, @HO_DEM, @TEN, @GIOI_TINH, @EMAIL, @SDT, @SO_TAI_KHOAN, @NGAN_HANG, @NGAY_CAP_THE, @NGAY_HET_HAN_THE, @NGAY_SINH, @HON_NHAN, @SO_CMT, @NGAY_CAP, @NOI_CAP, @QUOC_TICH, @DAN_TOC, @TON_GIAO, @NOI_SINH, @QUE_QUAN, @DIA_CHI_THUONG_TRU, @DIA_CHI_TAM_TRU, @DIA_CHI_LIEN_LAC, @MA_SO_THUE_CA_NHAN, @CHUYEN_MON, @TRINH_DO_VAN_HOA, @NAM_TOT_NGHIEP, @TOT_NGHIEP_TAI, @NGAY_VAO_HANG_KHONG, @NGAY_TIEP_NHAN_VAO_TCT, @NGAY_CHINH_THUC_TIEP_NHAN);
+SELECT ID, MA_NV, HO_DEM, TEN, GIOI_TINH, EMAIL, SDT, SO_TAI_KHOAN, NGAN_HANG, NGAY_CAP_THE, NGAY_HET_HAN_THE, NGAY_SINH, HON_NHAN, SO_CMT, NGAY_CAP, NOI_CAP, QUOC_TICH, DAN_TOC, TON_GIAO, NOI_SINH, QUE_QUAN, DIA_CHI_THUONG_TRU, DIA_CHI_TAM_TRU, DIA_CHI_LIEN_LAC, MA_SO_THUE_CA_NHAN, CHUYEN_MON, TRINH_DO_VAN_HOA, NAM_TOT_NGHIEP, TOT_NGHIEP_TAI, NGAY_VAO_HANG_KHONG, NGAY_TIEP_NHAN_VAO_TCT, NGAY_CHINH_THUC_TIEP_NHAN FROM DM_NHAN_VIEN WHERE (ID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@MA_NV" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_NV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@HO_DEM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HO_DEM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TEN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TEN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@GIOI_TINH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="GIOI_TINH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@EMAIL" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMAIL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SDT" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SDT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SO_TAI_KHOAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SO_TAI_KHOAN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NGAN_HANG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NGAN_HANG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_CAP_THE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_CAP_THE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_HET_HAN_THE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_HET_HAN_THE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_SINH" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_SINH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@HON_NHAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HON_NHAN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SO_CMT" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SO_CMT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_CAP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_CAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NOI_CAP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NOI_CAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@QUOC_TICH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="QUOC_TICH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DAN_TOC" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DAN_TOC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TON_GIAO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TON_GIAO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NOI_SINH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NOI_SINH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@QUE_QUAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="QUE_QUAN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DIA_CHI_THUONG_TRU" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIA_CHI_THUONG_TRU" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DIA_CHI_TAM_TRU" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIA_CHI_TAM_TRU" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DIA_CHI_LIEN_LAC" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIA_CHI_LIEN_LAC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@MA_SO_THUE_CA_NHAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_SO_THUE_CA_NHAN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CHUYEN_MON" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CHUYEN_MON" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TRINH_DO_VAN_HOA" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TRINH_DO_VAN_HOA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NAM_TOT_NGHIEP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAM_TOT_NGHIEP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TOT_NGHIEP_TAI" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TOT_NGHIEP_TAI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_VAO_HANG_KHONG" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_VAO_HANG_KHONG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_TIEP_NHAN_VAO_TCT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_TIEP_NHAN_VAO_TCT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_CHINH_THUC_TIEP_NHAN" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_CHINH_THUC_TIEP_NHAN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, MA_NV, HO_DEM, TEN, GIOI_TINH, EMAIL, SDT, SO_TAI_KHOAN, NGAN_HANG, NGAY_CAP_THE, NGAY_HET_HAN_THE, NGAY_SINH, HON_NHAN, SO_CMT, NGAY_CAP, NOI_CAP, QUOC_TICH, DAN_TOC, TON_GIAO, NOI_SINH, QUE_QUAN, DIA_CHI_THUONG_TRU, DIA_CHI_TAM_TRU, DIA_CHI_LIEN_LAC, MA_SO_THUE_CA_NHAN, CHUYEN_MON, TRINH_DO_VAN_HOA, NAM_TOT_NGHIEP, TOT_NGHIEP_TAI, NGAY_VAO_HANG_KHONG, NGAY_TIEP_NHAN_VAO_TCT, NGAY_CHINH_THUC_TIEP_NHAN FROM dbo.DM_NHAN_VIEN</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[DM_NHAN_VIEN] SET [MA_NV] = @MA_NV, [HO_DEM] = @HO_DEM, [TEN] = @TEN, [GIOI_TINH] = @GIOI_TINH, [EMAIL] = @EMAIL, [SDT] = @SDT, [SO_TAI_KHOAN] = @SO_TAI_KHOAN, [NGAN_HANG] = @NGAN_HANG, [NGAY_CAP_THE] = @NGAY_CAP_THE, [NGAY_HET_HAN_THE] = @NGAY_HET_HAN_THE, [NGAY_SINH] = @NGAY_SINH, [HON_NHAN] = @HON_NHAN, [SO_CMT] = @SO_CMT, [NGAY_CAP] = @NGAY_CAP, [NOI_CAP] = @NOI_CAP, [QUOC_TICH] = @QUOC_TICH, [DAN_TOC] = @DAN_TOC, [TON_GIAO] = @TON_GIAO, [NOI_SINH] = @NOI_SINH, [QUE_QUAN] = @QUE_QUAN, [DIA_CHI_THUONG_TRU] = @DIA_CHI_THUONG_TRU, [DIA_CHI_TAM_TRU] = @DIA_CHI_TAM_TRU, [DIA_CHI_LIEN_LAC] = @DIA_CHI_LIEN_LAC, [MA_SO_THUE_CA_NHAN] = @MA_SO_THUE_CA_NHAN, [CHUYEN_MON] = @CHUYEN_MON, [TRINH_DO_VAN_HOA] = @TRINH_DO_VAN_HOA, [NAM_TOT_NGHIEP] = @NAM_TOT_NGHIEP, [TOT_NGHIEP_TAI] = @TOT_NGHIEP_TAI, [NGAY_VAO_HANG_KHONG] = @NGAY_VAO_HANG_KHONG, [NGAY_TIEP_NHAN_VAO_TCT] = @NGAY_TIEP_NHAN_VAO_TCT, [NGAY_CHINH_THUC_TIEP_NHAN] = @NGAY_CHINH_THUC_TIEP_NHAN WHERE (([ID] = @Original_ID) AND ([MA_NV] = @Original_MA_NV) AND ([HO_DEM] = @Original_HO_DEM) AND ([TEN] = @Original_TEN) AND ((@IsNull_GIOI_TINH = 1 AND [GIOI_TINH] IS NULL) OR ([GIOI_TINH] = @Original_GIOI_TINH)) AND ((@IsNull_EMAIL = 1 AND [EMAIL] IS NULL) OR ([EMAIL] = @Original_EMAIL)) AND ((@IsNull_SDT = 1 AND [SDT] IS NULL) OR ([SDT] = @Original_SDT)) AND ((@IsNull_SO_TAI_KHOAN = 1 AND [SO_TAI_KHOAN] IS NULL) OR ([SO_TAI_KHOAN] = @Original_SO_TAI_KHOAN)) AND ((@IsNull_NGAN_HANG = 1 AND [NGAN_HANG] IS NULL) OR ([NGAN_HANG] = @Original_NGAN_HANG)) AND ((@IsNull_NGAY_CAP_THE = 1 AND [NGAY_CAP_THE] IS NULL) OR ([NGAY_CAP_THE] = @Original_NGAY_CAP_THE)) AND ((@IsNull_NGAY_HET_HAN_THE = 1 AND [NGAY_HET_HAN_THE] IS NULL) OR ([NGAY_HET_HAN_THE] = @Original_NGAY_HET_HAN_THE)) AND ((@IsNull_NGAY_SINH = 1 AND [NGAY_SINH] IS NULL) OR ([NGAY_SINH] = @Original_NGAY_SINH)) AND ((@IsNull_HON_NHAN = 1 AND [HON_NHAN] IS NULL) OR ([HON_NHAN] = @Original_HON_NHAN)) AND ((@IsNull_SO_CMT = 1 AND [SO_CMT] IS NULL) OR ([SO_CMT] = @Original_SO_CMT)) AND ((@IsNull_NGAY_CAP = 1 AND [NGAY_CAP] IS NULL) OR ([NGAY_CAP] = @Original_NGAY_CAP)) AND ((@IsNull_NOI_CAP = 1 AND [NOI_CAP] IS NULL) OR ([NOI_CAP] = @Original_NOI_CAP)) AND ((@IsNull_QUOC_TICH = 1 AND [QUOC_TICH] IS NULL) OR ([QUOC_TICH] = @Original_QUOC_TICH)) AND ((@IsNull_DAN_TOC = 1 AND [DAN_TOC] IS NULL) OR ([DAN_TOC] = @Original_DAN_TOC)) AND ((@IsNull_TON_GIAO = 1 AND [TON_GIAO] IS NULL) OR ([TON_GIAO] = @Original_TON_GIAO)) AND ((@IsNull_NOI_SINH = 1 AND [NOI_SINH] IS NULL) OR ([NOI_SINH] = @Original_NOI_SINH)) AND ((@IsNull_QUE_QUAN = 1 AND [QUE_QUAN] IS NULL) OR ([QUE_QUAN] = @Original_QUE_QUAN)) AND ((@IsNull_DIA_CHI_THUONG_TRU = 1 AND [DIA_CHI_THUONG_TRU] IS NULL) OR ([DIA_CHI_THUONG_TRU] = @Original_DIA_CHI_THUONG_TRU)) AND ((@IsNull_DIA_CHI_TAM_TRU = 1 AND [DIA_CHI_TAM_TRU] IS NULL) OR ([DIA_CHI_TAM_TRU] = @Original_DIA_CHI_TAM_TRU)) AND ((@IsNull_DIA_CHI_LIEN_LAC = 1 AND [DIA_CHI_LIEN_LAC] IS NULL) OR ([DIA_CHI_LIEN_LAC] = @Original_DIA_CHI_LIEN_LAC)) AND ((@IsNull_MA_SO_THUE_CA_NHAN = 1 AND [MA_SO_THUE_CA_NHAN] IS NULL) OR ([MA_SO_THUE_CA_NHAN] = @Original_MA_SO_THUE_CA_NHAN)) AND ((@IsNull_CHUYEN_MON = 1 AND [CHUYEN_MON] IS NULL) OR ([CHUYEN_MON] = @Original_CHUYEN_MON)) AND ((@IsNull_TRINH_DO_VAN_HOA = 1 AND [TRINH_DO_VAN_HOA] IS NULL) OR ([TRINH_DO_VAN_HOA] = @Original_TRINH_DO_VAN_HOA)) AND ((@IsNull_NAM_TOT_NGHIEP = 1 AND [NAM_TOT_NGHIEP] IS NULL) OR ([NAM_TOT_NGHIEP] = @Original_NAM_TOT_NGHIEP)) AND ((@IsNull_TOT_NGHIEP_TAI = 1 AND [TOT_NGHIEP_TAI] IS NULL) OR ([TOT_NGHIEP_TAI] = @Original_TOT_NGHIEP_TAI)) AND ((@IsNull_NGAY_VAO_HANG_KHONG = 1 AND [NGAY_VAO_HANG_KHONG] IS NULL) OR ([NGAY_VAO_HANG_KHONG] = @Original_NGAY_VAO_HANG_KHONG)) AND ((@IsNull_NGAY_TIEP_NHAN_VAO_TCT = 1 AND [NGAY_TIEP_NHAN_VAO_TCT] IS NULL) OR ([NGAY_TIEP_NHAN_VAO_TCT] = @Original_NGAY_TIEP_NHAN_VAO_TCT)) AND ((@IsNull_NGAY_CHINH_THUC_TIEP_NHAN = 1 AND [NGAY_CHINH_THUC_TIEP_NHAN] IS NULL) OR ([NGAY_CHINH_THUC_TIEP_NHAN] = @Original_NGAY_CHINH_THUC_TIEP_NHAN)));
+SELECT ID, MA_NV, HO_DEM, TEN, GIOI_TINH, EMAIL, SDT, SO_TAI_KHOAN, NGAN_HANG, NGAY_CAP_THE, NGAY_HET_HAN_THE, NGAY_SINH, HON_NHAN, SO_CMT, NGAY_CAP, NOI_CAP, QUOC_TICH, DAN_TOC, TON_GIAO, NOI_SINH, QUE_QUAN, DIA_CHI_THUONG_TRU, DIA_CHI_TAM_TRU, DIA_CHI_LIEN_LAC, MA_SO_THUE_CA_NHAN, CHUYEN_MON, TRINH_DO_VAN_HOA, NAM_TOT_NGHIEP, TOT_NGHIEP_TAI, NGAY_VAO_HANG_KHONG, NGAY_TIEP_NHAN_VAO_TCT, NGAY_CHINH_THUC_TIEP_NHAN FROM DM_NHAN_VIEN WHERE (ID = @ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@MA_NV" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_NV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@HO_DEM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HO_DEM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TEN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TEN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@GIOI_TINH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="GIOI_TINH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@EMAIL" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMAIL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SDT" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SDT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SO_TAI_KHOAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SO_TAI_KHOAN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NGAN_HANG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NGAN_HANG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_CAP_THE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_CAP_THE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_HET_HAN_THE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_HET_HAN_THE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_SINH" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_SINH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@HON_NHAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HON_NHAN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SO_CMT" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SO_CMT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_CAP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_CAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NOI_CAP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NOI_CAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@QUOC_TICH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="QUOC_TICH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DAN_TOC" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DAN_TOC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TON_GIAO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TON_GIAO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NOI_SINH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NOI_SINH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@QUE_QUAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="QUE_QUAN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DIA_CHI_THUONG_TRU" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIA_CHI_THUONG_TRU" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DIA_CHI_TAM_TRU" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIA_CHI_TAM_TRU" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DIA_CHI_LIEN_LAC" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIA_CHI_LIEN_LAC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@MA_SO_THUE_CA_NHAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_SO_THUE_CA_NHAN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CHUYEN_MON" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CHUYEN_MON" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TRINH_DO_VAN_HOA" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TRINH_DO_VAN_HOA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NAM_TOT_NGHIEP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAM_TOT_NGHIEP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TOT_NGHIEP_TAI" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TOT_NGHIEP_TAI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_VAO_HANG_KHONG" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_VAO_HANG_KHONG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_TIEP_NHAN_VAO_TCT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_TIEP_NHAN_VAO_TCT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_CHINH_THUC_TIEP_NHAN" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_CHINH_THUC_TIEP_NHAN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_MA_NV" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_NV" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_HO_DEM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HO_DEM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_TEN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TEN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GIOI_TINH" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GIOI_TINH" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_GIOI_TINH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="GIOI_TINH" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EMAIL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EMAIL" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_EMAIL" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMAIL" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SDT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SDT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SDT" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SDT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SO_TAI_KHOAN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SO_TAI_KHOAN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SO_TAI_KHOAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SO_TAI_KHOAN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAN_HANG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAN_HANG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NGAN_HANG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NGAN_HANG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAY_CAP_THE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAY_CAP_THE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAY_CAP_THE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_CAP_THE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAY_HET_HAN_THE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAY_HET_HAN_THE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAY_HET_HAN_THE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_HET_HAN_THE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAY_SINH" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAY_SINH" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAY_SINH" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_SINH" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_HON_NHAN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="HON_NHAN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_HON_NHAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HON_NHAN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SO_CMT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SO_CMT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SO_CMT" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SO_CMT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAY_CAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAY_CAP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAY_CAP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_CAP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NOI_CAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOI_CAP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NOI_CAP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NOI_CAP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_QUOC_TICH" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="QUOC_TICH" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_QUOC_TICH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="QUOC_TICH" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DAN_TOC" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DAN_TOC" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DAN_TOC" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DAN_TOC" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TON_GIAO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TON_GIAO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_TON_GIAO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TON_GIAO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NOI_SINH" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOI_SINH" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NOI_SINH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NOI_SINH" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_QUE_QUAN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="QUE_QUAN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_QUE_QUAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="QUE_QUAN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DIA_CHI_THUONG_TRU" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DIA_CHI_THUONG_TRU" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DIA_CHI_THUONG_TRU" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIA_CHI_THUONG_TRU" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DIA_CHI_TAM_TRU" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DIA_CHI_TAM_TRU" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DIA_CHI_TAM_TRU" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIA_CHI_TAM_TRU" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DIA_CHI_LIEN_LAC" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DIA_CHI_LIEN_LAC" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DIA_CHI_LIEN_LAC" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DIA_CHI_LIEN_LAC" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MA_SO_THUE_CA_NHAN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MA_SO_THUE_CA_NHAN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_MA_SO_THUE_CA_NHAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_SO_THUE_CA_NHAN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CHUYEN_MON" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CHUYEN_MON" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_CHUYEN_MON" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CHUYEN_MON" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TRINH_DO_VAN_HOA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TRINH_DO_VAN_HOA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_TRINH_DO_VAN_HOA" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TRINH_DO_VAN_HOA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NAM_TOT_NGHIEP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NAM_TOT_NGHIEP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NAM_TOT_NGHIEP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAM_TOT_NGHIEP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TOT_NGHIEP_TAI" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TOT_NGHIEP_TAI" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_TOT_NGHIEP_TAI" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TOT_NGHIEP_TAI" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAY_VAO_HANG_KHONG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAY_VAO_HANG_KHONG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAY_VAO_HANG_KHONG" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_VAO_HANG_KHONG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAY_TIEP_NHAN_VAO_TCT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAY_TIEP_NHAN_VAO_TCT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAY_TIEP_NHAN_VAO_TCT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_TIEP_NHAN_VAO_TCT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAY_CHINH_THUC_TIEP_NHAN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAY_CHINH_THUC_TIEP_NHAN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_NGAY_CHINH_THUC_TIEP_NHAN" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_CHINH_THUC_TIEP_NHAN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="" DataTypeServer="DT_POID" DbType="Decimal" Direction="Input" ParameterName="@ID" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="MA_NV" DataSetColumn="MA_NV" />
+              <Mapping SourceColumn="HO_DEM" DataSetColumn="HO_DEM" />
+              <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
+              <Mapping SourceColumn="GIOI_TINH" DataSetColumn="GIOI_TINH" />
+              <Mapping SourceColumn="EMAIL" DataSetColumn="EMAIL" />
+              <Mapping SourceColumn="SDT" DataSetColumn="SDT" />
+              <Mapping SourceColumn="SO_TAI_KHOAN" DataSetColumn="SO_TAI_KHOAN" />
+              <Mapping SourceColumn="NGAN_HANG" DataSetColumn="NGAN_HANG" />
+              <Mapping SourceColumn="NGAY_CAP_THE" DataSetColumn="NGAY_CAP_THE" />
+              <Mapping SourceColumn="NGAY_HET_HAN_THE" DataSetColumn="NGAY_HET_HAN_THE" />
+              <Mapping SourceColumn="NGAY_SINH" DataSetColumn="NGAY_SINH" />
+              <Mapping SourceColumn="HON_NHAN" DataSetColumn="HON_NHAN" />
+              <Mapping SourceColumn="SO_CMT" DataSetColumn="SO_CMT" />
+              <Mapping SourceColumn="NGAY_CAP" DataSetColumn="NGAY_CAP" />
+              <Mapping SourceColumn="NOI_CAP" DataSetColumn="NOI_CAP" />
+              <Mapping SourceColumn="QUOC_TICH" DataSetColumn="QUOC_TICH" />
+              <Mapping SourceColumn="DAN_TOC" DataSetColumn="DAN_TOC" />
+              <Mapping SourceColumn="TON_GIAO" DataSetColumn="TON_GIAO" />
+              <Mapping SourceColumn="NOI_SINH" DataSetColumn="NOI_SINH" />
+              <Mapping SourceColumn="QUE_QUAN" DataSetColumn="QUE_QUAN" />
+              <Mapping SourceColumn="DIA_CHI_THUONG_TRU" DataSetColumn="DIA_CHI_THUONG_TRU" />
+              <Mapping SourceColumn="DIA_CHI_TAM_TRU" DataSetColumn="DIA_CHI_TAM_TRU" />
+              <Mapping SourceColumn="DIA_CHI_LIEN_LAC" DataSetColumn="DIA_CHI_LIEN_LAC" />
+              <Mapping SourceColumn="MA_SO_THUE_CA_NHAN" DataSetColumn="MA_SO_THUE_CA_NHAN" />
+              <Mapping SourceColumn="CHUYEN_MON" DataSetColumn="CHUYEN_MON" />
+              <Mapping SourceColumn="TRINH_DO_VAN_HOA" DataSetColumn="TRINH_DO_VAN_HOA" />
+              <Mapping SourceColumn="NAM_TOT_NGHIEP" DataSetColumn="NAM_TOT_NGHIEP" />
+              <Mapping SourceColumn="TOT_NGHIEP_TAI" DataSetColumn="TOT_NGHIEP_TAI" />
+              <Mapping SourceColumn="NGAY_VAO_HANG_KHONG" DataSetColumn="NGAY_VAO_HANG_KHONG" />
+              <Mapping SourceColumn="NGAY_TIEP_NHAN_VAO_TCT" DataSetColumn="NGAY_TIEP_NHAN_VAO_TCT" />
+              <Mapping SourceColumn="NGAY_CHINH_THUC_TIEP_NHAN" DataSetColumn="NGAY_CHINH_THUC_TIEP_NHAN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_DM_NHAN_VIEN" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_DM_NHAN_VIEN" msprop:Generator_UserDSName="DS_DM_NHAN_VIEN">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DM_NHAN_VIEN" msprop:Generator_TableClassName="DM_NHAN_VIENDataTable" msprop:Generator_TableVarName="tableDM_NHAN_VIEN" msprop:Generator_TablePropName="DM_NHAN_VIEN" msprop:Generator_RowDeletingName="DM_NHAN_VIENRowDeleting" msprop:Generator_RowChangingName="DM_NHAN_VIENRowChanging" msprop:Generator_RowEvHandlerName="DM_NHAN_VIENRowChangeEventHandler" msprop:Generator_RowDeletedName="DM_NHAN_VIENRowDeleted" msprop:Generator_UserTableName="DM_NHAN_VIEN" msprop:Generator_RowChangedName="DM_NHAN_VIENRowChanged" msprop:Generator_RowEvArgName="DM_NHAN_VIENRowChangeEvent" msprop:Generator_RowClassName="DM_NHAN_VIENRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="MA_NV" msprop:Generator_ColumnVarNameInTable="columnMA_NV" msprop:Generator_ColumnPropNameInRow="MA_NV" msprop:Generator_ColumnPropNameInTable="MA_NVColumn" msprop:Generator_UserColumnName="MA_NV">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HO_DEM" msprop:Generator_ColumnVarNameInTable="columnHO_DEM" msprop:Generator_ColumnPropNameInRow="HO_DEM" msprop:Generator_ColumnPropNameInTable="HO_DEMColumn" msprop:Generator_UserColumnName="HO_DEM">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN" msprop:Generator_ColumnVarNameInTable="columnTEN" msprop:Generator_ColumnPropNameInRow="TEN" msprop:Generator_ColumnPropNameInTable="TENColumn" msprop:Generator_UserColumnName="TEN">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GIOI_TINH" msprop:Generator_ColumnVarNameInTable="columnGIOI_TINH" msprop:Generator_ColumnPropNameInRow="GIOI_TINH" msprop:Generator_ColumnPropNameInTable="GIOI_TINHColumn" msprop:Generator_UserColumnName="GIOI_TINH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMAIL" msprop:Generator_ColumnVarNameInTable="columnEMAIL" msprop:Generator_ColumnPropNameInRow="EMAIL" msprop:Generator_ColumnPropNameInTable="EMAILColumn" msprop:Generator_UserColumnName="EMAIL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SDT" msprop:Generator_ColumnVarNameInTable="columnSDT" msprop:Generator_ColumnPropNameInRow="SDT" msprop:Generator_ColumnPropNameInTable="SDTColumn" msprop:Generator_UserColumnName="SDT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SO_TAI_KHOAN" msprop:Generator_ColumnVarNameInTable="columnSO_TAI_KHOAN" msprop:Generator_ColumnPropNameInRow="SO_TAI_KHOAN" msprop:Generator_ColumnPropNameInTable="SO_TAI_KHOANColumn" msprop:Generator_UserColumnName="SO_TAI_KHOAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAN_HANG" msprop:Generator_ColumnVarNameInTable="columnNGAN_HANG" msprop:Generator_ColumnPropNameInRow="NGAN_HANG" msprop:Generator_ColumnPropNameInTable="NGAN_HANGColumn" msprop:Generator_UserColumnName="NGAN_HANG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAY_CAP_THE" msprop:Generator_ColumnVarNameInTable="columnNGAY_CAP_THE" msprop:Generator_ColumnPropNameInRow="NGAY_CAP_THE" msprop:Generator_ColumnPropNameInTable="NGAY_CAP_THEColumn" msprop:Generator_UserColumnName="NGAY_CAP_THE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NGAY_HET_HAN_THE" msprop:Generator_ColumnVarNameInTable="columnNGAY_HET_HAN_THE" msprop:Generator_ColumnPropNameInRow="NGAY_HET_HAN_THE" msprop:Generator_ColumnPropNameInTable="NGAY_HET_HAN_THEColumn" msprop:Generator_UserColumnName="NGAY_HET_HAN_THE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NGAY_SINH" msprop:Generator_ColumnVarNameInTable="columnNGAY_SINH" msprop:Generator_ColumnPropNameInRow="NGAY_SINH" msprop:Generator_ColumnPropNameInTable="NGAY_SINHColumn" msprop:Generator_UserColumnName="NGAY_SINH" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="HON_NHAN" msprop:Generator_ColumnVarNameInTable="columnHON_NHAN" msprop:Generator_ColumnPropNameInRow="HON_NHAN" msprop:Generator_ColumnPropNameInTable="HON_NHANColumn" msprop:Generator_UserColumnName="HON_NHAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SO_CMT" msprop:Generator_ColumnVarNameInTable="columnSO_CMT" msprop:Generator_ColumnPropNameInRow="SO_CMT" msprop:Generator_ColumnPropNameInTable="SO_CMTColumn" msprop:Generator_UserColumnName="SO_CMT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAY_CAP" msprop:Generator_ColumnVarNameInTable="columnNGAY_CAP" msprop:Generator_ColumnPropNameInRow="NGAY_CAP" msprop:Generator_ColumnPropNameInTable="NGAY_CAPColumn" msprop:Generator_UserColumnName="NGAY_CAP" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NOI_CAP" msprop:Generator_ColumnVarNameInTable="columnNOI_CAP" msprop:Generator_ColumnPropNameInRow="NOI_CAP" msprop:Generator_ColumnPropNameInTable="NOI_CAPColumn" msprop:Generator_UserColumnName="NOI_CAP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QUOC_TICH" msprop:Generator_ColumnVarNameInTable="columnQUOC_TICH" msprop:Generator_ColumnPropNameInRow="QUOC_TICH" msprop:Generator_ColumnPropNameInTable="QUOC_TICHColumn" msprop:Generator_UserColumnName="QUOC_TICH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DAN_TOC" msprop:Generator_ColumnVarNameInTable="columnDAN_TOC" msprop:Generator_ColumnPropNameInRow="DAN_TOC" msprop:Generator_ColumnPropNameInTable="DAN_TOCColumn" msprop:Generator_UserColumnName="DAN_TOC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TON_GIAO" msprop:Generator_ColumnVarNameInTable="columnTON_GIAO" msprop:Generator_ColumnPropNameInRow="TON_GIAO" msprop:Generator_ColumnPropNameInTable="TON_GIAOColumn" msprop:Generator_UserColumnName="TON_GIAO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOI_SINH" msprop:Generator_ColumnVarNameInTable="columnNOI_SINH" msprop:Generator_ColumnPropNameInRow="NOI_SINH" msprop:Generator_ColumnPropNameInTable="NOI_SINHColumn" msprop:Generator_UserColumnName="NOI_SINH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QUE_QUAN" msprop:Generator_ColumnVarNameInTable="columnQUE_QUAN" msprop:Generator_ColumnPropNameInRow="QUE_QUAN" msprop:Generator_ColumnPropNameInTable="QUE_QUANColumn" msprop:Generator_UserColumnName="QUE_QUAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIA_CHI_THUONG_TRU" msprop:Generator_ColumnVarNameInTable="columnDIA_CHI_THUONG_TRU" msprop:Generator_ColumnPropNameInRow="DIA_CHI_THUONG_TRU" msprop:Generator_ColumnPropNameInTable="DIA_CHI_THUONG_TRUColumn" msprop:Generator_UserColumnName="DIA_CHI_THUONG_TRU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIA_CHI_TAM_TRU" msprop:Generator_ColumnVarNameInTable="columnDIA_CHI_TAM_TRU" msprop:Generator_ColumnPropNameInRow="DIA_CHI_TAM_TRU" msprop:Generator_ColumnPropNameInTable="DIA_CHI_TAM_TRUColumn" msprop:Generator_UserColumnName="DIA_CHI_TAM_TRU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIA_CHI_LIEN_LAC" msprop:Generator_ColumnVarNameInTable="columnDIA_CHI_LIEN_LAC" msprop:Generator_ColumnPropNameInRow="DIA_CHI_LIEN_LAC" msprop:Generator_ColumnPropNameInTable="DIA_CHI_LIEN_LACColumn" msprop:Generator_UserColumnName="DIA_CHI_LIEN_LAC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MA_SO_THUE_CA_NHAN" msprop:Generator_ColumnVarNameInTable="columnMA_SO_THUE_CA_NHAN" msprop:Generator_ColumnPropNameInRow="MA_SO_THUE_CA_NHAN" msprop:Generator_ColumnPropNameInTable="MA_SO_THUE_CA_NHANColumn" msprop:Generator_UserColumnName="MA_SO_THUE_CA_NHAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CHUYEN_MON" msprop:Generator_ColumnVarNameInTable="columnCHUYEN_MON" msprop:Generator_ColumnPropNameInRow="CHUYEN_MON" msprop:Generator_ColumnPropNameInTable="CHUYEN_MONColumn" msprop:Generator_UserColumnName="CHUYEN_MON" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TRINH_DO_VAN_HOA" msprop:Generator_ColumnVarNameInTable="columnTRINH_DO_VAN_HOA" msprop:Generator_ColumnPropNameInRow="TRINH_DO_VAN_HOA" msprop:Generator_ColumnPropNameInTable="TRINH_DO_VAN_HOAColumn" msprop:Generator_UserColumnName="TRINH_DO_VAN_HOA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAM_TOT_NGHIEP" msprop:Generator_ColumnVarNameInTable="columnNAM_TOT_NGHIEP" msprop:Generator_ColumnPropNameInRow="NAM_TOT_NGHIEP" msprop:Generator_ColumnPropNameInTable="NAM_TOT_NGHIEPColumn" msprop:Generator_UserColumnName="NAM_TOT_NGHIEP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TOT_NGHIEP_TAI" msprop:Generator_ColumnVarNameInTable="columnTOT_NGHIEP_TAI" msprop:Generator_ColumnPropNameInRow="TOT_NGHIEP_TAI" msprop:Generator_ColumnPropNameInTable="TOT_NGHIEP_TAIColumn" msprop:Generator_UserColumnName="TOT_NGHIEP_TAI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAY_VAO_HANG_KHONG" msprop:Generator_ColumnVarNameInTable="columnNGAY_VAO_HANG_KHONG" msprop:Generator_ColumnPropNameInRow="NGAY_VAO_HANG_KHONG" msprop:Generator_ColumnPropNameInTable="NGAY_VAO_HANG_KHONGColumn" msprop:Generator_UserColumnName="NGAY_VAO_HANG_KHONG" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NGAY_TIEP_NHAN_VAO_TCT" msprop:Generator_ColumnVarNameInTable="columnNGAY_TIEP_NHAN_VAO_TCT" msprop:Generator_ColumnPropNameInRow="NGAY_TIEP_NHAN_VAO_TCT" msprop:Generator_ColumnPropNameInTable="NGAY_TIEP_NHAN_VAO_TCTColumn" msprop:Generator_UserColumnName="NGAY_TIEP_NHAN_VAO_TCT" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NGAY_CHINH_THUC_TIEP_NHAN" msprop:Generator_ColumnVarNameInTable="columnNGAY_CHINH_THUC_TIEP_NHAN" msprop:Generator_ColumnPropNameInRow="NGAY_CHINH_THUC_TIEP_NHAN" msprop:Generator_ColumnPropNameInTable="NGAY_CHINH_THUC_TIEP_NHANColumn" msprop:Generator_UserColumnName="NGAY_CHINH_THUC_TIEP_NHAN" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DM_NHAN_VIEN" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

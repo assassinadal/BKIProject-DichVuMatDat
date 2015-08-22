@@ -213,6 +213,12 @@
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="CCommon.cs" />
+    <Compile Include="DanhMuc\f101_dm_tham_so.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f101_dm_tham_so.Designer.cs">
+      <DependentUpon>f101_dm_tham_so.cs</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_PHU_THUOC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F_wait_form.resx">
       <DependentUpon>F_wait_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f101_dm_tham_so.resx">
+      <DependentUpon>f101_dm_tham_so.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\BackupDB.resx">
       <DependentUpon>BackupDB.cs</DependentUpon>
@@ -759,7 +768,6 @@
     </PublishFile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DanhMuc\" />
     <Folder Include="HeThong\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

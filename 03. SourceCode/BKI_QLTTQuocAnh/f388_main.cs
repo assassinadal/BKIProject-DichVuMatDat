@@ -214,6 +214,13 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DanhMuc.f101_dm_tham_so v_f = new DanhMuc.f101_dm_tham_so();
+            v_f.MdiParent = this;
+            v_f.Show();
+        }
+
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)
         //{
         //    try

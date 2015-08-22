@@ -61,6 +61,8 @@
             this.m_cmd_import_excel = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_cho_hs_len_lop = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_lap_hop_dong = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_len_luong_cho_nv = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -73,7 +75,6 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.m_cmd_len_luong_cho_nv = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -116,9 +117,10 @@
             this.m_cmd_import_excel,
             this.m_cmd_cho_hs_len_lop,
             this.m_cmd_lap_hop_dong,
-            this.m_cmd_len_luong_cho_nv});
+            this.m_cmd_len_luong_cho_nv,
+            this.barButtonItem1});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 40;
+            this.ribbon.MaxItemId = 41;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -403,6 +405,24 @@
             this.m_cmd_lap_hop_dong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // m_cmd_len_luong_cho_nv
+            // 
+            this.m_cmd_len_luong_cho_nv.Caption = "Lên lương cho nhân viên";
+            this.m_cmd_len_luong_cho_nv.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_len_luong_cho_nv.Glyph")));
+            this.m_cmd_len_luong_cho_nv.Id = 39;
+            this.m_cmd_len_luong_cho_nv.Name = "m_cmd_len_luong_cho_nv";
+            this.m_cmd_len_luong_cho_nv.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Tham số";
+            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
+            this.barButtonItem1.Id = 40;
+            this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -433,11 +453,11 @@
             this.ribbonPageGroup3});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "DANH MỤC";
-            this.ribbonPage2.Visible = false;
             // 
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_hs);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // ribbonPage3
@@ -486,15 +506,6 @@
             // MdiManager
             // 
             this.MdiManager.MdiParent = this;
-            // 
-            // m_cmd_len_luong_cho_nv
-            // 
-            this.m_cmd_len_luong_cho_nv.Caption = "Lên lương cho nhân viên";
-            this.m_cmd_len_luong_cho_nv.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_len_luong_cho_nv.Glyph")));
-            this.m_cmd_len_luong_cho_nv.Id = 39;
-            this.m_cmd_len_luong_cho_nv.Name = "m_cmd_len_luong_cho_nv";
-            this.m_cmd_len_luong_cho_nv.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // f388_main
             // 
@@ -563,5 +574,6 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_lap_hop_dong;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem m_cmd_len_luong_cho_nv;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

@@ -84,7 +84,9 @@
     <Compile Include="US_V_GD_QUYET_DINH.cs" />
     <Compile Include="US_V_HT_CONTROL_IN_FORM.cs" />
     <Compile Include="US_V_HT_NGUOI_SU_DUNG.cs" />
-    <Compile Include="US_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG.cs" />
+    <Compile Include="US_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BKI_QLTTQuocAnh.DS\BKI_DichVuMatDat.DS.csproj">

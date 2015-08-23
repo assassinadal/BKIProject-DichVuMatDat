@@ -219,6 +219,24 @@
     <Compile Include="DanhMuc\f101_dm_tham_so.Designer.cs">
       <DependentUpon>f101_dm_tham_so.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\F104_dm_loai_hop_dong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\F104_dm_loai_hop_dong.Designer.cs">
+      <DependentUpon>F104_dm_loai_hop_dong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\F105_dm_loai_ngay_cong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\F105_dm_loai_ngay_cong.Designer.cs">
+      <DependentUpon>F105_dm_loai_ngay_cong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\F109_dm_thue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\F109_dm_thue.Designer.cs">
+      <DependentUpon>F109_dm_thue.cs</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_PHU_THUOC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -267,8 +285,14 @@
     <EmbeddedResource Include="BaoCao\F_wait_form.resx">
       <DependentUpon>F_wait_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\f101_dm_tham_so.resx">
-      <DependentUpon>f101_dm_tham_so.cs</DependentUpon>
+    <EmbeddedResource Include="DanhMuc\F104_dm_loai_hop_dong.resx">
+      <DependentUpon>F104_dm_loai_hop_dong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\F105_dm_loai_ngay_cong.resx">
+      <DependentUpon>F105_dm_loai_ngay_cong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\F109_dm_thue.resx">
+      <DependentUpon>F109_dm_thue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\BackupDB.resx">
       <DependentUpon>BackupDB.cs</DependentUpon>

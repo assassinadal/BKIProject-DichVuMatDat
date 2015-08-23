@@ -32,6 +32,8 @@ namespace BKI_DichVuMatDat
 
             try
             {
+                //BKI_DichVuMatDat.DanhMuc.F109_dm_thue v_frm = new DanhMuc.F109_dm_thue();
+                //v_frm.ShowDialog();
                 //IP.Core.IPSystemAdmin.f101_Dang_Nhap v_frm_login_form = new f101_Dang_Nhap();
                 //US_HT_NGUOI_SU_DUNG v_us_user = new US_HT_NGUOI_SU_DUNG();
                 //CLoginInformation_302 v_obj_login_info = new CLoginInformation_302(v_us_user);
@@ -51,9 +53,9 @@ namespace BKI_DichVuMatDat
                 //{
                 //    CAppContext_201.InitializeContext(v_obj_login_info);
                 //    CAppContext_201.LoadDecentralizationByUserLogin();
-                    f388_main v_frm_main = new f388_main();
-                    v_frm_main.display_dvmd();
-                    v_frm_main.Dispose();
+                f388_main v_frm_main = new f388_main();
+                v_frm_main.display_dvmd();
+                v_frm_main.Dispose();
                 //    //f340_lap_phieu_thu v_frm = new f340_lap_phieu_thu();
                 //    //v_frm.display();
                 //    // sau main form hiện thì login hoặc thóat

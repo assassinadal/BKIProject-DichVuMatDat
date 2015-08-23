@@ -221,6 +221,27 @@ namespace BKI_DichVuMatDat
             v_f.Show();
         }
 
+        private void m_cmd_dm_loai_hop_dong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DanhMuc.F104_dm_loai_hop_dong v_f = new DanhMuc.F104_dm_loai_hop_dong();
+            v_f.MdiParent = this;
+            v_f.Show();
+        }
+
+        private void m_cmd_dm_loai_ngay_cong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DanhMuc.F105_dm_loai_ngay_cong v_f = new DanhMuc.F105_dm_loai_ngay_cong();
+            v_f.MdiParent = this;
+            v_f.Show();
+        }
+
+        private void m_cmd_dm_thue_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DanhMuc.F109_dm_thue v_f = new DanhMuc.F109_dm_thue();
+            v_f.MdiParent = this;
+            v_f.Show();
+        }
+
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)
         //{
         //    try

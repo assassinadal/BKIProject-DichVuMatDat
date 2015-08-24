@@ -253,7 +253,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             gridControl1.DataSource = v_ds.Tables[0];
         }
 
-
         private string find_hs_lns(decimal ip_dc_id_ma_lns, decimal ip_dc_id_muc_lns)
         {
             try

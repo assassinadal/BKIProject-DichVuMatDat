@@ -16,7 +16,7 @@ using System.Data;
 
 
 
-namespace BKI_QLTTQuocAnh.US{
+namespace BKI_DichVuMatDat.US{
 
 public class US_GD_NHAN_VIEN_PHU_CAP : US_Object
 {

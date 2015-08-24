@@ -118,6 +118,7 @@ namespace BKI_DichVuMatDat
             m_cmd_cham_cong_nv.ItemClick += m_cmd_cham_cong_nv_ItemClick;
             m_cmd_lap_hop_dong.ItemClick += m_cmd_lap_hop_dong_ItemClick;
             m_cmd_len_luong_cho_nv.ItemClick += m_cmd_len_luong_cho_nv_ItemClick;
+            m_cmd_dat_hs_lns_lcd.ItemClick += m_cmd_dat_hs_lns_lcd_ItemClick;
             //Hệ thống
             //m_cmd_thoat.ItemClick += m_cmd_thoat_ItemClick;
             //m_cmd_phan_quyen_nhom.ItemClick += m_cmd_phan_quyen_nhom_ItemClick;
@@ -164,7 +165,6 @@ namespace BKI_DichVuMatDat
              }
         }
 
-
         void m_cmd_cham_cong_nv_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
@@ -180,7 +180,6 @@ namespace BKI_DichVuMatDat
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
 
         void m_cmd_lap_hop_dong_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -203,6 +202,22 @@ namespace BKI_DichVuMatDat
             try
             {
                 f330_len_luong_cho_nv v_frm = new f330_len_luong_cho_nv();
+                if (IsExistFormName(v_frm)) return;
+
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_dat_hs_lns_lcd_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f340_dat_hs_lns_lcd v_frm = new f340_dat_hs_lns_lcd();
                 if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;

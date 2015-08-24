@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_V_F340_DAT_LCD" targetNamespace="http://tempuri.org/DS_V_F340_DAT_LCD.xsd" xmlns:mstns="http://tempuri.org/DS_V_F340_DAT_LCD.xsd" xmlns="http://tempuri.org/DS_V_F340_DAT_LCD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_DVMDConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_DVMDConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_DichVuMatDat.DS.Properties.Settings.GlobalReference.Default.BKI_DVMDConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_F340_DAT_LCDTableAdapter" GeneratorDataComponentClassName="V_F340_DAT_LCDTableAdapter" Name="V_F340_DAT_LCD" UserDataComponentName="V_F340_DAT_LCDTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BKI_DVMDConnectionString1 (Settings)" DbObjectName="BKI_DVMD.dbo.V_F340_DAT_LCD" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, MA_NV, HO_DEM, TEN, HO_TEN, ID_HOP_DONG, MA_HOP_DONG, ID_LOAI_HOP_DONG, MA_LOAI_HOP_DONG, LOAI_HOP_DONG, ID_LCD, SO_TIEN_LCD, ID_LY_DO_CHINH_SUA_LCD, MA_LY_DO_CHINH_SUA_LCD, TEN_LY_DO_CHINH_SUA_LCD, GHI_CHU_LCD, NGAY_BAT_DAU_LCD, NGAY_KET_THUC_LCD, NGAY_LAP_LCD, NGAY_SUA_LCD, NGUOI_LAP_LCD, NGUOI_SUA_LCD, DA_XOA_LCD FROM dbo.V_F340_DAT_LCD</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="MA_NV" DataSetColumn="MA_NV" />
+              <Mapping SourceColumn="HO_DEM" DataSetColumn="HO_DEM" />
+              <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
+              <Mapping SourceColumn="HO_TEN" DataSetColumn="HO_TEN" />
+              <Mapping SourceColumn="ID_HOP_DONG" DataSetColumn="ID_HOP_DONG" />
+              <Mapping SourceColumn="MA_HOP_DONG" DataSetColumn="MA_HOP_DONG" />
+              <Mapping SourceColumn="ID_LOAI_HOP_DONG" DataSetColumn="ID_LOAI_HOP_DONG" />
+              <Mapping SourceColumn="MA_LOAI_HOP_DONG" DataSetColumn="MA_LOAI_HOP_DONG" />
+              <Mapping SourceColumn="LOAI_HOP_DONG" DataSetColumn="LOAI_HOP_DONG" />
+              <Mapping SourceColumn="ID_LCD" DataSetColumn="ID_LCD" />
+              <Mapping SourceColumn="SO_TIEN_LCD" DataSetColumn="SO_TIEN_LCD" />
+              <Mapping SourceColumn="ID_LY_DO_CHINH_SUA_LCD" DataSetColumn="ID_LY_DO_CHINH_SUA_LCD" />
+              <Mapping SourceColumn="MA_LY_DO_CHINH_SUA_LCD" DataSetColumn="MA_LY_DO_CHINH_SUA_LCD" />
+              <Mapping SourceColumn="TEN_LY_DO_CHINH_SUA_LCD" DataSetColumn="TEN_LY_DO_CHINH_SUA_LCD" />
+              <Mapping SourceColumn="GHI_CHU_LCD" DataSetColumn="GHI_CHU_LCD" />
+              <Mapping SourceColumn="NGAY_BAT_DAU_LCD" DataSetColumn="NGAY_BAT_DAU_LCD" />
+              <Mapping SourceColumn="NGAY_KET_THUC_LCD" DataSetColumn="NGAY_KET_THUC_LCD" />
+              <Mapping SourceColumn="NGAY_LAP_LCD" DataSetColumn="NGAY_LAP_LCD" />
+              <Mapping SourceColumn="NGAY_SUA_LCD" DataSetColumn="NGAY_SUA_LCD" />
+              <Mapping SourceColumn="NGUOI_LAP_LCD" DataSetColumn="NGUOI_LAP_LCD" />
+              <Mapping SourceColumn="NGUOI_SUA_LCD" DataSetColumn="NGUOI_SUA_LCD" />
+              <Mapping SourceColumn="DA_XOA_LCD" DataSetColumn="DA_XOA_LCD" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_V_F340_DAT_LCD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_F340_DAT_LCD" msprop:Generator_UserDSName="DS_V_F340_DAT_LCD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_F340_DAT_LCD" msprop:Generator_TableClassName="V_F340_DAT_LCDDataTable" msprop:Generator_TableVarName="tableV_F340_DAT_LCD" msprop:Generator_TablePropName="V_F340_DAT_LCD" msprop:Generator_RowDeletingName="V_F340_DAT_LCDRowDeleting" msprop:Generator_RowChangingName="V_F340_DAT_LCDRowChanging" msprop:Generator_RowEvHandlerName="V_F340_DAT_LCDRowChangeEventHandler" msprop:Generator_RowDeletedName="V_F340_DAT_LCDRowDeleted" msprop:Generator_UserTableName="V_F340_DAT_LCD" msprop:Generator_RowChangedName="V_F340_DAT_LCDRowChanged" msprop:Generator_RowEvArgName="V_F340_DAT_LCDRowChangeEvent" msprop:Generator_RowClassName="V_F340_DAT_LCDRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="MA_NV" msprop:Generator_ColumnVarNameInTable="columnMA_NV" msprop:Generator_ColumnPropNameInRow="MA_NV" msprop:Generator_ColumnPropNameInTable="MA_NVColumn" msprop:Generator_UserColumnName="MA_NV">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HO_DEM" msprop:Generator_ColumnVarNameInTable="columnHO_DEM" msprop:Generator_ColumnPropNameInRow="HO_DEM" msprop:Generator_ColumnPropNameInTable="HO_DEMColumn" msprop:Generator_UserColumnName="HO_DEM">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN" msprop:Generator_ColumnVarNameInTable="columnTEN" msprop:Generator_ColumnPropNameInRow="TEN" msprop:Generator_ColumnPropNameInTable="TENColumn" msprop:Generator_UserColumnName="TEN">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HO_TEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHO_TEN" msprop:Generator_ColumnPropNameInRow="HO_TEN" msprop:Generator_ColumnPropNameInTable="HO_TENColumn" msprop:Generator_UserColumnName="HO_TEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_HOP_DONG" msprop:Generator_ColumnVarNameInTable="columnID_HOP_DONG" msprop:Generator_ColumnPropNameInRow="ID_HOP_DONG" msprop:Generator_ColumnPropNameInTable="ID_HOP_DONGColumn" msprop:Generator_UserColumnName="ID_HOP_DONG" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MA_HOP_DONG" msprop:Generator_ColumnVarNameInTable="columnMA_HOP_DONG" msprop:Generator_ColumnPropNameInRow="MA_HOP_DONG" msprop:Generator_ColumnPropNameInTable="MA_HOP_DONGColumn" msprop:Generator_UserColumnName="MA_HOP_DONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_LOAI_HOP_DONG" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInRow="ID_LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInTable="ID_LOAI_HOP_DONGColumn" msprop:Generator_UserColumnName="ID_LOAI_HOP_DONG" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MA_LOAI_HOP_DONG" msprop:Generator_ColumnVarNameInTable="columnMA_LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInRow="MA_LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInTable="MA_LOAI_HOP_DONGColumn" msprop:Generator_UserColumnName="MA_LOAI_HOP_DONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAI_HOP_DONG" msprop:Generator_ColumnVarNameInTable="columnLOAI_HOP_DONG" msprop:Generator_ColumnPropNameInRow="LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInTable="LOAI_HOP_DONGColumn" msprop:Generator_UserColumnName="LOAI_HOP_DONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_LCD" msprop:Generator_ColumnVarNameInTable="columnID_LCD" msprop:Generator_ColumnPropNameInRow="ID_LCD" msprop:Generator_ColumnPropNameInTable="ID_LCDColumn" msprop:Generator_UserColumnName="ID_LCD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SO_TIEN_LCD" msprop:Generator_ColumnVarNameInTable="columnSO_TIEN_LCD" msprop:Generator_ColumnPropNameInRow="SO_TIEN_LCD" msprop:Generator_ColumnPropNameInTable="SO_TIEN_LCDColumn" msprop:Generator_UserColumnName="SO_TIEN_LCD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_LY_DO_CHINH_SUA_LCD" msprop:Generator_ColumnVarNameInTable="columnID_LY_DO_CHINH_SUA_LCD" msprop:Generator_ColumnPropNameInRow="ID_LY_DO_CHINH_SUA_LCD" msprop:Generator_ColumnPropNameInTable="ID_LY_DO_CHINH_SUA_LCDColumn" msprop:Generator_UserColumnName="ID_LY_DO_CHINH_SUA_LCD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MA_LY_DO_CHINH_SUA_LCD" msprop:Generator_ColumnVarNameInTable="columnMA_LY_DO_CHINH_SUA_LCD" msprop:Generator_ColumnPropNameInRow="MA_LY_DO_CHINH_SUA_LCD" msprop:Generator_ColumnPropNameInTable="MA_LY_DO_CHINH_SUA_LCDColumn" msprop:Generator_UserColumnName="MA_LY_DO_CHINH_SUA_LCD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_LY_DO_CHINH_SUA_LCD" msprop:Generator_ColumnVarNameInTable="columnTEN_LY_DO_CHINH_SUA_LCD" msprop:Generator_ColumnPropNameInRow="TEN_LY_DO_CHINH_SUA_LCD" msprop:Generator_ColumnPropNameInTable="TEN_LY_DO_CHINH_SUA_LCDColumn" msprop:Generator_UserColumnName="TEN_LY_DO_CHINH_SUA_LCD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GHI_CHU_LCD" msprop:Generator_ColumnVarNameInTable="columnGHI_CHU_LCD" msprop:Generator_ColumnPropNameInRow="GHI_CHU_LCD" msprop:Generator_ColumnPropNameInTable="GHI_CHU_LCDColumn" msprop:Generator_UserColumnName="GHI_CHU_LCD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAY_BAT_DAU_LCD" msprop:Generator_ColumnVarNameInTable="columnNGAY_BAT_DAU_LCD" msprop:Generator_ColumnPropNameInRow="NGAY_BAT_DAU_LCD" msprop:Generator_ColumnPropNameInTable="NGAY_BAT_DAU_LCDColumn" msprop:Generator_UserColumnName="NGAY_BAT_DAU_LCD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NGAY_KET_THUC_LCD" msprop:Generator_ColumnVarNameInTable="columnNGAY_KET_THUC_LCD" msprop:Generator_ColumnPropNameInRow="NGAY_KET_THUC_LCD" msprop:Generator_ColumnPropNameInTable="NGAY_KET_THUC_LCDColumn" msprop:Generator_UserColumnName="NGAY_KET_THUC_LCD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NGAY_LAP_LCD" msprop:Generator_ColumnVarNameInTable="columnNGAY_LAP_LCD" msprop:Generator_ColumnPropNameInRow="NGAY_LAP_LCD" msprop:Generator_ColumnPropNameInTable="NGAY_LAP_LCDColumn" msprop:Generator_UserColumnName="NGAY_LAP_LCD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NGAY_SUA_LCD" msprop:Generator_ColumnVarNameInTable="columnNGAY_SUA_LCD" msprop:Generator_ColumnPropNameInRow="NGAY_SUA_LCD" msprop:Generator_ColumnPropNameInTable="NGAY_SUA_LCDColumn" msprop:Generator_UserColumnName="NGAY_SUA_LCD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NGUOI_LAP_LCD" msprop:Generator_ColumnVarNameInTable="columnNGUOI_LAP_LCD" msprop:Generator_ColumnPropNameInRow="NGUOI_LAP_LCD" msprop:Generator_ColumnPropNameInTable="NGUOI_LAP_LCDColumn" msprop:Generator_UserColumnName="NGUOI_LAP_LCD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGUOI_SUA_LCD" msprop:Generator_ColumnVarNameInTable="columnNGUOI_SUA_LCD" msprop:Generator_ColumnPropNameInRow="NGUOI_SUA_LCD" msprop:Generator_ColumnPropNameInTable="NGUOI_SUA_LCDColumn" msprop:Generator_UserColumnName="NGUOI_SUA_LCD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DA_XOA_LCD" msprop:Generator_ColumnVarNameInTable="columnDA_XOA_LCD" msprop:Generator_ColumnPropNameInRow="DA_XOA_LCD" msprop:Generator_ColumnPropNameInTable="DA_XOA_LCDColumn" msprop:Generator_UserColumnName="DA_XOA_LCD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

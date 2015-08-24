@@ -84,6 +84,9 @@ namespace BKI_DichVuMatDat.US {
         public const int MUC_LCD = 4;
         public const int LOAI_PHU_CAP = 5;
         public const int LOAI_LAO_DONG = 6;
+        public const int LOAI_DON_VI = 7;
+        public const int LY_DO_CHINH_SUA_HS_LNS = 8;
+        public const int LY_DO_CHINH_SUA_SO_TIEN_LCD = 9;
     }
 
   

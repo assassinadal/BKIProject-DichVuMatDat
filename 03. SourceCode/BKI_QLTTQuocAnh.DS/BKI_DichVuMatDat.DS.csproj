@@ -199,6 +199,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_F330_LEN_LUONG_CHO_NV.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_F340_DAT_HS_LNS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_F340_DAT_HS_LNS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_F340_DAT_LCD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_F340_DAT_LCD.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_GD_QUYET_DINH.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -560,6 +570,28 @@
     </None>
     <None Include="DS_V_F330_LEN_LUONG_CHO_NV.xss">
       <DependentUpon>DS_V_F330_LEN_LUONG_CHO_NV.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F340_DAT_HS_LNS.xsc">
+      <DependentUpon>DS_V_F340_DAT_HS_LNS.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F340_DAT_HS_LNS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_F340_DAT_HS_LNS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_F340_DAT_HS_LNS.xss">
+      <DependentUpon>DS_V_F340_DAT_HS_LNS.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F340_DAT_LCD.xsc">
+      <DependentUpon>DS_V_F340_DAT_LCD.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F340_DAT_LCD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_F340_DAT_LCD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_F340_DAT_LCD.xss">
+      <DependentUpon>DS_V_F340_DAT_LCD.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_QUYET_DINH.xsc">
       <DependentUpon>DS_V_GD_QUYET_DINH.xsd</DependentUpon>

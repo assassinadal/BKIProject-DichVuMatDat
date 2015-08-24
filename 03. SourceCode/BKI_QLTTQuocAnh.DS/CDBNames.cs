@@ -599,6 +599,60 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string LINK = "LINK";
     }
 
+    public class V_F340_DAT_HS_LNS
+    {
+        public const string ID = "ID";
+        public const string MA_NV = "MA_NV";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string HO_TEN = "HO_TEN";
+        public const string ID_HOP_DONG = "ID_HOP_DONG";
+        public const string MA_HOP_DONG = "MA_HOP_DONG";
+        public const string ID_LOAI_HOP_DONG = "ID_LOAI_HOP_DONG";
+        public const string MA_LOAI_HOP_DONG = "MA_LOAI_HOP_DONG";
+        public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
+        public const string ID_GD_HS_LNS = "ID_GD_HS_LNS";
+        public const string HE_SO_LNS = "HE_SO_LNS";
+        public const string ID_LY_DO_CHINH_SUA_LNS = "ID_LY_DO_CHINH_SUA_LNS";
+        public const string MA_LY_DO_CHINH_SUA_LNS = "MA_LY_DO_CHINH_SUA_LNS";
+        public const string TEN_LY_DO_CHINH_SUA_LNS = "TEN_LY_DO_CHINH_SUA_LNS";
+        public const string GHI_CHU_LNS = "GHI_CHU_LNS";
+        public const string NGAY_BAT_DAU_LNS = "NGAY_BAT_DAU_LNS";
+        public const string NGAY_KET_THU_LNS = "NGAY_KET_THU_LNS";
+        public const string NGAY_LAP_LNS = "NGAY_LAP_LNS";
+        public const string NGAY_SUA_LNS = "NGAY_SUA_LNS";
+        public const string NGUOI_LAP_LNS = "NGUOI_LAP_LNS";
+        public const string NGUOI_SUA_LNS = "NGUOI_SUA_LNS";
+        public const string DA_XOA_LNS = "DA_XOA_LNS";
+    }
+
+    public class V_F340_DAT_LCD
+    {
+        public const string ID = "ID";
+        public const string MA_NV = "MA_NV";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string HO_TEN = "HO_TEN";
+        public const string ID_HOP_DONG = "ID_HOP_DONG";
+        public const string MA_HOP_DONG = "MA_HOP_DONG";
+        public const string ID_LOAI_HOP_DONG = "ID_LOAI_HOP_DONG";
+        public const string MA_LOAI_HOP_DONG = "MA_LOAI_HOP_DONG";
+        public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
+        public const string ID_LCD = "ID_LCD";
+        public const string SO_TIEN_LCD = "SO_TIEN_LCD";
+        public const string ID_LY_DO_CHINH_SUA_LCD = "ID_LY_DO_CHINH_SUA_LCD";
+        public const string MA_LY_DO_CHINH_SUA_LCD = "MA_LY_DO_CHINH_SUA_LCD";
+        public const string TEN_LY_DO_CHINH_SUA_LCD = "TEN_LY_DO_CHINH_SUA_LCD";
+        public const string GHI_CHU_LCD = "GHI_CHU_LCD";
+        public const string NGAY_BAT_DAU_LCD = "NGAY_BAT_DAU_LCD";
+        public const string NGAY_KET_THUC_LCD = "NGAY_KET_THUC_LCD";
+        public const string NGAY_LAP_LCD = "NGAY_LAP_LCD";
+        public const string NGAY_SUA_LCD = "NGAY_SUA_LCD";
+        public const string NGUOI_LAP_LCD = "NGUOI_LAP_LCD";
+        public const string NGUOI_SUA_LCD = "NGUOI_SUA_LCD";
+        public const string DA_XOA_LCD = "DA_XOA_LCD";
+    }
+
 
     #endregion
 

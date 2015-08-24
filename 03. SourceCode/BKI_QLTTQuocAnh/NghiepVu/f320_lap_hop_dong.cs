@@ -12,6 +12,7 @@ using BKI_DichVuMatDat.US;
 using IP.Core.IPCommon;
 using BKI_DichVuMatDat.DS.CDBNames;
 using DevExpress.XtraEditors;
+using System.Globalization;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -24,12 +25,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         #region Public Interface
-        private void format_controls()
+        private void display()
         {
-            set_define_events();
-            this.KeyPreview = true;
+            this.ShowDialog();
         }
-
         #endregion
 
         #region Members
@@ -42,6 +41,12 @@ namespace BKI_DichVuMatDat.NghiepVu
         #endregion
 
         #region Private methods
+        private void format_controls()
+        {
+            set_define_events();
+            this.KeyPreview = true;
+        }
+
         private void set_initial_form_load()
         {
             load_data_2_sle_chon_nv();
@@ -396,7 +401,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         //Insert, update, delete
-        
+
         private void form_2_us_gd_hop_dong(US_GD_HOP_DONG ip_us)
         {
             try
@@ -721,7 +726,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us_gd_hs_lns_lcd.BeginTransaction();
                         v_us_gd_hs_lns_lcd.Insert();
                         v_us_gd_hs_lns_lcd.CommitTransaction();
-                        
+
                         //insert gd_hs_lns
                         form_2_us_gd_hs_lns(v_us_gd_hs_lns);
                         v_us_gd_hs_lns.BeginTransaction();
@@ -985,7 +990,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     }
                     else
                     {
-                        m_lbl_so_tien_lcd.Text = find_so_tien_lcd(CIPConvert.ToDecimal(m_sle_chuc_danh_lcd.EditValue), CIPConvert.ToDecimal(m_sle_muc_lcd.EditValue)).ToString("C") + " VNĐ";
+                        m_lbl_so_tien_lcd.Text = find_so_tien_lcd(CIPConvert.ToDecimal(m_sle_chuc_danh_lcd.EditValue), CIPConvert.ToDecimal(m_sle_muc_lcd.EditValue)).ToString("C", CultureInfo.CreateSpecificCulture("vi-VN"));
                     }
                 }
 

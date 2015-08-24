@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f330_len_luong_cho_nv));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_grc_LCD = new DevExpress.XtraEditors.GroupControl();
+            this.m_lbl_so_tien_lcd = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.m_sle_chuc_danh_lcd = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,6 +41,8 @@
             this.m_sle_muc_lcd = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.m_grc_LNS = new DevExpress.XtraEditors.GroupControl();
+            this.m_lbl_hs_lns = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.m_sle_chuc_danh_lns = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label11 = new System.Windows.Forms.Label();
@@ -53,8 +56,8 @@
             this.m_sle_chon_quyet_dinh = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.ImageList = new System.Windows.Forms.ImageList();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
@@ -71,20 +74,16 @@
             this.HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TEN_MA_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TEN_MUC_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HE_SO_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TEN_MA_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TEN_MUC_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_LAP_GD_HS_LNS_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_SUA_GD_HS_LNS_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGUOI_LAP_GD_HS_LNS_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGUOI_SUA_GD_HS_LNS_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TEN_MUC_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TEN_MA_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HE_SO_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TEN_MUC_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TEN_MA_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_lbl_hs_lns = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.m_lbl_so_tien_lcd = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_LCD)).BeginInit();
             this.m_grc_LCD.SuspendLayout();
@@ -119,7 +118,7 @@
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(1215, 44);
             this.m_lbl_header.TabIndex = 1;
-            this.m_lbl_header.Text = "LÊN LƯƠNG CHO NHÂN VIÊN";
+            this.m_lbl_header.Text = "TĂNG - GIẢM LƯƠNG CHO NHÂN VIÊN";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel2
@@ -149,6 +148,24 @@
             this.m_grc_LCD.Size = new System.Drawing.Size(335, 132);
             this.m_grc_LCD.TabIndex = 19;
             this.m_grc_LCD.Text = "THÔNG TIN LƯƠNG CHẾ ĐỘ";
+            // 
+            // m_lbl_so_tien_lcd
+            // 
+            this.m_lbl_so_tien_lcd.AutoSize = true;
+            this.m_lbl_so_tien_lcd.Location = new System.Drawing.Point(117, 93);
+            this.m_lbl_so_tien_lcd.Name = "m_lbl_so_tien_lcd";
+            this.m_lbl_so_tien_lcd.Size = new System.Drawing.Size(16, 13);
+            this.m_lbl_so_tien_lcd.TabIndex = 20;
+            this.m_lbl_so_tien_lcd.Text = "...";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(4, 93);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Số tiền LCĐ";
             // 
             // m_sle_chuc_danh_lcd
             // 
@@ -222,6 +239,24 @@
             this.m_grc_LNS.Size = new System.Drawing.Size(333, 132);
             this.m_grc_LNS.TabIndex = 19;
             this.m_grc_LNS.Text = "THÔNG TIN LƯƠNG NĂNG SUÂT";
+            // 
+            // m_lbl_hs_lns
+            // 
+            this.m_lbl_hs_lns.AutoSize = true;
+            this.m_lbl_hs_lns.Location = new System.Drawing.Point(115, 93);
+            this.m_lbl_hs_lns.Name = "m_lbl_hs_lns";
+            this.m_lbl_hs_lns.Size = new System.Drawing.Size(16, 13);
+            this.m_lbl_hs_lns.TabIndex = 18;
+            this.m_lbl_hs_lns.Text = "...";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 93);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Hệ số LNS";
             // 
             // m_sle_chuc_danh_lns
             // 
@@ -602,6 +637,65 @@
             this.LOAI_HOP_DONG.VisibleIndex = 4;
             this.LOAI_HOP_DONG.Width = 70;
             // 
+            // TEN_MA_LNS
+            // 
+            this.TEN_MA_LNS.Caption = "Mã LNS";
+            this.TEN_MA_LNS.FieldName = "TEN_MA_LNS";
+            this.TEN_MA_LNS.Name = "TEN_MA_LNS";
+            this.TEN_MA_LNS.OptionsColumn.AllowEdit = false;
+            this.TEN_MA_LNS.Visible = true;
+            this.TEN_MA_LNS.VisibleIndex = 5;
+            this.TEN_MA_LNS.Width = 70;
+            // 
+            // TEN_MUC_LNS
+            // 
+            this.TEN_MUC_LNS.Caption = "Mức LNS";
+            this.TEN_MUC_LNS.FieldName = "TEN_MUC_LNS";
+            this.TEN_MUC_LNS.Name = "TEN_MUC_LNS";
+            this.TEN_MUC_LNS.OptionsColumn.AllowEdit = false;
+            this.TEN_MUC_LNS.Visible = true;
+            this.TEN_MUC_LNS.VisibleIndex = 6;
+            this.TEN_MUC_LNS.Width = 70;
+            // 
+            // HE_SO_LNS
+            // 
+            this.HE_SO_LNS.Caption = "Hệ số LNS";
+            this.HE_SO_LNS.FieldName = "HE_SO_LNS";
+            this.HE_SO_LNS.Name = "HE_SO_LNS";
+            this.HE_SO_LNS.OptionsColumn.AllowEdit = false;
+            this.HE_SO_LNS.Visible = true;
+            this.HE_SO_LNS.VisibleIndex = 7;
+            this.HE_SO_LNS.Width = 91;
+            // 
+            // TEN_MA_LCD
+            // 
+            this.TEN_MA_LCD.Caption = "Mã LCĐ";
+            this.TEN_MA_LCD.FieldName = "TEN_MA_LCD";
+            this.TEN_MA_LCD.Name = "TEN_MA_LCD";
+            this.TEN_MA_LCD.OptionsColumn.AllowEdit = false;
+            this.TEN_MA_LCD.Visible = true;
+            this.TEN_MA_LCD.VisibleIndex = 8;
+            this.TEN_MA_LCD.Width = 72;
+            // 
+            // TEN_MUC_LCD
+            // 
+            this.TEN_MUC_LCD.Caption = "Mức LCĐ";
+            this.TEN_MUC_LCD.FieldName = "TEN_MUC_LCD";
+            this.TEN_MUC_LCD.Name = "TEN_MUC_LCD";
+            this.TEN_MUC_LCD.OptionsColumn.AllowEdit = false;
+            this.TEN_MUC_LCD.Visible = true;
+            this.TEN_MUC_LCD.VisibleIndex = 9;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Số tiền LCĐ";
+            this.gridColumn1.FieldName = "SO_TIEN_LCD";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 10;
+            this.gridColumn1.Width = 90;
+            // 
             // NGAY_LAP_GD_HS_LNS_LCD
             // 
             this.NGAY_LAP_GD_HS_LNS_LCD.Caption = "Ngày lập";
@@ -642,101 +736,6 @@
             this.NGUOI_SUA_GD_HS_LNS_LCD.VisibleIndex = 14;
             this.NGUOI_SUA_GD_HS_LNS_LCD.Width = 81;
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Số tiền LCĐ";
-            this.gridColumn1.FieldName = "SO_TIEN_LCD";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 10;
-            this.gridColumn1.Width = 90;
-            // 
-            // TEN_MUC_LCD
-            // 
-            this.TEN_MUC_LCD.Caption = "Mức LCĐ";
-            this.TEN_MUC_LCD.FieldName = "TEN_MUC_LCD";
-            this.TEN_MUC_LCD.Name = "TEN_MUC_LCD";
-            this.TEN_MUC_LCD.OptionsColumn.AllowEdit = false;
-            this.TEN_MUC_LCD.Visible = true;
-            this.TEN_MUC_LCD.VisibleIndex = 9;
-            // 
-            // TEN_MA_LCD
-            // 
-            this.TEN_MA_LCD.Caption = "Mã LCĐ";
-            this.TEN_MA_LCD.FieldName = "TEN_MA_LCD";
-            this.TEN_MA_LCD.Name = "TEN_MA_LCD";
-            this.TEN_MA_LCD.OptionsColumn.AllowEdit = false;
-            this.TEN_MA_LCD.Visible = true;
-            this.TEN_MA_LCD.VisibleIndex = 8;
-            this.TEN_MA_LCD.Width = 72;
-            // 
-            // HE_SO_LNS
-            // 
-            this.HE_SO_LNS.Caption = "Hệ số LNS";
-            this.HE_SO_LNS.FieldName = "HE_SO_LNS";
-            this.HE_SO_LNS.Name = "HE_SO_LNS";
-            this.HE_SO_LNS.OptionsColumn.AllowEdit = false;
-            this.HE_SO_LNS.Visible = true;
-            this.HE_SO_LNS.VisibleIndex = 7;
-            this.HE_SO_LNS.Width = 91;
-            // 
-            // TEN_MUC_LNS
-            // 
-            this.TEN_MUC_LNS.Caption = "Mức LNS";
-            this.TEN_MUC_LNS.FieldName = "TEN_MUC_LNS";
-            this.TEN_MUC_LNS.Name = "TEN_MUC_LNS";
-            this.TEN_MUC_LNS.OptionsColumn.AllowEdit = false;
-            this.TEN_MUC_LNS.Visible = true;
-            this.TEN_MUC_LNS.VisibleIndex = 6;
-            this.TEN_MUC_LNS.Width = 70;
-            // 
-            // TEN_MA_LNS
-            // 
-            this.TEN_MA_LNS.Caption = "Mã LNS";
-            this.TEN_MA_LNS.FieldName = "TEN_MA_LNS";
-            this.TEN_MA_LNS.Name = "TEN_MA_LNS";
-            this.TEN_MA_LNS.OptionsColumn.AllowEdit = false;
-            this.TEN_MA_LNS.Visible = true;
-            this.TEN_MA_LNS.VisibleIndex = 5;
-            this.TEN_MA_LNS.Width = 70;
-            // 
-            // m_lbl_hs_lns
-            // 
-            this.m_lbl_hs_lns.AutoSize = true;
-            this.m_lbl_hs_lns.Location = new System.Drawing.Point(115, 93);
-            this.m_lbl_hs_lns.Name = "m_lbl_hs_lns";
-            this.m_lbl_hs_lns.Size = new System.Drawing.Size(16, 13);
-            this.m_lbl_hs_lns.TabIndex = 18;
-            this.m_lbl_hs_lns.Text = "...";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 93);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Hệ số LNS";
-            // 
-            // m_lbl_so_tien_lcd
-            // 
-            this.m_lbl_so_tien_lcd.AutoSize = true;
-            this.m_lbl_so_tien_lcd.Location = new System.Drawing.Point(117, 93);
-            this.m_lbl_so_tien_lcd.Name = "m_lbl_so_tien_lcd";
-            this.m_lbl_so_tien_lcd.Size = new System.Drawing.Size(16, 13);
-            this.m_lbl_so_tien_lcd.TabIndex = 20;
-            this.m_lbl_so_tien_lcd.Text = "...";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(4, 93);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 13);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Số tiền LCĐ";
-            // 
             // f330_len_luong_cho_nv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -748,7 +747,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.m_lbl_header);
             this.Name = "f330_len_luong_cho_nv";
-            this.Text = "F330 - Lên lương cho nhân viên";
+            this.Text = "F330 - Tăng, giảm lương cho nhân viên";
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_LCD)).EndInit();
             this.m_grc_LCD.ResumeLayout(false);

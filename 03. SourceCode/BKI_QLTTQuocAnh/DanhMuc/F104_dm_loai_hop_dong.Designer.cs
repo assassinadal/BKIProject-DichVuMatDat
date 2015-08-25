@@ -52,11 +52,11 @@
             // m_grc_dm_loai_hop_dong
             // 
             this.m_grc_dm_loai_hop_dong.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc_dm_loai_hop_dong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_grc_dm_loai_hop_dong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_grc_dm_loai_hop_dong.Location = new System.Drawing.Point(0, 0);
             this.m_grc_dm_loai_hop_dong.MainView = this.m_grv_dm_loai_hop_dong;
             this.m_grc_dm_loai_hop_dong.Name = "m_grc_dm_loai_hop_dong";
-            this.m_grc_dm_loai_hop_dong.Size = new System.Drawing.Size(618, 200);
+            this.m_grc_dm_loai_hop_dong.Size = new System.Drawing.Size(618, 261);
             this.m_grc_dm_loai_hop_dong.TabIndex = 0;
             this.m_grc_dm_loai_hop_dong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_dm_loai_hop_dong});

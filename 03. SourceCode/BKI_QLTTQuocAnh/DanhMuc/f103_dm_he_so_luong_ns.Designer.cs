@@ -58,7 +58,7 @@
             this.c_ma_luong_ns,
             this.c_ten_luong_ns,
             this.c_muc_luong_ns,
-            this.c_loai_lao_dong,});
+            this.c_loai_lao_dong});
             this.m_grv_dm_he_so_luong_ns.GridControl = this.m_grc_dm_he_so_luong_ns;
             this.m_grv_dm_he_so_luong_ns.Name = "m_grv_dm_he_so_luong_ns";
             // 
@@ -124,14 +124,14 @@
             this.c_loai_lao_dong.VisibleIndex = 4;
             this.c_loai_lao_dong.Width = 181;
             // 
-            // m_cmd_dm_he_so_luong_ns
+            // F103_dm_he_so_luong_ns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(765, 292);
             this.Controls.Add(this.m_grc_dm_he_so_luong_ns);
-            this.Name = "m_cmd_dm_he_so_luong_ns";
-            this.Text = "m_cmd_dm_he_so_luong_ns";
+            this.Name = "F103_dm_he_so_luong_ns";
+            this.Text = "F103_dm_he_so_luong_ns";
             this.Load += new System.EventHandler(this.F103_dm_he_so_luong_ns_load);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_he_so_luong_ns)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_he_so_luong_ns)).EndInit();

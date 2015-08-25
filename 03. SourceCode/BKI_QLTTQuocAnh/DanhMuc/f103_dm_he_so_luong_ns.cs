@@ -16,7 +16,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             InitializeComponent();
         }
 
-        private void f103_dm_he_so_luong_ns_load(object sender, EventArgs e)
+        private void F103_dm_he_so_luong_ns_load(object sender, EventArgs e)
         {
             load_data_2_grid();
         }

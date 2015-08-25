@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f330_len_luong_cho_nv));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,8 +57,8 @@
             this.m_sle_chon_quyet_dinh = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList();
-            this.ImageList = new System.Windows.Forms.ImageList();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
@@ -79,7 +80,7 @@
             this.HE_SO_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TEN_MA_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TEN_MUC_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SO_TIEN_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_LAP_GD_HS_LNS_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_SUA_GD_HS_LNS_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGUOI_LAP_GD_HS_LNS_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -562,7 +563,7 @@
             this.HE_SO_LNS,
             this.TEN_MA_LCD,
             this.TEN_MUC_LCD,
-            this.gridColumn1,
+            this.SO_TIEN_LCD,
             this.NGAY_LAP_GD_HS_LNS_LCD,
             this.NGAY_SUA_GD_HS_LNS_LCD,
             this.NGUOI_LAP_GD_HS_LNS_LCD,
@@ -589,6 +590,9 @@
             // 
             this.STT.AppearanceCell.Options.UseTextOptions = true;
             this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.STT.Caption = "STT";
             this.STT.FieldName = "STT";
             this.STT.Name = "STT";
@@ -599,6 +603,9 @@
             // 
             // MA_NV
             // 
+            this.MA_NV.AppearanceHeader.Options.UseTextOptions = true;
+            this.MA_NV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MA_NV.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.MA_NV.Caption = "Mã NV";
             this.MA_NV.FieldName = "MA_NV";
             this.MA_NV.Name = "MA_NV";
@@ -609,6 +616,9 @@
             // 
             // HO_TEN
             // 
+            this.HO_TEN.AppearanceHeader.Options.UseTextOptions = true;
+            this.HO_TEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.HO_TEN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.HO_TEN.Caption = "Họ tên";
             this.HO_TEN.FieldName = "HO_TEN";
             this.HO_TEN.Name = "HO_TEN";
@@ -619,6 +629,9 @@
             // 
             // MA_HOP_DONG
             // 
+            this.MA_HOP_DONG.AppearanceHeader.Options.UseTextOptions = true;
+            this.MA_HOP_DONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MA_HOP_DONG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.MA_HOP_DONG.Caption = "Mã HĐ";
             this.MA_HOP_DONG.FieldName = "MA_HOP_DONG";
             this.MA_HOP_DONG.Name = "MA_HOP_DONG";
@@ -629,6 +642,9 @@
             // 
             // LOAI_HOP_DONG
             // 
+            this.LOAI_HOP_DONG.AppearanceHeader.Options.UseTextOptions = true;
+            this.LOAI_HOP_DONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.LOAI_HOP_DONG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.LOAI_HOP_DONG.Caption = "Loại HĐ";
             this.LOAI_HOP_DONG.FieldName = "LOAI_HOP_DONG";
             this.LOAI_HOP_DONG.Name = "LOAI_HOP_DONG";
@@ -639,6 +655,9 @@
             // 
             // TEN_MA_LNS
             // 
+            this.TEN_MA_LNS.AppearanceHeader.Options.UseTextOptions = true;
+            this.TEN_MA_LNS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TEN_MA_LNS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TEN_MA_LNS.Caption = "Mã LNS";
             this.TEN_MA_LNS.FieldName = "TEN_MA_LNS";
             this.TEN_MA_LNS.Name = "TEN_MA_LNS";
@@ -649,6 +668,9 @@
             // 
             // TEN_MUC_LNS
             // 
+            this.TEN_MUC_LNS.AppearanceHeader.Options.UseTextOptions = true;
+            this.TEN_MUC_LNS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TEN_MUC_LNS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TEN_MUC_LNS.Caption = "Mức LNS";
             this.TEN_MUC_LNS.FieldName = "TEN_MUC_LNS";
             this.TEN_MUC_LNS.Name = "TEN_MUC_LNS";
@@ -659,6 +681,9 @@
             // 
             // HE_SO_LNS
             // 
+            this.HE_SO_LNS.AppearanceHeader.Options.UseTextOptions = true;
+            this.HE_SO_LNS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.HE_SO_LNS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.HE_SO_LNS.Caption = "Hệ số LNS";
             this.HE_SO_LNS.FieldName = "HE_SO_LNS";
             this.HE_SO_LNS.Name = "HE_SO_LNS";
@@ -669,6 +694,9 @@
             // 
             // TEN_MA_LCD
             // 
+            this.TEN_MA_LCD.AppearanceHeader.Options.UseTextOptions = true;
+            this.TEN_MA_LCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TEN_MA_LCD.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TEN_MA_LCD.Caption = "Mã LCĐ";
             this.TEN_MA_LCD.FieldName = "TEN_MA_LCD";
             this.TEN_MA_LCD.Name = "TEN_MA_LCD";
@@ -679,6 +707,9 @@
             // 
             // TEN_MUC_LCD
             // 
+            this.TEN_MUC_LCD.AppearanceHeader.Options.UseTextOptions = true;
+            this.TEN_MUC_LCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TEN_MUC_LCD.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TEN_MUC_LCD.Caption = "Mức LCĐ";
             this.TEN_MUC_LCD.FieldName = "TEN_MUC_LCD";
             this.TEN_MUC_LCD.Name = "TEN_MUC_LCD";
@@ -686,18 +717,24 @@
             this.TEN_MUC_LCD.Visible = true;
             this.TEN_MUC_LCD.VisibleIndex = 9;
             // 
-            // gridColumn1
+            // SO_TIEN_LCD
             // 
-            this.gridColumn1.Caption = "Số tiền LCĐ";
-            this.gridColumn1.FieldName = "SO_TIEN_LCD";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 10;
-            this.gridColumn1.Width = 90;
+            this.SO_TIEN_LCD.AppearanceHeader.Options.UseTextOptions = true;
+            this.SO_TIEN_LCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SO_TIEN_LCD.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.SO_TIEN_LCD.Caption = "Số tiền LCĐ";
+            this.SO_TIEN_LCD.FieldName = "SO_TIEN_LCD";
+            this.SO_TIEN_LCD.Name = "SO_TIEN_LCD";
+            this.SO_TIEN_LCD.OptionsColumn.AllowEdit = false;
+            this.SO_TIEN_LCD.Visible = true;
+            this.SO_TIEN_LCD.VisibleIndex = 10;
+            this.SO_TIEN_LCD.Width = 90;
             // 
             // NGAY_LAP_GD_HS_LNS_LCD
             // 
+            this.NGAY_LAP_GD_HS_LNS_LCD.AppearanceHeader.Options.UseTextOptions = true;
+            this.NGAY_LAP_GD_HS_LNS_LCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAY_LAP_GD_HS_LNS_LCD.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.NGAY_LAP_GD_HS_LNS_LCD.Caption = "Ngày lập";
             this.NGAY_LAP_GD_HS_LNS_LCD.FieldName = "NGAY_LAP_GD_HS_LNS_LCD";
             this.NGAY_LAP_GD_HS_LNS_LCD.Name = "NGAY_LAP_GD_HS_LNS_LCD";
@@ -708,6 +745,9 @@
             // 
             // NGAY_SUA_GD_HS_LNS_LCD
             // 
+            this.NGAY_SUA_GD_HS_LNS_LCD.AppearanceHeader.Options.UseTextOptions = true;
+            this.NGAY_SUA_GD_HS_LNS_LCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAY_SUA_GD_HS_LNS_LCD.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.NGAY_SUA_GD_HS_LNS_LCD.Caption = "Ngày sửa";
             this.NGAY_SUA_GD_HS_LNS_LCD.FieldName = "NGAY_SUA_GD_HS_LNS_LCD";
             this.NGAY_SUA_GD_HS_LNS_LCD.Name = "NGAY_SUA_GD_HS_LNS_LCD";
@@ -718,6 +758,9 @@
             // 
             // NGUOI_LAP_GD_HS_LNS_LCD
             // 
+            this.NGUOI_LAP_GD_HS_LNS_LCD.AppearanceHeader.Options.UseTextOptions = true;
+            this.NGUOI_LAP_GD_HS_LNS_LCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGUOI_LAP_GD_HS_LNS_LCD.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.NGUOI_LAP_GD_HS_LNS_LCD.Caption = "Người lập";
             this.NGUOI_LAP_GD_HS_LNS_LCD.FieldName = "NGUOI_LAP_GD_HS_LNS_LCD";
             this.NGUOI_LAP_GD_HS_LNS_LCD.Name = "NGUOI_LAP_GD_HS_LNS_LCD";
@@ -728,6 +771,9 @@
             // 
             // NGUOI_SUA_GD_HS_LNS_LCD
             // 
+            this.NGUOI_SUA_GD_HS_LNS_LCD.AppearanceHeader.Options.UseTextOptions = true;
+            this.NGUOI_SUA_GD_HS_LNS_LCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGUOI_SUA_GD_HS_LNS_LCD.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.NGUOI_SUA_GD_HS_LNS_LCD.Caption = "Người sửa";
             this.NGUOI_SUA_GD_HS_LNS_LCD.FieldName = "NGUOI_SUA_GD_HS_LNS_LCD";
             this.NGUOI_SUA_GD_HS_LNS_LCD.Name = "NGUOI_SUA_GD_HS_LNS_LCD";
@@ -826,7 +872,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn HE_SO_LNS;
         private DevExpress.XtraGrid.Columns.GridColumn TEN_MA_LCD;
         private DevExpress.XtraGrid.Columns.GridColumn TEN_MUC_LCD;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn SO_TIEN_LCD;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_LAP_GD_HS_LNS_LCD;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_SUA_GD_HS_LNS_LCD;
         private DevExpress.XtraGrid.Columns.GridColumn NGUOI_LAP_GD_HS_LNS_LCD;

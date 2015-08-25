@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f320_lap_hop_dong));
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
@@ -68,7 +69,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.m_cmd_lap_hop_dong = new SIS.Controls.Button.SiSButton();
-            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -89,7 +90,7 @@
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
-            this.ImageList = new System.Windows.Forms.ImageList();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.panel1.SuspendLayout();
@@ -600,6 +601,11 @@
             // 
             // STT
             // 
+            this.STT.AppearanceCell.Options.UseTextOptions = true;
+            this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.STT.Caption = "STT";
             this.STT.FieldName = "STT";
             this.STT.Name = "STT";
@@ -610,6 +616,9 @@
             // 
             // MA_NV
             // 
+            this.MA_NV.AppearanceHeader.Options.UseTextOptions = true;
+            this.MA_NV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MA_NV.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.MA_NV.Caption = "Mã NV";
             this.MA_NV.FieldName = "MA_NV";
             this.MA_NV.Name = "MA_NV";
@@ -620,6 +629,9 @@
             // 
             // HO_TEN
             // 
+            this.HO_TEN.AppearanceHeader.Options.UseTextOptions = true;
+            this.HO_TEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.HO_TEN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.HO_TEN.Caption = "Họ tên";
             this.HO_TEN.FieldName = "HO_TEN";
             this.HO_TEN.Name = "HO_TEN";
@@ -630,6 +642,9 @@
             // 
             // MA_HOP_DONG
             // 
+            this.MA_HOP_DONG.AppearanceHeader.Options.UseTextOptions = true;
+            this.MA_HOP_DONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MA_HOP_DONG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.MA_HOP_DONG.Caption = "Mã HĐ";
             this.MA_HOP_DONG.FieldName = "MA_HOP_DONG";
             this.MA_HOP_DONG.Name = "MA_HOP_DONG";
@@ -639,6 +654,9 @@
             // 
             // TEN
             // 
+            this.TEN.AppearanceHeader.Options.UseTextOptions = true;
+            this.TEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TEN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TEN.Caption = "Loại HĐ";
             this.TEN.FieldName = "TEN";
             this.TEN.Name = "TEN";
@@ -648,6 +666,9 @@
             // 
             // NGAY_BAT_DAU
             // 
+            this.NGAY_BAT_DAU.AppearanceHeader.Options.UseTextOptions = true;
+            this.NGAY_BAT_DAU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAY_BAT_DAU.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.NGAY_BAT_DAU.Caption = "Ngày bắt đầu";
             this.NGAY_BAT_DAU.FieldName = "NGAY_BAT_DAU";
             this.NGAY_BAT_DAU.Name = "NGAY_BAT_DAU";
@@ -657,6 +678,9 @@
             // 
             // NGAY_KET_THUC
             // 
+            this.NGAY_KET_THUC.AppearanceHeader.Options.UseTextOptions = true;
+            this.NGAY_KET_THUC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAY_KET_THUC.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.NGAY_KET_THUC.Caption = "Ngày kết thúc";
             this.NGAY_KET_THUC.FieldName = "NGAY_KET_THUC";
             this.NGAY_KET_THUC.Name = "NGAY_KET_THUC";
@@ -666,7 +690,10 @@
             // 
             // NGAY_KY_HOP_DONG
             // 
-            this.NGAY_KY_HOP_DONG.Caption = "Ngày ký hợp đông";
+            this.NGAY_KY_HOP_DONG.AppearanceHeader.Options.UseTextOptions = true;
+            this.NGAY_KY_HOP_DONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAY_KY_HOP_DONG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.NGAY_KY_HOP_DONG.Caption = "Ngày ký";
             this.NGAY_KY_HOP_DONG.FieldName = "NGAY_KY_HOP_DONG";
             this.NGAY_KY_HOP_DONG.Name = "NGAY_KY_HOP_DONG";
             this.NGAY_KY_HOP_DONG.OptionsColumn.AllowEdit = false;
@@ -675,6 +702,9 @@
             // 
             // NGAY_LAP
             // 
+            this.NGAY_LAP.AppearanceHeader.Options.UseTextOptions = true;
+            this.NGAY_LAP.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAY_LAP.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.NGAY_LAP.Caption = "Ngày lập";
             this.NGAY_LAP.FieldName = "NGAY_LAP";
             this.NGAY_LAP.Name = "NGAY_LAP";
@@ -684,6 +714,9 @@
             // 
             // NGAY_SUA
             // 
+            this.NGAY_SUA.AppearanceHeader.Options.UseTextOptions = true;
+            this.NGAY_SUA.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAY_SUA.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.NGAY_SUA.Caption = "Ngày sửa";
             this.NGAY_SUA.FieldName = "NGAY_SUA";
             this.NGAY_SUA.Name = "NGAY_SUA";
@@ -693,6 +726,9 @@
             // 
             // NGUOI_LAP
             // 
+            this.NGUOI_LAP.AppearanceHeader.Options.UseTextOptions = true;
+            this.NGUOI_LAP.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGUOI_LAP.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.NGUOI_LAP.Caption = "Người lập";
             this.NGUOI_LAP.FieldName = "NGUOI_LAP";
             this.NGUOI_LAP.Name = "NGUOI_LAP";
@@ -702,6 +738,9 @@
             // 
             // NGUOI_SUA
             // 
+            this.NGUOI_SUA.AppearanceHeader.Options.UseTextOptions = true;
+            this.NGUOI_SUA.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGUOI_SUA.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.NGUOI_SUA.Caption = "Người sửa";
             this.NGUOI_SUA.FieldName = "NGUOI_SUA";
             this.NGUOI_SUA.Name = "NGUOI_SUA";

@@ -22,6 +22,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             InitializeComponent();
             format_controls();
         }
+
         #region Members
         DS_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG m_ds = new DS_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG();
         US_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG m_us = new US_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG();
@@ -106,6 +107,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         #endregion
+
         private void set_define_events()
         {
             this.Load += f310_cham_cong_theo_danh_sach_nhan_vien_Load;
@@ -187,13 +189,5 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-
-        
-
-        
-        
-
-
     }
 }

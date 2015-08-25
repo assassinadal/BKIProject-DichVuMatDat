@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -65,6 +66,7 @@
             this.m_cmd_dm_loai_hop_dong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_loai_ngay_cong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_thue = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_dat_hs_lns_lcd = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -76,8 +78,7 @@
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
-            this.m_cmd_dat_hs_lns_lcd = new DevExpress.XtraBars.BarButtonItem();
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -127,7 +128,7 @@
             this.m_cmd_dm_thue,
             this.m_cmd_dat_hs_lns_lcd});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 45;
+            this.ribbon.MaxItemId = 46;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -457,6 +458,15 @@
             this.m_cmd_dm_thue.Name = "m_cmd_dm_thue";
             this.m_cmd_dm_thue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_dm_thue_ItemClick);
             // 
+            // m_cmd_dat_hs_lns_lcd
+            // 
+            this.m_cmd_dat_hs_lns_lcd.Caption = "Đặt hệ số LNS, LCĐ";
+            this.m_cmd_dat_hs_lns_lcd.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dat_hs_lns_lcd.Glyph")));
+            this.m_cmd_dat_hs_lns_lcd.Id = 44;
+            this.m_cmd_dat_hs_lns_lcd.Name = "m_cmd_dat_hs_lns_lcd";
+            this.m_cmd_dat_hs_lns_lcd.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -544,15 +554,6 @@
             // MdiManager
             // 
             this.MdiManager.MdiParent = this;
-            // 
-            // m_cmd_dat_hs_lns_lcd
-            // 
-            this.m_cmd_dat_hs_lns_lcd.Caption = "Đặt hệ số LNS, LCĐ";
-            this.m_cmd_dat_hs_lns_lcd.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dat_hs_lns_lcd.Glyph")));
-            this.m_cmd_dat_hs_lns_lcd.Id = 44;
-            this.m_cmd_dat_hs_lns_lcd.Name = "m_cmd_dat_hs_lns_lcd";
-            this.m_cmd_dat_hs_lns_lcd.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // f388_main
             // 

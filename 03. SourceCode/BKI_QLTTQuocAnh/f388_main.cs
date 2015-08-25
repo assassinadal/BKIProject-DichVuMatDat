@@ -231,30 +231,63 @@ namespace BKI_DichVuMatDat
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DanhMuc.f101_dm_tham_so v_f = new DanhMuc.f101_dm_tham_so();
-            v_f.MdiParent = this;
-            v_f.Show();
+            try
+            {
+                DanhMuc.f101_dm_tham_so v_f = new DanhMuc.f101_dm_tham_so();
+                if (IsExistFormName(v_f)) return;
+                
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_cmd_dm_loai_hop_dong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DanhMuc.F104_dm_loai_hop_dong v_f = new DanhMuc.F104_dm_loai_hop_dong();
-            v_f.MdiParent = this;
-            v_f.Show();
+            try
+            {
+                DanhMuc.F104_dm_loai_hop_dong v_f = new DanhMuc.F104_dm_loai_hop_dong();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_cmd_dm_loai_ngay_cong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DanhMuc.F105_dm_loai_ngay_cong v_f = new DanhMuc.F105_dm_loai_ngay_cong();
-            v_f.MdiParent = this;
-            v_f.Show();
+            try
+            {
+                DanhMuc.F105_dm_loai_ngay_cong v_f = new DanhMuc.F105_dm_loai_ngay_cong();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_cmd_dm_thue_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DanhMuc.F109_dm_thue v_f = new DanhMuc.F109_dm_thue();
-            v_f.MdiParent = this;
-            v_f.Show();
+            try
+            {
+                DanhMuc.F109_dm_thue v_f = new DanhMuc.F109_dm_thue();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)

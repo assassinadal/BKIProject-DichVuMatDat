@@ -121,6 +121,7 @@
             this.m_lbl_header.TabIndex = 1;
             this.m_lbl_header.Text = "TĂNG - GIẢM LƯƠNG CHO NHÂN VIÊN";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_lbl_header.Click += new System.EventHandler(this.m_lbl_header_Click);
             // 
             // panel2
             // 

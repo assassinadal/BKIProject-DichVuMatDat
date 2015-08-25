@@ -249,10 +249,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                DanhMuc.F104_dm_loai_hop_dong v_f = new DanhMuc.F104_dm_loai_hop_dong();
-                if (IsExistFormName(v_f)) return;
-                v_f.MdiParent = this;
-                v_f.Show();
+                DanhMuc.F104_dm_loai_hop_dong v_frm = new DanhMuc.F104_dm_loai_hop_dong();
+                if (IsExistFormName(v_frm)) return;
+                v_frm.MdiParent = this;
+                v_frm.Show();
             }
             catch (Exception v_e)
             {
@@ -264,10 +264,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                DanhMuc.F105_dm_loai_ngay_cong v_f = new DanhMuc.F105_dm_loai_ngay_cong();
-                if (IsExistFormName(v_f)) return;
-                v_f.MdiParent = this;
-                v_f.Show();
+                DanhMuc.F105_dm_loai_ngay_cong v_frm = new DanhMuc.F105_dm_loai_ngay_cong();
+                if (IsExistFormName(v_frm)) return;
+                v_frm.MdiParent = this;
+                v_frm.Show();
             }
             catch (Exception v_e)
             {
@@ -279,10 +279,25 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                DanhMuc.F109_dm_thue v_f = new DanhMuc.F109_dm_thue();
-                if (IsExistFormName(v_f)) return;
-                v_f.MdiParent = this;
-                v_f.Show();
+                DanhMuc.F109_dm_thue v_frm = new DanhMuc.F109_dm_thue();
+                if (IsExistFormName(v_frm)) return;
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_quan_ly_vi_tri_cong_tac_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f350_quan_ly_vi_tri_cong_tac v_frm = new f350_quan_ly_vi_tri_cong_tac();
+                if (IsExistFormName(v_frm)) return;
+                v_frm.MdiParent = this;
+                v_frm.Show();
             }
             catch (Exception v_e)
             {

@@ -83,6 +83,7 @@
     <Compile Include="US_V_F330_LEN_LUONG_CHO_NV.cs" />
     <Compile Include="US_V_F340_DAT_HS_LNS.cs" />
     <Compile Include="US_V_F340_DAT_LCD.cs" />
+    <Compile Include="US_V_GD_CONG_TAC.cs" />
     <Compile Include="US_V_GD_QUYET_DINH.cs" />
     <Compile Include="US_V_HT_CONTROL_IN_FORM.cs" />
     <Compile Include="US_V_HT_NGUOI_SU_DUNG.cs" />

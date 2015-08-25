@@ -67,6 +67,8 @@ namespace BKI_DichVuMatDat.US {
         public const string CAP_DON_VI = "CAP_DON_VI";
         public const string LOAI_QUYET_DINH = "LOAI_QUYET_DINH";
         public const string DM_CA_HOC = "DM_CA_HOC";
+        public const string LOAI_CONG_TAC = "LOAI_CONG_TAC";
+        public const string LOAI_VI_TRI = "LOAI_VI_TRI";
     }
 
     public static class ID_LOAI_PHIEU_THU
@@ -87,6 +89,8 @@ namespace BKI_DichVuMatDat.US {
         public const int LOAI_DON_VI = 7;
         public const int LY_DO_CHINH_SUA_HS_LNS = 8;
         public const int LY_DO_CHINH_SUA_SO_TIEN_LCD = 9;
+        public const int LOAI_CONG_TAC = 10;
+        public const int LOAI_VI_TRI = 11;
     }
 
   

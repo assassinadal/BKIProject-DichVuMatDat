@@ -209,6 +209,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_F340_DAT_LCD.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_GD_CONG_TAC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_CONG_TAC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_GD_QUYET_DINH.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -592,6 +597,17 @@
     </None>
     <None Include="DS_V_F340_DAT_LCD.xss">
       <DependentUpon>DS_V_F340_DAT_LCD.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_CONG_TAC.xsc">
+      <DependentUpon>DS_V_GD_CONG_TAC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_CONG_TAC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_CONG_TAC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_CONG_TAC.xss">
+      <DependentUpon>DS_V_GD_CONG_TAC.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_QUYET_DINH.xsc">
       <DependentUpon>DS_V_GD_QUYET_DINH.xsd</DependentUpon>

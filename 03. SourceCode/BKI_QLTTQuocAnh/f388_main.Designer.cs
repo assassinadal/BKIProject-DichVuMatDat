@@ -79,6 +79,8 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.m_cmd_quan_ly_vi_tri_cong_tac = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -126,9 +128,10 @@
             this.m_cmd_dm_loai_hop_dong,
             this.m_cmd_dm_loai_ngay_cong,
             this.m_cmd_dm_thue,
-            this.m_cmd_dat_hs_lns_lcd});
+            this.m_cmd_dat_hs_lns_lcd,
+            this.m_cmd_quan_ly_vi_tri_cong_tac});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 46;
+            this.ribbon.MaxItemId = 47;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -511,7 +514,8 @@
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup4,
-            this.ribbonPageGroup5});
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup6});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "NGHIỆP VỤ";
             // 
@@ -554,6 +558,21 @@
             // MdiManager
             // 
             this.MdiManager.MdiParent = this;
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_quan_ly_vi_tri_cong_tac);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "Công tác";
+            // 
+            // m_cmd_quan_ly_vi_tri_cong_tac
+            // 
+            this.m_cmd_quan_ly_vi_tri_cong_tac.Caption = "Quản lý vị trí công tác";
+            this.m_cmd_quan_ly_vi_tri_cong_tac.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_quan_ly_vi_tri_cong_tac.Glyph")));
+            this.m_cmd_quan_ly_vi_tri_cong_tac.Id = 46;
+            this.m_cmd_quan_ly_vi_tri_cong_tac.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_quan_ly_vi_tri_cong_tac.LargeGlyph")));
+            this.m_cmd_quan_ly_vi_tri_cong_tac.Name = "m_cmd_quan_ly_vi_tri_cong_tac";
+            this.m_cmd_quan_ly_vi_tri_cong_tac.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_quan_ly_vi_tri_cong_tac_ItemClick);
             // 
             // f388_main
             // 
@@ -627,5 +646,7 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_loai_ngay_cong;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_thue;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dat_hs_lns_lcd;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_quan_ly_vi_tri_cong_tac;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
     }
 }

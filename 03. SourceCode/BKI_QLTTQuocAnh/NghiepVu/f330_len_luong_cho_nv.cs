@@ -62,7 +62,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
             US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
-
             v_us.FillDataset(v_ds);
             return v_ds;
         }

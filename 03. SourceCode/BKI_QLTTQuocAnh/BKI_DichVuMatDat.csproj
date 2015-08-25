@@ -272,7 +272,9 @@
     <Compile Include="NghiepVu\f340_dat_hs_lns_lcd.designer.cs">
       <DependentUpon>f340_dat_hs_lns_lcd.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\f350_quan_ly_vi_tri_cong_tac.cs" />
+    <Compile Include="NghiepVu\f350_quan_ly_vi_tri_cong_tac.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NghiepVu\f350_quan_ly_vi_tri_cong_tac.Designer.cs">
       <DependentUpon>f350_quan_ly_vi_tri_cong_tac.cs</DependentUpon>
     </Compile>

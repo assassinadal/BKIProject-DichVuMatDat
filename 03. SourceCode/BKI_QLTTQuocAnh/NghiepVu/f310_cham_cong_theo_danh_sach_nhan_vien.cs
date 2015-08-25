@@ -12,6 +12,7 @@ using BKI_DichVuMatDat.US;
 using IP.Core.IPCommon;
 using BKI_DichVuMatDat.DS.CDBNames;
 using DevExpress.XtraEditors;
+using System.Data;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -49,38 +50,42 @@ namespace BKI_DichVuMatDat.NghiepVu
             gridControl1.DataSource = m_ds.Tables[0];
         }
 
-        private DS_DM_LOAI_NGAY_CONG load_data_2_ds_dm_loai_ngay_cong()
+        private DataSet load_data_2_ds_dm_loai_ngay_cong(DataSet v_ds_dm_loai_ngay_cong)
         {
-            DS_DM_LOAI_NGAY_CONG v_ds = new DS_DM_LOAI_NGAY_CONG();
-            US_DM_LOAI_NGAY_CONG v_us = new US_DM_LOAI_NGAY_CONG();
+          
+            US_DUNG_CHUNG v_us= new US_DUNG_CHUNG();
+            DataSet v_ds_ = new DataSet();
+            v_ds_dm_loai_ngay_cong.Tables.Add(new DataTable());
 
-            v_ds.Clear();
-            v_ds.EnforceConstraints = false;
-            v_us.FillDataset(v_ds);
+          //  v_ds.EnforceConstraints = false;
+            v_us.FillDatasetWithQuery(v_ds_dm_loai_ngay_cong, "select ID,MA_NGAY_CONG, TEN_NGAY_CONG FROM DM_LOAI_NGAY_CONG");
 
-            return v_ds;
+            return v_ds_dm_loai_ngay_cong;
         }
 
         private void load_data_2_le_loai_ngay_cong()
         {
+            DataSet v_ds_dm_loai_ngay_cong = new DataSet();
             //Chinh hien thi nguoi dung
-            m_le_loai_ngay_cong.DataSource = load_data_2_ds_dm_loai_ngay_cong().DM_LOAI_NGAY_CONG;
-            m_le_loai_ngay_cong.DisplayMember = DM_LOAI_NGAY_CONG.MA_NGAY_CONG;
-            m_le_loai_ngay_cong.ValueMember = DM_LOAI_NGAY_CONG.ID;
+            m_sle_loai_ngay_cong.DataSource = load_data_2_ds_dm_loai_ngay_cong(v_ds_dm_loai_ngay_cong).Tables[0];
+            m_sle_loai_ngay_cong.DisplayMember = "TEN_NGAY_CONG";
+            m_sle_loai_ngay_cong.ValueMember = "ID";
 
-            m_le_loai_ngay_cong.PopulateColumns();
-            m_le_loai_ngay_cong.Columns[DM_LOAI_NGAY_CONG.ID].Visible = false;
-            m_le_loai_ngay_cong.Columns[DM_LOAI_NGAY_CONG.TI_LE_LCD].Visible = false;
-            m_le_loai_ngay_cong.Columns[DM_LOAI_NGAY_CONG.TI_LE_LNS].Visible = false;
+            m_sle_loai_ngay_cong.View.PopulateColumns();
 
-            m_le_loai_ngay_cong.Columns[DM_LOAI_NGAY_CONG.MA_NGAY_CONG].Width = 300;
-            m_le_loai_ngay_cong.Columns[DM_LOAI_NGAY_CONG.TEN_NGAY_CONG].Width = 150;
+            
+            //m_sle_loai_ngay_cong.View.Columns[DM_LOAI_NGAY_CONG.ID].Visible = false;
+            //m_sle_loai_ngay_cong.View.Columns[DM_LOAI_NGAY_CONG.TI_LE_LCD].Visible = false;
+            //m_sle_loai_ngay_cong.View.Columns[DM_LOAI_NGAY_CONG.TI_LE_LNS].Visible = false;
 
-            m_le_loai_ngay_cong.Columns[DM_LOAI_NGAY_CONG.MA_NGAY_CONG].Caption = "Mã ngày công";
-            m_le_loai_ngay_cong.Columns[DM_LOAI_NGAY_CONG.TEN_NGAY_CONG].Caption = "Tên ngày công";
+            //m_sle_loai_ngay_cong.View.Columns[DM_LOAI_NGAY_CONG.MA_NGAY_CONG].Width = 300;
+            //m_sle_loai_ngay_cong.View.Columns[DM_LOAI_NGAY_CONG.TEN_NGAY_CONG].Width = 150;
 
-            m_le_loai_ngay_cong.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            m_le_loai_ngay_cong.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+          //  m_sle_loai_ngay_cong.View.Columns[1].Caption
+            m_sle_loai_ngay_cong.View.Columns[2].Caption = "Tên ngày công";
+
+            m_sle_loai_ngay_cong.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            m_sle_loai_ngay_cong.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
 
             //m_gle_loai_ngay_cong.DataSource = load_data_2_ds_dm_loai_ngay_cong().DM_LOAI_NGAY_CONG;
             //m_gle_loai_ngay_cong.DisplayMember = DM_LOAI_NGAY_CONG.MA_NGAY_CONG;

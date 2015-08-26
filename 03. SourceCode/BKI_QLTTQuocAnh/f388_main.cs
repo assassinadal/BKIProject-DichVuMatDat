@@ -344,10 +344,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-               //// f350_quan_ly_vi_tri_cong_tac v_frm = new f350_quan_ly_vi_tri_cong_tac();
-               // if (IsExistFormName(v_frm)) return;
-               // v_frm.MdiParent = this;
-               // v_frm.Show();
+                f350_quan_ly_vi_tri_cong_tac v_frm = new f350_quan_ly_vi_tri_cong_tac();
+                if (IsExistFormName(v_frm)) return;
+                v_frm.MdiParent = this;
+                v_frm.Show();
             }
             catch (Exception v_e)
             {

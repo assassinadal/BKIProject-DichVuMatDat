@@ -241,8 +241,14 @@
     <Compile Include="DanhMuc\F106_dm_luong_che_do.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhMuc\F106_dm_luong_che_do.designer.cs">
+    <Compile Include="DanhMuc\F106_dm_luong_che_do.Designer.cs">
       <DependentUpon>F106_dm_luong_che_do.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\F107_dm_phu_cap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\F107_dm_phu_cap.Designer.cs">
+      <DependentUpon>F107_dm_phu_cap.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\F109_dm_thue.cs">
       <SubType>Form</SubType>
@@ -286,6 +292,12 @@
     <Compile Include="NghiepVu\f340_dat_hs_lns_lcd.designer.cs">
       <DependentUpon>f340_dat_hs_lns_lcd.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f350_quan_ly_vi_tri_cong_tac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f350_quan_ly_vi_tri_cong_tac.Designer.cs">
+      <DependentUpon>f350_quan_ly_vi_tri_cong_tac.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -317,6 +329,12 @@
     <EmbeddedResource Include="DanhMuc\F105_dm_loai_ngay_cong.resx">
       <DependentUpon>F105_dm_loai_ngay_cong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\F106_dm_luong_che_do.resx">
+      <DependentUpon>F106_dm_luong_che_do.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\F107_dm_phu_cap.resx">
+      <DependentUpon>F107_dm_phu_cap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F109_dm_thue.resx">
       <DependentUpon>F109_dm_thue.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f340_dat_hs_lns_lcd.resx">
       <DependentUpon>f340_dat_hs_lns_lcd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f350_quan_ly_vi_tri_cong_tac.resx">
+      <DependentUpon>f350_quan_ly_vi_tri_cong_tac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

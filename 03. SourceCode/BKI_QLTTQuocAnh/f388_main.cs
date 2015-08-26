@@ -229,13 +229,29 @@ namespace BKI_DichVuMatDat
             }
         }
 
-        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        private void m_cmd_dm_tham_so_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
             {
                 DanhMuc.f101_dm_tham_so v_f = new DanhMuc.f101_dm_tham_so();
                 if (IsExistFormName(v_f)) return;
                 
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_he_so_luong_ns_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                DanhMuc.F103_dm_he_so_luong_ns v_f = new DanhMuc.F103_dm_he_so_luong_ns();
+                if (IsExistFormName(v_f)) return;
+
                 v_f.MdiParent = this;
                 v_f.Show();
             }
@@ -294,10 +310,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f350_quan_ly_vi_tri_cong_tac v_frm = new f350_quan_ly_vi_tri_cong_tac();
-                if (IsExistFormName(v_frm)) return;
-                v_frm.MdiParent = this;
-                v_frm.Show();
+               //// f350_quan_ly_vi_tri_cong_tac v_frm = new f350_quan_ly_vi_tri_cong_tac();
+               // if (IsExistFormName(v_frm)) return;
+               // v_frm.MdiParent = this;
+               // v_frm.Show();
             }
             catch (Exception v_e)
             {

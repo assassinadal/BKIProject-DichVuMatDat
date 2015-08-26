@@ -32,5 +32,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_grc_dm_he_so_luong_ns.DataSource = v_ds.Tables[0];
         }
 
+       
+
     }
 }

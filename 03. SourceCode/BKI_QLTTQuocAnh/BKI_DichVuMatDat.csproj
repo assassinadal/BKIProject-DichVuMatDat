@@ -219,6 +219,12 @@
     <Compile Include="DanhMuc\f101_dm_tham_so.Designer.cs">
       <DependentUpon>f101_dm_tham_so.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\f103_dm_he_so_luong_ns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f103_dm_he_so_luong_ns.Designer.cs">
+      <DependentUpon>f103_dm_he_so_luong_ns.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\F104_dm_loai_hop_dong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,12 @@
     <Compile Include="DanhMuc\F105_dm_loai_ngay_cong.Designer.cs">
       <DependentUpon>F105_dm_loai_ngay_cong.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\F106_dm_luong_che_do.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\F106_dm_luong_che_do.Designer.cs">
+      <DependentUpon>F106_dm_luong_che_do.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\F109_dm_thue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +254,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_PHU_THUOC.xsd</DependentUpon>
     </Compile>
+    <Compile Include="m_cmd_dm_he_so_luong_ns.cs" />
     <Compile Include="NghiepVu\BackupDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,12 +285,6 @@
     <Compile Include="NghiepVu\f340_dat_hs_lns_lcd.designer.cs">
       <DependentUpon>f340_dat_hs_lns_lcd.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\f350_quan_ly_vi_tri_cong_tac.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\f350_quan_ly_vi_tri_cong_tac.Designer.cs">
-      <DependentUpon>f350_quan_ly_vi_tri_cong_tac.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -297,11 +304,20 @@
     <EmbeddedResource Include="BaoCao\F_wait_form.resx">
       <DependentUpon>F_wait_form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f101_dm_tham_so.resx">
+      <DependentUpon>f101_dm_tham_so.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f103_dm_he_so_luong_ns.resx">
+      <DependentUpon>f103_dm_he_so_luong_ns.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F104_dm_loai_hop_dong.resx">
       <DependentUpon>F104_dm_loai_hop_dong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F105_dm_loai_ngay_cong.resx">
       <DependentUpon>F105_dm_loai_ngay_cong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\F106_dm_luong_che_do.resx">
+      <DependentUpon>F106_dm_luong_che_do.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F109_dm_thue.resx">
       <DependentUpon>F109_dm_thue.cs</DependentUpon>
@@ -321,9 +337,6 @@
     <EmbeddedResource Include="NghiepVu\f340_dat_hs_lns_lcd.resx">
       <DependentUpon>f340_dat_hs_lns_lcd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f350_quan_ly_vi_tri_cong_tac.resx">
-      <DependentUpon>f350_quan_ly_vi_tri_cong_tac.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -332,6 +345,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f388_main.resx">
       <DependentUpon>f388_main.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>

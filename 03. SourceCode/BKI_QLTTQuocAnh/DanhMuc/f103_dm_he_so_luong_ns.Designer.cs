@@ -139,11 +139,7 @@
 
         }
 
-        private void F103_dm_he_so_luong_ns_load(object sender, System.EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
+      
         #endregion
 
         private DevExpress.XtraGrid.GridControl m_grc_dm_he_so_luong_ns;

@@ -65,13 +65,19 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_le_loai_ngay_cong()
         {
+            m_sle_loai_ngay_cong.View.Columns.AddField("ID").Visible = false;
+            m_sle_loai_ngay_cong.View.Columns.AddField("MA_NGAY_CONG").Visible = true;
+            m_sle_loai_ngay_cong.View.Columns.AddField("TEN_NGAY_CONG").Visible = true;
+            m_sle_loai_ngay_cong.View.Columns[1].Caption = "Tạ Quang Ngọc";
+            m_sle_loai_ngay_cong.View.Columns[2].Caption = "Trần Thị Hương";
             DataSet v_ds_dm_loai_ngay_cong = new DataSet();
             //Chinh hien thi nguoi dung
             m_sle_loai_ngay_cong.DataSource = load_data_2_ds_dm_loai_ngay_cong(v_ds_dm_loai_ngay_cong).Tables[0];
             m_sle_loai_ngay_cong.DisplayMember = "TEN_NGAY_CONG";
             m_sle_loai_ngay_cong.ValueMember = "ID";
+            
 
-            m_sle_loai_ngay_cong.View.PopulateColumns();
+            //m_sle_loai_ngay_cong.View.PopulateColumns();
 
             
             //m_sle_loai_ngay_cong.View.Columns[DM_LOAI_NGAY_CONG.ID].Visible = false;
@@ -82,7 +88,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             //m_sle_loai_ngay_cong.View.Columns[DM_LOAI_NGAY_CONG.TEN_NGAY_CONG].Width = 150;
 
           //  m_sle_loai_ngay_cong.View.Columns[1].Caption
-            m_sle_loai_ngay_cong.View.Columns[2].Caption = "Tên ngày công";
+            //m_sle_loai_ngay_cong.View.Columns[2].Caption = "Tên ngày công";
 
             m_sle_loai_ngay_cong.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_loai_ngay_cong.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;

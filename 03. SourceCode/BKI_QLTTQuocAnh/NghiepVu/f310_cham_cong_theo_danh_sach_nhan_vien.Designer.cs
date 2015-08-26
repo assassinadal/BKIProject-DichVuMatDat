@@ -49,6 +49,8 @@
             this.dMLOAINGAYCONGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bKI_DVMDDataSet = new BKI_DichVuMatDat.BKI_DVMDDataSet();
             this.dM_LOAI_NGAY_CONGTableAdapter = new BKI_DichVuMatDat.BKI_DVMDDataSetTableAdapters.DM_LOAI_NGAY_CONGTableAdapter();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -57,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_le_loai_ngay_cong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMLOAINGAYCONGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bKI_DVMDDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -151,7 +155,7 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.m_le_loai_ngay_cong,
             this.m_sle_loai_ngay_cong});
-            this.gridControl1.Size = new System.Drawing.Size(1032, 328);
+            this.gridControl1.Size = new System.Drawing.Size(1032, 374);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -170,6 +174,7 @@
             this.gridView1.OptionsFind.AllowFindPanel = false;
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
             // ID
             // 
@@ -252,11 +257,31 @@
             // 
             this.dM_LOAI_NGAY_CONGTableAdapter.ClearBeforeFill = true;
             // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.simpleButton1);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl1.Location = new System.Drawing.Point(0, 413);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1032, 42);
+            this.panelControl1.TabIndex = 3;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(927, 5);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(93, 32);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Text = "Lưu";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // f310_cham_cong_theo_danh_sach_nhan_vien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 409);
+            this.ClientSize = new System.Drawing.Size(1032, 455);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panel1);
             this.Name = "f310_cham_cong_theo_danh_sach_nhan_vien";
@@ -271,6 +296,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_le_loai_ngay_cong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMLOAINGAYCONGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bKI_DVMDDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -296,5 +323,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit m_le_loai_ngay_cong;
         private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit m_sle_loai_ngay_cong;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

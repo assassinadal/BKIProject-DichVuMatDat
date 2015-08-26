@@ -247,7 +247,7 @@ namespace BKI_DichVuMatDat
             }
         }
 
-        private void m_cmd_he_so_luong_ns_ItemClick(object sender, ItemClickEventArgs e)
+        private void m_cmd_dm_he_so_luong_ns_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
             {
@@ -323,13 +323,7 @@ namespace BKI_DichVuMatDat
             }
         }
 
-        private void m_cmd_dm_he_so_luong_ns_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            F103_dm_he_so_luong_ns v_f = new F103_dm_he_so_luong_ns();
-            v_f.MdiParent = this;
-            v_f.Show();
-
-        }
+      
 
 
 

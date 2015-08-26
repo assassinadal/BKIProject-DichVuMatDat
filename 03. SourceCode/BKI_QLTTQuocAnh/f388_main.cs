@@ -13,6 +13,8 @@ using BKI_DichVuMatDat.US;
 using BKI_DichVuMatDat.NghiepVu;
 using IP.Core.IPSystemAdmin;
 using BKI_DichVuMatDat.BaoCao;
+using BKI_DichVuMatDat.DanhMuc;
+
 namespace BKI_DichVuMatDat
 {
     public partial class f388_main : DevExpress.XtraBars.Ribbon.RibbonForm
@@ -320,6 +322,16 @@ namespace BKI_DichVuMatDat
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_cmd_dm_he_so_luong_ns_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            F103_dm_he_so_luong_ns v_f = new F103_dm_he_so_luong_ns();
+            v_f.MdiParent = this;
+            v_f.Show();
+
+        }
+
+
 
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)
         //{

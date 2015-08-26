@@ -82,6 +82,7 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.m_cmd_dm_luong_che_do = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -131,9 +132,10 @@
             this.m_cmd_dm_thue,
             this.m_cmd_dat_hs_lns_lcd,
             this.m_cmd_quan_ly_vi_tri_cong_tac,
-            this.m_cmd_dm_he_so_luong_ns});
+            this.m_cmd_dm_he_so_luong_ns,
+            this.m_cmd_dm_luong_che_do});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 48;
+            this.ribbon.MaxItemId = 49;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -528,6 +530,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_loai_ngay_cong);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_thue);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_he_so_luong_ns);
+            this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_luong_che_do);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // ribbonPage3
@@ -584,6 +587,15 @@
             // MdiManager
             // 
             this.MdiManager.MdiParent = this;
+            // 
+            // m_cmd_dm_luong_che_do
+            // 
+            this.m_cmd_dm_luong_che_do.Caption = "Lương chế độ";
+            this.m_cmd_dm_luong_che_do.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dm_luong_che_do.Glyph")));
+            this.m_cmd_dm_luong_che_do.Id = 48;
+            this.m_cmd_dm_luong_che_do.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dm_luong_che_do.LargeGlyph")));
+            this.m_cmd_dm_luong_che_do.Name = "m_cmd_dm_luong_che_do";
+            this.m_cmd_dm_luong_che_do.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_dm_luong_che_do_ItemClick);
             // 
             // f388_main
             // 
@@ -660,5 +672,6 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_quan_ly_vi_tri_cong_tac;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_he_so_luong_ns;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_dm_luong_che_do;
     }
 }

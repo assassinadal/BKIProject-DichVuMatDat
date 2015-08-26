@@ -263,6 +263,22 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void m_cmd_dm_luong_che_do_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                DanhMuc.F106_dm_luong_che_do v_f = new DanhMuc.F106_dm_luong_che_do();
+                if (IsExistFormName(v_f)) return;
+
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
         private void m_cmd_dm_loai_hop_dong_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
@@ -322,6 +338,8 @@ namespace BKI_DichVuMatDat
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+
 
       
 

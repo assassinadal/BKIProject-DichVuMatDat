@@ -235,11 +235,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                DanhMuc.f101_dm_tham_so v_f = new DanhMuc.f101_dm_tham_so();
-                if (IsExistFormName(v_f)) return;
+                DanhMuc.f101_dm_tham_so v_frm = new DanhMuc.f101_dm_tham_so();
+                if (IsExistFormName(v_frm)) return;
                 
-                v_f.MdiParent = this;
-                v_f.Show();
+                v_frm.MdiParent = this;
+                v_frm.Show();
             }
             catch (Exception v_e)
             {
@@ -251,11 +251,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                DanhMuc.F103_dm_he_so_luong_ns v_f = new DanhMuc.F103_dm_he_so_luong_ns();
-                if (IsExistFormName(v_f)) return;
+                DanhMuc.F103_dm_he_so_luong_ns v_frm = new DanhMuc.F103_dm_he_so_luong_ns();
+                if (IsExistFormName(v_frm)) return;
 
-                v_f.MdiParent = this;
-                v_f.Show();
+                v_frm.MdiParent = this;
+                v_frm.Show();
             }
             catch (Exception v_e)
             {
@@ -267,11 +267,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                DanhMuc.F106_dm_luong_che_do v_f = new DanhMuc.F106_dm_luong_che_do();
-                if (IsExistFormName(v_f)) return;
+                DanhMuc.F106_dm_luong_che_do v_frm = new DanhMuc.F106_dm_luong_che_do();
+                if (IsExistFormName(v_frm)) return;
 
-                v_f.MdiParent = this;
-                v_f.Show();
+                v_frm.MdiParent = this;
+                v_frm.Show();
             }
             catch (Exception v_e)
             {

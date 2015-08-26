@@ -34,6 +34,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Members
         int m_id_lns_lcd_trong_loai_td = 0; //1: LNS va 2:LCD
         decimal m_loai_hop_dong = 1; //0: hoc viec va 1: Cac loai khac
+        decimal m_insert_click = 0; //0: ko an, 1:an
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         decimal m_id_gd_hd = 0;
         decimal m_id_hs_lns = 0;
@@ -249,14 +250,14 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_grid(decimal ip_dc_id_nhan_vien)
         {
-            CCommon.make_stt(gridView6);
+            CCommon.make_stt(m_grv_lap_hd);
 
             DS_V_F320_LAP_HOP_DONG v_ds = new DS_V_F320_LAP_HOP_DONG();
             US_V_F320_LAP_HOP_DONG v_us = new US_V_F320_LAP_HOP_DONG();
 
             v_us.FillDataset(v_ds, "WHERE ID_NHAN_VIEN = " + ip_dc_id_nhan_vien);
 
-            gridControl1.DataSource = v_ds.Tables[0];
+            m_grc_lap_hd.DataSource = v_ds.Tables[0];
         }
 
         private decimal find_hs_lns(decimal ip_dc_id_ma_lns, decimal ip_dc_id_muc_lns)
@@ -330,7 +331,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 m_txt_ma_hd.BackColor = Color.Bisque;
                 m_lbl_kiem_tra_ma_hd.Visible = true;
-                m_lbl_kiem_tra_ma_hd.Text = "Đã có số phiếu rồi...";
+                m_lbl_kiem_tra_ma_hd.Text = "Đã có mã này rồi...";
                 return true;
             }
             else
@@ -579,7 +580,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                ip_us.dcID_HOP_DONG = m_id_gd_hd;
+                ip_us.dcID_HOP_DONG = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_sle_loai_hop_dong.EditValue), m_txt_ma_hd.Text.Trim()); ;
                 //ip_us.dcID_QUYET_DINH = 
                 ip_us.dcID_HS_LNS = m_id_hs_lns;
                 ip_us.dcID_LCD = m_id_lcd;
@@ -605,11 +606,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                ip_us.dcID_HOP_DONG = m_id_gd_hd;
+                ip_us.dcID_HOP_DONG = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_sle_loai_hop_dong.EditValue), m_txt_ma_hd.Text.Trim());
                 ip_us.dcHE_SO = CIPConvert.ToDecimal(find_hs_lns(CIPConvert.ToDecimal(m_sle_chuc_danh_lns.EditValue), CIPConvert.ToDecimal(m_sle_muc_lns.EditValue)));
                 //ip_us.dcID_LY_DO_CHINH_SUA =
                 ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
-                ip_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau.Value.Date;
+                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
 
                 if (m_e_form_mode == DataEntryFormMode.InsertDataState)
                 {
@@ -633,11 +634,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                ip_us.dcID_HOP_DONG = m_id_gd_hd;
+                ip_us.dcID_HOP_DONG = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_sle_loai_hop_dong.EditValue), m_txt_ma_hd.Text.Trim());
                 ip_us.dcSO_TIEN = CIPConvert.ToDecimal(find_so_tien_lcd(CIPConvert.ToDecimal(m_sle_chuc_danh_lcd.EditValue), CIPConvert.ToDecimal(m_sle_muc_lcd.EditValue)));
                 //ip_us.dcID_LY_DO_CHINH_SUA =
                 ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
-                ip_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau.Value.Date;
+                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
 
                 if (m_e_form_mode == DataEntryFormMode.InsertDataState)
                 {
@@ -672,8 +673,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_dat_ngay_ky.Value = v_us_gd_hd.datNGAY_KY_HOP_DONG;
             if (v_us_gd_hd.dcID_LOAI_HOP_DONG == CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
             {
-                m_grc_LNS.Enabled = false;
-                m_grc_LCD.Enabled = false;
+                m_gr_LNS.Enabled = false;
+                m_gr_LCD.Enabled = false;
             }
             else
             {
@@ -715,7 +716,10 @@ namespace BKI_DichVuMatDat.NghiepVu
                 switch (m_e_form_mode)
                 {
                     case DataEntryFormMode.InsertDataState:
-                        cho_hop_dong_da_co_ve_trang_thai_delete_Y();
+                        if (m_id_gd_hd != -1)
+                        {
+                            cho_hop_dong_da_co_ve_trang_thai_delete_Y();
+                        }
 
                         //lap hop dong moi
                         v_us_gd_hd.BeginTransaction();
@@ -733,6 +737,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us_gd_hs_lns.BeginTransaction();
                         v_us_gd_hs_lns.Insert();
                         v_us_gd_hs_lns.CommitTransaction();
+
                         //insert gd_lcd
                         form_2_us_gd_lcd(v_us_gd_lcd);
                         v_us_gd_lcd.BeginTransaction();
@@ -741,14 +746,14 @@ namespace BKI_DichVuMatDat.NghiepVu
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         v_us_gd_hd.BeginTransaction();
-                        v_us_gd_hd.dcID = CIPConvert.ToDecimal(gridView6.GetRowCellValue(gridView6.FocusedRowHandle, "ID"));
+                        v_us_gd_hd.dcID = CIPConvert.ToDecimal(m_grv_lap_hd.GetRowCellValue(m_grv_lap_hd.FocusedRowHandle, "ID"));
                         v_us_gd_hd.Update();
                         v_us_gd_hd.CommitTransaction();
 
                         //
                         form_2_us_gd_hs_lns_lcd(v_us_gd_hs_lns_lcd);
                         v_us_gd_hs_lns_lcd.BeginTransaction();
-                        v_us_gd_hs_lns_lcd.dcID = find_id_gd_lns_lcd(CIPConvert.ToDecimal(gridView6.GetRowCellValue(gridView6.FocusedRowHandle, "ID")));
+                        v_us_gd_hs_lns_lcd.dcID = find_id_gd_lns_lcd(CIPConvert.ToDecimal(m_grv_lap_hd.GetRowCellValue(m_grv_lap_hd.FocusedRowHandle, "ID")));
                         v_us_gd_hs_lns_lcd.Update();
                         v_us_gd_hs_lns_lcd.CommitTransaction();
                         break;
@@ -761,6 +766,33 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                 throw v_e;
             }
+        }
+
+        private void focus_new_row_created()
+        {
+            int v_row_index = 0;
+            decimal v_id_nv_f330 = 0;
+            string v_da_xoa_f340 = "N";
+
+            US_V_F320_LAP_HOP_DONG v_us = new US_V_F320_LAP_HOP_DONG();
+            DS_V_F320_LAP_HOP_DONG v_ds = new DS_V_F320_LAP_HOP_DONG();
+
+            v_id_nv_f330 = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
+
+            v_us.FillDataset(v_ds);
+
+            for (v_row_index = 0; v_row_index < v_ds.Tables[0].Rows.Count; v_row_index++)
+            {
+                var v_id_nv = CIPConvert.ToDecimal(m_grv_lap_hd.GetDataRow(v_row_index)["ID_NHAN_VIEN"].ToString());
+                var v_da_xoa = m_grv_lap_hd.GetDataRow(v_row_index)["DA_XOA"].ToString();
+
+                if (v_id_nv == v_id_nv_f330 && v_da_xoa == v_da_xoa_f340)
+                {
+                    break;
+                }
+            }
+
+            m_grv_lap_hd.FocusedRowHandle = v_row_index;
         }
 
         //clear data in form
@@ -777,13 +809,11 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_dat_ngay_bat_dau.Value = DateTime.Now.Date;
             m_dat_ngay_ket_thuc.Value = DateTime.Now.Date;
             m_dat_ngay_ky.Value = DateTime.Now.Date;
+            m_lbl_hs_lns.Text = "...";
+            m_lbl_so_tien_lcd.Text = "...";
 
-            //if (m_e_form_mode == DataEntryFormMode.InsertDataState)
-            //{
-            //    DS_V_F320_LAP_HOP_DONG v_ds = new DS_V_F320_LAP_HOP_DONG();
-            //    gridControl1.DataSource = v_ds.Tables[0];
-            //}
-
+            DS_V_F320_LAP_HOP_DONG v_ds = new DS_V_F320_LAP_HOP_DONG();
+            m_grc_lap_hd.DataSource = v_ds.Tables[0];
         }
 
         #endregion
@@ -798,20 +828,22 @@ namespace BKI_DichVuMatDat.NghiepVu
             //control
             m_sle_loai_hop_dong.EditValueChanged += m_sle_loai_hop_dong_EditValueChanged;
             m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
+            m_sle_chuc_danh_lns.EditValueChanged += m_sle_chuc_danh_lns_EditValueChanged;
             m_sle_muc_lns.EditValueChanged += m_sle_muc_lns_EditValueChanged;
+            m_sle_chuc_danh_lcd.EditValueChanged += m_sle_chuc_danh_lcd_EditValueChanged;
             m_sle_muc_lcd.EditValueChanged += m_sle_muc_lcd_EditValueChanged;
             //gridcontrol, gridview
-            gridView6.DoubleClick += gridView6_DoubleClick;
+            m_grv_lap_hd.DoubleClick += m_grv_lap_hd_DoubleClick;
         }
 
-        void gridView6_DoubleClick(object sender, EventArgs e)
+        void m_grv_lap_hd_DoubleClick(object sender, EventArgs e)
         {
             try
             {
                 decimal v_id_gd_hd = 0;
                 decimal v_id_gd_lns_lcd = 0;
 
-                v_id_gd_hd = CIPConvert.ToDecimal(gridView6.GetRowCellValue(gridView6.FocusedRowHandle, "ID"));
+                v_id_gd_hd = CIPConvert.ToDecimal(m_grv_lap_hd.GetRowCellValue(m_grv_lap_hd.FocusedRowHandle, "ID"));
                 v_id_gd_lns_lcd = find_id_gd_lns_lcd(v_id_gd_hd);
 
                 us_obj_2_form(v_id_gd_hd, v_id_gd_lns_lcd);
@@ -830,7 +862,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 decimal v_id_gd_hd = 0;
                 decimal v_id_gd_lns_lcd = 0;
 
-                v_id_gd_hd = CIPConvert.ToDecimal(gridView6.GetRowCellValue(gridView6.FocusedRowHandle, "ID"));
+                v_id_gd_hd = CIPConvert.ToDecimal(m_grv_lap_hd.GetRowCellValue(m_grv_lap_hd.FocusedRowHandle, "ID"));
                 v_id_gd_lns_lcd = find_id_gd_lns_lcd(v_id_gd_hd);
 
                 us_obj_2_form(v_id_gd_hd, v_id_gd_lns_lcd);
@@ -862,6 +894,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                m_insert_click = 1;
                 clear_data_in_form();
             }
             catch (Exception v_e)
@@ -876,21 +909,21 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (m_sle_loai_hop_dong.EditValue == null || m_sle_loai_hop_dong.EditValue == "")
                 {
-                    m_grc_LNS.Enabled = true;
-                    m_grc_LCD.Enabled = true;
+                    m_gr_LNS.Enabled = true;
+                    m_gr_LCD.Enabled = true;
                     return;
                 }
 
                 if (CIPConvert.ToDecimal(m_sle_loai_hop_dong.EditValue) == CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
                 {
-                    m_grc_LNS.Enabled = false;
-                    m_grc_LCD.Enabled = false;
+                    m_gr_LNS.Enabled = false;
+                    m_gr_LCD.Enabled = false;
                     m_loai_hop_dong = 0;
                 }
                 else
                 {
-                    m_grc_LNS.Enabled = true;
-                    m_grc_LCD.Enabled = true;
+                    m_gr_LNS.Enabled = true;
+                    m_gr_LCD.Enabled = true;
                     m_loai_hop_dong = 1;
                 }
 
@@ -931,8 +964,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     }
 
                     load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
-                    gridView6.OptionsNavigation.AutoFocusNewRow = true;
-                    clear_data_in_form();
+                    focus_new_row_created();
                 }
             }
             catch (Exception v_e)
@@ -953,24 +985,70 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
+        void m_sle_chuc_danh_lns_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_loai_hop_dong == 1)
+                {
+                    if (m_insert_click == 0)
+                    {
+                        m_sle_muc_lns.EditValue = null;
+                        m_lbl_hs_lns.Text = "...";
+                    }
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
         void m_sle_muc_lns_EditValueChanged(object sender, EventArgs e)
         {
             try
             {
                 if (m_loai_hop_dong == 1)
                 {
-                    if (m_sle_chuc_danh_lns.EditValue == null || m_sle_chuc_danh_lns.EditValue == "")
+                    if (m_insert_click == 0)
                     {
-                        MessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
-                        return;
+                        if (m_sle_chuc_danh_lns.EditValue == null || m_sle_chuc_danh_lns.EditValue == "")
+                        {
+                            MessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
+                            return;
+                        }
+                        else
+                        {
+                            if (m_sle_muc_lns.EditValue == null|| m_sle_muc_lns.EditValue == "")
+                            {
+                                return;
+                            }
+                            else
+                            {
+                                m_lbl_hs_lns.Text = find_hs_lns(CIPConvert.ToDecimal(m_sle_chuc_danh_lns.EditValue), CIPConvert.ToDecimal(m_sle_muc_lns.EditValue)).ToString();
+                            }
+                        }
                     }
-                    else
-                    {
-                        m_lbl_hs_lns.Text = find_hs_lns(CIPConvert.ToDecimal(m_sle_chuc_danh_lns.EditValue), CIPConvert.ToDecimal(m_sle_muc_lns.EditValue)).ToString();
-                    }
-
                 }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
+        void m_sle_chuc_danh_lcd_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_loai_hop_dong == 1)
+                {
+                    if (m_insert_click == 0)
+                    {
+                        m_sle_muc_lcd.EditValue = null;
+                        m_lbl_so_tien_lcd.Text = "...";
+                    }
+                }
             }
             catch (Exception v_e)
             {
@@ -984,15 +1062,26 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (m_loai_hop_dong == 1)
                 {
-                    if (m_sle_chuc_danh_lcd.EditValue == null || m_sle_chuc_danh_lcd.EditValue == "")
+                    if (m_insert_click == 0)
                     {
-                        MessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
-                        return;
+                        if (m_sle_chuc_danh_lcd.EditValue == null || m_sle_chuc_danh_lcd.EditValue == "")
+                        {
+                            MessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
+                            return;
+                        }
+                        else
+                        {
+                            if (m_sle_muc_lcd.EditValue == null || m_sle_muc_lcd.EditValue == "")
+                            {
+                                return;
+                            }
+                            else
+                            {
+                                m_lbl_so_tien_lcd.Text = find_so_tien_lcd(CIPConvert.ToDecimal(m_sle_chuc_danh_lcd.EditValue), CIPConvert.ToDecimal(m_sle_muc_lcd.EditValue)).ToString("C", CultureInfo.CreateSpecificCulture("vi-VN"));
+                            }
+                        }
                     }
-                    else
-                    {
-                        m_lbl_so_tien_lcd.Text = find_so_tien_lcd(CIPConvert.ToDecimal(m_sle_chuc_danh_lcd.EditValue), CIPConvert.ToDecimal(m_sle_muc_lcd.EditValue)).ToString("C", CultureInfo.CreateSpecificCulture("vi-VN"));
-                    }
+
                 }
 
             }

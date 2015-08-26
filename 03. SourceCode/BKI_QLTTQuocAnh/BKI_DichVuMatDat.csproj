@@ -237,12 +237,6 @@
     <Compile Include="DanhMuc\F105_dm_loai_ngay_cong.Designer.cs">
       <DependentUpon>F105_dm_loai_ngay_cong.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhMuc\F106_dm_luong_che_do.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DanhMuc\F106_dm_luong_che_do.Designer.cs">
-      <DependentUpon>F106_dm_luong_che_do.cs</DependentUpon>
-    </Compile>
     <Compile Include="DanhMuc\F109_dm_thue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,9 +309,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F105_dm_loai_ngay_cong.resx">
       <DependentUpon>F105_dm_loai_ngay_cong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\F106_dm_luong_che_do.resx">
-      <DependentUpon>F106_dm_luong_che_do.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F109_dm_thue.resx">
       <DependentUpon>F109_dm_thue.cs</DependentUpon>

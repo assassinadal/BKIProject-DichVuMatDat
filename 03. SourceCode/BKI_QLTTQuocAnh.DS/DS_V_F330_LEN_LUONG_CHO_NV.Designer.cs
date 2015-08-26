@@ -295,8 +295,6 @@ namespace BKI_DichVuMatDat.DS {
             
             private global::System.Data.DataColumn columnLOAI_HOP_DONG;
             
-            private global::System.Data.DataColumn columnMA_LOAI_HOP_DONG;
-            
             private global::System.Data.DataColumn columnMA_HOP_DONG;
             
             private global::System.Data.DataColumn columnNGAY_BAT_DAU;
@@ -345,6 +343,8 @@ namespace BKI_DichVuMatDat.DS {
             
             private global::System.Data.DataColumn columnID_LOAI_LAO_DONG;
             
+            private global::System.Data.DataColumn columnID_LCD;
+            
             private global::System.Data.DataColumn columnID_MA_LCD;
             
             private global::System.Data.DataColumn columnMA_LCD;
@@ -366,6 +366,10 @@ namespace BKI_DichVuMatDat.DS {
             private global::System.Data.DataColumn columnNGUOI_LAP_GD_HS_LNS_LCD;
             
             private global::System.Data.DataColumn columnNGUOI_SUA_GD_HS_LNS_LCD;
+            
+            private global::System.Data.DataColumn columnMA_LOAI_HOP_DONG;
+            
+            private global::System.Data.DataColumn columnMA_TU_DIEN;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -461,14 +465,6 @@ namespace BKI_DichVuMatDat.DS {
             public global::System.Data.DataColumn LOAI_HOP_DONGColumn {
                 get {
                     return this.columnLOAI_HOP_DONG;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MA_LOAI_HOP_DONGColumn {
-                get {
-                    return this.columnMA_LOAI_HOP_DONG;
                 }
             }
             
@@ -666,6 +662,14 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_LCDColumn {
+                get {
+                    return this.columnID_LCD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn ID_MA_LCDColumn {
                 get {
                     return this.columnID_MA_LCD;
@@ -754,6 +758,22 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MA_LOAI_HOP_DONGColumn {
+                get {
+                    return this.columnMA_LOAI_HOP_DONG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MA_TU_DIENColumn {
+                get {
+                    return this.columnMA_TU_DIEN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -798,7 +818,6 @@ namespace BKI_DichVuMatDat.DS {
                         decimal ID_HOP_DONG, 
                         decimal ID_LOAI_HOP_DONG, 
                         string LOAI_HOP_DONG, 
-                        string MA_LOAI_HOP_DONG, 
                         string MA_HOP_DONG, 
                         System.DateTime NGAY_BAT_DAU, 
                         System.DateTime NGAY_KET_THUC, 
@@ -823,6 +842,7 @@ namespace BKI_DichVuMatDat.DS {
                         string TEN_MUC_LNS, 
                         decimal HE_SO_LNS, 
                         decimal ID_LOAI_LAO_DONG, 
+                        decimal ID_LCD, 
                         decimal ID_MA_LCD, 
                         string MA_LCD, 
                         string TEN_MA_LCD, 
@@ -833,7 +853,9 @@ namespace BKI_DichVuMatDat.DS {
                         System.DateTime NGAY_LAP_GD_HS_LNS_LCD, 
                         System.DateTime NGAY_SUA_GD_HS_LNS_LCD, 
                         string NGUOI_LAP_GD_HS_LNS_LCD, 
-                        string NGUOI_SUA_GD_HS_LNS_LCD) {
+                        string NGUOI_SUA_GD_HS_LNS_LCD, 
+                        string MA_LOAI_HOP_DONG, 
+                        string MA_TU_DIEN) {
                 V_F330_LEN_LUONG_CHO_NVRow rowV_F330_LEN_LUONG_CHO_NVRow = ((V_F330_LEN_LUONG_CHO_NVRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -844,7 +866,6 @@ namespace BKI_DichVuMatDat.DS {
                         ID_HOP_DONG,
                         ID_LOAI_HOP_DONG,
                         LOAI_HOP_DONG,
-                        MA_LOAI_HOP_DONG,
                         MA_HOP_DONG,
                         NGAY_BAT_DAU,
                         NGAY_KET_THUC,
@@ -869,6 +890,7 @@ namespace BKI_DichVuMatDat.DS {
                         TEN_MUC_LNS,
                         HE_SO_LNS,
                         ID_LOAI_LAO_DONG,
+                        ID_LCD,
                         ID_MA_LCD,
                         MA_LCD,
                         TEN_MA_LCD,
@@ -879,7 +901,9 @@ namespace BKI_DichVuMatDat.DS {
                         NGAY_LAP_GD_HS_LNS_LCD,
                         NGAY_SUA_GD_HS_LNS_LCD,
                         NGUOI_LAP_GD_HS_LNS_LCD,
-                        NGUOI_SUA_GD_HS_LNS_LCD};
+                        NGUOI_SUA_GD_HS_LNS_LCD,
+                        MA_LOAI_HOP_DONG,
+                        MA_TU_DIEN};
                 rowV_F330_LEN_LUONG_CHO_NVRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_F330_LEN_LUONG_CHO_NVRow);
                 return rowV_F330_LEN_LUONG_CHO_NVRow;
@@ -910,7 +934,6 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnID_HOP_DONG = base.Columns["ID_HOP_DONG"];
                 this.columnID_LOAI_HOP_DONG = base.Columns["ID_LOAI_HOP_DONG"];
                 this.columnLOAI_HOP_DONG = base.Columns["LOAI_HOP_DONG"];
-                this.columnMA_LOAI_HOP_DONG = base.Columns["MA_LOAI_HOP_DONG"];
                 this.columnMA_HOP_DONG = base.Columns["MA_HOP_DONG"];
                 this.columnNGAY_BAT_DAU = base.Columns["NGAY_BAT_DAU"];
                 this.columnNGAY_KET_THUC = base.Columns["NGAY_KET_THUC"];
@@ -935,6 +958,7 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnTEN_MUC_LNS = base.Columns["TEN_MUC_LNS"];
                 this.columnHE_SO_LNS = base.Columns["HE_SO_LNS"];
                 this.columnID_LOAI_LAO_DONG = base.Columns["ID_LOAI_LAO_DONG"];
+                this.columnID_LCD = base.Columns["ID_LCD"];
                 this.columnID_MA_LCD = base.Columns["ID_MA_LCD"];
                 this.columnMA_LCD = base.Columns["MA_LCD"];
                 this.columnTEN_MA_LCD = base.Columns["TEN_MA_LCD"];
@@ -946,6 +970,8 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnNGAY_SUA_GD_HS_LNS_LCD = base.Columns["NGAY_SUA_GD_HS_LNS_LCD"];
                 this.columnNGUOI_LAP_GD_HS_LNS_LCD = base.Columns["NGUOI_LAP_GD_HS_LNS_LCD"];
                 this.columnNGUOI_SUA_GD_HS_LNS_LCD = base.Columns["NGUOI_SUA_GD_HS_LNS_LCD"];
+                this.columnMA_LOAI_HOP_DONG = base.Columns["MA_LOAI_HOP_DONG"];
+                this.columnMA_TU_DIEN = base.Columns["MA_TU_DIEN"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -967,8 +993,6 @@ namespace BKI_DichVuMatDat.DS {
                 base.Columns.Add(this.columnID_LOAI_HOP_DONG);
                 this.columnLOAI_HOP_DONG = new global::System.Data.DataColumn("LOAI_HOP_DONG", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLOAI_HOP_DONG);
-                this.columnMA_LOAI_HOP_DONG = new global::System.Data.DataColumn("MA_LOAI_HOP_DONG", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMA_LOAI_HOP_DONG);
                 this.columnMA_HOP_DONG = new global::System.Data.DataColumn("MA_HOP_DONG", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMA_HOP_DONG);
                 this.columnNGAY_BAT_DAU = new global::System.Data.DataColumn("NGAY_BAT_DAU", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -1017,6 +1041,8 @@ namespace BKI_DichVuMatDat.DS {
                 base.Columns.Add(this.columnHE_SO_LNS);
                 this.columnID_LOAI_LAO_DONG = new global::System.Data.DataColumn("ID_LOAI_LAO_DONG", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_LOAI_LAO_DONG);
+                this.columnID_LCD = new global::System.Data.DataColumn("ID_LCD", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_LCD);
                 this.columnID_MA_LCD = new global::System.Data.DataColumn("ID_MA_LCD", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_MA_LCD);
                 this.columnMA_LCD = new global::System.Data.DataColumn("MA_LCD", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1039,6 +1065,10 @@ namespace BKI_DichVuMatDat.DS {
                 base.Columns.Add(this.columnNGUOI_LAP_GD_HS_LNS_LCD);
                 this.columnNGUOI_SUA_GD_HS_LNS_LCD = new global::System.Data.DataColumn("NGUOI_SUA_GD_HS_LNS_LCD", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGUOI_SUA_GD_HS_LNS_LCD);
+                this.columnMA_LOAI_HOP_DONG = new global::System.Data.DataColumn("MA_LOAI_HOP_DONG", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMA_LOAI_HOP_DONG);
+                this.columnMA_TU_DIEN = new global::System.Data.DataColumn("MA_TU_DIEN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMA_TU_DIEN);
                 this.columnID.AllowDBNull = false;
                 this.columnMA_NV.AllowDBNull = false;
                 this.columnMA_NV.MaxLength = 15;
@@ -1049,7 +1079,6 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnHO_TEN.ReadOnly = true;
                 this.columnHO_TEN.MaxLength = 101;
                 this.columnLOAI_HOP_DONG.MaxLength = 250;
-                this.columnMA_LOAI_HOP_DONG.MaxLength = 15;
                 this.columnMA_HOP_DONG.MaxLength = 50;
                 this.columnNGUOI_LAP.MaxLength = 250;
                 this.columnNGUOI_SUA.MaxLength = 250;
@@ -1067,6 +1096,8 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnTEN_MUC_LCD.MaxLength = 50;
                 this.columnNGUOI_LAP_GD_HS_LNS_LCD.MaxLength = 250;
                 this.columnNGUOI_SUA_GD_HS_LNS_LCD.MaxLength = 250;
+                this.columnMA_LOAI_HOP_DONG.MaxLength = 15;
+                this.columnMA_TU_DIEN.MaxLength = 15;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1314,23 +1345,6 @@ namespace BKI_DichVuMatDat.DS {
                 }
                 set {
                     this[this.tableV_F330_LEN_LUONG_CHO_NV.LOAI_HOP_DONGColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string MA_LOAI_HOP_DONG {
-                get {
-                    try {
-                        return ((string)(this[this.tableV_F330_LEN_LUONG_CHO_NV.MA_LOAI_HOP_DONGColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MA_LOAI_HOP_DONG\' in table \'V_F330_LEN_LUONG_CHO_NV\' is DBN" +
-                                "ull.", e);
-                    }
-                }
-                set {
-                    this[this.tableV_F330_LEN_LUONG_CHO_NV.MA_LOAI_HOP_DONGColumn] = value;
                 }
             }
             
@@ -1727,6 +1741,22 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_LCD {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_F330_LEN_LUONG_CHO_NV.ID_LCDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_LCD\' in table \'V_F330_LEN_LUONG_CHO_NV\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_F330_LEN_LUONG_CHO_NV.ID_LCDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal ID_MA_LCD {
                 get {
                     try {
@@ -1907,6 +1937,39 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MA_LOAI_HOP_DONG {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_F330_LEN_LUONG_CHO_NV.MA_LOAI_HOP_DONGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MA_LOAI_HOP_DONG\' in table \'V_F330_LEN_LUONG_CHO_NV\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_F330_LEN_LUONG_CHO_NV.MA_LOAI_HOP_DONGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MA_TU_DIEN {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_F330_LEN_LUONG_CHO_NV.MA_TU_DIENColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MA_TU_DIEN\' in table \'V_F330_LEN_LUONG_CHO_NV\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_F330_LEN_LUONG_CHO_NV.MA_TU_DIENColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsHO_TENNull() {
                 return this.IsNull(this.tableV_F330_LEN_LUONG_CHO_NV.HO_TENColumn);
             }
@@ -1951,18 +2014,6 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetLOAI_HOP_DONGNull() {
                 this[this.tableV_F330_LEN_LUONG_CHO_NV.LOAI_HOP_DONGColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsMA_LOAI_HOP_DONGNull() {
-                return this.IsNull(this.tableV_F330_LEN_LUONG_CHO_NV.MA_LOAI_HOP_DONGColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetMA_LOAI_HOP_DONGNull() {
-                this[this.tableV_F330_LEN_LUONG_CHO_NV.MA_LOAI_HOP_DONGColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2255,6 +2306,18 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_LCDNull() {
+                return this.IsNull(this.tableV_F330_LEN_LUONG_CHO_NV.ID_LCDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_LCDNull() {
+                this[this.tableV_F330_LEN_LUONG_CHO_NV.ID_LCDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsID_MA_LCDNull() {
                 return this.IsNull(this.tableV_F330_LEN_LUONG_CHO_NV.ID_MA_LCDColumn);
             }
@@ -2383,6 +2446,30 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNGUOI_SUA_GD_HS_LNS_LCDNull() {
                 this[this.tableV_F330_LEN_LUONG_CHO_NV.NGUOI_SUA_GD_HS_LNS_LCDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMA_LOAI_HOP_DONGNull() {
+                return this.IsNull(this.tableV_F330_LEN_LUONG_CHO_NV.MA_LOAI_HOP_DONGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMA_LOAI_HOP_DONGNull() {
+                this[this.tableV_F330_LEN_LUONG_CHO_NV.MA_LOAI_HOP_DONGColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMA_TU_DIENNull() {
+                return this.IsNull(this.tableV_F330_LEN_LUONG_CHO_NV.MA_TU_DIENColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMA_TU_DIENNull() {
+                this[this.tableV_F330_LEN_LUONG_CHO_NV.MA_TU_DIENColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2553,7 +2640,6 @@ namespace BKI_DichVuMatDat.DS.DS_V_F330_LEN_LUONG_CHO_NVTableAdapters {
             tableMapping.ColumnMappings.Add("ID_HOP_DONG", "ID_HOP_DONG");
             tableMapping.ColumnMappings.Add("ID_LOAI_HOP_DONG", "ID_LOAI_HOP_DONG");
             tableMapping.ColumnMappings.Add("LOAI_HOP_DONG", "LOAI_HOP_DONG");
-            tableMapping.ColumnMappings.Add("MA_LOAI_HOP_DONG", "MA_LOAI_HOP_DONG");
             tableMapping.ColumnMappings.Add("MA_HOP_DONG", "MA_HOP_DONG");
             tableMapping.ColumnMappings.Add("NGAY_BAT_DAU", "NGAY_BAT_DAU");
             tableMapping.ColumnMappings.Add("NGAY_KET_THUC", "NGAY_KET_THUC");
@@ -2578,6 +2664,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_F330_LEN_LUONG_CHO_NVTableAdapters {
             tableMapping.ColumnMappings.Add("TEN_MUC_LNS", "TEN_MUC_LNS");
             tableMapping.ColumnMappings.Add("HE_SO_LNS", "HE_SO_LNS");
             tableMapping.ColumnMappings.Add("ID_LOAI_LAO_DONG", "ID_LOAI_LAO_DONG");
+            tableMapping.ColumnMappings.Add("ID_LCD", "ID_LCD");
             tableMapping.ColumnMappings.Add("ID_MA_LCD", "ID_MA_LCD");
             tableMapping.ColumnMappings.Add("MA_LCD", "MA_LCD");
             tableMapping.ColumnMappings.Add("TEN_MA_LCD", "TEN_MA_LCD");
@@ -2589,6 +2676,8 @@ namespace BKI_DichVuMatDat.DS.DS_V_F330_LEN_LUONG_CHO_NVTableAdapters {
             tableMapping.ColumnMappings.Add("NGAY_SUA_GD_HS_LNS_LCD", "NGAY_SUA_GD_HS_LNS_LCD");
             tableMapping.ColumnMappings.Add("NGUOI_LAP_GD_HS_LNS_LCD", "NGUOI_LAP_GD_HS_LNS_LCD");
             tableMapping.ColumnMappings.Add("NGUOI_SUA_GD_HS_LNS_LCD", "NGUOI_SUA_GD_HS_LNS_LCD");
+            tableMapping.ColumnMappings.Add("MA_LOAI_HOP_DONG", "MA_LOAI_HOP_DONG");
+            tableMapping.ColumnMappings.Add("MA_TU_DIEN", "MA_TU_DIEN");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2605,7 +2694,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_F330_LEN_LUONG_CHO_NVTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID, MA_NV, HO_DEM, TEN, HO_TEN, ID_HOP_DONG, ID_LOAI_HOP_DONG, LOAI_HOP_DONG, MA_LOAI_HOP_DONG, MA_HOP_DONG, NGAY_BAT_DAU, NGAY_KET_THUC, NGAY_KY_HOP_DONG, NGAY_LAP, NGAY_SUA, NGUOI_LAP, NGUOI_SUA, DA_XOA, ID_GD_HS_LNS_LCD, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_QD, MA_LOAI_QD, TEN_LOAI_QD, ID_HS_LNS, ID_MA_LNS, MA_LNS, TEN_MA_LNS, ID_MUC_LNS, MUC_LNS, TEN_MUC_LNS, HE_SO_LNS, ID_LOAI_LAO_DONG, ID_MA_LCD, MA_LCD, TEN_MA_LCD, ID_MUC_LCD, MUC_LCD, TEN_MUC_LCD, SO_TIEN_LCD, NGAY_LAP_GD_HS_LNS_LCD, NGAY_SUA_GD_HS_LNS_LCD, NGUOI_LAP_GD_HS_LNS_LCD, NGUOI_SUA_GD_HS_LNS_LCD FROM dbo.V_F330_LEN_LUONG_CHO_NV";
+            this._commandCollection[0].CommandText = @"SELECT ID, MA_NV, HO_DEM, TEN, HO_TEN, ID_HOP_DONG, ID_LOAI_HOP_DONG, LOAI_HOP_DONG, MA_HOP_DONG, NGAY_BAT_DAU, NGAY_KET_THUC, NGAY_KY_HOP_DONG, NGAY_LAP, NGAY_SUA, NGUOI_LAP, NGUOI_SUA, DA_XOA, ID_GD_HS_LNS_LCD, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_QD, MA_LOAI_QD, TEN_LOAI_QD, ID_HS_LNS, ID_MA_LNS, MA_LNS, TEN_MA_LNS, ID_MUC_LNS, MUC_LNS, TEN_MUC_LNS, HE_SO_LNS, ID_LOAI_LAO_DONG, ID_LCD, ID_MA_LCD, MA_LCD, TEN_MA_LCD, ID_MUC_LCD, MUC_LCD, TEN_MUC_LCD, SO_TIEN_LCD, NGAY_LAP_GD_HS_LNS_LCD, NGAY_SUA_GD_HS_LNS_LCD, NGUOI_LAP_GD_HS_LNS_LCD, NGUOI_SUA_GD_HS_LNS_LCD, MA_LOAI_HOP_DONG, MA_TU_DIEN FROM dbo.V_F330_LEN_LUONG_CHO_NV";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

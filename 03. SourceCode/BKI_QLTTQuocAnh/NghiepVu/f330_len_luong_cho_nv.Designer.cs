@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f330_len_luong_cho_nv));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.m_grc_LCD = new DevExpress.XtraEditors.GroupControl();
+            this.m_gr_LCD = new DevExpress.XtraEditors.GroupControl();
             this.m_lbl_so_tien_lcd = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.m_sle_chuc_danh_lcd = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -41,7 +41,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.m_sle_muc_lcd = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.m_grc_LNS = new DevExpress.XtraEditors.GroupControl();
+            this.m_gr_LNS = new DevExpress.XtraEditors.GroupControl();
             this.m_lbl_hs_lns = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.m_sle_chuc_danh_lns = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -50,7 +50,7 @@
             this.m_sle_muc_lns = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label13 = new System.Windows.Forms.Label();
-            this.m_grc_thong_tin_co_ban = new DevExpress.XtraEditors.GroupControl();
+            this.m_gr_thong_tin_co_ban = new DevExpress.XtraEditors.GroupControl();
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -66,8 +66,8 @@
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.m_cmd_len_luong_cho_nv = new SIS.Controls.Button.SiSButton();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.m_grc_tang_giam_luong_cho_nv = new DevExpress.XtraGrid.GridControl();
+            this.m_grv_tang_giam_luong_cho_nv = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -86,28 +86,28 @@
             this.NGUOI_LAP_GD_HS_LNS_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGUOI_SUA_GD_HS_LNS_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc_LCD)).BeginInit();
-            this.m_grc_LCD.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_gr_LCD)).BeginInit();
+            this.m_gr_LCD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chuc_danh_lcd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_muc_lcd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc_LNS)).BeginInit();
-            this.m_grc_LNS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_gr_LNS)).BeginInit();
+            this.m_gr_LNS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chuc_danh_lns.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_muc_lns.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc_thong_tin_co_ban)).BeginInit();
-            this.m_grc_thong_tin_co_ban.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_co_ban)).BeginInit();
+            this.m_gr_thong_tin_co_ban.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_quyet_dinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc_tang_giam_luong_cho_nv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_tang_giam_luong_cho_nv)).BeginInit();
             this.SuspendLayout();
             // 
             // m_lbl_header
@@ -117,39 +117,38 @@
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(1215, 44);
-            this.m_lbl_header.TabIndex = 1;
+            this.m_lbl_header.Size = new System.Drawing.Size(1215, 52);
+            this.m_lbl_header.TabIndex = 0;
             this.m_lbl_header.Text = "TĂNG - GIẢM LƯƠNG CHO NHÂN VIÊN";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_lbl_header.Click += new System.EventHandler(this.m_lbl_header_Click);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.m_grc_LCD);
-            this.panel2.Controls.Add(this.m_grc_LNS);
-            this.panel2.Controls.Add(this.m_grc_thong_tin_co_ban);
+            this.panel2.Controls.Add(this.m_gr_LCD);
+            this.panel2.Controls.Add(this.m_gr_LNS);
+            this.panel2.Controls.Add(this.m_gr_thong_tin_co_ban);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 44);
+            this.panel2.Location = new System.Drawing.Point(0, 52);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1215, 132);
-            this.panel2.TabIndex = 20;
+            this.panel2.TabIndex = 1;
             // 
-            // m_grc_LCD
+            // m_gr_LCD
             // 
-            this.m_grc_LCD.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_grc_LCD.Appearance.Options.UseFont = true;
-            this.m_grc_LCD.Controls.Add(this.m_lbl_so_tien_lcd);
-            this.m_grc_LCD.Controls.Add(this.label10);
-            this.m_grc_LCD.Controls.Add(this.m_sle_chuc_danh_lcd);
-            this.m_grc_LCD.Controls.Add(this.label5);
-            this.m_grc_LCD.Controls.Add(this.label6);
-            this.m_grc_LCD.Controls.Add(this.m_sle_muc_lcd);
-            this.m_grc_LCD.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_grc_LCD.Location = new System.Drawing.Point(670, 0);
-            this.m_grc_LCD.Name = "m_grc_LCD";
-            this.m_grc_LCD.Size = new System.Drawing.Size(335, 132);
-            this.m_grc_LCD.TabIndex = 19;
-            this.m_grc_LCD.Text = "THÔNG TIN LƯƠNG CHẾ ĐỘ";
+            this.m_gr_LCD.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_gr_LCD.Appearance.Options.UseFont = true;
+            this.m_gr_LCD.Controls.Add(this.m_lbl_so_tien_lcd);
+            this.m_gr_LCD.Controls.Add(this.label10);
+            this.m_gr_LCD.Controls.Add(this.m_sle_chuc_danh_lcd);
+            this.m_gr_LCD.Controls.Add(this.label5);
+            this.m_gr_LCD.Controls.Add(this.label6);
+            this.m_gr_LCD.Controls.Add(this.m_sle_muc_lcd);
+            this.m_gr_LCD.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_gr_LCD.Location = new System.Drawing.Point(670, 0);
+            this.m_gr_LCD.Name = "m_gr_LCD";
+            this.m_gr_LCD.Size = new System.Drawing.Size(335, 132);
+            this.m_gr_LCD.TabIndex = 2;
+            this.m_gr_LCD.Text = "THÔNG TIN LƯƠNG CHẾ ĐỘ";
             // 
             // m_lbl_so_tien_lcd
             // 
@@ -157,7 +156,7 @@
             this.m_lbl_so_tien_lcd.Location = new System.Drawing.Point(117, 93);
             this.m_lbl_so_tien_lcd.Name = "m_lbl_so_tien_lcd";
             this.m_lbl_so_tien_lcd.Size = new System.Drawing.Size(16, 13);
-            this.m_lbl_so_tien_lcd.TabIndex = 20;
+            this.m_lbl_so_tien_lcd.TabIndex = 5;
             this.m_lbl_so_tien_lcd.Text = "...";
             // 
             // label10
@@ -166,7 +165,7 @@
             this.label10.Location = new System.Drawing.Point(4, 93);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 13);
-            this.label10.TabIndex = 19;
+            this.label10.TabIndex = 4;
             this.label10.Text = "Số tiền LCĐ";
             // 
             // m_sle_chuc_danh_lcd
@@ -179,7 +178,7 @@
             this.m_sle_chuc_danh_lcd.Properties.NullText = "";
             this.m_sle_chuc_danh_lcd.Properties.View = this.gridView2;
             this.m_sle_chuc_danh_lcd.Size = new System.Drawing.Size(208, 20);
-            this.m_sle_chuc_danh_lcd.TabIndex = 16;
+            this.m_sle_chuc_danh_lcd.TabIndex = 1;
             // 
             // gridView2
             // 
@@ -194,7 +193,7 @@
             this.label5.Location = new System.Drawing.Point(4, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 13);
-            this.label5.TabIndex = 15;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Chọn chức danh";
             // 
             // label6
@@ -203,7 +202,7 @@
             this.label6.Location = new System.Drawing.Point(4, 69);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
-            this.label6.TabIndex = 17;
+            this.label6.TabIndex = 2;
             this.label6.Text = "Chọn mức";
             // 
             // m_sle_muc_lcd
@@ -216,7 +215,7 @@
             this.m_sle_muc_lcd.Properties.NullText = "";
             this.m_sle_muc_lcd.Properties.View = this.gridView3;
             this.m_sle_muc_lcd.Size = new System.Drawing.Size(208, 20);
-            this.m_sle_muc_lcd.TabIndex = 18;
+            this.m_sle_muc_lcd.TabIndex = 3;
             // 
             // gridView3
             // 
@@ -225,22 +224,22 @@
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
-            // m_grc_LNS
+            // m_gr_LNS
             // 
-            this.m_grc_LNS.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_grc_LNS.Appearance.Options.UseFont = true;
-            this.m_grc_LNS.Controls.Add(this.m_lbl_hs_lns);
-            this.m_grc_LNS.Controls.Add(this.label8);
-            this.m_grc_LNS.Controls.Add(this.m_sle_chuc_danh_lns);
-            this.m_grc_LNS.Controls.Add(this.label11);
-            this.m_grc_LNS.Controls.Add(this.m_sle_muc_lns);
-            this.m_grc_LNS.Controls.Add(this.label13);
-            this.m_grc_LNS.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_grc_LNS.Location = new System.Drawing.Point(337, 0);
-            this.m_grc_LNS.Name = "m_grc_LNS";
-            this.m_grc_LNS.Size = new System.Drawing.Size(333, 132);
-            this.m_grc_LNS.TabIndex = 19;
-            this.m_grc_LNS.Text = "THÔNG TIN LƯƠNG NĂNG SUÂT";
+            this.m_gr_LNS.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_gr_LNS.Appearance.Options.UseFont = true;
+            this.m_gr_LNS.Controls.Add(this.m_lbl_hs_lns);
+            this.m_gr_LNS.Controls.Add(this.label8);
+            this.m_gr_LNS.Controls.Add(this.m_sle_chuc_danh_lns);
+            this.m_gr_LNS.Controls.Add(this.label11);
+            this.m_gr_LNS.Controls.Add(this.m_sle_muc_lns);
+            this.m_gr_LNS.Controls.Add(this.label13);
+            this.m_gr_LNS.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_gr_LNS.Location = new System.Drawing.Point(337, 0);
+            this.m_gr_LNS.Name = "m_gr_LNS";
+            this.m_gr_LNS.Size = new System.Drawing.Size(333, 132);
+            this.m_gr_LNS.TabIndex = 1;
+            this.m_gr_LNS.Text = "THÔNG TIN LƯƠNG NĂNG SUÂT";
             // 
             // m_lbl_hs_lns
             // 
@@ -248,7 +247,7 @@
             this.m_lbl_hs_lns.Location = new System.Drawing.Point(115, 93);
             this.m_lbl_hs_lns.Name = "m_lbl_hs_lns";
             this.m_lbl_hs_lns.Size = new System.Drawing.Size(16, 13);
-            this.m_lbl_hs_lns.TabIndex = 18;
+            this.m_lbl_hs_lns.TabIndex = 5;
             this.m_lbl_hs_lns.Text = "...";
             // 
             // label8
@@ -257,7 +256,7 @@
             this.label8.Location = new System.Drawing.Point(3, 93);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 13);
-            this.label8.TabIndex = 17;
+            this.label8.TabIndex = 4;
             this.label8.Text = "Hệ số LNS";
             // 
             // m_sle_chuc_danh_lns
@@ -270,7 +269,7 @@
             this.m_sle_chuc_danh_lns.Properties.NullText = "";
             this.m_sle_chuc_danh_lns.Properties.View = this.gridView4;
             this.m_sle_chuc_danh_lns.Size = new System.Drawing.Size(208, 20);
-            this.m_sle_chuc_danh_lns.TabIndex = 12;
+            this.m_sle_chuc_danh_lns.TabIndex = 1;
             // 
             // gridView4
             // 
@@ -285,7 +284,7 @@
             this.label11.Location = new System.Drawing.Point(3, 41);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(86, 13);
-            this.label11.TabIndex = 11;
+            this.label11.TabIndex = 0;
             this.label11.Text = "Chọn chức danh";
             // 
             // m_sle_muc_lns
@@ -298,7 +297,7 @@
             this.m_sle_muc_lns.Properties.NullText = "";
             this.m_sle_muc_lns.Properties.View = this.gridView5;
             this.m_sle_muc_lns.Size = new System.Drawing.Size(208, 20);
-            this.m_sle_muc_lns.TabIndex = 14;
+            this.m_sle_muc_lns.TabIndex = 3;
             // 
             // gridView5
             // 
@@ -313,23 +312,23 @@
             this.label13.Location = new System.Drawing.Point(3, 69);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(55, 13);
-            this.label13.TabIndex = 13;
+            this.label13.TabIndex = 2;
             this.label13.Text = "Chọn mức";
             // 
-            // m_grc_thong_tin_co_ban
+            // m_gr_thong_tin_co_ban
             // 
-            this.m_grc_thong_tin_co_ban.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_grc_thong_tin_co_ban.Appearance.Options.UseFont = true;
-            this.m_grc_thong_tin_co_ban.Controls.Add(this.m_sle_chon_nhan_vien);
-            this.m_grc_thong_tin_co_ban.Controls.Add(this.label1);
-            this.m_grc_thong_tin_co_ban.Controls.Add(this.m_sle_chon_quyet_dinh);
-            this.m_grc_thong_tin_co_ban.Controls.Add(this.label2);
-            this.m_grc_thong_tin_co_ban.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_grc_thong_tin_co_ban.Location = new System.Drawing.Point(0, 0);
-            this.m_grc_thong_tin_co_ban.Name = "m_grc_thong_tin_co_ban";
-            this.m_grc_thong_tin_co_ban.Size = new System.Drawing.Size(337, 132);
-            this.m_grc_thong_tin_co_ban.TabIndex = 3;
-            this.m_grc_thong_tin_co_ban.Text = "THÔNG TIN CƠ BẢN";
+            this.m_gr_thong_tin_co_ban.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_gr_thong_tin_co_ban.Appearance.Options.UseFont = true;
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_sle_chon_nhan_vien);
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.label1);
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_sle_chon_quyet_dinh);
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.label2);
+            this.m_gr_thong_tin_co_ban.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_gr_thong_tin_co_ban.Location = new System.Drawing.Point(0, 0);
+            this.m_gr_thong_tin_co_ban.Name = "m_gr_thong_tin_co_ban";
+            this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(337, 132);
+            this.m_gr_thong_tin_co_ban.TabIndex = 0;
+            this.m_gr_thong_tin_co_ban.Text = "THÔNG TIN CƠ BẢN";
             // 
             // m_sle_chon_nhan_vien
             // 
@@ -341,7 +340,7 @@
             this.m_sle_chon_nhan_vien.Properties.NullText = "";
             this.m_sle_chon_nhan_vien.Properties.View = this.searchLookUpEdit1View;
             this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(208, 20);
-            this.m_sle_chon_nhan_vien.TabIndex = 12;
+            this.m_sle_chon_nhan_vien.TabIndex = 1;
             // 
             // searchLookUpEdit1View
             // 
@@ -356,7 +355,7 @@
             this.label1.Location = new System.Drawing.Point(3, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 13);
-            this.label1.TabIndex = 11;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Chọn nhân viên (*)";
             // 
             // m_sle_chon_quyet_dinh
@@ -369,7 +368,7 @@
             this.m_sle_chon_quyet_dinh.Properties.NullText = "";
             this.m_sle_chon_quyet_dinh.Properties.View = this.gridView1;
             this.m_sle_chon_quyet_dinh.Size = new System.Drawing.Size(208, 20);
-            this.m_sle_chon_quyet_dinh.TabIndex = 14;
+            this.m_sle_chon_quyet_dinh.TabIndex = 3;
             // 
             // gridView1
             // 
@@ -384,7 +383,7 @@
             this.label2.Location = new System.Drawing.Point(3, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 13);
-            this.label2.TabIndex = 13;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Chọn quyết định (*)";
             // 
             // imageList1
@@ -452,7 +451,7 @@
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1215, 49);
-            this.m_pnl_out_place_dm.TabIndex = 21;
+            this.m_pnl_out_place_dm.TabIndex = 4;
             // 
             // simpleButton1
             // 
@@ -462,7 +461,7 @@
             this.simpleButton1.Location = new System.Drawing.Point(180, 4);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(66, 41);
-            this.simpleButton1.TabIndex = 9;
+            this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "simpleButton1";
             this.simpleButton1.Visible = false;
             // 
@@ -493,7 +492,7 @@
             this.m_cmd_update.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 41);
-            this.m_cmd_update.TabIndex = 2;
+            this.m_cmd_update.TabIndex = 0;
             this.m_cmd_update.Text = "&Sửa";
             this.m_cmd_update.Visible = false;
             // 
@@ -509,7 +508,7 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(1123, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 41);
-            this.m_cmd_exit.TabIndex = 4;
+            this.m_cmd_exit.TabIndex = 3;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             this.m_cmd_exit.Visible = false;
             // 
@@ -517,10 +516,10 @@
             // 
             this.panel3.Controls.Add(this.m_cmd_len_luong_cho_nv);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 176);
+            this.panel3.Location = new System.Drawing.Point(0, 184);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1215, 55);
-            this.panel3.TabIndex = 22;
+            this.panel3.TabIndex = 2;
             // 
             // m_cmd_len_luong_cho_nv
             // 
@@ -534,24 +533,24 @@
             this.m_cmd_len_luong_cho_nv.Location = new System.Drawing.Point(0, 0);
             this.m_cmd_len_luong_cho_nv.Name = "m_cmd_len_luong_cho_nv";
             this.m_cmd_len_luong_cho_nv.Size = new System.Drawing.Size(180, 55);
-            this.m_cmd_len_luong_cho_nv.TabIndex = 10;
+            this.m_cmd_len_luong_cho_nv.TabIndex = 0;
             this.m_cmd_len_luong_cho_nv.Text = "&Lên lương cho nhân viên";
             // 
-            // gridControl1
+            // m_grc_tang_giam_luong_cho_nv
             // 
-            this.gridControl1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 231);
-            this.gridControl1.MainView = this.gridView6;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1215, 219);
-            this.gridControl1.TabIndex = 23;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView6});
+            this.m_grc_tang_giam_luong_cho_nv.Cursor = System.Windows.Forms.Cursors.Default;
+            this.m_grc_tang_giam_luong_cho_nv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_grc_tang_giam_luong_cho_nv.Location = new System.Drawing.Point(0, 239);
+            this.m_grc_tang_giam_luong_cho_nv.MainView = this.m_grv_tang_giam_luong_cho_nv;
+            this.m_grc_tang_giam_luong_cho_nv.Name = "m_grc_tang_giam_luong_cho_nv";
+            this.m_grc_tang_giam_luong_cho_nv.Size = new System.Drawing.Size(1215, 211);
+            this.m_grc_tang_giam_luong_cho_nv.TabIndex = 3;
+            this.m_grc_tang_giam_luong_cho_nv.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.m_grv_tang_giam_luong_cho_nv});
             // 
-            // gridView6
+            // m_grv_tang_giam_luong_cho_nv
             // 
-            this.gridView6.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.m_grv_tang_giam_luong_cho_nv.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
             this.ID_HOP_DONG,
             this.STT,
@@ -569,11 +568,11 @@
             this.NGAY_SUA_GD_HS_LNS_LCD,
             this.NGUOI_LAP_GD_HS_LNS_LCD,
             this.NGUOI_SUA_GD_HS_LNS_LCD});
-            this.gridView6.GridControl = this.gridControl1;
-            this.gridView6.Name = "gridView6";
-            this.gridView6.OptionsFind.AllowFindPanel = false;
-            this.gridView6.OptionsFind.AlwaysVisible = true;
-            this.gridView6.OptionsView.ShowFooter = true;
+            this.m_grv_tang_giam_luong_cho_nv.GridControl = this.m_grc_tang_giam_luong_cho_nv;
+            this.m_grv_tang_giam_luong_cho_nv.Name = "m_grv_tang_giam_luong_cho_nv";
+            this.m_grv_tang_giam_luong_cho_nv.OptionsFind.AllowFindPanel = false;
+            this.m_grv_tang_giam_luong_cho_nv.OptionsFind.AlwaysVisible = true;
+            this.m_grv_tang_giam_luong_cho_nv.OptionsView.ShowFooter = true;
             // 
             // ID
             // 
@@ -788,7 +787,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1215, 499);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.m_grc_tang_giam_luong_cho_nv);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -796,31 +795,31 @@
             this.Name = "f330_len_luong_cho_nv";
             this.Text = "F330 - Tăng, giảm lương cho nhân viên";
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc_LCD)).EndInit();
-            this.m_grc_LCD.ResumeLayout(false);
-            this.m_grc_LCD.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_gr_LCD)).EndInit();
+            this.m_gr_LCD.ResumeLayout(false);
+            this.m_gr_LCD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chuc_danh_lcd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_muc_lcd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc_LNS)).EndInit();
-            this.m_grc_LNS.ResumeLayout(false);
-            this.m_grc_LNS.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_gr_LNS)).EndInit();
+            this.m_gr_LNS.ResumeLayout(false);
+            this.m_gr_LNS.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chuc_danh_lns.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_muc_lns.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc_thong_tin_co_ban)).EndInit();
-            this.m_grc_thong_tin_co_ban.ResumeLayout(false);
-            this.m_grc_thong_tin_co_ban.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_co_ban)).EndInit();
+            this.m_gr_thong_tin_co_ban.ResumeLayout(false);
+            this.m_gr_thong_tin_co_ban.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_quyet_dinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc_tang_giam_luong_cho_nv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_tang_giam_luong_cho_nv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -829,21 +828,21 @@
 
         private System.Windows.Forms.Label m_lbl_header;
         private System.Windows.Forms.Panel panel2;
-        private DevExpress.XtraEditors.GroupControl m_grc_LCD;
+        private DevExpress.XtraEditors.GroupControl m_gr_LCD;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chuc_danh_lcd;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_muc_lcd;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-        private DevExpress.XtraEditors.GroupControl m_grc_LNS;
+        private DevExpress.XtraEditors.GroupControl m_gr_LNS;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chuc_danh_lns;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private System.Windows.Forms.Label label11;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_muc_lns;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
         private System.Windows.Forms.Label label13;
-        private DevExpress.XtraEditors.GroupControl m_grc_thong_tin_co_ban;
+        private DevExpress.XtraEditors.GroupControl m_gr_thong_tin_co_ban;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chon_nhan_vien;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private System.Windows.Forms.Label label1;
@@ -859,8 +858,8 @@
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.Panel panel3;
         internal SIS.Controls.Button.SiSButton m_cmd_len_luong_cho_nv;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
+        private DevExpress.XtraGrid.GridControl m_grc_tang_giam_luong_cho_nv;
+        private DevExpress.XtraGrid.Views.Grid.GridView m_grv_tang_giam_luong_cho_nv;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraGrid.Columns.GridColumn ID_HOP_DONG;
         private DevExpress.XtraGrid.Columns.GridColumn STT;

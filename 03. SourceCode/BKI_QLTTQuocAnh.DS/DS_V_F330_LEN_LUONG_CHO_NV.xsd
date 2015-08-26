@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="BKI_DVMDConnectionString1 (Settings)" DbObjectName="BKI_DVMD.dbo.V_F330_LEN_LUONG_CHO_NV" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, MA_NV, HO_DEM, TEN, HO_TEN, ID_HOP_DONG, ID_LOAI_HOP_DONG, LOAI_HOP_DONG, MA_LOAI_HOP_DONG, MA_HOP_DONG, NGAY_BAT_DAU, NGAY_KET_THUC, NGAY_KY_HOP_DONG, NGAY_LAP, NGAY_SUA, NGUOI_LAP, NGUOI_SUA, DA_XOA, ID_GD_HS_LNS_LCD, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_QD, MA_LOAI_QD, TEN_LOAI_QD, ID_HS_LNS, ID_MA_LNS, MA_LNS, TEN_MA_LNS, ID_MUC_LNS, MUC_LNS, TEN_MUC_LNS, HE_SO_LNS, ID_LOAI_LAO_DONG, ID_MA_LCD, MA_LCD, TEN_MA_LCD, ID_MUC_LCD, MUC_LCD, TEN_MUC_LCD, SO_TIEN_LCD, NGAY_LAP_GD_HS_LNS_LCD, NGAY_SUA_GD_HS_LNS_LCD, NGUOI_LAP_GD_HS_LNS_LCD, NGUOI_SUA_GD_HS_LNS_LCD FROM dbo.V_F330_LEN_LUONG_CHO_NV</CommandText>
+                    <CommandText>SELECT ID, MA_NV, HO_DEM, TEN, HO_TEN, ID_HOP_DONG, ID_LOAI_HOP_DONG, LOAI_HOP_DONG, MA_HOP_DONG, NGAY_BAT_DAU, NGAY_KET_THUC, NGAY_KY_HOP_DONG, NGAY_LAP, NGAY_SUA, NGUOI_LAP, NGUOI_SUA, DA_XOA, ID_GD_HS_LNS_LCD, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_QD, MA_LOAI_QD, TEN_LOAI_QD, ID_HS_LNS, ID_MA_LNS, MA_LNS, TEN_MA_LNS, ID_MUC_LNS, MUC_LNS, TEN_MUC_LNS, HE_SO_LNS, ID_LOAI_LAO_DONG, ID_LCD, ID_MA_LCD, MA_LCD, TEN_MA_LCD, ID_MUC_LCD, MUC_LCD, TEN_MUC_LCD, SO_TIEN_LCD, NGAY_LAP_GD_HS_LNS_LCD, NGAY_SUA_GD_HS_LNS_LCD, NGUOI_LAP_GD_HS_LNS_LCD, NGUOI_SUA_GD_HS_LNS_LCD, MA_LOAI_HOP_DONG, MA_TU_DIEN FROM dbo.V_F330_LEN_LUONG_CHO_NV</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -27,7 +27,6 @@
               <Mapping SourceColumn="ID_HOP_DONG" DataSetColumn="ID_HOP_DONG" />
               <Mapping SourceColumn="ID_LOAI_HOP_DONG" DataSetColumn="ID_LOAI_HOP_DONG" />
               <Mapping SourceColumn="LOAI_HOP_DONG" DataSetColumn="LOAI_HOP_DONG" />
-              <Mapping SourceColumn="MA_LOAI_HOP_DONG" DataSetColumn="MA_LOAI_HOP_DONG" />
               <Mapping SourceColumn="MA_HOP_DONG" DataSetColumn="MA_HOP_DONG" />
               <Mapping SourceColumn="NGAY_BAT_DAU" DataSetColumn="NGAY_BAT_DAU" />
               <Mapping SourceColumn="NGAY_KET_THUC" DataSetColumn="NGAY_KET_THUC" />
@@ -52,6 +51,7 @@
               <Mapping SourceColumn="TEN_MUC_LNS" DataSetColumn="TEN_MUC_LNS" />
               <Mapping SourceColumn="HE_SO_LNS" DataSetColumn="HE_SO_LNS" />
               <Mapping SourceColumn="ID_LOAI_LAO_DONG" DataSetColumn="ID_LOAI_LAO_DONG" />
+              <Mapping SourceColumn="ID_LCD" DataSetColumn="ID_LCD" />
               <Mapping SourceColumn="ID_MA_LCD" DataSetColumn="ID_MA_LCD" />
               <Mapping SourceColumn="MA_LCD" DataSetColumn="MA_LCD" />
               <Mapping SourceColumn="TEN_MA_LCD" DataSetColumn="TEN_MA_LCD" />
@@ -63,6 +63,8 @@
               <Mapping SourceColumn="NGAY_SUA_GD_HS_LNS_LCD" DataSetColumn="NGAY_SUA_GD_HS_LNS_LCD" />
               <Mapping SourceColumn="NGUOI_LAP_GD_HS_LNS_LCD" DataSetColumn="NGUOI_LAP_GD_HS_LNS_LCD" />
               <Mapping SourceColumn="NGUOI_SUA_GD_HS_LNS_LCD" DataSetColumn="NGUOI_SUA_GD_HS_LNS_LCD" />
+              <Mapping SourceColumn="MA_LOAI_HOP_DONG" DataSetColumn="MA_LOAI_HOP_DONG" />
+              <Mapping SourceColumn="MA_TU_DIEN" DataSetColumn="MA_TU_DIEN" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -112,13 +114,6 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="MA_LOAI_HOP_DONG" msprop:Generator_ColumnVarNameInTable="columnMA_LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInRow="MA_LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInTable="MA_LOAI_HOP_DONGColumn" msprop:Generator_UserColumnName="MA_LOAI_HOP_DONG" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -212,6 +207,7 @@
               </xs:element>
               <xs:element name="HE_SO_LNS" msprop:Generator_ColumnVarNameInTable="columnHE_SO_LNS" msprop:Generator_ColumnPropNameInRow="HE_SO_LNS" msprop:Generator_ColumnPropNameInTable="HE_SO_LNSColumn" msprop:Generator_UserColumnName="HE_SO_LNS" type="xs:decimal" minOccurs="0" />
               <xs:element name="ID_LOAI_LAO_DONG" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_LAO_DONG" msprop:Generator_ColumnPropNameInRow="ID_LOAI_LAO_DONG" msprop:Generator_ColumnPropNameInTable="ID_LOAI_LAO_DONGColumn" msprop:Generator_UserColumnName="ID_LOAI_LAO_DONG" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_LCD" msprop:Generator_ColumnVarNameInTable="columnID_LCD" msprop:Generator_ColumnPropNameInRow="ID_LCD" msprop:Generator_ColumnPropNameInTable="ID_LCDColumn" msprop:Generator_UserColumnName="ID_LCD" type="xs:decimal" minOccurs="0" />
               <xs:element name="ID_MA_LCD" msprop:Generator_ColumnVarNameInTable="columnID_MA_LCD" msprop:Generator_ColumnPropNameInRow="ID_MA_LCD" msprop:Generator_ColumnPropNameInTable="ID_MA_LCDColumn" msprop:Generator_UserColumnName="ID_MA_LCD" type="xs:decimal" minOccurs="0" />
               <xs:element name="MA_LCD" msprop:Generator_ColumnVarNameInTable="columnMA_LCD" msprop:Generator_ColumnPropNameInRow="MA_LCD" msprop:Generator_ColumnPropNameInTable="MA_LCDColumn" msprop:Generator_UserColumnName="MA_LCD" minOccurs="0">
                 <xs:simpleType>
@@ -256,6 +252,20 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MA_LOAI_HOP_DONG" msprop:Generator_ColumnVarNameInTable="columnMA_LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInRow="MA_LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInTable="MA_LOAI_HOP_DONGColumn" msprop:Generator_UserColumnName="MA_LOAI_HOP_DONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MA_TU_DIEN" msprop:Generator_ColumnVarNameInTable="columnMA_TU_DIEN" msprop:Generator_ColumnPropNameInRow="MA_TU_DIEN" msprop:Generator_ColumnPropNameInTable="MA_TU_DIENColumn" msprop:Generator_UserColumnName="MA_TU_DIEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

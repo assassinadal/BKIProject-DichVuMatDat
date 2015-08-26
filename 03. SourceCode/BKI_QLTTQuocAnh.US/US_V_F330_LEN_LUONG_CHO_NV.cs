@@ -199,28 +199,6 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["LOAI_HOP_DONG"] = System.Convert.DBNull;
         }
 
-        public string strMA_LOAI_HOP_DONG
-        {
-            get
-            {
-                return CNull.RowNVLString(pm_objDR, "MA_LOAI_HOP_DONG", IPConstants.c_DefaultString);
-            }
-            set
-            {
-                pm_objDR["MA_LOAI_HOP_DONG"] = value;
-            }
-        }
-
-        public bool IsMA_LOAI_HOP_DONGNull()
-        {
-            return pm_objDR.IsNull("MA_LOAI_HOP_DONG");
-        }
-
-        public void SetMA_LOAI_HOP_DONGNull()
-        {
-            pm_objDR["MA_LOAI_HOP_DONG"] = System.Convert.DBNull;
-        }
-
         public string strMA_HOP_DONG
         {
             get
@@ -749,6 +727,28 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["ID_LOAI_LAO_DONG"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_LCD
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_LCD", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_LCD"] = value;
+            }
+        }
+
+        public bool IsID_LCDNull()
+        {
+            return pm_objDR.IsNull("ID_LCD");
+        }
+
+        public void SetID_LCDNull()
+        {
+            pm_objDR["ID_LCD"] = System.Convert.DBNull;
+        }
+
         public decimal dcID_MA_LCD
         {
             get
@@ -989,6 +989,50 @@ namespace BKI_DichVuMatDat.US
         public void SetNGUOI_SUA_GD_HS_LNS_LCDNull()
         {
             pm_objDR["NGUOI_SUA_GD_HS_LNS_LCD"] = System.Convert.DBNull;
+        }
+
+        public string strMA_LOAI_HOP_DONG
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "MA_LOAI_HOP_DONG", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["MA_LOAI_HOP_DONG"] = value;
+            }
+        }
+
+        public bool IsMA_LOAI_HOP_DONGNull()
+        {
+            return pm_objDR.IsNull("MA_LOAI_HOP_DONG");
+        }
+
+        public void SetMA_LOAI_HOP_DONGNull()
+        {
+            pm_objDR["MA_LOAI_HOP_DONG"] = System.Convert.DBNull;
+        }
+
+        public string strMA_TU_DIEN
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "MA_TU_DIEN", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["MA_TU_DIEN"] = value;
+            }
+        }
+
+        public bool IsMA_TU_DIENNull()
+        {
+            return pm_objDR.IsNull("MA_TU_DIEN");
+        }
+
+        public void SetMA_TU_DIENNull()
+        {
+            pm_objDR["MA_TU_DIEN"] = System.Convert.DBNull;
         }
 
         #endregion

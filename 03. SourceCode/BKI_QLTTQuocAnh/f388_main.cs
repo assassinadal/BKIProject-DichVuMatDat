@@ -279,6 +279,22 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void m_cmd_dm_phu_cap_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                DanhMuc.F107_dm_phu_cap v_frm = new DanhMuc.F107_dm_phu_cap();
+                if (IsExistFormName(v_frm)) return;
+
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
         private void m_cmd_dm_loai_hop_dong_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
@@ -338,6 +354,8 @@ namespace BKI_DichVuMatDat
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+
 
 
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -81,7 +82,8 @@
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.m_cmd_dm_phu_cap = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -132,9 +134,10 @@
             this.m_cmd_dat_hs_lns_lcd,
             this.m_cmd_quan_ly_vi_tri_cong_tac,
             this.m_cmd_dm_he_so_luong_ns,
-            this.m_cmd_dm_luong_che_do});
+            this.m_cmd_dm_luong_che_do,
+            this.m_cmd_dm_phu_cap});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 49;
+            this.ribbon.MaxItemId = 50;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -539,6 +542,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_thue);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_he_so_luong_ns);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_luong_che_do);
+            this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_phu_cap);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // ribbonPage3
@@ -595,6 +599,13 @@
             // MdiManager
             // 
             this.MdiManager.MdiParent = this;
+            // 
+            // m_cmd_dm_phu_cap
+            // 
+            this.m_cmd_dm_phu_cap.Caption = "Phụ cấp";
+            this.m_cmd_dm_phu_cap.Id = 49;
+            this.m_cmd_dm_phu_cap.Name = "m_cmd_dm_phu_cap";
+            this.m_cmd_dm_phu_cap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_dm_phu_cap_ItemClick);
             // 
             // f388_main
             // 
@@ -672,5 +683,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_he_so_luong_ns;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_luong_che_do;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_dm_phu_cap;
     }
 }

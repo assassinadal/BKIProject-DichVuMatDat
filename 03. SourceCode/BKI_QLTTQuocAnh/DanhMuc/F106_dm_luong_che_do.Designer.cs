@@ -30,12 +30,18 @@
         {
             this.m_grc_dm_luong_che_do = new DevExpress.XtraGrid.GridControl();
             this.m_grv_dm_luong_che_do = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_ma_lcd = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_muc_lcd = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_so_tien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_lbl_header = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_luong_che_do)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_luong_che_do)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_grc_dm_luong_che_do
@@ -45,7 +51,7 @@
             this.m_grc_dm_luong_che_do.Location = new System.Drawing.Point(0, 0);
             this.m_grc_dm_luong_che_do.MainView = this.m_grv_dm_luong_che_do;
             this.m_grc_dm_luong_che_do.Name = "m_grc_dm_luong_che_do";
-            this.m_grc_dm_luong_che_do.Size = new System.Drawing.Size(730, 261);
+            this.m_grc_dm_luong_che_do.Size = new System.Drawing.Size(730, 309);
             this.m_grc_dm_luong_che_do.TabIndex = 0;
             this.m_grc_dm_luong_che_do.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_dm_luong_che_do});
@@ -59,6 +65,20 @@
             this.c_so_tien});
             this.m_grv_dm_luong_che_do.GridControl = this.m_grc_dm_luong_che_do;
             this.m_grv_dm_luong_che_do.Name = "m_grv_dm_luong_che_do";
+            // 
+            // STT
+            // 
+            this.STT.AppearanceCell.Options.UseTextOptions = true;
+            this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.STT.Caption = "STT";
+            this.STT.FieldName = "STT";
+            this.STT.Name = "STT";
+            this.STT.Visible = true;
+            this.STT.VisibleIndex = 0;
+            this.STT.Width = 38;
             // 
             // c_ma_lcd
             // 
@@ -93,31 +113,59 @@
             this.c_so_tien.VisibleIndex = 3;
             this.c_so_tien.Width = 226;
             // 
-            // STT
+            // panel1
             // 
-            this.STT.AppearanceCell.Options.UseTextOptions = true;
-            this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.STT.AppearanceHeader.Options.UseTextOptions = true;
-            this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.STT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.STT.Caption = "STT";
-            this.STT.FieldName = "STT";
-            this.STT.Name = "STT";
-            this.STT.Visible = true;
-            this.STT.VisibleIndex = 0;
-            this.STT.Width = 38;
+            this.panel1.Controls.Add(this.m_lbl_header);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(730, 44);
+            this.panel1.TabIndex = 2;
+            // 
+            // m_lbl_header
+            // 
+            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_header.Name = "m_lbl_header";
+            this.m_lbl_header.Size = new System.Drawing.Size(730, 44);
+            this.m_lbl_header.TabIndex = 0;
+            this.m_lbl_header.Text = "LƯƠNG CHẾ ĐỘ NHÂN VIÊN";
+            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 353);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(730, 47);
+            this.panel2.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.m_grc_dm_luong_che_do);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 44);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(730, 309);
+            this.panel3.TabIndex = 4;
             // 
             // F106_dm_luong_che_do
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 261);
-            this.Controls.Add(this.m_grc_dm_luong_che_do);
+            this.ClientSize = new System.Drawing.Size(730, 400);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "F106_dm_luong_che_do";
-            this.Text = "F106_dm_luong_che_do";
+            this.Text = "F106 - DANH MỤC LƯƠNG CHẾ ĐỘ";
             this.Load += new System.EventHandler(this.F106_dm_luong_che_do_load);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_luong_che_do)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_luong_che_do)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -130,5 +178,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn c_muc_lcd;
         private DevExpress.XtraGrid.Columns.GridColumn c_so_tien;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label m_lbl_header;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

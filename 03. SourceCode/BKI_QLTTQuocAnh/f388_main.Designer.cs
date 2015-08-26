@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -69,6 +68,7 @@
             this.m_cmd_dat_hs_lns_lcd = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_quan_ly_vi_tri_cong_tac = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_he_so_luong_ns = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_dm_luong_che_do = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -81,8 +81,7 @@
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.m_cmd_dm_luong_che_do = new DevExpress.XtraBars.BarButtonItem();
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -491,6 +490,15 @@
             this.m_cmd_dm_he_so_luong_ns.Name = "m_cmd_dm_he_so_luong_ns";
             this.m_cmd_dm_he_so_luong_ns.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_dm_he_so_luong_ns_ItemClick);
             // 
+            // m_cmd_dm_luong_che_do
+            // 
+            this.m_cmd_dm_luong_che_do.Caption = "Lương chế độ";
+            this.m_cmd_dm_luong_che_do.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dm_luong_che_do.Glyph")));
+            this.m_cmd_dm_luong_che_do.Id = 48;
+            this.m_cmd_dm_luong_che_do.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dm_luong_che_do.LargeGlyph")));
+            this.m_cmd_dm_luong_che_do.Name = "m_cmd_dm_luong_che_do";
+            this.m_cmd_dm_luong_che_do.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_dm_luong_che_do_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -588,15 +596,6 @@
             // 
             this.MdiManager.MdiParent = this;
             // 
-            // m_cmd_dm_luong_che_do
-            // 
-            this.m_cmd_dm_luong_che_do.Caption = "Lương chế độ";
-            this.m_cmd_dm_luong_che_do.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dm_luong_che_do.Glyph")));
-            this.m_cmd_dm_luong_che_do.Id = 48;
-            this.m_cmd_dm_luong_che_do.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dm_luong_che_do.LargeGlyph")));
-            this.m_cmd_dm_luong_che_do.Name = "m_cmd_dm_luong_che_do";
-            this.m_cmd_dm_luong_che_do.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_dm_luong_che_do_ItemClick);
-            // 
             // f388_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -609,7 +608,7 @@
             this.Name = "f388_main";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "PHẦN MỀM QUẢN LÝ TÀI CHÍNH TRUNG TÂM QUỐC ANH";
+            this.Text = "PHẦN MỀM QUẢN LÝ NHÂN SỰ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).EndInit();

@@ -70,6 +70,7 @@
             this.m_cmd_quan_ly_vi_tri_cong_tac = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_he_so_luong_ns = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_luong_che_do = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_dm_phu_cap = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -83,7 +84,6 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.m_cmd_dm_phu_cap = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -502,6 +502,15 @@
             this.m_cmd_dm_luong_che_do.Name = "m_cmd_dm_luong_che_do";
             this.m_cmd_dm_luong_che_do.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_dm_luong_che_do_ItemClick);
             // 
+            // m_cmd_dm_phu_cap
+            // 
+            this.m_cmd_dm_phu_cap.Caption = "Phụ cấp";
+            this.m_cmd_dm_phu_cap.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dm_phu_cap.Glyph")));
+            this.m_cmd_dm_phu_cap.Id = 49;
+            this.m_cmd_dm_phu_cap.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dm_phu_cap.LargeGlyph")));
+            this.m_cmd_dm_phu_cap.Name = "m_cmd_dm_phu_cap";
+            this.m_cmd_dm_phu_cap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_dm_phu_cap_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -599,13 +608,6 @@
             // MdiManager
             // 
             this.MdiManager.MdiParent = this;
-            // 
-            // m_cmd_dm_phu_cap
-            // 
-            this.m_cmd_dm_phu_cap.Caption = "Phụ cấp";
-            this.m_cmd_dm_phu_cap.Id = 49;
-            this.m_cmd_dm_phu_cap.Name = "m_cmd_dm_phu_cap";
-            this.m_cmd_dm_phu_cap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_dm_phu_cap_ItemClick);
             // 
             // f388_main
             // 

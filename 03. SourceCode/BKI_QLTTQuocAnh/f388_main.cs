@@ -331,6 +331,7 @@ namespace BKI_DichVuMatDat
             {
                 DanhMuc.F109_dm_thue v_frm = new DanhMuc.F109_dm_thue();
                 if (IsExistFormName(v_frm)) return;
+
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }

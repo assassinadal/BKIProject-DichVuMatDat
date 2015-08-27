@@ -1,6 +1,6 @@
 ﻿namespace BKI_DichVuMatDat.DanhMuc
 {
-    partial class f101_dm_tham_so
+    partial class F108_dm_tham_so
     {
         /// <summary>
         /// Required designer variable.

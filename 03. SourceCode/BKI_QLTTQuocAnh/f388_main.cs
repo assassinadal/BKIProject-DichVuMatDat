@@ -269,7 +269,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                DanhMuc.f101_dm_tham_so v_frm = new DanhMuc.f101_dm_tham_so();
+                DanhMuc.F108_dm_tham_so v_frm = new DanhMuc.F108_dm_tham_so();
                 if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;

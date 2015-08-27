@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace BKI_DichVuMatDat.DanhMuc
 {
-    public partial class f101_dm_tham_so : Form
+    public partial class F108_dm_tham_so : Form
     {
-        public f101_dm_tham_so()
+        public F108_dm_tham_so()
         {
             InitializeComponent();
         }

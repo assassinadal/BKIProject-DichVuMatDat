@@ -214,11 +214,23 @@
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="CCommon.cs" />
+    <Compile Include="DanhMuc\F101_dm_don_vi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\F101_dm_don_vi.Designer.cs">
+      <DependentUpon>F101_dm_don_vi.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\f101_dm_tham_so.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DanhMuc\f101_dm_tham_so.Designer.cs">
       <DependentUpon>f101_dm_tham_so.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\F102_dm_bao_hiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\F102_dm_bao_hiem.Designer.cs">
+      <DependentUpon>F102_dm_bao_hiem.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\f103_dm_he_so_luong_ns.cs">
       <SubType>Form</SubType>
@@ -231,10 +243,6 @@
     </Compile>
     <Compile Include="DanhMuc\F104_dm_loai_hop_dong.Designer.cs">
       <DependentUpon>F104_dm_loai_hop_dong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DanhMuc\F105_dm_loai_ngay_cong.cs" />
-    <Compile Include="DanhMuc\F105_dm_loai_ngay_cong.Designer.cs">
-      <DependentUpon>F105_dm_loai_ngay_cong.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\F106_dm_luong_che_do.cs">
       <SubType>Form</SubType>
@@ -321,17 +329,20 @@
     <EmbeddedResource Include="BaoCao\F_wait_form.resx">
       <DependentUpon>F_wait_form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\F101_dm_don_vi.resx">
+      <DependentUpon>F101_dm_don_vi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f101_dm_tham_so.resx">
       <DependentUpon>f101_dm_tham_so.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\F102_dm_bao_hiem.resx">
+      <DependentUpon>F102_dm_bao_hiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f103_dm_he_so_luong_ns.resx">
       <DependentUpon>f103_dm_he_so_luong_ns.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F104_dm_loai_hop_dong.resx">
       <DependentUpon>F104_dm_loai_hop_dong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\F105_dm_loai_ngay_cong.resx">
-      <DependentUpon>F105_dm_loai_ngay_cong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F106_dm_luong_che_do.resx">
       <DependentUpon>F106_dm_luong_che_do.cs</DependentUpon>

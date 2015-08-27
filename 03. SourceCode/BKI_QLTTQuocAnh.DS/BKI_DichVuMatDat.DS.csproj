@@ -134,6 +134,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_HS_LNS_LCD.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_LOAI_LAO_DONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_LOAI_LAO_DONG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_LUONG_CHE_DO.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -213,6 +218,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_GD_CONG_TAC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_GD_LOAI_LAO_DONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_LOAI_LAO_DONG.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_GD_QUYET_DINH.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -433,6 +443,17 @@
     <None Include="DS_GD_HS_LNS_LCD.xss">
       <DependentUpon>DS_GD_HS_LNS_LCD.xsd</DependentUpon>
     </None>
+    <None Include="DS_GD_LOAI_LAO_DONG.xsc">
+      <DependentUpon>DS_GD_LOAI_LAO_DONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_LOAI_LAO_DONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_LOAI_LAO_DONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_LOAI_LAO_DONG.xss">
+      <DependentUpon>DS_GD_LOAI_LAO_DONG.xsd</DependentUpon>
+    </None>
     <None Include="DS_GD_LUONG_CHE_DO.xsc">
       <DependentUpon>DS_GD_LUONG_CHE_DO.xsd</DependentUpon>
     </None>
@@ -608,6 +629,17 @@
     </None>
     <None Include="DS_V_GD_CONG_TAC.xss">
       <DependentUpon>DS_V_GD_CONG_TAC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_LOAI_LAO_DONG.xsc">
+      <DependentUpon>DS_V_GD_LOAI_LAO_DONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_LOAI_LAO_DONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_LOAI_LAO_DONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_LOAI_LAO_DONG.xss">
+      <DependentUpon>DS_V_GD_LOAI_LAO_DONG.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_QUYET_DINH.xsc">
       <DependentUpon>DS_V_GD_QUYET_DINH.xsd</DependentUpon>

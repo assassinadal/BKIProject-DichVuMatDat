@@ -68,6 +68,7 @@
     <Compile Include="US_GD_HE_SO_LNS.cs" />
     <Compile Include="US_GD_HOP_DONG.cs" />
     <Compile Include="US_GD_HS_LNS_LCD.cs" />
+    <Compile Include="US_GD_LOAI_LAO_DONG.cs" />
     <Compile Include="US_GD_LUONG_CHE_DO.cs" />
     <Compile Include="US_GD_NHAN_VIEN_PHU_CAP.cs" />
     <Compile Include="US_GD_PHU_THUOC.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="US_V_F340_DAT_HS_LNS.cs" />
     <Compile Include="US_V_F340_DAT_LCD.cs" />
     <Compile Include="US_V_GD_CONG_TAC.cs" />
+    <Compile Include="US_V_GD_LOAI_LAO_DONG.cs" />
     <Compile Include="US_V_GD_QUYET_DINH.cs" />
     <Compile Include="US_V_HT_CONTROL_IN_FORM.cs" />
     <Compile Include="US_V_HT_NGUOI_SU_DUNG.cs" />

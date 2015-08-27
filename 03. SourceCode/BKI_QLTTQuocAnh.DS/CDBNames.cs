@@ -458,6 +458,14 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string LINK = "LINK";
     }
 
+    public class GD_LOAI_LAO_DONG
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string ID_LOAI_LAO_DONG = "ID_LOAI_LAO_DONG";
+        public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+    }
     #endregion
 
     #region VIEW

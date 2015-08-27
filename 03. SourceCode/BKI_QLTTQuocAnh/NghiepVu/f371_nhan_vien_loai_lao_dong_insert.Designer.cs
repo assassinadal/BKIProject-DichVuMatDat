@@ -1,6 +1,6 @@
 ﻿namespace BKI_DichVuMatDat.NghiepVu
 {
-    partial class f370_nhan_vien_loai_lao_dong
+    partial class f371_nhan_vien_loai_lao_dong_insert
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f370_nhan_vien_loai_lao_dong));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f371_nhan_vien_loai_lao_dong_insert));
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.ImageList = new System.Windows.Forms.ImageList();
-            this.m_cmd_edit = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.m_cmd_cancel = new SIS.Controls.Button.SiSButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.m_dat_ngay_ket_thuc = new System.Windows.Forms.DateTimePicker();
+            this.m_dat_ngay_bat_dau = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.m_sle_chon_loai_lao_dong = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -57,22 +60,9 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.m_grc_v_gd_loai_lao_dong = new DevExpress.XtraGrid.GridControl();
-            this.m_grv_v_gd_loai_lao_dong = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.c_stt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_ma_nv = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_ho_dem = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_ten = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_ho_ten = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_id_loai_lao_dong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_ten_loai_lao_dong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_ngay_bat_dau = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_ngay_ket_thuc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_loai_lao_dong.Properties)).BeginInit();
@@ -81,9 +71,6 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc_v_gd_loai_lao_dong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_v_gd_loai_lao_dong)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -92,7 +79,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(782, 53);
+            this.panel1.Size = new System.Drawing.Size(713, 54);
             this.panel1.TabIndex = 0;
             // 
             // m_lbl_header
@@ -102,37 +89,36 @@
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(782, 50);
-            this.m_lbl_header.TabIndex = 1;
-            this.m_lbl_header.Text = "NHÂN VIÊN - LOẠI LAO ĐỘNG";
+            this.m_lbl_header.Size = new System.Drawing.Size(713, 51);
+            this.m_lbl_header.TabIndex = 2;
+            this.m_lbl_header.Text = "THÊM LOẠI LAO ĐỘNG CHO NHÂN VIÊN";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel2
+            // panel3
             // 
-            this.panel2.Controls.Add(this.m_cmd_insert);
-            this.panel2.Controls.Add(this.m_cmd_edit);
-            this.panel2.Controls.Add(this.m_cmd_delete);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 341);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(782, 38);
-            this.panel2.TabIndex = 1;
+            this.panel3.Controls.Add(this.m_cmd_save);
+            this.panel3.Controls.Add(this.m_cmd_cancel);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 199);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(713, 36);
+            this.panel3.TabIndex = 2;
             // 
-            // m_cmd_insert
+            // m_cmd_save
             // 
-            this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_insert.ImageIndex = 2;
-            this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(518, 0);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(88, 38);
-            this.m_cmd_insert.TabIndex = 3;
-            this.m_cmd_insert.Text = "&Thêm";
-            this.m_cmd_insert.Click += new System.EventHandler(this.m_cmd_insert_Click);
+            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_save.ImageIndex = 10;
+            this.m_cmd_save.ImageList = this.ImageList;
+            this.m_cmd_save.Location = new System.Drawing.Point(537, 0);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(88, 36);
+            this.m_cmd_save.TabIndex = 6;
+            this.m_cmd_save.Text = "&Lưu";
+            this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
             // 
             // ImageList
             // 
@@ -161,58 +147,83 @@
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
             // 
-            // m_cmd_edit
+            // m_cmd_cancel
             // 
-            this.m_cmd_edit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_edit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_edit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_edit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_edit.ImageIndex = 16;
-            this.m_cmd_edit.ImageList = this.ImageList;
-            this.m_cmd_edit.Location = new System.Drawing.Point(606, 0);
-            this.m_cmd_edit.Name = "m_cmd_edit";
-            this.m_cmd_edit.Size = new System.Drawing.Size(88, 38);
-            this.m_cmd_edit.TabIndex = 2;
-            this.m_cmd_edit.Text = "&Sửa";
-            this.m_cmd_edit.Click += new System.EventHandler(this.m_cmd_edit_Click);
+            this.m_cmd_cancel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_cancel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_cancel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.m_cmd_cancel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_cancel.ImageIndex = 4;
+            this.m_cmd_cancel.ImageList = this.ImageList;
+            this.m_cmd_cancel.Location = new System.Drawing.Point(625, 0);
+            this.m_cmd_cancel.Name = "m_cmd_cancel";
+            this.m_cmd_cancel.Size = new System.Drawing.Size(88, 36);
+            this.m_cmd_cancel.TabIndex = 4;
+            this.m_cmd_cancel.Text = "&Hủy";
+            this.m_cmd_cancel.Click += new System.EventHandler(this.m_cmd_cancel_Click);
             // 
-            // m_cmd_delete
+            // panel2
             // 
-            this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_delete.ImageIndex = 4;
-            this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(694, 0);
-            this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(88, 38);
-            this.m_cmd_delete.TabIndex = 1;
-            this.m_cmd_delete.Text = "&Xóa";
-            this.m_cmd_delete.Click += new System.EventHandler(this.m_cmd_delete_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.groupControl2);
-            this.panel4.Controls.Add(this.groupControl1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 53);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(782, 74);
-            this.panel4.TabIndex = 3;
+            this.panel2.Controls.Add(this.groupControl2);
+            this.panel2.Controls.Add(this.groupControl1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 54);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(713, 145);
+            this.panel2.TabIndex = 3;
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.label7);
+            this.groupControl2.Controls.Add(this.label6);
+            this.groupControl2.Controls.Add(this.m_dat_ngay_ket_thuc);
+            this.groupControl2.Controls.Add(this.m_dat_ngay_bat_dau);
             this.groupControl2.Controls.Add(this.label5);
             this.groupControl2.Controls.Add(this.m_sle_chon_loai_lao_dong);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl2.Location = new System.Drawing.Point(347, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(365, 74);
-            this.groupControl2.TabIndex = 5;
+            this.groupControl2.Size = new System.Drawing.Size(365, 145);
+            this.groupControl2.TabIndex = 9;
             this.groupControl2.Text = "THÔNG TIN LAO ĐỘNG";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 93);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Ngày kết thúc";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 67);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Ngày bắt đầu (*)";
+            // 
+            // m_dat_ngay_ket_thuc
+            // 
+            this.m_dat_ngay_ket_thuc.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(124, 90);
+            this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
+            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(208, 20);
+            this.m_dat_ngay_ket_thuc.TabIndex = 7;
+            // 
+            // m_dat_ngay_bat_dau
+            // 
+            this.m_dat_ngay_bat_dau.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_bat_dau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_bat_dau.Location = new System.Drawing.Point(124, 63);
+            this.m_dat_ngay_bat_dau.Name = "m_dat_ngay_bat_dau";
+            this.m_dat_ngay_bat_dau.Size = new System.Drawing.Size(208, 20);
+            this.m_dat_ngay_bat_dau.TabIndex = 6;
             // 
             // label5
             // 
@@ -287,8 +298,8 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(347, 74);
-            this.groupControl1.TabIndex = 4;
+            this.groupControl1.Size = new System.Drawing.Size(347, 145);
+            this.groupControl1.TabIndex = 8;
             this.groupControl1.Text = "THÔNG TIN CƠ BẢN";
             // 
             // m_sle_chon_nhan_vien
@@ -393,140 +404,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Chọn nhân viên (*)";
             // 
-            // panel3
+            // f371_nhan_vien_loai_lao_dong_insert
             // 
-            this.panel3.Controls.Add(this.m_grc_v_gd_loai_lao_dong);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 127);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(782, 214);
-            this.panel3.TabIndex = 4;
-            // 
-            // m_grc_v_gd_loai_lao_dong
-            // 
-            this.m_grc_v_gd_loai_lao_dong.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc_v_gd_loai_lao_dong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc_v_gd_loai_lao_dong.Location = new System.Drawing.Point(0, 0);
-            this.m_grc_v_gd_loai_lao_dong.MainView = this.m_grv_v_gd_loai_lao_dong;
-            this.m_grc_v_gd_loai_lao_dong.Name = "m_grc_v_gd_loai_lao_dong";
-            this.m_grc_v_gd_loai_lao_dong.Size = new System.Drawing.Size(782, 214);
-            this.m_grc_v_gd_loai_lao_dong.TabIndex = 1;
-            this.m_grc_v_gd_loai_lao_dong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.m_grv_v_gd_loai_lao_dong});
-            // 
-            // m_grv_v_gd_loai_lao_dong
-            // 
-            this.m_grv_v_gd_loai_lao_dong.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.c_stt,
-            this.c_ID,
-            this.c_ma_nv,
-            this.c_ho_dem,
-            this.c_ten,
-            this.c_ho_ten,
-            this.c_id_loai_lao_dong,
-            this.c_ten_loai_lao_dong,
-            this.c_ngay_bat_dau,
-            this.c_ngay_ket_thuc});
-            this.m_grv_v_gd_loai_lao_dong.GridControl = this.m_grc_v_gd_loai_lao_dong;
-            this.m_grv_v_gd_loai_lao_dong.Name = "m_grv_v_gd_loai_lao_dong";
-            this.m_grv_v_gd_loai_lao_dong.OptionsFind.AllowFindPanel = false;
-            this.m_grv_v_gd_loai_lao_dong.OptionsFind.AlwaysVisible = true;
-            this.m_grv_v_gd_loai_lao_dong.OptionsView.ShowFooter = true;
-            // 
-            // c_stt
-            // 
-            this.c_stt.Caption = "STT";
-            this.c_stt.FieldName = "STT";
-            this.c_stt.Name = "c_stt";
-            this.c_stt.Visible = true;
-            this.c_stt.VisibleIndex = 0;
-            this.c_stt.Width = 38;
-            // 
-            // c_ID
-            // 
-            this.c_ID.Caption = "ID";
-            this.c_ID.FieldName = "ID";
-            this.c_ID.Name = "c_ID";
-            this.c_ID.Width = 149;
-            // 
-            // c_ma_nv
-            // 
-            this.c_ma_nv.Caption = "Mã NV";
-            this.c_ma_nv.FieldName = "MA_NV";
-            this.c_ma_nv.Name = "c_ma_nv";
-            this.c_ma_nv.Visible = true;
-            this.c_ma_nv.VisibleIndex = 1;
-            this.c_ma_nv.Width = 149;
-            // 
-            // c_ho_dem
-            // 
-            this.c_ho_dem.Caption = "Họ đệm";
-            this.c_ho_dem.FieldName = "HO_DEM";
-            this.c_ho_dem.Name = "c_ho_dem";
-            this.c_ho_dem.Visible = true;
-            this.c_ho_dem.VisibleIndex = 2;
-            this.c_ho_dem.Width = 149;
-            // 
-            // c_ten
-            // 
-            this.c_ten.Caption = "Tên";
-            this.c_ten.FieldName = "TEN";
-            this.c_ten.Name = "c_ten";
-            this.c_ten.Visible = true;
-            this.c_ten.VisibleIndex = 3;
-            this.c_ten.Width = 150;
-            // 
-            // c_ho_ten
-            // 
-            this.c_ho_ten.Caption = "Họ tên";
-            this.c_ho_ten.FieldName = "HO_TEN";
-            this.c_ho_ten.Name = "c_ho_ten";
-            // 
-            // c_id_loai_lao_dong
-            // 
-            this.c_id_loai_lao_dong.Caption = "ID Loại lao động";
-            this.c_id_loai_lao_dong.FieldName = "ID_LOAI_LAO_DONG";
-            this.c_id_loai_lao_dong.Name = "c_id_loai_lao_dong";
-            // 
-            // c_ten_loai_lao_dong
-            // 
-            this.c_ten_loai_lao_dong.Caption = "Tên loại lao động";
-            this.c_ten_loai_lao_dong.FieldName = "TEN_LOAI_LAO_DONG";
-            this.c_ten_loai_lao_dong.Name = "c_ten_loai_lao_dong";
-            this.c_ten_loai_lao_dong.Visible = true;
-            this.c_ten_loai_lao_dong.VisibleIndex = 4;
-            // 
-            // c_ngay_bat_dau
-            // 
-            this.c_ngay_bat_dau.Caption = "Ngày bắt đầu";
-            this.c_ngay_bat_dau.FieldName = "NGAY_BAT_DAU";
-            this.c_ngay_bat_dau.Name = "c_ngay_bat_dau";
-            this.c_ngay_bat_dau.Visible = true;
-            this.c_ngay_bat_dau.VisibleIndex = 5;
-            // 
-            // c_ngay_ket_thuc
-            // 
-            this.c_ngay_ket_thuc.Caption = "Ngày kết thúc";
-            this.c_ngay_ket_thuc.FieldName = "NGAY_KET_THUC";
-            this.c_ngay_ket_thuc.Name = "c_ngay_ket_thuc";
-            this.c_ngay_ket_thuc.Visible = true;
-            this.c_ngay_ket_thuc.VisibleIndex = 6;
-            // 
-            // f370_nhan_vien_loai_lao_dong
-            // 
+            this.AcceptButton = this.m_cmd_save;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 379);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel4);
+            this.CancelButton = this.m_cmd_cancel;
+            this.ClientSize = new System.Drawing.Size(713, 235);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Name = "f370_nhan_vien_loai_lao_dong";
-            this.Text = "f370_nhan_vien_loai_lao_dong";
-            this.Load += new System.EventHandler(this.f370_nhan_vien_loai_lao_dong_Load);
+            this.MaximizeBox = false;
+            this.Name = "f371_nhan_vien_loai_lao_dong_insert";
+            this.Text = "f371_nhan_vien_loai_lao_dong_insert";
+            this.Load += new System.EventHandler(this.f371_nhan_vien_loai_lao_dong_insert_Load);
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
@@ -537,9 +431,6 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc_v_gd_loai_lao_dong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_v_gd_loai_lao_dong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -547,9 +438,24 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label m_lbl_header;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        internal System.Windows.Forms.ImageList ImageList;
+        internal SIS.Controls.Button.SiSButton m_cmd_save;
+        internal SIS.Controls.Button.SiSButton m_cmd_cancel;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc;
+        private System.Windows.Forms.DateTimePicker m_dat_ngay_bat_dau;
+        private System.Windows.Forms.Label label5;
+        private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chon_loai_lao_dong;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn35;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn36;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn37;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn38;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chon_nhan_vien;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
@@ -562,30 +468,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
-        private DevExpress.XtraGrid.GridControl m_grc_v_gd_loai_lao_dong;
-        private DevExpress.XtraGrid.Views.Grid.GridView m_grv_v_gd_loai_lao_dong;
-        private DevExpress.XtraGrid.Columns.GridColumn c_stt;
-        private DevExpress.XtraGrid.Columns.GridColumn c_ID;
-        private DevExpress.XtraGrid.Columns.GridColumn c_ma_nv;
-        private DevExpress.XtraGrid.Columns.GridColumn c_ho_dem;
-        private DevExpress.XtraGrid.Columns.GridColumn c_ten;
-        private DevExpress.XtraGrid.Columns.GridColumn c_ho_ten;
-        private DevExpress.XtraGrid.Columns.GridColumn c_id_loai_lao_dong;
-        private DevExpress.XtraGrid.Columns.GridColumn c_ten_loai_lao_dong;
-        private DevExpress.XtraGrid.Columns.GridColumn c_ngay_bat_dau;
-        private DevExpress.XtraGrid.Columns.GridColumn c_ngay_ket_thuc;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
-        private System.Windows.Forms.Label label5;
-        private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chon_loai_lao_dong;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn35;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn36;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn37;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn38;
-        internal SIS.Controls.Button.SiSButton m_cmd_insert;
-        internal SIS.Controls.Button.SiSButton m_cmd_edit;
-        internal SIS.Controls.Button.SiSButton m_cmd_delete;
-        internal System.Windows.Forms.ImageList ImageList;
     }
 }

@@ -35,7 +35,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         #region Members
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
-
+        decimal m_id_gd_loai_ld = 0;
         #endregion
 
         #region Private Methods
@@ -48,6 +48,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void set_initial_form_load()
         {
+            load_data_2_grid();
             load_data_2_sle_chon_nv();
             load_data_2_sle_chon_loai_lao_dong();
         }
@@ -87,6 +88,19 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
 
+        //Load toan bo du lieu tu V_GD_LOAI_LAO_DONG len luoi 
+        private void load_data_2_grid()
+        {
+            CCommon.make_stt(m_grv_v_gd_loai_lao_dong);
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            DataSet v_ds = new DataSet();
+
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillDatasetWithTableName(v_ds, "V_GD_LOAI_LAO_DONG");
+            m_grc_v_gd_loai_lao_dong.DataSource = v_ds.Tables[0];
+        }
+
+        //Load du lieu len luoi theo id nhan vien
         private void load_data_2_grid(decimal ip_dc_id_nv)
         {
             CCommon.make_stt(m_grv_v_gd_loai_lao_dong);
@@ -94,10 +108,23 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
 
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds, "Select * from V_GD_LOAI_LAO_DONG WHERE ID = " +ip_dc_id_nv);
+            v_us.FillDatasetWithQuery(v_ds, "Select * from V_GD_LOAI_LAO_DONG WHERE ID = " + ip_dc_id_nv);
             m_grc_v_gd_loai_lao_dong.DataSource = v_ds.Tables[0];
         }
 
+        //Load du lieu len luoi theo id_loai_lao_dong
+        private void load_data_2_grid_with_id_loai_lao_dong(decimal ip_dc_id_loai_ld)
+        {
+            CCommon.make_stt(m_grv_v_gd_loai_lao_dong);
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            DataSet v_ds = new DataSet();
+
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillDatasetWithQuery(v_ds, "Select * from V_GD_LOAI_LAO_DONG WHERE ID_LOAI_LAO_DONG = " + ip_dc_id_loai_ld);
+            m_grc_v_gd_loai_lao_dong.DataSource = v_ds.Tables[0];
+        }
+
+        //Load du lieu len luoi theo id nhan vien va id loai lao dong
         private void load_data_2_grid(decimal ip_dc_id_nv, decimal ip_dc_id_loai_ld)
         {
             CCommon.make_stt(m_grv_v_gd_loai_lao_dong);
@@ -111,16 +138,15 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grc_v_gd_loai_lao_dong.DataSource = v_ds.Tables[0];
         }
 
-        //Check data is ok
-        private void check_data_is_ok()
+        //Clear data in form
+        private void clear_data_in_form()
         {
-            if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
-            {
-                MessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO!");
-                return;
-            }
+            m_sle_chon_nhan_vien.EditValue = null;
+            m_sle_chon_loai_lao_dong.EditValue = null;
         }
+
         #endregion
+
         private void f370_nhan_vien_loai_lao_dong_Load(object sender, EventArgs e)
         {
             try
@@ -149,11 +175,11 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     return;
                 }
-                if (m_sle_chon_loai_lao_dong.EditValue == null || m_sle_chon_loai_lao_dong.EditValue == "")
+                 else if (m_sle_chon_loai_lao_dong.EditValue == null || m_sle_chon_loai_lao_dong.EditValue == "")
                 {
                     load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                 }
-                else
+                else if (m_sle_chon_loai_lao_dong.EditValue != null && m_sle_chon_loai_lao_dong.EditValue != "" && m_sle_chon_nhan_vien.EditValue != null && m_sle_chon_nhan_vien.EditValue != "")
                 {
                     load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_sle_chon_loai_lao_dong.EditValue));
                 }
@@ -168,17 +194,58 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
+                if (m_sle_chon_loai_lao_dong.EditValue == null || m_sle_chon_loai_lao_dong.EditValue == "")
                 {
                     return;
                 }
-                if ((m_sle_chon_nhan_vien.EditValue != null || m_sle_chon_nhan_vien.EditValue != "") && (m_sle_chon_loai_lao_dong.EditValue == null || m_sle_chon_loai_lao_dong.EditValue == ""))
+                else if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
                 {
-                    load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                    load_data_2_grid_with_id_loai_lao_dong(CIPConvert.ToDecimal(m_sle_chon_loai_lao_dong.EditValue));
                 }
-                if ((m_sle_chon_loai_lao_dong.EditValue != null && m_sle_chon_loai_lao_dong.EditValue != "") && (m_sle_chon_nhan_vien.EditValue != null && m_sle_chon_nhan_vien.EditValue != ""))
+                else if (m_sle_chon_loai_lao_dong.EditValue != null && m_sle_chon_loai_lao_dong.EditValue != "" && m_sle_chon_nhan_vien.EditValue != null && m_sle_chon_nhan_vien.EditValue != "")
                 {
                     load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_sle_chon_loai_lao_dong.EditValue));
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f371_nhan_vien_loai_lao_dong_insert v_frm = new f371_nhan_vien_loai_lao_dong_insert();
+                //v_frm.MdiChildren = this;
+                v_frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_edit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Lay ID cua dong du lieu muon xoa
+                DataRow v_dr = m_grv_v_gd_loai_lao_dong.GetDataRow(m_grv_v_gd_loai_lao_dong.FocusedRowHandle);
+                //decimal v_id = CIPConvert.ToDecimal(v_dr[GD_LOAI_LAO_DONG.ID_NHAN_VIEN]);
+                //decimal v_id_nv = CIPConvert.ToDecimal(m_grv_v_gd_loai_lao_dong.GetRowCellValue(m_grv_v_gd_loai_lao_dong.FocusedRowHandle, "ID"));
+                decimal v_id = 0;
+                US_GD_LOAI_LAO_DONG v_us = new US_GD_LOAI_LAO_DONG(v_id);
+                if (XtraMessageBox.Show("Bạn có chắc chắn muốn XÓA nhân viên - loại lao động này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    v_us.Delete();
+                    load_data_2_grid();
                 }
             }
             catch (Exception v_e)

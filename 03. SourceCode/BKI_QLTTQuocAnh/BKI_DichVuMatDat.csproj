@@ -220,11 +220,11 @@
     <Compile Include="DanhMuc\F101_dm_don_vi.Designer.cs">
       <DependentUpon>F101_dm_don_vi.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhMuc\f101_dm_tham_so.cs">
+    <Compile Include="DanhMuc\F108_dm_tham_so.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhMuc\f101_dm_tham_so.Designer.cs">
-      <DependentUpon>f101_dm_tham_so.cs</DependentUpon>
+    <Compile Include="DanhMuc\F108_dm_tham_so.Designer.cs">
+      <DependentUpon>F108_dm_tham_so.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\F102_dm_bao_hiem.cs">
       <SubType>Form</SubType>
@@ -356,8 +356,8 @@
     <EmbeddedResource Include="DanhMuc\F101_dm_don_vi.resx">
       <DependentUpon>F101_dm_don_vi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\f101_dm_tham_so.resx">
-      <DependentUpon>f101_dm_tham_so.cs</DependentUpon>
+    <EmbeddedResource Include="DanhMuc\F108_dm_tham_so.resx">
+      <DependentUpon>F108_dm_tham_so.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F102_dm_bao_hiem.resx">
       <DependentUpon>F102_dm_bao_hiem.cs</DependentUpon>

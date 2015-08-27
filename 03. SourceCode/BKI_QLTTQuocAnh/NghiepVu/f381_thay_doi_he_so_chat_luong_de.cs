@@ -22,6 +22,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Pulic Interface
         public void  display(ref string v_str_path)
         {
+            this.CenterToScreen();
             this.ShowDialog();
             v_str_path = m_txt_path.Text;
         }

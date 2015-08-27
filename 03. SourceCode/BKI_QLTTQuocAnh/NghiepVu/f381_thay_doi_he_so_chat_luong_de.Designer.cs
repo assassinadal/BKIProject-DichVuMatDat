@@ -173,7 +173,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_lbl_header);
-            this.Location = new System.Drawing.Point(500, 500);
+            this.Location = new System.Drawing.Point(1000, 1000);
             this.Name = "f381_thay_doi_he_so_chat_luong_de";
             this.Text = "F381 - Chọn file hệ số chất lượng";
             this.m_pnl_out_place_dm.ResumeLayout(false);

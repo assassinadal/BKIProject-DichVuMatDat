@@ -33,7 +33,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #endregion
 
         #region Members
-        
+        string m_str_path = "";
         #endregion
 
         #region Private methods
@@ -47,6 +47,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_txt_chon_thang.Text = DateTime.Now.Month.ToString();
             m_txt_chon_nam.Text = DateTime.Now.Year.ToString();
+        }
+
+        private void load_data_2_grid(string ip_str_path)
+        {
+            WinFormControls.load_xls_to_gridview(ip_str_path, m_grc_them_hs);
         }
         #endregion
 
@@ -76,6 +81,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                 string v_str_path = "";
                 f381_thay_doi_he_so_chat_luong_de v_frm_de = new f381_thay_doi_he_so_chat_luong_de();
                 v_frm_de.display(ref v_str_path);
+                m_str_path = v_str_path;
+                load_data_2_grid(m_str_path);
             }
             catch (Exception v_e)
             {

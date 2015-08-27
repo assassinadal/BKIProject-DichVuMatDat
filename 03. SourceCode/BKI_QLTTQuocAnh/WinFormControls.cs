@@ -320,7 +320,12 @@ namespace BKI_DichVuMatDat
             v_cstore.addDecimalInputParam("@THANG", ip_dc_thang);
             v_cstore.addDecimalInputParam("@NAM", ip_dc_nam);
             v_cstore.fillDataSetByCommand(this, ip_ds);
-        }            
+        }
+
+        internal void fillDatasetWithTableName(DataSet v_ds, string p)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class iParameter

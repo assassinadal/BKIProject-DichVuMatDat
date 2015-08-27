@@ -37,8 +37,6 @@
             this.m_cmd_phan_quyen_nhom = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_lop_mon = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_hs = new DevExpress.XtraBars.BarButtonItem();
-            this.m_cmd_nhap_hoc = new DevExpress.XtraBars.BarButtonItem();
-            this.m_cmd_nghi_hoc = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_cham_cong_nv = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_diem_danh = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_lap_phai_thu_le = new DevExpress.XtraBars.BarButtonItem();
@@ -85,6 +83,7 @@
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.m_cmd_quan_ly_qd = new DevExpress.XtraBars.BarButtonItem();
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -104,8 +103,6 @@
             this.m_cmd_phan_quyen_nhom,
             this.m_cmd_dm_lop_mon,
             this.m_cmd_dm_hs,
-            this.m_cmd_nhap_hoc,
-            this.m_cmd_nghi_hoc,
             this.m_cmd_cham_cong_nv,
             this.m_cmd_diem_danh,
             this.m_cmd_lap_phai_thu_le,
@@ -215,24 +212,6 @@
             this.m_cmd_dm_hs.Id = 7;
             this.m_cmd_dm_hs.Name = "m_cmd_dm_hs";
             this.m_cmd_dm_hs.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // m_cmd_nhap_hoc
-            // 
-            this.m_cmd_nhap_hoc.Caption = "Nhập học";
-            this.m_cmd_nhap_hoc.Glyph = global::BKI_DichVuMatDat.Properties.Resources.Icons8_Windows_8_Users_Enter_2;
-            this.m_cmd_nhap_hoc.Id = 8;
-            this.m_cmd_nhap_hoc.Name = "m_cmd_nhap_hoc";
-            this.m_cmd_nhap_hoc.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // m_cmd_nghi_hoc
-            // 
-            this.m_cmd_nghi_hoc.Caption = "Nghỉ học";
-            this.m_cmd_nghi_hoc.Glyph = global::BKI_DichVuMatDat.Properties.Resources._1425904361_23923;
-            this.m_cmd_nghi_hoc.Id = 9;
-            this.m_cmd_nghi_hoc.Name = "m_cmd_nghi_hoc";
-            this.m_cmd_nghi_hoc.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // m_cmd_cham_cong_nv
@@ -568,8 +547,6 @@
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_nhap_hoc);
-            this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_nghi_hoc);
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_cham_cong_nv);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Chấm công";
@@ -668,8 +645,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_lop_mon;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_hs;
-        private DevExpress.XtraBars.BarButtonItem m_cmd_nhap_hoc;
-        private DevExpress.XtraBars.BarButtonItem m_cmd_nghi_hoc;
         private DevExpress.XtraBars.BarButtonItem m_cmd_cham_cong_nv;
         private DevExpress.XtraBars.BarButtonItem m_cmd_diem_danh;
         private DevExpress.XtraBars.BarButtonItem m_cmd_lap_phai_thu_le;

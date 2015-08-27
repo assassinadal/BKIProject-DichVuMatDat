@@ -130,4 +130,10 @@ namespace BKI_DichVuMatDat.US {
     //    public const decimal TRUNG_TAM = 2;
     //    public const decimal PHONG_BAN = 3;
     //}
+
+    public static class CONST_ID_LOAI_CONG_TAC
+    {
+        public const decimal CHINH_THUC = 157;
+        public const decimal KIEM_NHIEM = 164;
+    }
 }

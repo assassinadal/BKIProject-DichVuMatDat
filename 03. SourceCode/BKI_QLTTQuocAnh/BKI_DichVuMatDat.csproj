@@ -232,11 +232,11 @@
     <Compile Include="DanhMuc\F102_dm_bao_hiem.Designer.cs">
       <DependentUpon>F102_dm_bao_hiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhMuc\f103_dm_he_so_luong_ns.cs">
+    <Compile Include="DanhMuc\F103_dm_he_so_luong_ns.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhMuc\f103_dm_he_so_luong_ns.Designer.cs">
-      <DependentUpon>f103_dm_he_so_luong_ns.cs</DependentUpon>
+    <Compile Include="DanhMuc\F103_dm_he_so_luong_ns.Designer.cs">
+      <DependentUpon>F103_dm_he_so_luong_ns.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\F104_dm_loai_hop_dong.cs">
       <SubType>Form</SubType>
@@ -362,8 +362,8 @@
     <EmbeddedResource Include="DanhMuc\F102_dm_bao_hiem.resx">
       <DependentUpon>F102_dm_bao_hiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\f103_dm_he_so_luong_ns.resx">
-      <DependentUpon>f103_dm_he_so_luong_ns.cs</DependentUpon>
+    <EmbeddedResource Include="DanhMuc\F103_dm_he_so_luong_ns.resx">
+      <DependentUpon>F103_dm_he_so_luong_ns.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F104_dm_loai_hop_dong.resx">
       <DependentUpon>F104_dm_loai_hop_dong.cs</DependentUpon>

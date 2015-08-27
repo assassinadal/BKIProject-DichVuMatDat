@@ -406,6 +406,36 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void c_cmd_danh_muc_don_vi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                F101_dm_don_vi v_frm = new F101_dm_don_vi();
+                if (IsExistFormName(v_frm)) return;
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void c_cmd_danh_muc_bao_hiem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                F102_dm_bao_hiem v_frm = new F102_dm_bao_hiem();
+                if (IsExistFormName(v_frm)) return;
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
 
 

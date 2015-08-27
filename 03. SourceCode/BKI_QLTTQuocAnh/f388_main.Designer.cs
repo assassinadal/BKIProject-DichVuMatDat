@@ -71,6 +71,7 @@
             this.m_cmd_dm_phu_cap = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_quan_ly_qd = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_nhan_vien_loai_lao_dong = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_them_hs_chat_luong = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -86,7 +87,8 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.m_cmd_them_hs_chat_luong = new DevExpress.XtraBars.BarButtonItem();
+            this.c_cmd_danh_muc_don_vi = new DevExpress.XtraBars.BarButtonItem();
+            this.c_cmd_danh_muc_bao_hiem = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -139,9 +141,11 @@
             this.m_cmd_dm_phu_cap,
             this.m_cmd_quan_ly_qd,
             this.m_cmd_nhan_vien_loai_lao_dong,
-            this.m_cmd_them_hs_chat_luong});
+            this.m_cmd_them_hs_chat_luong,
+            this.c_cmd_danh_muc_don_vi,
+            this.c_cmd_danh_muc_bao_hiem});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 53;
+            this.ribbon.MaxItemId = 55;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -515,6 +519,15 @@
             this.m_cmd_nhan_vien_loai_lao_dong.Name = "m_cmd_nhan_vien_loai_lao_dong";
             this.m_cmd_nhan_vien_loai_lao_dong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_nhan_vien_loai_lao_dong_ItemClick);
             // 
+            // m_cmd_them_hs_chat_luong
+            // 
+            this.m_cmd_them_hs_chat_luong.Caption = "Thêm hệ số chất lượng";
+            this.m_cmd_them_hs_chat_luong.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_them_hs_chat_luong.Glyph")));
+            this.m_cmd_them_hs_chat_luong.Id = 52;
+            this.m_cmd_them_hs_chat_luong.Name = "m_cmd_them_hs_chat_luong";
+            this.m_cmd_them_hs_chat_luong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -556,6 +569,8 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_he_so_luong_ns);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_luong_che_do);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_phu_cap);
+            this.ribbonPageGroup3.ItemLinks.Add(this.c_cmd_danh_muc_don_vi);
+            this.ribbonPageGroup3.ItemLinks.Add(this.c_cmd_danh_muc_bao_hiem);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // ribbonPage3
@@ -626,14 +641,23 @@
             // 
             this.MdiManager.MdiParent = this;
             // 
-            // m_cmd_them_hs_chat_luong
+            // c_cmd_danh_muc_don_vi
             // 
-            this.m_cmd_them_hs_chat_luong.Caption = "Thêm hệ số chất lượng";
-            this.m_cmd_them_hs_chat_luong.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_them_hs_chat_luong.Glyph")));
-            this.m_cmd_them_hs_chat_luong.Id = 52;
-            this.m_cmd_them_hs_chat_luong.Name = "m_cmd_them_hs_chat_luong";
-            this.m_cmd_them_hs_chat_luong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.c_cmd_danh_muc_don_vi.Caption = "Đơn vị";
+            this.c_cmd_danh_muc_don_vi.Glyph = ((System.Drawing.Image)(resources.GetObject("c_cmd_danh_muc_don_vi.Glyph")));
+            this.c_cmd_danh_muc_don_vi.Id = 53;
+            this.c_cmd_danh_muc_don_vi.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("c_cmd_danh_muc_don_vi.LargeGlyph")));
+            this.c_cmd_danh_muc_don_vi.Name = "c_cmd_danh_muc_don_vi";
+            this.c_cmd_danh_muc_don_vi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.c_cmd_danh_muc_don_vi_ItemClick);
+            // 
+            // c_cmd_danh_muc_bao_hiem
+            // 
+            this.c_cmd_danh_muc_bao_hiem.Caption = "Bảo hiểm";
+            this.c_cmd_danh_muc_bao_hiem.Glyph = ((System.Drawing.Image)(resources.GetObject("c_cmd_danh_muc_bao_hiem.Glyph")));
+            this.c_cmd_danh_muc_bao_hiem.Id = 54;
+            this.c_cmd_danh_muc_bao_hiem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("c_cmd_danh_muc_bao_hiem.LargeGlyph")));
+            this.c_cmd_danh_muc_bao_hiem.Name = "c_cmd_danh_muc_bao_hiem";
+            this.c_cmd_danh_muc_bao_hiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.c_cmd_danh_muc_bao_hiem_ItemClick);
             // 
             // f388_main
             // 
@@ -715,5 +739,7 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_nhan_vien_loai_lao_dong;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem m_cmd_them_hs_chat_luong;
+        private DevExpress.XtraBars.BarButtonItem c_cmd_danh_muc_don_vi;
+        private DevExpress.XtraBars.BarButtonItem c_cmd_danh_muc_bao_hiem;
     }
 }

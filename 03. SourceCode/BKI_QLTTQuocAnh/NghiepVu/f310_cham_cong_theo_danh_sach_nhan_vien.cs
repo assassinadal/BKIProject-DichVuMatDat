@@ -45,13 +45,18 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_2_grid()
         {
             CCommon.make_stt(gridView1);
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            DataSet v_ds = new System.Data.DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillDatasetGDChamCong(v_ds, m_dat_ngay_cham_cong.Value.Date);
 
-            DS_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG v_ds = new DS_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG();
-            US_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG v_us = new US_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG();
+            //DS_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG v_ds = new DS_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG();
+            //US_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG v_us = new US_V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG();
 
-            m_us.FillDatasetByNgayChamCong(m_ds, m_dat_ngay_cham_cong.Value.Date);
+          //  m_us.FillDatasetByNgayChamCong(m_ds, m_dat_ngay_cham_cong.Value.Date);
 
-            gridControl1.DataSource = m_ds.Tables[0];
+            gridControl1.DataSource = v_ds.Tables[0];
+         
         }
 
         private DataSet load_data_2_ds_dm_loai_ngay_cong(DataSet v_ds_dm_loai_ngay_cong)
@@ -62,14 +67,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_ds_dm_loai_ngay_cong.Tables.Add(new DataTable());
 
           //  v_ds.EnforceConstraints = false;
-            v_us.FillDatasetWithQuery(v_ds_dm_loai_ngay_cong, "select ID,MA_NGAY_CONG, TEN_NGAY_CONG FROM DM_LOAI_NGAY_CONG");
+            v_us.FillDatasetWithQuery(v_ds_dm_loai_ngay_cong, "select ID AS ID_LOAI_NGAY_CONG,MA_NGAY_CONG, TEN_NGAY_CONG FROM DM_LOAI_NGAY_CONG");
 
             return v_ds_dm_loai_ngay_cong;
         }
 
         private void load_data_2_le_loai_ngay_cong()
         {
-            m_sle_loai_ngay_cong.View.Columns.AddField("ID").Visible = false;
+            m_sle_loai_ngay_cong.View.Columns.AddField("ID_LOAI_NGAY_CONG").Visible = false;
             m_sle_loai_ngay_cong.View.Columns.AddField("MA_NGAY_CONG").Visible = true;
             m_sle_loai_ngay_cong.View.Columns.AddField("TEN_NGAY_CONG").Visible = true;
             m_sle_loai_ngay_cong.View.Columns[1].Caption = "MÃ NGÀY CÔNG";
@@ -77,8 +82,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds_dm_loai_ngay_cong = new DataSet();
             //Chinh hien thi nguoi dung
             m_sle_loai_ngay_cong.DataSource = load_data_2_ds_dm_loai_ngay_cong(v_ds_dm_loai_ngay_cong).Tables[0];
-            m_sle_loai_ngay_cong.DisplayMember = "TEN_NGAY_CONG";
-            m_sle_loai_ngay_cong.ValueMember = "ID";
+            m_sle_loai_ngay_cong.DisplayMember = "MA_NGAY_CONG";
+            m_sle_loai_ngay_cong.ValueMember = "ID_LOAI_NGAY_COUNT";
             
 
             //m_sle_loai_ngay_cong.View.PopulateColumns();
@@ -229,8 +234,9 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                load_data_2_grid();
                 load_data_2_le_loai_ngay_cong();
+                load_data_2_grid();
+                
             }
             catch (Exception v_e)
             {
@@ -249,7 +255,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             v_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(v_dr["ID"].ToString());
-            v_us.dcID_LOAI_NGAY_CONG = CIPConvert.ToDecimal(v_dr["CHAM_CONG"].ToString());
+            v_us.dcID_LOAI_NGAY_CONG = CIPConvert.ToDecimal(v_dr["ID_NGAY_CONG"].ToString());
             v_us.datNGAY_CHAM_CONG = m_dat_ngay_cham_cong.Value;
             v_us.strDA_XOA = "N";
             v_us.datNGAY_LAP = m_dat_ngay_cham_cong.Value;

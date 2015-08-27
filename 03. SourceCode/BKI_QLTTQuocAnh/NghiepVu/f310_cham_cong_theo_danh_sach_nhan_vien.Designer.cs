@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f310_cham_cong_theo_danh_sach_nhan_vien));
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList = new System.Windows.Forms.ImageList();
             this.m_dat_ngay_cham_cong = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_lbl_ngay_cham_cong = new System.Windows.Forms.Label();
@@ -42,11 +41,11 @@
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CHAM_CONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ID_LOAI_NGAY_CONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_sle_loai_ngay_cong = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.m_le_loai_ngay_cong = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.dMLOAINGAYCONGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dMLOAINGAYCONGBindingSource = new System.Windows.Forms.BindingSource();
             this.bKI_DVMDDataSet = new BKI_DichVuMatDat.BKI_DVMDDataSet();
             this.dM_LOAI_NGAY_CONGTableAdapter = new BKI_DichVuMatDat.BKI_DVMDDataSetTableAdapters.DM_LOAI_NGAY_CONGTableAdapter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -83,7 +82,7 @@
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(308, 42);
+            this.m_cmd_search.Location = new System.Drawing.Point(329, 47);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 9;
@@ -119,7 +118,7 @@
             // m_dat_ngay_cham_cong
             // 
             this.m_dat_ngay_cham_cong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_cham_cong.Location = new System.Drawing.Point(103, 47);
+            this.m_dat_ngay_cham_cong.Location = new System.Drawing.Point(124, 52);
             this.m_dat_ngay_cham_cong.Name = "m_dat_ngay_cham_cong";
             this.m_dat_ngay_cham_cong.Size = new System.Drawing.Size(164, 20);
             this.m_dat_ngay_cham_cong.TabIndex = 8;
@@ -139,7 +138,7 @@
             // m_lbl_ngay_cham_cong
             // 
             this.m_lbl_ngay_cham_cong.AutoSize = true;
-            this.m_lbl_ngay_cham_cong.Location = new System.Drawing.Point(9, 50);
+            this.m_lbl_ngay_cham_cong.Location = new System.Drawing.Point(30, 55);
             this.m_lbl_ngay_cham_cong.Name = "m_lbl_ngay_cham_cong";
             this.m_lbl_ngay_cham_cong.Size = new System.Drawing.Size(88, 13);
             this.m_lbl_ngay_cham_cong.TabIndex = 5;
@@ -155,7 +154,7 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.m_le_loai_ngay_cong,
             this.m_sle_loai_ngay_cong});
-            this.gridControl1.Size = new System.Drawing.Size(1032, 374);
+            this.gridControl1.Size = new System.Drawing.Size(1032, 393);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -167,7 +166,7 @@
             this.STT,
             this.MA_NV,
             this.HO_TEN,
-            this.CHAM_CONG});
+            this.ID_LOAI_NGAY_CONG});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.Inplace;
@@ -209,15 +208,15 @@
             this.HO_TEN.VisibleIndex = 2;
             this.HO_TEN.Width = 200;
             // 
-            // CHAM_CONG
+            // ID_LOAI_NGAY_CONG
             // 
-            this.CHAM_CONG.Caption = "Chấm công";
-            this.CHAM_CONG.ColumnEdit = this.m_sle_loai_ngay_cong;
-            this.CHAM_CONG.FieldName = "CHAM_CONG";
-            this.CHAM_CONG.Name = "CHAM_CONG";
-            this.CHAM_CONG.Visible = true;
-            this.CHAM_CONG.VisibleIndex = 3;
-            this.CHAM_CONG.Width = 726;
+            this.ID_LOAI_NGAY_CONG.Caption = "Chấm công";
+            this.ID_LOAI_NGAY_CONG.ColumnEdit = this.m_sle_loai_ngay_cong;
+            this.ID_LOAI_NGAY_CONG.FieldName = "ID_LOAI_NGAY_CONG";
+            this.ID_LOAI_NGAY_CONG.Name = "ID_LOAI_NGAY_CONG";
+            this.ID_LOAI_NGAY_CONG.Visible = true;
+            this.ID_LOAI_NGAY_CONG.VisibleIndex = 3;
+            this.ID_LOAI_NGAY_CONG.Width = 726;
             // 
             // m_sle_loai_ngay_cong
             // 
@@ -261,7 +260,7 @@
             // 
             this.panelControl1.Controls.Add(this.simpleButton1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 413);
+            this.panelControl1.Location = new System.Drawing.Point(0, 432);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1032, 42);
             this.panelControl1.TabIndex = 3;
@@ -280,7 +279,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 455);
+            this.ClientSize = new System.Drawing.Size(1032, 474);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panel1);
@@ -316,7 +315,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn MA_NV;
         private DevExpress.XtraGrid.Columns.GridColumn HO_TEN;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
-        private DevExpress.XtraGrid.Columns.GridColumn CHAM_CONG;
+        private DevExpress.XtraGrid.Columns.GridColumn ID_LOAI_NGAY_CONG;
         private BKI_DVMDDataSet bKI_DVMDDataSet;
         private System.Windows.Forms.BindingSource dMLOAINGAYCONGBindingSource;
         private BKI_DVMDDataSetTableAdapters.DM_LOAI_NGAY_CONGTableAdapter dM_LOAI_NGAY_CONGTableAdapter;

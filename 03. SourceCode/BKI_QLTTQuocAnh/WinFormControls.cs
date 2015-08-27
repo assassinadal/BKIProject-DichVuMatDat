@@ -322,9 +322,11 @@ namespace BKI_DichVuMatDat
             v_cstore.fillDataSetByCommand(this, ip_ds);
         }
 
-        internal void fillDatasetWithTableName(DataSet v_ds, string p)
+        internal void FillDatasetGDChamCong(DataSet v_ds, DateTime v_dat)
         {
-            throw new NotImplementedException();
+            CStoredProc v_cstore = new CStoredProc("pr_gd_cham_cong");
+            v_cstore.addDatetimeInputParam("@ngay_cham_cong", v_dat);
+            v_cstore.fillDataSetByCommand(this, v_ds);
         }
     }
 

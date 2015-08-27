@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f360_quan_ly_quyet_dinh));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_gr_thong_tin_co_ban = new DevExpress.XtraEditors.GroupControl();
+            this.m_txt_noi_dung = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_txt_link = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.m_txt_nguoi_ky = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.m_lbl_kiem_tra_ma_qd = new System.Windows.Forms.Label();
             this.m_txt_ma_qd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,8 +51,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.m_dat_ngay_co_hieu_luc = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_ngay_cham_cong = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList();
-            this.ImageList = new System.Windows.Forms.ImageList();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_grc_quyet_dinh = new DevExpress.XtraGrid.GridControl();
             this.m_grv_quyet_dinh = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,12 +72,6 @@
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.m_cmd_lap_qd = new SIS.Controls.Button.SiSButton();
-            this.m_txt_nguoi_ky = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.m_txt_link = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.m_txt_noi_dung = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_co_ban)).BeginInit();
             this.m_gr_thong_tin_co_ban.SuspendLayout();
@@ -130,6 +131,55 @@
             this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(1012, 195);
             this.m_gr_thong_tin_co_ban.TabIndex = 0;
             this.m_gr_thong_tin_co_ban.Text = "THÔNG TIN CƠ BẢN";
+            // 
+            // m_txt_noi_dung
+            // 
+            this.m_txt_noi_dung.Location = new System.Drawing.Point(146, 112);
+            this.m_txt_noi_dung.Multiline = true;
+            this.m_txt_noi_dung.Name = "m_txt_noi_dung";
+            this.m_txt_noi_dung.Size = new System.Drawing.Size(557, 46);
+            this.m_txt_noi_dung.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 115);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Nội dung";
+            // 
+            // m_txt_link
+            // 
+            this.m_txt_link.Location = new System.Drawing.Point(146, 164);
+            this.m_txt_link.Name = "m_txt_link";
+            this.m_txt_link.Size = new System.Drawing.Size(557, 20);
+            this.m_txt_link.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 167);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(93, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Link quyết định (*)";
+            // 
+            // m_txt_nguoi_ky
+            // 
+            this.m_txt_nguoi_ky.Location = new System.Drawing.Point(495, 86);
+            this.m_txt_nguoi_ky.Name = "m_txt_nguoi_ky";
+            this.m_txt_nguoi_ky.Size = new System.Drawing.Size(208, 20);
+            this.m_txt_nguoi_ky.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(384, 89);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Người ký (*)";
             // 
             // m_lbl_kiem_tra_ma_qd
             // 
@@ -533,55 +583,6 @@
             this.m_cmd_lap_qd.Size = new System.Drawing.Size(129, 44);
             this.m_cmd_lap_qd.TabIndex = 0;
             this.m_cmd_lap_qd.Text = "&Thêm quyết định";
-            // 
-            // m_txt_nguoi_ky
-            // 
-            this.m_txt_nguoi_ky.Location = new System.Drawing.Point(495, 86);
-            this.m_txt_nguoi_ky.Name = "m_txt_nguoi_ky";
-            this.m_txt_nguoi_ky.Size = new System.Drawing.Size(208, 20);
-            this.m_txt_nguoi_ky.TabIndex = 14;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(384, 89);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Người ký (*)";
-            // 
-            // m_txt_link
-            // 
-            this.m_txt_link.Location = new System.Drawing.Point(146, 164);
-            this.m_txt_link.Name = "m_txt_link";
-            this.m_txt_link.Size = new System.Drawing.Size(557, 20);
-            this.m_txt_link.TabIndex = 16;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 167);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Link quyết định (*)";
-            // 
-            // m_txt_noi_dung
-            // 
-            this.m_txt_noi_dung.Location = new System.Drawing.Point(146, 112);
-            this.m_txt_noi_dung.Multiline = true;
-            this.m_txt_noi_dung.Name = "m_txt_noi_dung";
-            this.m_txt_noi_dung.Size = new System.Drawing.Size(557, 46);
-            this.m_txt_noi_dung.TabIndex = 18;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 115);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Nội dung";
             // 
             // f360_quan_ly_quyet_dinh
             // 

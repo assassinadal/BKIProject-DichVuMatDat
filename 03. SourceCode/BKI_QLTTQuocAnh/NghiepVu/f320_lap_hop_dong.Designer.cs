@@ -79,7 +79,7 @@
             this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_BAT_DAU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_KY_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -573,7 +573,7 @@
             this.MA_NV,
             this.HO_TEN,
             this.MA_HOP_DONG,
-            this.TEN,
+            this.LOAI_HOP_DONG,
             this.NGAY_BAT_DAU,
             this.NGAY_KET_THUC,
             this.NGAY_KY_HOP_DONG,
@@ -652,17 +652,17 @@
             this.MA_HOP_DONG.Visible = true;
             this.MA_HOP_DONG.VisibleIndex = 3;
             // 
-            // TEN
+            // LOAI_HOP_DONG
             // 
-            this.TEN.AppearanceHeader.Options.UseTextOptions = true;
-            this.TEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.TEN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.TEN.Caption = "Loại HĐ";
-            this.TEN.FieldName = "TEN";
-            this.TEN.Name = "TEN";
-            this.TEN.OptionsColumn.AllowEdit = false;
-            this.TEN.Visible = true;
-            this.TEN.VisibleIndex = 4;
+            this.LOAI_HOP_DONG.AppearanceHeader.Options.UseTextOptions = true;
+            this.LOAI_HOP_DONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.LOAI_HOP_DONG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.LOAI_HOP_DONG.Caption = "Loại HĐ";
+            this.LOAI_HOP_DONG.FieldName = "LOAI_HOP_DONG";
+            this.LOAI_HOP_DONG.Name = "LOAI_HOP_DONG";
+            this.LOAI_HOP_DONG.OptionsColumn.AllowEdit = false;
+            this.LOAI_HOP_DONG.Visible = true;
+            this.LOAI_HOP_DONG.VisibleIndex = 4;
             // 
             // NGAY_BAT_DAU
             // 
@@ -942,7 +942,7 @@
         internal SIS.Controls.Button.SiSButton m_cmd_update;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private DevExpress.XtraGrid.Columns.GridColumn MA_HOP_DONG;
-        private DevExpress.XtraGrid.Columns.GridColumn TEN;
+        private DevExpress.XtraGrid.Columns.GridColumn LOAI_HOP_DONG;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_BAT_DAU;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KET_THUC;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KY_HOP_DONG;

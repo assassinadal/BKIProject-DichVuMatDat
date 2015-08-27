@@ -142,6 +142,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.TEN].Caption = "Loại quyết định";
             m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.NGAY_CO_HIEU_LUC].Caption = "Ngày có hiệu lực";
             m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.NGAY_HET_HIEU_LUC].Caption = "Ngày hết hiệu lực";
+            m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.NGUOI_KY].Caption = "Người ký";
             m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.NGAY_KY].Caption = "Ngày ký";
             m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.NOI_DUNG].Caption = "Nội dung";
             m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.LINK].Caption = "Link";

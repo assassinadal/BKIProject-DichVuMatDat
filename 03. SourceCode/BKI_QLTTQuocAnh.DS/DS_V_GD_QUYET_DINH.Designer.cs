@@ -295,6 +295,8 @@ namespace BKI_DichVuMatDat.DS {
             
             private global::System.Data.DataColumn columnNGAY_KY;
             
+            private global::System.Data.DataColumn columnNGUOI_KY;
+            
             private global::System.Data.DataColumn columnNGAY_HET_HIEU_LUC;
             
             private global::System.Data.DataColumn columnNOI_DUNG;
@@ -400,6 +402,14 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NGUOI_KYColumn {
+                get {
+                    return this.columnNGUOI_KY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn NGAY_HET_HIEU_LUCColumn {
                 get {
                     return this.columnNGAY_HET_HIEU_LUC;
@@ -459,7 +469,7 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_GD_QUYET_DINHRow AddV_GD_QUYET_DINHRow(string MA_QUYET_DINH, decimal ID_LOAI_QD, string MA_TU_DIEN, string TEN_NGAN, string TEN, System.DateTime NGAY_CO_HIEU_LUC, System.DateTime NGAY_KY, System.DateTime NGAY_HET_HIEU_LUC, string NOI_DUNG, string LINK) {
+            public V_GD_QUYET_DINHRow AddV_GD_QUYET_DINHRow(string MA_QUYET_DINH, decimal ID_LOAI_QD, string MA_TU_DIEN, string TEN_NGAN, string TEN, System.DateTime NGAY_CO_HIEU_LUC, System.DateTime NGAY_KY, string NGUOI_KY, System.DateTime NGAY_HET_HIEU_LUC, string NOI_DUNG, string LINK) {
                 V_GD_QUYET_DINHRow rowV_GD_QUYET_DINHRow = ((V_GD_QUYET_DINHRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -470,6 +480,7 @@ namespace BKI_DichVuMatDat.DS {
                         TEN,
                         NGAY_CO_HIEU_LUC,
                         NGAY_KY,
+                        NGUOI_KY,
                         NGAY_HET_HIEU_LUC,
                         NOI_DUNG,
                         LINK};
@@ -510,6 +521,7 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnTEN = base.Columns["TEN"];
                 this.columnNGAY_CO_HIEU_LUC = base.Columns["NGAY_CO_HIEU_LUC"];
                 this.columnNGAY_KY = base.Columns["NGAY_KY"];
+                this.columnNGUOI_KY = base.Columns["NGUOI_KY"];
                 this.columnNGAY_HET_HIEU_LUC = base.Columns["NGAY_HET_HIEU_LUC"];
                 this.columnNOI_DUNG = base.Columns["NOI_DUNG"];
                 this.columnLINK = base.Columns["LINK"];
@@ -534,6 +546,8 @@ namespace BKI_DichVuMatDat.DS {
                 base.Columns.Add(this.columnNGAY_CO_HIEU_LUC);
                 this.columnNGAY_KY = new global::System.Data.DataColumn("NGAY_KY", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAY_KY);
+                this.columnNGUOI_KY = new global::System.Data.DataColumn("NGUOI_KY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNGUOI_KY);
                 this.columnNGAY_HET_HIEU_LUC = new global::System.Data.DataColumn("NGAY_HET_HIEU_LUC", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAY_HET_HIEU_LUC);
                 this.columnNOI_DUNG = new global::System.Data.DataColumn("NOI_DUNG", typeof(string), null, global::System.Data.MappingType.Element);
@@ -554,6 +568,7 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnMA_TU_DIEN.MaxLength = 15;
                 this.columnTEN_NGAN.MaxLength = 35;
                 this.columnTEN.MaxLength = 50;
+                this.columnNGUOI_KY.MaxLength = 50;
                 this.columnNOI_DUNG.MaxLength = 250;
                 this.columnLINK.MaxLength = 250;
             }
@@ -811,6 +826,22 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NGUOI_KY {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_GD_QUYET_DINH.NGUOI_KYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NGUOI_KY\' in table \'V_GD_QUYET_DINH\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_GD_QUYET_DINH.NGUOI_KYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime NGAY_HET_HIEU_LUC {
                 get {
                     try {
@@ -915,6 +946,18 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNGAY_KYNull() {
                 this[this.tableV_GD_QUYET_DINH.NGAY_KYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNGUOI_KYNull() {
+                return this.IsNull(this.tableV_GD_QUYET_DINH.NGUOI_KYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNGUOI_KYNull() {
+                this[this.tableV_GD_QUYET_DINH.NGUOI_KYColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1121,6 +1164,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_GD_QUYET_DINHTableAdapters {
             tableMapping.ColumnMappings.Add("TEN", "TEN");
             tableMapping.ColumnMappings.Add("NGAY_CO_HIEU_LUC", "NGAY_CO_HIEU_LUC");
             tableMapping.ColumnMappings.Add("NGAY_KY", "NGAY_KY");
+            tableMapping.ColumnMappings.Add("NGUOI_KY", "NGUOI_KY");
             tableMapping.ColumnMappings.Add("NGAY_HET_HIEU_LUC", "NGAY_HET_HIEU_LUC");
             tableMapping.ColumnMappings.Add("NOI_DUNG", "NOI_DUNG");
             tableMapping.ColumnMappings.Add("LINK", "LINK");
@@ -1141,7 +1185,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_GD_QUYET_DINHTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, MA_QUYET_DINH, ID_LOAI_QD, MA_TU_DIEN, TEN_NGAN, TEN, NGAY_CO_HIEU_LUC" +
-                ", NGAY_KY, NGAY_HET_HIEU_LUC, NOI_DUNG, LINK FROM dbo.V_GD_QUYET_DINH";
+                ", NGAY_KY, NGUOI_KY, NGAY_HET_HIEU_LUC, NOI_DUNG, LINK FROM dbo.V_GD_QUYET_DINH";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

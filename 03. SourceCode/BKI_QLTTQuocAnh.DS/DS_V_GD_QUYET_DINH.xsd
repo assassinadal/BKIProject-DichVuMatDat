@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="BKI_DVMDConnectionString1 (Settings)" DbObjectName="BKI_DVMD.dbo.V_GD_QUYET_DINH" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, MA_QUYET_DINH, ID_LOAI_QD, MA_TU_DIEN, TEN_NGAN, TEN, NGAY_CO_HIEU_LUC, NGAY_KY, NGAY_HET_HIEU_LUC, NOI_DUNG, LINK FROM dbo.V_GD_QUYET_DINH</CommandText>
+                    <CommandText>SELECT ID, MA_QUYET_DINH, ID_LOAI_QD, MA_TU_DIEN, TEN_NGAN, TEN, NGAY_CO_HIEU_LUC, NGAY_KY, NGUOI_KY, NGAY_HET_HIEU_LUC, NOI_DUNG, LINK FROM dbo.V_GD_QUYET_DINH</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -27,6 +27,7 @@
               <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
               <Mapping SourceColumn="NGAY_CO_HIEU_LUC" DataSetColumn="NGAY_CO_HIEU_LUC" />
               <Mapping SourceColumn="NGAY_KY" DataSetColumn="NGAY_KY" />
+              <Mapping SourceColumn="NGUOI_KY" DataSetColumn="NGUOI_KY" />
               <Mapping SourceColumn="NGAY_HET_HIEU_LUC" DataSetColumn="NGAY_HET_HIEU_LUC" />
               <Mapping SourceColumn="NOI_DUNG" DataSetColumn="NOI_DUNG" />
               <Mapping SourceColumn="LINK" DataSetColumn="LINK" />
@@ -76,6 +77,13 @@
               </xs:element>
               <xs:element name="NGAY_CO_HIEU_LUC" msprop:Generator_ColumnVarNameInTable="columnNGAY_CO_HIEU_LUC" msprop:Generator_ColumnPropNameInRow="NGAY_CO_HIEU_LUC" msprop:Generator_ColumnPropNameInTable="NGAY_CO_HIEU_LUCColumn" msprop:Generator_UserColumnName="NGAY_CO_HIEU_LUC" type="xs:dateTime" minOccurs="0" />
               <xs:element name="NGAY_KY" msprop:Generator_ColumnVarNameInTable="columnNGAY_KY" msprop:Generator_ColumnPropNameInRow="NGAY_KY" msprop:Generator_ColumnPropNameInTable="NGAY_KYColumn" msprop:Generator_UserColumnName="NGAY_KY" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NGUOI_KY" msprop:Generator_ColumnVarNameInTable="columnNGUOI_KY" msprop:Generator_ColumnPropNameInRow="NGUOI_KY" msprop:Generator_ColumnPropNameInTable="NGUOI_KYColumn" msprop:Generator_UserColumnName="NGUOI_KY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="NGAY_HET_HIEU_LUC" msprop:Generator_ColumnVarNameInTable="columnNGAY_HET_HIEU_LUC" msprop:Generator_ColumnPropNameInRow="NGAY_HET_HIEU_LUC" msprop:Generator_ColumnPropNameInTable="NGAY_HET_HIEU_LUCColumn" msprop:Generator_UserColumnName="NGAY_HET_HIEU_LUC" type="xs:dateTime" minOccurs="0" />
               <xs:element name="NOI_DUNG" msprop:Generator_ColumnVarNameInTable="columnNOI_DUNG" msprop:Generator_ColumnPropNameInRow="NOI_DUNG" msprop:Generator_ColumnPropNameInTable="NOI_DUNGColumn" msprop:Generator_UserColumnName="NOI_DUNG" minOccurs="0">
                 <xs:simpleType>

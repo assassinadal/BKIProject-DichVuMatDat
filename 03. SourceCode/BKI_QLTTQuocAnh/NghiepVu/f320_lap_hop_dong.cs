@@ -395,9 +395,12 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return false;
             }
 
-            if (check_ma_hd())
+            if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
-                return false;
+                if (check_ma_hd())
+                {
+                    return false;
+                }
             }
 
             return true;
@@ -433,34 +436,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                 throw v_e;
             }
         }
-
-        private decimal find_id_gd_hd(decimal ip_dc_id_nv, decimal ip_dc_id_loai_hd, string ip_str_ma_hd)
-        {
-            try
-            {
-                US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
-                DS_GD_HOP_DONG v_ds = new DS_GD_HOP_DONG();
-
-                v_us.FillDataset(v_ds);
-
-                string v_str_filter = "ID_NHAN_VIEN = " + ip_dc_id_nv + " AND ID_LOAI_HOP_DONG = " + ip_dc_id_loai_hd + " AND MA_HOP_DONG = '" + ip_str_ma_hd + "'";
-                DataRow[] v_dr = v_ds.GD_HOP_DONG.Select(v_str_filter);
-
-                if (v_dr.Count() == 0)
-                {
-                    return -1;
-                }
-                else
-                {
-                    return CIPConvert.ToDecimal(v_dr.First()["ID"].ToString());
-                }
-            }
-            catch (Exception v_e)
-            {
-                throw v_e;
-            }
-        }
-
         private decimal find_id_gd_hd(decimal ip_dc_id_nv)
         {
             try
@@ -551,8 +526,62 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                 v_us.FillDataset(v_ds);
 
-                string v_str_filter = "ID_HOP_DONG = " + ip_dc_id_gd_hd;
+                string v_str_filter = "ID_HOP_DONG = " + ip_dc_id_gd_hd +"AND DA_XOA = 'N'";
                 DataRow[] v_dr = v_ds.GD_HS_LNS_LCD.Select(v_str_filter);
+
+                if (v_dr.Count() == 0)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return CIPConvert.ToDecimal(v_dr.First()["ID"].ToString());
+                }
+            }
+            catch (Exception v_e)
+            {
+                throw v_e;
+            }
+        }
+
+        private decimal find_id_gd_hs_lns(decimal ip_dc_id_gd_hd)
+        {
+            try
+            {
+                US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS();
+                DS_GD_HE_SO_LNS v_ds = new DS_GD_HE_SO_LNS();
+
+                v_us.FillDataset(v_ds);
+
+                string v_str_filter = "ID_HOP_DONG = " + ip_dc_id_gd_hd + "AND DA_XOA = 'N'";
+                DataRow[] v_dr = v_ds.GD_HE_SO_LNS.Select(v_str_filter);
+
+                if (v_dr.Count() == 0)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return CIPConvert.ToDecimal(v_dr.First()["ID"].ToString());
+                }
+            }
+            catch (Exception v_e)
+            {
+                throw v_e;
+            }
+        }
+
+        private decimal find_id_gd_lcd(decimal ip_dc_id_gd_hd)
+        {
+            try
+            {
+                US_GD_LUONG_CHE_DO v_us = new US_GD_LUONG_CHE_DO();
+                DS_GD_LUONG_CHE_DO v_ds = new DS_GD_LUONG_CHE_DO();
+
+                v_us.FillDataset(v_ds);
+
+                string v_str_filter = "ID_HOP_DONG = " + ip_dc_id_gd_hd + "AND DA_XOA = 'N'";
+                DataRow[] v_dr = v_ds.GD_LUONG_CHE_DO.Select(v_str_filter);
 
                 if (v_dr.Count() == 0)
                 {
@@ -571,7 +600,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_m_variable()
         {
-            m_id_gd_hd = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_sle_loai_hop_dong.EditValue), m_txt_ma_hd.Text.Trim());
+            m_id_gd_hd = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
             m_id_hs_lns = find_id_hs_lns(CIPConvert.ToDecimal(m_sle_chuc_danh_lns.EditValue), CIPConvert.ToDecimal(m_sle_muc_lns.EditValue));
             m_id_lcd = find_id_lcd(CIPConvert.ToDecimal(m_sle_chuc_danh_lcd.EditValue), CIPConvert.ToDecimal(m_sle_muc_lcd.EditValue));
         }
@@ -580,7 +609,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                ip_us.dcID_HOP_DONG = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_sle_loai_hop_dong.EditValue), m_txt_ma_hd.Text.Trim()); ;
+                ip_us.dcID_HOP_DONG = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue)); ;
                 //ip_us.dcID_QUYET_DINH = 
                 ip_us.dcID_HS_LNS = m_id_hs_lns;
                 ip_us.dcID_LCD = m_id_lcd;
@@ -606,7 +635,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                ip_us.dcID_HOP_DONG = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_sle_loai_hop_dong.EditValue), m_txt_ma_hd.Text.Trim());
+                ip_us.dcID_HOP_DONG = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                 ip_us.dcHE_SO = CIPConvert.ToDecimal(find_hs_lns(CIPConvert.ToDecimal(m_sle_chuc_danh_lns.EditValue), CIPConvert.ToDecimal(m_sle_muc_lns.EditValue)));
                 //ip_us.dcID_LY_DO_CHINH_SUA =
                 ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
@@ -634,7 +663,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                ip_us.dcID_HOP_DONG = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_sle_loai_hop_dong.EditValue), m_txt_ma_hd.Text.Trim());
+                ip_us.dcID_HOP_DONG = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                 ip_us.dcSO_TIEN = CIPConvert.ToDecimal(find_so_tien_lcd(CIPConvert.ToDecimal(m_sle_chuc_danh_lcd.EditValue), CIPConvert.ToDecimal(m_sle_muc_lcd.EditValue)));
                 //ip_us.dcID_LY_DO_CHINH_SUA =
                 ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
@@ -702,6 +731,51 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.CommitTransaction();
         }
 
+        private void cho_gd_hs_lns_lcd_da_xoa_Y()
+        {
+            decimal v_id_gd_hs_lns_lcd = 0;
+            v_id_gd_hs_lns_lcd = find_id_gd_lns_lcd(m_id_gd_hd);
+
+            US_GD_HS_LNS_LCD v_us = new US_GD_HS_LNS_LCD(v_id_gd_hs_lns_lcd);
+
+            v_us.strDA_XOA = "Y";
+            v_us.datNGAY_SUA = DateTime.Now.Date;
+            //nguoi sua
+            v_us.BeginTransaction();
+            v_us.Update();
+            v_us.CommitTransaction();
+        }
+
+        private void cho_gd_hs_lns_da_xoa_Y()
+        {
+            decimal v_id_gd_hs_lns = 0;
+            v_id_gd_hs_lns = find_id_gd_hs_lns(m_id_gd_hd);
+
+            US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS(v_id_gd_hs_lns);
+
+            v_us.strDA_XOA = "Y";
+            v_us.datNGAY_SUA = DateTime.Now.Date;
+            //nguoi sua
+            v_us.BeginTransaction();
+            v_us.Update();
+            v_us.CommitTransaction();
+        }
+
+        private void cho_gd_lcd_da_xoa_Y()
+        {
+            decimal v_id_gd_lcd = 0;
+            v_id_gd_lcd = find_id_gd_lcd(m_id_gd_hd);
+
+            US_GD_LUONG_CHE_DO v_us = new US_GD_LUONG_CHE_DO(v_id_gd_lcd);
+
+            v_us.strDA_XOA = "Y";
+            v_us.datNGAY_SUA = DateTime.Now.Date;
+            //nguoi sua
+            v_us.BeginTransaction();
+            v_us.Update();
+            v_us.CommitTransaction();
+        }
+
         private void save_data()
         {
 
@@ -719,6 +793,9 @@ namespace BKI_DichVuMatDat.NghiepVu
                         if (m_id_gd_hd != -1)
                         {
                             cho_hop_dong_da_co_ve_trang_thai_delete_Y();
+                            cho_gd_hs_lns_lcd_da_xoa_Y();
+                            cho_gd_hs_lns_da_xoa_Y();
+                            cho_gd_lcd_da_xoa_Y();
                         }
 
                         //lap hop dong moi

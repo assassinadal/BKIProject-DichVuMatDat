@@ -91,6 +91,7 @@ namespace BKI_DichVuMatDat.US {
         public const int LY_DO_CHINH_SUA_SO_TIEN_LCD = 9;
         public const int LOAI_CONG_TAC = 10;
         public const int LOAI_VI_TRI = 11;
+        public const int LOAI_QUYET_DINH = 12;
     }
 
   

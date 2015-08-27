@@ -451,6 +451,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string MA_QUYET_DINH = "MA_QUYET_DINH";
         public const string ID_LOAI_QD = "ID_LOAI_QD";
         public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
+        public const string NGUOI_KY = "NGUOI_KY";
         public const string NGAY_KY = "NGAY_KY";
         public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
         public const string NOI_DUNG = "NOI_DUNG";
@@ -585,8 +586,6 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string MA_TU_DIEN = "MA_TU_DIEN";
     }
 
-
-
     public class V_GD_QUYET_DINH
     {
         public const string ID = "ID";
@@ -597,6 +596,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string TEN = "TEN";
         public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
         public const string NGAY_KY = "NGAY_KY";
+        public const string NGUOI_KY = "NGUOI_KY";
         public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
         public const string NOI_DUNG = "NOI_DUNG";
         public const string LINK = "LINK";

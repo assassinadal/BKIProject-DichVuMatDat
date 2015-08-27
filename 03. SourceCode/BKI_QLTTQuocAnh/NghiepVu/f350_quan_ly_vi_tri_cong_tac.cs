@@ -60,8 +60,6 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private DataSet load_data_2_ds_v_dm_nv()
         {
-            //DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
-            //US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
 
@@ -74,50 +72,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_2_sle_chon_nv()
         {
             m_sle_chon_nhan_vien.Properties.DataSource = load_data_2_ds_v_dm_nv().Tables[0];
-            //m_sle_chon_nhan_vien.Properties.DataSource = load_data_2_ds_v_dm_nv().Tables[0];
-            //  m_sle_chon_nhan_vien.Properties.DataSource = load_data_2_ds_v_dm_nv().V_DM_NHAN_VIEN;
-            //m_sle_chon_nhan_vien.Properties.ValueMember = V_DM_NHAN_VIEN.ID;
-            //m_sle_chon_nhan_vien.Properties.DisplayMember = V_DM_NHAN_VIEN.HO_TEN;
-
-            //m_sle_chon_nhan_vien.Properties.PopulateViewColumns();
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.ID].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.HO_DEM].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.TEN].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.DAN_TOC].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.CHUYEN_MON].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.DIA_CHI_TAM_TRU].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.DIA_CHI_THUONG_TRU].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.MA_SO_THUE_CA_NHAN].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.NAM_TOT_NGHIEP].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.NGAN_HANG].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.NGAY_CAP].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.NGAY_CAP_THE].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.NGAY_CHINH_THUC_TIEP_NHAN].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.NGAY_HET_HAN_THE].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.NGAY_TIEP_NHAN_VAO_TCT].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.NGAY_VAO_HANG_KHONG].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.NOI_CAP].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.NOI_SINH].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.QUE_QUAN].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.QUOC_TICH].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.SO_CMT].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.SO_TAI_KHOAN].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.TON_GIAO].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.TOT_NGHIEP_TAI].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.TRINH_DO_VAN_HOA].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.NGAY_SINH].Visible = false;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.HON_NHAN].Visible = false;
-
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.MA_NV].Width = 75;
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.HO_TEN].Width = 120;
-
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.MA_NV].Caption = "Mã NV";
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.HO_TEN].Caption = "Họ tên";
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.GIOI_TINH].Caption = "Giới tính";
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.SDT].Caption = "SĐT";
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.EMAIL].Caption = "Email";
-            //m_sle_chon_nhan_vien.Properties.View.Columns[V_DM_NHAN_VIEN.DIA_CHI_LIEN_LAC].Caption = "Địa chị liên lạc";
-
+            
             m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
@@ -134,24 +89,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_2_sle_chon_quyet_dinh()
         {
             m_sle_chon_quyet_dinh.Properties.DataSource = load_data_2_ds_v_gd_quyet_dinh().Tables[0];
-            //m_sle_chon_quyet_dinh.Properties.DataSource = load_data_2_ds_v_gd_quyet_dinh().Tables[0];
-            //m_sle_chon_quyet_dinh.Properties.DataSource = load_data_2_ds_v_gd_quyet_dinh().V_GD_QUYET_DINH;
-            //m_sle_chon_quyet_dinh.Properties.DisplayMember = V_GD_QUYET_DINH.MA_QUYET_DINH;
-            //m_sle_chon_quyet_dinh.Properties.ValueMember = V_GD_QUYET_DINH.ID;
-
-            //m_sle_chon_quyet_dinh.Properties.PopulateViewColumns();
-            //m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.ID].Visible = false;
-            //m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.ID_LOAI_QD].Visible = false;
-            //m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.MA_TU_DIEN].Visible = false;
-            //m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.TEN_NGAN].Visible = false;
-
-            //m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.MA_QUYET_DINH].Caption = "Mã quyết định";
-            //m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.TEN].Caption = "Loại quyết định";
-            //m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.NGAY_CO_HIEU_LUC].Caption = "Ngày có hiệu lực";
-            //m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.NGAY_HET_HIEU_LUC].Caption = "Ngày hết hiệu lực";
-            //m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.NGAY_KY].Caption = "Ngày ký";
-            //m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.NOI_DUNG].Caption = "Nội dung";
-            //m_sle_chon_quyet_dinh.Properties.View.Columns[V_GD_QUYET_DINH.LINK].Caption = "Link";
 
             m_sle_chon_quyet_dinh.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_quyet_dinh.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
@@ -180,20 +117,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             v_ds = load_data_2_ds_v_dm_don_vi();
             m_sle_chon_don_vi.Properties.DataSource = v_ds.Tables[0];
-            //m_sle_chon_don_vi.Properties.ValueMember = CM_DM_TU_DIEN.ID;
-            //m_sle_chon_don_vi.Properties.DisplayMember = CM_DM_TU_DIEN.TEN;
-
-            //m_sle_chon_don_vi.Properties.PopulateViewColumns();
-            //m_sle_chon_don_vi.Properties.View.Columns[CM_DM_TU_DIEN.ID].Visible = false;
-            //m_sle_chon_don_vi.Properties.View.Columns[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN].Visible = false;
-            //m_sle_chon_don_vi.Properties.View.Columns[CM_DM_TU_DIEN.TEN_NGAN].Visible = false;
-
-            //m_sle_chon_don_vi.Properties.View.Columns[CM_DM_TU_DIEN.MA_TU_DIEN].Width = 75;
-            //m_sle_chon_don_vi.Properties.View.Columns[CM_DM_TU_DIEN.TEN].Width = 120;
-
-            //m_sle_chon_don_vi.Properties.View.Columns[CM_DM_TU_DIEN.MA_TU_DIEN].Caption = "Mã đơn vị";
-            //m_sle_chon_don_vi.Properties.View.Columns[CM_DM_TU_DIEN.TEN].Caption = "Đơn vị";
-            //m_sle_chon_don_vi.Properties.View.Columns[CM_DM_TU_DIEN.GHI_CHU].Caption = "Ghi chú";
 
             m_sle_chon_don_vi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_don_vi.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
@@ -202,20 +125,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_2_sle_chon_vi_tri()
         {
             m_sle_chon_vi_tri.Properties.DataSource = load_data_2_cm_dm_tu_dien(CONST_ID_LOAI_TU_DIEN.LOAI_VI_TRI).Tables[0];
-            //m_sle_chon_vi_tri.Properties.ValueMember = CM_DM_TU_DIEN.ID;
-            //m_sle_chon_vi_tri.Properties.DisplayMember = CM_DM_TU_DIEN.TEN;
-
-            //m_sle_chon_vi_tri.Properties.PopulateViewColumns();
-            //m_sle_chon_vi_tri.Properties.View.Columns[CM_DM_TU_DIEN.ID].Visible = false;
-            //m_sle_chon_vi_tri.Properties.View.Columns[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN].Visible = false;
-            //m_sle_chon_vi_tri.Properties.View.Columns[CM_DM_TU_DIEN.TEN_NGAN].Visible = false;
-
-            //m_sle_chon_vi_tri.Properties.View.Columns[CM_DM_TU_DIEN.MA_TU_DIEN].Width = 75;
-            //m_sle_chon_vi_tri.Properties.View.Columns[CM_DM_TU_DIEN.TEN].Width = 120;
-
-            //m_sle_chon_vi_tri.Properties.View.Columns[CM_DM_TU_DIEN.MA_TU_DIEN].Caption = "Mã vị trí";
-            //m_sle_chon_vi_tri.Properties.View.Columns[CM_DM_TU_DIEN.TEN].Caption = "Vị trí";
-            //m_sle_chon_vi_tri.Properties.View.Columns[CM_DM_TU_DIEN.GHI_CHU].Caption = "Ghi chú";
 
             m_sle_chon_vi_tri.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_vi_tri.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
@@ -224,20 +133,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_2_sle_chon_loai_cong_tac()
         {
             m_sle_chon_loai_cong_tac.Properties.DataSource = load_data_2_cm_dm_tu_dien(CONST_ID_LOAI_TU_DIEN.LOAI_CONG_TAC).Tables[0];
-            //m_sle_chon_loai_cong_tac.Properties.ValueMember = CM_DM_TU_DIEN.ID;
-            //m_sle_chon_loai_cong_tac.Properties.DisplayMember = CM_DM_TU_DIEN.TEN;
-
-            //m_sle_chon_loai_cong_tac.Properties.PopulateViewColumns();
-            //m_sle_chon_loai_cong_tac.Properties.View.Columns[CM_DM_TU_DIEN.ID].Visible = false;
-            //m_sle_chon_loai_cong_tac.Properties.View.Columns[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN].Visible = false;
-            //m_sle_chon_loai_cong_tac.Properties.View.Columns[CM_DM_TU_DIEN.TEN_NGAN].Visible = false;
-
-            //m_sle_chon_loai_cong_tac.Properties.View.Columns[CM_DM_TU_DIEN.MA_TU_DIEN].Width = 75;
-            //m_sle_chon_loai_cong_tac.Properties.View.Columns[CM_DM_TU_DIEN.TEN].Width = 120;
-
-            //m_sle_chon_loai_cong_tac.Properties.View.Columns[CM_DM_TU_DIEN.MA_TU_DIEN].Caption = "Mã loại công tác";
-            //m_sle_chon_loai_cong_tac.Properties.View.Columns[CM_DM_TU_DIEN.TEN].Caption = "Loại công tác";
-            //m_sle_chon_loai_cong_tac.Properties.View.Columns[CM_DM_TU_DIEN.GHI_CHU].Caption = "Ghi chú";
 
             m_sle_chon_loai_cong_tac.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_loai_cong_tac.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
@@ -246,8 +141,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_2_grid(decimal ip_dc_id_nv)
         {
             CCommon.make_stt(m_grv_v_gd_cong_tac);
-            //DS_V_GD_CONG_TAC v_ds = new DS_V_GD_CONG_TAC();
-            //US_V_GD_CONG_TAC v_us = new US_V_GD_CONG_TAC();
 
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
@@ -261,8 +154,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_2_grid(decimal ip_dc_id_nv, decimal ip_dc_id_loai_ct)
         {
             CCommon.make_stt(m_grv_v_gd_cong_tac);
-            //DS_V_GD_CONG_TAC v_ds = new DS_V_GD_CONG_TAC();
-            //US_V_GD_CONG_TAC v_us = new US_V_GD_CONG_TAC();
 
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -83,7 +82,9 @@
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.m_cmd_quan_ly_qd = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -135,9 +136,10 @@
             this.m_cmd_quan_ly_vi_tri_cong_tac,
             this.m_cmd_dm_he_so_luong_ns,
             this.m_cmd_dm_luong_che_do,
-            this.m_cmd_dm_phu_cap});
+            this.m_cmd_dm_phu_cap,
+            this.m_cmd_quan_ly_qd});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 50;
+            this.ribbon.MaxItemId = 51;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -559,7 +561,8 @@
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup4,
             this.ribbonPageGroup5,
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup6,
+            this.ribbonPageGroup7});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "NGHIỆP VỤ";
             // 
@@ -608,6 +611,22 @@
             // MdiManager
             // 
             this.MdiManager.MdiParent = this;
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_quan_ly_qd);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "Quyết định";
+            // 
+            // m_cmd_quan_ly_qd
+            // 
+            this.m_cmd_quan_ly_qd.Caption = "Quản lý quyết định";
+            this.m_cmd_quan_ly_qd.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_quan_ly_qd.Glyph")));
+            this.m_cmd_quan_ly_qd.Id = 50;
+            this.m_cmd_quan_ly_qd.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_quan_ly_qd.LargeGlyph")));
+            this.m_cmd_quan_ly_qd.Name = "m_cmd_quan_ly_qd";
+            this.m_cmd_quan_ly_qd.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // f388_main
             // 
@@ -686,5 +705,7 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_he_so_luong_ns;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_luong_che_do;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_phu_cap;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_quan_ly_qd;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
     }
 }

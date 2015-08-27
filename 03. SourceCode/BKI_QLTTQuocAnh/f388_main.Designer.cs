@@ -438,7 +438,6 @@
             this.m_cmd_dm_loai_ngay_cong.Id = 42;
             this.m_cmd_dm_loai_ngay_cong.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dm_loai_ngay_cong.LargeGlyph")));
             this.m_cmd_dm_loai_ngay_cong.Name = "m_cmd_dm_loai_ngay_cong";
-            this.m_cmd_dm_loai_ngay_cong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_dm_loai_ngay_cong_ItemClick);
             // 
             // m_cmd_dm_thue
             // 

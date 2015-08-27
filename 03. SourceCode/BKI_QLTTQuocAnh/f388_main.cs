@@ -25,7 +25,7 @@ namespace BKI_DichVuMatDat
             format_control();
             MdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             ribbon.SelectedPage = ribbonPage3;
-            
+
         }
 
         public void display(ref IP.Core.IPCommon.IPConstants.HowUserWantTo_Exit_MainForm v_exitmode)
@@ -80,7 +80,7 @@ namespace BKI_DichVuMatDat
             //    m_cmd_nguoi_sd.Visibility = BarItemVisibility.Never;
             //    ribbonPageGroup2.Visible = false;
             //}
-           set_define_events();
+            set_define_events();
         }
 
         private bool IsExistFormName(Form ip_frm)
@@ -129,8 +129,8 @@ namespace BKI_DichVuMatDat
             //m_cmd_doi_mat_khau.ItemClick += m_cmd_doi_mat_khau_ItemClick;
             //m_cmd_nguoi_sd.ItemClick += m_cmd_nguoi_sd_ItemClick;
             //m_cmd_backup_restore.ItemClick += m_cmd_backup_restore_ItemClick;
-            //Danh muc
-            
+            //Danh muc 
+            m_cmd_dm_loai_ngay_cong.ItemClick += m_cmd_dm_loai_ngay_cong_ItemClick;
             //Bao cao
             m_cmd_bang_luong_nv.ItemClick += m_cmd_bang_luong_nv_ItemClick;
         }
@@ -154,18 +154,18 @@ namespace BKI_DichVuMatDat
 
         void m_cmd_bang_luong_nv_ItemClick(object sender, ItemClickEventArgs e)
         {
-             try
-             {
-                 f410_rpt_bang_luong_nv v_frm = new f410_rpt_bang_luong_nv();
-                 if (IsExistFormName(v_frm)) return;
+            try
+            {
+                f410_rpt_bang_luong_nv v_frm = new f410_rpt_bang_luong_nv();
+                if (IsExistFormName(v_frm)) return;
 
-                 v_frm.MdiParent = this;
-                 v_frm.Show();
-             }
-             catch (Exception v_e)
-             {
-                 CSystemLog_301.ExceptionHandle(v_e);
-             }
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_cham_cong_nv_ItemClick(object sender, ItemClickEventArgs e)
@@ -254,7 +254,7 @@ namespace BKI_DichVuMatDat
             {
                 DanhMuc.f101_dm_tham_so v_frm = new DanhMuc.f101_dm_tham_so();
                 if (IsExistFormName(v_frm)) return;
-                
+
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
@@ -331,8 +331,9 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                DanhMuc.F105_dm_loai_ngay_cong v_frm = new DanhMuc.F105_dm_loai_ngay_cong();
+                F105_dm_loai_ngay_cong v_frm = new F105_dm_loai_ngay_cong();
                 if (IsExistFormName(v_frm)) return;
+
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
@@ -392,7 +393,7 @@ namespace BKI_DichVuMatDat
 
 
 
-      
+
 
 
 
@@ -411,7 +412,7 @@ namespace BKI_DichVuMatDat
         //        CSystemLog_301.ExceptionHandle(v_e);
         //    }
         //}
-           
+
         //void m_cmd_nguoi_sd_ItemClick(object sender, ItemClickEventArgs e)
         //{
         //    try
@@ -488,6 +489,6 @@ namespace BKI_DichVuMatDat
         //    }
         //}
 
-       
+
     }
 }

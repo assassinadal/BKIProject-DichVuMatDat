@@ -244,6 +244,12 @@
     <Compile Include="DanhMuc\F104_dm_loai_hop_dong.Designer.cs">
       <DependentUpon>F104_dm_loai_hop_dong.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\F105_dm_loai_ngay_cong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\F105_dm_loai_ngay_cong.Designer.cs">
+      <DependentUpon>F105_dm_loai_ngay_cong.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\F106_dm_luong_che_do.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,12 @@
     <Compile Include="NghiepVu\f360_quan_ly_quyet_dinh.Designer.cs">
       <DependentUpon>f360_quan_ly_quyet_dinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f370_nhan_vien_loai_lao_dong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f370_nhan_vien_loai_lao_dong.Designer.cs">
+      <DependentUpon>f370_nhan_vien_loai_lao_dong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -373,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f360_quan_ly_quyet_dinh.resx">
       <DependentUpon>f360_quan_ly_quyet_dinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f370_nhan_vien_loai_lao_dong.resx">
+      <DependentUpon>f370_nhan_vien_loai_lao_dong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -854,6 +869,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HeThong\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DanhMuc\New Text Document.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

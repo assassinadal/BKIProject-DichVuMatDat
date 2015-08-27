@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F104_dm_loai_hop_dong));
             this.tableAdapterManager1 = new IP.Core.IPData.DS_HT_PHAN_QUYEN_DETAILTableAdapters.TableAdapterManager();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_cmd_add = new SIS.Controls.Button.SiSButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
+            this.ImageList = new System.Windows.Forms.ImageList();
             this.m_cmd_edit = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_grc_dm_loai_hop_dong = new DevExpress.XtraGrid.GridControl();
@@ -67,7 +66,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.m_cmd_add);
+            this.panel1.Controls.Add(this.m_cmd_insert);
             this.panel1.Controls.Add(this.m_cmd_edit);
             this.panel1.Controls.Add(this.m_cmd_delete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -76,20 +75,20 @@
             this.panel1.Size = new System.Drawing.Size(618, 37);
             this.panel1.TabIndex = 1;
             // 
-            // m_cmd_add
+            // m_cmd_insert
             // 
-            this.m_cmd_add.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_add.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_add.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_add.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_add.ImageIndex = 2;
-            this.m_cmd_add.ImageList = this.ImageList;
-            this.m_cmd_add.Location = new System.Drawing.Point(354, 0);
-            this.m_cmd_add.Name = "m_cmd_add";
-            this.m_cmd_add.Size = new System.Drawing.Size(88, 37);
-            this.m_cmd_add.TabIndex = 3;
-            this.m_cmd_add.Text = "&Thêm";
+            this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_insert.ImageIndex = 2;
+            this.m_cmd_insert.ImageList = this.ImageList;
+            this.m_cmd_insert.Location = new System.Drawing.Point(354, 0);
+            this.m_cmd_insert.Name = "m_cmd_insert";
+            this.m_cmd_insert.Size = new System.Drawing.Size(88, 37);
+            this.m_cmd_insert.TabIndex = 3;
+            this.m_cmd_insert.Text = "&Thêm";
             // 
             // ImageList
             // 
@@ -352,7 +351,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn c_stt;
         private System.Windows.Forms.Label m_lbl_header;
         internal System.Windows.Forms.ImageList ImageList;
-        internal SIS.Controls.Button.SiSButton m_cmd_add;
+        internal SIS.Controls.Button.SiSButton m_cmd_insert;
         internal SIS.Controls.Button.SiSButton m_cmd_edit;
         internal SIS.Controls.Button.SiSButton m_cmd_delete;
 

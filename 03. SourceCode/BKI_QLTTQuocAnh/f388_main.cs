@@ -373,6 +373,21 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void m_cmd_nhan_vien_loai_lao_dong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f370_nhan_vien_loai_lao_dong v_frm = new f370_nhan_vien_loai_lao_dong();
+                if (IsExistFormName(v_frm)) return;
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
 
 

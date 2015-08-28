@@ -41,7 +41,7 @@
             this.m_grc_v_gd_loai_lao_dong = new DevExpress.XtraGrid.GridControl();
             this.m_grv_v_gd_loai_lao_dong = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.c_stt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_ID_NHAN_VIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_ma_nv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_ho_dem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_ten = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,6 +50,7 @@
             this.c_ten_loai_lao_dong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_ngay_bat_dau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_ngay_ket_thuc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -188,8 +189,9 @@
             // m_grv_v_gd_loai_lao_dong
             // 
             this.m_grv_v_gd_loai_lao_dong.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.c_stt,
             this.c_ID,
+            this.c_stt,
+            this.c_ID_NHAN_VIEN,
             this.c_ma_nv,
             this.c_ho_dem,
             this.c_ten,
@@ -213,12 +215,12 @@
             this.c_stt.VisibleIndex = 0;
             this.c_stt.Width = 38;
             // 
-            // c_ID
+            // c_ID_NHAN_VIEN
             // 
-            this.c_ID.Caption = "ID";
-            this.c_ID.FieldName = "ID";
-            this.c_ID.Name = "c_ID";
-            this.c_ID.Width = 149;
+            this.c_ID_NHAN_VIEN.Caption = "ID Nhân viên";
+            this.c_ID_NHAN_VIEN.FieldName = "ID_NHAN_VIEN";
+            this.c_ID_NHAN_VIEN.Name = "c_ID_NHAN_VIEN";
+            this.c_ID_NHAN_VIEN.Width = 149;
             // 
             // c_ma_nv
             // 
@@ -283,6 +285,12 @@
             this.c_ngay_ket_thuc.Visible = true;
             this.c_ngay_ket_thuc.VisibleIndex = 6;
             // 
+            // c_ID
+            // 
+            this.c_ID.Caption = "ID";
+            this.c_ID.FieldName = "ID";
+            this.c_ID.Name = "c_ID";
+            // 
             // f370_nhan_vien_loai_lao_dong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,7 +320,7 @@
         private DevExpress.XtraGrid.GridControl m_grc_v_gd_loai_lao_dong;
         private DevExpress.XtraGrid.Views.Grid.GridView m_grv_v_gd_loai_lao_dong;
         private DevExpress.XtraGrid.Columns.GridColumn c_stt;
-        private DevExpress.XtraGrid.Columns.GridColumn c_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn c_ID_NHAN_VIEN;
         private DevExpress.XtraGrid.Columns.GridColumn c_ma_nv;
         private DevExpress.XtraGrid.Columns.GridColumn c_ho_dem;
         private DevExpress.XtraGrid.Columns.GridColumn c_ten;
@@ -325,5 +333,6 @@
         internal SIS.Controls.Button.SiSButton m_cmd_edit;
         internal SIS.Controls.Button.SiSButton m_cmd_delete;
         internal System.Windows.Forms.ImageList ImageList;
+        private DevExpress.XtraGrid.Columns.GridColumn c_ID;
     }
 }

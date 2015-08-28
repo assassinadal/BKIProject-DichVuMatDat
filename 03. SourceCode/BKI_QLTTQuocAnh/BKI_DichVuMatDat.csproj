@@ -328,6 +328,12 @@
     <Compile Include="NghiepVu\f371_nhan_vien_loai_lao_dong_insert.Designer.cs">
       <DependentUpon>f371_nhan_vien_loai_lao_dong_insert.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f372_nhan_vien_loai_lao_dong_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f372_nhan_vien_loai_lao_dong_edit.Designer.cs">
+      <DependentUpon>f372_nhan_vien_loai_lao_dong_edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f380_thay_doi_he_so_chat_luong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -412,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f371_nhan_vien_loai_lao_dong_insert.resx">
       <DependentUpon>f371_nhan_vien_loai_lao_dong_insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f372_nhan_vien_loai_lao_dong_edit.resx">
+      <DependentUpon>f372_nhan_vien_loai_lao_dong_edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f380_thay_doi_he_so_chat_luong.resx">
       <DependentUpon>f380_thay_doi_he_so_chat_luong.cs</DependentUpon>

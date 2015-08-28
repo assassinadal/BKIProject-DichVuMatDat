@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="BKI_DVMDConnectionString1 (Settings)" DbObjectName="BKI_DVMD.dbo.V_GD_LOAI_LAO_DONG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, MA_NV, HO_DEM, TEN, HO_TEN, ID_LOAI_LAO_DONG, TEN_LOAI_LAO_DONG, NGAY_BAT_DAU, NGAY_KET_THUC FROM dbo.V_GD_LOAI_LAO_DONG</CommandText>
+                    <CommandText>SELECT ID, ID_NHAN_VIEN, MA_NV, HO_DEM, TEN, HO_TEN, ID_LOAI_LAO_DONG, TEN_LOAI_LAO_DONG, NGAY_BAT_DAU, NGAY_KET_THUC FROM dbo.V_GD_LOAI_LAO_DONG</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -20,6 +20,7 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="ID_NHAN_VIEN" DataSetColumn="ID_NHAN_VIEN" />
               <Mapping SourceColumn="MA_NV" DataSetColumn="MA_NV" />
               <Mapping SourceColumn="HO_DEM" DataSetColumn="HO_DEM" />
               <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
@@ -42,7 +43,8 @@
         <xs:element name="V_GD_LOAI_LAO_DONG" msprop:Generator_TableClassName="V_GD_LOAI_LAO_DONGDataTable" msprop:Generator_TableVarName="tableV_GD_LOAI_LAO_DONG" msprop:Generator_TablePropName="V_GD_LOAI_LAO_DONG" msprop:Generator_RowDeletingName="V_GD_LOAI_LAO_DONGRowDeleting" msprop:Generator_RowChangingName="V_GD_LOAI_LAO_DONGRowChanging" msprop:Generator_RowEvHandlerName="V_GD_LOAI_LAO_DONGRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_LOAI_LAO_DONGRowDeleted" msprop:Generator_UserTableName="V_GD_LOAI_LAO_DONG" msprop:Generator_RowChangedName="V_GD_LOAI_LAO_DONGRowChanged" msprop:Generator_RowEvArgName="V_GD_LOAI_LAO_DONGRowChangeEvent" msprop:Generator_RowClassName="V_GD_LOAI_LAO_DONGRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_NHAN_VIEN" msprop:Generator_ColumnVarNameInTable="columnID_NHAN_VIEN" msprop:Generator_ColumnPropNameInRow="ID_NHAN_VIEN" msprop:Generator_ColumnPropNameInTable="ID_NHAN_VIENColumn" msprop:Generator_UserColumnName="ID_NHAN_VIEN" type="xs:decimal" />
               <xs:element name="MA_NV" msprop:Generator_ColumnVarNameInTable="columnMA_NV" msprop:Generator_ColumnPropNameInRow="MA_NV" msprop:Generator_ColumnPropNameInTable="MA_NVColumn" msprop:Generator_UserColumnName="MA_NV">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -86,5 +88,11 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:V_GD_LOAI_LAO_DONG" />
+      <xs:field xpath="mstns:ID" />
+      <xs:field xpath="mstns:ID_NHAN_VIEN" />
+      <xs:field xpath="mstns:ID_LOAI_LAO_DONG" />
+    </xs:unique>
   </xs:element>
 </xs:schema>

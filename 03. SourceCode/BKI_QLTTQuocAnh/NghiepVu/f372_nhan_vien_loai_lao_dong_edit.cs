@@ -18,13 +18,14 @@ using IP.Core.IPCommon;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
-    public partial class f371_nhan_vien_loai_lao_dong_insert : Form
+    public partial class f372_nhan_vien_loai_lao_dong_edit : Form
     {
-        public f371_nhan_vien_loai_lao_dong_insert()
+        public f372_nhan_vien_loai_lao_dong_edit()
         {
             InitializeComponent();
             format_controls();
         }
+
         #region Public Interface
         public void display()
         {
@@ -33,12 +34,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         #endregion
 
         #region Members
-        DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
-        decimal m_id_gd_loai_ld = 0;
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.UpdateDataState;
         #endregion
 
         #region Private Methods
-
         private void format_controls()
         {
             set_define_event();
@@ -111,83 +110,49 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
-                MessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO!");
+                MessageBox.Show("Nhân viên không được trống!", "THÔNG BÁO!");
                 return false;
             }
             if (m_sle_chon_loai_lao_dong.EditValue == null || m_sle_chon_loai_lao_dong.EditValue == "")
             {
-                MessageBox.Show("Bạn phải chọn loại lao động", "THÔNG BÁO!");
+                MessageBox.Show("Loại lao động không được trống!", "THÔNG BÁO!");
                 return false;
             }
-
             if (m_dat_ngay_bat_dau.Value.Date == null || m_dat_ngay_bat_dau.Value.Date.ToString() == "")
             {
-                MessageBox.Show("Bạn phải chọn ngày bắt đầu", "THÔNG BÁO!");
-                return false;
-            }
-            if (m_dat_ngay_ket_thuc.Value.Date == null || m_dat_ngay_ket_thuc.Value.Date.ToString() == "")
-            {
-                MessageBox.Show("Bạn phải chọn ngày kết thúc", "THÔNG BÁO!");
+                MessageBox.Show("Ngày bắt đầu không được trống!", "THÔNG BÁO!");
                 return false;
             }
             return true;
         }
 
-        private void load_data_2_m_variable()
+        //Lay du lieu cua dong muon sua
+        private void get_data_row_nv_loai_lao_dong()
         {
-            m_id_gd_loai_ld = find_id_gd_nv_loai_ld(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
-        }
-
-        //Tim id_nhan_vien da co trong bang GD_LOAI_LAO_DONG
-        //Neu nhan vien da co loai lao dong thi khong the them duoc ma chi co the sua
-
-        private decimal find_id_gd_nv_loai_ld(decimal ip_dc_id_nv)
-        {
-            US_GD_LOAI_LAO_DONG v_us = new US_GD_LOAI_LAO_DONG();
-            DS_GD_LOAI_LAO_DONG v_ds = new DS_GD_LOAI_LAO_DONG();
-
-            v_us.FillDataset(v_ds);
-            string v_str_filter = "ID_NHAN_VIEN = " + ip_dc_id_nv;
-            DataRow[] v_dr = v_ds.GD_LOAI_LAO_DONG.Select(v_str_filter);
-
-            if (v_dr.Count() == 0)
-            {
-                return 0; // m_id_gd_loai_ld = 0 tuc la trong bang GD_LOAI_LAO_DONG chua co nhan vien nay
-            }
-            else return 1; // m_id_gd_loai_ld = 1 tuc la trong bang GD_LOAI_LAO_DONG da co nhan vien nay
+            
         }
 
         private void save_data()
         {
-            US_GD_LOAI_LAO_DONG v_us_gd_loai_lao_dong = new US_GD_LOAI_LAO_DONG();
-            form_2_us_gd_loai_lao_dong(v_us_gd_loai_lao_dong);
-            try
-            {
-                if (m_id_gd_loai_ld != 0)
-                {
-                    MessageBox.Show("Nhân viên nãy đã tồn tại loại lao động! Nếu bạn muốn SỬA thông tin cho nhân viên vui lòng chọn nút SỬA!", "THÔNG BÁO!");
-                }
-                else
-                {
-                    v_us_gd_loai_lao_dong.BeginTransaction();
-                    v_us_gd_loai_lao_dong.Insert();
-                    v_us_gd_loai_lao_dong.CommitTransaction();
-                }
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
+            decimal ip_id_dc_nv = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
+            US_GD_LOAI_LAO_DONG v_us_gd_loai_lao_dong = new US_GD_LOAI_LAO_DONG(ip_id_dc_nv);
+
+            v_us_gd_loai_lao_dong.dcID_LOAI_LAO_DONG = CIPConvert.ToDecimal(m_sle_chon_loai_lao_dong.EditValue);
+            v_us_gd_loai_lao_dong.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
+            v_us_gd_loai_lao_dong.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
+            v_us_gd_loai_lao_dong.BeginTransaction();
+            v_us_gd_loai_lao_dong.Update();
+            v_us_gd_loai_lao_dong.CommitTransaction();
+
         }
         #endregion
 
         private void set_define_event()
         {
-            this.Load += f371_nhan_vien_loai_lao_dong_insert_Load;
-
+            this.Load += f372_nhan_vien_loai_lao_dong_edit_Load;
         }
 
-        private void f371_nhan_vien_loai_lao_dong_insert_Load(object sender, EventArgs e)
+        private void f372_nhan_vien_loai_lao_dong_edit_Load(object sender, EventArgs e)
         {
             try
             {
@@ -199,35 +164,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        private void m_cmd_cancel_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.Close();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_sle_chon_nhan_vien_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void m_sle_chon_loai_lao_dong_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void m_cmd_save_Click(object sender, EventArgs e)
         {
             try
             {
                 if (check_data_is_ok() == true)
                 {
-                    load_data_2_m_variable();
                     save_data();
                     this.Close();
                 }
@@ -237,6 +179,5 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
     }
 }

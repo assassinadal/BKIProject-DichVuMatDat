@@ -61,8 +61,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             return v_ds;
         }
 
-        
-
         private DataSet load_data_2_cm_dm_tu_dien(int ip_dc_id_vt)
         {
             US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
@@ -71,8 +69,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.FillDatasetByIdLoaiTuDien(v_ds, ip_dc_id_vt);
             return v_ds;
         }
-
-        
 
         //Load toan bo du lieu tu V_GD_LOAI_LAO_DONG len luoi 
         private void load_data_2_grid()
@@ -124,8 +120,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grc_v_gd_loai_lao_dong.DataSource = v_ds.Tables[0];
         }
 
-        
-
         #endregion
 
         private void f370_nhan_vien_loai_lao_dong_Load(object sender, EventArgs e)
@@ -145,17 +139,13 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.Load += f370_nhan_vien_loai_lao_dong_Load;
         }
 
-        
-
-        
-
         private void m_cmd_insert_Click(object sender, EventArgs e)
         {
             try
             {
                 f371_nhan_vien_loai_lao_dong_insert v_frm = new f371_nhan_vien_loai_lao_dong_insert();
-                //v_frm.MdiChildren = this;
                 v_frm.ShowDialog();
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {
@@ -165,7 +155,16 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void m_cmd_edit_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                f372_nhan_vien_loai_lao_dong_edit v_frm = new f372_nhan_vien_loai_lao_dong_edit();
+                v_frm.ShowDialog();
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_cmd_delete_Click(object sender, EventArgs e)
@@ -174,9 +173,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 //Lay ID cua dong du lieu muon xoa
                 DataRow v_dr = m_grv_v_gd_loai_lao_dong.GetDataRow(m_grv_v_gd_loai_lao_dong.FocusedRowHandle);
-                //decimal v_id = CIPConvert.ToDecimal(v_dr[GD_LOAI_LAO_DONG.ID_NHAN_VIEN]);
-                //decimal v_id_nv = CIPConvert.ToDecimal(m_grv_v_gd_loai_lao_dong.GetRowCellValue(m_grv_v_gd_loai_lao_dong.FocusedRowHandle, "ID"));
-                decimal v_id = 0;
+                //Lay ID cua dong du lieu tren
+                decimal v_id = CIPConvert.ToDecimal(v_dr[GD_LOAI_LAO_DONG.ID]);
+                
                 US_GD_LOAI_LAO_DONG v_us = new US_GD_LOAI_LAO_DONG(v_id);
                 if (XtraMessageBox.Show("Bạn có chắc chắn muốn XÓA nhân viên - loại lao động này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {

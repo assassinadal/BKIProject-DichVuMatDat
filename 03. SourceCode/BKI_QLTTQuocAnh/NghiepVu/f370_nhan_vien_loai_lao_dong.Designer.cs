@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f370_nhan_vien_loai_lao_dong));
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
-            this.ImageList = new System.Windows.Forms.ImageList();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_edit = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -291,7 +292,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "f370_nhan_vien_loai_lao_dong";
-            this.Text = "f370_nhan_vien_loai_lao_dong";
+            this.Text = "f370 - NHÂN VIÊN LOẠI LAO ĐỘNG";
             this.Load += new System.EventHandler(this.f370_nhan_vien_loai_lao_dong_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

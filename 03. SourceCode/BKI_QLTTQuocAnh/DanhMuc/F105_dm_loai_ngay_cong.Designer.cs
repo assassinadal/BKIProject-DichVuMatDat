@@ -33,18 +33,18 @@
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_grc_dm_loai_ngay_cong = new DevExpress.XtraGrid.GridControl();
             this.m_grv_dm_loai_ngay_cong = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_NGAY_CONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TEN_NGAY_CONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TI_LE_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TI_LE_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.m_cmd_lap_qd = new SIS.Controls.Button.SiSButton();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.siSButton1 = new SIS.Controls.Button.SiSButton();
             this.siSButton2 = new SIS.Controls.Button.SiSButton();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.siSButton1 = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_lap_qd = new SIS.Controls.Button.SiSButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_loai_ngay_cong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_loai_ngay_cong)).BeginInit();
             this.panel1.SuspendLayout();
@@ -89,6 +89,12 @@
             this.m_grv_dm_loai_ngay_cong.OptionsFind.AllowFindPanel = false;
             this.m_grv_dm_loai_ngay_cong.OptionsFind.AlwaysVisible = true;
             this.m_grv_dm_loai_ngay_cong.OptionsView.ShowFooter = true;
+            // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
             // 
             // STT
             // 
@@ -163,29 +169,20 @@
             this.panel1.Size = new System.Drawing.Size(961, 39);
             this.panel1.TabIndex = 5;
             // 
-            // panel2
+            // siSButton2
             // 
-            this.panel2.Controls.Add(this.m_lbl_header);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(961, 49);
-            this.panel2.TabIndex = 6;
-            // 
-            // m_cmd_lap_qd
-            // 
-            this.m_cmd_lap_qd.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_lap_qd.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_lap_qd.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_lap_qd.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_lap_qd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_lap_qd.ImageIndex = 3;
-            this.m_cmd_lap_qd.ImageList = this.imageList1;
-            this.m_cmd_lap_qd.Location = new System.Drawing.Point(0, 0);
-            this.m_cmd_lap_qd.Name = "m_cmd_lap_qd";
-            this.m_cmd_lap_qd.Size = new System.Drawing.Size(86, 39);
-            this.m_cmd_lap_qd.TabIndex = 1;
-            this.m_cmd_lap_qd.Text = "&Thêm";
+            this.siSButton2.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.siSButton2.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.siSButton2.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.siSButton2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.siSButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.siSButton2.ImageIndex = 4;
+            this.siSButton2.ImageList = this.imageList1;
+            this.siSButton2.Location = new System.Drawing.Point(172, 0);
+            this.siSButton2.Name = "siSButton2";
+            this.siSButton2.Size = new System.Drawing.Size(86, 39);
+            this.siSButton2.TabIndex = 3;
+            this.siSButton2.Text = "&Xóa";
             // 
             // imageList1
             // 
@@ -214,12 +211,6 @@
             this.imageList1.Images.SetKeyName(20, "");
             this.imageList1.Images.SetKeyName(21, "");
             // 
-            // ID
-            // 
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
-            // 
             // siSButton1
             // 
             this.siSButton1.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -235,20 +226,29 @@
             this.siSButton1.TabIndex = 2;
             this.siSButton1.Text = "&Sửa";
             // 
-            // siSButton2
+            // m_cmd_lap_qd
             // 
-            this.siSButton2.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.siSButton2.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.siSButton2.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.siSButton2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.siSButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.siSButton2.ImageIndex = 4;
-            this.siSButton2.ImageList = this.imageList1;
-            this.siSButton2.Location = new System.Drawing.Point(172, 0);
-            this.siSButton2.Name = "siSButton2";
-            this.siSButton2.Size = new System.Drawing.Size(86, 39);
-            this.siSButton2.TabIndex = 3;
-            this.siSButton2.Text = "&Xóa";
+            this.m_cmd_lap_qd.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_lap_qd.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_lap_qd.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_lap_qd.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_lap_qd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_lap_qd.ImageIndex = 3;
+            this.m_cmd_lap_qd.ImageList = this.imageList1;
+            this.m_cmd_lap_qd.Location = new System.Drawing.Point(0, 0);
+            this.m_cmd_lap_qd.Name = "m_cmd_lap_qd";
+            this.m_cmd_lap_qd.Size = new System.Drawing.Size(86, 39);
+            this.m_cmd_lap_qd.TabIndex = 1;
+            this.m_cmd_lap_qd.Text = "&Thêm";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.m_lbl_header);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(961, 49);
+            this.panel2.TabIndex = 6;
             // 
             // F105_dm_loai_ngay_cong
             // 
@@ -259,7 +259,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "F105_dm_loai_ngay_cong";
-            this.Text = "F105 -Danh mục loại ngay công";
+            this.Text = "F105 - DANH MỤC LOẠI NGÀY CÔNG";
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_loai_ngay_cong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_loai_ngay_cong)).EndInit();
             this.panel1.ResumeLayout(false);

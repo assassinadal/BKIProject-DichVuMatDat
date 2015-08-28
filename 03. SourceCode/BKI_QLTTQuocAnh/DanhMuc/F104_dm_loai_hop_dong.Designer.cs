@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F104_dm_loai_hop_dong));
             this.tableAdapterManager1 = new IP.Core.IPData.DS_HT_PHAN_QUYEN_DETAILTableAdapters.TableAdapterManager();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
-            this.ImageList = new System.Windows.Forms.ImageList();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_edit = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_grc_dm_loai_hop_dong = new DevExpress.XtraGrid.GridControl();
@@ -320,7 +321,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "F104_dm_loai_hop_dong";
-            this.Text = "F104_dm_loai_hop_dong";
+            this.Text = "F104 - DANH MỤC LOẠI HỢP ĐỒNG";
             this.Load += new System.EventHandler(this.F104_dm_loai_hop_dong_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_loai_hop_dong)).EndInit();

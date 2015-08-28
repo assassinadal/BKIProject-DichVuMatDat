@@ -162,56 +162,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_define_event()
         {
             this.Load += f370_nhan_vien_loai_lao_dong_Load;
-
-            m_sle_chon_loai_lao_dong.EditValueChanged += m_sle_chon_loai_lao_dong_EditValueChanged;
-            m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
         }
 
-        private void m_sle_chon_nhan_vien_EditValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
-                {
-                    return;
-                }
-                 else if (m_sle_chon_loai_lao_dong.EditValue == null || m_sle_chon_loai_lao_dong.EditValue == "")
-                {
-                    load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
-                }
-                else if (m_sle_chon_loai_lao_dong.EditValue != null && m_sle_chon_loai_lao_dong.EditValue != "" && m_sle_chon_nhan_vien.EditValue != null && m_sle_chon_nhan_vien.EditValue != "")
-                {
-                    load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_sle_chon_loai_lao_dong.EditValue));
-                }
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+        
 
-        private void m_sle_chon_loai_lao_dong_EditValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (m_sle_chon_loai_lao_dong.EditValue == null || m_sle_chon_loai_lao_dong.EditValue == "")
-                {
-                    return;
-                }
-                else if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
-                {
-                    load_data_2_grid_with_id_loai_lao_dong(CIPConvert.ToDecimal(m_sle_chon_loai_lao_dong.EditValue));
-                }
-                else if (m_sle_chon_loai_lao_dong.EditValue != null && m_sle_chon_loai_lao_dong.EditValue != "" && m_sle_chon_nhan_vien.EditValue != null && m_sle_chon_nhan_vien.EditValue != "")
-                {
-                    load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_sle_chon_loai_lao_dong.EditValue));
-                }
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+        
 
         private void m_cmd_insert_Click(object sender, EventArgs e)
         {

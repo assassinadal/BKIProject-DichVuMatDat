@@ -49,8 +49,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_initial_form_load()
         {
             load_data_2_grid();
-            load_data_2_sle_chon_nv();
-            load_data_2_sle_chon_loai_lao_dong();
         }
 
         private DataSet load_data_2_ds_v_dm_nv()
@@ -63,13 +61,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             return v_ds;
         }
 
-        private void load_data_2_sle_chon_nv()
-        {
-            m_sle_chon_nhan_vien.Properties.DataSource = load_data_2_ds_v_dm_nv().Tables[0];
-
-            m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
-        }
+        
 
         private DataSet load_data_2_cm_dm_tu_dien(int ip_dc_id_vt)
         {
@@ -80,13 +72,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             return v_ds;
         }
 
-        private void load_data_2_sle_chon_loai_lao_dong()
-        {
-            m_sle_chon_loai_lao_dong.Properties.DataSource = load_data_2_cm_dm_tu_dien(CONST_ID_LOAI_TU_DIEN.LOAI_LAO_DONG).Tables[0];
-
-            m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
-        }
+        
 
         //Load toan bo du lieu tu V_GD_LOAI_LAO_DONG len luoi 
         private void load_data_2_grid()
@@ -138,12 +124,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grc_v_gd_loai_lao_dong.DataSource = v_ds.Tables[0];
         }
 
-        //Clear data in form
-        private void clear_data_in_form()
-        {
-            m_sle_chon_nhan_vien.EditValue = null;
-            m_sle_chon_loai_lao_dong.EditValue = null;
-        }
+        
 
         #endregion
 

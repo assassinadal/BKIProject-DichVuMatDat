@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f330_len_luong_cho_nv));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -57,8 +56,8 @@
             this.m_sle_chon_quyet_dinh = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.ImageList = new System.Windows.Forms.ImageList();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
@@ -143,10 +142,10 @@
             this.m_gr_LCD.Controls.Add(this.label5);
             this.m_gr_LCD.Controls.Add(this.label6);
             this.m_gr_LCD.Controls.Add(this.m_sle_muc_lcd);
-            this.m_gr_LCD.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_gr_LCD.Location = new System.Drawing.Point(670, 0);
+            this.m_gr_LCD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_gr_LCD.Location = new System.Drawing.Point(814, 0);
             this.m_gr_LCD.Name = "m_gr_LCD";
-            this.m_gr_LCD.Size = new System.Drawing.Size(335, 132);
+            this.m_gr_LCD.Size = new System.Drawing.Size(401, 132);
             this.m_gr_LCD.TabIndex = 2;
             this.m_gr_LCD.Text = "THÔNG TIN LƯƠNG CHẾ ĐỘ";
             // 
@@ -235,9 +234,9 @@
             this.m_gr_LNS.Controls.Add(this.m_sle_muc_lns);
             this.m_gr_LNS.Controls.Add(this.label13);
             this.m_gr_LNS.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_gr_LNS.Location = new System.Drawing.Point(337, 0);
+            this.m_gr_LNS.Location = new System.Drawing.Point(404, 0);
             this.m_gr_LNS.Name = "m_gr_LNS";
-            this.m_gr_LNS.Size = new System.Drawing.Size(333, 132);
+            this.m_gr_LNS.Size = new System.Drawing.Size(410, 132);
             this.m_gr_LNS.TabIndex = 1;
             this.m_gr_LNS.Text = "THÔNG TIN LƯƠNG NĂNG SUÂT";
             // 
@@ -326,7 +325,7 @@
             this.m_gr_thong_tin_co_ban.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_gr_thong_tin_co_ban.Location = new System.Drawing.Point(0, 0);
             this.m_gr_thong_tin_co_ban.Name = "m_gr_thong_tin_co_ban";
-            this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(337, 132);
+            this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(404, 132);
             this.m_gr_thong_tin_co_ban.TabIndex = 0;
             this.m_gr_thong_tin_co_ban.Text = "THÔNG TIN CƠ BẢN";
             // 

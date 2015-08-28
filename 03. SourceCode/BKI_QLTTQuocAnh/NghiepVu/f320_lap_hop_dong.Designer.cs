@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f320_lap_hop_dong));
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
@@ -69,7 +68,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.m_cmd_lap_hop_dong = new SIS.Controls.Button.SiSButton();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.panel4 = new System.Windows.Forms.Panel();
             this.m_grc_lap_hd = new DevExpress.XtraGrid.GridControl();
             this.m_grv_lap_hd = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -90,7 +89,7 @@
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList = new System.Windows.Forms.ImageList();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.panel1.SuspendLayout();
@@ -244,7 +243,7 @@
             this.m_gr_thong_tin_co_ban.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_gr_thong_tin_co_ban.Location = new System.Drawing.Point(0, 0);
             this.m_gr_thong_tin_co_ban.Name = "m_gr_thong_tin_co_ban";
-            this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(372, 198);
+            this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(398, 198);
             this.m_gr_thong_tin_co_ban.TabIndex = 0;
             this.m_gr_thong_tin_co_ban.Text = "THÔNG TIN CƠ BẢN";
             // 
@@ -308,10 +307,10 @@
             this.m_gr_LCD.Controls.Add(this.label5);
             this.m_gr_LCD.Controls.Add(this.label6);
             this.m_gr_LCD.Controls.Add(this.m_sle_muc_lcd);
-            this.m_gr_LCD.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_gr_LCD.Location = new System.Drawing.Point(740, 0);
+            this.m_gr_LCD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_gr_LCD.Location = new System.Drawing.Point(799, 0);
             this.m_gr_LCD.Name = "m_gr_LCD";
-            this.m_gr_LCD.Size = new System.Drawing.Size(369, 198);
+            this.m_gr_LCD.Size = new System.Drawing.Size(397, 198);
             this.m_gr_LCD.TabIndex = 2;
             this.m_gr_LCD.Text = "THÔNG TIN LƯƠNG CHẾ ĐỘ";
             // 
@@ -400,9 +399,9 @@
             this.m_gr_LNS.Controls.Add(this.m_sle_muc_lns);
             this.m_gr_LNS.Controls.Add(this.label13);
             this.m_gr_LNS.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_gr_LNS.Location = new System.Drawing.Point(372, 0);
+            this.m_gr_LNS.Location = new System.Drawing.Point(398, 0);
             this.m_gr_LNS.Name = "m_gr_LNS";
-            this.m_gr_LNS.Size = new System.Drawing.Size(368, 198);
+            this.m_gr_LNS.Size = new System.Drawing.Size(401, 198);
             this.m_gr_LNS.TabIndex = 1;
             this.m_gr_LNS.Text = "THÔNG TIN LƯƠNG NĂNG SUÂT";
             // 

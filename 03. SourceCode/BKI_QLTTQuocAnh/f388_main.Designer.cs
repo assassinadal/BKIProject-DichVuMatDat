@@ -224,8 +224,9 @@
             // m_cmd_cham_cong_nv
             // 
             this.m_cmd_cham_cong_nv.Caption = "Chấm công";
-            this.m_cmd_cham_cong_nv.Glyph = global::BKI_DichVuMatDat.Properties.Resources._1425904406_289616;
+            this.m_cmd_cham_cong_nv.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_cham_cong_nv.Glyph")));
             this.m_cmd_cham_cong_nv.Id = 10;
+            this.m_cmd_cham_cong_nv.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_cham_cong_nv.LargeGlyph")));
             this.m_cmd_cham_cong_nv.Name = "m_cmd_cham_cong_nv";
             this.m_cmd_cham_cong_nv.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
@@ -458,6 +459,7 @@
             this.m_cmd_dat_hs_lns_lcd.Caption = "Đặt hệ số LNS, LCĐ";
             this.m_cmd_dat_hs_lns_lcd.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dat_hs_lns_lcd.Glyph")));
             this.m_cmd_dat_hs_lns_lcd.Id = 44;
+            this.m_cmd_dat_hs_lns_lcd.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dat_hs_lns_lcd.LargeGlyph")));
             this.m_cmd_dat_hs_lns_lcd.Name = "m_cmd_dat_hs_lns_lcd";
             this.m_cmd_dat_hs_lns_lcd.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
@@ -510,7 +512,7 @@
             // 
             // m_cmd_nhan_vien_loai_lao_dong
             // 
-            this.m_cmd_nhan_vien_loai_lao_dong.Caption = "Nhân viên loại lao động";
+            this.m_cmd_nhan_vien_loai_lao_dong.Caption = "Loại lao động";
             this.m_cmd_nhan_vien_loai_lao_dong.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_nhan_vien_loai_lao_dong.Glyph")));
             this.m_cmd_nhan_vien_loai_lao_dong.Id = 51;
             this.m_cmd_nhan_vien_loai_lao_dong.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_nhan_vien_loai_lao_dong.LargeGlyph")));
@@ -522,6 +524,7 @@
             this.m_cmd_them_hs_chat_luong.Caption = "Hệ số chất lượng";
             this.m_cmd_them_hs_chat_luong.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_them_hs_chat_luong.Glyph")));
             this.m_cmd_them_hs_chat_luong.Id = 52;
+            this.m_cmd_them_hs_chat_luong.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_them_hs_chat_luong.LargeGlyph")));
             this.m_cmd_them_hs_chat_luong.Name = "m_cmd_them_hs_chat_luong";
             this.m_cmd_them_hs_chat_luong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));

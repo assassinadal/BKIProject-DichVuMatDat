@@ -28,20 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f372_nhan_vien_loai_lao_dong_edit));
-            this.label1 = new System.Windows.Forms.Label();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HO_DEM = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn37 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,15 +43,23 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_cmd_cancel = new SIS.Controls.Button.SiSButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList = new System.Windows.Forms.ImageList();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HO_DEM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_loai_lao_dong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -72,119 +67,11 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Chọn nhân viên (*)";
-            // 
-            // gridColumn17
-            // 
-            this.gridColumn17.Caption = "SĐT";
-            this.gridColumn17.FieldName = "SDT";
-            this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 5;
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.Caption = "Email";
-            this.gridColumn16.FieldName = "EMAIL";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 4;
-            // 
-            // gridColumn15
-            // 
-            this.gridColumn15.Caption = "Giới tính";
-            this.gridColumn15.FieldName = "GIOI_TINH";
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 3;
-            // 
-            // gridColumn14
-            // 
-            this.gridColumn14.Caption = "Tên";
-            this.gridColumn14.FieldName = "TEN";
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 2;
-            // 
-            // HO_DEM
-            // 
-            this.HO_DEM.Caption = "Họ đệm";
-            this.HO_DEM.FieldName = "HO_DEM";
-            this.HO_DEM.Name = "HO_DEM";
-            this.HO_DEM.Visible = true;
-            this.HO_DEM.VisibleIndex = 1;
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.Caption = "Mã NV";
-            this.gridColumn13.FieldName = "MA_NV";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 0;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Caption = "ID";
-            this.gridColumn12.FieldName = "ID";
-            this.gridColumn12.Name = "gridColumn12";
-            // 
-            // searchLookUpEdit1View
-            // 
-            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn12,
-            this.gridColumn13,
-            this.HO_DEM,
-            this.gridColumn14,
-            this.gridColumn15,
-            this.gridColumn16,
-            this.gridColumn17,
-            this.gridColumn18});
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn18
-            // 
-            this.gridColumn18.Caption = "Địa chỉ";
-            this.gridColumn18.FieldName = "DIA_CHI_THUONG_TRU";
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 6;
-            // 
-            // m_sle_chon_nhan_vien
-            // 
-            this.m_sle_chon_nhan_vien.EditValue = "";
-            this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(116, 36);
-            this.m_sle_chon_nhan_vien.Name = "m_sle_chon_nhan_vien";
-            this.m_sle_chon_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_sle_chon_nhan_vien.Properties.DisplayMember = "HO_TEN";
-            this.m_sle_chon_nhan_vien.Properties.NullText = "";
-            this.m_sle_chon_nhan_vien.Properties.ValueMember = "ID";
-            this.m_sle_chon_nhan_vien.Properties.View = this.searchLookUpEdit1View;
-            this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(210, 20);
-            this.m_sle_chon_nhan_vien.TabIndex = 1;
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.m_sle_chon_nhan_vien);
-            this.groupControl1.Controls.Add(this.label1);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(347, 121);
-            this.groupControl1.TabIndex = 8;
-            this.groupControl1.Text = "THÔNG TIN CƠ BẢN";
             // 
             // gridColumn38
             // 
@@ -306,7 +193,7 @@
             // 
             this.panel2.Controls.Add(this.groupControl2);
             this.panel2.Controls.Add(this.groupControl1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 54);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(713, 121);
@@ -402,10 +289,123 @@
             this.m_lbl_header.Text = "CẬP NHẬT THÔNG TIN LOẠI LAO ĐỘNG CHO NHÂN VIÊN";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Chọn nhân viên (*)";
+            // 
+            // m_sle_chon_nhan_vien
+            // 
+            this.m_sle_chon_nhan_vien.EditValue = "";
+            this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(116, 36);
+            this.m_sle_chon_nhan_vien.Name = "m_sle_chon_nhan_vien";
+            this.m_sle_chon_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_sle_chon_nhan_vien.Properties.DisplayMember = "HO_TEN";
+            this.m_sle_chon_nhan_vien.Properties.NullText = "";
+            this.m_sle_chon_nhan_vien.Properties.ValueMember = "ID";
+            this.m_sle_chon_nhan_vien.Properties.View = this.searchLookUpEdit1View;
+            this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(210, 20);
+            this.m_sle_chon_nhan_vien.TabIndex = 1;
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn12,
+            this.gridColumn13,
+            this.HO_DEM,
+            this.gridColumn14,
+            this.gridColumn15,
+            this.gridColumn16,
+            this.gridColumn17,
+            this.gridColumn18});
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "ID";
+            this.gridColumn12.FieldName = "ID";
+            this.gridColumn12.Name = "gridColumn12";
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Mã NV";
+            this.gridColumn13.FieldName = "MA_NV";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 0;
+            // 
+            // HO_DEM
+            // 
+            this.HO_DEM.Caption = "Họ đệm";
+            this.HO_DEM.FieldName = "HO_DEM";
+            this.HO_DEM.Name = "HO_DEM";
+            this.HO_DEM.Visible = true;
+            this.HO_DEM.VisibleIndex = 1;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Tên";
+            this.gridColumn14.FieldName = "TEN";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 2;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "Giới tính";
+            this.gridColumn15.FieldName = "GIOI_TINH";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 3;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "Email";
+            this.gridColumn16.FieldName = "EMAIL";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 4;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "SĐT";
+            this.gridColumn17.FieldName = "SDT";
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.Visible = true;
+            this.gridColumn17.VisibleIndex = 5;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "Địa chỉ";
+            this.gridColumn18.FieldName = "DIA_CHI_THUONG_TRU";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 6;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.m_sle_chon_nhan_vien);
+            this.groupControl1.Controls.Add(this.label1);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(347, 121);
+            this.groupControl1.TabIndex = 8;
+            this.groupControl1.Text = "THÔNG TIN CƠ BẢN";
+            // 
             // f372_nhan_vien_loai_lao_dong_edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.m_cmd_cancel;
             this.ClientSize = new System.Drawing.Size(713, 211);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -413,11 +413,6 @@
             this.Name = "f372_nhan_vien_loai_lao_dong_edit";
             this.Text = "f372_nhan_vien_loai_lao_dong_edit";
             this.Load += new System.EventHandler(this.f372_nhan_vien_loai_lao_dong_edit_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_loai_lao_dong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
@@ -426,24 +421,17 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
-        private DevExpress.XtraGrid.Columns.GridColumn HO_DEM;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
-        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
-        private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chon_nhan_vien;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn38;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn37;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn36;
@@ -463,5 +451,17 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label m_lbl_header;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chon_nhan_vien;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraGrid.Columns.GridColumn HO_DEM;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private System.Windows.Forms.Label label1;
     }
 }

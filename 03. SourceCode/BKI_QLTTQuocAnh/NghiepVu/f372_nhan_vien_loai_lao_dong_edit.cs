@@ -85,6 +85,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
 
+        //Load toan bo du lieu tu V_GD_LOAI_LAO_DONG len luoi 
+
         private void form_2_us_gd_loai_lao_dong(US_GD_LOAI_LAO_DONG ip_us)
         {
             if (m_sle_chon_nhan_vien.EditValue != null && m_sle_chon_nhan_vien.EditValue != "")
@@ -129,7 +131,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         //Lay du lieu cua dong muon sua
         private void get_data_row_nv_loai_lao_dong()
         {
-            
+            //Lay ID cua dong du lieu can sua tu V_GD_LOAI_LAO_DONG
+
         }
 
         private void save_data()

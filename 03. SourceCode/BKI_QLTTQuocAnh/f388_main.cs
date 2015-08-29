@@ -435,13 +435,20 @@ namespace BKI_DichVuMatDat
             }
         }
 
-
-
-
-
-
-
-
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                F696_Cham_cong_xls v_frm = new F696_Cham_cong_xls();
+                if (IsExistFormName(v_frm)) return;
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)
         //{

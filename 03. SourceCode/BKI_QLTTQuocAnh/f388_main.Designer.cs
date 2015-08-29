@@ -36,7 +36,6 @@
             this.m_cmd_nhom_nguoi_su_dung = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_phan_quyen_nhom = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_lop_mon = new DevExpress.XtraBars.BarButtonItem();
-            this.m_cmd_dm_hs = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_cham_cong_nv = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_diem_danh = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_lap_phai_thu_le = new DevExpress.XtraBars.BarButtonItem();
@@ -113,7 +112,6 @@
             this.m_cmd_nhom_nguoi_su_dung,
             this.m_cmd_phan_quyen_nhom,
             this.m_cmd_dm_lop_mon,
-            this.m_cmd_dm_hs,
             this.m_cmd_cham_cong_nv,
             this.m_cmd_diem_danh,
             this.m_cmd_lap_phai_thu_le,
@@ -224,15 +222,6 @@
             this.m_cmd_dm_lop_mon.Id = 6;
             this.m_cmd_dm_lop_mon.Name = "m_cmd_dm_lop_mon";
             this.m_cmd_dm_lop_mon.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // m_cmd_dm_hs
-            // 
-            this.m_cmd_dm_hs.Caption = "Học sinh";
-            this.m_cmd_dm_hs.Glyph = global::BKI_DichVuMatDat.Properties.Resources.Designbolts_Monsters_University_Monsters_Character_Young_Mikes;
-            this.m_cmd_dm_hs.Id = 7;
-            this.m_cmd_dm_hs.Name = "m_cmd_dm_hs";
-            this.m_cmd_dm_hs.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // m_cmd_cham_cong_nv
@@ -627,7 +616,6 @@
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_hs);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_loai_hop_dong);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_loai_ngay_cong);
@@ -771,7 +759,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_lop_mon;
-        private DevExpress.XtraBars.BarButtonItem m_cmd_dm_hs;
         private DevExpress.XtraBars.BarButtonItem m_cmd_cham_cong_nv;
         private DevExpress.XtraBars.BarButtonItem m_cmd_diem_danh;
         private DevExpress.XtraBars.BarButtonItem m_cmd_lap_phai_thu_le;

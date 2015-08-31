@@ -143,7 +143,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                f371_nhan_vien_loai_lao_dong_insert v_frm = new f371_nhan_vien_loai_lao_dong_insert();
+                f371_nhan_vien_loai_lao_dong_de v_frm = new f371_nhan_vien_loai_lao_dong_de();
                 v_frm.ShowDialog();
                 load_data_2_grid();
             }
@@ -157,8 +157,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                f372_nhan_vien_loai_lao_dong_edit v_frm = new f372_nhan_vien_loai_lao_dong_edit();
-                v_frm.ShowDialog();
+                DataRow v_dr = m_grv_v_gd_loai_lao_dong.GetDataRow(m_grv_v_gd_loai_lao_dong.FocusedRowHandle);
+                US_GD_LOAI_LAO_DONG v_us = new US_GD_LOAI_LAO_DONG(CIPConvert.ToDecimal(v_dr[GD_LOAI_LAO_DONG.ID].ToString()));
+                f371_nhan_vien_loai_lao_dong_de v_frm = new f371_nhan_vien_loai_lao_dong_de();
+                v_frm.DisplayForUpdate(v_us);
                 load_data_2_grid();
             }
             catch (Exception v_e)

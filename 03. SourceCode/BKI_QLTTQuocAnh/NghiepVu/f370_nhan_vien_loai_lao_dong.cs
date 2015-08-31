@@ -144,7 +144,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 f371_nhan_vien_loai_lao_dong_de v_frm = new f371_nhan_vien_loai_lao_dong_de();
-                v_frm.ShowDialog();
+                v_frm.DisplayForInsert();
                 load_data_2_grid();
             }
             catch (Exception v_e)

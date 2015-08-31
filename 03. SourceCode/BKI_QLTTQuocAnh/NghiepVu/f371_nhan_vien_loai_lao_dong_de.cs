@@ -34,7 +34,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #endregion
 
         #region Members
-        DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
+        DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
         decimal m_id_gd_loai_ld = 0;
         #endregion
 
@@ -178,7 +178,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us_gd_loai_lao_dong.CommitTransaction();
                     }
                 }
-                else if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
+                else //if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
                 {
                     v_us_gd_loai_lao_dong.BeginTransaction();
                     v_us_gd_loai_lao_dong.Update();
@@ -236,6 +236,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        public void DisplayForInsert()
+        {
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.ShowDialog();
         }
 
         public void DisplayForUpdate(US_GD_LOAI_LAO_DONG v_us)

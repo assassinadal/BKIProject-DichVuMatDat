@@ -416,7 +416,7 @@
             this.MaximizeBox = false;
             this.Name = "f371_nhan_vien_loai_lao_dong_insert";
             this.Text = "f371 - THÊM NHÂN VIÊN LOẠI LAO ĐỘNG";
-            this.Load += new System.EventHandler(this.f371_nhan_vien_loai_lao_dong_insert_Load);
+            //this.Load += new System.EventHandler(this.f371_nhan_vien_loai_lao_dong_insert_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

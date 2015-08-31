@@ -70,7 +70,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 US_DUNG_CHUNG v_us_dc = new US_DUNG_CHUNG();
                 US_GD_HE_SO_CHAT_LUONG v_us_gs_cl = new US_GD_HE_SO_CHAT_LUONG();
 
-                var v_data_row = m_grv_them_hs.GetDataRow(m_grv_them_hs.GetSelectedRows()[v_int_khong_nhap_duoc]);
+                var v_data_row = m_grv_them_hs.GetDataRow(m_grv_them_hs.GetSelectedRows()[i]);
 
                 try
                 {
@@ -82,6 +82,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     v_int_khong_nhap_duoc++;
                     continue;
                 }
+
                 v_us_gs_cl.dcID_NHAN_VIEN = v_id_nv;
                 v_us_gs_cl.dcHE_SO_K = CIPConvert.ToDecimal(v_data_row["HE_SO"].ToString());
                 v_us_gs_cl.dcTHANG = CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim());
@@ -102,14 +103,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     v_int_khong_nhap_duoc++;
                 }
             }
-            if (v_count == v_selectedRowCount)
-            {
-                MessageBox.Show("Cập nhật thành công cho " + v_count + " nhân viên");
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật thành công cho " + v_count + " nhân viên. Vui lòng kiểm tra lại thông tin của " + (v_selectedRowCount - v_count).ToString() + " nhân viên được chọn còn lại trong bảng!");
-            }
+
         }
 
         #endregion
@@ -160,6 +154,15 @@ namespace BKI_DichVuMatDat.NghiepVu
                 if (v_selectedRowCount > 0)
                 {
                     kiem_tra_va_thuc_hien_nhap_hs(ref v_count, ref v_int_khong_nhap_duoc, v_selectedRowCount);
+
+                    if (v_count == v_selectedRowCount)
+                    {
+                        MessageBox.Show("Cập nhật thành công cho " + v_count + " nhân viên");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật thành công cho " + v_count + " nhân viên. Vui lòng kiểm tra lại thông tin của " + (v_selectedRowCount - v_count).ToString() + " nhân viên được chọn còn lại trong bảng!");
+                    }
                 }
                 else
                 {

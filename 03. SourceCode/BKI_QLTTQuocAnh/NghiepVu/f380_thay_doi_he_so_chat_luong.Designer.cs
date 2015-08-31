@@ -341,6 +341,9 @@
             // 
             // HE_SO
             // 
+            this.HE_SO.AppearanceCell.Options.UseTextOptions = true;
+            this.HE_SO.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.HE_SO.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.HE_SO.AppearanceHeader.Options.UseTextOptions = true;
             this.HE_SO.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.HE_SO.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;

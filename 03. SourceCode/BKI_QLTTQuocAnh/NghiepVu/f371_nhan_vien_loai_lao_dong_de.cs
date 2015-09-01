@@ -36,6 +36,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Members
         DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
         decimal m_id_gd_loai_ld = 0;
+        US_GD_LOAI_LAO_DONG m_us = new US_GD_LOAI_LAO_DONG();
         #endregion
 
         #region Private Methods
@@ -87,12 +88,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
 
-        private void form_2_us_gd_loai_lao_dong(US_GD_LOAI_LAO_DONG ip_us)
+        private void form_2_us_gd_loai_lao_dong(US_GD_LOAI_LAO_DONG m_us)
         {
-            ip_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
-            ip_us.dcID_LOAI_LAO_DONG = CIPConvert.ToDecimal(m_sle_chon_loai_lao_dong.EditValue);
-            ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
-            ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
+            m_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
+            m_us.dcID_LOAI_LAO_DONG = CIPConvert.ToDecimal(m_sle_chon_loai_lao_dong.EditValue);
+            m_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
+            m_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
         }
 
         //Check data is ok?
@@ -146,38 +147,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             else return 1; // m_id_gd_loai_ld = 1 tuc la trong bang GD_LOAI_LAO_DONG da co nhan vien nay
         }
 
-        private void save_data()
-        {
-            US_GD_LOAI_LAO_DONG v_us_gd_loai_lao_dong = new US_GD_LOAI_LAO_DONG();
-            form_2_us_gd_loai_lao_dong(v_us_gd_loai_lao_dong);
-            try
-            {
-                if (m_e_form_mode == DataEntryFormMode.InsertDataState)
-                {
-                    load_data_2_m_variable();
-                    if (m_id_gd_loai_ld != 0)
-                    {
-                        MessageBox.Show("Nhân viên nãy đã tồn tại loại lao động! Nếu bạn muốn SỬA thông tin cho nhân viên vui lòng chọn nút SỬA!", "THÔNG BÁO!");
-                    }
-                    else
-                    {
-                        v_us_gd_loai_lao_dong.BeginTransaction();
-                        v_us_gd_loai_lao_dong.Insert();
-                        v_us_gd_loai_lao_dong.CommitTransaction();
-                    }
-                }
-                else //if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
-                {
-                    v_us_gd_loai_lao_dong.BeginTransaction();
-                    v_us_gd_loai_lao_dong.Update();
-                    v_us_gd_loai_lao_dong.CommitTransaction();
-                }
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
         #endregion
 
         private void set_define_event()
@@ -214,9 +183,27 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                //Kiem tra du lieu
                 if (check_data_is_ok() == true)
                 {
-                    save_data();
+                    //Dua du lieu vao US
+                    form_2_us_gd_loai_lao_dong(m_us);
+                    if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+                    {
+                        load_data_2_m_variable();
+                        if (m_id_gd_loai_ld != 0)
+                        {
+                            MessageBox.Show("Nhân viên nãy đã tồn tại loại lao động! Nếu bạn muốn SỬA thông tin cho nhân viên vui lòng chọn nút SỬA!", "THÔNG BÁO!");
+                        }
+                        else
+                        {
+                            m_us.Insert();
+                        }
+                    }
+                    else
+                    {
+                        m_us.Update();
+                    }
                     this.Close();
                 }
             }
@@ -235,16 +222,17 @@ namespace BKI_DichVuMatDat.NghiepVu
         public void DisplayForUpdate(US_GD_LOAI_LAO_DONG v_us)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
-            us_2_form(v_us);
+            m_us = v_us;
+            us_2_form(m_us);
             this.ShowDialog();
         }
 
-        private void us_2_form(US_GD_LOAI_LAO_DONG v_us)
+        private void us_2_form(US_GD_LOAI_LAO_DONG m_us)
         {
-            m_sle_chon_nhan_vien.EditValue = v_us.dcID_NHAN_VIEN;
-            m_sle_chon_loai_lao_dong.EditValue = v_us.dcID_LOAI_LAO_DONG;
-            m_dat_ngay_bat_dau.Value = v_us.datNGAY_BAT_DAU;
-            m_dat_ngay_ket_thuc.Value = v_us.datNGAY_KET_THUC;
+            m_sle_chon_nhan_vien.EditValue = m_us.dcID_NHAN_VIEN;
+            m_sle_chon_loai_lao_dong.EditValue = m_us.dcID_LOAI_LAO_DONG;
+            m_dat_ngay_bat_dau.Value = m_us.datNGAY_BAT_DAU;
+            m_dat_ngay_ket_thuc.Value = m_us.datNGAY_KET_THUC;
         }
 
     }

@@ -158,7 +158,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 DataRow v_dr = m_grv_v_gd_loai_lao_dong.GetDataRow(m_grv_v_gd_loai_lao_dong.FocusedRowHandle);
-                US_GD_LOAI_LAO_DONG v_us = new US_GD_LOAI_LAO_DONG(CIPConvert.ToDecimal(v_dr[GD_LOAI_LAO_DONG.ID].ToString()));
+                decimal v_id = CIPConvert.ToDecimal(v_dr[GD_LOAI_LAO_DONG.ID]);
+
+                US_GD_LOAI_LAO_DONG v_us = new US_GD_LOAI_LAO_DONG(v_id);
                 f371_nhan_vien_loai_lao_dong_de v_frm = new f371_nhan_vien_loai_lao_dong_de();
                 v_frm.DisplayForUpdate(v_us);
                 load_data_2_grid();

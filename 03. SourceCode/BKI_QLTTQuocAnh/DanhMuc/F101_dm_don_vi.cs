@@ -21,6 +21,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         public F101_dm_don_vi()
         {
             InitializeComponent();
+            format_controls();
         }
 
         #region Public Interface
@@ -29,6 +30,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             this.ShowDialog();
         }
         #endregion
+
         #region Members
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         #endregion
@@ -57,6 +59,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         }
 
         #endregion
+
         private void set_define_events()
         {
             this.Load += F105_dm_don_vi_Load;

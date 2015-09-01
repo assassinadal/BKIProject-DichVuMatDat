@@ -131,6 +131,7 @@ namespace BKI_DichVuMatDat
             //m_cmd_backup_restore.ItemClick += m_cmd_backup_restore_ItemClick;
             //Danh muc 
             m_cmd_dm_loai_ngay_cong.ItemClick += m_cmd_dm_loai_ngay_cong_ItemClick;
+            m_cmd_danh_muc_don_vi.ItemClick += m_cmd_danh_muc_don_vi_ItemClick;
             //Bao cao
             m_cmd_bang_luong_nv.ItemClick += m_cmd_bang_luong_nv_ItemClick;
         }
@@ -405,7 +406,7 @@ namespace BKI_DichVuMatDat
             }
         }
 
-        private void c_cmd_danh_muc_don_vi_ItemClick(object sender, ItemClickEventArgs e)
+        private void m_cmd_danh_muc_don_vi_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
             {

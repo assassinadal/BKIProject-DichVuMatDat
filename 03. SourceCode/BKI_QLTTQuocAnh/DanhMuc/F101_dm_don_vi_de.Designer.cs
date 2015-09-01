@@ -32,10 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F101_dm_don_vi_de));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_gr_thong_tin_co_ban = new DevExpress.XtraEditors.GroupControl();
+            this.m_txt_ten_dv = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.m_lbl_kiem_tra_ma_dv = new System.Windows.Forms.Label();
             this.m_txt_ma_dv = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.m_sle_chon_dv_cap_tren = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -44,18 +44,18 @@
             this.m_sle_loai_dv = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.m_lbl_kiem_tra_ma_dv = new System.Windows.Forms.Label();
-            this.m_txt_ten_dv = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_co_ban)).BeginInit();
             this.m_gr_thong_tin_co_ban.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_dv_cap_tren.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_loai_dv.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_lbl_header
@@ -79,58 +79,6 @@
             this.panel2.Size = new System.Drawing.Size(501, 143);
             this.panel2.TabIndex = 1;
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "");
-            this.imageList1.Images.SetKeyName(1, "");
-            this.imageList1.Images.SetKeyName(2, "");
-            this.imageList1.Images.SetKeyName(3, "");
-            this.imageList1.Images.SetKeyName(4, "");
-            this.imageList1.Images.SetKeyName(5, "");
-            this.imageList1.Images.SetKeyName(6, "");
-            this.imageList1.Images.SetKeyName(7, "");
-            this.imageList1.Images.SetKeyName(8, "");
-            this.imageList1.Images.SetKeyName(9, "");
-            this.imageList1.Images.SetKeyName(10, "");
-            this.imageList1.Images.SetKeyName(11, "");
-            this.imageList1.Images.SetKeyName(12, "");
-            this.imageList1.Images.SetKeyName(13, "");
-            this.imageList1.Images.SetKeyName(14, "");
-            this.imageList1.Images.SetKeyName(15, "");
-            this.imageList1.Images.SetKeyName(16, "");
-            this.imageList1.Images.SetKeyName(17, "");
-            this.imageList1.Images.SetKeyName(18, "");
-            this.imageList1.Images.SetKeyName(19, "");
-            this.imageList1.Images.SetKeyName(20, "");
-            this.imageList1.Images.SetKeyName(21, "");
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.m_cmd_save);
-            this.panel1.Controls.Add(this.m_cmd_exit);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 187);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(501, 42);
-            this.panel1.TabIndex = 2;
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.ImageList = this.imageList1;
-            this.m_cmd_exit.Location = new System.Drawing.Point(378, 0);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(123, 42);
-            this.m_cmd_exit.TabIndex = 1;
-            this.m_cmd_exit.Text = "&Thoát";
-            // 
             // m_gr_thong_tin_co_ban
             // 
             this.m_gr_thong_tin_co_ban.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,7 +97,33 @@
             this.m_gr_thong_tin_co_ban.Name = "m_gr_thong_tin_co_ban";
             this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(501, 143);
             this.m_gr_thong_tin_co_ban.TabIndex = 0;
-            this.m_gr_thong_tin_co_ban.Text = "THÔNG TIN CƠ BẢN";
+            this.m_gr_thong_tin_co_ban.Text = "ĐIỀN THÔNG TIN";
+            // 
+            // m_txt_ten_dv
+            // 
+            this.m_txt_ten_dv.Location = new System.Drawing.Point(127, 58);
+            this.m_txt_ten_dv.Name = "m_txt_ten_dv";
+            this.m_txt_ten_dv.Size = new System.Drawing.Size(208, 20);
+            this.m_txt_ten_dv.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 62);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Tên đơn vị (*)";
+            // 
+            // m_lbl_kiem_tra_ma_dv
+            // 
+            this.m_lbl_kiem_tra_ma_dv.AutoSize = true;
+            this.m_lbl_kiem_tra_ma_dv.Location = new System.Drawing.Point(350, 35);
+            this.m_lbl_kiem_tra_ma_dv.Name = "m_lbl_kiem_tra_ma_dv";
+            this.m_lbl_kiem_tra_ma_dv.Size = new System.Drawing.Size(16, 13);
+            this.m_lbl_kiem_tra_ma_dv.TabIndex = 2;
+            this.m_lbl_kiem_tra_ma_dv.Text = "...";
+            this.m_lbl_kiem_tra_ma_dv.Visible = false;
             // 
             // m_txt_ma_dv
             // 
@@ -223,31 +197,42 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Chọn loại đơn vị (*)";
             // 
-            // m_lbl_kiem_tra_ma_dv
+            // imageList1
             // 
-            this.m_lbl_kiem_tra_ma_dv.AutoSize = true;
-            this.m_lbl_kiem_tra_ma_dv.Location = new System.Drawing.Point(350, 35);
-            this.m_lbl_kiem_tra_ma_dv.Name = "m_lbl_kiem_tra_ma_dv";
-            this.m_lbl_kiem_tra_ma_dv.Size = new System.Drawing.Size(16, 13);
-            this.m_lbl_kiem_tra_ma_dv.TabIndex = 2;
-            this.m_lbl_kiem_tra_ma_dv.Text = "...";
-            this.m_lbl_kiem_tra_ma_dv.Visible = false;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "");
+            this.imageList1.Images.SetKeyName(1, "");
+            this.imageList1.Images.SetKeyName(2, "");
+            this.imageList1.Images.SetKeyName(3, "");
+            this.imageList1.Images.SetKeyName(4, "");
+            this.imageList1.Images.SetKeyName(5, "");
+            this.imageList1.Images.SetKeyName(6, "");
+            this.imageList1.Images.SetKeyName(7, "");
+            this.imageList1.Images.SetKeyName(8, "");
+            this.imageList1.Images.SetKeyName(9, "");
+            this.imageList1.Images.SetKeyName(10, "");
+            this.imageList1.Images.SetKeyName(11, "");
+            this.imageList1.Images.SetKeyName(12, "");
+            this.imageList1.Images.SetKeyName(13, "");
+            this.imageList1.Images.SetKeyName(14, "");
+            this.imageList1.Images.SetKeyName(15, "");
+            this.imageList1.Images.SetKeyName(16, "");
+            this.imageList1.Images.SetKeyName(17, "");
+            this.imageList1.Images.SetKeyName(18, "");
+            this.imageList1.Images.SetKeyName(19, "");
+            this.imageList1.Images.SetKeyName(20, "");
+            this.imageList1.Images.SetKeyName(21, "");
             // 
-            // m_txt_ten_dv
+            // panel1
             // 
-            this.m_txt_ten_dv.Location = new System.Drawing.Point(127, 58);
-            this.m_txt_ten_dv.Name = "m_txt_ten_dv";
-            this.m_txt_ten_dv.Size = new System.Drawing.Size(208, 20);
-            this.m_txt_ten_dv.TabIndex = 4;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 62);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Tên đơn vị (*)";
+            this.panel1.Controls.Add(this.m_cmd_save);
+            this.panel1.Controls.Add(this.m_cmd_exit);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 187);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(501, 42);
+            this.panel1.TabIndex = 2;
             // 
             // m_cmd_save
             // 
@@ -264,6 +249,21 @@
             this.m_cmd_save.TabIndex = 0;
             this.m_cmd_save.Text = "&Lưu";
             // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 12;
+            this.m_cmd_exit.ImageList = this.imageList1;
+            this.m_cmd_exit.Location = new System.Drawing.Point(378, 0);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(123, 42);
+            this.m_cmd_exit.TabIndex = 1;
+            this.m_cmd_exit.Text = "&Thoát";
+            // 
             // F101_dm_don_vi_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,7 +275,6 @@
             this.Name = "F101_dm_don_vi_de";
             this.Text = "F101 - Danh mục đơn vị detail";
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_co_ban)).EndInit();
             this.m_gr_thong_tin_co_ban.ResumeLayout(false);
             this.m_gr_thong_tin_co_ban.PerformLayout();
@@ -283,6 +282,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_loai_dv.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

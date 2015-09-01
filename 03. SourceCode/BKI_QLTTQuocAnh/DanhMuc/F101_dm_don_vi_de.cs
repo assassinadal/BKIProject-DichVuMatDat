@@ -22,7 +22,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             format_controls();
         }
 
-        #region Private interface
+        #region Public interface
         public void display_4_insert(ref decimal v_id_dm_don_vi_moi_tao)
         {
             this.Text = "F101 - Thêm đơn vị";
@@ -193,33 +193,6 @@ namespace BKI_DichVuMatDat.DanhMuc
             ip_us.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_sle_loai_dv.EditValue);
         }
 
-        private decimal find_id_dm_dv_moi_tao()
-        {
-            try
-            {
-                US_DM_DON_VI v_us = new US_DM_DON_VI();
-                DS_DM_DON_VI v_ds = new DS_DM_DON_VI();
-
-                v_us.FillDataset(v_ds);
-
-                string v_str_filter = "MA_DON_VI = '" + m_txt_ma_dv.Text.Trim() + "' AND TEN_DON_VI = '" + m_txt_ten_dv.Text.Trim() + "' AND ID_LOAI_DON_VI = "+CIPConvert.ToDecimal(m_sle_loai_dv.EditValue);
-                DataRow[] v_dr = v_ds.DM_DON_VI.Select(v_str_filter);
-
-                if (v_dr.Count() == 0)
-                {
-                    return -1;
-                }
-                else
-                {
-                    return CIPConvert.ToDecimal(v_dr.First()["ID"].ToString());
-                }
-            }
-            catch (Exception v_e)
-            {
-                throw v_e;
-            }
-        }
-
         private void save_data()
         {
             US_DM_DON_VI v_us_dm_dv = new US_DM_DON_VI();
@@ -248,6 +221,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_dv.BeginTransaction();
                         v_us_dm_dv.Update();
                         v_us_dm_dv.CommitTransaction();
+                        XtraMessageBox.Show("Bạn đã cập nhật đơn vị thành công!", "THÀNH CÔNG");
                         break;
                     default:
                         break;

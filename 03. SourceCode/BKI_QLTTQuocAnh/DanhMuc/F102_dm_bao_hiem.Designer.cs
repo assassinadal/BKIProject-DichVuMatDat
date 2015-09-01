@@ -40,25 +40,28 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.c_cmd_dm_bao_hiem_xoa = new SIS.Controls.Button.SiSButton();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.c_cmd_dm_bao_hiem_sua = new SIS.Controls.Button.SiSButton();
             this.m_cmd_dm_bao_hiem_them = new SIS.Controls.Button.SiSButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_bao_hiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_bao_hiem)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_grc_dm_bao_hiem
             // 
             this.m_grc_dm_bao_hiem.Cursor = System.Windows.Forms.Cursors.Default;
+            this.m_grc_dm_bao_hiem.Dock = System.Windows.Forms.DockStyle.Fill;
             gridLevelNode1.RelationName = "Level1";
             this.m_grc_dm_bao_hiem.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.m_grc_dm_bao_hiem.Location = new System.Drawing.Point(0, 47);
+            this.m_grc_dm_bao_hiem.Location = new System.Drawing.Point(0, 0);
             this.m_grc_dm_bao_hiem.MainView = this.m_grv_dm_bao_hiem;
             this.m_grc_dm_bao_hiem.Name = "m_grc_dm_bao_hiem";
-            this.m_grc_dm_bao_hiem.Size = new System.Drawing.Size(794, 378);
+            this.m_grc_dm_bao_hiem.Size = new System.Drawing.Size(794, 216);
             this.m_grc_dm_bao_hiem.TabIndex = 0;
             this.m_grc_dm_bao_hiem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_dm_bao_hiem});
@@ -73,6 +76,9 @@
             this.gridColumn1});
             this.m_grv_dm_bao_hiem.GridControl = this.m_grc_dm_bao_hiem;
             this.m_grv_dm_bao_hiem.Name = "m_grv_dm_bao_hiem";
+            this.m_grv_dm_bao_hiem.OptionsFind.AllowFindPanel = false;
+            this.m_grv_dm_bao_hiem.OptionsFind.AlwaysVisible = true;
+            this.m_grv_dm_bao_hiem.OptionsView.ShowFooter = true;
             // 
             // STT
             // 
@@ -148,10 +154,26 @@
             this.panel1.Controls.Add(this.c_cmd_dm_bao_hiem_sua);
             this.panel1.Controls.Add(this.m_cmd_dm_bao_hiem_them);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 421);
+            this.panel1.Location = new System.Drawing.Point(0, 260);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(794, 37);
             this.panel1.TabIndex = 3;
+            // 
+            // c_cmd_dm_bao_hiem_xoa
+            // 
+            this.c_cmd_dm_bao_hiem_xoa.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.c_cmd_dm_bao_hiem_xoa.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.c_cmd_dm_bao_hiem_xoa.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.c_cmd_dm_bao_hiem_xoa.Dock = System.Windows.Forms.DockStyle.Left;
+            this.c_cmd_dm_bao_hiem_xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.c_cmd_dm_bao_hiem_xoa.ImageIndex = 4;
+            this.c_cmd_dm_bao_hiem_xoa.ImageList = this.imageList1;
+            this.c_cmd_dm_bao_hiem_xoa.Location = new System.Drawing.Point(172, 0);
+            this.c_cmd_dm_bao_hiem_xoa.Name = "c_cmd_dm_bao_hiem_xoa";
+            this.c_cmd_dm_bao_hiem_xoa.Size = new System.Drawing.Size(86, 37);
+            this.c_cmd_dm_bao_hiem_xoa.TabIndex = 6;
+            this.c_cmd_dm_bao_hiem_xoa.Text = "&Xóa";
+            this.c_cmd_dm_bao_hiem_xoa.Click += new System.EventHandler(this.c_cmd_dm_bao_hiem_xoa_Click);
             // 
             // imageList1
             // 
@@ -180,21 +202,6 @@
             this.imageList1.Images.SetKeyName(20, "");
             this.imageList1.Images.SetKeyName(21, "");
             // 
-            // c_cmd_dm_bao_hiem_xoa
-            // 
-            this.c_cmd_dm_bao_hiem_xoa.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.c_cmd_dm_bao_hiem_xoa.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.c_cmd_dm_bao_hiem_xoa.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.c_cmd_dm_bao_hiem_xoa.Dock = System.Windows.Forms.DockStyle.Left;
-            this.c_cmd_dm_bao_hiem_xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.c_cmd_dm_bao_hiem_xoa.ImageIndex = 4;
-            this.c_cmd_dm_bao_hiem_xoa.ImageList = this.imageList1;
-            this.c_cmd_dm_bao_hiem_xoa.Location = new System.Drawing.Point(172, 0);
-            this.c_cmd_dm_bao_hiem_xoa.Name = "c_cmd_dm_bao_hiem_xoa";
-            this.c_cmd_dm_bao_hiem_xoa.Size = new System.Drawing.Size(86, 37);
-            this.c_cmd_dm_bao_hiem_xoa.TabIndex = 6;
-            this.c_cmd_dm_bao_hiem_xoa.Text = "&Xóa";
-            // 
             // c_cmd_dm_bao_hiem_sua
             // 
             this.c_cmd_dm_bao_hiem_sua.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -209,6 +216,7 @@
             this.c_cmd_dm_bao_hiem_sua.Size = new System.Drawing.Size(86, 37);
             this.c_cmd_dm_bao_hiem_sua.TabIndex = 5;
             this.c_cmd_dm_bao_hiem_sua.Text = "&Sửa";
+            this.c_cmd_dm_bao_hiem_sua.Click += new System.EventHandler(this.c_cmd_dm_bao_hiem_sua_Click);
             // 
             // m_cmd_dm_bao_hiem_them
             // 
@@ -224,21 +232,32 @@
             this.m_cmd_dm_bao_hiem_them.Size = new System.Drawing.Size(86, 37);
             this.m_cmd_dm_bao_hiem_them.TabIndex = 4;
             this.m_cmd_dm_bao_hiem_them.Text = "&Thêm";
+            this.m_cmd_dm_bao_hiem_them.Click += new System.EventHandler(this.m_cmd_dm_bao_hiem_them_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.m_grc_dm_bao_hiem);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 44);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(794, 216);
+            this.panel2.TabIndex = 4;
             // 
             // F102_dm_bao_hiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 458);
+            this.ClientSize = new System.Drawing.Size(794, 297);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_lbl_header);
-            this.Controls.Add(this.m_grc_dm_bao_hiem);
             this.Name = "F102_dm_bao_hiem";
             this.Text = "F102_DANH MỤC BẢO HIỂM";
             this.Load += new System.EventHandler(this.F102_dm_bao_hiem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_bao_hiem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_bao_hiem)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -258,5 +277,6 @@
         internal System.Windows.Forms.ImageList imageList1;
         internal SIS.Controls.Button.SiSButton c_cmd_dm_bao_hiem_sua;
         internal SIS.Controls.Button.SiSButton m_cmd_dm_bao_hiem_them;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -50,6 +50,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.c_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_loai_hop_dong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_loai_hop_dong)).BeginInit();
@@ -90,6 +91,7 @@
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 37);
             this.m_cmd_insert.TabIndex = 3;
             this.m_cmd_insert.Text = "&Thêm";
+            this.m_cmd_insert.Click += new System.EventHandler(this.m_cmd_insert_Click);
             // 
             // ImageList
             // 
@@ -132,6 +134,7 @@
             this.m_cmd_edit.Size = new System.Drawing.Size(88, 37);
             this.m_cmd_edit.TabIndex = 2;
             this.m_cmd_edit.Text = "&Sửa";
+            this.m_cmd_edit.Click += new System.EventHandler(this.m_cmd_edit_Click);
             // 
             // m_cmd_delete
             // 
@@ -147,6 +150,7 @@
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 37);
             this.m_cmd_delete.TabIndex = 1;
             this.m_cmd_delete.Text = "&Xóa";
+            this.m_cmd_delete.Click += new System.EventHandler(this.m_cmd_delete_Click);
             // 
             // m_grc_dm_loai_hop_dong
             // 
@@ -164,6 +168,7 @@
             // m_grv_dm_loai_hop_dong
             // 
             this.m_grv_dm_loai_hop_dong.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.c_id,
             this.c_stt,
             this.c_loai_hop_dong,
             this.c_ma_loai_hop_dong,
@@ -312,6 +317,12 @@
             this.panel3.Size = new System.Drawing.Size(618, 265);
             this.panel3.TabIndex = 3;
             // 
+            // c_id
+            // 
+            this.c_id.Caption = "ID";
+            this.c_id.FieldName = "ID";
+            this.c_id.Name = "c_id";
+            // 
             // F104_dm_loai_hop_dong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,6 +366,7 @@
         internal SIS.Controls.Button.SiSButton m_cmd_insert;
         internal SIS.Controls.Button.SiSButton m_cmd_edit;
         internal SIS.Controls.Button.SiSButton m_cmd_delete;
+        private DevExpress.XtraGrid.Columns.GridColumn c_id;
 
     }
 }

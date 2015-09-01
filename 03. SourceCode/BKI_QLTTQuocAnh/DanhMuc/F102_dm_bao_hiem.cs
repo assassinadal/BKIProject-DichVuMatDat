@@ -76,6 +76,59 @@ namespace BKI_DichVuMatDat.DanhMuc
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void c_cmd_dm_bao_hiem_xoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Lay ID cua dong du lieu muon xoa
+                DataRow v_dr = m_grv_dm_bao_hiem.GetDataRow(m_grv_dm_bao_hiem.FocusedRowHandle);
+                //Lay ID du lieu cua dong phia tren
+                decimal v_id = CIPConvert.ToDecimal(v_dr[DM_BAO_HIEM.ID]);
+
+                US_DM_BAO_HIEM v_us = new US_DM_BAO_HIEM(v_id);
+                if (XtraMessageBox.Show("Bạn có chắc chắn muốn XÓA LOẠI BẢO HIỂM này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    v_us.Delete();
+                    load_data_2_grid();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_dm_bao_hiem_them_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F102_dm_bao_hiem_de v_frm = new F102_dm_bao_hiem_de();
+                v_frm.DisplayForInsert();
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void c_cmd_dm_bao_hiem_sua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow v_dr = m_grv_dm_bao_hiem.GetDataRow(m_grv_dm_bao_hiem.FocusedRowHandle);
+                US_DM_BAO_HIEM v_us = new US_DM_BAO_HIEM(CIPConvert.ToDecimal(v_dr[DM_BAO_HIEM.ID].ToString()));
+
+                F102_dm_bao_hiem_de v_frm = new F102_dm_bao_hiem_de();
+                v_frm.DisplayForUpdate(v_us);
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 
 }

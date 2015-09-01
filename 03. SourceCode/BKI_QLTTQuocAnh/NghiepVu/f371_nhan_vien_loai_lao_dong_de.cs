@@ -89,22 +89,10 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void form_2_us_gd_loai_lao_dong(US_GD_LOAI_LAO_DONG ip_us)
         {
-            if (m_sle_chon_nhan_vien.EditValue != null && m_sle_chon_nhan_vien.EditValue != "")
-            {
-                ip_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
-            }
-            if (m_sle_chon_loai_lao_dong.EditValue != null && m_sle_chon_loai_lao_dong.EditValue != "")
-            {
-                ip_us.dcID_LOAI_LAO_DONG = CIPConvert.ToDecimal(m_sle_chon_loai_lao_dong.EditValue);
-            }
-            if (m_dat_ngay_bat_dau.Value.Date != null || m_dat_ngay_bat_dau.Value.Date.ToString() != "")
-            {
-                ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
-            }
-            if (m_dat_ngay_ket_thuc.Value.Date != null || m_dat_ngay_ket_thuc.Value.Date.ToString() != "")
-            {
-                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
-            }
+            ip_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
+            ip_us.dcID_LOAI_LAO_DONG = CIPConvert.ToDecimal(m_sle_chon_loai_lao_dong.EditValue);
+            ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
+            ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
         }
 
         //Check data is ok?

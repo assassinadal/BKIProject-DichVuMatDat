@@ -77,5 +77,58 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F105_dm_loai_ngay_cong_de v_frm = new F105_dm_loai_ngay_cong_de();
+                v_frm.DisplayForInsert();
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow v_dr = m_grv_dm_loai_ngay_cong.GetDataRow(m_grv_dm_loai_ngay_cong.FocusedRowHandle);
+                decimal v_id = CIPConvert.ToDecimal(v_dr[DM_LOAI_NGAY_CONG.ID]);
+
+                US_DM_LOAI_NGAY_CONG v_us = new US_DM_LOAI_NGAY_CONG(v_id);
+                F105_dm_loai_ngay_cong_de v_frm = new F105_dm_loai_ngay_cong_de();
+                v_frm.DispplayForUpdate(v_us);
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Lay ID cua dong muon xoa
+                DataRow v_dr = m_grv_dm_loai_ngay_cong.GetDataRow(m_grv_dm_loai_ngay_cong.FocusedRowHandle);
+                decimal v_id = CIPConvert.ToDecimal(v_dr[DM_LOAI_NGAY_CONG.ID]);
+
+                US_DM_LOAI_NGAY_CONG v_us = new US_DM_LOAI_NGAY_CONG(v_id);
+                if (XtraMessageBox.Show("Bạn có chắc chắn muốn XÓA LOẠI NGÀY CÔNG này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    v_us.Delete();
+                    load_data_2_grid();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
     }
 }

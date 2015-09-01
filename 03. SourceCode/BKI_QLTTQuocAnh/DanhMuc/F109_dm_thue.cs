@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IP.Core.IPCommon;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +15,28 @@ namespace BKI_DichVuMatDat.DanhMuc
         public F109_dm_thue()
         {
             InitializeComponent();
+            format_controls();
         }
 
-        private void F109_dm_thue_Load(object sender, EventArgs e)
+        #region Public Interface
+        public void display()
+        {
+            this.ShowDialog();
+        }
+        #endregion
+
+        #region Members
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
+        #endregion
+
+        #region Private Methods
+        private void format_controls()
+        {
+            set_define_events();
+            this.KeyPreview = true;
+        }
+
+        private void set_initial_form_load()
         {
             load_data_2_grid();
         }
@@ -31,5 +51,36 @@ namespace BKI_DichVuMatDat.DanhMuc
             v_us.FillDatasetWithTableName(v_ds, "V_DM_THUE");
             m_grc_dm_thue.DataSource = v_ds.Tables[0];
         }
+        #endregion
+        private void set_define_events()
+        {
+            this.Load += F109_dm_thue_Load;
+            m_cmd_insert.Click += m_cmd_insert_Click;
+        }
+
+        private void F109_dm_thue_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
     }
 }

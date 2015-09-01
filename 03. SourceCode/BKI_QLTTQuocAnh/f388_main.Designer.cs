@@ -59,7 +59,7 @@
             this.m_cmd_cho_hs_len_lop = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_lap_hop_dong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_len_luong_cho_nv = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_dm_tham_so = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_loai_hop_dong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_loai_ngay_cong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_thue = new DevExpress.XtraBars.BarButtonItem();
@@ -135,7 +135,7 @@
             this.m_cmd_cho_hs_len_lop,
             this.m_cmd_lap_hop_dong,
             this.m_cmd_len_luong_cho_nv,
-            this.barButtonItem1,
+            this.m_cmd_dm_tham_so,
             this.m_cmd_dm_loai_hop_dong,
             this.m_cmd_dm_loai_ngay_cong,
             this.m_cmd_dm_thue,
@@ -424,13 +424,13 @@
             this.m_cmd_len_luong_cho_nv.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // barButtonItem1
+            // m_cmd_dm_tham_so
             // 
-            this.barButtonItem1.Caption = "Tham số";
-            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
-            this.barButtonItem1.Id = 40;
-            this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.m_cmd_dm_tham_so.Caption = "Tham số";
+            this.m_cmd_dm_tham_so.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dm_tham_so.Glyph")));
+            this.m_cmd_dm_tham_so.Id = 40;
+            this.m_cmd_dm_tham_so.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dm_tham_so.LargeGlyph")));
+            this.m_cmd_dm_tham_so.Name = "m_cmd_dm_tham_so";
             // 
             // m_cmd_dm_loai_hop_dong
             // 
@@ -624,7 +624,7 @@
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_tham_so);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_loai_hop_dong);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_loai_ngay_cong);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_thue);
@@ -784,7 +784,7 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_lap_hop_dong;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem m_cmd_len_luong_cho_nv;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_dm_tham_so;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_loai_hop_dong;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_loai_ngay_cong;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_thue;

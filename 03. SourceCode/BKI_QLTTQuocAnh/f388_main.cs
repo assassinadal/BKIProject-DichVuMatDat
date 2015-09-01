@@ -132,6 +132,7 @@ namespace BKI_DichVuMatDat
             //Danh muc 
             m_cmd_dm_loai_ngay_cong.ItemClick += m_cmd_dm_loai_ngay_cong_ItemClick;
             m_cmd_danh_muc_don_vi.ItemClick += m_cmd_danh_muc_don_vi_ItemClick;
+            m_cmd_dm_tham_so.ItemClick += m_cmd_dm_tham_so_ItemClick;
             //Bao cao
             m_cmd_bang_luong_nv.ItemClick += m_cmd_bang_luong_nv_ItemClick;
         }

@@ -466,7 +466,6 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnID.Unique = true;
                 this.columnTEN_DON_VI.AllowDBNull = false;
                 this.columnTEN_DON_VI.MaxLength = 250;
-                this.columnMA_DON_VI.AllowDBNull = false;
                 this.columnMA_DON_VI.MaxLength = 35;
                 this.columnID_LOAI_DON_VI.AllowDBNull = false;
             }
@@ -635,7 +634,12 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MA_DON_VI {
                 get {
-                    return ((string)(this[this.tableDM_DON_VI.MA_DON_VIColumn]));
+                    try {
+                        return ((string)(this[this.tableDM_DON_VI.MA_DON_VIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MA_DON_VI\' in table \'DM_DON_VI\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDM_DON_VI.MA_DON_VIColumn] = value;
@@ -667,6 +671,18 @@ namespace BKI_DichVuMatDat.DS {
                 set {
                     this[this.tableDM_DON_VI.ID_DON_VI_CAP_TRENColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMA_DON_VINull() {
+                return this.IsNull(this.tableDM_DON_VI.MA_DON_VIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMA_DON_VINull() {
+                this[this.tableDM_DON_VI.MA_DON_VIColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -849,10 +865,11 @@ namespace BKI_DichVuMatDat.DS.DS_DM_DON_VITableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[DM_DON_VI] WHERE (([ID] = @Original_ID) AND ([TEN_DON_VI] = @Original_TEN_DON_VI) AND ([MA_DON_VI] = @Original_MA_DON_VI) AND ([ID_LOAI_DON_VI] = @Original_ID_LOAI_DON_VI) AND ((@IsNull_ID_DON_VI_CAP_TREN = 1 AND [ID_DON_VI_CAP_TREN] IS NULL) OR ([ID_DON_VI_CAP_TREN] = @Original_ID_DON_VI_CAP_TREN)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[DM_DON_VI] WHERE (([ID] = @Original_ID) AND ([TEN_DON_VI] = @Original_TEN_DON_VI) AND ((@IsNull_MA_DON_VI = 1 AND [MA_DON_VI] IS NULL) OR ([MA_DON_VI] = @Original_MA_DON_VI)) AND ([ID_LOAI_DON_VI] = @Original_ID_LOAI_DON_VI) AND ((@IsNull_ID_DON_VI_CAP_TREN = 1 AND [ID_DON_VI_CAP_TREN] IS NULL) OR ([ID_DON_VI_CAP_TREN] = @Original_ID_DON_VI_CAP_TREN)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TEN_DON_VI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN_DON_VI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MA_DON_VI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_DON_VI", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MA_DON_VI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_DON_VI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_LOAI_DON_VI", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_LOAI_DON_VI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_DON_VI_CAP_TREN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_DON_VI_CAP_TREN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -868,7 +885,7 @@ SELECT ID, TEN_DON_VI, MA_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CAP_TREN FROM DM_DON
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_DON_VI_CAP_TREN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_DON_VI_CAP_TREN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[DM_DON_VI] SET [TEN_DON_VI] = @TEN_DON_VI, [MA_DON_VI] = @MA_DON_VI, [ID_LOAI_DON_VI] = @ID_LOAI_DON_VI, [ID_DON_VI_CAP_TREN] = @ID_DON_VI_CAP_TREN WHERE (([ID] = @Original_ID) AND ([TEN_DON_VI] = @Original_TEN_DON_VI) AND ([MA_DON_VI] = @Original_MA_DON_VI) AND ([ID_LOAI_DON_VI] = @Original_ID_LOAI_DON_VI) AND ((@IsNull_ID_DON_VI_CAP_TREN = 1 AND [ID_DON_VI_CAP_TREN] IS NULL) OR ([ID_DON_VI_CAP_TREN] = @Original_ID_DON_VI_CAP_TREN)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[DM_DON_VI] SET [TEN_DON_VI] = @TEN_DON_VI, [MA_DON_VI] = @MA_DON_VI, [ID_LOAI_DON_VI] = @ID_LOAI_DON_VI, [ID_DON_VI_CAP_TREN] = @ID_DON_VI_CAP_TREN WHERE (([ID] = @Original_ID) AND ([TEN_DON_VI] = @Original_TEN_DON_VI) AND ((@IsNull_MA_DON_VI = 1 AND [MA_DON_VI] IS NULL) OR ([MA_DON_VI] = @Original_MA_DON_VI)) AND ([ID_LOAI_DON_VI] = @Original_ID_LOAI_DON_VI) AND ((@IsNull_ID_DON_VI_CAP_TREN = 1 AND [ID_DON_VI_CAP_TREN] IS NULL) OR ([ID_DON_VI_CAP_TREN] = @Original_ID_DON_VI_CAP_TREN)));
 SELECT ID, TEN_DON_VI, MA_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CAP_TREN FROM DM_DON_VI WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEN_DON_VI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN_DON_VI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -877,6 +894,7 @@ SELECT ID, TEN_DON_VI, MA_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CAP_TREN FROM DM_DON
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_DON_VI_CAP_TREN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_DON_VI_CAP_TREN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TEN_DON_VI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN_DON_VI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MA_DON_VI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_DON_VI", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MA_DON_VI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_DON_VI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_LOAI_DON_VI", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_LOAI_DON_VI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_DON_VI_CAP_TREN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_DON_VI_CAP_TREN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -968,19 +986,21 @@ SELECT ID, TEN_DON_VI, MA_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CAP_TREN FROM DM_DON
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_TEN_DON_VI));
             }
             if ((Original_MA_DON_VI == null)) {
-                throw new global::System.ArgumentNullException("Original_MA_DON_VI");
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_MA_DON_VI));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_MA_DON_VI));
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_ID_LOAI_DON_VI));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_ID_LOAI_DON_VI));
             if ((Original_ID_DON_VI_CAP_TREN.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_ID_DON_VI_CAP_TREN.Value));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_ID_DON_VI_CAP_TREN.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1010,7 +1030,7 @@ SELECT ID, TEN_DON_VI, MA_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CAP_TREN FROM DM_DON
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(TEN_DON_VI));
             }
             if ((MA_DON_VI == null)) {
-                throw new global::System.ArgumentNullException("MA_DON_VI");
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(MA_DON_VI));
@@ -1050,7 +1070,7 @@ SELECT ID, TEN_DON_VI, MA_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CAP_TREN FROM DM_DON
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(TEN_DON_VI));
             }
             if ((MA_DON_VI == null)) {
-                throw new global::System.ArgumentNullException("MA_DON_VI");
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(MA_DON_VI));
@@ -1070,21 +1090,23 @@ SELECT ID, TEN_DON_VI, MA_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CAP_TREN FROM DM_DON
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_TEN_DON_VI));
             }
             if ((Original_MA_DON_VI == null)) {
-                throw new global::System.ArgumentNullException("Original_MA_DON_VI");
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_MA_DON_VI));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_MA_DON_VI));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_ID_LOAI_DON_VI));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_ID_LOAI_DON_VI));
             if ((Original_ID_DON_VI_CAP_TREN.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_ID_DON_VI_CAP_TREN.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_ID_DON_VI_CAP_TREN.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(ID));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

@@ -167,11 +167,6 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
-        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
          
 }

@@ -116,7 +116,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                 XtraMessageBox.Show("Bạn chưa nhập mã lương năng suất!");
                 return false;
             }
-            if (m_sle_muc_lns.EditValue == null || m_sle_muc_lns.EditValue == "")
+            if (m_sle_muc_lns.EditValue == null)
             {
                 XtraMessageBox.Show("Bạn chưa chọn mức lương năng suất!");
                 return false;

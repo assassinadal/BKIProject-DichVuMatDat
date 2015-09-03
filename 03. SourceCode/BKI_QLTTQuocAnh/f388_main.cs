@@ -121,7 +121,8 @@ namespace BKI_DichVuMatDat
             m_cmd_len_luong_cho_nv.ItemClick += m_cmd_len_luong_cho_nv_ItemClick;
             m_cmd_dat_hs_lns_lcd.ItemClick += m_cmd_dat_hs_lns_lcd_ItemClick;
             m_cmd_quan_ly_qd.ItemClick += m_cmd_quan_ly_qd_ItemClick;
-            m_cmd_them_hs_chat_luong.ItemClick += m_cmd_them_hs_chat_luong_ItemClick;
+            m_cmd_hs_chat_luong_xls.ItemClick += m_cmd_them_hs_chat_luong_ItemClick;
+            m_cmd_hs_chat_luong_by_nv.ItemClick += m_cmd_hs_chat_luong_by_nv_ItemClick;
             //Hệ thống
             //m_cmd_thoat.ItemClick += m_cmd_thoat_ItemClick;
             //m_cmd_phan_quyen_nhom.ItemClick += m_cmd_phan_quyen_nhom_ItemClick;
@@ -254,7 +255,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f380_thay_doi_he_so_chat_luong v_frm = new f380_thay_doi_he_so_chat_luong();
+                f380_thay_doi_he_so_chat_luong_xls v_frm = new f380_thay_doi_he_so_chat_luong_xls();
                 if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
@@ -265,6 +266,23 @@ namespace BKI_DichVuMatDat
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        void m_cmd_hs_chat_luong_by_nv_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien v_frm = new f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien();
+                if (IsExistFormName(v_frm)) return;
+
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
         private void m_cmd_dm_tham_so_ItemClick(object sender, ItemClickEventArgs e)
         {

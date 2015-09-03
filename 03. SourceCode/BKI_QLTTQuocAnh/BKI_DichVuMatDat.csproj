@@ -307,11 +307,6 @@
     <Compile Include="DanhMuc\F109_dm_thue_de.Designer.cs">
       <DependentUpon>F109_dm_thue_de.cs</DependentUpon>
     </Compile>
-    <Compile Include="DS_GD_PHU_THUOC.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_GD_PHU_THUOC.xsd</DependentUpon>
-    </Compile>
     <Compile Include="NghiepVu\BackupDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,11 +361,17 @@
     <Compile Include="NghiepVu\f371_nhan_vien_loai_lao_dong_de.Designer.cs">
       <DependentUpon>f371_nhan_vien_loai_lao_dong_de.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\f380_thay_doi_he_so_chat_luong.cs">
+    <Compile Include="NghiepVu\f380_thay_doi_he_so_chat_luong_xls.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NghiepVu\f380_thay_doi_he_so_chat_luong.Designer.cs">
-      <DependentUpon>f380_thay_doi_he_so_chat_luong.cs</DependentUpon>
+    <Compile Include="NghiepVu\f380_thay_doi_he_so_chat_luong_xls.Designer.cs">
+      <DependentUpon>f380_thay_doi_he_so_chat_luong_xls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien.Designer.cs">
+      <DependentUpon>f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\F696_Cham_cong_xls.cs">
       <SubType>Form</SubType>
@@ -469,8 +470,11 @@
     <EmbeddedResource Include="NghiepVu\f371_nhan_vien_loai_lao_dong_de.resx">
       <DependentUpon>f371_nhan_vien_loai_lao_dong_de.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f380_thay_doi_he_so_chat_luong.resx">
-      <DependentUpon>f380_thay_doi_he_so_chat_luong.cs</DependentUpon>
+    <EmbeddedResource Include="NghiepVu\f380_thay_doi_he_so_chat_luong_xls.resx">
+      <DependentUpon>f380_thay_doi_he_so_chat_luong_xls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien.resx">
+      <DependentUpon>f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F696_Cham_cong_xls.resx">
       <DependentUpon>F696_Cham_cong_xls.cs</DependentUpon>
@@ -500,17 +504,6 @@
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
     </None>
     <None Include="BKI_QLTTQuocAnh_TemporaryKey.pfx" />
-    <None Include="DS_GD_PHU_THUOC.xsc">
-      <DependentUpon>DS_GD_PHU_THUOC.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_PHU_THUOC.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_GD_PHU_THUOC.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_GD_PHU_THUOC.xss">
-      <DependentUpon>DS_GD_PHU_THUOC.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

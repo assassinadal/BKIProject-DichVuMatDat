@@ -1,6 +1,6 @@
 ﻿namespace BKI_DichVuMatDat.NghiepVu
 {
-    partial class f380_thay_doi_he_so_chat_luong
+    partial class f380_thay_doi_he_so_chat_luong_xls
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f380_thay_doi_he_so_chat_luong));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f380_thay_doi_he_so_chat_luong_xls));
             this.m_lbl_header = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList();
-            this.ImageList = new System.Windows.Forms.ImageList();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_mo_file_mau = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
@@ -42,11 +43,11 @@
             this.MA_NHAN_VIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HE_SO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_txt_chon_thang = new System.Windows.Forms.TextBox();
             this.m_txt_chon_nam = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.m_txt_chon_thang = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_them_hs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_them_hs)).BeginInit();
@@ -63,7 +64,7 @@
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(1014, 52);
             this.m_lbl_header.TabIndex = 2;
-            this.m_lbl_header.Text = "QUẢN LÝ QUYẾT ĐỊNH";
+            this.m_lbl_header.Text = "QUẢN LÝ HỆ SỐ CHẤT LƯỢNG";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // imageList1
@@ -234,31 +235,6 @@
             this.panel1.Size = new System.Drawing.Size(1014, 46);
             this.panel1.TabIndex = 9;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.m_grc_them_hs);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 98);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1014, 322);
-            this.panel2.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Chọn tháng (*)";
-            // 
-            // m_txt_chon_thang
-            // 
-            this.m_txt_chon_thang.Location = new System.Drawing.Point(93, 10);
-            this.m_txt_chon_thang.Name = "m_txt_chon_thang";
-            this.m_txt_chon_thang.Size = new System.Drawing.Size(111, 20);
-            this.m_txt_chon_thang.TabIndex = 1;
-            // 
             // m_txt_chon_nam
             // 
             this.m_txt_chon_nam.Location = new System.Drawing.Point(322, 10);
@@ -274,6 +250,31 @@
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Chọn năm (*)";
+            // 
+            // m_txt_chon_thang
+            // 
+            this.m_txt_chon_thang.Location = new System.Drawing.Point(93, 10);
+            this.m_txt_chon_thang.Name = "m_txt_chon_thang";
+            this.m_txt_chon_thang.Size = new System.Drawing.Size(111, 20);
+            this.m_txt_chon_thang.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Chọn tháng (*)";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.m_grc_them_hs);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 98);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1014, 322);
+            this.panel2.TabIndex = 10;
             // 
             // f380_thay_doi_he_so_chat_luong
             // 

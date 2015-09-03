@@ -17,9 +17,9 @@ using System.Globalization;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
-    public partial class f380_thay_doi_he_so_chat_luong : Form
+    public partial class f380_thay_doi_he_so_chat_luong_xls : Form
     {
-        public f380_thay_doi_he_so_chat_luong()
+        public f380_thay_doi_he_so_chat_luong_xls()
         {
             InitializeComponent();
             format_controls();
@@ -62,6 +62,26 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_id_nv = CIPConvert.ToDecimal(v_ds.Tables[0].Rows[0]["ID"].ToString());
         }
 
+        private void delete_gd_da_co_trong_thang_cua_nhan_vien(US_DUNG_CHUNG v_us_dc, DataRow v_data_row, decimal ip_dc_id_nv)
+        {
+            decimal v_id_gd_hs_chat_luong = 0;
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us_dc.FillDatasetWithQuery(v_ds, "SELECT * FROM GD_HE_SO_CHAT_LUONG WHERE ID_NHAN_VIEN =" + ip_dc_id_nv + " AND THANG = " + CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()) + " AND NAM = " + CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
+            if (v_ds.Tables[0].Rows.Count > 0)
+            {
+                v_id_gd_hs_chat_luong = CIPConvert.ToDecimal(v_ds.Tables[0].Rows[0]["ID"].ToString());
+                US_GD_HE_SO_CHAT_LUONG v_us_gd_hs_cl = new US_GD_HE_SO_CHAT_LUONG(v_id_gd_hs_chat_luong);
+                v_us_gd_hs_cl.BeginTransaction();
+                v_us_gd_hs_cl.Delete();
+                v_us_gd_hs_cl.CommitTransaction();
+            }
+            else
+            {
+                return;
+            }
+        }
+
         private void kiem_tra_va_thuc_hien_nhap_hs(ref decimal v_count, ref int v_int_khong_nhap_duoc, decimal v_selectedRowCount)
         {
             for (int i = 0; i < v_selectedRowCount; i++)
@@ -92,6 +112,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                 try
                 {
+                    delete_gd_da_co_trong_thang_cua_nhan_vien(v_us_dc, v_data_row, v_id_nv);
                     v_us_gs_cl.BeginTransaction();
                     v_us_gs_cl.Insert();
                     v_us_gs_cl.CommitTransaction();

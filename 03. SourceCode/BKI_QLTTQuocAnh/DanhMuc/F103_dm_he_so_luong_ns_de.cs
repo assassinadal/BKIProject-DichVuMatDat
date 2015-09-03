@@ -40,10 +40,9 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_id_dm_he_so_luong_ns_4_update = ip_us.dcID;
             m_txt_ma_luong_ns.Text = ip_us.dcID_MA_LNS.ToString();
-            m_txt_muc_luong_ns.Text = ip_us.dcID_MUC_LNS.ToString();
+            m_sle_muc_lns.EditValue = ip_us.dcID_MUC_LNS.ToString();
             m_txt_he_so_luong_ns.Text = ip_us.dcHE_SO.ToString();
             m_txt_loai_lao_dong.Text = ip_us.dcID_LOAI_LAO_DONG.ToString();
-            //CCommon.format_text_2_money(m_txt_muc_luong_ns);
             this.CenterToScreen();
             this.ShowDialog();
         }
@@ -64,9 +63,52 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void set_initial_form_load()
         {
-
+            load_data_2_sle_muc_lns();
         }
 
+        private DS_CM_DM_TU_DIEN load_data_2_cm_dm_tu_dien(int m_id_muc_hs_lns_trong_loai_td)
+        {
+            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
+            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+
+            v_us.FillDatasetByIdLoaiTuDien(v_ds, m_id_muc_hs_lns_trong_loai_td);
+
+            return v_ds;
+        }
+
+        private void load_data_2_sle_muc_lns()
+        {
+            m_sle_muc_lns.Properties.DataSource = load_data_2_cm_dm_tu_dien(CONST_ID_LOAI_TU_DIEN.MUC_HS_LNS).CM_DM_TU_DIEN;
+            m_sle_muc_lns.Properties.ValueMember = CM_DM_TU_DIEN.ID;
+            m_sle_muc_lns.Properties.DisplayMember = CM_DM_TU_DIEN.TEN;
+
+            m_sle_muc_lns.Properties.PopulateViewColumns();
+            m_sle_muc_lns.Properties.View.Columns[CM_DM_TU_DIEN.ID].Visible = false;
+            m_sle_muc_lns.Properties.View.Columns[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN].Visible = false;
+            m_sle_muc_lns.Properties.View.Columns[CM_DM_TU_DIEN.TEN_NGAN].Visible = false;
+
+            m_sle_muc_lns.Properties.View.Columns[CM_DM_TU_DIEN.MA_TU_DIEN].Width = 75;
+            m_sle_muc_lns.Properties.View.Columns[CM_DM_TU_DIEN.TEN].Width = 120;
+
+            m_sle_muc_lns.Properties.View.Columns[CM_DM_TU_DIEN.MA_TU_DIEN].Caption = "Mã mức lương năng suất";
+            m_sle_muc_lns.Properties.View.Columns[CM_DM_TU_DIEN.TEN].Caption = "Mức lương năng suất";
+            m_sle_muc_lns.Properties.View.Columns[CM_DM_TU_DIEN.GHI_CHU].Caption = "Ghi chú";
+
+            m_sle_muc_lns.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            m_sle_muc_lns.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+        }
+
+        private DS_DM_HE_SO_LUONG_NS load_data_2_dm_loai_don_vi()
+        {
+            DS_DM_HE_SO_LUONG_NS v_ds = new DS_DM_HE_SO_LUONG_NS();
+            DS_DM_HE_SO_LUONG_NS v_us = new DS_DM_HE_SO_LUONG_NS();
+
+            v_us.FillDataset(v_ds);
+
+            return v_ds;
+        }
+
+        
         private bool check_validate_data()
         {
             if (m_txt_ma_luong_ns.Text.Trim() == "")
@@ -74,9 +116,9 @@ namespace BKI_DichVuMatDat.DanhMuc
                 XtraMessageBox.Show("Bạn chưa nhập mã lương năng suất!");
                 return false;
             }
-            if (m_txt_muc_luong_ns.Text.Trim() == "")
+            if (m_sle_muc_lns.EditValue == null || m_sle_muc_lns.EditValue == "")
             {
-                XtraMessageBox.Show("Bạn chưa nhập mức lương năng suất!");
+                XtraMessageBox.Show("Bạn chưa chọn mức lương năng suất!");
                 return false;
             }
             if (m_txt_he_so_luong_ns.Text.Trim() == "")
@@ -96,7 +138,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         private void form_2_us_obj(US_DM_HE_SO_LUONG_NS ip_us)
         {
             ip_us.dcID_MA_LNS = CIPConvert.ToDecimal(m_txt_ma_luong_ns.Text.Trim());
-            ip_us.dcID_MUC_LNS = CIPConvert.ToDecimal(m_txt_muc_luong_ns.Text.Trim());
+            ip_us.dcID_MUC_LNS = CIPConvert.ToDecimal(m_sle_muc_lns.EditValue);
             ip_us.dcHE_SO = CIPConvert.ToDecimal(m_txt_he_so_luong_ns.Text.Trim());
             ip_us.dcID_LOAI_LAO_DONG = CIPConvert.ToDecimal(m_txt_loai_lao_dong.Text.Trim());
         }
@@ -145,7 +187,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         private void refresh_form()
         {
             m_txt_ma_luong_ns.Text = "";
-            m_txt_muc_luong_ns.Text = "";
+            m_sle_muc_lns.EditValue = null;
             m_txt_he_so_luong_ns.BackColor = Color.White;
             m_txt_loai_lao_dong.Text = "";
         }

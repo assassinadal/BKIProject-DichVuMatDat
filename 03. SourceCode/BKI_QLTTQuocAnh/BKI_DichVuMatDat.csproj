@@ -530,6 +530,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Template\ChamCong.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BKI_QLTTQuocAnh.DS\BKI_DichVuMatDat.DS.csproj">

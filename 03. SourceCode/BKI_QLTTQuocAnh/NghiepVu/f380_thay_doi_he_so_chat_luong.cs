@@ -132,11 +132,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                string v_str_path = "";
-                f381_thay_doi_he_so_chat_luong_de v_frm_de = new f381_thay_doi_he_so_chat_luong_de();
-                v_frm_de.display(ref v_str_path);
-                m_str_path = v_str_path;
-                load_data_2_grid(m_str_path);
+                //string v_str_path = "";
+                //f381_thay_doi_he_so_chat_luong_de v_frm_de = new f381_thay_doi_he_so_chat_luong_de();
+                //v_frm_de.display(ref v_str_path);
+                //m_str_path = v_str_path;
+                load_data_2_grid(WinFormControls.openFileDialog());
             }
             catch (Exception v_e)
             {

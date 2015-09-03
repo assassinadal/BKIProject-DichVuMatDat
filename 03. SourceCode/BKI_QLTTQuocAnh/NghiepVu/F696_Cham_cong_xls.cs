@@ -10,6 +10,10 @@ using BKI_DichVuMatDat.US;
 using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.DS.CDBNames;
 using IP.Core.IPCommon;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -23,17 +27,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         DataSet m_ds_ngay_cong = new DataSet();
         DataSet m_ds_nhan_vien = new DataSet();
 
-        private void F696_Cham_cong_xls_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                WinFormControls.load_xls_to_gridview("H:/BKI_DVMD/trunk/01. Documents/testChamCong.xlsx", m_grc);
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-            
+        private void load_data_2_grid(string ip_path) {
+            WinFormControls.load_xls_to_gridview(ip_path, m_grc);
         }
 
         private void m_cmd_nhap_cham_cong_Click(object sender, EventArgs e)
@@ -78,7 +73,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_us.strDA_XOA = "N";
                 v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString());
                 v_us.Insert();
-            }            
+            }
         }
 
         private decimal get_nhan_vien_by_ma_nv(string ip_ma_nhan_vien)
@@ -97,6 +92,30 @@ namespace BKI_DichVuMatDat.NghiepVu
                       select row;
             
             return CIPConvert.ToDecimal(res.First()[DM_LOAI_NGAY_CONG.ID].ToString());
+        }
+
+        private void m_cmd_chon_du_lieu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid(WinFormControls.openFileDialog());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_mo_file_mau_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                WinFormControls.openTemplate("ChamCong.xlsx");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
     }
 }

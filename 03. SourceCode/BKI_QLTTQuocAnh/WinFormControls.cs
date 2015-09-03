@@ -17,6 +17,8 @@ using System.Configuration;
 using System.Data.OleDb;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.Utils.Menu;
+using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
 
 
 namespace BKI_DichVuMatDat
@@ -255,6 +257,42 @@ namespace BKI_DichVuMatDat
                 m_grv.ExportToXls(saveFileDialog1.FileName);
                 MessageBox.Show("Lưu báo cáo thành công");
             }
+        }
+        #endregion
+
+        #region openFileDialog
+        public static string openFileDialog() {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            // Set filter options and filter index.
+            openFileDialog1.Filter = "xlsx Files|*.xlsx|xls Files|*.xls|All Files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 1;
+            openFileDialog1.Multiselect = false;
+            var userClickedOK = openFileDialog1.ShowDialog();
+            if (userClickedOK == System.Windows.Forms.DialogResult.OK)
+            {
+                return openFileDialog1.FileName;
+            }
+            return "";
+        } 
+        #endregion
+
+        #region copy & open Template
+        public static void openTemplate(string ip_file_name) {
+            string sourcePath = (Directory.GetCurrentDirectory() + "\\Template");
+            string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string sourceFile = System.IO.Path.Combine(sourcePath, ip_file_name);
+            string destFile = System.IO.Path.Combine(targetPath, ip_file_name);
+            if (!System.IO.Directory.Exists(targetPath))
+            {
+                System.IO.Directory.CreateDirectory(targetPath);
+            }
+            System.IO.File.Copy(sourceFile, destFile, true);
+            string newpath = targetPath + "\\" + ip_file_name;
+            var excel = new Excel.Application();
+            excel.Visible = true;
+            Excel.Workbooks books = excel.Workbooks;
+            Excel.Workbook openexcel = books.Open(newpath);
         }
         #endregion
     }

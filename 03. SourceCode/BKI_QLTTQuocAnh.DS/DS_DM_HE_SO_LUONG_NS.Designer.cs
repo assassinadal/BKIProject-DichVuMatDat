@@ -713,6 +713,11 @@ namespace BKI_DichVuMatDat.DS {
                 }
             }
         }
+
+        public void FillDataset(DS_DM_HE_SO_LUONG_NS v_ds)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
 namespace BKI_DichVuMatDat.DS.DS_DM_HE_SO_LUONG_NSTableAdapters {

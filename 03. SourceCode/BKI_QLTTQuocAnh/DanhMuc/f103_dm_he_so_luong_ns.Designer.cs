@@ -31,10 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F103_dm_he_so_luong_ns));
             this.m_grc_dm_he_so_luong_ns = new DevExpress.XtraGrid.GridControl();
             this.m_grv_dm_he_so_luong_ns = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_ma_luong_ns = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_ten_luong_ns = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_muc_luong_ns = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_he_so = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_loai_lao_dong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,7 +45,6 @@
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.imageList1 = new System.Windows.Forms.ImageList();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_he_so_luong_ns)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_he_so_luong_ns)).BeginInit();
             this.panel1.SuspendLayout();
@@ -69,11 +69,20 @@
             this.ID,
             this.STT,
             this.c_ma_luong_ns,
-            this.c_ten_luong_ns,
             this.c_muc_luong_ns,
+            this.c_he_so,
             this.c_loai_lao_dong});
             this.m_grv_dm_he_so_luong_ns.GridControl = this.m_grc_dm_he_so_luong_ns;
             this.m_grv_dm_he_so_luong_ns.Name = "m_grv_dm_he_so_luong_ns";
+            // 
+            // ID
+            // 
+            this.ID.AppearanceHeader.Options.UseTextOptions = true;
+            this.ID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ID.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
             // 
             // STT
             // 
@@ -101,18 +110,6 @@
             this.c_ma_luong_ns.VisibleIndex = 1;
             this.c_ma_luong_ns.Width = 176;
             // 
-            // c_ten_luong_ns
-            // 
-            this.c_ten_luong_ns.AppearanceHeader.Options.UseTextOptions = true;
-            this.c_ten_luong_ns.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.c_ten_luong_ns.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.c_ten_luong_ns.Caption = "Tên Lương NS";
-            this.c_ten_luong_ns.FieldName = "TEN";
-            this.c_ten_luong_ns.Name = "c_ten_luong_ns";
-            this.c_ten_luong_ns.Visible = true;
-            this.c_ten_luong_ns.VisibleIndex = 2;
-            this.c_ten_luong_ns.Width = 176;
-            // 
             // c_muc_luong_ns
             // 
             this.c_muc_luong_ns.AppearanceHeader.Options.UseTextOptions = true;
@@ -122,8 +119,19 @@
             this.c_muc_luong_ns.FieldName = "MUC_LNS";
             this.c_muc_luong_ns.Name = "c_muc_luong_ns";
             this.c_muc_luong_ns.Visible = true;
-            this.c_muc_luong_ns.VisibleIndex = 3;
+            this.c_muc_luong_ns.VisibleIndex = 2;
             this.c_muc_luong_ns.Width = 176;
+            // 
+            // c_he_so
+            // 
+            this.c_he_so.AppearanceHeader.Options.UseTextOptions = true;
+            this.c_he_so.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_he_so.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.c_he_so.Caption = "Hệ số";
+            this.c_he_so.Name = "c_he_so";
+            this.c_he_so.Visible = true;
+            this.c_he_so.VisibleIndex = 3;
+            this.c_he_so.Width = 176;
             // 
             // c_loai_lao_dong
             // 
@@ -131,7 +139,7 @@
             this.c_loai_lao_dong.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.c_loai_lao_dong.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_loai_lao_dong.Caption = "Loại Lao Động";
-            this.c_loai_lao_dong.FieldName = "LOAI_LAO_DONG";
+            this.c_loai_lao_dong.FieldName = "TEN";
             this.c_loai_lao_dong.Name = "c_loai_lao_dong";
             this.c_loai_lao_dong.Visible = true;
             this.c_loai_lao_dong.VisibleIndex = 4;
@@ -241,15 +249,6 @@
             this.panel2.Size = new System.Drawing.Size(765, 268);
             this.panel2.TabIndex = 3;
             // 
-            // ID
-            // 
-            this.ID.AppearanceHeader.Options.UseTextOptions = true;
-            this.ID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ID.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
-            // 
             // F103_dm_he_so_luong_ns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,8 +273,8 @@
         private DevExpress.XtraGrid.GridControl m_grc_dm_he_so_luong_ns;
         private DevExpress.XtraGrid.Views.Grid.GridView m_grv_dm_he_so_luong_ns;
         private DevExpress.XtraGrid.Columns.GridColumn c_ma_luong_ns;
-        private DevExpress.XtraGrid.Columns.GridColumn c_ten_luong_ns;
         private DevExpress.XtraGrid.Columns.GridColumn c_muc_luong_ns;
+        private DevExpress.XtraGrid.Columns.GridColumn c_he_so;
         private DevExpress.XtraGrid.Columns.GridColumn c_loai_lao_dong;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
         private System.Windows.Forms.Label m_lbl_header;

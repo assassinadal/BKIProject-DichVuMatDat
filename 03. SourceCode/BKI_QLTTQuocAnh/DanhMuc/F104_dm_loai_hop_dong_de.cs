@@ -29,15 +29,21 @@ namespace BKI_DichVuMatDat.DanhMuc
         #endregion
         internal void DisplayForInsert()
         {
+            this.Text = "F104 - Thêm loại hợp đồng";
+            m_lbl_header.Text = "THÊM LOẠI HỢP ĐỒNG";
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.CenterToScreen();
             this.ShowDialog();
         }
 
         internal void DisplayForUpdate(US_DM_LOAI_HOP_DONG v_us)
         {
+            this.Text = "F104 - Sửa loại hợp đồng";
+            m_lbl_header.Text = "SỬA LOẠI HỢP ĐỒNG";
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_us = v_us;
             us_to_form(m_us);
+            this.CenterToScreen();
             this.ShowDialog();
         }
 

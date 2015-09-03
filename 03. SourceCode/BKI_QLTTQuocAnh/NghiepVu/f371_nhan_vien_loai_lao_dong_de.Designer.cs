@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f371_nhan_vien_loai_lao_dong_de));
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_cmd_cancel = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_exit = new DevExpress.XtraEditors.SimpleButton();
+            this.ImageList = new System.Windows.Forms.ImageList();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.label7 = new System.Windows.Forms.Label();
@@ -98,28 +97,33 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.m_cmd_save);
-            this.panel3.Controls.Add(this.m_cmd_cancel);
+            this.panel3.Controls.Add(this.m_cmd_exit);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 199);
+            this.panel3.Location = new System.Drawing.Point(0, 191);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(713, 36);
+            this.panel3.Size = new System.Drawing.Size(713, 44);
             this.panel3.TabIndex = 2;
             // 
             // m_cmd_save
             // 
-            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_save.ImageIndex = 10;
-            this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(537, 0);
+            this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
+            this.m_cmd_save.Location = new System.Drawing.Point(481, 0);
             this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(88, 36);
-            this.m_cmd_save.TabIndex = 6;
+            this.m_cmd_save.Size = new System.Drawing.Size(116, 44);
+            this.m_cmd_save.TabIndex = 22;
             this.m_cmd_save.Text = "&Lưu";
-            this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_exit.Image")));
+            this.m_cmd_exit.Location = new System.Drawing.Point(597, 0);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(116, 44);
+            this.m_cmd_exit.TabIndex = 20;
+            this.m_cmd_exit.Text = "&Thoát";
+            this.m_cmd_exit.Visible = false;
             // 
             // ImageList
             // 
@@ -148,23 +152,6 @@
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
             // 
-            // m_cmd_cancel
-            // 
-            this.m_cmd_cancel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_cancel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_cancel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.m_cmd_cancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_cancel.ImageIndex = 4;
-            this.m_cmd_cancel.ImageList = this.ImageList;
-            this.m_cmd_cancel.Location = new System.Drawing.Point(625, 0);
-            this.m_cmd_cancel.Name = "m_cmd_cancel";
-            this.m_cmd_cancel.Size = new System.Drawing.Size(88, 36);
-            this.m_cmd_cancel.TabIndex = 4;
-            this.m_cmd_cancel.Text = "&Hủy";
-            this.m_cmd_cancel.Click += new System.EventHandler(this.m_cmd_cancel_Click);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.groupControl2);
@@ -172,7 +159,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 54);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(713, 145);
+            this.panel2.Size = new System.Drawing.Size(713, 137);
             this.panel2.TabIndex = 3;
             // 
             // groupControl2
@@ -186,7 +173,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl2.Location = new System.Drawing.Point(347, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(365, 145);
+            this.groupControl2.Size = new System.Drawing.Size(365, 137);
             this.groupControl2.TabIndex = 9;
             this.groupControl2.Text = "THÔNG TIN LAO ĐỘNG";
             // 
@@ -298,7 +285,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(347, 145);
+            this.groupControl1.Size = new System.Drawing.Size(347, 137);
             this.groupControl1.TabIndex = 8;
             this.groupControl1.Text = "THÔNG TIN CƠ BẢN";
             // 
@@ -403,20 +390,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Chọn nhân viên (*)";
             // 
-            // f371_nhan_vien_loai_lao_dong_insert
+            // f371_nhan_vien_loai_lao_dong_de
             // 
-            this.AcceptButton = this.m_cmd_save;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.m_cmd_cancel;
             this.ClientSize = new System.Drawing.Size(713, 235);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
-            this.Name = "f371_nhan_vien_loai_lao_dong_insert";
+            this.Name = "f371_nhan_vien_loai_lao_dong_de";
             this.Text = "f371 - THÊM NHÂN VIÊN LOẠI LAO ĐỘNG";
-            //this.Load += new System.EventHandler(this.f371_nhan_vien_loai_lao_dong_insert_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -441,8 +425,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         internal System.Windows.Forms.ImageList ImageList;
-        internal SIS.Controls.Button.SiSButton m_cmd_save;
-        internal SIS.Controls.Button.SiSButton m_cmd_cancel;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -467,5 +449,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_save;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_exit;
     }
 }

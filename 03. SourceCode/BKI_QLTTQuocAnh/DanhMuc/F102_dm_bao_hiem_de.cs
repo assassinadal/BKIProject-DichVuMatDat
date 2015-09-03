@@ -21,10 +21,29 @@ namespace BKI_DichVuMatDat.DanhMuc
         public F102_dm_bao_hiem_de()
         {
             InitializeComponent();
+            format_controls();
         }
 
         #region Public Interface
+        public void DisplayForInsert()
+        {
+            this.Text = "F102 - Thêm bảo hiểm";
+            m_lbl_header.Text = "THÊM BẢO HIỂM";
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.CenterToScreen();
+            this.ShowDialog();
+        }
 
+        public void DisplayForUpdate(US_DM_BAO_HIEM v_us)
+        {
+            this.Text = "F102 - Sửa bảo hiểm";
+            m_lbl_header.Text = "SỬA BẢO HIỂM";
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            m_us = v_us;
+            us_to_form(m_us);
+            this.CenterToScreen();
+            this.ShowDialog();
+        }
         #endregion
 
         #region Members
@@ -32,23 +51,10 @@ namespace BKI_DichVuMatDat.DanhMuc
         US_DM_BAO_HIEM m_us = new US_DM_BAO_HIEM();
         #endregion
 
-        private void F102_dm_bao_hiem_de_Load(object sender, EventArgs e)
+        #region Private methods
+        private void format_controls()
         {
-
-        }
-
-        internal void DisplayForInsert()
-        {
-            m_e_form_mode = DataEntryFormMode.InsertDataState;
-            this.ShowDialog();
-        }
-
-        internal void DisplayForUpdate(US_DM_BAO_HIEM v_us)
-        {
-            m_e_form_mode = DataEntryFormMode.UpdateDataState;
-            m_us = v_us;
-            us_to_form(m_us);
-            this.ShowDialog();
+            set_define_events();
         }
 
         private void us_to_form(US_DM_BAO_HIEM v_us)
@@ -56,6 +62,13 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_txt_ma_bao_hiem.Text = v_us.strMA_BH;
             m_txt_ten_bao_hiem.Text = v_us.strTEN_BH;
             m_txt_ti_le.Text = v_us.dcTI_LE.ToString();
+        }
+
+        private void form_to_us()
+        {
+            m_us.strMA_BH = m_txt_ma_bao_hiem.Text;
+            m_us.strTEN_BH = m_txt_ten_bao_hiem.Text;
+            m_us.dcTI_LE = CIPConvert.ToDecimal(m_txt_ti_le.Text);
         }
 
         private bool check_data_is_ok()
@@ -76,6 +89,19 @@ namespace BKI_DichVuMatDat.DanhMuc
                 return false;
             }
             return true;
+        }
+
+        #endregion
+        private void set_define_events()
+        {
+            this.Load += new System.EventHandler(this.F102_dm_bao_hiem_de_Load);
+            m_cmd_save.Click += m_cmd_save_Click;
+            m_cmd_exit.Click += m_cmd_exit_Click;
+        }
+
+        private void F102_dm_bao_hiem_de_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void m_cmd_save_Click(object sender, EventArgs e)
@@ -104,14 +130,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
-        private void form_to_us()
-        {
-            m_us.strMA_BH = m_txt_ma_bao_hiem.Text;
-            m_us.strTEN_BH = m_txt_ten_bao_hiem.Text;
-            m_us.dcTI_LE = CIPConvert.ToDecimal(m_txt_ti_le.Text);
-        }
-
-        private void m_cmd_cancel_Click(object sender, EventArgs e)
+        private void m_cmd_exit_Click(object sender, EventArgs e)
         {
             try
             {

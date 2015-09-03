@@ -80,11 +80,12 @@
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.ImageList = new System.Windows.Forms.ImageList();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc_v_gd_cong_tac = new DevExpress.XtraGrid.GridControl();
             this.m_grv_v_gd_cong_tac = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -100,8 +101,7 @@
             this.c_da_xoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_huy_kiem_nhiem = new SIS.Controls.Button.SiSButton();
-            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -614,22 +614,6 @@
             this.panelControl2.Size = new System.Drawing.Size(839, 40);
             this.panelControl2.TabIndex = 2;
             // 
-            // m_cmd_insert
-            // 
-            this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_insert.ImageIndex = 2;
-            this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(2, 2);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(88, 36);
-            this.m_cmd_insert.TabIndex = 0;
-            this.m_cmd_insert.Text = "&Thêm";
-            this.m_cmd_insert.Click += new System.EventHandler(this.m_cmd_insert_Click);
-            // 
             // ImageList
             // 
             this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
@@ -702,6 +686,18 @@
             this.m_grv_v_gd_cong_tac.OptionsFind.AllowFindPanel = false;
             this.m_grv_v_gd_cong_tac.OptionsFind.AlwaysVisible = true;
             this.m_grv_v_gd_cong_tac.OptionsView.ShowFooter = true;
+            // 
+            // gridColumn27
+            // 
+            this.gridColumn27.Caption = "ID";
+            this.gridColumn27.FieldName = "ID";
+            this.gridColumn27.Name = "gridColumn27";
+            // 
+            // gridColumn28
+            // 
+            this.gridColumn28.Caption = "ID_NHAN_VIEN";
+            this.gridColumn28.FieldName = "ID_NHAN_VIEN";
+            this.gridColumn28.Name = "gridColumn28";
             // 
             // gridColumn1
             // 
@@ -879,17 +875,15 @@
             this.m_cmd_huy_kiem_nhiem.Visible = false;
             this.m_cmd_huy_kiem_nhiem.Click += new System.EventHandler(this.m_cmd_huy_kiem_nhiem_Click);
             // 
-            // gridColumn27
+            // m_cmd_insert
             // 
-            this.gridColumn27.Caption = "ID";
-            this.gridColumn27.FieldName = "ID";
-            this.gridColumn27.Name = "gridColumn27";
-            // 
-            // gridColumn28
-            // 
-            this.gridColumn28.Caption = "ID_NHAN_VIEN";
-            this.gridColumn28.FieldName = "ID_NHAN_VIEN";
-            this.gridColumn28.Name = "gridColumn28";
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
+            this.m_cmd_insert.Location = new System.Drawing.Point(2, 2);
+            this.m_cmd_insert.Name = "m_cmd_insert";
+            this.m_cmd_insert.Size = new System.Drawing.Size(116, 36);
+            this.m_cmd_insert.TabIndex = 15;
+            this.m_cmd_insert.Text = "&Thêm";
             // 
             // f350_quan_ly_vi_tri_cong_tac
             // 
@@ -969,7 +963,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
-        internal SIS.Controls.Button.SiSButton m_cmd_insert;
         internal System.Windows.Forms.ImageList ImageList;
         private DevExpress.XtraGrid.Columns.GridColumn c_ngay_bat_dau;
         private DevExpress.XtraGrid.Columns.GridColumn c_da_xoa;
@@ -1008,5 +1001,6 @@
         internal SIS.Controls.Button.SiSButton m_cmd_huy_kiem_nhiem;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
     }
 }

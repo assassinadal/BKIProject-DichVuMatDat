@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F102_dm_bao_hiem));
             this.m_grc_dm_bao_hiem = new DevExpress.XtraGrid.GridControl();
@@ -40,11 +39,12 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.c_cmd_dm_bao_hiem_xoa = new SIS.Controls.Button.SiSButton();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.c_cmd_dm_bao_hiem_sua = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_dm_bao_hiem_them = new SIS.Controls.Button.SiSButton();
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_bao_hiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_bao_hiem)).BeginInit();
             this.panel1.SuspendLayout();
@@ -150,30 +150,15 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.c_cmd_dm_bao_hiem_xoa);
-            this.panel1.Controls.Add(this.c_cmd_dm_bao_hiem_sua);
-            this.panel1.Controls.Add(this.m_cmd_dm_bao_hiem_them);
+            this.panel1.Controls.Add(this.m_cmd_insert);
+            this.panel1.Controls.Add(this.m_cmd_update);
+            this.panel1.Controls.Add(this.m_cmd_delete);
+            this.panel1.Controls.Add(this.m_cmd_xuat_excel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 260);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(794, 37);
             this.panel1.TabIndex = 3;
-            // 
-            // c_cmd_dm_bao_hiem_xoa
-            // 
-            this.c_cmd_dm_bao_hiem_xoa.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.c_cmd_dm_bao_hiem_xoa.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.c_cmd_dm_bao_hiem_xoa.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.c_cmd_dm_bao_hiem_xoa.Dock = System.Windows.Forms.DockStyle.Left;
-            this.c_cmd_dm_bao_hiem_xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.c_cmd_dm_bao_hiem_xoa.ImageIndex = 4;
-            this.c_cmd_dm_bao_hiem_xoa.ImageList = this.imageList1;
-            this.c_cmd_dm_bao_hiem_xoa.Location = new System.Drawing.Point(172, 0);
-            this.c_cmd_dm_bao_hiem_xoa.Name = "c_cmd_dm_bao_hiem_xoa";
-            this.c_cmd_dm_bao_hiem_xoa.Size = new System.Drawing.Size(86, 37);
-            this.c_cmd_dm_bao_hiem_xoa.TabIndex = 6;
-            this.c_cmd_dm_bao_hiem_xoa.Text = "&Xóa";
-            this.c_cmd_dm_bao_hiem_xoa.Click += new System.EventHandler(this.c_cmd_dm_bao_hiem_xoa_Click);
             // 
             // imageList1
             // 
@@ -202,38 +187,6 @@
             this.imageList1.Images.SetKeyName(20, "");
             this.imageList1.Images.SetKeyName(21, "");
             // 
-            // c_cmd_dm_bao_hiem_sua
-            // 
-            this.c_cmd_dm_bao_hiem_sua.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.c_cmd_dm_bao_hiem_sua.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.c_cmd_dm_bao_hiem_sua.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.c_cmd_dm_bao_hiem_sua.Dock = System.Windows.Forms.DockStyle.Left;
-            this.c_cmd_dm_bao_hiem_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.c_cmd_dm_bao_hiem_sua.ImageIndex = 16;
-            this.c_cmd_dm_bao_hiem_sua.ImageList = this.imageList1;
-            this.c_cmd_dm_bao_hiem_sua.Location = new System.Drawing.Point(86, 0);
-            this.c_cmd_dm_bao_hiem_sua.Name = "c_cmd_dm_bao_hiem_sua";
-            this.c_cmd_dm_bao_hiem_sua.Size = new System.Drawing.Size(86, 37);
-            this.c_cmd_dm_bao_hiem_sua.TabIndex = 5;
-            this.c_cmd_dm_bao_hiem_sua.Text = "&Sửa";
-            this.c_cmd_dm_bao_hiem_sua.Click += new System.EventHandler(this.c_cmd_dm_bao_hiem_sua_Click);
-            // 
-            // m_cmd_dm_bao_hiem_them
-            // 
-            this.m_cmd_dm_bao_hiem_them.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_dm_bao_hiem_them.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_dm_bao_hiem_them.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_dm_bao_hiem_them.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_dm_bao_hiem_them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_dm_bao_hiem_them.ImageIndex = 3;
-            this.m_cmd_dm_bao_hiem_them.ImageList = this.imageList1;
-            this.m_cmd_dm_bao_hiem_them.Location = new System.Drawing.Point(0, 0);
-            this.m_cmd_dm_bao_hiem_them.Name = "m_cmd_dm_bao_hiem_them";
-            this.m_cmd_dm_bao_hiem_them.Size = new System.Drawing.Size(86, 37);
-            this.m_cmd_dm_bao_hiem_them.TabIndex = 4;
-            this.m_cmd_dm_bao_hiem_them.Text = "&Thêm";
-            this.m_cmd_dm_bao_hiem_them.Click += new System.EventHandler(this.m_cmd_dm_bao_hiem_them_Click);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.m_grc_dm_bao_hiem);
@@ -242,6 +195,47 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(794, 216);
             this.panel2.TabIndex = 4;
+            // 
+            // m_cmd_insert
+            // 
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
+            this.m_cmd_insert.Location = new System.Drawing.Point(330, 0);
+            this.m_cmd_insert.Name = "m_cmd_insert";
+            this.m_cmd_insert.Size = new System.Drawing.Size(116, 37);
+            this.m_cmd_insert.TabIndex = 30;
+            this.m_cmd_insert.Text = "&Thêm";
+            // 
+            // m_cmd_update
+            // 
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
+            this.m_cmd_update.Location = new System.Drawing.Point(446, 0);
+            this.m_cmd_update.Name = "m_cmd_update";
+            this.m_cmd_update.Size = new System.Drawing.Size(116, 37);
+            this.m_cmd_update.TabIndex = 29;
+            this.m_cmd_update.Text = "&Sửa";
+            // 
+            // m_cmd_delete
+            // 
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
+            this.m_cmd_delete.Location = new System.Drawing.Point(562, 0);
+            this.m_cmd_delete.Name = "m_cmd_delete";
+            this.m_cmd_delete.Size = new System.Drawing.Size(116, 37);
+            this.m_cmd_delete.TabIndex = 28;
+            this.m_cmd_delete.Text = "&Xóa";
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_xuat_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_excel.Image")));
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(678, 0);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 37);
+            this.m_cmd_xuat_excel.TabIndex = 27;
+            this.m_cmd_xuat_excel.Text = "&Xuất Excel";
+            this.m_cmd_xuat_excel.Visible = false;
             // 
             // F102_dm_bao_hiem
             // 
@@ -273,10 +267,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn c_ten_bao_hiem;
         private DevExpress.XtraGrid.Columns.GridColumn c_ti_le;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        internal SIS.Controls.Button.SiSButton c_cmd_dm_bao_hiem_xoa;
         internal System.Windows.Forms.ImageList imageList1;
-        internal SIS.Controls.Button.SiSButton c_cmd_dm_bao_hiem_sua;
-        internal SIS.Controls.Button.SiSButton m_cmd_dm_bao_hiem_them;
         private System.Windows.Forms.Panel panel2;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_update;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
     }
 }

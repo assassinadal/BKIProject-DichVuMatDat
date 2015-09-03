@@ -28,18 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f370_nhan_vien_loai_lao_dong));
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_cmd_edit = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
+            this.ImageList = new System.Windows.Forms.ImageList();
             this.panel3 = new System.Windows.Forms.Panel();
             this.m_grc_v_gd_loai_lao_dong = new DevExpress.XtraGrid.GridControl();
             this.m_grv_v_gd_loai_lao_dong = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.c_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_stt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_ID_NHAN_VIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_ma_nv = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,7 +47,10 @@
             this.c_ten_loai_lao_dong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_ngay_bat_dau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_ngay_ket_thuc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -82,29 +82,14 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.m_cmd_insert);
-            this.panel2.Controls.Add(this.m_cmd_edit);
+            this.panel2.Controls.Add(this.m_cmd_update);
             this.panel2.Controls.Add(this.m_cmd_delete);
+            this.panel2.Controls.Add(this.m_cmd_xuat_excel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 341);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(782, 38);
             this.panel2.TabIndex = 1;
-            // 
-            // m_cmd_insert
-            // 
-            this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_insert.ImageIndex = 2;
-            this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(518, 0);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(88, 38);
-            this.m_cmd_insert.TabIndex = 3;
-            this.m_cmd_insert.Text = "&Thêm";
-            this.m_cmd_insert.Click += new System.EventHandler(this.m_cmd_insert_Click);
             // 
             // ImageList
             // 
@@ -132,38 +117,6 @@
             this.ImageList.Images.SetKeyName(19, "");
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
-            // 
-            // m_cmd_edit
-            // 
-            this.m_cmd_edit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_edit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_edit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_edit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_edit.ImageIndex = 16;
-            this.m_cmd_edit.ImageList = this.ImageList;
-            this.m_cmd_edit.Location = new System.Drawing.Point(606, 0);
-            this.m_cmd_edit.Name = "m_cmd_edit";
-            this.m_cmd_edit.Size = new System.Drawing.Size(88, 38);
-            this.m_cmd_edit.TabIndex = 2;
-            this.m_cmd_edit.Text = "&Sửa";
-            this.m_cmd_edit.Click += new System.EventHandler(this.m_cmd_edit_Click);
-            // 
-            // m_cmd_delete
-            // 
-            this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_delete.ImageIndex = 4;
-            this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(694, 0);
-            this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(88, 38);
-            this.m_cmd_delete.TabIndex = 1;
-            this.m_cmd_delete.Text = "&Xóa";
-            this.m_cmd_delete.Click += new System.EventHandler(this.m_cmd_delete_Click);
             // 
             // panel3
             // 
@@ -205,6 +158,12 @@
             this.m_grv_v_gd_loai_lao_dong.OptionsFind.AllowFindPanel = false;
             this.m_grv_v_gd_loai_lao_dong.OptionsFind.AlwaysVisible = true;
             this.m_grv_v_gd_loai_lao_dong.OptionsView.ShowFooter = true;
+            // 
+            // c_ID
+            // 
+            this.c_ID.Caption = "ID";
+            this.c_ID.FieldName = "ID";
+            this.c_ID.Name = "c_ID";
             // 
             // c_stt
             // 
@@ -285,11 +244,46 @@
             this.c_ngay_ket_thuc.Visible = true;
             this.c_ngay_ket_thuc.VisibleIndex = 6;
             // 
-            // c_ID
+            // m_cmd_insert
             // 
-            this.c_ID.Caption = "ID";
-            this.c_ID.FieldName = "ID";
-            this.c_ID.Name = "c_ID";
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
+            this.m_cmd_insert.Location = new System.Drawing.Point(318, 0);
+            this.m_cmd_insert.Name = "m_cmd_insert";
+            this.m_cmd_insert.Size = new System.Drawing.Size(116, 38);
+            this.m_cmd_insert.TabIndex = 22;
+            this.m_cmd_insert.Text = "&Thêm";
+            // 
+            // m_cmd_update
+            // 
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
+            this.m_cmd_update.Location = new System.Drawing.Point(434, 0);
+            this.m_cmd_update.Name = "m_cmd_update";
+            this.m_cmd_update.Size = new System.Drawing.Size(116, 38);
+            this.m_cmd_update.TabIndex = 21;
+            this.m_cmd_update.Text = "&Sửa";
+            // 
+            // m_cmd_delete
+            // 
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
+            this.m_cmd_delete.Location = new System.Drawing.Point(550, 0);
+            this.m_cmd_delete.Name = "m_cmd_delete";
+            this.m_cmd_delete.Size = new System.Drawing.Size(116, 38);
+            this.m_cmd_delete.TabIndex = 20;
+            this.m_cmd_delete.Text = "&Xóa";
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_xuat_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_excel.Image")));
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(666, 0);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 38);
+            this.m_cmd_xuat_excel.TabIndex = 19;
+            this.m_cmd_xuat_excel.Text = "&Xuất Excel";
+            this.m_cmd_xuat_excel.Visible = false;
             // 
             // f370_nhan_vien_loai_lao_dong
             // 
@@ -329,10 +323,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn c_ten_loai_lao_dong;
         private DevExpress.XtraGrid.Columns.GridColumn c_ngay_bat_dau;
         private DevExpress.XtraGrid.Columns.GridColumn c_ngay_ket_thuc;
-        internal SIS.Controls.Button.SiSButton m_cmd_insert;
-        internal SIS.Controls.Button.SiSButton m_cmd_edit;
-        internal SIS.Controls.Button.SiSButton m_cmd_delete;
         internal System.Windows.Forms.ImageList ImageList;
         private DevExpress.XtraGrid.Columns.GridColumn c_ID;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_update;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
     }
 }

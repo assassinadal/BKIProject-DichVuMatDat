@@ -30,15 +30,21 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         internal void DisplayForInsert()
         {
+            this.Text = "F105 - Thêm loại ngày công";
+            m_lbl_header.Text = "THÊM LOẠI NGÀY CÔNG";
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.CenterToScreen();
             this.ShowDialog();
         }
 
         internal void DispplayForUpdate(US.US_DM_LOAI_NGAY_CONG v_us)
         {
+            this.Text = "F105 - Sửa loại ngày công";
+            m_lbl_header.Text = "SỬA LOẠI NGÀY CÔNG";
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_us = v_us;
             us_to_form(m_us);
+            this.CenterToScreen();
             this.ShowDialog();
         }
 

@@ -31,6 +31,20 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             this.ShowDialog();
         }
+
+        public void DisplayForInsert()
+        {
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.ShowDialog();
+        }
+
+        public void DisplayForUpdate(US_GD_LOAI_LAO_DONG v_us)
+        {
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            m_us = v_us;
+            us_2_form(m_us);
+            this.ShowDialog();
+        }
         #endregion
 
         #region Members
@@ -152,7 +166,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_define_event()
         {
             this.Load += f371_nhan_vien_loai_lao_dong_insert_Load;
-
+            m_cmd_save.Click += m_cmd_save_Click;
+            m_cmd_exit.Click += m_cmd_exit_Click;
         }
 
         private void f371_nhan_vien_loai_lao_dong_insert_Load(object sender, EventArgs e)
@@ -167,7 +182,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        private void m_cmd_cancel_Click(object sender, EventArgs e)
+        private void m_cmd_exit_Click(object sender, EventArgs e)
         {
             try
             {
@@ -211,20 +226,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-        }
-
-        public void DisplayForInsert()
-        {
-            m_e_form_mode = DataEntryFormMode.InsertDataState;
-            this.ShowDialog();
-        }
-
-        public void DisplayForUpdate(US_GD_LOAI_LAO_DONG v_us)
-        {
-            m_e_form_mode = DataEntryFormMode.UpdateDataState;
-            m_us = v_us;
-            us_2_form(m_us);
-            this.ShowDialog();
         }
 
         private void us_2_form(US_GD_LOAI_LAO_DONG m_us)

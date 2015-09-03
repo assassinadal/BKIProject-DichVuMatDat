@@ -28,110 +28,143 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F102_dm_bao_hiem_de));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_gr_thong_tin_co_ban = new DevExpress.XtraEditors.GroupControl();
             this.m_lbl_ti_le = new System.Windows.Forms.Label();
-            this.m_lbl_ten_bao_hiem = new System.Windows.Forms.Label();
-            this.m_lbl_ma_bao_hiem = new System.Windows.Forms.Label();
-            this.m_txt_ti_le = new System.Windows.Forms.TextBox();
-            this.m_txt_ten_bao_hiem = new System.Windows.Forms.TextBox();
             this.m_txt_ma_bao_hiem = new System.Windows.Forms.TextBox();
+            this.m_txt_ten_bao_hiem = new System.Windows.Forms.TextBox();
+            this.m_lbl_ten_bao_hiem = new System.Windows.Forms.Label();
+            this.m_txt_ti_le = new System.Windows.Forms.TextBox();
+            this.m_lbl_ma_bao_hiem = new System.Windows.Forms.Label();
+            this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.m_cmd_cancel = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_exit = new DevExpress.XtraEditors.SimpleButton();
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_co_ban)).BeginInit();
+            this.m_gr_thong_tin_co_ban.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.m_lbl_ti_le);
-            this.panel1.Controls.Add(this.m_lbl_ten_bao_hiem);
-            this.panel1.Controls.Add(this.m_lbl_ma_bao_hiem);
-            this.panel1.Controls.Add(this.m_txt_ti_le);
-            this.panel1.Controls.Add(this.m_txt_ten_bao_hiem);
-            this.panel1.Controls.Add(this.m_txt_ma_bao_hiem);
+            this.panel1.Controls.Add(this.m_gr_thong_tin_co_ban);
+            this.panel1.Controls.Add(this.m_lbl_header);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(405, 186);
+            this.panel1.Size = new System.Drawing.Size(405, 161);
             this.panel1.TabIndex = 0;
+            // 
+            // m_gr_thong_tin_co_ban
+            // 
+            this.m_gr_thong_tin_co_ban.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_gr_thong_tin_co_ban.Appearance.Options.UseFont = true;
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_lbl_ti_le);
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_txt_ma_bao_hiem);
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_txt_ten_bao_hiem);
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_lbl_ten_bao_hiem);
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_txt_ti_le);
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_lbl_ma_bao_hiem);
+            this.m_gr_thong_tin_co_ban.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_gr_thong_tin_co_ban.Location = new System.Drawing.Point(0, 44);
+            this.m_gr_thong_tin_co_ban.Name = "m_gr_thong_tin_co_ban";
+            this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(405, 117);
+            this.m_gr_thong_tin_co_ban.TabIndex = 1;
+            this.m_gr_thong_tin_co_ban.Text = "ĐIỀN THÔNG TIN";
             // 
             // m_lbl_ti_le
             // 
             this.m_lbl_ti_le.AutoSize = true;
-            this.m_lbl_ti_le.Location = new System.Drawing.Point(53, 122);
+            this.m_lbl_ti_le.Location = new System.Drawing.Point(17, 83);
             this.m_lbl_ti_le.Name = "m_lbl_ti_le";
-            this.m_lbl_ti_le.Size = new System.Drawing.Size(27, 13);
+            this.m_lbl_ti_le.Size = new System.Drawing.Size(40, 13);
             this.m_lbl_ti_le.TabIndex = 5;
-            this.m_lbl_ti_le.Text = "Tỉ lệ";
-            // 
-            // m_lbl_ten_bao_hiem
-            // 
-            this.m_lbl_ten_bao_hiem.AutoSize = true;
-            this.m_lbl_ten_bao_hiem.Location = new System.Drawing.Point(53, 86);
-            this.m_lbl_ten_bao_hiem.Name = "m_lbl_ten_bao_hiem";
-            this.m_lbl_ten_bao_hiem.Size = new System.Drawing.Size(72, 13);
-            this.m_lbl_ten_bao_hiem.TabIndex = 4;
-            this.m_lbl_ten_bao_hiem.Text = "Tên bảo hiểm";
-            // 
-            // m_lbl_ma_bao_hiem
-            // 
-            this.m_lbl_ma_bao_hiem.AutoSize = true;
-            this.m_lbl_ma_bao_hiem.Location = new System.Drawing.Point(53, 50);
-            this.m_lbl_ma_bao_hiem.Name = "m_lbl_ma_bao_hiem";
-            this.m_lbl_ma_bao_hiem.Size = new System.Drawing.Size(68, 13);
-            this.m_lbl_ma_bao_hiem.TabIndex = 3;
-            this.m_lbl_ma_bao_hiem.Text = "Mã bảo hiểm";
-            // 
-            // m_txt_ti_le
-            // 
-            this.m_txt_ti_le.Location = new System.Drawing.Point(131, 119);
-            this.m_txt_ti_le.Name = "m_txt_ti_le";
-            this.m_txt_ti_le.Size = new System.Drawing.Size(191, 20);
-            this.m_txt_ti_le.TabIndex = 2;
-            // 
-            // m_txt_ten_bao_hiem
-            // 
-            this.m_txt_ten_bao_hiem.Location = new System.Drawing.Point(131, 83);
-            this.m_txt_ten_bao_hiem.Name = "m_txt_ten_bao_hiem";
-            this.m_txt_ten_bao_hiem.Size = new System.Drawing.Size(191, 20);
-            this.m_txt_ten_bao_hiem.TabIndex = 1;
+            this.m_lbl_ti_le.Text = "Tỉ lệ (*)";
             // 
             // m_txt_ma_bao_hiem
             // 
-            this.m_txt_ma_bao_hiem.Location = new System.Drawing.Point(131, 47);
+            this.m_txt_ma_bao_hiem.Location = new System.Drawing.Point(126, 28);
             this.m_txt_ma_bao_hiem.Name = "m_txt_ma_bao_hiem";
             this.m_txt_ma_bao_hiem.Size = new System.Drawing.Size(191, 20);
             this.m_txt_ma_bao_hiem.TabIndex = 0;
             // 
+            // m_txt_ten_bao_hiem
+            // 
+            this.m_txt_ten_bao_hiem.Location = new System.Drawing.Point(126, 54);
+            this.m_txt_ten_bao_hiem.Name = "m_txt_ten_bao_hiem";
+            this.m_txt_ten_bao_hiem.Size = new System.Drawing.Size(191, 20);
+            this.m_txt_ten_bao_hiem.TabIndex = 1;
+            // 
+            // m_lbl_ten_bao_hiem
+            // 
+            this.m_lbl_ten_bao_hiem.AutoSize = true;
+            this.m_lbl_ten_bao_hiem.Location = new System.Drawing.Point(17, 57);
+            this.m_lbl_ten_bao_hiem.Name = "m_lbl_ten_bao_hiem";
+            this.m_lbl_ten_bao_hiem.Size = new System.Drawing.Size(85, 13);
+            this.m_lbl_ten_bao_hiem.TabIndex = 4;
+            this.m_lbl_ten_bao_hiem.Text = "Tên bảo hiểm (*)";
+            // 
+            // m_txt_ti_le
+            // 
+            this.m_txt_ti_le.Location = new System.Drawing.Point(126, 80);
+            this.m_txt_ti_le.Name = "m_txt_ti_le";
+            this.m_txt_ti_le.Size = new System.Drawing.Size(191, 20);
+            this.m_txt_ti_le.TabIndex = 2;
+            // 
+            // m_lbl_ma_bao_hiem
+            // 
+            this.m_lbl_ma_bao_hiem.AutoSize = true;
+            this.m_lbl_ma_bao_hiem.Location = new System.Drawing.Point(17, 32);
+            this.m_lbl_ma_bao_hiem.Name = "m_lbl_ma_bao_hiem";
+            this.m_lbl_ma_bao_hiem.Size = new System.Drawing.Size(81, 13);
+            this.m_lbl_ma_bao_hiem.TabIndex = 3;
+            this.m_lbl_ma_bao_hiem.Text = "Mã bảo hiểm (*)";
+            // 
+            // m_lbl_header
+            // 
+            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_header.Name = "m_lbl_header";
+            this.m_lbl_header.Size = new System.Drawing.Size(405, 44);
+            this.m_lbl_header.TabIndex = 2;
+            this.m_lbl_header.Text = "THÊM ĐƠN VỊ";
+            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.m_cmd_save);
-            this.panel2.Controls.Add(this.m_cmd_cancel);
+            this.panel2.Controls.Add(this.m_cmd_exit);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 186);
+            this.panel2.Location = new System.Drawing.Point(0, 161);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(405, 38);
+            this.panel2.Size = new System.Drawing.Size(405, 43);
             this.panel2.TabIndex = 1;
             // 
             // m_cmd_save
             // 
-            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_save.ImageIndex = 10;
-            this.m_cmd_save.ImageList = this.imageList1;
-            this.m_cmd_save.Location = new System.Drawing.Point(229, 0);
+            this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
+            this.m_cmd_save.Location = new System.Drawing.Point(173, 0);
             this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(88, 38);
-            this.m_cmd_save.TabIndex = 8;
+            this.m_cmd_save.Size = new System.Drawing.Size(116, 43);
+            this.m_cmd_save.TabIndex = 26;
             this.m_cmd_save.Text = "&Lưu";
-            this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_exit.Image")));
+            this.m_cmd_exit.Location = new System.Drawing.Point(289, 0);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(116, 43);
+            this.m_cmd_exit.TabIndex = 25;
+            this.m_cmd_exit.Text = "&Thoát";
+            this.m_cmd_exit.Visible = false;
             // 
             // imageList1
             // 
@@ -160,37 +193,19 @@
             this.imageList1.Images.SetKeyName(20, "");
             this.imageList1.Images.SetKeyName(21, "");
             // 
-            // m_cmd_cancel
-            // 
-            this.m_cmd_cancel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_cancel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_cancel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.m_cmd_cancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_cancel.ImageIndex = 4;
-            this.m_cmd_cancel.ImageList = this.imageList1;
-            this.m_cmd_cancel.Location = new System.Drawing.Point(317, 0);
-            this.m_cmd_cancel.Name = "m_cmd_cancel";
-            this.m_cmd_cancel.Size = new System.Drawing.Size(88, 38);
-            this.m_cmd_cancel.TabIndex = 7;
-            this.m_cmd_cancel.Text = "&Hủy";
-            this.m_cmd_cancel.Click += new System.EventHandler(this.m_cmd_cancel_Click);
-            // 
             // F102_dm_bao_hiem_de
             // 
-            this.AcceptButton = this.m_cmd_save;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.m_cmd_cancel;
-            this.ClientSize = new System.Drawing.Size(405, 224);
+            this.ClientSize = new System.Drawing.Size(405, 204);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "F102_dm_bao_hiem_de";
             this.Text = "F102_dm_bao_hiem_de";
-            this.Load += new System.EventHandler(this.F102_dm_bao_hiem_de_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_co_ban)).EndInit();
+            this.m_gr_thong_tin_co_ban.ResumeLayout(false);
+            this.m_gr_thong_tin_co_ban.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -200,8 +215,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        internal SIS.Controls.Button.SiSButton m_cmd_save;
-        internal SIS.Controls.Button.SiSButton m_cmd_cancel;
         internal System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label m_lbl_ti_le;
         private System.Windows.Forms.Label m_lbl_ten_bao_hiem;
@@ -209,5 +222,9 @@
         private System.Windows.Forms.TextBox m_txt_ti_le;
         private System.Windows.Forms.TextBox m_txt_ten_bao_hiem;
         private System.Windows.Forms.TextBox m_txt_ma_bao_hiem;
+        private DevExpress.XtraEditors.GroupControl m_gr_thong_tin_co_ban;
+        private System.Windows.Forms.Label m_lbl_header;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_save;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_exit;
     }
 }

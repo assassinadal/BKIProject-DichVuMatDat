@@ -21,6 +21,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         public F102_dm_bao_hiem()
         {
             InitializeComponent();
+            format_controls();
         }
 
         #region Public Interface
@@ -33,17 +34,15 @@ namespace BKI_DichVuMatDat.DanhMuc
         #region Members
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         #endregion
+
         #region private methods
         private void format_controls()
         {
             set_define_events();
             this.KeyPreview = true;
         }
+
         private void set_initial_form_load()
-        {
-            load_data_2_grid();
-        }
-        private void F102_dm_bao_hiem_Load(object sender, EventArgs e)
         {
             load_data_2_grid();
         }
@@ -62,10 +61,13 @@ namespace BKI_DichVuMatDat.DanhMuc
           #endregion
         private void set_define_events()
         {
-            this.Load += F105_dm_bao_hiem_Load;
+            this.Load += F102_dm_bao_hiem_Load; 
+            m_cmd_insert.Click += m_cmd_insert_Click;
+            m_cmd_update.Click += m_cmd_update_Click;
+            m_cmd_delete.Click += m_cmd_delete_Click;
         }
 
-        void F105_dm_bao_hiem_Load(object sender, EventArgs e)
+        void F102_dm_bao_hiem_Load(object sender, EventArgs e)
         {
             try
             {
@@ -77,7 +79,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
-        private void c_cmd_dm_bao_hiem_xoa_Click(object sender, EventArgs e)
+        private void m_cmd_delete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -99,7 +101,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
-        private void m_cmd_dm_bao_hiem_them_Click(object sender, EventArgs e)
+        private void m_cmd_insert_Click(object sender, EventArgs e)
         {
             try
             {
@@ -113,7 +115,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
-        private void c_cmd_dm_bao_hiem_sua_Click(object sender, EventArgs e)
+        private void m_cmd_update_Click(object sender, EventArgs e)
         {
             try
             {

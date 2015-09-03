@@ -89,7 +89,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             this.Load += F105_dm_don_vi_Load;
             m_cmd_insert.Click += m_cmd_insert_Click;
             m_cmd_update.Click += m_cmd_update_Click;
-            m_cmd_delete.Click += m_cmd_delete_Click; 
+            m_cmd_delete.Click += m_cmd_delete_Click;
 
         }
 
@@ -98,28 +98,6 @@ namespace BKI_DichVuMatDat.DanhMuc
             try
             {
                 set_initial_form_load();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_delete_Click(object sender, EventArgs e)
-        {
-            try
-            { 
-                if (XtraMessageBox.Show("Bạn có chắc chắn muốn xóa đơn vị này?","XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    DataRow v_dr = m_grv_dm_don_vi.GetDataRow(m_grv_dm_don_vi.FocusedRowHandle);
-                    decimal v_id_don_vi = CIPConvert.ToDecimal(v_dr["ID"]);
-
-                    US_DM_DON_VI v_us = new US_DM_DON_VI(v_id_don_vi);
-                    v_us.BeginTransaction();
-                    v_us.Delete();
-                    v_us.CommitTransaction();
-                    load_data_2_grid();
-                }
             }
             catch (Exception v_e)
             {
@@ -160,7 +138,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                 }
                 else
                 {
-                    MessageBox.Show("Bạn phải chọn một đơn vị trên lưới để sửa!");
+                    XtraMessageBox.Show("Bạn phải chọn một đơn vị trên lưới để sửa!");
                 }
             }
             catch (Exception v_e)
@@ -169,5 +147,28 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
-      }
+        void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (XtraMessageBox.Show("Bạn có chắc chắn muốn xóa đơn vị này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    DataRow v_dr = m_grv_dm_don_vi.GetDataRow(m_grv_dm_don_vi.FocusedRowHandle);
+                    decimal v_id_don_vi = CIPConvert.ToDecimal(v_dr["ID"]);
+
+                    US_DM_DON_VI v_us = new US_DM_DON_VI(v_id_don_vi);
+                    v_us.BeginTransaction();
+                    v_us.Delete();
+                    v_us.CommitTransaction();
+                    load_data_2_grid();
+                    XtraMessageBox.Show("Bạn đã xóa thành công", "THÀNH CÔNG");
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+    }
 }

@@ -159,6 +159,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                     v_us.Delete();
                     v_us.CommitTransaction();
                     load_data_2_grid();
+                    XtraMessageBox.Show("Bạn đã xóa thành công", "THÀNH CÔNG");
                 }
             }
             catch (Exception v_e)
@@ -166,8 +167,6 @@ namespace BKI_DichVuMatDat.DanhMuc
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-
        
     }
 }

@@ -1,4 +1,7 @@
-﻿using IP.Core.IPCommon;
+﻿using BKI_DichVuMatDat.DS;
+using BKI_DichVuMatDat.US;
+using DevExpress.XtraEditors;
+using IP.Core.IPCommon;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,14 +51,41 @@ namespace BKI_DichVuMatDat.DanhMuc
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithTableName(v_ds, "V_DM_THUE");
+            v_us.FillDatasetWithTableName(v_ds, "DM_THUE");
             m_grc_dm_thue.DataSource = v_ds.Tables[0];
+        }
+
+        private void focus_new_row_created(decimal ip_dc_id_dm_thue)
+        {
+            int v_row_index = 0;
+            decimal v_id_qd_moi_lap = 0;
+
+            US_DM_THUE v_us = new US_DM_THUE();
+            DS_DM_THUE v_ds = new DS_DM_THUE();
+
+            v_id_qd_moi_lap = ip_dc_id_dm_thue;
+
+            v_us.FillDataset(v_ds);
+
+            for (v_row_index = 0; v_row_index < v_ds.Tables[0].Rows.Count; v_row_index++)
+            {
+                var v_id_gd_qd = CIPConvert.ToDecimal(m_grv_dm_thue.GetDataRow(v_row_index)["ID"].ToString());
+
+                if (v_id_gd_qd == v_id_qd_moi_lap)
+                {
+                    break;
+                }
+            }
+
+            m_grv_dm_thue.FocusedRowHandle = v_row_index;
         }
         #endregion
         private void set_define_events()
         {
             this.Load += F109_dm_thue_Load;
             m_cmd_insert.Click += m_cmd_insert_Click;
+            m_cmd_update.Click += m_cmd_update_Click;
+            m_cmd_delete.Click += m_cmd_delete_Click;
         }
 
         private void F109_dm_thue_Load(object sender, EventArgs e)
@@ -74,7 +104,12 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                set_initial_form_load();
+                decimal v_id_dm_thue_moi_tao = 0;
+                F109_dm_thue_de v_frm = new F109_dm_thue_de();
+                v_frm.display_4_insert(ref v_id_dm_thue_moi_tao);
+                load_data_2_grid();
+
+                focus_new_row_created(v_id_dm_thue_moi_tao);
             }
             catch (Exception v_e)
             {
@@ -82,5 +117,53 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
+        void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal v_id_dm_thue = CIPConvert.ToDecimal(m_grv_dm_thue.GetRowCellValue(m_grv_dm_thue.FocusedRowHandle, "ID"));
+
+                if (v_id_dm_thue > 0)
+                {
+                    US_DM_THUE v_us = new US_DM_THUE(v_id_dm_thue);
+                    F109_dm_thue_de v_frm = new F109_dm_thue_de();
+                    v_frm.display_4_update(v_us);
+                    load_data_2_grid();
+
+                    focus_new_row_created(v_id_dm_thue);
+                }
+                else
+                {
+                    MessageBox.Show("Bạn phải chọn một mức thuế trên lưới để sửa!");
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (XtraMessageBox.Show("Bạn có chắc chắn muốn xóa mức thuế này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    DataRow v_dr = m_grv_dm_thue.GetDataRow(m_grv_dm_thue.FocusedRowHandle);
+                    decimal v_id_dm_thue = CIPConvert.ToDecimal(v_dr["ID"]);
+
+                    US_DM_THUE v_us = new US_DM_THUE(v_id_dm_thue);
+                    v_us.BeginTransaction();
+                    v_us.Delete();
+                    v_us.CommitTransaction();
+                    load_data_2_grid();
+                    XtraMessageBox.Show("Bạn đã xóa thành công", "THÀNH CÔNG");
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

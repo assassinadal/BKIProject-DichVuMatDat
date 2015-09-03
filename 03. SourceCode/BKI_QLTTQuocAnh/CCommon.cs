@@ -6,6 +6,8 @@ using System.Text;
 using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.DS.CDBNames;
 using BKI_DichVuMatDat.US;
+using IP.Core.IPCommon;
+using System.Windows.Forms;
 
 namespace BKI_DichVuMatDat
 {
@@ -28,6 +30,13 @@ namespace BKI_DichVuMatDat
         {
             if (e.IsGetData)
                 e.Value = e.ListSourceRowIndex + 1;
+        }
+
+        public static void format_text_2_money(TextBox ip_m_txt)
+        {
+            decimal v_so_tien = 0;
+            v_so_tien = CIPConvert.ToDecimal(ip_m_txt.Text.Trim());
+            ip_m_txt.Text = string.Format("{0:#,##0}", v_so_tien);
         }
     }
 }

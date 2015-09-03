@@ -25,7 +25,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         #region Public Interface
         public void display_4_insert(ref decimal v_id_dm_tham_so_moi_tao)
         {
-            this.Text = "F101 - Thêm loại tham số mới";
+            this.Text = "F108 - Thêm loại tham số mới";
             m_lbl_header.Text = "THÊM LOẠI THAM SỐ MỚI";
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.CenterToScreen();
@@ -35,12 +35,13 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         public void display_4_update(US_DM_THAM_SO ip_us)
         {
-            this.Text = "F101 - Sửa loại tham số";
+            this.Text = "F108 - Sửa loại tham số";
             m_lbl_header.Text = "SỬA LOẠI THAM SỐ";
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_id_dm_tham_so_4_update = ip_us.dcID;
             m_txt_ten_tham_so.Text = ip_us.strLOAI;
-            m_txt_gia_tri_tham_so.Text = ip_us.dcSO_TIEN.ToString(); ;
+            m_txt_gia_tri_tham_so.Text = ip_us.dcSO_TIEN.ToString();
+            CCommon.format_text_2_money(m_txt_gia_tri_tham_so);
             this.CenterToScreen();
             this.ShowDialog();
         }
@@ -115,6 +116,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_tham_so.Update();
                         v_us_dm_tham_so.CommitTransaction();
                         XtraMessageBox.Show("Bạn đã cập nhật đơn vị thành công!", "THÀNH CÔNG");
+                        this.Close();
                         break;
                     default:
                         break;

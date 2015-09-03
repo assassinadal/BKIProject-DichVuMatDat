@@ -312,7 +312,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_PHU_THUOC.xsd</DependentUpon>
     </Compile>
-    <Compile Include="m_cmd_dm_he_so_luong_ns.cs" />
     <Compile Include="NghiepVu\BackupDB.cs">
       <SubType>Form</SubType>
     </Compile>

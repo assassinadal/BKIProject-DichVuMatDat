@@ -94,6 +94,7 @@
             this.STT.Caption = "STT";
             this.STT.FieldName = "STT";
             this.STT.Name = "STT";
+            this.STT.OptionsColumn.AllowEdit = false;
             this.STT.Visible = true;
             this.STT.VisibleIndex = 0;
             this.STT.Width = 25;
@@ -106,6 +107,7 @@
             this.LOAI.Caption = "Loại tham số";
             this.LOAI.FieldName = "LOAI";
             this.LOAI.Name = "LOAI";
+            this.LOAI.OptionsColumn.AllowEdit = false;
             this.LOAI.Visible = true;
             this.LOAI.VisibleIndex = 1;
             this.LOAI.Width = 54;
@@ -123,6 +125,7 @@
             this.SO_TIEN.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.SO_TIEN.FieldName = "SO_TIEN";
             this.SO_TIEN.Name = "SO_TIEN";
+            this.SO_TIEN.OptionsColumn.AllowEdit = false;
             this.SO_TIEN.Visible = true;
             this.SO_TIEN.VisibleIndex = 2;
             this.SO_TIEN.Width = 350;

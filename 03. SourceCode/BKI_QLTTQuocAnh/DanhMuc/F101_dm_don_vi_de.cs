@@ -222,6 +222,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_dv.Update();
                         v_us_dm_dv.CommitTransaction();
                         XtraMessageBox.Show("Bạn đã cập nhật đơn vị thành công!", "THÀNH CÔNG");
+                        this.Close();
                         break;
                     default:
                         break;

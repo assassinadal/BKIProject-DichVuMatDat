@@ -44,6 +44,7 @@
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.imageList1 = new System.Windows.Forms.ImageList();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_he_so_luong_ns)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_he_so_luong_ns)).BeginInit();
             this.panel1.SuspendLayout();
@@ -65,6 +66,7 @@
             // m_grv_dm_he_so_luong_ns
             // 
             this.m_grv_dm_he_so_luong_ns.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
             this.STT,
             this.c_ma_luong_ns,
             this.c_ten_luong_ns,
@@ -202,7 +204,6 @@
             this.m_cmd_xuat_excel.TabIndex = 31;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
             this.m_cmd_xuat_excel.Visible = false;
-            //this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             // 
             // imageList1
             // 
@@ -240,6 +241,15 @@
             this.panel2.Size = new System.Drawing.Size(765, 268);
             this.panel2.TabIndex = 3;
             // 
+            // ID
+            // 
+            this.ID.AppearanceHeader.Options.UseTextOptions = true;
+            this.ID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ID.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
+            // 
             // F103_dm_he_so_luong_ns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,5 +286,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
         internal System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel2;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
     }
 }

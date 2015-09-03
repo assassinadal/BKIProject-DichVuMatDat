@@ -128,6 +128,7 @@
             this.c_he_so.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.c_he_so.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_he_so.Caption = "Hệ số";
+            this.c_he_so.FieldName = "HE_SO";
             this.c_he_so.Name = "c_he_so";
             this.c_he_so.Visible = true;
             this.c_he_so.VisibleIndex = 3;

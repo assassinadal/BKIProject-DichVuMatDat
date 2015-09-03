@@ -58,7 +58,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us_dc.FillDatasetWithQuery(v_ds, "SELECT * FROM DM_NHAN_VIEN WHERE MA_NV ='" + v_data_row["MA_NHAN_VIEN"].ToString() + "'");
+            v_us_dc.FillDatasetWithQuery(v_ds, "SELECT * FROM DM_NHAN_VIEN WHERE MA_NV ='" + v_data_row[1].ToString() + "'");
             v_id_nv = CIPConvert.ToDecimal(v_ds.Tables[0].Rows[0]["ID"].ToString());
         }
 
@@ -78,13 +78,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Mã nhân viên " + v_data_row["MA_NHAN_VIEN"].ToString() + " không tồn tại trong hệ thống. Vui lòng kiểm tra lại thông tin!");
+                    MessageBox.Show("Mã nhân viên " + v_data_row[1].ToString() + " không tồn tại trong hệ thống. Vui lòng kiểm tra lại thông tin!");
                     v_int_khong_nhap_duoc++;
                     continue;
                 }
 
                 v_us_gs_cl.dcID_NHAN_VIEN = v_id_nv;
-                v_us_gs_cl.dcHE_SO_K = CIPConvert.ToDecimal(v_data_row["HE_SO"].ToString());
+                v_us_gs_cl.dcHE_SO_K = CIPConvert.ToDecimal(v_data_row[2].ToString());
                 v_us_gs_cl.dcTHANG = CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim());
                 v_us_gs_cl.dcNAM = CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim());
                 v_us_gs_cl.datNGAY_LAP = DateTime.Now.Date;
@@ -112,8 +112,9 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             this.Load += f380_thay_doi_he_so_chat_luong_Load;
             //cmd
+            m_cmd_mo_file_mau.Click += m_cmd_mo_file_mau_Click;
             m_cmd_chon_file.Click += m_cmd_chon_file_Click;
-            m_cmd_insert.Click += m_cmd_insert_Click;
+            m_cmd_nhap_cham_cong.Click += m_cmd_insert_Click;
         }
 
         void f380_thay_doi_he_so_chat_luong_Load(object sender, EventArgs e)
@@ -128,14 +129,22 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
+        void m_cmd_mo_file_mau_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                WinFormControls.openTemplate("HeSoChatLuong.xlsx");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
         void m_cmd_chon_file_Click(object sender, EventArgs e)
         {
             try
             {
-                //string v_str_path = "";
-                //f381_thay_doi_he_so_chat_luong_de v_frm_de = new f381_thay_doi_he_so_chat_luong_de();
-                //v_frm_de.display(ref v_str_path);
-                //m_str_path = v_str_path;
                 load_data_2_grid(WinFormControls.openFileDialog());
             }
             catch (Exception v_e)
@@ -157,11 +166,11 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                     if (v_count == v_selectedRowCount)
                     {
-                        MessageBox.Show("Cập nhật thành công cho " + v_count + " nhân viên");
+                        XtraMessageBox.Show("Cập nhật thành công cho " + v_count + " nhân viên","THÀNH CÔNG");
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật thành công cho " + v_count + " nhân viên. Vui lòng kiểm tra lại thông tin của " + (v_selectedRowCount - v_count).ToString() + " nhân viên được chọn còn lại trong bảng!");
+                        XtraMessageBox.Show("Cập nhật thành công cho " + v_count + " nhân viên. Vui lòng kiểm tra lại thông tin của " + (v_selectedRowCount - v_count).ToString() + " nhân viên được chọn còn lại trong bảng!","THÔNG BÁO");
                     }
                 }
                 else

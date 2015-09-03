@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F696_Cham_cong_xls));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.m_cmd_mo_file_mau = new DevExpress.XtraEditors.SimpleButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.m_cmd_chon_du_lieu = new DevExpress.XtraEditors.SimpleButton();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -37,15 +39,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.m_cmd_mo_file_mau = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,6 +58,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(789, 52);
             this.panel1.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.m_cmd_mo_file_mau);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(189, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Padding = new System.Windows.Forms.Padding(5);
+            this.panel4.Size = new System.Drawing.Size(200, 52);
+            this.panel4.TabIndex = 3;
+            // 
+            // m_cmd_mo_file_mau
+            // 
+            this.m_cmd_mo_file_mau.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_cmd_mo_file_mau.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_mo_file_mau.Image")));
+            this.m_cmd_mo_file_mau.Location = new System.Drawing.Point(5, 5);
+            this.m_cmd_mo_file_mau.Name = "m_cmd_mo_file_mau";
+            this.m_cmd_mo_file_mau.Size = new System.Drawing.Size(190, 42);
+            this.m_cmd_mo_file_mau.TabIndex = 0;
+            this.m_cmd_mo_file_mau.Text = "Mở file mẫu";
+            this.m_cmd_mo_file_mau.Click += new System.EventHandler(this.m_cmd_mo_file_mau_Click);
             // 
             // panel5
             // 
@@ -127,28 +148,10 @@
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
             this.m_grv.OptionsBehavior.Editable = false;
+            this.m_grv.OptionsFind.AllowFindPanel = false;
+            this.m_grv.OptionsFind.AlwaysVisible = true;
             this.m_grv.OptionsView.ColumnAutoWidth = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.m_cmd_mo_file_mau);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(189, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(5);
-            this.panel4.Size = new System.Drawing.Size(200, 52);
-            this.panel4.TabIndex = 3;
-            // 
-            // m_cmd_mo_file_mau
-            // 
-            this.m_cmd_mo_file_mau.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_cmd_mo_file_mau.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_mo_file_mau.Image")));
-            this.m_cmd_mo_file_mau.Location = new System.Drawing.Point(5, 5);
-            this.m_cmd_mo_file_mau.Name = "m_cmd_mo_file_mau";
-            this.m_cmd_mo_file_mau.Size = new System.Drawing.Size(190, 42);
-            this.m_cmd_mo_file_mau.TabIndex = 0;
-            this.m_cmd_mo_file_mau.Text = "Mở file mẫu";
-            this.m_cmd_mo_file_mau.Click += new System.EventHandler(this.m_cmd_mo_file_mau_Click);
+            this.m_grv.OptionsView.ShowFooter = true;
             // 
             // F696_Cham_cong_xls
             // 
@@ -160,12 +163,12 @@
             this.Name = "F696_Cham_cong_xls";
             this.Text = "F696_Cham_cong_xls";
             this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

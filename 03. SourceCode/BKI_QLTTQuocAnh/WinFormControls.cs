@@ -19,6 +19,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.Utils.Menu;
 using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Reflection;
 
 
 namespace BKI_DichVuMatDat
@@ -279,7 +280,7 @@ namespace BKI_DichVuMatDat
 
         #region copy & open Template
         public static void openTemplate(string ip_file_name) {
-            string sourcePath = (Directory.GetCurrentDirectory() + "\\Template");
+            string sourcePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Template\");
             string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string sourceFile = System.IO.Path.Combine(sourcePath, ip_file_name);
             string destFile = System.IO.Path.Combine(targetPath, ip_file_name);

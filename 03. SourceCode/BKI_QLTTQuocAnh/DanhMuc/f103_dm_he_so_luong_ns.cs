@@ -120,7 +120,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         void m_cmd_update_Click(object sender, EventArgs e)
         {
-             try
+            try
             {
                 decimal v_id_dm_he_so_luong_ns = CIPConvert.ToDecimal(m_grv_dm_he_so_luong_ns.GetRowCellValue(m_grv_dm_he_so_luong_ns.FocusedRowHandle, "ID"));
 

@@ -259,6 +259,12 @@
     <Compile Include="DanhMuc\F106_dm_luong_che_do_de.Designer.cs">
       <DependentUpon>F106_dm_luong_che_do_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\F107_dm_phu_cap_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\F107_dm_phu_cap_de.Designer.cs">
+      <DependentUpon>F107_dm_phu_cap_de.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\F108_dm_tham_so.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +325,8 @@
     <Compile Include="DanhMuc\F109_dm_thue_de.Designer.cs">
       <DependentUpon>F109_dm_thue_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\US_DM_PHU_CAP.cs" />
+    <Compile Include="DanhMuc\US_DM_PHU_CAP_2.cs" />
     <Compile Include="NghiepVu\BackupDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -430,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F106_dm_luong_che_do_de.resx">
       <DependentUpon>F106_dm_luong_che_do_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\F107_dm_phu_cap_de.resx">
+      <DependentUpon>F107_dm_phu_cap_de.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F108_dm_tham_so.resx">
       <DependentUpon>F108_dm_tham_so.cs</DependentUpon>

@@ -259,7 +259,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_txt_ly_do.Text = v_us.strLY_DO;
         }
 
-        private void save_data()
+        private void save_data(ref decimal v_id_gd_thu_nhap_khac)
         {
             US_GD_THU_NHAP_KHAC v_us_gd_thu_nhap_khac = new US_GD_THU_NHAP_KHAC();
             form_2_us_obj(v_us_gd_thu_nhap_khac);
@@ -271,6 +271,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us_gd_thu_nhap_khac.BeginTransaction();
                         v_us_gd_thu_nhap_khac.Insert();
                         v_us_gd_thu_nhap_khac.CommitTransaction();
+                        v_id_gd_thu_nhap_khac = v_us_gd_thu_nhap_khac.dcID;
                         XtraMessageBox.Show("Bạn đã thêm thu nhập khác cho nhân viên thành công!", "THÀNH CÔNG");
                         break;
                     case DataEntryFormMode.UpdateDataState:
@@ -303,6 +304,30 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_txt_chon_nam.Text = DateTime.Now.Year.ToString();
         }
 
+        private void focus_new_row_created(decimal v_id_gd_thu_nhap_khac)
+        {
+            int v_row_index = 0;
+            decimal v_id_gd_moi_lap = 0;
+
+            US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
+            DS_GD_THU_NHAP_KHAC v_ds = new DS_GD_THU_NHAP_KHAC();
+
+            v_id_gd_moi_lap = v_id_gd_thu_nhap_khac;
+
+            v_us.FillDataset(v_ds);
+
+            for (v_row_index = 0; v_row_index < v_ds.Tables[0].Rows.Count; v_row_index++)
+            {
+                var v_id_gd_qd = CIPConvert.ToDecimal(m_grv_quan_ly_thu_nhap_khac.GetDataRow(v_row_index)["ID"].ToString());
+
+                if (v_id_gd_qd == v_id_gd_moi_lap)
+                {
+                    break;
+                }
+            }
+
+            m_grv_quan_ly_thu_nhap_khac.FocusedRowHandle = v_row_index;
+        }
         #endregion
         private void set_define_events()
         {
@@ -371,10 +396,12 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                decimal v_id_gd_thu_nhap_khac = 0;
                 if (check_data_is_ok())
                 {
-                    save_data();
+                    save_data(ref v_id_gd_thu_nhap_khac);
                     load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
+                    focus_new_row_created(v_id_gd_thu_nhap_khac);
                 }
             }
             catch (Exception v_e)

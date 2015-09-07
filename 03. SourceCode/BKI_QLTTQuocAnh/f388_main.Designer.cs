@@ -75,7 +75,7 @@
             this.c_cmd_danh_muc_bao_hiem = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_quan_ly_thu_nhap_khac_xls = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_quan_ly_thu_nhap_khac = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_hs_chat_luong_by_nv = new DevExpress.XtraBars.BarButtonItem();
@@ -152,7 +152,7 @@
             this.c_cmd_danh_muc_bao_hiem,
             this.barButtonItem2,
             this.barButtonItem3,
-            this.barButtonItem4,
+            this.m_cmd_quan_ly_thu_nhap_khac_xls,
             this.m_cmd_quan_ly_thu_nhap_khac,
             this.barButtonItem6,
             this.m_cmd_hs_chat_luong_by_nv});
@@ -569,17 +569,17 @@
             this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
             this.barButtonItem3.Name = "barButtonItem3";
             // 
-            // barButtonItem4
+            // m_cmd_quan_ly_thu_nhap_khac_xls
             // 
-            this.barButtonItem4.Caption = "Truy lĩnh";
-            this.barButtonItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.Glyph")));
-            this.barButtonItem4.Id = 57;
-            this.barButtonItem4.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.LargeGlyph")));
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.m_cmd_quan_ly_thu_nhap_khac_xls.Caption = "Quản lý thu nhập khác XLSX";
+            this.m_cmd_quan_ly_thu_nhap_khac_xls.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_quan_ly_thu_nhap_khac_xls.Glyph")));
+            this.m_cmd_quan_ly_thu_nhap_khac_xls.Id = 57;
+            this.m_cmd_quan_ly_thu_nhap_khac_xls.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_quan_ly_thu_nhap_khac_xls.LargeGlyph")));
+            this.m_cmd_quan_ly_thu_nhap_khac_xls.Name = "m_cmd_quan_ly_thu_nhap_khac_xls";
             // 
             // m_cmd_quan_ly_thu_nhap_khac
             // 
-            this.m_cmd_quan_ly_thu_nhap_khac.Caption = "Thu nhập khác";
+            this.m_cmd_quan_ly_thu_nhap_khac.Caption = "Quản lý thu nhập khác";
             this.m_cmd_quan_ly_thu_nhap_khac.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_quan_ly_thu_nhap_khac.Glyph")));
             this.m_cmd_quan_ly_thu_nhap_khac.Id = 58;
             this.m_cmd_quan_ly_thu_nhap_khac.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_quan_ly_thu_nhap_khac.LargeGlyph")));
@@ -697,9 +697,8 @@
             // 
             // ribbonPageGroup6
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_quan_ly_thu_nhap_khac);
+            this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_quan_ly_thu_nhap_khac_xls);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Lương khác";
             // 
@@ -816,7 +815,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_quan_ly_thu_nhap_khac_xls;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem m_cmd_quan_ly_thu_nhap_khac;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;

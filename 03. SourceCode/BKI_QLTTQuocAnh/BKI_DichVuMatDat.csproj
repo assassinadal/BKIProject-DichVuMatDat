@@ -399,6 +399,12 @@
     <Compile Include="NghiepVu\f390_gd_thu_nhap_khac.Designer.cs">
       <DependentUpon>f390_gd_thu_nhap_khac.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f391_thu_nhap_khac_xls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f391_thu_nhap_khac_xls.Designer.cs">
+      <DependentUpon>f391_thu_nhap_khac_xls.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\F696_Cham_cong_xls.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -514,6 +520,9 @@
     <EmbeddedResource Include="NghiepVu\f390_gd_thu_nhap_khac.resx">
       <DependentUpon>f390_gd_thu_nhap_khac.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f391_thu_nhap_khac_xls.resx">
+      <DependentUpon>f391_thu_nhap_khac_xls.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F696_Cham_cong_xls.resx">
       <DependentUpon>F696_Cham_cong_xls.cs</DependentUpon>
     </EmbeddedResource>
@@ -555,6 +564,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Template\HeSoChatLuong.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\ThuNhapKhac.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

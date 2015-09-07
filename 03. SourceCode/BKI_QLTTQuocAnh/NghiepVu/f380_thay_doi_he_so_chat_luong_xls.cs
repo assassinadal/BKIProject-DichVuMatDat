@@ -88,7 +88,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 decimal v_id_nv = 0;
                 US_DUNG_CHUNG v_us_dc = new US_DUNG_CHUNG();
-                US_GD_HE_SO_CHAT_LUONG v_us_gs_cl = new US_GD_HE_SO_CHAT_LUONG();
+                US_GD_HE_SO_CHAT_LUONG v_us_hs_cl = new US_GD_HE_SO_CHAT_LUONG();
 
                 var v_data_row = m_grv_them_hs.GetDataRow(m_grv_them_hs.GetSelectedRows()[i]);
 
@@ -103,19 +103,19 @@ namespace BKI_DichVuMatDat.NghiepVu
                     continue;
                 }
 
-                v_us_gs_cl.dcID_NHAN_VIEN = v_id_nv;
-                v_us_gs_cl.dcHE_SO_K = CIPConvert.ToDecimal(v_data_row[2].ToString());
-                v_us_gs_cl.dcTHANG = CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim());
-                v_us_gs_cl.dcNAM = CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim());
-                v_us_gs_cl.datNGAY_LAP = DateTime.Now.Date;
-                v_us_gs_cl.strDA_XOA = "N";
+                v_us_hs_cl.dcID_NHAN_VIEN = v_id_nv;
+                v_us_hs_cl.dcHE_SO_K = CIPConvert.ToDecimal(v_data_row[2].ToString());
+                v_us_hs_cl.dcTHANG = CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim());
+                v_us_hs_cl.dcNAM = CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim());
+                v_us_hs_cl.datNGAY_LAP = DateTime.Now.Date;
+                v_us_hs_cl.strDA_XOA = "N";
 
                 try
                 {
                     delete_gd_da_co_trong_thang_cua_nhan_vien(v_us_dc, v_data_row, v_id_nv);
-                    v_us_gs_cl.BeginTransaction();
-                    v_us_gs_cl.Insert();
-                    v_us_gs_cl.CommitTransaction();
+                    v_us_hs_cl.BeginTransaction();
+                    v_us_hs_cl.Insert();
+                    v_us_hs_cl.CommitTransaction();
                     v_count++;
                 }
                 catch (Exception)
@@ -135,7 +135,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             //cmd
             m_cmd_mo_file_mau.Click += m_cmd_mo_file_mau_Click;
             m_cmd_chon_file.Click += m_cmd_chon_file_Click;
-            m_cmd_nhap_cham_cong.Click += m_cmd_insert_Click;
+            m_cmd_nhap_cham_cong.Click += m_cmd_nhap_cham_cong_Click;
         }
 
         void f380_thay_doi_he_so_chat_luong_Load(object sender, EventArgs e)
@@ -174,7 +174,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        void m_cmd_insert_Click(object sender, EventArgs e)
+        void m_cmd_nhap_cham_cong_Click(object sender, EventArgs e)
         {
             try
             {

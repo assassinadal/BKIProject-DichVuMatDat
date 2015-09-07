@@ -253,6 +253,16 @@ namespace BKI_DichVuMatDat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1441439378_06 {
+            get {
+                object obj = ResourceManager.GetObject("1441439378_06", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Aha_Soft_Security_Secrecy {
             get {
                 object obj = ResourceManager.GetObject("Aha-Soft-Security-Secrecy", resourceCulture);

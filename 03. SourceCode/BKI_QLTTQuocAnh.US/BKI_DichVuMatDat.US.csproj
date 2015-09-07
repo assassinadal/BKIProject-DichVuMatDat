@@ -73,6 +73,7 @@
     <Compile Include="US_GD_NHAN_VIEN_PHU_CAP.cs" />
     <Compile Include="US_GD_PHU_THUOC.cs" />
     <Compile Include="US_GD_QUYET_DINH.cs" />
+    <Compile Include="US_GD_THU_NHAP_KHAC.cs" />
     <Compile Include="US_HT_FORM.cs" />
     <Compile Include="US_HT_NHOM_NGUOI_SU_DUNG.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_CHO_NHOM.cs" />

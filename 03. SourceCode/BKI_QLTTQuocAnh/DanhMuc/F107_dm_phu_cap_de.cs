@@ -40,7 +40,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_lbl_header.Text = "SỬA LOẠI PHỤ CẤP";
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_id_dm_phu_cap_4_update = ip_us.dcID;
-            m_txt_loai_phu_cap.Text = ip_us.strTEN;
+            //m_txt_loai_phu_cap.Text = ip_us.strTEN;
             m_txt_doi_tuong_huong.Text = ip_us.strDOI_TUONG_HUONG_PHU_CAP;
             m_txt_ti_le.Text = ip_us.dcTI_LE.ToString();
             this.CenterToScreen();
@@ -89,7 +89,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         //save data
         private void form_2_us_obj(US_DM_PHU_CAP ip_us)
         {
-            ip_us.strTEN = m_txt_loai_phu_cap.Text.Trim();
+            //ip_us.strTEN = m_txt_loai_phu_cap.Text.Trim();
             ip_us.strDOI_TUONG_HUONG_PHU_CAP = m_txt_doi_tuong_huong.Text.Trim();
             ip_us.dcTI_LE = CIPConvert.ToDecimal(m_txt_ti_le.Text.Trim());
         }

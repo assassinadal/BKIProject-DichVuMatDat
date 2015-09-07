@@ -76,8 +76,9 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_quan_ly_thu_nhap_khac = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_hs_chat_luong_by_nv = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -95,7 +96,6 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.m_cmd_hs_chat_luong_by_nv = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -153,7 +153,7 @@
             this.barButtonItem2,
             this.barButtonItem3,
             this.barButtonItem4,
-            this.barButtonItem5,
+            this.m_cmd_quan_ly_thu_nhap_khac,
             this.barButtonItem6,
             this.m_cmd_hs_chat_luong_by_nv});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
@@ -577,13 +577,13 @@
             this.barButtonItem4.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.LargeGlyph")));
             this.barButtonItem4.Name = "barButtonItem4";
             // 
-            // barButtonItem5
+            // m_cmd_quan_ly_thu_nhap_khac
             // 
-            this.barButtonItem5.Caption = "Thu nhập khác";
-            this.barButtonItem5.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.Glyph")));
-            this.barButtonItem5.Id = 58;
-            this.barButtonItem5.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.LargeGlyph")));
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.m_cmd_quan_ly_thu_nhap_khac.Caption = "Thu nhập khác";
+            this.m_cmd_quan_ly_thu_nhap_khac.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_quan_ly_thu_nhap_khac.Glyph")));
+            this.m_cmd_quan_ly_thu_nhap_khac.Id = 58;
+            this.m_cmd_quan_ly_thu_nhap_khac.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_quan_ly_thu_nhap_khac.LargeGlyph")));
+            this.m_cmd_quan_ly_thu_nhap_khac.Name = "m_cmd_quan_ly_thu_nhap_khac";
             // 
             // barButtonItem6
             // 
@@ -592,6 +592,16 @@
             this.barButtonItem6.Id = 59;
             this.barButtonItem6.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.LargeGlyph")));
             this.barButtonItem6.Name = "barButtonItem6";
+            // 
+            // m_cmd_hs_chat_luong_by_nv
+            // 
+            this.m_cmd_hs_chat_luong_by_nv.Caption = "Hệ số chất lượng";
+            this.m_cmd_hs_chat_luong_by_nv.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_hs_chat_luong_by_nv.Glyph")));
+            this.m_cmd_hs_chat_luong_by_nv.Id = 60;
+            this.m_cmd_hs_chat_luong_by_nv.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_hs_chat_luong_by_nv.LargeGlyph")));
+            this.m_cmd_hs_chat_luong_by_nv.Name = "m_cmd_hs_chat_luong_by_nv";
+            this.m_cmd_hs_chat_luong_by_nv.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // ribbonPage1
             // 
@@ -689,7 +699,7 @@
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_quan_ly_thu_nhap_khac);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Lương khác";
             // 
@@ -722,16 +732,6 @@
             // MdiManager
             // 
             this.MdiManager.MdiParent = this;
-            // 
-            // m_cmd_hs_chat_luong_by_nv
-            // 
-            this.m_cmd_hs_chat_luong_by_nv.Caption = "Hệ số chất lượng";
-            this.m_cmd_hs_chat_luong_by_nv.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_hs_chat_luong_by_nv.Glyph")));
-            this.m_cmd_hs_chat_luong_by_nv.Id = 60;
-            this.m_cmd_hs_chat_luong_by_nv.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_hs_chat_luong_by_nv.LargeGlyph")));
-            this.m_cmd_hs_chat_luong_by_nv.Name = "m_cmd_hs_chat_luong_by_nv";
-            this.m_cmd_hs_chat_luong_by_nv.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // f388_main
             // 
@@ -818,7 +818,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_quan_ly_thu_nhap_khac;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.BarButtonItem m_cmd_hs_chat_luong_by_nv;

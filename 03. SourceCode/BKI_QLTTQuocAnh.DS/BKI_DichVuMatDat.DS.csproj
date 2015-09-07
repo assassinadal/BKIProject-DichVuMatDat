@@ -159,6 +159,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_QUYET_DINH.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_THU_NHAP_KHAC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_THU_NHAP_KHAC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_FORM.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -497,6 +502,17 @@
     </None>
     <None Include="DS_GD_QUYET_DINH.xss">
       <DependentUpon>DS_GD_QUYET_DINH.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_THU_NHAP_KHAC.xsc">
+      <DependentUpon>DS_GD_THU_NHAP_KHAC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_THU_NHAP_KHAC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_THU_NHAP_KHAC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_THU_NHAP_KHAC.xss">
+      <DependentUpon>DS_GD_THU_NHAP_KHAC.xsd</DependentUpon>
     </None>
     <None Include="DS_HT_FORM.xsc">
       <DependentUpon>DS_HT_FORM.xsd</DependentUpon>

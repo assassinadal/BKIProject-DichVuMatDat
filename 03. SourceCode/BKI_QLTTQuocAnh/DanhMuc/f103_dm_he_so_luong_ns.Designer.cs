@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F103_dm_he_so_luong_ns));
             this.m_grc_dm_he_so_luong_ns = new DevExpress.XtraGrid.GridControl();
             this.m_grv_dm_he_so_luong_ns = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -43,7 +44,7 @@
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_he_so_luong_ns)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_he_so_luong_ns)).BeginInit();
@@ -74,6 +75,9 @@
             this.c_loai_lao_dong});
             this.m_grv_dm_he_so_luong_ns.GridControl = this.m_grc_dm_he_so_luong_ns;
             this.m_grv_dm_he_so_luong_ns.Name = "m_grv_dm_he_so_luong_ns";
+            this.m_grv_dm_he_so_luong_ns.OptionsFind.AllowFindPanel = false;
+            this.m_grv_dm_he_so_luong_ns.OptionsFind.AlwaysVisible = true;
+            this.m_grv_dm_he_so_luong_ns.OptionsView.ShowFooter = true;
             // 
             // ID
             // 
@@ -100,6 +104,9 @@
             // 
             // c_ma_luong_ns
             // 
+            this.c_ma_luong_ns.AppearanceCell.Options.UseTextOptions = true;
+            this.c_ma_luong_ns.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ma_luong_ns.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_ma_luong_ns.AppearanceHeader.Options.UseTextOptions = true;
             this.c_ma_luong_ns.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.c_ma_luong_ns.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -108,10 +115,13 @@
             this.c_ma_luong_ns.Name = "c_ma_luong_ns";
             this.c_ma_luong_ns.Visible = true;
             this.c_ma_luong_ns.VisibleIndex = 1;
-            this.c_ma_luong_ns.Width = 176;
+            this.c_ma_luong_ns.Width = 120;
             // 
             // c_muc_luong_ns
             // 
+            this.c_muc_luong_ns.AppearanceCell.Options.UseTextOptions = true;
+            this.c_muc_luong_ns.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_muc_luong_ns.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_muc_luong_ns.AppearanceHeader.Options.UseTextOptions = true;
             this.c_muc_luong_ns.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.c_muc_luong_ns.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -120,10 +130,13 @@
             this.c_muc_luong_ns.Name = "c_muc_luong_ns";
             this.c_muc_luong_ns.Visible = true;
             this.c_muc_luong_ns.VisibleIndex = 2;
-            this.c_muc_luong_ns.Width = 176;
+            this.c_muc_luong_ns.Width = 120;
             // 
             // c_he_so
             // 
+            this.c_he_so.AppearanceCell.Options.UseTextOptions = true;
+            this.c_he_so.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_he_so.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_he_so.AppearanceHeader.Options.UseTextOptions = true;
             this.c_he_so.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.c_he_so.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -132,7 +145,7 @@
             this.c_he_so.Name = "c_he_so";
             this.c_he_so.Visible = true;
             this.c_he_so.VisibleIndex = 3;
-            this.c_he_so.Width = 176;
+            this.c_he_so.Width = 150;
             // 
             // c_loai_lao_dong
             // 
@@ -144,7 +157,7 @@
             this.c_loai_lao_dong.Name = "c_loai_lao_dong";
             this.c_loai_lao_dong.Visible = true;
             this.c_loai_lao_dong.VisibleIndex = 4;
-            this.c_loai_lao_dong.Width = 181;
+            this.c_loai_lao_dong.Width = 319;
             // 
             // m_lbl_header
             // 
@@ -155,7 +168,7 @@
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(765, 44);
             this.m_lbl_header.TabIndex = 1;
-            this.m_lbl_header.Text = "HỆ SỐ LƯƠNG NĂNG SUẤT";
+            this.m_lbl_header.Text = "DANH MỤC HỆ SỐ LƯƠNG NĂNG SUẤT";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1

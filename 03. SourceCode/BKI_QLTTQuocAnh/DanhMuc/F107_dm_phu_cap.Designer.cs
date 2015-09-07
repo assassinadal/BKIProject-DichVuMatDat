@@ -111,6 +111,9 @@
             // 
             // c_ten_phu_cap
             // 
+            this.c_ten_phu_cap.AppearanceCell.Options.UseTextOptions = true;
+            this.c_ten_phu_cap.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ten_phu_cap.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_ten_phu_cap.AppearanceHeader.Options.UseTextOptions = true;
             this.c_ten_phu_cap.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.c_ten_phu_cap.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -123,6 +126,9 @@
             // 
             // c_ti_le
             // 
+            this.c_ti_le.AppearanceCell.Options.UseTextOptions = true;
+            this.c_ti_le.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ti_le.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_ti_le.AppearanceHeader.Options.UseTextOptions = true;
             this.c_ti_le.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.c_ti_le.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -142,7 +148,7 @@
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(695, 44);
             this.m_lbl_header.TabIndex = 1;
-            this.m_lbl_header.Text = "CHẾ ĐỘ PHỤ CẤP NHÂN VIÊN";
+            this.m_lbl_header.Text = "DANH MỤC CHẾ ĐỘ PHỤ CẤP NHÂN VIÊN";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1

@@ -102,6 +102,9 @@
             // 
             // c_ma_lcd
             // 
+            this.c_ma_lcd.AppearanceCell.Options.UseTextOptions = true;
+            this.c_ma_lcd.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ma_lcd.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_ma_lcd.AppearanceHeader.Options.UseTextOptions = true;
             this.c_ma_lcd.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.c_ma_lcd.Caption = "Mã Lương CĐ";
@@ -113,6 +116,9 @@
             // 
             // c_muc_lcd
             // 
+            this.c_muc_lcd.AppearanceCell.Options.UseTextOptions = true;
+            this.c_muc_lcd.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_muc_lcd.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_muc_lcd.AppearanceHeader.Options.UseTextOptions = true;
             this.c_muc_lcd.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.c_muc_lcd.Caption = "Mức Lương CĐ";
@@ -124,9 +130,14 @@
             // 
             // c_so_tien
             // 
+            this.c_so_tien.AppearanceCell.Options.UseTextOptions = true;
+            this.c_so_tien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_so_tien.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_so_tien.AppearanceHeader.Options.UseTextOptions = true;
             this.c_so_tien.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.c_so_tien.Caption = "Số tiền";
+            this.c_so_tien.DisplayFormat.FormatString = "{0:#,##0}";
+            this.c_so_tien.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.c_so_tien.FieldName = "SO_TIEN";
             this.c_so_tien.Name = "c_so_tien";
             this.c_so_tien.Visible = true;
@@ -151,7 +162,7 @@
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(730, 44);
             this.m_lbl_header.TabIndex = 0;
-            this.m_lbl_header.Text = "LƯƠNG CHẾ ĐỘ NHÂN VIÊN";
+            this.m_lbl_header.Text = "DANH MỤC LƯƠNG CHẾ ĐỘ NHÂN VIÊN";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel2

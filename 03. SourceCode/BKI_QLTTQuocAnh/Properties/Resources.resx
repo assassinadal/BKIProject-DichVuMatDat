@@ -154,9 +154,6 @@
   <data name="Ampeross-Qetto-2-Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ampeross-Qetto-2-Settings.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1425912499_173055" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425912499_173055.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icons8-Ios7-Household-Room" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icons8-Ios7-Household-Room.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -165,6 +162,9 @@
   </data>
   <data name="Designbolts-Monsters-University-Monsters-Character-Young-Mikes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Designbolts-Monsters-University-Monsters-Character-Young-Mikes1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1441439378_06" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1441439378_06.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Designbolts-Monsters-University-Monsters-Character-Young-Mikes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Designbolts-Monsters-University-Monsters-Character-Young-Mikes.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,14 +184,17 @@
   <data name="Hopstarter-Sleek-Xp-Basic-Close-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hopstarter-Sleek-Xp-Basic-Close-2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1425904521_4387881" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425904521_4387881.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="1425904361_23923" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425904361_23923.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1425905592_196740" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425905592_196740.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425905213_379332" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425905213_379332.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425905897_25350" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425905897_25350.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Custom-Icon-Design-Pretty-Office-2-Man" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Custom-Icon-Design-Pretty-Office-2-Man.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,8 +208,8 @@
   <data name="1425905405_243979" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425905405_243979.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1425905897_25350" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425905897_25350.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1425904521_4387881" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425904521_4387881.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1425906136_315167" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425906136_315167.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,10 +217,10 @@
   <data name="1425904406_289616" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425904406_289616.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1425905213_379332" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425905213_379332.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1425912499_173055" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425912499_173055.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1441439378_06" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1441439378_06.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="man-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\man-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

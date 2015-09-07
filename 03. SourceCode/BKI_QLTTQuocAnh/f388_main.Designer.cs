@@ -96,6 +96,7 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.m_cmd_dm_nhan_vien = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -155,9 +156,10 @@
             this.m_cmd_quan_ly_thu_nhap_khac_xls,
             this.m_cmd_quan_ly_thu_nhap_khac,
             this.barButtonItem6,
-            this.m_cmd_hs_chat_luong_by_nv});
+            this.m_cmd_hs_chat_luong_by_nv,
+            this.m_cmd_dm_nhan_vien});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 61;
+            this.ribbon.MaxItemId = 62;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -645,6 +647,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_phu_cap);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_danh_muc_don_vi);
             this.ribbonPageGroup3.ItemLinks.Add(this.c_cmd_danh_muc_bao_hiem);
+            this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_nhan_vien);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // ribbonPage3
@@ -731,6 +734,15 @@
             // MdiManager
             // 
             this.MdiManager.MdiParent = this;
+            // 
+            // m_cmd_dm_nhan_vien
+            // 
+            this.m_cmd_dm_nhan_vien.Caption = "Nhân viên";
+            this.m_cmd_dm_nhan_vien.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dm_nhan_vien.Glyph")));
+            this.m_cmd_dm_nhan_vien.Id = 61;
+            this.m_cmd_dm_nhan_vien.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dm_nhan_vien.LargeGlyph")));
+            this.m_cmd_dm_nhan_vien.Name = "m_cmd_dm_nhan_vien";
+            this.m_cmd_dm_nhan_vien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_dm_nhan_vien_ItemClick);
             // 
             // f388_main
             // 
@@ -821,5 +833,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.BarButtonItem m_cmd_hs_chat_luong_by_nv;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_dm_nhan_vien;
     }
 }

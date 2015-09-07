@@ -504,6 +504,21 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void m_cmd_dm_nhan_vien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                F150_dm_nhan_vien v_frm = new F150_dm_nhan_vien();
+                if (IsExistFormName(v_frm)) return;
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)
         //{
         //    try

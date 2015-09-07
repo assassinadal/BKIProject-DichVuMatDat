@@ -68,6 +68,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.m_cmd_lap_hop_dong = new DevExpress.XtraEditors.SimpleButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.m_grc_lap_hd = new DevExpress.XtraGrid.GridControl();
@@ -92,7 +93,6 @@
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_cmd_lap_hop_dong = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -499,6 +499,17 @@
             this.panel3.Size = new System.Drawing.Size(1196, 44);
             this.panel3.TabIndex = 2;
             // 
+            // m_cmd_lap_hop_dong
+            // 
+            this.m_cmd_lap_hop_dong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_lap_hop_dong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_lap_hop_dong.Image")));
+            this.m_cmd_lap_hop_dong.Location = new System.Drawing.Point(0, 0);
+            this.m_cmd_lap_hop_dong.Name = "m_cmd_lap_hop_dong";
+            this.m_cmd_lap_hop_dong.Size = new System.Drawing.Size(116, 44);
+            this.m_cmd_lap_hop_dong.TabIndex = 7;
+            this.m_cmd_lap_hop_dong.Text = "&Lập hợp đồng";
+            this.m_cmd_lap_hop_dong.Visible = false;
+            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -539,10 +550,11 @@
             // m_grc_lap_hd
             // 
             this.m_grc_lap_hd.Cursor = System.Windows.Forms.Cursors.Default;
+            this.m_grc_lap_hd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_grc_lap_hd.Location = new System.Drawing.Point(0, 0);
             this.m_grc_lap_hd.MainView = this.m_grv_lap_hd;
             this.m_grc_lap_hd.Name = "m_grc_lap_hd";
-            this.m_grc_lap_hd.Size = new System.Drawing.Size(1092, 163);
+            this.m_grc_lap_hd.Size = new System.Drawing.Size(1196, 163);
             this.m_grc_lap_hd.TabIndex = 0;
             this.m_grc_lap_hd.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_lap_hd});
@@ -813,17 +825,6 @@
             this.ImageList.Images.SetKeyName(19, "");
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
-            // 
-            // m_cmd_lap_hop_dong
-            // 
-            this.m_cmd_lap_hop_dong.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_lap_hop_dong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_lap_hop_dong.Image")));
-            this.m_cmd_lap_hop_dong.Location = new System.Drawing.Point(0, 0);
-            this.m_cmd_lap_hop_dong.Name = "m_cmd_lap_hop_dong";
-            this.m_cmd_lap_hop_dong.Size = new System.Drawing.Size(116, 44);
-            this.m_cmd_lap_hop_dong.TabIndex = 7;
-            this.m_cmd_lap_hop_dong.Text = "&Lập hợp đồng";
-            this.m_cmd_lap_hop_dong.Visible = false;
             // 
             // f320_lap_hop_dong
             // 

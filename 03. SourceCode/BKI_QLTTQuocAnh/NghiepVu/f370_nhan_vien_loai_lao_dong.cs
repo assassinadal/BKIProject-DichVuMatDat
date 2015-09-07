@@ -153,7 +153,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        private void m_cmd_edit_Click(object sender, EventArgs e)
+        private void m_cmd_update_Click(object sender, EventArgs e)
         {
             try
             {
@@ -179,7 +179,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 DataRow v_dr = m_grv_v_gd_loai_lao_dong.GetDataRow(m_grv_v_gd_loai_lao_dong.FocusedRowHandle);
                 //Lay ID cua dong du lieu tren
                 decimal v_id = CIPConvert.ToDecimal(v_dr[GD_LOAI_LAO_DONG.ID]);
-                
+
                 US_GD_LOAI_LAO_DONG v_us = new US_GD_LOAI_LAO_DONG(v_id);
                 if (XtraMessageBox.Show("Bạn có chắc chắn muốn XÓA nhân viên - loại lao động này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {

@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f370_nhan_vien_loai_lao_dong));
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ImageList = new System.Windows.Forms.ImageList();
+            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.m_grc_v_gd_loai_lao_dong = new DevExpress.XtraGrid.GridControl();
             this.m_grv_v_gd_loai_lao_dong = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -47,10 +52,6 @@
             this.c_ten_loai_lao_dong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_ngay_bat_dau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_ngay_ket_thuc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -90,6 +91,50 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(782, 38);
             this.panel2.TabIndex = 1;
+            // 
+            // m_cmd_insert
+            // 
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
+            this.m_cmd_insert.Location = new System.Drawing.Point(318, 0);
+            this.m_cmd_insert.Name = "m_cmd_insert";
+            this.m_cmd_insert.Size = new System.Drawing.Size(116, 38);
+            this.m_cmd_insert.TabIndex = 22;
+            this.m_cmd_insert.Text = "&Thêm";
+            this.m_cmd_insert.Click += new System.EventHandler(this.m_cmd_insert_Click);
+            // 
+            // m_cmd_update
+            // 
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
+            this.m_cmd_update.Location = new System.Drawing.Point(434, 0);
+            this.m_cmd_update.Name = "m_cmd_update";
+            this.m_cmd_update.Size = new System.Drawing.Size(116, 38);
+            this.m_cmd_update.TabIndex = 21;
+            this.m_cmd_update.Text = "&Sửa";
+            this.m_cmd_update.Click += new System.EventHandler(this.m_cmd_update_Click);
+            // 
+            // m_cmd_delete
+            // 
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
+            this.m_cmd_delete.Location = new System.Drawing.Point(550, 0);
+            this.m_cmd_delete.Name = "m_cmd_delete";
+            this.m_cmd_delete.Size = new System.Drawing.Size(116, 38);
+            this.m_cmd_delete.TabIndex = 20;
+            this.m_cmd_delete.Text = "&Xóa";
+            this.m_cmd_delete.Click += new System.EventHandler(this.m_cmd_delete_Click);
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_xuat_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_excel.Image")));
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(666, 0);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 38);
+            this.m_cmd_xuat_excel.TabIndex = 19;
+            this.m_cmd_xuat_excel.Text = "&Xuất Excel";
+            this.m_cmd_xuat_excel.Visible = false;
             // 
             // ImageList
             // 
@@ -161,129 +206,150 @@
             // 
             // c_ID
             // 
+            this.c_ID.AppearanceHeader.Options.UseTextOptions = true;
+            this.c_ID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ID.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_ID.Caption = "ID";
             this.c_ID.FieldName = "ID";
             this.c_ID.Name = "c_ID";
+            this.c_ID.OptionsColumn.AllowEdit = false;
             // 
             // c_stt
             // 
+            this.c_stt.AppearanceCell.Options.UseTextOptions = true;
+            this.c_stt.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_stt.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.c_stt.AppearanceHeader.Options.UseTextOptions = true;
+            this.c_stt.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_stt.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_stt.Caption = "STT";
             this.c_stt.FieldName = "STT";
             this.c_stt.Name = "c_stt";
+            this.c_stt.OptionsColumn.AllowEdit = false;
             this.c_stt.Visible = true;
             this.c_stt.VisibleIndex = 0;
-            this.c_stt.Width = 38;
+            this.c_stt.Width = 40;
             // 
             // c_ID_NHAN_VIEN
             // 
+            this.c_ID_NHAN_VIEN.AppearanceCell.Options.UseTextOptions = true;
+            this.c_ID_NHAN_VIEN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ID_NHAN_VIEN.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.c_ID_NHAN_VIEN.AppearanceHeader.Options.UseTextOptions = true;
+            this.c_ID_NHAN_VIEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ID_NHAN_VIEN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_ID_NHAN_VIEN.Caption = "ID Nhân viên";
             this.c_ID_NHAN_VIEN.FieldName = "ID_NHAN_VIEN";
             this.c_ID_NHAN_VIEN.Name = "c_ID_NHAN_VIEN";
+            this.c_ID_NHAN_VIEN.OptionsColumn.AllowEdit = false;
             this.c_ID_NHAN_VIEN.Width = 149;
             // 
             // c_ma_nv
             // 
+            this.c_ma_nv.AppearanceCell.Options.UseTextOptions = true;
+            this.c_ma_nv.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ma_nv.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.c_ma_nv.AppearanceHeader.Options.UseTextOptions = true;
+            this.c_ma_nv.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ma_nv.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_ma_nv.Caption = "Mã NV";
             this.c_ma_nv.FieldName = "MA_NV";
             this.c_ma_nv.Name = "c_ma_nv";
+            this.c_ma_nv.OptionsColumn.AllowEdit = false;
             this.c_ma_nv.Visible = true;
             this.c_ma_nv.VisibleIndex = 1;
-            this.c_ma_nv.Width = 149;
+            this.c_ma_nv.Width = 120;
             // 
             // c_ho_dem
             // 
+            this.c_ho_dem.AppearanceHeader.Options.UseTextOptions = true;
+            this.c_ho_dem.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ho_dem.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_ho_dem.Caption = "Họ đệm";
             this.c_ho_dem.FieldName = "HO_DEM";
             this.c_ho_dem.Name = "c_ho_dem";
+            this.c_ho_dem.OptionsColumn.AllowEdit = false;
             this.c_ho_dem.Visible = true;
             this.c_ho_dem.VisibleIndex = 2;
-            this.c_ho_dem.Width = 149;
+            this.c_ho_dem.Width = 150;
             // 
             // c_ten
             // 
+            this.c_ten.AppearanceHeader.Options.UseTextOptions = true;
+            this.c_ten.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ten.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_ten.Caption = "Tên";
             this.c_ten.FieldName = "TEN";
             this.c_ten.Name = "c_ten";
+            this.c_ten.OptionsColumn.AllowEdit = false;
             this.c_ten.Visible = true;
             this.c_ten.VisibleIndex = 3;
             this.c_ten.Width = 150;
             // 
             // c_ho_ten
             // 
+            this.c_ho_ten.AppearanceHeader.Options.UseTextOptions = true;
+            this.c_ho_ten.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ho_ten.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_ho_ten.Caption = "Họ tên";
             this.c_ho_ten.FieldName = "HO_TEN";
             this.c_ho_ten.Name = "c_ho_ten";
+            this.c_ho_ten.OptionsColumn.AllowEdit = false;
             // 
             // c_id_loai_lao_dong
             // 
+            this.c_id_loai_lao_dong.AppearanceHeader.Options.UseTextOptions = true;
+            this.c_id_loai_lao_dong.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_id_loai_lao_dong.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_id_loai_lao_dong.Caption = "ID Loại lao động";
             this.c_id_loai_lao_dong.FieldName = "ID_LOAI_LAO_DONG";
             this.c_id_loai_lao_dong.Name = "c_id_loai_lao_dong";
+            this.c_id_loai_lao_dong.OptionsColumn.AllowEdit = false;
             // 
             // c_ten_loai_lao_dong
             // 
+            this.c_ten_loai_lao_dong.AppearanceHeader.Options.UseTextOptions = true;
+            this.c_ten_loai_lao_dong.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ten_loai_lao_dong.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_ten_loai_lao_dong.Caption = "Tên loại lao động";
             this.c_ten_loai_lao_dong.FieldName = "TEN_LOAI_LAO_DONG";
             this.c_ten_loai_lao_dong.Name = "c_ten_loai_lao_dong";
+            this.c_ten_loai_lao_dong.OptionsColumn.AllowEdit = false;
             this.c_ten_loai_lao_dong.Visible = true;
             this.c_ten_loai_lao_dong.VisibleIndex = 4;
+            this.c_ten_loai_lao_dong.Width = 98;
             // 
             // c_ngay_bat_dau
             // 
+            this.c_ngay_bat_dau.AppearanceCell.Options.UseTextOptions = true;
+            this.c_ngay_bat_dau.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ngay_bat_dau.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.c_ngay_bat_dau.AppearanceHeader.Options.UseTextOptions = true;
+            this.c_ngay_bat_dau.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ngay_bat_dau.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_ngay_bat_dau.Caption = "Ngày bắt đầu";
             this.c_ngay_bat_dau.FieldName = "NGAY_BAT_DAU";
             this.c_ngay_bat_dau.Name = "c_ngay_bat_dau";
+            this.c_ngay_bat_dau.OptionsColumn.AllowEdit = false;
             this.c_ngay_bat_dau.Visible = true;
             this.c_ngay_bat_dau.VisibleIndex = 5;
+            this.c_ngay_bat_dau.Width = 98;
             // 
             // c_ngay_ket_thuc
             // 
+            this.c_ngay_ket_thuc.AppearanceCell.Options.UseTextOptions = true;
+            this.c_ngay_ket_thuc.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ngay_ket_thuc.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.c_ngay_ket_thuc.AppearanceHeader.Options.UseTextOptions = true;
+            this.c_ngay_ket_thuc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.c_ngay_ket_thuc.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_ngay_ket_thuc.Caption = "Ngày kết thúc";
             this.c_ngay_ket_thuc.FieldName = "NGAY_KET_THUC";
             this.c_ngay_ket_thuc.Name = "c_ngay_ket_thuc";
+            this.c_ngay_ket_thuc.OptionsColumn.AllowEdit = false;
             this.c_ngay_ket_thuc.Visible = true;
             this.c_ngay_ket_thuc.VisibleIndex = 6;
-            // 
-            // m_cmd_insert
-            // 
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
-            this.m_cmd_insert.Location = new System.Drawing.Point(318, 0);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(116, 38);
-            this.m_cmd_insert.TabIndex = 22;
-            this.m_cmd_insert.Text = "&Thêm";
-            // 
-            // m_cmd_update
-            // 
-            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
-            this.m_cmd_update.Location = new System.Drawing.Point(434, 0);
-            this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(116, 38);
-            this.m_cmd_update.TabIndex = 21;
-            this.m_cmd_update.Text = "&Sửa";
-            // 
-            // m_cmd_delete
-            // 
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
-            this.m_cmd_delete.Location = new System.Drawing.Point(550, 0);
-            this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(116, 38);
-            this.m_cmd_delete.TabIndex = 20;
-            this.m_cmd_delete.Text = "&Xóa";
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_xuat_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_excel.Image")));
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(666, 0);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 38);
-            this.m_cmd_xuat_excel.TabIndex = 19;
-            this.m_cmd_xuat_excel.Text = "&Xuất Excel";
-            this.m_cmd_xuat_excel.Visible = false;
+            this.c_ngay_ket_thuc.Width = 108;
             // 
             // f370_nhan_vien_loai_lao_dong
             // 

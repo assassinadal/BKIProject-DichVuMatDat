@@ -35,14 +35,20 @@ namespace BKI_DichVuMatDat.NghiepVu
         public void DisplayForInsert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.Text = "F371 - Thêm nhân viên loại lao động";
+            m_lbl_header.Text = "THÊM NHÂN VIÊN LOẠI LAO ĐỘNG";
+            this.CenterToScreen();
             this.ShowDialog();
         }
 
         public void DisplayForUpdate(US_GD_LOAI_LAO_DONG v_us)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            this.Text = "F371 - Sửa nhân viên loại lao động";
+            m_lbl_header.Text = "SỬA NHÂN VIÊN LOẠI LAO ĐỘNG";
             m_us = v_us;
             us_2_form(m_us);
+            this.CenterToScreen();
             this.ShowDialog();
         }
         #endregion
@@ -182,16 +188,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        private void m_cmd_exit_Click(object sender, EventArgs e)
+        private void us_2_form(US_GD_LOAI_LAO_DONG m_us)
         {
-            try
-            {
-                this.Close();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
+            m_sle_chon_nhan_vien.EditValue = m_us.dcID_NHAN_VIEN;
+            m_sle_chon_loai_lao_dong.EditValue = m_us.dcID_LOAI_LAO_DONG;
+            m_dat_ngay_bat_dau.Value = m_us.datNGAY_BAT_DAU;
+            m_dat_ngay_ket_thuc.Value = m_us.datNGAY_KET_THUC;
         }
 
         private void m_cmd_save_Click(object sender, EventArgs e)
@@ -228,12 +230,16 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        private void us_2_form(US_GD_LOAI_LAO_DONG m_us)
+        private void m_cmd_exit_Click(object sender, EventArgs e)
         {
-            m_sle_chon_nhan_vien.EditValue = m_us.dcID_NHAN_VIEN;
-            m_sle_chon_loai_lao_dong.EditValue = m_us.dcID_LOAI_LAO_DONG;
-            m_dat_ngay_bat_dau.Value = m_us.datNGAY_BAT_DAU;
-            m_dat_ngay_ket_thuc.Value = m_us.datNGAY_KET_THUC;
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
     }

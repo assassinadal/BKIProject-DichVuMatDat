@@ -429,6 +429,18 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
+        private void display_m_cmd_huy_kiem_nhiem_yn()
+        {
+            if (CIPConvert.ToDecimal(m_sle_chon_loai_cong_tac.EditValue.ToString()) == CONST_ID_LOAI_CONG_TAC.KIEM_NHIEM)
+            {
+                m_cmd_huy_kiem_nhiem.Visible = true;
+            }
+            else
+            {
+                m_cmd_huy_kiem_nhiem.Visible = false;
+            }
+        }
+
         private void m_cmd_insert_Click(object sender, EventArgs e)
         {
             try
@@ -443,18 +455,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void display_m_cmd_huy_kiem_nhiem_yn()
-        {
-            if (CIPConvert.ToDecimal(m_sle_chon_loai_cong_tac.EditValue.ToString()) == CONST_ID_LOAI_CONG_TAC.KIEM_NHIEM)
-            {
-                m_cmd_huy_kiem_nhiem.Visible = true;
-            }
-            else
-            {
-                m_cmd_huy_kiem_nhiem.Visible = false;
             }
         }
 

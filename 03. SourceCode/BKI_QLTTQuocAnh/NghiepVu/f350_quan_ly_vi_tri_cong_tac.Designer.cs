@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f350_quan_ly_vi_tri_cong_tac));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -80,7 +81,8 @@
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.ImageList = new System.Windows.Forms.ImageList();
+            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc_v_gd_cong_tac = new DevExpress.XtraGrid.GridControl();
             this.m_grv_v_gd_cong_tac = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -101,7 +103,6 @@
             this.c_da_xoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_huy_kiem_nhiem = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -614,6 +615,16 @@
             this.panelControl2.Size = new System.Drawing.Size(839, 40);
             this.panelControl2.TabIndex = 2;
             // 
+            // m_cmd_insert
+            // 
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
+            this.m_cmd_insert.Location = new System.Drawing.Point(2, 2);
+            this.m_cmd_insert.Name = "m_cmd_insert";
+            this.m_cmd_insert.Size = new System.Drawing.Size(116, 36);
+            this.m_cmd_insert.TabIndex = 15;
+            this.m_cmd_insert.Text = "&Thêm";
+            // 
             // ImageList
             // 
             this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
@@ -701,12 +712,16 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn1.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn1.Caption = "STT";
             this.gridColumn1.FieldName = "STT";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 38;
@@ -719,6 +734,7 @@
             this.gridColumn2.Caption = "Mã NV";
             this.gridColumn2.FieldName = "MA_NV";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             // 
@@ -730,6 +746,7 @@
             this.gridColumn3.Caption = "Họ tên";
             this.gridColumn3.FieldName = "HO_TEN";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             // 
@@ -741,6 +758,7 @@
             this.gridColumn4.Caption = "Mã quyết định";
             this.gridColumn4.FieldName = "MA_QUYET_DINH";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
             // 
@@ -752,6 +770,7 @@
             this.gridColumn5.Caption = "Quyết định";
             this.gridColumn5.FieldName = "TEN_LOAI_QD";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
             // 
@@ -763,6 +782,7 @@
             this.gridColumn6.Caption = "Mã đơn vị";
             this.gridColumn6.FieldName = "MA_DON_VI";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
             // 
@@ -774,6 +794,7 @@
             this.gridColumn7.Caption = "Đơn vị";
             this.gridColumn7.FieldName = "TEN_DON_VI";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 6;
             // 
@@ -785,6 +806,7 @@
             this.gridColumn8.Caption = "Mã vị trí";
             this.gridColumn8.FieldName = "MA_VI_TRI";
             this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 7;
             // 
@@ -796,6 +818,7 @@
             this.gridColumn9.Caption = "Vị trí";
             this.gridColumn9.FieldName = "TEN_VI_TRI";
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowEdit = false;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 8;
             // 
@@ -807,6 +830,7 @@
             this.gridColumn10.Caption = "Mã loại công tác";
             this.gridColumn10.FieldName = "MA_LOAI_CONG_TAC";
             this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 9;
             // 
@@ -818,6 +842,7 @@
             this.gridColumn11.Caption = "Tên loại công tác";
             this.gridColumn11.FieldName = "TEN_LOAI_CONG_TAC";
             this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.OptionsColumn.AllowEdit = false;
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 10;
             // 
@@ -832,6 +857,7 @@
             this.c_ngay_bat_dau.Caption = "Ngày bắt đầu";
             this.c_ngay_bat_dau.FieldName = "NGAY_BAT_DAU";
             this.c_ngay_bat_dau.Name = "c_ngay_bat_dau";
+            this.c_ngay_bat_dau.OptionsColumn.AllowEdit = false;
             this.c_ngay_bat_dau.Visible = true;
             this.c_ngay_bat_dau.VisibleIndex = 11;
             // 
@@ -846,6 +872,7 @@
             this.c_da_xoa.Caption = "Đã xóa (Y/N?)";
             this.c_da_xoa.FieldName = "DA_XOA";
             this.c_da_xoa.Name = "c_da_xoa";
+            this.c_da_xoa.OptionsColumn.AllowEdit = false;
             this.c_da_xoa.Visible = true;
             this.c_da_xoa.VisibleIndex = 12;
             // 
@@ -874,16 +901,6 @@
             this.m_cmd_huy_kiem_nhiem.Text = "&Hủy kiêm nhiệm";
             this.m_cmd_huy_kiem_nhiem.Visible = false;
             this.m_cmd_huy_kiem_nhiem.Click += new System.EventHandler(this.m_cmd_huy_kiem_nhiem_Click);
-            // 
-            // m_cmd_insert
-            // 
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
-            this.m_cmd_insert.Location = new System.Drawing.Point(2, 2);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(116, 36);
-            this.m_cmd_insert.TabIndex = 15;
-            this.m_cmd_insert.Text = "&Thêm";
             // 
             // f350_quan_ly_vi_tri_cong_tac
             // 

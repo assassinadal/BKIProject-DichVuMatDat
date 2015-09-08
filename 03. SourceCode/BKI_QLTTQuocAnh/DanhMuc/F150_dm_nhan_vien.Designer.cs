@@ -982,7 +982,7 @@
             // 
             // m_pic_anh_dai_dien
             // 
-            this.m_pic_anh_dai_dien.Image = global::BKI_DichVuMatDat.Properties.Resources.man_icon;
+            //this.m_pic_anh_dai_dien.Image = global::BKI_DichVuMatDat.Properties.Resources.man_icon;
             this.m_pic_anh_dai_dien.Location = new System.Drawing.Point(561, 33);
             this.m_pic_anh_dai_dien.Name = "m_pic_anh_dai_dien";
             this.m_pic_anh_dai_dien.Size = new System.Drawing.Size(97, 104);

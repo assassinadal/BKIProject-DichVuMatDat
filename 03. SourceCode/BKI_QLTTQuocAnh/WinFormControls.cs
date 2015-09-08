@@ -296,6 +296,40 @@ namespace BKI_DichVuMatDat
             Excel.Workbook openexcel = books.Open(newpath);
         }
         #endregion
+
+        #region Drag Control
+        private static bool isDragging = false;
+        static Point move;
+
+        public static void allowDragControl(Control ip_c) {
+            ip_c.MouseDown += new MouseEventHandler(c_MouseDown);
+            ip_c.MouseMove += new MouseEventHandler(c_MouseMove);
+            ip_c.MouseUp += new MouseEventHandler(c_MouseUp);
+        }
+
+        static void c_MouseDown(object sender, MouseEventArgs e)
+        {
+            Control c = sender as Control;
+            isDragging = true;
+            move = e.Location;
+        }
+
+        static void c_MouseMove(object sender, MouseEventArgs e)
+        {
+
+            if (isDragging == true)
+            {
+                Control c = sender as Control;
+                c.Left += e.X - move.X;
+                c.Top += e.Y - move.Y;
+            }
+        }
+
+        static void c_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDragging = false;
+        }
+        #endregion
     }
 
     public class US_DUNG_CHUNG : US_Object

@@ -152,6 +152,7 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 load_header_rpt();
                 set_width();
+                WinFormControls.allowDragControl(m_cmd_bang_luong);
             }
             catch (Exception v_e)
             {
@@ -180,6 +181,14 @@ namespace BKI_DichVuMatDat.BaoCao
             v_ws.Columns[15].WidthInCharacters = 12;
             v_ws.Columns[16].WidthInCharacters = 12;
             v_ws.Columns[17].WidthInCharacters = 12;
+            v_ws.Columns[18].WidthInCharacters = 12;
+            v_ws.Columns[19].WidthInCharacters = 12;
+            v_ws.Columns[20].WidthInCharacters = 12;
+            v_ws.Columns[21].WidthInCharacters = 12;
+            v_ws.Columns[22].WidthInCharacters = 12;
+            v_ws.Columns[23].WidthInCharacters = 12;
+            v_ws.Columns[24].WidthInCharacters = 12;
+            v_ws.Columns[25].WidthInCharacters = 12;
         }
         
         private void load_header_rpt()
@@ -193,14 +202,22 @@ namespace BKI_DichVuMatDat.BaoCao
             set_header(3, 7, "Ăn ca", Color.Blue, Color.White);
             set_header(3, 8, "Làm thêm ngày thường", Color.Blue, Color.White);
             set_header(3, 9, "Làm thêm lễ tết", Color.Blue, Color.White);
-            set_header(3, 10, "Thu nhập", Color.Blue, Color.White);
-            set_header(3, 11, "BHXH", Color.Blue, Color.White);
-            set_header(3, 12, "BHYT", Color.Blue, Color.White);
-            set_header(3, 13, "BHTN", Color.Blue, Color.White);
-            set_header(3, 14, "Đoàn phí", Color.Blue, Color.White);
-            set_header(3, 15, "Thuế", Color.Blue, Color.White);
-            set_header(3, 16, "Phải nộp", Color.Blue, Color.White);
-            set_header(3, 17, "Thực lĩnh", Color.Blue, Color.White);
+            set_header(3, 10, "Lương khác - thuế 5%", Color.Blue, Color.White);
+            set_header(3, 11, "Lương khác - thuế 10%", Color.Blue, Color.White);
+            set_header(3, 12, "Lương khác - thuế tính theo lương", Color.Blue, Color.White);
+            set_header(3, 13, "Thu nhập", Color.Blue, Color.White);
+            set_header(3, 14, "BHXH", Color.Blue, Color.White);
+            set_header(3, 15, "BHYT", Color.Blue, Color.White);
+            set_header(3, 16, "BHTN", Color.Blue, Color.White);
+            set_header(3, 17, "Đoàn phí", Color.Blue, Color.White);
+            set_header(3, 18, "Thuế", Color.Blue, Color.White);
+            set_header(3, 19, "Thuế từ lương khác - thuế 5%", Color.Blue, Color.White);
+            set_header(3, 20, "Thuế từ lương khác - thuế 10%", Color.Blue, Color.White);
+            set_header(3, 21, "Phải nộp", Color.Blue, Color.White);
+            set_header(3, 22, "Thực lĩnh", Color.Blue, Color.White);
+            set_header(3, 23, "Truy lĩnh", Color.Blue, Color.White);
+            set_header(3, 24, "Truy thu", Color.Blue, Color.White);
+            set_header(3, 25, "Thực lĩnh cuối cùng", Color.Blue, Color.White);
         }
 
         private void set_header(int ip_row, int ip_col, string ip_display_text, Color ip_back_color, Color ip_fore_color)

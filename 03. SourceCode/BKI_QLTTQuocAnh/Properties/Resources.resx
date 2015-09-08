@@ -220,7 +220,4 @@
   <data name="1425912499_173055" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425912499_173055.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="man-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\man-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

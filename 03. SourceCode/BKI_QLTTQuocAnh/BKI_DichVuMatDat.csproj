@@ -646,7 +646,9 @@
     <None Include="Resources\Ampeross-Qetto-2-Settings.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Custom-Icon-Design-Pretty-Office-2-Man.ico" />
+    <None Include="Resources\Custom-Icon-Design-Pretty-Office-2-Man.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icons8-Ios7-Household-Room.ico" />

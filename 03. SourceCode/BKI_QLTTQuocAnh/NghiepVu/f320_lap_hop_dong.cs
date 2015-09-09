@@ -436,6 +436,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 throw v_e;
             }
         }
+
         private decimal find_id_gd_hd(decimal ip_dc_id_nv)
         {
             try

@@ -125,6 +125,7 @@ namespace BKI_DichVuMatDat
             m_cmd_hs_chat_luong_by_nv.ItemClick += m_cmd_hs_chat_luong_by_nv_ItemClick;
             m_cmd_quan_ly_thu_nhap_khac.ItemClick += m_cmd_quan_ly_thu_nhap_khac_ItemClick;
             m_cmd_quan_ly_thu_nhap_khac_xls.ItemClick += m_cmd_quan_ly_thu_nhap_khac_xls_ItemClick;
+            m_cmd_quan_ly_luong_cung.ItemClick += m_cmd_quan_ly_luong_cung_ItemClick;
             //Hệ thống
             //m_cmd_thoat.ItemClick += m_cmd_thoat_ItemClick;
             //m_cmd_phan_quyen_nhom.ItemClick += m_cmd_phan_quyen_nhom_ItemClick;
@@ -306,6 +307,22 @@ namespace BKI_DichVuMatDat
             try
             {
                 f391_thu_nhap_khac_xls v_frm = new f391_thu_nhap_khac_xls();
+                if (IsExistFormName(v_frm)) return;
+
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_quan_ly_luong_cung_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f363_quan_ly_cac_nhan_vien_co_luong_cung v_frm = new f363_quan_ly_cac_nhan_vien_co_luong_cung();
                 if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;

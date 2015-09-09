@@ -375,6 +375,12 @@
     <Compile Include="NghiepVu\f360_quan_ly_quyet_dinh.Designer.cs">
       <DependentUpon>f360_quan_ly_quyet_dinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f363_quan_ly_cac_nhan_vien_co_luong_cung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f363_quan_ly_cac_nhan_vien_co_luong_cung.Designer.cs">
+      <DependentUpon>f363_quan_ly_cac_nhan_vien_co_luong_cung.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f370_nhan_vien_loai_lao_dong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -513,6 +519,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f360_quan_ly_quyet_dinh.resx">
       <DependentUpon>f360_quan_ly_quyet_dinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f363_quan_ly_cac_nhan_vien_co_luong_cung.resx">
+      <DependentUpon>f363_quan_ly_cac_nhan_vien_co_luong_cung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f370_nhan_vien_loai_lao_dong.resx">
       <DependentUpon>f370_nhan_vien_loai_lao_dong.cs</DependentUpon>
@@ -1018,6 +1027,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1441439378_06.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1441820610_23.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1441820884_coin-delete.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

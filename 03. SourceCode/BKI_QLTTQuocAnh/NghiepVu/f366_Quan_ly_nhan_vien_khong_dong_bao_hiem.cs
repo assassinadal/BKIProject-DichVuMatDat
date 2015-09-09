@@ -1,4 +1,9 @@
-﻿using System;
+﻿using BKI_DichVuMatDat.DS;
+using BKI_DichVuMatDat.DS.CDBNames;
+using BKI_DichVuMatDat.US;
+using DevExpress.XtraEditors;
+using IP.Core.IPCommon;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,27 +11,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using IP.Core.IPCommon;
-using BKI_DichVuMatDat.DS;
-using BKI_DichVuMatDat.US;
-using BKI_DichVuMatDat.DS.CDBNames;
-using DevExpress.XtraEditors;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
-    public partial class f363_quan_ly_cac_nhan_vien_co_luong_cung : Form
+    public partial class f366_quan_ly_nhan_vien_khong_dong_bao_hiem : Form
     {
-        public f363_quan_ly_cac_nhan_vien_co_luong_cung()
+        public f366_quan_ly_nhan_vien_khong_dong_bao_hiem()
         {
             InitializeComponent();
             format_controls();
         }
 
         #region Public interface
-        public void display()
-        {
-            this.ShowDialog();
-        }
+
         #endregion
 
         #region Members
@@ -43,6 +40,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_initial_form_load()
         {
             load_data_2_sle_chon_nv();
+            m_txt_chon_thang.Text = DateTime.Now.Month.ToString();
+            m_txt_chon_nam.Text = DateTime.Now.Year.ToString();
             load_data_2_grid();
         }
 
@@ -112,7 +111,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithTableName(v_ds, "V_GD_LUONG_CUNG");
+            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_KHONG_DONG_BAO_HIEM WHERE THANG = " + CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()) + " AND NAM = " + CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()) + "");
             m_grc_luong_cung_cua_nhan_vien.DataSource = v_ds.Tables[0];
         }
 
@@ -123,7 +122,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_LUONG_CUNG WHERE ID_NHAN_VIEN = " + ip_dc_id_nv);
+            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_KHONG_DONG_BAO_HIEM WHERE ID_NHAN_VIEN = " + ip_dc_id_nv + " AND THANG = " + CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()) + " AND NAM = " + CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()) + "");
             m_grc_luong_cung_cua_nhan_vien.DataSource = v_ds.Tables[0];
         }
 
@@ -135,116 +134,84 @@ namespace BKI_DichVuMatDat.NghiepVu
                 XtraMessageBox.Show("Bạn chưa chọn nhân viên!", "THÔNG BÁO");
                 return false;
             }
-            if (m_txt_so_tien.Text.Trim() == "")
+            if (m_txt_chon_thang.Text.Trim() == "")
             {
-                XtraMessageBox.Show("Bạn chưa nhập số tiền!", "THÔNG BÁO");
+                XtraMessageBox.Show("Bạn chưa chọn tháng!", "THÔNG BÁO");
                 return false;
             }
-            if (m_dat_ngay_ket_thuc.Value > m_dat_ngay_bat_dau.Value)
+            if (m_txt_chon_nam.Text.Trim() == "")
             {
-                XtraMessageBox.Show("Ngày kết thúc đang nhỏ hơn ngày bắt đầu!", "THÔNG BÁO");
+                XtraMessageBox.Show("Bạn chưa chọn năm!", "THÔNG BÁO");
                 return false;
             }
             return true;
         }
 
         //save data
-        private void form_2_us_luong_cung(US_GD_LUONG_CUNG ip_us)
+        private void form_2_us_luong_cung(US_GD_KHONG_DONG_BAO_HIEM ip_us)
         {
             if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
             {
                 ip_us.dcID = CIPConvert.ToDecimal(m_grv_luong_cung_cua_nhan_vien.GetRowCellValue(m_grv_luong_cung_cua_nhan_vien.FocusedRowHandle, "ID"));
-                ip_us.datNGAY_SUA = DateTime.Now.Date;
                 //nguoi sua
             }
             else
             {
                 ip_us.datNGAY_LAP = DateTime.Now.Date;
                 //nguoi lap
-                ip_us.strDA_XOA = "N";
             }
+            ip_us.dcTHANG = CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim());
+            ip_us.dcNAM = CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim());
             ip_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
-            ip_us.dcSO_TIEN = CIPConvert.ToDecimal(m_txt_so_tien.Text.Trim());
-            ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
-            ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
-            ip_us.strGHI_CHU = m_txt_ghi_chu.Text.Trim();
+            ip_us.strLY_DO = m_txt_ly_do.Text.Trim();
         }
 
-        private void us_obj_2_form(US_GD_LUONG_CUNG ip_us)
+        private void us_obj_2_form(US_GD_KHONG_DONG_BAO_HIEM ip_us)
         {
             m_sle_chon_nhan_vien.EditValue = ip_us.dcID_NHAN_VIEN;
-            m_txt_so_tien.Text = ip_us.dcSO_TIEN.ToString();
-            CCommon.format_text_2_money(m_txt_so_tien);
-            m_dat_ngay_bat_dau.Value = ip_us.datNGAY_BAT_DAU;
-            m_dat_ngay_ket_thuc.Value = ip_us.datNGAY_KET_THUC;
-            m_txt_ghi_chu.Text = ip_us.strGHI_CHU;
+            m_txt_chon_thang.Text = ip_us.dcTHANG.ToString();
+            m_txt_chon_nam.Text = ip_us.dcNAM.ToString();
+            m_txt_ly_do.Text = ip_us.strLY_DO;
         }
 
-        private void cho_gd_da_co_da_xoa_Y(decimal ip_dc_id_nhan_vien)
-        {
-            decimal v_id_gd_luong_cung = 0;
-            v_id_gd_luong_cung = find_id_gd_luong_cung(ip_dc_id_nhan_vien);
-            if (v_id_gd_luong_cung == -1)
-            {
-                return;
-            }
-            else
-            {
-                US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG(v_id_gd_luong_cung);
-                try
-                {
-                    v_us.strDA_XOA = "Y";
-                    v_us.BeginTransaction();
-                    v_us.Update();
-                    v_us.CommitTransaction();
-                }
-                catch (Exception v_e)
-                {
-                    throw v_e;
-                }
-            }
-            
-        }
-
-        private decimal find_id_gd_luong_cung(decimal ip_dc_id_nhan_vien)
+        private bool check_id_khong_dong_bao_hiem_is_exist(decimal ip_dc_id_nhan_vien)
         {
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "GD_LUONG_CUNG");
+            v_us.FillDatasetWithTableName(v_ds, "GD_KHONG_DONG_BAO_HIEM");
 
-            string v_str_filter = "ID_NHAN_VIEN = " + ip_dc_id_nhan_vien + " AND DA_XOA = 'N'";
+            string v_str_filter = "ID_NHAN_VIEN = " + ip_dc_id_nhan_vien + " AND THANG = " + CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()) + " AND NAM = " + CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()) + "";
             DataRow[] v_dr = v_ds.Tables[0].Select(v_str_filter);
 
             if (v_dr.Count() == 0)
             {
-                return -1;
+                return false;
             }
             else
             {
-                return CIPConvert.ToDecimal(v_dr.First()["ID"].ToString());
+                return true;
             }
         }
 
         private void save_data()
         {
-            US_GD_LUONG_CUNG v_us_gd_luong_cung = new US_GD_LUONG_CUNG();
-            form_2_us_luong_cung(v_us_gd_luong_cung);
+            US_GD_KHONG_DONG_BAO_HIEM v_us_gd_khong_dong_bao_hiem = new US_GD_KHONG_DONG_BAO_HIEM();
+            form_2_us_luong_cung(v_us_gd_khong_dong_bao_hiem);
             try
             {
                 switch (m_e_form_mode)
                 {
                     case DataEntryFormMode.InsertDataState:
-                        cho_gd_da_co_da_xoa_Y(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
-                        v_us_gd_luong_cung.BeginTransaction();
-                        v_us_gd_luong_cung.Insert();
-                        v_us_gd_luong_cung.CommitTransaction();
-                        XtraMessageBox.Show("Bạn đã thêm lương thành công cho nhân viên!", "THÀNH CÔNG");
+                        v_us_gd_khong_dong_bao_hiem.BeginTransaction();
+                        v_us_gd_khong_dong_bao_hiem.Insert();
+                        v_us_gd_khong_dong_bao_hiem.CommitTransaction();
+                        XtraMessageBox.Show("Bạn đã thêm thông tin thành công cho nhân viên!", "THÀNH CÔNG");
                         break;
                     case DataEntryFormMode.UpdateDataState:
-                        v_us_gd_luong_cung.BeginTransaction();
-                        v_us_gd_luong_cung.Update();
-                        v_us_gd_luong_cung.CommitTransaction();
+                        v_us_gd_khong_dong_bao_hiem.BeginTransaction();
+                        v_us_gd_khong_dong_bao_hiem.Update();
+                        v_us_gd_khong_dong_bao_hiem.CommitTransaction();
                         XtraMessageBox.Show("Bạn đã cập nhật thành công!", "THÀNH CÔNG");
                         break;
                     default:
@@ -261,96 +228,73 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_2_form_4_udate()
         {
             decimal v_id_nv = CIPConvert.ToDecimal(m_grv_luong_cung_cua_nhan_vien.GetRowCellValue(m_grv_luong_cung_cua_nhan_vien.FocusedRowHandle, "ID_NHAN_VIEN"));
-            decimal v_id_gd_luong_cung = find_id_gd_luong_cung(v_id_nv);
-            if (v_id_gd_luong_cung != -1)
+            if (check_id_khong_dong_bao_hiem_is_exist(v_id_nv))
             {
-                US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG(v_id_gd_luong_cung);
+                decimal v_id_gd_khong_dong_bao_hiem = CIPConvert.ToDecimal(m_grv_luong_cung_cua_nhan_vien.GetRowCellValue(m_grv_luong_cung_cua_nhan_vien.FocusedRowHandle, "ID"));
+                US_GD_KHONG_DONG_BAO_HIEM v_us = new US_GD_KHONG_DONG_BAO_HIEM(v_id_gd_khong_dong_bao_hiem);
                 m_e_form_mode = DataEntryFormMode.UpdateDataState;
                 us_obj_2_form(v_us);
             }
             else
             {
-                XtraMessageBox.Show("Nhân viên này chưa có giá trị lương cứng", "THÔNG BÁO");
+                XtraMessageBox.Show("Nhân viên này chưa có thông tin trong tháng " + m_txt_chon_thang.Text.Trim() + " năm " + m_txt_chon_nam.Text.Trim() + "", "THÔNG BÁO");
                 m_sle_chon_nhan_vien.EditValue = v_id_nv;
                 return;
             }
         }
+
         //focus new row after created
-        private void focus_new_row_created()
-        {
-            int v_row_index = 0;
-            decimal v_id_nv_f363 = 0;
-            string v_da_xoa_f363 = "N";
+        //private void focus_new_row_created()
+        //{
+        //    int v_row_index = 0;
+        //    decimal v_id_nv_f366 = 0;
 
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
+        //    US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+        //    DataSet v_ds = new DataSet();
+        //    v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithTableName(v_ds, "V_GD_LUONG_CUNG");
+        //    v_us.FillDatasetWithTableName(v_ds, "V_GD_KHONG_DONG_BAO_HIEM");
 
-            v_id_nv_f363 = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
+        //    v_id_nv_f366 = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
 
-            for (v_row_index = 0; v_row_index < v_ds.Tables[0].Rows.Count; v_row_index++)
-            {
-                var v_id_nv = CIPConvert.ToDecimal(m_grv_luong_cung_cua_nhan_vien.GetDataRow(v_row_index)["ID_NHAN_VIEN"].ToString());
-                var v_da_xoa = m_grv_luong_cung_cua_nhan_vien.GetDataRow(v_row_index)["DA_XOA"].ToString();
+        //    for (v_row_index = 0; v_row_index < v_ds.Tables[0].Rows.Count; v_row_index++)
+        //    {
+        //        var v_id_nv = CIPConvert.ToDecimal(m_grv_luong_cung_cua_nhan_vien.GetDataRow(v_row_index)["ID_NHAN_VIEN"].ToString());
 
-                if (v_id_nv == v_id_nv_f363 && v_da_xoa == v_da_xoa_f363)
-                {
-                    break;
-                }
-            }
+        //        if (v_id_nv == v_id_nv_f366)
+        //        {
+        //            break;
+        //        }
+        //    }
 
-            m_grv_luong_cung_cua_nhan_vien.FocusedRowHandle = v_row_index;
-        }
+        //    m_grv_luong_cung_cua_nhan_vien.FocusedRowHandle = v_row_index;
+        //}
 
         //refesh form
         private void refresh_form()
         {
             m_sle_chon_nhan_vien.EditValue = null;
-            m_txt_so_tien.Text = "";
-            m_dat_ngay_bat_dau.Value = DateTime.Now.Date;
-            m_dat_ngay_ket_thuc.Value = DateTime.Now.Date;
-            m_txt_ghi_chu.Text = "";
+            m_txt_chon_nam.Text = "";
+            m_txt_chon_thang.Text = "";
+            m_txt_ly_do.Text = "";
         }
 
         #endregion
         private void set_define_events()
         {
-            this.Load += f363_quan_ly_cac_nhan_vien_co_luong_cung_Load;
+            this.Load += f366_Quan_ly_nhan_vien_khong_dong_bao_hiem_Load;
             m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
             m_cmd_update.Click += m_cmd_update_Click;
-            m_cmd_luu_tien_luong.Click += m_cmd_luu_tien_luong_Click;
+            m_cmd_luu_thong_tin.Click += m_cmd_luu_thong_tin_Click;
             m_cmd_insert.Click += m_cmd_insert_Click;
-            m_txt_so_tien.Leave += m_txt_so_tien_Leave;
             m_grv_luong_cung_cua_nhan_vien.DoubleClick += m_grv_luong_cung_cua_nhan_vien_DoubleClick;
         }
 
-        void f363_quan_ly_cac_nhan_vien_co_luong_cung_Load(object sender, EventArgs e)
+        private void f366_Quan_ly_nhan_vien_khong_dong_bao_hiem_Load(object sender, EventArgs e)
         {
             try
             {
                 set_initial_form_load();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_luu_tien_luong_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (check_data_is_ok())
-                {
-                    if (XtraMessageBox.Show("Bạn có chắc chắn muốn nhập mức lương " + String.Format("{0:#,##0}", m_txt_so_tien.Text).ToString() + " VNĐ cho nhân viên này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        save_data();
-                    }
-                    load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
-                    focus_new_row_created();
-                }
             }
             catch (Exception v_e)
             {
@@ -383,11 +327,19 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        void m_grv_luong_cung_cua_nhan_vien_DoubleClick(object sender, EventArgs e)
+        void m_cmd_luu_thong_tin_Click(object sender, EventArgs e)
         {
             try
             {
-                load_data_2_form_4_udate();
+                if (check_data_is_ok())
+                {
+                    if (XtraMessageBox.Show("Bạn có chắc chắn muốn lưu thông tin cho nhân viên này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        save_data();
+                    }
+                    load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                    //focus_new_row_created();
+                }
             }
             catch (Exception v_e)
             {
@@ -395,11 +347,11 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        void m_txt_so_tien_Leave(object sender, EventArgs e)
+        void m_grv_luong_cung_cua_nhan_vien_DoubleClick(object sender, EventArgs e)
         {
             try
             {
-                CCommon.format_text_2_money(m_txt_so_tien);
+                load_data_2_form_4_udate();
             }
             catch (Exception v_e)
             {
@@ -425,6 +377,5 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
     }
 }

@@ -103,6 +103,7 @@
     <Reference Include="DevExpress.Office.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.PivotGrid.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -123,6 +124,7 @@
     <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1.UI, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v14.1.Wizard, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -139,6 +141,7 @@
     <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -204,6 +207,18 @@
     </Compile>
     <Compile Include="BaoCao\f410_rpt_bang_luong_nv.Designer.cs">
       <DependentUpon>f410_rpt_bang_luong_nv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\F420_Bao_cao_nhan_su_theo_don_vi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\F420_Bao_cao_nhan_su_theo_don_vi.Designer.cs">
+      <DependentUpon>F420_Bao_cao_nhan_su_theo_don_vi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\F425_Bao_cao_nhan_su_tong_hop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\F425_Bao_cao_nhan_su_tong_hop.Designer.cs">
+      <DependentUpon>F425_Bao_cao_nhan_su_tong_hop.cs</DependentUpon>
     </Compile>
     <Compile Include="BaoCao\F_wait_form.cs">
       <SubType>Form</SubType>
@@ -444,6 +459,12 @@
     <Compile Include="WinFormControls.cs" />
     <EmbeddedResource Include="BaoCao\f410_rpt_bang_luong_nv.resx">
       <DependentUpon>f410_rpt_bang_luong_nv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\F420_Bao_cao_nhan_su_theo_don_vi.resx">
+      <DependentUpon>F420_Bao_cao_nhan_su_theo_don_vi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\F425_Bao_cao_nhan_su_tong_hop.resx">
+      <DependentUpon>F425_Bao_cao_nhan_su_tong_hop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F_wait_form.resx">
       <DependentUpon>F_wait_form.cs</DependentUpon>

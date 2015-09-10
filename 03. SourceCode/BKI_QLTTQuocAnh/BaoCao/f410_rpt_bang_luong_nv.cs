@@ -51,7 +51,7 @@ namespace BKI_DichVuMatDat.BaoCao
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds, "SELECT distinct ID_NHAN_VIEN FROM GD_HOP_DONG AS ghd WHERE  ghd.ID_LOAI_HOP_DONG <> 4 AND DA_XOA = 'N' AND  ghd.NGAY_KET_THUC >= dbo.FN_GET_NGAY_DAU_THANG(6,2015)");
+            v_us.FillDatasetWithQuery(v_ds, "SELECT distinct ID_NHAN_VIEN FROM GD_HOP_DONG AS ghd WHERE  ghd.ID_LOAI_HOP_DONG <> 4 AND DA_XOA = 'N' AND (ghd.NGAY_KET_THUC IS NULL OR  ghd.NGAY_KET_THUC >= dbo.FN_GET_NGAY_DAU_THANG("+ m_txt_thang.Text.Trim() +","+ m_txt_nam.Text.Trim() +"))");
             load_bang_luong_nhan_vien(v_ds.Tables[0]);
         }
 
@@ -60,7 +60,7 @@ namespace BKI_DichVuMatDat.BaoCao
             for (int i = 0; i < ip_dt.Rows.Count; i++)
             {
                 DataRow v_dr = ip_dt.Rows[i];
-                DataRow v_dr_luong = get_luong_nhan_vien(CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"]), 6, 2015);
+                DataRow v_dr_luong = get_luong_nhan_vien(CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"]), int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
                 DataRow2Grid(v_dr_luong);
             }
         }
@@ -150,6 +150,8 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
+                m_txt_nam.Text = DateTime.Now.Year.ToString();
+                m_txt_thang.Text = DateTime.Now.Month.ToString();
                 load_header_rpt();
                 set_width();
                 WinFormControls.allowDragControl(m_cmd_bang_luong);

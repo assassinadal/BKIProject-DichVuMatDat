@@ -569,6 +569,12 @@
             this.zoomRibbonPageGroup1 = new DevExpress.XtraSpreadsheet.UI.ZoomRibbonPageGroup();
             this.windowRibbonPageGroup1 = new DevExpress.XtraSpreadsheet.UI.WindowRibbonPageGroup();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.m_txt_nam = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_txt_thang = new System.Windows.Forms.TextBox();
+            this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
@@ -582,8 +588,6 @@
             this.spreadsheetCommandBarButtonItem116 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandBarButtonItem();
             this.m_bgwk = new System.ComponentModel.BackgroundWorker();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).BeginInit();
@@ -614,11 +618,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetNameBoxControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // stylesRibbonPageGroup1
@@ -1065,7 +1069,7 @@
             this.spreadsheetCommandBarCheckItem32,
             this.galleryTableStylesItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 506;
+            this.ribbonControl1.MaxItemId = 508;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.fileRibbonPage1,
@@ -3856,6 +3860,64 @@
             this.panel3.Size = new System.Drawing.Size(1055, 241);
             this.panel3.TabIndex = 2;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.m_txt_nam);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.m_txt_thang);
+            this.panel1.Controls.Add(this.m_cmd_luu_bang_luong);
+            this.panel1.Controls.Add(this.m_cmd_bang_luong);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 194);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
+            this.panel1.Size = new System.Drawing.Size(1055, 47);
+            this.panel1.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(268, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Nhập năm";
+            // 
+            // m_txt_nam
+            // 
+            this.m_txt_nam.Location = new System.Drawing.Point(339, 15);
+            this.m_txt_nam.Name = "m_txt_nam";
+            this.m_txt_nam.Size = new System.Drawing.Size(100, 20);
+            this.m_txt_nam.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(43, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Nhập tháng";
+            // 
+            // m_txt_thang
+            // 
+            this.m_txt_thang.Location = new System.Drawing.Point(114, 15);
+            this.m_txt_thang.Name = "m_txt_thang";
+            this.m_txt_thang.Size = new System.Drawing.Size(100, 20);
+            this.m_txt_thang.TabIndex = 5;
+            // 
+            // m_cmd_luu_bang_luong
+            // 
+            this.m_cmd_luu_bang_luong.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_luu_bang_luong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_luu_bang_luong.Image")));
+            this.m_cmd_luu_bang_luong.Location = new System.Drawing.Point(742, 5);
+            this.m_cmd_luu_bang_luong.Name = "m_cmd_luu_bang_luong";
+            this.m_cmd_luu_bang_luong.Size = new System.Drawing.Size(154, 37);
+            this.m_cmd_luu_bang_luong.TabIndex = 4;
+            this.m_cmd_luu_bang_luong.Text = "Lưu bảng lương";
+            this.m_cmd_luu_bang_luong.Visible = false;
+            // 
             // m_cmd_bang_luong
             // 
             this.m_cmd_bang_luong.Dock = System.Windows.Forms.DockStyle.Right;
@@ -4194,27 +4256,6 @@
             this.m_bgwk.DoWork += new System.ComponentModel.DoWorkEventHandler(this.m_bgwk_DoWork);
             this.m_bgwk.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.m_bgwk_RunWorkerCompleted);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.m_cmd_luu_bang_luong);
-            this.panel1.Controls.Add(this.m_cmd_bang_luong);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 194);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(1055, 47);
-            this.panel1.TabIndex = 4;
-            // 
-            // m_cmd_luu_bang_luong
-            // 
-            this.m_cmd_luu_bang_luong.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_luu_bang_luong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_luu_bang_luong.Image")));
-            this.m_cmd_luu_bang_luong.Location = new System.Drawing.Point(742, 5);
-            this.m_cmd_luu_bang_luong.Name = "m_cmd_luu_bang_luong";
-            this.m_cmd_luu_bang_luong.Size = new System.Drawing.Size(154, 37);
-            this.m_cmd_luu_bang_luong.TabIndex = 4;
-            this.m_cmd_luu_bang_luong.Text = "Lưu bảng lương";
-            // 
             // f410_rpt_bang_luong_nv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4255,11 +4296,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetNameBoxControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4591,8 +4633,12 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_bang_luong;
         private System.ComponentModel.BackgroundWorker m_bgwk;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_luu_bang_luong;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox m_txt_thang;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox m_txt_nam;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
 
     }
 }

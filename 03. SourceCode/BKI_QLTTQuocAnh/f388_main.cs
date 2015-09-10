@@ -553,6 +553,20 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void m_cmd_tk_ns_dv_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            F420_Bao_cao_nhan_su_theo_don_vi v_f = new F420_Bao_cao_nhan_su_theo_don_vi();
+            v_f.MdiParent = this;
+            v_f.Show();
+        }
+
+        private void m_cmd_tk_ns_tong_hop_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            F425_Bao_cao_nhan_su_tong_hop v_f = new F425_Bao_cao_nhan_su_tong_hop();
+            v_f.MdiParent = this;
+            v_f.Show();
+        }
+
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)
         //{
         //    try

@@ -896,7 +896,8 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnTEN.MaxLength = 50;
                 this.columnHO_TEN.ReadOnly = true;
                 this.columnHO_TEN.MaxLength = 101;
-                this.columnGIOI_TINH.MaxLength = 1;
+                this.columnGIOI_TINH.ReadOnly = true;
+                this.columnGIOI_TINH.MaxLength = 3;
                 this.columnEMAIL.MaxLength = 35;
                 this.columnSDT.MaxLength = 15;
                 this.columnSO_TAI_KHOAN.MaxLength = 35;

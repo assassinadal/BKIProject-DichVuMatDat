@@ -56,6 +56,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             load_data_2_sle_muc_lns();
             load_data_2_sle_chuc_danh_lcd();
             load_data_2_sle_muc_lcd();
+            load_data_2_grid();
         }
 
         //load data 2 all control
@@ -248,14 +249,29 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_muc_lcd.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
 
+        private void load_data_2_grid()
+        {
+            CCommon.make_stt(m_grv_lap_hd);
+
+            DS_V_F320_LAP_HOP_DONG v_ds = new DS_V_F320_LAP_HOP_DONG();
+            US_V_F320_LAP_HOP_DONG v_us = new US_V_F320_LAP_HOP_DONG();
+            string v_current_date = DateTime.Now.Date.ToShortDateString();
+
+            v_us.FillDataset(v_ds, "WHERE NGAY_BAT_DAU <= '" + v_current_date + "' AND NGAY_KET_THUC >= '" + v_current_date + "'");
+
+            m_grc_lap_hd.DataSource = v_ds.Tables[0];
+        }
+
+
         private void load_data_2_grid(decimal ip_dc_id_nhan_vien)
         {
             CCommon.make_stt(m_grv_lap_hd);
 
             DS_V_F320_LAP_HOP_DONG v_ds = new DS_V_F320_LAP_HOP_DONG();
             US_V_F320_LAP_HOP_DONG v_us = new US_V_F320_LAP_HOP_DONG();
+            string v_current_date = DateTime.Now.Date.ToShortDateString();
 
-            v_us.FillDataset(v_ds, "WHERE ID_NHAN_VIEN = " + ip_dc_id_nhan_vien);
+            v_us.FillDataset(v_ds, "WHERE ID_NHAN_VIEN = " + ip_dc_id_nhan_vien + " AND NGAY_BAT_DAU <= '" + v_current_date + "' AND NGAY_KET_THUC >= '" + v_current_date + "'");
 
             m_grc_lap_hd.DataSource = v_ds.Tables[0];
         }
@@ -527,7 +543,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                 v_us.FillDataset(v_ds);
 
-                string v_str_filter = "ID_HOP_DONG = " + ip_dc_id_gd_hd +"AND DA_XOA = 'N'";
+                string v_str_filter = "ID_HOP_DONG = " + ip_dc_id_gd_hd + "AND DA_XOA = 'N'";
                 DataRow[] v_dr = v_ds.GD_HS_LNS_LCD.Select(v_str_filter);
 
                 if (v_dr.Count() == 0)
@@ -958,9 +974,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
                 {
-                    return;
+                    load_data_2_grid();
                 }
-                load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                else
+                {
+                    load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                }
             }
             catch (Exception v_e)
             {
@@ -1097,7 +1116,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         }
                         else
                         {
-                            if (m_sle_muc_lns.EditValue == null|| m_sle_muc_lns.EditValue == "")
+                            if (m_sle_muc_lns.EditValue == null || m_sle_muc_lns.EditValue == "")
                             {
                                 return;
                             }

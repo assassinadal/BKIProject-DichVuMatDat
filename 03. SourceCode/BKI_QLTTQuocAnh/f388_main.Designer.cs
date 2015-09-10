@@ -627,6 +627,7 @@
             this.m_cmd_quan_ly_luong_cung.Name = "m_cmd_quan_ly_luong_cung";
             this.m_cmd_quan_ly_luong_cung.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.m_cmd_quan_ly_luong_cung.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_quan_ly_khong_dong_bh
             // 
@@ -719,6 +720,7 @@
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_quan_ly_khong_dong_bh);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Khác";
+            this.ribbonPageGroup10.Visible = false;
             // 
             // ribbonPage5
             // 

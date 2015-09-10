@@ -144,7 +144,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 174);
+            this.label4.Location = new System.Drawing.Point(3, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 13);
             this.label4.TabIndex = 11;
@@ -153,7 +153,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 148);
+            this.label3.Location = new System.Drawing.Point(3, 133);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 13);
             this.label3.TabIndex = 9;
@@ -162,7 +162,7 @@
             // m_lbl_ngay_cham_cong
             // 
             this.m_lbl_ngay_cham_cong.AutoSize = true;
-            this.m_lbl_ngay_cham_cong.Location = new System.Drawing.Point(3, 122);
+            this.m_lbl_ngay_cham_cong.Location = new System.Drawing.Point(3, 107);
             this.m_lbl_ngay_cham_cong.Name = "m_lbl_ngay_cham_cong";
             this.m_lbl_ngay_cham_cong.Size = new System.Drawing.Size(85, 13);
             this.m_lbl_ngay_cham_cong.TabIndex = 7;
@@ -171,7 +171,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 44);
+            this.label1.Location = new System.Drawing.Point(2, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 13);
             this.label1.TabIndex = 0;
@@ -180,7 +180,7 @@
             // m_sle_chon_nhan_vien
             // 
             this.m_sle_chon_nhan_vien.EditValue = "";
-            this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(120, 41);
+            this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(120, 26);
             this.m_sle_chon_nhan_vien.Name = "m_sle_chon_nhan_vien";
             this.m_sle_chon_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -199,7 +199,7 @@
             // m_sle_loai_hop_dong
             // 
             this.m_sle_loai_hop_dong.EditValue = "";
-            this.m_sle_loai_hop_dong.Location = new System.Drawing.Point(121, 93);
+            this.m_sle_loai_hop_dong.Location = new System.Drawing.Point(121, 78);
             this.m_sle_loai_hop_dong.Name = "m_sle_loai_hop_dong";
             this.m_sle_loai_hop_dong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -218,7 +218,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 96);
+            this.label2.Location = new System.Drawing.Point(3, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 13);
             this.label2.TabIndex = 5;
@@ -244,14 +244,14 @@
             this.m_gr_thong_tin_co_ban.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_gr_thong_tin_co_ban.Location = new System.Drawing.Point(0, 0);
             this.m_gr_thong_tin_co_ban.Name = "m_gr_thong_tin_co_ban";
-            this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(398, 198);
+            this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(394, 192);
             this.m_gr_thong_tin_co_ban.TabIndex = 0;
             this.m_gr_thong_tin_co_ban.Text = "THÔNG TIN CƠ BẢN";
             // 
             // m_lbl_kiem_tra_ma_hd
             // 
             this.m_lbl_kiem_tra_ma_hd.AutoSize = true;
-            this.m_lbl_kiem_tra_ma_hd.Location = new System.Drawing.Point(243, 69);
+            this.m_lbl_kiem_tra_ma_hd.Location = new System.Drawing.Point(243, 54);
             this.m_lbl_kiem_tra_ma_hd.Name = "m_lbl_kiem_tra_ma_hd";
             this.m_lbl_kiem_tra_ma_hd.Size = new System.Drawing.Size(16, 13);
             this.m_lbl_kiem_tra_ma_hd.TabIndex = 4;
@@ -260,7 +260,7 @@
             // 
             // m_txt_ma_hd
             // 
-            this.m_txt_ma_hd.Location = new System.Drawing.Point(121, 67);
+            this.m_txt_ma_hd.Location = new System.Drawing.Point(121, 52);
             this.m_txt_ma_hd.Name = "m_txt_ma_hd";
             this.m_txt_ma_hd.Size = new System.Drawing.Size(115, 20);
             this.m_txt_ma_hd.TabIndex = 3;
@@ -268,7 +268,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 70);
+            this.label7.Location = new System.Drawing.Point(3, 55);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 13);
             this.label7.TabIndex = 2;
@@ -277,7 +277,7 @@
             // m_dat_ngay_ky
             // 
             this.m_dat_ngay_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_ky.Location = new System.Drawing.Point(121, 171);
+            this.m_dat_ngay_ky.Location = new System.Drawing.Point(121, 156);
             this.m_dat_ngay_ky.Name = "m_dat_ngay_ky";
             this.m_dat_ngay_ky.Size = new System.Drawing.Size(164, 20);
             this.m_dat_ngay_ky.TabIndex = 12;
@@ -285,7 +285,7 @@
             // m_dat_ngay_ket_thuc
             // 
             this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(121, 145);
+            this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(121, 130);
             this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
             this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(164, 20);
             this.m_dat_ngay_ket_thuc.TabIndex = 10;
@@ -293,7 +293,7 @@
             // m_dat_ngay_bat_dau
             // 
             this.m_dat_ngay_bat_dau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_bat_dau.Location = new System.Drawing.Point(121, 119);
+            this.m_dat_ngay_bat_dau.Location = new System.Drawing.Point(121, 104);
             this.m_dat_ngay_bat_dau.Name = "m_dat_ngay_bat_dau";
             this.m_dat_ngay_bat_dau.Size = new System.Drawing.Size(164, 20);
             this.m_dat_ngay_bat_dau.TabIndex = 8;
@@ -308,16 +308,17 @@
             this.m_gr_LCD.Controls.Add(this.label5);
             this.m_gr_LCD.Controls.Add(this.label6);
             this.m_gr_LCD.Controls.Add(this.m_sle_muc_lcd);
-            this.m_gr_LCD.Location = new System.Drawing.Point(799, 0);
+            this.m_gr_LCD.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_gr_LCD.Location = new System.Drawing.Point(795, 0);
             this.m_gr_LCD.Name = "m_gr_LCD";
-            this.m_gr_LCD.Size = new System.Drawing.Size(327, 198);
+            this.m_gr_LCD.Size = new System.Drawing.Size(389, 192);
             this.m_gr_LCD.TabIndex = 2;
             this.m_gr_LCD.Text = "THÔNG TIN LƯƠNG CHẾ ĐỘ";
             // 
             // m_lbl_so_tien_lcd
             // 
             this.m_lbl_so_tien_lcd.AutoSize = true;
-            this.m_lbl_so_tien_lcd.Location = new System.Drawing.Point(117, 96);
+            this.m_lbl_so_tien_lcd.Location = new System.Drawing.Point(117, 81);
             this.m_lbl_so_tien_lcd.Name = "m_lbl_so_tien_lcd";
             this.m_lbl_so_tien_lcd.Size = new System.Drawing.Size(16, 13);
             this.m_lbl_so_tien_lcd.TabIndex = 5;
@@ -326,7 +327,7 @@
             // m_sle_chuc_danh_lcd
             // 
             this.m_sle_chuc_danh_lcd.EditValue = "";
-            this.m_sle_chuc_danh_lcd.Location = new System.Drawing.Point(117, 37);
+            this.m_sle_chuc_danh_lcd.Location = new System.Drawing.Point(117, 22);
             this.m_sle_chuc_danh_lcd.Name = "m_sle_chuc_danh_lcd";
             this.m_sle_chuc_danh_lcd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -345,7 +346,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(4, 96);
+            this.label10.Location = new System.Drawing.Point(4, 81);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 13);
             this.label10.TabIndex = 4;
@@ -354,7 +355,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 41);
+            this.label5.Location = new System.Drawing.Point(4, 26);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 13);
             this.label5.TabIndex = 0;
@@ -363,7 +364,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(4, 66);
+            this.label6.Location = new System.Drawing.Point(4, 51);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 2;
@@ -372,7 +373,7 @@
             // m_sle_muc_lcd
             // 
             this.m_sle_muc_lcd.EditValue = "";
-            this.m_sle_muc_lcd.Location = new System.Drawing.Point(117, 63);
+            this.m_sle_muc_lcd.Location = new System.Drawing.Point(117, 48);
             this.m_sle_muc_lcd.Name = "m_sle_muc_lcd";
             this.m_sle_muc_lcd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -399,16 +400,16 @@
             this.m_gr_LNS.Controls.Add(this.m_sle_muc_lns);
             this.m_gr_LNS.Controls.Add(this.label13);
             this.m_gr_LNS.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_gr_LNS.Location = new System.Drawing.Point(398, 0);
+            this.m_gr_LNS.Location = new System.Drawing.Point(394, 0);
             this.m_gr_LNS.Name = "m_gr_LNS";
-            this.m_gr_LNS.Size = new System.Drawing.Size(401, 198);
+            this.m_gr_LNS.Size = new System.Drawing.Size(401, 192);
             this.m_gr_LNS.TabIndex = 1;
             this.m_gr_LNS.Text = "THÔNG TIN LƯƠNG NĂNG SUÂT";
             // 
             // m_lbl_hs_lns
             // 
             this.m_lbl_hs_lns.AutoSize = true;
-            this.m_lbl_hs_lns.Location = new System.Drawing.Point(116, 96);
+            this.m_lbl_hs_lns.Location = new System.Drawing.Point(116, 81);
             this.m_lbl_hs_lns.Name = "m_lbl_hs_lns";
             this.m_lbl_hs_lns.Size = new System.Drawing.Size(16, 13);
             this.m_lbl_hs_lns.TabIndex = 5;
@@ -417,7 +418,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 96);
+            this.label8.Location = new System.Drawing.Point(3, 81);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 13);
             this.label8.TabIndex = 4;
@@ -426,7 +427,7 @@
             // m_sle_chuc_danh_lns
             // 
             this.m_sle_chuc_danh_lns.EditValue = "";
-            this.m_sle_chuc_danh_lns.Location = new System.Drawing.Point(116, 40);
+            this.m_sle_chuc_danh_lns.Location = new System.Drawing.Point(116, 25);
             this.m_sle_chuc_danh_lns.Name = "m_sle_chuc_danh_lns";
             this.m_sle_chuc_danh_lns.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -445,7 +446,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 44);
+            this.label11.Location = new System.Drawing.Point(3, 29);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(86, 13);
             this.label11.TabIndex = 0;
@@ -454,7 +455,7 @@
             // m_sle_muc_lns
             // 
             this.m_sle_muc_lns.EditValue = "";
-            this.m_sle_muc_lns.Location = new System.Drawing.Point(116, 66);
+            this.m_sle_muc_lns.Location = new System.Drawing.Point(116, 51);
             this.m_sle_muc_lns.Name = "m_sle_muc_lns";
             this.m_sle_muc_lns.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -473,7 +474,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 69);
+            this.label13.Location = new System.Drawing.Point(3, 54);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(55, 13);
             this.label13.TabIndex = 2;
@@ -487,16 +488,16 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 52);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1196, 198);
+            this.panel2.Size = new System.Drawing.Size(1196, 192);
             this.panel2.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.m_cmd_lap_hop_dong);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 250);
+            this.panel3.Location = new System.Drawing.Point(0, 244);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1196, 44);
+            this.panel3.Size = new System.Drawing.Size(1196, 39);
             this.panel3.TabIndex = 2;
             // 
             // m_cmd_lap_hop_dong
@@ -505,10 +506,9 @@
             this.m_cmd_lap_hop_dong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_lap_hop_dong.Image")));
             this.m_cmd_lap_hop_dong.Location = new System.Drawing.Point(0, 0);
             this.m_cmd_lap_hop_dong.Name = "m_cmd_lap_hop_dong";
-            this.m_cmd_lap_hop_dong.Size = new System.Drawing.Size(116, 44);
+            this.m_cmd_lap_hop_dong.Size = new System.Drawing.Size(116, 39);
             this.m_cmd_lap_hop_dong.TabIndex = 7;
             this.m_cmd_lap_hop_dong.Text = "&Lập hợp đồng";
-            this.m_cmd_lap_hop_dong.Visible = false;
             // 
             // imageList1
             // 
@@ -542,9 +542,9 @@
             this.panel4.Controls.Add(this.m_grc_lap_hd);
             this.panel4.Controls.Add(this.m_pnl_out_place_dm);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 294);
+            this.panel4.Location = new System.Drawing.Point(0, 283);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1196, 212);
+            this.panel4.Size = new System.Drawing.Size(1196, 223);
             this.panel4.TabIndex = 21;
             // 
             // m_grc_lap_hd
@@ -554,7 +554,7 @@
             this.m_grc_lap_hd.Location = new System.Drawing.Point(0, 0);
             this.m_grc_lap_hd.MainView = this.m_grv_lap_hd;
             this.m_grc_lap_hd.Name = "m_grc_lap_hd";
-            this.m_grc_lap_hd.Size = new System.Drawing.Size(1196, 163);
+            this.m_grc_lap_hd.Size = new System.Drawing.Size(1196, 180);
             this.m_grc_lap_hd.TabIndex = 0;
             this.m_grc_lap_hd.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_lap_hd});
@@ -580,7 +580,6 @@
             this.m_grv_lap_hd.Name = "m_grv_lap_hd";
             this.m_grv_lap_hd.OptionsFind.AllowFindPanel = false;
             this.m_grv_lap_hd.OptionsFind.AlwaysVisible = true;
-            this.m_grv_lap_hd.OptionsView.ShowFooter = true;
             // 
             // ID
             // 
@@ -750,10 +749,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 163);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 180);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1196, 49);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1196, 43);
             this.m_pnl_out_place_dm.TabIndex = 0;
             // 
             // m_cmd_insert
@@ -762,7 +761,7 @@
             this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
             this.m_cmd_insert.Location = new System.Drawing.Point(728, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(116, 41);
+            this.m_cmd_insert.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_insert.TabIndex = 6;
             this.m_cmd_insert.Text = "&Thêm";
             this.m_cmd_insert.Visible = false;
@@ -773,7 +772,7 @@
             this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
             this.m_cmd_update.Location = new System.Drawing.Point(844, 4);
             this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(116, 41);
+            this.m_cmd_update.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_update.TabIndex = 5;
             this.m_cmd_update.Text = "&Sửa";
             // 
@@ -783,7 +782,7 @@
             this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
             this.m_cmd_delete.Location = new System.Drawing.Point(960, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(116, 41);
+            this.m_cmd_delete.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_delete.TabIndex = 4;
             this.m_cmd_delete.Text = "&Xóa";
             this.m_cmd_delete.Visible = false;
@@ -794,7 +793,7 @@
             this.m_cmd_xuat_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_excel.Image")));
             this.m_cmd_xuat_excel.Location = new System.Drawing.Point(1076, 4);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 41);
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_xuat_excel.TabIndex = 3;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
             this.m_cmd_xuat_excel.Visible = false;

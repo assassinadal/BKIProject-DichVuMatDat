@@ -135,7 +135,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             //cmd
             m_cmd_mo_file_mau.Click += m_cmd_mo_file_mau_Click;
             m_cmd_chon_file.Click += m_cmd_chon_file_Click;
-            m_cmd_nhap_cham_cong.Click += m_cmd_nhap_cham_cong_Click;
+            m_cmd_luu_hs_cl.Click += m_cmd_nhap_cham_cong_Click;
         }
 
         void f380_thay_doi_he_so_chat_luong_Load(object sender, EventArgs e)

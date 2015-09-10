@@ -36,7 +36,7 @@
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_mo_file_mau = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_nhap_cham_cong = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_luu_hs_cl = new DevExpress.XtraEditors.SimpleButton();
             this.m_grc_them_hs = new DevExpress.XtraGrid.GridControl();
             this.m_grv_them_hs = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -125,7 +125,7 @@
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_mo_file_mau);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_file);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_nhap_cham_cong);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_luu_hs_cl);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 420);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
@@ -153,15 +153,15 @@
             this.m_cmd_chon_file.TabIndex = 3;
             this.m_cmd_chon_file.Text = "Chọn file";
             // 
-            // m_cmd_nhap_cham_cong
+            // m_cmd_luu_hs_cl
             // 
-            this.m_cmd_nhap_cham_cong.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_nhap_cham_cong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_nhap_cham_cong.Image")));
-            this.m_cmd_nhap_cham_cong.Location = new System.Drawing.Point(820, 4);
-            this.m_cmd_nhap_cham_cong.Name = "m_cmd_nhap_cham_cong";
-            this.m_cmd_nhap_cham_cong.Size = new System.Drawing.Size(190, 41);
-            this.m_cmd_nhap_cham_cong.TabIndex = 1;
-            this.m_cmd_nhap_cham_cong.Text = "Lưu chấm công";
+            this.m_cmd_luu_hs_cl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_luu_hs_cl.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_luu_hs_cl.Image")));
+            this.m_cmd_luu_hs_cl.Location = new System.Drawing.Point(820, 4);
+            this.m_cmd_luu_hs_cl.Name = "m_cmd_luu_hs_cl";
+            this.m_cmd_luu_hs_cl.Size = new System.Drawing.Size(190, 41);
+            this.m_cmd_luu_hs_cl.TabIndex = 1;
+            this.m_cmd_luu_hs_cl.Text = "Lưu hệ số";
             // 
             // m_grc_them_hs
             // 
@@ -276,7 +276,7 @@
             this.panel2.Size = new System.Drawing.Size(1014, 322);
             this.panel2.TabIndex = 10;
             // 
-            // f380_thay_doi_he_so_chat_luong
+            // f380_thay_doi_he_so_chat_luong_xls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -285,7 +285,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_lbl_header);
-            this.Name = "f380_thay_doi_he_so_chat_luong";
+            this.Name = "f380_thay_doi_he_so_chat_luong_xls";
             this.Text = "F380 - Thay đổi hệ số chất lượng";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_them_hs)).EndInit();
@@ -305,7 +305,7 @@
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private DevExpress.XtraGrid.GridControl m_grc_them_hs;
         private DevExpress.XtraGrid.Views.Grid.GridView m_grv_them_hs;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_nhap_cham_cong;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_luu_hs_cl;
         private DevExpress.XtraEditors.SimpleButton m_cmd_mo_file_mau;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
         private DevExpress.XtraGrid.Columns.GridColumn STT;

@@ -57,6 +57,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             load_data_2_sle_muc_lns();
             load_data_2_sle_chuc_danh_lcd();
             load_data_2_sle_muc_lcd();
+            load_data_2_grid();
         }
 
         //load data 2 all control
@@ -247,6 +248,17 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             m_sle_muc_lcd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_muc_lcd.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+        }
+
+        private void load_data_2_grid()
+        {
+            CCommon.make_stt(m_grv_tang_giam_luong_cho_nv);
+            US_V_F330_LEN_LUONG_CHO_NV v_us = new US_V_F330_LEN_LUONG_CHO_NV();
+            DS_V_F330_LEN_LUONG_CHO_NV v_ds = new DS_V_F330_LEN_LUONG_CHO_NV();
+
+            v_us.FillDataset(v_ds);
+
+            m_grc_tang_giam_luong_cho_nv.DataSource = v_ds.Tables[0];
         }
 
         private void load_data_2_grid(decimal ip_dc_id_nv)
@@ -775,9 +787,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
                 {
-                    return;
+                    load_data_2_grid();
                 }
-                load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                else
+                {
+                    load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                }
             }
             catch (Exception v_e)
             {

@@ -346,8 +346,6 @@
     <Compile Include="DanhMuc\F150_dm_nhan_vien.Designer.cs">
       <DependentUpon>F150_dm_nhan_vien.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhMuc\US_DM_PHU_CAP.cs" />
-    <Compile Include="DanhMuc\US_DM_PHU_CAP_2.cs" />
     <Compile Include="NghiepVu\BackupDB.cs">
       <SubType>Form</SubType>
     </Compile>

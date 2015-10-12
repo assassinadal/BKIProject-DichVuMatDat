@@ -968,6 +968,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         void m_sle_chon_nhan_vien_EditValueChanged(object sender, EventArgs e)
+        
         {
             try
             {

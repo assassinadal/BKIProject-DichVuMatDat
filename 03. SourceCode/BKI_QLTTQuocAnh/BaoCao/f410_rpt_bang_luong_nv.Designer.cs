@@ -126,7 +126,6 @@
             DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem spreadsheetCommandGalleryItem77 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem();
             DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem spreadsheetCommandGalleryItem78 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem();
             DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem spreadsheetCommandGalleryItem79 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f410_rpt_bang_luong_nv));
             DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItemGroup spreadsheetCommandGalleryItemGroup19 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItemGroup();
             DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem spreadsheetCommandGalleryItem80 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem();
             DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem spreadsheetCommandGalleryItem81 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem();
@@ -245,6 +244,7 @@
             DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem spreadsheetCommandGalleryItem173 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem();
             DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem spreadsheetCommandGalleryItem174 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem();
             DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem spreadsheetCommandGalleryItem175 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f410_rpt_bang_luong_nv));
             this.commandBarGalleryDropDown2 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
             this.commandBarGalleryDropDown1 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
             this.commandBarGalleryDropDown3 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
@@ -316,6 +316,7 @@
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.m_cmd_chot_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown3)).BeginInit();
@@ -1060,8 +1061,6 @@
     " when the category text is very long.";
             spreadsheetCommandGalleryItem79.Caption = "100% Stacked Bar";
             spreadsheetCommandGalleryItem79.CommandName = "InsertChartBarPercentStacked2D";
-            spreadsheetCommandGalleryItem79.Description = resources.GetString("spreadsheetCommandGalleryItem79.Description");
-            spreadsheetCommandGalleryItem79.Hint = resources.GetString("spreadsheetCommandGalleryItem79.Hint");
             spreadsheetCommandGalleryItemGroup18.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
             spreadsheetCommandGalleryItem77,
             spreadsheetCommandGalleryItem78,
@@ -1951,6 +1950,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cmd_chot_bang_luong);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.m_txt_nam);
             this.panel1.Controls.Add(this.label1);
@@ -2371,6 +2371,17 @@
             this.gridColumn23.Visible = true;
             this.gridColumn23.VisibleIndex = 25;
             // 
+            // m_cmd_chot_bang_luong
+            // 
+            this.m_cmd_chot_bang_luong.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_chot_bang_luong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chot_bang_luong.Image")));
+            this.m_cmd_chot_bang_luong.Location = new System.Drawing.Point(588, 5);
+            this.m_cmd_chot_bang_luong.Name = "m_cmd_chot_bang_luong";
+            this.m_cmd_chot_bang_luong.Size = new System.Drawing.Size(154, 37);
+            this.m_cmd_chot_bang_luong.TabIndex = 9;
+            this.m_cmd_chot_bang_luong.Text = "Chốt bảng lương";
+            this.m_cmd_chot_bang_luong.Click += new System.EventHandler(this.m_cmd_chot_bang_luong_Click);
+            // 
             // f410_rpt_bang_luong_nv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2489,6 +2500,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_chot_bang_luong;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
 
     }

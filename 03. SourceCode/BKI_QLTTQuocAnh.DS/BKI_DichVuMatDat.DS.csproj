@@ -204,6 +204,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_RPT_LUONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_RPT_LUONG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_DM_NHAN_VIEN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -611,6 +616,17 @@
     </None>
     <None Include="DS_HT_USER_GROUP.xss">
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_LUONG.xsc">
+      <DependentUpon>DS_RPT_LUONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_LUONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_RPT_LUONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_RPT_LUONG.xss">
+      <DependentUpon>DS_RPT_LUONG.xsd</DependentUpon>
     </None>
     <None Include="DS_V_DM_NHAN_VIEN.xsc">
       <DependentUpon>DS_V_DM_NHAN_VIEN.xsd</DependentUpon>

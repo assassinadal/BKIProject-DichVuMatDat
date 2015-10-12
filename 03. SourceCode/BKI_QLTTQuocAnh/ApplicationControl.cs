@@ -53,6 +53,11 @@ namespace BKI_DichVuMatDat
                 //{
                 //    CAppContext_201.InitializeContext(v_obj_login_info);
                 //    CAppContext_201.LoadDecentralizationByUserLogin();
+                // The following line provides localization for the application's user interface. 
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("vi-VN");
+
+                // The following line provides localization for data formats. 
+                System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("vi-VN");
                 f388_main v_frm_main = new f388_main();
                 v_frm_main.display_dvmd();
                 v_frm_main.Dispose();

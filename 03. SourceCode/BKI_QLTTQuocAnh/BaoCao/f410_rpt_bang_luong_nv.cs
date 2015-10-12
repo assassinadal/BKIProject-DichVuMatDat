@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using BKI_DichVuMatDat;
 using BKI_DichVuMatDat.DS;
+using BKI_DichVuMatDat.DS.CDBNames;
 using BKI_DichVuMatDat.US;
 using DevExpress.Spreadsheet;
 using DevExpress.XtraSplashScreen;
@@ -18,16 +19,15 @@ namespace BKI_DichVuMatDat.BaoCao
 {
     public partial class f410_rpt_bang_luong_nv : Form
     {
-        int m_index = 4;
         public f410_rpt_bang_luong_nv()
         {
             InitializeComponent();
-            format_controls();
         }
 
         #region Public Interface
         public void display()
         {
+            this.m_grv.BestFitColumns(true);
             this.ShowDialog();
         }
         #endregion
@@ -37,64 +37,105 @@ namespace BKI_DichVuMatDat.BaoCao
         #endregion
 
         #region Members
-        
+        DS_RPT_LUONG m_ds = new DS_RPT_LUONG();
         #endregion
 
         #region Private Methods
-        private void format_controls()
+        private void tinhBangLuong(BackgroundWorker ip_bgw)
         {
-            this.KeyPreview = true;
+            try
+            {
+                US_RPT_LUONG v_us = new US_RPT_LUONG();
+                DS_RPT_LUONG v_ds = new DS_RPT_LUONG();
+                v_us.Get_tat_ca_nhan_vien_can_tinh_luong(v_ds,CIPConvert.ToDecimal(m_txt_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_nam.Text.Trim()));
+                get_bang_luong_tat_ca_nhan_vien(v_ds.Tables[0], ip_bgw);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }            
         }
 
-        private void load_data_2_work_sheet()
-        {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds, "SELECT distinct ID_NHAN_VIEN FROM GD_HOP_DONG AS ghd WHERE  ghd.ID_LOAI_HOP_DONG <> 4 AND DA_XOA = 'N' AND (ghd.NGAY_KET_THUC IS NULL OR  ghd.NGAY_KET_THUC >= dbo.FN_GET_NGAY_DAU_THANG("+ m_txt_thang.Text.Trim() +","+ m_txt_nam.Text.Trim() +"))");
-            load_bang_luong_nhan_vien(v_ds.Tables[0]);
-        }
-
-        private void load_bang_luong_nhan_vien(DataTable ip_dt)
+        private void get_bang_luong_tat_ca_nhan_vien(DataTable ip_dt, BackgroundWorker ip_bgw)
         {
             for (int i = 0; i < ip_dt.Rows.Count; i++)
             {
                 DataRow v_dr = ip_dt.Rows[i];
-                DataRow v_dr_luong = get_luong_nhan_vien(CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"]), int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
-                DataRow2Grid(v_dr_luong);
+                decimal v_id_nhan_vien = CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"]);
+                DataRow v_dr_luong = get_luong_1_nhan_vien(v_id_nhan_vien, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
+                var v_dr_luong_nv = m_ds.Tables[0].NewRow();
+                DataRow v_dr_luong_1_nv = get_dr(v_dr_luong_nv, v_dr_luong, v_id_nhan_vien, i, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
+                m_ds.Tables[0].Rows.Add(v_dr_luong_1_nv);
+                insertLuongNV2RPT(v_dr_luong_1_nv);
+                ip_bgw.ReportProgress((i + 1) * 100 / ip_dt.Rows.Count);
             }
         }
 
-        delegate void BindTextSpreadSheetControl(DataRow ip_dr);
-
-        private void UpdateSpreadSheet(DataRow _ip_dr)
+        private void insertLuongNV2RPT(DataRow v_dr_luong_1_nv)
         {
-            IWorkbook v_wb = m_sp.Document;
-            Worksheet v_ws = v_wb.Worksheets[0];
-            for (int i = 0; i < _ip_dr.ItemArray.Length; i++)
-            {
-                long v_number = 0;
-                bool canConvert = long.TryParse(_ip_dr.ItemArray[i].ToString(), out v_number);
-                if (canConvert)
-                {
-                    v_ws.Cells[m_index, i + 2].Value = v_number;
-                    v_ws.Cells[m_index, i + 2].NumberFormat = "#,##0";
-                }
-                else
-                {
-                    v_ws.Cells[m_index, i + 2].Value = _ip_dr.ItemArray[i].ToString();
-                }
-            }
-            v_ws.Cells[m_index, 1].Value = m_index - 3;
-            m_index += 1;
+            US_RPT_LUONG v_us = new US_RPT_LUONG();
+            v_us.strMA_NV = v_dr_luong_1_nv[RPT_LUONG.MA_NV].ToString();
+            v_us.dcAN_CA = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.AN_CA].ToString());
+            v_us.dcBHTN = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.BHTN].ToString());
+            v_us.dcBHXH = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.BHXH].ToString());
+            v_us.dcBHYT = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.BHYT].ToString());
+            v_us.dcDOAN_PHI_CD = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.DOAN_PHI_CD].ToString());
+            v_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.ID_NHAN_VIEN].ToString());
+            v_us.dcLAM_THEM = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LAM_THEM].ToString());
+            v_us.dcLAM_THEM_LE_TET = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LAM_THEM_LE_TET].ToString());
+            v_us.dcLUONG_CD = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LUONG_CD].ToString());
+            v_us.dcLUONG_KHAC_THUE_10 = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LUONG_KHAC_THUE_10].ToString());
+            v_us.dcLUONG_KHAC_THUE_5 = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LUONG_KHAC_THUE_5].ToString());
+            v_us.dcLUONG_KHAC_THUE_TINH_THEO_LUONG = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LUONG_KHAC_THUE_TINH_THEO_LUONG].ToString());
+            v_us.dcLUONG_NS = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LUONG_NS].ToString());
+            v_us.dcNAM = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.NAM].ToString());
+            v_us.dcPHAI_NOP = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.PHAI_NOP].ToString());
+            v_us.dcPHU_CAP_TN = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.PHU_CAP_TN].ToString());
+            v_us.dcTHANG = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THANG].ToString());
+            v_us.dcTHU_NHAP = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THU_NHAP].ToString());
+            v_us.dcTHUC_LINH = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THUC_LINH].ToString());
+            v_us.dcTHUC_LINH_CUOI_CUNG = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THUC_LINH_CUOI_CUNG].ToString());
+            v_us.dcTHUE = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THUE].ToString());
+            v_us.dcTHUE_TU_LUONG_KHAC_10 = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THUE_TU_LUONG_KHAC_10].ToString());
+            v_us.dcTHUE_TU_LUONG_KHAC_5 = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THUE_TU_LUONG_KHAC_5].ToString());
+            v_us.dcTRUY_LINH = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.TRUY_LINH].ToString());
+            v_us.dcTRUY_THU = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.TRUY_THU].ToString());
+            v_us.Insert();
         }
 
-        private void DataRow2Grid(DataRow ip_dr_luong)
+        private DataRow get_dr(DataRow ip_dr_luong_nv,DataRow ip_dr_luong, decimal ip_id_nv, int ip_index, int ip_thang, int ip_nam)
         {
-            this.Invoke(new BindTextSpreadSheetControl(UpdateSpreadSheet), new object[] { ip_dr_luong});
+            ip_dr_luong_nv[RPT_LUONG.ID] = ip_index;
+            ip_dr_luong_nv[RPT_LUONG.ID_NHAN_VIEN] = ip_id_nv;
+            ip_dr_luong_nv[RPT_LUONG.THANG] = ip_thang;
+            ip_dr_luong_nv[RPT_LUONG.NAM] = ip_nam;
+            ip_dr_luong_nv[RPT_LUONG.MA_NV] = ip_dr_luong[RPT_LUONG.MA_NV];
+            ip_dr_luong_nv[RPT_LUONG.LUONG_NS] = ip_dr_luong[RPT_LUONG.LUONG_NS];
+            ip_dr_luong_nv[RPT_LUONG.LUONG_CD] = ip_dr_luong[RPT_LUONG.LUONG_CD];
+            ip_dr_luong_nv[RPT_LUONG.PHU_CAP_TN] = ip_dr_luong[RPT_LUONG.PHU_CAP_TN];
+            ip_dr_luong_nv[RPT_LUONG.AN_CA] = ip_dr_luong[RPT_LUONG.AN_CA];
+            ip_dr_luong_nv[RPT_LUONG.LAM_THEM] = ip_dr_luong[RPT_LUONG.LAM_THEM];
+            ip_dr_luong_nv[RPT_LUONG.LAM_THEM_LE_TET] = ip_dr_luong[RPT_LUONG.LAM_THEM_LE_TET];
+            ip_dr_luong_nv[RPT_LUONG.LUONG_KHAC_THUE_5] = ip_dr_luong[RPT_LUONG.LUONG_KHAC_THUE_5];
+            ip_dr_luong_nv[RPT_LUONG.LUONG_KHAC_THUE_10] = ip_dr_luong[RPT_LUONG.LUONG_KHAC_THUE_10];
+            ip_dr_luong_nv[RPT_LUONG.LUONG_KHAC_THUE_TINH_THEO_LUONG] = ip_dr_luong[RPT_LUONG.LUONG_KHAC_THUE_TINH_THEO_LUONG];
+            ip_dr_luong_nv[RPT_LUONG.THU_NHAP] = ip_dr_luong[RPT_LUONG.THU_NHAP];
+            ip_dr_luong_nv[RPT_LUONG.BHXH] = ip_dr_luong[RPT_LUONG.BHXH];
+            ip_dr_luong_nv[RPT_LUONG.BHYT] = ip_dr_luong[RPT_LUONG.BHYT];
+            ip_dr_luong_nv[RPT_LUONG.BHTN] = ip_dr_luong[RPT_LUONG.BHTN];
+            ip_dr_luong_nv[RPT_LUONG.DOAN_PHI_CD] = ip_dr_luong[RPT_LUONG.DOAN_PHI_CD];
+            ip_dr_luong_nv[RPT_LUONG.THUE] = ip_dr_luong[RPT_LUONG.THUE];
+            ip_dr_luong_nv[RPT_LUONG.THUE_TU_LUONG_KHAC_5] = ip_dr_luong[RPT_LUONG.THUE_TU_LUONG_KHAC_5];
+            ip_dr_luong_nv[RPT_LUONG.THUE_TU_LUONG_KHAC_10] = ip_dr_luong[RPT_LUONG.THUE_TU_LUONG_KHAC_10];
+            ip_dr_luong_nv[RPT_LUONG.PHAI_NOP] = ip_dr_luong[RPT_LUONG.PHAI_NOP];
+            ip_dr_luong_nv[RPT_LUONG.THUC_LINH] = ip_dr_luong[RPT_LUONG.THUC_LINH];
+            ip_dr_luong_nv[RPT_LUONG.TRUY_LINH] = ip_dr_luong[RPT_LUONG.TRUY_LINH];
+            ip_dr_luong_nv[RPT_LUONG.TRUY_THU] = ip_dr_luong[RPT_LUONG.TRUY_THU];
+            ip_dr_luong_nv[RPT_LUONG.THUC_LINH_CUOI_CUNG] = ip_dr_luong[RPT_LUONG.THUC_LINH_CUOI_CUNG];
+            return ip_dr_luong_nv;
         }
 
-        private DataRow get_luong_nhan_vien(decimal ip_dc_id_nhan_vien, int ip_int_thang, int ip_int_nam)
+        private DataRow get_luong_1_nhan_vien(decimal ip_dc_id_nhan_vien, int ip_int_thang, int ip_int_nam)
         {
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
@@ -103,21 +144,20 @@ namespace BKI_DichVuMatDat.BaoCao
             DataRow v_dr = v_ds.Tables[0].Rows[0];
             return v_dr;
         }
-
         #endregion
 
         private void m_cmd_bang_luong_Click(object sender, EventArgs e)
         {
             try
             {
-                
                 if (m_bgwk.IsBusy)
                 {
                     m_bgwk.CancelAsync();
                 }
                 else
                 {
-                    SplashScreenManager.ShowForm(typeof(F_wait_form));
+                    //SplashScreenManager.ShowForm(typeof(F_wait_form));
+                    this.m_prb.Visible = true;
                     m_bgwk.RunWorkerAsync();
                 }
             }
@@ -131,8 +171,8 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
-                load_data_2_work_sheet();
-                //m_bgwk.ReportProgress(100);
+                BackgroundWorker worker = sender as BackgroundWorker;
+                tinhBangLuong(worker);
             }
             catch (Exception v_e)
             {
@@ -143,7 +183,17 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void m_bgwk_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            SplashScreenManager.CloseForm();
+            this.m_prb.Visible = false;
+            load_data_2_grid();
+        }
+
+        private void load_data_2_grid()
+        {
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillDatasetWithTableName(v_ds, "V_RPT_LUONG WHERE THANG = "+ m_txt_thang.Text.Trim() +" AND NAM = " + m_txt_nam.Text.Trim());
+            m_grc.DataSource = v_ds.Tables[0];
         }
 
         private void f410_rpt_bang_luong_nv_Load(object sender, EventArgs e)
@@ -152,9 +202,6 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 m_txt_nam.Text = DateTime.Now.Year.ToString();
                 m_txt_thang.Text = DateTime.Now.Month.ToString();
-                load_header_rpt();
-                set_width();
-                WinFormControls.allowDragControl(m_cmd_bang_luong);
             }
             catch (Exception v_e)
             {
@@ -162,76 +209,10 @@ namespace BKI_DichVuMatDat.BaoCao
             }
         }
 
-        private void set_width()
+        private void m_bgwk_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            IWorkbook v_wb = m_sp.Document;
-            Worksheet v_ws = v_wb.Worksheets[0];
-            v_ws.Columns[1].WidthInCharacters = 5;
-            v_ws.Columns[2].WidthInCharacters = 8;
-            v_ws.Columns[3].WidthInCharacters = 25;
-            v_ws.Columns[4].WidthInCharacters = 12;
-            v_ws.Columns[5].WidthInCharacters = 12;
-            v_ws.Columns[6].WidthInCharacters = 12;
-            v_ws.Columns[7].WidthInCharacters = 12;
-            v_ws.Columns[8].WidthInCharacters = 12;
-            v_ws.Columns[9].WidthInCharacters = 12;
-            v_ws.Columns[10].WidthInCharacters = 12;
-            v_ws.Columns[11].WidthInCharacters = 12;
-            v_ws.Columns[12].WidthInCharacters = 12;
-            v_ws.Columns[13].WidthInCharacters = 12;
-            v_ws.Columns[14].WidthInCharacters = 12;
-            v_ws.Columns[15].WidthInCharacters = 12;
-            v_ws.Columns[16].WidthInCharacters = 12;
-            v_ws.Columns[17].WidthInCharacters = 12;
-            v_ws.Columns[18].WidthInCharacters = 12;
-            v_ws.Columns[19].WidthInCharacters = 12;
-            v_ws.Columns[20].WidthInCharacters = 12;
-            v_ws.Columns[21].WidthInCharacters = 12;
-            v_ws.Columns[22].WidthInCharacters = 12;
-            v_ws.Columns[23].WidthInCharacters = 12;
-            v_ws.Columns[24].WidthInCharacters = 12;
-            v_ws.Columns[25].WidthInCharacters = 12;
-        }
-        
-        private void load_header_rpt()
-        {
-            set_header(3, 1, "STT", Color.Blue, Color.White);
-            set_header(3, 2, "Mã nhân viên", Color.Blue, Color.White);
-            set_header(3, 3, "Họ tên", Color.Blue, Color.White);
-            set_header(3, 4, "Lương năng suất", Color.Blue, Color.White);
-            set_header(3, 5, "Lương chế độ", Color.Blue, Color.White);
-            set_header(3, 6, "Phụ cấp trách nhiệm", Color.Blue, Color.White);
-            set_header(3, 7, "Ăn ca", Color.Blue, Color.White);
-            set_header(3, 8, "Làm thêm ngày thường", Color.Blue, Color.White);
-            set_header(3, 9, "Làm thêm lễ tết", Color.Blue, Color.White);
-            set_header(3, 10, "Lương khác - thuế 5%", Color.Blue, Color.White);
-            set_header(3, 11, "Lương khác - thuế 10%", Color.Blue, Color.White);
-            set_header(3, 12, "Lương khác - thuế tính theo lương", Color.Blue, Color.White);
-            set_header(3, 13, "Thu nhập", Color.Blue, Color.White);
-            set_header(3, 14, "BHXH", Color.Blue, Color.White);
-            set_header(3, 15, "BHYT", Color.Blue, Color.White);
-            set_header(3, 16, "BHTN", Color.Blue, Color.White);
-            set_header(3, 17, "Đoàn phí", Color.Blue, Color.White);
-            set_header(3, 18, "Thuế", Color.Blue, Color.White);
-            set_header(3, 19, "Thuế từ lương khác - thuế 5%", Color.Blue, Color.White);
-            set_header(3, 20, "Thuế từ lương khác - thuế 10%", Color.Blue, Color.White);
-            set_header(3, 21, "Phải nộp", Color.Blue, Color.White);
-            set_header(3, 22, "Thực lĩnh", Color.Blue, Color.White);
-            set_header(3, 23, "Truy lĩnh", Color.Blue, Color.White);
-            set_header(3, 24, "Truy thu", Color.Blue, Color.White);
-            set_header(3, 25, "Thực lĩnh cuối cùng", Color.Blue, Color.White);
-        }
-
-        private void set_header(int ip_row, int ip_col, string ip_display_text, Color ip_back_color, Color ip_fore_color)
-        {
-            IWorkbook v_wb = m_sp.Document;
-            Worksheet v_ws = v_wb.Worksheets[0];
-            v_ws.Cells[ip_row, ip_col].Value = ip_display_text;
-            v_ws.Cells[ip_row, ip_col].Font.Color = ip_fore_color;
-            v_ws.Cells[ip_row, ip_col].Font.Bold = true;
-            v_ws.Cells[ip_row, ip_col].FillColor = ip_back_color;
-            v_ws.Cells[ip_row, ip_col].Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center;
-            v_ws.Cells[ip_row, ip_col].Alignment.Vertical = SpreadsheetVerticalAlignment.Center;
+            this.m_prb.Text = (e.ProgressPercentage.ToString() + "%");
+            this.m_prb.EditValue = e.ProgressPercentage;
         }
     }
 }

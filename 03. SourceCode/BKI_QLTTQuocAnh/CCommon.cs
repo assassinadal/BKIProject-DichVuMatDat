@@ -38,5 +38,45 @@ namespace BKI_DichVuMatDat
             v_so_tien = CIPConvert.ToDecimal(ip_m_txt.Text.Trim());
             ip_m_txt.Text = string.Format("{0:#,##0}", v_so_tien);
         }
+
+        public static bool thang_da_chot_bang_luong(DateTime ip_dat)
+        {
+            DS_GD_CHOT_BANG_LUONG v_ds = new DS_GD_CHOT_BANG_LUONG();
+            US_GD_CHOT_BANG_LUONG v_us = new US_GD_CHOT_BANG_LUONG();
+            v_us.FillDataset(v_ds);
+
+            string v_str_filter = "THANG = " + ip_dat.Month + " AND NAM = " + ip_dat.Year;
+
+            DataRow[] v_dr = v_ds.GD_CHOT_BANG_LUONG.Select(v_str_filter);
+
+            if (v_dr.Count() == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        
+        public static bool thang_da_chot_bang_luong(decimal ip_dc_thang, decimal ip_dc_nam)
+        {
+            DS_GD_CHOT_BANG_LUONG v_ds = new DS_GD_CHOT_BANG_LUONG();
+            US_GD_CHOT_BANG_LUONG v_us = new US_GD_CHOT_BANG_LUONG();
+            v_us.FillDataset(v_ds);
+
+            string v_str_filter = "THANG = " + ip_dc_thang + " AND NAM = " + ip_dc_nam;
+
+            DataRow[] v_dr = v_ds.GD_CHOT_BANG_LUONG.Select(v_str_filter);
+
+            if (v_dr.Count() == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

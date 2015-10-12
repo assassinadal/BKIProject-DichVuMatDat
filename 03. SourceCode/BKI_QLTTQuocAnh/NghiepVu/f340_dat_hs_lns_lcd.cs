@@ -345,26 +345,26 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
-                MessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO");
+                XtraMessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO");
                 return false;
             }
 
             if (m_sle_muc_lns.EditValue == null || m_sle_muc_lns.EditValue == "")
             {
-                MessageBox.Show("Bạn phải chọn mức lương năng suất", "THÔNG BÁO");
+                XtraMessageBox.Show("Bạn phải chọn mức lương năng suất", "THÔNG BÁO");
                 return false;
             }
 
             if (m_sle_muc_lcd.EditValue == null || m_sle_muc_lcd.EditValue == "")
             {
-                MessageBox.Show("Bạn phải chọn mức lương chế độ", "THÔNG BÁO");
+                XtraMessageBox.Show("Bạn phải chọn mức lương chế độ", "THÔNG BÁO");
                 return false;
             }
             //ly do chinh sua hs lns
 
             if (m_sle_chuc_danh_lns.EditValue == null || m_sle_chuc_danh_lns.EditValue == "")
             {
-                MessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
+                XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
                 return false;
             }
 
@@ -377,10 +377,21 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             if (m_dat_ngay_bat_dau_lns.Value.Date == m_dat_ngay_ket_thuc_lns.Value.Date)
             {
-                MessageBox.Show("Ngày bắt đầu và ngày kết thúc đang trùng nhau", "THÔNG BÁO");
+                XtraMessageBox.Show("Ngày bắt đầu và ngày kết thúc đang trùng nhau", "THÔNG BÁO");
                 return false;
             }
 
+            if (CCommon.thang_da_chot_bang_luong(m_dat_ngay_ket_thuc_lns.Value))
+            {
+                XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
+                return false;
+            }
+
+            if (CCommon.thang_da_chot_bang_luong(m_dat_ngay_ket_thuc_lcd.Value))
+            {
+                XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
+                return false;
+            }
             return true;
         }
 

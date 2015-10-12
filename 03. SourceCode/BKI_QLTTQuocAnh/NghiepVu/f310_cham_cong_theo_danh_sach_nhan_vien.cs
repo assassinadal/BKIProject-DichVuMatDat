@@ -131,42 +131,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.FillDatasetCBO(m_ds_loai_ngay_cong, "DM_LOAI_NGAY_CONG", "ID", "MA_NGAY_CONG", "");
         }
 
-        #endregion
-
-        private void set_define_events()
-        {
-            this.Load += f310_cham_cong_theo_danh_sach_nhan_vien_Load;
-            m_cmd_search.Click += m_cmd_search_Click;
-            m_cmd_insert.Click += m_cmd_insert_Click;
-            m_grv_cham_cong.CellValueChanged += m_grv_cham_cong_CellValueChanged;
-
-        }
-
-        private void f310_cham_cong_theo_danh_sach_nhan_vien_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                set_initial_form_load();
-                LayDuLieuLoaiNgayCong();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_search_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                load_data_2_grid();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
         private void m_grv_cham_cong_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             if (!m_lst_index.Exists(x => x == e.RowHandle))
@@ -184,7 +148,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception)
             {
-                
+
             }
             if (v_dr["MA_NGAY_CONG"].ToString() == "")
             {
@@ -214,21 +178,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             return CIPConvert.ToDecimal(res.First()[DM_LOAI_NGAY_CONG.ID].ToString());
         }
 
-        private void m_cmd_insert_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                luu_du_lieu();
-                MessageBox.Show("Đã lưu thành công!");
-                load_data_2_grid();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
         private void m_grv_cham_cong_PopupMenuShowing(object sender, PopupMenuShowingEventArgs e)
         {
             try
@@ -240,7 +189,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     e.Menu.Items.Clear();
                     foreach (DataRow item in m_ds_loai_ngay_cong.Tables[0].Rows)
                     {
-                        e.Menu.Items.Add(CreateRowSubMenu(rowHandle, item["MA_NGAY_CONG"].ToString()));    
+                        e.Menu.Items.Add(CreateRowSubMenu(rowHandle, item["MA_NGAY_CONG"].ToString()));
                     }
                     e.Menu.Items.Add(CreateRowSubMenu(rowHandle, ""));
                 }
@@ -249,7 +198,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-            
+
         }
 
         private DXMenuItem CreateRowSubMenu(int rowHandle, string ip_str_ma_ngay_cong)
@@ -264,6 +213,71 @@ namespace BKI_DichVuMatDat.NghiepVu
             DXMenuItem item = sender as DXMenuItem;
             int info = (int)item.Tag;
             m_grv_cham_cong.SetRowCellValue(int.Parse(info.ToString()), MA_NGAY_CONG, item.Caption);
+        }
+
+        #endregion
+
+        private void set_define_events()
+        {
+            this.Load += f310_cham_cong_theo_danh_sach_nhan_vien_Load;
+            m_cmd_search.Click += m_cmd_search_Click;
+            m_cmd_insert.Click += m_cmd_insert_Click;
+            m_grv_cham_cong.CellValueChanged += m_grv_cham_cong_CellValueChanged;
+        }
+
+        private void f310_cham_cong_theo_danh_sach_nhan_vien_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+                LayDuLieuLoaiNgayCong();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!CCommon.thang_da_chot_bang_luong(m_dat_ngay_cham_cong.Value))
+                {
+                    if (XtraMessageBox.Show("Bạn có chắc chắn lưu bảng chấm công này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        luu_du_lieu();
+                        MessageBox.Show("Đã lưu thành công!");
+                        load_data_2_grid();
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("Tháng " + m_dat_ngay_cham_cong.Value.Month.ToString() + " năm " + m_dat_ngay_cham_cong.Value.Year.ToString() + " đã chốt bảng lương nên không được sửa!", "THÔNG BÁO");
+                    return;
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_grv_cham_cong_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

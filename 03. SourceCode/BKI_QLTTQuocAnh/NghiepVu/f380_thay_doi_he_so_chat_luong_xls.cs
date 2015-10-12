@@ -84,47 +84,54 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void kiem_tra_va_thuc_hien_nhap_hs(ref decimal v_count, ref int v_int_khong_nhap_duoc, decimal v_selectedRowCount)
         {
-            for (int i = 0; i < v_selectedRowCount; i++)
+            if (CCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())))
             {
-                decimal v_id_nv = 0;
-                US_DUNG_CHUNG v_us_dc = new US_DUNG_CHUNG();
-                US_GD_HE_SO_CHAT_LUONG v_us_hs_cl = new US_GD_HE_SO_CHAT_LUONG();
-
-                var v_data_row = m_grv_them_hs.GetDataRow(m_grv_them_hs.GetSelectedRows()[i]);
-
-                try
+                XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
+                return;
+            }
+            else
+            {
+                for (int i = 0; i < v_selectedRowCount; i++)
                 {
-                    get_id_nhan_vien_tu_data_row(v_us_dc, v_data_row, ref v_id_nv);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Mã nhân viên " + v_data_row[1].ToString() + " không tồn tại trong hệ thống. Vui lòng kiểm tra lại thông tin!");
-                    v_int_khong_nhap_duoc++;
-                    continue;
-                }
+                    decimal v_id_nv = 0;
+                    US_DUNG_CHUNG v_us_dc = new US_DUNG_CHUNG();
+                    US_GD_HE_SO_CHAT_LUONG v_us_hs_cl = new US_GD_HE_SO_CHAT_LUONG();
 
-                v_us_hs_cl.dcID_NHAN_VIEN = v_id_nv;
-                v_us_hs_cl.dcHE_SO_K = CIPConvert.ToDecimal(v_data_row[2].ToString());
-                v_us_hs_cl.dcTHANG = CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim());
-                v_us_hs_cl.dcNAM = CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim());
-                v_us_hs_cl.datNGAY_LAP = DateTime.Now.Date;
-                v_us_hs_cl.strDA_XOA = "N";
+                    var v_data_row = m_grv_them_hs.GetDataRow(m_grv_them_hs.GetSelectedRows()[i]);
 
-                try
-                {
-                    delete_gd_da_co_trong_thang_cua_nhan_vien(v_us_dc, v_data_row, v_id_nv);
-                    v_us_hs_cl.BeginTransaction();
-                    v_us_hs_cl.Insert();
-                    v_us_hs_cl.CommitTransaction();
-                    v_count++;
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Lỗi!");
-                    v_int_khong_nhap_duoc++;
+                    try
+                    {
+                        get_id_nhan_vien_tu_data_row(v_us_dc, v_data_row, ref v_id_nv);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Mã nhân viên " + v_data_row[1].ToString() + " không tồn tại trong hệ thống. Vui lòng kiểm tra lại thông tin!");
+                        v_int_khong_nhap_duoc++;
+                        continue;
+                    }
+
+                    v_us_hs_cl.dcID_NHAN_VIEN = v_id_nv;
+                    v_us_hs_cl.dcHE_SO_K = CIPConvert.ToDecimal(v_data_row[2].ToString());
+                    v_us_hs_cl.dcTHANG = CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim());
+                    v_us_hs_cl.dcNAM = CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim());
+                    v_us_hs_cl.datNGAY_LAP = DateTime.Now.Date;
+                    v_us_hs_cl.strDA_XOA = "N";
+
+                    try
+                    {
+                        delete_gd_da_co_trong_thang_cua_nhan_vien(v_us_dc, v_data_row, v_id_nv);
+                        v_us_hs_cl.BeginTransaction();
+                        v_us_hs_cl.Insert();
+                        v_us_hs_cl.CommitTransaction();
+                        v_count++;
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Lỗi!");
+                        v_int_khong_nhap_duoc++;
+                    }
                 }
             }
-
         }
 
         #endregion
@@ -187,11 +194,11 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                     if (v_count == v_selectedRowCount)
                     {
-                        XtraMessageBox.Show("Cập nhật thành công cho " + v_count + " nhân viên","THÀNH CÔNG");
+                        XtraMessageBox.Show("Cập nhật thành công cho " + v_count + " nhân viên", "THÀNH CÔNG");
                     }
                     else
                     {
-                        XtraMessageBox.Show("Cập nhật thành công cho " + v_count + " nhân viên. Vui lòng kiểm tra lại thông tin của " + (v_selectedRowCount - v_count).ToString() + " nhân viên được chọn còn lại trong bảng!","THÔNG BÁO");
+                        XtraMessageBox.Show("Cập nhật thành công cho " + v_count + " nhân viên. Vui lòng kiểm tra lại thông tin của " + (v_selectedRowCount - v_count).ToString() + " nhân viên được chọn còn lại trong bảng!", "THÔNG BÁO");
                     }
                 }
                 else

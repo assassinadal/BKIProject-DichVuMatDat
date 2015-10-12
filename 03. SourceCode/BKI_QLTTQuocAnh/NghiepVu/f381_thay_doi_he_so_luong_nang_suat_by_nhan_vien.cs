@@ -188,6 +188,11 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 XtraMessageBox.Show("Bạn chưa chọn năm!");
                 return false;
+            } 
+            if (CCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())))
+            {
+                XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
+                return false;
             }
             return true;
         }

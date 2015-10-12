@@ -145,6 +145,12 @@ namespace BKI_DichVuMatDat.NghiepVu
                 XtraMessageBox.Show("Ngày kết thúc đang nhỏ hơn ngày bắt đầu!", "THÔNG BÁO");
                 return false;
             }
+
+            if (CCommon.thang_da_chot_bang_luong(m_dat_ngay_ket_thuc.Value))
+            {
+                XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
+                return false;
+            }
             return true;
         }
 

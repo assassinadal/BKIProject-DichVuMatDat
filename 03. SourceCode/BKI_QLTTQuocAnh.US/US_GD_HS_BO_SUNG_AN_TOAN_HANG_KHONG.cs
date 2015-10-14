@@ -226,5 +226,16 @@ namespace BKI_DichVuMatDat.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+
+        public void insert_data_by_proc(decimal ip_dc_thang, decimal ip_dc_nam)
+        {
+            BeginTransaction();
+            CStoredProc v_cstore = new CStoredProc("PR_GET_ALL_HS_BS_ATHK");
+
+            v_cstore.addDecimalInputParam("@IP_THANG", ip_dc_thang);
+            v_cstore.addDecimalInputParam("@IP_NAM", ip_dc_nam);
+            v_cstore.ExecuteCommand(this);
+            CommitTransaction();
+        }
     }
 }

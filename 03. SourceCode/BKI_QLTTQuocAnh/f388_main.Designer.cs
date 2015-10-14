@@ -82,6 +82,8 @@
             this.m_cmd_dm_nhan_vien = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_quan_ly_luong_cung = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_quan_ly_khong_dong_bh = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_tk_ns_dv = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_tk_ns_tong_hop = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -98,11 +100,9 @@
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.m_cmd_tk_ns_dv = new DevExpress.XtraBars.BarButtonItem();
-            this.m_cmd_tk_ns_tong_hop = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -632,7 +632,6 @@
             this.m_cmd_quan_ly_luong_cung.Name = "m_cmd_quan_ly_luong_cung";
             this.m_cmd_quan_ly_luong_cung.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.m_cmd_quan_ly_luong_cung.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_quan_ly_khong_dong_bh
             // 
@@ -642,6 +641,24 @@
             this.m_cmd_quan_ly_khong_dong_bh.Name = "m_cmd_quan_ly_khong_dong_bh";
             this.m_cmd_quan_ly_khong_dong_bh.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // m_cmd_tk_ns_dv
+            // 
+            this.m_cmd_tk_ns_dv.Caption = "Thống kê nhân sự theo đơn vị";
+            this.m_cmd_tk_ns_dv.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_tk_ns_dv.Glyph")));
+            this.m_cmd_tk_ns_dv.Id = 64;
+            this.m_cmd_tk_ns_dv.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_tk_ns_dv.LargeGlyph")));
+            this.m_cmd_tk_ns_dv.Name = "m_cmd_tk_ns_dv";
+            this.m_cmd_tk_ns_dv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tk_ns_dv_ItemClick);
+            // 
+            // m_cmd_tk_ns_tong_hop
+            // 
+            this.m_cmd_tk_ns_tong_hop.Caption = "Thống kê tổng hợp";
+            this.m_cmd_tk_ns_tong_hop.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_tk_ns_tong_hop.Glyph")));
+            this.m_cmd_tk_ns_tong_hop.Id = 65;
+            this.m_cmd_tk_ns_tong_hop.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_tk_ns_tong_hop.LargeGlyph")));
+            this.m_cmd_tk_ns_tong_hop.Name = "m_cmd_tk_ns_tong_hop";
+            this.m_cmd_tk_ns_tong_hop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tk_ns_tong_hop_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -725,7 +742,6 @@
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_quan_ly_khong_dong_bh);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Khác";
-            this.ribbonPageGroup10.Visible = false;
             // 
             // ribbonPage5
             // 
@@ -772,6 +788,13 @@
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Báo cáo tổng";
             // 
+            // ribbonPageGroup12
+            // 
+            this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_tk_ns_dv);
+            this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_tk_ns_tong_hop);
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup12.Text = "Báo cáo nhân sự";
+            // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 418);
@@ -782,31 +805,6 @@
             // MdiManager
             // 
             this.MdiManager.MdiParent = this;
-            // 
-            // ribbonPageGroup12
-            // 
-            this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_tk_ns_dv);
-            this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_tk_ns_tong_hop);
-            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
-            this.ribbonPageGroup12.Text = "Báo cáo nhân sự";
-            // 
-            // m_cmd_tk_ns_dv
-            // 
-            this.m_cmd_tk_ns_dv.Caption = "Thống kê nhân sự theo đơn vị";
-            this.m_cmd_tk_ns_dv.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_tk_ns_dv.Glyph")));
-            this.m_cmd_tk_ns_dv.Id = 64;
-            this.m_cmd_tk_ns_dv.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_tk_ns_dv.LargeGlyph")));
-            this.m_cmd_tk_ns_dv.Name = "m_cmd_tk_ns_dv";
-            this.m_cmd_tk_ns_dv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tk_ns_dv_ItemClick);
-            // 
-            // m_cmd_tk_ns_tong_hop
-            // 
-            this.m_cmd_tk_ns_tong_hop.Caption = "Thống kê tổng hợp";
-            this.m_cmd_tk_ns_tong_hop.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_tk_ns_tong_hop.Glyph")));
-            this.m_cmd_tk_ns_tong_hop.Id = 65;
-            this.m_cmd_tk_ns_tong_hop.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_tk_ns_tong_hop.LargeGlyph")));
-            this.m_cmd_tk_ns_tong_hop.Name = "m_cmd_tk_ns_tong_hop";
-            this.m_cmd_tk_ns_tong_hop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tk_ns_tong_hop_ItemClick);
             // 
             // f388_main
             // 

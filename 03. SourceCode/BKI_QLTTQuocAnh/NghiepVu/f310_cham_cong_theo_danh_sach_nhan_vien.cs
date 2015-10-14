@@ -139,6 +139,20 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
+        private bool bang_luong_thang_do_da_tinh(decimal v_id_nhan_vien, int ip_dat_thang, int ip_dat_nam)
+        {
+            DS_RPT_LUONG v_ds = new DS_RPT_LUONG();
+            US_RPT_LUONG v_us = new US_RPT_LUONG();
+            v_us.FillDataset(v_ds, "WHERE ID_NHAN_VIEN = " + v_id_nhan_vien + " AND THANG = " + ip_dat_thang + " AND  NAM = " + ip_dat_nam + "");
+
+            if (v_ds.Tables[0].Rows.Count != 0)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
         private void update_du_lieu(DataRow v_dr) //Lưu dữ liệu từ gridview vào DB
         {
             try
@@ -166,7 +180,44 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_us_gd_cc.strNGUOI_LAP = "admin";
                 v_us_gd_cc.strNGUOI_SUA = "admin";
                 v_us_gd_cc.Insert();
+
+                //tinh lai bang luong cho nhan vien da sua
+                if (bang_luong_thang_do_da_tinh(CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"].ToString()), int.Parse(m_dat_ngay_cham_cong.Value.Month.ToString()), int.Parse(m_dat_ngay_cham_cong.Value.Year.ToString())))
+                {
+                    Update_luong_nv_2_rpt_bang_luong(CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"].ToString()));
+                }
             }
+        }
+
+        private int find_id_rpt_luong(decimal v_id_nhan_vien, int ip_dat_thang, int ip_dat_nam)
+        {
+            DS_RPT_LUONG v_ds = new DS_RPT_LUONG();
+            US_RPT_LUONG v_us = new US_RPT_LUONG();
+            v_us.FillDataset(v_ds);
+
+            string v_str_filter = "ID_NHAN_VIEN = " + v_id_nhan_vien + " AND THANG = " + ip_dat_thang + " AND  NAM = " + ip_dat_nam;
+            DataRow[] v_dr = v_ds.RPT_LUONG.Select(v_str_filter);
+
+            if (v_dr.Count() == 0)
+            {
+                return -1;
+            }
+            else
+            {
+                return int.Parse(v_dr.First()["ID"].ToString());
+            }
+        }
+
+        private void Update_luong_nv_2_rpt_bang_luong(decimal v_id_nhan_vien)
+        {
+            DS_RPT_LUONG v_ds = new DS_RPT_LUONG();
+
+            DataRow v_dr_luong = CCommon.get_luong_1_nhan_vien(v_id_nhan_vien, int.Parse(m_dat_ngay_cham_cong.Value.Month.ToString()), int.Parse(m_dat_ngay_cham_cong.Value.Year.ToString()));
+            var v_dr_luong_nv = v_ds.Tables[0].NewRow();
+            int v_id_rpt_luong = find_id_rpt_luong(v_id_nhan_vien, int.Parse(m_dat_ngay_cham_cong.Value.Month.ToString()), int.Parse(m_dat_ngay_cham_cong.Value.Year.ToString()));
+            DataRow v_dr_luong_1_nv = CCommon.get_dr(v_dr_luong_nv, v_dr_luong, v_id_nhan_vien, v_id_rpt_luong, int.Parse(m_dat_ngay_cham_cong.Value.Month.ToString()), int.Parse(m_dat_ngay_cham_cong.Value.Year.ToString()));
+            v_ds.Tables[0].Rows.Add(v_dr_luong_1_nv);
+            CCommon.update_luong_1NV_2_rpt(v_id_rpt_luong, v_dr_luong_1_nv);
         }
 
         private decimal get_id_loai_ngay_cong(string ip_str_ma_ngay_cong)

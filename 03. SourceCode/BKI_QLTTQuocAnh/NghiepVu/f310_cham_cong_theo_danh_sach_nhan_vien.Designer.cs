@@ -218,6 +218,7 @@
             this.MA_NGAY_CONG.Caption = "Chấm công";
             this.MA_NGAY_CONG.FieldName = "MA_NGAY_CONG";
             this.MA_NGAY_CONG.Name = "MA_NGAY_CONG";
+            this.MA_NGAY_CONG.OptionsColumn.AllowEdit = false;
             this.MA_NGAY_CONG.Visible = true;
             this.MA_NGAY_CONG.VisibleIndex = 3;
             this.MA_NGAY_CONG.Width = 726;

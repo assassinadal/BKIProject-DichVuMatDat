@@ -68,6 +68,7 @@
     <Compile Include="US_GD_HE_SO_CHAT_LUONG.cs" />
     <Compile Include="US_GD_HE_SO_LNS.cs" />
     <Compile Include="US_GD_HOP_DONG.cs" />
+    <Compile Include="US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG.cs" />
     <Compile Include="US_GD_HS_LNS_LCD.cs" />
     <Compile Include="US_GD_KHONG_DONG_BAO_HIEM.cs" />
     <Compile Include="US_GD_LOAI_LAO_DONG.cs" />

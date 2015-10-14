@@ -134,6 +134,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_HS_LNS_LCD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -467,6 +472,17 @@
     </None>
     <None Include="DS_GD_HOP_DONG.xss">
       <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG.xsc">
+      <DependentUpon>DS_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG.xss">
+      <DependentUpon>DS_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG.xsd</DependentUpon>
     </None>
     <None Include="DS_GD_HS_LNS_LCD.xsc">
       <DependentUpon>DS_GD_HS_LNS_LCD.xsd</DependentUpon>

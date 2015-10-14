@@ -569,8 +569,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             ip_us.dcID_HOP_DONG = m_id_gd_hd;
             ip_us.dcHE_SO = CIPConvert.ToDecimal(find_hs_lns(CIPConvert.ToDecimal(m_sle_chuc_danh_lns.EditValue), CIPConvert.ToDecimal(m_sle_muc_lns.EditValue)));
             //ip_us.dcID_LY_DO_CHINH_SUA =
-            ip_us.datNGAY_BAT_DAU = v_us.datNGAY_CO_HIEU_LUC;
-            ip_us.datNGAY_KET_THUC = v_us.datNGAY_HET_HIEU_LUC;
+            //so sanh gia tri ngay bat dau, ngay ket thuc vs ngay co hieu luc, ngay het hieu luc cua quyet dinh
+            ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau_lns.Value;
+            ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lns.Value;
 
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
@@ -587,12 +588,13 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void form_2_us_gd_lcd(US_GD_LUONG_CHE_DO ip_us)
         {
-            US_V_GD_QUYET_DINH v_us = new US_V_GD_QUYET_DINH(CIPConvert.ToDecimal(m_sle_chon_quyet_dinh.EditValue));
+            //US_V_GD_QUYET_DINH v_us = new US_V_GD_QUYET_DINH(CIPConvert.ToDecimal(m_sle_chon_quyet_dinh.EditValue));
             ip_us.dcID_HOP_DONG = m_id_gd_hd;
             ip_us.dcSO_TIEN = CIPConvert.ToDecimal(find_so_tien_lcd(CIPConvert.ToDecimal(m_sle_chuc_danh_lcd.EditValue), CIPConvert.ToDecimal(m_sle_muc_lcd.EditValue)));
             //ip_us.dcID_LY_DO_CHINH_SUA =
-            ip_us.datNGAY_BAT_DAU = v_us.datNGAY_CO_HIEU_LUC;
-            ip_us.datNGAY_KET_THUC = v_us.datNGAY_HET_HIEU_LUC;
+            //so sanh gia tri ngay bat dau, ngay ket thuc vs ngay co hieu luc, ngay het hieu luc cua quyet dinh
+            ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau_lcd.Value;
+            ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lcd.Value;
 
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {

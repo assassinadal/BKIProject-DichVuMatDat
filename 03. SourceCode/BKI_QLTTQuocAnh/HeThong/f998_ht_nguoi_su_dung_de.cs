@@ -259,7 +259,7 @@ namespace BKI_DichVuMatDat
             "Đã đóng"});
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(119, 120);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
-            this.m_cbo_trang_thai.Size = new System.Drawing.Size(96, 22);
+            this.m_cbo_trang_thai.Size = new System.Drawing.Size(96, 21);
             this.m_cbo_trang_thai.TabIndex = 12;
             // 
             // label5
@@ -326,7 +326,7 @@ namespace BKI_DichVuMatDat
             "Đã đóng"});
             this.m_cbo_nhom_quyen.Location = new System.Drawing.Point(119, 147);
             this.m_cbo_nhom_quyen.Name = "m_cbo_nhom_quyen";
-            this.m_cbo_nhom_quyen.Size = new System.Drawing.Size(224, 22);
+            this.m_cbo_nhom_quyen.Size = new System.Drawing.Size(224, 21);
             this.m_cbo_nhom_quyen.TabIndex = 12;
             // 
             // label9
@@ -363,7 +363,7 @@ namespace BKI_DichVuMatDat
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(83, 16);
             this.label10.TabIndex = 11;
-            this.label10.Text = "Nhóm quyền";
+            this.label10.Text = "Thuộc nhóm";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // f998_ht_nguoi_su_dung_de

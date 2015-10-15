@@ -90,10 +90,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 242);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 211);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(440, 71);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(440, 44);
             this.m_pnl_out_place_dm.TabIndex = 7;
             // 
             // m_cmd_save
@@ -101,13 +101,13 @@
             this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(245, 4);
             this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(116, 63);
+            this.m_cmd_save.Size = new System.Drawing.Size(103, 36);
             this.m_cmd_save.TabIndex = 0;
             this.m_cmd_save.Text = "&Lưu";
             // 
@@ -122,7 +122,7 @@
             this.m_cmd_exit.ImageList = this.ImageList;
             this.m_cmd_exit.Location = new System.Drawing.Point(348, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 63);
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 36);
             this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Trở về (Esc)";
             // 
@@ -180,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 313);
+            this.ClientSize = new System.Drawing.Size(440, 255);
             this.Controls.Add(this.m_txt_nhap_lai_mat_khau_moi);
             this.Controls.Add(this.m_txt_mat_khau_moi);
             this.Controls.Add(this.m_txt_mat_khau_cu);

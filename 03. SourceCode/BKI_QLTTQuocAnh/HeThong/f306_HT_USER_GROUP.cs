@@ -24,6 +24,7 @@ using BKI_DichVuMatDat.DS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 using BKI_DichVuMatDat.HeThong;
+using DevExpress.XtraEditors;
 
 namespace BKI_DichVuMatDat
 {
@@ -329,7 +330,9 @@ namespace BKI_DichVuMatDat
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+            var dlg = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dlg != System.Windows.Forms.DialogResult.Yes) return;
+
             US_HT_USER_GROUP v_us = new US_HT_USER_GROUP();
             grid2us_object(v_us, m_fg.Row);
             try

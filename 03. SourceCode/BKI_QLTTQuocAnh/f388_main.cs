@@ -179,10 +179,7 @@ namespace BKI_DichVuMatDat
             try
             {
                 f308_DOI_MAT_KHAU_NGUOI_SD v_frm = new f308_DOI_MAT_KHAU_NGUOI_SD();
-                if(IsExistFormName(v_frm)) return;
-
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                v_frm.ShowDialog();
             }
             catch(Exception v_e)
             {
@@ -211,10 +208,7 @@ namespace BKI_DichVuMatDat
             try
             {
                 f995_ht_phan_quyen_cho_nhom v_frm = new f995_ht_phan_quyen_cho_nhom();
-                if(IsExistFormName(v_frm)) return;
-
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                v_frm.ShowDialog();
             }
             catch(Exception v_e)
             {
@@ -248,7 +242,7 @@ namespace BKI_DichVuMatDat
 
         private void set_initial_form_load()
         {
-            format_control();
+            //format_control();
         }
 
         void m_cmd_bang_luong_nv_ItemClick(object sender, ItemClickEventArgs e)

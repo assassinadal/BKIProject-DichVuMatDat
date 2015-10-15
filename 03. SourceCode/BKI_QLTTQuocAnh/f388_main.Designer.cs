@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -102,7 +101,8 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.m_cmd_bc_hs_bs_hs_athk = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -167,9 +167,10 @@
             this.m_cmd_quan_ly_luong_cung,
             this.m_cmd_quan_ly_khong_dong_bh,
             this.m_cmd_tk_ns_dv,
-            this.m_cmd_tk_ns_tong_hop});
+            this.m_cmd_tk_ns_tong_hop,
+            this.m_cmd_bc_hs_bs_hs_athk});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 66;
+            this.ribbon.MaxItemId = 67;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -785,6 +786,7 @@
             // ribbonPageGroup11
             // 
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bang_luong_nv);
+            this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bc_hs_bs_hs_athk);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Báo cáo tổng";
             // 
@@ -805,6 +807,15 @@
             // MdiManager
             // 
             this.MdiManager.MdiParent = this;
+            // 
+            // m_cmd_bc_hs_bs_hs_athk
+            // 
+            this.m_cmd_bc_hs_bs_hs_athk.Caption = "Hệ số bổ sung, hệ số an toàn hành không";
+            this.m_cmd_bc_hs_bs_hs_athk.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_bc_hs_bs_hs_athk.Glyph")));
+            this.m_cmd_bc_hs_bs_hs_athk.Id = 66;
+            this.m_cmd_bc_hs_bs_hs_athk.Name = "m_cmd_bc_hs_bs_hs_athk";
+            this.m_cmd_bc_hs_bs_hs_athk.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // f388_main
             // 
@@ -902,5 +913,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
         private DevExpress.XtraBars.BarButtonItem m_cmd_tk_ns_dv;
         private DevExpress.XtraBars.BarButtonItem m_cmd_tk_ns_tong_hop;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_bc_hs_bs_hs_athk;
     }
 }

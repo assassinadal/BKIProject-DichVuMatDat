@@ -350,6 +350,7 @@
     <Compile Include="DanhMuc\F150_dm_nhan_vien.Designer.cs">
       <DependentUpon>F150_dm_nhan_vien.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormatControl\FormatControl.cs" />
     <Compile Include="HeThong\collection.cs" />
     <Compile Include="HeThong\f306_HT_USER_GROUP.cs">
       <SubType>Form</SubType>

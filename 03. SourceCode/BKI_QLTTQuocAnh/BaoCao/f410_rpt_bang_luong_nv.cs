@@ -25,6 +25,8 @@ namespace BKI_DichVuMatDat.BaoCao
         public f410_rpt_bang_luong_nv()
         {
             InitializeComponent();
+            this.m_grv.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
+            this.m_grv.OptionsPrint.AutoWidth = false;
         }
 
         #region Public Interface

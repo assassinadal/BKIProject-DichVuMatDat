@@ -89,7 +89,7 @@ Public Class BaseMessages
         If v_dvMessage.Count > 0 Then
             v_strValue = CType(v_dvMessage.Item(0).Item("Message"), String)
         Else
-            v_strValue = "Thông báo này chưa đựơc định nghĩa"
+            v_strValue = "Đã có lỗi xảy ra. Vui lòng kiểm tra lại các trường thông tin."
         End If
         Return v_strValue
     End Function

@@ -197,6 +197,17 @@ namespace BKI_DichVuMatDat
 
         #region Report
         static GridView m_grv;
+        public static void m_grv_PopupMenuShowing(object sender, PopupMenuShowingEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (e.MenuType == DevExpress.XtraGrid.Views.Grid.GridMenuType.Row)
+            {
+                int rowHandle = e.HitInfo.RowHandle;
+                e.Menu.Items.Clear();
+                e.Menu.Items.Add(WinFormControls.CreateRowSubMenu(view, rowHandle));
+            }
+        }
+
         public static DXMenuItem CreateRowSubMenu(GridView view, int rowHandle)
         {
             m_grv = view;

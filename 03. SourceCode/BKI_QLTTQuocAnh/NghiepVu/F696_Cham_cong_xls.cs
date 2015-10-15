@@ -22,6 +22,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         public F696_Cham_cong_xls()
         {
             InitializeComponent();
+            FormatControl.SetVisibleSimpleButton(this);
         }
 
         DataSet m_ds_ngay_cong = new DataSet();

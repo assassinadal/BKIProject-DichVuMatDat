@@ -26,6 +26,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void F104_dm_loai_hop_dong_Load(object sender, EventArgs e)
         {
+            FormatControl.SetVisibleSimpleButton(this);
             load_data_2_grid();
         }
 

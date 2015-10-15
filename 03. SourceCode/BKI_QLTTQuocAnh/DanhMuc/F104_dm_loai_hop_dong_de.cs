@@ -83,7 +83,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void F104_dm_loai_hop_dong_de_Load(object sender, EventArgs e)
         {
-
+            FormatControl.SetVisibleSimpleButton(this);
         }
 
         private bool check_data_is_ok()

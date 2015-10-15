@@ -260,6 +260,7 @@ namespace BKI_DichVuMatDat
         private void format_controls()
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
+            FormatControl.SetVisibleSimpleButton(this);
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);

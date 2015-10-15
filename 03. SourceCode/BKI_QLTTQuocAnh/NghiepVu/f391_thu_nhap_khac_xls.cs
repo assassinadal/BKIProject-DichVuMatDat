@@ -32,6 +32,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Private Methods
         private void format_controls()
         {
+            FormatControl.SetVisibleSimpleButton(this);
             set_define_events();
             this.KeyPreview = true;
         }

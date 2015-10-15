@@ -62,7 +62,7 @@ namespace BKI_DichVuMatDat
             }
         }
 
-        public static void GetAllBarButtonItem(RibbonControl ribbonControl, List<BarButtonItem> outList)
+        private static void GetAllBarButtonItem(RibbonControl ribbonControl, List<BarButtonItem> outList)
         {
             for (int x = 0; x < ribbonControl.Manager.Items.Count; x++)
             {

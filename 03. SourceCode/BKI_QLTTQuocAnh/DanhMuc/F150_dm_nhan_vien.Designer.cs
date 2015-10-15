@@ -167,7 +167,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1362, 82);
+            this.panel2.Size = new System.Drawing.Size(1354, 82);
             this.panel2.TabIndex = 1;
             // 
             // m_gr_thong_tin_tra_cuu
@@ -187,7 +187,7 @@
             this.m_gr_thong_tin_tra_cuu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_gr_thong_tin_tra_cuu.Location = new System.Drawing.Point(0, 0);
             this.m_gr_thong_tin_tra_cuu.Name = "m_gr_thong_tin_tra_cuu";
-            this.m_gr_thong_tin_tra_cuu.Size = new System.Drawing.Size(1362, 82);
+            this.m_gr_thong_tin_tra_cuu.Size = new System.Drawing.Size(1354, 82);
             this.m_gr_thong_tin_tra_cuu.TabIndex = 2;
             this.m_gr_thong_tin_tra_cuu.Text = "THÔNG TIN TRA CỨU";
             // 
@@ -495,14 +495,14 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 510);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1362, 39);
+            this.panel5.Size = new System.Drawing.Size(1354, 39);
             this.panel5.TabIndex = 5;
             // 
             // m_cmd_insert
             // 
             this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
-            this.m_cmd_insert.Location = new System.Drawing.Point(902, 0);
+            this.m_cmd_insert.Location = new System.Drawing.Point(894, 0);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(115, 39);
             this.m_cmd_insert.TabIndex = 34;
@@ -512,7 +512,7 @@
             // 
             this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
-            this.m_cmd_update.Location = new System.Drawing.Point(1017, 0);
+            this.m_cmd_update.Location = new System.Drawing.Point(1009, 0);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(115, 39);
             this.m_cmd_update.TabIndex = 33;
@@ -522,7 +522,7 @@
             // 
             this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
-            this.m_cmd_delete.Location = new System.Drawing.Point(1132, 0);
+            this.m_cmd_delete.Location = new System.Drawing.Point(1124, 0);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(115, 39);
             this.m_cmd_delete.TabIndex = 32;
@@ -532,7 +532,7 @@
             // 
             this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_xuat_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_excel.Image")));
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(1247, 0);
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(1239, 0);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(115, 39);
             this.m_cmd_xuat_excel.TabIndex = 31;
@@ -545,7 +545,7 @@
             this.m_xtc_tong.Location = new System.Drawing.Point(0, 0);
             this.m_xtc_tong.Name = "m_xtc_tong";
             this.m_xtc_tong.SelectedTabPage = this.m_xtp_ly_lich_ca_nha;
-            this.m_xtc_tong.Size = new System.Drawing.Size(1362, 428);
+            this.m_xtc_tong.Size = new System.Drawing.Size(1354, 428);
             this.m_xtc_tong.TabIndex = 0;
             this.m_xtc_tong.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.m_xtp_ly_lich_ca_nha,
@@ -560,7 +560,7 @@
             this.m_xtp_ly_lich_ca_nha.Controls.Add(this.m_grc_thong_tin_co_ban);
             this.m_xtp_ly_lich_ca_nha.Image = global::BKI_DichVuMatDat.Properties.Resources.Custom_Icon_Design_Pretty_Office_2_Man;
             this.m_xtp_ly_lich_ca_nha.Name = "m_xtp_ly_lich_ca_nha";
-            this.m_xtp_ly_lich_ca_nha.Size = new System.Drawing.Size(1356, 381);
+            this.m_xtp_ly_lich_ca_nha.Size = new System.Drawing.Size(1348, 381);
             this.m_xtp_ly_lich_ca_nha.Text = "Lý lịch cá nhân";
             // 
             // m_grc_td_ct
@@ -1230,14 +1230,14 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 82);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1362, 428);
+            this.panel6.Size = new System.Drawing.Size(1354, 428);
             this.panel6.TabIndex = 6;
             // 
             // F150_dm_nhan_vien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 549);
+            this.ClientSize = new System.Drawing.Size(1354, 549);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);

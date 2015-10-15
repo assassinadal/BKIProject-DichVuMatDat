@@ -1,4 +1,6 @@
 ﻿
+using DevExpress.XtraBars;
+using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using IP.Core.IPData;
 using IP.Core.IPSystemAdmin;
@@ -56,6 +58,33 @@ namespace BKI_DichVuMatDat
                 if (!CanUseThisControl(v_ds, iForm.Name, control.Name))
                 {
                     control.Visible = false;
+                }
+            }
+        }
+
+        public static void GetAllBarButtonItem(RibbonControl ribbonControl, List<BarButtonItem> outList)
+        {
+            for (int x = 0; x < ribbonControl.Manager.Items.Count; x++)
+            {
+                if (ribbonControl.Manager.Items[x].GetType() == typeof(BarButtonItem))
+                {
+                    BarButtonItem btn = ribbonControl.Manager.Items[x] as BarButtonItem;
+                    outList.Add(btn);
+                }
+            }
+        }
+        public static void SetVisibleBarButtonItem(RibbonControl iRibbonForm, string iFormName)
+        {
+            var ds = getDataPhanQuyen();
+
+            List<BarButtonItem> listBarButtonItem = new List<BarButtonItem>();
+            GetAllBarButtonItem(iRibbonForm, listBarButtonItem);
+
+            foreach (var barBtn in listBarButtonItem)
+            {
+                if (!CanUseThisControl(ds, iFormName, barBtn.Name))
+                {
+                    barBtn.Visibility = BarItemVisibility.Never;
                 }
             }
         }

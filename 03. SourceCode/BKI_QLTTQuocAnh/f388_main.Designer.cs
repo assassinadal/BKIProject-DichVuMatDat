@@ -73,11 +73,11 @@
             this.m_cmd_hs_chat_luong_xls = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_danh_muc_don_vi = new DevExpress.XtraBars.BarButtonItem();
             this.c_cmd_danh_muc_bao_hiem = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_cham_cong_xls = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_quan_ly_thu_nhap_khac_xls = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_quan_ly_thu_nhap_khac = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_quyet_toan_the_nam = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_hs_chat_luong_by_nv = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_nhan_vien = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_quan_ly_luong_cung = new DevExpress.XtraBars.BarButtonItem();
@@ -157,11 +157,11 @@
             this.m_cmd_hs_chat_luong_xls,
             this.m_cmd_danh_muc_don_vi,
             this.c_cmd_danh_muc_bao_hiem,
-            this.barButtonItem2,
+            this.m_cmd_cham_cong_xls,
             this.barButtonItem3,
             this.m_cmd_quan_ly_thu_nhap_khac_xls,
             this.m_cmd_quan_ly_thu_nhap_khac,
-            this.barButtonItem6,
+            this.m_cmd_quyet_toan_the_nam,
             this.m_cmd_hs_chat_luong_by_nv,
             this.m_cmd_dm_nhan_vien,
             this.m_cmd_quan_ly_luong_cung,
@@ -564,14 +564,14 @@
             this.c_cmd_danh_muc_bao_hiem.Name = "c_cmd_danh_muc_bao_hiem";
             this.c_cmd_danh_muc_bao_hiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.c_cmd_danh_muc_bao_hiem_ItemClick);
             // 
-            // barButtonItem2
+            // m_cmd_cham_cong_xls
             // 
-            this.barButtonItem2.Caption = "Chấm công từ XLSX";
-            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
-            this.barButtonItem2.Id = 55;
-            this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            this.m_cmd_cham_cong_xls.Caption = "Chấm công từ XLSX";
+            this.m_cmd_cham_cong_xls.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_cham_cong_xls.Glyph")));
+            this.m_cmd_cham_cong_xls.Id = 55;
+            this.m_cmd_cham_cong_xls.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_cham_cong_xls.LargeGlyph")));
+            this.m_cmd_cham_cong_xls.Name = "m_cmd_cham_cong_xls";
+            this.m_cmd_cham_cong_xls.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -597,13 +597,13 @@
             this.m_cmd_quan_ly_thu_nhap_khac.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_quan_ly_thu_nhap_khac.LargeGlyph")));
             this.m_cmd_quan_ly_thu_nhap_khac.Name = "m_cmd_quan_ly_thu_nhap_khac";
             // 
-            // barButtonItem6
+            // m_cmd_quyet_toan_the_nam
             // 
-            this.barButtonItem6.Caption = "Quyết toán thuế năm";
-            this.barButtonItem6.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.Glyph")));
-            this.barButtonItem6.Id = 59;
-            this.barButtonItem6.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.LargeGlyph")));
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.m_cmd_quyet_toan_the_nam.Caption = "Quyết toán thuế năm";
+            this.m_cmd_quyet_toan_the_nam.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_quyet_toan_the_nam.Glyph")));
+            this.m_cmd_quyet_toan_the_nam.Id = 59;
+            this.m_cmd_quyet_toan_the_nam.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_quyet_toan_the_nam.LargeGlyph")));
+            this.m_cmd_quyet_toan_the_nam.Name = "m_cmd_quyet_toan_the_nam";
             // 
             // m_cmd_hs_chat_luong_by_nv
             // 
@@ -755,7 +755,7 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_cham_cong_nv);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_cham_cong_xls);
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_hs_chat_luong_by_nv);
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_hs_chat_luong_xls);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
@@ -770,7 +770,7 @@
             // 
             // ribbonPageGroup9
             // 
-            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup9.ItemLinks.Add(this.m_cmd_quyet_toan_the_nam);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Thuế";
             // 
@@ -886,13 +886,13 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_hs_chat_luong_xls;
         private DevExpress.XtraBars.BarButtonItem m_cmd_danh_muc_don_vi;
         private DevExpress.XtraBars.BarButtonItem c_cmd_danh_muc_bao_hiem;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_cham_cong_xls;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem m_cmd_quan_ly_thu_nhap_khac_xls;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem m_cmd_quan_ly_thu_nhap_khac;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_quyet_toan_the_nam;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.BarButtonItem m_cmd_hs_chat_luong_by_nv;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_nhan_vien;

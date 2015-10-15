@@ -79,6 +79,7 @@ namespace BKI_DichVuMatDat
                 //m_cmd_nguoi_sd.Visibility = BarItemVisibility.Never;
             //    ribbonPageGroup2.Visible = false;
             //}
+            FormatControl.SetVisibleBarButtonItem(ribbon, this.Name);
             set_define_events();
         }
 

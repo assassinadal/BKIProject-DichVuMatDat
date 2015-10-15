@@ -256,9 +256,10 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             DS_V_F320_LAP_HOP_DONG v_ds = new DS_V_F320_LAP_HOP_DONG();
             US_V_F320_LAP_HOP_DONG v_us = new US_V_F320_LAP_HOP_DONG();
-            string v_current_date = DateTime.Now.Date.ToShortDateString();
+            //string v_current_date = DateTime.Now.Date.ToShortDateString();
 
-            v_us.FillDataset(v_ds, "WHERE NGAY_BAT_DAU <= '" + v_current_date + "' AND (NGAY_KET_THUC >= '" + v_current_date + "' OR NGAY_KET_THUC IS NULL)");
+            //v_us.FillDataset(v_ds, "WHERE NGAY_BAT_DAU <= '" + v_current_date + "' AND (NGAY_KET_THUC >= '" + v_current_date + "' OR NGAY_KET_THUC IS NULL)");
+            v_us.FillDataset_by_ngay_hien_tai(v_ds, DateTime.Now.Date);
 
             m_grc_lap_hd.DataSource = v_ds.Tables[0];
         }
@@ -269,10 +270,10 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             DS_V_F320_LAP_HOP_DONG v_ds = new DS_V_F320_LAP_HOP_DONG();
             US_V_F320_LAP_HOP_DONG v_us = new US_V_F320_LAP_HOP_DONG();
-            string v_current_date = DateTime.Now.Date.ToShortDateString();
+            //string v_current_date = DateTime.Now.Date.ToShortDateString();
 
-            v_us.FillDataset(v_ds, "WHERE ID_NHAN_VIEN = " + ip_dc_id_nhan_vien + " AND NGAY_BAT_DAU <= '" + v_current_date + "' AND (NGAY_KET_THUC >= '" + v_current_date + "' OR NGAY_KET_THUC IS NULL)");
-
+            //v_us.FillDataset(v_ds, "WHERE ID_NHAN_VIEN = " + ip_dc_id_nhan_vien + " AND NGAY_BAT_DAU <= '" + v_current_date + "' AND (NGAY_KET_THUC >= '" + v_current_date + "' OR NGAY_KET_THUC IS NULL)");
+            v_us.FillDataset_by_ngay_hien_tai(v_ds, ip_dc_id_nhan_vien, DateTime.Now.Date);
             m_grc_lap_hd.DataSource = v_ds.Tables[0];
         }
 

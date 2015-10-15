@@ -402,5 +402,22 @@ namespace BKI_DichVuMatDat.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+
+        public void FillDataset_by_ngay_hien_tai(DS_V_F320_LAP_HOP_DONG v_ds, DateTime ip_dat_curent_date)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_V_F320_LAP_HOP_DONG_by_date");
+            v_sp.addDatetimeInputParam("@ip_dat_curent_date", ip_dat_curent_date);
+            
+            v_sp.fillDataSetByCommand(this, v_ds);
+        }
+
+        public void FillDataset_by_ngay_hien_tai(DS_V_F320_LAP_HOP_DONG v_ds, decimal ip_dc_id_nhan_vien, DateTime ip_dat_curent_date)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_V_F320_LAP_HOP_DONG_by_id_nv_and_date");
+            v_sp.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            v_sp.addDatetimeInputParam("@ip_dat_curent_date", ip_dat_curent_date);
+
+            v_sp.fillDataSetByCommand(this, v_ds);
+        }
     }
 }

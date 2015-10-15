@@ -311,5 +311,17 @@ namespace BKI_DichVuMatDat.BaoCao
                 }
             }
         }
+
+        private void m_cmd_luu_bang_luong_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+            saveFileDialog1.RestoreDirectory = true;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                m_grv.ExportToXls(saveFileDialog1.FileName);
+                MessageBox.Show("Lưu báo cáo thành công");
+            }
+        }
     }
 }

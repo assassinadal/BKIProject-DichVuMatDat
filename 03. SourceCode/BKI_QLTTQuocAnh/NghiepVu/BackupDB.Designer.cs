@@ -233,7 +233,6 @@
             this.m_txt_location.Name = "m_txt_location";
             this.m_txt_location.Size = new System.Drawing.Size(315, 20);
             this.m_txt_location.TabIndex = 1;
-            this.m_txt_location.Text = "D:\\DuLieuLuuTru\\Du lieu tai chinh";
             // 
             // label10
             // 

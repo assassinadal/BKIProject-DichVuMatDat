@@ -182,11 +182,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                //f410_rpt_bang_luong_nv v_frm = new f410_rpt_bang_luong_nv();
-                //if(IsExistFormName(v_frm)) return;
+                BackupDB v_frm = new BackupDB();
+                if (IsExistFormName(v_frm)) return;
 
-                //v_frm.MdiParent = this;
-                //v_frm.Show();
+                v_frm.MdiParent = this;
+                v_frm.Show();
             }
             catch(Exception v_e)
             {

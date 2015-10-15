@@ -38,6 +38,8 @@ namespace BKI_DichVuMatDat.DanhMuc
         #region Private methods
         private void format_controls()
         {
+            this.m_grv_dm_luong_che_do.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
+            this.m_grv_dm_luong_che_do.OptionsPrint.AutoWidth = false;
             set_define_events();
             this.KeyPreview = true;
         }

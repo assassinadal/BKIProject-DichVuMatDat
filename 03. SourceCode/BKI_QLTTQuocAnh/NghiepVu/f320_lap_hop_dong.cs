@@ -45,6 +45,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void format_controls()
         {
             FormatControl.SetVisibleSimpleButton(this);
+            this.m_grv_lap_hd.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
+            this.m_grv_lap_hd.OptionsPrint.AutoWidth = false;
             set_define_events();
             this.KeyPreview = true;
         }
@@ -970,7 +972,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         void m_sle_chon_nhan_vien_EditValueChanged(object sender, EventArgs e)
-        
         {
             try
             {

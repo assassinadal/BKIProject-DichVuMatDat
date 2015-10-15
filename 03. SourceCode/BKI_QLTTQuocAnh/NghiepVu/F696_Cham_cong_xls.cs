@@ -23,6 +23,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             InitializeComponent();
             FormatControl.SetVisibleSimpleButton(this);
+            this.m_grv.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
+            this.m_grv.OptionsPrint.AutoWidth = false;
         }
 
         DataSet m_ds_ngay_cong = new DataSet();

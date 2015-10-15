@@ -33,6 +33,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void format_controls()
         {
             FormatControl.SetVisibleSimpleButton(this);
+            this.m_grv_quan_ly_thu_nhap_khac.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
+            this.m_grv_quan_ly_thu_nhap_khac.OptionsPrint.AutoWidth = false;
             set_define_events();
             this.KeyPreview = true;
         }

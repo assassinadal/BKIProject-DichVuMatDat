@@ -39,6 +39,8 @@ namespace BKI_DichVuMatDat.DanhMuc
         private void format_controls()
         {
             FormatControl.SetVisibleSimpleButton(this);
+            this.m_grv_tham_so.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
+            this.m_grv_tham_so.OptionsPrint.AutoWidth = false;
             set_define_events();
             this.KeyPreview = true;
         }

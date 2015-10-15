@@ -37,6 +37,7 @@ namespace BKI_DichVuMatDat
             YES,
             NO
         }
+
         public enum eLOAI_TU_DIEN
         {
             TRANG_THAI_CHUC_VU,
@@ -50,6 +51,7 @@ namespace BKI_DichVuMatDat
             TRANG_THAI_LAO_DONG,
             DM_CA_HOC
         }
+
         public static void load_data_to_cbo_tu_dien(
              eLOAI_TU_DIEN ip_e
             , eTAT_CA ip_e_tat_ca
@@ -105,6 +107,7 @@ namespace BKI_DichVuMatDat
                 ip_obj_cbo_trang_thai.SelectedIndex = 0;
             }
         }
+
         public static void load_data_to_auto_complete_source(string ip_str_table_name, string ip_str_column_name, TextBox ip_txt)
         {
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();

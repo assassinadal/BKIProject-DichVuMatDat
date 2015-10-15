@@ -46,6 +46,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void format_controls()
         {
             FormatControl.SetVisibleSimpleButton(this);
+            this.m_grv_tang_giam_luong_cho_nv.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
+            this.m_grv_tang_giam_luong_cho_nv.OptionsPrint.AutoWidth = false;
             set_define_events();
             this.KeyPreview = true;
         }

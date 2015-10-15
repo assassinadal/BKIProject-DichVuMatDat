@@ -37,6 +37,8 @@ namespace BKI_DichVuMatDat.BaoCao
         #region Private methods
         private void format_controls()
         {
+            this.m_grv_bc_cac_thang_da_chot_bang_luong.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
+            this.m_grv_bc_cac_thang_da_chot_bang_luong.OptionsPrint.AutoWidth = false;
             set_define_events();
             this.KeyPreview = true;
         }

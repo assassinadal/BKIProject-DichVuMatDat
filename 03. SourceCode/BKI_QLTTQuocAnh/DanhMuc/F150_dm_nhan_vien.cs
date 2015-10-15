@@ -31,7 +31,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         #endregion
 
         #region Members
-
+        decimal m_is_newbie = 0; //1 la nhan vien moi
         #endregion
 
         #region Private Methods
@@ -46,6 +46,8 @@ namespace BKI_DichVuMatDat.DanhMuc
         private void set_initial_form_load()
         {
             load_data_to_sle_chon_nhan_vien();
+            tinh_tuoi_nhan_vien();
+            set_gioi_tinh_default();
         }
 
         private DataSet load_data_2_ds_v_dm_nv()
@@ -65,6 +67,13 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
+
+        //---------------------------------------------******----------------------------------------------------//
+        /****Li lich nhan vien****/
+        /*****/
+        /****/
+        /***/
+        /**/
 
         private decimal find_id_gd_ct(decimal ip_dc_id_nv)
         {
@@ -88,7 +97,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void load_data_2_grc_thong_tin_tra_cuu(US_DM_NHAN_VIEN v_us_nv)
         {
-            m_lbl_ma_nv.Text = v_us_nv.strMA_NV;
+            m_txt_ma_nv.Text = v_us_nv.strMA_NV;
 
             decimal v_id_gd_ct = find_id_gd_ct(v_us_nv.dcID);
 
@@ -124,13 +133,18 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
+        private void tinh_tuoi_nhan_vien()
+        {
+            decimal v_so_tuoi = CIPConvert.ToDecimal(DateTime.Now.Year - m_dat_ngay_sinh.Value.Year);
+            m_txt_tuoi.Text = v_so_tuoi.ToString();
+        }
+
         private void load_data_2_grc_thong_tin_co_ban(US_DM_NHAN_VIEN v_us_nv)
         {
             m_txt_ho_dem.Text = v_us_nv.strHO_DEM;
             m_txt_ten.Text = v_us_nv.strTEN;
             m_dat_ngay_sinh.Value = v_us_nv.datNGAY_SINH;
-            decimal v_so_tuoi = CIPConvert.ToDecimal(DateTime.Now.Year - m_dat_ngay_sinh.Value.Year);
-            m_txt_tuoi.Text = v_so_tuoi.ToString();
+            tinh_tuoi_nhan_vien();
             load_data_2_radio_button_gioi_tinh(v_us_nv);
 
             m_txt_hon_nhan.Text = v_us_nv.strHON_NHAN;
@@ -171,16 +185,228 @@ namespace BKI_DichVuMatDat.DanhMuc
         private void load_data_to_all_controls(decimal ip_dc_id_nv)
         {
             US_DM_NHAN_VIEN v_us_nv = new US_DM_NHAN_VIEN(ip_dc_id_nv);
+            m_sle_chon_nhan_vien.EditValue = v_us_nv.dcID;
             load_data_2_grc_thong_tin_tra_cuu(v_us_nv);
             load_data_2_grc_thong_tin_co_ban(v_us_nv);
             load_data_2_grc_thong_tin_lien_he(v_us_nv);
             load_data_2_grc_thong_tin_cong_tac(v_us_nv);
         }
 
+        private void change_form_2_insert_newbie()
+        {
+            this.Refresh();
+            set_gioi_tinh_default();
+            change_visible_of_control(false);
+            Refesh_controls_in_form();
+
+        }
+
+        private void set_gioi_tinh_default()
+        {
+            m_rdb_gioi_tinh_nam.Checked = true;
+            m_rdb_gioi_tinh_nu.Checked = false;
+        }
+
+        private void change_visible_of_control(bool ip_bool)
+        {
+            m_lbl_ho_ten_nv.Visible = ip_bool;
+            m_sle_chon_nhan_vien.Visible = ip_bool;
+            label1.Visible = ip_bool;
+            m_lbl_ngay_bat_dau.Visible = ip_bool;
+            label2.Visible = ip_bool;
+            m_lbl_don_vi.Visible = ip_bool;
+            label3.Visible = ip_bool;
+            m_lbl_vi_tri.Visible = ip_bool;
+            label4.Visible = ip_bool;
+            m_lbl_ngay_het_hd.Visible = ip_bool;
+        }
+
+        private void Refesh_controls_in_form()
+        {
+            Action<Control.ControlCollection> func = null;
+
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                    if (control is TextBox)
+                        (control as TextBox).Clear();
+                    else if (control is DateTimePicker)
+                        (control as DateTimePicker).Value = DateTime.Now.Date;
+                    else
+                        func(control.Controls);
+            };
+
+            func(Controls);
+        }
+
+        private void grc_thong_tin_co_ban_2_us(US_DM_NHAN_VIEN v_us_nv)
+        {
+            v_us_nv.strMA_NV = m_txt_ma_nv.Text.Trim();
+            v_us_nv.strHO_DEM = m_txt_ho_dem.Text.Trim();
+            v_us_nv.strTEN = m_txt_ten.Text.Trim();
+            v_us_nv.datNGAY_SINH = m_dat_ngay_sinh.Value.Date;
+            if (m_rdb_gioi_tinh_nam.Checked == true)
+            {
+                v_us_nv.strGIOI_TINH = "Y";
+            }
+            if (m_rdb_gioi_tinh_nu.Checked == true)
+            {
+                v_us_nv.strGIOI_TINH = "N";
+            }
+            v_us_nv.strHON_NHAN = m_txt_hon_nhan.Text.Trim();
+            v_us_nv.strQUOC_TICH = m_txt_quoc_tich.Text.Trim();
+            v_us_nv.strDAN_TOC = m_txt_dan_toc.Text.Trim();
+            v_us_nv.strTON_GIAO = m_txt_ton_giao.Text.Trim();
+            v_us_nv.strSO_CMT = m_txt_so_cmnd.Text.Trim();
+            v_us_nv.datNGAY_CAP = m_dat_ngay_cap.Value.Date;
+            v_us_nv.strSO_TAI_KHOAN = m_txt_so_tai_khoan.Text.Trim();
+            v_us_nv.strNGAN_HANG = m_txt_ngan_hang.Text.Trim();
+            v_us_nv.datNGAY_CAP_THE = m_dat_ngay_cap_the.Value.Date;
+            v_us_nv.datNGAY_HET_HAN_THE = m_dat_ngay_het_han_the.Value.Date;
+            v_us_nv.strMA_SO_THUE_CA_NHAN = m_txt_ma_so_thue_ca_nhan.Text.Trim();
+        }
+
+        private void grc_thong_tin_lien_he_2_us(US_DM_NHAN_VIEN v_us_nv)
+        {
+            v_us_nv.strNOI_SINH = m_txt_noi_sinh.Text.Trim();
+            v_us_nv.strQUE_QUAN = m_txt_que_quan.Text.Trim();
+            v_us_nv.strDIA_CHI_THUONG_TRU = m_txt_dc_thuong_tru.Text.Trim();
+            v_us_nv.strDIA_CHI_TAM_TRU = m_txt_dc_tam_tru.Text.Trim();
+            v_us_nv.strDIA_CHI_LIEN_LAC = m_txt_dc_lien_lac.Text.Trim();
+            v_us_nv.strEMAIL = m_txt_email.Text.Trim();
+            v_us_nv.strSDT = m_txt_so_dien_thoai.Text.Trim();
+        }
+
+        private void grc_thong_tin_cong_tac_2_us(US_DM_NHAN_VIEN v_us_nv)
+        {
+            v_us_nv.strCHUYEN_MON = m_txt_chuyen_mon.Text.Trim();
+            v_us_nv.strTRINH_DO_VAN_HOA = m_txt_trinh_do.Text.Trim();
+            v_us_nv.strNAM_TOT_NGHIEP = m_txt_nam_tot_nghiep.Text.Trim();
+            v_us_nv.strTOT_NGHIEP_TAI = m_txt_tot_nghiep_tai.Text.Trim();
+            v_us_nv.datNGAY_VAO_HANG_KHONG = m_dat_ngay_vao_hang_khong.Value.Date;
+            v_us_nv.datNGAY_TIEP_NHAN_VAO_TCT = m_dat_ngay_tiep_nhan_vao_tct.Value.Date;
+            v_us_nv.datNGAY_CHINH_THUC_TIEP_NHAN = m_dat_ngay_chinh_thuc_tiep_nhan.Value.Date;
+        }
+
+        private void form_2_us_dm_nv(US_DM_NHAN_VIEN v_us_nv)
+        {
+            grc_thong_tin_co_ban_2_us(v_us_nv);
+            grc_thong_tin_lien_he_2_us(v_us_nv);
+            grc_thong_tin_cong_tac_2_us(v_us_nv);
+        }
+
+        private bool check_data_is_ok()
+        {
+            if (m_txt_ma_nv.Text == "")
+            {
+                XtraMessageBox.Show("Bạn chưa nhập mã nhân viên rồi!");
+                return false;
+            }
+            if (m_txt_ho_dem.Text == "")
+            {
+                XtraMessageBox.Show("Bạn chưa nhập họ đệm cho nhân viên rồi!");
+                return false;
+            }
+            if (m_txt_ten.Text == "")
+            {
+                XtraMessageBox.Show("Bạn chưa nhập tên cho nhân viên rồi!");
+                return false;
+            }
+            return true;
+        }
+
         #endregion
         private void set_define_events()
         {
             this.Load += F150_dm_nhan_vien_Load;
+            //li lich nhan vien
+            m_cmd_them_nhan_vien.Click += m_cmd_them_nhan_vien_Click;
+            m_dat_ngay_sinh.ValueChanged += m_dat_ngay_sinh_ValueChanged;
+            m_cmd_insert.Click += m_cmd_insert_Click;
+        }
+
+        void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (check_data_is_ok())
+                {
+                    if (XtraMessageBox.Show("Bạn chắc chắc muốn lưu các thông tin chứ?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (m_is_newbie == 1)
+                        {
+                            US_DM_NHAN_VIEN v_us_nv_4_insert = new US_DM_NHAN_VIEN();
+                            form_2_us_dm_nv(v_us_nv_4_insert);
+                        
+                            //insert
+                            try
+                            {
+                                v_us_nv_4_insert.BeginTransaction();
+                                v_us_nv_4_insert.Insert();
+                                v_us_nv_4_insert.CommitTransaction();
+                                m_is_newbie = 0;
+                            }
+                            catch (Exception v_e)
+                            {
+                                v_us_nv_4_insert.Rollback();
+                                CSystemLog_301.ExceptionHandle(v_e);
+                            } 
+                            //cho cac control visible false -> true
+                            change_visible_of_control(true);
+                            //load_data_2_sle_chon_nv
+                            load_data_to_all_controls(v_us_nv_4_insert.dcID);
+                            load_data_2_ds_v_dm_nv();
+                            m_sle_chon_nhan_vien.EditValue = v_us_nv_4_insert.dcID;
+
+                            XtraMessageBox.Show("Thành công!", "THÔNG BÁO");
+                        }
+                        else
+                        {
+                            //update
+                            try
+                            {
+                                US_DM_NHAN_VIEN v_us_nv_4_update = new US_DM_NHAN_VIEN(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                                form_2_us_dm_nv(v_us_nv_4_update);
+                                v_us_nv_4_update.Update();
+                                XtraMessageBox.Show("Thành công!", "THÔNG BÁO");
+                            }
+                            catch (Exception v_e)
+                            {
+                                CSystemLog_301.ExceptionHandle(v_e);
+                            } 
+                        }
+                    }
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_dat_ngay_sinh_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                tinh_tuoi_nhan_vien();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_them_nhan_vien_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                change_form_2_insert_newbie();
+                m_is_newbie = 1;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void F150_dm_nhan_vien_Load(object sender, EventArgs e)

@@ -115,7 +115,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithTableName(v_ds, "V_GD_LUONG_CUNG");
+            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_LUONG_CUNG");
             m_grc_luong_cung_cua_nhan_vien.DataSource = v_ds.Tables[0];
         }
 
@@ -126,9 +126,30 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_LUONG_CUNG WHERE ID_NHAN_VIEN = " + ip_dc_id_nv);
+            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_LUONG_CUNG WHERE ID_NHAN_VIEN = " + ip_dc_id_nv + " AND DA_XOA = 'N'");
             m_grc_luong_cung_cua_nhan_vien.DataSource = v_ds.Tables[0];
         }
+
+        //private void load_luong_cung_nv_2_form(decimal ip_dc_id_nv)
+        //{
+        //    decimal v_id_gd_luong_cung = find_id_gd_luong_cung(ip_dc_id_nv);
+        //    if (v_id_gd_luong_cung != -1)
+        //    {
+        //        US_GD_LUONG_CUNG v_us_lc = new US_GD_LUONG_CUNG(v_id_gd_luong_cung);
+        //        m_txt_so_tien.Text = v_us_lc.dcSO_TIEN.ToString();
+        //        CCommon.format_text_2_money(m_txt_so_tien);
+        //        m_dat_ngay_bat_dau.Value = v_us_lc.datNGAY_BAT_DAU;
+        //        m_dat_ngay_ket_thuc.Value = v_us_lc.datNGAY_KET_THUC;
+        //        m_txt_ghi_chu.Text = v_us_lc.strGHI_CHU;
+        //    }
+        //    else
+        //    {
+        //        m_txt_so_tien.Text = "";
+        //        m_dat_ngay_bat_dau.Value = DateTime.Now.Date;
+        //        m_dat_ngay_ket_thuc.Value = DateTime.Now.Date;
+        //        m_txt_ghi_chu.Text = "";
+        //    }
+        //}
 
         //check data is ok
         private bool check_data_is_ok()
@@ -143,7 +164,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 XtraMessageBox.Show("Bạn chưa nhập số tiền!", "THÔNG BÁO");
                 return false;
             }
-            if (m_dat_ngay_ket_thuc.Value > m_dat_ngay_bat_dau.Value)
+            if (m_dat_ngay_ket_thuc.Value < m_dat_ngay_bat_dau.Value)
             {
                 XtraMessageBox.Show("Ngày kết thúc đang nhỏ hơn ngày bắt đầu!", "THÔNG BÁO");
                 return false;
@@ -212,7 +233,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     throw v_e;
                 }
             }
-            
+
         }
 
         private decimal find_id_gd_luong_cung(decimal ip_dc_id_nhan_vien)
@@ -237,13 +258,14 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void save_data()
         {
-            US_GD_LUONG_CUNG v_us_gd_luong_cung = new US_GD_LUONG_CUNG();
-            form_2_us_luong_cung(v_us_gd_luong_cung);
+
             try
             {
                 switch (m_e_form_mode)
                 {
                     case DataEntryFormMode.InsertDataState:
+                        US_GD_LUONG_CUNG v_us_gd_luong_cung = new US_GD_LUONG_CUNG();
+                        form_2_us_luong_cung(v_us_gd_luong_cung);
                         cho_gd_da_co_da_xoa_Y(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                         v_us_gd_luong_cung.BeginTransaction();
                         v_us_gd_luong_cung.Insert();
@@ -251,9 +273,12 @@ namespace BKI_DichVuMatDat.NghiepVu
                         XtraMessageBox.Show("Bạn đã thêm lương thành công cho nhân viên!", "THÀNH CÔNG");
                         break;
                     case DataEntryFormMode.UpdateDataState:
-                        v_us_gd_luong_cung.BeginTransaction();
-                        v_us_gd_luong_cung.Update();
-                        v_us_gd_luong_cung.CommitTransaction();
+                        decimal v_id_gd_lc = find_id_gd_luong_cung(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                        US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG(v_id_gd_lc);
+                        form_2_us_luong_cung(v_us);
+                        v_us.BeginTransaction();
+                        v_us.Update();
+                        v_us.CommitTransaction();
                         XtraMessageBox.Show("Bạn đã cập nhật thành công!", "THÀNH CÔNG");
                         break;
                     default:
@@ -301,8 +326,8 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             for (v_row_index = 0; v_row_index < v_ds.Tables[0].Rows.Count; v_row_index++)
             {
-                var v_id_nv = CIPConvert.ToDecimal(m_grv_luong_cung_cua_nhan_vien.GetDataRow(v_row_index)["ID_NHAN_VIEN"].ToString());
-                var v_da_xoa = m_grv_luong_cung_cua_nhan_vien.GetDataRow(v_row_index)["DA_XOA"].ToString();
+                decimal v_id_nv = CIPConvert.ToDecimal(m_grv_luong_cung_cua_nhan_vien.GetDataRow(v_row_index)["ID_NHAN_VIEN"].ToString());
+                string v_da_xoa = m_grv_luong_cung_cua_nhan_vien.GetDataRow(v_row_index)["DA_XOA"].ToString();
 
                 if (v_id_nv == v_id_nv_f363 && v_da_xoa == v_da_xoa_f363)
                 {
@@ -358,7 +383,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         save_data();
                     }
                     load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
-                    focus_new_row_created();
+                    //focus_new_row_created();
                 }
             }
             catch (Exception v_e)
@@ -420,6 +445,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                m_txt_so_tien.Text = "";
                 if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
                 {
                     load_data_2_grid();
@@ -427,6 +453,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 else
                 {
                     load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                    //load_luong_cung_nv_2_form(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                 }
             }
             catch (Exception v_e)

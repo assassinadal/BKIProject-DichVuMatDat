@@ -225,6 +225,12 @@
     <Compile Include="BaoCao\F425_Bao_cao_nhan_su_tong_hop.Designer.cs">
       <DependentUpon>F425_Bao_cao_nhan_su_tong_hop.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\F430_bao_cao_cac_thang_da_chot_bang_luong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\F430_bao_cao_cac_thang_da_chot_bang_luong.Designer.cs">
+      <DependentUpon>F430_bao_cao_cac_thang_da_chot_bang_luong.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\F_wait_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -522,6 +528,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F425_Bao_cao_nhan_su_tong_hop.resx">
       <DependentUpon>F425_Bao_cao_nhan_su_tong_hop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\F430_bao_cao_cac_thang_da_chot_bang_luong.resx">
+      <DependentUpon>F430_bao_cao_cac_thang_da_chot_bang_luong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F_wait_form.resx">
       <DependentUpon>F_wait_form.cs</DependentUpon>

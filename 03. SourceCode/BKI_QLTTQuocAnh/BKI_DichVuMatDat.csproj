@@ -226,6 +226,10 @@
     <Compile Include="BaoCao\F_wait_form.Designer.cs">
       <DependentUpon>F_wait_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="BKI_DVMDDataSet.cs">
+      <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -345,6 +349,42 @@
     </Compile>
     <Compile Include="DanhMuc\F150_dm_nhan_vien.Designer.cs">
       <DependentUpon>F150_dm_nhan_vien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeThong\f306_HT_USER_GROUP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f306_HT_USER_GROUP_DE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f308_DOI_MAT_KHAU_NGUOI_SD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f308_DOI_MAT_KHAU_NGUOI_SD.designer.cs">
+      <DependentUpon>f308_DOI_MAT_KHAU_NGUOI_SD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeThong\f990_ht_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f992_phan_quyen_he_thong_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f992_phan_quyen_he_thong_de.Designer.cs">
+      <DependentUpon>f992_phan_quyen_he_thong_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeThong\f993_phan_quyen_he_thong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f995_ht_phan_quyen_cho_nhom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f995_ht_phan_quyen_cho_nhom.Designer.cs">
+      <DependentUpon>f995_ht_phan_quyen_cho_nhom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeThong\f998_ht_nguoi_su_dung_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f999_ht_nguoi_su_dung.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="NghiepVu\BackupDB.cs">
       <SubType>Form</SubType>
@@ -523,6 +563,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F150_dm_nhan_vien.resx">
       <DependentUpon>F150_dm_nhan_vien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f306_HT_USER_GROUP.resx">
+      <DependentUpon>f306_HT_USER_GROUP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f306_HT_USER_GROUP_DE.resx">
+      <DependentUpon>f306_HT_USER_GROUP_DE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f308_DOI_MAT_KHAU_NGUOI_SD.resx">
+      <DependentUpon>f308_DOI_MAT_KHAU_NGUOI_SD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f990_ht_form.resx">
+      <DependentUpon>f990_ht_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f992_phan_quyen_he_thong_de.resx">
+      <DependentUpon>f992_phan_quyen_he_thong_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f993_phan_quyen_he_thong.resx">
+      <DependentUpon>f993_phan_quyen_he_thong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f995_ht_phan_quyen_cho_nhom.resx">
+      <DependentUpon>f995_ht_phan_quyen_cho_nhom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f998_ht_nguoi_su_dung_de.resx">
+      <DependentUpon>f998_ht_nguoi_su_dung_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f999_ht_nguoi_su_dung.resx">
+      <DependentUpon>f999_ht_nguoi_su_dung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\BackupDB.resx">
       <DependentUpon>BackupDB.cs</DependentUpon>
@@ -1050,9 +1117,7 @@
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="HeThong\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\1441439378_06.ico" />
   </ItemGroup>

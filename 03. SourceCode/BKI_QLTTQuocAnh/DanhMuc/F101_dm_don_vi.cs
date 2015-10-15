@@ -13,6 +13,7 @@ using IP.Core.IPCommon;
 using BKI_DichVuMatDat.DS.CDBNames;
 using DevExpress.XtraEditors;
 using System.Globalization;
+using IP.Core.IPSystemAdmin;
 
 namespace BKI_DichVuMatDat.DanhMuc
 {
@@ -38,6 +39,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         #region private methods
         private void format_controls()
         {
+            CControlFormat.setFormStyle(this, new CAppContext_201());
             set_define_events();
             this.KeyPreview = true;
         }

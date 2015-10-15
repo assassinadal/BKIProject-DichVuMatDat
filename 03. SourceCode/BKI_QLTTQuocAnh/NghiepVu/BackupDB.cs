@@ -9,37 +9,36 @@ using System.Windows.Forms;
 using IP.Core.IPCommon;
 using System.Data.SqlClient;
 using System.Configuration;
+using BKI_DichVuMatDat.EF;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class BackupDB : Form
     {
+        private BKI_DVMDEntities context;
+        SqlConnection conn;
+        SqlCommand command;
+        SqlDataReader reader;
+        string sql = "";
+
         private string DB_NAME;
         private string DISK_LOCATION;
         private string CONNECTION_STRING;
+
 
         public BackupDB()
         {
             InitializeComponent();
             format_control();
-            getDataFromAppConfig();
+            get_data_from_app_config();
         }
-
         private void format_control()
         {
             set_define_events();
         }
 
-        #region MyRegion
-        SqlConnection conn;
-        SqlCommand command;
-        SqlDataReader reader;
-        string sql = "";
-        #endregion
-
-
         #region Private Methods
-        private void getDataFromAppConfig()
+        private void get_data_from_app_config()
         {
             var reader = new System.Configuration.AppSettingsReader();
             DB_NAME = reader.GetValue("INITIAL_DATABASE", typeof(string)).ToString();
@@ -48,87 +47,13 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private void set_intial_form_load()
         {
-            m_txt_location.Text = DISK_LOCATION;
-            m_txt_location.ReadOnly = true;
-            m_cmd_disconnect.Enabled = false;
-            m_cbo_db.Enabled = false;
-            m_cmd_backup.Enabled = false;
-            m_cmd_restore.Enabled = false;
-            connect_to_db();
-            m_cbo_db.Text = DB_NAME;
+            m_cmd_add_new_back_up.Visible = false;
+            m_cmd_backup.Visible = true;
+            m_txt_ten_file.Text = gen_name_back_up_db();
+            m_txt_location.Text = gen_name_disk_location_back_up();
+            fill_data_2_grid();
         }
-        private void connect_to_db()
-        {
-            //connectionString = "Data Source = " + m_txt_data_source.Text + "; User Id = " + m_txt_user_id.Text + "; Password=" + m_txt_pwd.Text + "";
-            conn = new SqlConnection(CONNECTION_STRING);
-            conn.Open();
-            sql = "SELECT * FROM sys.databases d WHERE d.database_id>4";
-            command = new SqlCommand(sql, conn);
-            reader = command.ExecuteReader();
-            m_cbo_db.Items.Clear();
-            while (reader.Read())
-            {
-                m_cbo_db.Items.Add(reader[0].ToString());
-            }
 
-            conn.Close();
-            conn.Dispose();
-
-            m_txt_user_id.Enabled = false;
-            m_txt_pwd.Enabled = false;
-            m_cmd_connect.Enabled = false;
-            m_cmd_disconnect.Enabled = true;
-            m_cmd_backup.Enabled = true;
-            m_cmd_restore.Enabled = true;
-            m_cbo_db.Enabled = true;
-            m_txt_ten_file.Text = DB_NAME + "_v" + DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day + " " + DateTime.Now.Hour + "h" + DateTime.Now.Minute + ".bak";
-        }
-        private void disconect_db()
-        {
-            m_txt_data_source.Enabled = true;
-            m_txt_user_id.Enabled = true;
-            m_txt_pwd.Enabled = true;
-            m_cbo_db.Enabled = false;
-            m_cmd_backup.Enabled = false;
-            m_cmd_restore.Enabled = false;
-        }
-        private void restore_db()
-        {
-            if (!BaseMessages.MsgBox_Confirm("Bạn có chắc chắn muốn phục hồi dữ liệu tại thời điểm này. Khi phục hồi thì các dữ liệu sau ngày tạo file lưu trữ này sẽ biến mất!"))
-            {
-                return;
-            }
-            //if(m_cbo_db.Text.CompareTo("") == 0) {
-            //    MessageBox.Show("Làm ơn chọn Database đi!");
-            //    return;
-            //}
-            conn = new SqlConnection(CONNECTION_STRING);
-            conn.Open();
-            sql = "Alter Database " + DB_NAME + " Set SINGLE_USER WITH ROLLBACK IMMEDIATE;";
-            sql += "Restore Database " + DB_NAME + " FROM Disk = '" + m_txt_backup_path.Text + "'" + " WITH REPLACE;";
-            command = new SqlCommand(sql, conn);
-            command.ExecuteNonQuery();
-            conn.Close();
-            conn.Dispose();
-            MessageBox.Show("Restore Database thành công");
-        }
-        private void backup_db()
-        {
-            //if(m_cbo_db.Text.CompareTo("") == 0) {
-            //    MessageBox.Show("Làm ơn chọn Database đi");
-            //    return;
-            //}
-            conn = new SqlConnection(CONNECTION_STRING);
-            conn.Open();
-            sql = "BACKUP DATABASE " + DB_NAME + " TO DISK = '" + m_txt_location.Text + "\\" + m_txt_ten_file.Text + "'";
-            command = new SqlCommand(sql, conn);
-            command.ExecuteNonQuery();
-
-            conn.Close();
-            conn.Dispose();
-
-            MessageBox.Show("Backup thành công!");
-        }
         private void choose_file_restore()
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -148,18 +73,124 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             m_txt_ten_file.Text = DB_NAME + "_v" + "_v" + DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day + " " + DateTime.Now.Hour + "h" + DateTime.Now.Minute + ".bak";
         }
+
+        private void restore_db()
+        {
+            try
+            {
+                if (!BaseMessages.MsgBox_Confirm("Bạn có chắc chắn muốn phục hồi dữ liệu tại thời điểm này. Khi phục hồi thì các dữ liệu sau ngày tạo file lưu trữ này sẽ biến mất!"))
+                {
+                    return;
+                }
+                conn = new SqlConnection(CONNECTION_STRING);
+                conn.Open();
+                
+                sql = "Alter Database " + DB_NAME + " Set SINGLE_USER WITH ROLLBACK IMMEDIATE;";
+                sql += "Use master Restore Database " + DB_NAME + " FROM Disk = '" + m_txt_backup_path.Text + "'" + " WITH REPLACE, RECOVERY;";
+                command = new SqlCommand(sql, conn);
+                command.ExecuteNonQuery();
+
+                string Alter2 = @"ALTER DATABASE [" + DB_NAME + "] SET Multi_User";
+                SqlCommand Alter2Cmd = new SqlCommand(Alter2, conn);
+                Alter2Cmd.ExecuteNonQuery();
+
+                
+                MessageBox.Show("Restore Database thành công");
+            }
+            catch (Exception)
+            {
+                string Alter2 = @"ALTER DATABASE [" + DB_NAME + "] SET Multi_User";
+                SqlCommand Alter2Cmd = new SqlCommand(Alter2, conn);
+                Alter2Cmd.ExecuteNonQuery();
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+        }
+        private string gen_name_back_up_db()
+        {
+            return DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day + "  " + DateTime.Now.Hour + "h" + DateTime.Now.Minute + "p";
+        }
+        private string gen_name_disk_location_back_up()
+        {
+            return DISK_LOCATION + "\\" + m_txt_ten_file.Text + ".bak";
+        }
+        private void backup_db()
+        {
+            conn = new SqlConnection(CONNECTION_STRING);
+            conn.Open();
+            sql = "BACKUP DATABASE " + DB_NAME + " TO DISK = '" + m_txt_location.Text + "'";
+            command = new SqlCommand(sql, conn);
+            command.ExecuteNonQuery();
+
+            conn.Close();
+            conn.Dispose();
+            using (context = new BKI_DVMDEntities())
+            {
+                BACKUP_INFO info = new BACKUP_INFO();
+                info.DISK_LOCATION = m_txt_location.Text;
+                info.FILE_NAME = m_txt_ten_file.Text;
+                info.NGAY_TAO = DateTime.Now;
+                context.BACKUP_INFO.Add(info);
+                context.SaveChanges();
+            }
+            m_cmd_add_new_back_up.Visible = true;
+            m_cmd_backup.Visible = false;
+            fill_data_2_grid();
+            MessageBox.Show("Backup thành công!");
+        }
+
+        private void fill_data_2_grid()
+        {
+            using (var context = new BKI_DVMDEntities())
+            {
+                var dataSource = context.BACKUP_INFO.ToList();
+                gridControlSave.DataSource = dataSource;
+                gridControlSave.RefreshDataSource();
+                gridViewSave.FocusedRowChanged += gridViewSave_FocusedRowChanged;
+            }
+        }
         #endregion
-        //
-        //Events
+
+        #region Events
         private void set_define_events()
         {
-            m_cmd_connect.Click += m_cmd_connect_Click;
-            m_cmd_disconnect.Click += m_cmd_disconnect_Click;
             m_cmd_backup.Click += m_cmd_backup_Click;
-            this.Load += BackupDB_Load;
-            m_cmd_browse_backup.Click += m_cmd_browse_backup_Click;
-            m_cmd_browse_restore.Click += m_cmd_browse_restore_Click;
             m_cmd_restore.Click += m_cmd_restore_Click;
+            this.Load += BackupDB_Load;
+            m_cmd_add_new_back_up.Click += m_cmd_add_new_back_up_Click;
+            
+        }
+
+        void gridViewSave_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            try
+            {
+                var info = (BACKUP_INFO)gridViewSave.GetRow(gridViewSave.FocusedRowHandle);
+                m_txt_backup_path.Text = info.DISK_LOCATION;
+            }
+            catch (Exception v_e)
+            {
+                MessageBox.Show(v_e.Message);
+            }
+        }
+
+        void m_cmd_add_new_back_up_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_cmd_add_new_back_up.Visible = false;
+                m_cmd_backup.Visible = true;
+                m_txt_ten_file.Text = gen_name_back_up_db();
+                m_txt_location.Text = gen_name_disk_location_back_up();
+            }
+            catch (Exception v_e)
+            {
+                MessageBox.Show(v_e.Message);
+            }
         }
 
         void m_cmd_restore_Click(object sender, EventArgs e)
@@ -170,33 +201,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-
-                MessageBox.Show(v_e.Message);
-            }
-        }
-
-        void m_cmd_browse_restore_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                choose_file_restore();
-            }
-            catch (Exception v_e)
-            {
-
-                MessageBox.Show(v_e.Message);
-            }
-        }
-
-        void m_cmd_browse_backup_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                choose_file_backup();
-            }
-            catch (Exception v_e)
-            {
-
                 MessageBox.Show(v_e.Message);
             }
         }
@@ -209,7 +213,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-
                 MessageBox.Show(v_e.Message);
             }
         }
@@ -226,30 +229,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                 MessageBox.Show(v_e.Message);
             }
         }
+        #endregion
 
-        void m_cmd_disconnect_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                disconect_db();
-            }
-            catch (Exception v_e)
-            {
 
-                MessageBox.Show(v_e.Message);
-            }
-        }
-
-        void m_cmd_connect_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                connect_to_db();
-            }
-            catch (Exception v_e)
-            {
-                MessageBox.Show(v_e.Message);
-            }
-        }
     }
 }

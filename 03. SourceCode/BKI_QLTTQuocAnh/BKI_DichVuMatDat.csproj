@@ -153,6 +153,12 @@
     <Reference Include="DevExpress.XtraTreeList.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -182,11 +188,14 @@
       <HintPath>..\DLL\SiSMenu.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Printing" />
     <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
@@ -360,6 +369,24 @@
     </Compile>
     <Compile Include="DanhMuc\F150_dm_nhan_vien.Designer.cs">
       <DependentUpon>F150_dm_nhan_vien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EF\BACKUP_INFO.cs">
+      <DependentUpon>ModelDVMD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ModelDVMD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDVMD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ModelDVMD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDVMD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ModelDVMD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDVMD.edmx</DependentUpon>
     </Compile>
     <Compile Include="FormatControl\FormatControl.cs" />
     <Compile Include="HeThong\collection.cs" />
@@ -695,6 +722,24 @@
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
     </None>
     <None Include="BKI_QLTTQuocAnh_TemporaryKey.pfx" />
+    <EntityDeploy Include="EF\ModelDVMD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelDVMD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\ModelDVMD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDVMD.edmx</DependentUpon>
+      <LastGenOutput>ModelDVMD.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EF\ModelDVMD.edmx.diagram">
+      <DependentUpon>ModelDVMD.edmx</DependentUpon>
+    </None>
+    <None Include="EF\ModelDVMD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDVMD.edmx</DependentUpon>
+      <LastGenOutput>ModelDVMD.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1148,7 +1193,9 @@
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1441439378_06.ico" />
   </ItemGroup>

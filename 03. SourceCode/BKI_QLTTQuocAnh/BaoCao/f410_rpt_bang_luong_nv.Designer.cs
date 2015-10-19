@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItemGroup spreadsheetCommandGalleryItemGroup1 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItemGroup();
             DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem spreadsheetCommandGalleryItem1 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem();
             DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem spreadsheetCommandGalleryItem2 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem();
@@ -244,30 +245,30 @@
             DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem spreadsheetCommandGalleryItem174 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem();
             DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem spreadsheetCommandGalleryItem175 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandGalleryItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f410_rpt_bang_luong_nv));
-            this.commandBarGalleryDropDown2 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown1 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown3 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown4 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown5 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown6 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown7 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown8 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown9 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown10 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown11 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown12 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown13 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown14 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown15 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown16 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown17 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown18 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown19 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown20 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown21 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown22 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown23 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
-            this.commandBarGalleryDropDown24 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown();
+            this.commandBarGalleryDropDown2 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown1 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown3 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown4 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown5 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown6 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown7 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown8 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown9 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown10 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown11 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown12 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown13 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown14 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown15 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown16 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown17 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown18 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown19 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown20 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown21 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown22 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown23 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
+            this.commandBarGalleryDropDown24 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
             this.spreadsheetBarController1 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetBarController();
             this.spreadsheetCommandBarButtonItem112 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandBarButtonItem();
             this.spreadsheetCommandBarButtonItem113 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetCommandBarButtonItem();
@@ -1964,14 +1965,14 @@
             this.panel1.Location = new System.Drawing.Point(0, 336);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(1055, 47);
+            this.panel1.Size = new System.Drawing.Size(1020, 47);
             this.panel1.TabIndex = 5;
             // 
             // m_cmd_chot_bang_luong
             // 
             this.m_cmd_chot_bang_luong.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_chot_bang_luong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chot_bang_luong.Image")));
-            this.m_cmd_chot_bang_luong.Location = new System.Drawing.Point(588, 5);
+            this.m_cmd_chot_bang_luong.Location = new System.Drawing.Point(553, 5);
             this.m_cmd_chot_bang_luong.Name = "m_cmd_chot_bang_luong";
             this.m_cmd_chot_bang_luong.Size = new System.Drawing.Size(154, 37);
             this.m_cmd_chot_bang_luong.TabIndex = 9;
@@ -2014,7 +2015,7 @@
             // 
             this.m_cmd_luu_bang_luong.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_luu_bang_luong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_luu_bang_luong.Image")));
-            this.m_cmd_luu_bang_luong.Location = new System.Drawing.Point(742, 5);
+            this.m_cmd_luu_bang_luong.Location = new System.Drawing.Point(707, 5);
             this.m_cmd_luu_bang_luong.Name = "m_cmd_luu_bang_luong";
             this.m_cmd_luu_bang_luong.Size = new System.Drawing.Size(154, 37);
             this.m_cmd_luu_bang_luong.TabIndex = 4;
@@ -2025,7 +2026,7 @@
             // 
             this.m_cmd_bang_luong.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_bang_luong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_bang_luong.Image")));
-            this.m_cmd_bang_luong.Location = new System.Drawing.Point(896, 5);
+            this.m_cmd_bang_luong.Location = new System.Drawing.Point(861, 5);
             this.m_cmd_bang_luong.Name = "m_cmd_bang_luong";
             this.m_cmd_bang_luong.Size = new System.Drawing.Size(154, 37);
             this.m_cmd_bang_luong.TabIndex = 3;
@@ -2037,7 +2038,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1055, 46);
+            this.panel2.Size = new System.Drawing.Size(1020, 46);
             this.panel2.TabIndex = 6;
             // 
             // panel3
@@ -2047,7 +2048,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 46);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1055, 290);
+            this.panel3.Size = new System.Drawing.Size(1020, 290);
             this.panel3.TabIndex = 7;
             // 
             // m_prb
@@ -2068,7 +2069,7 @@
             this.m_grc.Location = new System.Drawing.Point(0, 0);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(1055, 290);
+            this.m_grc.Size = new System.Drawing.Size(1020, 290);
             this.m_grc.TabIndex = 0;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
@@ -2442,7 +2443,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1055, 383);
+            this.ClientSize = new System.Drawing.Size(1020, 383);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

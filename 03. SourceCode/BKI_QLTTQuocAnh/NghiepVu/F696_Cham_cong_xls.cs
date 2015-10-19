@@ -70,12 +70,20 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             for (int i = 1; i < ip_dataRow.Table.Columns.Count; i++)
             {
-                US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
-                v_us.dcID_NHAN_VIEN = get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString());
-                v_us.datNGAY_CHAM_CONG = CIPConvert.ToDatetime(ip_dataRow.Table.Columns[i].ColumnName, "dd/MM/yyyy");
-                v_us.strDA_XOA = "N";
-                v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString());
-                v_us.Insert();
+                try
+                {
+                    US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
+                    v_us.dcID_NHAN_VIEN = get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString());
+                    v_us.datNGAY_CHAM_CONG = CIPConvert.ToDatetime(ip_dataRow.Table.Columns[i].ColumnName, "dd/MM/yyyy");
+                    v_us.strDA_XOA = "N";
+                    v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString());
+                    v_us.Insert();
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+                
             }
         }
 
@@ -91,7 +99,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private decimal get_loai_ngay_cong(string ip_ma_ngay_cong)
         {
             EnumerableRowCollection<DataRow> res = from row in m_ds_ngay_cong.Tables[0].AsEnumerable()
-                      where row.Field<string>(DM_LOAI_NGAY_CONG.MA_NGAY_CONG) == ip_ma_ngay_cong
+                      where row.Field<string>(DM_LOAI_NGAY_CONG.MA_NGAY_CONG).ToUpper() == ip_ma_ngay_cong.ToUpper()
                       select row;
             
             return CIPConvert.ToDecimal(res.First()[DM_LOAI_NGAY_CONG.ID].ToString());

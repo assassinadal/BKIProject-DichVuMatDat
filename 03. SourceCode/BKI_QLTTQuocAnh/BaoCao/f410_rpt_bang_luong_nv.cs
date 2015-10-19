@@ -17,7 +17,6 @@ using DevExpress;
 using DevComponents;
 using DevExpress.XtraEditors;
 
-
 namespace BKI_DichVuMatDat.BaoCao
 {
     public partial class f410_rpt_bang_luong_nv : Form
@@ -231,6 +230,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 {
                     //SplashScreenManager.ShowForm(typeof(F_wait_form));
                     this.m_prb.Visible = true;
+                    m_ds.Clear();
                     m_bgwk.RunWorkerAsync();
                     m_is_click_cmd_tinh_bang_luong = 1;
                 }
@@ -266,7 +266,7 @@ namespace BKI_DichVuMatDat.BaoCao
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "V_RPT_LUONG WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim());
+            v_us.FillDatasetWithQuery(v_ds, "SELECT DISTINCT * FROM V_RPT_LUONG WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim());
             m_grc.DataSource = v_ds.Tables[0];
         }
 

@@ -195,7 +195,21 @@ namespace BKI_DichVuMatDat
                 ExcelAdapter.Fill(dt);
             }
             con.Close();
+            format_data_header(dt);
             ip_grc.DataSource = dt;
+        }
+
+        private static void format_data_header(DataTable dt)
+        {
+            foreach (DataColumn item in dt.Columns)
+            {
+                if (item.ColumnName.StartsWith("4"))
+                {
+                    var v_name_value = int.Parse(item.ColumnName.Trim());
+                    var v_str_name = (new DateTime(1899, 12, 31).AddDays(v_name_value)).ToString("dd/MM/yyyy");
+                    item.ColumnName = v_str_name;
+                }
+            }
         }
 
         #region Report

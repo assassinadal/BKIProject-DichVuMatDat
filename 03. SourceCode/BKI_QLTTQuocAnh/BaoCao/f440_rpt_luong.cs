@@ -66,6 +66,7 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 f441_thuc_linh_de frm = new f441_thuc_linh_de();
                 frm.fillDataSource(e.CreateDrillDownDataSource());
+                frm.ShowDialog();
             }
             catch (Exception v_e)
             {

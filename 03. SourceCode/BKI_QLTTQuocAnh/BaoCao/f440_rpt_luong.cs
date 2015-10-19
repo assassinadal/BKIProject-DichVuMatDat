@@ -11,6 +11,10 @@ using IP.Core.IPCommon;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraPrinting;
+using DevExpress.XtraReports.UI;
+using DevExpress.XtraCharts;
+using DevExpress.XtraCharts.Printing;
 namespace BKI_DichVuMatDat.BaoCao
 {
     public partial class f440_rpt_luong : Form
@@ -50,7 +54,7 @@ namespace BKI_DichVuMatDat.BaoCao
         private void setInitFormLoad()
         {
             fillDataPivotGrid(getDataSource());
-            pivotGridControl1.Cells.Selection = new  Rectangle(0, 0, Width, pivotGridControl1.Cells.RowCount);
+            pivotGridControl1.Cells.Selection = new Rectangle(0, 0, Width, pivotGridControl1.Cells.RowCount);
         }
         #endregion
 
@@ -59,6 +63,37 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             this.Load += f440_rpt_luong_Load;
             pivotGridControl1.CellDoubleClick += pivotGridControl1_CellDoubleClick;
+            m_cmd_xuat_pdf.Click += m_cmd_xuat_pdf_Click;
+        }
+
+        void m_cmd_xuat_pdf_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Check whether the ChartControl can be previewed.
+                if (!chartControl1.IsPrintingAvailable)
+                {
+                    MessageBox.Show("The 'DevExpress.XtraPrinting' is not found", "Error");
+                    return;
+                }
+                // Open the Preview window.
+                PrintableComponentLink link = new PrintableComponentLink(new PrintingSystem());
+
+                link.Component = chartControl1;
+                chartControl1.OptionsPrint.SizeMode = PrintSizeMode.Stretch;
+                //chartControl1.Legend.MaxVerticalPercentage = 100;
+                link.Landscape = true;
+                link.PaperKind = System.Drawing.Printing.PaperKind.A4;
+                link.ShowPreview();
+                // Specify the paper kind and page orientation.
+                //chartControl1.Legend.MaxVerticalPercentage = 100;
+                //chartControl1.Legend.Direction = DevExpress.XtraCharts.LegendDirection.TopToBottom;
+                //chartControl1.ShowPrintPreview(DevExpress.XtraCharts.Printing.PrintSizeMode.Zoom);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         void pivotGridControl1_CellDoubleClick(object sender, DevExpress.XtraPivotGrid.PivotCellEventArgs e)
         {

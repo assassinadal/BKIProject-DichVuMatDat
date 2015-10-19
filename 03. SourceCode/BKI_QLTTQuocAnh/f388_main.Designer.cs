@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -84,6 +85,7 @@
             this.m_cmd_tk_ns_dv = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_tk_ns_tong_hop = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_bc_hs_bs_hs_athk = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_bc_cac_thang_da_chot_bang_luong = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -102,8 +104,10 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
-            this.m_cmd_bc_cac_thang_da_chot_bang_luong = new DevExpress.XtraBars.BarButtonItem();
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_luong_theo_don_vi = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -170,9 +174,10 @@
             this.m_cmd_tk_ns_dv,
             this.m_cmd_tk_ns_tong_hop,
             this.m_cmd_bc_hs_bs_hs_athk,
-            this.m_cmd_bc_cac_thang_da_chot_bang_luong});
+            this.m_cmd_bc_cac_thang_da_chot_bang_luong,
+            this.m_cmd_luong_theo_don_vi});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 68;
+            this.ribbon.MaxItemId = 69;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -672,6 +677,15 @@
             this.m_cmd_bc_hs_bs_hs_athk.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // m_cmd_bc_cac_thang_da_chot_bang_luong
+            // 
+            this.m_cmd_bc_cac_thang_da_chot_bang_luong.Caption = "Các tháng đã chốt bảng lương";
+            this.m_cmd_bc_cac_thang_da_chot_bang_luong.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_bc_cac_thang_da_chot_bang_luong.Glyph")));
+            this.m_cmd_bc_cac_thang_da_chot_bang_luong.Id = 67;
+            this.m_cmd_bc_cac_thang_da_chot_bang_luong.Name = "m_cmd_bc_cac_thang_da_chot_bang_luong";
+            this.m_cmd_bc_cac_thang_da_chot_bang_luong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -799,6 +813,7 @@
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bang_luong_nv);
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bc_hs_bs_hs_athk);
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bc_cac_thang_da_chot_bang_luong);
+            this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_luong_theo_don_vi);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Báo cáo tổng";
             // 
@@ -820,13 +835,32 @@
             // 
             this.MdiManager.MdiParent = this;
             // 
-            // m_cmd_bc_cac_thang_da_chot_bang_luong
+            // barButtonItem1
             // 
-            this.m_cmd_bc_cac_thang_da_chot_bang_luong.Caption = "Các tháng đã chốt bảng lương";
-            this.m_cmd_bc_cac_thang_da_chot_bang_luong.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_bc_cac_thang_da_chot_bang_luong.Glyph")));
-            this.m_cmd_bc_cac_thang_da_chot_bang_luong.Id = 67;
-            this.m_cmd_bc_cac_thang_da_chot_bang_luong.Name = "m_cmd_bc_cac_thang_da_chot_bang_luong";
-            this.m_cmd_bc_cac_thang_da_chot_bang_luong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.barButtonItem1.Caption = "Các tháng đã chốt bảng lương";
+            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
+            this.barButtonItem1.Id = 67;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // m_cmd_luong_theo_don_vi
+            // 
+            this.m_cmd_luong_theo_don_vi.Caption = "Lương theo đơn vị";
+            this.m_cmd_luong_theo_don_vi.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_luong_theo_don_vi.Glyph")));
+            this.m_cmd_luong_theo_don_vi.Id = 68;
+            this.m_cmd_luong_theo_don_vi.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_luong_theo_don_vi.LargeGlyph")));
+            this.m_cmd_luong_theo_don_vi.Name = "m_cmd_luong_theo_don_vi";
+            this.m_cmd_luong_theo_don_vi.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Các tháng đã chốt bảng lương";
+            this.barButtonItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.Glyph")));
+            this.barButtonItem4.Id = 67;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // f388_main
@@ -927,5 +961,8 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_tk_ns_tong_hop;
         private DevExpress.XtraBars.BarButtonItem m_cmd_bc_hs_bs_hs_athk;
         private DevExpress.XtraBars.BarButtonItem m_cmd_bc_cac_thang_da_chot_bang_luong;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_luong_theo_don_vi;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
     }
 }

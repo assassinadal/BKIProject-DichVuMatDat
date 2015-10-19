@@ -26,5 +26,6 @@ namespace BKI_DichVuMatDat.EF
         }
     
         public virtual DbSet<BACKUP_INFO> BACKUP_INFO { get; set; }
+        public virtual DbSet<V_RPT_LUONG> V_RPT_LUONG { get; set; }
     }
 }

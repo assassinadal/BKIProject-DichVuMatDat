@@ -240,6 +240,24 @@
     <Compile Include="BaoCao\F430_bao_cao_cac_thang_da_chot_bang_luong.Designer.cs">
       <DependentUpon>F430_bao_cao_cac_thang_da_chot_bang_luong.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\f440_rpt_luong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f440_rpt_luong.Designer.cs">
+      <DependentUpon>f440_rpt_luong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\f441_thuc_linh_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f441_thuc_linh_de.Designer.cs">
+      <DependentUpon>f441_thuc_linh_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\f445_bien_dong_luong_theo_thang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f445_bien_dong_luong_theo_thang.Designer.cs">
+      <DependentUpon>f445_bien_dong_luong_theo_thang.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\F_wait_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,6 +405,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelDVMD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF\V_RPT_LUONG.cs">
+      <DependentUpon>ModelDVMD.tt</DependentUpon>
     </Compile>
     <Compile Include="FormatControl\FormatControl.cs" />
     <Compile Include="HeThong\collection.cs" />
@@ -558,6 +579,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F430_bao_cao_cac_thang_da_chot_bang_luong.resx">
       <DependentUpon>F430_bao_cao_cac_thang_da_chot_bang_luong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f440_rpt_luong.resx">
+      <DependentUpon>f440_rpt_luong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f441_thuc_linh_de.resx">
+      <DependentUpon>f441_thuc_linh_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f445_bien_dong_luong_theo_thang.resx">
+      <DependentUpon>f445_bien_dong_luong_theo_thang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F_wait_form.resx">
       <DependentUpon>F_wait_form.cs</DependentUpon>

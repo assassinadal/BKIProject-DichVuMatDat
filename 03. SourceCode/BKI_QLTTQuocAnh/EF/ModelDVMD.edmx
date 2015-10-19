@@ -15,8 +15,92 @@
           <Property Name="GHI_CHU" Type="nchar" MaxLength="10" />
           <Property Name="NGAY_TAO" Type="datetime" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BKI_DVMD.dbo.V_RPT_LUONG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_RPT_LUONG">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_NHAN_VIEN" />
+            <PropertyRef Name="HO_DEM" />
+            <PropertyRef Name="TEN" />
+          </Key>
+          <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_NHAN_VIEN" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="THANG" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="NAM" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="MA_NV" Type="nvarchar" MaxLength="15" />
+          <Property Name="LUONG_NS" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="LUONG_CD" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="PHU_CAP_TN" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="AN_CA" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="LAM_THEM" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="LAM_THEM_LE_TET" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="LUONG_KHAC_THUE_5" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="LUONG_KHAC_THUE_10" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="LUONG_KHAC_THUE_TINH_THEO_LUONG" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="THU_NHAP" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="BHXH" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="BHYT" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="BHTN" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="DOAN_PHI_CD" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="THUE" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="THUE_TU_LUONG_KHAC_5" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="THUE_TU_LUONG_KHAC_10" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="PHAI_NOP" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="THUC_LINH" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="TRUY_LINH" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="TRUY_THU" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="THUC_LINH_CUOI_CUNG" Type="numeric" Precision="21" Scale="3" />
+          <Property Name="ID_DON_VI" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="TEN_DON_VI" Type="nvarchar" MaxLength="250" />
+          <Property Name="MA_DON_VI" Type="nvarchar" MaxLength="35" />
+          <Property Name="ID_LOAI_DON_VI" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ID_DON_VI_CAP_TREN" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="HO_DEM" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SO_TAI_KHOAN" Type="nvarchar" MaxLength="35" />
+        </EntityType>
         <EntityContainer Name="BKI_DVMDModelStoreContainer">
           <EntitySet Name="BACKUP_INFO" EntityType="Self.BACKUP_INFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="V_RPT_LUONG" EntityType="Self.V_RPT_LUONG" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_RPT_LUONG].[ID] AS [ID], 
+    [V_RPT_LUONG].[ID_NHAN_VIEN] AS [ID_NHAN_VIEN], 
+    [V_RPT_LUONG].[THANG] AS [THANG], 
+    [V_RPT_LUONG].[NAM] AS [NAM], 
+    [V_RPT_LUONG].[MA_NV] AS [MA_NV], 
+    [V_RPT_LUONG].[LUONG_NS] AS [LUONG_NS], 
+    [V_RPT_LUONG].[LUONG_CD] AS [LUONG_CD], 
+    [V_RPT_LUONG].[PHU_CAP_TN] AS [PHU_CAP_TN], 
+    [V_RPT_LUONG].[AN_CA] AS [AN_CA], 
+    [V_RPT_LUONG].[LAM_THEM] AS [LAM_THEM], 
+    [V_RPT_LUONG].[LAM_THEM_LE_TET] AS [LAM_THEM_LE_TET], 
+    [V_RPT_LUONG].[LUONG_KHAC_THUE_5] AS [LUONG_KHAC_THUE_5], 
+    [V_RPT_LUONG].[LUONG_KHAC_THUE_10] AS [LUONG_KHAC_THUE_10], 
+    [V_RPT_LUONG].[LUONG_KHAC_THUE_TINH_THEO_LUONG] AS [LUONG_KHAC_THUE_TINH_THEO_LUONG], 
+    [V_RPT_LUONG].[THU_NHAP] AS [THU_NHAP], 
+    [V_RPT_LUONG].[BHXH] AS [BHXH], 
+    [V_RPT_LUONG].[BHYT] AS [BHYT], 
+    [V_RPT_LUONG].[BHTN] AS [BHTN], 
+    [V_RPT_LUONG].[DOAN_PHI_CD] AS [DOAN_PHI_CD], 
+    [V_RPT_LUONG].[THUE] AS [THUE], 
+    [V_RPT_LUONG].[THUE_TU_LUONG_KHAC_5] AS [THUE_TU_LUONG_KHAC_5], 
+    [V_RPT_LUONG].[THUE_TU_LUONG_KHAC_10] AS [THUE_TU_LUONG_KHAC_10], 
+    [V_RPT_LUONG].[PHAI_NOP] AS [PHAI_NOP], 
+    [V_RPT_LUONG].[THUC_LINH] AS [THUC_LINH], 
+    [V_RPT_LUONG].[TRUY_LINH] AS [TRUY_LINH], 
+    [V_RPT_LUONG].[TRUY_THU] AS [TRUY_THU], 
+    [V_RPT_LUONG].[THUC_LINH_CUOI_CUNG] AS [THUC_LINH_CUOI_CUNG], 
+    [V_RPT_LUONG].[ID_DON_VI] AS [ID_DON_VI], 
+    [V_RPT_LUONG].[TEN_DON_VI] AS [TEN_DON_VI], 
+    [V_RPT_LUONG].[MA_DON_VI] AS [MA_DON_VI], 
+    [V_RPT_LUONG].[ID_LOAI_DON_VI] AS [ID_LOAI_DON_VI], 
+    [V_RPT_LUONG].[ID_DON_VI_CAP_TREN] AS [ID_DON_VI_CAP_TREN], 
+    [V_RPT_LUONG].[HO_DEM] AS [HO_DEM], 
+    [V_RPT_LUONG].[TEN] AS [TEN], 
+    [V_RPT_LUONG].[SO_TAI_KHOAN] AS [SO_TAI_KHOAN]
+    FROM [dbo].[V_RPT_LUONG] AS [V_RPT_LUONG]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -24,6 +108,7 @@
       <Schema Namespace="BKI_DVMDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="BKI_DVMDEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BACKUP_INFO" EntityType="BKI_DVMDModel.BACKUP_INFO" />
+          <EntitySet Name="V_RPT_LUONG" EntityType="BKI_DVMDModel.V_RPT_LUONG" />
         </EntityContainer>
         <EntityType Name="BACKUP_INFO">
           <Key>
@@ -34,6 +119,49 @@
           <Property Name="DISK_LOCATION" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="GHI_CHU" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="NGAY_TAO" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="V_RPT_LUONG">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_NHAN_VIEN" />
+            <PropertyRef Name="HO_DEM" />
+            <PropertyRef Name="TEN" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_NHAN_VIEN" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="THANG" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="NAM" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="MA_NV" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="LUONG_NS" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="LUONG_CD" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="PHU_CAP_TN" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="AN_CA" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="LAM_THEM" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="LAM_THEM_LE_TET" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="LUONG_KHAC_THUE_5" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="LUONG_KHAC_THUE_10" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="LUONG_KHAC_THUE_TINH_THEO_LUONG" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="THU_NHAP" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="BHXH" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="BHYT" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="BHTN" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="DOAN_PHI_CD" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="THUE" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="THUE_TU_LUONG_KHAC_5" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="THUE_TU_LUONG_KHAC_10" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="PHAI_NOP" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="THUC_LINH" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="TRUY_LINH" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="TRUY_THU" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="THUC_LINH_CUOI_CUNG" Type="Decimal" Precision="21" Scale="3" />
+          <Property Name="ID_DON_VI" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TEN_DON_VI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="MA_DON_VI" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="ID_LOAI_DON_VI" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ID_DON_VI_CAP_TREN" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HO_DEM" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SO_TAI_KHOAN" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -48,6 +176,47 @@
                 <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
                 <ScalarProperty Name="DISK_LOCATION" ColumnName="DISK_LOCATION" />
                 <ScalarProperty Name="FILE_NAME" ColumnName="FILE_NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_RPT_LUONG">
+            <EntityTypeMapping TypeName="BKI_DVMDModel.V_RPT_LUONG">
+              <MappingFragment StoreEntitySet="V_RPT_LUONG">
+                <ScalarProperty Name="SO_TAI_KHOAN" ColumnName="SO_TAI_KHOAN" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="HO_DEM" ColumnName="HO_DEM" />
+                <ScalarProperty Name="ID_DON_VI_CAP_TREN" ColumnName="ID_DON_VI_CAP_TREN" />
+                <ScalarProperty Name="ID_LOAI_DON_VI" ColumnName="ID_LOAI_DON_VI" />
+                <ScalarProperty Name="MA_DON_VI" ColumnName="MA_DON_VI" />
+                <ScalarProperty Name="TEN_DON_VI" ColumnName="TEN_DON_VI" />
+                <ScalarProperty Name="ID_DON_VI" ColumnName="ID_DON_VI" />
+                <ScalarProperty Name="THUC_LINH_CUOI_CUNG" ColumnName="THUC_LINH_CUOI_CUNG" />
+                <ScalarProperty Name="TRUY_THU" ColumnName="TRUY_THU" />
+                <ScalarProperty Name="TRUY_LINH" ColumnName="TRUY_LINH" />
+                <ScalarProperty Name="THUC_LINH" ColumnName="THUC_LINH" />
+                <ScalarProperty Name="PHAI_NOP" ColumnName="PHAI_NOP" />
+                <ScalarProperty Name="THUE_TU_LUONG_KHAC_10" ColumnName="THUE_TU_LUONG_KHAC_10" />
+                <ScalarProperty Name="THUE_TU_LUONG_KHAC_5" ColumnName="THUE_TU_LUONG_KHAC_5" />
+                <ScalarProperty Name="THUE" ColumnName="THUE" />
+                <ScalarProperty Name="DOAN_PHI_CD" ColumnName="DOAN_PHI_CD" />
+                <ScalarProperty Name="BHTN" ColumnName="BHTN" />
+                <ScalarProperty Name="BHYT" ColumnName="BHYT" />
+                <ScalarProperty Name="BHXH" ColumnName="BHXH" />
+                <ScalarProperty Name="THU_NHAP" ColumnName="THU_NHAP" />
+                <ScalarProperty Name="LUONG_KHAC_THUE_TINH_THEO_LUONG" ColumnName="LUONG_KHAC_THUE_TINH_THEO_LUONG" />
+                <ScalarProperty Name="LUONG_KHAC_THUE_10" ColumnName="LUONG_KHAC_THUE_10" />
+                <ScalarProperty Name="LUONG_KHAC_THUE_5" ColumnName="LUONG_KHAC_THUE_5" />
+                <ScalarProperty Name="LAM_THEM_LE_TET" ColumnName="LAM_THEM_LE_TET" />
+                <ScalarProperty Name="LAM_THEM" ColumnName="LAM_THEM" />
+                <ScalarProperty Name="AN_CA" ColumnName="AN_CA" />
+                <ScalarProperty Name="PHU_CAP_TN" ColumnName="PHU_CAP_TN" />
+                <ScalarProperty Name="LUONG_CD" ColumnName="LUONG_CD" />
+                <ScalarProperty Name="LUONG_NS" ColumnName="LUONG_NS" />
+                <ScalarProperty Name="MA_NV" ColumnName="MA_NV" />
+                <ScalarProperty Name="NAM" ColumnName="NAM" />
+                <ScalarProperty Name="THANG" ColumnName="THANG" />
+                <ScalarProperty Name="ID_NHAN_VIEN" ColumnName="ID_NHAN_VIEN" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

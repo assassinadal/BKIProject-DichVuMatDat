@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="38764cea75b9421193bece20e8421851" Name="Diagram1">
         <EntityTypeShape EntityType="BKI_DVMDModel.BACKUP_INFO" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BKI_DVMDModel.V_RPT_LUONG" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

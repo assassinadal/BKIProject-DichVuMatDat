@@ -3,6 +3,16 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BKI_DichVuMatDat.US {
+    public class CONST_ID_CACH_TINH_THUE
+    {
+        public const decimal THUE_THANG = 169;
+
+    }
+
+    public class CONST_ID_LOAI_THU_NHAP_KHAC
+    {
+        public const decimal LINH_CO_THUE = 175;
+    }
 
     public class CONST_ID_LOAI_HOP_DONG
     {

@@ -52,8 +52,10 @@ namespace BKI_DichVuMatDat
                 {
                     CAppContext_201.InitializeContext(v_obj_login_info);
                     CAppContext_201.LoadDecentralizationByUserLogin();
-                    f388_main v_frm_main = new f388_main();
-                    v_frm_main.display(ref v_exitmode);
+                    //f388_main v_frm_main = new f388_main();
+                    //v_frm_main.display(ref v_exitmode);
+                    f355_thuong_an_toan_hang_khong v_frm_main = new f355_thuong_an_toan_hang_khong();
+                    v_frm_main.ShowDialog();
                     v_frm_main.Dispose();
                     // sau main form hiện thì login hoặc thóat
                     switch (v_exitmode)

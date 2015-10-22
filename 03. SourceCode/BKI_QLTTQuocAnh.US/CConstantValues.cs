@@ -104,6 +104,8 @@ namespace BKI_DichVuMatDat.US {
         public const int LOAI_QUYET_DINH = 12;
         public const int LOAI_CACH_TINH_THUE = 13;
         public const int LOAI_THU_NHAP_KHAC = 14;
+
+        public const decimal TRANG_THAI_LAO_DONG = 15;
     }
 
   

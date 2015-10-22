@@ -325,6 +325,19 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     #endregion
     
     #region GIAO_DICH
+    public class GD_TRANG_THAI_LAO_DONG
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string ID_TRANG_THAI_LAO_DONG = "ID_TRANG_THAI_LAO_DONG";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string NGAY_SUA = "NGAY_SUA";
+        public const string NGUOI_SUA = "NGUOI_SUA";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string DA_XOA = "DA_XOA";
+    }
+
     public class GD_CHAM_CONG
     {
         public const string ID = "ID";

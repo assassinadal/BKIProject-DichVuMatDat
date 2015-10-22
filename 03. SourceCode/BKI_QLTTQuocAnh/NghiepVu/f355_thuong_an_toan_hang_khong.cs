@@ -162,18 +162,15 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             return true;
         }
-        private US_GD_THU_NHAP_KHAC data_row_2_us(DataRow dr)
+        private void data_row_2_us(DataRow dr, ref US_GD_THU_NHAP_KHAC ref_us)
         {
-            US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
-            v_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(dr["ID_NHAN_VIEN"].ToString());
-            v_us.dcSO_TIEN = CIPConvert.ToDecimal(dr["SO_TIEN_THUONG_NV"].ToString());
-            v_us.dcTHANG = m_dat_thang_thuong.DateTime.Month;
-            v_us.dcNAM = m_dat_thang_thuong.DateTime.Year;
-            v_us.strLY_DO = m_txt_ly_do_thuong.Text;
-            v_us.dcID_CACH_TINH_THUE = CONST_ID_CACH_TINH_THUE.THUE_THANG;
-            v_us.dcID_LOAI_THU_NHAP_KHAC = CONST_ID_LOAI_THU_NHAP_KHAC.LINH_CO_THUE;
-
-            return v_us;
+            ref_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(dr["ID_NHAN_VIEN"].ToString());
+            ref_us.dcSO_TIEN = CIPConvert.ToDecimal(dr["SO_TIEN_THUONG_NV"].ToString());
+            ref_us.dcTHANG = m_dat_thang_thuong.DateTime.Month;
+            ref_us.dcNAM = m_dat_thang_thuong.DateTime.Year;
+            ref_us.strLY_DO = m_txt_ly_do_thuong.Text;
+            ref_us.dcID_CACH_TINH_THUE = CONST_ID_CACH_TINH_THUE.THUE_THANG;
+            ref_us.dcID_LOAI_THU_NHAP_KHAC = CONST_ID_LOAI_THU_NHAP_KHAC.LINH_CO_THUE;
         }
         private void save_data()
         {
@@ -183,16 +180,20 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             //B1: GetList Object to insert
             SplashScreenManager.ShowForm(typeof(F_wait_form));
+            US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
+            v_us.BeginTransaction();
             for (int rowHandle = 0; rowHandle < m_grv_luong_thuong.RowCount; rowHandle++)
             {
                 var dr = m_grv_luong_thuong.GetDataRow(rowHandle);
-                var v_us = data_row_2_us(dr);
+                data_row_2_us(dr, ref v_us);
                 if (v_us.dcSO_TIEN > 0)
                 {
                     v_us.Insert();
                 }
+                v_us.ClearAllFields();
             }
-            SplashScreenManager.ShowForm(typeof(F_wait_form));
+            v_us.CommitTransaction();
+            SplashScreenManager.CloseForm();
             XtraMessageBox.Show("Lưu dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         #endregion
@@ -284,12 +285,5 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
         #endregion
-
-        private void m_dat_thang_thuong_Popup(object sender, EventArgs e)
-        {
-            DateEdit edit = sender as DateEdit;
-            PopupDateEditForm form = (edit as IPopupControl).PopupWindow as PopupDateEditForm;
-            form.Calendar.View = DevExpress.XtraEditors.Controls.DateEditCalendarViewType.MonthInfo;
-        }
     }
 }

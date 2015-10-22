@@ -140,7 +140,6 @@
             this.m_dat_thang_thuong.Size = new System.Drawing.Size(433, 20);
             this.m_dat_thang_thuong.StyleController = this.layoutControl1;
             this.m_dat_thang_thuong.TabIndex = 11;
-            this.m_dat_thang_thuong.Popup += new System.EventHandler(this.m_dat_thang_thuong_Popup);
             // 
             // m_chk_giam_tru
             // 
@@ -234,6 +233,10 @@
             this.ID_NHAN_VIEN});
             this.m_grv_luong_thuong.GridControl = this.m_grc_luong_thuong;
             this.m_grv_luong_thuong.Name = "m_grv_luong_thuong";
+            this.m_grv_luong_thuong.OptionsBehavior.Editable = false;
+            this.m_grv_luong_thuong.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDown;
+            this.m_grv_luong_thuong.OptionsBehavior.ReadOnly = true;
+            this.m_grv_luong_thuong.OptionsView.ShowGroupPanel = false;
             // 
             // STT
             // 

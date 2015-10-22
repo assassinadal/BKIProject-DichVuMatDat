@@ -129,6 +129,7 @@ namespace BKI_DichVuMatDat
             m_cmd_quan_ly_thu_nhap_khac_xls.ItemClick += m_cmd_quan_ly_thu_nhap_khac_xls_ItemClick;
             m_cmd_quan_ly_luong_cung.ItemClick += m_cmd_quan_ly_luong_cung_ItemClick;
             m_cmd_quan_ly_khong_dong_bh.ItemClick += m_cmd_quan_ly_khong_dong_bh_ItemClick;
+            m_cmd_luong_hs_athk.ItemClick += m_cmd_luong_hs_athk_ItemClick;
             //Hệ thống
             m_cmd_thoat.ItemClick += m_cmd_thoat_ItemClick;
             m_cmd_phan_quyen_nhom.ItemClick += m_cmd_phan_quyen_nhom_ItemClick;
@@ -145,6 +146,39 @@ namespace BKI_DichVuMatDat
             m_cmd_bc_hs_bs_hs_athk.ItemClick += m_cmd_bc_hs_bs_hs_athk_ItemClick;
             m_cmd_bc_cac_thang_da_chot_bang_luong.ItemClick += m_cmd_bc_cac_thang_da_chot_bang_luong_ItemClick;
             m_cmd_luong_theo_don_vi.ItemClick += m_cmd_luong_theo_don_vi_ItemClick;
+            m_cmd_chuyen_trang_thai_LD.ItemClick += m_cmd_chuyen_trang_thai_LD_ItemClick;
+        }
+
+        void m_cmd_chuyen_trang_thai_LD_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                frm356_chuyen_trang_thai_lao_dong v_frm = new frm356_chuyen_trang_thai_lao_dong();
+                if (IsExistFormName(v_frm)) return;
+
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        void m_cmd_luong_hs_athk_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f355_thuong_an_toan_hang_khong v_frm = new f355_thuong_an_toan_hang_khong();
+                if (IsExistFormName(v_frm)) return;
+
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         void m_cmd_luong_theo_don_vi_ItemClick(object sender, ItemClickEventArgs e)

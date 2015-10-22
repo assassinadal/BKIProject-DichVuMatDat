@@ -12,6 +12,8 @@ using IP.Core.IPCommon;
 using BKI_DichVuMatDat.US;
 using DevExpress.XtraSplashScreen;
 using BKI_DichVuMatDat.BaoCao;
+using DevExpress.XtraEditors.Popup;
+using DevExpress.Utils.Win;
 namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class f355_thuong_an_toan_hang_khong : Form
@@ -39,6 +41,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             //Format control here
             set_define_event();
         }
+
         private void fill_data_to_grid()
         {
             SplashScreenManager.ShowForm(typeof(F_wait_form));
@@ -51,10 +54,22 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grc_luong_thuong.RefreshDataSource();
             SplashScreenManager.CloseForm();
         }
+
         private void set_inital_form_load()
         {
 
         }
+
+        //private void set_label_dem_so_thang_xet_thuong()
+        //{
+        //    if (!ValidateControlEmpty(m_dat_tu_ngay, m_dat_den_ngay))
+        //    {
+        //        return;
+        //    }
+        //    var v_count_so_thang_xet_thuong = (m_dat_den_ngay.DateTime.Year - m_dat_tu_ngay.DateTime.Year) * 12 
+        //                                            + m_dat_den_ngay.DateTime.Month - m_dat_tu_ngay.DateTime.Month + 1;
+        //    m_lbl_so_thang_xet_thuong.Text = "Đang xét " + v_count_so_thang_xet_thuong.ToString();
+        //}
         private bool ValidateControlEmpty(params Control[] controls)
         {
             var isValidated = false;
@@ -162,6 +177,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private void save_data()
         {
+            if (m_grv_luong_thuong.RowCount <= 0)
+            {
+                return;
+            }
             //B1: GetList Object to insert
             SplashScreenManager.ShowForm(typeof(F_wait_form));
             for (int rowHandle = 0; rowHandle < m_grv_luong_thuong.RowCount; rowHandle++)
@@ -174,6 +193,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 }
             }
             SplashScreenManager.ShowForm(typeof(F_wait_form));
+            XtraMessageBox.Show("Lưu dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         #endregion
 
@@ -264,5 +284,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
         #endregion
+
+        private void m_dat_thang_thuong_Popup(object sender, EventArgs e)
+        {
+            DateEdit edit = sender as DateEdit;
+            PopupDateEditForm form = (edit as IPopupControl).PopupWindow as PopupDateEditForm;
+            form.Calendar.View = DevExpress.XtraEditors.Controls.DateEditCalendarViewType.MonthInfo;
+        }
     }
 }

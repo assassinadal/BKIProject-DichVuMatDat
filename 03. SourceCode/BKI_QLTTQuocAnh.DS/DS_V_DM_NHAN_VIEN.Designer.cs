@@ -896,15 +896,14 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnTEN.MaxLength = 50;
                 this.columnHO_TEN.ReadOnly = true;
                 this.columnHO_TEN.MaxLength = 101;
-                this.columnGIOI_TINH.ReadOnly = true;
-                this.columnGIOI_TINH.MaxLength = 3;
+                this.columnGIOI_TINH.MaxLength = 1;
                 this.columnEMAIL.MaxLength = 35;
                 this.columnSDT.MaxLength = 15;
                 this.columnSO_TAI_KHOAN.MaxLength = 35;
                 this.columnNGAN_HANG.MaxLength = 250;
                 this.columnHON_NHAN.MaxLength = 35;
                 this.columnSO_CMT.MaxLength = 15;
-                this.columnNOI_CAP.MaxLength = 35;
+                this.columnNOI_CAP.MaxLength = 250;
                 this.columnQUOC_TICH.MaxLength = 35;
                 this.columnDAN_TOC.MaxLength = 15;
                 this.columnTON_GIAO.MaxLength = 15;
@@ -2116,7 +2115,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_DM_NHAN_VIENTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BKI_DichVuMatDat.DS.Properties.Settings.Default.BKI_DVMDConnectionString1;
+            this._connection.ConnectionString = global::BKI_DichVuMatDat.DS.Properties.Settings.Default.BKI_DVMD_V2ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

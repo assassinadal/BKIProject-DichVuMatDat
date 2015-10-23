@@ -157,11 +157,13 @@
     <Reference Include="DevExpress.XtraTreeList.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -514,6 +516,12 @@
     <Compile Include="NghiepVu\f363_quan_ly_cac_nhan_vien_co_luong_cung.Designer.cs">
       <DependentUpon>f363_quan_ly_cac_nhan_vien_co_luong_cung.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\F365_quan_ly_hs_bo_sung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\F365_quan_ly_hs_bo_sung.Designer.cs">
+      <DependentUpon>F365_quan_ly_hs_bo_sung.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f366_Quan_ly_nhan_vien_khong_dong_bao_hiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -721,6 +729,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f363_quan_ly_cac_nhan_vien_co_luong_cung.resx">
       <DependentUpon>f363_quan_ly_cac_nhan_vien_co_luong_cung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\F365_quan_ly_hs_bo_sung.resx">
+      <DependentUpon>F365_quan_ly_hs_bo_sung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f366_Quan_ly_nhan_vien_khong_dong_bao_hiem.resx">
       <DependentUpon>f366_Quan_ly_nhan_vien_khong_dong_bao_hiem.cs</DependentUpon>
@@ -1256,6 +1267,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1441820884_coin-delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1444999351_banker.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

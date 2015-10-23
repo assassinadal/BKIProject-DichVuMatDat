@@ -16,6 +16,7 @@ using System.Globalization;
 using IP.Core.IPSystemAdmin;
 
 
+
 namespace BKI_DichVuMatDat.BaoCao
 {
     public partial class F430_bao_cao_cac_thang_da_chot_bang_luong : Form

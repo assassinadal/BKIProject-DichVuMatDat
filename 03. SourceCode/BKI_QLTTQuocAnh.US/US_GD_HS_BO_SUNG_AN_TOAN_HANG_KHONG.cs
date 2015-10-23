@@ -229,13 +229,13 @@ namespace BKI_DichVuMatDat.US
 
         public void insert_data_by_proc(decimal ip_dc_thang, decimal ip_dc_nam)
         {
-            BeginTransaction();
+            //BeginTransaction();
             CStoredProc v_cstore = new CStoredProc("PR_GET_ALL_HS_BS_ATHK");
 
             v_cstore.addDecimalInputParam("@IP_THANG", ip_dc_thang);
             v_cstore.addDecimalInputParam("@IP_NAM", ip_dc_nam);
             v_cstore.ExecuteCommand(this);
-            CommitTransaction();
+            //CommitTransaction();
         }
         public void load_du_lieu_bang_luong_theo_hs_athk(DataSet op_ds   
                                                                 ,DateTime ip_dat_tu_ngay

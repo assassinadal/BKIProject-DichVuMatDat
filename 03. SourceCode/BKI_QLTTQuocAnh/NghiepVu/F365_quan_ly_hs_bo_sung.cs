@@ -26,11 +26,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         #region Public Interface
-        
+
         #endregion
 
         #region Members
-        
+
         #endregion
 
         #region Private methods
@@ -46,6 +46,21 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_txt_chon_nam.Text = DateTime.Now.Year.ToString();
         }
+
+        private bool check_data_is_ok()
+        {
+            if (m_txt_chon_nam.Text == "")
+            {
+                XtraMessageBox.Show("Bạn chưa nhập năm để tính tiền rồi!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                return false;
+            }
+            if (m_txt_so_tien.Text == "")
+            {
+                XtraMessageBox.Show("Bạn chưa nhập số tiền để tính tiền rồi!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
         #endregion
         private void set_define_events()
         {
@@ -57,7 +72,19 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                //1. Lay tien nay truyen vao 
+                if (check_data_is_ok())
+                {
+                    US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
+                    try
+                    {
+                        v_us.Insert_tien_hs_bo_sung_luong(CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()), CIPConvert.ToDecimal(m_txt_so_tien.Text.Trim()));
+                        XtraMessageBox.Show("Thành công!", "THÔNG BÁO");
+                    }
+                    catch (Exception v_e)
+                    {
+                        throw v_e;
+                    }
+                }
             }
             catch (Exception v_e)
             {
@@ -77,7 +104,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        
+
 
     }
 }

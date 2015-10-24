@@ -19,14 +19,18 @@ namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class F365_quan_ly_hs_bo_sung : Form
     {
+        
+
+        #region Public Interface
         public F365_quan_ly_hs_bo_sung()
         {
             InitializeComponent();
             format_controls();
         }
-
-        #region Public Interface
-        
+        ~F365_quan_ly_hs_bo_sung()
+        {
+            Dispose(false);
+        }
         #endregion
 
         #region Members
@@ -36,6 +40,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Private methods
         private void format_controls()
         {
+            FormatControl.SetVisibleSimpleButton(this);
             this.m_grv_quan_ly_he_so_bo_sung.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
             this.m_grv_quan_ly_he_so_bo_sung.OptionsPrint.AutoWidth = false;
             set_define_events();
@@ -46,18 +51,54 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_txt_chon_nam.Text = DateTime.Now.Year.ToString();
         }
+
+        private void save_data()
+        {
+
+        }
         #endregion
         private void set_define_events()
         {
             this.Load += F365_quan_ly_hs_bo_sung_Load;
             m_cmd_luu_so_tien.Click += m_cmd_luu_so_tien_Click;
+            m_cmd_tinh_tien.Click += m_cmd_tinh_tien_Click;
+            FormClosed += F365_quan_ly_hs_bo_sung_FormClosed;
+        }
+
+        void F365_quan_ly_hs_bo_sung_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                Dispose();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_tinh_tien_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Fill Data To Grid Here
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_luu_so_tien_Click(object sender, EventArgs e)
         {
             try
             {
-                //1. Lay tien nay truyen vao 
+                if (m_grc_quan_ly_he_so_bo_sung.DataSource == null)
+                {
+                    XtraMessageBox.Show("Dữ liệu trống", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                save_data();
             }
             catch (Exception v_e)
             {
@@ -76,8 +117,5 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-        
-
     }
 }

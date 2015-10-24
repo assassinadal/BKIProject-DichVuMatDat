@@ -39,6 +39,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void format_control()
         {
             //Format control here
+            FormatControl.SetVisibleSimpleButton(this);
             set_define_event();
         }
 

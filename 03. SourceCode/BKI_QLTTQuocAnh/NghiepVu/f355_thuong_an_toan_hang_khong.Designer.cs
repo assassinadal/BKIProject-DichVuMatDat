@@ -236,6 +236,7 @@
             this.m_grv_luong_thuong.OptionsBehavior.Editable = false;
             this.m_grv_luong_thuong.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDown;
             this.m_grv_luong_thuong.OptionsBehavior.ReadOnly = true;
+            this.m_grv_luong_thuong.OptionsView.ShowFooter = true;
             this.m_grv_luong_thuong.OptionsView.ShowGroupPanel = false;
             // 
             // STT
@@ -303,6 +304,8 @@
             this.TONG_HS_ATHK.Caption = "Tổng Hệ số ATHK";
             this.TONG_HS_ATHK.FieldName = "TONG_HS_ATHK";
             this.TONG_HS_ATHK.Name = "TONG_HS_ATHK";
+            this.TONG_HS_ATHK.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_HS_ATHK", "Tổng = {0}")});
             this.TONG_HS_ATHK.Visible = true;
             this.TONG_HS_ATHK.VisibleIndex = 4;
             this.TONG_HS_ATHK.Width = 133;
@@ -318,6 +321,8 @@
             this.SO_TIEN_THUONG_NV.ColumnEdit = this.repositoryItemTextEdit1;
             this.SO_TIEN_THUONG_NV.FieldName = "SO_TIEN_THUONG_NV";
             this.SO_TIEN_THUONG_NV.Name = "SO_TIEN_THUONG_NV";
+            this.SO_TIEN_THUONG_NV.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_THUONG_NV", "Tổng = {0:n0}")});
             this.SO_TIEN_THUONG_NV.Visible = true;
             this.SO_TIEN_THUONG_NV.VisibleIndex = 5;
             this.SO_TIEN_THUONG_NV.Width = 147;

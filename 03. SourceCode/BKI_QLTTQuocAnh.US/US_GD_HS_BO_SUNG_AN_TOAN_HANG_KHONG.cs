@@ -237,7 +237,6 @@ namespace BKI_DichVuMatDat.US
             v_cstore.ExecuteCommand(this);
             //CommitTransaction();
         }
-
         public void load_du_lieu_bang_luong_theo_hs_athk(DataSet op_ds   
                                                                 ,DateTime ip_dat_tu_ngay
                                                                 , DateTime ip_dat_den_ngay

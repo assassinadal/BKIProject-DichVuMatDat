@@ -181,7 +181,7 @@ namespace BKI_DichVuMatDat.BaoCao
             }
         }
 
-        private void insert_gd_chot_bang_luong()
+        private void insert_gd_bang_luong()
         {
             US_GD_CHOT_BANG_LUONG v_us = new US_GD_CHOT_BANG_LUONG();
 
@@ -302,7 +302,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 if (!check_gd_chot_bang_luong_is_exist())
                 {
                     //insert vao gd_chot_bang_luong
-                    insert_gd_chot_bang_luong();
+                    insert_gd_bang_luong();
                     //them dl vao bang hs bo sung, hs an toan hk
                     insert_hs_hs_bs_hs_anhk(CIPConvert.ToDecimal(m_txt_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_nam.Text.Trim()));
                 }

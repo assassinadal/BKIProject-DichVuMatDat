@@ -209,14 +209,5 @@ public class US_GD_THU_NHAP_KHAC : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-
-    public void Insert_tien_hs_bo_sung_luong(decimal ip_dc_nam, decimal ip_dc_so_tien)
-    {
-        CStoredProc v_cstore = new CStoredProc("pr_F365_QL_HSBS_insert_so_tien_vao_GD_THU_NHAP_KHAC");
-
-        v_cstore.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
-        v_cstore.addDecimalInputParam("@ip_dc_so_tien", ip_dc_so_tien);
-        v_cstore.ExecuteCommand(this);
-    }
-}
+	}
 }

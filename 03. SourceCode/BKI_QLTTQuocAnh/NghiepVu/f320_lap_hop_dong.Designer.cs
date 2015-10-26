@@ -68,6 +68,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.m_cmd_tao_lai = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_lap_hop_dong = new DevExpress.XtraEditors.SimpleButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
@@ -493,12 +494,24 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.m_cmd_tao_lai);
             this.panel3.Controls.Add(this.m_cmd_lap_hop_dong);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 244);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1196, 39);
             this.panel3.TabIndex = 2;
+            // 
+            // m_cmd_tao_lai
+            // 
+            this.m_cmd_tao_lai.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_tao_lai.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tao_lai.Image")));
+            this.m_cmd_tao_lai.Location = new System.Drawing.Point(116, 0);
+            this.m_cmd_tao_lai.Name = "m_cmd_tao_lai";
+            this.m_cmd_tao_lai.Size = new System.Drawing.Size(116, 39);
+            this.m_cmd_tao_lai.TabIndex = 8;
+            this.m_cmd_tao_lai.Text = "&Tạo lại";
+            this.m_cmd_tao_lai.Click += new System.EventHandler(this.m_cmd_tao_lai_Click);
             // 
             // m_cmd_lap_hop_dong
             // 
@@ -933,5 +946,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
         private DevExpress.XtraEditors.SimpleButton m_cmd_lap_hop_dong;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_tao_lai;
     }
 }

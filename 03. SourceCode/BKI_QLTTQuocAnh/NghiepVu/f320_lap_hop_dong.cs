@@ -1190,5 +1190,10 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_cmd_tao_lai_Click(object sender, EventArgs e)
+        {
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+        }
     }
 }

@@ -179,6 +179,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_QUYET_DINH.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_QUY_TIEN_THUONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_QUY_TIEN_THUONG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_GD_THANG_DA_GIAM_TRU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_THANG_DA_GIAM_TRU.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_THU_NHAP_KHAC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -576,6 +586,28 @@
     </None>
     <None Include="DS_GD_QUYET_DINH.xss">
       <DependentUpon>DS_GD_QUYET_DINH.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_QUY_TIEN_THUONG.xsc">
+      <DependentUpon>DS_GD_QUY_TIEN_THUONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_QUY_TIEN_THUONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_QUY_TIEN_THUONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_QUY_TIEN_THUONG.xss">
+      <DependentUpon>DS_GD_QUY_TIEN_THUONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_THANG_DA_GIAM_TRU.xsc">
+      <DependentUpon>DS_GD_THANG_DA_GIAM_TRU.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_THANG_DA_GIAM_TRU.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_THANG_DA_GIAM_TRU.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_THANG_DA_GIAM_TRU.xss">
+      <DependentUpon>DS_GD_THANG_DA_GIAM_TRU.xsd</DependentUpon>
     </None>
     <None Include="DS_GD_THU_NHAP_KHAC.xsc">
       <DependentUpon>DS_GD_THU_NHAP_KHAC.xsd</DependentUpon>

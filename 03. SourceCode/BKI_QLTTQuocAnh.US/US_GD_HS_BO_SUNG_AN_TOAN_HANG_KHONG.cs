@@ -237,8 +237,8 @@ namespace BKI_DichVuMatDat.US
             v_cstore.ExecuteCommand(this);
             //CommitTransaction();
         }
-        public void load_du_lieu_bang_luong_theo_hs_athk(DataSet op_ds   
-                                                                ,DateTime ip_dat_tu_ngay
+        public void load_du_lieu_bang_luong_theo_hs_athk(DataSet op_ds
+                                                                , DateTime ip_dat_tu_ngay
                                                                 , DateTime ip_dat_den_ngay
                                                                  , decimal ip_dc_tong_tien)
         {
@@ -247,6 +247,16 @@ namespace BKI_DichVuMatDat.US
             v_cstore.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
             v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
             v_cstore.addDecimalInputParam("@ip_dc_tong_so_tien", ip_dc_tong_tien);
+
+            v_cstore.fillDataSetByCommand(this, op_ds);
+        }
+
+        public void load_du_lieu_bang_luong_theo_hs_bs(DataSet op_ds, decimal ip_dc_nam, decimal ip_dc_so_tien)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_lay_du_lieu_bang_luong_by_hs_bo_sung");
+
+            v_cstore.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
+            v_cstore.addDecimalInputParam("@ip_dc_so_tien", ip_dc_so_tien);
 
             v_cstore.fillDataSetByCommand(this, op_ds);
         }

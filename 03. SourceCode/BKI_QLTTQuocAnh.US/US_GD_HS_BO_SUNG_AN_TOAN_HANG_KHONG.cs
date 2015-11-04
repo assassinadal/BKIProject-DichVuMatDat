@@ -240,14 +240,19 @@ namespace BKI_DichVuMatDat.US
         public void load_du_lieu_bang_luong_theo_hs_athk(DataSet op_ds
                                                                 , DateTime ip_dat_tu_ngay
                                                                 , DateTime ip_dat_den_ngay
-                                                                 , decimal ip_dc_tong_tien)
+                                                                 , decimal ip_dc_tong_tien
+                                                                , string ip_yn_giam_tru
+                                                                , int ip_int_thang_thuong
+                                                                , int ip_int_nam_thuong)
         {
             CStoredProc v_cstore = new CStoredProc("pr_lay_du_lieu_bang_luong_by_hs_athk");
 
             v_cstore.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
             v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
             v_cstore.addDecimalInputParam("@ip_dc_tong_so_tien", ip_dc_tong_tien);
-
+            v_cstore.addNVarcharInputParam("@ip_yn_giam_tru", ip_yn_giam_tru);
+            v_cstore.addDecimalInputParam("@ip_int_thang_tinh_thuong", ip_int_thang_thuong );
+            v_cstore.addDecimalInputParam("@ip_int_nam_tinh_thuong", ip_int_nam_thuong);
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
 

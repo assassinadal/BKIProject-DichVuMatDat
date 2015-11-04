@@ -45,15 +45,30 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void fill_data_to_grid()
         {
-            SplashScreenManager.ShowForm(typeof(F_wait_form));
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add();
-            m_us_hs_bs_athk = new US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG();
-            m_us_hs_bs_athk.load_du_lieu_bang_luong_theo_hs_athk(v_ds, m_dat_tu_ngay.DateTime, m_dat_den_ngay.DateTime, CIPConvert.ToDecimal(m_txt_so_tien.EditValue));
+            try
+            {
+                SplashScreenManager.ShowForm(typeof(F_wait_form));
+                DataSet v_ds = new DataSet();
+                v_ds.Tables.Add();
+                m_us_hs_bs_athk = new US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG();
+                m_us_hs_bs_athk.load_du_lieu_bang_luong_theo_hs_athk(v_ds
+                                                                , m_dat_tu_ngay.DateTime
+                                                                , m_dat_den_ngay.DateTime
+                                                                , CIPConvert.ToDecimal(m_txt_so_tien.EditValue)
+                                                                , m_chk_giam_tru.Checked == true ? "Y" : "N"
+                                                                , m_dat_thang_thuong.DateTime.Month
+                                                                , m_dat_thang_thuong.DateTime.Year);
 
-            m_grc_luong_thuong.DataSource = v_ds.Tables[0];
-            m_grc_luong_thuong.RefreshDataSource();
-            SplashScreenManager.CloseForm();
+                m_grc_luong_thuong.DataSource = v_ds.Tables[0];
+                m_grc_luong_thuong.RefreshDataSource();
+                SplashScreenManager.CloseForm();
+            }
+            catch(Exception)
+            {
+                SplashScreenManager.CloseForm();
+                throw;
+            }
+            
         }
 
         private void set_inital_form_load()
@@ -208,6 +223,43 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_save_data.Click += m_cmd_save_data_Click;
             m_dat_tu_ngay.EditValueChanged += m_dat_tu_ngay_EditValueChanged;
             m_dat_den_ngay.EditValueChanged += m_dat_den_ngay_EditValueChanged;
+            m_dat_thang_thuong.EditValueChanged += m_dat_thang_thuong_EditValueChanged;
+            m_chk_giam_tru.CheckedChanged += m_chk_giam_tru_CheckedChanged;
+        }
+
+        void m_chk_giam_tru_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(m_chk_giam_tru.CheckState == CheckState.Unchecked)
+                {
+                    m_chk_giam_tru.Enabled = true;
+                }
+                else if(m_chk_giam_tru.CheckState == CheckState.Checked)
+                {
+                    m_chk_giam_tru.Enabled = false;
+                }
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_dat_thang_thuong_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                US_GD_THANG_DA_GIAM_TRU v_us = new US_GD_THANG_DA_GIAM_TRU();
+                decimal op_dc_giam_tru = 0;
+                v_us.kiem_tra_thang_da_giam_tru_chua(m_dat_thang_thuong.DateTime.Month, m_dat_thang_thuong.DateTime.Year, ref op_dc_giam_tru);
+
+                m_chk_giam_tru.Checked = op_dc_giam_tru == 0 ? false : true;
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_dat_den_ngay_EditValueChanged(object sender, EventArgs e)

@@ -157,4 +157,10 @@ namespace BKI_DichVuMatDat.US {
         public const decimal TRUC_TIEP = 144;
         public const decimal GIAN_TIEP = 145;
     }
+
+    public static class CONST_ID_TIEN_THUONG
+    {
+        public const decimal THUONG_HS_BS = 627;
+        public const decimal THUONG_ATHK = 628;
+    }
 }

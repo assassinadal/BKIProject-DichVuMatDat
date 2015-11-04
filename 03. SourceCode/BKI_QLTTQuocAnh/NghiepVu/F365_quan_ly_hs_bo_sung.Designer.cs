@@ -265,9 +265,13 @@
             this.SO_TIEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.SO_TIEN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.SO_TIEN.Caption = "Tiền thưởng";
+            this.SO_TIEN.DisplayFormat.FormatString = "{0:#,##0}";
+            this.SO_TIEN.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.SO_TIEN.FieldName = "SO_TIEN";
             this.SO_TIEN.Name = "SO_TIEN";
             this.SO_TIEN.OptionsColumn.AllowEdit = false;
+            this.SO_TIEN.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN", "Tổng = {0:#,##0}")});
             this.SO_TIEN.Visible = true;
             this.SO_TIEN.VisibleIndex = 4;
             // 
@@ -279,10 +283,14 @@
             this.SO_TIEN_SAU_TINH_THUE.AppearanceHeader.Options.UseTextOptions = true;
             this.SO_TIEN_SAU_TINH_THUE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.SO_TIEN_SAU_TINH_THUE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.SO_TIEN_SAU_TINH_THUE.Caption = "Tiền thưởng đã giảm trừ";
+            this.SO_TIEN_SAU_TINH_THUE.Caption = "Tiền thưởng sau thuế";
+            this.SO_TIEN_SAU_TINH_THUE.DisplayFormat.FormatString = "{0:#,##0}";
+            this.SO_TIEN_SAU_TINH_THUE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.SO_TIEN_SAU_TINH_THUE.FieldName = "SO_TIEN_SAU_TINH_THUE";
             this.SO_TIEN_SAU_TINH_THUE.Name = "SO_TIEN_SAU_TINH_THUE";
             this.SO_TIEN_SAU_TINH_THUE.OptionsColumn.AllowEdit = false;
+            this.SO_TIEN_SAU_TINH_THUE.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_SAU_TINH_THUE", "Tổng = {0:#,##0}")});
             this.SO_TIEN_SAU_TINH_THUE.Visible = true;
             this.SO_TIEN_SAU_TINH_THUE.VisibleIndex = 5;
             // 
@@ -294,6 +302,8 @@
             this.LY_DO.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.LY_DO.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.LY_DO.Caption = "Lý do";
+            this.LY_DO.DisplayFormat.FormatString = "{0:n0}";
+            this.LY_DO.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.LY_DO.FieldName = "LY_DO";
             this.LY_DO.Name = "LY_DO";
             this.LY_DO.OptionsColumn.AllowEdit = false;

@@ -256,12 +256,13 @@ namespace BKI_DichVuMatDat.US
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
 
-        public void load_du_lieu_bang_luong_theo_hs_bs(DataSet op_ds, decimal ip_dc_nam, decimal ip_dc_so_tien)
+        public void load_du_lieu_bang_luong_theo_hs_bs(DataSet op_ds, decimal ip_dc_nam, decimal ip_dc_so_tien, decimal ip_check_giam_tru)
         {
             CStoredProc v_cstore = new CStoredProc("pr_lay_du_lieu_bang_luong_by_hs_bo_sung");
 
             v_cstore.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
             v_cstore.addDecimalInputParam("@ip_dc_so_tien", ip_dc_so_tien);
+            v_cstore.addDecimalInputParam("@ip_check_giam_tru", ip_check_giam_tru);
 
             v_cstore.fillDataSetByCommand(this, op_ds);
         }

@@ -372,7 +372,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(733, 228);
             this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextToControlDistance = 0;
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
@@ -424,7 +423,6 @@
             this.layoutControlItem6.Size = new System.Drawing.Size(152, 42);
             this.layoutControlItem6.Text = "layoutControlItem6";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextToControlDistance = 0;
             this.layoutControlItem6.TextVisible = false;
             // 
             // emptySpaceItem1
@@ -456,7 +454,6 @@
             this.layoutControlItem7.Size = new System.Drawing.Size(379, 23);
             this.layoutControlItem7.Text = "layoutControlItem7";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem7.TextToControlDistance = 0;
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem8

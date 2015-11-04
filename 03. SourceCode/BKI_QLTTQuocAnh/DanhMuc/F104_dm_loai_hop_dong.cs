@@ -58,7 +58,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         }
 
-        private void m_cmd_edit_Click(object sender, EventArgs e)
+        private void m_cmd_update_Click(object sender, EventArgs e)
         {
             try
             {
@@ -97,5 +97,6 @@ namespace BKI_DichVuMatDat.DanhMuc
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
     }
 }

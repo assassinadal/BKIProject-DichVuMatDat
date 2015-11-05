@@ -54,13 +54,10 @@
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HO_DEM = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GIOI_TINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_sle_chon_vi_tri = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -357,13 +354,10 @@
             // 
             this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn12,
-            this.gridColumn13,
+            this.MA_NV,
             this.HO_DEM,
-            this.gridColumn14,
-            this.gridColumn15,
-            this.gridColumn16,
-            this.gridColumn17,
-            this.gridColumn18});
+            this.TEN,
+            this.GIOI_TINH});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -375,13 +369,13 @@
             this.gridColumn12.FieldName = "ID";
             this.gridColumn12.Name = "gridColumn12";
             // 
-            // gridColumn13
+            // MA_NV
             // 
-            this.gridColumn13.Caption = "Mã NV";
-            this.gridColumn13.FieldName = "MA_NV";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 0;
+            this.MA_NV.Caption = "Mã NV";
+            this.MA_NV.FieldName = "MA_NV";
+            this.MA_NV.Name = "MA_NV";
+            this.MA_NV.Visible = true;
+            this.MA_NV.VisibleIndex = 0;
             // 
             // HO_DEM
             // 
@@ -391,45 +385,21 @@
             this.HO_DEM.Visible = true;
             this.HO_DEM.VisibleIndex = 1;
             // 
-            // gridColumn14
+            // TEN
             // 
-            this.gridColumn14.Caption = "Tên";
-            this.gridColumn14.FieldName = "TEN";
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 2;
+            this.TEN.Caption = "Tên";
+            this.TEN.FieldName = "TEN";
+            this.TEN.Name = "TEN";
+            this.TEN.Visible = true;
+            this.TEN.VisibleIndex = 2;
             // 
-            // gridColumn15
+            // GIOI_TINH
             // 
-            this.gridColumn15.Caption = "Giới tính";
-            this.gridColumn15.FieldName = "GIOI_TINH";
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 3;
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.Caption = "Email";
-            this.gridColumn16.FieldName = "EMAIL";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 4;
-            // 
-            // gridColumn17
-            // 
-            this.gridColumn17.Caption = "SĐT";
-            this.gridColumn17.FieldName = "SDT";
-            this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 5;
-            // 
-            // gridColumn18
-            // 
-            this.gridColumn18.Caption = "Địa chỉ";
-            this.gridColumn18.FieldName = "DIA_CHI_THUONG_TRU";
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 6;
+            this.GIOI_TINH.Caption = "Giới tính";
+            this.GIOI_TINH.FieldName = "GIOI_TINH";
+            this.GIOI_TINH.Name = "GIOI_TINH";
+            this.GIOI_TINH.Visible = true;
+            this.GIOI_TINH.VisibleIndex = 3;
             // 
             // m_sle_chon_vi_tri
             // 
@@ -984,13 +954,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn c_ngay_bat_dau;
         private DevExpress.XtraGrid.Columns.GridColumn c_da_xoa;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn MA_NV;
+        private DevExpress.XtraGrid.Columns.GridColumn TEN;
         private DevExpress.XtraGrid.Columns.GridColumn HO_DEM;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private DevExpress.XtraGrid.Columns.GridColumn GIOI_TINH;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;

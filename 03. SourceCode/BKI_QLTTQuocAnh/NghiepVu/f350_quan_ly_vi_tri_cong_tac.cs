@@ -389,7 +389,10 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_sle_chon_loai_cong_tac.EditValue));
                 }
-                display_m_cmd_huy_kiem_nhiem_yn();
+                if (m_sle_chon_loai_cong_tac.EditValue != null && m_sle_chon_loai_cong_tac.EditValue == "")
+                {
+                    display_m_cmd_huy_kiem_nhiem_yn();
+                }
             }
             catch (Exception v_e)
             {
@@ -415,6 +418,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
                 {
+                    clear_data_in_form();
                     return;
                 }
                 if (m_sle_chon_loai_cong_tac.EditValue == null || m_sle_chon_loai_cong_tac.EditValue == "")

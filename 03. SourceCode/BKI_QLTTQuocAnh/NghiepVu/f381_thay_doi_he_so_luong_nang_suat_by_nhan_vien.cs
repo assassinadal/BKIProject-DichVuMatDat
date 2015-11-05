@@ -258,6 +258,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.Load += f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien_Load;
             m_cmd_search.Click += m_cmd_search_Click;
             m_cmd_luu_hs.Click += m_cmd_luu_hs_Click;
+            m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
             m_grv_hs_chat_luong.DoubleClick += m_grv_hs_chat_luong_DoubleClick;
         }
 
@@ -305,6 +306,22 @@ namespace BKI_DichVuMatDat.NghiepVu
                         load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
                         m_txt_hs.Text = find_hs_chat_luong_by_nv_thang_nam(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())).ToString();
                     }
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_sle_chon_nhan_vien_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
+                {
+                    m_txt_hs.Text = "";
+                    load_data_2_grid(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
                 }
             }
             catch (Exception v_e)

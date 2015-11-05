@@ -192,6 +192,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void us_2_form(US_GD_LOAI_LAO_DONG m_us)
         {
             m_sle_chon_nhan_vien.EditValue = m_us.dcID_NHAN_VIEN;
+            m_sle_chon_nhan_vien.ReadOnly = true;
             m_sle_chon_loai_lao_dong.EditValue = m_us.dcID_LOAI_LAO_DONG;
             m_dat_ngay_bat_dau.Value = m_us.datNGAY_BAT_DAU;
             m_dat_ngay_ket_thuc.Value = m_us.datNGAY_KET_THUC;

@@ -346,6 +346,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         //check validate data
         private bool check_data_is_ok()
         {
+           
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO");
@@ -365,6 +366,13 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             //ly do chinh sua hs lns
 
+            if (m_sle_chon_ly_do_chinh_sua_hs_lns.EditValue.ToString() == "0")
+            {
+                XtraMessageBox.Show("Bạn phải chọn lý do chỉnh sửa mức lương năng suất", "THÔNG BÁO");
+                return false;
+            }
+           
+
             if (m_sle_chuc_danh_lns.EditValue == null || m_sle_chuc_danh_lns.EditValue == "")
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
@@ -377,7 +385,12 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return false;
             }
             //ly do chinh sua so tien lcd
-
+            if (m_sle_chon_ly_do_chinh_sua_so_tien_lcd.EditValue.ToString() == "0")
+            {
+                XtraMessageBox.Show("Bạn phải chọn lý do chỉnh sửa mức lương chế độ", "THÔNG BÁO");
+                return false;
+            }
+           
             if (m_dat_ngay_bat_dau_lns.Value.Date == m_dat_ngay_ket_thuc_lns.Value.Date)
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Ngày bắt đầu và ngày kết thúc đang trùng nhau", "THÔNG BÁO");
@@ -841,6 +854,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                
                 if (!check_data_is_ok())
                 {
                     return;

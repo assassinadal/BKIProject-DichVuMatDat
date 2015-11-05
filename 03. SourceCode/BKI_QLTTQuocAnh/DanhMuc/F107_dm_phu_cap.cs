@@ -153,9 +153,8 @@ namespace BKI_DichVuMatDat.DanhMuc
                 if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn xóa đơn vị này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     DataRow v_dr = m_grv_dm_phu_cap.GetDataRow(m_grv_dm_phu_cap.FocusedRowHandle);
-                    decimal v_id_don_vi = CIPConvert.ToDecimal(v_dr["ID"]);
-
-                    US_DM_DON_VI v_us = new US_DM_DON_VI(v_id_don_vi);
+                    decimal v_id_phu_cap = CIPConvert.ToDecimal(v_dr["ID"]);
+                    US_DM_PHU_CAP v_us = new US_DM_PHU_CAP(v_id_phu_cap);
                     v_us.BeginTransaction();
                     v_us.Delete();
                     v_us.CommitTransaction();

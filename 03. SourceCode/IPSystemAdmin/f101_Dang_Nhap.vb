@@ -9,6 +9,8 @@ Imports IP.Core.IPBusinessService
 Imports IP.Core.IPData.DBNames
 
 
+
+
 Public Class f101_Dang_Nhap
     Inherits System.Windows.Forms.Form
 
@@ -60,11 +62,10 @@ Public Class f101_Dang_Nhap
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(f101_Dang_Nhap))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.m_btnOK = New SIS.Controls.Button.SiSButton()
-        Me.ImageList = New System.Windows.Forms.ImageList(Me.components)
+        Me.ImageList = New System.Windows.Forms.ImageList()
         Me.m_btnCancel = New SIS.Controls.Button.SiSButton()
         Me.m_txtMatKhau = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -84,7 +85,7 @@ Public Class f101_Dang_Nhap
         Me.Panel1.Controls.Add(Me.m_btnOK)
         Me.Panel1.Controls.Add(Me.m_btnCancel)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(3, 123)
+        Me.Panel1.Location = New System.Drawing.Point(3, 127)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Padding = New System.Windows.Forms.Padding(3)
         Me.Panel1.Size = New System.Drawing.Size(296, 36)
@@ -180,7 +181,7 @@ Public Class f101_Dang_Nhap
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.HighlightText
         Me.GroupBox1.Location = New System.Drawing.Point(0, 8)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(302, 162)
+        Me.GroupBox1.Size = New System.Drawing.Size(302, 166)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Đăng nhập - Hệ thống quản lý tài chính"
@@ -325,6 +326,7 @@ Public Class f101_Dang_Nhap
     '
     Private Sub f101_Dang_Nhap_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.KeyPreview = True
+
         Try
             setInitialFormLoad()
             ' Dim v_settingReader As New System.Configuration.AppSettingsReader
@@ -333,6 +335,7 @@ Public Class f101_Dang_Nhap
             ' LoadUserGroup() 
             AddHandler m_btnOK.Click, AddressOf m_btnOK_Click
             AddHandler m_btnCancel.Click, AddressOf m_btnCancel_Click
+
         Catch v_e As System.Exception
             CSystemLog_301.ExceptionHandle(v_e)
         End Try
@@ -361,6 +364,7 @@ Public Class f101_Dang_Nhap
                 Me.DialogResult = DialogResult.OK
                 Me.Close()
             End If
+
         Catch ex As Exception
             CSystemLog_301.ExceptionHandle(ex)
         End Try

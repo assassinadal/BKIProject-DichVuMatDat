@@ -32,21 +32,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F107_dm_phu_cap_de));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_exit = new DevExpress.XtraEditors.SimpleButton();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_gr_thong_tin_co_ban = new DevExpress.XtraEditors.GroupControl();
+            this.m_search_lookup_edit_loai_phu_cap = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.m_txt_ti_le = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.m_txt_doi_tuong_huong = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.m_txt_loai_phu_cap = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_txt_ti_le = new System.Windows.Forms.TextBox();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_co_ban)).BeginInit();
             this.m_gr_thong_tin_co_ban.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_search_lookup_edit_loai_phu_cap.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // m_lbl_header
@@ -70,6 +74,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(386, 40);
             this.panel1.TabIndex = 4;
+            // 
+            // m_cmd_save
+            // 
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
+            this.m_cmd_save.Location = new System.Drawing.Point(154, 0);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(116, 40);
+            this.m_cmd_save.TabIndex = 28;
+            this.m_cmd_save.Text = "&Lưu";
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_exit.Image")));
+            this.m_cmd_exit.Location = new System.Drawing.Point(270, 0);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(116, 40);
+            this.m_cmd_exit.TabIndex = 27;
+            this.m_cmd_exit.Text = "&Thoát";
+            this.m_cmd_exit.Visible = false;
             // 
             // imageList1
             // 
@@ -98,27 +123,6 @@
             this.imageList1.Images.SetKeyName(20, "");
             this.imageList1.Images.SetKeyName(21, "");
             // 
-            // m_cmd_save
-            // 
-            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
-            this.m_cmd_save.Location = new System.Drawing.Point(154, 0);
-            this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(116, 40);
-            this.m_cmd_save.TabIndex = 28;
-            this.m_cmd_save.Text = "&Lưu";
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_exit.Image")));
-            this.m_cmd_exit.Location = new System.Drawing.Point(270, 0);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(116, 40);
-            this.m_cmd_exit.TabIndex = 27;
-            this.m_cmd_exit.Text = "&Thoát";
-            this.m_cmd_exit.Visible = false;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.m_gr_thong_tin_co_ban);
@@ -132,11 +136,11 @@
             // 
             this.m_gr_thong_tin_co_ban.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_gr_thong_tin_co_ban.Appearance.Options.UseFont = true;
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_search_lookup_edit_loai_phu_cap);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.m_txt_ti_le);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.label1);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.m_txt_doi_tuong_huong);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.label6);
-            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_txt_loai_phu_cap);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.label7);
             this.m_gr_thong_tin_co_ban.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_gr_thong_tin_co_ban.Location = new System.Drawing.Point(0, 0);
@@ -144,6 +148,44 @@
             this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(386, 128);
             this.m_gr_thong_tin_co_ban.TabIndex = 4;
             this.m_gr_thong_tin_co_ban.Text = "ĐIỀN THÔNG TIN";
+            // 
+            // m_search_lookup_edit_loai_phu_cap
+            // 
+            this.m_search_lookup_edit_loai_phu_cap.Location = new System.Drawing.Point(110, 32);
+            this.m_search_lookup_edit_loai_phu_cap.Name = "m_search_lookup_edit_loai_phu_cap";
+            this.m_search_lookup_edit_loai_phu_cap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_search_lookup_edit_loai_phu_cap.Properties.DisplayMember = "TEN";
+            this.m_search_lookup_edit_loai_phu_cap.Properties.NullText = "";
+            this.m_search_lookup_edit_loai_phu_cap.Properties.ValueMember = "ID";
+            this.m_search_lookup_edit_loai_phu_cap.Properties.View = this.searchLookUpEdit1View;
+            this.m_search_lookup_edit_loai_phu_cap.Size = new System.Drawing.Size(258, 20);
+            this.m_search_lookup_edit_loai_phu_cap.TabIndex = 7;
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1});
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // m_txt_ti_le
+            // 
+            this.m_txt_ti_le.Location = new System.Drawing.Point(110, 84);
+            this.m_txt_ti_le.Name = "m_txt_ti_le";
+            this.m_txt_ti_le.Size = new System.Drawing.Size(258, 20);
+            this.m_txt_ti_le.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 87);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Tỷ lệ(*)";
             // 
             // m_txt_doi_tuong_huong
             // 
@@ -161,13 +203,6 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "Đối tượng hưởng(*)";
             // 
-            // m_txt_loai_phu_cap
-            // 
-            this.m_txt_loai_phu_cap.Location = new System.Drawing.Point(110, 32);
-            this.m_txt_loai_phu_cap.Name = "m_txt_loai_phu_cap";
-            this.m_txt_loai_phu_cap.Size = new System.Drawing.Size(258, 20);
-            this.m_txt_loai_phu_cap.TabIndex = 1;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -177,21 +212,13 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Loại phụ cấp";
             // 
-            // label1
+            // gridColumn1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 87);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Tỷ lệ(*)";
-            // 
-            // m_txt_ti_le
-            // 
-            this.m_txt_ti_le.Location = new System.Drawing.Point(110, 84);
-            this.m_txt_ti_le.Name = "m_txt_ti_le";
-            this.m_txt_ti_le.Size = new System.Drawing.Size(258, 20);
-            this.m_txt_ti_le.TabIndex = 6;
+            this.gridColumn1.Caption = "LOẠI PHỤ CẤP";
+            this.gridColumn1.FieldName = "TEN";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
             // 
             // F107_dm_phu_cap_de
             // 
@@ -208,6 +235,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_co_ban)).EndInit();
             this.m_gr_thong_tin_co_ban.ResumeLayout(false);
             this.m_gr_thong_tin_co_ban.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_search_lookup_edit_loai_phu_cap.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,9 +252,11 @@
         private DevExpress.XtraEditors.GroupControl m_gr_thong_tin_co_ban;
         private System.Windows.Forms.TextBox m_txt_doi_tuong_huong;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox m_txt_loai_phu_cap;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox m_txt_ti_le;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SearchLookUpEdit m_search_lookup_edit_loai_phu_cap;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

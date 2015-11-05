@@ -10,6 +10,7 @@ using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.DS.CDBNames;
 using BKI_DichVuMatDat.US;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 using IP.Core.IPCommon;
 
 
@@ -40,7 +41,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_lbl_header.Text = "SỬA LOẠI PHỤ CẤP";
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_id_dm_phu_cap_4_update = ip_us.dcID;
-            //m_txt_loai_phu_cap.Text = ip_us.strTEN;
+            m_search_lookup_edit_loai_phu_cap.EditValue = ip_us.dcID_LOAI_PHU_CAP;
             m_txt_doi_tuong_huong.Text = ip_us.strDOI_TUONG_HUONG_PHU_CAP;
             m_txt_ti_le.Text = ip_us.dcTI_LE.ToString();
             this.CenterToScreen();
@@ -67,9 +68,20 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         }
 
+        private void get_loai_phu_cap()
+        {
+            DataSet v_ds = new DataSet();
+            DataTable v_dt = new DataTable();
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            v_ds.Tables.Add(v_dt);
+            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM CM_DM_TU_DIEN WHERE ID_LOAI_TU_DIEN = 5");
+            m_search_lookup_edit_loai_phu_cap.Properties.DataSource = v_ds.Tables[0];
+            m_search_lookup_edit_loai_phu_cap.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
+        }
+
         private bool check_validate_data()
         {
-            if (m_txt_loai_phu_cap.Text.Trim() == "")
+            if (m_search_lookup_edit_loai_phu_cap.Text.Trim() == "")
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập tên loại phụ cấp!");
                 return false;
@@ -90,7 +102,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         //save data
         private void form_2_us_obj(US_DM_PHU_CAP ip_us)
         {
-            //ip_us.strTEN = m_txt_loai_phu_cap.Text.Trim();
+            ip_us.dcID_LOAI_PHU_CAP = CIPConvert.ToDecimal(m_search_lookup_edit_loai_phu_cap.EditValue.ToString()) ;
             ip_us.strDOI_TUONG_HUONG_PHU_CAP = m_txt_doi_tuong_huong.Text.Trim();
             ip_us.dcTI_LE = CIPConvert.ToDecimal(m_txt_ti_le.Text.Trim());
         }
@@ -138,7 +150,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void refresh_form()
         {
-            m_txt_loai_phu_cap.Text = "";
+            m_search_lookup_edit_loai_phu_cap.Text = "";
             m_txt_doi_tuong_huong.Text = "";
             m_txt_ti_le.BackColor = Color.White;
         }
@@ -155,6 +167,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             try
             {
                 set_initial_form_load();
+                get_loai_phu_cap();
             }
             catch (Exception v_e)
             {

@@ -242,7 +242,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 else
                 {
                     v_us_gd_hs_cl.BeginTransaction();
-                    v_us_gd_hs_cl.Update();
+                    v_us_gd_hs_cl.Insert();
                     v_us_gd_hs_cl.CommitTransaction();
                 }
             }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f360_quan_ly_quyet_dinh));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,8 +51,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.m_dat_ngay_co_hieu_luc = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_ngay_cham_cong = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList();
-            this.ImageList = new System.Windows.Forms.ImageList();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_grc_quyet_dinh = new DevExpress.XtraGrid.GridControl();
             this.m_grv_quyet_dinh = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,11 +66,11 @@
             this.NOI_DUNG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LINK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.m_cmd_lap_qd = new DevExpress.XtraEditors.SimpleButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_co_ban)).BeginInit();
@@ -501,15 +502,6 @@
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1012, 49);
             this.m_pnl_out_place_dm.TabIndex = 4;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.m_cmd_lap_qd);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 247);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1012, 44);
-            this.panel3.TabIndex = 5;
-            // 
             // m_cmd_insert
             // 
             this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
@@ -551,6 +543,15 @@
             this.m_cmd_xuat_excel.TabIndex = 15;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
             this.m_cmd_xuat_excel.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.m_cmd_lap_qd);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 247);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1012, 44);
+            this.panel3.TabIndex = 5;
             // 
             // m_cmd_lap_qd
             // 

@@ -233,12 +233,12 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private bool check_data_is_ok()
         {
-            if (m_txt_chon_nam.EditValue == null || m_txt_chon_nam.EditValue == "")
+            if (m_txt_chon_nam.Text == "")
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập năm để tính rồi!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                 return false;
             }
-            if (m_txt_so_tien.EditValue == null || m_txt_chon_nam.EditValue == "" || CIPConvert.ToDecimal(m_txt_so_tien.EditValue) == 0)
+            if ( m_txt_so_tien.Text == "")
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập năm để tính rồi!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                 return false;

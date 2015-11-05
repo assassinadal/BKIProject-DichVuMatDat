@@ -130,7 +130,11 @@ namespace BKI_DichVuMatDat.NghiepVu
                 DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn loại quyết định", "THÔNG BÁO");
                 return false;
             }
-
+            if (m_txt_ma_qd.Text.Trim() == "")
+            {
+                XtraMessageBox.Show("Bạn phải nhập mã quyết định", "THÔNG BÁO");
+                return false;
+            }
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
                 if (check_ma_qd())
@@ -335,6 +339,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 clear_data_inform();
+                m_e_form_mode = DataEntryFormMode.InsertDataState;
             }
             catch (Exception v_e)
             {

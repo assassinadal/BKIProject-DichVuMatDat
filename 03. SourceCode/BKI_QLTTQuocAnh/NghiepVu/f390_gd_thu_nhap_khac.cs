@@ -436,8 +436,11 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 m_e_form_mode = DataEntryFormMode.UpdateDataState;
-                decimal v_id_gd_thu_nhap_khac = CIPConvert.ToDecimal(m_grv_quan_ly_thu_nhap_khac.GetRowCellValue(m_grv_quan_ly_thu_nhap_khac.FocusedRowHandle, "ID").ToString());
-                us_obj_2_form(v_id_gd_thu_nhap_khac);
+                if (m_grv_quan_ly_thu_nhap_khac.RowCount != 0)
+                {
+                    decimal v_id_gd_thu_nhap_khac = CIPConvert.ToDecimal(m_grv_quan_ly_thu_nhap_khac.GetRowCellValue(m_grv_quan_ly_thu_nhap_khac.FocusedRowHandle, "ID").ToString());
+                    us_obj_2_form(v_id_gd_thu_nhap_khac);  
+                }               
             }
             catch (Exception v_e)
             {
@@ -449,7 +452,12 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-
+                if (m_grv_quan_ly_thu_nhap_khac.RowCount != 0)
+                {
+                    decimal v_id_gd_thu_nhap_khac = CIPConvert.ToDecimal(m_grv_quan_ly_thu_nhap_khac.GetRowCellValue(m_grv_quan_ly_thu_nhap_khac.FocusedRowHandle, "ID").ToString());
+                    US_GD_THU_NHAP_KHAC v_us_gd_thu_nhap_khac = new US_GD_THU_NHAP_KHAC(v_id_gd_thu_nhap_khac);
+                    v_us_gd_thu_nhap_khac.Delete();
+                } 
             }
             catch (Exception v_e)
             {

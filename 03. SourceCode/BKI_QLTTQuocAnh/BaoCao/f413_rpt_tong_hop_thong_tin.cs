@@ -26,7 +26,12 @@ namespace BKI_DichVuMatDat.BaoCao
         #region Private Method
         private void load_data_2_grid()
         {
-
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_RPT_BAO_CAO_TONG_HOP WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim());
+            m_grc_tong_hop.DataSource = v_ds.Tables[0];
+            m_grc_tong_hop.RefreshDataSource();
         }
         private DS_RPT_THONG_TIN_TONG_HOP lay_danh_sach_nhan_vien_can_tong_hop_thong_tin()
         {
@@ -47,7 +52,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
                 //B1: Tong hop thong tin 1 nhan vien
                 DataRow v_dr_thong_tin_tong_hop = CCommon.get_thong_tin_tong_hop_1_nhan_vien(v_id_nhan_vien, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
-                //
+                //B2: Insert vao Rpt
                 CCommon.insertThongTinTongHopNV2RPT(v_dr_thong_tin_tong_hop);
                 ip_bgw.ReportProgress((i + 1) * 100 / ip_dt.Rows.Count);
             }
@@ -119,6 +124,25 @@ namespace BKI_DichVuMatDat.BaoCao
             }
         }
         #endregion
-        
+
+        private void m_cmd_luu_bang_luong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+                saveFileDialog1.RestoreDirectory = true;
+                if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    m_grc_tong_hop.ExportToXls(saveFileDialog1.FileName);
+                    MessageBox.Show("Lưu báo cáo thành công");
+                }
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
     }
 }

@@ -58,7 +58,7 @@ namespace BKI_DichVuMatDat
                 return true;
             }
         }
-        
+
         public static bool thang_da_chot_bang_luong(decimal ip_dc_thang, decimal ip_dc_nam)
         {
             DS_GD_CHOT_BANG_LUONG v_ds = new DS_GD_CHOT_BANG_LUONG();
@@ -121,7 +121,7 @@ namespace BKI_DichVuMatDat
             ip_dr_luong_nv[RPT_LUONG.THUC_LINH_CUOI_CUNG] = ip_dr_luong[RPT_LUONG.THUC_LINH_CUOI_CUNG];
             return ip_dr_luong_nv;
         }
-        
+
         public static void DataRow2US(DataRow v_dr_luong_1_nv, US_RPT_LUONG v_us)
         {
             v_us.strMA_NV = v_dr_luong_1_nv[RPT_LUONG.MA_NV].ToString();
@@ -168,3 +168,4 @@ namespace BKI_DichVuMatDat
         #endregion
     }
 }
+

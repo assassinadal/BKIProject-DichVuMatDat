@@ -103,7 +103,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
                 US_DM_LOAI_NGAY_CONG v_us = new US_DM_LOAI_NGAY_CONG(v_id);
                 F105_dm_loai_ngay_cong_de v_frm = new F105_dm_loai_ngay_cong_de();
-                v_frm.DispplayForUpdate(v_us);
+                v_frm.DisplayForUpdate(v_us);
                 load_data_2_grid();
             }
             catch (Exception v_e)

@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F105_dm_loai_ngay_cong_de));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_cancel = new DevExpress.XtraEditors.SimpleButton();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.m_lbl_ti_le_lcd = new System.Windows.Forms.Label();
@@ -42,9 +46,6 @@
             this.m_txt_ti_le_lns = new System.Windows.Forms.TextBox();
             this.m_txt_ten_ngay_cong = new System.Windows.Forms.TextBox();
             this.m_txt_ma_ngay_cong = new System.Windows.Forms.TextBox();
-            this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_cancel = new DevExpress.XtraEditors.SimpleButton();
-            this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -61,6 +62,18 @@
             this.panel1.Size = new System.Drawing.Size(605, 46);
             this.panel1.TabIndex = 0;
             // 
+            // m_lbl_header
+            // 
+            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_header.Name = "m_lbl_header";
+            this.m_lbl_header.Size = new System.Drawing.Size(605, 44);
+            this.m_lbl_header.TabIndex = 0;
+            this.m_lbl_header.Text = "QUẢN LÝ VỊ TRÍ CÔNG TÁC";
+            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.m_cmd_save);
@@ -69,7 +82,30 @@
             this.panel2.Location = new System.Drawing.Point(0, 172);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(605, 38);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 2;
+            // 
+            // m_cmd_save
+            // 
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
+            this.m_cmd_save.Location = new System.Drawing.Point(373, 0);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(116, 38);
+            this.m_cmd_save.TabIndex = 0;
+            this.m_cmd_save.Text = "&Lưu";
+            this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
+            // 
+            // m_cmd_cancel
+            // 
+            this.m_cmd_cancel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_cancel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_cancel.Image")));
+            this.m_cmd_cancel.Location = new System.Drawing.Point(489, 0);
+            this.m_cmd_cancel.Name = "m_cmd_cancel";
+            this.m_cmd_cancel.Size = new System.Drawing.Size(116, 38);
+            this.m_cmd_cancel.TabIndex = 1;
+            this.m_cmd_cancel.Text = "&Thoát";
+            this.m_cmd_cancel.Visible = false;
+            this.m_cmd_cancel.Click += new System.EventHandler(this.m_cmd_cancel_Click);
             // 
             // imageList1
             // 
@@ -121,7 +157,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(605, 126);
-            this.groupControl1.TabIndex = 1;
+            this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "THÔNG TIN LOẠI NGÀY CÔNG";
             // 
             // m_lbl_ti_le_lcd
@@ -195,39 +231,6 @@
             this.m_txt_ma_ngay_cong.Name = "m_txt_ma_ngay_cong";
             this.m_txt_ma_ngay_cong.Size = new System.Drawing.Size(188, 20);
             this.m_txt_ma_ngay_cong.TabIndex = 1;
-            // 
-            // m_cmd_save
-            // 
-            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
-            this.m_cmd_save.Location = new System.Drawing.Point(373, 0);
-            this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(116, 38);
-            this.m_cmd_save.TabIndex = 30;
-            this.m_cmd_save.Text = "&Lưu";
-            // 
-            // m_cmd_cancel
-            // 
-            this.m_cmd_cancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_cancel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_cancel.Image")));
-            this.m_cmd_cancel.Location = new System.Drawing.Point(489, 0);
-            this.m_cmd_cancel.Name = "m_cmd_cancel";
-            this.m_cmd_cancel.Size = new System.Drawing.Size(116, 38);
-            this.m_cmd_cancel.TabIndex = 29;
-            this.m_cmd_cancel.Text = "&Thoát";
-            this.m_cmd_cancel.Visible = false;
-            // 
-            // m_lbl_header
-            // 
-            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(605, 44);
-            this.m_lbl_header.TabIndex = 3;
-            this.m_lbl_header.Text = "QUẢN LÝ VỊ TRÍ CÔNG TÁC";
-            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // F105_dm_loai_ngay_cong_de
             // 

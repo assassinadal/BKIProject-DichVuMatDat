@@ -21,13 +21,30 @@ namespace BKI_DichVuMatDat.DanhMuc
         public F105_dm_loai_ngay_cong_de()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+            this.KeyDown += F105_dm_loai_ngay_cong_de_KeyDown;
         }
 
-        #region Members
-        DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
-        US_DM_LOAI_NGAY_CONG m_us = new US_DM_LOAI_NGAY_CONG();
-        #endregion
+        void F105_dm_loai_ngay_cong_de_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+                if (e.KeyCode == Keys.Enter)
+                {
+                    
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
+        #region Public interface
         internal void DisplayForInsert()
         {
             this.Text = "F105 - Thêm loại ngày công";
@@ -37,7 +54,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             this.ShowDialog();
         }
 
-        internal void DispplayForUpdate(US.US_DM_LOAI_NGAY_CONG v_us)
+        internal void DisplayForUpdate(US.US_DM_LOAI_NGAY_CONG v_us)
         {
             this.Text = "F105 - Sửa loại ngày công";
             m_lbl_header.Text = "SỬA LOẠI NGÀY CÔNG";
@@ -47,20 +64,14 @@ namespace BKI_DichVuMatDat.DanhMuc
             this.CenterToScreen();
             this.ShowDialog();
         }
+        #endregion
+        
+        #region Members
+        DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
+        US_DM_LOAI_NGAY_CONG m_us = new US_DM_LOAI_NGAY_CONG();
+        #endregion
 
-        private void us_to_form(US_DM_LOAI_NGAY_CONG m_us)
-        {
-            m_txt_ma_ngay_cong.Text = m_us.strMA_NGAY_CONG;
-            m_txt_ten_ngay_cong.Text = m_us.strTEN_NGAY_CONG;
-            m_txt_ti_le_lns.Text = m_us.dcTI_LE_LNS.ToString();
-            m_txt_ti_le_lcd.Text = m_us.dcTI_LE_LCD.ToString();
-        }
-
-        private void F105_dm_loai_ngay_cong_de_Load(object sender, EventArgs e)
-        {
-            FormatControl.SetVisibleSimpleButton(this);
-        }
-
+        #region Private method
         private bool check_data_is_ok()
         {
             if (m_txt_ma_ngay_cong.Text == null || m_txt_ma_ngay_cong.Text == "")
@@ -84,6 +95,28 @@ namespace BKI_DichVuMatDat.DanhMuc
                 return false;
             }
             return true;
+        }
+
+        private void us_to_form(US_DM_LOAI_NGAY_CONG m_us)
+        {
+            m_txt_ma_ngay_cong.Text = m_us.strMA_NGAY_CONG;
+            m_txt_ten_ngay_cong.Text = m_us.strTEN_NGAY_CONG;
+            m_txt_ti_le_lns.Text = m_us.dcTI_LE_LNS.ToString();
+            m_txt_ti_le_lcd.Text = m_us.dcTI_LE_LCD.ToString();
+        }
+
+        private void form_to_us(US_DM_LOAI_NGAY_CONG m_us)
+        {
+            m_us.strMA_NGAY_CONG = m_txt_ma_ngay_cong.Text;
+            m_us.strTEN_NGAY_CONG = m_txt_ten_ngay_cong.Text;
+            m_us.dcTI_LE_LNS = CIPConvert.ToDecimal(m_txt_ti_le_lns.Text);
+            m_us.dcTI_LE_LCD = CIPConvert.ToDecimal(m_txt_ti_le_lcd.Text);
+        }
+        #endregion
+
+        private void F105_dm_loai_ngay_cong_de_Load(object sender, EventArgs e)
+        {
+            FormatControl.SetVisibleSimpleButton(this);
         }
 
         private void m_cmd_save_Click(object sender, EventArgs e)
@@ -110,14 +143,6 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-        }
-
-        private void form_to_us(US_DM_LOAI_NGAY_CONG m_us)
-        {
-            m_us.strMA_NGAY_CONG = m_txt_ma_ngay_cong.Text;
-            m_us.strTEN_NGAY_CONG = m_txt_ten_ngay_cong.Text;
-            m_us.dcTI_LE_LNS = CIPConvert.ToDecimal(m_txt_ti_le_lns.Text);
-            m_us.dcTI_LE_LCD = CIPConvert.ToDecimal(m_txt_ti_le_lcd.Text);
         }
 
         private void m_cmd_cancel_Click(object sender, EventArgs e)

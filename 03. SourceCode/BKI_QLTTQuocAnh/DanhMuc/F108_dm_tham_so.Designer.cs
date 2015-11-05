@@ -164,6 +164,7 @@
             this.m_cmd_insert.Size = new System.Drawing.Size(116, 39);
             this.m_cmd_insert.TabIndex = 30;
             this.m_cmd_insert.Text = "&Thêm";
+            this.m_cmd_insert.Visible = false;
             // 
             // m_cmd_update
             // 
@@ -184,6 +185,7 @@
             this.m_cmd_delete.Size = new System.Drawing.Size(116, 39);
             this.m_cmd_delete.TabIndex = 28;
             this.m_cmd_delete.Text = "&Xóa";
+            this.m_cmd_delete.Visible = false;
             // 
             // m_cmd_xuat_excel
             // 

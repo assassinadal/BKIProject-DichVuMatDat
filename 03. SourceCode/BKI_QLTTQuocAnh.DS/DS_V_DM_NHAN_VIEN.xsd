@@ -96,10 +96,10 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="GIOI_TINH" msprop:Generator_ColumnVarNameInTable="columnGIOI_TINH" msprop:Generator_ColumnPropNameInRow="GIOI_TINH" msprop:Generator_ColumnPropNameInTable="GIOI_TINHColumn" msprop:Generator_UserColumnName="GIOI_TINH" minOccurs="0">
+              <xs:element name="GIOI_TINH" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGIOI_TINH" msprop:Generator_ColumnPropNameInRow="GIOI_TINH" msprop:Generator_ColumnPropNameInTable="GIOI_TINHColumn" msprop:Generator_UserColumnName="GIOI_TINH" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
+                    <xs:maxLength value="3" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

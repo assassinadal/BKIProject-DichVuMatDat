@@ -1316,6 +1316,141 @@
   <ItemGroup>
     <None Include="Resources\1444999351_banker.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon backup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon doi password .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon phan quyen .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon nhom nhan vien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon user .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon backup1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon bang luong nv .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon bang luong theo don vi .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon bao hiem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon cac thang da chot bang luong .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon cham cong tu excel .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon cham cong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon chuyen trang thai lao dong .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon dat he so LNS .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon doi password 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon don vi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon he so bo sung .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon he so chat luong xlsx .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon he so chat luong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon he so luong .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon lap hop dong .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon len luong cho nhan vien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon loai hop dong .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon loai lao dong .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon loai ngay cong .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon luong che do .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon nhan vien ko bao hiem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon nhan vien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon nhom nhan vien1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon phan quyen 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon phu cap .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon quan ly luong cung .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon quan ly quyet dinh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon quan ly thu nhap khac .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon quan ly thu nhap khac xlsx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon quan ly thuong theo he so .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon quan ly vi tri cong tac .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon quyet toan thue nam .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon tham so .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon thong ke nhan su theo don vi .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon thong ke tong hop .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon thue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon user 1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

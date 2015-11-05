@@ -338,6 +338,17 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return false;
             }
 
+            /*if (m_sle_chon_quyet_dinh.EditValue == null || m_sle_chon_quyet_dinh.EditValue.ToString() == "")
+            {
+                MessageBox.Show("Bạn phải chọn quyết định", "THÔNG BÁO");
+                return false;
+            }
+
+            if (m_sle_chon_quyet_dinh.EditValue == null || m_sle_chon_quyet_dinh.EditValue.ToString() == "")
+            {
+                MessageBox.Show("Bạn phải chọn quyết định", "THÔNG BÁO");
+                return false;
+            }*/
             //if (m_sle_chon_quyet_dinh.EditValue == null || m_sle_chon_quyet_dinh.EditValue == "")
             //{
             //    DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn quyết định", "THÔNG BÁO");
@@ -568,7 +579,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void form_2_us_gd_hs_lns(US_GD_HE_SO_LNS ip_us)
         {
-            US_V_GD_QUYET_DINH v_us = new US_V_GD_QUYET_DINH(CIPConvert.ToDecimal(m_sle_chon_quyet_dinh.EditValue));
+            //US_V_GD_QUYET_DINH v_us = new US_V_GD_QUYET_DINH(CIPConvert.ToDecimal(m_sle_chon_quyet_dinh.EditValue));
             ip_us.dcID_HOP_DONG = m_id_gd_hd;
             ip_us.dcHE_SO = CIPConvert.ToDecimal(find_hs_lns(CIPConvert.ToDecimal(m_sle_chuc_danh_lns.EditValue), CIPConvert.ToDecimal(m_sle_muc_lns.EditValue)));
             //ip_us.dcID_LY_DO_CHINH_SUA =

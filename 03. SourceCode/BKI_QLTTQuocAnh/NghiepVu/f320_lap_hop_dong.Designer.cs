@@ -245,7 +245,7 @@
             this.m_gr_thong_tin_co_ban.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_gr_thong_tin_co_ban.Location = new System.Drawing.Point(0, 0);
             this.m_gr_thong_tin_co_ban.Name = "m_gr_thong_tin_co_ban";
-            this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(394, 192);
+            this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(391, 192);
             this.m_gr_thong_tin_co_ban.TabIndex = 0;
             this.m_gr_thong_tin_co_ban.Text = "THÔNG TIN CƠ BẢN";
             // 
@@ -310,7 +310,7 @@
             this.m_gr_LCD.Controls.Add(this.label6);
             this.m_gr_LCD.Controls.Add(this.m_sle_muc_lcd);
             this.m_gr_LCD.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_gr_LCD.Location = new System.Drawing.Point(795, 0);
+            this.m_gr_LCD.Location = new System.Drawing.Point(792, 0);
             this.m_gr_LCD.Name = "m_gr_LCD";
             this.m_gr_LCD.Size = new System.Drawing.Size(389, 192);
             this.m_gr_LCD.TabIndex = 2;
@@ -401,7 +401,7 @@
             this.m_gr_LNS.Controls.Add(this.m_sle_muc_lns);
             this.m_gr_LNS.Controls.Add(this.label13);
             this.m_gr_LNS.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_gr_LNS.Location = new System.Drawing.Point(394, 0);
+            this.m_gr_LNS.Location = new System.Drawing.Point(391, 0);
             this.m_gr_LNS.Name = "m_gr_LNS";
             this.m_gr_LNS.Size = new System.Drawing.Size(401, 192);
             this.m_gr_LNS.TabIndex = 1;

@@ -896,6 +896,14 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void clear_data_in_form()
         {
             m_sle_chon_nhan_vien.EditValue = null;
+            clear_data_without_sle_chon_nv_and_grid();
+            load_data_2_grid();
+            //DS_V_F320_LAP_HOP_DONG v_ds = new DS_V_F320_LAP_HOP_DONG();
+            //m_grc_lap_hd.DataSource = v_ds.Tables[0];
+        }
+
+        private void clear_data_without_sle_chon_nv_and_grid()
+        {
             m_txt_ma_hd.Text = "";
             m_lbl_kiem_tra_ma_hd.Visible = false;
             m_sle_loai_hop_dong.EditValue = null;
@@ -908,11 +916,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_dat_ngay_ky.Value = DateTime.Now.Date;
             m_lbl_hs_lns.Text = "...";
             m_lbl_so_tien_lcd.Text = "...";
-
-            DS_V_F320_LAP_HOP_DONG v_ds = new DS_V_F320_LAP_HOP_DONG();
-            m_grc_lap_hd.DataSource = v_ds.Tables[0];
         }
 
+        
         #endregion
 
         private void set_define_events()
@@ -977,6 +983,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
                 {
+                    clear_data_without_sle_chon_nv_and_grid();
                     load_data_2_grid();
                 }
                 else
@@ -1193,7 +1200,16 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void m_cmd_tao_lai_Click(object sender, EventArgs e)
         {
-            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            try
+            {
+                m_e_form_mode = DataEntryFormMode.InsertDataState;
+                m_insert_click = 1;
+                clear_data_in_form();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
     }
 }

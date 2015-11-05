@@ -68,12 +68,11 @@
             this.SO_TIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TEN_LOAI_CACH_TINH_THUE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TEN_CACH_TINH_THUE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LY_DO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.LY_DO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -515,12 +514,19 @@
             this.TEN_CACH_TINH_THUE.Visible = true;
             this.TEN_CACH_TINH_THUE.VisibleIndex = 7;
             // 
+            // LY_DO
+            // 
+            this.LY_DO.Caption = "Lý do";
+            this.LY_DO.FieldName = "LY_DO";
+            this.LY_DO.Name = "LY_DO";
+            this.LY_DO.Visible = true;
+            this.LY_DO.VisibleIndex = 8;
+            // 
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 281);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
@@ -532,7 +538,7 @@
             // 
             this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
-            this.m_cmd_insert.Location = new System.Drawing.Point(711, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(827, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(116, 41);
             this.m_cmd_insert.TabIndex = 6;
@@ -542,7 +548,7 @@
             // 
             this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
-            this.m_cmd_update.Location = new System.Drawing.Point(827, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(943, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(116, 41);
             this.m_cmd_update.TabIndex = 5;
@@ -552,29 +558,11 @@
             // 
             this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
-            this.m_cmd_delete.Location = new System.Drawing.Point(943, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(1059, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(116, 41);
             this.m_cmd_delete.TabIndex = 4;
             this.m_cmd_delete.Text = "&Xóa";
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_xuat_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_excel.Image")));
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(1059, 4);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 41);
-            this.m_cmd_xuat_excel.TabIndex = 3;
-            this.m_cmd_xuat_excel.Text = "&Xuất Excel";
-            // 
-            // LY_DO
-            // 
-            this.LY_DO.Caption = "Lý do";
-            this.LY_DO.FieldName = "LY_DO";
-            this.LY_DO.Name = "LY_DO";
-            this.LY_DO.Visible = true;
-            this.LY_DO.VisibleIndex = 8;
             // 
             // f390_gd_thu_nhap_khac
             // 
@@ -634,7 +622,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
         private DevExpress.XtraEditors.SimpleButton m_cmd_update;
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
         private System.Windows.Forms.Label label7;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_cach_tinh_thue;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;

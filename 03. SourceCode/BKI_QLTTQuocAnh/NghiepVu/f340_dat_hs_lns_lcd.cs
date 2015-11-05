@@ -348,51 +348,51 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
-                XtraMessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO");
                 return false;
             }
 
             if (m_sle_muc_lns.EditValue == null || m_sle_muc_lns.EditValue == "")
             {
-                XtraMessageBox.Show("Bạn phải chọn mức lương năng suất", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn mức lương năng suất", "THÔNG BÁO");
                 return false;
             }
 
             if (m_sle_muc_lcd.EditValue == null || m_sle_muc_lcd.EditValue == "")
             {
-                XtraMessageBox.Show("Bạn phải chọn mức lương chế độ", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn mức lương chế độ", "THÔNG BÁO");
                 return false;
             }
             //ly do chinh sua hs lns
 
             if (m_sle_chuc_danh_lns.EditValue == null || m_sle_chuc_danh_lns.EditValue == "")
             {
-                XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
                 return false;
             }
 
             if (m_sle_chuc_danh_lcd.EditValue == null || m_sle_chuc_danh_lcd.EditValue == "")
             {
-                MessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
                 return false;
             }
             //ly do chinh sua so tien lcd
 
             if (m_dat_ngay_bat_dau_lns.Value.Date == m_dat_ngay_ket_thuc_lns.Value.Date)
             {
-                XtraMessageBox.Show("Ngày bắt đầu và ngày kết thúc đang trùng nhau", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Ngày bắt đầu và ngày kết thúc đang trùng nhau", "THÔNG BÁO");
                 return false;
             }
 
             if (CCommon.thang_da_chot_bang_luong(m_dat_ngay_ket_thuc_lns.Value))
             {
-                XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
                 return false;
             }
 
             if (CCommon.thang_da_chot_bang_luong(m_dat_ngay_ket_thuc_lcd.Value))
             {
-                XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
                 return false;
             }
             return true;
@@ -850,13 +850,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                     switch (m_e_form_mode)
                     {
                         case DataEntryFormMode.InsertDataState:
-                            if (XtraMessageBox.Show("Bạn có chắc chắn muốn điều chỉnh hệ số LNS và LCĐ như trên?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn điều chỉnh hệ số LNS và LCĐ như trên?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 save_data();
                             }
                             break;
                         case DataEntryFormMode.UpdateDataState:
-                            if (XtraMessageBox.Show("Bạn có chắc chắn muốn cập nhật hệ số LNS và LCĐ như trên?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn cập nhật hệ số LNS và LCĐ như trên?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 save_data();
                             }
@@ -933,7 +933,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     if (m_sle_chuc_danh_lns.EditValue == null || m_sle_chuc_danh_lns.EditValue == "")
                     {
-                        MessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
                         return;
                     }
                     else
@@ -979,7 +979,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     if (m_sle_chuc_danh_lcd.EditValue == null || m_sle_chuc_danh_lcd.EditValue == "")
                     {
-                        MessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
                         return;
                     }
                     else

@@ -184,7 +184,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 decimal v_id = CIPConvert.ToDecimal(v_dr[GD_LOAI_LAO_DONG.ID]);
 
                 US_GD_LOAI_LAO_DONG v_us = new US_GD_LOAI_LAO_DONG(v_id);
-                if (XtraMessageBox.Show("Bạn có chắc chắn muốn XÓA nhân viên - loại lao động này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn XÓA nhân viên - loại lao động này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     v_us.Delete();
                     load_data_2_grid();

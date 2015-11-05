@@ -235,12 +235,12 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_txt_chon_nam.EditValue == null || m_txt_chon_nam.EditValue == "")
             {
-                XtraMessageBox.Show("Bạn chưa nhập năm để tính rồi!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập năm để tính rồi!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                 return false;
             }
             if (m_txt_so_tien.EditValue == null || m_txt_chon_nam.EditValue == "" || CIPConvert.ToDecimal(m_txt_so_tien.EditValue) == 0)
             {
-                XtraMessageBox.Show("Bạn chưa nhập năm để tính rồi!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập năm để tính rồi!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -342,10 +342,10 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (m_grc_quan_ly_he_so_bo_sung.DataSource == null)
                 {
-                    XtraMessageBox.Show("Dữ liệu trống", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Dữ liệu trống", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (XtraMessageBox.Show("Bạn có chắc chắn muốn lưu thông tin này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn lưu thông tin này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     save_data();
                     XtraMessageBox.Show("Thành công!", "THÔNG BÁO");

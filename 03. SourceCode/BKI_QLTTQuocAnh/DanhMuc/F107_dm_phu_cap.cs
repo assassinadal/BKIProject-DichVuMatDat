@@ -137,7 +137,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                 }
                 else
                 {
-                    MessageBox.Show("Bạn phải chọn một đơn vị trên lưới để sửa!");
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn một đơn vị trên lưới để sửa!");
                 }
             }
             catch (Exception v_e)
@@ -150,7 +150,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                if (XtraMessageBox.Show("Bạn có chắc chắn muốn xóa đơn vị này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn xóa đơn vị này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     DataRow v_dr = m_grv_dm_phu_cap.GetDataRow(m_grv_dm_phu_cap.FocusedRowHandle);
                     decimal v_id_don_vi = CIPConvert.ToDecimal(v_dr["ID"]);
@@ -160,7 +160,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                     v_us.Delete();
                     v_us.CommitTransaction();
                     load_data_2_grid();
-                    XtraMessageBox.Show("Bạn đã xóa thành công", "THÀNH CÔNG");
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã xóa thành công", "THÀNH CÔNG");
                 }
             }
             catch (Exception v_e)

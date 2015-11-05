@@ -70,12 +70,12 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             if (m_txt_ten_tham_so.Text.Trim() == "")
             {
-                XtraMessageBox.Show("Bạn chưa nhập tên tham số!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập tên tham số!");
                 return false;
             }
             if (m_txt_gia_tri_tham_so.Text.Trim() == "")
             {
-                XtraMessageBox.Show("Bạn chưa nhập giá trị tham số!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập giá trị tham số!");
                 return false;
             }
             return true;
@@ -102,7 +102,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_tham_so.Insert();
                         v_us_dm_tham_so.CommitTransaction();
                         m_id_dm_tham_so_moi_tao = v_us_dm_tham_so.dcID;
-                        if (XtraMessageBox.Show("Bạn đã thêm tham số thành công! Bạn có muốn thêm tham số khác không?", "THÀNH CÔNG", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã thêm tham số thành công! Bạn có muốn thêm tham số khác không?", "THÀNH CÔNG", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             refresh_form();
                         }
@@ -116,7 +116,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_tham_so.BeginTransaction();
                         v_us_dm_tham_so.Update();
                         v_us_dm_tham_so.CommitTransaction();
-                        XtraMessageBox.Show("Bạn đã cập nhật đơn vị thành công!", "THÀNH CÔNG");
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã cập nhật đơn vị thành công!", "THÀNH CÔNG");
                         this.Close();
                         break;
                     default:
@@ -161,7 +161,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 if (check_validate_data())
                 {
-                    if (XtraMessageBox.Show("Bạn có chắc chắn muốn lưu tham số này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn lưu tham số này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         save_data();
                     }

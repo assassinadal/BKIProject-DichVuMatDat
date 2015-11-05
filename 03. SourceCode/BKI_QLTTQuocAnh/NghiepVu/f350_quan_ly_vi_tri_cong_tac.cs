@@ -218,36 +218,36 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
-                MessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO!");
                 return false;
             }
             //GD quyet dinh dang chua co du lieu
             if (m_sle_chon_quyet_dinh.EditValue == null || m_sle_chon_quyet_dinh.EditValue == "")
             {
-                MessageBox.Show("Bạn phải chọn quyết định", "THÔNG BÁO!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn quyết định", "THÔNG BÁO!");
                 return false;
             }
             if (m_sle_chon_don_vi.EditValue == null || m_sle_chon_don_vi.EditValue == "")
             {
-                MessageBox.Show("Bạn phải chọn đơn vị", "THÔNG BÁO!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn đơn vị", "THÔNG BÁO!");
                 return false;
             }
 
             if (m_sle_chon_vi_tri.EditValue == null || m_sle_chon_vi_tri.EditValue == "")
             {
-                MessageBox.Show("Bạn phải chọn vị trí", "THÔNG BÁO!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn vị trí", "THÔNG BÁO!");
                 return false;
             }
 
             if (m_sle_chon_loai_cong_tac.EditValue == null || m_sle_chon_loai_cong_tac.EditValue == "")
             {
-                MessageBox.Show("Bạn phải chọn loại công tác", "THÔNG BÁO!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn loại công tác", "THÔNG BÁO!");
                 return false;
             }
 
             if (m_dat_ngay_bat_dau.Value.Date == null || m_dat_ngay_bat_dau.Value.Date.ToString() == "")
             {
-                MessageBox.Show("Bạn phải chọn ngày bắt đầu", "THÔNG BÁO!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn ngày bắt đầu", "THÔNG BÁO!");
             }
             return true;
         }
@@ -465,7 +465,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (XtraMessageBox.Show("Bạn có chắc chắn muốn hủy kiêm nhiệm của nhân viên này hay không?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn hủy kiêm nhiệm của nhân viên này hay không?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     decimal v_id_gd_loai_ct = 0;
 

@@ -37,13 +37,19 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.m_cmd_nhap_cham_cong = new DevExpress.XtraEditors.SimpleButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.m_pn = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_prb = new DevExpress.XtraEditors.ProgressBarControl();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.m_bgwk = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.m_pn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             this.SuspendLayout();
@@ -124,12 +130,45 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.m_pn);
             this.panel2.Controls.Add(this.m_grc);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(789, 292);
             this.panel2.TabIndex = 1;
+            // 
+            // m_pn
+            // 
+            this.m_pn.Controls.Add(this.label1);
+            this.m_pn.Controls.Add(this.m_prb);
+            this.m_pn.Location = new System.Drawing.Point(86, 108);
+            this.m_pn.Name = "m_pn";
+            this.m_pn.Padding = new System.Windows.Forms.Padding(10);
+            this.m_pn.Size = new System.Drawing.Size(618, 68);
+            this.m_pn.TabIndex = 3;
+            this.m_pn.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(221, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Đang lưu dữ liệu. Vui lòng chờ trong giây lát...";
+            // 
+            // m_prb
+            // 
+            this.m_prb.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_prb.Location = new System.Drawing.Point(10, 10);
+            this.m_prb.Name = "m_prb";
+            this.m_prb.Properties.DisplayFormat.FormatString = "00";
+            this.m_prb.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.m_prb.ShowProgressInTaskBar = true;
+            this.m_prb.Size = new System.Drawing.Size(598, 30);
+            this.m_prb.TabIndex = 2;
+            this.m_prb.Visible = false;
             // 
             // m_grc
             // 
@@ -153,6 +192,14 @@
             this.m_grv.OptionsView.ColumnAutoWidth = false;
             this.m_grv.OptionsView.ShowFooter = true;
             // 
+            // m_bgwk
+            // 
+            this.m_bgwk.WorkerReportsProgress = true;
+            this.m_bgwk.WorkerSupportsCancellation = true;
+            this.m_bgwk.DoWork += new System.ComponentModel.DoWorkEventHandler(this.m_bgwk_DoWork);
+            this.m_bgwk.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.m_bgwk_ProgressChanged);
+            this.m_bgwk.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.m_bgwk_RunWorkerCompleted);
+            // 
             // F696_Cham_cong_xls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +214,9 @@
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.m_pn.ResumeLayout(false);
+            this.m_pn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
             this.ResumeLayout(false);
@@ -185,5 +235,9 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_du_lieu;
         private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraEditors.SimpleButton m_cmd_mo_file_mau;
+        private System.ComponentModel.BackgroundWorker m_bgwk;
+        private System.Windows.Forms.Panel m_pn;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.ProgressBarControl m_prb;
     }
 }

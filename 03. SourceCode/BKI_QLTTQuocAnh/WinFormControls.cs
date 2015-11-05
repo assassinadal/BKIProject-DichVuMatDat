@@ -248,7 +248,7 @@ namespace BKI_DichVuMatDat
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 m_grv.ExportToPdf(saveFileDialog1.FileName);
-                MessageBox.Show("Lưu báo cáo thành công");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
             }
         }
 
@@ -260,7 +260,7 @@ namespace BKI_DichVuMatDat
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 m_grv.ExportToHtml(saveFileDialog1.FileName);
-                MessageBox.Show("Lưu báo cáo thành công");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
             }
         }
 
@@ -272,7 +272,7 @@ namespace BKI_DichVuMatDat
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 m_grv.ExportToText(saveFileDialog1.FileName);
-                MessageBox.Show("Lưu báo cáo thành công");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
             }
         }
 
@@ -284,7 +284,7 @@ namespace BKI_DichVuMatDat
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 m_grv.ExportToXls(saveFileDialog1.FileName);
-                MessageBox.Show("Lưu báo cáo thành công");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
             }
         }
         #endregion

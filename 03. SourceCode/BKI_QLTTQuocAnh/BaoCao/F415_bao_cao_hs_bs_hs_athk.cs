@@ -85,7 +85,7 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 if (m_txt_chon_nam.Text == "")
                 {
-                    XtraMessageBox.Show("Bạn phải điền năm để lọc dữ liệu", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải điền năm để lọc dữ liệu", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

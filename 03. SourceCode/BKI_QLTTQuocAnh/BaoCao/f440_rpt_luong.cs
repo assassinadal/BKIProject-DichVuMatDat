@@ -73,7 +73,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 // Check whether the ChartControl can be previewed.
                 if (!chartControl1.IsPrintingAvailable)
                 {
-                    MessageBox.Show("The 'DevExpress.XtraPrinting' is not found", "Error");
+                    DevExpress.XtraEditors.XtraMessageBox.Show("The 'DevExpress.XtraPrinting' is not found", "Error");
                     return;
                 }
                 // Open the Preview window.

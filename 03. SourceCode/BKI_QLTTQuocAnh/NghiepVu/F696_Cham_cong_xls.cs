@@ -14,6 +14,8 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -38,18 +40,24 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                LayDuLieuLoaiNgayCong();
-                LayDuLieuNhanVien();
-                for (int i = 0; i < m_grv.RowCount; i++)
+                if (m_bgwk.IsBusy)
                 {
-                    nhapChamCong(m_grv.GetDataRow(i));
+                    m_bgwk.CancelAsync();
+                }
+                else
+                {
+                    this.m_pn.Visible = true;
+                    this.m_prb.Visible = true;
+                    this.m_cmd_nhap_cham_cong.Text = "Đang lưu chấm công ...";
+                    this.m_cmd_nhap_cham_cong.Enabled = false;
+                    m_bgwk.RunWorkerAsync();
+                    
                 }
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-            
         }
 
         private void LayDuLieuNhanVien()
@@ -127,6 +135,73 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void m_bgwk_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            LayDuLieuLoaiNgayCong();
+            if (checkBangChamCong())
+            {
+                LayDuLieuNhanVien();
+                for (int i = 0; i < m_grv.RowCount; i++)
+                {
+                    nhapChamCong(m_grv.GetDataRow(i));
+                    worker.ReportProgress((i + 1) * 100 / m_grv.RowCount);
+                }    
+            }
+            else
+            {
+                XtraMessageBox.Show("Bạn vui lòng kiểm tra lại bảng chấm công.");
+            }            
+        }
+
+        private bool checkBangChamCong()
+        {
+            int v_int_dem_cham_cong_sai = 0;
+            for (int i = 0; i < m_grv.RowCount; i++)
+            {
+                var v_dr = m_grv.GetDataRow(i);
+                for (int j = 1; j < m_grv.Columns.Count; j++)
+                {
+                    EnumerableRowCollection<DataRow> res = from row in m_ds_ngay_cong.Tables[0].AsEnumerable()
+                                                           where row.Field<string>(DM_LOAI_NGAY_CONG.MA_NGAY_CONG).ToUpper() == v_dr[j].ToString().ToUpper()
+                                                           select row;
+                    if (res.Count() == 0)
+                    {
+                        v_int_dem_cham_cong_sai += 1;
+                        m_grv.FocusedRowHandle = i;
+                        m_grv.FocusedColumn = m_grv.Columns[j];
+                    }
+                }
+            }
+            if (v_int_dem_cham_cong_sai == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void m_grv_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void m_bgwk_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            this.m_prb.EditValue = e.ProgressPercentage;
+        }
+
+        private void m_bgwk_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            this.m_prb.Visible = false;
+            this.m_pn.Visible = false;
+            this.m_cmd_nhap_cham_cong.Text = "Lưu chấm công";
+            this.m_cmd_nhap_cham_cong.Enabled = true;
+            XtraMessageBox.Show("Lưu dữ liệu thành công");
         }
     }
 }

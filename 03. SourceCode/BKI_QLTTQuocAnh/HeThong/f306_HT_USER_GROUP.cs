@@ -331,7 +331,7 @@ namespace BKI_DichVuMatDat
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            var dlg = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var dlg = DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlg != System.Windows.Forms.DialogResult.Yes) return;
 
             US_HT_USER_GROUP v_us = new US_HT_USER_GROUP();

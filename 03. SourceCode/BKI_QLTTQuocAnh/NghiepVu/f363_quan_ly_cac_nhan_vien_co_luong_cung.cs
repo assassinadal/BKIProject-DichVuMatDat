@@ -156,23 +156,23 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
-                XtraMessageBox.Show("Bạn chưa chọn nhân viên!", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn nhân viên!", "THÔNG BÁO");
                 return false;
             }
             if (m_txt_so_tien.Text.Trim() == "")
             {
-                XtraMessageBox.Show("Bạn chưa nhập số tiền!", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập số tiền!", "THÔNG BÁO");
                 return false;
             }
             if (m_dat_ngay_ket_thuc.Value < m_dat_ngay_bat_dau.Value)
             {
-                XtraMessageBox.Show("Ngày kết thúc đang nhỏ hơn ngày bắt đầu!", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Ngày kết thúc đang nhỏ hơn ngày bắt đầu!", "THÔNG BÁO");
                 return false;
             }
 
             if (CCommon.thang_da_chot_bang_luong(m_dat_ngay_ket_thuc.Value))
             {
-                XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
                 return false;
             }
             return true;
@@ -270,7 +270,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us_gd_luong_cung.BeginTransaction();
                         v_us_gd_luong_cung.Insert();
                         v_us_gd_luong_cung.CommitTransaction();
-                        XtraMessageBox.Show("Bạn đã thêm lương thành công cho nhân viên!", "THÀNH CÔNG");
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã thêm lương thành công cho nhân viên!", "THÀNH CÔNG");
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         decimal v_id_gd_lc = find_id_gd_luong_cung(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
@@ -279,7 +279,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us.BeginTransaction();
                         v_us.Update();
                         v_us.CommitTransaction();
-                        XtraMessageBox.Show("Bạn đã cập nhật thành công!", "THÀNH CÔNG");
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã cập nhật thành công!", "THÀNH CÔNG");
                         break;
                     default:
                         break;
@@ -287,7 +287,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-                //XtraMessageBox.Show("Đã xẩy ra lỗi trong quá trình lưu dữ liệu", "THÔNG BÁO");
+                //DevExpress.XtraEditors.XtraMessageBox.Show("Đã xẩy ra lỗi trong quá trình lưu dữ liệu", "THÔNG BÁO");
                 throw v_e;
             }
         }
@@ -304,7 +304,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             else
             {
-                XtraMessageBox.Show("Nhân viên này chưa có giá trị lương cứng", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Nhân viên này chưa có giá trị lương cứng", "THÔNG BÁO");
                 m_sle_chon_nhan_vien.EditValue = v_id_nv;
                 return;
             }
@@ -378,7 +378,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (check_data_is_ok())
                 {
-                    if (XtraMessageBox.Show("Bạn có chắc chắn muốn nhập mức lương " + String.Format("{0:#,##0}", m_txt_so_tien.Text).ToString() + " VNĐ cho nhân viên này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn nhập mức lương " + String.Format("{0:#,##0}", m_txt_so_tien.Text).ToString() + " VNĐ cho nhân viên này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         save_data();
                     }

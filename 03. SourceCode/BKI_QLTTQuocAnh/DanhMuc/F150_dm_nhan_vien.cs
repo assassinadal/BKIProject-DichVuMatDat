@@ -299,17 +299,17 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             if (m_txt_ma_nv.Text == "")
             {
-                XtraMessageBox.Show("Bạn chưa nhập mã nhân viên rồi!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập mã nhân viên rồi!");
                 return false;
             }
             if (m_txt_ho_dem.Text == "")
             {
-                XtraMessageBox.Show("Bạn chưa nhập họ đệm cho nhân viên rồi!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập họ đệm cho nhân viên rồi!");
                 return false;
             }
             if (m_txt_ten.Text == "")
             {
-                XtraMessageBox.Show("Bạn chưa nhập tên cho nhân viên rồi!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập tên cho nhân viên rồi!");
                 return false;
             }
             return true;
@@ -331,7 +331,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 if (check_data_is_ok())
                 {
-                    if (XtraMessageBox.Show("Bạn chắc chắc muốn lưu các thông tin chứ?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chắc chắc muốn lưu các thông tin chứ?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         if (m_is_newbie == 1)
                         {
@@ -358,7 +358,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                             load_data_2_ds_v_dm_nv();
                             m_sle_chon_nhan_vien.EditValue = v_us_nv_4_insert.dcID;
 
-                            XtraMessageBox.Show("Thành công!", "THÔNG BÁO");
+                            DevExpress.XtraEditors.XtraMessageBox.Show("Thành công!", "THÔNG BÁO");
                         }
                         else
                         {
@@ -368,7 +368,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                                 US_DM_NHAN_VIEN v_us_nv_4_update = new US_DM_NHAN_VIEN(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                                 form_2_us_dm_nv(v_us_nv_4_update);
                                 v_us_nv_4_update.Update();
-                                XtraMessageBox.Show("Thành công!", "THÔNG BÁO");
+                                DevExpress.XtraEditors.XtraMessageBox.Show("Thành công!", "THÔNG BÁO");
                             }
                             catch (Exception v_e)
                             {

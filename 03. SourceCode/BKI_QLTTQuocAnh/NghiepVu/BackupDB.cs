@@ -95,7 +95,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 Alter2Cmd.ExecuteNonQuery();
 
                 
-                MessageBox.Show("Restore Database thành công");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Restore Database thành công");
             }
             catch (Exception)
             {
@@ -140,7 +140,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_add_new_back_up.Visible = true;
             m_cmd_backup.Visible = false;
             fill_data_2_grid();
-            MessageBox.Show("Backup thành công!");
+            DevExpress.XtraEditors.XtraMessageBox.Show("Backup thành công!");
         }
 
         private void fill_data_2_grid()
@@ -174,7 +174,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-                MessageBox.Show(v_e.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(v_e.Message);
             }
         }
 
@@ -189,7 +189,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-                MessageBox.Show(v_e.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(v_e.Message);
             }
         }
 
@@ -201,7 +201,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-                MessageBox.Show(v_e.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(v_e.Message);
             }
         }
 
@@ -213,7 +213,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-                MessageBox.Show(v_e.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(v_e.Message);
             }
         }
 
@@ -226,7 +226,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             catch (Exception v_e)
             {
 
-                MessageBox.Show(v_e.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(v_e.Message);
             }
         }
         #endregion

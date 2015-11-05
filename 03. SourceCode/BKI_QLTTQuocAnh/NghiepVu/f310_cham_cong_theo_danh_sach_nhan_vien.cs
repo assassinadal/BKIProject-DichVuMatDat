@@ -308,10 +308,10 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (!CCommon.thang_da_chot_bang_luong(m_dat_ngay_cham_cong.Value))
                 {
-                    if (XtraMessageBox.Show("Bạn có chắc chắn lưu bảng chấm công này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn lưu bảng chấm công này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         luu_du_lieu();
-                        MessageBox.Show("Đã lưu thành công!");
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Đã lưu thành công!");
                         load_data_2_grid();
                     }
                     else
@@ -321,7 +321,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 }
                 else
                 {
-                    XtraMessageBox.Show("Tháng " + m_dat_ngay_cham_cong.Value.Month.ToString() + " năm " + m_dat_ngay_cham_cong.Value.Year.ToString() + " đã chốt bảng lương nên không được sửa!", "THÔNG BÁO");
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Tháng " + m_dat_ngay_cham_cong.Value.Month.ToString() + " năm " + m_dat_ngay_cham_cong.Value.Year.ToString() + " đã chốt bảng lương nên không được sửa!", "THÔNG BÁO");
                     return;
                 }
             }

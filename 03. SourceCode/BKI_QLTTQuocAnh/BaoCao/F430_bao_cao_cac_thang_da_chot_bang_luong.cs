@@ -75,7 +75,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 decimal v_thang_chot_bang_luong = CIPConvert.ToDecimal(m_grv_bc_cac_thang_da_chot_bang_luong.GetRowCellValue(m_grv_bc_cac_thang_da_chot_bang_luong.FocusedRowHandle, "THANG"));
                 decimal v_nam_chot_bang_luong = CIPConvert.ToDecimal(m_grv_bc_cac_thang_da_chot_bang_luong.GetRowCellValue(m_grv_bc_cac_thang_da_chot_bang_luong.FocusedRowHandle, "NAM"));
 
-                if (XtraMessageBox.Show("Bạn có chắc chắn muốn bỏ chốt của bảng lương tháng " + v_thang_chot_bang_luong.ToString() + " năm " + v_nam_chot_bang_luong.ToString() + " không?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn bỏ chốt của bảng lương tháng " + v_thang_chot_bang_luong.ToString() + " năm " + v_nam_chot_bang_luong.ToString() + " không?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     US_GD_CHOT_BANG_LUONG v_us = new US_GD_CHOT_BANG_LUONG(v_id_gd_chot_bang_luong);
                     try
@@ -88,7 +88,7 @@ namespace BKI_DichVuMatDat.BaoCao
                     {
                         throw v_e;
                     }
-                    XtraMessageBox.Show("Thành công!!!", "THÔNG BÁO");
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Thành công!!!", "THÔNG BÁO");
                     load_data_2_grid();
                 }
             }

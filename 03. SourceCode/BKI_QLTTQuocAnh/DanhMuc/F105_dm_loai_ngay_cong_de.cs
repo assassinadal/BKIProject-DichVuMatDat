@@ -76,22 +76,22 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             if (m_txt_ma_ngay_cong.Text == null || m_txt_ma_ngay_cong.Text == "")
             {
-                MessageBox.Show("Bạn phải nhập mã loại ngày công!", "THÔNG BÁO!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải nhập mã loại ngày công!", "THÔNG BÁO!");
                 return false;
             }
             if (m_txt_ten_ngay_cong.Text == null || m_txt_ten_ngay_cong.Text == "")
             {
-                MessageBox.Show("Bạn phải nhập tên loại ngày công!", "THÔNG BÁO!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải nhập tên loại ngày công!", "THÔNG BÁO!");
                 return false;
             }
             if (m_txt_ti_le_lns.Text == null || m_txt_ti_le_lns.Text == "")
             {
-                MessageBox.Show("Bạn phải nhập tỉ lệ lương năng suất!", "THÔNG BÁO!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải nhập tỉ lệ lương năng suất!", "THÔNG BÁO!");
                 return false;
             }
             if (m_txt_ti_le_lcd.Text == null || m_txt_ti_le_lcd.Text == "")
             {
-                MessageBox.Show("Bạn phải nhập tỉ lệ lương chế độ!", "THÔNG BÁO!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải nhập tỉ lệ lương chế độ!", "THÔNG BÁO!");
                 return false;
             }
             return true;

@@ -365,19 +365,19 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
-                MessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO");
                 return false;
             }
 
             if (m_sle_loai_hop_dong.EditValue == null || m_sle_loai_hop_dong.EditValue == "")
             {
-                MessageBox.Show("Bạn phải chọn loại hợp đồng", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn loại hợp đồng", "THÔNG BÁO");
                 return false;
             }
 
             if (m_txt_ma_hd.Text == null)
             {
-                MessageBox.Show("Bạn phải điền mã hợp đồng", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải điền mã hợp đồng", "THÔNG BÁO");
                 return false;
             }
 
@@ -385,32 +385,32 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (m_sle_muc_lns.EditValue == null || m_sle_muc_lns.EditValue == "")
                 {
-                    MessageBox.Show("Bạn phải chọn mức lương năng suất", "THÔNG BÁO");
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn mức lương năng suất", "THÔNG BÁO");
                     return false;
                 }
 
                 if (m_sle_muc_lcd.EditValue == null || m_sle_muc_lcd.EditValue == "")
                 {
-                    MessageBox.Show("Bạn phải chọn mức lương chế độ", "THÔNG BÁO");
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn mức lương chế độ", "THÔNG BÁO");
                     return false;
                 }
 
                 if (m_sle_chuc_danh_lns.EditValue == null || m_sle_chuc_danh_lns.EditValue == "")
                 {
-                    MessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
                     return false;
                 }
 
                 if (m_sle_chuc_danh_lcd.EditValue == null || m_sle_chuc_danh_lcd.EditValue == "")
                 {
-                    MessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
                     return false;
                 }
             }
 
             if (m_dat_ngay_bat_dau.Value.Date == m_dat_ngay_ket_thuc.Value.Date)
             {
-                MessageBox.Show("Ngày bắt đầu và ngày kết thúc đang trùng nhau", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Ngày bắt đầu và ngày kết thúc đang trùng nhau", "THÔNG BÁO");
                 return false;
             }
 
@@ -1048,13 +1048,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                     switch (m_e_form_mode)
                     {
                         case DataEntryFormMode.InsertDataState:
-                            if (XtraMessageBox.Show("Bạn có chắc chắn muốn lập hợp đồng này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn lập hợp đồng này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 save_data();
                             }
                             break;
                         case DataEntryFormMode.UpdateDataState:
-                            if (XtraMessageBox.Show("Bạn có chắc chắn muốn cập nhật hợp đồng này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn cập nhật hợp đồng này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 save_data();
                             }
@@ -1114,7 +1114,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     {
                         if (m_sle_chuc_danh_lns.EditValue == null || m_sle_chuc_danh_lns.EditValue == "")
                         {
-                            MessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
+                            DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
                             return;
                         }
                         else
@@ -1166,7 +1166,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     {
                         if (m_sle_chuc_danh_lcd.EditValue == null || m_sle_chuc_danh_lcd.EditValue == "")
                         {
-                            MessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
+                            DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
                             return;
                         }
                         else

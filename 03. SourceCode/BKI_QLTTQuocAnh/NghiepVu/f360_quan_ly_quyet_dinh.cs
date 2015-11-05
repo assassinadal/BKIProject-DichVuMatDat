@@ -127,7 +127,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_sle_loai_quyet_dinh.EditValue == null || m_sle_loai_quyet_dinh.EditValue == "")
             {
-                MessageBox.Show("Bạn phải chọn loại quyết định", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn loại quyết định", "THÔNG BÁO");
                 return false;
             }
 
@@ -305,13 +305,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                     switch (m_e_form_mode)
                     {
                         case DataEntryFormMode.InsertDataState:
-                            if (XtraMessageBox.Show("Bạn có chắc chắn muốn thêm quyết định này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn thêm quyết định này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 save_data();
                             }
                             break;
                         case DataEntryFormMode.UpdateDataState:
-                            if (XtraMessageBox.Show("Bạn có chắc chắn muốn cập nhật quyết định này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn cập nhật quyết định này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 save_data();
                             }

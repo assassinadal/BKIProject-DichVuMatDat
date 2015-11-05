@@ -210,7 +210,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             v_us.CommitTransaction();
             SplashScreenManager.CloseForm();
-            XtraMessageBox.Show("Lưu dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DevExpress.XtraEditors.XtraMessageBox.Show("Lưu dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         #endregion
 

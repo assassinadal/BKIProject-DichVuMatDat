@@ -114,17 +114,17 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             if (m_txt_ma_lcd.Text.Trim() == "")
             {
-                XtraMessageBox.Show("Bạn chưa nhập mã lương chế độ!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập mã lương chế độ!");
                 return false;
             }
             if (m_sle_muc_lcd.EditValue == null)
             {
-                XtraMessageBox.Show("Bạn chưa chọn mức lương chế độ!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn mức lương chế độ!");
                 return false;
             }
             if (m_txt_so_tien.Text.Trim() == "")
             {
-                XtraMessageBox.Show("Bạn chưa nhập số tiền!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập số tiền!");
                 return false;
             }
             return true;
@@ -152,7 +152,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_luong_che_do.Insert();
                         v_us_dm_luong_che_do.CommitTransaction();
                         m_id_dm_luong_che_do_moi_tao = v_us_dm_luong_che_do.dcID;
-                        if (XtraMessageBox.Show("Bạn đã thêm lương chế độ thành công! Bạn có muốn thêm tham số khác không?", "THÀNH CÔNG", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã thêm lương chế độ thành công! Bạn có muốn thêm tham số khác không?", "THÀNH CÔNG", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             refresh_form();
                         }
@@ -166,7 +166,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_luong_che_do.BeginTransaction();
                         v_us_dm_luong_che_do.Update();
                         v_us_dm_luong_che_do.CommitTransaction();
-                        XtraMessageBox.Show("Bạn đã cập nhật lương chế độ thành công!", "THÀNH CÔNG");
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã cập nhật lương chế độ thành công!", "THÀNH CÔNG");
                         this.Close();
                         break;
                     default:
@@ -212,7 +212,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 if (check_validate_data())
                 {
-                    if (XtraMessageBox.Show("Bạn có chắc chắn muốn lưu loại lương chế độ này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn lưu loại lương chế độ này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         save_data();
                     }

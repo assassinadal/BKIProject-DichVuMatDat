@@ -86,7 +86,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                 decimal v_id = CIPConvert.ToDecimal(v_dr[DM_LOAI_HOP_DONG.ID]);
 
                 US_DM_LOAI_HOP_DONG v_us = new US_DM_LOAI_HOP_DONG(v_id);
-                if (XtraMessageBox.Show("Bạn có chắc chắn muốn XÓA LOẠI HỢP ĐỒNG này không?", "XÁC NHẬN LẠI!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn XÓA LOẠI HỢP ĐỒNG này không?", "XÁC NHẬN LẠI!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     v_us.Delete();
                     load_data_2_grid();

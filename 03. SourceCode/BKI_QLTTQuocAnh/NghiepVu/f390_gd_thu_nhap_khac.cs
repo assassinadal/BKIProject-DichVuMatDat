@@ -194,12 +194,12 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_txt_chon_thang.Text == "")
             {
-                XtraMessageBox.Show("Bạn chưa chọn tháng!", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn tháng!", "THÔNG BÁO");
                 return false;
             }
             if (m_txt_chon_nam.Text == "")
             {
-                XtraMessageBox.Show("Bạn chưa chọn năm!", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn năm!", "THÔNG BÁO");
                 return false;
             }
             return true;
@@ -213,27 +213,27 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
-                XtraMessageBox.Show("Bạn chưa chọn nhân viên!", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn nhân viên!", "THÔNG BÁO");
                 return false;
             }
             if (m_sle_loai_thu_nhap.EditValue == null || m_sle_loai_thu_nhap.EditValue == "")
             {
-                XtraMessageBox.Show("Bạn chưa loại thu nhập!", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa loại thu nhập!", "THÔNG BÁO");
                 return false;
             }
             if (m_txt_so_tien.Text.Trim() == "")
             {
-                XtraMessageBox.Show("Bạn chưa điền số tiền!", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa điền số tiền!", "THÔNG BÁO");
                 return false;
             }
             if (m_txt_ly_do.Text.Trim() == "")
             {
-                XtraMessageBox.Show("Bạn chưa điền lý do!", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa điền lý do!", "THÔNG BÁO");
                 return false;
             }
             if (CCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())))
             {
-                XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
                 return false;
             }
             return true;
@@ -280,14 +280,14 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us_gd_thu_nhap_khac.Insert();
                         v_us_gd_thu_nhap_khac.CommitTransaction();
                         v_id_gd_thu_nhap_khac = v_us_gd_thu_nhap_khac.dcID;
-                        XtraMessageBox.Show("Bạn đã thêm thu nhập khác cho nhân viên thành công!", "THÀNH CÔNG");
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã thêm thu nhập khác cho nhân viên thành công!", "THÀNH CÔNG");
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         v_us_gd_thu_nhap_khac.BeginTransaction();
                         v_us_gd_thu_nhap_khac.dcID = CIPConvert.ToDecimal(m_grv_quan_ly_thu_nhap_khac.GetRowCellValue(m_grv_quan_ly_thu_nhap_khac.FocusedRowHandle, "ID").ToString());
                         v_us_gd_thu_nhap_khac.Update();
                         v_us_gd_thu_nhap_khac.CommitTransaction();
-                        XtraMessageBox.Show("Bạn đã cập nhật thông tin thu nhập khác thành công!", "THÀNH CÔNG");
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã cập nhật thông tin thu nhập khác thành công!", "THÀNH CÔNG");
                         break;
                     default:
                         break;

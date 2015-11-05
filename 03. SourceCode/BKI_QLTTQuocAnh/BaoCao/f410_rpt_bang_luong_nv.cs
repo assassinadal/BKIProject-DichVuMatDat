@@ -209,7 +209,7 @@ namespace BKI_DichVuMatDat.BaoCao
             try
             {
                 v_us.insert_data_by_proc(ip_dc_thang, ip_dc_nam);
-                XtraMessageBox.Show("Thành công!!!", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Thành công!!!", "THÔNG BÁO");
             }
             catch (Exception v_e)
             {
@@ -251,7 +251,7 @@ namespace BKI_DichVuMatDat.BaoCao
             catch (Exception v_e)
             {
 
-                MessageBox.Show("Có tý tẹo vấn đề. Bạn chụp ảnh và gửi để chúng tôi hỗ trợ nhé!" + v_e.ToString());
+                DevExpress.XtraEditors.XtraMessageBox.Show("Có tý tẹo vấn đề. Bạn chụp ảnh và gửi để chúng tôi hỗ trợ nhé!" + v_e.ToString());
             }
         }
 
@@ -293,11 +293,11 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             if (m_is_click_cmd_tinh_bang_luong == 0)
             {
-                XtraMessageBox.Show("Chưa có dữ liệu để chốt!!!", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Chưa có dữ liệu để chốt!!!", "THÔNG BÁO");
                 return;
             }
 
-            if (XtraMessageBox.Show("Bạn có chắc chắn muốn chốt bảng lương tháng " + m_txt_thang.Text.Trim() + " năm " + m_txt_nam.Text.Trim(), "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn chốt bảng lương tháng " + m_txt_thang.Text.Trim() + " năm " + m_txt_nam.Text.Trim(), "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (!check_gd_chot_bang_luong_is_exist())
                 {
@@ -308,7 +308,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 }
                 else
                 {
-                    XtraMessageBox.Show("Bảng lương tháng " + m_txt_thang.Text.Trim() + " năm " + m_txt_nam.Text.Trim() + " đã được chốt rồi", "THÔNG BÁO");
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Bảng lương tháng " + m_txt_thang.Text.Trim() + " năm " + m_txt_nam.Text.Trim() + " đã được chốt rồi", "THÔNG BÁO");
                     return;
                 }
             }
@@ -322,7 +322,7 @@ namespace BKI_DichVuMatDat.BaoCao
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 m_grv.ExportToXls(saveFileDialog1.FileName);
-                MessageBox.Show("Lưu báo cáo thành công");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
             }
         }
     }

@@ -134,22 +134,22 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
-                XtraMessageBox.Show("Bạn chưa chọn nhân viên!", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn nhân viên!", "THÔNG BÁO");
                 return false;
             }
             if (m_txt_chon_thang.Text.Trim() == "")
             {
-                XtraMessageBox.Show("Bạn chưa chọn tháng!", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn tháng!", "THÔNG BÁO");
                 return false;
             }
             if (m_txt_chon_nam.Text.Trim() == "")
             {
-                XtraMessageBox.Show("Bạn chưa chọn năm!", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn năm!", "THÔNG BÁO");
                 return false;
             }
             if (CCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()),CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())))
             {
-                XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
                 return false;
             }
             return true;
@@ -214,13 +214,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us_gd_khong_dong_bao_hiem.BeginTransaction();
                         v_us_gd_khong_dong_bao_hiem.Insert();
                         v_us_gd_khong_dong_bao_hiem.CommitTransaction();
-                        XtraMessageBox.Show("Bạn đã thêm thông tin thành công cho nhân viên!", "THÀNH CÔNG");
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã thêm thông tin thành công cho nhân viên!", "THÀNH CÔNG");
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         v_us_gd_khong_dong_bao_hiem.BeginTransaction();
                         v_us_gd_khong_dong_bao_hiem.Update();
                         v_us_gd_khong_dong_bao_hiem.CommitTransaction();
-                        XtraMessageBox.Show("Bạn đã cập nhật thành công!", "THÀNH CÔNG");
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã cập nhật thành công!", "THÀNH CÔNG");
                         break;
                     default:
                         break;
@@ -228,7 +228,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-                //XtraMessageBox.Show("Đã xẩy ra lỗi trong quá trình lưu dữ liệu", "THÔNG BÁO");
+                //DevExpress.XtraEditors.XtraMessageBox.Show("Đã xẩy ra lỗi trong quá trình lưu dữ liệu", "THÔNG BÁO");
                 throw v_e;
             }
         }
@@ -245,7 +245,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             else
             {
-                XtraMessageBox.Show("Nhân viên này chưa có thông tin trong tháng " + m_txt_chon_thang.Text.Trim() + " năm " + m_txt_chon_nam.Text.Trim() + "", "THÔNG BÁO");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Nhân viên này chưa có thông tin trong tháng " + m_txt_chon_thang.Text.Trim() + " năm " + m_txt_chon_nam.Text.Trim() + "", "THÔNG BÁO");
                 m_sle_chon_nhan_vien.EditValue = v_id_nv;
                 return;
             }
@@ -341,7 +341,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (check_data_is_ok())
                 {
-                    if (XtraMessageBox.Show("Bạn có chắc chắn muốn lưu thông tin cho nhân viên này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn lưu thông tin cho nhân viên này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         save_data();
                     }

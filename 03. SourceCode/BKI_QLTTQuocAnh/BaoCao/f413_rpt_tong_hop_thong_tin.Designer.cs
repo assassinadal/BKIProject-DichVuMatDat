@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f413_rpt_tong_hop_thong_tin));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_tinh = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.m_txt_nam = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@
             this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.advBandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.STT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.MA_NV = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.HO_VA_TEN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -44,6 +46,7 @@
             this.TEN_HOP_DONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.LUONG_CHE_DO_THEO_CHUC_VU = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.TAI_KHOAN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.CHAM_CONG_X = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.CHAM_CONG_OM_CO = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.CHAM_CONG_TS = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -51,13 +54,10 @@
             this.CHAM_CONG_PHEP_DIDUONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.CHAM_CONG_RO_KO_DC = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.CHAM_CONG_KHAC = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.HE_SO_K = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.HE_SO_K = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.m_bgwk = new System.ComponentModel.BackgroundWorker();
             this.m_prb = new DevExpress.XtraEditors.ProgressBarControl();
-            this.m_cmd_tinh = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).BeginInit();
@@ -78,6 +78,15 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(941, 47);
             this.panel1.TabIndex = 6;
+            // 
+            // m_cmd_tinh
+            // 
+            this.m_cmd_tinh.Location = new System.Drawing.Point(394, 13);
+            this.m_cmd_tinh.Name = "m_cmd_tinh";
+            this.m_cmd_tinh.Size = new System.Drawing.Size(75, 23);
+            this.m_cmd_tinh.TabIndex = 9;
+            this.m_cmd_tinh.Text = "Xem báo cáo";
+            this.m_cmd_tinh.Click += new System.EventHandler(this.m_cmd_tinh_Click);
             // 
             // label2
             // 
@@ -159,6 +168,24 @@
             this.advBandedGridView1.Name = "advBandedGridView1";
             this.advBandedGridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // gridBand1
+            // 
+            this.gridBand1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridBand1.AppearanceHeader.Options.UseFont = true;
+            this.gridBand1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand1.Caption = "Thông tin cơ bản";
+            this.gridBand1.Columns.Add(this.STT);
+            this.gridBand1.Columns.Add(this.MA_NV);
+            this.gridBand1.Columns.Add(this.HO_VA_TEN);
+            this.gridBand1.Columns.Add(this.TEN_CHUC_VU);
+            this.gridBand1.Columns.Add(this.TEN_HOP_DONG);
+            this.gridBand1.Columns.Add(this.LUONG_CHE_DO_THEO_CHUC_VU);
+            this.gridBand1.Columns.Add(this.TAI_KHOAN);
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 0;
+            this.gridBand1.Width = 525;
+            // 
             // STT
             // 
             this.STT.AppearanceHeader.Options.UseTextOptions = true;
@@ -231,6 +258,24 @@
             this.TAI_KHOAN.FieldName = "TAI_KHOAN";
             this.TAI_KHOAN.Name = "TAI_KHOAN";
             this.TAI_KHOAN.Visible = true;
+            // 
+            // gridBand2
+            // 
+            this.gridBand2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridBand2.AppearanceHeader.Options.UseFont = true;
+            this.gridBand2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand2.Caption = "Tổng hợp chấm công";
+            this.gridBand2.Columns.Add(this.CHAM_CONG_X);
+            this.gridBand2.Columns.Add(this.CHAM_CONG_OM_CO);
+            this.gridBand2.Columns.Add(this.CHAM_CONG_TS);
+            this.gridBand2.Columns.Add(this.CHAM_CONG_TNLD);
+            this.gridBand2.Columns.Add(this.CHAM_CONG_PHEP_DIDUONG);
+            this.gridBand2.Columns.Add(this.CHAM_CONG_RO_KO_DC);
+            this.gridBand2.Columns.Add(this.CHAM_CONG_KHAC);
+            this.gridBand2.Name = "gridBand2";
+            this.gridBand2.VisibleIndex = 1;
+            this.gridBand2.Width = 285;
             // 
             // CHAM_CONG_X
             // 
@@ -309,6 +354,15 @@
             this.CHAM_CONG_KHAC.Visible = true;
             this.CHAM_CONG_KHAC.Width = 51;
             // 
+            // gridBand3
+            // 
+            this.gridBand3.Caption = "gridBand3";
+            this.gridBand3.Columns.Add(this.HE_SO_K);
+            this.gridBand3.Name = "gridBand3";
+            this.gridBand3.OptionsBand.ShowCaption = false;
+            this.gridBand3.VisibleIndex = 2;
+            this.gridBand3.Width = 75;
+            // 
             // HE_SO_K
             // 
             this.HE_SO_K.AppearanceHeader.Options.UseTextOptions = true;
@@ -319,53 +373,10 @@
             this.HE_SO_K.Name = "HE_SO_K";
             this.HE_SO_K.Visible = true;
             // 
-            // gridBand1
-            // 
-            this.gridBand1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridBand1.AppearanceHeader.Options.UseFont = true;
-            this.gridBand1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand1.Caption = "Thông tin cơ bản";
-            this.gridBand1.Columns.Add(this.STT);
-            this.gridBand1.Columns.Add(this.MA_NV);
-            this.gridBand1.Columns.Add(this.HO_VA_TEN);
-            this.gridBand1.Columns.Add(this.TEN_CHUC_VU);
-            this.gridBand1.Columns.Add(this.TEN_HOP_DONG);
-            this.gridBand1.Columns.Add(this.LUONG_CHE_DO_THEO_CHUC_VU);
-            this.gridBand1.Columns.Add(this.TAI_KHOAN);
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 525;
-            // 
-            // gridBand2
-            // 
-            this.gridBand2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridBand2.AppearanceHeader.Options.UseFont = true;
-            this.gridBand2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand2.Caption = "Tổng hợp chấm công";
-            this.gridBand2.Columns.Add(this.CHAM_CONG_X);
-            this.gridBand2.Columns.Add(this.CHAM_CONG_OM_CO);
-            this.gridBand2.Columns.Add(this.CHAM_CONG_TS);
-            this.gridBand2.Columns.Add(this.CHAM_CONG_TNLD);
-            this.gridBand2.Columns.Add(this.CHAM_CONG_PHEP_DIDUONG);
-            this.gridBand2.Columns.Add(this.CHAM_CONG_RO_KO_DC);
-            this.gridBand2.Columns.Add(this.CHAM_CONG_KHAC);
-            this.gridBand2.Name = "gridBand2";
-            this.gridBand2.VisibleIndex = 1;
-            this.gridBand2.Width = 285;
-            // 
-            // gridBand3
-            // 
-            this.gridBand3.Caption = "gridBand3";
-            this.gridBand3.Columns.Add(this.HE_SO_K);
-            this.gridBand3.Name = "gridBand3";
-            this.gridBand3.OptionsBand.ShowCaption = false;
-            this.gridBand3.VisibleIndex = 2;
-            this.gridBand3.Width = 75;
-            // 
             // m_bgwk
             // 
+            this.m_bgwk.WorkerReportsProgress = true;
+            this.m_bgwk.WorkerSupportsCancellation = true;
             this.m_bgwk.DoWork += new System.ComponentModel.DoWorkEventHandler(this.m_bgwk_DoWork);
             this.m_bgwk.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.m_bgwk_ProgressChanged);
             this.m_bgwk.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.m_bgwk_RunWorkerCompleted);
@@ -380,15 +391,6 @@
             this.m_prb.Size = new System.Drawing.Size(605, 34);
             this.m_prb.TabIndex = 8;
             this.m_prb.Visible = false;
-            // 
-            // m_cmd_tinh
-            // 
-            this.m_cmd_tinh.Location = new System.Drawing.Point(394, 13);
-            this.m_cmd_tinh.Name = "m_cmd_tinh";
-            this.m_cmd_tinh.Size = new System.Drawing.Size(75, 23);
-            this.m_cmd_tinh.TabIndex = 9;
-            this.m_cmd_tinh.Text = "Xem báo cáo";
-            this.m_cmd_tinh.Click += new System.EventHandler(this.m_cmd_tinh_Click);
             // 
             // f413_rpt_tong_hop_thong_tin
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -88,6 +89,7 @@
             this.m_cmd_luong_theo_don_vi = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_luong_hs_athk = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_chuyen_trang_thai_LD = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_ql_thuong_hsbs = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -106,10 +108,10 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.m_cmd_ql_thuong_hsbs = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_bao_cao_tong_hop = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             this.SuspendLayout();
@@ -180,9 +182,10 @@
             this.m_cmd_luong_theo_don_vi,
             this.m_cmd_luong_hs_athk,
             this.m_cmd_chuyen_trang_thai_LD,
-            this.m_cmd_ql_thuong_hsbs});
+            this.m_cmd_ql_thuong_hsbs,
+            this.m_cmd_bao_cao_tong_hop});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 72;
+            this.ribbon.MaxItemId = 73;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -719,6 +722,15 @@
             this.m_cmd_chuyen_trang_thai_LD.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // m_cmd_ql_thuong_hsbs
+            // 
+            this.m_cmd_ql_thuong_hsbs.Caption = "Quản lý thưởng hệ số bổ sung";
+            this.m_cmd_ql_thuong_hsbs.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_ql_thuong_hsbs.Glyph")));
+            this.m_cmd_ql_thuong_hsbs.Id = 71;
+            this.m_cmd_ql_thuong_hsbs.Name = "m_cmd_ql_thuong_hsbs";
+            this.m_cmd_ql_thuong_hsbs.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -850,6 +862,7 @@
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bc_hs_bs_hs_athk);
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bc_cac_thang_da_chot_bang_luong);
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_luong_theo_don_vi);
+            this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bao_cao_tong_hop);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Báo cáo tổng";
             // 
@@ -889,13 +902,13 @@
             this.barButtonItem4.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // m_cmd_ql_thuong_hsbs
+            // m_cmd_bao_cao_tong_hop
             // 
-            this.m_cmd_ql_thuong_hsbs.Caption = "Quản lý thưởng hệ số bổ sung";
-            this.m_cmd_ql_thuong_hsbs.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_ql_thuong_hsbs.Glyph")));
-            this.m_cmd_ql_thuong_hsbs.Id = 71;
-            this.m_cmd_ql_thuong_hsbs.Name = "m_cmd_ql_thuong_hsbs";
-            this.m_cmd_ql_thuong_hsbs.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.m_cmd_bao_cao_tong_hop.Caption = "Báo cáo tổng hợp";
+            this.m_cmd_bao_cao_tong_hop.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_bao_cao_tong_hop.Glyph")));
+            this.m_cmd_bao_cao_tong_hop.Id = 72;
+            this.m_cmd_bao_cao_tong_hop.Name = "m_cmd_bao_cao_tong_hop";
+            this.m_cmd_bao_cao_tong_hop.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // f388_main
@@ -1002,5 +1015,6 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_luong_hs_athk;
         private DevExpress.XtraBars.BarButtonItem m_cmd_chuyen_trang_thai_LD;
         private DevExpress.XtraBars.BarButtonItem m_cmd_ql_thuong_hsbs;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_bao_cao_tong_hop;
     }
 }

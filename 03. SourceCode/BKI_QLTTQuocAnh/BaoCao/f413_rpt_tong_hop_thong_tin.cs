@@ -13,18 +13,22 @@ using BKI_DichVuMatDat.DS;
 
 namespace BKI_DichVuMatDat.BaoCao
 {
+
     public partial class f413_rpt_tong_hop_thong_tin : Form
     {
+        #region Public Interface
         public f413_rpt_tong_hop_thong_tin()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Private Method
         private void load_data_2_grid()
         {
 
         }
-        private DS_RPT_THONG_TIN_TONG_HOP lay_danh_sach_nhan_vien_can_tong_hop_thong_tin() 
+        private DS_RPT_THONG_TIN_TONG_HOP lay_danh_sach_nhan_vien_can_tong_hop_thong_tin()
         {
             US_RPT_THONG_TIN_TONG_HOP v_us = new US_RPT_THONG_TIN_TONG_HOP();
             DS_RPT_THONG_TIN_TONG_HOP v_ds = new DS_RPT_THONG_TIN_TONG_HOP();
@@ -44,17 +48,21 @@ namespace BKI_DichVuMatDat.BaoCao
                 //B1: Tong hop thong tin 1 nhan vien
                 DataRow v_dr_thong_tin_tong_hop = CCommon.get_thong_tin_tong_hop_1_nhan_vien(v_id_nhan_vien, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
                 //
-              //  CCommon.insertLuongNV2RPT(v_dr_luong_1_nv);
+                CCommon.insertThongTinTongHopNV2RPT(v_dr_thong_tin_tong_hop);
                 ip_bgw.ReportProgress((i + 1) * 100 / ip_dt.Rows.Count);
             }
         }
+
+        #endregion
+
+        #region Event Handle
         private void m_bgwk_DoWork(object sender, DoWorkEventArgs e)
         {
             try
             {
                 BackgroundWorker worker = sender as BackgroundWorker;
                 var v_ds_nv_can_tong_hop = lay_danh_sach_nhan_vien_can_tong_hop_thong_tin();
-                tong_hop_bao_cao(v_ds_nv_can_tong_hop, worker); 
+                tong_hop_bao_cao(v_ds_nv_can_tong_hop, worker);
             }
             catch(Exception v_e)
             {
@@ -97,6 +105,11 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
+                if(m_bgwk.IsBusy)
+                {
+                    m_bgwk.CancelAsync();
+                    return;
+                }
                 this.m_prb.Visible = true;
                 m_bgwk.RunWorkerAsync();
             }
@@ -105,5 +118,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        #endregion
+        
     }
 }

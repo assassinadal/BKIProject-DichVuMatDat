@@ -239,6 +239,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_RPT_LUONG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_RPT_THONG_TIN_TONG_HOP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_RPT_THONG_TIN_TONG_HOP.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_DM_NHAN_VIEN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -723,6 +728,17 @@
     </None>
     <None Include="DS_RPT_LUONG.xss">
       <DependentUpon>DS_RPT_LUONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_THONG_TIN_TONG_HOP.xsc">
+      <DependentUpon>DS_RPT_THONG_TIN_TONG_HOP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_THONG_TIN_TONG_HOP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_RPT_THONG_TIN_TONG_HOP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_RPT_THONG_TIN_TONG_HOP.xss">
+      <DependentUpon>DS_RPT_THONG_TIN_TONG_HOP.xsd</DependentUpon>
     </None>
     <None Include="DS_V_DM_NHAN_VIEN.xsc">
       <DependentUpon>DS_V_DM_NHAN_VIEN.xsd</DependentUpon>

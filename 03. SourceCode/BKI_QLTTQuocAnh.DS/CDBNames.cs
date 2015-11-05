@@ -710,4 +710,31 @@ namespace BKI_DichVuMatDat.DS.CDBNames
 
     #endregion
 
+    public class RPT_THONG_TIN_TONG_HOP
+    {
+        public const string ID = "ID";
+        public const string THANG = "THANG";
+        public const string NAM = "NAM";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string MA_NV = "MA_NV";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string HO_VA_TEN = "HO_VA_TEN";
+        public const string TEN_CHUC_VU = "TEN_CHUC_VU";
+        public const string TEN_HOP_DONG = "TEN_HOP_DONG";
+        public const string LUONG_CHE_DO_THEO_CHUC_VU = "LUONG_CHE_DO_THEO_CHUC_VU";
+        public const string HS_LUONG_NANG_SUAT_DUOC_HUONG = "HS_LUONG_NANG_SUAT_DUOC_HUONG";
+        public const string TAI_KHOAN = "TAI_KHOAN";
+        public const string CHAM_CONG_X = "CHAM_CONG_X";
+        public const string CHAM_CONG_OM_CO = "CHAM_CONG_OM_CO";
+        public const string CHAM_CONG_TS = "CHAM_CONG_TS";
+        public const string CHAM_CONG_TNLD = "CHAM_CONG_TNLD";
+        public const string CHAM_CONG_PHEP_DIDUONG = "CHAM_CONG_PHEP_DIDUONG";
+        public const string CHAM_CONG_RO_KO_DC = "CHAM_CONG_RO_KO_DC";
+        public const string CHAM_CONG_KHAC = "CHAM_CONG_KHAC";
+    }
+
+
+
+
 }

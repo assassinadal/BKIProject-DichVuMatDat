@@ -28,7 +28,7 @@ namespace BKI_DichVuMatDat
 
         static void ip_grv_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
-            if (e.IsGetData)
+            if(e.IsGetData)
                 e.Value = e.ListSourceRowIndex + 1;
         }
 
@@ -49,7 +49,7 @@ namespace BKI_DichVuMatDat
 
             DataRow[] v_dr = v_ds.GD_CHOT_BANG_LUONG.Select(v_str_filter);
 
-            if (v_dr.Count() == 0)
+            if(v_dr.Count() == 0)
             {
                 return false;
             }
@@ -69,7 +69,7 @@ namespace BKI_DichVuMatDat
 
             DataRow[] v_dr = v_ds.GD_CHOT_BANG_LUONG.Select(v_str_filter);
 
-            if (v_dr.Count() == 0)
+            if(v_dr.Count() == 0)
             {
                 return false;
             }
@@ -89,7 +89,15 @@ namespace BKI_DichVuMatDat
             DataRow v_dr = v_ds.Tables[0].Rows[0];
             return v_dr;
         }
-
+        public static DataRow get_thong_tin_tong_hop_1_nhan_vien(decimal ip_dc_id_nhan_vien, int ip_int_thang, int ip_int_nam)
+        {
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillThongTinTongHopNhanVien(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
+            DataRow v_dr = v_ds.Tables[0].Rows[0];
+            return v_dr;
+        }
         public static DataRow get_dr(DataRow ip_dr_luong_nv, DataRow ip_dr_luong, decimal ip_id_nv, int ip_index, int ip_thang, int ip_nam)
         {
             ip_dr_luong_nv[RPT_LUONG.ID] = ip_index;
@@ -151,14 +159,41 @@ namespace BKI_DichVuMatDat
             v_us.dcTRUY_LINH = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.TRUY_LINH].ToString());
             v_us.dcTRUY_THU = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.TRUY_THU].ToString());
         }
-
+        public static void DataRow2USThongTinTongHop(DataRow v_dr_luong_1_nv, US_RPT_THONG_TIN_TONG_HOP v_us)
+        {
+            v_us.dcID = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.ID].ToString());
+            v_us.dcTHANG = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.THANG].ToString());
+            v_us.dcNAM = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.NAM].ToString());
+            v_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.ID_NHAN_VIEN].ToString());
+            v_us.strMA_NV = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.MA_NV].ToString();
+            v_us.strHO_DEM = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.HO_DEM].ToString();
+            v_us.strTEN = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.TEN].ToString();
+            v_us.strHO_VA_TEN =  v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.HO_VA_TEN].ToString();
+            v_us.strTEN_CHUC_VU = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.TEN_CHUC_VU].ToString();
+            v_us.strTEN_HOP_DONG = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.TEN_HOP_DONG].ToString();
+            v_us.dcLUONG_CHE_DO_THEO_CHUC_VU = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.LUONG_CHE_DO_THEO_CHUC_VU].ToString());
+            v_us.dcHS_LUONG_NANG_SUAT_DUOC_HUONG = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.HS_LUONG_NANG_SUAT_DUOC_HUONG].ToString());
+            v_us.strTAI_KHOAN = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.TAI_KHOAN].ToString();
+            v_us.dcCHAM_CONG_X = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_X].ToString());
+            v_us.dcCHAM_CONG_OM_CO = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_OM_CO].ToString());
+            v_us.dcCHAM_CONG_TS = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_TS].ToString());
+            v_us.dcCHAM_CONG_TNLD = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_TNLD].ToString());
+            v_us.dcCHAM_CONG_PHEP_DIDUONG = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_PHEP_DIDUONG].ToString());
+            v_us.dcCHAM_CONG_RO_KO_DC = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_RO_KO_DC].ToString());
+            v_us.dcCHAM_CONG_KHAC = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_KHAC].ToString());
+        }
         public static void insertLuongNV2RPT(DataRow v_dr_luong_1_nv)
         {
             US_RPT_LUONG v_us = new US_RPT_LUONG();
             DataRow2US(v_dr_luong_1_nv, v_us);
             v_us.Insert();
         }
-
+        public static void insertThongTinTongHopNV2RPT(DataRow v_dr_luong_1_nv)
+        {
+            US_RPT_THONG_TIN_TONG_HOP v_us = new US_RPT_THONG_TIN_TONG_HOP();
+            DataRow2USThongTinTongHop(v_dr_luong_1_nv, v_us);
+            v_us.Insert();
+        }
         public static void update_luong_1NV_2_rpt(int ip_id_rpt_luong, DataRow v_dr_luong_1_nv)
         {
             US_RPT_LUONG v_us = new US_RPT_LUONG(ip_id_rpt_luong);

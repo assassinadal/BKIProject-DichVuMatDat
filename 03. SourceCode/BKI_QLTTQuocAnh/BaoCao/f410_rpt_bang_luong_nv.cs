@@ -308,7 +308,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 }
                 else
                 {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Bảng lương tháng " + m_txt_thang.Text.Trim() + " năm " + m_txt_nam.Text.Trim() + " đã được chốt rồi", "THÔNG BÁO");
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Bảng lương tháng " + m_txt_thang.Text.Trim() + " năm " + m_txt_nam.Text.Trim() + " đã được chốt", "THÔNG BÁO");
                     return;
                 }
             }

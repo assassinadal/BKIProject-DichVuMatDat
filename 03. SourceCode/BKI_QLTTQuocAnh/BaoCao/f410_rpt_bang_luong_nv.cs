@@ -50,15 +50,30 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
-                US_RPT_LUONG v_us = new US_RPT_LUONG();
-                DS_RPT_LUONG v_ds = new DS_RPT_LUONG();
-                v_us.Get_tat_ca_nhan_vien_can_tinh_luong(v_ds, CIPConvert.ToDecimal(m_txt_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_nam.Text.Trim()));
-                get_bang_luong_tat_ca_nhan_vien(v_ds.Tables[0], ip_bgw);
+                if (!checkChotBangLuong())
+                {
+                    US_RPT_LUONG v_us = new US_RPT_LUONG();
+                    DS_RPT_LUONG v_ds = new DS_RPT_LUONG();
+                    v_us.Get_tat_ca_nhan_vien_can_tinh_luong(v_ds, CIPConvert.ToDecimal(m_txt_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_nam.Text.Trim()));
+                    get_bang_luong_tat_ca_nhan_vien(v_ds.Tables[0], ip_bgw);
+                }
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private bool checkChotBangLuong()
+        {
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            DataSet v_ds = new DataSet();
+            v_us.FillDatasetWithQuery(v_ds, "select * from gd_chot_bang_luong where thang = "+ m_txt_thang.Text.Trim() +"and nam =" + m_txt_nam.Text.Trim());
+            if (v_ds.Tables[0].Rows.Count == 0)
+            {
+                return false;
+            }
+            else return true;
         }
 
         private void get_bang_luong_tat_ca_nhan_vien(DataTable ip_dt, BackgroundWorker ip_bgw)

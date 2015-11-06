@@ -87,6 +87,7 @@ namespace BKI_DichVuMatDat.BaoCao
             try
             {
                 this.m_prb.Visible = false;
+                this.m_panel.Visible = false;
                 load_data_2_grid();
             }
             catch(Exception v_e)
@@ -100,6 +101,7 @@ namespace BKI_DichVuMatDat.BaoCao
             try
             {
                 m_prb.Visible = false;
+                this.m_panel.Visible = false;
             }
             catch(Exception v_e)
             {
@@ -117,6 +119,7 @@ namespace BKI_DichVuMatDat.BaoCao
                     return;
                 }
                 this.m_prb.Visible = true;
+                this.m_panel.Visible = true;
                 m_bgwk.RunWorkerAsync();
             }
             catch(Exception v_e)

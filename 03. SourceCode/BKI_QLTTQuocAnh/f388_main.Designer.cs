@@ -118,8 +118,9 @@
             // 
             // ribbon
             // 
-            this.ribbon.ApplicationIcon = global::BKI_DichVuMatDat.Properties.Resources.Logo_luyen_thi_V4_0;
+            this.ribbon.ApplicationIcon = global::BKI_DichVuMatDat.Properties.Resources.paper133_1_;
             this.ribbon.AutoSizeItems = true;
+            this.ribbon.BackColor = System.Drawing.Color.White;
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {

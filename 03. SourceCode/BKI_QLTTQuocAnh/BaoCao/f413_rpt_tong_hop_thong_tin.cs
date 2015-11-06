@@ -26,6 +26,7 @@ namespace BKI_DichVuMatDat.BaoCao
         #region Private Method
         private void load_data_2_grid()
         {
+            CCommon.make_stt(m_adv_tong_hop);
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
@@ -142,6 +143,11 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
     }

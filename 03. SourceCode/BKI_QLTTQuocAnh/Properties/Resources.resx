@@ -118,250 +118,259 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="1425906098_24333" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425906098_24333.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425912499_173055" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425912499_173055.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425904832_45433" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425904832_45433.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425904874_448241" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425904874_448241.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425905405_243979" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425905405_243979.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425904521_438788" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425904521_438788.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo-web" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo-web.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425905897_25350" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425905897_25350.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425905213_379332" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425905213_379332.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1441439378_06" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1441439378_06.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425904625_416404" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425904625_416404.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon user " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon user .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Aha-Soft-Security-Secrecy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aha-Soft-Security-Secrecy.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425904406_289616" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425904406_289616.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon phan quyen " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon phan quyen .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Ampeross-Qetto-2-Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ampeross-Qetto-2-Settings.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425904361_23923" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425904361_23923.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Designbolts-Monsters-University-Monsters-Character-Young-Mikes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Designbolts-Monsters-University-Monsters-Character-Young-Mikes.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Custom-Icon-Design-Pretty-Office-2-Man" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Custom-Icon-Design-Pretty-Office-2-Man.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icons8-Ios7-Household-Room" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icons8-Ios7-Household-Room.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hopstarter-Soft-Scraps-User-Group" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hopstarter-Soft-Scraps-User-Group.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1441820884_coin-delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1441820884_coin-delete.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1444999351_banker" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1444999351_banker.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icons8-Windows-8-Users-Enter-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icons8-Windows-8-Users-Enter-2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425904521_4387881" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425904521_4387881.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Benjigarner-Softdimension-Excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Benjigarner-Softdimension-Excel.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hopstarter-Sleek-Xp-Basic-Close-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hopstarter-Sleek-Xp-Basic-Close-2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1441820610_23" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1441820610_23.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425906136_315167" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425906136_315167.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425906224_17014" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425906224_17014.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="paper-plane(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paper-plane(1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icons8-Ios7-Household-Room1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icons8-Ios7-Household-Room1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1425905865_103845" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425905865_103845.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logo luyen thi V4.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo luyen thi V4.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon doi password " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon doi password .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425904874_44824" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425904874_44824.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Designbolts-Monsters-University-Monsters-Character-Young-Mikes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Designbolts-Monsters-University-Monsters-Character-Young-Mikes1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon nhom nhan vien" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon nhom nhan vien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425904783_54524" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425904783_54524.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hopstarter-Soft-Scraps-User-Group1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hopstarter-Soft-Scraps-User-Group1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon backup" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon backup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425905897_253501" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425905897_253501.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1425905592_196740" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425905592_196740.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icon backup1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon backup1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon bang luong nv " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon bang luong nv .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon bang luong theo don vi " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon bang luong theo don vi .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Hopstarter-Soft-Scraps-User-Group" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hopstarter-Soft-Scraps-User-Group.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425904361_23923" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425904361_23923.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo luyen thi V4.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo luyen thi V4.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon user 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon user 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1444999351_banker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1444999351_banker.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon bao hiem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon bao hiem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon cac thang da chot bang luong " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon cac thang da chot bang luong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1425912499_173055" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425912499_173055.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon cham cong tu excel " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon cham cong tu excel .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon cham cong" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon cham cong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon chuyen trang thai lao dong " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon chuyen trang thai lao dong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon dat he so LNS " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon dat he so LNS .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon doi password 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon doi password 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon don vi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon don vi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon exit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon exit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1425905865_103845" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425905865_103845.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon he so bo sung " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon he so bo sung .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon he so chat luong xlsx " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon he so chat luong xlsx .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon he so chat luong" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon he so chat luong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon he so luong " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon he so luong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon lap hop dong " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon lap hop dong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon len luong cho nhan vien" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon len luong cho nhan vien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon loai hop dong " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon loai hop dong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1425904521_4387881" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425904521_4387881.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon loai lao dong " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon loai lao dong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon loai ngay cong " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon loai ngay cong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon len luong cho nhan vien" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon len luong cho nhan vien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon dat he so LNS " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon dat he so LNS .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hopstarter-Soft-Scraps-User-Group1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hopstarter-Soft-Scraps-User-Group1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon cac thang da chot bang luong " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon cac thang da chot bang luong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Designbolts-Monsters-University-Monsters-Character-Young-Mikes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Designbolts-Monsters-University-Monsters-Character-Young-Mikes1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon doi password " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon doi password .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425905405_243979" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425905405_243979.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon luong che do " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon luong che do .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon nhan vien ko bao hiem" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon nhan vien ko bao hiem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon loai ngay cong " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon loai ngay cong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon nhan vien" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon nhan vien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo-web" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo-web.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon nhom nhan vien1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon nhom nhan vien1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon cham cong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon cham cong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon phan quyen 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon phan quyen 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Aha-Soft-Security-Secrecy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Aha-Soft-Security-Secrecy.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon phu cap " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon phu cap .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon cham cong tu excel " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon cham cong tu excel .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425906224_17014" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425906224_17014.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="paper133" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paper133.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon bang luong nv " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon bang luong nv .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425904406_289616" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425904406_289616.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon quan ly luong cung " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon quan ly luong cung .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon quan ly quyet dinh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon quan ly quyet dinh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon lap hop dong " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon lap hop dong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Custom-Icon-Design-Pretty-Office-2-Man" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Custom-Icon-Design-Pretty-Office-2-Man.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon quan ly thu nhap khac " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon quan ly thu nhap khac .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon quan ly thu nhap khac xlsx" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon quan ly thu nhap khac xlsx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon thong ke nhan su theo don vi " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon thong ke nhan su theo don vi .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon quan ly thuong theo he so " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon quan ly thuong theo he so .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1441820884_coin-delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1441820884_coin-delete.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon quan ly vi tri cong tac " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon quan ly vi tri cong tac .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icons8-Ios7-Household-Room" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icons8-Ios7-Household-Room.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon quyet toan thue nam " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon quyet toan thue nam .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1425905897_25350" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425905897_25350.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425904874_448241" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425904874_448241.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon doi password 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon doi password 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon phu cap " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon phu cap .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon phan quyen " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon phan quyen .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon exit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon exit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425904783_54524" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425904783_54524.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425904874_44824" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425904874_44824.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon nhan vien ko bao hiem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon nhan vien ko bao hiem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon tham so " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon tham so .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon thong ke nhan su theo don vi " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon thong ke nhan su theo don vi .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ampeross-Qetto-2-Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ampeross-Qetto-2-Settings.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon quan ly quyet dinh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon quan ly quyet dinh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Benjigarner-Softdimension-Excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Benjigarner-Softdimension-Excel.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon he so chat luong xlsx " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon he so chat luong xlsx .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon thong ke tong hop " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon thong ke tong hop .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Hopstarter-Sleek-Xp-Basic-Close-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hopstarter-Sleek-Xp-Basic-Close-2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon nhan vien" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon nhan vien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425904832_45433" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425904832_45433.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon chuyen trang thai lao dong " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon chuyen trang thai lao dong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon he so chat luong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon he so chat luong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon nhom nhan vien1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon nhom nhan vien1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Designbolts-Monsters-University-Monsters-Character-Young-Mikes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Designbolts-Monsters-University-Monsters-Character-Young-Mikes.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon quan ly vi tri cong tac " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon quan ly vi tri cong tac .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon user " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon user .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon nhom nhan vien" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon nhom nhan vien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icons8-Windows-8-Users-Enter-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icons8-Windows-8-Users-Enter-2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon quan ly thuong theo he so " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon quan ly thuong theo he so .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon thue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon thue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon user 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon user 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1441820610_23" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1441820610_23.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon don vi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon don vi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425905213_379332" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425905213_379332.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425904521_438788" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425904521_438788.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1441439378_06" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1441439378_06.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon quyet toan thue nam " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon quyet toan thue nam .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon loai hop dong " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon loai hop dong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon he so luong " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon he so luong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon backup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon backup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon quan ly thu nhap khac xlsx" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon quan ly thu nhap khac xlsx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon phan quyen 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon phan quyen 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425904625_416404" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425904625_416404.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425906136_315167" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425906136_315167.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425906098_24333" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425906098_24333.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425905592_196740" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425905592_196740.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425905897_253501" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425905897_253501.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="paper133(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paper133(1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

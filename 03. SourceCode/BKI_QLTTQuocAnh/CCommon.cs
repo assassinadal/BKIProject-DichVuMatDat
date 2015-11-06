@@ -171,8 +171,8 @@ namespace BKI_DichVuMatDat
             v_us.strHO_VA_TEN =  v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.HO_VA_TEN].ToString();
             v_us.strTEN_CHUC_VU = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.TEN_CHUC_VU].ToString();
             v_us.strTEN_HOP_DONG = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.TEN_HOP_DONG].ToString();
-            v_us.dcLUONG_CHE_DO_THEO_CHUC_VU = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.LUONG_CHE_DO_THEO_CHUC_VU].ToString());
-            v_us.dcHS_LUONG_NANG_SUAT_DUOC_HUONG = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.HS_LUONG_NANG_SUAT_DUOC_HUONG].ToString());
+            v_us.dcLUONG_CHE_DO_THEO_CHUC_VU = (decimal)v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.LUONG_CHE_DO_THEO_CHUC_VU];
+            v_us.dcHS_LUONG_NANG_SUAT_DUOC_HUONG = (decimal)v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.HS_LUONG_NANG_SUAT_DUOC_HUONG];
             v_us.strTAI_KHOAN = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.TAI_KHOAN].ToString();
             v_us.dcCHAM_CONG_X = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_X].ToString());
             v_us.dcCHAM_CONG_OM_CO = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_OM_CO].ToString());

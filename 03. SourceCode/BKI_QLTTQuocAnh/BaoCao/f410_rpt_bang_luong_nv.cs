@@ -219,16 +219,38 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void insert_hs_hs_bs_hs_anhk(decimal ip_dc_thang, decimal ip_dc_nam)
         {
-            US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG v_us = new US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG();
+            US_DUNG_CHUNG v_us_dung_chung = new US_DUNG_CHUNG();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us_dung_chung.FillDatasetWithQuery(v_ds, "SELECT DISTINCT * FROM V_RPT_LUONG WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim());
+            m_grc.DataSource = v_ds.Tables[0];
 
             try
             {
-                v_us.insert_data_by_proc(ip_dc_thang, ip_dc_nam);
+                for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
+                {
+                    decimal v_id_nv = CIPConvert.ToDecimal(v_ds.Tables[0].Rows[i]["ID_NHAN_VIEN"].ToString());
+                    US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG v_us = new US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG();
+
+                    try
+                    {
+
+                        v_us.BeginTransaction();
+                        v_us.insert_data_by_proc(v_id_nv, ip_dc_thang, ip_dc_nam);
+
+                        v_us.CommitTransaction();
+                    }
+                    catch (Exception v_e)
+                    {
+                        v_us.Rollback();
+                        throw v_e;
+                    }
+                }
                 DevExpress.XtraEditors.XtraMessageBox.Show("Thành công!!!", "THÔNG BÁO");
             }
-            catch (Exception v_e)
+            catch (Exception v_e_for)
             {
-                throw v_e;
+                throw v_e_for;
             }
         }
         #endregion

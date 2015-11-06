@@ -227,11 +227,12 @@ namespace BKI_DichVuMatDat.US
         }
         #endregion
 
-        public void insert_data_by_proc(decimal ip_dc_thang, decimal ip_dc_nam)
+        public void insert_data_by_proc(decimal ip_dc_id_nv, decimal ip_dc_thang, decimal ip_dc_nam)
         {
             //BeginTransaction();
             CStoredProc v_cstore = new CStoredProc("PR_GET_ALL_HS_BS_ATHK");
 
+            v_cstore.addDecimalInputParam("@IP_DC_ID_NV", ip_dc_id_nv);
             v_cstore.addDecimalInputParam("@IP_THANG", ip_dc_thang);
             v_cstore.addDecimalInputParam("@IP_NAM", ip_dc_nam);
             v_cstore.ExecuteCommand(this);

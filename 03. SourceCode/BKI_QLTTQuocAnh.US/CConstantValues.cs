@@ -23,15 +23,21 @@ namespace BKI_DichVuMatDat.US {
         public const decimal HOP_DONG_KHONG_XAC_DINH = 8;
     }
 
+    public class CONST_ID_LUONG_CUNG_HSLNS_LCD
+    {
+        public const decimal MA_LUONG_CUNG_LCD = 690;
+        public const decimal MUC_LUONG_CUNG_LCD = 135;
+
+        public const decimal MA_LUONG_CUNG_HS_LNS = 631;
+        public const decimal MUC_LUONG_CUNG_HS_LNS = 113;
+    }
+
     public class CONST_TIEN_TO_SO_PHIEU {
         public const string PHAI_THU = "PT-";
         public const string THUC_THU = "TT-";
         public const string GIAM_TRU = "GT-";
     }
-    public class CONST_ID_TRANG_THAI_HOC_SINH {
-        public const decimal DA_NGHI = 84;
-            public const decimal DANG_HOC = 83;
-    }
+    
     public class CONST_ID_LOAI_DOI_TUONG {
         public const decimal ID_HOC_SINH = 18;
         public const decimal ID_GIAO_VIEN = 19;

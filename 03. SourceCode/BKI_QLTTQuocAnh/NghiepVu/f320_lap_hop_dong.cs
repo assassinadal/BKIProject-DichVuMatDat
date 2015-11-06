@@ -1024,7 +1024,12 @@ namespace BKI_DichVuMatDat.NghiepVu
                 if (CIPConvert.ToDecimal(m_sle_loai_hop_dong.EditValue) == CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
                 {
                     m_gr_LNS.Enabled = false;
+                    m_sle_chuc_danh_lcd.EditValue = CONST_ID_LUONG_CUNG_HSLNS_LCD.MA_LUONG_CUNG_LCD;
+                    m_sle_muc_lcd.EditValue = CONST_ID_LUONG_CUNG_HSLNS_LCD.MUC_LUONG_CUNG_LCD;
+
                     m_gr_LCD.Enabled = false;
+                    m_sle_chuc_danh_lns.EditValue = CONST_ID_LUONG_CUNG_HSLNS_LCD.MA_LUONG_CUNG_HS_LNS;
+                    m_sle_muc_lns.EditValue = CONST_ID_LUONG_CUNG_HSLNS_LCD.MUC_LUONG_CUNG_HS_LNS;
                     m_loai_hop_dong = 0;
                 }
                 else

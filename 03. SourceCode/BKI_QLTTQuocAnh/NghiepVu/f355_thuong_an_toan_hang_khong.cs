@@ -14,6 +14,7 @@ using DevExpress.XtraSplashScreen;
 using BKI_DichVuMatDat.BaoCao;
 using DevExpress.XtraEditors.Popup;
 using DevExpress.Utils.Win;
+using IP.Core.IPSystemAdmin;
 namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class f355_thuong_an_toan_hang_khong : Form
@@ -188,29 +189,116 @@ namespace BKI_DichVuMatDat.NghiepVu
             ref_us.dcID_CACH_TINH_THUE = CONST_ID_CACH_TINH_THUE.THUE_THANG;
             ref_us.dcID_LOAI_THU_NHAP_KHAC = CONST_ID_LOAI_THU_NHAP_KHAC.LINH_CO_THUE;
         }
+        private void data_row_2_us(DataRow dr, ref US_GD_TIEN_THUONG_NHAN_VIEN ref_us)
+        {
+            ref_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(dr["ID_NHAN_VIEN"].ToString());
+            ref_us.dcSO_TIEN = CIPConvert.ToDecimal(dr["SO_TIEN_THUONG_NV"].ToString());
+            ref_us.dcTHANG = m_dat_thang_thuong.DateTime.Month;
+            ref_us.dcNAM = m_dat_thang_thuong.DateTime.Year;
+            ref_us.dcID_LOAI_TIEN_THUONG = CONST_ID_TIEN_THUONG.THUONG_ATHK;
+            ref_us.strDA_XOA = "N";
+        }
+        private void luu_so_tien_vao_quy_tien(US_GD_THU_NHAP_KHAC ip_trans_of_us)
+        {
+            US_GD_QUY_TIEN_THUONG v_us_quy_tien_thuong = new US_GD_QUY_TIEN_THUONG();
+            //xoa_quy_tien_hs_bs_trong_nam();
+            try
+            {
+                v_us_quy_tien_thuong.dcSO_TIEN = CIPConvert.ToDecimal(m_txt_so_tien.EditValue);
+                v_us_quy_tien_thuong.strTHANG = m_dat_thang_thuong.DateTime.Month.ToString();
+                v_us_quy_tien_thuong.strNAM = m_dat_thang_thuong.DateTime.Year.ToString();
+                v_us_quy_tien_thuong.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
+                v_us_quy_tien_thuong.dcID_LOAI_QUY_TIEN = CONST_ID_TIEN_THUONG.THUONG_ATHK;
+                v_us_quy_tien_thuong.strDA_XOA = "N";
+                v_us_quy_tien_thuong.UseTransOfUSObject(ip_trans_of_us);
+                v_us_quy_tien_thuong.Insert();
+            }
+            catch(Exception v_e)
+            {
+                throw v_e;
+            }
+        }
+        private void luu_thang_da_giam_tru(US_GD_THU_NHAP_KHAC ip_trans_of_us)
+        {
+            US_GD_THANG_DA_GIAM_TRU v_us_thang_da_giam_tru = new US_GD_THANG_DA_GIAM_TRU();
+            try
+            {
+                v_us_thang_da_giam_tru.strTHANG = m_dat_thang_thuong.DateTime.Month.ToString();
+                v_us_thang_da_giam_tru.strNAM = m_dat_thang_thuong.DateTime.Year.ToString();
+                v_us_thang_da_giam_tru.strGIAM_TRU_YN = "Y";
+                v_us_thang_da_giam_tru.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
+                v_us_thang_da_giam_tru.datNGAY_LAP = DateTime.Now.Date;
+                v_us_thang_da_giam_tru.strDA_XOA = "N";
+                v_us_thang_da_giam_tru.UseTransOfUSObject(ip_trans_of_us);
+                v_us_thang_da_giam_tru.Insert();
+            }
+            catch(Exception v_e)
+            {
+                throw v_e;
+            }
+        }
+        private void luu_so_tien_sau_thue_vao_gd_tien_thuong(DataSet ip_ds)
+        {
+            for(int i = 0; i < ip_ds.Tables[0].Rows.Count; i++)
+            {
+                US_GD_TIEN_THUONG_NHAN_VIEN v_us_tien_thuong_nv = new US_GD_TIEN_THUONG_NHAN_VIEN();
+                v_us_tien_thuong_nv.dcID_NHAN_VIEN = CIPConvert.ToDecimal(ip_ds.Tables[0].Rows[i]["ID_NHAN_VIEN"]);
+                v_us_tien_thuong_nv.dcSO_TIEN = CIPConvert.ToDecimal(ip_ds.Tables[0].Rows[i]["SO_TIEN_SAU_TINH_THUE"]);
+                v_us_tien_thuong_nv.dcTHANG = CIPConvert.ToDecimal(DateTime.Now.Month.ToString());
+                v_us_tien_thuong_nv.dcNAM = CIPConvert.ToDecimal(ip_ds.Tables[0].Rows[i]["NAM"]);
+                v_us_tien_thuong_nv.dcID_LOAI_TIEN_THUONG = CONST_ID_TIEN_THUONG.THUONG_HS_BS;
+                //nguoi lap
+                v_us_tien_thuong_nv.datNGAY_LAP = DateTime.Now.Date;
+                //nguoi sua 
+                //ngay sua
+                v_us_tien_thuong_nv.strDA_XOA = "N";
+                v_us_tien_thuong_nv.Insert();
+            }
+        }
         private void save_data()
         {
-            if (m_grv_luong_thuong.RowCount <= 0)
+            try
             {
-                return;
-            }
-            //B1: GetList Object to insert
-            SplashScreenManager.ShowForm(typeof(F_wait_form));
-            US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
-            v_us.BeginTransaction();
-            for (int rowHandle = 0; rowHandle < m_grv_luong_thuong.RowCount; rowHandle++)
-            {
-                var dr = m_grv_luong_thuong.GetDataRow(rowHandle);
-                data_row_2_us(dr, ref v_us);
-                if (v_us.dcSO_TIEN > 0)
+                if(m_grv_luong_thuong.RowCount <= 0)
                 {
-                    v_us.Insert();
+                    return;
                 }
-                v_us.ClearAllFields();
+                //B1: GetList Object to insert
+                SplashScreenManager.ShowForm(typeof(F_wait_form));
+                US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
+                US_GD_TIEN_THUONG_NHAN_VIEN v_us_tien_thuong_nv = new US_GD_TIEN_THUONG_NHAN_VIEN();
+                v_us.BeginTransaction();
+                
+                luu_so_tien_vao_quy_tien(v_us);
+                if(m_chk_giam_tru.Checked == true)
+                {
+                    luu_thang_da_giam_tru(v_us);
+                }
+                for(int rowHandle = 0; rowHandle < m_grv_luong_thuong.RowCount; rowHandle++)
+                {
+                    var dr = m_grv_luong_thuong.GetDataRow(rowHandle);
+                    data_row_2_us(dr, ref v_us);
+                    data_row_2_us(dr, ref v_us_tien_thuong_nv);
+                    if(v_us.dcSO_TIEN > 0)
+                    {
+                        v_us.Insert();
+                        v_us_tien_thuong_nv.UseTransOfUSObject(v_us);
+                        v_us_tien_thuong_nv.Insert();
+                    }
+                    v_us.ClearAllFields();
+                }
+                v_us.CommitTransaction();
+                SplashScreenManager.CloseForm();
+                DevExpress.XtraEditors.XtraMessageBox.Show("Lưu dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            v_us.CommitTransaction();
-            SplashScreenManager.CloseForm();
-            DevExpress.XtraEditors.XtraMessageBox.Show("Lưu dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm();
+            }
         }
         #endregion
 

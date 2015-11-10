@@ -362,6 +362,17 @@ namespace BKI_DichVuMatDat
 
     public class US_DUNG_CHUNG : US_Object
     {
+        public bool IsDaChotBangLuongThang(decimal ip_i_thang, decimal ip_i_nam)
+        {
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            this.FillDatasetWithQuery(v_ds, "select * from gd_chot_bang_luong where thang = " + ip_i_thang.ToString() + "and nam =" + ip_i_nam.ToString());
+            if(v_ds.Tables[0].Rows.Count == 0)
+            {
+                return false;
+            }
+            else return true;
+        }
         public void FillDatasetWithProc(DataSet op_ds, string ip_str_table_name, string ip_str_column_name)
         {
             CStoredProc v_cstore = new CStoredProc("get_data_to_dataset_with_table_name_and_column_name");

@@ -63,7 +63,7 @@ namespace BKI_DichVuMatDat.BaoCao
             hien_thi_thong_tin_qtr_tinh_luong();
         }
 
-        
+
         private void load_data_2_grid()
         {
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
@@ -93,7 +93,7 @@ namespace BKI_DichVuMatDat.BaoCao
             US_DUNG_CHUNG v_us_dung_chung = new US_DUNG_CHUNG();
             return v_us_dung_chung.IsDaChotBangLuongThang(
                                     CIPConvert.ToDecimal(m_txt_thang.EditValue)
-                                    , CIPConvert.ToDecimal( m_txt_nam.EditValue));
+                                    , CIPConvert.ToDecimal(m_txt_nam.EditValue));
         }
 
         private void tinh_bang_luong_tat_ca_nhan_vien(DataTable ip_dt, BackgroundWorker ip_bgw)
@@ -226,28 +226,30 @@ namespace BKI_DichVuMatDat.BaoCao
             ip_us_gd_chot_bang_luong.Insert();
         }
 
-        private void insert_hs_hs_bs_hs_anhk(US_GD_CHOT_BANG_LUONG ip_us_of_trans, decimal ip_dc_thang, decimal ip_dc_nam)
+        private void insert_hs_hs_bs_hs_anhk(decimal ip_dc_thang, decimal ip_dc_nam)
         {
             US_DUNG_CHUNG v_us_dung_chung = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us_dung_chung.FillDatasetWithQuery(v_ds, "SELECT DISTINCT * FROM V_RPT_LUONG WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim());
-            m_grc.DataSource = v_ds.Tables[0];
+            v_us_dung_chung.FillDatasetNhanVienCanInsertHeSo(v_ds, ip_dc_thang, ip_dc_nam);
+            //v_us_dung_chung.FillDatasetWithQuery(v_ds, "SELECT DISTINCT * FROM V_RPT_LUONG WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim());
+
+            //m_grc.DataSource = v_ds.Tables[0];
 
             for(int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
             {
                 decimal v_id_nv = CIPConvert.ToDecimal(v_ds.Tables[0].Rows[i]["ID_NHAN_VIEN"].ToString());
                 US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG v_us = new US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG();
 
-                v_us.UseTransOfUSObject(ip_us_of_trans);
                 v_us.insert_data_by_proc(v_id_nv, ip_dc_thang, ip_dc_nam);
             }
             DevExpress.XtraEditors.XtraMessageBox.Show("Thành công!!!", "THÔNG BÁO");
+            load_data_2_grid();
         }
 
         private bool is_valide_data_input()
         {
-            if((decimal) m_txt_thang.EditValue == 0 || (decimal) m_txt_nam.EditValue == 0)
+            if((decimal)m_txt_thang.EditValue == 0 || (decimal)m_txt_nam.EditValue == 0)
             {
                 XtraMessageBox.Show("Hoàn thiện dữ liệu trước", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -256,7 +258,7 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         private void start_tinh_luong_process()
         {
-            
+
             if(m_bgwk.IsBusy)
             {
                 m_bgwk.CancelAsync();
@@ -305,28 +307,16 @@ namespace BKI_DichVuMatDat.BaoCao
             if(!check_gd_chot_bang_luong_is_exist())
             {
                 US_GD_CHOT_BANG_LUONG v_us_gd_chot_bang_luong = new US_GD_CHOT_BANG_LUONG();
-                try
-                {
-                    v_us_gd_chot_bang_luong.BeginTransaction();
-                    insert_gd_bang_luong(v_us_gd_chot_bang_luong);
-                    //them dl vao bang hs bo sung, hs an toan hk
-                    insert_hs_hs_bs_hs_anhk(v_us_gd_chot_bang_luong, CIPConvert.ToDecimal(m_txt_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_nam.Text.Trim()));
-                    v_us_gd_chot_bang_luong.CommitTransaction();
-                }
-                catch(Exception)
-                {
-                    if(v_us_gd_chot_bang_luong.is_having_transaction())
-                    {
-                        v_us_gd_chot_bang_luong.Rollback();
-                    }
-                    throw;
-                }
+                insert_gd_bang_luong(v_us_gd_chot_bang_luong);
+                //them dl vao bang hs bo sung, hs an toan hk
+                //insert_hs_hs_bs_hs_anhk(CIPConvert.ToDecimal(m_txt_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_nam.Text.Trim()));
             }
-            else
-            {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bảng lương tháng " + m_txt_thang.Text.Trim() + " năm " + m_txt_nam.Text.Trim() + " đã được chốt rồi", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            insert_hs_hs_bs_hs_anhk(CIPConvert.ToDecimal(m_txt_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_nam.Text.Trim()));
+            //else
+            //{
+            //    DevExpress.XtraEditors.XtraMessageBox.Show("Bảng lương tháng " + m_txt_thang.Text.Trim() + " năm " + m_txt_nam.Text.Trim() + " đã được chốt rồi", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
         }
         private void tinh_toan_qtr_tinh_luong(out decimal op_dc_sl_nv_can_tinh, out decimal op_dc_sl_nv_da_tinh)
         {
@@ -364,7 +354,7 @@ namespace BKI_DichVuMatDat.BaoCao
         {
 
         }
-    
+
         private void m_cmd_bang_luong_Click(object sender, EventArgs e)
         {
             try
@@ -404,7 +394,7 @@ namespace BKI_DichVuMatDat.BaoCao
             }
         }
 
-        
+
 
         private void f410_rpt_bang_luong_nv_Load(object sender, EventArgs e)
         {
@@ -429,7 +419,7 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 throw;
             }
-            
+
         }
 
         private void m_cmd_chot_bang_luong_Click(object sender, EventArgs e)
@@ -440,7 +430,7 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             catch(Exception v_e)
             {
-                CSystemLog_301.ExceptionHandle(v_e);
+                XtraMessageBox.Show("Có lỗi hoặc mất mạng. Ấn chốt bảng lương để tính tiếp nhé");
             }
 
         }

@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // f354_danh_sach_quy_thuong
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(612, 404);
+            this.Name = "f354_danh_sach_quy_thuong";
             this.Text = "f354_danh_sach_quy_thuong";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -199,6 +199,50 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["DA_XOA"] = System.Convert.DBNull;
         }
 
+        public string strTEN_QUY
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "TEN_QUY", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["TEN_QUY"] = value;
+            }
+        }
+
+        public bool IsTEN_QUYNull()
+        {
+            return pm_objDR.IsNull("TEN_QUY");
+        }
+
+        public void SetTEN_QUYNull()
+        {
+            pm_objDR["TEN_QUY"] = System.Convert.DBNull;
+        }
+
+        public string strTINH_XONG_YN
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "TINH_XONG_YN", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["TINH_XONG_YN"] = value;
+            }
+        }
+
+        public bool IsTINH_XONG_YNNull()
+        {
+            return pm_objDR.IsNull("TINH_XONG_YN");
+        }
+
+        public void SetTINH_XONG_YNNull()
+        {
+            pm_objDR["TINH_XONG_YN"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_GD_QUY_TIEN_THUONG()

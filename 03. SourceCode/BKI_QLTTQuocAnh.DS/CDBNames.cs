@@ -352,7 +352,19 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string GHI_CHU = "GHI_CHU";
         public const string DA_XOA = "DA_XOA";
     }
-
+    public class GD_QUY_TIEN_THUONG
+    {
+        public const string ID = "ID";
+        public const string THANG = "THANG";
+        public const string NAM = "NAM";
+        public const string SO_TIEN = "SO_TIEN";
+        public const string ID_LOAI_QUY_TIEN = "ID_LOAI_QUY_TIEN";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string DA_XOA = "DA_XOA";
+        public const string TEN_QUY = "TEN_QUY";
+        public const string TINH_XONG_YN = "TINH_XONG_YN";
+    }
     public class GD_CHAM_CONG
     {
         public const string ID = "ID";

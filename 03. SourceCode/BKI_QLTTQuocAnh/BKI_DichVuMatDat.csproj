@@ -780,6 +780,9 @@
     <EmbeddedResource Include="NghiepVu\f350_quan_ly_vi_tri_cong_tac.resx">
       <DependentUpon>f350_quan_ly_vi_tri_cong_tac.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f354_danh_sach_quy_thuong.resx">
+      <DependentUpon>f354_danh_sach_quy_thuong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f355_thuong_an_toan_hang_khong.resx">
       <DependentUpon>f355_thuong_an_toan_hang_khong.cs</DependentUpon>
     </EmbeddedResource>

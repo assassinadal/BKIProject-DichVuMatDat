@@ -369,6 +369,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                 m_chk_giam_tru.Checked = op_dc_giam_tru == 0 ? false : true;
                 m_is_giam_tru = op_dc_giam_tru == 0 ? IS_GIAM_TRU.CHUA_GIAM_TRU : IS_GIAM_TRU.DA_GIA_TRU;
+
             }
             catch(Exception v_e)
             {

@@ -542,6 +542,12 @@
     <Compile Include="NghiepVu\f350_quan_ly_vi_tri_cong_tac.Designer.cs">
       <DependentUpon>f350_quan_ly_vi_tri_cong_tac.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f354_danh_sach_quy_thuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f354_danh_sach_quy_thuong.Designer.cs">
+      <DependentUpon>f354_danh_sach_quy_thuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f355_thuong_an_toan_hang_khong.cs">
       <SubType>Form</SubType>
     </Compile>

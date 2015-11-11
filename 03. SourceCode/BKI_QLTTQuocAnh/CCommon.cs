@@ -25,7 +25,15 @@ namespace BKI_DichVuMatDat
             col.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             ip_grv.CustomUnboundColumnData += ip_grv_CustomUnboundColumnData;
         }
-
+        public static void make_stt(int ip_index_col, DevExpress.XtraGrid.Views.Grid.GridView ip_grv)
+        {
+            for(int i = 0; i <= ip_grv.RowCount - 1; i++)
+            {
+                ip_grv.SetRowCellValue(i, ip_grv.Columns[ip_index_col], i + 1);
+            }
+            //col.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            //ip_grv.CustomUnboundColumnData += ip_grv_CustomUnboundColumnData;
+        }
         static void ip_grv_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
             if(e.IsGetData)

@@ -130,7 +130,7 @@
             // m_dat_thang_thuong
             // 
             this.m_dat_thang_thuong.EditValue = null;
-            this.m_dat_thang_thuong.Location = new System.Drawing.Point(103, 108);
+            this.m_dat_thang_thuong.Location = new System.Drawing.Point(120, 108);
             this.m_dat_thang_thuong.Name = "m_dat_thang_thuong";
             this.m_dat_thang_thuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.DropDown)});
@@ -139,7 +139,7 @@
             this.m_dat_thang_thuong.Properties.CalendarTimeProperties.Mask.EditMask = "";
             this.m_dat_thang_thuong.Properties.Mask.EditMask = "MM/yyyy";
             this.m_dat_thang_thuong.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_dat_thang_thuong.Size = new System.Drawing.Size(274, 20);
+            this.m_dat_thang_thuong.Size = new System.Drawing.Size(257, 20);
             this.m_dat_thang_thuong.StyleController = this.layoutControl1;
             this.m_dat_thang_thuong.TabIndex = 11;
             // 
@@ -166,47 +166,47 @@
             // 
             // m_txt_ly_do_thuong
             // 
-            this.m_txt_ly_do_thuong.Location = new System.Drawing.Point(103, 84);
+            this.m_txt_ly_do_thuong.Location = new System.Drawing.Point(120, 84);
             this.m_txt_ly_do_thuong.Name = "m_txt_ly_do_thuong";
-            this.m_txt_ly_do_thuong.Size = new System.Drawing.Size(274, 20);
+            this.m_txt_ly_do_thuong.Size = new System.Drawing.Size(257, 20);
             this.m_txt_ly_do_thuong.StyleController = this.layoutControl1;
             this.m_txt_ly_do_thuong.TabIndex = 8;
             // 
             // m_txt_so_tien
             // 
             this.m_txt_so_tien.EditValue = ((long)(0));
-            this.m_txt_so_tien.Location = new System.Drawing.Point(103, 60);
+            this.m_txt_so_tien.Location = new System.Drawing.Point(120, 60);
             this.m_txt_so_tien.Name = "m_txt_so_tien";
             this.m_txt_so_tien.Properties.Mask.EditMask = "n0";
             this.m_txt_so_tien.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_so_tien.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_txt_so_tien.Size = new System.Drawing.Size(274, 20);
+            this.m_txt_so_tien.Size = new System.Drawing.Size(257, 20);
             this.m_txt_so_tien.StyleController = this.layoutControl1;
             this.m_txt_so_tien.TabIndex = 7;
             // 
             // m_dat_den_ngay
             // 
             this.m_dat_den_ngay.EditValue = null;
-            this.m_dat_den_ngay.Location = new System.Drawing.Point(103, 36);
+            this.m_dat_den_ngay.Location = new System.Drawing.Point(120, 36);
             this.m_dat_den_ngay.Name = "m_dat_den_ngay";
             this.m_dat_den_ngay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_dat_den_ngay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_den_ngay.Size = new System.Drawing.Size(274, 20);
+            this.m_dat_den_ngay.Size = new System.Drawing.Size(257, 20);
             this.m_dat_den_ngay.StyleController = this.layoutControl1;
             this.m_dat_den_ngay.TabIndex = 6;
             // 
             // m_dat_tu_ngay
             // 
             this.m_dat_tu_ngay.EditValue = null;
-            this.m_dat_tu_ngay.Location = new System.Drawing.Point(103, 12);
+            this.m_dat_tu_ngay.Location = new System.Drawing.Point(120, 12);
             this.m_dat_tu_ngay.Name = "m_dat_tu_ngay";
             this.m_dat_tu_ngay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_dat_tu_ngay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_tu_ngay.Size = new System.Drawing.Size(274, 20);
+            this.m_dat_tu_ngay.Size = new System.Drawing.Size(257, 20);
             this.m_dat_tu_ngay.StyleController = this.layoutControl1;
             this.m_dat_tu_ngay.TabIndex = 5;
             // 
@@ -240,6 +240,7 @@
             this.m_grv_luong_thuong.OptionsBehavior.Editable = false;
             this.m_grv_luong_thuong.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDown;
             this.m_grv_luong_thuong.OptionsBehavior.ReadOnly = true;
+            this.m_grv_luong_thuong.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.m_grv_luong_thuong.OptionsView.ShowFooter = true;
             this.m_grv_luong_thuong.OptionsView.ShowGroupPanel = false;
             // 
@@ -358,7 +359,7 @@
             this.gridColumn1.FieldName = "SO_THUE_PHAI_NOP";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_THUE_PHAI_NOP", "n0")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_THUE_PHAI_NOP", "Tổng = {0:n0}")});
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 6;
             this.gridColumn1.Width = 80;
@@ -376,7 +377,7 @@
             this.gridColumn2.FieldName = "THUC_LINH";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUC_LINH", "n0")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUC_LINH", "Tổng = {0:n0}")});
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 7;
             this.gridColumn2.Width = 91;
@@ -422,8 +423,8 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(369, 24);
-            this.layoutControlItem2.Text = "Xét từ ngày";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(88, 13);
+            this.layoutControlItem2.Text = "Xét từ ngày (*)";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(105, 13);
             // 
             // layoutControlItem3
             // 
@@ -432,8 +433,8 @@
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(369, 24);
-            this.layoutControlItem3.Text = "Đến ngày";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(88, 13);
+            this.layoutControlItem3.Text = "Đến ngày (*)";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(105, 13);
             // 
             // layoutControlItem4
             // 
@@ -442,8 +443,8 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(369, 24);
-            this.layoutControlItem4.Text = "Số tiền";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(88, 13);
+            this.layoutControlItem4.Text = "Số tiền (*)";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(105, 13);
             // 
             // layoutControlItem5
             // 
@@ -452,8 +453,8 @@
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(369, 24);
-            this.layoutControlItem5.Text = "Lý do thưởng";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(88, 13);
+            this.layoutControlItem5.Text = "Lý do thưởng (*)";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(105, 13);
             // 
             // layoutControlItem6
             // 
@@ -506,8 +507,8 @@
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(369, 24);
-            this.layoutControlItem8.Text = "Thưởng cho tháng";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(88, 13);
+            this.layoutControlItem8.Text = "Thưởng cho tháng (*)";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(105, 13);
             // 
             // f355_thuong_an_toan_hang_khong
             // 

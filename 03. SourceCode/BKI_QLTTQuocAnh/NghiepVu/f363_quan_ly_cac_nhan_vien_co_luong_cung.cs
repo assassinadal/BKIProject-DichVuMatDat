@@ -110,7 +110,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_grid()
         {
-            CCommon.make_stt(m_grv_luong_cung_cua_nhan_vien);
+            CHRMCommon.make_stt(m_grv_luong_cung_cua_nhan_vien);
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
@@ -121,7 +121,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_grid(decimal ip_dc_id_nv)
         {
-            CCommon.make_stt(m_grv_luong_cung_cua_nhan_vien);
+            CHRMCommon.make_stt(m_grv_luong_cung_cua_nhan_vien);
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
@@ -170,7 +170,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return false;
             }
 
-            if (CCommon.thang_da_chot_bang_luong(m_dat_ngay_ket_thuc.Value))
+            if (CHRMCommon.thang_da_chot_bang_luong(m_dat_ngay_ket_thuc.Value))
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
                 return false;
@@ -204,7 +204,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_sle_chon_nhan_vien.EditValue = ip_us.dcID_NHAN_VIEN;
             m_txt_so_tien.Text = ip_us.dcSO_TIEN.ToString();
-            CCommon.format_text_2_money(m_txt_so_tien);
+            CHRMCommon.format_text_2_money(m_txt_so_tien);
             m_dat_ngay_bat_dau.Value = ip_us.datNGAY_BAT_DAU;
             m_dat_ngay_ket_thuc.Value = ip_us.datNGAY_KET_THUC;
             m_txt_ghi_chu.Text = ip_us.strGHI_CHU;
@@ -433,7 +433,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                CCommon.format_text_2_money(m_txt_so_tien);
+                CHRMCommon.format_text_2_money(m_txt_so_tien);
             }
             catch (Exception v_e)
             {

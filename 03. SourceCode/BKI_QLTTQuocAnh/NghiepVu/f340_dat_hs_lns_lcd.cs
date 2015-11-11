@@ -269,7 +269,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_grc_hs_lns(decimal ip_dc_id_nhan_vien)
         {
-            CCommon.make_stt(m_grv_hs_lns);
+            CHRMCommon.make_stt(m_grv_hs_lns);
             DS_V_F340_DAT_HS_LNS v_ds = new DS_V_F340_DAT_HS_LNS();
             US_V_F340_DAT_HS_LNS v_us = new US_V_F340_DAT_HS_LNS();
 
@@ -280,7 +280,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_grc_lcd(decimal ip_dc_id_nhan_vien)
         {
-            CCommon.make_stt(m_grv_lcd);
+            CHRMCommon.make_stt(m_grv_lcd);
             DS_V_F340_DAT_LCD v_ds = new DS_V_F340_DAT_LCD();
             US_V_F340_DAT_LCD v_us = new US_V_F340_DAT_LCD();
 
@@ -397,13 +397,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return false;
             }
 
-            if (CCommon.thang_da_chot_bang_luong(m_dat_ngay_ket_thuc_lns.Value))
+            if (CHRMCommon.thang_da_chot_bang_luong(m_dat_ngay_ket_thuc_lns.Value))
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
                 return false;
             }
 
-            if (CCommon.thang_da_chot_bang_luong(m_dat_ngay_ket_thuc_lcd.Value))
+            if (CHRMCommon.thang_da_chot_bang_luong(m_dat_ngay_ket_thuc_lcd.Value))
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
                 return false;

@@ -323,7 +323,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CCommon.cs" />
+    <Compile Include="CHRMCommon.cs" />
     <Compile Include="DanhMuc\F101_dm_don_vi.cs">
       <SubType>Form</SubType>
     </Compile>

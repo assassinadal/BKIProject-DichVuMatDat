@@ -254,7 +254,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_grid()
         {
-            CCommon.make_stt(m_grv_lap_hd);
+            CHRMCommon.make_stt(m_grv_lap_hd);
 
             DS_V_F320_LAP_HOP_DONG v_ds = new DS_V_F320_LAP_HOP_DONG();
             US_V_F320_LAP_HOP_DONG v_us = new US_V_F320_LAP_HOP_DONG();
@@ -268,7 +268,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_grid(decimal ip_dc_id_nhan_vien)
         {
-            CCommon.make_stt(m_grv_lap_hd);
+            CHRMCommon.make_stt(m_grv_lap_hd);
 
             DS_V_F320_LAP_HOP_DONG v_ds = new DS_V_F320_LAP_HOP_DONG();
             US_V_F320_LAP_HOP_DONG v_us = new US_V_F320_LAP_HOP_DONG();

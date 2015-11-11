@@ -76,7 +76,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         //Load toan bo du lieu tu V_GD_LOAI_LAO_DONG len luoi 
         private void load_data_2_grid()
         {
-            CCommon.make_stt(m_grv_v_gd_loai_lao_dong);
+            CHRMCommon.make_stt(m_grv_v_gd_loai_lao_dong);
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
 
@@ -88,7 +88,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         //Load du lieu len luoi theo id nhan vien
         private void load_data_2_grid(decimal ip_dc_id_nv)
         {
-            CCommon.make_stt(m_grv_v_gd_loai_lao_dong);
+            CHRMCommon.make_stt(m_grv_v_gd_loai_lao_dong);
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
 
@@ -100,7 +100,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         //Load du lieu len luoi theo id_loai_lao_dong
         private void load_data_2_grid_with_id_loai_lao_dong(decimal ip_dc_id_loai_ld)
         {
-            CCommon.make_stt(m_grv_v_gd_loai_lao_dong);
+            CHRMCommon.make_stt(m_grv_v_gd_loai_lao_dong);
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
 
@@ -112,7 +112,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         //Load du lieu len luoi theo id nhan vien va id loai lao dong
         private void load_data_2_grid(decimal ip_dc_id_nv, decimal ip_dc_id_loai_ld)
         {
-            CCommon.make_stt(m_grv_v_gd_loai_lao_dong);
+            CHRMCommon.make_stt(m_grv_v_gd_loai_lao_dong);
 
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();

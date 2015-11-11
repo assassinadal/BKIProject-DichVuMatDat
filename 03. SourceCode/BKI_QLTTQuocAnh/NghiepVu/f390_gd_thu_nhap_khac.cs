@@ -167,7 +167,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_grid(decimal ip_dc_id_nv, decimal ip_dc_thang, decimal ip_dc_nam)
         {
-            CCommon.make_stt(m_grv_quan_ly_thu_nhap_khac);
+            CHRMCommon.make_stt(m_grv_quan_ly_thu_nhap_khac);
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
@@ -179,7 +179,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_gridd(decimal ip_dc_thang, decimal ip_dc_nam)
         {
-            CCommon.make_stt(m_grv_quan_ly_thu_nhap_khac);
+            CHRMCommon.make_stt(m_grv_quan_ly_thu_nhap_khac);
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
@@ -231,7 +231,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa điền lý do!", "THÔNG BÁO");
                 return false;
             }
-            if (CCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())))
+            if (CHRMCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())))
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
                 return false;
@@ -263,7 +263,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_loai_thu_nhap.EditValue = v_us.dcID_LOAI_THU_NHAP_KHAC;
             m_sle_cach_tinh_thue.EditValue = v_us.dcID_CACH_TINH_THUE;
             m_txt_so_tien.Text = v_us.dcSO_TIEN.ToString();
-            CCommon.format_text_2_money(m_txt_so_tien);
+            CHRMCommon.format_text_2_money(m_txt_so_tien);
             m_txt_ly_do.Text = v_us.strLY_DO;
         }
 
@@ -469,7 +469,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                CCommon.format_text_2_money(m_txt_so_tien);
+                CHRMCommon.format_text_2_money(m_txt_so_tien);
             }
             catch (Exception v_e)
             {

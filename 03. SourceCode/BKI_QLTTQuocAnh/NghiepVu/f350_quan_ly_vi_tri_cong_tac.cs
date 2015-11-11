@@ -143,7 +143,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_grid(decimal ip_dc_id_nv)
         {
-            CCommon.make_stt(m_grv_v_gd_cong_tac);
+            CHRMCommon.make_stt(m_grv_v_gd_cong_tac);
 
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
@@ -156,7 +156,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_grid(decimal ip_dc_id_nv, decimal ip_dc_id_loai_ct)
         {
-            CCommon.make_stt(m_grv_v_gd_cong_tac);
+            CHRMCommon.make_stt(m_grv_v_gd_cong_tac);
 
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();

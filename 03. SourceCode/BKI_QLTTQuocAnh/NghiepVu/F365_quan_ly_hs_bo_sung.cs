@@ -311,7 +311,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (check_data_is_ok())
                 {
-                    CCommon.make_stt(m_grv_quan_ly_he_so_bo_sung);
+                    CHRMCommon.make_stt(m_grv_quan_ly_he_so_bo_sung);
                     SplashScreenManager.ShowForm(typeof(F_wait_form));
                     DataSet v_ds = new DataSet();
                     load_data_2_dataset_bang_tien_thuong_hs_bs(v_ds);

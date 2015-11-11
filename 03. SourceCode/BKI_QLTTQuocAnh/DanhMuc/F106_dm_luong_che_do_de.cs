@@ -42,7 +42,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_txt_ma_lcd.Text = ip_us.dcID_MA_LCD.ToString();
             m_sle_muc_lcd.EditValue = ip_us.dcID_MUC_LCD.ToString();
             m_txt_so_tien.Text = ip_us.dcSO_TIEN.ToString();
-            CCommon.format_text_2_money(m_txt_so_tien);
+            CHRMCommon.format_text_2_money(m_txt_so_tien);
             this.CenterToScreen();
             this.ShowDialog();
         }

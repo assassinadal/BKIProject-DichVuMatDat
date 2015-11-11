@@ -34,7 +34,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void load_data_2_grid()
         {
-            CCommon.make_stt(m_grv_dm_loai_hop_dong);
+            CHRMCommon.make_stt(m_grv_dm_loai_hop_dong);
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());

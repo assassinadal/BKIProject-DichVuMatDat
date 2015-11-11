@@ -113,7 +113,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_grid(decimal ip_dc_id_nv, decimal ip_dc_thang, decimal ip_dc_nam)
         {
-            CCommon.make_stt(m_grv_hs_chat_luong);
+            CHRMCommon.make_stt(m_grv_hs_chat_luong);
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
@@ -124,7 +124,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_grid(decimal ip_dc_thang, decimal ip_dc_nam)
         {
-            CCommon.make_stt(m_grv_hs_chat_luong);
+            CHRMCommon.make_stt(m_grv_hs_chat_luong);
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
@@ -192,7 +192,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn năm!");
                 return false;
             } 
-            if (CCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())))
+            if (CHRMCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())))
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
                 return false;

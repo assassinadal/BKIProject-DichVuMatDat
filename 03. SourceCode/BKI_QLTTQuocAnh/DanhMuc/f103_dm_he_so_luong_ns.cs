@@ -52,7 +52,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void load_data_2_grid() 
         {
-            CCommon.make_stt(m_grv_dm_he_so_luong_ns);
+            CHRMCommon.make_stt(m_grv_dm_he_so_luong_ns);
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());

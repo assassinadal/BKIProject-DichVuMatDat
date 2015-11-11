@@ -44,9 +44,9 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_txt_ti_le.Text = (ip_us.dcTI_LE*100).ToString();
             m_txt_bu_tru.Text = ip_us.dcBU_TRU.ToString().Substring(ip_us.dcBU_TRU.ToString().LastIndexOf("-") + 1);
 
-            CCommon.format_text_2_money(m_txt_chan_duoi);
-            CCommon.format_text_2_money(m_txt_chan_tren);
-            CCommon.format_text_2_money(m_txt_bu_tru);
+            CHRMCommon.format_text_2_money(m_txt_chan_duoi);
+            CHRMCommon.format_text_2_money(m_txt_chan_tren);
+            CHRMCommon.format_text_2_money(m_txt_bu_tru);
 
             this.CenterToScreen();
             this.ShowDialog();
@@ -229,7 +229,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                CCommon.format_text_2_money(m_txt_chan_duoi);
+                CHRMCommon.format_text_2_money(m_txt_chan_duoi);
             }
             catch (Exception v_e)
             {
@@ -241,7 +241,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                CCommon.format_text_2_money(m_txt_chan_tren);
+                CHRMCommon.format_text_2_money(m_txt_chan_tren);
             }
             catch (Exception v_e)
             {
@@ -253,7 +253,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                CCommon.format_text_2_money(m_txt_bu_tru);
+                CHRMCommon.format_text_2_money(m_txt_bu_tru);
             }
             catch (Exception v_e)
             {

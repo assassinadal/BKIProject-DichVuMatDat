@@ -68,18 +68,20 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                 m_grc_luong_thuong.DataSource = v_ds.Tables[0];
                 m_grc_luong_thuong.RefreshDataSource();
-                SplashScreenManager.CloseForm();
+                CHRMCommon.make_stt(0, m_grv_luong_thuong);
             }
             catch(Exception)
             {
-                SplashScreenManager.CloseForm();
                 throw;
             }
-
+            finally
+            {
+                SplashScreenManager.CloseForm();
+            }
         }
         private void set_inital_form_load()
         {
-            m_dat_tu_ngay.DateTime = DateTime.Now.AddMonths(-DateTime.Now.Month).AddDays(-DateTime.Now.Day + 1);
+            m_dat_tu_ngay.DateTime = DateTime.Now.AddMonths(-DateTime.Now.Month + 1).AddDays(-DateTime.Now.Day + 1);
             m_dat_thang_thuong.DateTime = DateTime.Now;
         }
 
@@ -361,7 +363,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 US_GD_THANG_DA_GIAM_TRU v_us = new US_GD_THANG_DA_GIAM_TRU();
                 decimal op_dc_giam_tru = 0;
-                v_us.kiem_tra_thang_da_giam_tru_chua(m_dat_thang_thuong.DateTime.Month, m_dat_thang_thuong.DateTime.Year, ref op_dc_giam_tru);
+                v_us.kiem_tra_thang_da_giam_tru_chua(m_dat_thang_thuong.DateTime.Month
+                                                            , m_dat_thang_thuong.DateTime.Year
+                                                            , ref op_dc_giam_tru);
 
                 m_chk_giam_tru.Checked = op_dc_giam_tru == 0 ? false : true;
                 m_is_giam_tru = op_dc_giam_tru == 0 ? IS_GIAM_TRU.CHUA_GIAM_TRU : IS_GIAM_TRU.DA_GIA_TRU;

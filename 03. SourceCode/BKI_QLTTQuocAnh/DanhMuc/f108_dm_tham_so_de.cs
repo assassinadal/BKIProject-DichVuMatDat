@@ -41,7 +41,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_id_dm_tham_so_4_update = ip_us.dcID;
             m_txt_ten_tham_so.Text = ip_us.strLOAI;
             m_txt_gia_tri_tham_so.Text = ip_us.dcSO_TIEN.ToString();
-            CCommon.format_text_2_money(m_txt_gia_tri_tham_so);
+            CHRMCommon.format_text_2_money(m_txt_gia_tri_tham_so);
             this.CenterToScreen();
             this.ShowDialog();
         }

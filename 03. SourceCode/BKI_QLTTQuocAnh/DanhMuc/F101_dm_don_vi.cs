@@ -53,7 +53,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void load_data_2_grid()
         {
-            CCommon.make_stt(m_grv_dm_don_vi);
+            CHRMCommon.make_stt(m_grv_dm_don_vi);
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
 

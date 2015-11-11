@@ -50,7 +50,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void load_data_2_grid()
         {
-            CCommon.make_stt(m_grv_hs_bs_hs_athk);
+            CHRMCommon.make_stt(m_grv_hs_bs_hs_athk);
 
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
@@ -62,7 +62,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void load_data_2_grid(decimal ip_dc_thang)
         {
-            CCommon.make_stt(m_grv_hs_bs_hs_athk);
+            CHRMCommon.make_stt(m_grv_hs_bs_hs_athk);
 
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();

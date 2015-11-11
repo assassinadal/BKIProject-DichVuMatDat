@@ -147,7 +147,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void kiem_tra_va_thuc_hien_nhap_du_lieu(ref decimal v_count, ref int v_int_khong_nhap_duoc, decimal v_selectedRowCount)
         {
-            if (CCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())))
+            if (CHRMCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())))
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
                 return;

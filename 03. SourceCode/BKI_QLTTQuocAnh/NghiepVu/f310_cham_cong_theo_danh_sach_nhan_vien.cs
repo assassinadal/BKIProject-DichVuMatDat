@@ -54,7 +54,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_2_grid()
         {
             int v_row_count = 0;
-            CCommon.make_stt(m_grv_cham_cong);
+            CHRMCommon.make_stt(m_grv_cham_cong);
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new System.Data.DataSet();
             v_ds.Tables.Add(new DataTable());
@@ -213,12 +213,12 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             DS_RPT_LUONG v_ds = new DS_RPT_LUONG();
 
-            DataRow v_dr_luong = CCommon.get_luong_1_nhan_vien(v_id_nhan_vien, int.Parse(m_dat_ngay_cham_cong.Value.Month.ToString()), int.Parse(m_dat_ngay_cham_cong.Value.Year.ToString()));
+            DataRow v_dr_luong = CHRMCommon.get_luong_1_nhan_vien(v_id_nhan_vien, int.Parse(m_dat_ngay_cham_cong.Value.Month.ToString()), int.Parse(m_dat_ngay_cham_cong.Value.Year.ToString()));
             var v_dr_luong_nv = v_ds.Tables[0].NewRow();
             int v_id_rpt_luong = find_id_rpt_luong(v_id_nhan_vien, int.Parse(m_dat_ngay_cham_cong.Value.Month.ToString()), int.Parse(m_dat_ngay_cham_cong.Value.Year.ToString()));
-            DataRow v_dr_luong_1_nv = CCommon.get_dr(v_dr_luong_nv, v_dr_luong, v_id_nhan_vien, v_id_rpt_luong, int.Parse(m_dat_ngay_cham_cong.Value.Month.ToString()), int.Parse(m_dat_ngay_cham_cong.Value.Year.ToString()));
+            DataRow v_dr_luong_1_nv = CHRMCommon.get_dr(v_dr_luong_nv, v_dr_luong, v_id_nhan_vien, v_id_rpt_luong, int.Parse(m_dat_ngay_cham_cong.Value.Month.ToString()), int.Parse(m_dat_ngay_cham_cong.Value.Year.ToString()));
             v_ds.Tables[0].Rows.Add(v_dr_luong_1_nv);
-            CCommon.update_luong_1NV_2_rpt(v_id_rpt_luong, v_dr_luong_1_nv);
+            CHRMCommon.update_luong_1NV_2_rpt(v_id_rpt_luong, v_dr_luong_1_nv);
         }
 
         private decimal get_id_loai_ngay_cong(string ip_str_ma_ngay_cong)
@@ -306,7 +306,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (!CCommon.thang_da_chot_bang_luong(m_dat_ngay_cham_cong.Value))
+                if (!CHRMCommon.thang_da_chot_bang_luong(m_dat_ngay_cham_cong.Value))
                 {
                     if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn lưu bảng chấm công này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {

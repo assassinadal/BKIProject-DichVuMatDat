@@ -102,11 +102,11 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 DataRow v_dr = ip_dt.Rows[i];
                 decimal v_id_nhan_vien = CIPConvert.ToDecimal(v_dr[RPT_LUONG.ID_NHAN_VIEN]);
-                DataRow v_dr_luong = CCommon.get_luong_1_nhan_vien(v_id_nhan_vien, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
+                DataRow v_dr_luong = CHRMCommon.get_luong_1_nhan_vien(v_id_nhan_vien, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
                 var v_dr_luong_nv = m_ds_rpt_luong.Tables[0].NewRow();
-                DataRow v_dr_luong_1_nv = CCommon.get_dr(v_dr_luong_nv, v_dr_luong, v_id_nhan_vien, i, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
+                DataRow v_dr_luong_1_nv = CHRMCommon.get_dr(v_dr_luong_nv, v_dr_luong, v_id_nhan_vien, i, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
                 m_ds_rpt_luong.Tables[0].Rows.Add(v_dr_luong_1_nv);
-                CCommon.insertLuongNV2RPT(v_dr_luong_1_nv);
+                CHRMCommon.insertLuongNV2RPT(v_dr_luong_1_nv);
                 ip_bgw.ReportProgress((i + 1) * 100 / ip_dt.Rows.Count);
             }
         }

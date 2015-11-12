@@ -29,8 +29,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
 
         #endregion
-
-
+        
         #region Member
         private BindingList<V_RPT_LUONG> getDataSource()
         {
@@ -73,7 +72,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 // Check whether the ChartControl can be previewed.
                 if (!chartControl1.IsPrintingAvailable)
                 {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("The 'DevExpress.XtraPrinting' is not found", "Error");
+                    CHRM_BaseMessages.MsgBox_Error("The 'DevExpress.XtraPrinting' is not found");
                     return;
                 }
                 // Open the Preview window.

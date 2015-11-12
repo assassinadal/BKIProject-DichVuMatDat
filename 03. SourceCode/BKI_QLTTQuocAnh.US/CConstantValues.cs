@@ -42,6 +42,7 @@ namespace BKI_DichVuMatDat.US {
         public const decimal ID_HOC_SINH = 18;
         public const decimal ID_GIAO_VIEN = 19;
     }
+
     public class CONST_ID_USER_GROUP {
         public const decimal ADMIN = 1;
     }
@@ -59,6 +60,7 @@ namespace BKI_DichVuMatDat.US {
         public const decimal DA_BAN_GIAO = 82;
 
     }
+
     public class CONST_ID_DM_LOAI_CHUNG_TU {
        
         public const decimal ID_TAT_CA = -1;
@@ -87,13 +89,6 @@ namespace BKI_DichVuMatDat.US {
         public const string LOAI_VI_TRI = "LOAI_VI_TRI";
     }
 
-    public static class ID_LOAI_PHIEU_THU
-    {
-        public const decimal ID_PHIEU_PHAI_THU = 27;
-        public const decimal ID_PHIEU_THUC_THU = 26;
-        public const decimal ID_PHIEU_GIAM_TRU = 54;
-    }
-
     public static class CONST_ID_LOAI_TU_DIEN
     {
         public const int MA_HS_LNS = 1;
@@ -113,8 +108,6 @@ namespace BKI_DichVuMatDat.US {
 
         public const decimal TRANG_THAI_LAO_DONG = 15;
     }
-
-  
 
     //public class TU_DIEN {
     //    public const string Q1 = "1";
@@ -169,4 +162,22 @@ namespace BKI_DichVuMatDat.US {
         public const decimal THUONG_HS_BS = 627;
         public const decimal THUONG_ATHK = 628;
     }
+
+    public static class CONST_ID_MSGBOX
+    {
+        // Thông báo chung
+        public const int INFOR_DU_LIEU_DA_DUOC_CAP_NHAT = 190;
+        public const int QUESTION_XAC_NHAN_LUU_DU_LIEU = 195;
+        public const int QUESTION_XAC_NHAN_XOA_DU_LIEU = 8;
+
+        //DM_DON_VI
+        public const int UPDATE_DU_LIEU_DM_DON_VI = 191;
+        public const int ERROR_CHUA_NHAP_TEN_DON_VI = 192;
+        public const int ERROR_CHUA_CHON_LOAI_DON_VI = 193;
+        public const int INSERT_DM_DON_VI_THANH_CONG_TIEP_TUC_INSERT_YN = 194;
+
+
+
+    }
+
 }

@@ -288,7 +288,7 @@ namespace BKI_DichVuMatDat
 		private void delete_ht_phan_quyen_he_thong(){
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
+            if (CHRM_BaseMessages.askUser_DataCouldBeDeleted(8) != CHRM_BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
 			US_HT_PHAN_QUYEN_HE_THONG v_us = new US_HT_PHAN_QUYEN_HE_THONG();
 			grid2us_object(v_us, m_fg.Row);
 			try {			

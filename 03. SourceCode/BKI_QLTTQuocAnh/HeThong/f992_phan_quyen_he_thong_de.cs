@@ -92,7 +92,7 @@ namespace BKI_DichVuMatDat.HeThong
                     m_us.Update();
                     break;
             }
-            BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
+            CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
             this.Close();
         }
 

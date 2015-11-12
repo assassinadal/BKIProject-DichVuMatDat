@@ -457,7 +457,7 @@ namespace BKI_DichVuMatDat
 			if (!CValidateTextBox.IsValid(m_txt_ten, DataType.StringType, allowNull.NO, true)) return false;
 			if (!CValidateTextBox.IsValid(m_txt_mat_khau, DataType.StringType, allowNull.NO, true)) return false;
 			if (m_txt_mat_khau.Text != m_txt_go_lai_mat_khau.Text){
-				BaseMessages.MsgBox_Infor("Mật khẩu gõ chưa chính xác!");
+                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_MAT_KHAU_NHAP_SAI);
 				return false;
 			}
 			return true;
@@ -473,7 +473,7 @@ namespace BKI_DichVuMatDat
 					m_us_user.Update();
 					break;
 			}						
-			BaseMessages.MsgBox_Infor("Đã cập nhật thành công!");
+			CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
 			this.Close();
 			
 		}

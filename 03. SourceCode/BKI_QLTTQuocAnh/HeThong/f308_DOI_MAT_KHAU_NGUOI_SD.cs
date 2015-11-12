@@ -75,12 +75,12 @@ namespace BKI_DichVuMatDat.HeThong
             US_HT_NGUOI_SU_DUNG v_us_ht_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG(CIPConvert.ToDecimal(m_cbo_tai_khoan.SelectedValue));
 
             if(CIPConvert.Deciphering(v_us_ht_nguoi_su_dung.strMAT_KHAU) != m_txt_mat_khau_cu.Text) {
-                BaseMessages.MsgBox_Error("Mật khẩu cũ không đúng!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_NHAP_SAI_MAT_KHAU_CU);
                 return;
             }
             //Buoc 3: Check mat khau cu va moi co trung nhau hay khong?
             if(m_txt_mat_khau_moi.Text != m_txt_nhap_lai_mat_khau_moi.Text) {
-                BaseMessages.MsgBox_Error("Việc nhập lại mật khẩu mới chưa đúng!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_NHAP_LAI_MAT_KHAU_MOI_BI_SAI);
                 return;
             }
 
@@ -96,7 +96,7 @@ namespace BKI_DichVuMatDat.HeThong
             	CSystemLog_301.ExceptionHandle(v_e);
             }
             //Buoc 5: Hien thong bao
-            BaseMessages.MsgBox_Infor("Đã đổi mật khẩu thành công!");
+            CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DOI_MAT_KHAU_THANH_CONG);
             this.Close();
         }
         

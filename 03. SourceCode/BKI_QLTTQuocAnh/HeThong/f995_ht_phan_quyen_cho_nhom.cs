@@ -119,7 +119,7 @@ namespace BKI_DichVuMatDat.HeThong
             }
             catch (System.Exception v_e)
             {
-                BaseMessages.MsgBox_Error("Đã cấp hết quyền!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_DA_CAP_HET_QUYEN);
             }          
         }
 
@@ -134,7 +134,7 @@ namespace BKI_DichVuMatDat.HeThong
             }
             catch (System.Exception v_e)
             {
-                BaseMessages.MsgBox_Error("Không còn quyền đã cấp để chuyển!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_KHONG_CON_QUYEN_DE_CAP);
             }      
         }
 
@@ -220,7 +220,7 @@ namespace BKI_DichVuMatDat.HeThong
                     v_us_ht_phan_quyen_cho_nhom.dcID = CIPConvert.ToDecimal(v_ds_ht_phan_quyen_cho_nhom.Tables[0].Rows[0][HT_PHAN_QUYEN_CHO_NHOM.ID]);
                     v_us_ht_phan_quyen_cho_nhom.Delete();
                 }
-                BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
+                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
                 //this.Close();
             }
             catch (Exception v_e)

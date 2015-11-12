@@ -61,7 +61,7 @@ namespace BKI_DichVuMatDat.HeThong
                 v_us_ht_pq_detail.strVISIBLE_YN = "Y";
                 v_us_ht_pq_detail.Insert();
             }
-            BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
+            CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
          //   this.Close();
         }
 

@@ -181,6 +181,16 @@ namespace BKI_DichVuMatDat.US {
         public const int INFOR_LUU_BAO_CAO_THANH_CONG = 401;
         public const int ERROR_CHUA_CHON_NAM_DE_LOC_DU_LIEU = 402;
         public const int ERROR_CHUA_CHON_THANG_DE_LOC_DU_LIEU = 403;
+
+        //Hệ thống
+        public const int ERROR_NHAP_SAI_MAT_KHAU_CU = 221;
+        public const int ERROR_NHAP_LAI_MAT_KHAU_MOI_BI_SAI = 222;
+        public const int INFOR_DOI_MAT_KHAU_THANH_CONG = 223;
+        public const int ERROR_DA_CAP_HET_QUYEN = 224;
+        public const int ERROR_KHONG_CON_QUYEN_DE_CAP = 225;
+        public const int ERROR_MAT_KHAU_NHAP_SAI = 226;
+
+
     }
 
 }

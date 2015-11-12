@@ -645,6 +645,7 @@
       <DependentUpon>F800_ReportBangLuong.cs</DependentUpon>
     </Compile>
     <Compile Include="WinFormControls.cs" />
+    <Compile Include="CHRM_BaseMessages210.cs" />
     <EmbeddedResource Include="BaoCao\f410_rpt_bang_luong_nv.resx">
       <DependentUpon>f410_rpt_bang_luong_nv.cs</DependentUpon>
     </EmbeddedResource>
@@ -1477,6 +1478,7 @@
   <ItemGroup>
     <None Include="Resources\paper133%281%29.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

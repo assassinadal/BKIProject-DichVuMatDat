@@ -286,23 +286,20 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             if(!is_da_tinh_het_luong_nhan_vien())
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Chưa tính toán xong dữ liệu nhân viên", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Infor("Chưa tính toán xong dữ liệu nhân viên");
                 return;
             }
             if(m_e_bang_luong_status == e_bang_luong_status.CHUA_TINH)
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Chưa có dữ liệu để chốt!!!", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error("Chưa có dữ liệu để chốt!!!");
                 return;
             }
 
-            if(DevExpress.XtraEditors.XtraMessageBox.Show(
+            if(CHRM_BaseMessages.MsgBox_Confirm(
                                         "Bạn có chắc chắn muốn chốt bảng lương tháng "
                                         + m_txt_thang.Text.Trim()
                                         + " năm "
-                                        + m_txt_nam.Text.Trim()
-                                        , "XÁC NHẬN LẠI"
-                                        , MessageBoxButtons.YesNo
-                                        , MessageBoxIcon.Question) == DialogResult.No)
+                                        + m_txt_nam.Text.Trim()) == false)
                 return;
             if(!check_gd_chot_bang_luong_is_exist())
             {
@@ -341,7 +338,7 @@ namespace BKI_DichVuMatDat.BaoCao
             if(sl_nv_can_tinh > sl_nv_da_tinh)
             {
                 m_lbl_thong_bao.Text = "Đã tính được lương cho";
-                XtraMessageBox.Show("Chưa tính lương xong, Ấn tính bảng lương để tính tiếp nhé!");
+                CHRM_BaseMessages.MsgBox_Infor("Chưa tính lương xong, Ấn tính bảng lương để tính tiếp nhé!");
                 m_lbl_thong_bao.ForeColor = Color.Red;
                 m_lbl_so_luong_nv_tinh_luong.ForeColor = Color.Red;
             }
@@ -430,7 +427,7 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             catch(Exception v_e)
             {
-                XtraMessageBox.Show("Có lỗi hoặc mất mạng. Ấn chốt bảng lương để tính tiếp nhé");
+                CHRM_BaseMessages.MsgBox_Infor("Có lỗi hoặc mất mạng. Ấn chốt bảng lương để tính tiếp nhé");
             }
 
         }

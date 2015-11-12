@@ -3,7 +3,7 @@ Option Strict On
 Option Explicit On 
 Imports System.Xml
 Imports System.Windows.Forms
-Imports ip.Core.IPCommon.MessageForms
+Imports IP.Core.IPCommon.MessageForms
 
 Public Class BaseMessages
 

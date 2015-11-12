@@ -72,7 +72,7 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             catch(Exception v_e)
             {
-                MessageBox.Show("Có tý tẹo vấn đề. Bạn chụp ảnh và gửi để chúng tôi hỗ trợ nhé! " + v_e.ToString());
+                CHRM_BaseMessages.MsgBox_Infor("Có tý tẹo vấn đề. Bạn chụp ảnh và gửi để chúng tôi hỗ trợ nhé! " + v_e.ToString());
             }
         }
 
@@ -139,18 +139,13 @@ namespace BKI_DichVuMatDat.BaoCao
                 if(saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     m_grc_tong_hop.ExportToXls(saveFileDialog1.FileName);
-                    MessageBox.Show("Lưu báo cáo thành công");
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
                 }
             }
             catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
     }

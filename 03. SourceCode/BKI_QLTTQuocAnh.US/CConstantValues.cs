@@ -176,8 +176,11 @@ namespace BKI_DichVuMatDat.US {
         public const int ERROR_CHUA_CHON_LOAI_DON_VI = 193;
         public const int INSERT_DM_DON_VI_THANH_CONG_TIEP_TUC_INSERT_YN = 194;
 
-
-
+        //Form RPT
+        public const int ERROR_CHUA_CO_DU_LIEU_DE_THUC_HIEN_THAO_TAC = 400;
+        public const int INFOR_LUU_BAO_CAO_THANH_CONG = 401;
+        public const int ERROR_CHUA_CHON_NAM_DE_LOC_DU_LIEU = 402;
+        public const int ERROR_CHUA_CHON_THANG_DE_LOC_DU_LIEU = 403;
     }
 
 }

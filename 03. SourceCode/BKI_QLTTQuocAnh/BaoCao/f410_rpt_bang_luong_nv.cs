@@ -291,7 +291,7 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             if(m_e_bang_luong_status == e_bang_luong_status.CHUA_TINH)
             {
-                CHRM_BaseMessages.MsgBox_Error("Chưa có dữ liệu để chốt!!!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CO_DU_LIEU_DE_THUC_HIEN_THAO_TAC);
                 return;
             }
 

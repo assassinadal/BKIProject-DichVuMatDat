@@ -10,6 +10,7 @@ using IP.Core.IPCommon;
 using System.Data.SqlClient;
 using System.Configuration;
 using BKI_DichVuMatDat.EF;
+using BKI_DichVuMatDat.US;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -78,7 +79,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (!BaseMessages.MsgBox_Confirm("Bạn có chắc chắn muốn phục hồi dữ liệu tại thời điểm này. Khi phục hồi thì các dữ liệu sau ngày tạo file lưu trữ này sẽ biến mất!"))
+                if (!CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.INFOR_BACKUP_DB_THANG_CONG) == true)
                 {
                     return;
                 }
@@ -95,7 +96,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 Alter2Cmd.ExecuteNonQuery();
 
                 
-                DevExpress.XtraEditors.XtraMessageBox.Show("Restore Database thành công");
+                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_RESTORE_DB_THANG_CONG);
             }
             catch (Exception)
             {
@@ -140,7 +141,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_add_new_back_up.Visible = true;
             m_cmd_backup.Visible = false;
             fill_data_2_grid();
-            DevExpress.XtraEditors.XtraMessageBox.Show("Backup thành công!");
+            CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_BACKUP_DB_THANG_CONG);
         }
 
         private void fill_data_2_grid()
@@ -174,7 +175,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show(v_e.Message);
+                CHRM_BaseMessages.MsgBox_Infor(v_e.Message);
             }
         }
 
@@ -189,7 +190,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show(v_e.Message);
+                CHRM_BaseMessages.MsgBox_Infor(v_e.Message);
             }
         }
 
@@ -201,7 +202,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show(v_e.Message);
+                CHRM_BaseMessages.MsgBox_Infor(v_e.Message);
             }
         }
 
@@ -213,7 +214,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show(v_e.Message);
+                CHRM_BaseMessages.MsgBox_Infor(v_e.Message);
             }
         }
 
@@ -225,8 +226,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-
-                DevExpress.XtraEditors.XtraMessageBox.Show(v_e.Message);
+                CHRM_BaseMessages.MsgBox_Infor(v_e.Message);
             }
         }
         #endregion

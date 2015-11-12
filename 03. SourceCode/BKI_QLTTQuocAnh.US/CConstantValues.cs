@@ -189,6 +189,10 @@ namespace BKI_DichVuMatDat.US {
         public const int ERROR_DA_CAP_HET_QUYEN = 224;
         public const int ERROR_KHONG_CON_QUYEN_DE_CAP = 225;
         public const int ERROR_MAT_KHAU_NHAP_SAI = 226;
+        public const int CONFIRM_RESTORE_DB = 227;
+        public const int INFOR_RESTORE_DB_THANG_CONG = 228;
+        public const int INFOR_BACKUP_DB_THANG_CONG = 229;
+
 
 
     }

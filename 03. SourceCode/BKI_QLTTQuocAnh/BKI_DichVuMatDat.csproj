@@ -1478,7 +1478,12 @@
   <ItemGroup>
     <None Include="Resources\paper133%281%29.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\1447274005_calculator.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accounting.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

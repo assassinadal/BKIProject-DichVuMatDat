@@ -181,6 +181,9 @@
   <data name="icon doi password " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon doi password .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1447274005_calculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1447274005_calculator.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1425905405_243979" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425905405_243979.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -331,6 +334,9 @@
   <data name="1425904521_438788" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425904521_438788.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="paper133(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paper133(1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1441439378_06" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1441439378_06.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -370,7 +376,7 @@
   <data name="1425905897_253501" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425905897_253501.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="paper133(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\paper133(1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="accounting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\accounting.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

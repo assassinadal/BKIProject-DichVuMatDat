@@ -352,6 +352,72 @@ public class US_V_GD_QUY_TIEN_THUONG : US_Object
         pm_objDR["DEN_NGAY_XET_THUONG"] = System.Convert.DBNull;
     }
 
+    public decimal dcSL_NV_CAN_TINH
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "SL_NV_CAN_TINH", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["SL_NV_CAN_TINH"] = value;
+        }
+    }
+
+    public bool IsSL_NV_CAN_TINHNull()
+    {
+        return pm_objDR.IsNull("SL_NV_CAN_TINH");
+    }
+
+    public void SetSL_NV_CAN_TINHNull()
+    {
+        pm_objDR["SL_NV_CAN_TINH"] = System.Convert.DBNull;
+    }
+
+    public decimal dcSL_NV_DA_TINH
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "SL_NV_DA_TINH", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["SL_NV_DA_TINH"] = value;
+        }
+    }
+
+    public bool IsSL_NV_DA_TINHNull()
+    {
+        return pm_objDR.IsNull("SL_NV_DA_TINH");
+    }
+
+    public void SetSL_NV_DA_TINHNull()
+    {
+        pm_objDR["SL_NV_DA_TINH"] = System.Convert.DBNull;
+    }
+
+    public decimal dcPHAN_TRAM_DA_TINH
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "PHAN_TRAM_DA_TINH", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["PHAN_TRAM_DA_TINH"] = value;
+        }
+    }
+
+    public bool IsPHAN_TRAM_DA_TINHNull()
+    {
+        return pm_objDR.IsNull("PHAN_TRAM_DA_TINH");
+    }
+
+    public void SetPHAN_TRAM_DA_TINHNull()
+    {
+        pm_objDR["PHAN_TRAM_DA_TINH"] = System.Convert.DBNull;
+    }
+
     #endregion
     #region "Init Functions"
 	    public US_V_GD_QUY_TIEN_THUONG() 
@@ -387,6 +453,17 @@ public class US_V_GD_QUY_TIEN_THUONG : US_Object
             v_sp.addDatetimeInputParam("@ip_dat_from_date", ip_dat_from_date);
             v_sp.addDatetimeInputParam("@ip_dat_to_date", ip_dat_to_date);
             v_sp.fillDataSetByCommand(this, op_ds);
+        }
+
+        public void lay_thong_tin_qua_trinh_tinh_luong(out DataRow op_dr, decimal ip_dc_id_quy_tien_thuong)
+        {
+            DS_V_GD_QUY_TIEN_THUONG op_ds = new DS_V_GD_QUY_TIEN_THUONG();
+            op_ds.EnforceConstraints = false;
+            CStoredProc v_sp = new CStoredProc("pr_lay_thong_tin_qua_trinh_tinh_tien_thuong");
+            v_sp.addDecimalInputParam("@ip_dc_id_quy_tien_thuong", ip_dc_id_quy_tien_thuong);
+            v_sp.fillDataSetByCommand(this, op_ds);
+
+            op_dr = op_ds.V_GD_QUY_TIEN_THUONG[0];
         }
 	}
 }

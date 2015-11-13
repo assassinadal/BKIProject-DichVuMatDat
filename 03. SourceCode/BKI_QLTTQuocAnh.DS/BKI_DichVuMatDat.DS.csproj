@@ -293,6 +293,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_GD_QUY_TIEN_THUONG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_GD_THU_NHAP_KHAC_2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_THU_NHAP_KHAC_2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_HT_CONTROL_IN_FORM.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -847,6 +852,17 @@
     </None>
     <None Include="DS_V_GD_QUY_TIEN_THUONG.xss">
       <DependentUpon>DS_V_GD_QUY_TIEN_THUONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_THU_NHAP_KHAC_2.xsc">
+      <DependentUpon>DS_V_GD_THU_NHAP_KHAC_2.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_THU_NHAP_KHAC_2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_THU_NHAP_KHAC_2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_THU_NHAP_KHAC_2.xss">
+      <DependentUpon>DS_V_GD_THU_NHAP_KHAC_2.xsd</DependentUpon>
     </None>
     <None Include="DS_V_HT_CONTROL_IN_FORM.xsc">
       <DependentUpon>DS_V_HT_CONTROL_IN_FORM.xsd</DependentUpon>

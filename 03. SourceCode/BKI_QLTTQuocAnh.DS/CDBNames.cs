@@ -342,7 +342,11 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string LY_DO_THUONG = "LY_DO_THUONG";
         public const string TU_NGAY_XET_THUONG = "TU_NGAY_XET_THUONG";
         public const string DEN_NGAY_XET_THUONG = "DEN_NGAY_XET_THUONG";
+        public const string SL_NV_CAN_TINH = "SL_NV_CAN_TINH";
+        public const string SL_NV_DA_TINH = "SL_NV_DA_TINH";
+        public const string PHAN_TRAM_DA_TINH = "PHAN_TRAM_DA_TINH";
     }
+
 
 
     public class GD_THU_NHAP_KHAC
@@ -359,7 +363,25 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string SO_TIEN_GIAM_TRU = "SO_TIEN_GIAM_TRU";
         public const string SO_TIEN_NOP_THE = "SO_TIEN_NOP_THE";
         public const string SO_TIEN_THUC_LINH = "SO_TIEN_THUC_LINH";
+        public const string TONG_HS_ATHK = "TONG_HS_ATHK";
     }
+    public class V_GD_THU_NHAP_KHAC_2
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string SO_TIEN = "SO_TIEN";
+        public const string THANG = "THANG";
+        public const string NAM = "NAM";
+        public const string LY_DO = "LY_DO";
+        public const string ID_CACH_TINH_THUE = "ID_CACH_TINH_THUE";
+        public const string ID_LOAI_THU_NHAP_KHAC = "ID_LOAI_THU_NHAP_KHAC";
+        public const string ID_QUY_TIEN_THUONG = "ID_QUY_TIEN_THUONG";
+        public const string SO_TIEN_GIAM_TRU = "SO_TIEN_GIAM_TRU";
+        public const string SO_TIEN_NOP_THE = "SO_TIEN_NOP_THE";
+        public const string SO_TIEN_THUC_LINH = "SO_TIEN_THUC_LINH";
+        public const string TONG_HS_ATHK = "TONG_HS_ATHK";
+    }
+
     public class GD_TRANG_THAI_LAO_DONG
     {
         public const string ID = "ID";

@@ -122,23 +122,23 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NHAN_VIEN);
                 return false;
             }
             if (m_sle_chon_loai_lao_dong.EditValue == null || m_sle_chon_loai_lao_dong.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn loại lao động", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_LOAI_LAO_DONG);
                 return false;
             }
 
             if (m_dat_ngay_bat_dau.Value.Date == null || m_dat_ngay_bat_dau.Value.Date.ToString() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn ngày bắt đầu", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NGAY_BAT_DAU);
                 return false;
             }
             if (m_dat_ngay_ket_thuc.Value.Date == null || m_dat_ngay_ket_thuc.Value.Date.ToString() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn ngày kết thúc", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NGAY_KET_THUC);
                 return false;
             }
             return true;
@@ -212,7 +212,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         load_data_2_m_variable();
                         if (m_id_gd_loai_ld != 0)
                         {
-                            DevExpress.XtraEditors.XtraMessageBox.Show("Nhân viên nãy đã tồn tại loại lao động! Nếu bạn muốn SỬA thông tin cho nhân viên vui lòng chọn nút SỬA!", "THÔNG BÁO!");
+                            CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_NHAN_VIEN_DA_CO_LOAI_LAO_DONG);
                         }
                         else
                         {

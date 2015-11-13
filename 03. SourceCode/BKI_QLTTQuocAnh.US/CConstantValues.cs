@@ -283,6 +283,12 @@ namespace BKI_DichVuMatDat.US
         public const int ERROR_CHUA_CHON_LOAI_THU_NHAP = 306;
         public const int ERROR_CHUA_NHAP_LY_DO = 307;
         public const int ERROR_CHUA_CHON_NHAN_VIEN = 308;
+        
+        //Nhân viên loại lao động
+        public const int ERROR_CHUA_CHON_LOAI_LAO_DONG = 309;
+        public const int ERROR_CHUA_CHON_NGAY_BAT_DAU = 310;
+        public const int ERROR_CHUA_CHON_NGAY_KET_THUC = 311;
+        public const int ERROR_NHAN_VIEN_DA_CO_LOAI_LAO_DONG = 312;
         #endregion
 
     }

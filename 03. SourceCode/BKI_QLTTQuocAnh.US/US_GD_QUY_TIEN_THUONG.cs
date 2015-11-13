@@ -243,6 +243,72 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["TINH_XONG_YN"] = System.Convert.DBNull;
         }
 
+        public DateTime datTU_NGAY_XET_THUONG
+        {
+            get
+            {
+                return CNull.RowNVLDate(pm_objDR, "TU_NGAY_XET_THUONG", IPConstants.c_DefaultDate);
+            }
+            set
+            {
+                pm_objDR["TU_NGAY_XET_THUONG"] = value;
+            }
+        }
+
+        public bool IsTU_NGAY_XET_THUONGNull()
+        {
+            return pm_objDR.IsNull("TU_NGAY_XET_THUONG");
+        }
+
+        public void SetTU_NGAY_XET_THUONGNull()
+        {
+            pm_objDR["TU_NGAY_XET_THUONG"] = System.Convert.DBNull;
+        }
+
+        public DateTime datDEN_NGAY_XET_THUONG
+        {
+            get
+            {
+                return CNull.RowNVLDate(pm_objDR, "DEN_NGAY_XET_THUONG", IPConstants.c_DefaultDate);
+            }
+            set
+            {
+                pm_objDR["DEN_NGAY_XET_THUONG"] = value;
+            }
+        }
+
+        public bool IsDEN_NGAY_XET_THUONGNull()
+        {
+            return pm_objDR.IsNull("DEN_NGAY_XET_THUONG");
+        }
+
+        public void SetDEN_NGAY_XET_THUONGNull()
+        {
+            pm_objDR["DEN_NGAY_XET_THUONG"] = System.Convert.DBNull;
+        }
+
+        public string strLY_DO_THUONG
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "LY_DO_THUONG", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["LY_DO_THUONG"] = value;
+            }
+        }
+
+        public bool IsLY_DO_THUONGNull()
+        {
+            return pm_objDR.IsNull("LY_DO_THUONG");
+        }
+
+        public void SetLY_DO_THUONGNull()
+        {
+            pm_objDR["LY_DO_THUONG"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_GD_QUY_TIEN_THUONG()

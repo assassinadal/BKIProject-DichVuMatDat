@@ -301,6 +301,14 @@ namespace BKI_DichVuMatDat.DS {
             
             private global::System.Data.DataColumn columnTEN_LOAI_QUY_TIEN;
             
+            private global::System.Data.DataColumn columnTINH_XONG_TEXT;
+            
+            private global::System.Data.DataColumn columnLY_DO_THUONG;
+            
+            private global::System.Data.DataColumn columnTU_NGAY_XET_THUONG;
+            
+            private global::System.Data.DataColumn columnDEN_NGAY_XET_THUONG;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public V_GD_QUY_TIEN_THUONGDataTable() {
@@ -424,6 +432,38 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TINH_XONG_TEXTColumn {
+                get {
+                    return this.columnTINH_XONG_TEXT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LY_DO_THUONGColumn {
+                get {
+                    return this.columnLY_DO_THUONG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TU_NGAY_XET_THUONGColumn {
+                get {
+                    return this.columnTU_NGAY_XET_THUONG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DEN_NGAY_XET_THUONGColumn {
+                get {
+                    return this.columnDEN_NGAY_XET_THUONG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +499,7 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_GD_QUY_TIEN_THUONGRow AddV_GD_QUY_TIEN_THUONGRow(decimal ID, string THANG, string NAM, decimal SO_TIEN, decimal ID_LOAI_QUY_TIEN, string NGUOI_LAP, System.DateTime NGAY_LAP, string DA_XOA, string TEN_QUY, string TINH_XONG_YN, string TEN_LOAI_QUY_TIEN) {
+            public V_GD_QUY_TIEN_THUONGRow AddV_GD_QUY_TIEN_THUONGRow(decimal ID, string THANG, string NAM, decimal SO_TIEN, decimal ID_LOAI_QUY_TIEN, string NGUOI_LAP, System.DateTime NGAY_LAP, string DA_XOA, string TEN_QUY, string TINH_XONG_YN, string TEN_LOAI_QUY_TIEN, string TINH_XONG_TEXT, string LY_DO_THUONG, System.DateTime TU_NGAY_XET_THUONG, System.DateTime DEN_NGAY_XET_THUONG) {
                 V_GD_QUY_TIEN_THUONGRow rowV_GD_QUY_TIEN_THUONGRow = ((V_GD_QUY_TIEN_THUONGRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -472,7 +512,11 @@ namespace BKI_DichVuMatDat.DS {
                         DA_XOA,
                         TEN_QUY,
                         TINH_XONG_YN,
-                        TEN_LOAI_QUY_TIEN};
+                        TEN_LOAI_QUY_TIEN,
+                        TINH_XONG_TEXT,
+                        LY_DO_THUONG,
+                        TU_NGAY_XET_THUONG,
+                        DEN_NGAY_XET_THUONG};
                 rowV_GD_QUY_TIEN_THUONGRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_GD_QUY_TIEN_THUONGRow);
                 return rowV_GD_QUY_TIEN_THUONGRow;
@@ -513,6 +557,10 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnTEN_QUY = base.Columns["TEN_QUY"];
                 this.columnTINH_XONG_YN = base.Columns["TINH_XONG_YN"];
                 this.columnTEN_LOAI_QUY_TIEN = base.Columns["TEN_LOAI_QUY_TIEN"];
+                this.columnTINH_XONG_TEXT = base.Columns["TINH_XONG_TEXT"];
+                this.columnLY_DO_THUONG = base.Columns["LY_DO_THUONG"];
+                this.columnTU_NGAY_XET_THUONG = base.Columns["TU_NGAY_XET_THUONG"];
+                this.columnDEN_NGAY_XET_THUONG = base.Columns["DEN_NGAY_XET_THUONG"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -540,6 +588,14 @@ namespace BKI_DichVuMatDat.DS {
                 base.Columns.Add(this.columnTINH_XONG_YN);
                 this.columnTEN_LOAI_QUY_TIEN = new global::System.Data.DataColumn("TEN_LOAI_QUY_TIEN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTEN_LOAI_QUY_TIEN);
+                this.columnTINH_XONG_TEXT = new global::System.Data.DataColumn("TINH_XONG_TEXT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTINH_XONG_TEXT);
+                this.columnLY_DO_THUONG = new global::System.Data.DataColumn("LY_DO_THUONG", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLY_DO_THUONG);
+                this.columnTU_NGAY_XET_THUONG = new global::System.Data.DataColumn("TU_NGAY_XET_THUONG", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTU_NGAY_XET_THUONG);
+                this.columnDEN_NGAY_XET_THUONG = new global::System.Data.DataColumn("DEN_NGAY_XET_THUONG", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDEN_NGAY_XET_THUONG);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
@@ -555,6 +611,9 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnTINH_XONG_YN.MaxLength = 1;
                 this.columnTEN_LOAI_QUY_TIEN.AllowDBNull = false;
                 this.columnTEN_LOAI_QUY_TIEN.MaxLength = 35;
+                this.columnTINH_XONG_TEXT.ReadOnly = true;
+                this.columnTINH_XONG_TEXT.MaxLength = 14;
+                this.columnLY_DO_THUONG.MaxLength = 250;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -849,6 +908,72 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TINH_XONG_TEXT {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_GD_QUY_TIEN_THUONG.TINH_XONG_TEXTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TINH_XONG_TEXT\' in table \'V_GD_QUY_TIEN_THUONG\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_GD_QUY_TIEN_THUONG.TINH_XONG_TEXTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string LY_DO_THUONG {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_GD_QUY_TIEN_THUONG.LY_DO_THUONGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LY_DO_THUONG\' in table \'V_GD_QUY_TIEN_THUONG\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_GD_QUY_TIEN_THUONG.LY_DO_THUONGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime TU_NGAY_XET_THUONG {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableV_GD_QUY_TIEN_THUONG.TU_NGAY_XET_THUONGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TU_NGAY_XET_THUONG\' in table \'V_GD_QUY_TIEN_THUONG\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_GD_QUY_TIEN_THUONG.TU_NGAY_XET_THUONGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DEN_NGAY_XET_THUONG {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableV_GD_QUY_TIEN_THUONG.DEN_NGAY_XET_THUONGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DEN_NGAY_XET_THUONG\' in table \'V_GD_QUY_TIEN_THUONG\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_GD_QUY_TIEN_THUONG.DEN_NGAY_XET_THUONGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTHANGNull() {
                 return this.IsNull(this.tableV_GD_QUY_TIEN_THUONG.THANGColumn);
             }
@@ -917,6 +1042,54 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNGAY_LAPNull() {
                 this[this.tableV_GD_QUY_TIEN_THUONG.NGAY_LAPColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTINH_XONG_TEXTNull() {
+                return this.IsNull(this.tableV_GD_QUY_TIEN_THUONG.TINH_XONG_TEXTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTINH_XONG_TEXTNull() {
+                this[this.tableV_GD_QUY_TIEN_THUONG.TINH_XONG_TEXTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLY_DO_THUONGNull() {
+                return this.IsNull(this.tableV_GD_QUY_TIEN_THUONG.LY_DO_THUONGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLY_DO_THUONGNull() {
+                this[this.tableV_GD_QUY_TIEN_THUONG.LY_DO_THUONGColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTU_NGAY_XET_THUONGNull() {
+                return this.IsNull(this.tableV_GD_QUY_TIEN_THUONG.TU_NGAY_XET_THUONGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTU_NGAY_XET_THUONGNull() {
+                this[this.tableV_GD_QUY_TIEN_THUONG.TU_NGAY_XET_THUONGColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDEN_NGAY_XET_THUONGNull() {
+                return this.IsNull(this.tableV_GD_QUY_TIEN_THUONG.DEN_NGAY_XET_THUONGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDEN_NGAY_XET_THUONGNull() {
+                this[this.tableV_GD_QUY_TIEN_THUONG.DEN_NGAY_XET_THUONGColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1090,6 +1263,10 @@ namespace BKI_DichVuMatDat.DS.DS_V_GD_QUY_TIEN_THUONGTableAdapters {
             tableMapping.ColumnMappings.Add("TEN_QUY", "TEN_QUY");
             tableMapping.ColumnMappings.Add("TINH_XONG_YN", "TINH_XONG_YN");
             tableMapping.ColumnMappings.Add("TEN_LOAI_QUY_TIEN", "TEN_LOAI_QUY_TIEN");
+            tableMapping.ColumnMappings.Add("TINH_XONG_TEXT", "TINH_XONG_TEXT");
+            tableMapping.ColumnMappings.Add("LY_DO_THUONG", "LY_DO_THUONG");
+            tableMapping.ColumnMappings.Add("TU_NGAY_XET_THUONG", "TU_NGAY_XET_THUONG");
+            tableMapping.ColumnMappings.Add("DEN_NGAY_XET_THUONG", "DEN_NGAY_XET_THUONG");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1107,7 +1284,8 @@ namespace BKI_DichVuMatDat.DS.DS_V_GD_QUY_TIEN_THUONGTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, THANG, NAM, SO_TIEN, ID_LOAI_QUY_TIEN, NGUOI_LAP, NGAY_LAP, DA_XOA, TE" +
-                "N_QUY, TINH_XONG_YN, TEN_LOAI_QUY_TIEN FROM dbo.V_GD_QUY_TIEN_THUONG";
+                "N_QUY, TINH_XONG_YN, TEN_LOAI_QUY_TIEN, TINH_XONG_TEXT, LY_DO_THUONG, TU_NGAY_XE" +
+                "T_THUONG, DEN_NGAY_XET_THUONG FROM dbo.V_GD_QUY_TIEN_THUONG";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

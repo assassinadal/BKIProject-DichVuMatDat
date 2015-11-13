@@ -339,7 +339,11 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string TINH_XONG_YN = "TINH_XONG_YN";
         public const string TEN_LOAI_QUY_TIEN = "TEN_LOAI_QUY_TIEN";
         public const string TINH_XONG_TEXT = "TINH_XONG_TEXT";
+        public const string LY_DO_THUONG = "LY_DO_THUONG";
+        public const string TU_NGAY_XET_THUONG = "TU_NGAY_XET_THUONG";
+        public const string DEN_NGAY_XET_THUONG = "DEN_NGAY_XET_THUONG";
     }
+
 
     public class GD_THU_NHAP_KHAC
     {
@@ -380,6 +384,9 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string DA_XOA = "DA_XOA";
         public const string TEN_QUY = "TEN_QUY";
         public const string TINH_XONG_YN = "TINH_XONG_YN";
+        public const string TU_NGAY_XET_THUONG = "TU_NGAY_XET_THUONG";
+        public const string DEN_NGAY_XET_THUONG = "DEN_NGAY_XET_THUONG";
+        public const string LY_DO_THUONG = "LY_DO_THUONG";
     }
     public class GD_CHAM_CONG
     {

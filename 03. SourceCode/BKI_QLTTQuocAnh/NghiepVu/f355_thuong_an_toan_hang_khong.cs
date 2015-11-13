@@ -27,6 +27,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             InitializeComponent();
             format_control();
         }
+        public f355_thuong_an_toan_hang_khong(decimal ip_dc_id_quy_tien)
+        {
+            InitializeComponent();
+            format_control();
+            fill_data_2_control(ip_dc_id_quy_tien);
+        }
         ~f355_thuong_an_toan_hang_khong()
         {
             Dispose(false);
@@ -40,7 +46,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             CHUA_GIAM_TRU
         }
         IS_GIAM_TRU m_is_giam_tru;
+
         US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG m_us_hs_bs_athk;
+        //US_V_GD_QUY_TIEN_THUONG m_us_v_gd_quy_tien_thuong;
         #endregion
 
         #region Private method
@@ -84,6 +92,18 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_dat_tu_ngay.DateTime = DateTime.Now.AddMonths(-DateTime.Now.Month + 1).AddDays(-DateTime.Now.Day + 1);
             m_dat_thang_thuong.DateTime = DateTime.Now;
         }
+        private void fill_data_2_control(decimal ip_dc_id_quy_tien)
+        {
+            US_V_GD_QUY_TIEN_THUONG v_us_v_gd_quy_tien_thuong = new US_V_GD_QUY_TIEN_THUONG(ip_dc_id_quy_tien);
+            m_txt_ten_quy.Text = v_us_v_gd_quy_tien_thuong.strTEN_QUY;
+            m_dat_thang_thuong.DateTime = new DateTime((int)CIPConvert.ToDecimal(v_us_v_gd_quy_tien_thuong.strNAM)
+                                                            , (int)CIPConvert.ToDecimal(v_us_v_gd_quy_tien_thuong.strTHANG)
+                                                            , 01);
+            m_dat_tu_ngay.DateTime = v_us_v_gd_quy_tien_thuong.datTU_NGAY_XET_THUONG;
+            m_dat_den_ngay.DateTime = v_us_v_gd_quy_tien_thuong.datDEN_NGAY_XET_THUONG;
+            m_txt_so_tien.EditValue = v_us_v_gd_quy_tien_thuong.dcSO_TIEN;
+        }
+
 
         private bool validate_control_empty(params Control[] controls)
         {
@@ -171,7 +191,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private bool is_valid_data_before_tinh_luong()
         {
-            if(validate_control_empty(m_dat_tu_ngay, m_dat_den_ngay, m_txt_so_tien, m_txt_ly_do_thuong, m_dat_thang_thuong))
+            if(validate_control_empty(m_dat_tu_ngay, m_dat_den_ngay, m_txt_so_tien, m_dat_thang_thuong))
             {
                 return false;
             }
@@ -183,7 +203,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             ref_us.dcSO_TIEN = CIPConvert.ToDecimal(dr["SO_TIEN_THUONG_NV"].ToString());
             ref_us.dcTHANG = m_dat_thang_thuong.DateTime.Month;
             ref_us.dcNAM = m_dat_thang_thuong.DateTime.Year;
-            ref_us.strLY_DO = m_txt_ly_do_thuong.Text;
             ref_us.dcID_CACH_TINH_THUE = CONST_ID_CACH_TINH_THUE.THUE_THANG;
             ref_us.dcID_LOAI_THU_NHAP_KHAC = CONST_ID_LOAI_THU_NHAP_KHAC.LINH_CO_THUE;
         }
@@ -320,6 +339,22 @@ namespace BKI_DichVuMatDat.NghiepVu
                 SplashScreenManager.CloseForm();
             }
         }
+        private void handle_key_down(Keys ip_key, bool ip_is_ctrl_press)
+        {
+            if(ip_key == Keys.Escape)
+            {
+                Dispose();
+            }
+            if(ip_key == Keys.Enter && ip_is_ctrl_press)
+            {
+                save_data();
+            }
+        }
+        private void us_2_control_data(decimal ip_dc_id_gd_quy_tien_thuong)
+        {
+            var v_us_v_gd_quy_tien_thuong = new US_V_GD_QUY_TIEN_THUONG(ip_dc_id_gd_quy_tien_thuong);
+
+        }
         #endregion
 
         #region Event Handle
@@ -333,6 +368,19 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_dat_den_ngay.EditValueChanged += m_dat_den_ngay_EditValueChanged;
             m_dat_thang_thuong.EditValueChanged += m_dat_thang_thuong_EditValueChanged;
             m_chk_giam_tru.CheckedChanged += m_chk_giam_tru_CheckedChanged;
+            KeyDown += f355_thuong_an_toan_hang_khong_KeyDown;
+        }
+
+        void f355_thuong_an_toan_hang_khong_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                handle_key_down(e.KeyCode, e.Control);
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_chk_giam_tru_CheckedChanged(object sender, EventArgs e)

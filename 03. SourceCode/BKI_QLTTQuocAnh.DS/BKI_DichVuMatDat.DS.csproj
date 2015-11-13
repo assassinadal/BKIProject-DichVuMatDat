@@ -284,6 +284,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_GD_QUYET_DINH.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_GD_QUY_TIEN_THUONG.cs">
+      <DependentUpon>DS_V_GD_QUY_TIEN_THUONG.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DS_V_GD_QUY_TIEN_THUONG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

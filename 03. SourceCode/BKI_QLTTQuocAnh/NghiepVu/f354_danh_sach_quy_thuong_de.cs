@@ -38,6 +38,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         #endregion
 
         #region Private Methode
+        private void set_tu_dau_nam_den_cuoi_nam()
+        {
+            m_dat_tu_ngay.DateTime = DateTime.Now.AddMonths(-DateTime.Now.Month + 1).AddDays(-DateTime.Now.Day + 1);
+            m_dat_den_ngay.DateTime = m_dat_tu_ngay.DateTime.AddYears(1).AddDays(-1);
+        }
         private void format_control()
         {
             set_define_event();
@@ -54,12 +59,12 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_initial_form_load()
         {
             m_dat_thang_thuong.DateTime = DateTime.Now;
+            set_tu_dau_nam_den_cuoi_nam();
             fill_data_loai_quy_thuong();
-            //DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
         private bool is_valid_data()
         {
-            if(!CHRMCommon.validate_control_empty(m_le_loai_quy_thuong,m_txt_ten_quy))
+            if(!CHRMCommon.validate_control_empty(m_le_loai_quy_thuong,m_txt_ten_quy, m_dat_thang_thuong, m_dat_tu_ngay, m_dat_den_ngay))
             {
                 XtraMessageBox.Show("Hoàn thiện dữ liệu trước!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -84,6 +89,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us_gd_quy_tien_thuong.strDA_XOA = "N";
             v_us_gd_quy_tien_thuong.strTEN_QUY = m_txt_ten_quy.Text;
             v_us_gd_quy_tien_thuong.strTINH_XONG_YN = "N";
+            v_us_gd_quy_tien_thuong.strLY_DO_THUONG = m_txt_ly_do_thuong.Text;
+            v_us_gd_quy_tien_thuong.datTU_NGAY_XET_THUONG = m_dat_tu_ngay.DateTime;
+            v_us_gd_quy_tien_thuong.datDEN_NGAY_XET_THUONG = m_dat_den_ngay.DateTime;
 
             v_us_gd_quy_tien_thuong.Insert();
             DialogResult = System.Windows.Forms.DialogResult.OK;

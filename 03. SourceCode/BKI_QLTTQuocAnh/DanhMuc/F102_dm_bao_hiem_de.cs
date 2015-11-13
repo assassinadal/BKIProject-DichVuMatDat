@@ -76,17 +76,17 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             if (m_txt_ma_bao_hiem.Text == null || m_txt_ma_bao_hiem.Text == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải nhập mã bảo hiểm!", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_MA_BAO_HIEM);
                 return false;
             }
             if (m_txt_ten_bao_hiem.Text == null || m_txt_ten_bao_hiem.Text == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải nhập tên loại bảo hiểm!", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TEN_LOAI_BAO_HIEM);
                 return false;
             }
             if (m_txt_ti_le.Text == null || m_txt_ti_le.Text == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải nhập tỉ lệ!", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TI_LE_BAO_HIEM);
                 return false;
             }
             return true;

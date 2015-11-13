@@ -208,7 +208,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_dv.Insert();
                         v_us_dm_dv.CommitTransaction();
                         m_id_dm_don_vi_moi_tao = v_us_dm_dv.dcID;
-                        if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.INSERT_DM_DON_VI_THANH_CONG_TIEP_TUC_INSERT_YN) == true)
+                        if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_INSERT_DM_DON_VI_THANH_CONG_TIEP_TUC_INSERT_YN) == true)
                         {
                             refresh_form();
                         }

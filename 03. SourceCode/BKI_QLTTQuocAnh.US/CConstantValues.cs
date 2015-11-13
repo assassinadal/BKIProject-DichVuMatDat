@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BKI_DichVuMatDat.US {
+namespace BKI_DichVuMatDat.US
+{
     public class CONST_ID_LOAI_CACH_TINH_THUE
     {
         public const decimal THUE_5PT = 167;
@@ -33,52 +34,61 @@ namespace BKI_DichVuMatDat.US {
         public const decimal MUC_LUONG_CUNG_HS_LNS = 113;
     }
 
-    public class CONST_TIEN_TO_SO_PHIEU {
+    public class CONST_TIEN_TO_SO_PHIEU
+    {
         public const string PHAI_THU = "PT-";
         public const string THUC_THU = "TT-";
         public const string GIAM_TRU = "GT-";
     }
-    
-    public class CONST_ID_LOAI_DOI_TUONG {
+
+    public class CONST_ID_LOAI_DOI_TUONG
+    {
         public const decimal ID_HOC_SINH = 18;
         public const decimal ID_GIAO_VIEN = 19;
     }
 
-    public class CONST_ID_USER_GROUP {
+    public class CONST_ID_USER_GROUP
+    {
         public const decimal ADMIN = 1;
     }
 
-    public class CONST_ID_LOAI_PHIEU_THU {
+    public class CONST_ID_LOAI_PHIEU_THU
+    {
 
         public const decimal PHIEU_PHAI_THU = 27;
         public const decimal PHIEU_THUC_THU = 26;
         public const decimal PHIEU_GIAM_TRU = 54;
     }
 
-    public class CONST_ID_TRANG_THAI_BAN_GIAO {
+    public class CONST_ID_TRANG_THAI_BAN_GIAO
+    {
 
         public const decimal DA_THU = 81;
         public const decimal DA_BAN_GIAO = 82;
 
     }
 
-    public class CONST_ID_DM_LOAI_CHUNG_TU {
-       
+    public class CONST_ID_DM_LOAI_CHUNG_TU
+    {
+
         public const decimal ID_TAT_CA = -1;
         public const decimal ID_NHAP_SO_DU = 60;
         public const decimal ID_BAO_HANH_SUA_CHUA = 37;
 
     }
 
-    public class CONST_ID_TRANG_THAI_HANG_HOA {
+    public class CONST_ID_TRANG_THAI_HANG_HOA
+    {
         public const decimal ID_DA_NHAP = 691;
     }
 
-    public class CONST_ID_DVT_THOI_GIAN {
+    public class CONST_ID_DVT_THOI_GIAN
+    {
         public const decimal ID_THANG = 694;
     }
-    
-    public class MA_LOAI_TU_DIEN {
+
+    public class MA_LOAI_TU_DIEN
+    {
         public const string TRANG_THAI_CHUC_VU = "TRANG_THAI_CHUC_VU";
         public const string TRANG_THAI_LAO_DONG = "TRANG_THAI_LAO_DONG";
         public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
@@ -168,16 +178,34 @@ namespace BKI_DichVuMatDat.US {
     public static class CONST_ID_MSGBOX
     {
         // Thông báo chung
-        public const int INFOR_DU_LIEU_DA_DUOC_CAP_NHAT = 190;
-        public const int INFOR_LUU_DU_LIEU_THANH_CONG = 50;
         public const int QUESTION_XAC_NHAN_LUU_DU_LIEU = 195;
         public const int QUESTION_XAC_NHAN_XOA_DU_LIEU = 8;
+        public const int INFOR_LUU_DU_LIEU_THANH_CONG = 50;
+        public const int INFOR_XOA_DU_LIEU_THANH_CONG = 202;
+        public const int INFOR_DU_LIEU_DA_DUOC_CAP_NHAT = 190;
 
         //DM_DON_VI
         public const int UPDATE_DU_LIEU_DM_DON_VI = 191;
         public const int ERROR_CHUA_NHAP_TEN_DON_VI = 192;
         public const int ERROR_CHUA_CHON_LOAI_DON_VI = 193;
-        public const int INSERT_DM_DON_VI_THANH_CONG_TIEP_TUC_INSERT_YN = 194;
+        public const int QUESTION_INSERT_DM_DON_VI_THANH_CONG_TIEP_TUC_INSERT_YN = 194;
+        public const int QUESTION_XAC_NHAN_XOA_DON_VI = 196;
+
+        //DM_BAO_HIEM
+        public const int QUESTION_XAC_NHAN_XOA_LOAI_BAO_HIEM = 197;
+        public const int ERROR_CHUA_NHAP_MA_BAO_HIEM = 198;
+        public const int ERROR_CHUA_NHAP_TEN_LOAI_BAO_HIEM = 199;
+        public const int ERROR_CHUA_NHAP_TI_LE_BAO_HIEM = 200;
+
+        //DM_HS_LNS
+        public const int ERROR_CHUA_CHON_HE_SO_DE_SUA = 201;
+        public const int QUESTION_XAC_NHAN_XOA_HE_SO = 201;
+        public const int ERROR_CHUA_NHAP_MA_LNS = 204;
+        public const int ERROR_CHUA_CHON_MUC_LNS = 205;
+        public const int ERROR_CHUA_NHAP_HE_SO_LNS = 206;
+        public const int ERROR_CHUA_NHAP_LOAI_LAO_DONG = 207;
+        public const int QUESTION_INSER_DM_HS_LNS_THANH_CONG_TIEP_TUC_INSERT_YN = 208;
+        
 
         //Form RPT
         public const int ERROR_CHUA_CO_DU_LIEU_DE_THUC_HIEN_THAO_TAC = 400;
@@ -186,15 +214,15 @@ namespace BKI_DichVuMatDat.US {
         public const int ERROR_CHUA_CHON_THANG_DE_LOC_DU_LIEU = 403;
 
         //Hệ thống
-        public const int ERROR_NHAP_SAI_MAT_KHAU_CU = 221;
-        public const int ERROR_NHAP_LAI_MAT_KHAU_MOI_BI_SAI = 222;
-        public const int INFOR_DOI_MAT_KHAU_THANH_CONG = 223;
-        public const int ERROR_DA_CAP_HET_QUYEN = 224;
-        public const int ERROR_KHONG_CON_QUYEN_DE_CAP = 225;
-        public const int ERROR_MAT_KHAU_NHAP_SAI = 226;
-        public const int CONFIRM_RESTORE_DB = 227;
-        public const int INFOR_RESTORE_DB_THANG_CONG = 228;
-        public const int INFOR_BACKUP_DB_THANG_CONG = 229;
+        public const int ERROR_NHAP_SAI_MAT_KHAU_CU = 280;  
+        public const int ERROR_NHAP_LAI_MAT_KHAU_MOI_BI_SAI = 281;
+        public const int INFOR_DOI_MAT_KHAU_THANH_CONG = 282;
+        public const int ERROR_DA_CAP_HET_QUYEN = 283;
+        public const int ERROR_KHONG_CON_QUYEN_DE_CAP = 284;
+        public const int ERROR_MAT_KHAU_NHAP_SAI = 285;
+        public const int CONFIRM_RESTORE_DB = 286;
+        public const int INFOR_RESTORE_DB_THANG_CONG = 287;
+        public const int INFOR_BACKUP_DB_THANG_CONG = 288;
 
         //Giao dịch
         public const int ERROR_CHUA_CO_DU_LIEU_TREN_LUOI = 300;
@@ -204,7 +232,10 @@ namespace BKI_DichVuMatDat.US {
 
     public static class CONST_ID_TRANG_THAI_LAO_DONG
     {
+        public const int DANG_LAM = 622;
+        public const int NGHI_VIEC = 624;
         public const int NGHI_HUU = 689;
+
     }
 
 }

@@ -114,22 +114,22 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             if (m_txt_ma_luong_ns.Text.Trim() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập mã lương năng suất!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_MA_LNS);
                 return false;
             }
             if (m_sle_muc_lns.EditValue == null)
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn mức lương năng suất!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MUC_LNS);
                 return false;
             }
             if (m_txt_he_so_luong_ns.Text.Trim() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập hệ số lương năng suất!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_HE_SO_LNS);
                 return false;
             }
             if (m_txt_loai_lao_dong.Text.Trim() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập loại lao động!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_LOAI_LAO_DONG);
                 return false;
             }
             return true;
@@ -158,7 +158,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_he_so_luong_ns.Insert();
                         v_us_dm_he_so_luong_ns.CommitTransaction();
                         m_id_dm_he_so_luong_ns_moi_tao = v_us_dm_he_so_luong_ns.dcID;
-                        if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã thêm hệ số lương năng suất thành công! Bạn có muốn thêm tham số khác không?", "THÀNH CÔNG", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_INSER_DM_HS_LNS_THANH_CONG_TIEP_TUC_INSERT_YN) == true)
                         {
                             refresh_form();
                         }
@@ -172,7 +172,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_he_so_luong_ns.BeginTransaction();
                         v_us_dm_he_so_luong_ns.Update();
                         v_us_dm_he_so_luong_ns.CommitTransaction();
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã cập nhật hệ số lương năng suất thành công!", "THÀNH CÔNG");
+                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
                         this.Close();
                         break;
                     default:
@@ -219,7 +219,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 if (check_validate_data())
                 {
-                    if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn lưu hệ số lương năng suất này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
                     {
                         save_data();
                     }

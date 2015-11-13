@@ -313,6 +313,16 @@ namespace BKI_DichVuMatDat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add16 {
+            get {
+                object obj = ResourceManager.GetObject("add16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Aha_Soft_Security_Secrecy {
             get {
                 object obj = ResourceManager.GetObject("Aha-Soft-Security-Secrecy", resourceCulture);
@@ -366,6 +376,16 @@ namespace BKI_DichVuMatDat.Properties {
         internal static System.Drawing.Bitmap Designbolts_Monsters_University_Monsters_Character_Young_Mikes1 {
             get {
                 object obj = ResourceManager.GetObject("Designbolts-Monsters-University-Monsters-Character-Young-Mikes1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Exit {
+            get {
+                object obj = ResourceManager.GetObject("Exit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -926,6 +946,16 @@ namespace BKI_DichVuMatDat.Properties {
         internal static System.Drawing.Bitmap paper133_1_ {
             get {
                 object obj = ResourceManager.GetObject("paper133(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Save {
+            get {
+                object obj = ResourceManager.GetObject("Save", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

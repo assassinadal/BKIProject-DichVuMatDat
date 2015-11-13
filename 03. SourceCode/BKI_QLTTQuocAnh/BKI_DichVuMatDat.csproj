@@ -548,6 +548,12 @@
     <Compile Include="NghiepVu\f354_danh_sach_quy_thuong.Designer.cs">
       <DependentUpon>f354_danh_sach_quy_thuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f354_danh_sach_quy_thuong_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f354_danh_sach_quy_thuong_de.Designer.cs">
+      <DependentUpon>f354_danh_sach_quy_thuong_de.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f355_thuong_an_toan_hang_khong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -783,6 +789,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f354_danh_sach_quy_thuong.resx">
       <DependentUpon>f354_danh_sach_quy_thuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f354_danh_sach_quy_thuong_de.resx">
+      <DependentUpon>f354_danh_sach_quy_thuong_de.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f355_thuong_an_toan_hang_khong.resx">
       <DependentUpon>f355_thuong_an_toan_hang_khong.cs</DependentUpon>
@@ -1483,6 +1492,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\accounting.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

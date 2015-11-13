@@ -63,7 +63,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us_v_gd_quy_tien_thuong.FillDataSetByDateFilter(out v_ds_v_gd_quy_tien_thuong, from_date(), to_date());
             m_grc_ds_quy_tien.DataSource = v_ds_v_gd_quy_tien_thuong.V_GD_QUY_TIEN_THUONG;
             m_grc_ds_quy_tien.RefreshDataSource();
-            CHRMCommon.make_stt(0, m_grv_ds_quy_tien);
+            CHRMCommon.make_stt_indicator(m_grv_ds_quy_tien);
         }
         #endregion
 
@@ -74,6 +74,19 @@ namespace BKI_DichVuMatDat.NghiepVu
             FormClosed += f354_danh_sach_quy_thuong_FormClosed;
             m_cmd_filter.Click += m_cmd_filter_Click;
             m_repoBtn_tinh_tien_thuong.Click += m_repoBtn_tinh_tien_thuong_Click;
+            m_cmd_them_quy_tien_thuong.Click += m_cmd_them_quy_tien_thuong_Click;
+        }
+
+        void m_cmd_them_quy_tien_thuong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_repoBtn_tinh_tien_thuong_Click(object sender, EventArgs e)

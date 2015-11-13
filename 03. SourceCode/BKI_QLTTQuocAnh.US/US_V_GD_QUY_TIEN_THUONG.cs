@@ -318,8 +318,8 @@ public class US_V_GD_QUY_TIEN_THUONG : US_Object
             op_ds = new DS_V_GD_QUY_TIEN_THUONG();
             op_ds.EnforceConstraints = false;
             CStoredProc v_sp = new CStoredProc("pr_get_data_quy_tien_thuong_by_date_filter");
-            v_sp.addDecimalInputParam("@ip_dat_from_date", ip_dat_from_date);
-            v_sp.addDecimalInputParam("@ip_dat_to_date", ip_dat_to_date);
+            v_sp.addDatetimeInputParam("@ip_dat_from_date", ip_dat_from_date);
+            v_sp.addDatetimeInputParam("@ip_dat_to_date", ip_dat_to_date);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 	}

@@ -177,15 +177,18 @@ namespace BKI_DichVuMatDat.US
 
     public static class CONST_ID_MSGBOX
     {
-        // Thông báo chung
+        #region Thông báo chung
         public const int QUESTION_XAC_NHAN_LUU_DU_LIEU = 195;
         public const int QUESTION_XAC_NHAN_XOA_DU_LIEU = 8;
         public const int INFOR_LUU_DU_LIEU_THANH_CONG = 50;
         public const int INFOR_XOA_DU_LIEU_THANH_CONG = 202;
         public const int INFOR_DU_LIEU_DA_DUOC_CAP_NHAT = 190;
+        public const int ERROR_CHUA_CHON_DONG_TREN_LUOI_DE_SUA = 191;
+        public const int QUESTION_XAC_NHAN_XOA_THONG_TIN_DA_CHON_TREN_LUOI = 201;
+        #endregion
 
+        #region Danh mục
         //DM_DON_VI
-        public const int UPDATE_DU_LIEU_DM_DON_VI = 191;
         public const int ERROR_CHUA_NHAP_TEN_DON_VI = 192;
         public const int ERROR_CHUA_CHON_LOAI_DON_VI = 193;
         public const int QUESTION_INSERT_DM_DON_VI_THANH_CONG_TIEP_TUC_INSERT_YN = 194;
@@ -198,28 +201,63 @@ namespace BKI_DichVuMatDat.US
         public const int ERROR_CHUA_NHAP_TI_LE = 200;
 
         //DM_HS_LNS
-        public const int ERROR_CHUA_CHON_HE_SO_DE_SUA = 201;
         public const int QUESTION_XAC_NHAN_XOA_HE_SO = 202;
         public const int ERROR_CHUA_NHAP_MA_LNS = 204;
         public const int ERROR_CHUA_CHON_MUC_LNS = 205;
         public const int ERROR_CHUA_NHAP_HE_SO_LNS = 206;
         public const int ERROR_CHUA_NHAP_LOAI_LAO_DONG = 207;
         public const int QUESTION_INSER_DM_HS_LNS_THANH_CONG_TIEP_TUC_INSERT_YN = 208;
-        
+
         //DM_LOAI_HOP_DONG
         public const int QUESTION_XAC_NHAN_XOA_LOAI_HOP_DONG = 209;
         public const int ERROR_CHUA_NHAP_MA_LOAI_HOP_DONG = 210;
         public const int ERROR_CHUA_NHAP_TEN_LOAI_HOP_DONG = 211;
         public const int ERROR_CHUA_NHAP_SO_TIEN = 212;
 
+        //DM_LOAI_NGAY_CONG
+        public const int QUESTION_XAC_NHAN_XOA_LOAI_NGAY_CONG = 213;
+        public const int ERROR_CHUA_NHAP_MA_LOAI_NGAY_CONG = 214;
+        public const int ERROR_CHUA_NHAP_TEN_LOAI_NGAY_CONG = 215;
+        public const int ERROR_CHUA_NHAP_TI_LE_LNS = 216;
+        public const int ERROR_CHUA_NHAP_TI_LE_LCD = 217;
+
+        //DM_LUONG_CHE_DO
+        public const int QUESTION_INSER_DM_LCD_THANH_CONG_TIEP_TUC_INSERT_YN = 218;
+        public const int ERROR_CHUA_NHAP_MA_LCD = 219;
+        public const int ERROR_CHUA_CHON_MUC_LCD = 220;
+
+        //DM_PHU_CAP
+        public const int QUESTION_INSER_DM_PHU_CAP_THANH_CONG_TIEP_TUC_INSERT_YN = 221;
+        public const int ERROR_CHUA_NHAP_TEN_LOAI_PHU_CAP = 222;
+        public const int ERROR_CHUA_NHAP_DOI_TUONG_DC_HUONG_PHU_CAP = 223;
+
+        //DM_THAM_SO
+        public const int QUESTION_INSER_DM_THAM_SO_THANH_CONG_TIEP_TUC_INSERT_YN = 224;
+        public const int ERROR_CHUA_NHAP_TEN_THAM_SO = 225;
+        public const int ERROR_CHUA_NHAP_GIA_TRI_THAM_SO = 226;
+
+        //DM_THUE
+        public const int QUESTION_INSER_DM_THUE_THANH_CONG_TIEP_TUC_INSERT_YN = 229;
+        public const int ERROR_CHUA_NHAP_GIA_TRI_BU_TRU = 227;
+        public const int ERROR_CHUA_NHAP_GIA_TRI_CHAN_DUOI_NHO_HON_CHAN_TREN = 228;
+
+        //DM_NHAN_VI
+        public const int ERROR_CHUA_NHAP_MA_NHAN_VIEN = 230;
+        public const int ERROR_CHUA_NHAP_HO_DEM_NHAN_VIEN = 231;
+        public const int ERROR_CHUA_NHAP_TEN_NHAN_VIEN = 232;
+        #endregion
+
+        #region Báo cáo
         //Form RPT
         public const int ERROR_CHUA_CO_DU_LIEU_DE_THUC_HIEN_THAO_TAC = 400;
         public const int INFOR_LUU_BAO_CAO_THANH_CONG = 401;
         public const int ERROR_CHUA_CHON_NAM_DE_LOC_DU_LIEU = 402;
         public const int ERROR_CHUA_CHON_THANG_DE_LOC_DU_LIEU = 403;
+        #endregion
 
+        #region Hệ thống
         //Hệ thống
-        public const int ERROR_NHAP_SAI_MAT_KHAU_CU = 280;  
+        public const int ERROR_NHAP_SAI_MAT_KHAU_CU = 280;
         public const int ERROR_NHAP_LAI_MAT_KHAU_MOI_BI_SAI = 281;
         public const int INFOR_DOI_MAT_KHAU_THANH_CONG = 282;
         public const int ERROR_DA_CAP_HET_QUYEN = 283;
@@ -228,11 +266,15 @@ namespace BKI_DichVuMatDat.US
         public const int CONFIRM_RESTORE_DB = 286;
         public const int INFOR_RESTORE_DB_THANG_CONG = 287;
         public const int INFOR_BACKUP_DB_THANG_CONG = 288;
+        #endregion
 
+        #region Giao dịch
         //Giao dịch
         public const int ERROR_CHUA_CO_DU_LIEU_TREN_LUOI = 300;
         public const int ERROR_CHUA_NHAP_NAM_DE_TINH = 301;
         public const int ERROR_CHUA_NHAP_SO_TIEN_DE_TINH = 302;
+        #endregion
+
     }
 
     public static class CONST_ID_TRANG_THAI_LAO_DONG

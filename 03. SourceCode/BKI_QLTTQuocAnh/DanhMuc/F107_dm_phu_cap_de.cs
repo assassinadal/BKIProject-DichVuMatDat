@@ -83,17 +83,17 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             if (m_search_lookup_edit_loai_phu_cap.Text.Trim() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập tên loại phụ cấp!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TEN_LOAI_PHU_CAP);
                 return false;
             }
             if (m_txt_doi_tuong_huong.Text.Trim() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập đối tượng hưởng!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_DOI_TUONG_DC_HUONG_PHU_CAP);
                 return false;
             }
             if (m_txt_ti_le.Text.Trim() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập tỉ lệ!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TI_LE);
                 return false;
             }
             return true;
@@ -121,7 +121,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_phu_cap.Insert();
                         v_us_dm_phu_cap.CommitTransaction();
                         m_id_dm_phu_cap_moi_tao = v_us_dm_phu_cap.dcID;
-                        if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã thêm loại phụ cấp thành công! Bạn có muốn thêm tham số khác không?", "THÀNH CÔNG", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_INSER_DM_PHU_CAP_THANH_CONG_TIEP_TUC_INSERT_YN) == true)
                         {
                             refresh_form();
                         }
@@ -135,7 +135,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_phu_cap.BeginTransaction();
                         v_us_dm_phu_cap.Update();
                         v_us_dm_phu_cap.CommitTransaction();
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã cập nhật đơn vị thành công!", "THÀNH CÔNG");
+                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
                         this.Close();
                         break;
                     default:
@@ -181,7 +181,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 if (check_validate_data())
                 {
-                    if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn lưu loại phụ cấp này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
                     {
                         save_data();
                     }

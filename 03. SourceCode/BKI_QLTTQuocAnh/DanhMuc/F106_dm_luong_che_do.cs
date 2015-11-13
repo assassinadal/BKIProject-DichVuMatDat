@@ -138,7 +138,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                 }
                 else
                 {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn một đơn vị trên lưới để sửa!");
+                    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_DONG_TREN_LUOI_DE_SUA);
                 }
             }
             catch (Exception v_e)
@@ -151,7 +151,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn xóa đơn vị này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_THONG_TIN_DA_CHON_TREN_LUOI) ==  true)
                 {
                     DataRow v_dr = m_grv_dm_luong_che_do.GetDataRow(m_grv_dm_luong_che_do.FocusedRowHandle);
                     decimal v_id_don_vi = CIPConvert.ToDecimal(v_dr["ID"]);
@@ -161,7 +161,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                     v_us.Delete();
                     v_us.CommitTransaction();
                     load_data_2_grid();
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã xóa thành công", "THÀNH CÔNG");
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_XOA_DU_LIEU_THANH_CONG);
                 }
             }
             catch (Exception v_e)

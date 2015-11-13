@@ -138,7 +138,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                 }
                 else
                 {
-                    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_HE_SO_DE_SUA);
+                    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_DONG_TREN_LUOI_DE_SUA);
                 }
             }
             catch (Exception v_e)
@@ -151,7 +151,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_HE_SO) == true)
+                if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_THONG_TIN_DA_CHON_TREN_LUOI) == true)
                 {
                     DataRow v_dr = m_grv_dm_he_so_luong_ns.GetDataRow(m_grv_dm_he_so_luong_ns.FocusedRowHandle);
                     decimal v_id_don_vi = CIPConvert.ToDecimal(v_dr["ID"]);

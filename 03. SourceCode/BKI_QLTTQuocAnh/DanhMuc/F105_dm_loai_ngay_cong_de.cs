@@ -76,22 +76,22 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             if (m_txt_ma_ngay_cong.Text == null || m_txt_ma_ngay_cong.Text == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải nhập mã loại ngày công!", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_MA_LOAI_NGAY_CONG);
                 return false;
             }
             if (m_txt_ten_ngay_cong.Text == null || m_txt_ten_ngay_cong.Text == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải nhập tên loại ngày công!", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TEN_LOAI_NGAY_CONG);
                 return false;
             }
             if (m_txt_ti_le_lns.Text == null || m_txt_ti_le_lns.Text == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải nhập tỉ lệ lương năng suất!", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TI_LE_LNS);
                 return false;
             }
             if (m_txt_ti_le_lcd.Text == null || m_txt_ti_le_lcd.Text == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải nhập tỉ lệ lương chế độ!", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TI_LE_LCD);
                 return false;
             }
             return true;
@@ -136,6 +136,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                     {
                         m_us.Update();
                     }
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
                     this.Close();
                 }               
             }

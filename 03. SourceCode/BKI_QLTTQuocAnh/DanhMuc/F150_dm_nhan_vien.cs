@@ -31,7 +31,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         #endregion
 
         #region Members
-        decimal m_is_newbie = 0; //1 la nhan vien moi
+        decimal m_member_is_newbie = 0; //1 la nhan vien moi
         #endregion
 
         #region Private Methods
@@ -299,17 +299,17 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             if (m_txt_ma_nv.Text == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập mã nhân viên rồi!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_MA_NHAN_VIEN);
                 return false;
             }
             if (m_txt_ho_dem.Text == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập họ đệm cho nhân viên rồi!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_HO_DEM_NHAN_VIEN);
                 return false;
             }
             if (m_txt_ten.Text == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập tên cho nhân viên rồi!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TEN_NHAN_VIEN);
                 return false;
             }
             return true;
@@ -331,7 +331,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 if (check_data_is_ok())
                 {
-                    if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chắc chắc muốn lưu các thông tin chứ?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
                     {
                         if (check_ma_nv_da_ton_tai(m_txt_ma_nv.Text) == true)
                         {
@@ -344,7 +344,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                                 v_us_nv_4_insert.BeginTransaction();
                                 v_us_nv_4_insert.Insert();
                                 v_us_nv_4_insert.CommitTransaction();
-                                m_is_newbie = 0;
+                                m_member_is_newbie = 0;
                             }
                             catch (Exception v_e)
                             {
@@ -358,11 +358,11 @@ namespace BKI_DichVuMatDat.DanhMuc
                             load_data_2_ds_v_dm_nv();
                             m_sle_chon_nhan_vien.EditValue = v_us_nv_4_insert.dcID;
 
-                            DevExpress.XtraEditors.XtraMessageBox.Show("Thành công!", "THÔNG BÁO");
+                            CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                         }
                         else
                         {
-                            if (m_is_newbie == 1)
+                            if (m_member_is_newbie == 1)
                             {
                                 US_DM_NHAN_VIEN v_us_nv_4_insert = new US_DM_NHAN_VIEN();
                                 form_2_us_dm_nv(v_us_nv_4_insert);
@@ -373,7 +373,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                                     v_us_nv_4_insert.BeginTransaction();
                                     v_us_nv_4_insert.Insert();
                                     v_us_nv_4_insert.CommitTransaction();
-                                    m_is_newbie = 0;
+                                    m_member_is_newbie = 0;
                                 }
                                 catch (Exception v_e)
                                 {
@@ -387,7 +387,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                                 load_data_2_ds_v_dm_nv();
                                 m_sle_chon_nhan_vien.EditValue = v_us_nv_4_insert.dcID;
 
-                                DevExpress.XtraEditors.XtraMessageBox.Show("Thành công!", "THÔNG BÁO");
+                                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                             }
                             else
                             {
@@ -397,7 +397,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                                     US_DM_NHAN_VIEN v_us_nv_4_update = new US_DM_NHAN_VIEN(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                                     form_2_us_dm_nv(v_us_nv_4_update);
                                     v_us_nv_4_update.Update();
-                                    XtraMessageBox.Show("Thành công!", "THÔNG BÁO");
+                                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
                                 }
                                 catch (Exception v_e)
                                 {
@@ -447,7 +447,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             try
             {
                 change_form_2_insert_newbie();
-                m_is_newbie = 1;
+                m_member_is_newbie = 1;
             }
             catch (Exception v_e)
             {

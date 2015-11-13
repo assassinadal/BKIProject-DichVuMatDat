@@ -121,7 +121,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                 decimal v_id = CIPConvert.ToDecimal(v_dr[DM_LOAI_NGAY_CONG.ID]);
 
                 US_DM_LOAI_NGAY_CONG v_us = new US_DM_LOAI_NGAY_CONG(v_id);
-                if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn XÓA LOẠI NGÀY CÔNG này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_LOAI_NGAY_CONG) == true)
                 {
                     v_us.Delete();
                     load_data_2_grid();

@@ -70,12 +70,13 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             if (m_txt_ten_tham_so.Text.Trim() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập tên tham số!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TEN_THAM_SO);
                 return false;
             }
             if (m_txt_gia_tri_tham_so.Text.Trim() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập giá trị tham số!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_GIA_TRI_THAM_SO);
+
                 return false;
             }
             return true;
@@ -102,7 +103,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_tham_so.Insert();
                         v_us_dm_tham_so.CommitTransaction();
                         m_id_dm_tham_so_moi_tao = v_us_dm_tham_so.dcID;
-                        if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã thêm tham số thành công! Bạn có muốn thêm tham số khác không?", "THÀNH CÔNG", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_INSER_DM_THAM_SO_THANH_CONG_TIEP_TUC_INSERT_YN) == true)
                         {
                             refresh_form();
                         }
@@ -116,7 +117,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_tham_so.BeginTransaction();
                         v_us_dm_tham_so.Update();
                         v_us_dm_tham_so.CommitTransaction();
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã cập nhật đơn vị thành công!", "THÀNH CÔNG");
+                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
                         this.Close();
                         break;
                     default:
@@ -161,7 +162,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 if (check_validate_data())
                 {
-                    if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn lưu tham số này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
                     {
                         save_data();
                     }

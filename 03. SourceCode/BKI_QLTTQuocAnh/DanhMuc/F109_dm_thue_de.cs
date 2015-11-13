@@ -79,19 +79,20 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             if (m_txt_ti_le.Text.Trim() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập tỉ lệ!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TI_LE);
                 return false;
             }
             if (m_txt_bu_tru.Text.Trim() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập giá trị bù trừ!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_GIA_TRI_BU_TRU);
                 return false;
             }
             if (m_txt_chan_duoi.Text != "" && m_txt_chan_tren.Text != "")
             {
                 if (CIPConvert.ToDecimal(m_txt_chan_tren.Text.Trim()) <= CIPConvert.ToDecimal(m_txt_chan_duoi.Text.Trim()))
                 {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Giá trị chặn trên phải lớn hơn giá chị chặn dưới");
+                    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_GIA_TRI_CHAN_DUOI_NHO_HON_CHAN_TREN);
+
                     return false;
                 }
             }
@@ -121,7 +122,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_thue.Insert();
                         v_us_dm_thue.CommitTransaction();
                         m_id_dm_thue_moi_tao = v_us_dm_thue.dcID;
-                        if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã thêm mức thuế mới thành công! Bạn có muốn thêm mức thuế khác không?", "THÀNH CÔNG", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_INSER_DM_THUE_THANH_CONG_TIEP_TUC_INSERT_YN) == true)
                         {
                             refresh_form();
                         }
@@ -135,7 +136,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_thue.BeginTransaction();
                         v_us_dm_thue.Update();
                         v_us_dm_thue.CommitTransaction();
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã cập nhật mức thuế thành công!", "THÀNH CÔNG");
+                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
                         this.Close();
                         break;
                     default:
@@ -186,7 +187,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 if (check_validate_data())
                 {
-                    if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn lưu mức thuế này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
                     {
                         save_data();
                     }

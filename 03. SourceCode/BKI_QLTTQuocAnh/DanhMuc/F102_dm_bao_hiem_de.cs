@@ -86,7 +86,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
             if (m_txt_ti_le.Text == null || m_txt_ti_le.Text == "")
             {
-                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TI_LE_BAO_HIEM);
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TI_LE);
                 return false;
             }
             return true;

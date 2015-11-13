@@ -195,17 +195,22 @@ namespace BKI_DichVuMatDat.US
         public const int QUESTION_XAC_NHAN_XOA_LOAI_BAO_HIEM = 197;
         public const int ERROR_CHUA_NHAP_MA_BAO_HIEM = 198;
         public const int ERROR_CHUA_NHAP_TEN_LOAI_BAO_HIEM = 199;
-        public const int ERROR_CHUA_NHAP_TI_LE_BAO_HIEM = 200;
+        public const int ERROR_CHUA_NHAP_TI_LE = 200;
 
         //DM_HS_LNS
         public const int ERROR_CHUA_CHON_HE_SO_DE_SUA = 201;
-        public const int QUESTION_XAC_NHAN_XOA_HE_SO = 201;
+        public const int QUESTION_XAC_NHAN_XOA_HE_SO = 202;
         public const int ERROR_CHUA_NHAP_MA_LNS = 204;
         public const int ERROR_CHUA_CHON_MUC_LNS = 205;
         public const int ERROR_CHUA_NHAP_HE_SO_LNS = 206;
         public const int ERROR_CHUA_NHAP_LOAI_LAO_DONG = 207;
         public const int QUESTION_INSER_DM_HS_LNS_THANH_CONG_TIEP_TUC_INSERT_YN = 208;
         
+        //DM_LOAI_HOP_DONG
+        public const int QUESTION_XAC_NHAN_XOA_LOAI_HOP_DONG = 209;
+        public const int ERROR_CHUA_NHAP_MA_LOAI_HOP_DONG = 210;
+        public const int ERROR_CHUA_NHAP_TEN_LOAI_HOP_DONG = 211;
+        public const int ERROR_CHUA_NHAP_SO_TIEN = 212;
 
         //Form RPT
         public const int ERROR_CHUA_CO_DU_LIEU_DE_THUC_HIEN_THAO_TAC = 400;

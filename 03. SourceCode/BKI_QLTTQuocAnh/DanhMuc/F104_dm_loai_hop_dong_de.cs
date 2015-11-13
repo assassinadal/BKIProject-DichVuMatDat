@@ -52,22 +52,22 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             if (m_txt_ma_loai_hop_dong.Text == null || m_txt_ma_loai_hop_dong.Text == "")
             {
-                MessageBox.Show("Bạn phải điền mã loại hợp đồng!", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_MA_LOAI_HOP_DONG);
                 return false;
             }
             if (m_txt_ten_loai_hop_dong.Text == null || m_txt_ten_loai_hop_dong.Text == "")
             {
-                MessageBox.Show("Bạn phải điền tên loại hợp đồng!", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TEN_LOAI_HOP_DONG);
                 return false;
             }
             if (m_txt_ti_le.Text == null || m_txt_ti_le.Text == "")
             {
-                MessageBox.Show("Bạn phải ghi tỉ lệ!", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TI_LE);
                 return false;
             }
             if (m_txt_so_tien.Text == null || m_txt_so_tien.Text == "")
             {
-                MessageBox.Show("Bạn phải ghi số tiền!", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_SO_TIEN);
                 return false;
             }
             return true;
@@ -167,7 +167,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         default:
                             break;
                     }
-                    XtraMessageBox.Show("Thành công!", "THÔNG BÁO");
+                    CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
                 }
                 this.Close();
             }

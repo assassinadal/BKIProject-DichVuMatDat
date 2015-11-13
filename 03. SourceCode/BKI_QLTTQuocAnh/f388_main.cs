@@ -171,7 +171,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                F365_quan_ly_hs_bo_sung v_frm = new F365_quan_ly_hs_bo_sung();
+                F365_quan_ly_thuong_hs_bo_sung v_frm = new F365_quan_ly_thuong_hs_bo_sung();
                 if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;

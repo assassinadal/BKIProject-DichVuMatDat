@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BKI_DichVuMatDat.US {
-    public class CONST_ID_CACH_TINH_THUE
+    public class CONST_ID_LOAI_CACH_TINH_THUE
     {
+        public const decimal THUE_5PT = 167;
+        public const decimal THUE_10PT = 168;
         public const decimal THUE_THANG = 169;
-
     }
 
     public class CONST_ID_LOAI_THU_NHAP_KHAC
@@ -168,6 +169,7 @@ namespace BKI_DichVuMatDat.US {
     {
         // Thông báo chung
         public const int INFOR_DU_LIEU_DA_DUOC_CAP_NHAT = 190;
+        public const int INFOR_LUU_DU_LIEU_THANH_CONG = 50;
         public const int QUESTION_XAC_NHAN_LUU_DU_LIEU = 195;
         public const int QUESTION_XAC_NHAN_XOA_DU_LIEU = 8;
 
@@ -194,8 +196,15 @@ namespace BKI_DichVuMatDat.US {
         public const int INFOR_RESTORE_DB_THANG_CONG = 228;
         public const int INFOR_BACKUP_DB_THANG_CONG = 229;
 
+        //Giao dịch
+        public const int ERROR_CHUA_CO_DU_LIEU_TREN_LUOI = 300;
+        public const int ERROR_CHUA_NHAP_NAM_DE_TINH = 301;
+        public const int ERROR_CHUA_NHAP_SO_TIEN_DE_TINH = 302;
+    }
 
-
+    public static class CONST_ID_TRANG_THAI_LAO_DONG
+    {
+        public const int NGHI_HUU = 689;
     }
 
 }

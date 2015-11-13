@@ -1,6 +1,6 @@
 ﻿namespace BKI_DichVuMatDat.NghiepVu
 {
-    partial class F365_quan_ly_hs_bo_sung
+    partial class F365_quan_ly_thuong_hs_bo_sung
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F365_quan_ly_hs_bo_sung));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F365_quan_ly_thuong_hs_bo_sung));
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.m_txt_so_tien = new DevExpress.XtraEditors.TextEdit();
             this.m_txt_chon_nam = new DevExpress.XtraEditors.TextEdit();
@@ -43,6 +43,8 @@
             this.HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SO_TIEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SO_TIEN_GIAM_TRU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SO_TIEN_NOP_THUE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SO_TIEN_SAU_TINH_THUE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LY_DO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -175,6 +177,8 @@
             this.HO_TEN,
             this.NAM,
             this.SO_TIEN,
+            this.SO_TIEN_GIAM_TRU,
+            this.SO_TIEN_NOP_THUE,
             this.SO_TIEN_SAU_TINH_THUE,
             this.LY_DO});
             this.m_grv_quan_ly_he_so_bo_sung.CustomizationFormBounds = new System.Drawing.Rectangle(723, 270, 210, 172);
@@ -275,6 +279,42 @@
             this.SO_TIEN.Visible = true;
             this.SO_TIEN.VisibleIndex = 4;
             // 
+            // SO_TIEN_GIAM_TRU
+            // 
+            this.SO_TIEN_GIAM_TRU.AppearanceCell.Options.UseTextOptions = true;
+            this.SO_TIEN_GIAM_TRU.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.SO_TIEN_GIAM_TRU.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.SO_TIEN_GIAM_TRU.AppearanceHeader.Options.UseTextOptions = true;
+            this.SO_TIEN_GIAM_TRU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SO_TIEN_GIAM_TRU.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.SO_TIEN_GIAM_TRU.Caption = "Giảm trừ";
+            this.SO_TIEN_GIAM_TRU.DisplayFormat.FormatString = "{0:#,##0}";
+            this.SO_TIEN_GIAM_TRU.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.SO_TIEN_GIAM_TRU.FieldName = "SO_TIEN_GIAM_TRU";
+            this.SO_TIEN_GIAM_TRU.Name = "SO_TIEN_GIAM_TRU";
+            this.SO_TIEN_GIAM_TRU.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_GIAM_TRU", "Tổng = {0:#,##0}")});
+            this.SO_TIEN_GIAM_TRU.Visible = true;
+            this.SO_TIEN_GIAM_TRU.VisibleIndex = 5;
+            // 
+            // SO_TIEN_NOP_THUE
+            // 
+            this.SO_TIEN_NOP_THUE.AppearanceCell.Options.UseTextOptions = true;
+            this.SO_TIEN_NOP_THUE.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.SO_TIEN_NOP_THUE.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.SO_TIEN_NOP_THUE.AppearanceHeader.Options.UseTextOptions = true;
+            this.SO_TIEN_NOP_THUE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SO_TIEN_NOP_THUE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.SO_TIEN_NOP_THUE.Caption = "Nộp thuế";
+            this.SO_TIEN_NOP_THUE.DisplayFormat.FormatString = "{0:#,##0}";
+            this.SO_TIEN_NOP_THUE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.SO_TIEN_NOP_THUE.FieldName = "SO_TIEN_NOP_THUE";
+            this.SO_TIEN_NOP_THUE.Name = "SO_TIEN_NOP_THUE";
+            this.SO_TIEN_NOP_THUE.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_NOP_THUE", "Tổng = {0:#,##0}")});
+            this.SO_TIEN_NOP_THUE.Visible = true;
+            this.SO_TIEN_NOP_THUE.VisibleIndex = 6;
+            // 
             // SO_TIEN_SAU_TINH_THUE
             // 
             this.SO_TIEN_SAU_TINH_THUE.AppearanceCell.Options.UseTextOptions = true;
@@ -292,7 +332,7 @@
             this.SO_TIEN_SAU_TINH_THUE.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_SAU_TINH_THUE", "Tổng = {0:#,##0}")});
             this.SO_TIEN_SAU_TINH_THUE.Visible = true;
-            this.SO_TIEN_SAU_TINH_THUE.VisibleIndex = 5;
+            this.SO_TIEN_SAU_TINH_THUE.VisibleIndex = 7;
             // 
             // LY_DO
             // 
@@ -308,7 +348,7 @@
             this.LY_DO.Name = "LY_DO";
             this.LY_DO.OptionsColumn.AllowEdit = false;
             this.LY_DO.Visible = true;
-            this.LY_DO.VisibleIndex = 6;
+            this.LY_DO.VisibleIndex = 8;
             // 
             // layoutControlGroup1
             // 
@@ -518,14 +558,14 @@
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
             this.m_cmd_xuat_excel.Visible = false;
             // 
-            // F365_quan_ly_hs_bo_sung
+            // F365_quan_ly_thuong_hs_bo_sung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 499);
             this.Controls.Add(this.dataLayoutControl1);
             this.Controls.Add(this.panel1);
-            this.Name = "F365_quan_ly_hs_bo_sung";
+            this.Name = "F365_quan_ly_thuong_hs_bo_sung";
             this.Text = "F365 - Quản lý hệ số bổ sung";
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
@@ -588,5 +628,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn SO_TIEN;
         private DevExpress.XtraGrid.Columns.GridColumn SO_TIEN_SAU_TINH_THUE;
         private DevExpress.XtraGrid.Columns.GridColumn LY_DO;
+        private DevExpress.XtraGrid.Columns.GridColumn SO_TIEN_GIAM_TRU;
+        private DevExpress.XtraGrid.Columns.GridColumn SO_TIEN_NOP_THUE;
     }
 }

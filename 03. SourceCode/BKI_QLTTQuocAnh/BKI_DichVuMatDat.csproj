@@ -578,11 +578,11 @@
     <Compile Include="NghiepVu\f363_quan_ly_cac_nhan_vien_co_luong_cung.Designer.cs">
       <DependentUpon>f363_quan_ly_cac_nhan_vien_co_luong_cung.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\F365_quan_ly_hs_bo_sung.cs">
+    <Compile Include="NghiepVu\F365_quan_ly_thuong_hs_bo_sung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NghiepVu\F365_quan_ly_hs_bo_sung.Designer.cs">
-      <DependentUpon>F365_quan_ly_hs_bo_sung.cs</DependentUpon>
+    <Compile Include="NghiepVu\F365_quan_ly_thuong_hs_bo_sung.Designer.cs">
+      <DependentUpon>F365_quan_ly_thuong_hs_bo_sung.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\f366_Quan_ly_nhan_vien_khong_dong_bao_hiem.cs">
       <SubType>Form</SubType>
@@ -811,8 +811,8 @@
     <EmbeddedResource Include="NghiepVu\f363_quan_ly_cac_nhan_vien_co_luong_cung.resx">
       <DependentUpon>f363_quan_ly_cac_nhan_vien_co_luong_cung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\F365_quan_ly_hs_bo_sung.resx">
-      <DependentUpon>F365_quan_ly_hs_bo_sung.cs</DependentUpon>
+    <EmbeddedResource Include="NghiepVu\F365_quan_ly_thuong_hs_bo_sung.resx">
+      <DependentUpon>F365_quan_ly_thuong_hs_bo_sung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f366_Quan_ly_nhan_vien_khong_dong_bao_hiem.resx">
       <DependentUpon>f366_Quan_ly_nhan_vien_khong_dong_bao_hiem.cs</DependentUpon>

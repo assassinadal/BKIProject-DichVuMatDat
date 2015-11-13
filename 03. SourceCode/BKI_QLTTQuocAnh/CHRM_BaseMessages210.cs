@@ -82,6 +82,7 @@ namespace BKI_DichVuMatDat
         {
             m_DataSet = null;
         }
+
         private static void LoadMessagesData(decimal i_NumOFMsg)
         {
             string v_strWhere = null;

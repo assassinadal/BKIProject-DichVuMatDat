@@ -142,7 +142,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                 }
                 else
                 {
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.UPDATE_DU_LIEU_DM_DON_VI);
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
                 }
             }
             catch (Exception v_e)

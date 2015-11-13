@@ -211,7 +211,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             ref_us.dcSO_TIEN = CIPConvert.ToDecimal(ip_dr_du_lieu_1_nv["SO_TIEN_THUONG_NV"].ToString());
             ref_us.dcTHANG = m_dat_thang_thuong.DateTime.Month;
             ref_us.dcNAM = m_dat_thang_thuong.DateTime.Year;
-            ref_us.dcID_CACH_TINH_THUE = CONST_ID_CACH_TINH_THUE.THUE_THANG;
+            ref_us.dcID_CACH_TINH_THUE = CONST_ID_LOAI_CACH_TINH_THUE.THUE_THANG;
             ref_us.dcID_LOAI_THU_NHAP_KHAC = CONST_ID_LOAI_THU_NHAP_KHAC.LINH_CO_THUE;
             ref_us.dcID_QUY_TIEN_THUONG = m_us_v_gd_quy_tien_thuong.dcID;
 

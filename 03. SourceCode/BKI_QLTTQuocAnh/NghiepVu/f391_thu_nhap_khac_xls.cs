@@ -149,7 +149,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (CHRMCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())))
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_THANG_DA_CHOT_BANG_LUONG);
                 return;
             }
             else
@@ -169,7 +169,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     }
                     catch (Exception)
                     {
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Mã nhân viên " + v_data_row[1].ToString() + " không tồn tại trong hệ thống. Vui lòng kiểm tra lại thông tin!");
+                        CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + v_data_row[1].ToString() + " không tồn tại trong hệ thống. Vui lòng kiểm tra lại thông tin!");
                         v_int_khong_nhap_duoc++;
                         continue;
                     }
@@ -186,7 +186,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     }
                     catch (Exception)
                     {
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Lỗi!");
+                        CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_DA_CO_LOI_XAY_RA);
                         v_int_khong_nhap_duoc++;
                     }
                 }
@@ -252,16 +252,16 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                     if (v_count == v_selectedRowCount)
                     {
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Cập nhật thành công cho " + v_count + " nhân viên", "THÀNH CÔNG");
+                        CHRM_BaseMessages.MsgBox_Infor("Cập nhật thành công cho " + v_count + " nhân viên");
                     }
                     else
                     {
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Cập nhật thành công cho " + v_count + " nhân viên. Vui lòng kiểm tra lại thông tin của " + (v_selectedRowCount - v_count).ToString() + " nhân viên được chọn còn lại trong bảng!", "THÔNG BÁO");
+                        CHRM_BaseMessages.MsgBox_Infor("Cập nhật thành công cho " + v_count + " nhân viên. Vui lòng kiểm tra lại thông tin của " + (v_selectedRowCount - v_count).ToString() + " nhân viên được chọn còn lại trong bảng!");
                     }
                 }
                 else
                 {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn nhân viên để nhập thu nhập khác cho họ!");
+                    CHRM_BaseMessages.MsgBox_Infor("Bạn phải chọn nhân viên để nhập thu nhập khác cho họ!");
                 }
             }
             catch (Exception v_e)

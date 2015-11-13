@@ -152,7 +152,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             else
             {
-                XtraMessageBox.Show("Bạn vui lòng kiểm tra lại bảng chấm công.");
+                CHRM_BaseMessages.MsgBox_Warning(CONST_ID_MSGBOX.WAR_KIEM_TRA_LAI_BANG_CHAM_CONG);
             }            
         }
 
@@ -201,7 +201,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_pn.Visible = false;
             this.m_cmd_nhap_cham_cong.Text = "Lưu chấm công";
             this.m_cmd_nhap_cham_cong.Enabled = true;
-            XtraMessageBox.Show("Lưu dữ liệu thành công");
+            CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
         }
     }
 }

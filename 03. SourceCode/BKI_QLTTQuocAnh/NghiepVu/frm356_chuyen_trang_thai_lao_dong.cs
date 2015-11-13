@@ -20,7 +20,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         DS_V_DM_NHAN_VIEN m_ds_nhan_vien;
         #endregion
 
-
         #region Public Interface
         public frm356_chuyen_trang_thai_lao_dong()
         {
@@ -34,7 +33,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             Dispose(false);
         }
         #endregion
-
 
         #region Private Method
         private void fill_data_2_sle_nhan_vien()
@@ -71,12 +69,12 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_sle_chon_nhan_vien.CustomDisplayText += m_sle_chon_nhan_vien_CustomDisplayText;
             m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
-            
+
             m_cmd_save.Enabled = false;
             panelControlSave.Enabled = false;
         }
 
-       
+
         private void select_trang_thai_by_nhan_vien(decimal ip_id_nhan_vien)
         {
             US_GD_TRANG_THAI_LAO_DONG v_us = new US_GD_TRANG_THAI_LAO_DONG();
@@ -87,14 +85,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             US_GD_TRANG_THAI_LAO_DONG v_us = new US_GD_TRANG_THAI_LAO_DONG();
             v_us.thay_doi_trang_thai_lao_dong((decimal)m_sle_chon_nhan_vien.EditValue, (decimal)m_le_trang_thai_hien_tai.EditValue, DateTime.Now, CAppContext_201.getCurrentUserName());
-            XtraMessageBox.Show("Lưu dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
             fill_data_2_grid();
             labelControlNhacNho.Text = "";
         }
         #endregion
-
-
-
 
         #region Event Handle
         private void set_define_event()
@@ -113,8 +108,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                     return;
                 }
                 US_GD_TRANG_THAI_LAO_DONG v_us = new US_GD_TRANG_THAI_LAO_DONG();
-                var id_trang_thai_ld = v_us.get_id_trang_thai_lao_dong((decimal) m_sle_chon_nhan_vien.EditValue);
-                if (id_trang_thai_ld != (decimal) m_le_trang_thai_hien_tai.EditValue)
+                var id_trang_thai_ld = v_us.get_id_trang_thai_lao_dong((decimal)m_sle_chon_nhan_vien.EditValue);
+                if (id_trang_thai_ld != (decimal)m_le_trang_thai_hien_tai.EditValue)
                 {
                     m_cmd_save.Enabled = true;
                     panelControlSave.Enabled = true;
@@ -137,7 +132,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 US_GD_TRANG_THAI_LAO_DONG v_us = new US_GD_TRANG_THAI_LAO_DONG();
-                
+
                 if (m_cmd_save.Enabled == false)
                 {
                     return;
@@ -167,7 +162,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 panelControlSave.Enabled = false;
                 labelControlNhacNho.Text = "...";
-                select_trang_thai_by_nhan_vien((decimal) m_sle_chon_nhan_vien.EditValue);
+                select_trang_thai_by_nhan_vien((decimal)m_sle_chon_nhan_vien.EditValue);
                 m_le_trang_thai_hien_tai.EditValueChanged += m_le_trang_thai_hien_tai_EditValueChanged;
                 fill_data_2_grid();
             }
@@ -178,7 +173,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         void m_sle_chon_nhan_vien_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {
-            
+
             try
             {
                 SearchLookUpEdit edit = sender as SearchLookUpEdit;

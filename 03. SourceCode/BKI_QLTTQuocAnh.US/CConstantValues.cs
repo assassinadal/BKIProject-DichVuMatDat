@@ -185,6 +185,7 @@ namespace BKI_DichVuMatDat.US
         public const int INFOR_DU_LIEU_DA_DUOC_CAP_NHAT = 190;
         public const int ERROR_CHUA_CHON_DONG_TREN_LUOI_DE_SUA = 191;
         public const int QUESTION_XAC_NHAN_XOA_THONG_TIN_DA_CHON_TREN_LUOI = 201;
+        public const int ERROR_DA_CO_LOI_XAY_RA = 305;
         #endregion
 
         #region Danh mục
@@ -251,8 +252,8 @@ namespace BKI_DichVuMatDat.US
         //Form RPT
         public const int ERROR_CHUA_CO_DU_LIEU_DE_THUC_HIEN_THAO_TAC = 400;
         public const int INFOR_LUU_BAO_CAO_THANH_CONG = 401;
-        public const int ERROR_CHUA_CHON_NAM_DE_LOC_DU_LIEU = 402;
-        public const int ERROR_CHUA_CHON_THANG_DE_LOC_DU_LIEU = 403;
+        public const int ERROR_CHUA_CHON_NAM = 402;
+        public const int ERROR_CHUA_CHON_THANG = 403;
         #endregion
 
         #region Hệ thống
@@ -273,6 +274,15 @@ namespace BKI_DichVuMatDat.US
         public const int ERROR_CHUA_CO_DU_LIEU_TREN_LUOI = 300;
         public const int ERROR_CHUA_NHAP_NAM_DE_TINH = 301;
         public const int ERROR_CHUA_NHAP_SO_TIEN_DE_TINH = 302;
+
+        //Chấm công
+        public const int WAR_KIEM_TRA_LAI_BANG_CHAM_CONG = 303;
+        public const int ERROR_THANG_DA_CHOT_BANG_LUONG = 304;
+
+        //Thu nhập khác
+        public const int ERROR_CHUA_CHON_LOAI_THU_NHAP = 306;
+        public const int ERROR_CHUA_NHAP_LY_DO = 307;
+        public const int ERROR_CHUA_CHON_NHAN_VIEN = 308;
         #endregion
 
     }

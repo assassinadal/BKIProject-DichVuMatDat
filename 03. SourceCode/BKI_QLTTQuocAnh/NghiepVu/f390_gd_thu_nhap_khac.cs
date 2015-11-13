@@ -194,12 +194,12 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_txt_chon_thang.Text == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn tháng!", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_THANG);
                 return false;
             }
             if (m_txt_chon_nam.Text == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn năm!", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NAM);
                 return false;
             }
             return true;
@@ -213,27 +213,27 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn nhân viên!", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NHAN_VIEN);
                 return false;
             }
             if (m_sle_loai_thu_nhap.EditValue == null || m_sle_loai_thu_nhap.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa loại thu nhập!", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_LOAI_THU_NHAP);
                 return false;
             }
             if (m_txt_so_tien.Text.Trim() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa điền số tiền!", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_SO_TIEN);
                 return false;
             }
             if (m_txt_ly_do.Text.Trim() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa điền lý do!", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_LY_DO);
                 return false;
             }
             if (CHRMCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())))
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_THANG_DA_CHOT_BANG_LUONG);
                 return false;
             }
             return true;
@@ -280,14 +280,14 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us_gd_thu_nhap_khac.Insert();
                         v_us_gd_thu_nhap_khac.CommitTransaction();
                         v_id_gd_thu_nhap_khac = v_us_gd_thu_nhap_khac.dcID;
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã thêm thu nhập khác cho nhân viên thành công!", "THÀNH CÔNG");
+                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         v_us_gd_thu_nhap_khac.BeginTransaction();
                         v_us_gd_thu_nhap_khac.dcID = CIPConvert.ToDecimal(m_grv_quan_ly_thu_nhap_khac.GetRowCellValue(m_grv_quan_ly_thu_nhap_khac.FocusedRowHandle, "ID").ToString());
                         v_us_gd_thu_nhap_khac.Update();
                         v_us_gd_thu_nhap_khac.CommitTransaction();
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã cập nhật thông tin thu nhập khác thành công!", "THÀNH CÔNG");
+                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
                         break;
                     default:
                         break;

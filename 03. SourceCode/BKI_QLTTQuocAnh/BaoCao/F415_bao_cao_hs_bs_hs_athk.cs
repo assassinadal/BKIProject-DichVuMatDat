@@ -85,7 +85,7 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 if (m_txt_chon_nam.Text == "")
                 {
-                    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NAM_DE_LOC_DU_LIEU);
+                    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NAM);
                 }
                 else
                 {

@@ -65,6 +65,15 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grc_ds_quy_tien.RefreshDataSource();
             CHRMCommon.make_stt_indicator(m_grv_ds_quy_tien);
         }
+        private void start_them_quy_tien_process()
+        {
+            f354_danh_sach_quy_thuong_de v_frm = new f354_danh_sach_quy_thuong_de();
+            v_frm.ShowDialog();
+            if(v_frm.is_inserted_quy_tien())
+            {
+                load_data_2_grid();
+            }
+        }
         #endregion
 
         #region Event Handle
@@ -81,7 +90,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-
+                start_them_quy_tien_process();
             }
             catch(Exception v_e)
             {

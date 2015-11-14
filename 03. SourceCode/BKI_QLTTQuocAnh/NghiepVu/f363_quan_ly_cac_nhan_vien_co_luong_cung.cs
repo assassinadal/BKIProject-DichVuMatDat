@@ -156,23 +156,23 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn nhân viên!", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NHAN_VIEN);
                 return false;
             }
             if (m_txt_so_tien.Text.Trim() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập số tiền!", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_SO_TIEN);
                 return false;
             }
             if (m_dat_ngay_ket_thuc.Value < m_dat_ngay_bat_dau.Value)
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Ngày kết thúc đang nhỏ hơn ngày bắt đầu!", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_NGAY_KET_THUC_NHO_HON_NGAY_BAT_DAU);
                 return false;
             }
 
             if (CHRMCommon.thang_da_chot_bang_luong(m_dat_ngay_ket_thuc.Value))
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_THANG_DA_CHOT_BANG_LUONG);
                 return false;
             }
             return true;
@@ -270,7 +270,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us_gd_luong_cung.BeginTransaction();
                         v_us_gd_luong_cung.Insert();
                         v_us_gd_luong_cung.CommitTransaction();
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã thêm lương thành công cho nhân viên!", "THÀNH CÔNG");
+                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         decimal v_id_gd_lc = find_id_gd_luong_cung(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
@@ -279,7 +279,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us.BeginTransaction();
                         v_us.Update();
                         v_us.CommitTransaction();
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn đã cập nhật thành công!", "THÀNH CÔNG");
+                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
                         break;
                     default:
                         break;
@@ -304,7 +304,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             else
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Nhân viên này chưa có giá trị lương cứng", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_NHAN_VIEN_CHUA_CO_GIA_TRI_LUONG_CUNG);
                 m_sle_chon_nhan_vien.EditValue = v_id_nv;
                 return;
             }
@@ -378,7 +378,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (check_data_is_ok())
                 {
-                    if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn nhập mức lương " + String.Format("{0:#,##0}", m_txt_so_tien.Text).ToString() + " VNĐ cho nhân viên này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (CHRM_BaseMessages.MsgBox_Confirm("Bạn có chắc chắn muốn nhập mức lương " + String.Format("{0:#,##0}", m_txt_so_tien.Text).ToString() + " VNĐ cho nhân viên này?") == true)
                     {
                         save_data();
                     }

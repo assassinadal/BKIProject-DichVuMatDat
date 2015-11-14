@@ -127,12 +127,12 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_sle_loai_quyet_dinh.EditValue == null || m_sle_loai_quyet_dinh.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn loại quyết định", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_LOAI_QUYET_DINH);
                 return false;
             }
             if (m_txt_ma_qd.Text.Trim() == "")
             {
-                XtraMessageBox.Show("Bạn phải nhập mã quyết định", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_MA_QUYET_DINH);
                 return false;
             }
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
@@ -309,13 +309,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                     switch (m_e_form_mode)
                     {
                         case DataEntryFormMode.InsertDataState:
-                            if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn thêm quyết định này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
                             {
                                 save_data();
                             }
                             break;
                         case DataEntryFormMode.UpdateDataState:
-                            if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn cập nhật quyết định này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
                             {
                                 save_data();
                             }

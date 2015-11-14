@@ -186,6 +186,7 @@ namespace BKI_DichVuMatDat.US
         public const int ERROR_CHUA_CHON_DONG_TREN_LUOI_DE_SUA = 191;
         public const int QUESTION_XAC_NHAN_XOA_THONG_TIN_DA_CHON_TREN_LUOI = 201;
         public const int ERROR_DA_CO_LOI_XAY_RA = 305;
+        public const int ERROR_DU_LIEU_CHUA_HOAN_THIEN = 317;
         #endregion
 
         #region Danh mục
@@ -289,6 +290,21 @@ namespace BKI_DichVuMatDat.US
         public const int ERROR_CHUA_CHON_NGAY_BAT_DAU = 310;
         public const int ERROR_CHUA_CHON_NGAY_KET_THUC = 311;
         public const int ERROR_NHAN_VIEN_DA_CO_LOAI_LAO_DONG = 312;
+
+        //Quản lý lương cứng
+        public const int ERROR_NGAY_KET_THUC_NHO_HON_NGAY_BAT_DAU = 313;
+        public const int ERROR_NHAN_VIEN_CHUA_CO_GIA_TRI_LUONG_CUNG = 314;
+
+        //Quản lý quyết định
+        public const int ERROR_CHUA_CHON_LOAI_QUYET_DINH = 315;
+        public const int ERROR_CHUA_NHAP_MA_QUYET_DINH = 316;
+
+        //Quản lý vị trí công tác
+        public const int ERROR_CHUA_CHON_QUYET_DINH = 318;
+        public const int ERROR_CHUA_CHON_DON_VI = 319;
+        public const int ERROR_CHUA_CHON_VI_TRI = 320;
+        public const int ERROR_CHUA_CHON_LOAI_CONG_TAC = 321;
+        public const int QUESTION_HUY_KIEM_NHIEM_CUA_NHAN_VIEN_YN = 322;
         #endregion
 
     }

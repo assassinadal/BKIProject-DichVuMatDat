@@ -66,12 +66,12 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if(!CHRMCommon.validate_control_empty(m_le_loai_quy_thuong,m_txt_ten_quy, m_dat_thang_thuong, m_dat_tu_ngay, m_dat_den_ngay))
             {
-                XtraMessageBox.Show("Hoàn thiện dữ liệu trước!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_DU_LIEU_CHUA_HOAN_THIEN);
                 return false;
             }
             if(((decimal) m_txt_so_tien.EditValue == 0))
             {
-                 XtraMessageBox.Show("Điền số tiền trước!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_SO_TIEN);
                 return false;
             }
             return true;
@@ -95,7 +95,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             v_us_gd_quy_tien_thuong.Insert();
             DialogResult = System.Windows.Forms.DialogResult.OK;
-            XtraMessageBox.Show("Thêm quỹ tiền thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
         }
         private void start_save_process()
         {

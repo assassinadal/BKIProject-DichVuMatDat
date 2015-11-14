@@ -218,36 +218,36 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NHAN_VIEN);
                 return false;
             }
             //GD quyet dinh dang chua co du lieu
             if (m_sle_chon_quyet_dinh.EditValue == null || m_sle_chon_quyet_dinh.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn quyết định", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_QUYET_DINH);
                 return false;
             }
             if (m_sle_chon_don_vi.EditValue == null || m_sle_chon_don_vi.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn đơn vị", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_DON_VI);
                 return false;
             }
 
             if (m_sle_chon_vi_tri.EditValue == null || m_sle_chon_vi_tri.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn vị trí", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_VI_TRI);
                 return false;
             }
 
             if (m_sle_chon_loai_cong_tac.EditValue == null || m_sle_chon_loai_cong_tac.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn loại công tác", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_LOAI_CONG_TAC);
                 return false;
             }
 
             if (m_dat_ngay_bat_dau.Value.Date == null || m_dat_ngay_bat_dau.Value.Date.ToString() == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn ngày bắt đầu", "THÔNG BÁO!");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NGAY_BAT_DAU);
             }
             return true;
         }
@@ -469,7 +469,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn hủy kiêm nhiệm của nhân viên này hay không?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_HUY_KIEM_NHIEM_CUA_NHAN_VIEN_YN) == true)
                 {
                     decimal v_id_gd_loai_ct = 0;
 

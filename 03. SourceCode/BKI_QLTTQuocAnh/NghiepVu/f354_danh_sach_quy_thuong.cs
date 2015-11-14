@@ -33,7 +33,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         #endregion
         
-
         #region Private Method
         private void format_controls()
         {

@@ -365,19 +365,19 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NHAN_VIEN);
                 return false;
             }
 
             if (m_sle_loai_hop_dong.EditValue == null || m_sle_loai_hop_dong.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn loại hợp đồng", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_LOAI_HOP_DONG);
                 return false;
             }
 
             if (m_txt_ma_hd.Text == null)
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải điền mã hợp đồng", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_MA_HOP_DONG);
                 return false;
             }
 
@@ -385,32 +385,32 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (m_sle_muc_lns.EditValue == null || m_sle_muc_lns.EditValue == "")
                 {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn mức lương năng suất", "THÔNG BÁO");
+                    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MUC_LNS);
                     return false;
                 }
 
                 if (m_sle_muc_lcd.EditValue == null || m_sle_muc_lcd.EditValue == "")
                 {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn mức lương chế độ", "THÔNG BÁO");
+                    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MUC_LCD);
                     return false;
                 }
 
                 if (m_sle_chuc_danh_lns.EditValue == null || m_sle_chuc_danh_lns.EditValue == "")
                 {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
+                    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MA_LNS);
                     return false;
                 }
 
                 if (m_sle_chuc_danh_lcd.EditValue == null || m_sle_chuc_danh_lcd.EditValue == "")
                 {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
+                    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MA_LCD);
                     return false;
                 }
             }
 
             if (m_dat_ngay_bat_dau.Value.Date == m_dat_ngay_ket_thuc.Value.Date)
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Ngày bắt đầu và ngày kết thúc đang trùng nhau", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_NGAY_KET_THUC_NHO_HON_NGAY_BAT_DAU);
                 return false;
             }
 
@@ -1060,13 +1060,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                     switch (m_e_form_mode)
                     {
                         case DataEntryFormMode.InsertDataState:
-                            if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn lập hợp đồng này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
                             {
                                 save_data();
                             }
                             break;
                         case DataEntryFormMode.UpdateDataState:
-                            if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn cập nhật hợp đồng này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_CAP_NHAT_DU_LIEU) == true)
                             {
                                 save_data();
                             }
@@ -1126,7 +1126,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     {
                         if (m_sle_chuc_danh_lns.EditValue == null || m_sle_chuc_danh_lns.EditValue == "")
                         {
-                            DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
+                            CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MA_LNS);
                             return;
                         }
                         else
@@ -1178,7 +1178,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     {
                         if (m_sle_chuc_danh_lcd.EditValue == null || m_sle_chuc_danh_lcd.EditValue == "")
                         {
-                            DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
+                            CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MA_LCD);
                             return;
                         }
                         else

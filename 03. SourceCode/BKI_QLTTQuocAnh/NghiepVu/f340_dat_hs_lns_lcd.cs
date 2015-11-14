@@ -349,63 +349,63 @@ namespace BKI_DichVuMatDat.NghiepVu
            
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NHAN_VIEN);
                 return false;
             }
 
             if (m_sle_muc_lns.EditValue == null || m_sle_muc_lns.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn mức lương năng suất", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MUC_LNS);
                 return false;
             }
 
             if (m_sle_muc_lcd.EditValue == null || m_sle_muc_lcd.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn mức lương chế độ", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MUC_LCD);
                 return false;
             }
             //ly do chinh sua hs lns
 
             if (m_sle_chon_ly_do_chinh_sua_hs_lns.EditValue.ToString() == "0")
             {
-                XtraMessageBox.Show("Bạn phải chọn lý do chỉnh sửa mức lương năng suất", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_LY_DO_THAY_DOI_LNS);
                 return false;
             }
            
 
             if (m_sle_chuc_danh_lns.EditValue == null || m_sle_chuc_danh_lns.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_CHUC_DANH_DE_TINH_LNS);
                 return false;
             }
 
             if (m_sle_chuc_danh_lcd.EditValue == null || m_sle_chuc_danh_lcd.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_CHUC_DANH_DE_TINH_LCD);
                 return false;
             }
             //ly do chinh sua so tien lcd
             if (m_sle_chon_ly_do_chinh_sua_so_tien_lcd.EditValue.ToString() == "0")
             {
-                XtraMessageBox.Show("Bạn phải chọn lý do chỉnh sửa mức lương chế độ", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_LY_DO_THAY_DOI_LCD);
                 return false;
             }
            
             if (m_dat_ngay_bat_dau_lns.Value.Date == m_dat_ngay_ket_thuc_lns.Value.Date)
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Ngày bắt đầu và ngày kết thúc đang trùng nhau", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_NGAY_KET_THUC_NHO_HON_NGAY_BAT_DAU);
                 return false;
             }
 
             if (CHRMCommon.thang_da_chot_bang_luong(m_dat_ngay_ket_thuc_lns.Value))
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_THANG_DA_CHOT_BANG_LUONG);
                 return false;
             }
 
             if (CHRMCommon.thang_da_chot_bang_luong(m_dat_ngay_ket_thuc_lcd.Value))
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Tháng này đã chốt bảng lương nên không được sửa", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_THANG_DA_CHOT_BANG_LUONG);
                 return false;
             }
             return true;
@@ -947,7 +947,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     if (m_sle_chuc_danh_lns.EditValue == null || m_sle_chuc_danh_lns.EditValue == "")
                     {
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
+                        CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MA_LNS);
                         return;
                     }
                     else
@@ -993,7 +993,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     if (m_sle_chuc_danh_lcd.EditValue == null || m_sle_chuc_danh_lcd.EditValue == "")
                     {
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
+                        CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MA_LCD);
                         return;
                     }
                     else

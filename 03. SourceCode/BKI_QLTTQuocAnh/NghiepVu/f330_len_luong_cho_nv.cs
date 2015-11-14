@@ -334,7 +334,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn nhân viên", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NHAN_VIEN);
                 return false;
             }
 
@@ -363,25 +363,25 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             if (m_sle_muc_lns.EditValue == null || m_sle_muc_lns.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn mức lương năng suất", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MUC_LNS);
                 return false;
             }
 
             if (m_sle_muc_lcd.EditValue == null || m_sle_muc_lcd.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn mức lương chế độ", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MUC_LCD);
                 return false;
             }
 
             if (m_sle_chuc_danh_lns.EditValue == null || m_sle_chuc_danh_lns.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MA_LNS);
                 return false;
             }
 
             if (m_sle_chuc_danh_lcd.EditValue == null || m_sle_chuc_danh_lcd.EditValue == "")
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MA_LCD);
                 return false;
             }
 
@@ -843,7 +843,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     switch (m_e_form_mode)
                     {
                         case DataEntryFormMode.InsertDataState:
-                            if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn lên lương cho nhân viên này?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LEN_LUONG_CHO_NHAN_VIEN) == true)
                             {
                                 save_data();
                             }
@@ -891,7 +891,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     if (m_sle_chuc_danh_lns.EditValue == null || m_sle_chuc_danh_lns.EditValue == "")
                     {
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương năng suất", "THÔNG BÁO");
+                        CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MA_LNS);
                         return;
                     }
                     else
@@ -937,7 +937,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     if (m_sle_chuc_danh_lcd.EditValue == null || m_sle_chuc_danh_lcd.EditValue == "")
                     {
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Bạn phải chọn chức danh để tính lương chế độ", "THÔNG BÁO");
+                        CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MA_LCD);
                         return;
                     }
                     else

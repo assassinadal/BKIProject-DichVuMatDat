@@ -187,6 +187,7 @@ namespace BKI_DichVuMatDat.US
         public const int QUESTION_XAC_NHAN_XOA_THONG_TIN_DA_CHON_TREN_LUOI = 201;
         public const int ERROR_DA_CO_LOI_XAY_RA = 305;
         public const int ERROR_DU_LIEU_CHUA_HOAN_THIEN = 317;
+        public const int QUESTION_XAC_NHAN_CAP_NHAT_DU_LIEU = 9;
         #endregion
 
         #region Danh mục
@@ -279,6 +280,7 @@ namespace BKI_DichVuMatDat.US
         //Chấm công
         public const int WAR_KIEM_TRA_LAI_BANG_CHAM_CONG = 303;
         public const int ERROR_THANG_DA_CHOT_BANG_LUONG = 304;
+        public const int QUESTION_XAC_NHAN_LUU_BAN_CHAM_CONG = 323;
 
         //Thu nhập khác
         public const int ERROR_CHUA_CHON_LOAI_THU_NHAP = 306;
@@ -304,7 +306,22 @@ namespace BKI_DichVuMatDat.US
         public const int ERROR_CHUA_CHON_DON_VI = 319;
         public const int ERROR_CHUA_CHON_VI_TRI = 320;
         public const int ERROR_CHUA_CHON_LOAI_CONG_TAC = 321;
-        public const int QUESTION_HUY_KIEM_NHIEM_CUA_NHAN_VIEN_YN = 322;
+        public const int QUESTION_XAC_NHAN_HUY_KIEM_NHIEM_CUA_NHAN_VIEN = 322;
+
+        //Lập hợp đồng
+        public const int ERROR_CHUA_CHON_LOAI_HOP_DONG= 324;
+        public const int ERROR_CHUA_NHAP_MA_HOP_DONG = 325;
+        public const int ERROR_CHUA_CHON_MA_LCD = 326;
+        public const int ERROR_CHUA_CHON_MA_LNS = 327;
+
+        //Lên lương cho nhân viên
+        public const int QUESTION_XAC_NHAN_LEN_LUONG_CHO_NHAN_VIEN = 328;
+
+        //Đặt lại hs lns lcd
+        public const int ERROR_CHUA_CHON_LY_DO_THAY_DOI_LNS = 329;
+        public const int ERROR_CHUA_CHON_CHUC_DANH_DE_TINH_LNS = 330;
+        public const int ERROR_CHUA_CHON_CHUC_DANH_DE_TINH_LCD = 331;
+        public const int ERROR_CHUA_CHON_LY_DO_THAY_DOI_LCD = 332;
         #endregion
 
     }

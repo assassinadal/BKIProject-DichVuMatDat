@@ -469,7 +469,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_HUY_KIEM_NHIEM_CUA_NHAN_VIEN_YN) == true)
+                if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_HUY_KIEM_NHIEM_CUA_NHAN_VIEN) == true)
                 {
                     decimal v_id_gd_loai_ct = 0;
 

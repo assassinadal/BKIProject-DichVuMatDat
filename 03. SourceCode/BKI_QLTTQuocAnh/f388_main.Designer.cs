@@ -92,6 +92,9 @@
             this.m_cmd_ql_thuong_hsbs = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_bao_cao_tong_hop = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dang_ky_giam_tru_phu_thuoc = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_dang_ky_bao_hiem_y_te = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_tinh_phep_tieu_chuan = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -113,8 +116,12 @@
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbon
@@ -186,9 +193,12 @@
             this.m_cmd_chuyen_trang_thai_LD,
             this.m_cmd_ql_thuong_hsbs,
             this.m_cmd_bao_cao_tong_hop,
-            this.m_cmd_dang_ky_giam_tru_phu_thuoc});
+            this.m_cmd_dang_ky_giam_tru_phu_thuoc,
+            this.barButtonItem2,
+            this.m_cmd_dang_ky_bao_hiem_y_te,
+            this.m_cmd_tinh_phep_tieu_chuan});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 75;
+            this.ribbon.MaxItemId = 78;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -200,7 +210,7 @@
             this.ribbon.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.True;
             this.ribbon.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.True;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(845, 144);
+            this.ribbon.Size = new System.Drawing.Size(902, 144);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
@@ -768,6 +778,29 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.m_cmd_dang_ky_giam_tru_phu_thuoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_dang_ky_giam_tru_phu_thuoc_ItemClick);
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "barButtonItem2";
+            this.barButtonItem2.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_bao_hiem;
+            this.barButtonItem2.Id = 75;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // m_cmd_dang_ky_bao_hiem_y_te
+            // 
+            this.m_cmd_dang_ky_bao_hiem_y_te.Caption = "Đăng ký bảo hiểm y tế";
+            this.m_cmd_dang_ky_bao_hiem_y_te.Id = 76;
+            this.m_cmd_dang_ky_bao_hiem_y_te.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_bao_hiem;
+            this.m_cmd_dang_ky_bao_hiem_y_te.Name = "m_cmd_dang_ky_bao_hiem_y_te";
+            this.m_cmd_dang_ky_bao_hiem_y_te.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_dang_ky_bao_hiem_y_te_ItemClick);
+            // 
+            // m_cmd_tinh_phep_tieu_chuan
+            // 
+            this.m_cmd_tinh_phep_tieu_chuan.Caption = "Tính phép tiêu chuẩn";
+            this.m_cmd_tinh_phep_tieu_chuan.Id = 77;
+            this.m_cmd_tinh_phep_tieu_chuan.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_bang_luong_nv_;
+            this.m_cmd_tinh_phep_tieu_chuan.Name = "m_cmd_tinh_phep_tieu_chuan";
+            this.m_cmd_tinh_phep_tieu_chuan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tinh_phep_tieu_chuan_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -850,6 +883,8 @@
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_quan_ly_luong_cung);
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_quan_ly_khong_dong_bh);
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_dang_ky_giam_tru_phu_thuoc);
+            this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_dang_ky_bao_hiem_y_te);
+            this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_tinh_phep_tieu_chuan);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Khác";
             // 
@@ -916,7 +951,7 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 418);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(845, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(902, 31);
             // 
             // MdiManager
             // 
@@ -940,11 +975,32 @@
             this.barButtonItem4.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // m_lbl_canh_bao_het_han_hop_dong
+            // 
+            this.m_lbl_canh_bao_het_han_hop_dong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_canh_bao_het_han_hop_dong.Location = new System.Drawing.Point(22, 9);
+            this.m_lbl_canh_bao_het_han_hop_dong.Name = "m_lbl_canh_bao_het_han_hop_dong";
+            this.m_lbl_canh_bao_het_han_hop_dong.Size = new System.Drawing.Size(63, 13);
+            this.m_lbl_canh_bao_het_han_hop_dong.TabIndex = 3;
+            this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
+            this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.m_lbl_canh_bao_het_han_hop_dong);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl1.Location = new System.Drawing.Point(0, 389);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(20, 7, 0, 0);
+            this.panelControl1.Size = new System.Drawing.Size(902, 29);
+            this.panelControl1.TabIndex = 6;
+            // 
             // f388_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 449);
+            this.ClientSize = new System.Drawing.Size(902, 449);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -956,6 +1012,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1046,5 +1105,10 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_ql_thuong_hsbs;
         private DevExpress.XtraBars.BarButtonItem m_cmd_bao_cao_tong_hop;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dang_ky_giam_tru_phu_thuoc;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_dang_ky_bao_hiem_y_te;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_tinh_phep_tieu_chuan;
+        private DevExpress.XtraEditors.LabelControl m_lbl_canh_bao_het_han_hop_dong;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
     }
 }

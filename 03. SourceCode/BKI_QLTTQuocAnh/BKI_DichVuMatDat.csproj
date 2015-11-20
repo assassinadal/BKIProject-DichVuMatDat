@@ -432,6 +432,12 @@
     <Compile Include="DanhMuc\F109_dm_thue_de.Designer.cs">
       <DependentUpon>F109_dm_thue_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\F110_dm_hop_dong_het_han.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\F110_dm_hop_dong_het_han.Designer.cs">
+      <DependentUpon>F110_dm_hop_dong_het_han.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\F150_dm_nhan_vien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -626,6 +632,18 @@
     <Compile Include="NghiepVu\f391_thu_nhap_khac_xls.Designer.cs">
       <DependentUpon>f391_thu_nhap_khac_xls.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f392_ke_khai_bao_hiem_y_te.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f392_ke_khai_bao_hiem_y_te.Designer.cs">
+      <DependentUpon>f392_ke_khai_bao_hiem_y_te.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\f393_tinh_phep_tieu_chuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f393_tinh_phep_tieu_chuan.Designer.cs">
+      <DependentUpon>f393_tinh_phep_tieu_chuan.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\F696_Cham_cong_xls.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -742,6 +760,9 @@
     <EmbeddedResource Include="DanhMuc\F109_dm_thue_de.resx">
       <DependentUpon>F109_dm_thue_de.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\F110_dm_hop_dong_het_han.resx">
+      <DependentUpon>F110_dm_hop_dong_het_han.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F150_dm_nhan_vien.resx">
       <DependentUpon>F150_dm_nhan_vien.cs</DependentUpon>
     </EmbeddedResource>
@@ -834,6 +855,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f391_thu_nhap_khac_xls.resx">
       <DependentUpon>f391_thu_nhap_khac_xls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f392_ke_khai_bao_hiem_y_te.resx">
+      <DependentUpon>f392_ke_khai_bao_hiem_y_te.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f393_tinh_phep_tieu_chuan.resx">
+      <DependentUpon>f393_tinh_phep_tieu_chuan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F696_Cham_cong_xls.resx">
       <DependentUpon>F696_Cham_cong_xls.cs</DependentUpon>

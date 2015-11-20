@@ -14,6 +14,7 @@ using IP.Core.IPSystemAdmin;
 using BKI_DichVuMatDat.BaoCao;
 using BKI_DichVuMatDat.DanhMuc;
 using BKI_DichVuMatDat.HeThong;
+using BKI_DichVuMatDat.DS.CDBNames;
 
 namespace BKI_DichVuMatDat
 {
@@ -31,7 +32,9 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                this.ShowDialog();
+                int v_so_hop_dong_het_han = get_hop_dong_het_han().Tables[0].Rows.Count;
+                m_lbl_canh_bao_het_han_hop_dong.Text = "Hiện có " + v_so_hop_dong_het_han + " nhân viên đã hết hạn hợp đồng";
+                this.ShowDialog();            
             }
             catch (Exception v_e)
             {
@@ -789,6 +792,53 @@ namespace BKI_DichVuMatDat
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_cmd_dang_ky_bao_hiem_y_te_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f392_ke_khai_bao_hiem_y_te v_f = new f392_ke_khai_bao_hiem_y_te();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_tinh_phep_tieu_chuan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f393_tinh_phep_tieu_chuan v_f = new f393_tinh_phep_tieu_chuan();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private DataSet get_hop_dong_het_han()
+        {
+            DataSet v_ds = new DataSet();
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillDatasetWithTableName(v_ds, "V_DM_HOP_DONG_HET_HAN");
+            return v_ds;
+        }
+
+        private void m_lbl_canh_bao_het_han_hop_dong_DoubleClick(object sender, EventArgs e)
+        {
+            F110_dm_hop_dong_het_han v_f = new F110_dm_hop_dong_het_han();
+            v_f.display_for_show(get_hop_dong_het_han());
+        }
+
+       
 
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)
         //{

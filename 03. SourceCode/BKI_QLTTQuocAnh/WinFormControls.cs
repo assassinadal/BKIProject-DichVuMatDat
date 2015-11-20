@@ -454,6 +454,13 @@ namespace BKI_DichVuMatDat
             v_cstore.addDatetimeInputParam("@ngay_cham_cong", v_dat);
             v_cstore.fillDataSetByCommand(this, v_ds);
         }
+        internal void FillDatasetNgayPhepTieuChuan(DataSet v_ds, string year)
+        {
+            CStoredProc v_cstore = new CStoredProc("PR_GET_PHEP_TIEU_CHUAN");
+            v_cstore.addNVarcharInputParam("@nam", year);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+        }
+
     }
 
     public class iParameter

@@ -23,6 +23,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class f355_thuong_an_toan_hang_khong : Form
     {
+        #region Member
         enum IS_GIAM_TRU
         {
             DA_GIA_TRU,
@@ -32,6 +33,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         IS_GIAM_TRU m_is_giam_tru;
 
         US_V_GD_QUY_TIEN_THUONG m_us_v_gd_quy_tien_thuong;
+        #endregion
+
 
         #region Public interface
         public f355_thuong_an_toan_hang_khong()
@@ -69,20 +72,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                SplashScreenManager.ShowForm(typeof(F_wait_form));
                 US_DUNG_CHUNG v_us_dung_chung = new US_DUNG_CHUNG();
                 DataSet v_ds = new DataSet();
                 v_ds.Tables.Add();
-                v_us_dung_chung.FillDatasetWithQuery(v_ds, "select * from V_GD_THU_NHAP_KHAC_2");
-               
-                //m_us_hs_bs_athk = new US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG();
-                //m_us_hs_bs_athk.load_du_lieu_bang_luong_theo_hs_athk(v_ds
-                //                                                , m_dat_tu_ngay.DateTime
-                //                                                , m_dat_den_ngay.DateTime
-                //                                                , CIPConvert.ToDecimal(m_txt_so_tien.EditValue)
-                //                                                , m_chk_giam_tru.Checked == true ? "Y" : "N"
-                //                                                , m_dat_thang_thuong.DateTime.Month
-                //                                                , m_dat_thang_thuong.DateTime.Year);
+                string procedure = "select * from V_GD_THU_NHAP_KHAC_2 where ID_QUY_TIEN_THUONG = " + m_us_v_gd_quy_tien_thuong.dcID;
+                v_us_dung_chung.FillDatasetWithQuery(v_ds, procedure);
 
                 m_grc_luong_thuong.DataSource = v_ds.Tables[0];
                 m_grc_luong_thuong.RefreshDataSource();
@@ -94,12 +88,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 throw;
             }
-            finally
-            {
-                SplashScreenManager.CloseForm();
-            }
         }
-        
+
         private void fill_data_2_control(decimal ip_dc_id_quy_tien)
         {
             m_us_v_gd_quy_tien_thuong = new US_V_GD_QUY_TIEN_THUONG(ip_dc_id_quy_tien);
@@ -207,18 +197,18 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private void data_row_2_us(DataRow ip_dr_du_lieu_1_nv, ref US_GD_THU_NHAP_KHAC ref_us)
         {
-            ref_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(ip_dr_du_lieu_1_nv["ID_NHAN_VIEN"]);
-            ref_us.dcSO_TIEN = CIPConvert.ToDecimal(ip_dr_du_lieu_1_nv["SO_TIEN_THUONG_NV"].ToString());
+            ref_us.dcID_NHAN_VIEN = (decimal)ip_dr_du_lieu_1_nv["ID_NHAN_VIEN"];
+            ref_us.dcSO_TIEN = Convert.ToDecimal(ip_dr_du_lieu_1_nv["SO_TIEN_THUONG_NV"]);
             ref_us.dcTHANG = m_dat_thang_thuong.DateTime.Month;
             ref_us.dcNAM = m_dat_thang_thuong.DateTime.Year;
             ref_us.dcID_CACH_TINH_THUE = CONST_ID_LOAI_CACH_TINH_THUE.THUE_THANG;
             ref_us.dcID_LOAI_THU_NHAP_KHAC = CONST_ID_LOAI_THU_NHAP_KHAC.LINH_CO_THUE;
             ref_us.dcID_QUY_TIEN_THUONG = m_us_v_gd_quy_tien_thuong.dcID;
 
-            ref_us.dcSO_TIEN_GIAM_TRU = CIPConvert.ToDecimal(ip_dr_du_lieu_1_nv["SO_TIEN_GIAM_TRU"]);
-            ref_us.dcSO_TIEN_NOP_THE = CIPConvert.ToDecimal(ip_dr_du_lieu_1_nv["SO_THUE_PHAI_NOP"]);
-            ref_us.dcSO_TIEN_THUC_LINH = CIPConvert.ToDecimal(ip_dr_du_lieu_1_nv["THUC_LINH"]);
-            ref_us.dcTONG_HS_ATHK = CIPConvert.ToDecimal(ip_dr_du_lieu_1_nv["TONG_HS_ATHK"]);
+            ref_us.dcSO_TIEN_GIAM_TRU = Convert.ToDecimal(ip_dr_du_lieu_1_nv["SO_TIEN_GIAM_TRU"]);
+            ref_us.dcSO_TIEN_NOP_THE = Convert.ToDecimal(ip_dr_du_lieu_1_nv["SO_THUE_PHAI_NOP"]);
+            ref_us.dcSO_TIEN_THUC_LINH = Convert.ToDecimal(ip_dr_du_lieu_1_nv["THUC_LINH"]);
+            ref_us.dcTONG_HS_ATHK = Convert.ToDecimal(ip_dr_du_lieu_1_nv["TONG_HS_ATHK"]);
         }
 
         private void luu_thang_da_giam_tru()
@@ -240,7 +230,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us_thang_da_giam_tru.strDA_XOA = "N";
             v_us_thang_da_giam_tru.Insert();
         }
-        
+
         private DS_DM_NHAN_VIEN lay_danh_sach_nhan_vien_chua_tinh_thuong()
         {
             US_GD_THU_NHAP_KHAC v_us_gd_thu_nhap_khac = new US_GD_THU_NHAP_KHAC();
@@ -259,19 +249,17 @@ namespace BKI_DichVuMatDat.NghiepVu
             var rowLimit = v_ds_nhan_vien_canh_tinh.DM_NHAN_VIEN.Count;
             for(int rowToComput = 0; rowToComput < rowLimit; rowToComput++)
             {
-                var v_id_nv = CIPConvert.ToDecimal(v_ds_nhan_vien_canh_tinh.DM_NHAN_VIEN.Rows[rowToComput][DM_NHAN_VIEN.ID].ToString());
+                var v_id_nv = (decimal)v_ds_nhan_vien_canh_tinh.DM_NHAN_VIEN.Rows[rowToComput][DM_NHAN_VIEN.ID];
                 //B2: Tinh thu nhap khac cho nhan vien nay
                 var v_dr_du_lieu_1_nv = lay_du_lieu_tien_thuong_1_nhan_vien(v_id_nv);
 
                 //B3: Chuyen doi du lieu tu DataRow sang US de insert
                 US_GD_THU_NHAP_KHAC v_us_gd_thu_nhap_khac = new US_GD_THU_NHAP_KHAC();
                 data_row_2_us(v_dr_du_lieu_1_nv, ref v_us_gd_thu_nhap_khac);
-                if(v_us_gd_thu_nhap_khac.dcSO_TIEN > 0)
-                {
-                    v_us_gd_thu_nhap_khac.Insert();
-                }
+                v_us_gd_thu_nhap_khac.Insert();
                 m_bgwk.ReportProgress((rowToComput + 1) * 100 / rowLimit);
             }
+            mark_complete_tinh_thuong();
         }
         private DataRow lay_du_lieu_tien_thuong_1_nhan_vien(decimal ip_dc_id_nhan_vien)
         {
@@ -294,6 +282,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 SplashScreenManager.ShowForm(typeof(F_wait_form));
 
+                if(m_us_v_gd_quy_tien_thuong.strTINH_XONG_YN == "Y")
+                {
+                    XtraMessageBox.Show("Đã tính tiền thưởng xong rồi!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    fill_data_to_grid();
+                    return;
+                }
                 save_data_tien_thuong_nhan_vien();
 
                 //B3: Thong bao Message Box
@@ -309,6 +303,21 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
+        private void mark_complete_tinh_thuong()
+        {
+            try
+            {
+                US_GD_QUY_TIEN_THUONG v_us_quy = new US_GD_QUY_TIEN_THUONG(m_us_v_gd_quy_tien_thuong.dcID);
+                v_us_quy.strTINH_XONG_YN = "Y";
+                v_us_quy.Update();
+            }
+            catch(Exception)
+            {
+                XtraMessageBox.Show("Có lỗi xảy ra!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                throw;
+            }
+           
+        }
 
         private void handle_key_down(Keys ip_key, bool ip_is_ctrl_press)
         {
@@ -321,8 +330,9 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_dat_tu_ngay.DateTime = DateTime.Now.AddMonths(-DateTime.Now.Month + 1).AddDays(-DateTime.Now.Day + 1);
             m_dat_thang_thuong.DateTime = DateTime.Now;
-            m_prb.Visible = false;
+            m_prb.Visible = false; layoutControlItem10.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             set_text_thong_tin_da_tinh_luong();
+            fill_data_to_grid();
         }
         private void handle_thay_doi_thang_thuong()
         {
@@ -334,6 +344,13 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             m_chk_giam_tru.Checked = op_dc_giam_tru == 0 ? false : true;
             m_is_giam_tru = op_dc_giam_tru == 0 ? IS_GIAM_TRU.CHUA_GIAM_TRU : IS_GIAM_TRU.DA_GIA_TRU;
+        }
+        private void handle_worker_completed()
+        {
+            this.m_prb.Visible = false;
+            layoutControlItem10.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            
+            fill_data_to_grid();
         }
         private void start_tinh_tien_thuong_process()
         {
@@ -348,6 +365,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             else
             {
                 this.m_prb.Visible = true;
+                layoutControlItem10.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                 m_bgwk.RunWorkerAsync();
             }
         }
@@ -362,7 +380,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_chk_giam_tru.CheckedChanged += m_chk_giam_tru_CheckedChanged;
             KeyDown += f355_thuong_an_toan_hang_khong_KeyDown;
         }
-
 
         private void m_bgwk_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -392,8 +409,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                this.m_prb.Visible = false;
-                fill_data_to_grid();
+                handle_worker_completed();
             }
             catch(Exception v_e)
             {

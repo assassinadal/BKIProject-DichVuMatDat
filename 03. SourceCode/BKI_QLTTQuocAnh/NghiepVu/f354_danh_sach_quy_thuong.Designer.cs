@@ -52,6 +52,7 @@
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DA_TINH_PHAN_TRAM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -64,7 +65,6 @@
             this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
             this.simpleSeparator2 = new DevExpress.XtraLayout.SimpleSeparator();
             this.simpleSeparator3 = new DevExpress.XtraLayout.SimpleSeparator();
-            this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_ngay.Properties.CalendarTimeProperties)).BeginInit();
@@ -74,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_ds_quy_tien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_ds_quy_tien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_repoBtn_tinh_tien_thuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -86,7 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // TINH_XONG_YN
@@ -94,6 +94,7 @@
             this.TINH_XONG_YN.Caption = "TINH_XONG_YN";
             this.TINH_XONG_YN.FieldName = "TINH_XONG_YN";
             this.TINH_XONG_YN.Name = "TINH_XONG_YN";
+            this.TINH_XONG_YN.OptionsColumn.ReadOnly = true;
             // 
             // layoutControl1
             // 
@@ -225,6 +226,8 @@
             this.m_grv_ds_quy_tien.OptionsBehavior.AutoExpandAllGroups = true;
             this.m_grv_ds_quy_tien.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDown;
             this.m_grv_ds_quy_tien.OptionsBehavior.ReadOnly = true;
+            this.m_grv_ds_quy_tien.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.m_grv_ds_quy_tien.OptionsSelection.EnableAppearanceFocusedRow = false;
             this.m_grv_ds_quy_tien.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.m_grv_ds_quy_tien.OptionsView.ShowFooter = true;
             this.m_grv_ds_quy_tien.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
@@ -370,6 +373,7 @@
             this.gridColumn9.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn9.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn9.Caption = "Lý do thưởng";
+            this.gridColumn9.FieldName = "LY_DO_THUONG";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.OptionsColumn.ReadOnly = true;
             this.gridColumn9.Visible = true;
@@ -420,8 +424,16 @@
             this.DA_TINH_PHAN_TRAM.ColumnEdit = this.repositoryItemProgressBar1;
             this.DA_TINH_PHAN_TRAM.FieldName = "PHAN_TRAM_DA_TINH";
             this.DA_TINH_PHAN_TRAM.Name = "DA_TINH_PHAN_TRAM";
+            this.DA_TINH_PHAN_TRAM.OptionsColumn.ReadOnly = true;
             this.DA_TINH_PHAN_TRAM.Visible = true;
             this.DA_TINH_PHAN_TRAM.VisibleIndex = 8;
+            // 
+            // repositoryItemProgressBar1
+            // 
+            this.repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
+            this.repositoryItemProgressBar1.ReadOnly = true;
+            this.repositoryItemProgressBar1.ShowTitle = true;
+            this.repositoryItemProgressBar1.Step = 1;
             // 
             // layoutControlGroup1
             // 
@@ -559,13 +571,6 @@
             this.simpleSeparator3.Size = new System.Drawing.Size(2, 48);
             this.simpleSeparator3.Text = "simpleSeparator3";
             // 
-            // repositoryItemProgressBar1
-            // 
-            this.repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
-            this.repositoryItemProgressBar1.ReadOnly = true;
-            this.repositoryItemProgressBar1.ShowTitle = true;
-            this.repositoryItemProgressBar1.Step = 1;
-            // 
             // f354_danh_sach_quy_thuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,6 +589,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_ds_quy_tien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_ds_quy_tien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_repoBtn_tinh_tien_thuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -596,7 +602,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
             this.ResumeLayout(false);
 
         }

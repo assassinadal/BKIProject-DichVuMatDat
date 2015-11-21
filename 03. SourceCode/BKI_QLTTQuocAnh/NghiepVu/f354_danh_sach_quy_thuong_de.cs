@@ -61,6 +61,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_dat_thang_thuong.DateTime = DateTime.Now;
             set_tu_dau_nam_den_cuoi_nam();
             fill_data_loai_quy_thuong();
+            m_le_loai_quy_thuong.EditValue = CONST_ID_TIEN_THUONG.THUONG_ATHK;
         }
         private bool is_valid_data()
         {

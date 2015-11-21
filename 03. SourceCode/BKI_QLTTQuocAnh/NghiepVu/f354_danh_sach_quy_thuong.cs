@@ -16,7 +16,6 @@ namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class f354_danh_sach_quy_thuong : Form
     {
-
         #region Field
         
         #endregion
@@ -152,6 +151,5 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         #endregion
-
     }
 }

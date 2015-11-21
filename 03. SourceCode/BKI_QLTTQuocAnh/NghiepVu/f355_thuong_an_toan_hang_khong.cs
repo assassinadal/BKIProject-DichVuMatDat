@@ -28,9 +28,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             DA_GIA_TRU,
             CHUA_GIAM_TRU
         }
+
         IS_GIAM_TRU m_is_giam_tru;
 
-        US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG m_us_hs_bs_athk;
         US_V_GD_QUY_TIEN_THUONG m_us_v_gd_quy_tien_thuong;
 
         #region Public interface

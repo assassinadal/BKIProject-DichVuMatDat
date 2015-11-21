@@ -171,17 +171,23 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             else
             {
-                US_GD_CHAM_CONG v_us_gd_cc = new US_GD_CHAM_CONG();
-                v_us_gd_cc.dcID_NHAN_VIEN = CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"].ToString());
-                v_us_gd_cc.dcID_LOAI_NGAY_CONG = get_id_loai_ngay_cong(v_dr["MA_NGAY_CONG"].ToString());
-                v_us_gd_cc.datNGAY_CHAM_CONG = m_dat_ngay_cham_cong.Value.Date;
-                v_us_gd_cc.strDA_XOA = "N";
-                v_us_gd_cc.datNGAY_LAP = m_dat_ngay_cham_cong.Value;
-                v_us_gd_cc.datNGAY_SUA = m_dat_ngay_cham_cong.Value;
-                v_us_gd_cc.strNGUOI_LAP = "admin";
-                v_us_gd_cc.strNGUOI_SUA = "admin";
-                v_us_gd_cc.Insert();
-
+                if (check_ngay_cong_phep(v_dr))
+                {
+                    US_GD_CHAM_CONG v_us_gd_cc = new US_GD_CHAM_CONG();
+                    v_us_gd_cc.dcID_NHAN_VIEN = CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"].ToString());
+                    v_us_gd_cc.dcID_LOAI_NGAY_CONG = get_id_loai_ngay_cong(v_dr["MA_NGAY_CONG"].ToString());
+                    v_us_gd_cc.datNGAY_CHAM_CONG = m_dat_ngay_cham_cong.Value.Date;
+                    v_us_gd_cc.strDA_XOA = "N";
+                    v_us_gd_cc.datNGAY_LAP = m_dat_ngay_cham_cong.Value;
+                    v_us_gd_cc.datNGAY_SUA = m_dat_ngay_cham_cong.Value;
+                    v_us_gd_cc.strNGUOI_LAP = "admin";
+                    v_us_gd_cc.strNGUOI_SUA = "admin";
+                    v_us_gd_cc.Insert(); 
+                }
+                else
+                {
+                    MessageBox.Show("Nhân viên " + v_dr["HO_TEN"] + " đã nghỉ hết ngày phép tiêu chuẩn!");
+                }
                 //tinh lai bang luong cho nhan vien da sua
                 if (bang_luong_thang_do_da_tinh(CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"].ToString()), int.Parse(m_dat_ngay_cham_cong.Value.Month.ToString()), int.Parse(m_dat_ngay_cham_cong.Value.Year.ToString())))
                 {
@@ -189,6 +195,29 @@ namespace BKI_DichVuMatDat.NghiepVu
                 }
             }
         }
+
+        private bool check_ngay_cong_phep(System.Data.DataRow v_dr)
+        {
+            if (v_dr["MA_NGAY_CONG"].ToString() == "F")
+            {
+                DataSet v_ds = new DataSet();
+                US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+                v_ds.Tables.Add(new DataTable());
+                string v_nam_cham_cong = m_dat_ngay_cham_cong.Value.Year.ToString();
+                decimal v_id_nhan_vien = CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"].ToString());
+                v_us.FillDatasetNgayPhepTieuChuan(v_ds, v_nam_cham_cong , v_id_nhan_vien);
+                decimal v_so_phep_da_nghi = CIPConvert.ToDecimal(v_ds.Tables[0].Rows[0]["SO_PHEP_DA_NGHI"].ToString());
+                decimal v_so_phep_tieu_chuan = CIPConvert.ToDecimal(v_ds.Tables[0].Rows[0]["SO_PHEP_TIEU_CHUAN"].ToString());
+                if (v_so_phep_da_nghi == v_so_phep_tieu_chuan) 
+                {
+                    return false;
+                }
+                else return true;         
+            }
+            else return true;
+        }
+
+        
 
         private int find_id_rpt_luong(decimal v_id_nhan_vien, int ip_dat_thang, int ip_dat_nam)
         {

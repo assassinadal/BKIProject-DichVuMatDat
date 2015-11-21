@@ -74,7 +74,6 @@
             this.m_txt_nam_tinh_phep.Name = "m_txt_nam_tinh_phep";
             this.m_txt_nam_tinh_phep.Size = new System.Drawing.Size(100, 20);
             this.m_txt_nam_tinh_phep.TabIndex = 1;
-
             // 
             // m_lbl_nam_tinh_phep
             // 
@@ -147,8 +146,8 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.Caption = "SỐ NGÀY PHÉP ĐÃ NGHỈ";
-            this.gridColumn5.FieldName = "SO_NGAY_PHEP_DA_NGHI";
+            this.gridColumn5.Caption = "SỐ PHÉP ĐÃ NGHỈ";
+            this.gridColumn5.FieldName = "SO_PHEP_DA_NGHI";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
@@ -156,8 +155,8 @@
             // 
             // gridColumn6
             // 
-            this.gridColumn6.Caption = "SỐ NGÀY PHÉP";
-            this.gridColumn6.FieldName = "SO_NGAY_PHEP";
+            this.gridColumn6.Caption = "SỐ PHÉP TIÊU CHUẨN";
+            this.gridColumn6.FieldName = "SO_PHEP_TIEU_CHUAN";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 3;

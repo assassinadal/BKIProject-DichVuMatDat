@@ -28,7 +28,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataTable v_dt = new DataTable();
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             v_ds.Tables.Add(v_dt);
-            v_us.FillDatasetNgayPhepTieuChuan(v_ds, m_txt_nam_tinh_phep.Text);
+            v_us.FillDatasetNgayPhepTieuChuan(v_ds, m_txt_nam_tinh_phep.Text, -1);
             m_grc_phep_tieu_chuan.DataSource = v_ds.Tables[0];
         }
 
@@ -55,10 +55,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             for (int i = 0; i < ip_str_nam_tinh_phep.Length; i++)
             {
-                if (char.IsDigit(ip_str_nam_tinh_phep[i]) == true)
-                    return true;
+                if (char.IsDigit(ip_str_nam_tinh_phep[i]) == false)
+                    return false;
             }
-            return false;
+            return true;
         }          
     }
 }

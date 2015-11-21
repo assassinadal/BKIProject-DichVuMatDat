@@ -454,10 +454,11 @@ namespace BKI_DichVuMatDat
             v_cstore.addDatetimeInputParam("@ngay_cham_cong", v_dat);
             v_cstore.fillDataSetByCommand(this, v_ds);
         }
-        internal void FillDatasetNgayPhepTieuChuan(DataSet v_ds, string year)
+        internal void FillDatasetNgayPhepTieuChuan(DataSet v_ds, string ip_nam_tinh_phep, decimal ip_id_nhan_vien)
         {
             CStoredProc v_cstore = new CStoredProc("PR_GET_PHEP_TIEU_CHUAN");
-            v_cstore.addNVarcharInputParam("@nam", year);
+            v_cstore.addNVarcharInputParam("@nam_tinh_phep", ip_nam_tinh_phep);
+            v_cstore.addDecimalInputParam("@dc_id_nhan_vien", ip_id_nhan_vien);
             v_cstore.fillDataSetByCommand(this, v_ds);
         }
 

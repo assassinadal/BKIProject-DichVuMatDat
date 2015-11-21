@@ -280,14 +280,13 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                SplashScreenManager.ShowForm(typeof(F_wait_form));
-
                 if(m_us_v_gd_quy_tien_thuong.strTINH_XONG_YN == "Y")
                 {
                     XtraMessageBox.Show("Đã tính tiền thưởng xong rồi!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     fill_data_to_grid();
                     return;
                 }
+
                 save_data_tien_thuong_nhan_vien();
 
                 //B3: Thong bao Message Box
@@ -296,10 +295,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             catch(Exception)
             {
                 throw;
-            }
-            finally
-            {
-                SplashScreenManager.CloseForm();
             }
         }
 
@@ -367,6 +362,20 @@ namespace BKI_DichVuMatDat.NghiepVu
                 this.m_prb.Visible = true;
                 layoutControlItem10.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                 m_bgwk.RunWorkerAsync();
+            }
+        }
+        private void handle_giam_tru_checked()
+        {
+            if(m_chk_giam_tru.CheckState == CheckState.Unchecked)
+            {
+                m_chk_giam_tru.Enabled = true;
+            }
+            else if(m_chk_giam_tru.CheckState == CheckState.Checked)//
+            {
+                if(m_is_giam_tru == IS_GIAM_TRU.DA_GIA_TRU)
+                {
+                    m_chk_giam_tru.Enabled = false;
+                }
             }
         }
         #endregion
@@ -447,17 +456,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if(m_chk_giam_tru.CheckState == CheckState.Unchecked)
-                {
-                    m_chk_giam_tru.Enabled = true;
-                }
-                else if(m_chk_giam_tru.CheckState == CheckState.Checked)//
-                {
-                    if(m_is_giam_tru == IS_GIAM_TRU.DA_GIA_TRU)
-                    {
-                        m_chk_giam_tru.Enabled = false;
-                    }
-                }
+                handle_giam_tru_checked();
+                
             }
             catch(Exception v_e)
             {

@@ -40,13 +40,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.m_txt_dia_chi = new System.Windows.Forms.TextBox();
+            this.m_txt_mst = new System.Windows.Forms.TextBox();
+            this.m_txt_cmt = new System.Windows.Forms.TextBox();
+            this.m_dtp_ns_nv = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.m_slue_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -65,15 +69,19 @@
             this.label8 = new System.Windows.Forms.Label();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -135,16 +143,16 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.dateTimePicker1);
+            this.panel3.Controls.Add(this.m_txt_dia_chi);
+            this.panel3.Controls.Add(this.m_txt_mst);
+            this.panel3.Controls.Add(this.m_txt_cmt);
+            this.panel3.Controls.Add(this.m_dtp_ns_nv);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.m_slue_nhan_vien);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(609, 393);
+            this.panel3.Size = new System.Drawing.Size(606, 393);
             this.panel3.TabIndex = 2;
             // 
             // label7
@@ -202,36 +210,40 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Ngày sinh";
             // 
-            // textBox3
+            // m_txt_dia_chi
             // 
-            this.textBox3.Location = new System.Drawing.Point(107, 112);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(469, 161);
-            this.textBox3.TabIndex = 5;
+            this.m_txt_dia_chi.Enabled = false;
+            this.m_txt_dia_chi.Location = new System.Drawing.Point(107, 112);
+            this.m_txt_dia_chi.Multiline = true;
+            this.m_txt_dia_chi.Name = "m_txt_dia_chi";
+            this.m_txt_dia_chi.Size = new System.Drawing.Size(469, 161);
+            this.m_txt_dia_chi.TabIndex = 5;
             // 
-            // textBox2
+            // m_txt_mst
             // 
-            this.textBox2.Location = new System.Drawing.Point(376, 77);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 20);
-            this.textBox2.TabIndex = 4;
+            this.m_txt_mst.Enabled = false;
+            this.m_txt_mst.Location = new System.Drawing.Point(376, 77);
+            this.m_txt_mst.Name = "m_txt_mst";
+            this.m_txt_mst.Size = new System.Drawing.Size(200, 20);
+            this.m_txt_mst.TabIndex = 4;
             // 
-            // textBox1
+            // m_txt_cmt
             // 
-            this.textBox1.Location = new System.Drawing.Point(107, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 20);
-            this.textBox1.TabIndex = 3;
+            this.m_txt_cmt.Enabled = false;
+            this.m_txt_cmt.Location = new System.Drawing.Point(107, 77);
+            this.m_txt_cmt.Name = "m_txt_cmt";
+            this.m_txt_cmt.Size = new System.Drawing.Size(185, 20);
+            this.m_txt_cmt.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // m_dtp_ns_nv
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(376, 47);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.m_dtp_ns_nv.CustomFormat = "dd/MM/yyyy";
+            this.m_dtp_ns_nv.Enabled = false;
+            this.m_dtp_ns_nv.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dtp_ns_nv.Location = new System.Drawing.Point(376, 47);
+            this.m_dtp_ns_nv.Name = "m_dtp_ns_nv";
+            this.m_dtp_ns_nv.Size = new System.Drawing.Size(200, 20);
+            this.m_dtp_ns_nv.TabIndex = 2;
             // 
             // label1
             // 
@@ -253,6 +265,7 @@
             this.m_slue_nhan_vien.Properties.View = this.searchLookUpEdit1View;
             this.m_slue_nhan_vien.Size = new System.Drawing.Size(185, 20);
             this.m_slue_nhan_vien.TabIndex = 0;
+            this.m_slue_nhan_vien.EditValueChanged += new System.EventHandler(this.m_slue_nhan_vien_EditValueChanged);
             // 
             // searchLookUpEdit1View
             // 
@@ -265,6 +278,36 @@
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "ID";
+            this.gridColumn1.FieldName = "ID";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "MÃ NHÂN VIÊN";
+            this.gridColumn2.FieldName = "MA_NV";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "HỌ TÊN";
+            this.gridColumn3.FieldName = "HO_TEN";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "ĐỊA CHỈ";
+            this.gridColumn4.FieldName = "DIA_CHI_THUONG_TRU";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 2;
             // 
             // panel4
             // 
@@ -431,8 +474,79 @@
             // 
             // m_grv
             // 
+            this.m_grv.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Tên người phụ thuộc";
+            this.gridColumn5.FieldName = "TEN_NGUOI_PHU_THUOC";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 0;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "ID";
+            this.gridColumn6.FieldName = "ID";
+            this.gridColumn6.Name = "gridColumn6";
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Ngày sinh";
+            this.gridColumn7.FieldName = "NGAY_SINH_NGUOI_PHU_THUOC";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 1;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Số CMT";
+            this.gridColumn8.FieldName = "SO_CMT_NGUOI_PHU_THUOC";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 2;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Mã số thuế";
+            this.gridColumn9.FieldName = "MA_SO_THUE_NGUOI_PHU_THUOC";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 3;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Địa chỉ thường trú";
+            this.gridColumn10.FieldName = "DIA_CHI_NGUOI_PHU_THUOC";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 4;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Quan hệ với người giảm trừ";
+            this.gridColumn11.FieldName = "QUAN_HE_VOI_NGUOI_NOP_THUE";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 5;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Giấy tờ đi kèm";
+            this.gridColumn12.FieldName = "GIAY_TO_DI_KEM";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 6;
             // 
             // m_pnl_out_place_dm
             // 
@@ -490,36 +604,6 @@
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
             this.m_cmd_xuat_excel.Visible = false;
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "ID";
-            this.gridColumn1.FieldName = "ID";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "MÃ NHÂN VIÊN";
-            this.gridColumn2.FieldName = "MA_NV";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "HỌ TÊN";
-            this.gridColumn3.FieldName = "HO_TEN";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "ĐỊA CHỈ";
-            this.gridColumn4.FieldName = "DIA_CHI_THUONG_TRU";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
-            // 
             // F312_dang_ky_giam_tru_nguoi_phu_thuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,10 +652,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox m_txt_dia_chi;
+        private System.Windows.Forms.TextBox m_txt_mst;
+        private System.Windows.Forms.TextBox m_txt_cmt;
+        private System.Windows.Forms.DateTimePicker m_dtp_ns_nv;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox7;
@@ -596,5 +680,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
     }
 }

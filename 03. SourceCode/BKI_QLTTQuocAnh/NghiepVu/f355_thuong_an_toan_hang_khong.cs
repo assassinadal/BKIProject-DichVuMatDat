@@ -500,7 +500,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 saveFileDialog1.RestoreDirectory = true;
                 if(saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    m_grv.ExportToXls(saveFileDialog1.FileName);
+                    m_grv_luong_thuong.ExportToXls(saveFileDialog1.FileName);
                     DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
                 }
             }

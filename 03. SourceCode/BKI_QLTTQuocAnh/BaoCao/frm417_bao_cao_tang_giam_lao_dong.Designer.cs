@@ -28,40 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.m_trl_bao_cao = new DevExpress.XtraTreeList.TreeList();
+            this.ID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.TEN_DON_VI = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.DAU_KY = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.PHAT_SINH_TANG = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.PHAT_SINH_GIAM = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.CUOI_KY = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
-            this.m_grc_bao_cao = new DevExpress.XtraGrid.GridControl();
-            this.prrpttanggiamlaodongBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.m_grv_bao_cao = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMA_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colID_LOAI_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colID_DON_VI_CAP_TREN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colID_DV_0 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colID_DV_1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colID_DV_2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colID_DV_3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colID_DV_4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDAU_KY = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPHAT_SINH_TANG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPHAT_SINH_GIAM = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCUOI_KY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_dat_den_ngay = new DevExpress.XtraEditors.DateEdit();
             this.m_dat_tu_ngay = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc_bao_cao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prrpttanggiamlaodongBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_bao_cao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_trl_bao_cao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_ngay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_ngay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_ngay.Properties.CalendarTimeProperties)).BeginInit();
@@ -69,250 +59,152 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.m_cmd_xuat_excel);
+            this.layoutControl1.Controls.Add(this.m_trl_bao_cao);
             this.layoutControl1.Controls.Add(this.m_cmd_filter);
-            this.layoutControl1.Controls.Add(this.m_grc_bao_cao);
             this.layoutControl1.Controls.Add(this.m_dat_den_ngay);
             this.layoutControl1.Controls.Add(this.m_dat_tu_ngay);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1013, 272, 250, 350);
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(479, 272, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
             this.layoutControl1.Size = new System.Drawing.Size(887, 513);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.Image = global::BKI_DichVuMatDat.Properties.Resources.table1;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(756, 471);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(119, 30);
+            this.m_cmd_xuat_excel.StyleController = this.layoutControl1;
+            this.m_cmd_xuat_excel.TabIndex = 9;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
+            // 
+            // m_trl_bao_cao
+            // 
+            this.m_trl_bao_cao.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.ID,
+            this.TEN_DON_VI,
+            this.DAU_KY,
+            this.PHAT_SINH_TANG,
+            this.PHAT_SINH_GIAM,
+            this.CUOI_KY});
+            this.m_trl_bao_cao.Location = new System.Drawing.Point(12, 94);
+            this.m_trl_bao_cao.Name = "m_trl_bao_cao";
+            this.m_trl_bao_cao.Size = new System.Drawing.Size(863, 373);
+            this.m_trl_bao_cao.TabIndex = 8;
+            // 
+            // ID
+            // 
+            this.ID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ID.AppearanceHeader.Options.UseFont = true;
+            this.ID.AppearanceHeader.Options.UseTextOptions = true;
+            this.ID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ID.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
+            this.ID.OptionsColumn.ReadOnly = true;
+            // 
+            // TEN_DON_VI
+            // 
+            this.TEN_DON_VI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.TEN_DON_VI.AppearanceHeader.Options.UseFont = true;
+            this.TEN_DON_VI.AppearanceHeader.Options.UseTextOptions = true;
+            this.TEN_DON_VI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TEN_DON_VI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.TEN_DON_VI.Caption = "Tên đơn vị";
+            this.TEN_DON_VI.FieldName = "TEN_DON_VI";
+            this.TEN_DON_VI.Name = "TEN_DON_VI";
+            this.TEN_DON_VI.OptionsColumn.ReadOnly = true;
+            this.TEN_DON_VI.Visible = true;
+            this.TEN_DON_VI.VisibleIndex = 0;
+            this.TEN_DON_VI.Width = 324;
+            // 
+            // DAU_KY
+            // 
+            this.DAU_KY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.DAU_KY.AppearanceHeader.Options.UseFont = true;
+            this.DAU_KY.AppearanceHeader.Options.UseTextOptions = true;
+            this.DAU_KY.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.DAU_KY.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.DAU_KY.Caption = "Đầu kỳ";
+            this.DAU_KY.FieldName = "DAU_KY";
+            this.DAU_KY.Name = "DAU_KY";
+            this.DAU_KY.OptionsColumn.ReadOnly = true;
+            this.DAU_KY.Visible = true;
+            this.DAU_KY.VisibleIndex = 1;
+            this.DAU_KY.Width = 130;
+            // 
+            // PHAT_SINH_TANG
+            // 
+            this.PHAT_SINH_TANG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.PHAT_SINH_TANG.AppearanceHeader.Options.UseFont = true;
+            this.PHAT_SINH_TANG.AppearanceHeader.Options.UseTextOptions = true;
+            this.PHAT_SINH_TANG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PHAT_SINH_TANG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.PHAT_SINH_TANG.Caption = "Phát sinh tăng";
+            this.PHAT_SINH_TANG.FieldName = "PHAT_SINH_TANG";
+            this.PHAT_SINH_TANG.Name = "PHAT_SINH_TANG";
+            this.PHAT_SINH_TANG.OptionsColumn.ReadOnly = true;
+            this.PHAT_SINH_TANG.Visible = true;
+            this.PHAT_SINH_TANG.VisibleIndex = 2;
+            this.PHAT_SINH_TANG.Width = 130;
+            // 
+            // PHAT_SINH_GIAM
+            // 
+            this.PHAT_SINH_GIAM.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.PHAT_SINH_GIAM.AppearanceHeader.Options.UseFont = true;
+            this.PHAT_SINH_GIAM.AppearanceHeader.Options.UseTextOptions = true;
+            this.PHAT_SINH_GIAM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PHAT_SINH_GIAM.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.PHAT_SINH_GIAM.Caption = "Phát sinh giảm";
+            this.PHAT_SINH_GIAM.FieldName = "PHAT_SINH_GIAM";
+            this.PHAT_SINH_GIAM.Name = "PHAT_SINH_GIAM";
+            this.PHAT_SINH_GIAM.OptionsColumn.ReadOnly = true;
+            this.PHAT_SINH_GIAM.Visible = true;
+            this.PHAT_SINH_GIAM.VisibleIndex = 3;
+            this.PHAT_SINH_GIAM.Width = 130;
+            // 
+            // CUOI_KY
+            // 
+            this.CUOI_KY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.CUOI_KY.AppearanceHeader.Options.UseFont = true;
+            this.CUOI_KY.AppearanceHeader.Options.UseTextOptions = true;
+            this.CUOI_KY.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CUOI_KY.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.CUOI_KY.Caption = "Cuối kỳ";
+            this.CUOI_KY.FieldName = "CUOI_KY";
+            this.CUOI_KY.Name = "CUOI_KY";
+            this.CUOI_KY.OptionsColumn.ReadOnly = true;
+            this.CUOI_KY.Visible = true;
+            this.CUOI_KY.VisibleIndex = 4;
+            this.CUOI_KY.Width = 131;
+            // 
             // m_cmd_filter
             // 
+            this.m_cmd_filter.Image = global::BKI_DichVuMatDat.Properties.Resources.find;
             this.m_cmd_filter.Location = new System.Drawing.Point(12, 60);
             this.m_cmd_filter.Name = "m_cmd_filter";
-            this.m_cmd_filter.Size = new System.Drawing.Size(87, 22);
+            this.m_cmd_filter.Size = new System.Drawing.Size(114, 30);
             this.m_cmd_filter.StyleController = this.layoutControl1;
             this.m_cmd_filter.TabIndex = 7;
             this.m_cmd_filter.Text = "Hiển thị";
             this.m_cmd_filter.Click += new System.EventHandler(this.m_cmd_filter_Click);
-            // 
-            // m_grc_bao_cao
-            // 
-            this.m_grc_bao_cao.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc_bao_cao.DataSource = this.prrpttanggiamlaodongBindingSource;
-            this.m_grc_bao_cao.Location = new System.Drawing.Point(12, 86);
-            this.m_grc_bao_cao.MainView = this.m_grv_bao_cao;
-            this.m_grc_bao_cao.Name = "m_grc_bao_cao";
-            this.m_grc_bao_cao.Size = new System.Drawing.Size(863, 415);
-            this.m_grc_bao_cao.TabIndex = 3;
-            this.m_grc_bao_cao.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.m_grv_bao_cao});
-            // 
-            // prrpttanggiamlaodongBindingSource
-            // 
-            this.prrpttanggiamlaodongBindingSource.DataMember = "pr_rpt_tang_giam_lao_dong";
-            // 
-            // m_grv_bao_cao
-            // 
-            this.m_grv_bao_cao.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colID,
-            this.colTEN_DON_VI,
-            this.colMA_DON_VI,
-            this.colID_LOAI_DON_VI,
-            this.colID_DON_VI_CAP_TREN,
-            this.colID_DV_0,
-            this.colID_DV_1,
-            this.colID_DV_2,
-            this.colID_DV_3,
-            this.colID_DV_4,
-            this.colDAU_KY,
-            this.colPHAT_SINH_TANG,
-            this.colPHAT_SINH_GIAM,
-            this.colCUOI_KY});
-            this.m_grv_bao_cao.GridControl = this.m_grc_bao_cao;
-            this.m_grv_bao_cao.Name = "m_grv_bao_cao";
-            this.m_grv_bao_cao.OptionsBehavior.Editable = false;
-            this.m_grv_bao_cao.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDown;
-            this.m_grv_bao_cao.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.m_grv_bao_cao.OptionsSelection.EnableAppearanceFocusedRow = false;
-            this.m_grv_bao_cao.OptionsView.ShowGroupPanel = false;
-            // 
-            // colID
-            // 
-            this.colID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colID.AppearanceHeader.Options.UseFont = true;
-            this.colID.AppearanceHeader.Options.UseTextOptions = true;
-            this.colID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colID.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colID.FieldName = "ID";
-            this.colID.Name = "colID";
-            this.colID.OptionsColumn.ReadOnly = true;
-            // 
-            // colTEN_DON_VI
-            // 
-            this.colTEN_DON_VI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colTEN_DON_VI.AppearanceHeader.Options.UseFont = true;
-            this.colTEN_DON_VI.AppearanceHeader.Options.UseTextOptions = true;
-            this.colTEN_DON_VI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colTEN_DON_VI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colTEN_DON_VI.Caption = "Tên đơn vị";
-            this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
-            this.colTEN_DON_VI.Name = "colTEN_DON_VI";
-            this.colTEN_DON_VI.Visible = true;
-            this.colTEN_DON_VI.VisibleIndex = 0;
-            this.colTEN_DON_VI.Width = 324;
-            // 
-            // colMA_DON_VI
-            // 
-            this.colMA_DON_VI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colMA_DON_VI.AppearanceHeader.Options.UseFont = true;
-            this.colMA_DON_VI.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMA_DON_VI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMA_DON_VI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colMA_DON_VI.FieldName = "MA_DON_VI";
-            this.colMA_DON_VI.Name = "colMA_DON_VI";
-            // 
-            // colID_LOAI_DON_VI
-            // 
-            this.colID_LOAI_DON_VI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colID_LOAI_DON_VI.AppearanceHeader.Options.UseFont = true;
-            this.colID_LOAI_DON_VI.AppearanceHeader.Options.UseTextOptions = true;
-            this.colID_LOAI_DON_VI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colID_LOAI_DON_VI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colID_LOAI_DON_VI.FieldName = "ID_LOAI_DON_VI";
-            this.colID_LOAI_DON_VI.Name = "colID_LOAI_DON_VI";
-            // 
-            // colID_DON_VI_CAP_TREN
-            // 
-            this.colID_DON_VI_CAP_TREN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colID_DON_VI_CAP_TREN.AppearanceHeader.Options.UseFont = true;
-            this.colID_DON_VI_CAP_TREN.AppearanceHeader.Options.UseTextOptions = true;
-            this.colID_DON_VI_CAP_TREN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colID_DON_VI_CAP_TREN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colID_DON_VI_CAP_TREN.FieldName = "ID_DON_VI_CAP_TREN";
-            this.colID_DON_VI_CAP_TREN.Name = "colID_DON_VI_CAP_TREN";
-            // 
-            // colID_DV_0
-            // 
-            this.colID_DV_0.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colID_DV_0.AppearanceHeader.Options.UseFont = true;
-            this.colID_DV_0.AppearanceHeader.Options.UseTextOptions = true;
-            this.colID_DV_0.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colID_DV_0.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colID_DV_0.FieldName = "ID_DV_0";
-            this.colID_DV_0.Name = "colID_DV_0";
-            // 
-            // colID_DV_1
-            // 
-            this.colID_DV_1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colID_DV_1.AppearanceHeader.Options.UseFont = true;
-            this.colID_DV_1.AppearanceHeader.Options.UseTextOptions = true;
-            this.colID_DV_1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colID_DV_1.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colID_DV_1.FieldName = "ID_DV_1";
-            this.colID_DV_1.Name = "colID_DV_1";
-            // 
-            // colID_DV_2
-            // 
-            this.colID_DV_2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colID_DV_2.AppearanceHeader.Options.UseFont = true;
-            this.colID_DV_2.AppearanceHeader.Options.UseTextOptions = true;
-            this.colID_DV_2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colID_DV_2.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colID_DV_2.FieldName = "ID_DV_2";
-            this.colID_DV_2.Name = "colID_DV_2";
-            // 
-            // colID_DV_3
-            // 
-            this.colID_DV_3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colID_DV_3.AppearanceHeader.Options.UseFont = true;
-            this.colID_DV_3.AppearanceHeader.Options.UseTextOptions = true;
-            this.colID_DV_3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colID_DV_3.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colID_DV_3.FieldName = "ID_DV_3";
-            this.colID_DV_3.Name = "colID_DV_3";
-            // 
-            // colID_DV_4
-            // 
-            this.colID_DV_4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colID_DV_4.AppearanceHeader.Options.UseFont = true;
-            this.colID_DV_4.AppearanceHeader.Options.UseTextOptions = true;
-            this.colID_DV_4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colID_DV_4.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colID_DV_4.FieldName = "ID_DV_4";
-            this.colID_DV_4.Name = "colID_DV_4";
-            // 
-            // colDAU_KY
-            // 
-            this.colDAU_KY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colDAU_KY.AppearanceHeader.Options.UseFont = true;
-            this.colDAU_KY.AppearanceHeader.Options.UseTextOptions = true;
-            this.colDAU_KY.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDAU_KY.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colDAU_KY.Caption = "Số lượng đầu kỳ";
-            this.colDAU_KY.DisplayFormat.FormatString = "n0";
-            this.colDAU_KY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colDAU_KY.FieldName = "DAU_KY";
-            this.colDAU_KY.Name = "colDAU_KY";
-            this.colDAU_KY.OptionsColumn.ReadOnly = true;
-            this.colDAU_KY.Visible = true;
-            this.colDAU_KY.VisibleIndex = 1;
-            this.colDAU_KY.Width = 130;
-            // 
-            // colPHAT_SINH_TANG
-            // 
-            this.colPHAT_SINH_TANG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colPHAT_SINH_TANG.AppearanceHeader.Options.UseFont = true;
-            this.colPHAT_SINH_TANG.AppearanceHeader.Options.UseTextOptions = true;
-            this.colPHAT_SINH_TANG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colPHAT_SINH_TANG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colPHAT_SINH_TANG.Caption = "Phát sinh tăng";
-            this.colPHAT_SINH_TANG.DisplayFormat.FormatString = "n0";
-            this.colPHAT_SINH_TANG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colPHAT_SINH_TANG.FieldName = "PHAT_SINH_TANG";
-            this.colPHAT_SINH_TANG.Name = "colPHAT_SINH_TANG";
-            this.colPHAT_SINH_TANG.OptionsColumn.ReadOnly = true;
-            this.colPHAT_SINH_TANG.Visible = true;
-            this.colPHAT_SINH_TANG.VisibleIndex = 2;
-            this.colPHAT_SINH_TANG.Width = 130;
-            // 
-            // colPHAT_SINH_GIAM
-            // 
-            this.colPHAT_SINH_GIAM.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colPHAT_SINH_GIAM.AppearanceHeader.Options.UseFont = true;
-            this.colPHAT_SINH_GIAM.AppearanceHeader.Options.UseTextOptions = true;
-            this.colPHAT_SINH_GIAM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colPHAT_SINH_GIAM.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colPHAT_SINH_GIAM.Caption = "Phát sinh giảm";
-            this.colPHAT_SINH_GIAM.DisplayFormat.FormatString = "n0";
-            this.colPHAT_SINH_GIAM.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colPHAT_SINH_GIAM.FieldName = "PHAT_SINH_GIAM";
-            this.colPHAT_SINH_GIAM.Name = "colPHAT_SINH_GIAM";
-            this.colPHAT_SINH_GIAM.OptionsColumn.ReadOnly = true;
-            this.colPHAT_SINH_GIAM.Visible = true;
-            this.colPHAT_SINH_GIAM.VisibleIndex = 3;
-            this.colPHAT_SINH_GIAM.Width = 130;
-            // 
-            // colCUOI_KY
-            // 
-            this.colCUOI_KY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colCUOI_KY.AppearanceHeader.Options.UseFont = true;
-            this.colCUOI_KY.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCUOI_KY.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colCUOI_KY.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colCUOI_KY.Caption = "Cuối kỳ";
-            this.colCUOI_KY.DisplayFormat.FormatString = "n0";
-            this.colCUOI_KY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colCUOI_KY.FieldName = "CUOI_KY";
-            this.colCUOI_KY.Name = "colCUOI_KY";
-            this.colCUOI_KY.OptionsColumn.ReadOnly = true;
-            this.colCUOI_KY.Visible = true;
-            this.colCUOI_KY.VisibleIndex = 4;
-            this.colCUOI_KY.Width = 131;
             // 
             // m_dat_den_ngay
             // 
@@ -348,10 +240,12 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3,
             this.layoutControlItem4,
             this.emptySpaceItem1,
-            this.emptySpaceItem2});
+            this.emptySpaceItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem5,
+            this.emptySpaceItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(887, 513);
@@ -378,25 +272,16 @@
             this.layoutControlItem2.Text = "Đến ngày";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(47, 13);
             // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.m_grc_bao_cao;
-            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 74);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(867, 419);
-            this.layoutControlItem3.Text = "layoutControlItem3";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextToControlDistance = 0;
-            this.layoutControlItem3.TextVisible = false;
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.m_cmd_filter;
             this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem4.MaxSize = new System.Drawing.Size(118, 34);
+            this.layoutControlItem4.MinSize = new System.Drawing.Size(118, 34);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(91, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(118, 34);
+            this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.Text = "layoutControlItem4";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextToControlDistance = 0;
@@ -408,7 +293,7 @@
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
             this.emptySpaceItem1.Location = new System.Drawing.Point(391, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(476, 74);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(476, 82);
             this.emptySpaceItem1.Text = "emptySpaceItem1";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -416,11 +301,48 @@
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(91, 48);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(118, 48);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(300, 26);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(273, 34);
             this.emptySpaceItem2.Text = "emptySpaceItem2";
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.m_trl_bao_cao;
+            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 82);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(867, 377);
+            this.layoutControlItem3.Text = "layoutControlItem3";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextToControlDistance = 0;
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.m_cmd_xuat_excel;
+            this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
+            this.layoutControlItem5.Location = new System.Drawing.Point(744, 459);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(123, 34);
+            this.layoutControlItem5.Text = "layoutControlItem5";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextToControlDistance = 0;
+            this.layoutControlItem5.TextVisible = false;
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.CustomizationFormText = "emptySpaceItem3";
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 459);
+            this.emptySpaceItem3.MaxSize = new System.Drawing.Size(744, 34);
+            this.emptySpaceItem3.MinSize = new System.Drawing.Size(744, 34);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(744, 34);
+            this.emptySpaceItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.emptySpaceItem3.Text = "emptySpaceItem3";
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // frm417_bao_cao_tang_giam_lao_dong
             // 
@@ -430,11 +352,10 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "frm417_bao_cao_tang_giam_lao_dong";
             this.Text = "F417 - Báo cáo tăng giảm lao động";
+            this.Load += new System.EventHandler(this.frm417_bao_cao_tang_giam_lao_dong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc_bao_cao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prrpttanggiamlaodongBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_bao_cao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_trl_bao_cao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_ngay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_ngay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_ngay.Properties.CalendarTimeProperties)).EndInit();
@@ -442,10 +363,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -454,31 +377,24 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraGrid.GridControl m_grc_bao_cao;
-        private DevExpress.XtraGrid.Views.Grid.GridView m_grv_bao_cao;
         private DevExpress.XtraEditors.DateEdit m_dat_den_ngay;
         private DevExpress.XtraEditors.DateEdit m_dat_tu_ngay;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.SimpleButton m_cmd_filter;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
-        private System.Windows.Forms.BindingSource prrpttanggiamlaodongBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colID;
-        private DevExpress.XtraGrid.Columns.GridColumn colTEN_DON_VI;
-        private DevExpress.XtraGrid.Columns.GridColumn colMA_DON_VI;
-        private DevExpress.XtraGrid.Columns.GridColumn colID_LOAI_DON_VI;
-        private DevExpress.XtraGrid.Columns.GridColumn colID_DON_VI_CAP_TREN;
-        private DevExpress.XtraGrid.Columns.GridColumn colID_DV_0;
-        private DevExpress.XtraGrid.Columns.GridColumn colID_DV_1;
-        private DevExpress.XtraGrid.Columns.GridColumn colID_DV_2;
-        private DevExpress.XtraGrid.Columns.GridColumn colID_DV_3;
-        private DevExpress.XtraGrid.Columns.GridColumn colID_DV_4;
-        private DevExpress.XtraGrid.Columns.GridColumn colDAU_KY;
-        private DevExpress.XtraGrid.Columns.GridColumn colPHAT_SINH_TANG;
-        private DevExpress.XtraGrid.Columns.GridColumn colPHAT_SINH_GIAM;
-        private DevExpress.XtraGrid.Columns.GridColumn colCUOI_KY;
+        private DevExpress.XtraTreeList.TreeList m_trl_bao_cao;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn ID;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn TEN_DON_VI;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn DAU_KY;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn PHAT_SINH_TANG;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn PHAT_SINH_GIAM;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn CUOI_KY;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
     }
 }

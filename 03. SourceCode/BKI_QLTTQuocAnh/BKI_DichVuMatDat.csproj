@@ -456,6 +456,11 @@
     <Compile Include="DanhMuc\F150_dm_nhan_vien.Designer.cs">
       <DependentUpon>F150_dm_nhan_vien.cs</DependentUpon>
     </Compile>
+    <Compile Include="DVMDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DVMDDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EF\BACKUP_INFO.cs">
       <DependentUpon>ModelDVMD.tt</DependentUpon>
     </Compile>
@@ -915,6 +920,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelDVMD.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DVMDDataSet.xsc">
+      <DependentUpon>DVMDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DVMDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DVMDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DVMDDataSet.xss">
+      <DependentUpon>DVMDDataSet.xsd</DependentUpon>
+    </None>
     <None Include="EF\ModelDVMD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelDVMD.edmx</DependentUpon>

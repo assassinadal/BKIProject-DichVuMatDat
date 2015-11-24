@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.m_grc = new DevExpress.XtraGrid.GridControl();
+            DevExpress.XtraCharts.SimpleDiagram simpleDiagram1 = new DevExpress.XtraCharts.SimpleDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -38,21 +41,18 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.m_grc = new DevExpress.XtraGrid.GridControl();
+            this.m_chart = new DevExpress.XtraCharts.ChartControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_chart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(simpleDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // m_grc
-            // 
-            this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc.Location = new System.Drawing.Point(0, 0);
-            this.m_grc.MainView = this.gridView1;
-            this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(638, 343);
-            this.m_grc.TabIndex = 0;
-            this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
             // 
             // gridView1
             // 
@@ -64,7 +64,9 @@
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7,
-            this.gridColumn8});
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10});
             this.gridView1.GridControl = this.m_grc;
             this.gridView1.Name = "gridView1";
             // 
@@ -104,7 +106,7 @@
             this.gridColumn5.FieldName = "CHUC_VU";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 3;
+            this.gridColumn5.VisibleIndex = 5;
             // 
             // gridColumn6
             // 
@@ -119,8 +121,6 @@
             this.gridColumn7.Caption = "MÃ HỢP ĐỒNG";
             this.gridColumn7.FieldName = "MA_HOP_DONG";
             this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
             // 
             // gridColumn8
             // 
@@ -130,24 +130,76 @@
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 6;
             // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "QUỐC TỊCH";
+            this.gridColumn9.FieldName = "QUOC_TICH";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 3;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "NGÀY KÝ HỢP ĐỒNG";
+            this.gridColumn10.FieldName = "NGAY_KY_HOP_DONG";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 7;
+            // 
+            // m_grc
+            // 
+            this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
+            this.m_grc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_grc.Location = new System.Drawing.Point(0, 0);
+            this.m_grc.MainView = this.gridView1;
+            this.m_grc.Name = "m_grc";
+            this.m_grc.Size = new System.Drawing.Size(752, 266);
+            this.m_grc.TabIndex = 0;
+            this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // m_chart
+            // 
+            simpleDiagram1.EqualPieSize = false;
+            this.m_chart.Diagram = simpleDiagram1;
+            this.m_chart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_chart.Location = new System.Drawing.Point(0, 266);
+            this.m_chart.Name = "m_chart";
+            series1.Name = "Series 1";
+            pieSeriesView1.RuntimeExploding = false;
+            pieSeriesView1.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Counterclockwise;
+            series1.View = pieSeriesView1;
+            this.m_chart.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            pieSeriesView2.RuntimeExploding = false;
+            pieSeriesView2.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Counterclockwise;
+            this.m_chart.SeriesTemplate.View = pieSeriesView2;
+            this.m_chart.Size = new System.Drawing.Size(752, 162);
+            this.m_chart.TabIndex = 1;
+            // 
             // f435_bao_cao_lao_dong_nuoc_ngoai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 343);
+            this.ClientSize = new System.Drawing.Size(752, 428);
+            this.Controls.Add(this.m_chart);
             this.Controls.Add(this.m_grc);
             this.Name = "f435_bao_cao_lao_dong_nuoc_ngoai";
             this.Text = "F435 - Thống kê lao động nước ngoài";
             this.Load += new System.EventHandler(this.f435_bao_cao_lao_dong_nuoc_ngoai_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(simpleDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_chart)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl m_grc;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
@@ -157,5 +209,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.GridControl m_grc;
+        private DevExpress.XtraCharts.ChartControl m_chart;
+
     }
 }

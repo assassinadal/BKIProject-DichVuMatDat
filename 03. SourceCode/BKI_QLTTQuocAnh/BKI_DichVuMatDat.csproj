@@ -290,6 +290,12 @@
     <Compile Include="BaoCao\F430_bao_cao_cac_thang_da_chot_bang_luong.Designer.cs">
       <DependentUpon>F430_bao_cao_cac_thang_da_chot_bang_luong.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\f435_bao_cao_lao_dong_nuoc_ngoai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f435_bao_cao_lao_dong_nuoc_ngoai.Designer.cs">
+      <DependentUpon>f435_bao_cao_lao_dong_nuoc_ngoai.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\f440_rpt_luong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -699,6 +705,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F430_bao_cao_cac_thang_da_chot_bang_luong.resx">
       <DependentUpon>F430_bao_cao_cac_thang_da_chot_bang_luong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f435_bao_cao_lao_dong_nuoc_ngoai.resx">
+      <DependentUpon>f435_bao_cao_lao_dong_nuoc_ngoai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f440_rpt_luong.resx">
       <DependentUpon>f440_rpt_luong.cs</DependentUpon>

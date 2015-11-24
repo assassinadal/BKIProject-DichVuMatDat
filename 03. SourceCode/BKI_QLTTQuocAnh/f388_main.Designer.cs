@@ -95,6 +95,7 @@
             this.m_cmd_dang_ky_bao_hiem_y_te = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_tinh_phep_tieu_chuan = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_bc_tang_giam_ld = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_tk_lao_dong_nuoc_ngoai = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -116,13 +117,17 @@
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_tk_lao_dong_nuoc_ngoai = new DevExpress.XtraBars.BarButtonItem();
+            this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            this.dockPanel1.SuspendLayout();
+            this.dockPanel1_Container.SuspendLayout();
+            this.hideContainerRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbon
@@ -812,6 +817,14 @@
             this.m_cmd_bc_tang_giam_ld.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // m_cmd_tk_lao_dong_nuoc_ngoai
+            // 
+            this.m_cmd_tk_lao_dong_nuoc_ngoai.Caption = "Thống kê lao động nước ngoài";
+            this.m_cmd_tk_lao_dong_nuoc_ngoai.Id = 79;
+            this.m_cmd_tk_lao_dong_nuoc_ngoai.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_nhom_nhan_vien;
+            this.m_cmd_tk_lao_dong_nuoc_ngoai.Name = "m_cmd_tk_lao_dong_nuoc_ngoai";
+            this.m_cmd_tk_lao_dong_nuoc_ngoai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tk_lao_dong_nuoc_ngoai_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -988,40 +1001,67 @@
             this.barButtonItem4.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // dockManager1
+            // 
+            this.dockManager1.AutoHideContainers.AddRange(new DevExpress.XtraBars.Docking.AutoHideContainer[] {
+            this.hideContainerRight});
+            this.dockManager1.Form = this;
+            this.dockManager1.TopZIndexControls.AddRange(new string[] {
+            "DevExpress.XtraBars.BarDockControl",
+            "DevExpress.XtraBars.StandaloneBarDockControl",
+            "System.Windows.Forms.StatusBar",
+            "System.Windows.Forms.MenuStrip",
+            "System.Windows.Forms.StatusStrip",
+            "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
+            "DevExpress.XtraBars.Ribbon.RibbonControl",
+            "DevExpress.XtraBars.Navigation.OfficeNavigationBar",
+            "DevExpress.XtraBars.Navigation.TileNavPane"});
+            // 
+            // dockPanel1
+            // 
+            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
+            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dockPanel1.ID = new System.Guid("1e0cc779-2952-469d-b59f-b102440e1fde");
+            this.dockPanel1.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel1.Name = "dockPanel1";
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(224, 200);
+            this.dockPanel1.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dockPanel1.SavedIndex = 0;
+            this.dockPanel1.Size = new System.Drawing.Size(224, 274);
+            this.dockPanel1.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
+            // 
+            // dockPanel1_Container
+            // 
+            this.dockPanel1_Container.Controls.Add(this.m_lbl_canh_bao_het_han_hop_dong);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel1_Container.Name = "dockPanel1_Container";
+            this.dockPanel1_Container.Size = new System.Drawing.Size(216, 247);
+            this.dockPanel1_Container.TabIndex = 0;
+            // 
             // m_lbl_canh_bao_het_han_hop_dong
             // 
-            this.m_lbl_canh_bao_het_han_hop_dong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_canh_bao_het_han_hop_dong.Location = new System.Drawing.Point(22, 9);
+            this.m_lbl_canh_bao_het_han_hop_dong.Location = new System.Drawing.Point(12, 12);
             this.m_lbl_canh_bao_het_han_hop_dong.Name = "m_lbl_canh_bao_het_han_hop_dong";
             this.m_lbl_canh_bao_het_han_hop_dong.Size = new System.Drawing.Size(63, 13);
-            this.m_lbl_canh_bao_het_han_hop_dong.TabIndex = 3;
+            this.m_lbl_canh_bao_het_han_hop_dong.TabIndex = 10;
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
             // 
-            // panelControl1
+            // hideContainerRight
             // 
-            this.panelControl1.Controls.Add(this.m_lbl_canh_bao_het_han_hop_dong);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 389);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(20, 7, 0, 0);
-            this.panelControl1.Size = new System.Drawing.Size(902, 29);
-            this.panelControl1.TabIndex = 6;
-            // 
-            // m_cmd_tk_lao_dong_nuoc_ngoai
-            // 
-            this.m_cmd_tk_lao_dong_nuoc_ngoai.Caption = "Thống kê lao động nước ngoài";
-            this.m_cmd_tk_lao_dong_nuoc_ngoai.Id = 79;
-            this.m_cmd_tk_lao_dong_nuoc_ngoai.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_nhom_nhan_vien;
-            this.m_cmd_tk_lao_dong_nuoc_ngoai.Name = "m_cmd_tk_lao_dong_nuoc_ngoai";
-            this.m_cmd_tk_lao_dong_nuoc_ngoai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tk_lao_dong_nuoc_ngoai_ItemClick);
+            this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.hideContainerRight.Controls.Add(this.dockPanel1);
+            this.hideContainerRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.hideContainerRight.Location = new System.Drawing.Point(883, 144);
+            this.hideContainerRight.Name = "hideContainerRight";
+            this.hideContainerRight.Size = new System.Drawing.Size(19, 274);
             // 
             // f388_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 449);
-            this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.hideContainerRight);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1033,9 +1073,11 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            this.dockPanel1.ResumeLayout(false);
+            this.dockPanel1_Container.ResumeLayout(false);
+            this.dockPanel1_Container.PerformLayout();
+            this.hideContainerRight.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1129,9 +1171,12 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dang_ky_bao_hiem_y_te;
         private DevExpress.XtraBars.BarButtonItem m_cmd_tinh_phep_tieu_chuan;
-        private DevExpress.XtraEditors.LabelControl m_lbl_canh_bao_het_han_hop_dong;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraBars.BarButtonItem m_cmd_bc_tang_giam_ld;
         private DevExpress.XtraBars.BarButtonItem m_cmd_tk_lao_dong_nuoc_ngoai;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
+        private DevExpress.XtraEditors.LabelControl m_lbl_canh_bao_het_han_hop_dong;
+        private DevExpress.XtraBars.Docking.DockManager dockManager1;
+        private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerRight;
     }
 }

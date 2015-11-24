@@ -859,7 +859,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-               
+                f435_bao_cao_lao_dong_nuoc_ngoai v_f = new f435_bao_cao_lao_dong_nuoc_ngoai();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
             }
             catch (Exception v_e)
             {

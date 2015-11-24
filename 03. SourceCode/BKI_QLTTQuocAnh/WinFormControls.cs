@@ -470,6 +470,14 @@ namespace BKI_DichVuMatDat
             v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
+
+        internal void get_bang_cham_cong(DataSet v_ds, string ip_str_thang, string ip_str_nam)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_GET_DANH_SACH_NHAN_VIEN_CHAM_CONG");
+            v_cstore.addDecimalInputParam("@THANG", CIPConvert.ToDecimal(ip_str_thang));
+            v_cstore.addDecimalInputParam("@NAM", CIPConvert.ToDecimal(ip_str_nam));
+            v_cstore.fillDataSetByCommand(this, v_ds);
+        }
     }
 
     public class iParameter

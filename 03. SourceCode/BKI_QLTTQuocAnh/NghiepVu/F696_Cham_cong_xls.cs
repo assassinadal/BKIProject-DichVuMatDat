@@ -129,12 +129,46 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                WinFormControls.openTemplate("ChamCong.xlsx");
+                //WinFormControls.openTemplate("ChamCong.xlsx");
+                tao_file_mau("ChamCong.xlsx");
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void tao_file_mau(string ip_str_file_name)
+        {
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.get_bang_cham_cong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
+
+            DateTime v_dat_bat_dau = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1);
+            DateTime v_dat_ket_thuc = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text) + 1, 1);
+
+            for (DateTime i = v_dat_bat_dau; i < v_dat_ket_thuc; i = i.AddDays(1))
+            {
+                var v_c = new DataColumn();
+                v_c.ColumnName = i.ToString("dd/MM/yyyy");
+                v_ds.Tables[0].Columns.Add(v_c);
+            }
+            m_grc.DataSource = v_ds.Tables[0];
+            SaveXLSX(ip_str_file_name);
+        }
+
+        private void SaveXLSX(string ip_str_file_name)
+        {
+            string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string newpath = targetPath + "\\" + "Chấm công tháng " + m_txt_thang.Text + "-" + m_txt_nam.Text+".xls";
+            m_grv.ExportToXls(newpath);
+            DevExpress.XtraEditors.XtraMessageBox.Show("Đã lưu file mẫu tại " + newpath);
+            var process = new System.Diagnostics.Process();
+            process.StartInfo.FileName = newpath;
+            process.StartInfo.Verb = "Open";
+            process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
+            process.Start();
         }
 
         private void m_bgwk_DoWork(object sender, DoWorkEventArgs e)

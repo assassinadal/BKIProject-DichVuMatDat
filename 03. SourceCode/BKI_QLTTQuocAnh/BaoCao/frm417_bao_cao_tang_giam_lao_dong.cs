@@ -18,20 +18,37 @@ namespace BKI_DichVuMatDat.BaoCao
             InitializeComponent();
         }
 
+        private void load_data_to_grid()
+        {
+            US_DUNG_CHUNG v_us_dung_chung = new US_DUNG_CHUNG();
+            DataSet v_op_ds = new DataSet();
+            v_op_ds.Tables.Add();
+
+            v_us_dung_chung.FillDatasetBaoCaoTangGiamLaoDong(v_op_ds, m_dat_tu_ngay.DateTime, m_dat_den_ngay.DateTime);
+            m_trl_bao_cao.KeyFieldName = "ID";
+            m_trl_bao_cao.ParentFieldName = "ID_DON_VI_CAP_TREN";
+            m_trl_bao_cao.DataSource = v_op_ds.Tables[0];
+            m_trl_bao_cao.ExpandAll();
+        }
+
+        private void xuat_excel()
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+            saveFileDialog1.RestoreDirectory = true;
+
+            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                m_trl_bao_cao.ExportToXls(saveFileDialog1.FileName);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
+            }
+        }
 
         private void m_cmd_filter_Click(object sender, EventArgs e)
         {
             try
             {
-                US_DUNG_CHUNG v_us_dung_chung = new US_DUNG_CHUNG();
-                DataSet v_op_ds = new DataSet();
-                v_op_ds.Tables.Add();
-
-                v_us_dung_chung.FillDatasetBaoCaoTangGiamLaoDong(v_op_ds, m_dat_tu_ngay.DateTime, m_dat_den_ngay.DateTime);
-                m_trl_bao_cao.KeyFieldName = "ID";
-                m_trl_bao_cao.ParentFieldName = "ID_DON_VI_CAP_TREN";
-                m_trl_bao_cao.DataSource = v_op_ds.Tables[0];
-                m_trl_bao_cao.ExpandAll();
+                load_data_to_grid();
             }
             catch(Exception v_e)
             {
@@ -56,15 +73,7 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
-                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-                saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
-                saveFileDialog1.RestoreDirectory = true;
-
-                if(saveFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    m_trl_bao_cao.ExportToXls(saveFileDialog1.FileName);
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
-                }
+                xuat_excel();
             }
             catch(Exception v_e)
             {

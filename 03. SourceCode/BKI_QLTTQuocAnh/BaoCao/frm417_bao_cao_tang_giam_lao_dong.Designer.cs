@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraTreeList.StyleFormatConditions.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraTreeList.StyleFormatConditions.StyleFormatCondition();
+            DevExpress.XtraTreeList.StyleFormatConditions.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraTreeList.StyleFormatConditions.StyleFormatCondition();
+            this.PHAT_SINH_TANG = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.PHAT_SINH_GIAM = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_trl_bao_cao = new DevExpress.XtraTreeList.TreeList();
             this.ID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.TEN_DON_VI = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.DAU_KY = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.PHAT_SINH_TANG = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.PHAT_SINH_GIAM = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.CUOI_KY = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
             this.m_dat_den_ngay = new DevExpress.XtraEditors.DateEdit();
@@ -66,6 +68,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             this.SuspendLayout();
+            // 
+            // PHAT_SINH_TANG
+            // 
+            this.PHAT_SINH_TANG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.PHAT_SINH_TANG.AppearanceHeader.Options.UseFont = true;
+            this.PHAT_SINH_TANG.AppearanceHeader.Options.UseTextOptions = true;
+            this.PHAT_SINH_TANG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PHAT_SINH_TANG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.PHAT_SINH_TANG.Caption = "Phát sinh tăng";
+            this.PHAT_SINH_TANG.FieldName = "PHAT_SINH_TANG";
+            this.PHAT_SINH_TANG.Name = "PHAT_SINH_TANG";
+            this.PHAT_SINH_TANG.OptionsColumn.ReadOnly = true;
+            this.PHAT_SINH_TANG.Visible = true;
+            this.PHAT_SINH_TANG.VisibleIndex = 2;
+            this.PHAT_SINH_TANG.Width = 130;
+            // 
+            // PHAT_SINH_GIAM
+            // 
+            this.PHAT_SINH_GIAM.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.PHAT_SINH_GIAM.AppearanceHeader.Options.UseFont = true;
+            this.PHAT_SINH_GIAM.AppearanceHeader.Options.UseTextOptions = true;
+            this.PHAT_SINH_GIAM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PHAT_SINH_GIAM.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.PHAT_SINH_GIAM.Caption = "Phát sinh giảm";
+            this.PHAT_SINH_GIAM.FieldName = "PHAT_SINH_GIAM";
+            this.PHAT_SINH_GIAM.Name = "PHAT_SINH_GIAM";
+            this.PHAT_SINH_GIAM.OptionsColumn.ReadOnly = true;
+            this.PHAT_SINH_GIAM.Visible = true;
+            this.PHAT_SINH_GIAM.VisibleIndex = 3;
+            this.PHAT_SINH_GIAM.Width = 130;
             // 
             // layoutControl1
             // 
@@ -103,6 +135,19 @@
             this.PHAT_SINH_TANG,
             this.PHAT_SINH_GIAM,
             this.CUOI_KY});
+            styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Green;
+            styleFormatCondition1.Appearance.Options.UseForeColor = true;
+            styleFormatCondition1.Column = this.PHAT_SINH_TANG;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.GreaterOrEqual;
+            styleFormatCondition1.Value1 = "0";
+            styleFormatCondition2.Appearance.ForeColor = System.Drawing.Color.Red;
+            styleFormatCondition2.Appearance.Options.UseForeColor = true;
+            styleFormatCondition2.Column = this.PHAT_SINH_GIAM;
+            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Less;
+            styleFormatCondition2.Value1 = "0";
+            this.m_trl_bao_cao.FormatConditions.AddRange(new DevExpress.XtraTreeList.StyleFormatConditions.StyleFormatCondition[] {
+            styleFormatCondition1,
+            styleFormatCondition2});
             this.m_trl_bao_cao.Location = new System.Drawing.Point(12, 94);
             this.m_trl_bao_cao.Name = "m_trl_bao_cao";
             this.m_trl_bao_cao.Size = new System.Drawing.Size(863, 373);
@@ -149,36 +194,6 @@
             this.DAU_KY.Visible = true;
             this.DAU_KY.VisibleIndex = 1;
             this.DAU_KY.Width = 130;
-            // 
-            // PHAT_SINH_TANG
-            // 
-            this.PHAT_SINH_TANG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.PHAT_SINH_TANG.AppearanceHeader.Options.UseFont = true;
-            this.PHAT_SINH_TANG.AppearanceHeader.Options.UseTextOptions = true;
-            this.PHAT_SINH_TANG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.PHAT_SINH_TANG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.PHAT_SINH_TANG.Caption = "Phát sinh tăng";
-            this.PHAT_SINH_TANG.FieldName = "PHAT_SINH_TANG";
-            this.PHAT_SINH_TANG.Name = "PHAT_SINH_TANG";
-            this.PHAT_SINH_TANG.OptionsColumn.ReadOnly = true;
-            this.PHAT_SINH_TANG.Visible = true;
-            this.PHAT_SINH_TANG.VisibleIndex = 2;
-            this.PHAT_SINH_TANG.Width = 130;
-            // 
-            // PHAT_SINH_GIAM
-            // 
-            this.PHAT_SINH_GIAM.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.PHAT_SINH_GIAM.AppearanceHeader.Options.UseFont = true;
-            this.PHAT_SINH_GIAM.AppearanceHeader.Options.UseTextOptions = true;
-            this.PHAT_SINH_GIAM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.PHAT_SINH_GIAM.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.PHAT_SINH_GIAM.Caption = "Phát sinh giảm";
-            this.PHAT_SINH_GIAM.FieldName = "PHAT_SINH_GIAM";
-            this.PHAT_SINH_GIAM.Name = "PHAT_SINH_GIAM";
-            this.PHAT_SINH_GIAM.OptionsColumn.ReadOnly = true;
-            this.PHAT_SINH_GIAM.Visible = true;
-            this.PHAT_SINH_GIAM.VisibleIndex = 3;
-            this.PHAT_SINH_GIAM.Width = 130;
             // 
             // CUOI_KY
             // 
@@ -324,8 +339,11 @@
             this.layoutControlItem5.Control = this.m_cmd_xuat_excel;
             this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
             this.layoutControlItem5.Location = new System.Drawing.Point(744, 459);
+            this.layoutControlItem5.MaxSize = new System.Drawing.Size(123, 34);
+            this.layoutControlItem5.MinSize = new System.Drawing.Size(123, 34);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(123, 34);
+            this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.Text = "layoutControlItem5";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextToControlDistance = 0;

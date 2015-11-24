@@ -462,6 +462,14 @@ namespace BKI_DichVuMatDat
             v_cstore.fillDataSetByCommand(this, v_ds);
         }
 
+
+        public void FillDatasetBaoCaoTangGiamLaoDong(DataSet op_ds, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_rpt_tang_giam_lao_dong");
+            v_cstore.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+            v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+            v_cstore.fillDataSetByCommand(this, op_ds);
+        }
     }
 
     public class iParameter

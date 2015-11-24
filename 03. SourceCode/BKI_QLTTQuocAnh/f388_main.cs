@@ -153,6 +153,23 @@ namespace BKI_DichVuMatDat
             m_cmd_luong_theo_don_vi.ItemClick += m_cmd_luong_theo_don_vi_ItemClick;
             m_cmd_chuyen_trang_thai_LD.ItemClick += m_cmd_chuyen_trang_thai_LD_ItemClick;
             m_cmd_bao_cao_tong_hop.ItemClick += m_cmd_bao_cao_tong_hop_ItemClick;
+            m_cmd_bc_tang_giam_ld.ItemClick += m_cmd_bc_tang_giam_ld_ItemClick;
+        }
+
+        void m_cmd_bc_tang_giam_ld_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                frm417_bao_cao_tang_giam_lao_dong v_frm = new frm417_bao_cao_tang_giam_lao_dong();
+                if(IsExistFormName(v_frm)) return;
+
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_bao_cao_tong_hop_ItemClick(object sender, ItemClickEventArgs e)

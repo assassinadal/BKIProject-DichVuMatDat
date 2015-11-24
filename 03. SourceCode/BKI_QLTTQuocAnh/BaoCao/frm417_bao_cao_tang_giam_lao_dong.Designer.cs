@@ -135,101 +135,184 @@
             this.colCUOI_KY});
             this.m_grv_bao_cao.GridControl = this.m_grc_bao_cao;
             this.m_grv_bao_cao.Name = "m_grv_bao_cao";
+            this.m_grv_bao_cao.OptionsBehavior.Editable = false;
+            this.m_grv_bao_cao.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDown;
+            this.m_grv_bao_cao.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.m_grv_bao_cao.OptionsSelection.EnableAppearanceFocusedRow = false;
+            this.m_grv_bao_cao.OptionsView.ShowGroupPanel = false;
             // 
             // colID
             // 
+            this.colID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colID.AppearanceHeader.Options.UseFont = true;
+            this.colID.AppearanceHeader.Options.UseTextOptions = true;
+            this.colID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colID.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colID.FieldName = "ID";
             this.colID.Name = "colID";
             this.colID.OptionsColumn.ReadOnly = true;
             // 
             // colTEN_DON_VI
             // 
+            this.colTEN_DON_VI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colTEN_DON_VI.AppearanceHeader.Options.UseFont = true;
+            this.colTEN_DON_VI.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTEN_DON_VI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTEN_DON_VI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colTEN_DON_VI.Caption = "Tên đơn vị";
             this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
             this.colTEN_DON_VI.Name = "colTEN_DON_VI";
             this.colTEN_DON_VI.Visible = true;
             this.colTEN_DON_VI.VisibleIndex = 0;
+            this.colTEN_DON_VI.Width = 324;
             // 
             // colMA_DON_VI
             // 
+            this.colMA_DON_VI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colMA_DON_VI.AppearanceHeader.Options.UseFont = true;
+            this.colMA_DON_VI.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMA_DON_VI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMA_DON_VI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colMA_DON_VI.FieldName = "MA_DON_VI";
             this.colMA_DON_VI.Name = "colMA_DON_VI";
-            this.colMA_DON_VI.Visible = true;
-            this.colMA_DON_VI.VisibleIndex = 1;
             // 
             // colID_LOAI_DON_VI
             // 
+            this.colID_LOAI_DON_VI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colID_LOAI_DON_VI.AppearanceHeader.Options.UseFont = true;
+            this.colID_LOAI_DON_VI.AppearanceHeader.Options.UseTextOptions = true;
+            this.colID_LOAI_DON_VI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colID_LOAI_DON_VI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colID_LOAI_DON_VI.FieldName = "ID_LOAI_DON_VI";
             this.colID_LOAI_DON_VI.Name = "colID_LOAI_DON_VI";
             // 
             // colID_DON_VI_CAP_TREN
             // 
+            this.colID_DON_VI_CAP_TREN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colID_DON_VI_CAP_TREN.AppearanceHeader.Options.UseFont = true;
+            this.colID_DON_VI_CAP_TREN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colID_DON_VI_CAP_TREN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colID_DON_VI_CAP_TREN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colID_DON_VI_CAP_TREN.FieldName = "ID_DON_VI_CAP_TREN";
             this.colID_DON_VI_CAP_TREN.Name = "colID_DON_VI_CAP_TREN";
             // 
             // colID_DV_0
             // 
+            this.colID_DV_0.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colID_DV_0.AppearanceHeader.Options.UseFont = true;
+            this.colID_DV_0.AppearanceHeader.Options.UseTextOptions = true;
+            this.colID_DV_0.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colID_DV_0.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colID_DV_0.FieldName = "ID_DV_0";
             this.colID_DV_0.Name = "colID_DV_0";
             // 
             // colID_DV_1
             // 
+            this.colID_DV_1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colID_DV_1.AppearanceHeader.Options.UseFont = true;
+            this.colID_DV_1.AppearanceHeader.Options.UseTextOptions = true;
+            this.colID_DV_1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colID_DV_1.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colID_DV_1.FieldName = "ID_DV_1";
             this.colID_DV_1.Name = "colID_DV_1";
             // 
             // colID_DV_2
             // 
+            this.colID_DV_2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colID_DV_2.AppearanceHeader.Options.UseFont = true;
+            this.colID_DV_2.AppearanceHeader.Options.UseTextOptions = true;
+            this.colID_DV_2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colID_DV_2.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colID_DV_2.FieldName = "ID_DV_2";
             this.colID_DV_2.Name = "colID_DV_2";
             // 
             // colID_DV_3
             // 
+            this.colID_DV_3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colID_DV_3.AppearanceHeader.Options.UseFont = true;
+            this.colID_DV_3.AppearanceHeader.Options.UseTextOptions = true;
+            this.colID_DV_3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colID_DV_3.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colID_DV_3.FieldName = "ID_DV_3";
             this.colID_DV_3.Name = "colID_DV_3";
             // 
             // colID_DV_4
             // 
+            this.colID_DV_4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colID_DV_4.AppearanceHeader.Options.UseFont = true;
+            this.colID_DV_4.AppearanceHeader.Options.UseTextOptions = true;
+            this.colID_DV_4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colID_DV_4.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colID_DV_4.FieldName = "ID_DV_4";
             this.colID_DV_4.Name = "colID_DV_4";
             // 
             // colDAU_KY
             // 
+            this.colDAU_KY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colDAU_KY.AppearanceHeader.Options.UseFont = true;
+            this.colDAU_KY.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDAU_KY.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDAU_KY.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colDAU_KY.Caption = "Số lượng đầu kỳ";
             this.colDAU_KY.DisplayFormat.FormatString = "n0";
             this.colDAU_KY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colDAU_KY.FieldName = "DAU_KY";
             this.colDAU_KY.Name = "colDAU_KY";
             this.colDAU_KY.OptionsColumn.ReadOnly = true;
             this.colDAU_KY.Visible = true;
-            this.colDAU_KY.VisibleIndex = 2;
+            this.colDAU_KY.VisibleIndex = 1;
+            this.colDAU_KY.Width = 130;
             // 
             // colPHAT_SINH_TANG
             // 
+            this.colPHAT_SINH_TANG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colPHAT_SINH_TANG.AppearanceHeader.Options.UseFont = true;
+            this.colPHAT_SINH_TANG.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPHAT_SINH_TANG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPHAT_SINH_TANG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colPHAT_SINH_TANG.Caption = "Phát sinh tăng";
             this.colPHAT_SINH_TANG.DisplayFormat.FormatString = "n0";
             this.colPHAT_SINH_TANG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPHAT_SINH_TANG.FieldName = "PHAT_SINH_TANG";
             this.colPHAT_SINH_TANG.Name = "colPHAT_SINH_TANG";
             this.colPHAT_SINH_TANG.OptionsColumn.ReadOnly = true;
             this.colPHAT_SINH_TANG.Visible = true;
-            this.colPHAT_SINH_TANG.VisibleIndex = 3;
+            this.colPHAT_SINH_TANG.VisibleIndex = 2;
+            this.colPHAT_SINH_TANG.Width = 130;
             // 
             // colPHAT_SINH_GIAM
             // 
+            this.colPHAT_SINH_GIAM.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colPHAT_SINH_GIAM.AppearanceHeader.Options.UseFont = true;
+            this.colPHAT_SINH_GIAM.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPHAT_SINH_GIAM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPHAT_SINH_GIAM.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colPHAT_SINH_GIAM.Caption = "Phát sinh giảm";
             this.colPHAT_SINH_GIAM.DisplayFormat.FormatString = "n0";
             this.colPHAT_SINH_GIAM.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPHAT_SINH_GIAM.FieldName = "PHAT_SINH_GIAM";
             this.colPHAT_SINH_GIAM.Name = "colPHAT_SINH_GIAM";
             this.colPHAT_SINH_GIAM.OptionsColumn.ReadOnly = true;
             this.colPHAT_SINH_GIAM.Visible = true;
-            this.colPHAT_SINH_GIAM.VisibleIndex = 4;
+            this.colPHAT_SINH_GIAM.VisibleIndex = 3;
+            this.colPHAT_SINH_GIAM.Width = 130;
             // 
             // colCUOI_KY
             // 
+            this.colCUOI_KY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colCUOI_KY.AppearanceHeader.Options.UseFont = true;
+            this.colCUOI_KY.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCUOI_KY.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCUOI_KY.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colCUOI_KY.Caption = "Cuối kỳ";
             this.colCUOI_KY.DisplayFormat.FormatString = "n0";
             this.colCUOI_KY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colCUOI_KY.FieldName = "CUOI_KY";
             this.colCUOI_KY.Name = "colCUOI_KY";
             this.colCUOI_KY.OptionsColumn.ReadOnly = true;
             this.colCUOI_KY.Visible = true;
-            this.colCUOI_KY.VisibleIndex = 5;
+            this.colCUOI_KY.VisibleIndex = 4;
+            this.colCUOI_KY.Width = 131;
             // 
             // m_dat_den_ngay
             // 

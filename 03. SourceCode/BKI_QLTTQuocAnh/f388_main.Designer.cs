@@ -118,6 +118,7 @@
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_cmd_bc_tang_giam_ld = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -196,9 +197,10 @@
             this.m_cmd_dang_ky_giam_tru_phu_thuoc,
             this.barButtonItem2,
             this.m_cmd_dang_ky_bao_hiem_y_te,
-            this.m_cmd_tinh_phep_tieu_chuan});
+            this.m_cmd_tinh_phep_tieu_chuan,
+            this.m_cmd_bc_tang_giam_ld});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 78;
+            this.ribbon.MaxItemId = 79;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -936,6 +938,7 @@
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bc_cac_thang_da_chot_bang_luong);
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_luong_theo_don_vi);
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bao_cao_tong_hop);
+            this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bc_tang_giam_ld);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Báo cáo tổng";
             // 
@@ -994,6 +997,14 @@
             this.panelControl1.Padding = new System.Windows.Forms.Padding(20, 7, 0, 0);
             this.panelControl1.Size = new System.Drawing.Size(902, 29);
             this.panelControl1.TabIndex = 6;
+            // 
+            // m_cmd_bc_tang_giam_ld
+            // 
+            this.m_cmd_bc_tang_giam_ld.Caption = "Báo cáo tăng giảm lao động";
+            this.m_cmd_bc_tang_giam_ld.Id = 78;
+            this.m_cmd_bc_tang_giam_ld.Name = "m_cmd_bc_tang_giam_ld";
+            this.m_cmd_bc_tang_giam_ld.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // f388_main
             // 
@@ -1110,5 +1121,6 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_tinh_phep_tieu_chuan;
         private DevExpress.XtraEditors.LabelControl m_lbl_canh_bao_het_han_hop_dong;
         private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_bc_tang_giam_ld;
     }
 }

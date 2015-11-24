@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -95,6 +94,7 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dang_ky_bao_hiem_y_te = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_tinh_phep_tieu_chuan = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_bc_tang_giam_ld = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -113,12 +113,12 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_bc_tang_giam_ld = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_tk_lao_dong_nuoc_ngoai = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -198,9 +198,10 @@
             this.barButtonItem2,
             this.m_cmd_dang_ky_bao_hiem_y_te,
             this.m_cmd_tinh_phep_tieu_chuan,
-            this.m_cmd_bc_tang_giam_ld});
+            this.m_cmd_bc_tang_giam_ld,
+            this.m_cmd_tk_lao_dong_nuoc_ngoai});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 79;
+            this.ribbon.MaxItemId = 80;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -803,6 +804,14 @@
             this.m_cmd_tinh_phep_tieu_chuan.Name = "m_cmd_tinh_phep_tieu_chuan";
             this.m_cmd_tinh_phep_tieu_chuan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tinh_phep_tieu_chuan_ItemClick);
             // 
+            // m_cmd_bc_tang_giam_ld
+            // 
+            this.m_cmd_bc_tang_giam_ld.Caption = "Báo cáo tăng giảm lao động";
+            this.m_cmd_bc_tang_giam_ld.Id = 78;
+            this.m_cmd_bc_tang_giam_ld.Name = "m_cmd_bc_tang_giam_ld";
+            this.m_cmd_bc_tang_giam_ld.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -946,6 +955,7 @@
             // 
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_tk_ns_dv);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_tk_ns_tong_hop);
+            this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_tk_lao_dong_nuoc_ngoai);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Báo cáo nhân sự";
             // 
@@ -998,13 +1008,13 @@
             this.panelControl1.Size = new System.Drawing.Size(902, 29);
             this.panelControl1.TabIndex = 6;
             // 
-            // m_cmd_bc_tang_giam_ld
+            // m_cmd_tk_lao_dong_nuoc_ngoai
             // 
-            this.m_cmd_bc_tang_giam_ld.Caption = "Báo cáo tăng giảm lao động";
-            this.m_cmd_bc_tang_giam_ld.Id = 78;
-            this.m_cmd_bc_tang_giam_ld.Name = "m_cmd_bc_tang_giam_ld";
-            this.m_cmd_bc_tang_giam_ld.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.m_cmd_tk_lao_dong_nuoc_ngoai.Caption = "Thống kê lao động nước ngoài";
+            this.m_cmd_tk_lao_dong_nuoc_ngoai.Id = 79;
+            this.m_cmd_tk_lao_dong_nuoc_ngoai.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_nhom_nhan_vien;
+            this.m_cmd_tk_lao_dong_nuoc_ngoai.Name = "m_cmd_tk_lao_dong_nuoc_ngoai";
+            this.m_cmd_tk_lao_dong_nuoc_ngoai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tk_lao_dong_nuoc_ngoai_ItemClick);
             // 
             // f388_main
             // 
@@ -1122,5 +1132,6 @@
         private DevExpress.XtraEditors.LabelControl m_lbl_canh_bao_het_han_hop_dong;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraBars.BarButtonItem m_cmd_bc_tang_giam_ld;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_tk_lao_dong_nuoc_ngoai;
     }
 }

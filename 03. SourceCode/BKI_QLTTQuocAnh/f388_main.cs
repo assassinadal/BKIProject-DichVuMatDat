@@ -855,6 +855,18 @@ namespace BKI_DichVuMatDat
             v_f.display_for_show(get_hop_dong_het_han());
         }
 
+        private void m_cmd_tk_lao_dong_nuoc_ngoai_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+               
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
        
 
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)

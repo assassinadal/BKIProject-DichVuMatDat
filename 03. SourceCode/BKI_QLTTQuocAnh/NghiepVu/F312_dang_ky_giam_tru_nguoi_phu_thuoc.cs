@@ -66,7 +66,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_nhan_vien_info(decimal ip_id_nhan_vien)
         {
-            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN(ip_id_nhan_vien);
             
             m_dtp_ns_nv.Value = v_us.datNGAY_SINH;
             m_txt_cmt.Text = v_us.strSO_CMT;

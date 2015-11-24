@@ -118,16 +118,16 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
-            this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            this.hideContainerRight.SuspendLayout();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
-            this.hideContainerRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbon
@@ -1017,6 +1017,15 @@
             "DevExpress.XtraBars.Navigation.OfficeNavigationBar",
             "DevExpress.XtraBars.Navigation.TileNavPane"});
             // 
+            // hideContainerRight
+            // 
+            this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.hideContainerRight.Controls.Add(this.dockPanel1);
+            this.hideContainerRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.hideContainerRight.Location = new System.Drawing.Point(883, 144);
+            this.hideContainerRight.Name = "hideContainerRight";
+            this.hideContainerRight.Size = new System.Drawing.Size(19, 274);
+            // 
             // dockPanel1
             // 
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
@@ -1028,6 +1037,7 @@
             this.dockPanel1.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel1.SavedIndex = 0;
             this.dockPanel1.Size = new System.Drawing.Size(224, 274);
+            this.dockPanel1.Text = "Cảnh báo";
             this.dockPanel1.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
             // 
             // dockPanel1_Container
@@ -1040,21 +1050,13 @@
             // 
             // m_lbl_canh_bao_het_han_hop_dong
             // 
+            this.m_lbl_canh_bao_het_han_hop_dong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.m_lbl_canh_bao_het_han_hop_dong.Location = new System.Drawing.Point(12, 12);
             this.m_lbl_canh_bao_het_han_hop_dong.Name = "m_lbl_canh_bao_het_han_hop_dong";
             this.m_lbl_canh_bao_het_han_hop_dong.Size = new System.Drawing.Size(63, 13);
             this.m_lbl_canh_bao_het_han_hop_dong.TabIndex = 10;
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
-            // 
-            // hideContainerRight
-            // 
-            this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
-            this.hideContainerRight.Controls.Add(this.dockPanel1);
-            this.hideContainerRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.hideContainerRight.Location = new System.Drawing.Point(883, 144);
-            this.hideContainerRight.Name = "hideContainerRight";
-            this.hideContainerRight.Size = new System.Drawing.Size(19, 274);
             // 
             // f388_main
             // 
@@ -1074,10 +1076,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            this.hideContainerRight.ResumeLayout(false);
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
             this.dockPanel1_Container.PerformLayout();
-            this.hideContainerRight.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

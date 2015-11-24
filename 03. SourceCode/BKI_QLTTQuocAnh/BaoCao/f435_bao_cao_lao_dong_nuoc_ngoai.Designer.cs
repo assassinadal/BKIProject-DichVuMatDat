@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.SimpleDiagram simpleDiagram1 = new DevExpress.XtraCharts.SimpleDiagram();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.SimpleDiagram simpleDiagram2 = new DevExpress.XtraCharts.SimpleDiagram();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView3 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView4 = new DevExpress.XtraCharts.PieSeriesView();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,10 +48,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_chart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(simpleDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(simpleDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).BeginInit();
             this.SuspendLayout();
             // 
             // gridView1
@@ -160,20 +160,20 @@
             // 
             // m_chart
             // 
-            simpleDiagram1.EqualPieSize = false;
-            this.m_chart.Diagram = simpleDiagram1;
+            simpleDiagram2.EqualPieSize = false;
+            this.m_chart.Diagram = simpleDiagram2;
             this.m_chart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_chart.Location = new System.Drawing.Point(0, 266);
             this.m_chart.Name = "m_chart";
-            series1.Name = "Series 1";
-            pieSeriesView1.RuntimeExploding = false;
-            pieSeriesView1.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Counterclockwise;
-            series1.View = pieSeriesView1;
+            series2.Name = "Series 1";
+            pieSeriesView3.RuntimeExploding = false;
+            pieSeriesView3.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Counterclockwise;
+            series2.View = pieSeriesView3;
             this.m_chart.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            pieSeriesView2.RuntimeExploding = false;
-            pieSeriesView2.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Counterclockwise;
-            this.m_chart.SeriesTemplate.View = pieSeriesView2;
+        series2};
+            pieSeriesView4.RuntimeExploding = false;
+            pieSeriesView4.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Counterclockwise;
+            this.m_chart.SeriesTemplate.View = pieSeriesView4;
             this.m_chart.Size = new System.Drawing.Size(752, 162);
             this.m_chart.TabIndex = 1;
             // 
@@ -189,10 +189,10 @@
             this.Load += new System.EventHandler(this.f435_bao_cao_lao_dong_nuoc_ngoai_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(simpleDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(simpleDiagram2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_chart)).EndInit();
             this.ResumeLayout(false);
 

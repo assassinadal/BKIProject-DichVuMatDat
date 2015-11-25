@@ -337,7 +337,16 @@ namespace BKI_DichVuMatDat.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
-
         
+        public void kiem_tra_nam_das_thuong_hs_bo_sung(decimal ip_dc_nam, ref string op_str_nam_da_thuong_hs_bo_sung)
+        {
+            CStoredProc v_obj = new CStoredProc("pr_CHECK_NAM_DA_CO_THUONG_HS_BO_SUNG_YN");
+
+            v_obj.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
+
+            SqlParameter v_str_nam_da_thuong_hs_bo_sung = v_obj.addNVarcharOutputParam("@op_str_nam_da_thuong_hs_bo_sung", "N");
+            v_obj.ExecuteCommand(this);
+            op_str_nam_da_thuong_hs_bo_sung = v_str_nam_da_thuong_hs_bo_sung.Value.ToString();
+        }
     }
 }

@@ -188,6 +188,7 @@ namespace BKI_DichVuMatDat.US
         public const int ERROR_DA_CO_LOI_XAY_RA = 305;
         public const int ERROR_DU_LIEU_CHUA_HOAN_THIEN = 317;
         public const int QUESTION_XAC_NHAN_CAP_NHAT_DU_LIEU = 9;
+        public const int ERROR_LOI_TRONG_QUA_TRINH_TINH_TOAN_MOI_TINH_LAI = 333;
         #endregion
 
         #region Danh mục
@@ -322,6 +323,9 @@ namespace BKI_DichVuMatDat.US
         public const int ERROR_CHUA_CHON_CHUC_DANH_DE_TINH_LNS = 330;
         public const int ERROR_CHUA_CHON_CHUC_DANH_DE_TINH_LCD = 331;
         public const int ERROR_CHUA_CHON_LY_DO_THAY_DOI_LCD = 332;
+
+        //Thưởng hệ số bổ sung
+        public const int INFOR_DA_CO_THUONG_HS_BS_TRONG_NAM_DA_CHON = 334;
         #endregion
 
     }

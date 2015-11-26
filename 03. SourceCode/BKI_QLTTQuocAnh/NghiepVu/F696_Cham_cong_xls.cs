@@ -16,6 +16,7 @@ using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Columns;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -34,6 +35,25 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_grid(string ip_path) {
             WinFormControls.load_xls_to_gridview(ip_path, m_grc);
+            format_gridview();
+        }
+
+        private void format_gridview()
+        {
+            foreach (GridColumn item in m_grv.Columns)
+            {
+                DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition(DevExpress.XtraGrid.FormatConditionEnum.Expression);
+                styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Red;
+                styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.White;
+                styleFormatCondition1.Appearance.Options.UseBackColor = true;
+                styleFormatCondition1.Appearance.Options.UseForeColor = true;
+                styleFormatCondition1.Column = item;
+                styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+                styleFormatCondition1.Expression = "["+ item.Name +"] > 3";
+                this.m_grv.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+                styleFormatCondition1});
+            }
+            m_grc.Refresh();
         }
 
         private void m_cmd_nhap_cham_cong_Click(object sender, EventArgs e)

@@ -113,7 +113,7 @@
             // 
             this.m_pn.Controls.Add(this.label1);
             this.m_pn.Controls.Add(this.m_prb);
-            this.m_pn.Location = new System.Drawing.Point(73, 99);
+            this.m_pn.Location = new System.Drawing.Point(73, 85);
             this.m_pn.Name = "m_pn";
             this.m_pn.Padding = new System.Windows.Forms.Padding(10);
             this.m_pn.Size = new System.Drawing.Size(618, 68);
@@ -218,6 +218,7 @@
             this.m_txt_thang.Name = "m_txt_thang";
             this.m_txt_thang.Size = new System.Drawing.Size(117, 20);
             this.m_txt_thang.TabIndex = 0;
+            this.m_txt_thang.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel9
             // 
@@ -252,6 +253,7 @@
             this.m_txt_nam.Name = "m_txt_nam";
             this.m_txt_nam.Size = new System.Drawing.Size(112, 20);
             this.m_txt_nam.TabIndex = 0;
+            this.m_txt_nam.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel4
             // 

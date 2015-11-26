@@ -29,16 +29,26 @@ namespace BKI_DichVuMatDat.BaoCao
         private void load_data_to_chart()
         {
             m_chart.DataSource = m_ds.Tables[0];
-            m_chart.SeriesDataMember = "QUOC_TICH";
+            m_chart.SeriesDataMember = "GIOI_TINH";
             m_chart.SeriesTemplate.ArgumentDataMember = "QUOC_TICH";
-            m_chart.SeriesTemplate.ValueDataMembers.AddRange(new string[] { "ID" });
             m_chart.SeriesTemplate.SummaryFunction = "COUNT()";
-            //m_webchartcontrol.SeriesTemplate.View = new SideBySideBarSeriesView();
-            var v_ssv = new PieSeriesView() ;
-            //v_ssv.LineStyle.DashStyle = DashStyle.Solid;
-            //v_ssv.MarkerVisibility = DevExpress.Utils.DefaultBoolean.False;
-            m_chart.SeriesTemplate.View = v_ssv;
+
             
+
+            var v_ssv = new PieSeriesView() ;
+            
+            m_chart.SeriesTemplate.View = v_ssv;
+            foreach (Series item in m_chart.Series)
+            {
+                item.ShowInLegend = true;
+                item.LegendText = item.Name;
+                item.LegendTextPattern = "{S} - {A} : {VP:0.##%} ({V} Lao động)";
+                item.Label.TextPattern = "{A}";
+                SeriesTitle st = new SeriesTitle();
+                st.Text = item.Name;
+                st.Dock = ChartTitleDockStyle.Bottom;
+                ((PieSeriesView)item.View).Titles.Add(st);
+            }
         }
 
 

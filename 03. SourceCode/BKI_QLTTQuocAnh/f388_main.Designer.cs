@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -114,14 +115,15 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
+            this.m_cmd_thong_tin_nhan_vien = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -204,9 +206,10 @@
             this.m_cmd_dang_ky_bao_hiem_y_te,
             this.m_cmd_tinh_phep_tieu_chuan,
             this.m_cmd_bc_tang_giam_ld,
-            this.m_cmd_tk_lao_dong_nuoc_ngoai});
+            this.m_cmd_tk_lao_dong_nuoc_ngoai,
+            this.m_cmd_thong_tin_nhan_vien});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 80;
+            this.ribbon.MaxItemId = 81;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -969,6 +972,7 @@
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_tk_ns_dv);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_tk_ns_tong_hop);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_tk_lao_dong_nuoc_ngoai);
+            this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_thong_tin_nhan_vien);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Báo cáo nhân sự";
             // 
@@ -1057,6 +1061,14 @@
             this.m_lbl_canh_bao_het_han_hop_dong.TabIndex = 10;
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
+            // 
+            // m_cmd_thong_tin_nhan_vien
+            // 
+            this.m_cmd_thong_tin_nhan_vien.Caption = "Thông tin nhân viên";
+            this.m_cmd_thong_tin_nhan_vien.Id = 80;
+            this.m_cmd_thong_tin_nhan_vien.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_nhan_vien_ko_bao_hiem;
+            this.m_cmd_thong_tin_nhan_vien.Name = "m_cmd_thong_tin_nhan_vien";
+            this.m_cmd_thong_tin_nhan_vien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_thong_tin_nhan_vien_ItemClick);
             // 
             // f388_main
             // 
@@ -1180,5 +1192,6 @@
         private DevExpress.XtraEditors.LabelControl m_lbl_canh_bao_het_han_hop_dong;
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
         private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerRight;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_thong_tin_nhan_vien;
     }
 }

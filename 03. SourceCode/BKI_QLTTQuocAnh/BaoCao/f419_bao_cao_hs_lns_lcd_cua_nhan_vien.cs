@@ -53,6 +53,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void load_data_2_grid()
         {
+            CHRMCommon.make_stt(m_grv_bao_cao_hs_lns_lcd_nhan_vien);
             US_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG v_us_bc_hs_lns_lcd_nv_theo_thang = new US_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG();
             DS_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG v_ds_bc_hs_lns_lcd_nv_theo_thang = new DS_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG();
 

@@ -501,7 +501,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 if(saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     m_grv_luong_thuong.ExportToXls(saveFileDialog1.FileName);
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
                 }
             }
             catch(Exception v_e)

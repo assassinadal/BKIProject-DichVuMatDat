@@ -780,6 +780,28 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NAM = "NAM";
     }
 
+    public class V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG
+    {
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string MA_NV = "MA_NV";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string HO_TEN = "HO_TEN";
+        public const string ID_HOP_DONG = "ID_HOP_DONG";
+        public const string NGAY_BAT_DAU_HOP_DONG = "NGAY_BAT_DAU_HOP_DONG";
+        public const string NGAY_KET_THUC_HOP_DONG = "NGAY_KET_THUC_HOP_DONG";
+        public const string DA_XOA_HOP_DONG_YN = "DA_XOA_HOP_DONG_YN";
+        public const string ID_GD_HS_LNS = "ID_GD_HS_LNS";
+        public const string HE_SO_LNS = "HE_SO_LNS";
+        public const string NGAY_BAT_DAU_HS_LNS = "NGAY_BAT_DAU_HS_LNS";
+        public const string NGAY_KET_THUC_HS_LNS = "NGAY_KET_THUC_HS_LNS";
+        public const string DA_XOA_HS_LNS_YN = "DA_XOA_HS_LNS_YN";
+        public const string ID_GD_LCD = "ID_GD_LCD";
+        public const string LUONG_CHE_DO = "LUONG_CHE_DO";
+        public const string NGAY_BAT_DAU_LCD = "NGAY_BAT_DAU_LCD";
+        public const string NGAY_KET_THUC_LCD = "NGAY_KET_THUC_LCD";
+        public const string DA_XOA_LCD = "DA_XOA_LCD";
+    }
     #endregion
 
     public class RPT_THONG_TIN_TONG_HOP

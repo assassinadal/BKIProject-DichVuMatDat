@@ -95,6 +95,7 @@
     <Compile Include="US_V_F330_LEN_LUONG_CHO_NV.cs" />
     <Compile Include="US_V_F340_DAT_HS_LNS.cs" />
     <Compile Include="US_V_F340_DAT_LCD.cs" />
+    <Compile Include="US_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG.cs" />
     <Compile Include="US_V_GD_CONG_TAC.cs" />
     <Compile Include="US_V_GD_LOAI_LAO_DONG.cs" />
     <Compile Include="US_V_GD_QUYET_DINH.cs" />

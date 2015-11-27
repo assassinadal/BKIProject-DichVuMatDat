@@ -61,6 +61,7 @@ namespace BKI_DichVuMatDat.BaoCao
             m_txt_nam.Text = DateTime.Now.Year.ToString();
             m_txt_thang.Text = DateTime.Now.Month.ToString();
             hien_thi_thong_tin_qtr_tinh_luong();
+            load_data_2_grid();
         }
 
 
@@ -110,7 +111,12 @@ namespace BKI_DichVuMatDat.BaoCao
                 ip_bgw.ReportProgress((i + 1) * 100 / ip_dt.Rows.Count);
             }
         }
-
+        private void xoa_bang_luong_thang()
+        {
+            //B1: Xoa het bang luong thang do
+            US_RPT_LUONG v_us_rpt_luong = new US_RPT_LUONG();
+            v_us_rpt_luong.XoaLuong(Convert.ToDecimal(m_txt_thang.EditValue), Convert.ToDecimal(m_txt_nam.EditValue));
+        }
         //private void insertLuongNV2RPT(DataRow v_dr_luong_1_nv)
         //{
         //    US_RPT_LUONG v_us = new US_RPT_LUONG();
@@ -344,6 +350,25 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             m_lbl_so_luong_nv_tinh_luong.Text = sl_nv_da_tinh.ToString() + "/" + sl_nv_can_tinh.ToString() + " (nhân viên)";
         }
+
+        private void tinh_lai_bang_luong()
+        {
+            if(is_da_chot_bang_luong())
+                return;
+            var dlg = XtraMessageBox.Show("Bạn có chắc chắn muốn tính lại bảng lương?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dlg == System.Windows.Forms.DialogResult.Yes)
+            {
+                if(m_bgwk.IsBusy)
+                {
+                    m_bgwk.CancelAsync();
+                }
+                else
+                {
+                    xoa_bang_luong_thang();
+                    start_tinh_luong_process();
+                }
+            }
+        }
         #endregion
 
         #region Event Handle
@@ -457,6 +482,18 @@ namespace BKI_DichVuMatDat.BaoCao
             try
             {
                 hien_thi_thong_tin_qtr_tinh_luong();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_tinh_lai_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tinh_lai_bang_luong();
             }
             catch(Exception v_e)
             {

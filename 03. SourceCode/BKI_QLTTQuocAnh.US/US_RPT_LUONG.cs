@@ -644,12 +644,35 @@ namespace BKI_DichVuMatDat.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
-
+        public void XoaLuong(decimal ip_thang, decimal ip_nam)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_xoa_bang_luong_theo_thang");
+            v_sp.addDecimalInputParam("@ip_thang", ip_thang);
+            v_sp.addDecimalInputParam("@ip_nam", ip_nam);
+            v_sp.ExecuteCommand(this);
+        }
+        public void XoaBanGhiLuong(decimal ip_dc_id_nhan_vien, decimal ip_thang, decimal ip_nam)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_xoa_ban_ghi_luong");
+            v_sp.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            v_sp.addDecimalInputParam("@ip_thang", ip_thang);
+            v_sp.addDecimalInputParam("@ip_nam", ip_nam);
+            v_sp.ExecuteCommand(this);
+        }
         public void Get_tat_ca_nhan_vien_can_tinh_luong(out DS_RPT_LUONG op_ds, decimal ip_thang, decimal ip_nam)
         {
             op_ds = new DS_RPT_LUONG();
             op_ds.EnforceConstraints = false;
             CStoredProc v_sp = new CStoredProc("pr_GET_DANH_SACH_NHAN_VIEN_TINH_LUONG");
+            v_sp.addDecimalInputParam("@THANG", ip_thang);
+            v_sp.addDecimalInputParam("@NAM", ip_nam);
+            v_sp.fillDataSetByCommand(this, op_ds);
+        }
+        public void Get_tat_ca_nhan_vien_can_tinh_luong_thao_tac_lai(out DS_RPT_LUONG op_ds, decimal ip_thang, decimal ip_nam)
+        {
+            op_ds = new DS_RPT_LUONG();
+            op_ds.EnforceConstraints = false;
+            CStoredProc v_sp = new CStoredProc("pr_GET_DANH_SACH_NHAN_VIEN_TINH_LUONG_THAO_TAC_LAI");
             v_sp.addDecimalInputParam("@THANG", ip_thang);
             v_sp.addDecimalInputParam("@NAM", ip_nam);
             v_sp.fillDataSetByCommand(this, op_ds);

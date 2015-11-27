@@ -10,6 +10,7 @@ using IP.Core.IPCommon;
 using System.Windows.Forms;
 using System.Drawing;
 using DevExpress.XtraEditors;
+using BKI_DichVuMatDat.EF;
 
 namespace BKI_DichVuMatDat
 {
@@ -109,7 +110,7 @@ namespace BKI_DichVuMatDat
             }
             return isValidated;
         }
-        
+
         public static void make_stt(DevExpress.XtraGrid.Views.Grid.GridView ip_grv)
         {
             var col = ip_grv.Columns.Add();
@@ -262,11 +263,11 @@ namespace BKI_DichVuMatDat
             //v_us.dcID = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.ID].ToString());
             v_us.dcTHANG = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.THANG]);
             v_us.dcNAM = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.NAM]);
-            v_us.dcID_NHAN_VIEN = (decimal) v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.ID_NHAN_VIEN];
+            v_us.dcID_NHAN_VIEN = (decimal)v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.ID_NHAN_VIEN];
             v_us.strMA_NV = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.MA_NV].ToString();
             v_us.strHO_DEM = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.HO_DEM].ToString();
             v_us.strTEN = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.TEN].ToString();
-            v_us.strHO_VA_TEN =  v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.HO_VA_TEN].ToString();
+            v_us.strHO_VA_TEN = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.HO_VA_TEN].ToString();
             v_us.strTEN_CHUC_VU = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.TEN_CHUC_VU].ToString();
             v_us.strTEN_HOP_DONG = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.TEN_HOP_DONG].ToString();
             v_us.dcLUONG_CHE_DO_THEO_CHUC_VU = (decimal)v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.LUONG_CHE_DO_THEO_CHUC_VU];
@@ -287,6 +288,36 @@ namespace BKI_DichVuMatDat
             DataRow2US(v_dr_luong_1_nv, v_us);
             v_us.Insert();
         }
+        //public static void insertLuongNV2RPT_ThaoTacLai(DataRow v_dr_luong_1_nv)
+        //{
+        //    US_RPT_LUONG v_us_old = new US_RPT_LUONG();
+        //    US_RPT_LUONG v_us_new = new US_RPT_LUONG();
+        //    try
+        //    {
+        //        //Day du lieu bang luong moi vao us_new
+        //        DataRow2US(v_dr_luong_1_nv, v_us_new);
+
+        //        //Lay du lieu nhan vien & thang & nam
+        //        decimal v_dc_id_nhan_vien = (decimal)v_dr_luong_1_nv[RPT_LUONG.ID_NHAN_VIEN];
+        //        decimal v_dc_thang = Convert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THANG]);
+        //        decimal v_dc_nam = Convert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.NAM]);
+
+        //        v_us_old.BeginTransaction();
+        //        v_us_old.XoaBanGhiLuong(v_dc_id_nhan_vien, v_dc_thang, v_dc_nam);
+        //        v_us_new.UseTransOfUSObject(v_us_old);
+        //        v_us_new.Insert();
+        //        v_us_old.CommitTransaction();
+        //    }
+        //    catch(Exception)
+        //    {
+        //        if(v_us_old.is_having_transaction())
+        //        {
+        //            v_us_old.Rollback();
+        //        }
+        //        throw;
+        //    }
+
+        //}
         public static void insertThongTinTongHopNV2RPT(DataRow v_dr_luong_1_nv)
         {
             US_RPT_THONG_TIN_TONG_HOP v_us = new US_RPT_THONG_TIN_TONG_HOP();

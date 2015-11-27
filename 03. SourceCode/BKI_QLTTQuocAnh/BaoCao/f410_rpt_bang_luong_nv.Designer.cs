@@ -324,6 +324,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_cmd_chot_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_tinh_lai = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown3)).BeginInit();
@@ -1967,6 +1968,7 @@
             this.panel1.Controls.Add(this.m_txt_thang);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.m_cmd_tinh_lai);
             this.panel1.Controls.Add(this.m_cmd_bang_luong);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -2489,6 +2491,16 @@
             this.m_cmd_luu_bang_luong.Text = "Xuất bảng lương";
             this.m_cmd_luu_bang_luong.Click += new System.EventHandler(this.m_cmd_luu_bang_luong_Click);
             // 
+            // m_cmd_tinh_lai
+            // 
+            this.m_cmd_tinh_lai.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tinh_lai.Image")));
+            this.m_cmd_tinh_lai.Location = new System.Drawing.Point(194, 74);
+            this.m_cmd_tinh_lai.Name = "m_cmd_tinh_lai";
+            this.m_cmd_tinh_lai.Size = new System.Drawing.Size(172, 37);
+            this.m_cmd_tinh_lai.TabIndex = 3;
+            this.m_cmd_tinh_lai.Text = "Tính lại bảng lương";
+            this.m_cmd_tinh_lai.Click += new System.EventHandler(this.m_cmd_tinh_lai_Click);
+            // 
             // f410_rpt_bang_luong_nv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2618,6 +2630,7 @@
         private DevExpress.XtraEditors.LabelControl m_lbl_so_luong_nv_tinh_luong;
         private DevExpress.XtraEditors.TextEdit m_txt_nam;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xem_thong_tin_tinh_luong;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_tinh_lai;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
 
     }

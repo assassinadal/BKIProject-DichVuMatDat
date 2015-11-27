@@ -70,7 +70,7 @@ namespace BKI_DichVuMatDat.BaoCao
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds, "SELECT DISTINCT * FROM V_RPT_LUONG WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim());
+            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_RPT_LUONG WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim());
             m_grc.DataSource = v_ds.Tables[0];
         }
         private void tinh_bang_luong(BackgroundWorker ip_bgw)
@@ -494,6 +494,35 @@ namespace BKI_DichVuMatDat.BaoCao
             try
             {
                 tinh_lai_bang_luong();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_tinh_lai_cho_nhan_vien_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(m_grv.FocusedRowHandle < 0)
+                {
+                    XtraMessageBox.Show("Chọn nhân viên trước để tính lại lương!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                decimal v_id_nhan_vien = Convert.ToDecimal(m_grv.GetRowCellValue(m_grv.FocusedRowHandle, "ID_NHAN_VIEN"));
+
+                DataRow v_dr_luong = CHRMCommon.get_luong_1_nhan_vien(v_id_nhan_vien, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
+
+                var v_dr_luong_nv = m_ds_rpt_luong.Tables[0].NewRow();
+                DataRow v_dr_luong_1_nv = CHRMCommon.get_dr(v_dr_luong_nv, v_dr_luong, v_id_nhan_vien, 0, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
+                
+                //Xoa ban ghi truoc khi insert lai
+                US_RPT_LUONG v_us_2_del = new US_RPT_LUONG();
+                v_us_2_del.XoaBanGhiLuong(v_id_nhan_vien, Convert.ToDecimal(m_txt_thang.EditValue), Convert.ToDecimal(m_txt_nam.EditValue));
+                CHRMCommon.insertLuongNV2RPT(v_dr_luong_1_nv);
+                load_data_2_grid();
+                XtraMessageBox.Show("Cập nhật thành công");
             }
             catch(Exception v_e)
             {

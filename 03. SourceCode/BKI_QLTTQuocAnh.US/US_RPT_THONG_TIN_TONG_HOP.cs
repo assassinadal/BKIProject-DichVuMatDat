@@ -462,6 +462,28 @@ public class US_RPT_THONG_TIN_TONG_HOP : US_Object
         pm_objDR["CHAM_CONG_KHAC"] = System.Convert.DBNull;
     }
 
+    public decimal dcHE_SO_K
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "HE_SO_K", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["HE_SO_K"] = value;
+        }
+    }
+
+    public bool IsHE_SO_KNull()
+    {
+        return pm_objDR.IsNull("HE_SO_K");
+    }
+
+    public void SetHE_SO_KNull()
+    {
+        pm_objDR["HE_SO_K"] = System.Convert.DBNull;
+    }
+
     #endregion
 #region "Init Functions"
 	public US_RPT_THONG_TIN_TONG_HOP() 

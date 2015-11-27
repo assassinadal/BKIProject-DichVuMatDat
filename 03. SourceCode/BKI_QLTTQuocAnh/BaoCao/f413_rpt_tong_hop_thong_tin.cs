@@ -33,6 +33,7 @@ namespace BKI_DichVuMatDat.BaoCao
             v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_RPT_BAO_CAO_TONG_HOP WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim());
             m_grc_tong_hop.DataSource = v_ds.Tables[0];
             m_grc_tong_hop.RefreshDataSource();
+
         }
         private DS_RPT_THONG_TIN_TONG_HOP lay_danh_sach_nhan_vien_can_tong_hop_thong_tin()
         {
@@ -78,8 +79,15 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void m_bgwk_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            this.m_prb.Text = (e.ProgressPercentage.ToString() + "%");
-            this.m_prb.EditValue = e.ProgressPercentage;
+            try
+            {
+                this.m_prb.Text = (e.ProgressPercentage.ToString() + "%");
+                this.m_prb.EditValue = e.ProgressPercentage;
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_bgwk_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

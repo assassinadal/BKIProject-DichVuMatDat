@@ -246,7 +246,7 @@
             this.gridBand1.Columns.Add(this.HS_LNS_DUOC_HUONG);
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 600;
+            this.gridBand1.Width = 570;
             // 
             // STT
             // 
@@ -258,7 +258,6 @@
             this.STT.Caption = "STT";
             this.STT.FieldName = "STT";
             this.STT.Name = "STT";
-            this.STT.Visible = true;
             this.STT.Width = 30;
             // 
             // MA_NV

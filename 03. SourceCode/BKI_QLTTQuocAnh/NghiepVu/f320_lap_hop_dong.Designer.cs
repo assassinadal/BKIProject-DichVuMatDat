@@ -277,6 +277,7 @@
             // 
             // m_dat_ngay_ky
             // 
+            this.m_dat_ngay_ky.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_ky.Location = new System.Drawing.Point(121, 156);
             this.m_dat_ngay_ky.Name = "m_dat_ngay_ky";
@@ -285,6 +286,7 @@
             // 
             // m_dat_ngay_ket_thuc
             // 
+            this.m_dat_ngay_ket_thuc.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(121, 130);
             this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
@@ -293,6 +295,7 @@
             // 
             // m_dat_ngay_bat_dau
             // 
+            this.m_dat_ngay_bat_dau.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_bat_dau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_bat_dau.Location = new System.Drawing.Point(121, 104);
             this.m_dat_ngay_bat_dau.Name = "m_dat_ngay_bat_dau";

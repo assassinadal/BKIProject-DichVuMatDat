@@ -209,6 +209,7 @@
             // 
             // m_dat_ngay_ky
             // 
+            this.m_dat_ngay_ky.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_ky.Location = new System.Drawing.Point(146, 85);
             this.m_dat_ngay_ky.Name = "m_dat_ngay_ky";
@@ -226,6 +227,7 @@
             // 
             // m_dat_ngay_het_hieu_luc
             // 
+            this.m_dat_ngay_het_hieu_luc.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_het_hieu_luc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_het_hieu_luc.Location = new System.Drawing.Point(495, 59);
             this.m_dat_ngay_het_hieu_luc.Name = "m_dat_ngay_het_hieu_luc";
@@ -271,6 +273,7 @@
             // 
             // m_dat_ngay_co_hieu_luc
             // 
+            this.m_dat_ngay_co_hieu_luc.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_co_hieu_luc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_co_hieu_luc.Location = new System.Drawing.Point(146, 59);
             this.m_dat_ngay_co_hieu_luc.Name = "m_dat_ngay_co_hieu_luc";

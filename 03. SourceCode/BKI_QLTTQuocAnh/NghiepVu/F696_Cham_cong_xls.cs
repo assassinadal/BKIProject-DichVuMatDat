@@ -96,7 +96,8 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void nhapChamCong(DataRow ip_dataRow)
         {
-            for (int i = 1; i < ip_dataRow.Table.Columns.Count; i++)
+            xoa_du_lieu_cham_cong_cu(get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString()));
+            for (int i = 1; i < ip_dataRow.Table.Columns.Count - 1; i++)
             {
                 try
                 {
@@ -111,8 +112,21 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     continue;
                 }
-                
             }
+            US_GD_HE_SO_CHAT_LUONG v_us_hsk = new US_GD_HE_SO_CHAT_LUONG();
+            v_us_hsk.dcHE_SO_K = CIPConvert.ToDecimal(ip_dataRow[ip_dataRow.Table.Columns.Count - 1].ToString());
+            v_us_hsk.dcID_NHAN_VIEN = get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString());
+            v_us_hsk.dcTHANG = CIPConvert.ToDecimal(m_txt_thang.Text);
+            v_us_hsk.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text);
+            v_us_hsk.datNGAY_LAP = DateTime.Now.Date;
+            v_us_hsk.strDA_XOA = "N";
+            v_us_hsk.Insert();
+        }
+
+        private void xoa_du_lieu_cham_cong_cu(decimal ip_dc_id_nv)
+        {
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            v_us.xoa_du_lieu_cham_cong(ip_dc_id_nv, m_txt_thang.Text, m_txt_nam.Text);            
         }
 
         private decimal get_nhan_vien_by_ma_nv(string ip_ma_nhan_vien)
@@ -166,7 +180,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.get_bang_cham_cong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
 
             DateTime v_dat_bat_dau = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1);
-            DateTime v_dat_ket_thuc = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text) + 1, 1);
+            DateTime v_dat_ket_thuc = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1).AddMonths(1);
 
             for (DateTime i = v_dat_bat_dau; i < v_dat_ket_thuc; i = i.AddDays(1))
             {
@@ -174,6 +188,9 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_c.ColumnName = i.ToString("dd/MM/yyyy");
                 v_ds.Tables[0].Columns.Add(v_c);
             }
+            var v_c_hsk = new DataColumn();
+            v_c_hsk.ColumnName = "HSK";
+            v_ds.Tables[0].Columns.Add(v_c_hsk);
             m_grc.DataSource = v_ds.Tables[0];
             SaveXLSX(ip_str_file_name);
         }
@@ -195,7 +212,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             BackgroundWorker worker = sender as BackgroundWorker;
             LayDuLieuLoaiNgayCong();
-            if (checkBangChamCong())
+            if (true)//checkBangChamCong())
             {
                 LayDuLieuNhanVien();
                 for (int i = 0; i < m_grv.RowCount; i++)

@@ -478,6 +478,15 @@ namespace BKI_DichVuMatDat
             v_cstore.addDecimalInputParam("@NAM", CIPConvert.ToDecimal(ip_str_nam));
             v_cstore.fillDataSetByCommand(this, v_ds);
         }
+
+        internal void xoa_du_lieu_cham_cong(decimal ip_dc_id_nv, string ip_str_thang, string ip_str_nam)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_XOA_DU_LIEU_CHAM_CONG");
+            v_cstore.addDecimalInputParam("@ID_NHAN_VIEN", ip_dc_id_nv);
+            v_cstore.addDecimalInputParam("@THANG", CIPConvert.ToDecimal(ip_str_thang));
+            v_cstore.addDecimalInputParam("@NAM", CIPConvert.ToDecimal(ip_str_nam));
+            v_cstore.ExecuteCommand(this);
+        }
     }
 
     public class iParameter

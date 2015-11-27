@@ -164,12 +164,40 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                WinFormControls.openTemplate("HeSoChatLuong.xlsx");
+                //WinFormControls.openTemplate("HeSoChatLuong.xlsx");
+                tao_file_mau();
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void tao_file_mau()
+        {
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.get_bang_cham_cong(v_ds, m_txt_chon_thang.Text, m_txt_chon_nam.Text);
+
+            var v_c_hsk = new DataColumn();
+            v_c_hsk.ColumnName = "HSK";
+            v_ds.Tables[0].Columns.Add(v_c_hsk);
+            m_grc_them_hs.DataSource = v_ds.Tables[0];
+            SaveXLSX();
+        }
+
+        private void SaveXLSX()
+        {
+            string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string newpath = targetPath + "\\" + "Hệ số chất lượng tháng " + m_txt_chon_thang.Text + "-" + m_txt_chon_nam.Text + ".xls";
+            m_grv_them_hs.ExportToXls(newpath);
+            DevExpress.XtraEditors.XtraMessageBox.Show("Đã lưu file mẫu tại " + newpath);
+            var process = new System.Diagnostics.Process();
+            process.StartInfo.FileName = newpath;
+            process.StartInfo.Verb = "Open";
+            process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
+            process.Start();
         }
 
         void m_cmd_chon_file_Click(object sender, EventArgs e)

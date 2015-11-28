@@ -42,6 +42,7 @@
             this.STT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.MA_NV = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.HO_VA_TEN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn23 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.TEN_CHUC_VU = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.TEN_HOP_DONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.TAI_KHOAN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -219,13 +220,17 @@
             this.bandedGridColumn19,
             this.bandedGridColumn20,
             this.bandedGridColumn21,
-            this.bandedGridColumn22});
+            this.bandedGridColumn22,
+            this.bandedGridColumn23});
             this.m_adv_tong_hop.GridControl = this.m_grc_tong_hop;
+            this.m_adv_tong_hop.GroupCount = 1;
             this.m_adv_tong_hop.Name = "m_adv_tong_hop";
             this.m_adv_tong_hop.OptionsBehavior.Editable = false;
             this.m_adv_tong_hop.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDown;
             this.m_adv_tong_hop.OptionsBehavior.ReadOnly = true;
             this.m_adv_tong_hop.OptionsView.ShowGroupPanel = false;
+            this.m_adv_tong_hop.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.bandedGridColumn23, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // gridBand1
             // 
@@ -239,6 +244,7 @@
             this.gridBand1.Columns.Add(this.STT);
             this.gridBand1.Columns.Add(this.MA_NV);
             this.gridBand1.Columns.Add(this.HO_VA_TEN);
+            this.gridBand1.Columns.Add(this.bandedGridColumn23);
             this.gridBand1.Columns.Add(this.TEN_CHUC_VU);
             this.gridBand1.Columns.Add(this.TEN_HOP_DONG);
             this.gridBand1.Columns.Add(this.TAI_KHOAN);
@@ -246,7 +252,7 @@
             this.gridBand1.Columns.Add(this.HS_LNS_DUOC_HUONG);
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 570;
+            this.gridBand1.Width = 645;
             // 
             // STT
             // 
@@ -284,6 +290,19 @@
             this.HO_VA_TEN.Name = "HO_VA_TEN";
             this.HO_VA_TEN.Visible = true;
             this.HO_VA_TEN.Width = 99;
+            // 
+            // bandedGridColumn23
+            // 
+            this.bandedGridColumn23.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
+            this.bandedGridColumn23.AppearanceHeader.Options.UseForeColor = true;
+            this.bandedGridColumn23.AppearanceHeader.Options.UseTextOptions = true;
+            this.bandedGridColumn23.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.bandedGridColumn23.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.bandedGridColumn23.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.bandedGridColumn23.Caption = "Đơn vị";
+            this.bandedGridColumn23.FieldName = "DON_VI";
+            this.bandedGridColumn23.Name = "bandedGridColumn23";
+            this.bandedGridColumn23.Visible = true;
             // 
             // TEN_CHUC_VU
             // 
@@ -969,13 +988,14 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn21;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn22;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn HS_LNS_DUOC_HUONG;
+        private System.Windows.Forms.Panel m_panel;
+        private System.Windows.Forms.Label label3;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn23;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand5;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand6;
-        private System.Windows.Forms.Panel m_panel;
-        private System.Windows.Forms.Label label3;
     }
 }

@@ -114,7 +114,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     }
 
                     v_us_hs_cl.dcID_NHAN_VIEN = v_id_nv;
-                    v_us_hs_cl.dcHE_SO_K = CIPConvert.ToDecimal(v_data_row[2].ToString());
+                    v_us_hs_cl.dcHE_SO_K = Convert.ToDecimal(v_data_row["HSK"]);
                     v_us_hs_cl.dcTHANG = CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim());
                     v_us_hs_cl.dcNAM = CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim());
                     v_us_hs_cl.datNGAY_LAP = DateTime.Now.Date;

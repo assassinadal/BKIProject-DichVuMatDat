@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<DatasetMsg xmlns="http://tempuri.org/DatasetMsg.xsd">
+  <Message>
+    <Message>Chưa có dữ liệu để thực hiện thao tác!</Message>
+    <ID>400</ID>
+  </Message>
+  <Message>
+    <Message>Lưu báo cáo thành công!</Message>
+    <ID>401</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa chọn năm!</Message>
+    <ID>402</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa chọn tháng!</Message>
+    <ID>403</ID>
+  </Message>
+</DatasetMsg>

@@ -281,6 +281,7 @@ namespace BKI_DichVuMatDat
             v_us.dcCHAM_CONG_RO_KO_DC = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_RO_KO_DC]);
             v_us.dcCHAM_CONG_KHAC = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_KHAC]);
             v_us.dcHE_SO_K = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.HE_SO_K]);
+            v_us.strDON_VI = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.DON_VI].ToString();
         }
         public static void insertLuongNV2RPT(DataRow v_dr_luong_1_nv)
         {

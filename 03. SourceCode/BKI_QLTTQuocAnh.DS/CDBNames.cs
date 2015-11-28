@@ -827,7 +827,9 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string CHAM_CONG_RO_KO_DC = "CHAM_CONG_RO_KO_DC";
         public const string CHAM_CONG_KHAC = "CHAM_CONG_KHAC";
         public const string HE_SO_K = "HE_SO_K";
+        public const string DON_VI = "DON_VI";
     }
+
 
 
 

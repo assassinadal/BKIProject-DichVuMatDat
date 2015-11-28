@@ -484,32 +484,54 @@ public class US_RPT_THONG_TIN_TONG_HOP : US_Object
         pm_objDR["HE_SO_K"] = System.Convert.DBNull;
     }
 
+    public string strDON_VI
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "DON_VI", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["DON_VI"] = value;
+        }
+    }
+
+    public bool IsDON_VINull()
+    {
+        return pm_objDR.IsNull("DON_VI");
+    }
+
+    public void SetDON_VINull()
+    {
+        pm_objDR["DON_VI"] = System.Convert.DBNull;
+    }
+
     #endregion
-#region "Init Functions"
-	public US_RPT_THONG_TIN_TONG_HOP() 
-	{
-		pm_objDS = new DS_RPT_THONG_TIN_TONG_HOP();
-		pm_strTableName = c_TableName;
-		pm_objDR = pm_objDS.Tables[pm_strTableName].NewRow();
-	}
+    #region "Init Functions"
+	    public US_RPT_THONG_TIN_TONG_HOP() 
+	    {
+		    pm_objDS = new DS_RPT_THONG_TIN_TONG_HOP();
+		    pm_strTableName = c_TableName;
+		    pm_objDR = pm_objDS.Tables[pm_strTableName].NewRow();
+	    }
 
-	public US_RPT_THONG_TIN_TONG_HOP(DataRow i_objDR): this()
-	{
-		this.DataRow2Me(i_objDR);
-	}
+	    public US_RPT_THONG_TIN_TONG_HOP(DataRow i_objDR): this()
+	    {
+		    this.DataRow2Me(i_objDR);
+	    }
 
-	public US_RPT_THONG_TIN_TONG_HOP(decimal i_dbID) 
-	{
-		pm_objDS = new DS_RPT_THONG_TIN_TONG_HOP();
-		pm_strTableName = c_TableName;
-		IMakeSelectCmd v_objMkCmd = new CMakeAndSelectCmd(pm_objDS, c_TableName);
-		v_objMkCmd.AddCondition("ID", i_dbID, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang);
-		SqlCommand v_cmdSQL;
-		v_cmdSQL = v_objMkCmd.getSelectCmd();
-		this.FillDatasetByCommand(pm_objDS, v_cmdSQL);
-		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
-	}
-#endregion
+	    public US_RPT_THONG_TIN_TONG_HOP(decimal i_dbID) 
+	    {
+		    pm_objDS = new DS_RPT_THONG_TIN_TONG_HOP();
+		    pm_strTableName = c_TableName;
+		    IMakeSelectCmd v_objMkCmd = new CMakeAndSelectCmd(pm_objDS, c_TableName);
+		    v_objMkCmd.AddCondition("ID", i_dbID, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang);
+		    SqlCommand v_cmdSQL;
+		    v_cmdSQL = v_objMkCmd.getSelectCmd();
+		    this.FillDatasetByCommand(pm_objDS, v_cmdSQL);
+		    pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
+	    }
+    #endregion
 
     public void Get_tat_ca_nhan_vien_can_tong_hop_thong_tin(DS_RPT_THONG_TIN_TONG_HOP op_ds, decimal ip_thang, decimal ip_nam)
     {

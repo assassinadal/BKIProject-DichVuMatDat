@@ -909,6 +909,9 @@
     <EmbeddedResource Include="NghiepVu\f393_tinh_phep_tieu_chuan.resx">
       <DependentUpon>f393_tinh_phep_tieu_chuan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f394_cham_cong_thang.resx">
+      <DependentUpon>f394_cham_cong_thang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F696_Cham_cong_xls.resx">
       <DependentUpon>F696_Cham_cong_xls.cs</DependentUpon>
     </EmbeddedResource>

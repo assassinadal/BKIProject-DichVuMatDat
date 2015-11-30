@@ -29,26 +29,37 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_cmd_loc = new DevExpress.XtraEditors.SimpleButton();
             this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_txt_thang = new DevExpress.XtraEditors.TextEdit();
             this.m_lbl_thang = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.m_grc = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.m_pv = new DevExpress.XtraPivotGrid.PivotGridControl();
+            this.pivotGridField1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField2 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField3 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pv)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.m_sle_chon_nhan_vien);
             this.panelControl1.Controls.Add(this.m_cmd_loc);
             this.panelControl1.Controls.Add(this.m_txt_nam);
             this.panelControl1.Controls.Add(this.labelControl1);
@@ -60,10 +71,58 @@
             this.panelControl1.Size = new System.Drawing.Size(736, 83);
             this.panelControl1.TabIndex = 0;
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(33, 55);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(75, 13);
+            this.labelControl2.TabIndex = 6;
+            this.labelControl2.Text = "Chọn nhân viên";
+            // 
+            // m_sle_chon_nhan_vien
+            // 
+            this.m_sle_chon_nhan_vien.EditValue = "";
+            this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(114, 52);
+            this.m_sle_chon_nhan_vien.Name = "m_sle_chon_nhan_vien";
+            this.m_sle_chon_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_sle_chon_nhan_vien.Properties.DisplayMember = "HO_TEN";
+            this.m_sle_chon_nhan_vien.Properties.NullText = "";
+            this.m_sle_chon_nhan_vien.Properties.ValueMember = "ID";
+            this.m_sle_chon_nhan_vien.Properties.View = this.searchLookUpEdit1View;
+            this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(133, 20);
+            this.m_sle_chon_nhan_vien.TabIndex = 5;
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2});
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "MÃ_NV";
+            this.gridColumn1.FieldName = "MA_NV";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "HỌ TÊN";
+            this.gridColumn2.FieldName = "HO_TEN";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
             // m_cmd_loc
             // 
             this.m_cmd_loc.Image = global::BKI_DichVuMatDat.Properties.Resources.find;
-            this.m_cmd_loc.Location = new System.Drawing.Point(418, 23);
+            this.m_cmd_loc.Location = new System.Drawing.Point(375, 23);
             this.m_cmd_loc.Name = "m_cmd_loc";
             this.m_cmd_loc.Size = new System.Drawing.Size(75, 23);
             this.m_cmd_loc.TabIndex = 4;
@@ -72,14 +131,14 @@
             // 
             // m_txt_nam
             // 
-            this.m_txt_nam.Location = new System.Drawing.Point(276, 25);
+            this.m_txt_nam.Location = new System.Drawing.Point(246, 26);
             this.m_txt_nam.Name = "m_txt_nam";
             this.m_txt_nam.Size = new System.Drawing.Size(100, 20);
             this.m_txt_nam.TabIndex = 3;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(239, 28);
+            this.labelControl1.Location = new System.Drawing.Point(219, 28);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(21, 13);
             this.labelControl1.TabIndex = 2;
@@ -87,7 +146,7 @@
             // 
             // m_txt_thang
             // 
-            this.m_txt_thang.Location = new System.Drawing.Point(86, 25);
+            this.m_txt_thang.Location = new System.Drawing.Point(69, 26);
             this.m_txt_thang.Name = "m_txt_thang";
             this.m_txt_thang.Size = new System.Drawing.Size(100, 20);
             this.m_txt_thang.TabIndex = 1;
@@ -102,29 +161,60 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.m_grc);
+            this.panelControl2.Controls.Add(this.m_pv);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 83);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(736, 295);
             this.panelControl2.TabIndex = 1;
             // 
-            // m_grc
+            // m_pv
             // 
-            this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc.Location = new System.Drawing.Point(2, 2);
-            this.m_grc.MainView = this.gridView1;
-            this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(732, 291);
-            this.m_grc.TabIndex = 0;
-            this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.m_pv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_pv.Fields.AddRange(new DevExpress.XtraPivotGrid.PivotGridField[] {
+            this.pivotGridField1,
+            this.pivotGridField2,
+            this.pivotGridField3,
+            this.pivotGridField4});
+            this.m_pv.Location = new System.Drawing.Point(2, 2);
+            this.m_pv.Name = "m_pv";
+            this.m_pv.Size = new System.Drawing.Size(732, 291);
+            this.m_pv.TabIndex = 0;
+            this.m_pv.CellDoubleClick += new DevExpress.XtraPivotGrid.PivotCellEventHandler(this.m_pv_CellDoubleClick);
             // 
-            // gridView1
+            // pivotGridField1
             // 
-            this.gridView1.GridControl = this.m_grc;
-            this.gridView1.Name = "gridView1";
+            this.pivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.pivotGridField1.AreaIndex = 0;
+            this.pivotGridField1.Caption = "Mã nhân viên";
+            this.pivotGridField1.FieldName = "MA_NV";
+            this.pivotGridField1.Name = "pivotGridField1";
+            this.pivotGridField1.Visible = false;
+            // 
+            // pivotGridField2
+            // 
+            this.pivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
+            this.pivotGridField2.AreaIndex = 0;
+            this.pivotGridField2.Caption = "Ngày chấm công";
+            this.pivotGridField2.FieldName = "NGAY_CHAM_CONG";
+            this.pivotGridField2.Name = "pivotGridField2";
+            // 
+            // pivotGridField3
+            // 
+            this.pivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.pivotGridField3.AreaIndex = 0;
+            this.pivotGridField3.Caption = "Mã ngày công";
+            this.pivotGridField3.FieldName = "MA_NGAY_CONG";
+            this.pivotGridField3.Name = "pivotGridField3";
+            this.pivotGridField3.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Max;
+            // 
+            // pivotGridField4
+            // 
+            this.pivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.pivotGridField4.AreaIndex = 0;
+            this.pivotGridField4.Caption = "Nhân viên";
+            this.pivotGridField4.FieldName = "HO_TEN";
+            this.pivotGridField4.Name = "pivotGridField4";
             // 
             // f394_cham_cong_thang
             // 
@@ -135,15 +225,17 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "f394_cham_cong_thang";
             this.Text = "F394 - Chấm công theo tháng";
+            this.Load += new System.EventHandler(this.f394_cham_cong_thang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -157,7 +249,15 @@
         private DevExpress.XtraEditors.TextEdit m_txt_thang;
         private DevExpress.XtraEditors.LabelControl m_lbl_thang;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraGrid.GridControl m_grc;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraPivotGrid.PivotGridControl m_pv;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField1;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField2;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField3;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField4;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chon_nhan_vien;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

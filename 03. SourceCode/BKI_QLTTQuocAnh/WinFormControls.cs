@@ -471,6 +471,15 @@ namespace BKI_DichVuMatDat
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
 
+        public void FillDatasetChamCong(DataSet op_ds, string thang, string nam, decimal id_nv)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_GET_GD_CHAM_CONG");
+            v_cstore.addNVarcharInputParam("@thang", thang);
+            v_cstore.addNVarcharInputParam("@nam", nam);
+            v_cstore.addDecimalInputParam("@id_nhan_vien", id_nv);
+            v_cstore.fillDataSetByCommand(this, op_ds);
+        }
+
         internal void get_bang_cham_cong(DataSet v_ds, string ip_str_thang, string ip_str_nam)
         {
             CStoredProc v_cstore = new CStoredProc("pr_GET_DANH_SACH_NHAN_VIEN_CHAM_CONG");

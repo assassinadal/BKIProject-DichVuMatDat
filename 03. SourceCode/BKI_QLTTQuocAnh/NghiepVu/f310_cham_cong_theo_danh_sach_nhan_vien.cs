@@ -12,12 +12,12 @@ using BKI_DichVuMatDat.US;
 using IP.Core.IPCommon;
 using BKI_DichVuMatDat.DS.CDBNames;
 using DevExpress.XtraEditors;
-using System.Data;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.Utils.Menu;
 using DevExpress.XtraTreeList.ViewInfo;
 using DevExpress.XtraTreeList.Nodes;
+using IP.Core.IPSystemAdmin;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -180,8 +180,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                     v_us_gd_cc.strDA_XOA = "N";
                     v_us_gd_cc.datNGAY_LAP = m_dat_ngay_cham_cong.Value;
                     v_us_gd_cc.datNGAY_SUA = m_dat_ngay_cham_cong.Value;
-                    v_us_gd_cc.strNGUOI_LAP = "admin";
-                    v_us_gd_cc.strNGUOI_SUA = "admin";
+                    v_us_gd_cc.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
+                    v_us_gd_cc.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
                     v_us_gd_cc.Insert(); 
                 }
                 else

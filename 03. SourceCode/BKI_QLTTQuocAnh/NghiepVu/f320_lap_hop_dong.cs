@@ -13,6 +13,7 @@ using IP.Core.IPCommon;
 using BKI_DichVuMatDat.DS.CDBNames;
 using DevExpress.XtraEditors;
 using System.Globalization;
+using IP.Core.IPSystemAdmin;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -436,16 +437,18 @@ namespace BKI_DichVuMatDat.NghiepVu
                 ip_us.strMA_HOP_DONG = m_txt_ma_hd.Text.Trim();
                 ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
                 ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
-                ip_us.datNGAY_KY_HOP_DONG = m_dat_ngay_ky.Value.Date;
+                ip_us.datNGAY_KY_HOP_DONG = m_dat_ngay_ky.Value.Date;             
                 if (m_e_form_mode == DataEntryFormMode.InsertDataState)
                 {
                     ip_us.datNGAY_LAP = DateTime.Now.Date;
                     //Nguoi lap
+                    ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                 }
                 if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
                 {
                     ip_us.datNGAY_SUA = DateTime.Now.Date;
                     //nguoi sua
+                    ip_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
                 }
                 ip_us.strDA_XOA = "N";
 
@@ -637,11 +640,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     ip_us.datNGAY_LAP = DateTime.Now.Date;
                     //Nguoi lap
+                    ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                 }
                 if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
                 {
                     ip_us.datNGAY_SUA = DateTime.Now.Date;
                     //nguoi sua
+                    ip_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
                 }
                 ip_us.strDA_XOA = "N";
             }
@@ -665,11 +670,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     ip_us.datNGAY_LAP = DateTime.Now.Date;
                     //Nguoi lap
+                    ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                 }
                 if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
                 {
                     ip_us.datNGAY_SUA = DateTime.Now.Date;
                     //nguoi sua
+                    ip_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
                 }
                 ip_us.strDA_XOA = "N";
             }
@@ -693,11 +700,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     ip_us.datNGAY_LAP = DateTime.Now.Date;
                     //Nguoi lap
+                    ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                 }
                 if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
                 {
                     ip_us.datNGAY_SUA = DateTime.Now.Date;
                     //nguoi sua
+                    ip_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
                 }
                 ip_us.strDA_XOA = "N";
             }

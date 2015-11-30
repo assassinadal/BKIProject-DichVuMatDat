@@ -3,6 +3,7 @@ using BKI_DichVuMatDat.DS.CDBNames;
 using BKI_DichVuMatDat.US;
 using DevExpress.XtraEditors;
 using IP.Core.IPCommon;
+using IP.Core.IPSystemAdmin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -164,11 +165,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 ip_us.dcID = CIPConvert.ToDecimal(m_grv_luong_cung_cua_nhan_vien.GetRowCellValue(m_grv_luong_cung_cua_nhan_vien.FocusedRowHandle, "ID"));
                 //nguoi sua
+                ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
+               
             }
             else
             {
                 ip_us.datNGAY_LAP = DateTime.Now.Date;
                 //nguoi lap
+                ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             }
             ip_us.dcTHANG = CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim());
             ip_us.dcNAM = CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim());

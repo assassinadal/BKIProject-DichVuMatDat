@@ -10,114 +10,110 @@ using BKI_DichVuMatDat.US;
 using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.DS.CDBNames;
 using IP.Core.IPCommon;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using System.IO;
-using Excel = Microsoft.Office.Interop.Excel;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Columns;
-using System.Linq;
+using DevExpress.XtraPivotGrid;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class f394_cham_cong_thang : Form
     {
+        decimal m_id_nhan_vien;
         public f394_cham_cong_thang()
         {
             InitializeComponent();
         }
-        string m_str_ma_nv;
-        string m_str_ngay;
+        
         private void m_cmd_loc_Click(object sender, EventArgs e)
         {
-            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            //DataSet v_ds = new DataSet();
-            //v_ds.Tables.Add(new DataTable());
-            //v_us.get_bang_cham_cong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
-
-            //DateTime v_dat_bat_dau = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1);
-            //DateTime v_dat_ket_thuc = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1).AddMonths(1);
-
-            //for (DateTime i = v_dat_bat_dau; i < v_dat_ket_thuc; i = i.AddDays(1))
-            //{
-            //    var v_c = new DataColumn();
-            //    v_c.ColumnName = i.ToString("dd/MM/yyyy");
-            //    v_ds.Tables[0].Columns.Add(v_c);
-            //    DataTable v_dt = get_gd_cham_cong();
-            //    DataTable v_dt_soure = v_ds.Tables[0];
-            //    for (int j = 0; j < v_ds.Tables[0].Rows.Count; j++)
-            //    {
-            //        DataTable v_dr_theo_ngay = v_dt.Select("NGAY_CHAM_CONG = " + i.Date).CopyToDataTable();
-
-            //        foreach (DataRow item in v_dt_soure.Rows)
-            //        {
-            //            var v_id_nv = Convert.ToDecimal(item["ID_NHAN_VIEN"]);
-
-            //        }
-            //    }               
-            //}
-             
-
-            ////
-            //B1 : Lay du lieu GD_CHAM_CONG 
-            DataTable v_dt_gd_cham_cong = get_gd_cham_cong();
-            //B2: Tao Datasoure
-            DataTable v_dt_data_source = create_data_source();
-
-
-
-            DateTime v_dat_bat_dau = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1);
-            DateTime v_dat_ket_thuc = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1).AddMonths(1);
-            for (DateTime i = v_dat_bat_dau; i < v_dat_ket_thuc; i = i.AddDays(1))
-            {
-                var v_c = new DataColumn();
-                v_c.ColumnName = i.ToString("dd/MM/yyyy");
-                v_dt_data_source.Columns.Add(v_c);
-
-
-                DataTable v_dt_1_ngay = v_dt_gd_cham_cong.Select("NGAY_CHAM_CONG = " + v_dat_bat_dau.Date).CopyToDataTable();
-                //for(int i = 0; i < v_dt_data_source.Rows.Count; i++){
-                //    var id_nhan_vien = item["ID_NHAN_VIEN"];
-                //    var id_loai_ngay_cong = v_dt_1_ngay.Select("ID_NHAN_VIEN = " + id_nhan_vien)[0]["ID_LOAI_NGAY_CONG"];
-
-                //    v_dt_data_source.Rows
-                //}
-                
+            if (check_validate_data_is_ok(m_txt_thang.Text) && check_validate_data_is_ok(m_txt_nam.Text))
+            {           
+                if (m_sle_chon_nhan_vien.EditValue.ToString() == "" || m_sle_chon_nhan_vien.EditValue == null)
+                {
+                    m_id_nhan_vien = -1;                   
+                }
+                else
+                {
+                    m_id_nhan_vien = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue.ToString());
+                }
+                load_data_to_m_pv(m_id_nhan_vien);        
             }
-
-            //B2.2: insert_dac cot theo ngay trong thang
-
-            //B3: Insert du lieu cham cong theo tung ngay
-
+            else
+            {
+                MessageBox.Show("Dữ liệu nhập chưa hợp lệ!");
+            }    
         }
 
-        private DataTable get_gd_cham_cong()
+        private void load_data_to_m_pv(decimal m_id_nhan_vien)
         {
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "V_GD_CHAM_CONG");
-            return v_ds.Tables[0].Copy();
+            v_us.FillDatasetChamCong(v_ds, m_txt_thang.Text, m_txt_nam.Text, m_id_nhan_vien);
+            m_pv.DataSource = v_ds.Tables[0];
         }
-        private DataTable create_data_source()
+
+        private DataSet load_data_to_ds_v_dm_nv()
         {
-            US_DUNG_CHUNG v_us_source = new US_DUNG_CHUNG();
-            DataSet v_ds_source = new DataSet();
-            v_ds_source.Tables.Add(new DataTable());
-            v_us_source.get_bang_cham_cong(v_ds_source, m_txt_thang.Text, m_txt_nam.Text);
-
-
-            //DateTime v_dat_bat_dau = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1);
-            //DateTime v_dat_ket_thuc = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1).AddMonths(1);
-            //for (DateTime i = v_dat_bat_dau; i < v_dat_ket_thuc; i = i.AddDays(1))
-            //{
-            //    var v_c = new DataColumn();
-            //    v_c.ColumnName = i.ToString("dd/MM/yyyy");
-            //    v_ds_source.Tables[0].Columns.Add(v_c);
-            //}
-
-            return v_ds_source.Tables[0].Copy();
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
+            return v_ds;
         }
+
+        private void load_data_to_sle_chon_nhan_vien()
+        {
+            m_sle_chon_nhan_vien.Properties.DataSource = load_data_to_ds_v_dm_nv().Tables[0];
+            m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+        }
+        private bool check_validate_data_is_ok(string ip_str_thang_cham_cong)
+        {
+            for (int i = 0; i < ip_str_thang_cham_cong.Length; i++)
+            {
+                if (char.IsDigit(ip_str_thang_cham_cong[i]) == false)
+                    return false;
+            }
+            return true;
+        }
+
+        private void m_pv_CellDoubleClick(object sender, DevExpress.XtraPivotGrid.PivotCellEventArgs e)
+        {
+            try
+            {
+                f394_cham_cong_thang_detail v_f = new f394_cham_cong_thang_detail();
+                PivotDrillDownDataSource v_ds = e.CreateDrillDownDataSource();
+                PivotDrillDownDataRow v_dr = v_ds[0];
+                var v_id_loai_ngay_cong = CIPConvert.ToDecimal(v_dr["ID_LOAI_NGAY_CONG"].ToString());
+                v_f.display_for_update(ref v_id_loai_ngay_cong);
+                US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG(CIPConvert.ToDecimal(v_dr["ID"].ToString()));
+                v_us.dcID_LOAI_NGAY_CONG = v_id_loai_ngay_cong;
+                v_us.Update();
+                load_data_to_m_pv(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue.ToString()));
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+            
+        }
+
+        private void f394_cham_cong_thang_Load(object sender, EventArgs e)
+        {
+            load_data_to_sle_chon_nhan_vien();
+        }
+        
+
+        //private DataTable get_gd_cham_cong(string ip_str_ngay_cham_cong)
+        //{
+        //    US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+        //    DataSet v_ds = new DataSet();
+        //    v_ds.Tables.Add(new DataTable());
+        //    v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_CHAM_CONG where NGAY_CHAM_CONG = '" + ip_str_ngay_cham_cong + "' ORDER BY MA_NV");
+        //    return v_ds.Tables[0];
+        //}
     }
 }

@@ -114,6 +114,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_us_quy_tien_thuong.dcID_LOAI_QUY_TIEN = CONST_ID_TIEN_THUONG.THUONG_HS_BS;
                 v_us_quy_tien_thuong.strDA_XOA = "N";
                 v_us_quy_tien_thuong.strLY_DO_THUONG = m_txt_ly_do_thuong.Text;
+                v_us_quy_tien_thuong.strNGUOI_LAP =  CAppContext_201.getCurrentUserName();
                 v_us_quy_tien_thuong.Insert();
             }
             catch (Exception v_e)
@@ -134,6 +135,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 //v_us_thang_da_giam_tru.strNGUOI_LAP=
                 v_us_thang_da_giam_tru.datNGAY_LAP = DateTime.Now.Date;
                 v_us_thang_da_giam_tru.strDA_XOA = "N";
+                v_us_thang_da_giam_tru.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                 v_us_thang_da_giam_tru.Insert();
             }
             catch (Exception v_e)

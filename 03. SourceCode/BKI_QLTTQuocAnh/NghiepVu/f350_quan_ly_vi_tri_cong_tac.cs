@@ -14,6 +14,7 @@ using BKI_DichVuMatDat.DS.CDBNames;
 using IP.Core.IPCommon;
 using System.Globalization;
 using DevExpress.XtraEditors;
+using IP.Core.IPSystemAdmin;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -309,11 +310,13 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 //Ngay lap
                 ip_us.datNGAY_LAP = DateTime.Now.Date;
+                ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             }
             else if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
             {
                 //Ngay sua
                 ip_us.datNGAY_SUA = DateTime.Now.Date;
+                ip_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
             }
             ip_us.strDA_XOA = "N";
         }

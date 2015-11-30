@@ -11,6 +11,7 @@ using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.US;
 using BKI_DichVuMatDat.DS.CDBNames;
 using DevExpress.XtraEditors;
+using IP.Core.IPSystemAdmin;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -186,12 +187,14 @@ namespace BKI_DichVuMatDat.NghiepVu
                 ip_us.dcID = CIPConvert.ToDecimal(m_grv_luong_cung_cua_nhan_vien.GetRowCellValue(m_grv_luong_cung_cua_nhan_vien.FocusedRowHandle, "ID"));
                 ip_us.datNGAY_SUA = DateTime.Now.Date;
                 //nguoi sua
+                ip_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
             }
             else
             {
                 ip_us.datNGAY_LAP = DateTime.Now.Date;
                 //nguoi lap
                 ip_us.strDA_XOA = "N";
+                ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             }
             ip_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
             ip_us.dcSO_TIEN = CIPConvert.ToDecimal(m_txt_so_tien.Text.Trim());

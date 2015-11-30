@@ -13,6 +13,7 @@ using IP.Core.IPCommon;
 using BKI_DichVuMatDat.DS.CDBNames;
 using DevExpress.XtraEditors;
 using System.Globalization;
+using IP.Core.IPSystemAdmin;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -213,11 +214,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                 ip_us.dcID = v_id_gd_hs_cl;
                 ip_us.datNGAY_SUA = DateTime.Now.Date;
                 //nguoi sua
+                ip_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
             }
             else
             {
                 ip_us.datNGAY_LAP = DateTime.Now.Date;
                 //nguoi lap
+                ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                 ip_us.strDA_XOA = "N";
             }
 

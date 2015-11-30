@@ -17,6 +17,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Columns;
+using IP.Core.IPSystemAdmin;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -105,6 +106,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     v_us.dcID_NHAN_VIEN = get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString());
                     v_us.datNGAY_CHAM_CONG = CIPConvert.ToDatetime(ip_dataRow.Table.Columns[i].ColumnName, "dd/MM/yyyy");
                     v_us.strDA_XOA = "N";
+                    v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                     v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString());
                     v_us.Insert();
                 }
@@ -120,6 +122,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us_hsk.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text);
             v_us_hsk.datNGAY_LAP = DateTime.Now.Date;
             v_us_hsk.strDA_XOA = "N";
+            v_us_hsk.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             v_us_hsk.Insert();
         }
 

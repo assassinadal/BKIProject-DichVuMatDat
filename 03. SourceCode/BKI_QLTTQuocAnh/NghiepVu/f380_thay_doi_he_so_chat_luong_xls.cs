@@ -13,6 +13,7 @@ using IP.Core.IPCommon;
 using BKI_DichVuMatDat.DS.CDBNames;
 using DevExpress.XtraEditors;
 using System.Globalization;
+using IP.Core.IPSystemAdmin;
 
 
 namespace BKI_DichVuMatDat.NghiepVu
@@ -118,6 +119,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     v_us_hs_cl.dcTHANG = CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim());
                     v_us_hs_cl.dcNAM = CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim());
                     v_us_hs_cl.datNGAY_LAP = DateTime.Now.Date;
+                    v_us_hs_cl.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                     v_us_hs_cl.strDA_XOA = "N";
 
                     try

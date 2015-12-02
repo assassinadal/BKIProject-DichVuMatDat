@@ -100,13 +100,13 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_chon_nhan_vien = new DevExpress.XtraEditors.LabelControl();
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_pnl_qua_trinh_lam_viec)).BeginInit();
@@ -740,7 +740,7 @@
             // 
             // m_lbl_chuc_vu
             // 
-            this.m_lbl_chuc_vu.Location = new System.Drawing.Point(525, 46);
+            this.m_lbl_chuc_vu.Location = new System.Drawing.Point(561, 46);
             this.m_lbl_chuc_vu.Name = "m_lbl_chuc_vu";
             this.m_lbl_chuc_vu.Size = new System.Drawing.Size(68, 13);
             this.m_lbl_chuc_vu.TabIndex = 10;
@@ -748,7 +748,7 @@
             // 
             // m_lbl_don_vi
             // 
-            this.m_lbl_don_vi.Location = new System.Drawing.Point(341, 46);
+            this.m_lbl_don_vi.Location = new System.Drawing.Point(318, 46);
             this.m_lbl_don_vi.Name = "m_lbl_don_vi";
             this.m_lbl_don_vi.Size = new System.Drawing.Size(68, 13);
             this.m_lbl_don_vi.TabIndex = 9;
@@ -772,7 +772,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(461, 46);
+            this.labelControl4.Location = new System.Drawing.Point(507, 46);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(44, 13);
             this.labelControl4.TabIndex = 5;
@@ -793,6 +793,14 @@
             this.labelControl2.Size = new System.Drawing.Size(42, 13);
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Giới tính:";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(277, 46);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(35, 13);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "Đơn vị:";
             // 
             // m_lbl_chon_nhan_vien
             // 
@@ -848,14 +856,6 @@
             this.gridColumn3.FieldName = "ID";
             this.gridColumn3.Name = "gridColumn3";
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(277, 46);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(35, 13);
-            this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "Đơn vị:";
-            // 
             // f450_thong_tin_nhan_vien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -864,7 +864,7 @@
             this.ClientSize = new System.Drawing.Size(675, 738);
             this.Controls.Add(this.panelControl1);
             this.Name = "f450_thong_tin_nhan_vien";
-            this.Text = "f450_thong_tin_nhan_vien";
+            this.Text = "F450 - Thông tin nhân viên";
             this.Load += new System.EventHandler(this.f450_thong_tin_nhan_vien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

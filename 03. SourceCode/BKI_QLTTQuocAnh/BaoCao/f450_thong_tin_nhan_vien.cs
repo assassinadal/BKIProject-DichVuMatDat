@@ -53,32 +53,134 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void load_data_to_all_controls(decimal ip_dc_id_nv)
         {
-            US_DM_NHAN_VIEN v_us_nv = new US_DM_NHAN_VIEN(ip_dc_id_nv);
+            US_V_DM_NHAN_VIEN v_us_nv = new US_V_DM_NHAN_VIEN(ip_dc_id_nv);
             load_data_to_pnl_thong_tin_co_ban(v_us_nv);
             load_data_to_pnl_thong_tin_giao_dich(v_us_nv);
             load_data_to_grc_hoc_van(v_us_nv);
             load_data_to_grc_thong_tin_lien_lac(v_us_nv);
-            load_data_to_grc_hop_dong(v_us_nv);
+            load_data_to_grc_hop_dong(ip_dc_id_nv);
+            load_data_to_grc_cong_tac(ip_dc_id_nv);
         }
 
-        private void load_data_to_grc_hop_dong(US_DM_NHAN_VIEN v_us_nv)
+        private void load_data_to_grc_cong_tac(decimal ip_dc_id_nv)
         {
+            m_grc_cong_tac.Controls.Clear();
+            DataTable v_dt_v_gd_ct = load_data_to_v_gd_cong_tac(ip_dc_id_nv);
             List<Label> customLabels = new List<Label>();
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < v_dt_v_gd_ct.Rows.Count; i++)
             {
                 Label label = new Label();
-                label.Location = new System.Drawing.Point(317, 119 + customLabels.Count * 26);
+                label.Parent = m_grc_cong_tac;
+                label.Location = new System.Drawing.Point(21, 51 + customLabels.Count * 60);
+                label.Text = v_dt_v_gd_ct.Rows[i]["TEN_DON_VI"].ToString();
+                label.Size = new System.Drawing.Size(200, 13);
+                customLabels.Add(label);
+                m_grc_cong_tac.Controls.Add(label);
+            }
+            List<Label> customLabels1 = new List<Label>();
+            for (int i = 0; i < v_dt_v_gd_ct.Rows.Count; i++)
+            {
+                Label label = new Label();
+                label.Parent = m_grc_cong_tac;
+                label.Location = new System.Drawing.Point(280, 51 + customLabels1.Count * 60);
+                label.Text = v_dt_v_gd_ct.Rows[i]["NGAY_BAT_DAU"].ToString().Substring(0, 10) + " - " + v_dt_v_gd_ct.Rows[i]["NGAY_KET_THUC"].ToString().Substring(0, 10);
+                label.Size = new System.Drawing.Size(180, 13);
+                customLabels1.Add(label);
+                m_grc_cong_tac.Controls.Add(label);
+            }
+            List<Label> customLabels2 = new List<Label>();
+            for (int i = 0; i < v_dt_v_gd_ct.Rows.Count; i++)
+            {
+                Label label = new Label();
+                label.Parent = m_grc_cong_tac;
+                label.Location = new System.Drawing.Point(30, 70 + customLabels2.Count * 60);
+                label.Text = "Chức vụ: " + v_dt_v_gd_ct.Rows[i]["TEN_VI_TRI"].ToString();
+                label.Size = new System.Drawing.Size(250, 13);
+                customLabels2.Add(label);
+                m_grc_cong_tac.Controls.Add(label);
+            }
+            List<Label> customLabels3 = new List<Label>();
+            for (int i = 0; i < v_dt_v_gd_ct.Rows.Count; i++)
+            {
+                Label label = new Label();
+                label.Parent = m_grc_cong_tac;
+                label.Location = new System.Drawing.Point(30, 89 + customLabels3.Count * 40);
+                label.Text = "Loại công tác: " + v_dt_v_gd_ct.Rows[i]["TEN_LOAI_CONG_TAC"].ToString();
+                label.Size = new System.Drawing.Size(200, 13);
+                customLabels3.Add(label);
+                m_grc_cong_tac.Controls.Add(label);
+            }
+        }
+
+        private DataTable load_data_to_v_gd_cong_tac(decimal ip_dc_id_nv)
+        {
+            DataSet v_ds = new DataSet();
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillDatasetWithQuery(v_ds, "select * from v_gd_cong_tac where id_nhan_vien=" + ip_dc_id_nv);
+            return v_ds.Tables[0];
+        }
+
+        private DataTable load_data_to_v_gd_hop_dong(decimal ip_dc_id_nv)
+        {           
+            DataSet v_ds = new DataSet();
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillDatasetWithQuery(v_ds, "select * from v_gd_hop_dong where id_nhan_vien=" + ip_dc_id_nv);
+            return v_ds.Tables[0];
+        }
+
+        private void load_data_to_grc_hop_dong(decimal ip_dc_id_nv)
+        {
+            m_grc_hop_dong.Controls.Clear();
+            DataTable v_dt_v_gd_hd = load_data_to_v_gd_hop_dong(ip_dc_id_nv);
+            List<Label> customLabels = new List<Label>();
+            for (int i = 0; i < v_dt_v_gd_hd.Rows.Count; i++)
+            {
+                Label label = new Label();
                 label.Parent = m_grc_hop_dong;
-                label.Name = "label" ;
-                label.Text = v_us_nv.strCHUYEN_MON;
-                label.Size = new System.Drawing.Size(77, 21);
+                label.Location = new System.Drawing.Point(21, 54 + customLabels.Count*40);                
+                label.Text = v_dt_v_gd_hd.Rows[i]["LOAI_HOP_DONG"].ToString();
+                label.Size = new System.Drawing.Size(200, 13);
                 customLabels.Add(label);
                 m_grc_hop_dong.Controls.Add(label);
             }
-         
+            List<Label> customLabels1 = new List<Label>();
+            for (int i = 0; i < v_dt_v_gd_hd.Rows.Count; i++)
+            {
+                Label label = new Label();
+                label.Parent = m_grc_hop_dong;
+                label.Location = new System.Drawing.Point(280, 54 + customLabels1.Count * 40);
+                label.Text = v_dt_v_gd_hd.Rows[i]["NGAY_BAT_DAU"].ToString().Substring(0,10) + " - " + v_dt_v_gd_hd.Rows[i]["NGAY_KET_THUC"].ToString().Substring(0,10);
+                label.Size = new System.Drawing.Size(180, 13);
+                customLabels1.Add(label);
+                m_grc_hop_dong.Controls.Add(label);
+            }
+            List<Label> customLabels2 = new List<Label>();
+            for (int i = 0; i < v_dt_v_gd_hd.Rows.Count; i++)
+            {
+                Label label = new Label();
+                label.Parent = m_grc_hop_dong;
+                label.Location = new System.Drawing.Point(30, 73 + customLabels2.Count * 40);
+                label.Text = "Hệ số lương NS: " + v_dt_v_gd_hd.Rows[i]["HE_SO"].ToString();
+                label.Size = new System.Drawing.Size(200, 13);
+                customLabels2.Add(label);
+                m_grc_hop_dong.Controls.Add(label);
+            }
+            List<Label> customLabels3 = new List<Label>();
+            for (int i = 0; i < v_dt_v_gd_hd.Rows.Count; i++)
+            {
+                Label label = new Label();
+                label.Parent = m_grc_hop_dong;
+                label.Location = new System.Drawing.Point(30, 93 + customLabels3.Count * 40);
+                label.Text = "Lương chế độ: " + v_dt_v_gd_hd.Rows[i]["SO_TIEN"].ToString();
+                label.Size = new System.Drawing.Size(200, 13);
+                customLabels3.Add(label);
+                m_grc_hop_dong.Controls.Add(label);
+            }
+            
         }
-
-        private void load_data_to_grc_thong_tin_lien_lac(US_DM_NHAN_VIEN v_us_nv)
+        private void load_data_to_grc_thong_tin_lien_lac(US_V_DM_NHAN_VIEN v_us_nv)
         {
             m_lbl_email.Text = v_us_nv.strEMAIL;
             m_lbl_sdt.Text = v_us_nv.strSDT;
@@ -87,7 +189,7 @@ namespace BKI_DichVuMatDat.BaoCao
             m_lbl_dc_thuong_tru.Text = v_us_nv.strDIA_CHI_THUONG_TRU;
         }
 
-        private void load_data_to_grc_hoc_van(US_DM_NHAN_VIEN v_us_nv)
+        private void load_data_to_grc_hoc_van(US_V_DM_NHAN_VIEN v_us_nv)
         {
             m_lbl_chuyen_mon.Text = v_us_nv.strCHUYEN_MON;
             m_lbl_trinh_do.Text = v_us_nv.strTRINH_DO_VAN_HOA;
@@ -95,7 +197,7 @@ namespace BKI_DichVuMatDat.BaoCao
             m_lbl_noi_tot_nghiep.Text = v_us_nv.strTOT_NGHIEP_TAI;
         }
 
-        private void load_data_to_pnl_thong_tin_giao_dich(US_DM_NHAN_VIEN v_us_nv)
+        private void load_data_to_pnl_thong_tin_giao_dich(US_V_DM_NHAN_VIEN v_us_nv)
         {
             m_lbl_so_cmt.Text = v_us_nv.strSO_CMT;
             m_lbl_noi_cap_cmt.Text = v_us_nv.strNOI_CAP;
@@ -107,7 +209,7 @@ namespace BKI_DichVuMatDat.BaoCao
             m_lbl_ma_so_thue.Text = v_us_nv.strMA_SO_THUE_CA_NHAN;
         }
 
-        private void load_data_to_pnl_thong_tin_co_ban(US_DM_NHAN_VIEN v_us_nv)
+        private void load_data_to_pnl_thong_tin_co_ban(US_V_DM_NHAN_VIEN v_us_nv)
         {
             m_lbl_gioi_tinh.Text = v_us_nv.strGIOI_TINH;
             m_lbl_ma_nv.Text = v_us_nv.strMA_NV;
@@ -116,7 +218,7 @@ namespace BKI_DichVuMatDat.BaoCao
             m_lbl_que_quan.Text = v_us_nv.strQUE_QUAN;
             m_lbl_ton_giao.Text = v_us_nv.strTON_GIAO;
             m_lbl_quoc_tich.Text = v_us_nv.strQUOC_TICH;
-            m_lbl_ton_giao.Text = v_us_nv.strTON_GIAO;
+            m_lbl_dan_toc.Text = v_us_nv.strDAN_TOC;
             m_lbl_hon_nhan.Text = v_us_nv.strHON_NHAN;           
             m_lbl_ngay_vao_hang_khong.Text = v_us_nv.datNGAY_VAO_HANG_KHONG.ToShortDateString();
             m_lbl_ngay_tiep_nhan_vao_tct.Text = v_us_nv.datNGAY_TIEP_NHAN_VAO_TCT.ToShortDateString();

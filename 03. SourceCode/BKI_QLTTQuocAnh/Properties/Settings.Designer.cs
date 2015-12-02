@@ -44,5 +44,7 @@ namespace BKI_DichVuMatDat.Properties {
                 return ((string)(this["DVMDConnectionString"]));
             }
         }
+
+        public System.Collections.Generic.IEnumerable<string> ValuteCustom { get; set; }
     }
 }

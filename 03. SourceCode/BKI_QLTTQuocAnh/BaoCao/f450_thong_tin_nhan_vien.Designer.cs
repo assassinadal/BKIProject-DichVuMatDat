@@ -1,4 +1,5 @@
-﻿namespace BKI_DichVuMatDat.BaoCao
+﻿using System.Drawing.Printing;
+namespace BKI_DichVuMatDat.BaoCao
 {
     partial class f450_thong_tin_nhan_vien
     {
@@ -28,7 +29,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f450_thong_tin_nhan_vien));
+            this.m_pnl_thong_tin_nhan_vien = new DevExpress.XtraEditors.PanelControl();
             this.m_pnl_qua_trinh_lam_viec = new DevExpress.XtraEditors.PanelControl();
             this.m_grc_dia_chi = new DevExpress.XtraEditors.GroupControl();
             this.m_lbl_sdt = new DevExpress.XtraEditors.LabelControl();
@@ -107,8 +109,10 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pnl_thong_tin_nhan_vien)).BeginInit();
+            this.m_pnl_thong_tin_nhan_vien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_pnl_qua_trinh_lam_viec)).BeginInit();
             this.m_pnl_qua_trinh_lam_viec.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dia_chi)).BeginInit();
@@ -130,16 +134,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelControl1
+            // m_pnl_thong_tin_nhan_vien
             // 
-            this.panelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panelControl1.Controls.Add(this.m_pnl_qua_trinh_lam_viec);
-            this.panelControl1.Controls.Add(this.m_pnl_thong_tin_ca_nhan);
-            this.panelControl1.Controls.Add(this.m_pnl_chon_nhan_vien);
-            this.panelControl1.Location = new System.Drawing.Point(-1, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(678, 738);
-            this.panelControl1.TabIndex = 3;
+            this.m_pnl_thong_tin_nhan_vien.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.m_pnl_thong_tin_nhan_vien.Controls.Add(this.m_pnl_qua_trinh_lam_viec);
+            this.m_pnl_thong_tin_nhan_vien.Controls.Add(this.m_pnl_thong_tin_ca_nhan);
+            this.m_pnl_thong_tin_nhan_vien.Controls.Add(this.m_pnl_chon_nhan_vien);
+            this.m_pnl_thong_tin_nhan_vien.Location = new System.Drawing.Point(3, 0);
+            this.m_pnl_thong_tin_nhan_vien.Name = "m_pnl_thong_tin_nhan_vien";
+            this.m_pnl_thong_tin_nhan_vien.Size = new System.Drawing.Size(678, 750);
+            this.m_pnl_thong_tin_nhan_vien.TabIndex = 3;
             // 
             // m_pnl_qua_trinh_lam_viec
             // 
@@ -151,7 +155,7 @@
             this.m_pnl_qua_trinh_lam_viec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_pnl_qua_trinh_lam_viec.Location = new System.Drawing.Point(2, 76);
             this.m_pnl_qua_trinh_lam_viec.Name = "m_pnl_qua_trinh_lam_viec";
-            this.m_pnl_qua_trinh_lam_viec.Size = new System.Drawing.Size(445, 660);
+            this.m_pnl_qua_trinh_lam_viec.Size = new System.Drawing.Size(445, 672);
             this.m_pnl_qua_trinh_lam_viec.TabIndex = 8;
             // 
             // m_grc_dia_chi
@@ -169,9 +173,9 @@
             this.m_grc_dia_chi.Controls.Add(this.labelControl5);
             this.m_grc_dia_chi.Controls.Add(this.m_lbl_email);
             this.m_grc_dia_chi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc_dia_chi.Location = new System.Drawing.Point(2, 484);
+            this.m_grc_dia_chi.Location = new System.Drawing.Point(2, 489);
             this.m_grc_dia_chi.Name = "m_grc_dia_chi";
-            this.m_grc_dia_chi.Size = new System.Drawing.Size(441, 174);
+            this.m_grc_dia_chi.Size = new System.Drawing.Size(441, 181);
             this.m_grc_dia_chi.TabIndex = 39;
             this.m_grc_dia_chi.Text = "ĐỊA CHỈ LIÊN LẠC";
             // 
@@ -262,7 +266,7 @@
             this.m_grc_hop_dong.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grc_hop_dong.Location = new System.Drawing.Point(2, 327);
             this.m_grc_hop_dong.Name = "m_grc_hop_dong";
-            this.m_grc_hop_dong.Size = new System.Drawing.Size(441, 157);
+            this.m_grc_hop_dong.Size = new System.Drawing.Size(441, 162);
             this.m_grc_hop_dong.TabIndex = 38;
             this.m_grc_hop_dong.Text = "HỢP ĐỒNG ĐÃ KÝ";
             // 
@@ -279,7 +283,9 @@
             // 
             // m_grc_hoc_van
             // 
-            this.m_grc_hoc_van.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.m_grc_hoc_van.Appearance.BackColor = System.Drawing.Color.White;
+            this.m_grc_hoc_van.Appearance.Options.UseBackColor = true;
+            this.m_grc_hoc_van.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.m_grc_hoc_van.CaptionImage = global::BKI_DichVuMatDat.Properties.Resources._1425904406_289616;
             this.m_grc_hoc_van.Controls.Add(this.m_lbl_noi_tot_nghiep);
             this.m_grc_hoc_van.Controls.Add(this.m_lbl_nam_tot_nghiep);
@@ -367,7 +373,7 @@
             this.m_pnl_thong_tin_ca_nhan.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_pnl_thong_tin_ca_nhan.Location = new System.Drawing.Point(447, 76);
             this.m_pnl_thong_tin_ca_nhan.Name = "m_pnl_thong_tin_ca_nhan";
-            this.m_pnl_thong_tin_ca_nhan.Size = new System.Drawing.Size(229, 660);
+            this.m_pnl_thong_tin_ca_nhan.Size = new System.Drawing.Size(229, 672);
             this.m_pnl_thong_tin_ca_nhan.TabIndex = 7;
             // 
             // panelControl2
@@ -397,7 +403,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(2, 327);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(225, 331);
+            this.panelControl2.Size = new System.Drawing.Size(225, 343);
             this.panelControl2.TabIndex = 6;
             // 
             // m_lbl_ngan_hang
@@ -532,17 +538,17 @@
             // 
             this.m_lbl_ngay_chinh_thuc_tiep_nhan.Location = new System.Drawing.Point(158, 294);
             this.m_lbl_ngay_chinh_thuc_tiep_nhan.Name = "m_lbl_ngay_chinh_thuc_tiep_nhan";
-            this.m_lbl_ngay_chinh_thuc_tiep_nhan.Size = new System.Drawing.Size(80, 13);
+            this.m_lbl_ngay_chinh_thuc_tiep_nhan.Size = new System.Drawing.Size(60, 13);
             this.m_lbl_ngay_chinh_thuc_tiep_nhan.TabIndex = 29;
-            this.m_lbl_ngay_chinh_thuc_tiep_nhan.Text = "....................";
+            this.m_lbl_ngay_chinh_thuc_tiep_nhan.Text = "...............";
             // 
             // m_lbl_ngay_tiep_nhan_vao_tct
             // 
             this.m_lbl_ngay_tiep_nhan_vao_tct.Location = new System.Drawing.Point(151, 267);
             this.m_lbl_ngay_tiep_nhan_vao_tct.Name = "m_lbl_ngay_tiep_nhan_vao_tct";
-            this.m_lbl_ngay_tiep_nhan_vao_tct.Size = new System.Drawing.Size(80, 13);
+            this.m_lbl_ngay_tiep_nhan_vao_tct.Size = new System.Drawing.Size(68, 13);
             this.m_lbl_ngay_tiep_nhan_vao_tct.TabIndex = 28;
-            this.m_lbl_ngay_tiep_nhan_vao_tct.Text = "....................";
+            this.m_lbl_ngay_tiep_nhan_vao_tct.Text = ".................";
             // 
             // m_lbl_ngay_vao_hang_khong
             // 
@@ -603,9 +609,9 @@
             // 
             this.m_lbl_hon_nhan.Location = new System.Drawing.Point(132, 304);
             this.m_lbl_hon_nhan.Name = "m_lbl_hon_nhan";
-            this.m_lbl_hon_nhan.Size = new System.Drawing.Size(80, 13);
+            this.m_lbl_hon_nhan.Size = new System.Drawing.Size(60, 13);
             this.m_lbl_hon_nhan.TabIndex = 51;
-            this.m_lbl_hon_nhan.Text = "....................";
+            this.m_lbl_hon_nhan.Text = "...............";
             // 
             // labelControl49
             // 
@@ -722,6 +728,11 @@
             // 
             // m_pnl_chon_nhan_vien
             // 
+            this.m_pnl_chon_nhan_vien.Appearance.BackColor = System.Drawing.Color.White;
+            this.m_pnl_chon_nhan_vien.Appearance.BackColor2 = System.Drawing.Color.White;
+            this.m_pnl_chon_nhan_vien.Appearance.BorderColor = System.Drawing.Color.White;
+            this.m_pnl_chon_nhan_vien.Appearance.Options.UseBackColor = true;
+            this.m_pnl_chon_nhan_vien.Appearance.Options.UseBorderColor = true;
             this.m_pnl_chon_nhan_vien.Controls.Add(this.m_lbl_chuc_vu);
             this.m_pnl_chon_nhan_vien.Controls.Add(this.m_lbl_don_vi);
             this.m_pnl_chon_nhan_vien.Controls.Add(this.m_lbl_ma_nv);
@@ -740,7 +751,7 @@
             // 
             // m_lbl_chuc_vu
             // 
-            this.m_lbl_chuc_vu.Location = new System.Drawing.Point(561, 46);
+            this.m_lbl_chuc_vu.Location = new System.Drawing.Point(342, 48);
             this.m_lbl_chuc_vu.Name = "m_lbl_chuc_vu";
             this.m_lbl_chuc_vu.Size = new System.Drawing.Size(68, 13);
             this.m_lbl_chuc_vu.TabIndex = 10;
@@ -748,7 +759,7 @@
             // 
             // m_lbl_don_vi
             // 
-            this.m_lbl_don_vi.Location = new System.Drawing.Point(318, 46);
+            this.m_lbl_don_vi.Location = new System.Drawing.Point(95, 48);
             this.m_lbl_don_vi.Name = "m_lbl_don_vi";
             this.m_lbl_don_vi.Size = new System.Drawing.Size(68, 13);
             this.m_lbl_don_vi.TabIndex = 9;
@@ -756,15 +767,15 @@
             // 
             // m_lbl_ma_nv
             // 
-            this.m_lbl_ma_nv.Location = new System.Drawing.Point(105, 46);
+            this.m_lbl_ma_nv.Location = new System.Drawing.Point(534, 18);
             this.m_lbl_ma_nv.Name = "m_lbl_ma_nv";
-            this.m_lbl_ma_nv.Size = new System.Drawing.Size(76, 13);
+            this.m_lbl_ma_nv.Size = new System.Drawing.Size(64, 13);
             this.m_lbl_ma_nv.TabIndex = 8;
-            this.m_lbl_ma_nv.Text = "...................";
+            this.m_lbl_ma_nv.Text = "................";
             // 
             // m_lbl_gioi_tinh
             // 
-            this.m_lbl_gioi_tinh.Location = new System.Drawing.Point(341, 16);
+            this.m_lbl_gioi_tinh.Location = new System.Drawing.Point(336, 18);
             this.m_lbl_gioi_tinh.Name = "m_lbl_gioi_tinh";
             this.m_lbl_gioi_tinh.Size = new System.Drawing.Size(68, 13);
             this.m_lbl_gioi_tinh.TabIndex = 6;
@@ -772,7 +783,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(507, 46);
+            this.labelControl4.Location = new System.Drawing.Point(289, 48);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(44, 13);
             this.labelControl4.TabIndex = 5;
@@ -780,7 +791,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(24, 46);
+            this.labelControl3.Location = new System.Drawing.Point(459, 18);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(68, 13);
             this.labelControl3.TabIndex = 4;
@@ -788,7 +799,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(277, 16);
+            this.labelControl2.Location = new System.Drawing.Point(288, 18);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(42, 13);
             this.labelControl2.TabIndex = 3;
@@ -796,7 +807,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(277, 46);
+            this.labelControl1.Location = new System.Drawing.Point(26, 48);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(35, 13);
             this.labelControl1.TabIndex = 2;
@@ -804,7 +815,7 @@
             // 
             // m_lbl_chon_nhan_vien
             // 
-            this.m_lbl_chon_nhan_vien.Location = new System.Drawing.Point(24, 16);
+            this.m_lbl_chon_nhan_vien.Location = new System.Drawing.Point(26, 18);
             this.m_lbl_chon_nhan_vien.Name = "m_lbl_chon_nhan_vien";
             this.m_lbl_chon_nhan_vien.Size = new System.Drawing.Size(75, 13);
             this.m_lbl_chon_nhan_vien.TabIndex = 1;
@@ -856,18 +867,33 @@
             this.gridColumn3.FieldName = "ID";
             this.gridColumn3.Name = "gridColumn3";
             // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // printDocument1
+            // 
+            
+            // 
             // f450_thong_tin_nhan_vien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(675, 738);
-            this.Controls.Add(this.panelControl1);
+            this.ClientSize = new System.Drawing.Size(682, 750);
+            this.Controls.Add(this.m_pnl_thong_tin_nhan_vien);
             this.Name = "f450_thong_tin_nhan_vien";
             this.Text = "F450 - Thông tin nhân viên";
             this.Load += new System.EventHandler(this.f450_thong_tin_nhan_vien_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.f450_thong_tin_nhan_vien_MouseClick);
+            ((System.ComponentModel.ISupportInitialize)(this.m_pnl_thong_tin_nhan_vien)).EndInit();
+            this.m_pnl_thong_tin_nhan_vien.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_pnl_qua_trinh_lam_viec)).EndInit();
             this.m_pnl_qua_trinh_lam_viec.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dia_chi)).EndInit();
@@ -897,8 +923,8 @@
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.PanelControl panelControl1;
+        
+        private DevExpress.XtraEditors.PanelControl m_pnl_thong_tin_nhan_vien;
         private DevExpress.XtraEditors.PanelControl m_pnl_chon_nhan_vien;
         private DevExpress.XtraEditors.LabelControl m_lbl_chuc_vu;
         private DevExpress.XtraEditors.LabelControl m_lbl_don_vi;
@@ -977,6 +1003,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private PrintDocument printDocument1;
 
 
 

@@ -17,10 +17,21 @@ using IP.Core.IPCommon;
 using DevExpress.XtraEditors;
 using System.Globalization;
 
+using System.Drawing.Printing;
+using System.Drawing.Drawing2D;
+using System.IO;
+using System.Drawing.Imaging; 
+
 namespace BKI_DichVuMatDat.BaoCao
 {
     public partial class f450_thong_tin_nhan_vien : Form
     {
+        //int i = 0;
+        //private Bitmap bitmap;
+        //PrintDocument printdoc1 = new PrintDocument();
+        //PrintPreviewDialog previewdlg = new PrintPreviewDialog();
+        //PanelControl pannel = null;
+       
         public f450_thong_tin_nhan_vien()
         {
             InitializeComponent();
@@ -73,7 +84,7 @@ namespace BKI_DichVuMatDat.BaoCao
             m_grc_cong_tac.Controls.Clear();
             DataTable v_dt_v_gd_ct = load_data_to_v_gd_cong_tac(ip_dc_id_nv);
             load_data_to_lbl_don_vi(v_dt_v_gd_ct);
-            load_data_to_lbl_thoi_gian(v_dt_v_gd_ct);
+            load_data_to_lbl_thoi_han(v_dt_v_gd_ct);
             load_data_to_lbl_chuc_vu(v_dt_v_gd_ct);
             load_data_to_lbl_loai_ct(v_dt_v_gd_ct);        
         }
@@ -87,8 +98,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 label.Parent = m_grc_cong_tac;
                 label.Location = new System.Drawing.Point(30, 89 + customLabels.Count * 40);
                 label.Text = "Loại công tác: " + v_dt_v_gd_ct.Rows[i]["TEN_LOAI_CONG_TAC"].ToString();
-                label.Size = new System.Drawing.Size(200, 13);
-              
+                label.Size = new System.Drawing.Size(200, 13);             
                 customLabels.Add(label);
                 m_grc_cong_tac.Controls.Add(label);
             }
@@ -109,7 +119,7 @@ namespace BKI_DichVuMatDat.BaoCao
             }
         }
 
-        private void load_data_to_lbl_thoi_gian(DataTable v_dt_v_gd_ct)
+        private void load_data_to_lbl_thoi_han(DataTable v_dt_v_gd_ct)
         {
             List<Label> customLabels = new List<Label>();
             for (int i = 0; i < v_dt_v_gd_ct.Rows.Count; i++)
@@ -139,11 +149,6 @@ namespace BKI_DichVuMatDat.BaoCao
             }
         }
 
-        private void load_data_to_lbl_loai_ld(DataTable v_dt_v_gd_ct)
-        {
-            throw new NotImplementedException();
-        }
-
         private DataTable load_data_to_v_gd_cong_tac(decimal ip_dc_id_nv)
         {
             DataSet v_ds = new DataSet();
@@ -168,43 +173,8 @@ namespace BKI_DichVuMatDat.BaoCao
             DataTable v_dt_v_gd_hd = load_data_to_v_gd_hop_dong(ip_dc_id_nv);
             load_data_to_lbl_loai_hd(v_dt_v_gd_hd);
             load_data_to_lbl_thoi_han_hd(v_dt_v_gd_hd);
-            load_data_to_lbl_luong_ns(v_dt_v_gd_hd);
-            load_data_to_lbl_luong_che_do(v_dt_v_gd_hd);
-            
-           
-            
-            
-            
-        }
-
-        private void load_data_to_lbl_luong_che_do(DataTable v_dt_v_gd_hd)
-        {
-            List<Label> customLabels = new List<Label>();
-            for (int i = 0; i < v_dt_v_gd_hd.Rows.Count; i++)
-            {
-                Label label = new Label();
-                label.Parent = m_grc_hop_dong;
-                label.Location = new System.Drawing.Point(30, 93 + customLabels.Count * 40);
-                label.Text = "Lương chế độ: " + v_dt_v_gd_hd.Rows[i]["SO_TIEN"].ToString();
-                label.Size = new System.Drawing.Size(200, 13);
-                customLabels.Add(label);
-                m_grc_hop_dong.Controls.Add(label);
-            }
-        }
-
-        private void load_data_to_lbl_luong_ns(DataTable v_dt_v_gd_hd)
-        {
-            List<Label> customLabels = new List<Label>();
-            for (int i = 0; i < v_dt_v_gd_hd.Rows.Count; i++)
-            {
-                Label label = new Label();
-                label.Parent = m_grc_hop_dong;
-                label.Location = new System.Drawing.Point(30, 73 + customLabels.Count * 40);
-                label.Text = "Hệ số lương NS: " + v_dt_v_gd_hd.Rows[i]["HE_SO"].ToString();
-                label.Size = new System.Drawing.Size(200, 13);
-                customLabels.Add(label);
-                m_grc_hop_dong.Controls.Add(label);
-            }
+            //load_data_to_lbl_luong_ns(v_dt_v_gd_hd);
+            //load_data_to_lbl_luong_che_do(v_dt_v_gd_hd);                
         }
 
         private void load_data_to_lbl_thoi_han_hd(DataTable v_dt_v_gd_hd)
@@ -290,6 +260,53 @@ namespace BKI_DichVuMatDat.BaoCao
 
 
 
-   
+        private void f450_thong_tin_nhan_vien_MouseClick(object sender, MouseEventArgs e)
+        {
+            //Print(this.m_pnl_thong_tin_nhan_vien);
+            SaveBitmap();
+        }
+
+        //private void Print(PanelControl panelControl)
+        //{
+        //    GetPrintArea(panelControl);
+        //    printPreviewDialog1.Document = printDocument1;
+        //    printPreviewDialog1.PrintPreviewControl.Zoom = 1.2;
+        //    ((Form)printPreviewDialog1).WindowState = FormWindowState.Maximized;
+        //    printPreviewDialog1.ShowDialog();
+        //}
+
+        //private void GetPrintArea(PanelControl panelControl)
+        //{
+        //    bitmap = new Bitmap(panelControl.Width, panelControl.Height);
+        //    panelControl.DrawToBitmap(bitmap, new Rectangle(0, 0, panelControl.Width, panelControl.Height));
+        //}
+        //private void PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        //{
+        //    Rectangle pagearea = e.PageBounds;
+        //    e.Graphics.DrawImage(bitmap, (pagearea.Width / 2) - (this.m_pnl_thong_tin_nhan_vien.Width / 2), this.m_pnl_thong_tin_nhan_vien.Location.Y) ;
+        //}
+
+        public void DrawControl(Control control, Bitmap bitmap)
+        {
+            control.DrawToBitmap(bitmap, control.Bounds);
+            //foreach (Control childControl in control.Controls)
+            //{
+            //    DrawControl(childControl, bitmap);
+            //}
+        }
+
+        public void SaveBitmap()
+        {
+            Bitmap bmp = new Bitmap(this.m_pnl_thong_tin_nhan_vien.Width, this.m_pnl_thong_tin_nhan_vien.Height);
+
+            this.m_pnl_thong_tin_nhan_vien.DrawToBitmap(bmp, new Rectangle(0, 0, this.m_pnl_thong_tin_nhan_vien.Width, this.m_pnl_thong_tin_nhan_vien.Height));
+            foreach (Control control in m_pnl_thong_tin_nhan_vien.Controls)
+            {
+                DrawControl(control, bmp);
+            }           
+            bmp.Save( "C:\\"+ new Guid().ToString() +"panel.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+            
+        }
+
     }
 }

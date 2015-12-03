@@ -125,6 +125,8 @@ namespace BKI_DichVuMatDat
             col.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             ip_grv.CustomUnboundColumnData += ip_grv_CustomUnboundColumnData;
         }
+
+        
         static void ip_grv_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
             if(e.IsGetData)
@@ -340,6 +342,7 @@ namespace BKI_DichVuMatDat
                 e.Info.DisplayText = (e.RowHandle + 1).ToString();
         }
         #endregion
+
     }
 }
 

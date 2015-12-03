@@ -806,6 +806,44 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGAY_KET_THUC_LCD = "NGAY_KET_THUC_LCD";
         public const string DA_XOA_LCD = "DA_XOA_LCD";
     }
+
+    public class V_F395_QUAN_LY_PHU_CAP_NHAN_VIEN
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string MA_NV = "MA_NV";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string HO_TEN = "HO_TEN";
+        public const string ID_PHU_CAP = "ID_PHU_CAP";
+        public const string ID_LOAI_PHU_CAP = "ID_LOAI_PHU_CAP";
+        public const string MA_TU_DIEN = "MA_TU_DIEN";
+        public const string TEN_NGAN = "TEN_NGAN";
+        public const string TEN_LOAI_PHU_CAP = "TEN_LOAI_PHU_CAP";
+        public const string DOI_TUONG_HUONG_PHU_CAP = "DOI_TUONG_HUONG_PHU_CAP";
+        public const string TI_LE = "TI_LE";
+        public const string ID_QUYET_DINH = "ID_QUYET_DINH";
+        public const string MA_QUYET_DINH = "MA_QUYET_DINH";
+        public const string TEN_NGAN_QUYET_DINH = "TEN_NGAN_QUYET_DINH";
+        public const string TEN_QUYET_DINH = "TEN_QUYET_DINH";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string NGUOI_SUA = "NGUOI_SUA";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string NGAY_SUA = "NGAY_SUA";
+        public const string DA_XOA = "DA_XOA";
+    }
+
+    public class V_DM_PHU_CAP_HDH
+    {
+        public const string ID = "ID";
+        public const string ID_LOAI_PHU_CAP = "ID_LOAI_PHU_CAP";
+        public const string MA_LOAI_PHU_CAP = "MA_LOAI_PHU_CAP";
+        public const string TEN_NGAN_LOAI_PHU_CAP = "TEN_NGAN_LOAI_PHU_CAP";
+        public const string TEN_LOAI_PHU_CAP = "TEN_LOAI_PHU_CAP";
+        public const string DOI_TUONG_HUONG_PHU_CAP = "DOI_TUONG_HUONG_PHU_CAP";
+        public const string TI_LE = "TI_LE";
+    }
+
     #endregion
 
     public class RPT_THONG_TIN_TONG_HOP

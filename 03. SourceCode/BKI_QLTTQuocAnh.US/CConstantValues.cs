@@ -184,6 +184,7 @@ namespace BKI_DichVuMatDat.US
         public const int INFOR_XOA_DU_LIEU_THANH_CONG = 202;
         public const int INFOR_DU_LIEU_DA_DUOC_CAP_NHAT = 190;
         public const int ERROR_CHUA_CHON_DONG_TREN_LUOI_DE_SUA = 191;
+        public const int ERROR_CHUA_CHON_DONG_TREN_LUOI_DE_XOA = 233;
         public const int QUESTION_XAC_NHAN_XOA_THONG_TIN_DA_CHON_TREN_LUOI = 201;
         public const int ERROR_DA_CO_LOI_XAY_RA = 305;
         public const int ERROR_DU_LIEU_CHUA_HOAN_THIEN = 317;
@@ -326,6 +327,9 @@ namespace BKI_DichVuMatDat.US
 
         //Thưởng hệ số bổ sung
         public const int INFOR_DA_CO_THUONG_HS_BS_TRONG_NAM_DA_CHON = 334;
+
+        //Quản lý phụ cấp nhân viên
+        public const int ERROR_CHUA_CHON_LOAI_PHU_CAP = 335;
         #endregion
 
     }

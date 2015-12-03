@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_V_DM_PHU_CAP_HHD" targetNamespace="http://tempuri.org/DS_V_DM_PHU_CAP_HHD.xsd" xmlns:mstns="http://tempuri.org/DS_V_DM_PHU_CAP_HHD.xsd" xmlns="http://tempuri.org/DS_V_DM_PHU_CAP_HHD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DVMDConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DVMDConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_DichVuMatDat.DS.Properties.Settings.GlobalReference.Default.DVMDConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_DM_PHU_CAP_HDHTableAdapter" GeneratorDataComponentClassName="V_DM_PHU_CAP_HDHTableAdapter" Name="V_DM_PHU_CAP_HDH" UserDataComponentName="V_DM_PHU_CAP_HDHTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DVMDConnectionString (Settings)" DbObjectName="DVMD.dbo.V_DM_PHU_CAP_HDH" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, ID_LOAI_PHU_CAP, MA_LOAI_PHU_CAP, TEN_NGAN_LOAI_PHU_CAP, TEN_LOAI_PHU_CAP, DOI_TUONG_HUONG_PHU_CAP, TI_LE FROM dbo.V_DM_PHU_CAP_HDH</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="ID_LOAI_PHU_CAP" DataSetColumn="ID_LOAI_PHU_CAP" />
+              <Mapping SourceColumn="MA_LOAI_PHU_CAP" DataSetColumn="MA_LOAI_PHU_CAP" />
+              <Mapping SourceColumn="TEN_NGAN_LOAI_PHU_CAP" DataSetColumn="TEN_NGAN_LOAI_PHU_CAP" />
+              <Mapping SourceColumn="TEN_LOAI_PHU_CAP" DataSetColumn="TEN_LOAI_PHU_CAP" />
+              <Mapping SourceColumn="DOI_TUONG_HUONG_PHU_CAP" DataSetColumn="DOI_TUONG_HUONG_PHU_CAP" />
+              <Mapping SourceColumn="TI_LE" DataSetColumn="TI_LE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_V_DM_PHU_CAP_HHD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_DM_PHU_CAP_HHD" msprop:Generator_UserDSName="DS_V_DM_PHU_CAP_HHD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_DM_PHU_CAP_HDH" msprop:Generator_TableClassName="V_DM_PHU_CAP_HDHDataTable" msprop:Generator_TableVarName="tableV_DM_PHU_CAP_HDH" msprop:Generator_TablePropName="V_DM_PHU_CAP_HDH" msprop:Generator_RowDeletingName="V_DM_PHU_CAP_HDHRowDeleting" msprop:Generator_RowChangingName="V_DM_PHU_CAP_HDHRowChanging" msprop:Generator_RowEvHandlerName="V_DM_PHU_CAP_HDHRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_PHU_CAP_HDHRowDeleted" msprop:Generator_UserTableName="V_DM_PHU_CAP_HDH" msprop:Generator_RowChangedName="V_DM_PHU_CAP_HDHRowChanged" msprop:Generator_RowEvArgName="V_DM_PHU_CAP_HDHRowChangeEvent" msprop:Generator_RowClassName="V_DM_PHU_CAP_HDHRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="ID_LOAI_PHU_CAP" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_PHU_CAP" msprop:Generator_ColumnPropNameInRow="ID_LOAI_PHU_CAP" msprop:Generator_ColumnPropNameInTable="ID_LOAI_PHU_CAPColumn" msprop:Generator_UserColumnName="ID_LOAI_PHU_CAP" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MA_LOAI_PHU_CAP" msprop:Generator_ColumnVarNameInTable="columnMA_LOAI_PHU_CAP" msprop:Generator_ColumnPropNameInRow="MA_LOAI_PHU_CAP" msprop:Generator_ColumnPropNameInTable="MA_LOAI_PHU_CAPColumn" msprop:Generator_UserColumnName="MA_LOAI_PHU_CAP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_NGAN_LOAI_PHU_CAP" msprop:Generator_ColumnVarNameInTable="columnTEN_NGAN_LOAI_PHU_CAP" msprop:Generator_ColumnPropNameInRow="TEN_NGAN_LOAI_PHU_CAP" msprop:Generator_ColumnPropNameInTable="TEN_NGAN_LOAI_PHU_CAPColumn" msprop:Generator_UserColumnName="TEN_NGAN_LOAI_PHU_CAP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_LOAI_PHU_CAP" msprop:Generator_ColumnVarNameInTable="columnTEN_LOAI_PHU_CAP" msprop:Generator_ColumnPropNameInRow="TEN_LOAI_PHU_CAP" msprop:Generator_ColumnPropNameInTable="TEN_LOAI_PHU_CAPColumn" msprop:Generator_UserColumnName="TEN_LOAI_PHU_CAP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DOI_TUONG_HUONG_PHU_CAP" msprop:Generator_ColumnVarNameInTable="columnDOI_TUONG_HUONG_PHU_CAP" msprop:Generator_ColumnPropNameInRow="DOI_TUONG_HUONG_PHU_CAP" msprop:Generator_ColumnPropNameInTable="DOI_TUONG_HUONG_PHU_CAPColumn" msprop:Generator_UserColumnName="DOI_TUONG_HUONG_PHU_CAP">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TI_LE" msprop:Generator_ColumnVarNameInTable="columnTI_LE" msprop:Generator_ColumnPropNameInRow="TI_LE" msprop:Generator_ColumnPropNameInTable="TI_LEColumn" msprop:Generator_UserColumnName="TI_LE" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_DM_PHU_CAP_HDH" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

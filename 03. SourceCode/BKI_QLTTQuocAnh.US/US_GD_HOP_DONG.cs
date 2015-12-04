@@ -314,5 +314,15 @@ namespace BKI_DichVuMatDat.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+        public DataSet LayDanhSachHopDongHetHan(DateTime ip_dat_lay_tu_ngay)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_lay_danh_sach_hop_dong_het_han");
+            v_sp.addDatetimeInputParam("@ip_dat_lay_tu_ngay", ip_dat_lay_tu_ngay);
+            DataSet v_op_ds = new DataSet();
+            v_op_ds.Tables.Add();
+
+            v_sp.fillDataSetByCommand(this, v_op_ds);
+            return v_op_ds;
+        }
     }
 }

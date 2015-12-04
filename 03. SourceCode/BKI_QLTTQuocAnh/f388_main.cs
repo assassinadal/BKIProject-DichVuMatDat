@@ -158,6 +158,23 @@ namespace BKI_DichVuMatDat
             m_cmd_bao_cao_nhan_su_bo_nhiem.ItemClick += m_cmd_bao_cao_nhan_su_bo_nhiem_ItemClick;
             m_cmd_thong_ke_nhan_vien.ItemClick += m_cmd_thong_ke_nhan_vien_ItemClick;
             m_cmd_bc_qua_trinh_ct.ItemClick += m_cmd_bc_qua_trinh_ct_ItemClick;
+            m_cmd_bc_hop_dong_het_han.ItemClick += m_cmd_bc_hop_dong_het_han_ItemClick;
+        }
+
+        void m_cmd_bc_hop_dong_het_han_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                F110_dm_hop_dong_het_han v_frm = new F110_dm_hop_dong_het_han();
+                if(IsExistFormName(v_frm)) return;
+
+                v_frm.MdiParent = this;
+                v_frm.display(DateTime.Now.Date);
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_bc_qua_trinh_ct_ItemClick(object sender, ItemClickEventArgs e)
@@ -910,17 +927,18 @@ namespace BKI_DichVuMatDat
 
         private DataSet get_hop_dong_het_han()
         {
-            DataSet v_ds = new DataSet();
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "V_DM_HOP_DONG_HET_HAN");
+            DateTime v_2_thang_truoc = DateTime.Now.AddMonths(-1);
+            US_GD_HOP_DONG v_us_gd_hop_dong = new US_GD_HOP_DONG();
+            DataSet v_ds = v_us_gd_hop_dong.LayDanhSachHopDongHetHan(v_2_thang_truoc.Date);
+
             return v_ds;
         }
 
         private void m_lbl_canh_bao_het_han_hop_dong_DoubleClick(object sender, EventArgs e)
         {
+            DateTime v_2_thang_truoc = DateTime.Now.AddMonths(-1);
             F110_dm_hop_dong_het_han v_f = new F110_dm_hop_dong_het_han();
-            v_f.display_for_show(get_hop_dong_het_han());
+            v_f.display(v_2_thang_truoc.Date);
         }
 
         private void m_cmd_tk_lao_dong_nuoc_ngoai_ItemClick(object sender, ItemClickEventArgs e)

@@ -765,5 +765,38 @@ namespace BKI_DichVuMatDat.US
             v_sp.fillDataSetByCommand(this, v_ds_op);
             return v_ds_op;
         }
+
+        public bool IsExistNhanVienInDB(string ip_str_ma_nv)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_is_exist_nhan_vien");
+            v_sp.addNVarcharInputParam("@ip_str_ma_nv", ip_str_ma_nv);
+
+            SqlParameter v_para = v_sp.addNVarcharOutputParam("@op_yn_is_exist", "");
+
+            v_sp.ExecuteCommand(this);
+
+            if(v_para.Value.ToString() == "Y")
+            {
+                return true;
+            }
+            else if(v_para.Value.ToString() == "N")
+            {
+                return false;
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
+        public DS_V_GD_CONG_TAC XemQuaTrinhCongTac(string ip_str_ma_nv)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_xem_qua_trinh_cong_tac");
+            v_sp.addNVarcharInputParam("@ip_str_ma_nv", ip_str_ma_nv);
+            DS_V_GD_CONG_TAC v_op_ds = new DS_V_GD_CONG_TAC();
+            v_op_ds.EnforceConstraints = false;
+            v_sp.fillDataSetByCommand(this, v_op_ds);
+
+            return v_op_ds;
+        }
     }
 }

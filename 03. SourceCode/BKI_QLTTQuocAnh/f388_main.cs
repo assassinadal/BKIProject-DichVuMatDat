@@ -157,6 +157,23 @@ namespace BKI_DichVuMatDat
             m_cmd_bao_cao_hs_lns_lcd_nhan_vien.ItemClick += m_cmd_bao_cao_hs_lns_lcd_nhan_vien_ItemClick;
             m_cmd_bao_cao_nhan_su_bo_nhiem.ItemClick += m_cmd_bao_cao_nhan_su_bo_nhiem_ItemClick;
             m_cmd_thong_ke_nhan_vien.ItemClick += m_cmd_thong_ke_nhan_vien_ItemClick;
+            m_cmd_bc_qua_trinh_ct.ItemClick += m_cmd_bc_qua_trinh_ct_ItemClick;
+        }
+
+        void m_cmd_bc_qua_trinh_ct_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f471_bao_cao_qua_trinh_cong_tac v_frm = new f471_bao_cao_qua_trinh_cong_tac();
+                if(IsExistFormName(v_frm)) return;
+
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_thong_ke_nhan_vien_ItemClick(object sender, ItemClickEventArgs e)

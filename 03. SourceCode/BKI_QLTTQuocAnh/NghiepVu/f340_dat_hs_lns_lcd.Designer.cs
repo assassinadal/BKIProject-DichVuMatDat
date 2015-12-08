@@ -76,8 +76,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.m_cmd_dat_gia_tri = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_dat_gia_tri_hs_lns = new DevExpress.XtraEditors.SimpleButton();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
@@ -111,6 +110,7 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.m_cmd_dat_gia_tri_lcd = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_LCD)).BeginInit();
@@ -133,7 +133,6 @@
             this.m_gr_thong_tin_co_ban.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            this.panel3.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_f340_hs_lns)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_hs_lns)).BeginInit();
@@ -178,13 +177,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 47);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1274, 183);
+            this.panel2.Size = new System.Drawing.Size(1274, 234);
             this.panel2.TabIndex = 1;
             // 
             // m_gr_LCD
             // 
             this.m_gr_LCD.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_gr_LCD.Appearance.Options.UseFont = true;
+            this.m_gr_LCD.Controls.Add(this.m_cmd_dat_gia_tri_lcd);
             this.m_gr_LCD.Controls.Add(this.label15);
             this.m_gr_LCD.Controls.Add(this.m_dat_ngay_ket_thuc_lcd);
             this.m_gr_LCD.Controls.Add(this.m_txt_ghi_chu_lcd);
@@ -200,10 +200,10 @@
             this.m_gr_LCD.Controls.Add(this.label5);
             this.m_gr_LCD.Controls.Add(this.label6);
             this.m_gr_LCD.Controls.Add(this.m_sle_muc_lcd);
-            this.m_gr_LCD.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_gr_LCD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_gr_LCD.Location = new System.Drawing.Point(797, 0);
             this.m_gr_LCD.Name = "m_gr_LCD";
-            this.m_gr_LCD.Size = new System.Drawing.Size(478, 183);
+            this.m_gr_LCD.Size = new System.Drawing.Size(477, 234);
             this.m_gr_LCD.TabIndex = 2;
             this.m_gr_LCD.Text = "THÔNG TIN LƯƠNG CHẾ ĐỘ";
             // 
@@ -373,6 +373,7 @@
             // 
             this.m_gr_LNS.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_gr_LNS.Appearance.Options.UseFont = true;
+            this.m_gr_LNS.Controls.Add(this.m_cmd_dat_gia_tri_hs_lns);
             this.m_gr_LNS.Controls.Add(this.m_txt_ghi_chu_hs_lns);
             this.m_gr_LNS.Controls.Add(this.label7);
             this.m_gr_LNS.Controls.Add(this.m_dat_ngay_ket_thuc_lns);
@@ -390,7 +391,7 @@
             this.m_gr_LNS.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_gr_LNS.Location = new System.Drawing.Point(320, 0);
             this.m_gr_LNS.Name = "m_gr_LNS";
-            this.m_gr_LNS.Size = new System.Drawing.Size(477, 183);
+            this.m_gr_LNS.Size = new System.Drawing.Size(477, 234);
             this.m_gr_LNS.TabIndex = 1;
             this.m_gr_LNS.Text = "THÔNG TIN LƯƠNG NĂNG SUÂT";
             // 
@@ -556,7 +557,7 @@
             this.m_gr_thong_tin_co_ban.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_gr_thong_tin_co_ban.Location = new System.Drawing.Point(0, 0);
             this.m_gr_thong_tin_co_ban.Name = "m_gr_thong_tin_co_ban";
-            this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(320, 183);
+            this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(320, 234);
             this.m_gr_thong_tin_co_ban.TabIndex = 0;
             this.m_gr_thong_tin_co_ban.Text = "THÔNG TIN CƠ BẢN";
             // 
@@ -642,24 +643,14 @@
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
             // 
-            // panel3
+            // m_cmd_dat_gia_tri_hs_lns
             // 
-            this.panel3.Controls.Add(this.m_cmd_dat_gia_tri);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 230);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1274, 38);
-            this.panel3.TabIndex = 1;
-            // 
-            // m_cmd_dat_gia_tri
-            // 
-            this.m_cmd_dat_gia_tri.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_dat_gia_tri.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_dat_gia_tri.Image")));
-            this.m_cmd_dat_gia_tri.Location = new System.Drawing.Point(0, 0);
-            this.m_cmd_dat_gia_tri.Name = "m_cmd_dat_gia_tri";
-            this.m_cmd_dat_gia_tri.Size = new System.Drawing.Size(128, 38);
-            this.m_cmd_dat_gia_tri.TabIndex = 12;
-            this.m_cmd_dat_gia_tri.Text = "&Đặt giá trị";
+            this.m_cmd_dat_gia_tri_hs_lns.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_dat_gia_tri_hs_lns.Image")));
+            this.m_cmd_dat_gia_tri_hs_lns.Location = new System.Drawing.Point(7, 187);
+            this.m_cmd_dat_gia_tri_hs_lns.Name = "m_cmd_dat_gia_tri_hs_lns";
+            this.m_cmd_dat_gia_tri_hs_lns.Size = new System.Drawing.Size(128, 38);
+            this.m_cmd_dat_gia_tri_hs_lns.TabIndex = 12;
+            this.m_cmd_dat_gia_tri_hs_lns.Text = "&Đặt giá trị HS LNS";
             // 
             // m_pnl_out_place_dm
             // 
@@ -724,7 +715,7 @@
             this.m_grc_f340_hs_lns.Location = new System.Drawing.Point(2, 21);
             this.m_grc_f340_hs_lns.MainView = this.m_grv_hs_lns;
             this.m_grc_f340_hs_lns.Name = "m_grc_f340_hs_lns";
-            this.m_grc_f340_hs_lns.Size = new System.Drawing.Size(656, 184);
+            this.m_grc_f340_hs_lns.Size = new System.Drawing.Size(656, 171);
             this.m_grc_f340_hs_lns.TabIndex = 0;
             this.m_grc_f340_hs_lns.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_hs_lns});
@@ -857,7 +848,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1274, 207);
+            this.panel4.Size = new System.Drawing.Size(1274, 194);
             this.panel4.TabIndex = 23;
             // 
             // panel5
@@ -866,7 +857,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(660, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(614, 207);
+            this.panel5.Size = new System.Drawing.Size(614, 194);
             this.panel5.TabIndex = 24;
             // 
             // groupControl2
@@ -877,7 +868,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(614, 207);
+            this.groupControl2.Size = new System.Drawing.Size(614, 194);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "LỊCH SỬ ĐIỀU CHỈNH LƯƠNG CHẾ ĐỘ";
             // 
@@ -888,7 +879,7 @@
             this.m_grc_f340_lcd.Location = new System.Drawing.Point(2, 21);
             this.m_grc_f340_lcd.MainView = this.m_grv_lcd;
             this.m_grc_f340_lcd.Name = "m_grc_f340_lcd";
-            this.m_grc_f340_lcd.Size = new System.Drawing.Size(610, 184);
+            this.m_grc_f340_lcd.Size = new System.Drawing.Size(610, 171);
             this.m_grc_f340_lcd.TabIndex = 0;
             this.m_grc_f340_lcd.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_lcd});
@@ -1025,7 +1016,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(660, 207);
+            this.groupControl1.Size = new System.Drawing.Size(660, 194);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "LỊCH SỬ ĐIỀU CHỈNH HỆ SỐ LNS";
             // 
@@ -1037,10 +1028,19 @@
             // 
             this.panel6.Controls.Add(this.panel4);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 268);
+            this.panel6.Location = new System.Drawing.Point(0, 281);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1274, 207);
+            this.panel6.Size = new System.Drawing.Size(1274, 194);
             this.panel6.TabIndex = 23;
+            // 
+            // m_cmd_dat_gia_tri_lcd
+            // 
+            this.m_cmd_dat_gia_tri_lcd.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_dat_gia_tri_lcd.Image")));
+            this.m_cmd_dat_gia_tri_lcd.Location = new System.Drawing.Point(9, 187);
+            this.m_cmd_dat_gia_tri_lcd.Name = "m_cmd_dat_gia_tri_lcd";
+            this.m_cmd_dat_gia_tri_lcd.Size = new System.Drawing.Size(128, 38);
+            this.m_cmd_dat_gia_tri_lcd.TabIndex = 14;
+            this.m_cmd_dat_gia_tri_lcd.Text = "&Đặt giá trị LCĐ";
             // 
             // f340_dat_hs_lns_lcd
             // 
@@ -1051,7 +1051,6 @@
             this.ClientSize = new System.Drawing.Size(1274, 522);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "f340_dat_hs_lns_lcd";
@@ -1081,7 +1080,6 @@
             this.m_gr_thong_tin_co_ban.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            this.panel3.ResumeLayout(false);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_f340_hs_lns)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_hs_lns)).EndInit();
@@ -1129,7 +1127,6 @@
         private System.Windows.Forms.Label m_lbl_ngay_cham_cong;
         internal System.Windows.Forms.ImageList imageList1;
         internal System.Windows.Forms.ImageList ImageList;
-        private System.Windows.Forms.Panel panel3;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private DevExpress.XtraGrid.GridControl m_grc_f340_hs_lns;
         private DevExpress.XtraGrid.Views.Grid.GridView m_grv_hs_lns;
@@ -1180,8 +1177,9 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_update;
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_dat_gia_tri;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_dat_gia_tri_hs_lns;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_bat_dau_lns;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_dat_gia_tri_lcd;
 
     }
 }

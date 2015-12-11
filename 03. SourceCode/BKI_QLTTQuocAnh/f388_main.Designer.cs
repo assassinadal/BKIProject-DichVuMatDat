@@ -131,6 +131,7 @@
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
+            this.m_cmd_thuong_2014 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -221,9 +222,10 @@
             this.m_cmd_thong_ke_nhan_vien,
             this.m_cmd_bc_qua_trinh_ct,
             this.m_cmd_bc_hop_dong_het_han,
-            this.m_cmd_card_nhan_vien});
+            this.m_cmd_card_nhan_vien,
+            this.m_cmd_thuong_2014});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 89;
+            this.ribbon.MaxItemId = 90;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1017,6 +1019,7 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_quan_ly_thu_nhap_khac_xls);
             this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_luong_hs_athk);
             this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_ql_thuong_hsbs);
+            this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_thuong_2014);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Lương khác";
             // 
@@ -1145,6 +1148,14 @@
             this.m_lbl_canh_bao_het_han_hop_dong.TabIndex = 10;
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
+            // 
+            // m_cmd_thuong_2014
+            // 
+            this.m_cmd_thuong_2014.Caption = "Quản lý thưởng 2014";
+            this.m_cmd_thuong_2014.Id = 89;
+            this.m_cmd_thuong_2014.Name = "m_cmd_thuong_2014";
+            this.m_cmd_thuong_2014.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // f388_main
             // 
@@ -1276,5 +1287,6 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_bc_qua_trinh_ct;
         private DevExpress.XtraBars.BarButtonItem m_cmd_bc_hop_dong_het_han;
         private DevExpress.XtraBars.BarButtonItem m_cmd_card_nhan_vien;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_thuong_2014;
     }
 }

@@ -67,7 +67,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void handle_them_quy_tien()
         {
             f354_danh_sach_quy_thuong_de v_frm = new f354_danh_sach_quy_thuong_de();
-            v_frm.ShowDialog();
+            v_frm.Display_for_athk();
             if(v_frm.is_inserted_quy_tien())
             {
                 load_data_2_grid();

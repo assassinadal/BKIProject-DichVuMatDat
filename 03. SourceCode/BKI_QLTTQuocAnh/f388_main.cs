@@ -135,6 +135,7 @@ namespace BKI_DichVuMatDat
             m_cmd_luong_hs_athk.ItemClick += m_cmd_luong_hs_athk_ItemClick;
             m_cmd_ql_thuong_hsbs.ItemClick += m_cmd_ql_thuong_hsbs_ItemClick;
             m_cmd_dang_ky_giam_tru_phu_thuoc.ItemClick += m_cmd_dang_ky_giam_tru_phu_thuoc_ItemClick;
+            m_cmd_thuong_2014.ItemClick += m_cmd_thuong_2014_ItemClick;
             //Hệ thống
             m_cmd_thoat.ItemClick += m_cmd_thoat_ItemClick;
             m_cmd_phan_quyen_nhom.ItemClick += m_cmd_phan_quyen_nhom_ItemClick;
@@ -160,6 +161,22 @@ namespace BKI_DichVuMatDat
             m_cmd_bc_qua_trinh_ct.ItemClick += m_cmd_bc_qua_trinh_ct_ItemClick;
             m_cmd_bc_hop_dong_het_han.ItemClick += m_cmd_bc_hop_dong_het_han_ItemClick;
             m_cmd_card_nhan_vien.ItemClick += m_cmd_card_nhan_vien_ItemClick;
+        }
+
+        void m_cmd_thuong_2014_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f316_tinh_thuong_2014 v_frm = new f316_tinh_thuong_2014();
+                if(IsExistFormName(v_frm)) return;
+
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_card_nhan_vien_ItemClick(object sender, ItemClickEventArgs e)

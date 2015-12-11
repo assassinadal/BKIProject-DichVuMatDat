@@ -370,6 +370,9 @@
   <data name="icon backup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon backup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="find" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\find.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon quan ly thu nhap khac xlsx" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon quan ly thu nhap khac xlsx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -397,7 +400,7 @@
   <data name="1425905897_253501" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425905897_253501.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="find" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\find.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

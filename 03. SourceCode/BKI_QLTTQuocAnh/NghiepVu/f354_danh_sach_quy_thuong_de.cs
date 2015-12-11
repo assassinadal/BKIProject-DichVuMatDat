@@ -17,6 +17,10 @@ namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class f354_danh_sach_quy_thuong_de : Form
     {
+        //Field
+        US_GD_QUY_TIEN_THUONG m_us_op_quy_tien_thuong = new US_GD_QUY_TIEN_THUONG();
+
+
         #region Public Interface
         public f354_danh_sach_quy_thuong_de()
         {
@@ -34,6 +38,23 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return true;
             }
             return false;
+        }
+        public void Display_for_athk()
+        {
+            fill_data_loai_quy_thuong();
+            m_le_loai_quy_thuong.EditValue = CONST_ID_TIEN_THUONG.THUONG_ATHK;
+            m_txt_ten_quy.Focus();
+            m_le_loai_quy_thuong.ReadOnly = true;
+            ShowDialog();
+        }
+        public US_GD_QUY_TIEN_THUONG Display_for_thuong_2014()
+        {
+            fill_data_loai_quy_thuong();
+            m_le_loai_quy_thuong.EditValue = CONST_ID_TIEN_THUONG.THUONG_2014;
+            m_txt_ten_quy.Focus();
+            m_le_loai_quy_thuong.ReadOnly = true;
+            ShowDialog();
+            return m_us_op_quy_tien_thuong;
         }
         #endregion
 
@@ -60,8 +81,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_dat_thang_thuong.DateTime = DateTime.Now;
             set_tu_dau_nam_den_cuoi_nam();
-            fill_data_loai_quy_thuong();
-            m_le_loai_quy_thuong.EditValue = CONST_ID_TIEN_THUONG.THUONG_ATHK;
+            
         }
         private bool is_valid_data()
         {
@@ -83,7 +103,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us_gd_quy_tien_thuong.strTHANG = m_dat_thang_thuong.DateTime.Month.ToString();
             v_us_gd_quy_tien_thuong.strNAM = m_dat_thang_thuong.DateTime.Year.ToString();
             v_us_gd_quy_tien_thuong.dcSO_TIEN = (decimal) m_txt_so_tien.EditValue;
-            v_us_gd_quy_tien_thuong.dcID_LOAI_QUY_TIEN = CONST_ID_TIEN_THUONG.THUONG_ATHK;
+            //v_us_gd_quy_tien_thuong.dcID_LOAI_QUY_TIEN = CONST_ID_TIEN_THUONG.THUONG_ATHK;
             v_us_gd_quy_tien_thuong.dcID_LOAI_QUY_TIEN = (decimal)m_le_loai_quy_thuong.EditValue;
             v_us_gd_quy_tien_thuong.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             v_us_gd_quy_tien_thuong.datNGAY_LAP = DateTime.Now;
@@ -95,6 +115,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us_gd_quy_tien_thuong.datDEN_NGAY_XET_THUONG = m_dat_den_ngay.DateTime;
 
             v_us_gd_quy_tien_thuong.Insert();
+            m_us_op_quy_tien_thuong = v_us_gd_quy_tien_thuong;
             DialogResult = System.Windows.Forms.DialogResult.OK;
             CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
         }

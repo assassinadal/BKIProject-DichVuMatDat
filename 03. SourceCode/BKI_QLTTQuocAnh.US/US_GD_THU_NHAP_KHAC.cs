@@ -365,5 +365,16 @@ namespace BKI_DichVuMatDat.US
             v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
+        public bool KiemTraXemDaInsertThuong2014Chua(decimal ip_id_quy_tien, decimal ip_dc_id_nhan_vien)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_check_before_insert_thuong_2k14");
+            v_sp.addDecimalInputParam("@ip_dc_id_quy_tien", ip_id_quy_tien);
+            v_sp.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            SqlParameter v_yn = v_sp.addNVarcharOutputParam("@op_yn_insert", "");
+
+            v_sp.ExecuteCommand(this);
+
+            return v_yn.Value.ToString() == "Y" ? false: true;//Y la chua co
+        }
     }
 }

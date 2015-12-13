@@ -313,6 +313,16 @@ namespace BKI_DichVuMatDat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add {
+            get {
+                object obj = ResourceManager.GetObject("add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add16 {
             get {
                 object obj = ResourceManager.GetObject("add16", resourceCulture);
@@ -406,6 +416,16 @@ namespace BKI_DichVuMatDat.Properties {
         internal static System.Drawing.Bitmap find {
             get {
                 object obj = ResourceManager.GetObject("find", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap forward {
+            get {
+                object obj = ResourceManager.GetObject("forward", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

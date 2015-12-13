@@ -1,4 +1,5 @@
-﻿using BKI_DichVuMatDat.DS;
+﻿using BKI_DichVuMatDat.BaoCao;
+using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.US;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
@@ -15,6 +16,10 @@ using System.Windows.Forms;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
+    //627	THUONG_HS_BS
+    //628	THUONG_ATHK
+    //747	THUONG_KHAC
+
     public partial class f316_tinh_thuong_2014 : Form
     {
         private bool m_b_imported = false;
@@ -28,6 +33,15 @@ namespace BKI_DichVuMatDat.NghiepVu
         #endregion
 
         #region Private Method
+        private void fill_data_cach_tinh_thue()
+        {
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+            v_us.FillDatasetWithQuery(v_ds, "select * from CM_DM_TU_DIEN where ID_LOAI_TU_DIEN = 16");
+
+            m_le_cach_tinh_thue.Properties.DataSource = v_ds.Tables[0];
+        }
         private bool validate_control_empty(params Control[] controls)
         {
             var isValidated = false;
@@ -141,7 +155,9 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void handle_form_load()
         {
+            m_grc_main.Visible = false;
             fill_data_quy_tien_thuong();
+            fill_data_cach_tinh_thue();
             m_sle_quy_tien_thuong.EditValueChanged += m_sle_quy_tien_thuong_EditValueChanged;
         }
         private void xuat_excel()
@@ -327,7 +343,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     return;
                 }
                 fill_data_2_grid_from_excel(WinFormControls.openFileDialog());
-
+                m_grc_main.Visible = true;
             }
             catch(Exception v_e)
             {
@@ -339,6 +355,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                m_grc_main.Visible = false;
                 if(!is_valid_data())
                 {
                     return;
@@ -377,5 +394,18 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
         #endregion
+
+        private void m_cmd_xem_chi_tiet_quỹ_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f480_bao_cao_thuong_khac v_frm = new f480_bao_cao_thuong_khac();
+                v_frm.display(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue));
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

@@ -389,6 +389,12 @@
     <Compile Include="BaoCao\f471_bao_cao_qua_trinh_cong_tac.Designer.cs">
       <DependentUpon>f471_bao_cao_qua_trinh_cong_tac.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\f480_bao_cao_thuong_khac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f480_bao_cao_thuong_khac.Designer.cs">
+      <DependentUpon>f480_bao_cao_thuong_khac.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\frm417_bao_cao_tang_giam_lao_dong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -841,6 +847,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f471_bao_cao_qua_trinh_cong_tac.resx">
       <DependentUpon>f471_bao_cao_qua_trinh_cong_tac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f480_bao_cao_thuong_khac.resx">
+      <DependentUpon>f480_bao_cao_thuong_khac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\frm417_bao_cao_tang_giam_lao_dong.resx">
       <DependentUpon>frm417_bao_cao_tang_giam_lao_dong.cs</DependentUpon>
@@ -1900,6 +1909,8 @@
     <None Include="Resources\add161.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\add.ico" />
+    <None Include="Resources\forward.ico" />
     <Content Include="Software_win7.ico" />
   </ItemGroup>
   <ItemGroup>

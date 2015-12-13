@@ -4,6 +4,16 @@ using System.Text;
 
 namespace BKI_DichVuMatDat.US
 {
+    public class CONST_TRANG_THAI_LD
+    {
+        public const decimal DANG_LAM_VIEC = 167;
+        public const decimal DINH_CHI = 168;
+        public const decimal NGHI_THAI_SAN = 169;
+        public const decimal NGHI_TNLD = 167;
+        public const decimal NGHI_HUU = 168;
+        public const decimal BUOC_THOI_VIEC = 169;
+        public const decimal THOI_VIEC = 167;
+    }
     public class CONST_ID_LOAI_CACH_TINH_THUE
     {
         public const decimal THUE_5PT = 167;

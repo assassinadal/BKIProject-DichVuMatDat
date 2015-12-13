@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -105,6 +104,7 @@
             this.m_cmd_bc_qua_trinh_ct = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_bc_hop_dong_het_han = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_card_nhan_vien = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_thuong_2014 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -123,15 +123,15 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
-            this.m_cmd_thuong_2014 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_them_nhan_vien_nhanh = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -223,9 +223,10 @@
             this.m_cmd_bc_qua_trinh_ct,
             this.m_cmd_bc_hop_dong_het_han,
             this.m_cmd_card_nhan_vien,
-            this.m_cmd_thuong_2014});
+            this.m_cmd_thuong_2014,
+            this.m_cmd_them_nhan_vien_nhanh});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 90;
+            this.ribbon.MaxItemId = 91;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -907,6 +908,14 @@
             this.m_cmd_card_nhan_vien.Id = 88;
             this.m_cmd_card_nhan_vien.Name = "m_cmd_card_nhan_vien";
             // 
+            // m_cmd_thuong_2014
+            // 
+            this.m_cmd_thuong_2014.Caption = "Quản lý thưởng khác";
+            this.m_cmd_thuong_2014.Id = 89;
+            this.m_cmd_thuong_2014.Name = "m_cmd_thuong_2014";
+            this.m_cmd_thuong_2014.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1020,6 +1029,7 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_luong_hs_athk);
             this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_ql_thuong_hsbs);
             this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_thuong_2014);
+            this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_them_nhan_vien_nhanh);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Lương khác";
             // 
@@ -1149,12 +1159,12 @@
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
             // 
-            // m_cmd_thuong_2014
+            // m_cmd_them_nhan_vien_nhanh
             // 
-            this.m_cmd_thuong_2014.Caption = "Quản lý thưởng 2014";
-            this.m_cmd_thuong_2014.Id = 89;
-            this.m_cmd_thuong_2014.Name = "m_cmd_thuong_2014";
-            this.m_cmd_thuong_2014.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.m_cmd_them_nhan_vien_nhanh.Caption = "Thêm nhân viên nhanh";
+            this.m_cmd_them_nhan_vien_nhanh.Id = 90;
+            this.m_cmd_them_nhan_vien_nhanh.Name = "m_cmd_them_nhan_vien_nhanh";
+            this.m_cmd_them_nhan_vien_nhanh.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // f388_main
@@ -1288,5 +1298,6 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_bc_hop_dong_het_han;
         private DevExpress.XtraBars.BarButtonItem m_cmd_card_nhan_vien;
         private DevExpress.XtraBars.BarButtonItem m_cmd_thuong_2014;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_them_nhan_vien_nhanh;
     }
 }

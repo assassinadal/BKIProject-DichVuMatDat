@@ -537,6 +537,12 @@
     <Compile Include="DanhMuc\F150_dm_nhan_vien.Designer.cs">
       <DependentUpon>F150_dm_nhan_vien.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\f160_them_nhan_vien_nhanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f160_them_nhan_vien_nhanh.Designer.cs">
+      <DependentUpon>f160_them_nhan_vien_nhanh.cs</DependentUpon>
+    </Compile>
     <Compile Include="DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -916,6 +922,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F150_dm_nhan_vien.resx">
       <DependentUpon>F150_dm_nhan_vien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f160_them_nhan_vien_nhanh.resx">
+      <DependentUpon>f160_them_nhan_vien_nhanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f306_HT_USER_GROUP.resx">
       <DependentUpon>f306_HT_USER_GROUP.cs</DependentUpon>

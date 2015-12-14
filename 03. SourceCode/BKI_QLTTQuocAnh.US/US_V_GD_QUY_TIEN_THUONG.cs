@@ -242,6 +242,50 @@ public class US_V_GD_QUY_TIEN_THUONG : US_Object
         pm_objDR["TINH_XONG_YN"] = System.Convert.DBNull;
     }
 
+    public decimal dcID_CACH_TINH_THUE
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_CACH_TINH_THUE", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_CACH_TINH_THUE"] = value;
+        }
+    }
+
+    public bool IsID_CACH_TINH_THUENull()
+    {
+        return pm_objDR.IsNull("ID_CACH_TINH_THUE");
+    }
+
+    public void SetID_CACH_TINH_THUENull()
+    {
+        pm_objDR["ID_CACH_TINH_THUE"] = System.Convert.DBNull;
+    }
+
+    public string strTEN_CACH_TINH_THUE
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "TEN_CACH_TINH_THUE", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["TEN_CACH_TINH_THUE"] = value;
+        }
+    }
+
+    public bool IsTEN_CACH_TINH_THUENull()
+    {
+        return pm_objDR.IsNull("TEN_CACH_TINH_THUE");
+    }
+
+    public void SetTEN_CACH_TINH_THUENull()
+    {
+        pm_objDR["TEN_CACH_TINH_THUE"] = System.Convert.DBNull;
+    }
+
     public string strTEN_LOAI_QUY_TIEN
     {
         get
@@ -419,6 +463,7 @@ public class US_V_GD_QUY_TIEN_THUONG : US_Object
     }
 
     #endregion
+
     #region "Init Functions"
 	    public US_V_GD_QUY_TIEN_THUONG() 
 	    {

@@ -164,6 +164,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void handle_form_load()
         {
             m_grc_main.Visible = false;
+            layoutControlItemGrid.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            layoutControlItemSave.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             fill_data_quy_tien_thuong();
             fill_data_cach_tinh_thue();
             m_sle_quy_tien_thuong.EditValueChanged += m_sle_quy_tien_thuong_EditValueChanged;
@@ -214,14 +216,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add();
             v_us_dung_chung.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN_2");
-            //v_ds.Tables[0].Columns.Add("PHAN_TRAM_THUE");
-            //foreach(DataRow v_dr in v_ds.Tables[0].Rows)
-            //{
-            //    v_dr["PHAN_TRAM_THUE"] = 10;
-            //}
+            v_ds.Tables[0].Columns.Add("PHAN_TRAM_THUE");
+            foreach(DataRow v_dr in v_ds.Tables[0].Rows)
+            {
+                v_dr["PHAN_TRAM_THUE"] = 10;
+            }
             m_grc_main.DataSource = v_ds.Tables[0];
-            MessageBox.Show("Em chưa làm xong tính thưởng theo thuế tháng!");
-            return;
         }
         private void fill_data_2_grid_from_excel(string ip_str_path)
         {
@@ -396,6 +396,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 if(v_dr != null)
                 {
                     m_txt_tong_tien.EditValue = v_dr["SO_TIEN"];
+                    m_le_cach_tinh_thue.EditValue = v_dr["ID_CACH_TINH_THUE"];
                 }
             }
             catch(Exception v_e)
@@ -414,6 +415,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                 }
                 fill_data_2_grid_from_excel(WinFormControls.openFileDialog());
                 m_grc_main.Visible = true;
+                layoutControlItemGrid.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                layoutControlItemSave.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
             }
             catch(Exception v_e)
             {
@@ -426,6 +429,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 m_grc_main.Visible = false;
+                layoutControlItemGrid.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                layoutControlItemSave.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                 if(!is_valid_data())
                 {
                     MessageBox.Show("Nhập thiếu dữ liệu");

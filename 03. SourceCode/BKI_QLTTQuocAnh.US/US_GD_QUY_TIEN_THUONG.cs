@@ -309,6 +309,28 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["LY_DO_THUONG"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_CACH_TINH_THUE
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_CACH_TINH_THUE", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_CACH_TINH_THUE"] = value;
+            }
+        }
+
+        public bool IsID_CACH_TINH_THUENull()
+        {
+            return pm_objDR.IsNull("ID_CACH_TINH_THUE");
+        }
+
+        public void SetID_CACH_TINH_THUENull()
+        {
+            pm_objDR["ID_CACH_TINH_THUE"] = System.Convert.DBNull;
+        }
+
         #endregion
 
         #region "Init Functions"

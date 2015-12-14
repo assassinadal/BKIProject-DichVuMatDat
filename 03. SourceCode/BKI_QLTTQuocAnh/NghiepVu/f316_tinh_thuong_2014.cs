@@ -196,6 +196,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_dr["PHAN_TRAM_THUE"] = 5;
             }
             m_grc_main.DataSource = v_ds.Tables[0];
+            CHRMCommon.make_stt_indicator(m_grv_main);
         }
         private void fill_data_2_grid_thue_10()
         {
@@ -209,6 +210,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_dr["PHAN_TRAM_THUE"] = 10;
             }
             m_grc_main.DataSource = v_ds.Tables[0];
+            CHRMCommon.make_stt_indicator(m_grv_main);
         }
         private void fill_data_2_grid_thue_thang()
         {
@@ -222,6 +224,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_dr["PHAN_TRAM_THUE"] = 10;
             }
             m_grc_main.DataSource = v_ds.Tables[0];
+            CHRMCommon.make_stt_indicator(m_grv_main);
         }
         private void fill_data_2_grid_from_excel(string ip_str_path)
         {

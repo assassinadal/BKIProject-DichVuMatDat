@@ -594,8 +594,11 @@
             this.layoutControlItemSave.Control = this.m_cmd_save;
             this.layoutControlItemSave.CustomizationFormText = "layoutControlItem3";
             this.layoutControlItemSave.Location = new System.Drawing.Point(521, 404);
+            this.layoutControlItemSave.MaxSize = new System.Drawing.Size(226, 42);
+            this.layoutControlItemSave.MinSize = new System.Drawing.Size(226, 42);
             this.layoutControlItemSave.Name = "layoutControlItemSave";
             this.layoutControlItemSave.Size = new System.Drawing.Size(226, 42);
+            this.layoutControlItemSave.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemSave.Text = "layoutControlItemSave";
             this.layoutControlItemSave.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemSave.TextToControlDistance = 0;

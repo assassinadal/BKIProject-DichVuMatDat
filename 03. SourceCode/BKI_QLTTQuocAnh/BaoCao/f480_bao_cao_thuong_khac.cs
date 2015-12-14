@@ -34,7 +34,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
             v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_THU_NHAP_KHAC_2 where id_quy_tien_thuong = " + ip_dc_id_quy_tien);
             m_grc_luong_thuong.DataSource = v_ds.Tables[0];
-
+            CHRMCommon.make_stt_indicator(m_grv_luong_thuong);
             m_sle_quy_thuong.EditValue = ip_dc_id_quy_tien;
             ShowDialog();
         }
@@ -66,6 +66,25 @@ namespace BKI_DichVuMatDat.BaoCao
             try
             {
 
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+                saveFileDialog1.RestoreDirectory = true;
+                if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    m_grv_luong_thuong.ExportToXls(saveFileDialog1.FileName);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
+                }
             }
             catch(Exception v_e)
             {

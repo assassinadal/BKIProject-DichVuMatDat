@@ -110,7 +110,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_SO_TIEN);
                 return false;
             }
-            if(is_thang_da_giam_tru())
+            if(Convert.ToDecimal(m_le_cach_tinh_thue.EditValue) == CONST_ID_LOAI_CACH_TINH_THUE.THUE_THANG && is_thang_da_giam_tru())
             {
                 XtraMessageBox.Show("Tháng này đã giảm trừ rồi, không thể giảm trừ được nữa", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;

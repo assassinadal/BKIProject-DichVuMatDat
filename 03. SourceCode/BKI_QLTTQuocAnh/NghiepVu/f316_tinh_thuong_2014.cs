@@ -233,6 +233,11 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 splashScreenManager1.ShowWaitForm();
+                if(ip_str_path == "")
+                {
+                    return;
+                }
+                
                 //m_grv_main.Columns.Clear();
                 WinFormControls.load_xls_to_gridview(ip_str_path, m_grc_main);
                 var v_dr = (DataRow)m_sle_quy_tien_thuong.Properties.View.GetFocusedDataRow();
@@ -467,12 +472,21 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                var v_dr = (DataRow)m_sle_quy_tien_thuong.Properties.View.GetDataRow(m_sle_quy_tien_thuong.Properties.View.FocusedRowHandle);
-                if(v_dr != null)
+                if(m_sle_quy_tien_thuong.EditValue == null)
                 {
-                    m_txt_tong_tien.EditValue = v_dr["SO_TIEN"];
-                    m_le_cach_tinh_thue.EditValue = v_dr["ID_CACH_TINH_THUE"];
+                    m_txt_tong_tien.ResetText();
+                    m_le_cach_tinh_thue.EditValue = null;
                 }
+                else
+                {
+                    var v_dr = (DataRow)m_sle_quy_tien_thuong.Properties.View.GetDataRow(m_sle_quy_tien_thuong.Properties.View.FocusedRowHandle);
+                    if(v_dr != null)
+                    {
+                        m_txt_tong_tien.EditValue = v_dr["SO_TIEN"];
+                        m_le_cach_tinh_thue.EditValue = v_dr["ID_CACH_TINH_THUE"];
+                    }
+                }
+                
             }
             catch(Exception v_e)
             {
@@ -574,6 +588,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                if(m_sle_quy_tien_thuong.EditValue == null)
+                {
+                    return;
+                }
                 f480_bao_cao_thuong_khac v_frm = new f480_bao_cao_thuong_khac();
                 v_frm.display(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue));
             }

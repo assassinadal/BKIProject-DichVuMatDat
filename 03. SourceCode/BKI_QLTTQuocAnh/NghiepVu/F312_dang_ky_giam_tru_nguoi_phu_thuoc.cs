@@ -141,6 +141,11 @@ namespace BKI_DichVuMatDat.NghiepVu
                     US_GD_PHU_THUOC_DETAILS v_us = new US_GD_PHU_THUOC_DETAILS(CIPConvert.ToDecimal(v_dr["ID"].ToString()));
                     v_us.strDA_XOA = "Y";
                     v_us.Update();
+
+                    US_GD_PHU_THUOC v_us_gd_phu_thuoc = new US_GD_PHU_THUOC(Convert.ToDecimal(v_dr["ID_GD_PHU_THUOC"]));
+                    v_us_gd_phu_thuoc.dcSO_LUONG--;
+                    v_us_gd_phu_thuoc.Update();
+
                     load_data_2_grid(m_slue_nhan_vien.EditValue.ToString());
                     BaseMessages.MsgBox_Infor("91 - Xóa người phụ thuộc thành công");
                 }

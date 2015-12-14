@@ -211,7 +211,7 @@ namespace BKI_DichVuMatDat
         //Hàm thông báo Thông tin thông thường bằng chuỗi
         public static void MsgBox_Infor(string i_strMsg)
         {
-            CHRM_MsgBox_OK(i_strMsg, c_ErrorMsgString, Msgs.MsgIconType.InfomationIcon);
+            CHRM_MsgBox_OK(i_strMsg, c_InfoMsgString, Msgs.MsgIconType.InfomationIcon);
         }
 
         //Hàm xác nhận lại yêu cầu  dùng chỉ sỗ chuỗi thông báo

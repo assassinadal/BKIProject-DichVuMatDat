@@ -155,9 +155,11 @@ namespace BKI_DichVuMatDat.NghiepVu
             var v_us_quy_tien = v_frm.Display_for_thuong_2014();
             if(v_us_quy_tien.dcID > 0)
             {
-                
+
                 //m_sle_quy_tien_thuong.EditValue = v_us_quy_tien.dcID;
                 fill_data_quy_tien_thuong();
+                m_sle_quy_tien_thuong.Focus();
+                m_sle_quy_tien_thuong.ShowPopup();
             }
         }
 
@@ -218,51 +220,69 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add();
             v_us_dung_chung.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN_2");
-            v_ds.Tables[0].Columns.Add("PHAN_TRAM_THUE");
-            foreach(DataRow v_dr in v_ds.Tables[0].Rows)
-            {
-                v_dr["PHAN_TRAM_THUE"] = 10;
-            }
+            //v_ds.Tables[0].Columns.Add("PHAN_TRAM_THUE");
+            //foreach(DataRow v_dr in v_ds.Tables[0].Rows)
+            //{
+            //    v_dr["PHAN_TRAM_THUE"] = 10;
+            //}
             m_grc_main.DataSource = v_ds.Tables[0];
             CHRMCommon.make_stt_indicator(m_grv_main);
         }
         private void fill_data_2_grid_from_excel(string ip_str_path)
         {
-            //m_grv_main.Columns.Clear();
-            WinFormControls.load_xls_to_gridview(ip_str_path, m_grc_main);
-            var v_dr = (DataRow)m_sle_quy_tien_thuong.Properties.View.GetFocusedDataRow();
-            var v_tong_tien = (decimal)v_dr["SO_TIEN"];
-            var datasource = (DataTable)m_grc_main.DataSource;
-            //Lay tong he so
-            decimal tong_he_so = 0;
-            foreach(DataRow item in datasource.Rows)
+            try
             {
-                if(item["HS_THUONG"] != DBNull.Value)
+                splashScreenManager1.ShowWaitForm();
+                //m_grv_main.Columns.Clear();
+                WinFormControls.load_xls_to_gridview(ip_str_path, m_grc_main);
+                var v_dr = (DataRow)m_sle_quy_tien_thuong.Properties.View.GetFocusedDataRow();
+                var v_tong_tien = (decimal)v_dr["SO_TIEN"];
+                var datasource = (DataTable)m_grc_main.DataSource;
+                //Lay tong he so
+                decimal tong_he_so = 0;
+                foreach(DataRow item in datasource.Rows)
                 {
-                    tong_he_so = tong_he_so + Convert.ToDecimal(item["HS_THUONG"]);
-                }
+                    if(item["HS_THUONG"] != DBNull.Value)
+                    {
+                        tong_he_so = tong_he_so + Convert.ToDecimal(item["HS_THUONG"]);
+                    }
 
-            }
-            if(tong_he_so == 0)
-            {
-                MessageBox.Show("Lỗi do tổng hệ số thưởng = 0");
-                return;
-            }
-            //
-            foreach(DataRow item in datasource.Rows)
-            {
-                if(item["HS_THUONG"] != DBNull.Value)
-                {
-                    var thanh_tien = v_tong_tien / tong_he_so * Convert.ToDecimal(item["HS_THUONG"]);
-                    item["THANH_TIEN"] = thanh_tien;
-                    item["THUE"] = thanh_tien * Convert.ToDecimal(item["PHAN_TRAM_THUE"]) / 100;
-                    item["THUC_LINH"] = Convert.ToDecimal(item["THANH_TIEN"]) - Convert.ToDecimal(item["THUE"]);
                 }
+                if(tong_he_so == 0)
+                {
+                    MessageBox.Show("Lỗi do tổng hệ số thưởng = 0");
+                    return;
+                }
+                //
+                foreach(DataRow item in datasource.Rows)
+                {
+                    if(item["HS_THUONG"] != DBNull.Value)
+                    {
+                        var thanh_tien = v_tong_tien / tong_he_so * Convert.ToDecimal(item["HS_THUONG"]);
+                        item["THANH_TIEN"] = thanh_tien;
+
+                        US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+                        DataSet v_ds = new DataSet();
+                        v_ds.Tables.Add();
+
+                        US_DM_THUE v_us_thue = new US_DM_THUE();
+                        decimal v_thue_nhan_vien = v_us_thue.LayThueTheoTien(thanh_tien, Convert.ToDecimal(item["ID"]));
+                        //Tinh thue o day
+                        item["THUE"] = v_thue_nhan_vien;
+                        item["THUC_LINH"] = Convert.ToDecimal(item["THANH_TIEN"]) - Convert.ToDecimal(item["THUE"]);
+                    }
+                }
+                m_b_imported = true;
+                m_grc_main.Visible = true;
+                layoutControlItemGrid.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                layoutControlItemSave.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
             }
-            m_b_imported = true;
-            m_grc_main.Visible = true;
-            layoutControlItemGrid.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
-            layoutControlItemSave.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            catch(Exception)
+            {
+                throw;
+            }
+            finally { splashScreenManager1.CloseWaitForm(); }
+
         }
         private bool is_valid_data()
         {
@@ -289,7 +309,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             ref_us.dcID_LOAI_THU_NHAP_KHAC = CONST_ID_LOAI_THU_NHAP_KHAC.LINH_CO_THUE;
             ref_us.dcID_QUY_TIEN_THUONG = Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue);
 
-            // ref_us.dcSO_TIEN_GIAM_TRU = Convert.ToDecimal(ip_dr_du_lieu_1_nv[""]);
+           // ref_us.dcSO_TIEN_GIAM_TRU = 
             ref_us.dcSO_TIEN_NOP_THE = Convert.ToDecimal(ip_dr_du_lieu_1_nv["THUE"]);
             ref_us.dcSO_TIEN_THUC_LINH = Convert.ToDecimal(ip_dr_du_lieu_1_nv["THUC_LINH"]);
             // ref_us.dcTONG_HS_ATHK = Convert.ToDecimal(ip_dr_du_lieu_1_nv["TONG_HS_ATHK"]);
@@ -420,7 +440,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     return;
                 }
                 fill_data_2_grid_from_excel(WinFormControls.openFileDialog());
-                
+
             }
             catch(Exception v_e)
             {

@@ -107,7 +107,29 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_SO_TIEN);
                 return false;
             }
+            if(is_thang_da_giam_tru())
+            {
+                XtraMessageBox.Show("Tháng này đã giảm trừ rồi, không thể giảm trừ được nữa", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             return true;
+        }
+        private bool is_thang_da_giam_tru()
+        {
+            US_GD_THANG_DA_GIAM_TRU v_us = new US_GD_THANG_DA_GIAM_TRU();
+            decimal op_dc_giam_tru = 0;
+            v_us.kiem_tra_thang_da_giam_tru_chua(m_dat_thang_thuong.DateTime.Month
+                                                        , m_dat_thang_thuong.DateTime.Year
+                                                        , ref op_dc_giam_tru);
+
+            if(op_dc_giam_tru == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
         private void insert_tien_thuong()
         {

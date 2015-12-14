@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_grc_luong_thuong = new DevExpress.XtraGrid.GridControl();
             this.m_grv_luong_thuong = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MaNV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,7 +47,6 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -76,6 +76,17 @@
             this.layoutControl1.Size = new System.Drawing.Size(935, 498);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.Image = global::BKI_DichVuMatDat.Properties.Resources.table;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(820, 456);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(103, 30);
+            this.m_cmd_xuat_excel.StyleController = this.layoutControl1;
+            this.m_cmd_xuat_excel.TabIndex = 10;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             // 
             // m_grc_luong_thuong
             // 
@@ -206,7 +217,7 @@
             this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn1.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn1.Caption = "Số thuế phải nộp (3)";
+            this.gridColumn1.Caption = "Số thuế phải nộp (2)";
             this.gridColumn1.DisplayFormat.FormatString = "n0";
             this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn1.FieldName = "SO_TIEN_NOP_THE";
@@ -214,7 +225,7 @@
             this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_NOP_THE", "Tổng = {0:n0}")});
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 5;
+            this.gridColumn1.VisibleIndex = 4;
             this.gridColumn1.Width = 95;
             // 
             // gridColumn2
@@ -224,7 +235,7 @@
             this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn2.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn2.Caption = "Thực lĩnh (4) = (1) - (3)";
+            this.gridColumn2.Caption = "Thực lĩnh (3) = (1) - (2)";
             this.gridColumn2.DisplayFormat.FormatString = "n0";
             this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn2.FieldName = "SO_TIEN_THUC_LINH";
@@ -232,7 +243,7 @@
             this.gridColumn2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_THUC_LINH", "Tổng = {0:n0}")});
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 6;
+            this.gridColumn2.VisibleIndex = 5;
             this.gridColumn2.Width = 93;
             // 
             // gridColumn3
@@ -249,8 +260,6 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_GIAM_TRU", "Tổng = {0:n0}")});
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 4;
             this.gridColumn3.Width = 99;
             // 
             // m_sle_quy_thuong
@@ -308,17 +317,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextToControlDistance = 0;
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.Image = global::BKI_DichVuMatDat.Properties.Resources.table;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(820, 456);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(103, 30);
-            this.m_cmd_xuat_excel.StyleController = this.layoutControl1;
-            this.m_cmd_xuat_excel.TabIndex = 10;
-            this.m_cmd_xuat_excel.Text = "Xuất Excel";
-            this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             // 
             // layoutControlItem3
             // 

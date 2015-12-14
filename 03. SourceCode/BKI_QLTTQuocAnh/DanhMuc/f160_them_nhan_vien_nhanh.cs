@@ -149,7 +149,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                     v_us_dm_nhan_vien.Insert();
 
 
-                    v_us_gd_ttld.datNGAY_LAP = DateTime.Now;
+                    v_us_gd_ttld.datNGAY_LAP = DateTime.Now.Date;
                     v_us_gd_ttld.dcID_NHAN_VIEN = v_us_dm_nhan_vien.dcID;
                     v_us_gd_ttld.dcID_TRANG_THAI_LAO_DONG = Convert.ToDecimal(m_le_ttld.EditValue);
                     v_us_gd_ttld.strDA_XOA = "N";
@@ -159,7 +159,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                     v_us_gd_cong_tac.datNGAY_BAT_DAU = m_dat_ngay_bat_dau_cong_tac.DateTime;
                     v_us_gd_cong_tac.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_cong_tac.DateTime;
                     v_us_gd_cong_tac.dcID_DON_VI = (decimal)m_sle_don_vi.EditValue;
-                    v_us_gd_cong_tac.datNGAY_LAP = DateTime.Now;
+                    v_us_gd_cong_tac.datNGAY_LAP = DateTime.Now.Date;
                     v_us_gd_cong_tac.dcID_NHAN_VIEN = v_us_dm_nhan_vien.dcID;
                     v_us_gd_cong_tac.strDA_XOA = "N";
                     v_us_gd_cong_tac.strNGUOI_LAP = CAppContext_201.getCurrentUserName();

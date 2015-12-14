@@ -148,5 +148,17 @@ public class US_DM_THUE : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+
+    public decimal LayThueTheoTien(decimal ip_dc_tong_tien, decimal ip_dc_id_nhan_vien)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_get_thue_theo_tien");
+        v_sp.addDecimalInputParam("@ip_dc_tien", ip_dc_tong_tien);
+        v_sp.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+
+        SqlParameter v_para = v_sp.addDecimalOutputParam("@op_thue", 0);
+        v_sp.ExecuteCommand(this);
+
+        return Convert.ToDecimal(v_para.Value);
+    }
 	}
 }

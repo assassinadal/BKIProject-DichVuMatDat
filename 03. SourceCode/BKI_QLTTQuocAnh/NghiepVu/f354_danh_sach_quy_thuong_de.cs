@@ -131,6 +131,25 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return true;
             }
         }
+        private void luu_thang_da_giam_tru()
+        {
+            US_GD_THANG_DA_GIAM_TRU v_us_thang_da_giam_tru = new US_GD_THANG_DA_GIAM_TRU();
+            decimal op_dc_thang_da_giam_tru = 0;
+            v_us_thang_da_giam_tru.kiem_tra_thang_da_giam_tru_chua(m_dat_thang_thuong.DateTime.Month
+                                                                            , m_dat_thang_thuong.DateTime.Year
+                                                                            , ref op_dc_thang_da_giam_tru);
+            if(op_dc_thang_da_giam_tru == 1)
+            {
+                return;
+            }
+            v_us_thang_da_giam_tru.strTHANG = m_dat_thang_thuong.DateTime.Month.ToString();
+            v_us_thang_da_giam_tru.strNAM = m_dat_thang_thuong.DateTime.Year.ToString();
+            v_us_thang_da_giam_tru.strGIAM_TRU_YN = "Y";
+            v_us_thang_da_giam_tru.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
+            v_us_thang_da_giam_tru.datNGAY_LAP = DateTime.Now.Date;
+            v_us_thang_da_giam_tru.strDA_XOA = "N";
+            v_us_thang_da_giam_tru.Insert();
+        }
         private void insert_tien_thuong()
         {
             US_GD_QUY_TIEN_THUONG v_us_gd_quy_tien_thuong = new US_GD_QUY_TIEN_THUONG();
@@ -147,6 +166,10 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us_gd_quy_tien_thuong.datTU_NGAY_XET_THUONG = m_dat_tu_ngay.DateTime;
             v_us_gd_quy_tien_thuong.datDEN_NGAY_XET_THUONG = m_dat_den_ngay.DateTime;
             v_us_gd_quy_tien_thuong.dcID_CACH_TINH_THUE = (decimal)m_le_cach_tinh_thue.EditValue;
+            if(v_us_gd_quy_tien_thuong.dcID_CACH_TINH_THUE == CONST_ID_LOAI_CACH_TINH_THUE.THUE_THANG)
+            {
+                luu_thang_da_giam_tru();
+            }
             v_us_gd_quy_tien_thuong.Insert();
             m_us_op_quy_tien_thuong = v_us_gd_quy_tien_thuong;
             DialogResult = System.Windows.Forms.DialogResult.OK;

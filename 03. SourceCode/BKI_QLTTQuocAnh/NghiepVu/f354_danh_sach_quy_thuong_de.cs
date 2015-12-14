@@ -45,6 +45,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_le_loai_quy_thuong.EditValue = CONST_ID_TIEN_THUONG.THUONG_ATHK;
             m_txt_ten_quy.Focus();
             m_le_loai_quy_thuong.ReadOnly = true;
+            set_tu_dau_nam_den_cuoi_nam();
             ShowDialog();
         }
         public US_GD_QUY_TIEN_THUONG Display_for_thuong_2014()
@@ -54,6 +55,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_le_loai_quy_thuong.EditValue = CONST_ID_TIEN_THUONG.THUONG_2014;
             m_txt_ten_quy.Focus();
             m_le_loai_quy_thuong.ReadOnly = true;
+            m_dat_tu_ngay.DateTime = new DateTime(2014, 12, 1);
+            m_dat_den_ngay.DateTime = new DateTime(2014, 12, 31);
             ShowDialog();
             return m_us_op_quy_tien_thuong;
         }
@@ -92,7 +95,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_initial_form_load()
         {
             m_dat_thang_thuong.DateTime = DateTime.Now;
-            set_tu_dau_nam_den_cuoi_nam();
+            
 
         }
         private bool is_valid_data()

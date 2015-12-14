@@ -228,7 +228,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grc_main.DataSource = v_ds.Tables[0];
             CHRMCommon.make_stt_indicator(m_grv_main);
         }
-        private void fill_data_2_grid_from_excel(string ip_str_path)
+        private void fill_data_2_grid_from_excel_thue_thang(string ip_str_path)
         {
             try
             {
@@ -269,6 +269,55 @@ namespace BKI_DichVuMatDat.NghiepVu
                         decimal v_thue_nhan_vien = v_us_thue.LayThueTheoTien(thanh_tien, Convert.ToDecimal(item["ID"]));
                         //Tinh thue o day
                         item["THUE"] = v_thue_nhan_vien;
+                        item["THUC_LINH"] = Convert.ToDecimal(item["THANH_TIEN"]) - Convert.ToDecimal(item["THUE"]);
+                    }
+                }
+                m_b_imported = true;
+                m_grc_main.Visible = true;
+                layoutControlItemGrid.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                layoutControlItemSave.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            finally { splashScreenManager1.CloseWaitForm(); }
+
+        }
+        private void fill_data_2_grid_from_excel_thue_phan_tram(string ip_str_path)
+        {
+            try
+            {
+                splashScreenManager1.ShowWaitForm();
+                //m_grv_main.Columns.Clear();
+                WinFormControls.load_xls_to_gridview(ip_str_path, m_grc_main);
+                var v_dr = (DataRow)m_sle_quy_tien_thuong.Properties.View.GetFocusedDataRow();
+                var v_tong_tien = (decimal)v_dr["SO_TIEN"];
+                var datasource = (DataTable)m_grc_main.DataSource;
+                //Lay tong he so
+                decimal tong_he_so = 0;
+                foreach(DataRow item in datasource.Rows)
+                {
+                    if(item["HS_THUONG"] != DBNull.Value)
+                    {
+                        tong_he_so = tong_he_so + Convert.ToDecimal(item["HS_THUONG"]);
+                    }
+
+                }
+                if(tong_he_so == 0)
+                {
+                    MessageBox.Show("Lỗi do tổng hệ số thưởng = 0");
+                    return;
+                }
+                //
+                foreach(DataRow item in datasource.Rows)
+                {
+                    if(item["HS_THUONG"] != DBNull.Value)
+                    {
+                        var thanh_tien = v_tong_tien / tong_he_so * Convert.ToDecimal(item["HS_THUONG"]);
+                        item["THANH_TIEN"] = thanh_tien;
+                        //Tinh thue o day
+                        item["THUE"] = thanh_tien * Convert.ToDecimal(item["PHAN_TRAM_THUE"]) / 100; 
                         item["THUC_LINH"] = Convert.ToDecimal(item["THANH_TIEN"]) - Convert.ToDecimal(item["THUE"]);
                     }
                 }
@@ -439,8 +488,20 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     return;
                 }
-                fill_data_2_grid_from_excel(WinFormControls.openFileDialog());
-
+                switch(m_cach_tinh_thue)
+                {
+                    case CACH_TINH_THUE.THUE_5:
+                        fill_data_2_grid_from_excel_thue_phan_tram(WinFormControls.openFileDialog());
+                        break;
+                    case CACH_TINH_THUE.THUE_10:
+                        fill_data_2_grid_from_excel_thue_phan_tram(WinFormControls.openFileDialog());
+                        break;
+                    case CACH_TINH_THUE.THUE_THANG:
+                        fill_data_2_grid_from_excel_thue_thang(WinFormControls.openFileDialog());
+                        break;
+                    default:
+                        break;
+                }
             }
             catch(Exception v_e)
             {

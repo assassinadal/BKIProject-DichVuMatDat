@@ -1920,6 +1920,9 @@
   <ItemGroup>
     <None Include="Resources\add.ico" />
     <None Include="Resources\forward.ico" />
+    <None Include="Resources\1450117506_edit-clear.ico" />
+    <None Include="Resources\edit-clear.png" />
+    <None Include="Resources\brush_24.png" />
     <Content Include="Software_win7.ico" />
   </ItemGroup>
   <ItemGroup>

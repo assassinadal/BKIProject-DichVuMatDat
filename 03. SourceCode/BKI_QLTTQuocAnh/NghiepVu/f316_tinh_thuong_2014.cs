@@ -260,6 +260,9 @@ namespace BKI_DichVuMatDat.NghiepVu
                 }
             }
             m_b_imported = true;
+            m_grc_main.Visible = true;
+            layoutControlItemGrid.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            layoutControlItemSave.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
         }
         private bool is_valid_data()
         {
@@ -417,9 +420,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     return;
                 }
                 fill_data_2_grid_from_excel(WinFormControls.openFileDialog());
-                m_grc_main.Visible = true;
-                layoutControlItemGrid.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
-                layoutControlItemSave.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                
             }
             catch(Exception v_e)
             {

@@ -303,6 +303,16 @@ namespace BKI_DichVuMatDat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1450117506_edit_clear {
+            get {
+                object obj = ResourceManager.GetObject("1450117506_edit-clear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap accounting {
             get {
                 object obj = ResourceManager.GetObject("accounting", resourceCulture);
@@ -373,6 +383,16 @@ namespace BKI_DichVuMatDat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap brush_24 {
+            get {
+                object obj = ResourceManager.GetObject("brush_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Custom_Icon_Design_Pretty_Office_2_Man {
             get {
                 object obj = ResourceManager.GetObject("Custom-Icon-Design-Pretty-Office-2-Man", resourceCulture);
@@ -396,6 +416,16 @@ namespace BKI_DichVuMatDat.Properties {
         internal static System.Drawing.Bitmap Designbolts_Monsters_University_Monsters_Character_Young_Mikes1 {
             get {
                 object obj = ResourceManager.GetObject("Designbolts-Monsters-University-Monsters-Character-Young-Mikes1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_clear {
+            get {
+                object obj = ResourceManager.GetObject("edit-clear", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

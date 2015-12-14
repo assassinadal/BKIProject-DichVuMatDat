@@ -155,8 +155,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             var v_us_quy_tien = v_frm.Display_for_thuong_2014();
             if(v_us_quy_tien.dcID > 0)
             {
+                
+                //m_sle_quy_tien_thuong.EditValue = v_us_quy_tien.dcID;
                 fill_data_quy_tien_thuong();
-                m_sle_quy_tien_thuong.EditValue = v_us_quy_tien.dcID;
             }
         }
 
@@ -338,6 +339,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                if(m_sle_quy_tien_thuong.Text == m_sle_quy_tien_thuong.Properties.NullText)
+                {
+                    return;
+                }
                 decimal gia_tri = Convert.ToDecimal(m_le_cach_tinh_thue.EditValue);
                 if(gia_tri == (decimal)CACH_TINH_THUE.THUE_5)
                 {
@@ -387,7 +392,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                var v_dr = (DataRow)m_sle_quy_tien_thuong.Properties.View.GetFocusedDataRow();
+                var v_dr = (DataRow)m_sle_quy_tien_thuong.Properties.View.GetDataRow(m_sle_quy_tien_thuong.Properties.View.FocusedRowHandle);
                 if(v_dr != null)
                 {
                     m_txt_tong_tien.EditValue = v_dr["SO_TIEN"];

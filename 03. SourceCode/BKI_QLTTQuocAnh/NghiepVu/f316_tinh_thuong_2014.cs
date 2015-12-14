@@ -344,7 +344,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 return false;
 
-            } if(m_le_cach_tinh_thue.Text == "")
+            } 
+            if(m_le_cach_tinh_thue.Text == "")
             {
                 return false;
 

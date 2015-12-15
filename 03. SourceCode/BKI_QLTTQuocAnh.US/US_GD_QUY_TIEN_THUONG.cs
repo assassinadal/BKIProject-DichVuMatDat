@@ -370,5 +370,13 @@ namespace BKI_DichVuMatDat.US
             v_obj.ExecuteCommand(this);
             op_str_nam_da_thuong_hs_bo_sung = v_str_nam_da_thuong_hs_bo_sung.Value.ToString();
         }
+
+        public void xoa_quy_tien_thuong(decimal ip_dc_id_quy_tien_thuong)
+        {
+            CStoredProc v_obj = new CStoredProc("pr_xoa_du_lieu_thu_nhap_khac");
+            v_obj.addDecimalInputParam("@ip_dc_id_quy_tien_thuong", ip_dc_id_quy_tien_thuong);
+
+            v_obj.ExecuteCommand(this);
+        }
     }
 }

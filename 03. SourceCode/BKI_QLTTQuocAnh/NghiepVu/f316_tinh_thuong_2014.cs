@@ -193,6 +193,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_ds.Tables.Add();
             v_us_dung_chung.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN_2");
             v_ds.Tables[0].Columns.Add("PHAN_TRAM_THUE");
+            v_ds.Tables[0].Columns.Add("TRUY_LINH");
+            v_ds.Tables[0].Columns.Add("TRUY_THU");
+            v_ds.Tables[0].Columns.Add("THUC_LINH_CUOI_CUNG");
             foreach(DataRow v_dr in v_ds.Tables[0].Rows)
             {
                 v_dr["PHAN_TRAM_THUE"] = 5;
@@ -207,6 +210,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_ds.Tables.Add();
             v_us_dung_chung.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN_2");
             v_ds.Tables[0].Columns.Add("PHAN_TRAM_THUE");
+            v_ds.Tables[0].Columns.Add("TRUY_LINH");
+            v_ds.Tables[0].Columns.Add("TRUY_THU");
+            v_ds.Tables[0].Columns.Add("THUC_LINH_CUOI_CUNG");
             foreach(DataRow v_dr in v_ds.Tables[0].Rows)
             {
                 v_dr["PHAN_TRAM_THUE"] = 10;
@@ -220,6 +226,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add();
             v_us_dung_chung.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN_2");
+            v_ds.Tables[0].Columns.Add("TRUY_LINH");
+            v_ds.Tables[0].Columns.Add("TRUY_THU");
+            v_ds.Tables[0].Columns.Add("THUC_LINH_CUOI_CUNG");
             //v_ds.Tables[0].Columns.Add("PHAN_TRAM_THUE");
             //foreach(DataRow v_dr in v_ds.Tables[0].Rows)
             //{
@@ -275,6 +284,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         //Tinh thue o day
                         item["THUE"] = v_thue_nhan_vien;
                         item["THUC_LINH"] = Convert.ToDecimal(item["THANH_TIEN"]) - Convert.ToDecimal(item["THUE"]);
+                        item["THUC_LINH_CUOI_CUNG"] = Convert.ToDecimal(item["THUC_LINH"]) + Convert.ToDecimal(item["TRUY_LINH"]) - Convert.ToDecimal(item["TRUY_THU"]);
                     }
                 }
                 m_b_imported = true;
@@ -324,6 +334,25 @@ namespace BKI_DichVuMatDat.NghiepVu
                         //Tinh thue o day
                         item["THUE"] = thanh_tien * Convert.ToDecimal(item["PHAN_TRAM_THUE"]) / 100; 
                         item["THUC_LINH"] = Convert.ToDecimal(item["THANH_TIEN"]) - Convert.ToDecimal(item["THUE"]);
+                        if(item["TRUY_LINH"] == DBNull.Value)
+                        {
+                            item["TRUY_LINH"] = 0;
+                        }
+                        if(item["TRUY_THU"] == DBNull.Value)
+                        {
+                            item["TRUY_THU"] = 0;
+                        }
+                        item["THUC_LINH_CUOI_CUNG"] = Convert.ToDecimal(item["THANH_TIEN"]) + Convert.ToDecimal(item["TRUY_LINH"]) - Convert.ToDecimal(item["TRUY_THU"]);
+                    }
+                    else
+                    {
+                        item["HS_THUONG"] = 0;
+                        item["THANH_TIEN"] = 0;
+                        item["THUE"] = 0;
+                        item["THUC_LINH"] = 0;
+                        item["TRUY_LINH"] = 0;
+                        item["TRUY_THU"] = 0;
+                        item["THUC_LINH_CUOI_CUNG"] = 0;
                     }
                 }
                 m_b_imported = true;
@@ -364,9 +393,13 @@ namespace BKI_DichVuMatDat.NghiepVu
             ref_us.dcID_LOAI_THU_NHAP_KHAC = CONST_ID_LOAI_THU_NHAP_KHAC.LINH_CO_THUE;
             ref_us.dcID_QUY_TIEN_THUONG = Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue);
 
-           // ref_us.dcSO_TIEN_GIAM_TRU = 
+            // ref_us.dcSO_TIEN_GIAM_TRU = 
             ref_us.dcSO_TIEN_NOP_THE = Convert.ToDecimal(ip_dr_du_lieu_1_nv["THUE"]);
             ref_us.dcSO_TIEN_THUC_LINH = Convert.ToDecimal(ip_dr_du_lieu_1_nv["THUC_LINH"]);
+            ref_us.dcTRUY_LINH = Convert.ToDecimal(ip_dr_du_lieu_1_nv["TRUY_LINH"]);
+            ref_us.dcTRUY_THU = Convert.ToDecimal(ip_dr_du_lieu_1_nv["TRUY_THU"]);
+            ref_us.dcTHUC_LINH_CUOI_CUNG = ref_us.dcSO_TIEN_THUC_LINH + ref_us.dcTRUY_LINH - ref_us.dcTRUY_THU;
+
             // ref_us.dcTONG_HS_ATHK = Convert.ToDecimal(ip_dr_du_lieu_1_nv["TONG_HS_ATHK"]);
         }
         private void save_data()
@@ -595,6 +628,29 @@ namespace BKI_DichVuMatDat.NghiepVu
                 }
                 f480_bao_cao_thuong_khac v_frm = new f480_bao_cao_thuong_khac();
                 v_frm.display(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue));
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(m_sle_quy_tien_thuong.EditValue == null)
+                {
+                    return;
+                }
+                var dlg = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa xử liệu quỹ thưởng này. Việc xóa sẽ xóa hết dữ liệu thu nhập khác từ nhân viên. Ấn Yes để XÓA!", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(dlg == System.Windows.Forms.DialogResult.Yes)
+                {
+                    US_GD_QUY_TIEN_THUONG v_us_quy = new US_GD_QUY_TIEN_THUONG();
+                    v_us_quy.xoa_quy_tien_thuong(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue));
+                    XtraMessageBox.Show("Xóa dữ liệu quỹ thưởng thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    fill_data_quy_tien_thuong();
+                }
             }
             catch(Exception v_e)
             {

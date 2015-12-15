@@ -368,7 +368,11 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string SO_TIEN_NOP_THE = "SO_TIEN_NOP_THE";
         public const string SO_TIEN_THUC_LINH = "SO_TIEN_THUC_LINH";
         public const string TONG_HS_ATHK = "TONG_HS_ATHK";
+        public const string TRUY_LINH = "TRUY_LINH";
+        public const string TRUY_THU = "TRUY_THU";
+        public const string THUC_LINH_CUOI_CUNG = "THUC_LINH_CUOI_CUNG";
     }
+
     public class V_GD_THU_NHAP_KHAC_2
     {
         public const string ID = "ID";
@@ -384,7 +388,16 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string SO_TIEN_NOP_THE = "SO_TIEN_NOP_THE";
         public const string SO_TIEN_THUC_LINH = "SO_TIEN_THUC_LINH";
         public const string TONG_HS_ATHK = "TONG_HS_ATHK";
+        public const string TRUY_LINH = "TRUY_LINH";
+        public const string TRUY_THU = "TRUY_THU";
+        public const string THUC_LINH_CUOI_CUNG = "THUC_LINH_CUOI_CUNG";
+        public const string MA_NV = "MA_NV";
+        public const string HO_VA_TEN = "HO_VA_TEN";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string CHUC_VU = "CHUC_VU";
+        public const string SO_TAI_KHOAN = "SO_TAI_KHOAN";
     }
+
 
     public class GD_TRANG_THAI_LAO_DONG
     {

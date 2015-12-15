@@ -1923,6 +1923,7 @@
     <None Include="Resources\1450117506_edit-clear.ico" />
     <None Include="Resources\edit-clear.png" />
     <None Include="Resources\brush_24.png" />
+    <None Include="Resources\delete_24.png" />
     <Content Include="Software_win7.ico" />
   </ItemGroup>
   <ItemGroup>

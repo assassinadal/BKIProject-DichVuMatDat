@@ -308,6 +308,72 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["TONG_HS_ATHK"] = System.Convert.DBNull;
         }
 
+        public decimal dcTRUY_LINH
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "TRUY_LINH", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["TRUY_LINH"] = value;
+            }
+        }
+
+        public bool IsTRUY_LINHNull()
+        {
+            return pm_objDR.IsNull("TRUY_LINH");
+        }
+
+        public void SetTRUY_LINHNull()
+        {
+            pm_objDR["TRUY_LINH"] = System.Convert.DBNull;
+        }
+
+        public decimal dcTRUY_THU
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "TRUY_THU", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["TRUY_THU"] = value;
+            }
+        }
+
+        public bool IsTRUY_THUNull()
+        {
+            return pm_objDR.IsNull("TRUY_THU");
+        }
+
+        public void SetTRUY_THUNull()
+        {
+            pm_objDR["TRUY_THU"] = System.Convert.DBNull;
+        }
+
+        public decimal dcTHUC_LINH_CUOI_CUNG
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "THUC_LINH_CUOI_CUNG", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["THUC_LINH_CUOI_CUNG"] = value;
+            }
+        }
+
+        public bool IsTHUC_LINH_CUOI_CUNGNull()
+        {
+            return pm_objDR.IsNull("THUC_LINH_CUOI_CUNG");
+        }
+
+        public void SetTHUC_LINH_CUOI_CUNGNull()
+        {
+            pm_objDR["THUC_LINH_CUOI_CUNG"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_GD_THU_NHAP_KHAC()

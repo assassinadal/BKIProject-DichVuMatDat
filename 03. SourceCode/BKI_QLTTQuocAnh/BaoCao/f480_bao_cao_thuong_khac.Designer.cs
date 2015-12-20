@@ -43,6 +43,9 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_sle_quy_thuong = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -50,9 +53,6 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_luong_thuong)).BeginInit();
@@ -283,6 +283,57 @@
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 2;
             // 
+            // gridColumn5
+            // 
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn5.Caption = "Truy lĩnh (4)";
+            this.gridColumn5.DisplayFormat.FormatString = "n0";
+            this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn5.FieldName = "TRUY_LINH";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TRUY_LINH", "{0:n0}")});
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 7;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn6.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn6.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn6.Caption = "Truy thu (5)";
+            this.gridColumn6.DisplayFormat.FormatString = "n0";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn6.FieldName = "TRUY_THU";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TRUY_THU", "{0:n0}")});
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 8;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn7.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn7.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn7.Caption = "Thực lĩnh cuối cùng (6) = (3) + (4) - (5)";
+            this.gridColumn7.DisplayFormat.FormatString = "n0";
+            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn7.FieldName = "THUC_LINH_CUOI_CUNG";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUC_LINH_CUOI_CUNG", "{0:n0}")});
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 9;
+            // 
             // m_sle_quy_thuong
             // 
             this.m_sle_quy_thuong.Location = new System.Drawing.Point(92, 12);
@@ -363,53 +414,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(849, 34);
             this.emptySpaceItem1.Text = "emptySpaceItem1";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn5.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn5.Caption = "Truy lĩnh (4)";
-            this.gridColumn5.FieldName = "TRUY_LINH";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TRUY_LINH", "{0:n0}")});
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 7;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn6.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn6.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn6.Caption = "Truy thu (5)";
-            this.gridColumn6.FieldName = "TRUY_THU";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TRUY_THU", "{0:n0}")});
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 8;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn7.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn7.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn7.Caption = "Thực lĩnh cuối cùng (6) = (3) + (4) - (5)";
-            this.gridColumn7.DisplayFormat.FormatString = "n0";
-            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn7.FieldName = "THUC_LINH_CUOI_CUNG";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUC_LINH_CUOI_CUNG", "{0:n0}")});
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 9;
             // 
             // f480_bao_cao_thuong_khac
             // 

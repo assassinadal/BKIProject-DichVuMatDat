@@ -256,6 +256,7 @@
     </Compile>
     <Compile Include="DS_V_DM_NHAN_VIEN.cs">
       <DependentUpon>DS_V_DM_NHAN_VIEN.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DS_V_DM_NHAN_VIEN.Designer.cs">
       <AutoGen>True</AutoGen>

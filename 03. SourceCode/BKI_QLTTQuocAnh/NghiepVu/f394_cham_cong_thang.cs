@@ -92,7 +92,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                 US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG(CIPConvert.ToDecimal(v_dr["ID"].ToString()));
                 v_us.dcID_LOAI_NGAY_CONG = v_id_loai_ngay_cong;
                 v_us.Update();
-                load_data_to_m_pv(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue.ToString()));
+                XtraMessageBox.Show("Sửa dữ liệu chấm công thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                load_data_to_m_pv(Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
             }
             catch (Exception v_e)
             {

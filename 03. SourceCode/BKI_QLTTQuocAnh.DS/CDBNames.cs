@@ -632,6 +632,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     }
 
 
+
     public class V_F320_LAP_HOP_DONG
     {
         public const string ID = "ID";

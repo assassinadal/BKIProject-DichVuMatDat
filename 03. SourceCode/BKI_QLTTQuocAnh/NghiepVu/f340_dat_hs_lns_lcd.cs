@@ -607,14 +607,20 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_id_gd_hd = find_id_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
             m_id_gd_hs_lns_lcd_hien_tai = find_id_gd_hs_lns_lcd_hien_tai(m_id_gd_hd);
+            if(m_id_gd_hs_lns_lcd_hien_tai != -1)
+            {
+                m_id_ma_hs_lns_hien_tai = find_id_ma_hs_lns_hien_tai(m_id_gd_hs_lns_lcd_hien_tai);
+                m_id_muc_hs_lns_hien_tai = find_id_muc_hs_lns_hien_tai(m_id_gd_hs_lns_lcd_hien_tai);
+                m_id_ma_lcd_hien_tai = find_id_ma_lcd_hien_tai(m_id_gd_hs_lns_lcd_hien_tai); ;
+                m_id_muc_lcd_hien_tai = find_id_muc_lcd_hien_tai(m_id_gd_hs_lns_lcd_hien_tai);
 
-            m_id_ma_hs_lns_hien_tai = find_id_ma_hs_lns_hien_tai(m_id_gd_hs_lns_lcd_hien_tai);
-            m_id_muc_hs_lns_hien_tai = find_id_muc_hs_lns_hien_tai(m_id_gd_hs_lns_lcd_hien_tai);
-            m_id_ma_lcd_hien_tai = find_id_ma_lcd_hien_tai(m_id_gd_hs_lns_lcd_hien_tai); ;
-            m_id_muc_lcd_hien_tai = find_id_muc_lcd_hien_tai(m_id_gd_hs_lns_lcd_hien_tai);
+                m_id_gd_hs_lns_hien_tai = find_id_gd_hs_lns_hien_tai(m_id_gd_hd);
+                m_id_gd_lcd_hien_tai = find_id_gd_lcd_hien_tai(m_id_gd_hd);
+            }
+            else
+            {
 
-            m_id_gd_hs_lns_hien_tai = find_id_gd_hs_lns_hien_tai(m_id_gd_hd);
-            m_id_gd_lcd_hien_tai = find_id_gd_lcd_hien_tai(m_id_gd_hd);
+            }
         }
 
         private void form_2_us_gd_hs_lns(US_GD_HE_SO_LNS ip_us)
@@ -964,6 +970,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     return;
                 }
+
                 load_data_2_m_variable();
                 load_data_2_grc_hs_lns(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                 load_data_2_grc_lcd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));

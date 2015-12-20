@@ -613,6 +613,7 @@
             this.m_cmd_hs_chat_luong_xls.Name = "m_cmd_hs_chat_luong_xls";
             this.m_cmd_hs_chat_luong_xls.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.m_cmd_hs_chat_luong_xls.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_danh_muc_don_vi
             // 

@@ -98,7 +98,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void nhapChamCong(DataRow ip_dataRow)
         {
             xoa_du_lieu_cham_cong_cu(get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString()));
-            for (int i = 1; i < ip_dataRow.Table.Columns.Count - 1; i++)
+
+            for (int i = 2; i < ip_dataRow.Table.Columns.Count - 1; i++)
             {
                 try
                 {
@@ -115,8 +116,17 @@ namespace BKI_DichVuMatDat.NghiepVu
                     continue;
                 }
             }
+
             US_GD_HE_SO_CHAT_LUONG v_us_hsk = new US_GD_HE_SO_CHAT_LUONG();
-            v_us_hsk.dcHE_SO_K = CIPConvert.ToDecimal(ip_dataRow[ip_dataRow.Table.Columns.Count - 1].ToString());
+            if(ip_dataRow[ip_dataRow.Table.Columns.Count - 1] != DBNull.Value)
+            {
+                v_us_hsk.dcHE_SO_K = Convert.ToDecimal(ip_dataRow[ip_dataRow.Table.Columns.Count - 1]);
+            }
+            else
+            {
+                v_us_hsk.dcHE_SO_K = 0;
+            }
+            
             v_us_hsk.dcID_NHAN_VIEN = get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString());
             v_us_hsk.dcTHANG = CIPConvert.ToDecimal(m_txt_thang.Text);
             v_us_hsk.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text);

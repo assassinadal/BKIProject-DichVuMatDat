@@ -182,6 +182,7 @@
             this.pivotGridField2.Caption = "Ngày chấm công";
             this.pivotGridField2.FieldName = "NGAY_CHAM_CONG";
             this.pivotGridField2.Name = "pivotGridField2";
+            this.pivotGridField2.Width = 70;
             // 
             // pivotGridField3
             // 
@@ -197,7 +198,6 @@
             this.pivotGridField3.Name = "pivotGridField3";
             this.pivotGridField3.Options.ShowGrandTotal = false;
             this.pivotGridField3.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Max;
-            this.pivotGridField3.Width = 80;
             // 
             // pivotGridField4
             // 
@@ -206,6 +206,7 @@
             this.pivotGridField4.Caption = "Nhân viên";
             this.pivotGridField4.FieldName = "HO_TEN";
             this.pivotGridField4.Name = "pivotGridField4";
+            this.pivotGridField4.Width = 200;
             // 
             // gridColumn1
             // 

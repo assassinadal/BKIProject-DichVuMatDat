@@ -19,7 +19,7 @@
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
-    <UpdateMode>Background</UpdateMode>
+    <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
@@ -71,6 +71,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>paper1331.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="C1.Common, Version=1.0.20031.116, Culture=neutral, PublicKeyToken=e272bb32d11b1948">
@@ -1162,9 +1165,9 @@
     <None Include="Resources\Hopstarter-Sleek-Xp-Basic-Close-2.ico" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.0,KB2468871">
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29 and Update for .NET Framework 4 %28KB2468871%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -1924,9 +1927,16 @@
     <None Include="Resources\edit-clear.png" />
     <None Include="Resources\brush_24.png" />
     <None Include="Resources\delete_24.png" />
+    <Content Include="paper1331.ico" />
     <Content Include="Software_win7.ico" />
   </ItemGroup>
   <ItemGroup>
+    <FileAssociation Include=".ico">
+      <Visible>False</Visible>
+      <Description>IconPM</Description>
+      <Progid>Icon2</Progid>
+      <DefaultIcon>paper1331.ico</DefaultIcon>
+    </FileAssociation>
     <FileAssociation Include=".Icon">
       <Visible>False</Visible>
       <Description>Icon</Description>

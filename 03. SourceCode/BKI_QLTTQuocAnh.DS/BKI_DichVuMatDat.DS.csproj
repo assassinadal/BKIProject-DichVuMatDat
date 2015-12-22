@@ -298,6 +298,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_GD_CONG_TAC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -897,6 +907,28 @@
     </None>
     <None Include="DS_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG.xss">
       <DependentUpon>DS_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG.xsc">
+      <DependentUpon>DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG.xss">
+      <DependentUpon>DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.xsc">
+      <DependentUpon>DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.xss">
+      <DependentUpon>DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_CONG_TAC.xsc">
       <DependentUpon>DS_V_GD_CONG_TAC.xsd</DependentUpon>

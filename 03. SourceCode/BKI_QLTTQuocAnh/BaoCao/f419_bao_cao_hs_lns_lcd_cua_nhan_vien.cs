@@ -39,8 +39,8 @@ namespace BKI_DichVuMatDat.BaoCao
         private void format_controls()
         {
             FormatControl.SetVisibleSimpleButton(this);
-            this.m_grv_bao_cao_hs_lns_lcd_nhan_vien.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
-            this.m_grv_bao_cao_hs_lns_lcd_nhan_vien.OptionsPrint.AutoWidth = false;
+            this.m_grv_bao_cao_hs_lns_nhan_vien.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
+            this.m_grv_bao_cao_hs_lns_nhan_vien.OptionsPrint.AutoWidth = false;
             set_define_events();
             this.KeyPreview = true;
         }
@@ -75,29 +75,70 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void load_data_2_grid()
         {
-            CHRMCommon.make_stt(m_grv_bao_cao_hs_lns_lcd_nhan_vien);
-            US_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG v_us_bc_hs_lns_lcd_nv_theo_thang = new US_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG();
-            DS_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG v_ds_bc_hs_lns_lcd_nv_theo_thang = new DS_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG();
+            load_data_2_grid_hs_lns();
+            load_data_2_grid_lcd();
+        }
 
-            v_us_bc_hs_lns_lcd_nv_theo_thang.FillDataset_by_thang_nam(v_ds_bc_hs_lns_lcd_nv_theo_thang
+        private void load_data_2_grid_hs_lns()
+        {
+            CHRMCommon.make_stt(m_grv_bao_cao_hs_lns_nhan_vien);
+            US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG v_us_bc_hs_lns_nv_theo_thang = new US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG();
+            DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG v_ds_bc_hs_lns_nv_theo_thang = new DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG();
+
+            v_us_bc_hs_lns_nv_theo_thang.FillDataset_by_thang_nam(v_ds_bc_hs_lns_nv_theo_thang
                                                                             , CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim())
                                                                             , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
 
-            m_grc_bao_cao_hs_lns_lcd_nhan_vien.DataSource = v_ds_bc_hs_lns_lcd_nv_theo_thang.Tables[0];
+            m_grc_bao_cao_hs_lns_nhan_vien.DataSource = v_ds_bc_hs_lns_nv_theo_thang.Tables[0];
         }
 
+        private void load_data_2_grid_lcd()
+        {
+            CHRMCommon.make_stt(m_grv_bao_cao_lcd_nhan_vien);
+            US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG v_us_bc_lcd_nv_theo_thang = new US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG();
+            DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG v_ds_bc_lcd_nv_theo_thang = new DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG();
+
+            v_us_bc_lcd_nv_theo_thang.FillDataset_by_thang_nam(v_ds_bc_lcd_nv_theo_thang
+                                                                            , CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim())
+                                                                            , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
+
+            m_grc_bao_cao_lcd_nhan_vien.DataSource = v_ds_bc_lcd_nv_theo_thang.Tables[0];
+        }
+
+
+        //
         private void load_data_2_grid(decimal ip_dc_id_nhan_vien)
         {
-            CHRMCommon.make_stt(m_grv_bao_cao_hs_lns_lcd_nhan_vien);
-            US_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG v_us_bc_hs_lns_lcd_nv_theo_thang = new US_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG();
-            DS_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG v_ds_bc_hs_lns_lcd_nv_theo_thang = new DS_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG();
+            load_data_2_grid_hs_lns(ip_dc_id_nhan_vien);
+            load_data_2_grid_lcd(ip_dc_id_nhan_vien);
+        }
 
-            v_us_bc_hs_lns_lcd_nv_theo_thang.FillDataset_by_thang_nam_id_nhan_vien(v_ds_bc_hs_lns_lcd_nv_theo_thang
+        private void load_data_2_grid_hs_lns(decimal ip_dc_id_nhan_vien)
+        {
+            CHRMCommon.make_stt(m_grv_bao_cao_hs_lns_nhan_vien);
+            US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG v_us_bc_hs_lns_nv_theo_thang = new US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG();
+            DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG v_ds_bc_hs_lns_nv_theo_thang = new DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG();
+
+            v_us_bc_hs_lns_nv_theo_thang.FillDataset_by_thang_nam_id_nhan_vien(v_ds_bc_hs_lns_nv_theo_thang
                                                                             , CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim())
                                                                             , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())
                                                                             , ip_dc_id_nhan_vien);
 
-            m_grc_bao_cao_hs_lns_lcd_nhan_vien.DataSource = v_ds_bc_hs_lns_lcd_nv_theo_thang.Tables[0];
+            m_grc_bao_cao_hs_lns_nhan_vien.DataSource = v_ds_bc_hs_lns_nv_theo_thang.Tables[0];
+        }
+
+        private void load_data_2_grid_lcd(decimal ip_dc_id_nhan_vien)
+        {
+            CHRMCommon.make_stt(m_grv_bao_cao_lcd_nhan_vien);
+            US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG v_us_bc_lcd_nv_theo_thang = new US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG();
+            DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG v_ds_bc_lcd_nv_theo_thang = new DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG();
+
+            v_us_bc_lcd_nv_theo_thang.FillDataset_by_thang_nam_id_nhan_vien(v_ds_bc_lcd_nv_theo_thang
+                                                                            , CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim())
+                                                                            , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())
+                                                                            , ip_dc_id_nhan_vien);
+
+            m_grc_bao_cao_lcd_nhan_vien.DataSource = v_ds_bc_lcd_nv_theo_thang.Tables[0];
         }
 
         private bool check_data_is_ok()
@@ -123,6 +164,8 @@ namespace BKI_DichVuMatDat.BaoCao
             this.Load += f419_bao_cao_hs_lns_lcd_cua_nhan_vien_Load;
             m_cmd_search.Click += m_cmd_search_Click;
             m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
+            m_cmd_xuat_bc_hs_lns.Click += m_cmd_xuat_bc_hs_lns_Click;
+            m_cmd_xuat_bc_lcd.Click += m_cmd_xuat_bc_lcd_Click;
         }
 
         void f419_bao_cao_hs_lns_lcd_cua_nhan_vien_Load(object sender, EventArgs e)
@@ -167,7 +210,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 saveFileDialog1.RestoreDirectory = true;
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    m_grv_bao_cao_hs_lns_lcd_nhan_vien.ExportToXls(saveFileDialog1.FileName);
+                    m_grv_bao_cao_hs_lns_nhan_vien.ExportToXls(saveFileDialog1.FileName);
                     CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
                 }
             }
@@ -176,6 +219,45 @@ namespace BKI_DichVuMatDat.BaoCao
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        void m_cmd_xuat_bc_hs_lns_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    m_grv_bao_cao_hs_lns_nhan_vien.ExportToXls(saveFileDialog1.FileName);
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_xuat_bc_lcd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    m_grv_bao_cao_lcd_nhan_vien.ExportToXls(saveFileDialog1.FileName);
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
         #endregion
     }
 }

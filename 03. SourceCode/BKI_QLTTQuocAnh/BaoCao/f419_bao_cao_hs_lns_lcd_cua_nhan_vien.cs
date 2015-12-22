@@ -49,6 +49,28 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             m_txt_chon_thang.Text = DateTime.Now.Date.Month.ToString();
             m_txt_chon_nam.Text = DateTime.Now.Date.Year.ToString();
+            load_data_2_sle_chon_nv();
+        }
+
+        private DS_V_DM_NHAN_VIEN load_data_2_ds_v_dm_nv()
+        {
+            DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
+            US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
+
+            v_us.FillDataset(v_ds);
+            return v_ds;
+        }
+
+        private void load_data_2_sle_chon_nv()
+        {
+            m_sle_chon_nhan_vien.Properties.DataSource = load_data_2_ds_v_dm_nv().V_DM_NHAN_VIEN;
+            m_sle_chon_nhan_vien.Properties.ValueMember = V_DM_NHAN_VIEN.ID;
+            m_sle_chon_nhan_vien.Properties.DisplayMember = V_DM_NHAN_VIEN.HO_TEN;
+
+            m_sle_chon_nhan_vien.Properties.PopulateViewColumns();
+
+            m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
 
         private void load_data_2_grid()
@@ -60,6 +82,20 @@ namespace BKI_DichVuMatDat.BaoCao
             v_us_bc_hs_lns_lcd_nv_theo_thang.FillDataset_by_thang_nam(v_ds_bc_hs_lns_lcd_nv_theo_thang
                                                                             , CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim())
                                                                             , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
+
+            m_grc_bao_cao_hs_lns_lcd_nhan_vien.DataSource = v_ds_bc_hs_lns_lcd_nv_theo_thang.Tables[0];
+        }
+
+        private void load_data_2_grid(decimal ip_dc_id_nhan_vien)
+        {
+            CHRMCommon.make_stt(m_grv_bao_cao_hs_lns_lcd_nhan_vien);
+            US_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG v_us_bc_hs_lns_lcd_nv_theo_thang = new US_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG();
+            DS_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG v_ds_bc_hs_lns_lcd_nv_theo_thang = new DS_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG();
+
+            v_us_bc_hs_lns_lcd_nv_theo_thang.FillDataset_by_thang_nam_id_nhan_vien(v_ds_bc_hs_lns_lcd_nv_theo_thang
+                                                                            , CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim())
+                                                                            , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())
+                                                                            , ip_dc_id_nhan_vien);
 
             m_grc_bao_cao_hs_lns_lcd_nhan_vien.DataSource = v_ds_bc_hs_lns_lcd_nv_theo_thang.Tables[0];
         }
@@ -107,7 +143,14 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 if (!check_data_is_ok())
                     return;
-                load_data_2_grid();
+                if (m_sle_chon_nhan_vien.EditValue == null)
+                {
+                    load_data_2_grid();
+                }
+                else
+                {
+                    load_data_2_grid(Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                }
             }
             catch (Exception v_e)
             {

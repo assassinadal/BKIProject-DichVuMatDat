@@ -469,12 +469,30 @@ namespace BKI_DichVuMatDat.US
         }
         #endregion
 
-        public void FillDataset_by_thang_nam(DS_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG op_ds_bc_hs_lns_lcd_nv_theo_thang, decimal ip_dc_thang, decimal ip_dc_nam)
-        {
+        public void FillDataset_by_thang_nam(
+                        DS_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG op_ds_bc_hs_lns_lcd_nv_theo_thang, 
+                        decimal ip_dc_thang, 
+                        decimal ip_dc_nam) {
+
             CStoredProc v_cstore = new CStoredProc("pr_f419_bao_cao_hs_lns_lcd_nhan_vien_theo_thang");
 
             v_cstore.addDecimalInputParam("@ip_dc_thang", ip_dc_thang);
             v_cstore.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
+
+            v_cstore.fillDataSetByCommand(this, op_ds_bc_hs_lns_lcd_nv_theo_thang);
+        }
+
+        public void FillDataset_by_thang_nam_id_nhan_vien(
+                        DS_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG op_ds_bc_hs_lns_lcd_nv_theo_thang,
+                        decimal ip_dc_thang,
+                        decimal ip_dc_nam, 
+                        decimal ip_dc_id_nhan_vien)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_f419_bao_cao_hs_lns_lcd_1_nhan_vien_theo_thang_nam");
+
+            v_cstore.addDecimalInputParam("@ip_dc_thang", ip_dc_thang);
+            v_cstore.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
+            v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
 
             v_cstore.fillDataSetByCommand(this, op_ds_bc_hs_lns_lcd_nv_theo_thang);
         }

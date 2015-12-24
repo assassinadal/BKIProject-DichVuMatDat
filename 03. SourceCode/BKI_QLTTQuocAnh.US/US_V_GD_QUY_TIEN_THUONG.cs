@@ -546,5 +546,12 @@ public class US_V_GD_QUY_TIEN_THUONG : US_Object
             CStoredProc v_sp = new CStoredProc("pr_get_data_quy_tien_thuong");
             v_sp.fillDataSetByCommand(this, op_ds);
         }
+        public void LayDanhSachQuyThuongLeTet(out DS_V_GD_QUY_TIEN_THUONG op_ds)
+        {
+            op_ds = new DS_V_GD_QUY_TIEN_THUONG();
+            op_ds.EnforceConstraints = false;
+            CStoredProc v_sp = new CStoredProc("pr_get_data_quy_tien_thuong_le_tet");
+            v_sp.fillDataSetByCommand(this, op_ds);
+        }
 	}
 }

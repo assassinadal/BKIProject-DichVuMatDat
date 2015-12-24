@@ -39,6 +39,19 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             return false;
         }
+        public US_GD_QUY_TIEN_THUONG Display_for_le_tet()
+        {
+            layoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            fill_data_loai_quy_thuong();
+            fill_data_cach_tinh_thue();
+            m_le_loai_quy_thuong.EditValue = CONST_ID_TIEN_THUONG.THUONG_LE_TET;
+            m_txt_ten_quy.Focus();
+            
+            m_le_loai_quy_thuong.ReadOnly = true;
+            set_tu_dau_nam_den_cuoi_nam();
+            ShowDialog();
+            return m_us_op_quy_tien_thuong;
+        }
         public US_GD_QUY_TIEN_THUONG Display_for_athk()
         {
             fill_data_loai_quy_thuong();

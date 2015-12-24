@@ -133,7 +133,7 @@ namespace BKI_DichVuMatDat
             m_cmd_quan_ly_luong_cung.ItemClick += m_cmd_quan_ly_luong_cung_ItemClick;
             m_cmd_quan_ly_khong_dong_bh.ItemClick += m_cmd_quan_ly_khong_dong_bh_ItemClick;
             m_cmd_luong_hs_athk.ItemClick += m_cmd_luong_hs_athk_ItemClick;
-            m_cmd_ql_thuong_hsbs.ItemClick += m_cmd_ql_thuong_hsbs_ItemClick;
+            m_cmd_ql_thuong_le_tet.ItemClick += m_cmd_ql_thuong_hsbs_ItemClick;
             m_cmd_dang_ky_giam_tru_phu_thuoc.ItemClick += m_cmd_dang_ky_giam_tru_phu_thuoc_ItemClick;
             m_cmd_thuong_2014.ItemClick += m_cmd_thuong_2014_ItemClick;
             //Hệ thống
@@ -328,7 +328,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                F365_quan_ly_thuong_hs_bo_sung v_frm = new F365_quan_ly_thuong_hs_bo_sung();
+                f318_thuong_le_tet v_frm = new f318_thuong_le_tet();
                 if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;

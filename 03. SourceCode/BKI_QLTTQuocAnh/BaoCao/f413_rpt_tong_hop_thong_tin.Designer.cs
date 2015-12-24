@@ -526,7 +526,7 @@
             this.gridBand4.Columns.Add(this.bandedGridColumn10);
             this.gridBand4.Name = "gridBand4";
             this.gridBand4.VisibleIndex = 3;
-            this.gridBand4.Width = 750;
+            this.gridBand4.Width = 525;
             // 
             // bandedGridColumn1
             // 
@@ -623,7 +623,6 @@
             this.bandedGridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn7.FieldName = "LUONG_KHAC_THUE_5";
             this.bandedGridColumn7.Name = "bandedGridColumn7";
-            this.bandedGridColumn7.Visible = true;
             // 
             // bandedGridColumn8
             // 
@@ -637,7 +636,6 @@
             this.bandedGridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn8.FieldName = "LUONG_KHAC_THUE_10";
             this.bandedGridColumn8.Name = "bandedGridColumn8";
-            this.bandedGridColumn8.Visible = true;
             // 
             // bandedGridColumn9
             // 
@@ -651,7 +649,6 @@
             this.bandedGridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn9.FieldName = "LUONG_KHAC_THUE_TINH_THEO_LUONG";
             this.bandedGridColumn9.Name = "bandedGridColumn9";
-            this.bandedGridColumn9.Visible = true;
             // 
             // bandedGridColumn10
             // 
@@ -687,7 +684,7 @@
             this.gridBand5.Columns.Add(this.bandedGridColumn18);
             this.gridBand5.Name = "gridBand5";
             this.gridBand5.VisibleIndex = 4;
-            this.gridBand5.Width = 600;
+            this.gridBand5.Width = 450;
             // 
             // bandedGridColumn11
             // 
@@ -771,7 +768,6 @@
             this.bandedGridColumn16.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn16.FieldName = "THUE_TU_LUONG_KHAC_5";
             this.bandedGridColumn16.Name = "bandedGridColumn16";
-            this.bandedGridColumn16.Visible = true;
             // 
             // bandedGridColumn17
             // 
@@ -785,7 +781,6 @@
             this.bandedGridColumn17.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn17.FieldName = "THUE_TU_LUONG_KHAC_10";
             this.bandedGridColumn17.Name = "bandedGridColumn17";
-            this.bandedGridColumn17.Visible = true;
             // 
             // bandedGridColumn18
             // 

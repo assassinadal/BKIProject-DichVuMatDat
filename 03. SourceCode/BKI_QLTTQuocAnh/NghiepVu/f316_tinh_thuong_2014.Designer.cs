@@ -32,7 +32,7 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.m_cmd_xoa_quy_tien_thuong = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.m_cmd_xem_chi_tiet_quỹ = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_xem_chi_tiet_quy = new DevExpress.XtraEditors.SimpleButton();
             this.m_le_cach_tinh_thue = new DevExpress.XtraEditors.LookUpEdit();
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.m_txt_tong_tien = new DevExpress.XtraEditors.TextEdit();
@@ -117,7 +117,7 @@
             // 
             this.layoutControl1.Controls.Add(this.m_cmd_xoa_quy_tien_thuong);
             this.layoutControl1.Controls.Add(this.labelControl1);
-            this.layoutControl1.Controls.Add(this.m_cmd_xem_chi_tiet_quỹ);
+            this.layoutControl1.Controls.Add(this.m_cmd_xem_chi_tiet_quy);
             this.layoutControl1.Controls.Add(this.m_le_cach_tinh_thue);
             this.layoutControl1.Controls.Add(this.m_cmd_save);
             this.layoutControl1.Controls.Add(this.m_txt_tong_tien);
@@ -157,16 +157,16 @@
             this.labelControl1.TabIndex = 17;
             this.labelControl1.Text = "TÍNH THƯỞNG KHÁC";
             // 
-            // m_cmd_xem_chi_tiet_quỹ
+            // m_cmd_xem_chi_tiet_quy
             // 
-            this.m_cmd_xem_chi_tiet_quỹ.Image = global::BKI_DichVuMatDat.Properties.Resources.forward;
-            this.m_cmd_xem_chi_tiet_quỹ.Location = new System.Drawing.Point(393, 114);
-            this.m_cmd_xem_chi_tiet_quỹ.Name = "m_cmd_xem_chi_tiet_quỹ";
-            this.m_cmd_xem_chi_tiet_quỹ.Size = new System.Drawing.Size(152, 30);
-            this.m_cmd_xem_chi_tiet_quỹ.StyleController = this.layoutControl1;
-            this.m_cmd_xem_chi_tiet_quỹ.TabIndex = 16;
-            this.m_cmd_xem_chi_tiet_quỹ.Text = "Xem chi tiết tiền thưởng";
-            this.m_cmd_xem_chi_tiet_quỹ.Click += new System.EventHandler(this.m_cmd_xem_chi_tiet_quỹ_Click);
+            this.m_cmd_xem_chi_tiet_quy.Image = global::BKI_DichVuMatDat.Properties.Resources.forward;
+            this.m_cmd_xem_chi_tiet_quy.Location = new System.Drawing.Point(393, 114);
+            this.m_cmd_xem_chi_tiet_quy.Name = "m_cmd_xem_chi_tiet_quy";
+            this.m_cmd_xem_chi_tiet_quy.Size = new System.Drawing.Size(152, 30);
+            this.m_cmd_xem_chi_tiet_quy.StyleController = this.layoutControl1;
+            this.m_cmd_xem_chi_tiet_quy.TabIndex = 16;
+            this.m_cmd_xem_chi_tiet_quy.Text = "Xem chi tiết tiền thưởng";
+            this.m_cmd_xem_chi_tiet_quy.Click += new System.EventHandler(this.m_cmd_xem_chi_tiet_quỹ_Click);
             // 
             // m_le_cach_tinh_thue
             // 
@@ -845,7 +845,7 @@
             // 
             // layoutControlItem10
             // 
-            this.layoutControlItem10.Control = this.m_cmd_xem_chi_tiet_quỹ;
+            this.layoutControlItem10.Control = this.m_cmd_xem_chi_tiet_quy;
             this.layoutControlItem10.CustomizationFormText = "layoutControlItem10";
             this.layoutControlItem10.Location = new System.Drawing.Point(369, 34);
             this.layoutControlItem10.MaxSize = new System.Drawing.Size(156, 34);
@@ -970,7 +970,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private DevExpress.XtraEditors.LookUpEdit m_le_cach_tinh_thue;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_xem_chi_tiet_quỹ;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_xem_chi_tiet_quy;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;

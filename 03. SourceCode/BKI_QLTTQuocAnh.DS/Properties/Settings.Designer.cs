@@ -251,5 +251,16 @@ namespace BKI_DichVuMatDat.DS.Properties {
                 return ((string)(this["DVMDConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\sqlexpress;Initial Catalog=DVMD;Persist Security Info=True;User ID=" +
+            "sa;Password=sa")]
+        public string DVMDConnectionString2 {
+            get {
+                return ((string)(this["DVMDConnectionString2"]));
+            }
+        }
     }
 }

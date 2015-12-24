@@ -360,7 +360,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f354_danh_sach_quy_thuong v_frm = new f354_danh_sach_quy_thuong();
+                f355_thuong_an_toan_hang_khong v_frm = new f355_thuong_an_toan_hang_khong();
                 if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;

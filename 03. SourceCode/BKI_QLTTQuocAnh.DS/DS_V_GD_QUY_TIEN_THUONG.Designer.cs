@@ -301,6 +301,8 @@ namespace BKI_DichVuMatDat.DS {
             
             private global::System.Data.DataColumn columnID_CACH_TINH_THUE;
             
+            private global::System.Data.DataColumn columnGIAM_TRU_YN;
+            
             private global::System.Data.DataColumn columnTEN_CACH_TINH_THUE;
             
             private global::System.Data.DataColumn columnTEN_LOAI_QUY_TIEN;
@@ -442,6 +444,14 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GIAM_TRU_YNColumn {
+                get {
+                    return this.columnGIAM_TRU_YN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn TEN_CACH_TINH_THUEColumn {
                 get {
                     return this.columnTEN_CACH_TINH_THUE;
@@ -561,6 +571,7 @@ namespace BKI_DichVuMatDat.DS {
                         string TEN_QUY, 
                         string TINH_XONG_YN, 
                         decimal ID_CACH_TINH_THUE, 
+                        string GIAM_TRU_YN, 
                         string TEN_CACH_TINH_THUE, 
                         string TEN_LOAI_QUY_TIEN, 
                         string TINH_XONG_TEXT, 
@@ -583,6 +594,7 @@ namespace BKI_DichVuMatDat.DS {
                         TEN_QUY,
                         TINH_XONG_YN,
                         ID_CACH_TINH_THUE,
+                        GIAM_TRU_YN,
                         TEN_CACH_TINH_THUE,
                         TEN_LOAI_QUY_TIEN,
                         TINH_XONG_TEXT,
@@ -632,6 +644,7 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnTEN_QUY = base.Columns["TEN_QUY"];
                 this.columnTINH_XONG_YN = base.Columns["TINH_XONG_YN"];
                 this.columnID_CACH_TINH_THUE = base.Columns["ID_CACH_TINH_THUE"];
+                this.columnGIAM_TRU_YN = base.Columns["GIAM_TRU_YN"];
                 this.columnTEN_CACH_TINH_THUE = base.Columns["TEN_CACH_TINH_THUE"];
                 this.columnTEN_LOAI_QUY_TIEN = base.Columns["TEN_LOAI_QUY_TIEN"];
                 this.columnTINH_XONG_TEXT = base.Columns["TINH_XONG_TEXT"];
@@ -668,6 +681,8 @@ namespace BKI_DichVuMatDat.DS {
                 base.Columns.Add(this.columnTINH_XONG_YN);
                 this.columnID_CACH_TINH_THUE = new global::System.Data.DataColumn("ID_CACH_TINH_THUE", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_CACH_TINH_THUE);
+                this.columnGIAM_TRU_YN = new global::System.Data.DataColumn("GIAM_TRU_YN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGIAM_TRU_YN);
                 this.columnTEN_CACH_TINH_THUE = new global::System.Data.DataColumn("TEN_CACH_TINH_THUE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTEN_CACH_TINH_THUE);
                 this.columnTEN_LOAI_QUY_TIEN = new global::System.Data.DataColumn("TEN_LOAI_QUY_TIEN", typeof(string), null, global::System.Data.MappingType.Element);
@@ -699,6 +714,7 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnTEN_QUY.MaxLength = 100;
                 this.columnTINH_XONG_YN.AllowDBNull = false;
                 this.columnTINH_XONG_YN.MaxLength = 1;
+                this.columnGIAM_TRU_YN.MaxLength = 1;
                 this.columnTEN_CACH_TINH_THUE.AllowDBNull = false;
                 this.columnTEN_CACH_TINH_THUE.MaxLength = 250;
                 this.columnTEN_LOAI_QUY_TIEN.AllowDBNull = false;
@@ -1009,6 +1025,22 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string GIAM_TRU_YN {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_GD_QUY_TIEN_THUONG.GIAM_TRU_YNColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GIAM_TRU_YN\' in table \'V_GD_QUY_TIEN_THUONG\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_GD_QUY_TIEN_THUONG.GIAM_TRU_YNColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TEN_CACH_TINH_THUE {
                 get {
                     return ((string)(this[this.tableV_GD_QUY_TIEN_THUONG.TEN_CACH_TINH_THUEColumn]));
@@ -1226,6 +1258,18 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetID_CACH_TINH_THUENull() {
                 this[this.tableV_GD_QUY_TIEN_THUONG.ID_CACH_TINH_THUEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGIAM_TRU_YNNull() {
+                return this.IsNull(this.tableV_GD_QUY_TIEN_THUONG.GIAM_TRU_YNColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGIAM_TRU_YNNull() {
+                this[this.tableV_GD_QUY_TIEN_THUONG.GIAM_TRU_YNColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1483,6 +1527,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_GD_QUY_TIEN_THUONGTableAdapters {
             tableMapping.ColumnMappings.Add("TEN_QUY", "TEN_QUY");
             tableMapping.ColumnMappings.Add("TINH_XONG_YN", "TINH_XONG_YN");
             tableMapping.ColumnMappings.Add("ID_CACH_TINH_THUE", "ID_CACH_TINH_THUE");
+            tableMapping.ColumnMappings.Add("GIAM_TRU_YN", "GIAM_TRU_YN");
             tableMapping.ColumnMappings.Add("TEN_CACH_TINH_THUE", "TEN_CACH_TINH_THUE");
             tableMapping.ColumnMappings.Add("TEN_LOAI_QUY_TIEN", "TEN_LOAI_QUY_TIEN");
             tableMapping.ColumnMappings.Add("TINH_XONG_TEXT", "TINH_XONG_TEXT");
@@ -1499,7 +1544,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_GD_QUY_TIEN_THUONGTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BKI_DichVuMatDat.DS.Properties.Settings.Default.DVMDConnectionString1;
+            this._connection.ConnectionString = global::BKI_DichVuMatDat.DS.Properties.Settings.Default.DVMDConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1508,7 +1553,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_GD_QUY_TIEN_THUONGTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID, THANG, NAM, SO_TIEN, ID_LOAI_QUY_TIEN, NGUOI_LAP, NGAY_LAP, DA_XOA, TEN_QUY, TINH_XONG_YN, ID_CACH_TINH_THUE, TEN_CACH_TINH_THUE, TEN_LOAI_QUY_TIEN, TINH_XONG_TEXT, LY_DO_THUONG, TU_NGAY_XET_THUONG, DEN_NGAY_XET_THUONG, SL_NV_CAN_TINH, SL_NV_DA_TINH, PHAN_TRAM_DA_TINH FROM dbo.V_GD_QUY_TIEN_THUONG";
+            this._commandCollection[0].CommandText = @"SELECT ID, THANG, NAM, SO_TIEN, ID_LOAI_QUY_TIEN, NGUOI_LAP, NGAY_LAP, DA_XOA, TEN_QUY, TINH_XONG_YN, ID_CACH_TINH_THUE, GIAM_TRU_YN, TEN_CACH_TINH_THUE, TEN_LOAI_QUY_TIEN, TINH_XONG_TEXT, LY_DO_THUONG, TU_NGAY_XET_THUONG, DEN_NGAY_XET_THUONG, SL_NV_CAN_TINH, SL_NV_DA_TINH, PHAN_TRAM_DA_TINH FROM dbo.V_GD_QUY_TIEN_THUONG";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

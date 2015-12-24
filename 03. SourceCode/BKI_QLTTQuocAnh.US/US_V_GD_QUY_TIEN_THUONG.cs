@@ -264,6 +264,28 @@ public class US_V_GD_QUY_TIEN_THUONG : US_Object
         pm_objDR["ID_CACH_TINH_THUE"] = System.Convert.DBNull;
     }
 
+    public string strGIAM_TRU_YN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "GIAM_TRU_YN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["GIAM_TRU_YN"] = value;
+        }
+    }
+
+    public bool IsGIAM_TRU_YNNull()
+    {
+        return pm_objDR.IsNull("GIAM_TRU_YN");
+    }
+
+    public void SetGIAM_TRU_YNNull()
+    {
+        pm_objDR["GIAM_TRU_YN"] = System.Convert.DBNull;
+    }
+
     public string strTEN_CACH_TINH_THUE
     {
         get
@@ -515,6 +537,15 @@ public class US_V_GD_QUY_TIEN_THUONG : US_Object
             v_sp.fillDataSetByCommand(this, op_ds);
 
             op_dr = op_ds.V_GD_QUY_TIEN_THUONG[0];
+        }
+
+        public void LayDanhSachQuyThuong(out DS_V_GD_QUY_TIEN_THUONG op_ds, decimal ip_dc_id_loai_quy_thuong)
+        {
+            op_ds = new DS_V_GD_QUY_TIEN_THUONG();
+            op_ds.EnforceConstraints = false;
+            CStoredProc v_sp = new CStoredProc("pr_get_data_quy_tien_thuong");
+            v_sp.addDecimalInputParam("@ip_dc_id_loai_tien_thuong", ip_dc_id_loai_quy_thuong);
+            v_sp.fillDataSetByCommand(this, op_ds);
         }
 	}
 }

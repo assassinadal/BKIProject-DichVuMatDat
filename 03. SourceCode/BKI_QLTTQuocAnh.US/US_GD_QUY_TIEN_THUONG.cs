@@ -331,6 +331,28 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["ID_CACH_TINH_THUE"] = System.Convert.DBNull;
         }
 
+        public string strGIAM_TRU_YN
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "GIAM_TRU_YN", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["GIAM_TRU_YN"] = value;
+            }
+        }
+
+        public bool IsGIAM_TRU_YNNull()
+        {
+            return pm_objDR.IsNull("GIAM_TRU_YN");
+        }
+
+        public void SetGIAM_TRU_YNNull()
+        {
+            pm_objDR["GIAM_TRU_YN"] = System.Convert.DBNull;
+        }
+
         #endregion
 
         #region "Init Functions"
@@ -374,6 +396,13 @@ namespace BKI_DichVuMatDat.US
         public void xoa_quy_tien_thuong(decimal ip_dc_id_quy_tien_thuong)
         {
             CStoredProc v_obj = new CStoredProc("pr_xoa_du_lieu_thu_nhap_khac");
+            v_obj.addDecimalInputParam("@ip_dc_id_quy_tien_thuong", ip_dc_id_quy_tien_thuong);
+
+            v_obj.ExecuteCommand(this);
+        }
+        public void xoa_du_lieu_thuong(decimal ip_dc_id_quy_tien_thuong)
+        {
+            CStoredProc v_obj = new CStoredProc("pr_xoa_du_lieu_thuong");
             v_obj.addDecimalInputParam("@ip_dc_id_quy_tien_thuong", ip_dc_id_quy_tien_thuong);
 
             v_obj.ExecuteCommand(this);

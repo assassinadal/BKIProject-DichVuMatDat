@@ -26,6 +26,22 @@ namespace BKI_DichVuMatDat.NghiepVu
             InitializeComponent();
             format_controls();
         }
+        public void display_for_athk()
+        {
+            this.ShowDialog();
+        }
+        public void display_for_hsbs()
+        {
+
+        }
+        public void display_for_le_tet()
+        {
+
+        }
+        public void display_for_khac()
+        {
+
+        }
         ~f354_danh_sach_quy_thuong()
         {
             Dispose(false);

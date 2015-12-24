@@ -338,6 +338,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string TEN_QUY = "TEN_QUY";
         public const string TINH_XONG_YN = "TINH_XONG_YN";
         public const string ID_CACH_TINH_THUE = "ID_CACH_TINH_THUE";
+        public const string GIAM_TRU_YN = "GIAM_TRU_YN";
         public const string TEN_CACH_TINH_THUE = "TEN_CACH_TINH_THUE";
         public const string TEN_LOAI_QUY_TIEN = "TEN_LOAI_QUY_TIEN";
         public const string TINH_XONG_TEXT = "TINH_XONG_TEXT";
@@ -348,6 +349,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string SL_NV_DA_TINH = "SL_NV_DA_TINH";
         public const string PHAN_TRAM_DA_TINH = "PHAN_TRAM_DA_TINH";
     }
+
 
 
 
@@ -427,7 +429,9 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string DEN_NGAY_XET_THUONG = "DEN_NGAY_XET_THUONG";
         public const string LY_DO_THUONG = "LY_DO_THUONG";
         public const string ID_CACH_TINH_THUE = "ID_CACH_TINH_THUE";
+        public const string GIAM_TRU_YN = "GIAM_TRU_YN";
     }
+
 
     public class GD_CHAM_CONG
     {

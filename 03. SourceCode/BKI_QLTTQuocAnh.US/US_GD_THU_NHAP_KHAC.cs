@@ -433,6 +433,28 @@ namespace BKI_DichVuMatDat.US
             v_cstore.addDecimalInputParam("@ip_dc_id_cach_tinh_thue", ip_dc_id_cach_tinh_thue);
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
+        public void load_du_lieu_bang_luong_1nv_theo_hs_bs(DataSet op_ds
+                                                                , DateTime ip_dat_tu_ngay
+                                                                , DateTime ip_dat_den_ngay
+                                                                 , decimal ip_dc_tong_tien
+                                                                , string ip_yn_giam_tru
+                                                                , int ip_int_thang_thuong
+                                                                , int ip_int_nam_thuong
+                                                                , decimal ip_dc_id_nhan_vien
+                                                                , decimal ip_dc_id_cach_tinh_thue)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_lay_du_lieu_bang_luong_1nv_by_hs_bs");
+
+            v_cstore.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+            v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+            v_cstore.addDecimalInputParam("@ip_dc_tong_so_tien", ip_dc_tong_tien);
+            v_cstore.addNVarcharInputParam("@ip_yn_giam_tru", ip_yn_giam_tru);
+            v_cstore.addDecimalInputParam("@ip_int_thang_tinh_thuong", ip_int_thang_thuong);
+            v_cstore.addDecimalInputParam("@ip_int_nam_tinh_thuong", ip_int_nam_thuong);
+            v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            v_cstore.addDecimalInputParam("@ip_dc_id_cach_tinh_thue", ip_dc_id_cach_tinh_thue);
+            v_cstore.fillDataSetByCommand(this, op_ds);
+        }
         public bool KiemTraXemDaInsertThuong2014Chua(decimal ip_id_quy_tien, decimal ip_dc_id_nhan_vien)
         {
             CStoredProc v_sp = new CStoredProc("pr_check_before_insert_thuong_2k14");

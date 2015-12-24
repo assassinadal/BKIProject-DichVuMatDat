@@ -45,6 +45,7 @@
             this.ID_CACH_TINH_THUE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GIAM_TRU_YN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_cmd_them_quy_tien = new DevExpress.XtraEditors.SimpleButton();
             this.m_prb = new DevExpress.XtraEditors.ProgressBarControl();
             this.m_lbl_thong_tin = new DevExpress.XtraEditors.LabelControl();
@@ -86,7 +87,8 @@
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.m_bgwk = new System.ComponentModel.BackgroundWorker();
-            this.GIAM_TRU_YN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.m_cmd_hsbs = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -124,6 +126,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -159,6 +162,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.m_cmd_hsbs);
             this.layoutControl1.Controls.Add(this.m_cmd_xoa_du_lieu_thuong_nv);
             this.layoutControl1.Controls.Add(this.m_cmd_xoa_quy_tien_thuong);
             this.layoutControl1.Controls.Add(this.m_cmd_xem_chi_tiet_quy);
@@ -342,6 +346,14 @@
             this.gridColumn17.VisibleIndex = 0;
             this.gridColumn17.Width = 268;
             // 
+            // GIAM_TRU_YN
+            // 
+            this.GIAM_TRU_YN.Caption = "Giảm trừ (Y|N)";
+            this.GIAM_TRU_YN.FieldName = "GIAM_TRU_YN";
+            this.GIAM_TRU_YN.Name = "GIAM_TRU_YN";
+            this.GIAM_TRU_YN.Visible = true;
+            this.GIAM_TRU_YN.VisibleIndex = 6;
+            // 
             // m_cmd_them_quy_tien
             // 
             this.m_cmd_them_quy_tien.Image = global::BKI_DichVuMatDat.Properties.Resources.add;
@@ -350,7 +362,7 @@
             this.m_cmd_them_quy_tien.Size = new System.Drawing.Size(142, 30);
             this.m_cmd_them_quy_tien.StyleController = this.layoutControl1;
             this.m_cmd_them_quy_tien.TabIndex = 11;
-            this.m_cmd_them_quy_tien.Text = "Thêm quỹ thưởng mới";
+            this.m_cmd_them_quy_tien.Text = "Thêm quỹ ATHK";
             // 
             // m_prb
             // 
@@ -654,7 +666,8 @@
             this.layoutControlItem13,
             this.layoutControlItem14,
             this.emptySpaceItem4,
-            this.layoutControlItem15});
+            this.layoutControlItem15,
+            this.layoutControlItem7});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1037, 449);
@@ -806,9 +819,9 @@
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.CustomizationFormText = "emptySpaceItem3";
-            this.emptySpaceItem3.Location = new System.Drawing.Point(146, 0);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(264, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(871, 34);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(753, 34);
             this.emptySpaceItem3.Text = "emptySpaceItem3";
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -888,13 +901,27 @@
             this.m_bgwk.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.m_bgwk_ProgressChanged);
             this.m_bgwk.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.m_bgwk_RunWorkerCompleted);
             // 
-            // GIAM_TRU_YN
+            // m_cmd_hsbs
             // 
-            this.GIAM_TRU_YN.Caption = "Giảm trừ (Y|N)";
-            this.GIAM_TRU_YN.FieldName = "GIAM_TRU_YN";
-            this.GIAM_TRU_YN.Name = "GIAM_TRU_YN";
-            this.GIAM_TRU_YN.Visible = true;
-            this.GIAM_TRU_YN.VisibleIndex = 6;
+            this.m_cmd_hsbs.Image = global::BKI_DichVuMatDat.Properties.Resources.add;
+            this.m_cmd_hsbs.Location = new System.Drawing.Point(158, 12);
+            this.m_cmd_hsbs.Name = "m_cmd_hsbs";
+            this.m_cmd_hsbs.Size = new System.Drawing.Size(114, 30);
+            this.m_cmd_hsbs.StyleController = this.layoutControl1;
+            this.m_cmd_hsbs.TabIndex = 12;
+            this.m_cmd_hsbs.Text = "Thêm quỹ HSBS";
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.m_cmd_hsbs;
+            this.layoutControlItem7.CustomizationFormText = "layoutControlItem7";
+            this.layoutControlItem7.Location = new System.Drawing.Point(146, 0);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(118, 34);
+            this.layoutControlItem7.Text = "layoutControlItem7";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextToControlDistance = 0;
+            this.layoutControlItem7.TextVisible = false;
             // 
             // f355_thuong_an_toan_hang_khong
             // 
@@ -943,6 +970,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1007,5 +1035,7 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_xoa_du_lieu_thuong_nv;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
         private DevExpress.XtraGrid.Columns.GridColumn GIAM_TRU_YN;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_hsbs;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }

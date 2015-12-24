@@ -259,7 +259,15 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 var v_id_nv = (decimal)v_ds_nhan_vien_canh_tinh.DM_NHAN_VIEN.Rows[rowToComput][DM_NHAN_VIEN.ID];
                 //B2: Tinh thu nhap khac cho nhan vien nay
-                var v_dr_du_lieu_1_nv = lay_du_lieu_tien_thuong_1_nhan_vien(v_id_nv);
+                DataRow v_dr_du_lieu_1_nv = null;
+                if(m_us_v_gd_quy_tien_thuong.dcID_LOAI_QUY_TIEN == CONST_ID_TIEN_THUONG.THUONG_ATHK)
+                {
+                    v_dr_du_lieu_1_nv = lay_du_lieu_tien_thuong_athk_1_nhan_vien(v_id_nv);
+                }
+                else if(m_us_v_gd_quy_tien_thuong.dcID_LOAI_QUY_TIEN == CONST_ID_TIEN_THUONG.THUONG_HS_BS)
+                {
+                    v_dr_du_lieu_1_nv = lay_du_lieu_tien_thuong_hsbs_1_nhan_vien(v_id_nv);
+                }
 
                 //B3: Chuyen doi du lieu tu DataRow sang US de insert
                 US_GD_THU_NHAP_KHAC v_us_gd_thu_nhap_khac = new US_GD_THU_NHAP_KHAC();
@@ -269,13 +277,30 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             mark_complete_tinh_thuong();
         }
-        private DataRow lay_du_lieu_tien_thuong_1_nhan_vien(decimal ip_dc_id_nhan_vien)
+        private DataRow lay_du_lieu_tien_thuong_athk_1_nhan_vien(decimal ip_dc_id_nhan_vien)
         {
             US_GD_THU_NHAP_KHAC v_us_gd_thu_nhap_khac = new US_GD_THU_NHAP_KHAC();
             DataSet v_ds_du_lieu_thu_nhap_khac = new DataSet();
             v_ds_du_lieu_thu_nhap_khac.Tables.Add();
 
             v_us_gd_thu_nhap_khac.load_du_lieu_bang_luong_1nv_theo_hs_athk(v_ds_du_lieu_thu_nhap_khac
+                                                                                , m_us_v_gd_quy_tien_thuong.datTU_NGAY_XET_THUONG
+                                                                                , m_us_v_gd_quy_tien_thuong.datDEN_NGAY_XET_THUONG
+                                                                                , m_us_v_gd_quy_tien_thuong.dcSO_TIEN
+                                                                                , m_us_v_gd_quy_tien_thuong.strGIAM_TRU_YN
+                                                                                , Convert.ToInt32(m_us_v_gd_quy_tien_thuong.strTHANG)
+                                                                                , Convert.ToInt32(m_us_v_gd_quy_tien_thuong.strNAM)
+                                                                                , ip_dc_id_nhan_vien
+                                                                                , m_us_v_gd_quy_tien_thuong.dcID_CACH_TINH_THUE);
+            return v_ds_du_lieu_thu_nhap_khac.Tables[0].Rows[0];
+        }
+        private DataRow lay_du_lieu_tien_thuong_hsbs_1_nhan_vien(decimal ip_dc_id_nhan_vien)
+        {
+            US_GD_THU_NHAP_KHAC v_us_gd_thu_nhap_khac = new US_GD_THU_NHAP_KHAC();
+            DataSet v_ds_du_lieu_thu_nhap_khac = new DataSet();
+            v_ds_du_lieu_thu_nhap_khac.Tables.Add();
+
+            v_us_gd_thu_nhap_khac.load_du_lieu_bang_luong_1nv_theo_hs_bs(v_ds_du_lieu_thu_nhap_khac
                                                                                 , m_us_v_gd_quy_tien_thuong.datTU_NGAY_XET_THUONG
                                                                                 , m_us_v_gd_quy_tien_thuong.datDEN_NGAY_XET_THUONG
                                                                                 , m_us_v_gd_quy_tien_thuong.dcSO_TIEN
@@ -368,7 +393,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        private void them_quy_tien()
+        private void them_quy_tien_athk()
         {
             f354_danh_sach_quy_thuong_de v_frm = new f354_danh_sach_quy_thuong_de();
             var v_us_quy_tien = v_frm.Display_for_athk();
@@ -380,12 +405,23 @@ namespace BKI_DichVuMatDat.NghiepVu
                 m_sle_quy_tien_thuong.ShowPopup();
             }
         }
-        
+        private void them_quy_tien_hsbs()
+        {
+            f354_danh_sach_quy_thuong_de v_frm = new f354_danh_sach_quy_thuong_de();
+            var v_us_quy_tien = v_frm.Display_for_hsbs();
+            if(v_us_quy_tien.dcID > 0)
+            {
+                fill_data_quy_tien_thuong();
+                m_sle_quy_tien_thuong.EditValue = v_us_quy_tien.dcID;
+                m_sle_quy_tien_thuong.Focus();
+                m_sle_quy_tien_thuong.ShowPopup();
+            }
+        }
         private DS_V_GD_QUY_TIEN_THUONG LayDanhSachQuyTienThuong()
         {
             DS_V_GD_QUY_TIEN_THUONG v_ds_quy_tien_thuong = new DS_V_GD_QUY_TIEN_THUONG();
             US_V_GD_QUY_TIEN_THUONG v_us_quy_tien_thuong = new US_V_GD_QUY_TIEN_THUONG();
-            v_us_quy_tien_thuong.LayDanhSachQuyThuong(out v_ds_quy_tien_thuong, CONST_ID_TIEN_THUONG.THUONG_ATHK);
+            v_us_quy_tien_thuong.LayDanhSachQuyThuong(out v_ds_quy_tien_thuong);
             return v_ds_quy_tien_thuong;
         }
 
@@ -413,37 +449,64 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_xem_chi_tiet_quy.Click += m_cmd_xem_chi_tiet_quy_Click;
             m_cmd_xoa_quy_tien_thuong.Click += m_cmd_xoa_quy_tien_thuong_Click;
             m_cmd_xoa_du_lieu_thuong_nv.Click += m_cmd_xoa_du_lieu_thuong_nv_Click;
+            m_cmd_hsbs.Click += m_cmd_hsbs_Click;
+        }
+
+        void m_cmd_hsbs_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                them_quy_tien_hsbs();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_xoa_du_lieu_thuong_nv_Click(object sender, EventArgs e)
         {
-            if(m_sle_quy_tien_thuong.EditValue == null)
+            try
             {
-                return;
+                if(m_sle_quy_tien_thuong.EditValue == null)
+                {
+                    return;
+                }
+                var dlg = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu thưởng của nhân viên để tính lại. Ấn Yes để XÓA!", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(dlg == System.Windows.Forms.DialogResult.Yes)
+                {
+                    US_GD_QUY_TIEN_THUONG v_us_quy = new US_GD_QUY_TIEN_THUONG();
+                    v_us_quy.xoa_du_lieu_thuong(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue));
+                    XtraMessageBox.Show("Xóa dữ liệu quỹ thưởng thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    fill_data_quy_tien_thuong();
+                }
             }
-            var dlg = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu thưởng của nhân viên để tính lại. Ấn Yes để XÓA!", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(dlg == System.Windows.Forms.DialogResult.Yes)
+            catch(Exception v_e)
             {
-                US_GD_QUY_TIEN_THUONG v_us_quy = new US_GD_QUY_TIEN_THUONG();
-                v_us_quy.xoa_du_lieu_thuong(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue));
-                XtraMessageBox.Show("Xóa dữ liệu quỹ thưởng thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                fill_data_quy_tien_thuong();
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
         void m_cmd_xoa_quy_tien_thuong_Click(object sender, EventArgs e)
         {
-            if(m_sle_quy_tien_thuong.EditValue == null)
+            try
             {
-                return;
+                if(m_sle_quy_tien_thuong.EditValue == null)
+                {
+                    return;
+                }
+                var dlg = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa xử liệu quỹ thưởng này. Việc xóa sẽ xóa hết dữ liệu thu nhập khác từ nhân viên. Ấn Yes để XÓA!", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(dlg == System.Windows.Forms.DialogResult.Yes)
+                {
+                    US_GD_QUY_TIEN_THUONG v_us_quy = new US_GD_QUY_TIEN_THUONG();
+                    v_us_quy.xoa_quy_tien_thuong(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue));
+                    XtraMessageBox.Show("Xóa dữ liệu quỹ thưởng thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    fill_data_quy_tien_thuong();
+                }
             }
-            var dlg = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa xử liệu quỹ thưởng này. Việc xóa sẽ xóa hết dữ liệu thu nhập khác từ nhân viên. Ấn Yes để XÓA!", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(dlg == System.Windows.Forms.DialogResult.Yes)
+            catch(Exception v_e)
             {
-                US_GD_QUY_TIEN_THUONG v_us_quy = new US_GD_QUY_TIEN_THUONG();
-                v_us_quy.xoa_quy_tien_thuong(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue));
-                XtraMessageBox.Show("Xóa dữ liệu quỹ thưởng thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                fill_data_quy_tien_thuong();
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -590,7 +653,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                them_quy_tien();
+                them_quy_tien_athk();
             }
             catch(Exception v_e)
             {

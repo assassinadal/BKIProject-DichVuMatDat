@@ -539,12 +539,11 @@ public class US_V_GD_QUY_TIEN_THUONG : US_Object
             op_dr = op_ds.V_GD_QUY_TIEN_THUONG[0];
         }
 
-        public void LayDanhSachQuyThuong(out DS_V_GD_QUY_TIEN_THUONG op_ds, decimal ip_dc_id_loai_quy_thuong)
+        public void LayDanhSachQuyThuong(out DS_V_GD_QUY_TIEN_THUONG op_ds)
         {
             op_ds = new DS_V_GD_QUY_TIEN_THUONG();
             op_ds.EnforceConstraints = false;
             CStoredProc v_sp = new CStoredProc("pr_get_data_quy_tien_thuong");
-            v_sp.addDecimalInputParam("@ip_dc_id_loai_tien_thuong", ip_dc_id_loai_quy_thuong);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 	}

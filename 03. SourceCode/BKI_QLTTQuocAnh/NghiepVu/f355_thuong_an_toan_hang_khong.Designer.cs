@@ -86,6 +86,7 @@
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.m_bgwk = new System.ComponentModel.BackgroundWorker();
+            this.GIAM_TRU_YN = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -236,7 +237,8 @@
             this.gridColumn7,
             this.ID_CACH_TINH_THUE,
             this.gridColumn16,
-            this.gridColumn17});
+            this.gridColumn17,
+            this.GIAM_TRU_YN});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -886,6 +888,14 @@
             this.m_bgwk.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.m_bgwk_ProgressChanged);
             this.m_bgwk.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.m_bgwk_RunWorkerCompleted);
             // 
+            // GIAM_TRU_YN
+            // 
+            this.GIAM_TRU_YN.Caption = "Giảm trừ (Y|N)";
+            this.GIAM_TRU_YN.FieldName = "GIAM_TRU_YN";
+            this.GIAM_TRU_YN.Name = "GIAM_TRU_YN";
+            this.GIAM_TRU_YN.Visible = true;
+            this.GIAM_TRU_YN.VisibleIndex = 6;
+            // 
             // f355_thuong_an_toan_hang_khong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -996,5 +1006,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xoa_du_lieu_thuong_nv;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
+        private DevExpress.XtraGrid.Columns.GridColumn GIAM_TRU_YN;
     }
 }

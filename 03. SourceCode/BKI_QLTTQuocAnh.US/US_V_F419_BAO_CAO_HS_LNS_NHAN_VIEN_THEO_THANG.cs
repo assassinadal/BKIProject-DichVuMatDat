@@ -346,13 +346,15 @@ public class US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG : US_Object
     public void FillDataset_by_thang_nam(
                         DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG op_ds_bc_hs_lns_nv_theo_thang,
                         decimal ip_dc_thang,
-                        decimal ip_dc_nam)
+                        decimal ip_dc_nam,
+                        decimal ip_co_xem_lich_su_giao_dich)
     {
 
         CStoredProc v_cstore = new CStoredProc("pr_f419_bao_cao_hs_lns_nhan_vien_theo_thang");
 
         v_cstore.addDecimalInputParam("@ip_dc_thang", ip_dc_thang);
         v_cstore.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
+        v_cstore.addDecimalInputParam("@ip_co_xem_lich_su_giao_dich", ip_co_xem_lich_su_giao_dich);
 
         v_cstore.fillDataSetByCommand(this, op_ds_bc_hs_lns_nv_theo_thang);
     }
@@ -363,13 +365,15 @@ public class US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG : US_Object
                         DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG op_ds_bc_hs_lns_nv_theo_thang,
                         decimal ip_dc_thang,
                         decimal ip_dc_nam, 
-                        decimal ip_dc_id_nhan_vien)
+                        decimal ip_dc_id_nhan_vien,
+                        decimal ip_co_xem_lich_su_giao_dich)
     {
         CStoredProc v_cstore = new CStoredProc("pr_f419_bao_cao_hs_lns_1_nhan_vien_theo_thang_nam");
 
         v_cstore.addDecimalInputParam("@ip_dc_thang", ip_dc_thang);
         v_cstore.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
         v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+        v_cstore.addDecimalInputParam("@ip_co_xem_lich_su_giao_dich", ip_co_xem_lich_su_giao_dich);
 
         v_cstore.fillDataSetByCommand(this, op_ds_bc_hs_lns_nv_theo_thang);
     }

@@ -32,7 +32,13 @@ namespace BKI_DichVuMatDat.BaoCao
         #endregion
 
         #region Members
+        enum MyEnum
+        {
+            XEM_LICH_SU,
 
+
+        }
+        decimal m_xem_het_lich_su_giao_dich = 0; //0 chua check, 1 check roi
         #endregion
 
         #region Private Method
@@ -75,11 +81,21 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void load_data_2_grid()
         {
-            load_data_2_grid_hs_lns();
-            load_data_2_grid_lcd();
+            if (m_chk_hien_lich_su.Checked == true)
+            {
+                m_xem_het_lich_su_giao_dich = 1;
+                load_data_2_grid_hs_lns(m_xem_het_lich_su_giao_dich);
+                load_data_2_grid_lcd(m_xem_het_lich_su_giao_dich);
+            }
+            else
+            {
+                m_xem_het_lich_su_giao_dich = 0;
+                load_data_2_grid_hs_lns(m_xem_het_lich_su_giao_dich);
+                load_data_2_grid_lcd(m_xem_het_lich_su_giao_dich);
+            }
         }
 
-        private void load_data_2_grid_hs_lns()
+        private void load_data_2_grid_hs_lns(decimal ip_co_xem_lich_su_giao_dich)
         {
             CHRMCommon.make_stt(m_grv_bao_cao_hs_lns_nhan_vien);
             US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG v_us_bc_hs_lns_nv_theo_thang = new US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG();
@@ -87,12 +103,13 @@ namespace BKI_DichVuMatDat.BaoCao
 
             v_us_bc_hs_lns_nv_theo_thang.FillDataset_by_thang_nam(v_ds_bc_hs_lns_nv_theo_thang
                                                                             , CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim())
-                                                                            , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
+                                                                            , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())
+                                                                            , ip_co_xem_lich_su_giao_dich);
 
             m_grc_bao_cao_hs_lns_nhan_vien.DataSource = v_ds_bc_hs_lns_nv_theo_thang.Tables[0];
         }
 
-        private void load_data_2_grid_lcd()
+        private void load_data_2_grid_lcd(decimal ip_co_xem_lich_su_giao_dich)
         {
             CHRMCommon.make_stt(m_grv_bao_cao_lcd_nhan_vien);
             US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG v_us_bc_lcd_nv_theo_thang = new US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG();
@@ -100,7 +117,8 @@ namespace BKI_DichVuMatDat.BaoCao
 
             v_us_bc_lcd_nv_theo_thang.FillDataset_by_thang_nam(v_ds_bc_lcd_nv_theo_thang
                                                                             , CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim())
-                                                                            , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
+                                                                            , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())
+                                                                            , ip_co_xem_lich_su_giao_dich);
 
             m_grc_bao_cao_lcd_nhan_vien.DataSource = v_ds_bc_lcd_nv_theo_thang.Tables[0];
         }
@@ -109,11 +127,21 @@ namespace BKI_DichVuMatDat.BaoCao
         //
         private void load_data_2_grid(decimal ip_dc_id_nhan_vien)
         {
-            load_data_2_grid_hs_lns(ip_dc_id_nhan_vien);
-            load_data_2_grid_lcd(ip_dc_id_nhan_vien);
+            if (m_chk_hien_lich_su.Checked == true)
+            {
+                m_xem_het_lich_su_giao_dich = 1;
+                load_data_2_grid_hs_lns(ip_dc_id_nhan_vien, m_xem_het_lich_su_giao_dich);
+                load_data_2_grid_lcd(ip_dc_id_nhan_vien, m_xem_het_lich_su_giao_dich);
+            }
+            else
+            {
+                m_xem_het_lich_su_giao_dich = 0;
+                load_data_2_grid_hs_lns(ip_dc_id_nhan_vien, m_xem_het_lich_su_giao_dich);
+                load_data_2_grid_lcd(ip_dc_id_nhan_vien, m_xem_het_lich_su_giao_dich);
+            }
         }
 
-        private void load_data_2_grid_hs_lns(decimal ip_dc_id_nhan_vien)
+        private void load_data_2_grid_hs_lns(decimal ip_dc_id_nhan_vien, decimal ip_co_xem_lich_su_giao_dich)
         {
             CHRMCommon.make_stt(m_grv_bao_cao_hs_lns_nhan_vien);
             US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG v_us_bc_hs_lns_nv_theo_thang = new US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG();
@@ -122,12 +150,13 @@ namespace BKI_DichVuMatDat.BaoCao
             v_us_bc_hs_lns_nv_theo_thang.FillDataset_by_thang_nam_id_nhan_vien(v_ds_bc_hs_lns_nv_theo_thang
                                                                             , CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim())
                                                                             , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())
-                                                                            , ip_dc_id_nhan_vien);
+                                                                            , ip_dc_id_nhan_vien
+                                                                            , ip_co_xem_lich_su_giao_dich);
 
             m_grc_bao_cao_hs_lns_nhan_vien.DataSource = v_ds_bc_hs_lns_nv_theo_thang.Tables[0];
         }
 
-        private void load_data_2_grid_lcd(decimal ip_dc_id_nhan_vien)
+        private void load_data_2_grid_lcd(decimal ip_dc_id_nhan_vien, decimal ip_co_xem_lich_su_giao_dich)
         {
             CHRMCommon.make_stt(m_grv_bao_cao_lcd_nhan_vien);
             US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG v_us_bc_lcd_nv_theo_thang = new US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG();
@@ -136,7 +165,8 @@ namespace BKI_DichVuMatDat.BaoCao
             v_us_bc_lcd_nv_theo_thang.FillDataset_by_thang_nam_id_nhan_vien(v_ds_bc_lcd_nv_theo_thang
                                                                             , CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim())
                                                                             , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())
-                                                                            , ip_dc_id_nhan_vien);
+                                                                            , ip_dc_id_nhan_vien
+                                                                            , ip_co_xem_lich_su_giao_dich);
 
             m_grc_bao_cao_lcd_nhan_vien.DataSource = v_ds_bc_lcd_nv_theo_thang.Tables[0];
         }
@@ -194,6 +224,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 {
                     load_data_2_grid(Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                 }
+
             }
             catch (Exception v_e)
             {

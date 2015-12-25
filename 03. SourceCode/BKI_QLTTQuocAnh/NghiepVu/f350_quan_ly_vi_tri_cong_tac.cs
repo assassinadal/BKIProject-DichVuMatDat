@@ -93,7 +93,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_2_sle_chon_quyet_dinh()
         {
             m_sle_chon_quyet_dinh.Properties.DataSource = load_data_2_ds_v_gd_quyet_dinh().Tables[0];
-
+            m_sle_chon_quyet_dinh.Properties.DisplayMember = V_GD_QUYET_DINH.NOI_DUNG;
             m_sle_chon_quyet_dinh.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_quyet_dinh.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
@@ -223,11 +223,11 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return false;
             }
             //GD quyet dinh dang chua co du lieu
-            if (m_sle_chon_quyet_dinh.EditValue == null || m_sle_chon_quyet_dinh.EditValue == "")
-            {
-                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_QUYET_DINH);
-                return false;
-            }
+            //if (m_sle_chon_quyet_dinh.EditValue == null || m_sle_chon_quyet_dinh.EditValue == "")
+            //{
+            //    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_QUYET_DINH);
+            //    return false;
+            //}
             if (m_sle_chon_don_vi.EditValue == null || m_sle_chon_don_vi.EditValue == "")
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_DON_VI);

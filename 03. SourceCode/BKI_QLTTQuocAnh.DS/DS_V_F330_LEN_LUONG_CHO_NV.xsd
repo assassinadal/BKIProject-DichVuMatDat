@@ -2,14 +2,15 @@
 <xs:schema id="DS_V_F330_LEN_LUONG_CHO_NV" targetNamespace="http://tempuri.org/DS_V_F330_LEN_LUONG_CHO_NV.xsd" xmlns:mstns="http://tempuri.org/DS_V_F330_LEN_LUONG_CHO_NV.xsd" xmlns="http://tempuri.org/DS_V_F330_LEN_LUONG_CHO_NV.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_DVMDConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_DVMDConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_DichVuMatDat.DS.Properties.Settings.GlobalReference.Default.BKI_DVMDConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DVMDConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DVMDConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_DichVuMatDat.DS.Properties.Settings.GlobalReference.Default.DVMDConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_F330_LEN_LUONG_CHO_NVTableAdapter" GeneratorDataComponentClassName="V_F330_LEN_LUONG_CHO_NVTableAdapter" Name="V_F330_LEN_LUONG_CHO_NV" UserDataComponentName="V_F330_LEN_LUONG_CHO_NVTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BKI_DVMDConnectionString1 (Settings)" DbObjectName="BKI_DVMD.dbo.V_F330_LEN_LUONG_CHO_NV" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DVMDConnectionString (Settings)" DbObjectName="DVMD.dbo.V_F330_LEN_LUONG_CHO_NV" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT ID, MA_NV, HO_DEM, TEN, HO_TEN, ID_HOP_DONG, ID_LOAI_HOP_DONG, LOAI_HOP_DONG, MA_HOP_DONG, NGAY_BAT_DAU, NGAY_KET_THUC, NGAY_KY_HOP_DONG, NGAY_LAP, NGAY_SUA, NGUOI_LAP, NGUOI_SUA, DA_XOA, ID_GD_HS_LNS_LCD, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_QD, MA_LOAI_QD, TEN_LOAI_QD, ID_HS_LNS, ID_MA_LNS, MA_LNS, TEN_MA_LNS, ID_MUC_LNS, MUC_LNS, TEN_MUC_LNS, HE_SO_LNS, ID_LOAI_LAO_DONG, ID_LCD, ID_MA_LCD, MA_LCD, TEN_MA_LCD, ID_MUC_LCD, MUC_LCD, TEN_MUC_LCD, SO_TIEN_LCD, NGAY_LAP_GD_HS_LNS_LCD, NGAY_SUA_GD_HS_LNS_LCD, NGUOI_LAP_GD_HS_LNS_LCD, NGUOI_SUA_GD_HS_LNS_LCD, MA_LOAI_HOP_DONG, MA_TU_DIEN FROM dbo.V_F330_LEN_LUONG_CHO_NV</CommandText>
@@ -170,7 +171,7 @@
               <xs:element name="TEN_LOAI_QD" msprop:Generator_ColumnVarNameInTable="columnTEN_LOAI_QD" msprop:Generator_ColumnPropNameInRow="TEN_LOAI_QD" msprop:Generator_ColumnPropNameInTable="TEN_LOAI_QDColumn" msprop:Generator_UserColumnName="TEN_LOAI_QD" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -186,7 +187,7 @@
               <xs:element name="TEN_MA_LNS" msprop:Generator_ColumnVarNameInTable="columnTEN_MA_LNS" msprop:Generator_ColumnPropNameInRow="TEN_MA_LNS" msprop:Generator_ColumnPropNameInTable="TEN_MA_LNSColumn" msprop:Generator_UserColumnName="TEN_MA_LNS" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -201,7 +202,7 @@
               <xs:element name="TEN_MUC_LNS" msprop:Generator_ColumnVarNameInTable="columnTEN_MUC_LNS" msprop:Generator_ColumnPropNameInRow="TEN_MUC_LNS" msprop:Generator_ColumnPropNameInTable="TEN_MUC_LNSColumn" msprop:Generator_UserColumnName="TEN_MUC_LNS" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -219,7 +220,7 @@
               <xs:element name="TEN_MA_LCD" msprop:Generator_ColumnVarNameInTable="columnTEN_MA_LCD" msprop:Generator_ColumnPropNameInRow="TEN_MA_LCD" msprop:Generator_ColumnPropNameInTable="TEN_MA_LCDColumn" msprop:Generator_UserColumnName="TEN_MA_LCD" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -234,7 +235,7 @@
               <xs:element name="TEN_MUC_LCD" msprop:Generator_ColumnVarNameInTable="columnTEN_MUC_LCD" msprop:Generator_ColumnPropNameInRow="TEN_MUC_LCD" msprop:Generator_ColumnPropNameInTable="TEN_MUC_LCDColumn" msprop:Generator_UserColumnName="TEN_MUC_LCD" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

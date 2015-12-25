@@ -212,17 +212,12 @@ namespace BKI_DichVuMatDat
             ip_dr_luong_nv[RPT_LUONG.AN_CA] = ip_dr_luong[RPT_LUONG.AN_CA];
             ip_dr_luong_nv[RPT_LUONG.LAM_THEM] = ip_dr_luong[RPT_LUONG.LAM_THEM];
             ip_dr_luong_nv[RPT_LUONG.LAM_THEM_LE_TET] = ip_dr_luong[RPT_LUONG.LAM_THEM_LE_TET];
-            ip_dr_luong_nv[RPT_LUONG.LUONG_KHAC_THUE_5] = ip_dr_luong[RPT_LUONG.LUONG_KHAC_THUE_5];
-            ip_dr_luong_nv[RPT_LUONG.LUONG_KHAC_THUE_10] = ip_dr_luong[RPT_LUONG.LUONG_KHAC_THUE_10];
-            ip_dr_luong_nv[RPT_LUONG.LUONG_KHAC_THUE_TINH_THEO_LUONG] = ip_dr_luong[RPT_LUONG.LUONG_KHAC_THUE_TINH_THEO_LUONG];
             ip_dr_luong_nv[RPT_LUONG.THU_NHAP] = ip_dr_luong[RPT_LUONG.THU_NHAP];
             ip_dr_luong_nv[RPT_LUONG.BHXH] = ip_dr_luong[RPT_LUONG.BHXH];
             ip_dr_luong_nv[RPT_LUONG.BHYT] = ip_dr_luong[RPT_LUONG.BHYT];
             ip_dr_luong_nv[RPT_LUONG.BHTN] = ip_dr_luong[RPT_LUONG.BHTN];
             ip_dr_luong_nv[RPT_LUONG.DOAN_PHI_CD] = ip_dr_luong[RPT_LUONG.DOAN_PHI_CD];
             ip_dr_luong_nv[RPT_LUONG.THUE] = ip_dr_luong[RPT_LUONG.THUE];
-            ip_dr_luong_nv[RPT_LUONG.THUE_TU_LUONG_KHAC_5] = ip_dr_luong[RPT_LUONG.THUE_TU_LUONG_KHAC_5];
-            ip_dr_luong_nv[RPT_LUONG.THUE_TU_LUONG_KHAC_10] = ip_dr_luong[RPT_LUONG.THUE_TU_LUONG_KHAC_10];
             ip_dr_luong_nv[RPT_LUONG.PHAI_NOP] = ip_dr_luong[RPT_LUONG.PHAI_NOP];
             ip_dr_luong_nv[RPT_LUONG.THUC_LINH] = ip_dr_luong[RPT_LUONG.THUC_LINH];
             ip_dr_luong_nv[RPT_LUONG.TRUY_LINH] = ip_dr_luong[RPT_LUONG.TRUY_LINH];
@@ -243,9 +238,6 @@ namespace BKI_DichVuMatDat
             v_us.dcLAM_THEM = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LAM_THEM].ToString());
             v_us.dcLAM_THEM_LE_TET = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LAM_THEM_LE_TET].ToString());
             v_us.dcLUONG_CD = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LUONG_CD].ToString());
-            v_us.dcLUONG_KHAC_THUE_10 = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LUONG_KHAC_THUE_10].ToString());
-            v_us.dcLUONG_KHAC_THUE_5 = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LUONG_KHAC_THUE_5].ToString());
-            v_us.dcLUONG_KHAC_THUE_TINH_THEO_LUONG = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LUONG_KHAC_THUE_TINH_THEO_LUONG].ToString());
             v_us.dcLUONG_NS = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LUONG_NS].ToString());
             v_us.dcNAM = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.NAM].ToString());
             v_us.dcPHAI_NOP = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.PHAI_NOP].ToString());
@@ -255,8 +247,6 @@ namespace BKI_DichVuMatDat
             v_us.dcTHUC_LINH = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THUC_LINH].ToString());
             v_us.dcTHUC_LINH_CUOI_CUNG = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THUC_LINH_CUOI_CUNG].ToString());
             v_us.dcTHUE = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THUE].ToString());
-            v_us.dcTHUE_TU_LUONG_KHAC_10 = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THUE_TU_LUONG_KHAC_10].ToString());
-            v_us.dcTHUE_TU_LUONG_KHAC_5 = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THUE_TU_LUONG_KHAC_5].ToString());
             v_us.dcTRUY_LINH = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.TRUY_LINH].ToString());
             v_us.dcTRUY_THU = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.TRUY_THU].ToString());
         }

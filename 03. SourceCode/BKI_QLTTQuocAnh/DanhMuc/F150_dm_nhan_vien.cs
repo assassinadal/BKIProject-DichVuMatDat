@@ -323,90 +323,95 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_cmd_them_nhan_vien.Click += m_cmd_them_nhan_vien_Click;
             m_dat_ngay_sinh.ValueChanged += m_dat_ngay_sinh_ValueChanged;
             m_cmd_insert.Click += m_cmd_insert_Click;
+            m_cmd_tra_cuu.Click += m_cmd_tra_cuu_Click;
+        }
+
+        void m_cmd_tra_cuu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                change_visible_of_control(true);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_insert_Click(object sender, EventArgs e)
         {
             try
             {
-                if (check_data_is_ok())
+                if (check_data_is_ok() == false) return;
+
+                if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == false) return;
+
+                if (check_ma_nv_da_ton_tai(m_txt_ma_nv.Text) == true)
                 {
-                    if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
+                    US_DM_NHAN_VIEN v_us_nv_4_insert = new US_DM_NHAN_VIEN();
+                    form_2_us_dm_nv(v_us_nv_4_insert);
+
+                    //insert
+                    try
                     {
-                        if (check_ma_nv_da_ton_tai(m_txt_ma_nv.Text) == true)
+                        v_us_nv_4_insert.BeginTransaction();
+                        v_us_nv_4_insert.Insert();
+                        v_us_nv_4_insert.CommitTransaction();
+                        m_member_is_newbie = 0;
+                    }
+                    catch (Exception v_e)
+                    {
+                        v_us_nv_4_insert.Rollback();
+                        throw v_e;
+                    }
+                    //cho cac control visible false -> true
+                    change_visible_of_control(true);
+                    //load_data_2_sle_chon_nv
+                    load_data_to_all_controls(v_us_nv_4_insert.dcID);
+                    load_data_2_ds_v_dm_nv();
+                    m_sle_chon_nhan_vien.EditValue = v_us_nv_4_insert.dcID;
+
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                }
+                else
+                {
+                    if (m_member_is_newbie == 1)
+                    {
+                        US_DM_NHAN_VIEN v_us_nv_4_insert = new US_DM_NHAN_VIEN();
+                        form_2_us_dm_nv(v_us_nv_4_insert);
+
+                        //insert
+                        try
                         {
-                            US_DM_NHAN_VIEN v_us_nv_4_insert = new US_DM_NHAN_VIEN();
-                            form_2_us_dm_nv(v_us_nv_4_insert);
-
-                            //insert
-                            try
-                            {
-                                v_us_nv_4_insert.BeginTransaction();
-                                v_us_nv_4_insert.Insert();
-                                v_us_nv_4_insert.CommitTransaction();
-                                m_member_is_newbie = 0;
-                            }
-                            catch (Exception v_e)
-                            {
-                                v_us_nv_4_insert.Rollback();
-                                CSystemLog_301.ExceptionHandle(v_e);
-                            }
-                            //cho cac control visible false -> true
-                            change_visible_of_control(true);
-                            //load_data_2_sle_chon_nv
-                            load_data_to_all_controls(v_us_nv_4_insert.dcID);
-                            load_data_2_ds_v_dm_nv();
-                            m_sle_chon_nhan_vien.EditValue = v_us_nv_4_insert.dcID;
-
-                            CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                            v_us_nv_4_insert.BeginTransaction();
+                            v_us_nv_4_insert.Insert();
+                            v_us_nv_4_insert.CommitTransaction();
+                            m_member_is_newbie = 0;
                         }
-                        else
+                        catch (Exception v_e)
                         {
-                            if (m_member_is_newbie == 1)
-                            {
-                                US_DM_NHAN_VIEN v_us_nv_4_insert = new US_DM_NHAN_VIEN();
-                                form_2_us_dm_nv(v_us_nv_4_insert);
-
-                                //insert
-                                try
-                                {
-                                    v_us_nv_4_insert.BeginTransaction();
-                                    v_us_nv_4_insert.Insert();
-                                    v_us_nv_4_insert.CommitTransaction();
-                                    m_member_is_newbie = 0;
-                                }
-                                catch (Exception v_e)
-                                {
-                                    v_us_nv_4_insert.Rollback();
-                                    CSystemLog_301.ExceptionHandle(v_e);
-                                }
-                                //cho cac control visible false -> true
-                                change_visible_of_control(true);
-                                //load_data_2_sle_chon_nv                          
-                                load_data_to_all_controls(v_us_nv_4_insert.dcID);
-                                load_data_2_ds_v_dm_nv();
-                                m_sle_chon_nhan_vien.EditValue = v_us_nv_4_insert.dcID;
-
-                                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-                            }
-                            else
-                            {
-                                //update
-                                try
-                                {
-                                    US_DM_NHAN_VIEN v_us_nv_4_update = new US_DM_NHAN_VIEN(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
-                                    form_2_us_dm_nv(v_us_nv_4_update);
-                                    v_us_nv_4_update.Update();
-                                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
-                                }
-                                catch (Exception v_e)
-                                {
-                                    CSystemLog_301.ExceptionHandle(v_e);
-                                }
-                            }
+                            v_us_nv_4_insert.Rollback();
+                            throw v_e;
                         }
+                        //cho cac control visible false -> true
+                        change_visible_of_control(true);
+                        //load_data_2_sle_chon_nv                          
+                        load_data_to_all_controls(v_us_nv_4_insert.dcID);
+                        load_data_2_ds_v_dm_nv();
+                        m_sle_chon_nhan_vien.EditValue = v_us_nv_4_insert.dcID;
+
+                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                    }
+                    else
+                    {
+                        //update
+                        US_DM_NHAN_VIEN v_us_nv_4_update = new US_DM_NHAN_VIEN(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                        form_2_us_dm_nv(v_us_nv_4_update);
+                        v_us_nv_4_update.Update();
+                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
                     }
                 }
+                change_visible_of_control(true);
             }
             catch (Exception v_e)
             {
@@ -427,8 +432,6 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
             else return false;
         }
-
-
 
         void m_dat_ngay_sinh_ValueChanged(object sender, EventArgs e)
         {

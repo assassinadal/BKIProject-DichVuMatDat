@@ -115,7 +115,7 @@ namespace BKI_DichVuMatDat
             }
             else
             {
-                v_strValue = "Đã có lỗi xảy ra. Vui lòng kiểm tra lại các trường thông tin.";
+                v_strValue = "Chương trình chưa tìm thấy nội dung thông báo! Bạn vui lòng sao chép thư mục XML message đính kèm vào thư mục chương trình";
             }
             return v_strValue;
         }

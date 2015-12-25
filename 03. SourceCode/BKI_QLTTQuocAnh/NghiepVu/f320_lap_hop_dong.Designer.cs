@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f320_lap_hop_dong));
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
@@ -70,7 +69,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.m_cmd_tao_lai = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_lap_hop_dong = new DevExpress.XtraEditors.SimpleButton();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.panel4 = new System.Windows.Forms.Panel();
             this.m_grc_lap_hd = new DevExpress.XtraGrid.GridControl();
             this.m_grv_lap_hd = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -93,7 +92,7 @@
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList = new System.Windows.Forms.ImageList();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -185,7 +184,7 @@
             this.m_sle_chon_nhan_vien.Name = "m_sle_chon_nhan_vien";
             this.m_sle_chon_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_sle_chon_nhan_vien.Properties.NullText = "";
+            this.m_sle_chon_nhan_vien.Properties.NullText = "--Chọn nhân viên--";
             this.m_sle_chon_nhan_vien.Properties.View = this.searchLookUpEdit1View;
             this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(208, 20);
             this.m_sle_chon_nhan_vien.TabIndex = 1;

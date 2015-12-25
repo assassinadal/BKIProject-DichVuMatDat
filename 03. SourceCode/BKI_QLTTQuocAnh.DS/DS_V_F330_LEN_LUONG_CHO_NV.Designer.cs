@@ -1085,15 +1085,15 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnDA_XOA.MaxLength = 1;
                 this.columnMA_QUYET_DINH.MaxLength = 50;
                 this.columnMA_LOAI_QD.MaxLength = 15;
-                this.columnTEN_LOAI_QD.MaxLength = 50;
+                this.columnTEN_LOAI_QD.MaxLength = 250;
                 this.columnMA_LNS.MaxLength = 15;
-                this.columnTEN_MA_LNS.MaxLength = 50;
+                this.columnTEN_MA_LNS.MaxLength = 250;
                 this.columnMUC_LNS.MaxLength = 15;
-                this.columnTEN_MUC_LNS.MaxLength = 50;
+                this.columnTEN_MUC_LNS.MaxLength = 250;
                 this.columnMA_LCD.MaxLength = 15;
-                this.columnTEN_MA_LCD.MaxLength = 50;
+                this.columnTEN_MA_LCD.MaxLength = 250;
                 this.columnMUC_LCD.MaxLength = 15;
-                this.columnTEN_MUC_LCD.MaxLength = 50;
+                this.columnTEN_MUC_LCD.MaxLength = 250;
                 this.columnNGUOI_LAP_GD_HS_LNS_LCD.MaxLength = 250;
                 this.columnNGUOI_SUA_GD_HS_LNS_LCD.MaxLength = 250;
                 this.columnMA_LOAI_HOP_DONG.MaxLength = 15;
@@ -2685,7 +2685,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_F330_LEN_LUONG_CHO_NVTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BKI_DichVuMatDat.DS.Properties.Settings.Default.BKI_DVMDConnectionString1;
+            this._connection.ConnectionString = global::BKI_DichVuMatDat.DS.Properties.Settings.Default.DVMDConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

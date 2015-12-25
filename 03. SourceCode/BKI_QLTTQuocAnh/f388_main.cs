@@ -1037,6 +1037,21 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                F393_gd_nhan_vien_phu_cap v_f = new F393_gd_nhan_vien_phu_cap();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
 
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)

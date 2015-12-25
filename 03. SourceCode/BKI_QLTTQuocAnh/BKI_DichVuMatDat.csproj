@@ -32,7 +32,7 @@
     <SuiteName>HGS_HRM</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -774,6 +774,18 @@
     <Compile Include="NghiepVu\f392_ke_khai_bao_hiem_y_te.Designer.cs">
       <DependentUpon>f392_ke_khai_bao_hiem_y_te.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\F393_gd_nhan_vien_phu_cap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\F393_gd_nhan_vien_phu_cap.Designer.cs">
+      <DependentUpon>F393_gd_nhan_vien_phu_cap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\F393_nhan_vien_phu_cap_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\F393_nhan_vien_phu_cap_de.Designer.cs">
+      <DependentUpon>F393_nhan_vien_phu_cap_de.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f393_tinh_phep_tieu_chuan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1061,6 +1073,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f392_ke_khai_bao_hiem_y_te.resx">
       <DependentUpon>f392_ke_khai_bao_hiem_y_te.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\F393_gd_nhan_vien_phu_cap.resx">
+      <DependentUpon>F393_gd_nhan_vien_phu_cap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\F393_nhan_vien_phu_cap_de.resx">
+      <DependentUpon>F393_nhan_vien_phu_cap_de.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f393_tinh_phep_tieu_chuan.resx">
       <DependentUpon>f393_tinh_phep_tieu_chuan.cs</DependentUpon>

@@ -707,6 +707,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string MA_TU_DIEN = "MA_TU_DIEN";
     }
 
+
     public class V_GD_QUYET_DINH
     {
         public const string ID = "ID";

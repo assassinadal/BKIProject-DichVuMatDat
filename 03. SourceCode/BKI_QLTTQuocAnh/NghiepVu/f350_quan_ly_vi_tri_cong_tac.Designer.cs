@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f350_quan_ly_vi_tri_cong_tac));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -79,7 +78,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList = new System.Windows.Forms.ImageList();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc_v_gd_cong_tac = new DevExpress.XtraGrid.GridControl();
             this.m_grv_v_gd_cong_tac = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -572,9 +571,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Chọn quyết định (*)";
+            this.label2.Text = "Chọn quyết định";
             // 
             // panelControl2
             // 

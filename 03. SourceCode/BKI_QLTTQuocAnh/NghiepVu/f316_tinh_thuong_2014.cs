@@ -141,7 +141,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             DS_V_GD_QUY_TIEN_THUONG v_ds_quy_tien_thuong = new DS_V_GD_QUY_TIEN_THUONG();
             US_V_GD_QUY_TIEN_THUONG v_us_quy_tien_thuong = new US_V_GD_QUY_TIEN_THUONG();
-            v_us_quy_tien_thuong.FillDataSetAll(out v_ds_quy_tien_thuong);
+            v_us_quy_tien_thuong.FillDataSetThuongKhac(out v_ds_quy_tien_thuong);
             return v_ds_quy_tien_thuong;
         }
         private void fill_data_quy_tien_thuong()

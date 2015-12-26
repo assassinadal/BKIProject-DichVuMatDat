@@ -528,6 +528,13 @@ public class US_V_GD_QUY_TIEN_THUONG : US_Object
             CStoredProc v_sp = new CStoredProc("pr_get_data_quy_tien_thuong_all");
             v_sp.fillDataSetByCommand(this, op_ds);
         }
+        public void FillDataSetThuongKhac(out DS_V_GD_QUY_TIEN_THUONG op_ds)
+        {
+            op_ds = new DS_V_GD_QUY_TIEN_THUONG();
+            op_ds.EnforceConstraints = false;
+            CStoredProc v_sp = new CStoredProc("pr_get_data_quy_tien_thuong_khac");
+            v_sp.fillDataSetByCommand(this, op_ds);
+        }
         public void lay_thong_tin_qua_trinh_tinh_luong(out DataRow op_dr, decimal ip_dc_id_quy_tien_thuong)
         {
             DS_V_GD_QUY_TIEN_THUONG op_ds = new DS_V_GD_QUY_TIEN_THUONG();

@@ -907,6 +907,15 @@ namespace BKI_DichVuMatDat.DS.CDBNames
 
     #endregion
 
+    public class GD_CHAM_CONG_LAM_THEM
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string THANG = "THANG";
+        public const string NAM = "NAM";
+        public const string SO_NGAY_LAM_THEM = "SO_NGAY_LAM_THEM";
+    }
+
     public class RPT_THONG_TIN_TONG_HOP
     {
         public const string ID = "ID";

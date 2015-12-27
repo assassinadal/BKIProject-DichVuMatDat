@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -125,14 +126,15 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
+            this.m_cmd_xem_cham_cong_lam_them = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -226,9 +228,10 @@
             this.m_cmd_card_nhan_vien,
             this.m_cmd_thuong_2014,
             this.m_cmd_them_nhan_vien_nhanh,
-            this.barButtonItem5});
+            this.barButtonItem5,
+            this.m_cmd_xem_cham_cong_lam_them});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 92;
+            this.ribbon.MaxItemId = 93;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1048,6 +1051,7 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_cham_cong_xls);
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_hs_chat_luong_by_nv);
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_hs_chat_luong_xls);
+            this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_xem_cham_cong_lam_them);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Chấm công";
             // 
@@ -1188,6 +1192,14 @@
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
             // 
+            // m_cmd_xem_cham_cong_lam_them
+            // 
+            this.m_cmd_xem_cham_cong_lam_them.Caption = "Chấm công làm thêm";
+            this.m_cmd_xem_cham_cong_lam_them.Id = 92;
+            this.m_cmd_xem_cham_cong_lam_them.Name = "m_cmd_xem_cham_cong_lam_them";
+            this.m_cmd_xem_cham_cong_lam_them.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // f388_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1321,5 +1333,6 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_thuong_2014;
         private DevExpress.XtraBars.BarButtonItem m_cmd_them_nhan_vien_nhanh;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_xem_cham_cong_lam_them;
     }
 }

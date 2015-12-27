@@ -810,6 +810,12 @@
     <Compile Include="NghiepVu\F696_Cham_cong_xls.Designer.cs">
       <DependentUpon>F696_Cham_cong_xls.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f697_cham_cong_lam_them.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f697_cham_cong_lam_them.Designer.cs">
+      <DependentUpon>f697_cham_cong_lam_them.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\frm356_chuyen_trang_thai_lao_dong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1091,6 +1097,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F696_Cham_cong_xls.resx">
       <DependentUpon>F696_Cham_cong_xls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f697_cham_cong_lam_them.resx">
+      <DependentUpon>f697_cham_cong_lam_them.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm356_chuyen_trang_thai_lao_dong.resx">
       <DependentUpon>frm356_chuyen_trang_thai_lao_dong.cs</DependentUpon>

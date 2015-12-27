@@ -2166,9 +2166,7 @@
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.GroupCount = 1;
             this.m_grv.Name = "m_grv";
-            this.m_grv.OptionsBehavior.Editable = false;
             this.m_grv.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDown;
-            this.m_grv.OptionsBehavior.ReadOnly = true;
             this.m_grv.OptionsView.ColumnAutoWidth = false;
             this.m_grv.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.m_grv.OptionsView.RowAutoHeight = true;

@@ -719,28 +719,48 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void us_obj_2_form(decimal v_id_gd_hd, decimal v_id_gd_lns_lcd)
         {
             US_GD_HOP_DONG v_us_gd_hd = new US_GD_HOP_DONG(v_id_gd_hd);
-            US_GD_HS_LNS_LCD v_us_gd_lns_lcd = new US_GD_HS_LNS_LCD(v_id_gd_lns_lcd);
-            US_DM_HE_SO_LUONG_NS v_us_dm_hs_lns = new US_DM_HE_SO_LUONG_NS(v_us_gd_lns_lcd.dcID_HS_LNS);
-            US_DM_LUONG_CHE_DO v_us_dm_lcd = new US_DM_LUONG_CHE_DO(v_us_gd_lns_lcd.dcID_LCD);
-
-            m_sle_chon_nhan_vien.EditValue = v_us_gd_hd.dcID_NHAN_VIEN;
-            m_txt_ma_hd.Text = v_us_gd_hd.strMA_HOP_DONG;
-            m_sle_loai_hop_dong.EditValue = v_us_gd_hd.dcID_LOAI_HOP_DONG;
-            m_dat_ngay_bat_dau.Value = v_us_gd_hd.datNGAY_BAT_DAU;
-            m_dat_ngay_ket_thuc.Value = v_us_gd_hd.datNGAY_KET_THUC;
-            m_dat_ngay_ky.Value = v_us_gd_hd.datNGAY_KY_HOP_DONG;
-            if (v_us_gd_hd.dcID_LOAI_HOP_DONG == CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
+            
+            if(v_id_gd_lns_lcd != -1)
             {
-                m_gr_LNS.Enabled = false;
-                m_gr_LCD.Enabled = false;
+                US_GD_HS_LNS_LCD v_us_gd_lns_lcd = new US_GD_HS_LNS_LCD(v_id_gd_lns_lcd);
+                US_DM_HE_SO_LUONG_NS v_us_dm_hs_lns = new US_DM_HE_SO_LUONG_NS(v_us_gd_lns_lcd.dcID_HS_LNS);
+                US_DM_LUONG_CHE_DO v_us_dm_lcd = new US_DM_LUONG_CHE_DO(v_us_gd_lns_lcd.dcID_LCD);
+                m_sle_chon_nhan_vien.EditValue = v_us_gd_hd.dcID_NHAN_VIEN;
+                m_txt_ma_hd.Text = v_us_gd_hd.strMA_HOP_DONG;
+                m_sle_loai_hop_dong.EditValue = v_us_gd_hd.dcID_LOAI_HOP_DONG;
+                m_dat_ngay_bat_dau.Value = v_us_gd_hd.datNGAY_BAT_DAU;
+                m_dat_ngay_ket_thuc.Value = v_us_gd_hd.datNGAY_KET_THUC;
+                m_dat_ngay_ky.Value = v_us_gd_hd.datNGAY_KY_HOP_DONG;
+
+                if (v_us_gd_hd.dcID_LOAI_HOP_DONG == CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
+                {
+                    m_gr_LNS.Enabled = false;
+                    m_gr_LCD.Enabled = false;
+                }
+                else
+                {
+                    m_sle_chuc_danh_lns.EditValue = v_us_dm_hs_lns.dcID_MA_LNS;
+                    m_sle_muc_lns.EditValue = v_us_dm_hs_lns.dcID_MUC_LNS;
+                    m_sle_chuc_danh_lcd.EditValue = v_us_dm_lcd.dcID_MA_LCD;
+                    m_sle_muc_lcd.EditValue = v_us_dm_lcd.dcID_MUC_LCD;
+                }
             }
             else
             {
-                m_sle_chuc_danh_lns.EditValue = v_us_dm_hs_lns.dcID_MA_LNS;
-                m_sle_muc_lns.EditValue = v_us_dm_hs_lns.dcID_MUC_LNS;
-                m_sle_chuc_danh_lcd.EditValue = v_us_dm_lcd.dcID_MA_LCD;
-                m_sle_muc_lcd.EditValue = v_us_dm_lcd.dcID_MUC_LCD;
+                m_sle_chon_nhan_vien.EditValue = v_us_gd_hd.dcID_NHAN_VIEN;
+                m_txt_ma_hd.Text = v_us_gd_hd.strMA_HOP_DONG;
+                m_sle_loai_hop_dong.EditValue = v_us_gd_hd.dcID_LOAI_HOP_DONG;
+                m_dat_ngay_bat_dau.Value = v_us_gd_hd.datNGAY_BAT_DAU;
+                m_dat_ngay_ket_thuc.Value = v_us_gd_hd.datNGAY_KET_THUC;
+                m_dat_ngay_ky.Value = v_us_gd_hd.datNGAY_KY_HOP_DONG;
+                if (v_us_gd_hd.dcID_LOAI_HOP_DONG == CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
+                {
+                    m_gr_LNS.Enabled = false;
+                    m_gr_LCD.Enabled = false;
+                }
             }
+
+            
 
             if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
             {
@@ -764,7 +784,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             decimal v_id_gd_hs_lns_lcd = 0;
             v_id_gd_hs_lns_lcd = find_id_gd_lns_lcd(m_id_gd_hd);
-
+            if (v_id_gd_hs_lns_lcd == -1)
+            {
+                return;
+            }
             US_GD_HS_LNS_LCD v_us = new US_GD_HS_LNS_LCD(v_id_gd_hs_lns_lcd);
 
             v_us.strDA_XOA = "Y";
@@ -1085,7 +1108,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     }
 
                     load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
-                    focus_new_row_created();
+                    //focus_new_row_created();
                 }
             }
             catch (Exception v_e)

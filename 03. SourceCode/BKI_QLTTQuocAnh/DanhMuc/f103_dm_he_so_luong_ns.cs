@@ -90,6 +90,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_cmd_insert.Click += m_cmd_insert_Click;
             m_cmd_update.Click += m_cmd_update_Click;
             m_cmd_delete.Click += m_cmd_delete_Click;
+           
         }
 
         void F103_dm_he_so_luong_ns_Load(object sender, EventArgs e)

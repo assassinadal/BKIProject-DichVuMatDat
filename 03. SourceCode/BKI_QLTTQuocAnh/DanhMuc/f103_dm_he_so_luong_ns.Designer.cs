@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F103_dm_he_so_luong_ns));
             this.m_grc_dm_he_so_luong_ns = new DevExpress.XtraGrid.GridControl();
             this.m_grv_dm_he_so_luong_ns = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -44,7 +43,7 @@
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_he_so_luong_ns)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_he_so_luong_ns)).BeginInit();
@@ -111,7 +110,7 @@
             this.c_ma_luong_ns.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.c_ma_luong_ns.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.c_ma_luong_ns.Caption = "Mã Lương NS";
-            this.c_ma_luong_ns.FieldName = "ID_MA_LNS";
+            this.c_ma_luong_ns.FieldName = "TEN_NGAN_LNS";
             this.c_ma_luong_ns.Name = "c_ma_luong_ns";
             this.c_ma_luong_ns.Visible = true;
             this.c_ma_luong_ns.VisibleIndex = 1;

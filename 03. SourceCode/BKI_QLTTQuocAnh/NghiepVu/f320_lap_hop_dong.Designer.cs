@@ -93,6 +93,7 @@
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.ImageList = new System.Windows.Forms.ImageList();
+            this.m_cmd_loc_du_lieu = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -228,6 +229,7 @@
             // 
             this.m_gr_thong_tin_co_ban.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_gr_thong_tin_co_ban.Appearance.Options.UseFont = true;
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_cmd_loc_du_lieu);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.m_lbl_kiem_tra_ma_hd);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.m_txt_ma_hd);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.label7);
@@ -244,7 +246,7 @@
             this.m_gr_thong_tin_co_ban.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_gr_thong_tin_co_ban.Location = new System.Drawing.Point(0, 0);
             this.m_gr_thong_tin_co_ban.Name = "m_gr_thong_tin_co_ban";
-            this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(391, 192);
+            this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(439, 192);
             this.m_gr_thong_tin_co_ban.TabIndex = 0;
             this.m_gr_thong_tin_co_ban.Text = "THÔNG TIN CƠ BẢN";
             // 
@@ -312,7 +314,7 @@
             this.m_gr_LCD.Controls.Add(this.label6);
             this.m_gr_LCD.Controls.Add(this.m_sle_muc_lcd);
             this.m_gr_LCD.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_gr_LCD.Location = new System.Drawing.Point(792, 0);
+            this.m_gr_LCD.Location = new System.Drawing.Point(840, 0);
             this.m_gr_LCD.Name = "m_gr_LCD";
             this.m_gr_LCD.Size = new System.Drawing.Size(389, 192);
             this.m_gr_LCD.TabIndex = 2;
@@ -403,7 +405,7 @@
             this.m_gr_LNS.Controls.Add(this.m_sle_muc_lns);
             this.m_gr_LNS.Controls.Add(this.label13);
             this.m_gr_LNS.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_gr_LNS.Location = new System.Drawing.Point(391, 0);
+            this.m_gr_LNS.Location = new System.Drawing.Point(439, 0);
             this.m_gr_LNS.Name = "m_gr_LNS";
             this.m_gr_LNS.Size = new System.Drawing.Size(401, 192);
             this.m_gr_LNS.TabIndex = 1;
@@ -840,6 +842,15 @@
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
             // 
+            // m_cmd_loc_du_lieu
+            // 
+            this.m_cmd_loc_du_lieu.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_loc_du_lieu.Image")));
+            this.m_cmd_loc_du_lieu.Location = new System.Drawing.Point(345, 25);
+            this.m_cmd_loc_du_lieu.Name = "m_cmd_loc_du_lieu";
+            this.m_cmd_loc_du_lieu.Size = new System.Drawing.Size(88, 39);
+            this.m_cmd_loc_du_lieu.TabIndex = 9;
+            this.m_cmd_loc_du_lieu.Text = "&Lọc";
+            // 
             // f320_lap_hop_dong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -949,5 +960,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
         private DevExpress.XtraEditors.SimpleButton m_cmd_lap_hop_dong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tao_lai;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_loc_du_lieu;
     }
 }

@@ -50,6 +50,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             load_data_2_sle_cach_tinh_thue();
             m_txt_chon_thang.Text = DateTime.Now.Month.ToString();
             m_txt_chon_nam.Text = DateTime.Now.Year.ToString();
+            m_txt_so_tien.Text = "0";
         }
 
         //load data 2 all control

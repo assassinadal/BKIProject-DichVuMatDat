@@ -228,6 +228,7 @@
             this.m_adv_tong_hop.OptionsBehavior.Editable = false;
             this.m_adv_tong_hop.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDown;
             this.m_adv_tong_hop.OptionsBehavior.ReadOnly = true;
+            this.m_adv_tong_hop.OptionsView.ShowFooter = true;
             this.m_adv_tong_hop.OptionsView.ShowGroupPanel = false;
             this.m_adv_tong_hop.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.bandedGridColumn23, DevExpress.Data.ColumnSortOrder.Ascending)});
@@ -276,6 +277,8 @@
             this.MA_NV.Caption = "Mã nhân viên";
             this.MA_NV.FieldName = "MA_NV";
             this.MA_NV.Name = "MA_NV";
+            this.MA_NV.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MA_NV", "SLNV : {0:n0}")});
             this.MA_NV.Visible = true;
             // 
             // HO_VA_TEN
@@ -595,6 +598,8 @@
             this.bandedGridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn5.FieldName = "LAM_THEM";
             this.bandedGridColumn5.Name = "bandedGridColumn5";
+            this.bandedGridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LAM_THEM", "{0:n0}")});
             this.bandedGridColumn5.Visible = true;
             // 
             // bandedGridColumn6
@@ -609,6 +614,8 @@
             this.bandedGridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn6.FieldName = "LAM_THEM_LE_TET";
             this.bandedGridColumn6.Name = "bandedGridColumn6";
+            this.bandedGridColumn6.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LAM_THEM_LE_TET", "{0:n0}")});
             this.bandedGridColumn6.Visible = true;
             // 
             // bandedGridColumn7
@@ -662,6 +669,8 @@
             this.bandedGridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn10.FieldName = "THU_NHAP";
             this.bandedGridColumn10.Name = "bandedGridColumn10";
+            this.bandedGridColumn10.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THU_NHAP", "{0:n0}")});
             this.bandedGridColumn10.Visible = true;
             // 
             // gridBand5
@@ -698,6 +707,8 @@
             this.bandedGridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn11.FieldName = "BHXH";
             this.bandedGridColumn11.Name = "bandedGridColumn11";
+            this.bandedGridColumn11.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHXH", "{0:n0}")});
             this.bandedGridColumn11.Visible = true;
             // 
             // bandedGridColumn12
@@ -712,6 +723,8 @@
             this.bandedGridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn12.FieldName = "BHYT";
             this.bandedGridColumn12.Name = "bandedGridColumn12";
+            this.bandedGridColumn12.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHYT", "{0:n0}")});
             this.bandedGridColumn12.Visible = true;
             // 
             // bandedGridColumn13
@@ -726,6 +739,8 @@
             this.bandedGridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn13.FieldName = "BHTN";
             this.bandedGridColumn13.Name = "bandedGridColumn13";
+            this.bandedGridColumn13.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHTN", "{0:n0}")});
             this.bandedGridColumn13.Visible = true;
             // 
             // bandedGridColumn14
@@ -740,6 +755,8 @@
             this.bandedGridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn14.FieldName = "DOAN_PHI_CD";
             this.bandedGridColumn14.Name = "bandedGridColumn14";
+            this.bandedGridColumn14.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOAN_PHI_CD", "{0:n0}")});
             this.bandedGridColumn14.Visible = true;
             // 
             // bandedGridColumn15
@@ -754,6 +771,8 @@
             this.bandedGridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn15.FieldName = "THUE";
             this.bandedGridColumn15.Name = "bandedGridColumn15";
+            this.bandedGridColumn15.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUE", "{0:n0}")});
             this.bandedGridColumn15.Visible = true;
             // 
             // bandedGridColumn16
@@ -794,6 +813,8 @@
             this.bandedGridColumn18.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn18.FieldName = "PHAI_NOP";
             this.bandedGridColumn18.Name = "bandedGridColumn18";
+            this.bandedGridColumn18.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PHAI_NOP", "{0:n0}")});
             this.bandedGridColumn18.Visible = true;
             // 
             // gridBand6
@@ -826,6 +847,8 @@
             this.bandedGridColumn19.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn19.FieldName = "THUC_LINH";
             this.bandedGridColumn19.Name = "bandedGridColumn19";
+            this.bandedGridColumn19.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUC_LINH", "{0:n0}")});
             this.bandedGridColumn19.Visible = true;
             // 
             // bandedGridColumn20
@@ -840,6 +863,8 @@
             this.bandedGridColumn20.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn20.FieldName = "TRUY_LINH";
             this.bandedGridColumn20.Name = "bandedGridColumn20";
+            this.bandedGridColumn20.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TRUY_LINH", "{0:n0}")});
             this.bandedGridColumn20.Visible = true;
             // 
             // bandedGridColumn21
@@ -854,6 +879,8 @@
             this.bandedGridColumn21.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn21.FieldName = "TRUY_THU";
             this.bandedGridColumn21.Name = "bandedGridColumn21";
+            this.bandedGridColumn21.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TRUY_THU", "{0:n0}")});
             this.bandedGridColumn21.Visible = true;
             // 
             // bandedGridColumn22
@@ -868,6 +895,8 @@
             this.bandedGridColumn22.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn22.FieldName = "THUC_LINH_CUOI_CUNG";
             this.bandedGridColumn22.Name = "bandedGridColumn22";
+            this.bandedGridColumn22.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUC_LINH_CUOI_CUNG", "{0:n0}")});
             this.bandedGridColumn22.Visible = true;
             // 
             // m_bgwk

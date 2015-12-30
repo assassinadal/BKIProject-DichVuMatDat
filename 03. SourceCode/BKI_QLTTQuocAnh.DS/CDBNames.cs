@@ -782,6 +782,8 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     {
         public const string ID = "ID";
         public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string THANG = "THANG";
+        public const string NAM = "NAM";
         public const string MA_NV = "MA_NV";
         public const string LUONG_NS = "LUONG_NS";
         public const string LUONG_CD = "LUONG_CD";
@@ -805,9 +807,9 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string TRUY_LINH = "TRUY_LINH";
         public const string TRUY_THU = "TRUY_THU";
         public const string THUC_LINH_CUOI_CUNG = "THUC_LINH_CUOI_CUNG";
-        public const string THANG = "THANG";
-        public const string NAM = "NAM";
+        public const string SO_NGAY_LAM_THEM = "SO_NGAY_LAM_THEM";
     }
+
 
     public class V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG
     {

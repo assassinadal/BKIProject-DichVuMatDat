@@ -16,5 +16,19 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             InitializeComponent();
         }
+
+        private void f688_truy_linh_truy_thu_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+                
+            }
+            catch(Exception)
+            {
+                
+                throw;
+            }
+        }
     }
 }

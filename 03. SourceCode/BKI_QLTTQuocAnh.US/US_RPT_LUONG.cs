@@ -617,6 +617,28 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["THUC_LINH_CUOI_CUNG"] = System.Convert.DBNull;
         }
 
+        public decimal dcSO_NGAY_LAM_THEM
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "SO_NGAY_LAM_THEM", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["SO_NGAY_LAM_THEM"] = value;
+            }
+        }
+
+        public bool IsSO_NGAY_LAM_THEMNull()
+        {
+            return pm_objDR.IsNull("SO_NGAY_LAM_THEM");
+        }
+
+        public void SetSO_NGAY_LAM_THEMNull()
+        {
+            pm_objDR["SO_NGAY_LAM_THEM"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_RPT_LUONG()

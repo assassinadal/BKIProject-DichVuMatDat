@@ -302,7 +302,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddTab.cs" />
     <Compile Include="ApplicationControl.cs" />
     <Compile Include="BaoCao\f410_rpt_bang_luong_nv.cs">
       <SubType>Form</SubType>
@@ -862,25 +861,11 @@
     </Compile>
     <Compile Include="WinFormControls.cs" />
     <Compile Include="CHRM_BaseMessages210.cs" />
-    <Content Include="bao_cao.xml" />
-    <Content Include="CommonMsg.xml" />
-    <Content Include="dang_ky.xml" />
-    <Content Include="dang_nhap.xml" />
-    <Content Include="danh_muc.xml" />
-    <Content Include="dau_gia.xml" />
-    <Content Include="giao_dich.xml" />
-    <Content Include="he_thong.xml" />
-    <Content Include="ket_qua.xml" />
-    <Content Include="lan_dau_gia.xml" />
-    <Content Include="NumOfMessage.XML" />
     <None Include="Resources\Refresh.gif" />
     <None Include="Resources\Refresh.png" />
     <None Include="Resources\Modify.ico" />
     <None Include="Resources\View.ico" />
     <None Include="Resources\Save1.ico" />
-    <Content Include="tuy_chon.xml" />
-    <Content Include="UserMsg.xml" />
-    <Content Include="WriteXMLMsg.exe" />
     <EmbeddedResource Include="BaoCao\f410_rpt_bang_luong_nv.resx">
       <DependentUpon>f410_rpt_bang_luong_nv.cs</DependentUpon>
     </EmbeddedResource>

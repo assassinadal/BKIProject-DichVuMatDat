@@ -1,4 +1,5 @@
-﻿using BKI_DichVuMatDat.DS;
+﻿using BKI_DichVuMatDat.BaoCao;
+using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.DS.CDBNames;
 using BKI_DichVuMatDat.US;
 using DevExpress.XtraEditors;
@@ -367,6 +368,24 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grv_main.CellValueChanged += m_grv_main_CellValueChanged;
             m_grv_main.ValidatingEditor += m_grv_main_ValidatingEditor;
             m_grv_main.ShownEditor += m_grv_main_ShownEditor;
+            m_cmd_xem_chi_tiet_quy.Click += m_cmd_xem_chi_tiet_quy_Click;
+        }
+
+        void m_cmd_xem_chi_tiet_quy_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(m_sle_quy_tien_thuong.EditValue == null)
+                {
+                    return;
+                }
+                f480_bao_cao_thuong_khac v_frm = new f480_bao_cao_thuong_khac();
+                v_frm.display_le_tet(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue));
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_grv_main_ShownEditor(object sender, EventArgs e)

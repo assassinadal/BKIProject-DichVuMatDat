@@ -56,7 +56,24 @@ namespace BKI_DichVuMatDat.BaoCao
             m_grv_luong_thuong.Columns["THUC_LINH_CUOI_CUNG"].Visible = false;
             ShowDialog();
         }
+        public void display_le_tet(decimal ip_dc_id_quy_tien)
+        {
+            fill_data_quy_tien_thuong();
 
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+
+            v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_THU_NHAP_KHAC_2 where id_quy_tien_thuong = " + ip_dc_id_quy_tien);
+            m_grc_luong_thuong.DataSource = v_ds.Tables[0];
+            CHRMCommon.make_stt_indicator(m_grv_luong_thuong);
+            m_sle_quy_thuong.EditValue = ip_dc_id_quy_tien;
+
+            m_grv_luong_thuong.Columns["TRUY_LINH"].Visible = false;
+            m_grv_luong_thuong.Columns["TRUY_THU"].Visible = false;
+            m_grv_luong_thuong.Columns["THUC_LINH_CUOI_CUNG"].Visible = false;
+            ShowDialog();
+        }
         private void fill_data_quy_tien_thuong()
         {
             var dataset = LayDanhSachQuyTienThuong();

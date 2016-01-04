@@ -377,6 +377,7 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(956, 24);
             this.layoutControlItem2.Text = "Tên quỹ thưởng";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // layoutControlItem1
             // 

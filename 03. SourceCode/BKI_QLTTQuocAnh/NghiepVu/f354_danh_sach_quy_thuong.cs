@@ -115,7 +115,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             Load += f354_danh_sach_quy_thuong_Load;
             m_cmd_filter.Click += m_cmd_filter_Click;
             m_repoBtn_tinh_tien_thuong.Click += m_repoBtn_tinh_tien_thuong_Click;
-            m_cmd_them_quy_tien_thuong.Click += m_cmd_them_quy_tien_thuong_Click;
         }
 
         void m_cmd_them_quy_tien_thuong_Click(object sender, EventArgs e)

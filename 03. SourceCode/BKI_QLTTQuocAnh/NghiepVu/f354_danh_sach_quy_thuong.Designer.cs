@@ -33,7 +33,6 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.TINH_XONG_YN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.m_cmd_them_quy_tien_thuong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
             this.m_dat_den_ngay = new DevExpress.XtraEditors.DateEdit();
             this.m_dat_tu_ngay = new DevExpress.XtraEditors.DateEdit();
@@ -59,8 +58,6 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
             this.simpleSeparator2 = new DevExpress.XtraLayout.SimpleSeparator();
             this.simpleSeparator3 = new DevExpress.XtraLayout.SimpleSeparator();
@@ -81,8 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator3)).BeginInit();
@@ -97,7 +92,6 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.m_cmd_them_quy_tien_thuong);
             this.layoutControl1.Controls.Add(this.m_cmd_filter);
             this.layoutControl1.Controls.Add(this.m_dat_den_ngay);
             this.layoutControl1.Controls.Add(this.m_dat_tu_ngay);
@@ -111,19 +105,9 @@
             this.layoutControl1.TabIndex = 3;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // m_cmd_them_quy_tien_thuong
-            // 
-            this.m_cmd_them_quy_tien_thuong.Image = global::BKI_DichVuMatDat.Properties.Resources.add16;
-            this.m_cmd_them_quy_tien_thuong.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.m_cmd_them_quy_tien_thuong.Location = new System.Drawing.Point(12, 12);
-            this.m_cmd_them_quy_tien_thuong.Name = "m_cmd_them_quy_tien_thuong";
-            this.m_cmd_them_quy_tien_thuong.Size = new System.Drawing.Size(26, 22);
-            this.m_cmd_them_quy_tien_thuong.StyleController = this.layoutControl1;
-            this.m_cmd_them_quy_tien_thuong.TabIndex = 10;
-            // 
             // m_cmd_filter
             // 
-            this.m_cmd_filter.Location = new System.Drawing.Point(12, 86);
+            this.m_cmd_filter.Location = new System.Drawing.Point(12, 62);
             this.m_cmd_filter.Name = "m_cmd_filter";
             this.m_cmd_filter.Size = new System.Drawing.Size(68, 22);
             this.m_cmd_filter.StyleController = this.layoutControl1;
@@ -133,7 +117,7 @@
             // m_dat_den_ngay
             // 
             this.m_dat_den_ngay.EditValue = null;
-            this.m_dat_den_ngay.Location = new System.Drawing.Point(87, 62);
+            this.m_dat_den_ngay.Location = new System.Drawing.Point(87, 38);
             this.m_dat_den_ngay.Name = "m_dat_den_ngay";
             this.m_dat_den_ngay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -152,7 +136,7 @@
             // m_dat_tu_ngay
             // 
             this.m_dat_tu_ngay.EditValue = null;
-            this.m_dat_tu_ngay.Location = new System.Drawing.Point(87, 38);
+            this.m_dat_tu_ngay.Location = new System.Drawing.Point(87, 14);
             this.m_dat_tu_ngay.Name = "m_dat_tu_ngay";
             this.m_dat_tu_ngay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -171,13 +155,13 @@
             // m_grc_ds_quy_tien
             // 
             this.m_grc_ds_quy_tien.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc_ds_quy_tien.Location = new System.Drawing.Point(12, 112);
+            this.m_grc_ds_quy_tien.Location = new System.Drawing.Point(12, 88);
             this.m_grc_ds_quy_tien.MainView = this.m_grv_ds_quy_tien;
             this.m_grc_ds_quy_tien.Name = "m_grc_ds_quy_tien";
             this.m_grc_ds_quy_tien.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.m_repoBtn_tinh_tien_thuong,
             this.repositoryItemProgressBar1});
-            this.m_grc_ds_quy_tien.Size = new System.Drawing.Size(868, 479);
+            this.m_grc_ds_quy_tien.Size = new System.Drawing.Size(868, 503);
             this.m_grc_ds_quy_tien.TabIndex = 4;
             this.m_grc_ds_quy_tien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_ds_quy_tien});
@@ -428,8 +412,6 @@
             this.emptySpaceItem1,
             this.layoutControlItem5,
             this.emptySpaceItem2,
-            this.layoutControlItem3,
-            this.emptySpaceItem3,
             this.simpleSeparator1,
             this.simpleSeparator2,
             this.simpleSeparator3});
@@ -443,9 +425,9 @@
             // 
             this.layoutControlItem1.Control = this.m_grc_ds_quy_tien;
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 100);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 76);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(872, 483);
+            this.layoutControlItem1.Size = new System.Drawing.Size(872, 507);
             this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextToControlDistance = 0;
@@ -455,7 +437,7 @@
             // 
             this.layoutControlItem2.Control = this.m_dat_tu_ngay;
             this.layoutControlItem2.CustomizationFormText = "Từ tháng";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 2);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(336, 24);
             this.layoutControlItem2.Text = "Xem từ tháng";
@@ -465,7 +447,7 @@
             // 
             this.layoutControlItem4.Control = this.m_dat_den_ngay;
             this.layoutControlItem4.CustomizationFormText = "Đến tháng";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 50);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(336, 24);
             this.layoutControlItem4.Text = "Xem đến tháng";
@@ -475,7 +457,7 @@
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(338, 26);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(338, 2);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(534, 48);
             this.emptySpaceItem1.Text = "emptySpaceItem1";
@@ -485,7 +467,7 @@
             // 
             this.layoutControlItem5.Control = this.m_cmd_filter;
             this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 74);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 50);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(72, 26);
             this.layoutControlItem5.Text = "layoutControlItem5";
@@ -497,48 +479,26 @@
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(74, 74);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(74, 50);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(798, 26);
             this.emptySpaceItem2.Text = "emptySpaceItem2";
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.m_cmd_them_quy_tien_thuong;
-            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(30, 26);
-            this.layoutControlItem3.Text = "layoutControlItem3";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextToControlDistance = 0;
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // emptySpaceItem3
-            // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.CustomizationFormText = "emptySpaceItem3";
-            this.emptySpaceItem3.Location = new System.Drawing.Point(32, 0);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(840, 26);
-            this.emptySpaceItem3.Text = "emptySpaceItem3";
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // simpleSeparator1
             // 
             this.simpleSeparator1.AllowHotTrack = false;
             this.simpleSeparator1.CustomizationFormText = "simpleSeparator1";
-            this.simpleSeparator1.Location = new System.Drawing.Point(30, 0);
+            this.simpleSeparator1.Location = new System.Drawing.Point(0, 0);
             this.simpleSeparator1.Name = "simpleSeparator1";
-            this.simpleSeparator1.Size = new System.Drawing.Size(2, 26);
+            this.simpleSeparator1.Size = new System.Drawing.Size(872, 2);
             this.simpleSeparator1.Text = "simpleSeparator1";
             // 
             // simpleSeparator2
             // 
             this.simpleSeparator2.AllowHotTrack = false;
             this.simpleSeparator2.CustomizationFormText = "simpleSeparator2";
-            this.simpleSeparator2.Location = new System.Drawing.Point(72, 74);
+            this.simpleSeparator2.Location = new System.Drawing.Point(72, 50);
             this.simpleSeparator2.Name = "simpleSeparator2";
             this.simpleSeparator2.Size = new System.Drawing.Size(2, 26);
             this.simpleSeparator2.Text = "simpleSeparator2";
@@ -547,7 +507,7 @@
             // 
             this.simpleSeparator3.AllowHotTrack = false;
             this.simpleSeparator3.CustomizationFormText = "simpleSeparator3";
-            this.simpleSeparator3.Location = new System.Drawing.Point(336, 26);
+            this.simpleSeparator3.Location = new System.Drawing.Point(336, 2);
             this.simpleSeparator3.Name = "simpleSeparator3";
             this.simpleSeparator3.Size = new System.Drawing.Size(2, 48);
             this.simpleSeparator3.Text = "simpleSeparator3";
@@ -578,8 +538,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator3)).EndInit();
@@ -610,9 +568,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit m_repoBtn_tinh_tien_thuong;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_them_quy_tien_thuong;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.SimpleSeparator simpleSeparator1;
         private DevExpress.XtraLayout.SimpleSeparator simpleSeparator2;
         private DevExpress.XtraLayout.SimpleSeparator simpleSeparator3;

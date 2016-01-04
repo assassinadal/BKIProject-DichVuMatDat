@@ -352,7 +352,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f318_thuong_le_tet v_frm = new f318_thuong_le_tet();
+                f301_tinh_thu_nhap_khac v_frm = new f301_tinh_thu_nhap_khac();
                 if(IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;

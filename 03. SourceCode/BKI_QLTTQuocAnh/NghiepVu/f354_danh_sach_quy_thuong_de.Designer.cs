@@ -32,6 +32,7 @@
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_exit = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.m_chk_giam_tru = new DevExpress.XtraEditors.CheckEdit();
             this.m_le_cach_tinh_thue = new DevExpress.XtraEditors.LookUpEdit();
             this.m_txt_ly_do_thuong = new DevExpress.XtraEditors.TextEdit();
             this.m_dat_den_ngay = new DevExpress.XtraEditors.DateEdit();
@@ -49,13 +50,12 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_chk_giam_tru = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_chk_giam_tru.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_le_cach_tinh_thue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_ly_do_thuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_ngay.Properties.CalendarTimeProperties)).BeginInit();
@@ -76,9 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_chk_giam_tru.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -130,6 +128,17 @@
             this.layoutControl1.Size = new System.Drawing.Size(481, 252);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // m_chk_giam_tru
+            // 
+            this.m_chk_giam_tru.Enabled = false;
+            this.m_chk_giam_tru.Location = new System.Drawing.Point(12, 108);
+            this.m_chk_giam_tru.Name = "m_chk_giam_tru";
+            this.m_chk_giam_tru.Properties.Caption = "Có giảm trừ";
+            this.m_chk_giam_tru.Size = new System.Drawing.Size(457, 19);
+            this.m_chk_giam_tru.StyleController = this.layoutControl1;
+            this.m_chk_giam_tru.TabIndex = 17;
+            this.m_chk_giam_tru.Visible = false;
             // 
             // m_le_cach_tinh_thue
             // 
@@ -254,8 +263,7 @@
             this.layoutControlItem6,
             this.layoutControlItem7,
             this.layoutControlItem8,
-            this.layoutControlItem9,
-            this.emptySpaceItem1});
+            this.layoutControlItem9});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(481, 252);
@@ -342,37 +350,18 @@
             this.layoutControlItem8.Text = "Cách tính thuế";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(113, 13);
             // 
-            // m_chk_giam_tru
-            // 
-            this.m_chk_giam_tru.Enabled = false;
-            this.m_chk_giam_tru.Location = new System.Drawing.Point(140, 108);
-            this.m_chk_giam_tru.Name = "m_chk_giam_tru";
-            this.m_chk_giam_tru.Properties.Caption = "Có giảm trừ";
-            this.m_chk_giam_tru.Size = new System.Drawing.Size(329, 19);
-            this.m_chk_giam_tru.StyleController = this.layoutControl1;
-            this.m_chk_giam_tru.TabIndex = 17;
-            // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.m_chk_giam_tru;
             this.layoutControlItem9.CustomizationFormText = "layoutControlItem9";
-            this.layoutControlItem9.Location = new System.Drawing.Point(128, 96);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(333, 23);
+            this.layoutControlItem9.Size = new System.Drawing.Size(461, 23);
             this.layoutControlItem9.Text = "layoutControlItem9";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextToControlDistance = 0;
             this.layoutControlItem9.TextVisible = false;
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 96);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(128, 23);
-            this.emptySpaceItem1.Text = "emptySpaceItem1";
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem9.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // f354_danh_sach_quy_thuong_de
             // 
@@ -389,6 +378,7 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_chk_giam_tru.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_le_cach_tinh_thue.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_ly_do_thuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_ngay.Properties.CalendarTimeProperties)).EndInit();
@@ -409,9 +399,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_chk_giam_tru.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -441,6 +429,5 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraEditors.CheckEdit m_chk_giam_tru;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }

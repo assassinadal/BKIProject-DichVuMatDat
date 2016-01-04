@@ -798,5 +798,17 @@ namespace BKI_DichVuMatDat.US
 
             return v_op_ds;
         }
+
+        public decimal getIDNhanVienByMaNV(string ip_str_ma_nv)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_get_id_nhan_vien_by_ma_nv");
+             v_sp.addNVarcharInputParam("@ip_str_ma_nv", ip_str_ma_nv);
+
+            SqlParameter v_para = v_sp.addDecimalOutputParam("@op_dc_id_nhan_vien", -1);
+
+            v_sp.ExecuteCommand(this);
+
+            return Convert.ToDecimal(v_para.Value);
+        }
     }
 }

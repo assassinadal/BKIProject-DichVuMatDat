@@ -410,7 +410,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 US_GD_THU_NHAP_KHAC v_us_gd_thu_nhap_khac = new US_GD_THU_NHAP_KHAC();
                 splashScreenManager1.ShowWaitForm();
 
-                for(int i = 0; i < rowCount - 1; i++)
+                for(int i = 0; i < rowCount; i++)
                 {
                     var dr = m_grv_main.GetDataRow(i);
                     var is_exist = v_us_gd_thu_nhap_khac.KiemTraXemDaInsertThuong2014Chua(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue), Convert.ToDecimal(dr["ID"]));

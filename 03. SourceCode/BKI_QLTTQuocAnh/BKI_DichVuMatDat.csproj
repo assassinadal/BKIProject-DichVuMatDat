@@ -643,6 +643,12 @@
     <Compile Include="NghiepVu\f300_tinh_hs_athk_hsbs_1_thang.Designer.cs">
       <DependentUpon>f300_tinh_hs_athk_hsbs_1_thang.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f301_tinh_thu_nhap_khac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f301_tinh_thu_nhap_khac.Designer.cs">
+      <DependentUpon>f301_tinh_thu_nhap_khac.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f310_cham_cong_theo_danh_sach_nhan_vien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1022,6 +1028,9 @@
     <EmbeddedResource Include="NghiepVu\f300_tinh_hs_athk_hsbs_1_thang.resx">
       <DependentUpon>f300_tinh_hs_athk_hsbs_1_thang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f301_tinh_thu_nhap_khac.resx">
+      <DependentUpon>f301_tinh_thu_nhap_khac.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f310_cham_cong_theo_danh_sach_nhan_vien.resx">
       <DependentUpon>f310_cham_cong_theo_danh_sach_nhan_vien.cs</DependentUpon>
     </EmbeddedResource>
@@ -1195,6 +1204,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\add162.png" />
     <Content Include="Template\ChamCong.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

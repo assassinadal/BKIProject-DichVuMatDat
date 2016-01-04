@@ -401,6 +401,24 @@ namespace BKI_DichVuMatDat.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+
+        public void XoaDuLieuChiaThuongNhanVien(decimal ip_dc_id_quy_tien_thuong)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_xoa_du_lieu_chia_thuong_nhan_vien");
+            v_sp.addDecimalInputParam("@ip_dc_id_quy_tien_thuong", ip_dc_id_quy_tien_thuong);
+
+            v_sp.ExecuteCommand(this);
+        }
+        public bool QuyThuongDaChiaNhanVienChua(decimal ip_dc_id_quy_tien_thuong)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_quy_thuong_da_chia_nhan_vien_chua");
+            v_sp.addDecimalInputParam("@ip_dc_id_quy_thuong", ip_dc_id_quy_tien_thuong);
+
+            SqlParameter v_para = v_sp.addNVarcharOutputParam("@op_str_yn", "");
+            v_sp.ExecuteCommand(this);
+
+            return v_para.Value.ToString() == "Y" ? true : false;//Y la da chia thuog cho nhan vien, N la chua chia thuong
+        }
         public void Get_tat_ca_nhan_vien_can_tinh_thuong(out DS_DM_NHAN_VIEN op_ds, decimal ip_dc_id_quy_tien_thuong)
         {
             op_ds = new DS_DM_NHAN_VIEN();

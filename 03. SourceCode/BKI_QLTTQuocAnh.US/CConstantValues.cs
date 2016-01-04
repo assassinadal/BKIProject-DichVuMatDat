@@ -184,7 +184,7 @@ namespace BKI_DichVuMatDat.US
         public const decimal THUONG_HS_BS = 627;
         public const decimal THUONG_ATHK = 628;
         public const decimal THUONG_2014 = 747;
-        public const decimal THUONG_LE_TET = 748;
+        public const decimal THUONG_LE_TET = 753;
     }
 
     public static class CONST_ID_MSGBOX

@@ -39,6 +39,15 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             return false;
         }
+        public US_GD_QUY_TIEN_THUONG Display_for_all()
+        {
+            fill_data_loai_quy_thuong();
+            fill_data_cach_tinh_thue();
+            set_tu_dau_nam_den_cuoi_nam();
+            ShowDialog();
+
+            return m_us_op_quy_tien_thuong;
+        }
         public US_GD_QUY_TIEN_THUONG Display_for_le_tet()
         {
             layoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
@@ -132,19 +141,19 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_DU_LIEU_CHUA_HOAN_THIEN);
                 return false;
             }
-            if(((decimal)m_txt_so_tien.EditValue == 0))
+            if(((decimal)m_txt_so_tien.EditValue == 0) && Convert.ToDecimal(m_le_loai_quy_thuong.EditValue) != CONST_ID_TIEN_THUONG.THUONG_LE_TET)
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_SO_TIEN);
                 return false;
             }
-            if(m_chk_giam_tru.Checked == true)
-            {
-                if(Convert.ToDecimal(m_le_cach_tinh_thue.EditValue) == CONST_ID_LOAI_CACH_TINH_THUE.THUE_THANG && is_thang_da_giam_tru())
-                {
-                    XtraMessageBox.Show("Tháng này đã giảm trừ rồi, không thể giảm trừ được nữa", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
-            }
+            //if(m_chk_giam_tru.Checked == true)
+            //{
+            //    if(Convert.ToDecimal(m_le_cach_tinh_thue.EditValue) == CONST_ID_LOAI_CACH_TINH_THUE.THUE_THANG && is_thang_da_giam_tru())
+            //    {
+            //        XtraMessageBox.Show("Tháng này đã giảm trừ rồi, không thể giảm trừ được nữa", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        return false;
+            //    }
+            //}
            
             return true;
         }
@@ -192,7 +201,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us_gd_quy_tien_thuong.dcSO_TIEN = (decimal)m_txt_so_tien.EditValue;
             v_us_gd_quy_tien_thuong.dcID_LOAI_QUY_TIEN = (decimal)m_le_loai_quy_thuong.EditValue;
             v_us_gd_quy_tien_thuong.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
-            v_us_gd_quy_tien_thuong.datNGAY_LAP = DateTime.Now;
+            v_us_gd_quy_tien_thuong.datNGAY_LAP = DateTime.Now.Date;
             v_us_gd_quy_tien_thuong.strDA_XOA = "N";
             v_us_gd_quy_tien_thuong.strTEN_QUY = m_txt_ten_quy.Text;
             v_us_gd_quy_tien_thuong.strTINH_XONG_YN = "N";
@@ -200,15 +209,17 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us_gd_quy_tien_thuong.datTU_NGAY_XET_THUONG = m_dat_tu_ngay.DateTime;
             v_us_gd_quy_tien_thuong.datDEN_NGAY_XET_THUONG = m_dat_den_ngay.DateTime;
             v_us_gd_quy_tien_thuong.dcID_CACH_TINH_THUE = (decimal)m_le_cach_tinh_thue.EditValue;
-            if(v_us_gd_quy_tien_thuong.dcID_CACH_TINH_THUE == CONST_ID_LOAI_CACH_TINH_THUE.THUE_THANG && m_chk_giam_tru.Checked == true)
-            {
-                luu_thang_da_giam_tru();
-                v_us_gd_quy_tien_thuong.strGIAM_TRU_YN = "Y";
-            }
-            else
-            {
-                v_us_gd_quy_tien_thuong.strGIAM_TRU_YN = "N";
-            }
+
+            v_us_gd_quy_tien_thuong.strGIAM_TRU_YN = "N";
+            //if(v_us_gd_quy_tien_thuong.dcID_CACH_TINH_THUE == CONST_ID_LOAI_CACH_TINH_THUE.THUE_THANG && m_chk_giam_tru.Checked == true)
+            //{
+            //    luu_thang_da_giam_tru();
+            //    v_us_gd_quy_tien_thuong.strGIAM_TRU_YN = "Y";
+            //}
+            //else
+            //{
+            //    v_us_gd_quy_tien_thuong.strGIAM_TRU_YN = "N";
+            //}
             v_us_gd_quy_tien_thuong.Insert();
             m_us_op_quy_tien_thuong = v_us_gd_quy_tien_thuong;
             DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -243,6 +254,26 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_exit.Click += m_cmd_exit_Click;
             m_cmd_save.Click += m_cmd_save_Click;
             KeyDown += f354_danh_sach_quy_thuong_de_KeyDown;
+            m_le_loai_quy_thuong.EditValueChanged += m_le_loai_quy_thuong_EditValueChanged;
+        }
+
+        void m_le_loai_quy_thuong_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if((decimal) m_le_loai_quy_thuong.EditValue == CONST_ID_TIEN_THUONG.THUONG_LE_TET)
+                {
+                    m_txt_so_tien.Enabled = false;
+                }
+                else
+                {
+                    m_txt_so_tien.Enabled = true;
+                }
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         void m_le_cach_tinh_thue_EditValueChanged(object sender, EventArgs e)
         {

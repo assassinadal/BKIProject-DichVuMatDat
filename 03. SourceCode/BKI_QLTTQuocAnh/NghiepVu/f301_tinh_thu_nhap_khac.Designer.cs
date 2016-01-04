@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f301_tinh_thu_nhap_khac));
             this.layoutControlMain = new DevExpress.XtraLayout.LayoutControl();
             this.m_cmd_tinh_tien_thuong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
@@ -111,10 +110,10 @@
             // 
             // m_cmd_tinh_tien_thuong
             // 
-            this.m_cmd_tinh_tien_thuong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tinh_tien_thuong.Image")));
+            this.m_cmd_tinh_tien_thuong.Image = global::BKI_DichVuMatDat.Properties.Resources.sum;
             this.m_cmd_tinh_tien_thuong.Location = new System.Drawing.Point(221, 89);
             this.m_cmd_tinh_tien_thuong.Name = "m_cmd_tinh_tien_thuong";
-            this.m_cmd_tinh_tien_thuong.Size = new System.Drawing.Size(215, 38);
+            this.m_cmd_tinh_tien_thuong.Size = new System.Drawing.Size(215, 30);
             this.m_cmd_tinh_tien_thuong.StyleController = this.layoutControlMain;
             this.m_cmd_tinh_tien_thuong.TabIndex = 16;
             this.m_cmd_tinh_tien_thuong.Text = "Bước 3: Tính tiền thưởng";
@@ -141,7 +140,7 @@
             this.m_lbl_download_template.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
             this.m_lbl_download_template.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_download_template.LineVisible = true;
-            this.m_lbl_download_template.Location = new System.Drawing.Point(440, 101);
+            this.m_lbl_download_template.Location = new System.Drawing.Point(440, 97);
             this.m_lbl_download_template.Name = "m_lbl_download_template";
             this.m_lbl_download_template.Size = new System.Drawing.Size(154, 14);
             this.m_lbl_download_template.StyleController = this.layoutControlMain;
@@ -150,10 +149,10 @@
             // 
             // m_cmd_import_excel
             // 
-            this.m_cmd_import_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_excel.Image")));
+            this.m_cmd_import_excel.Image = global::BKI_DichVuMatDat.Properties.Resources.upload;
             this.m_cmd_import_excel.Location = new System.Drawing.Point(12, 89);
             this.m_cmd_import_excel.Name = "m_cmd_import_excel";
-            this.m_cmd_import_excel.Size = new System.Drawing.Size(205, 38);
+            this.m_cmd_import_excel.Size = new System.Drawing.Size(205, 30);
             this.m_cmd_import_excel.StyleController = this.layoutControlMain;
             this.m_cmd_import_excel.TabIndex = 13;
             this.m_cmd_import_excel.Text = "Bước 2: Import Excel tiền thưởng";
@@ -171,12 +170,12 @@
             // m_grc_main
             // 
             this.m_grc_main.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc_main.Location = new System.Drawing.Point(12, 131);
+            this.m_grc_main.Location = new System.Drawing.Point(12, 123);
             this.m_grc_main.MainView = this.m_grv_main;
             this.m_grc_main.Name = "m_grc_main";
             this.m_grc_main.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
-            this.m_grc_main.Size = new System.Drawing.Size(693, 304);
+            this.m_grc_main.Size = new System.Drawing.Size(693, 312);
             this.m_grc_main.TabIndex = 11;
             this.m_grc_main.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_main});
@@ -519,9 +518,9 @@
             // 
             this.layoutControlItemGrid.Control = this.m_grc_main;
             this.layoutControlItemGrid.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItemGrid.Location = new System.Drawing.Point(0, 119);
+            this.layoutControlItemGrid.Location = new System.Drawing.Point(0, 111);
             this.layoutControlItemGrid.Name = "layoutControlItemGrid";
-            this.layoutControlItemGrid.Size = new System.Drawing.Size(697, 308);
+            this.layoutControlItemGrid.Size = new System.Drawing.Size(697, 316);
             this.layoutControlItemGrid.Text = "layoutControlItemGrid";
             this.layoutControlItemGrid.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemGrid.TextToControlDistance = 0;
@@ -570,10 +569,10 @@
             this.layoutControlItem5.Control = this.m_cmd_import_excel;
             this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 77);
-            this.layoutControlItem5.MaxSize = new System.Drawing.Size(209, 42);
-            this.layoutControlItem5.MinSize = new System.Drawing.Size(209, 42);
+            this.layoutControlItem5.MaxSize = new System.Drawing.Size(209, 34);
+            this.layoutControlItem5.MinSize = new System.Drawing.Size(209, 34);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(209, 42);
+            this.layoutControlItem5.Size = new System.Drawing.Size(209, 34);
             this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.Text = "layoutControlItem5";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
@@ -586,7 +585,7 @@
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
             this.emptySpaceItem1.Location = new System.Drawing.Point(586, 77);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(111, 42);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(111, 34);
             this.emptySpaceItem1.Text = "emptySpaceItem1";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -597,7 +596,7 @@
             this.layoutControlItemDownload.CustomizationFormText = "Tải File Excel mẫu!";
             this.layoutControlItemDownload.Location = new System.Drawing.Point(428, 77);
             this.layoutControlItemDownload.Name = "layoutControlItemDownload";
-            this.layoutControlItemDownload.Size = new System.Drawing.Size(158, 42);
+            this.layoutControlItemDownload.Size = new System.Drawing.Size(158, 34);
             this.layoutControlItemDownload.Text = "Tải File Excel mẫu!";
             this.layoutControlItemDownload.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemDownload.TextToControlDistance = 0;
@@ -634,8 +633,11 @@
             this.layoutControlItem3.Control = this.m_cmd_tinh_tien_thuong;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
             this.layoutControlItem3.Location = new System.Drawing.Point(209, 77);
+            this.layoutControlItem3.MaxSize = new System.Drawing.Size(219, 34);
+            this.layoutControlItem3.MinSize = new System.Drawing.Size(219, 34);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(219, 42);
+            this.layoutControlItem3.Size = new System.Drawing.Size(219, 34);
+            this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.Text = "layoutControlItem3";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextToControlDistance = 0;

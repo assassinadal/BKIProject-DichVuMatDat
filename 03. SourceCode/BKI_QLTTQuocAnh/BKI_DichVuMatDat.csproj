@@ -1205,6 +1205,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Resources\add162.png" />
+    <None Include="Resources\mobile-phone.ico" />
+    <None Include="Resources\upload.ico" />
+    <None Include="Resources\sum.ico" />
+    <None Include="Resources\sum1.ico" />
     <Content Include="Template\ChamCong.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

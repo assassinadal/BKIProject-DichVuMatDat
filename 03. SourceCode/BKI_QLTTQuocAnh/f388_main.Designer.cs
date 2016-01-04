@@ -108,6 +108,7 @@
             this.m_cmd_thuong_2014 = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_them_nhan_vien_nhanh = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_xem_cham_cong_lam_them = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -134,7 +135,7 @@
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
-            this.m_cmd_xem_cham_cong_lam_them = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItemServer = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -229,9 +230,10 @@
             this.m_cmd_thuong_2014,
             this.m_cmd_them_nhan_vien_nhanh,
             this.barButtonItem5,
-            this.m_cmd_xem_cham_cong_lam_them});
+            this.m_cmd_xem_cham_cong_lam_them,
+            this.barStaticItemServer});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 93;
+            this.ribbon.MaxItemId = 94;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -947,6 +949,14 @@
             this.barButtonItem5.Name = "barButtonItem5";
             this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
+            // m_cmd_xem_cham_cong_lam_them
+            // 
+            this.m_cmd_xem_cham_cong_lam_them.Caption = "Chấm công làm thêm";
+            this.m_cmd_xem_cham_cong_lam_them.Id = 92;
+            this.m_cmd_xem_cham_cong_lam_them.Name = "m_cmd_xem_cham_cong_lam_them";
+            this.m_cmd_xem_cham_cong_lam_them.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1108,6 +1118,7 @@
             // 
             // ribbonStatusBar
             // 
+            this.ribbonStatusBar.ItemLinks.Add(this.barStaticItemServer);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 418);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
@@ -1192,13 +1203,13 @@
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
             // 
-            // m_cmd_xem_cham_cong_lam_them
+            // barStaticItemServer
             // 
-            this.m_cmd_xem_cham_cong_lam_them.Caption = "Chấm công làm thêm";
-            this.m_cmd_xem_cham_cong_lam_them.Id = 92;
-            this.m_cmd_xem_cham_cong_lam_them.Name = "m_cmd_xem_cham_cong_lam_them";
-            this.m_cmd_xem_cham_cong_lam_them.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.barStaticItemServer.Caption = "...";
+            this.barStaticItemServer.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.barStaticItemServer.Id = 93;
+            this.barStaticItemServer.Name = "barStaticItemServer";
+            this.barStaticItemServer.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
             // f388_main
             // 
@@ -1334,5 +1345,6 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_them_nhan_vien_nhanh;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem m_cmd_xem_cham_cong_lam_them;
+        private DevExpress.XtraBars.BarStaticItem barStaticItemServer;
     }
 }

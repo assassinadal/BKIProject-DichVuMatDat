@@ -58,6 +58,7 @@
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TEN_LOAI_QUY_TIEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ID_LOAI_QUY_TIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItemGrid = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -70,7 +71,6 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
-            this.ID_LOAI_QUY_TIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlMain)).BeginInit();
             this.layoutControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_main)).BeginInit();
@@ -299,6 +299,7 @@
             this.TEN_DON_VI.Caption = "TEN_DON_VI";
             this.TEN_DON_VI.FieldName = "TEN_DON_VI";
             this.TEN_DON_VI.Name = "TEN_DON_VI";
+            this.TEN_DON_VI.OptionsColumn.ReadOnly = true;
             this.TEN_DON_VI.Visible = true;
             this.TEN_DON_VI.VisibleIndex = 7;
             this.TEN_DON_VI.Width = 114;
@@ -311,6 +312,7 @@
             this.CHUC_VU.Caption = "CHUC_VU";
             this.CHUC_VU.FieldName = "CHUC_VU";
             this.CHUC_VU.Name = "CHUC_VU";
+            this.CHUC_VU.OptionsColumn.ReadOnly = true;
             this.CHUC_VU.Visible = true;
             this.CHUC_VU.VisibleIndex = 8;
             this.CHUC_VU.Width = 114;
@@ -323,6 +325,7 @@
             this.SO_TAI_KHOAN.Caption = "SO_TAI_KHOAN";
             this.SO_TAI_KHOAN.FieldName = "SO_TAI_KHOAN";
             this.SO_TAI_KHOAN.Name = "SO_TAI_KHOAN";
+            this.SO_TAI_KHOAN.OptionsColumn.ReadOnly = true;
             this.SO_TAI_KHOAN.Visible = true;
             this.SO_TAI_KHOAN.VisibleIndex = 9;
             this.SO_TAI_KHOAN.Width = 131;
@@ -332,6 +335,7 @@
             this.HO_TEN.Caption = "HO_TEN";
             this.HO_TEN.FieldName = "HO_TEN";
             this.HO_TEN.Name = "HO_TEN";
+            this.HO_TEN.OptionsColumn.ReadOnly = true;
             this.HO_TEN.Visible = true;
             this.HO_TEN.VisibleIndex = 6;
             this.HO_TEN.Width = 114;
@@ -341,6 +345,7 @@
             this.STT.Caption = "STT";
             this.STT.FieldName = "STT";
             this.STT.Name = "STT";
+            this.STT.OptionsColumn.ReadOnly = true;
             this.STT.Visible = true;
             this.STT.VisibleIndex = 0;
             this.STT.Width = 35;
@@ -483,6 +488,12 @@
             this.TEN_LOAI_QUY_TIEN.Name = "TEN_LOAI_QUY_TIEN";
             this.TEN_LOAI_QUY_TIEN.Visible = true;
             this.TEN_LOAI_QUY_TIEN.VisibleIndex = 0;
+            // 
+            // ID_LOAI_QUY_TIEN
+            // 
+            this.ID_LOAI_QUY_TIEN.Caption = "ID_LOAI_QUY_TIEN";
+            this.ID_LOAI_QUY_TIEN.FieldName = "ID_LOAI_QUY_TIEN";
+            this.ID_LOAI_QUY_TIEN.Name = "ID_LOAI_QUY_TIEN";
             // 
             // layoutControlGroup1
             // 
@@ -629,12 +640,6 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextToControlDistance = 0;
             this.layoutControlItem3.TextVisible = false;
-            // 
-            // ID_LOAI_QUY_TIEN
-            // 
-            this.ID_LOAI_QUY_TIEN.Caption = "ID_LOAI_QUY_TIEN";
-            this.ID_LOAI_QUY_TIEN.FieldName = "ID_LOAI_QUY_TIEN";
-            this.ID_LOAI_QUY_TIEN.Name = "ID_LOAI_QUY_TIEN";
             // 
             // f301_tinh_thu_nhap_khac
             // 

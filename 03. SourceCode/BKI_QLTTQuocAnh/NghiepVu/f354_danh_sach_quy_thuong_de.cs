@@ -111,7 +111,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             US_CM_DM_TU_DIEN v_us_td = new US_CM_DM_TU_DIEN();
             DS_CM_DM_TU_DIEN v_ds_td = new DS_CM_DM_TU_DIEN();
-            v_us_td.FillDatasetByIdLoaiTuDien(v_ds_td, (int)CONST_ID_LOAI_TU_DIEN.LOAI_QUY_TIEN);
+            string v_filter = "where id_loai_tu_dien = "+(int)CONST_ID_LOAI_TU_DIEN.LOAI_QUY_TIEN+" and " + "id != " +CONST_ID_TIEN_THUONG.THUONG_LE_TET;
+            v_us_td.FillDataset(v_ds_td, v_filter); //FillDatasetByIdLoaiTuDien(v_ds_td, (int)CONST_ID_LOAI_TU_DIEN.LOAI_QUY_TIEN);
 
             m_le_loai_quy_thuong.Properties.DataSource = v_ds_td.CM_DM_TU_DIEN;
         }

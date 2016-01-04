@@ -353,6 +353,28 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["GIAM_TRU_YN"] = System.Convert.DBNull;
         }
 
+        public decimal dcDON_GIA
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "DON_GIA", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["DON_GIA"] = value;
+            }
+        }
+
+        public bool IsDON_GIANull()
+        {
+            return pm_objDR.IsNull("DON_GIA");
+        }
+
+        public void SetDON_GIANull()
+        {
+            pm_objDR["DON_GIA"] = System.Convert.DBNull;
+        }
+
         #endregion
 
         #region "Init Functions"

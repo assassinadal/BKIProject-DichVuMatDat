@@ -50,8 +50,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         public US_GD_QUY_TIEN_THUONG Display_for_le_tet()
         {
-            layoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            fill_data_loai_quy_thuong();
+            fill_data_loai_quy_thuong_le_tet();
             fill_data_cach_tinh_thue();
             m_le_loai_quy_thuong.EditValue = CONST_ID_TIEN_THUONG.THUONG_LE_TET;
             m_txt_ten_quy.Focus();
@@ -116,7 +115,15 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             m_le_loai_quy_thuong.Properties.DataSource = v_ds_td.CM_DM_TU_DIEN;
         }
+        private void fill_data_loai_quy_thuong_le_tet()
+        {
+            US_CM_DM_TU_DIEN v_us_td = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds_td = new DS_CM_DM_TU_DIEN();
+            string v_filter = "where id_loai_tu_dien = " + (int)CONST_ID_LOAI_TU_DIEN.LOAI_QUY_TIEN + " and " + "id = " + CONST_ID_TIEN_THUONG.THUONG_LE_TET;
+            v_us_td.FillDataset(v_ds_td, v_filter); //FillDatasetByIdLoaiTuDien(v_ds_td, (int)CONST_ID_LOAI_TU_DIEN.LOAI_QUY_TIEN);
 
+            m_le_loai_quy_thuong.Properties.DataSource = v_ds_td.CM_DM_TU_DIEN;
+        }
         private void fill_data_cach_tinh_thue()
         {
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
@@ -199,7 +206,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_GD_QUY_TIEN_THUONG v_us_gd_quy_tien_thuong = new US_GD_QUY_TIEN_THUONG();
             v_us_gd_quy_tien_thuong.strTHANG = m_dat_thang_thuong.DateTime.Month.ToString();
             v_us_gd_quy_tien_thuong.strNAM = m_dat_thang_thuong.DateTime.Year.ToString();
-            v_us_gd_quy_tien_thuong.dcSO_TIEN = (decimal)m_txt_so_tien.EditValue;
+            if(Convert.ToDecimal(m_le_loai_quy_thuong.EditValue) == CONST_ID_TIEN_THUONG.THUONG_LE_TET)
+            {
+                v_us_gd_quy_tien_thuong.dcDON_GIA = (decimal)m_txt_so_tien.EditValue;
+            }
+            else
+            {
+                v_us_gd_quy_tien_thuong.dcSO_TIEN = (decimal)m_txt_so_tien.EditValue;
+            }
             v_us_gd_quy_tien_thuong.dcID_LOAI_QUY_TIEN = (decimal)m_le_loai_quy_thuong.EditValue;
             v_us_gd_quy_tien_thuong.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             v_us_gd_quy_tien_thuong.datNGAY_LAP = DateTime.Now.Date;
@@ -264,11 +278,11 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if((decimal) m_le_loai_quy_thuong.EditValue == CONST_ID_TIEN_THUONG.THUONG_LE_TET)
                 {
-                    m_txt_so_tien.Enabled = false;
+                    layoutControlItem2.Text = "Đơn giá *";
                 }
                 else
                 {
-                    m_txt_so_tien.Enabled = true;
+                    layoutControlItem2.Text = "Số tiền *";
                 }
             }
             catch(Exception v_e)

@@ -643,6 +643,12 @@
     <Compile Include="NghiepVu\f300_tinh_hs_athk_hsbs_1_thang.Designer.cs">
       <DependentUpon>f300_tinh_hs_athk_hsbs_1_thang.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f301_tinh_thu_nhap_khac_le_tet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f301_tinh_thu_nhap_khac_le_tet.Designer.cs">
+      <DependentUpon>f301_tinh_thu_nhap_khac_le_tet.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f301_tinh_thu_nhap_khac.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1027,6 +1033,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f300_tinh_hs_athk_hsbs_1_thang.resx">
       <DependentUpon>f300_tinh_hs_athk_hsbs_1_thang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f301_tinh_thu_nhap_khac_le_tet.resx">
+      <DependentUpon>f301_tinh_thu_nhap_khac_le_tet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f301_tinh_thu_nhap_khac.resx">
       <DependentUpon>f301_tinh_thu_nhap_khac.cs</DependentUpon>

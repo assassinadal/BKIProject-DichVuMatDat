@@ -348,7 +348,9 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string SL_NV_CAN_TINH = "SL_NV_CAN_TINH";
         public const string SL_NV_DA_TINH = "SL_NV_DA_TINH";
         public const string PHAN_TRAM_DA_TINH = "PHAN_TRAM_DA_TINH";
+        public const string DON_GIA = "DON_GIA";
     }
+
 
 
 
@@ -430,7 +432,9 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string LY_DO_THUONG = "LY_DO_THUONG";
         public const string ID_CACH_TINH_THUE = "ID_CACH_TINH_THUE";
         public const string GIAM_TRU_YN = "GIAM_TRU_YN";
+        public const string DON_GIA = "DON_GIA";
     }
+
 
 
     public class GD_CHAM_CONG

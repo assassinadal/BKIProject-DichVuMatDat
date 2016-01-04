@@ -139,7 +139,7 @@ namespace BKI_DichVuMatDat
             m_cmd_quan_ly_thu_nhap_khac_xls.ItemClick += m_cmd_quan_ly_thu_nhap_khac_xls_ItemClick;
             m_cmd_quan_ly_luong_cung.ItemClick += m_cmd_quan_ly_luong_cung_ItemClick;
             m_cmd_quan_ly_khong_dong_bh.ItemClick += m_cmd_quan_ly_khong_dong_bh_ItemClick;
-            m_cmd_luong_hs_athk.ItemClick += m_cmd_luong_hs_athk_ItemClick;
+            m_cmd_thuong_thu_nhap_khac.ItemClick += m_cmd_luong_hs_athk_ItemClick;
             m_cmd_ql_thuong_le_tet.ItemClick += m_cmd_ql_thuong_hsbs_ItemClick;
             m_cmd_dang_ky_giam_tru_phu_thuoc.ItemClick += m_cmd_dang_ky_giam_tru_phu_thuoc_ItemClick;
             m_cmd_thuong_2014.ItemClick += m_cmd_thuong_2014_ItemClick;
@@ -352,7 +352,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f301_tinh_thu_nhap_khac v_frm = new f301_tinh_thu_nhap_khac();
+                f301_tinh_thu_nhap_khac_le_tet v_frm = new f301_tinh_thu_nhap_khac_le_tet();
                 if(IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
@@ -384,7 +384,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f355_thuong_an_toan_hang_khong v_frm = new f355_thuong_an_toan_hang_khong();
+                f301_tinh_thu_nhap_khac v_frm = new f301_tinh_thu_nhap_khac();
                 if(IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;

@@ -638,6 +638,12 @@
     <Compile Include="NghiepVu\BackupDB.Designer.cs">
       <DependentUpon>BackupDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f300_tinh_hs_athk_hsbs_1_thang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f300_tinh_hs_athk_hsbs_1_thang.Designer.cs">
+      <DependentUpon>f300_tinh_hs_athk_hsbs_1_thang.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f310_cham_cong_theo_danh_sach_nhan_vien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -869,6 +875,9 @@
     <Content Include="NumOfMessage.XML" />
     <None Include="Resources\Refresh.gif" />
     <None Include="Resources\Refresh.png" />
+    <None Include="Resources\Modify.ico" />
+    <None Include="Resources\View.ico" />
+    <None Include="Resources\Save1.ico" />
     <Content Include="tuy_chon.xml" />
     <Content Include="UserMsg.xml" />
     <Content Include="WriteXMLMsg.exe" />
@@ -1024,6 +1033,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\BackupDB.resx">
       <DependentUpon>BackupDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f300_tinh_hs_athk_hsbs_1_thang.resx">
+      <DependentUpon>f300_tinh_hs_athk_hsbs_1_thang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f310_cham_cong_theo_danh_sach_nhan_vien.resx">
       <DependentUpon>f310_cham_cong_theo_danh_sach_nhan_vien.cs</DependentUpon>

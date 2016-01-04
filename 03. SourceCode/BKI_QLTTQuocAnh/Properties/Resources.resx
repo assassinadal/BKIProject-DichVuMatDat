@@ -148,8 +148,8 @@
   <data name="1444999351_banker" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1444999351_banker.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1425905897_253501" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425905897_253501.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1425905592_196740" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425905592_196740.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon bao hiem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon bao hiem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,8 +187,8 @@
   <data name="icon doi password " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon doi password .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon exit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon exit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Modify" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Modify.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1425905405_243979" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425905405_243979.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,8 +205,8 @@
   <data name="accounting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\accounting.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon cham cong" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon cham cong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Refresh1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Aha-Soft-Security-Secrecy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Aha-Soft-Security-Secrecy.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -222,6 +222,9 @@
   </data>
   <data name="1425906224_17014" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425906224_17014.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="View" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\View.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="paper133" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paper133.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,9 +256,6 @@
   <data name="1441820884_coin-delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1441820884_coin-delete.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="forward" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\forward.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icons8-Ios7-Household-Room" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icons8-Ios7-Household-Room.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -274,8 +274,11 @@
   <data name="icon phan quyen " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon phan quyen .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Hopstarter-Sleek-Xp-Basic-Close-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hopstarter-Sleek-Xp-Basic-Close-2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon exit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon exit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1425904783_54524" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425904783_54524.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,8 +304,14 @@
   <data name="icon he so chat luong xlsx " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon he so chat luong xlsx .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon cham cong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon cham cong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon thong ke tong hop " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon thong ke tong hop .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hopstarter-Sleek-Xp-Basic-Close-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hopstarter-Sleek-Xp-Basic-Close-2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon nhan vien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon nhan vien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -324,9 +333,6 @@
   </data>
   <data name="table" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\table.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1450117506_edit-clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1450117506_edit-clear.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon quan ly vi tri cong tac " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon quan ly vi tri cong tac .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -385,8 +391,8 @@
   <data name="brush_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brush_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add161" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="forward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forward.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="find" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\find.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -406,6 +412,9 @@
   <data name="1425904625_416404" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425904625_416404.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1425906136_315167" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425906136_315167.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -415,16 +424,16 @@
   <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1425905592_196740" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425905592_196740.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1450117506_edit-clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1450117506_edit-clear.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon backup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon backup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1425905897_253501" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425905897_253501.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Refresh1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Save1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

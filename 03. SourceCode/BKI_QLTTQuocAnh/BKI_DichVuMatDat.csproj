@@ -655,6 +655,12 @@
     <Compile Include="NghiepVu\f301_tinh_thu_nhap_khac.Designer.cs">
       <DependentUpon>f301_tinh_thu_nhap_khac.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f302_quan_ly_quy_thuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f302_quan_ly_quy_thuong.Designer.cs">
+      <DependentUpon>f302_quan_ly_quy_thuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f310_cham_cong_theo_danh_sach_nhan_vien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1039,6 +1045,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f301_tinh_thu_nhap_khac.resx">
       <DependentUpon>f301_tinh_thu_nhap_khac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f302_quan_ly_quy_thuong.resx">
+      <DependentUpon>f302_quan_ly_quy_thuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f310_cham_cong_theo_danh_sach_nhan_vien.resx">
       <DependentUpon>f310_cham_cong_theo_danh_sach_nhan_vien.cs</DependentUpon>

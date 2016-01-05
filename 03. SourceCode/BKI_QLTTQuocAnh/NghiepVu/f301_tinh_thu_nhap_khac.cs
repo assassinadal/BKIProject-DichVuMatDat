@@ -238,6 +238,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     data_row_2_us(dr, ref v_us_gd_thu_nhap_khac);
                     v_us_gd_thu_nhap_khac.Insert();
                 }
+                cap_nhat_tinh_xong_quy_thuong(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue));
             }
             catch(Exception)
             {
@@ -273,6 +274,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     data_row_2_us(dr, ref v_us_gd_thu_nhap_khac);
                     v_us_gd_thu_nhap_khac.Insert();
                 }
+                cap_nhat_tinh_xong_quy_thuong(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue));
             }
             catch(Exception)
             {
@@ -287,6 +289,13 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             US_GD_THU_NHAP_KHAC v_us_thu_nhap_khac = new US_GD_THU_NHAP_KHAC();
             return v_us_thu_nhap_khac.QuyThuongDaChiaNhanVienChua(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue));
+        }
+
+        private void cap_nhat_tinh_xong_quy_thuong(decimal ip_dc_id_quy_tien_thuong)
+        {
+            US_GD_QUY_TIEN_THUONG v_us_gd_quy_tien = new US_GD_QUY_TIEN_THUONG(ip_dc_id_quy_tien_thuong);
+            v_us_gd_quy_tien.strTINH_XONG_YN = "Y";
+            v_us_gd_quy_tien.Update();
         }
         #endregion
 

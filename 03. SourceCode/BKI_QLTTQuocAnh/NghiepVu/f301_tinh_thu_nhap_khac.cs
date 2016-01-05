@@ -134,6 +134,18 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             return Convert.ToDecimal(v_dr_selected[V_GD_QUY_TIEN_THUONG.SO_TIEN]);
         }
+        private decimal lay_tong_tien_thuong_tren_grid()
+        {
+            decimal v_tong_tien_tren_grid = 0;
+            int v_i_row_count = m_grv_main.RowCount;
+
+            for(int v_i_row = 0; v_i_row < v_i_row_count; v_i_row++)
+            {
+                var v_so_tien_tren_hang = Convert.ToDecimal(m_grv_main.GetRowCellValue(v_i_row_count, "THANH_TIEN"));
+                v_tong_tien_tren_grid = v_tong_tien_tren_grid + v_so_tien_tren_hang;
+            }
+            return v_tong_tien_tren_grid;
+        }
         private decimal lay_phan_tram_thue()
         {
             int index = m_sle_quy_tien_thuong.Properties.GetIndexByKeyValue(m_sle_quy_tien_thuong.EditValue);
@@ -178,6 +190,13 @@ namespace BKI_DichVuMatDat.NghiepVu
             return true;
         }
 
+
+        private void sua_tong_tien_quy_tien_thuong(decimal ip_dc_id_quy_tien_thuong, decimal ip_dc_tong_tien_moi)
+        {
+            US_GD_QUY_TIEN_THUONG v_us_gd_quy_tien = new US_GD_QUY_TIEN_THUONG(ip_dc_id_quy_tien_thuong);
+            v_us_gd_quy_tien.dcSO_TIEN = ip_dc_tong_tien_moi;
+            v_us_gd_quy_tien.Update();
+        }
 
         private void data_row_2_us(DataRow ip_dr_du_lieu_1_nv, ref US_GD_THU_NHAP_KHAC ref_us)
         {
@@ -303,10 +322,23 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return;
             }
 
+            if(lay_tong_tien_thuong_tren_grid() != lay_tong_tien_thuong())
+            {
+                var msg = XtraMessageBox.Show("Tổng tiền quỹ thưởng đã bị thay đổi do chỉnh sửa của bạn. Bạn có chắc chắn muốn lưu dữ liệu?\n(Việc lưu sẽ cập nhật lại tổng tiền thưởng mới của quỹ)","XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(msg == System.Windows.Forms.DialogResult.No)
+                {
+                    XtraMessageBox.Show("Dữ liệu chưa được lưu", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else
+                {
+                    sua_tong_tien_quy_tien_thuong(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue), lay_tong_tien_thuong_tren_grid());
+                }
+            }
             
             if(XetQuyThuongDaChiaNhanVienChua())
             {
-                var dlg = XtraMessageBox.Show("Qũy thưởng đã chia cho nhân viên rồi. \n Ấn Yes để chia lại thưởng (xóa hết dữ liệu thưởng cũ, thêm dữ liệu thưởng mới), \n Ấn No để tiếp tục lưu dữ liệu thưởng (trong trường hợp quá trình lưu dữ liệu bị gián đoạn). \n Ấn Cancle để hủy hành động.", "XÁC NHẬN", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                var dlg = XtraMessageBox.Show("Qũy thưởng đã chia cho nhân viên rồi. \n -> Ấn Yes để chia lại thưởng (xóa hết dữ liệu thưởng cũ, thêm dữ liệu thưởng mới), \n -> Ấn No để tiếp tục lưu dữ liệu thưởng (trong trường hợp quá trình lưu dữ liệu bị gián đoạn). \n Ấn Cancle để hủy hành động.", "XÁC NHẬN", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if(dlg == System.Windows.Forms.DialogResult.Yes)
                 {
                     save_data_new();

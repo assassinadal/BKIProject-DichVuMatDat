@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.layoutControlMain = new DevExpress.XtraLayout.LayoutControl();
+            this.m_cmd_xem_chi_tiet_quy = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_tinh_tien_thuong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.m_lbl_download_template = new DevExpress.XtraEditors.LabelControl();
@@ -63,6 +64,7 @@
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItemDownload = new DevExpress.XtraLayout.LayoutControlItem();
@@ -70,8 +72,6 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
-            this.m_cmd_xem_chi_tiet_quy = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlMain)).BeginInit();
             this.layoutControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_main)).BeginInit();
@@ -84,13 +84,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControlMain
@@ -111,6 +111,16 @@
             this.layoutControlMain.Size = new System.Drawing.Size(717, 489);
             this.layoutControlMain.TabIndex = 0;
             this.layoutControlMain.Text = "layoutControl1";
+            // 
+            // m_cmd_xem_chi_tiet_quy
+            // 
+            this.m_cmd_xem_chi_tiet_quy.Image = global::BKI_DichVuMatDat.Properties.Resources.forward;
+            this.m_cmd_xem_chi_tiet_quy.Location = new System.Drawing.Point(541, 43);
+            this.m_cmd_xem_chi_tiet_quy.Name = "m_cmd_xem_chi_tiet_quy";
+            this.m_cmd_xem_chi_tiet_quy.Size = new System.Drawing.Size(152, 30);
+            this.m_cmd_xem_chi_tiet_quy.StyleController = this.layoutControlMain;
+            this.m_cmd_xem_chi_tiet_quy.TabIndex = 19;
+            this.m_cmd_xem_chi_tiet_quy.Text = "Xem chi tiết tiền thưởng";
             // 
             // m_cmd_tinh_tien_thuong
             // 
@@ -361,7 +371,7 @@
             this.m_sle_quy_tien_thuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_quy_tien_thuong.Properties.DisplayMember = "TEN_QUY";
-            this.m_sle_quy_tien_thuong.Properties.NullText = "--Chọn quỹ tiền thưởng khác--";
+            this.m_sle_quy_tien_thuong.Properties.NullText = "--Chọn quỹ tiền thưởng--";
             this.m_sle_quy_tien_thuong.Properties.PopupFormMinSize = new System.Drawing.Size(700, 0);
             this.m_sle_quy_tien_thuong.Properties.ValueMember = "ID";
             this.m_sle_quy_tien_thuong.Properties.View = this.searchLookUpEdit1View;
@@ -569,6 +579,21 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(105, 13);
             this.layoutControlItem1.TrimClientAreaToControl = false;
             // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.m_cmd_xem_chi_tiet_quy;
+            this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
+            this.layoutControlItem4.Location = new System.Drawing.Point(517, 0);
+            this.layoutControlItem4.MaxSize = new System.Drawing.Size(156, 34);
+            this.layoutControlItem4.MinSize = new System.Drawing.Size(156, 34);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(156, 34);
+            this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem4.Text = "layoutControlItem4";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextToControlDistance = 0;
+            this.layoutControlItem4.TextVisible = false;
+            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.m_cmd_import_excel;
@@ -648,31 +673,6 @@
             this.layoutControlItem3.TextToControlDistance = 0;
             this.layoutControlItem3.TextVisible = false;
             // 
-            // m_cmd_xem_chi_tiet_quy
-            // 
-            this.m_cmd_xem_chi_tiet_quy.Image = global::BKI_DichVuMatDat.Properties.Resources.forward;
-            this.m_cmd_xem_chi_tiet_quy.Location = new System.Drawing.Point(541, 43);
-            this.m_cmd_xem_chi_tiet_quy.Name = "m_cmd_xem_chi_tiet_quy";
-            this.m_cmd_xem_chi_tiet_quy.Size = new System.Drawing.Size(152, 30);
-            this.m_cmd_xem_chi_tiet_quy.StyleController = this.layoutControlMain;
-            this.m_cmd_xem_chi_tiet_quy.TabIndex = 19;
-            this.m_cmd_xem_chi_tiet_quy.Text = "Xem chi tiết tiền thưởng";
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.m_cmd_xem_chi_tiet_quy;
-            this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
-            this.layoutControlItem4.Location = new System.Drawing.Point(517, 0);
-            this.layoutControlItem4.MaxSize = new System.Drawing.Size(156, 34);
-            this.layoutControlItem4.MinSize = new System.Drawing.Size(156, 34);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(156, 34);
-            this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem4.Text = "layoutControlItem4";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextToControlDistance = 0;
-            this.layoutControlItem4.TextVisible = false;
-            // 
             // f301_tinh_thu_nhap_khac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -693,13 +693,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemDownload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }

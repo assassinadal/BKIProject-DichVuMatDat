@@ -290,6 +290,7 @@ namespace BKI_DichVuMatDat.US
         public const int ERROR_CHUA_CO_DU_LIEU_TREN_LUOI = 300;
         public const int ERROR_CHUA_NHAP_NAM_DE_TINH = 301;
         public const int ERROR_CHUA_NHAP_SO_TIEN_DE_TINH = 302;
+        public static int ERROR_CHUA_NHAP_THANG_NAM = 317;
 
         //Chấm công
         public const int WAR_KIEM_TRA_LAI_BANG_CHAM_CONG = 303;
@@ -342,8 +343,18 @@ namespace BKI_DichVuMatDat.US
 
         //Quản lý phụ cấp nhân viên
         public const int ERROR_CHUA_CHON_LOAI_PHU_CAP = 335;
+        
         #endregion
 
+        #region Thông báo các form
+        public const int ERROR_DU_LIEU_NHAP_CHUA_HOP_LE = 14;
+        #endregion
+
+
+
+
+
+        
     }
 
     public static class CONST_ID_TRANG_THAI_LAO_DONG

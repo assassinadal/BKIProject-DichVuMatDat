@@ -281,20 +281,37 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
+                if (check_validate_data_is_ok(m_txt_chon_thang.Text) && check_validate_data_is_ok(m_txt_chon_nam.Text))
                 {
-                    load_data_2_grid(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
+                    if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
+                    {
+                        load_data_2_grid(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
+                    }
+                    else
+                    {
+                        load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
+                        m_txt_hs.Text = find_hs_chat_luong_by_nv_thang_nam(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())).ToString();
+                    }
                 }
                 else
                 {
-                    load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
-                    m_txt_hs.Text = find_hs_chat_luong_by_nv_thang_nam(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())).ToString();
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_DU_LIEU_NHAP_CHUA_HOP_LE);
                 }
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private bool check_validate_data_is_ok(string ip_str_thang_cham_cong)
+        {
+            for (int i = 0; i < ip_str_thang_cham_cong.Length; i++)
+            {
+                if (char.IsDigit(ip_str_thang_cham_cong[i]) == false)
+                    return false;
+            }
+            return true;
         }
 
         void m_cmd_luu_hs_Click(object sender, EventArgs e)

@@ -23,6 +23,11 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         #endregion
 
+        #region Member
+        int m_work_fail = 0;
+        #endregion
+
+
         #region Private Method
         private void load_data_2_grid()
         {
@@ -37,12 +42,34 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         private DS_RPT_THONG_TIN_TONG_HOP lay_danh_sach_nhan_vien_can_tong_hop_thong_tin()
         {
-            US_RPT_THONG_TIN_TONG_HOP v_us = new US_RPT_THONG_TIN_TONG_HOP();
-            DS_RPT_THONG_TIN_TONG_HOP v_ds = new DS_RPT_THONG_TIN_TONG_HOP();
-            v_us.Get_tat_ca_nhan_vien_can_tong_hop_thong_tin(v_ds, CIPConvert.ToDecimal(m_txt_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_nam.Text.Trim()));
-
-            return v_ds;
+                US_RPT_THONG_TIN_TONG_HOP v_us = new US_RPT_THONG_TIN_TONG_HOP();
+                DS_RPT_THONG_TIN_TONG_HOP v_ds = new DS_RPT_THONG_TIN_TONG_HOP();
+                v_us.Get_tat_ca_nhan_vien_can_tong_hop_thong_tin(v_ds, CIPConvert.ToDecimal(m_txt_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_nam.Text.Trim()));
+                return v_ds; 
         }
+
+        private bool check_validate_data_is_ok(string ip_str_thang_cham_cong)
+        {
+            if (m_txt_thang.Text.Trim() == "" || m_txt_nam.Text.Trim() =="")
+            {
+                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_THANG_NAM);
+                return false;
+            }
+            else
+            {
+                for (int i = 0; i < ip_str_thang_cham_cong.Length; i++)
+                {
+                    if (char.IsDigit(ip_str_thang_cham_cong[i]) == false)
+                    {
+                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_DU_LIEU_NHAP_CHUA_HOP_LE);                        
+                    }
+                    return false;
+                }
+                return true;
+                m_work_fail = 1;
+            }           
+        }
+
         private void tong_hop_bao_cao(DS_RPT_THONG_TIN_TONG_HOP ip_ds, BackgroundWorker ip_bgw)
         {
             var ip_dt = ip_ds.Tables[0];
@@ -68,8 +95,11 @@ namespace BKI_DichVuMatDat.BaoCao
             try
             {
                 BackgroundWorker worker = sender as BackgroundWorker;
-                var v_ds_nv_can_tong_hop = lay_danh_sach_nhan_vien_can_tong_hop_thong_tin();
-                tong_hop_bao_cao(v_ds_nv_can_tong_hop, worker);
+                if (check_validate_data_is_ok(m_txt_thang.Text) && check_validate_data_is_ok(m_txt_nam.Text))
+                {
+                    var v_ds_nv_can_tong_hop = lay_danh_sach_nhan_vien_can_tong_hop_thong_tin();
+                    tong_hop_bao_cao(v_ds_nv_can_tong_hop, worker);
+                }
             }
             catch(Exception v_e)
             {
@@ -96,7 +126,11 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 this.m_prb.Visible = false;
                 this.m_panel.Visible = false;
-                load_data_2_grid();
+                if (m_work_fail == 1 )
+                {
+                    load_data_2_grid();
+                }
+
             }
             catch(Exception v_e)
             {

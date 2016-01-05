@@ -762,6 +762,7 @@
             this.m_cmd_luong_theo_don_vi.Name = "m_cmd_luong_theo_don_vi";
             this.m_cmd_luong_theo_don_vi.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.m_cmd_luong_theo_don_vi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tk_ns_dv_ItemClick);
             // 
             // m_cmd_thuong_thu_nhap_khac
             // 

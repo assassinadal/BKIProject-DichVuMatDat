@@ -42,8 +42,19 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             else
             {
-                MessageBox.Show("Dữ liệu nhập chưa hợp lệ!");
+                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_DU_LIEU_NHAP_CHUA_HOP_LE);
             }    
+        }
+
+
+        private bool check_validate_data_is_ok(string ip_str_thang_cham_cong)
+        {
+            for (int i = 0; i < ip_str_thang_cham_cong.Length; i++)
+            {
+                if (char.IsDigit(ip_str_thang_cham_cong[i]) == false)
+                    return false;
+            }
+            return true;
         }
 
         private void load_data_to_m_pv(decimal m_id_nhan_vien)
@@ -69,15 +80,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chon_nhan_vien.Properties.DataSource = load_data_to_ds_v_dm_nv().Tables[0];
             m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
-        }
-        private bool check_validate_data_is_ok(string ip_str_thang_cham_cong)
-        {
-            for (int i = 0; i < ip_str_thang_cham_cong.Length; i++)
-            {
-                if (char.IsDigit(ip_str_thang_cham_cong[i]) == false)
-                    return false;
-            }
-            return true;
         }
 
         private void m_pv_CellDoubleClick(object sender, DevExpress.XtraPivotGrid.PivotCellEventArgs e)

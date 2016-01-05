@@ -199,10 +199,31 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_THANG);
                 return false;
             }
-            if (m_txt_chon_nam.Text == "")
+            else if (m_txt_chon_nam.Text == "")
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NAM);
                 return false;
+            }
+            else
+            {
+                if (check_validate_data_is_ok(m_txt_chon_thang.Text) && check_validate_data_is_ok(m_txt_chon_nam.Text))
+                {
+                    return true;
+                }
+                else
+                {
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_DU_LIEU_NHAP_CHUA_HOP_LE);
+                    return false;
+                }
+            }
+        }
+
+        private bool check_validate_data_is_ok(string ip_str_thang_cham_cong)
+        {
+            for (int i = 0; i < ip_str_thang_cham_cong.Length; i++)
+            {
+                if (char.IsDigit(ip_str_thang_cham_cong[i]) == false)
+                    return false;
             }
             return true;
         }
@@ -385,7 +406,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (check_data_load_data_2_grid_is_ok())
                 {
-                    if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
+                    if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue.ToString() == "")
                     {
                         load_data_2_gridd(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
                     }

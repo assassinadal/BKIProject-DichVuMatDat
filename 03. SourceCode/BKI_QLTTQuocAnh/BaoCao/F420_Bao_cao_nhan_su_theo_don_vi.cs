@@ -27,7 +27,6 @@ namespace BKI_DichVuMatDat.BaoCao
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
             v_us.FillDatasetWithTableName(v_ds, "V_NHAN_VIEN_DON_VI");
-
             m_pv.DataSource = v_ds.Tables[0];
         }
     }

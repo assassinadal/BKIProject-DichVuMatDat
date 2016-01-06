@@ -81,35 +81,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
         void m_cmd_search_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (check_validate_data_is_ok(m_txt_chon_thang.Text) && check_validate_data_is_ok(m_txt_chon_nam.Text))
-                {
-                    if (m_txt_chon_nam.Text == "")
-                    {
-                        CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NAM);
-                    }
-                    else
-                    {
-                        if (m_txt_chon_thang.Text == "")
-                        {
-                            load_data_2_grid();
-                        }
-                        else
-                        {
-                            load_data_2_grid(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()));
-                        }
-                    }
-                }
-                else
-                {
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_DU_LIEU_NHAP_CHUA_HOP_LE);
-                }
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
+
         }
 
         private bool check_validate_data_is_ok(string ip_str_ngay_cham_cong)

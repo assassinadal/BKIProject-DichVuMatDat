@@ -110,6 +110,7 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_xem_cham_cong_lam_them = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItemServer = new DevExpress.XtraBars.BarStaticItem();
+            this.m_cmd_bc_thu_lao_hdqt = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -136,7 +137,6 @@
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
-            this.m_cmd_bc_thu_lao_hdqt = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -969,6 +969,14 @@
             this.barStaticItemServer.Name = "barStaticItemServer";
             this.barStaticItemServer.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
+            // m_cmd_bc_thu_lao_hdqt
+            // 
+            this.m_cmd_bc_thu_lao_hdqt.Caption = "Thù lao HĐQT";
+            this.m_cmd_bc_thu_lao_hdqt.Id = 94;
+            this.m_cmd_bc_thu_lao_hdqt.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_nhan_vien;
+            this.m_cmd_bc_thu_lao_hdqt.Name = "m_cmd_bc_thu_lao_hdqt";
+            this.m_cmd_bc_thu_lao_hdqt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_bc_thu_lao_hdqt_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1109,7 +1117,7 @@
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bc_cac_thang_da_chot_bang_luong);
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_luong_theo_don_vi);
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bao_cao_tong_hop);
-            this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bc_tang_giam_ld);
+            this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bc_tang_giam_ld, true);
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bc_thu_lao_hdqt);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Báo cáo tổng";
@@ -1215,14 +1223,6 @@
             this.m_lbl_canh_bao_het_han_hop_dong.TabIndex = 10;
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
-            // 
-            // m_cmd_bc_thu_lao_hdqt
-            // 
-            this.m_cmd_bc_thu_lao_hdqt.Caption = "Thù lao HĐQT";
-            this.m_cmd_bc_thu_lao_hdqt.Id = 94;
-            this.m_cmd_bc_thu_lao_hdqt.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_nhan_vien;
-            this.m_cmd_bc_thu_lao_hdqt.Name = "m_cmd_bc_thu_lao_hdqt";
-            this.m_cmd_bc_thu_lao_hdqt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_bc_thu_lao_hdqt_ItemClick);
             // 
             // f388_main
             // 

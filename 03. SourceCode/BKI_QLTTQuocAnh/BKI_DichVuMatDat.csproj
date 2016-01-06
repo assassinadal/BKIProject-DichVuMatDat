@@ -938,6 +938,9 @@
     <EmbeddedResource Include="BaoCao\f480_bao_cao_thuong_khac.resx">
       <DependentUpon>f480_bao_cao_thuong_khac.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f481_bao_cao_thu_lao_hdqt.resx">
+      <DependentUpon>f481_bao_cao_thu_lao_hdqt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\frm417_bao_cao_tang_giam_lao_dong.resx">
       <DependentUpon>frm417_bao_cao_tang_giam_lao_dong.cs</DependentUpon>
     </EmbeddedResource>

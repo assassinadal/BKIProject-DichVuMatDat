@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -127,14 +128,15 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
+            this.m_cmd_bc_thu_lao_hdqt = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -230,9 +232,10 @@
             this.m_cmd_them_nhan_vien_nhanh,
             this.barButtonItem5,
             this.m_cmd_xem_cham_cong_lam_them,
-            this.barStaticItemServer});
+            this.barStaticItemServer,
+            this.m_cmd_bc_thu_lao_hdqt});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 94;
+            this.ribbon.MaxItemId = 95;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1107,6 +1110,7 @@
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_luong_theo_don_vi);
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bao_cao_tong_hop);
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bc_tang_giam_ld);
+            this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bc_thu_lao_hdqt);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Báo cáo tổng";
             // 
@@ -1211,6 +1215,14 @@
             this.m_lbl_canh_bao_het_han_hop_dong.TabIndex = 10;
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
+            // 
+            // m_cmd_bc_thu_lao_hdqt
+            // 
+            this.m_cmd_bc_thu_lao_hdqt.Caption = "Thù lao HĐQT";
+            this.m_cmd_bc_thu_lao_hdqt.Id = 94;
+            this.m_cmd_bc_thu_lao_hdqt.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_nhan_vien;
+            this.m_cmd_bc_thu_lao_hdqt.Name = "m_cmd_bc_thu_lao_hdqt";
+            this.m_cmd_bc_thu_lao_hdqt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_bc_thu_lao_hdqt_ItemClick);
             // 
             // f388_main
             // 
@@ -1347,5 +1359,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem m_cmd_xem_cham_cong_lam_them;
         private DevExpress.XtraBars.BarStaticItem barStaticItemServer;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_bc_thu_lao_hdqt;
     }
 }

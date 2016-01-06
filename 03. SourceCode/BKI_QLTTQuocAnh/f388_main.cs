@@ -1077,6 +1077,21 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void m_cmd_bc_thu_lao_hdqt_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f481_bao_cao_thu_lao_hdqt v_f = new f481_bao_cao_thu_lao_hdqt();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
 
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)

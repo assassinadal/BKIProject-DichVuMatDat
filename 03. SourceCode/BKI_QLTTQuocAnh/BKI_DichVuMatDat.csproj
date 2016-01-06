@@ -399,6 +399,12 @@
     <Compile Include="BaoCao\f480_bao_cao_thuong_khac.Designer.cs">
       <DependentUpon>f480_bao_cao_thuong_khac.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\f481_bao_cao_thu_lao_hdqt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f481_bao_cao_thu_lao_hdqt.Designer.cs">
+      <DependentUpon>f481_bao_cao_thu_lao_hdqt.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\frm417_bao_cao_tang_giam_lao_dong.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -81,7 +81,21 @@ namespace BKI_DichVuMatDat.BaoCao
 
         void m_cmd_search_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (m_txt_chon_thang.Text == "")
+                {
+                    load_data_2_grid();
+                }
+                else
+                {
+                    load_data_2_grid(CIPConvert.ToDecimal(m_txt_chon_nam.Text));
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }            
         }
 
         private bool check_validate_data_is_ok(string ip_str_ngay_cham_cong)

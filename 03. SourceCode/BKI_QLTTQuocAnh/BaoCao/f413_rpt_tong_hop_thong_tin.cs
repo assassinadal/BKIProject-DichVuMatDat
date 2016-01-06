@@ -62,11 +62,12 @@ namespace BKI_DichVuMatDat.BaoCao
                     if (char.IsDigit(ip_str_thang_cham_cong[i]) == false)
                     {
                         CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_DU_LIEU_NHAP_CHUA_HOP_LE);                        
+                        return false;
                     }
-                    return false;
                 }
-                return true;
                 m_work_fail = 1;
+                return true;
+                
             }           
         }
 
@@ -95,7 +96,7 @@ namespace BKI_DichVuMatDat.BaoCao
             try
             {
                 BackgroundWorker worker = sender as BackgroundWorker;
-                if (check_validate_data_is_ok(m_txt_thang.Text) && check_validate_data_is_ok(m_txt_nam.Text))
+                if (check_validate_data_is_ok(m_txt_thang.Text.Trim()) && check_validate_data_is_ok(m_txt_nam.Text.Trim()))
                 {
                     var v_ds_nv_can_tong_hop = lay_danh_sach_nhan_vien_can_tong_hop_thong_tin();
                     tong_hop_bao_cao(v_ds_nv_can_tong_hop, worker);

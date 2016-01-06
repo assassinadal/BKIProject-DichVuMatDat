@@ -37,6 +37,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void load_data_to_grid()
         {
+            CHRMCommon.make_stt(m_grv_hs_bs_hs_athk);
             DataSet v_ds = new DataSet();
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             v_ds.Tables.Add(new DataTable());

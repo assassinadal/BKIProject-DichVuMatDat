@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F415_bao_cao_hs_bs_hs_athk));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_import = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_search = new DevExpress.XtraEditors.SimpleButton();
             this.m_txt_chon_nam = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,7 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_import = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_tinh_lai = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -52,7 +53,6 @@
             this.NAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HS_BO_SUNG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HS_ATHK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_cmd_tinh_lai = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_hs_bs_hs_athk)).BeginInit();
@@ -72,6 +72,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(985, 101);
             this.panel1.TabIndex = 11;
+            // 
+            // m_cmd_import
+            // 
+            this.m_cmd_import.Image = global::BKI_DichVuMatDat.Properties.Resources.table;
+            this.m_cmd_import.Location = new System.Drawing.Point(4, 63);
+            this.m_cmd_import.Name = "m_cmd_import";
+            this.m_cmd_import.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_import.TabIndex = 5;
+            this.m_cmd_import.Text = "&Import Excel";
+            this.m_cmd_import.Click += new System.EventHandler(this.m_cmd_import_Click);
             // 
             // m_cmd_search
             // 
@@ -138,15 +148,15 @@
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(985, 43);
             this.m_pnl_out_place_dm.TabIndex = 13;
             // 
-            // m_cmd_import
+            // m_cmd_tinh_lai
             // 
-            this.m_cmd_import.Image = global::BKI_DichVuMatDat.Properties.Resources.table;
-            this.m_cmd_import.Location = new System.Drawing.Point(4, 63);
-            this.m_cmd_import.Name = "m_cmd_import";
-            this.m_cmd_import.Size = new System.Drawing.Size(116, 35);
-            this.m_cmd_import.TabIndex = 5;
-            this.m_cmd_import.Text = "&Import Excel";
-            this.m_cmd_import.Click += new System.EventHandler(this.m_cmd_import_Click);
+            this.m_cmd_tinh_lai.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_tinh_lai.Image = global::BKI_DichVuMatDat.Properties.Resources.Refresh;
+            this.m_cmd_tinh_lai.Location = new System.Drawing.Point(633, 4);
+            this.m_cmd_tinh_lai.Name = "m_cmd_tinh_lai";
+            this.m_cmd_tinh_lai.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_tinh_lai.TabIndex = 7;
+            this.m_cmd_tinh_lai.Text = "&Tính lại hệ số";
             // 
             // m_cmd_save
             // 
@@ -304,16 +314,6 @@
             this.HS_ATHK.Name = "HS_ATHK";
             this.HS_ATHK.Visible = true;
             this.HS_ATHK.VisibleIndex = 3;
-            // 
-            // m_cmd_tinh_lai
-            // 
-            this.m_cmd_tinh_lai.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_tinh_lai.Image = global::BKI_DichVuMatDat.Properties.Resources.Refresh;
-            this.m_cmd_tinh_lai.Location = new System.Drawing.Point(633, 4);
-            this.m_cmd_tinh_lai.Name = "m_cmd_tinh_lai";
-            this.m_cmd_tinh_lai.Size = new System.Drawing.Size(116, 35);
-            this.m_cmd_tinh_lai.TabIndex = 7;
-            this.m_cmd_tinh_lai.Text = "&Tính lại hệ số";
             // 
             // F415_bao_cao_hs_bs_hs_athk
             // 

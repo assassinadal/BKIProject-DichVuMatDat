@@ -137,6 +137,7 @@
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
+            this.m_cmd_bang_luong = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -233,9 +234,10 @@
             this.barButtonItem5,
             this.m_cmd_xem_cham_cong_lam_them,
             this.barStaticItemServer,
-            this.m_cmd_bc_thu_lao_hdqt});
+            this.m_cmd_bc_thu_lao_hdqt,
+            this.m_cmd_bang_luong});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 95;
+            this.ribbon.MaxItemId = 96;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1119,6 +1121,7 @@
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bao_cao_tong_hop);
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bc_tang_giam_ld, true);
             this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bc_thu_lao_hdqt);
+            this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_bang_luong);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Báo cáo tổng";
             // 
@@ -1223,6 +1226,14 @@
             this.m_lbl_canh_bao_het_han_hop_dong.TabIndex = 10;
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
+            // 
+            // m_cmd_bang_luong
+            // 
+            this.m_cmd_bang_luong.Caption = "Bảng lương  ";
+            this.m_cmd_bang_luong.Id = 95;
+            this.m_cmd_bang_luong.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_bang_luong_nv_;
+            this.m_cmd_bang_luong.Name = "m_cmd_bang_luong";
+            this.m_cmd_bang_luong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_bang_luong_ItemClick);
             // 
             // f388_main
             // 
@@ -1360,5 +1371,6 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_xem_cham_cong_lam_them;
         private DevExpress.XtraBars.BarStaticItem barStaticItemServer;
         private DevExpress.XtraBars.BarButtonItem m_cmd_bc_thu_lao_hdqt;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_bang_luong;
     }
 }

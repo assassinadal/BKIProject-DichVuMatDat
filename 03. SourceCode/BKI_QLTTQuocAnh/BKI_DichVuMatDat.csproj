@@ -303,6 +303,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationControl.cs" />
+    <Compile Include="BaoCao\f409_rpt_bang_luong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f409_rpt_bang_luong.Designer.cs">
+      <DependentUpon>f409_rpt_bang_luong.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\f410_rpt_bang_luong_nv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -890,6 +896,9 @@
     <None Include="Resources\Modify.ico" />
     <None Include="Resources\View.ico" />
     <None Include="Resources\Save1.ico" />
+    <EmbeddedResource Include="BaoCao\f409_rpt_bang_luong.resx">
+      <DependentUpon>f409_rpt_bang_luong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f410_rpt_bang_luong_nv.resx">
       <DependentUpon>f410_rpt_bang_luong_nv.cs</DependentUpon>
     </EmbeddedResource>

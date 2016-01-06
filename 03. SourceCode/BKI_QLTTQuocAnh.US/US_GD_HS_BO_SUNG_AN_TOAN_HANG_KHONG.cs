@@ -250,5 +250,14 @@ namespace BKI_DichVuMatDat.US
 
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
+
+        public void xoa_du_lieu_athk_bsl_thang(decimal ip_dc_thang, decimal ip_dc_nam)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_xoa_du_lieu_athk_bsl_thang");
+
+            v_cstore.addDecimalInputParam("@ip_thang", ip_dc_thang);
+            v_cstore.addDecimalInputParam("@ip_nam", ip_dc_nam);
+            v_cstore.ExecuteCommand(this);
+        }
     }
 }

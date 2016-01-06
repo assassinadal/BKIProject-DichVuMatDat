@@ -369,6 +369,13 @@ namespace BKI_DichVuMatDat
             v_cstore.addDecimalInputParam("@ip_nam", ip_nam);
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
+        public void XoaDuLieuTrongThang_ATHK_BSL(decimal ip_thang, decimal ip_nam)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_xoa_du_lieu_athk_bsl_thang");
+            v_cstore.addDecimalInputParam("@ip_thang", ip_thang);
+            v_cstore.addDecimalInputParam("@ip_nam", ip_nam);
+            v_cstore.ExecuteCommand(this);
+        }
         public bool IsDaChotBangLuongThang(decimal ip_i_thang, decimal ip_i_nam)
         {
             DataSet v_ds = new DataSet();

@@ -921,6 +921,30 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string DA_XOA_LCD = "DA_XOA_LCD";
     }
 
+    public class V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string MA_NV = "MA_NV";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string HO_TEN = "HO_TEN";
+        public const string ID_TRANG_THAI_LAO_DONG = "ID_TRANG_THAI_LAO_DONG";
+        public const string MA_TRANG_THAI_LD = "MA_TRANG_THAI_LD";
+        public const string TEN_TRANG_THAI_LD = "TEN_TRANG_THAI_LD";
+        public const string GHI_CHU_TRANG_THAI_LAO_DONG = "GHI_CHU_TRANG_THAI_LAO_DONG";
+        public const string ID_LOAI_TRANG_THAI_LD = "ID_LOAI_TRANG_THAI_LD";
+        public const string MA_LOAI_TRANG_THAI_LD = "MA_LOAI_TRANG_THAI_LD";
+        public const string TEN_LOAI_TRANG_THAI_LD = "TEN_LOAI_TRANG_THAI_LD";
+        public const string NGAY_AP_DUNG = "NGAY_AP_DUNG";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string NGAY_SUA = "NGAY_SUA";
+        public const string NGUOI_SUA = "NGUOI_SUA";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string DA_XOA = "DA_XOA";
+    }
+
     #endregion
 
     public class GD_CHAM_CONG_LAM_THEM

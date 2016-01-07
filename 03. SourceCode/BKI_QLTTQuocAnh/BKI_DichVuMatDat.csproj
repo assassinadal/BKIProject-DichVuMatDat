@@ -751,6 +751,12 @@
     <Compile Include="NghiepVu\f355_thuong_an_toan_hang_khong.Designer.cs">
       <DependentUpon>f355_thuong_an_toan_hang_khong.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien.Designer.cs">
+      <DependentUpon>f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f360_quan_ly_quyet_dinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1105,6 +1111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f355_thuong_an_toan_hang_khong.resx">
       <DependentUpon>f355_thuong_an_toan_hang_khong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien.resx">
+      <DependentUpon>f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f360_quan_ly_quyet_dinh.resx">
       <DependentUpon>f360_quan_ly_quyet_dinh.cs</DependentUpon>

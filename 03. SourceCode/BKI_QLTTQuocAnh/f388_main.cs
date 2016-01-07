@@ -368,7 +368,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                frm356_chuyen_trang_thai_lao_dong v_frm = new frm356_chuyen_trang_thai_lao_dong();
+                f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien v_frm = new f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien();
                 if(IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;

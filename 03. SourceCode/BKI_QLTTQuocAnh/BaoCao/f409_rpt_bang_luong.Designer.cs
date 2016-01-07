@@ -464,7 +464,6 @@
             this.colTHU_NHAP_KHAC_TRONG_LUONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTHU_NHAP_KHAC_TRONG_LUONG.FieldName = "THU_NHAP_KHAC_TRONG_LUONG";
             this.colTHU_NHAP_KHAC_TRONG_LUONG.Name = "colTHU_NHAP_KHAC_TRONG_LUONG";
-            this.colTHU_NHAP_KHAC_TRONG_LUONG.Visible = true;
             // 
             // colTONG_THU_NHAP_TRONG_LUONG
             // 
@@ -695,7 +694,7 @@
             // 
             // colPHAI_NOP_THUE_TNCN
             // 
-            this.colPHAI_NOP_THUE_TNCN.Caption = "Thuế";
+            this.colPHAI_NOP_THUE_TNCN.Caption = "Thuế TNCN";
             this.colPHAI_NOP_THUE_TNCN.DisplayFormat.FormatString = "n0";
             this.colPHAI_NOP_THUE_TNCN.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPHAI_NOP_THUE_TNCN.FieldName = "THUE";
@@ -775,7 +774,7 @@
             this.gridBand8});
             this.gridBand4.Name = "gridBand4";
             this.gridBand4.VisibleIndex = 1;
-            this.gridBand4.Width = 1200;
+            this.gridBand4.Width = 1125;
             // 
             // gridBand7
             // 
@@ -792,7 +791,7 @@
             this.gridBand7.Columns.Add(this.colTONG_THU_NHAP_TRONG_LUONG);
             this.gridBand7.Name = "gridBand7";
             this.gridBand7.VisibleIndex = 0;
-            this.gridBand7.Width = 750;
+            this.gridBand7.Width = 675;
             // 
             // gridBand8
             // 

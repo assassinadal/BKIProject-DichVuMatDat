@@ -224,6 +224,16 @@ namespace BKI_DichVuMatDat
             ip_dr_luong_nv[RPT_LUONG.TRUY_THU] = ip_dr_luong[RPT_LUONG.TRUY_THU];
             ip_dr_luong_nv[RPT_LUONG.THUC_LINH_CUOI_CUNG] = ip_dr_luong[RPT_LUONG.THUC_LINH_CUOI_CUNG];
             ip_dr_luong_nv[RPT_LUONG.SO_NGAY_LAM_THEM] = ip_dr_luong[RPT_LUONG.SO_NGAY_LAM_THEM];
+            ip_dr_luong_nv[RPT_LUONG.LAM_THEM_200] = ip_dr_luong[RPT_LUONG.LAM_THEM_200];
+            ip_dr_luong_nv[RPT_LUONG.LAM_THEM_300] = ip_dr_luong[RPT_LUONG.LAM_THEM_300];
+            ip_dr_luong_nv[RPT_LUONG.THUONG] = ip_dr_luong[RPT_LUONG.THUONG];
+            ip_dr_luong_nv[RPT_LUONG.THU_NHAP_KHAC] = ip_dr_luong[RPT_LUONG.THU_NHAP_KHAC];
+            ip_dr_luong_nv[RPT_LUONG.GIAM_TRU_LAM_THEM] = ip_dr_luong[RPT_LUONG.GIAM_TRU_LAM_THEM];
+            ip_dr_luong_nv[RPT_LUONG.GIAM_TRU_GIA_CANH] = ip_dr_luong[RPT_LUONG.GIAM_TRU_GIA_CANH];
+            ip_dr_luong_nv[RPT_LUONG.GIAM_TRU_PHU_THUOC] = ip_dr_luong[RPT_LUONG.GIAM_TRU_PHU_THUOC];
+            ip_dr_luong_nv[RPT_LUONG.GIAM_TRU_KHAC] = ip_dr_luong[RPT_LUONG.GIAM_TRU_KHAC];
+            ip_dr_luong_nv[RPT_LUONG.THU_NHAP_CHIU_THUE] = ip_dr_luong[RPT_LUONG.THU_NHAP_CHIU_THUE];
+            ip_dr_luong_nv[RPT_LUONG.TONG_GIAM_TRU] = ip_dr_luong[RPT_LUONG.TONG_GIAM_TRU];
             return ip_dr_luong_nv;
         }
 
@@ -251,6 +261,16 @@ namespace BKI_DichVuMatDat
             v_us.dcTRUY_LINH = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.TRUY_LINH].ToString());
             v_us.dcTRUY_THU = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.TRUY_THU].ToString());
             v_us.dcSO_NGAY_LAM_THEM = Convert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.SO_NGAY_LAM_THEM]);
+            v_us.dcLAM_THEM_200 = Convert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LAM_THEM_200]);
+            v_us.dcLAM_THEM_300 = Convert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.LAM_THEM_300]);
+            v_us.dcTHU_NHAP_KHAC = Convert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THU_NHAP_KHAC]);
+            v_us.dcTHUONG = Convert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THUONG]);
+            v_us.dcGIAM_TRU_GIA_CANH = Convert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.GIAM_TRU_GIA_CANH]);
+            v_us.dcGIAM_TRU_PHU_THUOC = Convert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.GIAM_TRU_PHU_THUOC]);
+            v_us.dcGIAM_TRU_LAM_THEM = Convert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.GIAM_TRU_LAM_THEM]);
+            v_us.dcGIAM_TRU_KHAC = Convert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.GIAM_TRU_KHAC]);
+            v_us.dcTONG_GIAM_TRU = Convert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.TONG_GIAM_TRU]);
+            v_us.dcTHU_NHAP_CHIU_THUE = Convert.ToDecimal(v_dr_luong_1_nv[RPT_LUONG.THU_NHAP_CHIU_THUE]);
         }
         public static void DataRow2USThongTinTongHop(DataRow v_dr_luong_1_nv, US_RPT_THONG_TIN_TONG_HOP v_us)
         {

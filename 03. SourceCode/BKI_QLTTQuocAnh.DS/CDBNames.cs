@@ -812,6 +812,16 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string TRUY_THU = "TRUY_THU";
         public const string THUC_LINH_CUOI_CUNG = "THUC_LINH_CUOI_CUNG";
         public const string SO_NGAY_LAM_THEM = "SO_NGAY_LAM_THEM";
+        public const string LAM_THEM_200 = "LAM_THEM_200";
+        public const string LAM_THEM_300 = "LAM_THEM_300";
+        public const string THU_NHAP_KHAC = "THU_NHAP_KHAC";
+        public const string THUONG = "THUONG";
+        public const string GIAM_TRU_LAM_THEM = "GIAM_TRU_LAM_THEM";
+        public const string GIAM_TRU_GIA_CANH = "GIAM_TRU_GIA_CANH";
+        public const string GIAM_TRU_PHU_THUOC = "GIAM_TRU_PHU_THUOC";
+        public const string GIAM_TRU_KHAC = "GIAM_TRU_KHAC";
+        public const string THU_NHAP_CHIU_THUE = "THU_NHAP_CHIU_THUE";
+        public const string TONG_GIAM_TRU = "TONG_GIAM_TRU";
     }
 
 

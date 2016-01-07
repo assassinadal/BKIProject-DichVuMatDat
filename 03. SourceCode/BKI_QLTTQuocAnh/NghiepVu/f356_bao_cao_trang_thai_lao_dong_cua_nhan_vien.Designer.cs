@@ -37,6 +37,13 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.m_grc_bao_cao_trang_thai_lao_dong_nhan_vien = new DevExpress.XtraGrid.GridControl();
             this.m_grv_bao_cao_trang_thai_lao_dong_nhan_vien = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HO_DEM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TEN_TRANG_THAI_LD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TEN_LOAI_TRANG_THAI_LD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NGAY_AP_DUNG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_cmd_search = new DevExpress.XtraEditors.SimpleButton();
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -54,13 +61,6 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HO_DEM = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TEN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TEN_TRANG_THAI_LD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TEN_LOAI_TRANG_THAI_LD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NGAY_AP_DUNG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -166,6 +166,83 @@
             this.NGAY_AP_DUNG});
             this.m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.GridControl = this.m_grc_bao_cao_trang_thai_lao_dong_nhan_vien;
             this.m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.Name = "m_grv_bao_cao_trang_thai_lao_dong_nhan_vien";
+            // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
+            // 
+            // MA_NV
+            // 
+            this.MA_NV.AppearanceCell.Options.UseTextOptions = true;
+            this.MA_NV.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MA_NV.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.MA_NV.AppearanceHeader.Options.UseTextOptions = true;
+            this.MA_NV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MA_NV.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.MA_NV.Caption = "Mã NV";
+            this.MA_NV.FieldName = "MA_NV";
+            this.MA_NV.Name = "MA_NV";
+            this.MA_NV.Visible = true;
+            this.MA_NV.VisibleIndex = 0;
+            // 
+            // HO_DEM
+            // 
+            this.HO_DEM.AppearanceHeader.Options.UseTextOptions = true;
+            this.HO_DEM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.HO_DEM.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.HO_DEM.Caption = "Họ đệm";
+            this.HO_DEM.FieldName = "HO_DEM";
+            this.HO_DEM.Name = "HO_DEM";
+            this.HO_DEM.Visible = true;
+            this.HO_DEM.VisibleIndex = 1;
+            // 
+            // TEN
+            // 
+            this.TEN.AppearanceHeader.Options.UseTextOptions = true;
+            this.TEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TEN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.TEN.Caption = "Tên";
+            this.TEN.FieldName = "TEN";
+            this.TEN.Name = "TEN";
+            this.TEN.Visible = true;
+            this.TEN.VisibleIndex = 2;
+            // 
+            // TEN_TRANG_THAI_LD
+            // 
+            this.TEN_TRANG_THAI_LD.AppearanceHeader.Options.UseTextOptions = true;
+            this.TEN_TRANG_THAI_LD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TEN_TRANG_THAI_LD.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.TEN_TRANG_THAI_LD.Caption = "Trạng thái LĐ";
+            this.TEN_TRANG_THAI_LD.FieldName = "TEN_TRANG_THAI_LD";
+            this.TEN_TRANG_THAI_LD.Name = "TEN_TRANG_THAI_LD";
+            this.TEN_TRANG_THAI_LD.Visible = true;
+            this.TEN_TRANG_THAI_LD.VisibleIndex = 3;
+            // 
+            // TEN_LOAI_TRANG_THAI_LD
+            // 
+            this.TEN_LOAI_TRANG_THAI_LD.AppearanceHeader.Options.UseTextOptions = true;
+            this.TEN_LOAI_TRANG_THAI_LD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TEN_LOAI_TRANG_THAI_LD.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.TEN_LOAI_TRANG_THAI_LD.Caption = "Loại trạng thái LĐ";
+            this.TEN_LOAI_TRANG_THAI_LD.FieldName = "TEN_LOAI_TRANG_THAI_LD";
+            this.TEN_LOAI_TRANG_THAI_LD.Name = "TEN_LOAI_TRANG_THAI_LD";
+            this.TEN_LOAI_TRANG_THAI_LD.Visible = true;
+            this.TEN_LOAI_TRANG_THAI_LD.VisibleIndex = 4;
+            // 
+            // NGAY_AP_DUNG
+            // 
+            this.NGAY_AP_DUNG.AppearanceHeader.Options.UseTextOptions = true;
+            this.NGAY_AP_DUNG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAY_AP_DUNG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.NGAY_AP_DUNG.Caption = "Ngày áp dụng";
+            this.NGAY_AP_DUNG.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.NGAY_AP_DUNG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.NGAY_AP_DUNG.FieldName = "NGAY_AP_DUNG";
+            this.NGAY_AP_DUNG.Name = "NGAY_AP_DUNG";
+            this.NGAY_AP_DUNG.Visible = true;
+            this.NGAY_AP_DUNG.VisibleIndex = 5;
             // 
             // m_cmd_search
             // 
@@ -340,83 +417,6 @@
             this.layoutControlItem2.Text = "layoutControlItem2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
-            // 
-            // ID
-            // 
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
-            // 
-            // MA_NV
-            // 
-            this.MA_NV.AppearanceCell.Options.UseTextOptions = true;
-            this.MA_NV.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.MA_NV.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.MA_NV.AppearanceHeader.Options.UseTextOptions = true;
-            this.MA_NV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.MA_NV.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.MA_NV.Caption = "Mã NV";
-            this.MA_NV.FieldName = "MA_NV";
-            this.MA_NV.Name = "MA_NV";
-            this.MA_NV.Visible = true;
-            this.MA_NV.VisibleIndex = 0;
-            // 
-            // HO_DEM
-            // 
-            this.HO_DEM.AppearanceHeader.Options.UseTextOptions = true;
-            this.HO_DEM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.HO_DEM.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.HO_DEM.Caption = "Họ đệm";
-            this.HO_DEM.FieldName = "HO_DEM";
-            this.HO_DEM.Name = "HO_DEM";
-            this.HO_DEM.Visible = true;
-            this.HO_DEM.VisibleIndex = 1;
-            // 
-            // TEN
-            // 
-            this.TEN.AppearanceHeader.Options.UseTextOptions = true;
-            this.TEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.TEN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.TEN.Caption = "Tên";
-            this.TEN.FieldName = "TEN";
-            this.TEN.Name = "TEN";
-            this.TEN.Visible = true;
-            this.TEN.VisibleIndex = 2;
-            // 
-            // TEN_TRANG_THAI_LD
-            // 
-            this.TEN_TRANG_THAI_LD.AppearanceHeader.Options.UseTextOptions = true;
-            this.TEN_TRANG_THAI_LD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.TEN_TRANG_THAI_LD.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.TEN_TRANG_THAI_LD.Caption = "Trạng thái LĐ";
-            this.TEN_TRANG_THAI_LD.FieldNameSortGroup = "TEN_TRANG_THAI_LD";
-            this.TEN_TRANG_THAI_LD.Name = "TEN_TRANG_THAI_LD";
-            this.TEN_TRANG_THAI_LD.Visible = true;
-            this.TEN_TRANG_THAI_LD.VisibleIndex = 3;
-            // 
-            // TEN_LOAI_TRANG_THAI_LD
-            // 
-            this.TEN_LOAI_TRANG_THAI_LD.AppearanceHeader.Options.UseTextOptions = true;
-            this.TEN_LOAI_TRANG_THAI_LD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.TEN_LOAI_TRANG_THAI_LD.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.TEN_LOAI_TRANG_THAI_LD.Caption = "Loại trạng thái LĐ";
-            this.TEN_LOAI_TRANG_THAI_LD.FieldName = "TEN_LOAI_TRANG_THAI_LD";
-            this.TEN_LOAI_TRANG_THAI_LD.Name = "TEN_LOAI_TRANG_THAI_LD";
-            this.TEN_LOAI_TRANG_THAI_LD.Visible = true;
-            this.TEN_LOAI_TRANG_THAI_LD.VisibleIndex = 4;
-            // 
-            // NGAY_AP_DUNG
-            // 
-            this.NGAY_AP_DUNG.AppearanceHeader.Options.UseTextOptions = true;
-            this.NGAY_AP_DUNG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NGAY_AP_DUNG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.NGAY_AP_DUNG.Caption = "Ngày áp dụng";
-            this.NGAY_AP_DUNG.DisplayFormat.FormatString = "dd/MM/yyyy";
-            this.NGAY_AP_DUNG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.NGAY_AP_DUNG.FieldName = "NGAY_AP_DUNG";
-            this.NGAY_AP_DUNG.Name = "NGAY_AP_DUNG";
-            this.NGAY_AP_DUNG.Visible = true;
-            this.NGAY_AP_DUNG.VisibleIndex = 5;
             // 
             // f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien
             // 

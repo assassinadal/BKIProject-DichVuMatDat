@@ -298,6 +298,7 @@
             this.m_grv.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.gridBand1,
             this.gridBand4,
+            this.gridBand9,
             this.gridBand5,
             this.gridBand6,
             this.gridBand3,
@@ -459,6 +460,8 @@
             // colTHUONG
             // 
             this.colTHUONG.Caption = "Thưởng";
+            this.colTHUONG.DisplayFormat.FormatString = "n0";
+            this.colTHUONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTHUONG.FieldName = "THUONG";
             this.colTHUONG.Name = "colTHUONG";
             this.colTHUONG.Visible = true;
@@ -466,6 +469,8 @@
             // colGIAM_TRU_AN_CA
             // 
             this.colGIAM_TRU_AN_CA.Caption = "Ăn ca";
+            this.colGIAM_TRU_AN_CA.DisplayFormat.FormatString = "n0";
+            this.colGIAM_TRU_AN_CA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colGIAM_TRU_AN_CA.FieldName = "AN_CA";
             this.colGIAM_TRU_AN_CA.Name = "colGIAM_TRU_AN_CA";
             this.colGIAM_TRU_AN_CA.Visible = true;
@@ -473,6 +478,8 @@
             // colPHAI_NOP_BHXH
             // 
             this.colPHAI_NOP_BHXH.Caption = "BHXH";
+            this.colPHAI_NOP_BHXH.DisplayFormat.FormatString = "n0";
+            this.colPHAI_NOP_BHXH.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPHAI_NOP_BHXH.FieldName = "BHXH";
             this.colPHAI_NOP_BHXH.Name = "colPHAI_NOP_BHXH";
             this.colPHAI_NOP_BHXH.Visible = true;
@@ -480,6 +487,8 @@
             // colPHAI_NOP_BHYT
             // 
             this.colPHAI_NOP_BHYT.Caption = "BHYT";
+            this.colPHAI_NOP_BHYT.DisplayFormat.FormatString = "n0";
+            this.colPHAI_NOP_BHYT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPHAI_NOP_BHYT.FieldName = "BHYT";
             this.colPHAI_NOP_BHYT.Name = "colPHAI_NOP_BHYT";
             this.colPHAI_NOP_BHYT.Visible = true;
@@ -487,6 +496,8 @@
             // colPHAI_NOP_BHTN
             // 
             this.colPHAI_NOP_BHTN.Caption = "BHTN";
+            this.colPHAI_NOP_BHTN.DisplayFormat.FormatString = "n0";
+            this.colPHAI_NOP_BHTN.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPHAI_NOP_BHTN.FieldName = "BHTN";
             this.colPHAI_NOP_BHTN.Name = "colPHAI_NOP_BHTN";
             this.colPHAI_NOP_BHTN.Visible = true;
@@ -494,6 +505,8 @@
             // colGIAM_TRU_LAM_THEM_150
             // 
             this.colGIAM_TRU_LAM_THEM_150.Caption = "Làm thêm 150%";
+            this.colGIAM_TRU_LAM_THEM_150.DisplayFormat.FormatString = "n0";
+            this.colGIAM_TRU_LAM_THEM_150.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colGIAM_TRU_LAM_THEM_150.FieldName = "GIAM_TRU_LAM_THEM";
             this.colGIAM_TRU_LAM_THEM_150.Name = "colGIAM_TRU_LAM_THEM_150";
             this.colGIAM_TRU_LAM_THEM_150.Visible = true;
@@ -501,6 +514,8 @@
             // colGIAM_TRU_GIA_CANH
             // 
             this.colGIAM_TRU_GIA_CANH.Caption = "Giảm trừ gia cảnh";
+            this.colGIAM_TRU_GIA_CANH.DisplayFormat.FormatString = "n0";
+            this.colGIAM_TRU_GIA_CANH.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colGIAM_TRU_GIA_CANH.FieldName = "GIAM_TRU_GIA_CANH";
             this.colGIAM_TRU_GIA_CANH.Name = "colGIAM_TRU_GIA_CANH";
             this.colGIAM_TRU_GIA_CANH.Visible = true;
@@ -508,6 +523,8 @@
             // colGIAM_TRU_PHU_THUOC
             // 
             this.colGIAM_TRU_PHU_THUOC.Caption = "Giảm trừ phụ thuộc";
+            this.colGIAM_TRU_PHU_THUOC.DisplayFormat.FormatString = "n0";
+            this.colGIAM_TRU_PHU_THUOC.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colGIAM_TRU_PHU_THUOC.FieldName = "GIAM_TRU_PHU_THUOC";
             this.colGIAM_TRU_PHU_THUOC.Name = "colGIAM_TRU_PHU_THUOC";
             this.colGIAM_TRU_PHU_THUOC.Visible = true;
@@ -515,6 +532,8 @@
             // colGIAM_TRU_KHAC
             // 
             this.colGIAM_TRU_KHAC.Caption = "Giảm trừ khác";
+            this.colGIAM_TRU_KHAC.DisplayFormat.FormatString = "n0";
+            this.colGIAM_TRU_KHAC.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colGIAM_TRU_KHAC.FieldName = "GIAM_TRU_KHAC";
             this.colGIAM_TRU_KHAC.Name = "colGIAM_TRU_KHAC";
             this.colGIAM_TRU_KHAC.Visible = true;
@@ -522,6 +541,8 @@
             // colTONG_GIAM_TRU
             // 
             this.colTONG_GIAM_TRU.Caption = "Tổng giảm trừ";
+            this.colTONG_GIAM_TRU.DisplayFormat.FormatString = "n0";
+            this.colTONG_GIAM_TRU.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTONG_GIAM_TRU.FieldName = "TONG_GIAM_TRU";
             this.colTONG_GIAM_TRU.Name = "colTONG_GIAM_TRU";
             this.colTONG_GIAM_TRU.Visible = true;
@@ -529,6 +550,8 @@
             // colTHU_NHAP_CHIU_THE
             // 
             this.colTHU_NHAP_CHIU_THE.Caption = "Thu nhập chịu thuế";
+            this.colTHU_NHAP_CHIU_THE.DisplayFormat.FormatString = "n0";
+            this.colTHU_NHAP_CHIU_THE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTHU_NHAP_CHIU_THE.FieldName = "THU_NHAP_CHIU_THUE";
             this.colTHU_NHAP_CHIU_THE.Name = "colTHU_NHAP_CHIU_THE";
             this.colTHU_NHAP_CHIU_THE.Visible = true;
@@ -630,13 +653,18 @@
             // colTONG_THU_NHAP
             // 
             this.colTONG_THU_NHAP.Caption = "Tổng thu nhập";
+            this.colTONG_THU_NHAP.DisplayFormat.FormatString = "n0";
+            this.colTONG_THU_NHAP.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTONG_THU_NHAP.FieldName = "TONG_THU_NHAP";
             this.colTONG_THU_NHAP.Name = "colTONG_THU_NHAP";
             this.colTONG_THU_NHAP.Visible = true;
+            this.colTONG_THU_NHAP.Width = 84;
             // 
             // colLAM_THEM_200
             // 
             this.colLAM_THEM_200.Caption = "Làm thêm 200%";
+            this.colLAM_THEM_200.DisplayFormat.FormatString = "n0";
+            this.colLAM_THEM_200.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colLAM_THEM_200.FieldName = "LAM_THEM_200";
             this.colLAM_THEM_200.Name = "colLAM_THEM_200";
             this.colLAM_THEM_200.Visible = true;
@@ -644,6 +672,8 @@
             // colTHU_NHAP_KHAC_TRONG_LUONG
             // 
             this.colTHU_NHAP_KHAC_TRONG_LUONG.Caption = "Thu nhập khác trong lương";
+            this.colTHU_NHAP_KHAC_TRONG_LUONG.DisplayFormat.FormatString = "n0";
+            this.colTHU_NHAP_KHAC_TRONG_LUONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTHU_NHAP_KHAC_TRONG_LUONG.FieldName = "THU_NHAP_KHAC_TRONG_LUONG";
             this.colTHU_NHAP_KHAC_TRONG_LUONG.Name = "colTHU_NHAP_KHAC_TRONG_LUONG";
             this.colTHU_NHAP_KHAC_TRONG_LUONG.Visible = true;
@@ -651,6 +681,8 @@
             // colTONG_THU_NHAP_NGOAI_LUONG
             // 
             this.colTONG_THU_NHAP_NGOAI_LUONG.Caption = "Tổng thu nhập ngoài lương";
+            this.colTONG_THU_NHAP_NGOAI_LUONG.DisplayFormat.FormatString = "n0";
+            this.colTONG_THU_NHAP_NGOAI_LUONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTONG_THU_NHAP_NGOAI_LUONG.FieldName = "TONG_THU_NHAP_NGOAI_LUONG";
             this.colTONG_THU_NHAP_NGOAI_LUONG.Name = "colTONG_THU_NHAP_NGOAI_LUONG";
             this.colTONG_THU_NHAP_NGOAI_LUONG.Visible = true;
@@ -658,6 +690,8 @@
             // colTHUONG_ATHK
             // 
             this.colTHUONG_ATHK.Caption = "Thưởng ATHK";
+            this.colTHUONG_ATHK.DisplayFormat.FormatString = "n0";
+            this.colTHUONG_ATHK.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTHUONG_ATHK.FieldName = "THUONG_ATHK";
             this.colTHUONG_ATHK.Name = "colTHUONG_ATHK";
             this.colTHUONG_ATHK.Visible = true;
@@ -665,6 +699,8 @@
             // colBO_SUNG_LUONG
             // 
             this.colBO_SUNG_LUONG.Caption = "Bổ sung lương";
+            this.colBO_SUNG_LUONG.DisplayFormat.FormatString = "n0";
+            this.colBO_SUNG_LUONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colBO_SUNG_LUONG.FieldName = "BO_SUNG_LUONG";
             this.colBO_SUNG_LUONG.Name = "colBO_SUNG_LUONG";
             this.colBO_SUNG_LUONG.Visible = true;
@@ -672,6 +708,8 @@
             // colTHUONG_LE_TET
             // 
             this.colTHUONG_LE_TET.Caption = "Thưởng lễ tết";
+            this.colTHUONG_LE_TET.DisplayFormat.FormatString = "n0";
+            this.colTHUONG_LE_TET.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTHUONG_LE_TET.FieldName = "THUONG_LE_TET";
             this.colTHUONG_LE_TET.Name = "colTHUONG_LE_TET";
             this.colTHUONG_LE_TET.Visible = true;
@@ -679,6 +717,8 @@
             // colTHU_NHAP_KHAC_NGOAI_LUONG
             // 
             this.colTHU_NHAP_KHAC_NGOAI_LUONG.Caption = "Thu nhập khác ngoài lương";
+            this.colTHU_NHAP_KHAC_NGOAI_LUONG.DisplayFormat.FormatString = "n0";
+            this.colTHU_NHAP_KHAC_NGOAI_LUONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTHU_NHAP_KHAC_NGOAI_LUONG.FieldName = "THU_NHAP_KHAC_NGOAI_LUONG";
             this.colTHU_NHAP_KHAC_NGOAI_LUONG.Name = "colTHU_NHAP_KHAC_NGOAI_LUONG";
             this.colTHU_NHAP_KHAC_NGOAI_LUONG.Visible = true;
@@ -686,6 +726,8 @@
             // colGIAM_TRU_LAM_THEM_200
             // 
             this.colGIAM_TRU_LAM_THEM_200.Caption = "Làm thêm 200%";
+            this.colGIAM_TRU_LAM_THEM_200.DisplayFormat.FormatString = "n0";
+            this.colGIAM_TRU_LAM_THEM_200.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colGIAM_TRU_LAM_THEM_200.FieldName = "GIAM_TRU_LAM_THEM_200";
             this.colGIAM_TRU_LAM_THEM_200.Name = "colGIAM_TRU_LAM_THEM_200";
             this.colGIAM_TRU_LAM_THEM_200.Visible = true;
@@ -693,6 +735,8 @@
             // colGIAM_TRU_LAM_THEM_300
             // 
             this.colGIAM_TRU_LAM_THEM_300.Caption = "Giảm trừ làm thêm 300%";
+            this.colGIAM_TRU_LAM_THEM_300.DisplayFormat.FormatString = "n0";
+            this.colGIAM_TRU_LAM_THEM_300.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colGIAM_TRU_LAM_THEM_300.FieldName = "GIAM_TRU_LAM_THEM";
             this.colGIAM_TRU_LAM_THEM_300.Name = "colGIAM_TRU_LAM_THEM_300";
             this.colGIAM_TRU_LAM_THEM_300.Visible = true;
@@ -700,6 +744,8 @@
             // colPHAI_NOP_KHAC
             // 
             this.colPHAI_NOP_KHAC.Caption = "Phải thu khác";
+            this.colPHAI_NOP_KHAC.DisplayFormat.FormatString = "n0";
+            this.colPHAI_NOP_KHAC.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPHAI_NOP_KHAC.FieldName = "PHAI_NOP_KHAC";
             this.colPHAI_NOP_KHAC.Name = "colPHAI_NOP_KHAC";
             this.colPHAI_NOP_KHAC.Visible = true;
@@ -726,8 +772,7 @@
             this.gridBand4.Caption = "Tổng thu nhập";
             this.gridBand4.Children.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.gridBand7,
-            this.gridBand8,
-            this.gridBand9});
+            this.gridBand8});
             this.gridBand4.Name = "gridBand4";
             this.gridBand4.VisibleIndex = 1;
             this.gridBand4.Width = 1125;
@@ -766,9 +811,8 @@
             this.gridBand9.Caption = "Tổng thu nhập";
             this.gridBand9.Columns.Add(this.colTONG_THU_NHAP);
             this.gridBand9.Name = "gridBand9";
-            this.gridBand9.Visible = false;
-            this.gridBand9.VisibleIndex = -1;
-            this.gridBand9.Width = 75;
+            this.gridBand9.VisibleIndex = 2;
+            this.gridBand9.Width = 84;
             // 
             // gridBand5
             // 
@@ -790,7 +834,7 @@
             this.gridBand5.Columns.Add(this.colGIAM_TRU_KHAC);
             this.gridBand5.Columns.Add(this.colTONG_GIAM_TRU);
             this.gridBand5.Name = "gridBand5";
-            this.gridBand5.VisibleIndex = 2;
+            this.gridBand5.VisibleIndex = 3;
             this.gridBand5.Width = 900;
             // 
             // gridBand6
@@ -802,7 +846,7 @@
             this.gridBand6.Caption = "Thu nhập chịu thuế";
             this.gridBand6.Columns.Add(this.colTHU_NHAP_CHIU_THE);
             this.gridBand6.Name = "gridBand6";
-            this.gridBand6.VisibleIndex = 3;
+            this.gridBand6.VisibleIndex = 4;
             this.gridBand6.Width = 100;
             // 
             // gridBand3
@@ -822,7 +866,7 @@
             this.gridBand3.Columns.Add(this.colPHAI_NOP_TRUY_THU);
             this.gridBand3.Columns.Add(this.colTONG_PHAI_NOP);
             this.gridBand3.Name = "gridBand3";
-            this.gridBand3.VisibleIndex = 4;
+            this.gridBand3.VisibleIndex = 5;
             this.gridBand3.Width = 600;
             // 
             // gridBand2
@@ -835,7 +879,7 @@
             this.gridBand2.Caption = "Tổng hợp";
             this.gridBand2.Columns.Add(this.colTHUC_LINH);
             this.gridBand2.Name = "gridBand2";
-            this.gridBand2.VisibleIndex = 5;
+            this.gridBand2.VisibleIndex = 6;
             this.gridBand2.Width = 75;
             // 
             // f409_rpt_bang_luong
@@ -926,6 +970,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTHU_NHAP_KHAC_NGOAI_LUONG;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colGIAM_TRU_LAM_THEM_200;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colGIAM_TRU_LAM_THEM_300;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colPHAI_NOP_KHAC;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand7;
@@ -934,7 +979,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand5;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand6;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colPHAI_NOP_KHAC;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
     }
 }

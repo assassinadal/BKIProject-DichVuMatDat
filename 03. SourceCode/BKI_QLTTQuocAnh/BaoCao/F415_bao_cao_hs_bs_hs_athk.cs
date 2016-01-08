@@ -114,6 +114,19 @@ namespace BKI_DichVuMatDat.BaoCao
             DevExpress.XtraEditors.XtraMessageBox.Show("Thành công!!!", "THÔNG BÁO");
             load_data_2_grid(ip_dc_thang);
         }
+
+        private void fill_data_2_grid(string ip_path_excel)
+        {
+            try
+            {
+                m_grc_hs_bs_hs_athk.DataSource = null;
+                WinFormControls.load_xls_to_gridview(ip_path_excel, m_grc_hs_bs_hs_athk);
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+        }
         #endregion
         private void set_define_events()
         {
@@ -178,7 +191,7 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
-                tinh_lai_he_so_thang(Convert.ToDecimal(m_txt_chon_thang.Text), Convert.ToDecimal(m_txt_chon_nam.Text));
+                //tinh_lai_he_so_thang(Convert.ToDecimal(m_txt_chon_thang.Text), Convert.ToDecimal(m_txt_chon_nam.Text));
             }
             catch(Exception v_e)
             {
@@ -190,6 +203,14 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+                saveFileDialog1.RestoreDirectory = true;
+                if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    m_grv_hs_bs_hs_athk.ExportToXls(saveFileDialog1.FileName);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
+                }
             }
             catch(Exception v_e)
             {
@@ -197,5 +218,16 @@ namespace BKI_DichVuMatDat.BaoCao
             }
         }
 
+        private void m_cmd_import_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                fill_data_2_grid(WinFormControls.openFileDialog());
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

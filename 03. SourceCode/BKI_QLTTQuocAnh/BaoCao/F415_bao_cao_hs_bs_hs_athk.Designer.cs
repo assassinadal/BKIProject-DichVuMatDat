@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_tinh_lai = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
@@ -138,6 +139,7 @@
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_import_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_tinh_lai);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
@@ -147,6 +149,17 @@
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(985, 43);
             this.m_pnl_out_place_dm.TabIndex = 13;
+            // 
+            // m_cmd_import_excel
+            // 
+            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_import_excel.Image = global::BKI_DichVuMatDat.Properties.Resources.table;
+            this.m_cmd_import_excel.Location = new System.Drawing.Point(517, 4);
+            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
+            this.m_cmd_import_excel.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_import_excel.TabIndex = 8;
+            this.m_cmd_import_excel.Text = "&Import Excel";
+            this.m_cmd_import_excel.Click += new System.EventHandler(this.m_cmd_import_excel_Click);
             // 
             // m_cmd_tinh_lai
             // 
@@ -178,7 +191,6 @@
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_xuat_excel.TabIndex = 3;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
-            this.m_cmd_xuat_excel.Visible = false;
             this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             // 
             // panel2
@@ -362,5 +374,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn HS_ATHK;
         private DevExpress.XtraEditors.SimpleButton m_cmd_search;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tinh_lai;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_import_excel;
     }
 }

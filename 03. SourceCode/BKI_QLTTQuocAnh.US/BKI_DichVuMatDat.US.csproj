@@ -90,6 +90,7 @@
     <Compile Include="US_HT_PHAN_QUYEN_HE_THONG.cs" />
     <Compile Include="US_HT_USER_GROUP.cs" />
     <Compile Include="US_RPT_LUONG.cs" />
+    <Compile Include="US_RPT_LUONG_V2.cs" />
     <Compile Include="US_RPT_THONG_TIN_TONG_HOP.cs" />
     <Compile Include="US_V_DM_NHAN_VIEN.cs" />
     <Compile Include="US_V_DM_PHU_CAP_HDH.cs" />

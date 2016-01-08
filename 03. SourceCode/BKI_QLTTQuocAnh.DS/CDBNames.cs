@@ -789,26 +789,58 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string THANG = "THANG";
         public const string NAM = "NAM";
         public const string MA_NV = "MA_NV";
-        public const string TONG_THU_NHAP = "TONG_THU_NHAP";
+        public const string LUONG_NS = "LUONG_NS";
+        public const string LUONG_CD = "LUONG_CD";
+        public const string PHU_CAP_TN = "PHU_CAP_TN";
+        public const string AN_CA = "AN_CA";
+        public const string LAM_THEM = "LAM_THEM";
+        public const string LAM_THEM_LE_TET = "LAM_THEM_LE_TET";
+        public const string LUONG_KHAC_THUE_5 = "LUONG_KHAC_THUE_5";
+        public const string LUONG_KHAC_THUE_10 = "LUONG_KHAC_THUE_10";
+        public const string LUONG_KHAC_THUE_TINH_THEO_LUONG = "LUONG_KHAC_THUE_TINH_THEO_LUONG";
+        public const string THU_NHAP = "THU_NHAP";
+        public const string BHXH = "BHXH";
+        public const string BHYT = "BHYT";
+        public const string BHTN = "BHTN";
+        public const string DOAN_PHI_CD = "DOAN_PHI_CD";
+        public const string THUE = "THUE";
+        public const string THUE_TU_LUONG_KHAC_5 = "THUE_TU_LUONG_KHAC_5";
+        public const string THUE_TU_LUONG_KHAC_10 = "THUE_TU_LUONG_KHAC_10";
+        public const string PHAI_NOP = "PHAI_NOP";
+        public const string THUC_LINH = "THUC_LINH";
+        public const string TRUY_LINH = "TRUY_LINH";
+        public const string TRUY_THU = "TRUY_THU";
+        public const string THUC_LINH_CUOI_CUNG = "THUC_LINH_CUOI_CUNG";
+        public const string SO_NGAY_LAM_THEM = "SO_NGAY_LAM_THEM";
+    }
+
+    public class RPT_LUONG_V2
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string THANG = "THANG";
+        public const string NAM = "NAM";
+        public const string MA_NV = "MA_NV";
         public const string LUONG_NS = "LUONG_NS";
         public const string LUONG_CD = "LUONG_CD";
         public const string PHU_CAP_TN = "PHU_CAP_TN";
         public const string AN_CA = "AN_CA";
         public const string LAM_THEM = "LAM_THEM";
         public const string LAM_THEM_200 = "LAM_THEM_200";
-        public const string LAM_THEM_LE_TET = "LAM_THEM_LE_TET";
+        public const string LAM_THEM_300 = "LAM_THEM_300";
         public const string THU_NHAP_KHAC_TRONG_LUONG = "THU_NHAP_KHAC_TRONG_LUONG";
         public const string TONG_THU_NHAP_TRONG_LUONG = "TONG_THU_NHAP_TRONG_LUONG";
         public const string THUONG = "THUONG";
-        public const string THUONG_LE_TET = "THUONG_LE_TET";
         public const string THUONG_ATHK = "THUONG_ATHK";
+        public const string THUONG_LE_TET = "THUONG_LE_TET";
         public const string BO_SUNG_LUONG = "BO_SUNG_LUONG";
         public const string THU_NHAP_KHAC_NGOAI_LUONG = "THU_NHAP_KHAC_NGOAI_LUONG";
         public const string TONG_THU_NHAP_NGOAI_LUONG = "TONG_THU_NHAP_NGOAI_LUONG";
+        public const string TONG_THU_NHAP = "TONG_THU_NHAP";
         public const string BHXH = "BHXH";
         public const string BHYT = "BHYT";
         public const string BHTN = "BHTN";
-        public const string GIAM_TRU_LAM_THEM = "GIAM_TRU_LAM_THEM";
+        public const string GIAM_TRU_LAM_THEM_150 = "GIAM_TRU_LAM_THEM_150";
         public const string GIAM_TRU_LAM_THEM_200 = "GIAM_TRU_LAM_THEM_200";
         public const string GIAM_TRU_LAM_THEM_300 = "GIAM_TRU_LAM_THEM_300";
         public const string GIAM_TRU_GIA_CANH = "GIAM_TRU_GIA_CANH";
@@ -821,10 +853,6 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string PHAI_NOP_KHAC = "PHAI_NOP_KHAC";
         public const string TONG_PHAI_NOP = "TONG_PHAI_NOP";
         public const string THUC_LINH = "THUC_LINH";
-        public const string TRUY_LINH = "TRUY_LINH";
-        public const string TRUY_THU = "TRUY_THU";
-        public const string THUC_LINH_CUOI_CUNG = "THUC_LINH_CUOI_CUNG";
-        public const string SO_NGAY_LAM_THEM = "SO_NGAY_LAM_THEM";
     }
 
 

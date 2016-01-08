@@ -789,5 +789,47 @@ public class US_RPT_LUONG_V2 : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+    public void Get_tat_ca_nhan_vien_can_tinh_luong(out DS_RPT_LUONG_V2 op_ds, decimal ip_thang, decimal ip_nam)
+    {
+        op_ds = new DS_RPT_LUONG_V2();
+        op_ds.EnforceConstraints = false;
+        CStoredProc v_sp = new CStoredProc("pr_GET_DANH_SACH_NHAN_VIEN_TINH_LUONG_V2");
+        v_sp.addDecimalInputParam("@THANG", ip_thang);
+        v_sp.addDecimalInputParam("@NAM", ip_nam);
+        v_sp.fillDataSetByCommand(this, op_ds);
+    }
+    public void XoaBanGhiLuong(decimal ip_dc_id_nhan_vien, decimal ip_thang, decimal ip_nam)//Chua xoa rpt_tong_hop
+    {
+        CStoredProc v_sp = new CStoredProc("pr_xoa_ban_ghi_luong_v2");
+        v_sp.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+        v_sp.addDecimalInputParam("@ip_thang", ip_thang);
+        v_sp.addDecimalInputParam("@ip_nam", ip_nam);
+        v_sp.ExecuteCommand(this);
+    }
+    public void XoaLuong(decimal ip_thang, decimal ip_nam)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_xoa_bang_luong_theo_thang_v2");//Chua xoa rpt_tong_hop
+        v_sp.addDecimalInputParam("@ip_thang", ip_thang);
+        v_sp.addDecimalInputParam("@ip_nam", ip_nam);
+        v_sp.ExecuteCommand(this);
+    }
+    public void get_thong_tin_qua_trinh_tinh_luong(decimal ip_thang, decimal ip_nam, out decimal op_sl_nv_can_tinh_luong, out decimal op_sl_nv_da_tinh_luong)
+    {
+        op_sl_nv_can_tinh_luong = 0;
+        op_sl_nv_da_tinh_luong = 0;
+
+        CStoredProc v_sp = new CStoredProc("pr_get_thong_tin_qua_trinh_tinh_luong_v2");
+        v_sp.addDecimalInputParam("@ip_dat_thang", ip_thang);
+        v_sp.addDecimalInputParam("@ip_dat_nam", ip_nam);
+
+        SqlParameter v_para_all = v_sp.addDecimalOutputParam("@op_dc_so_luong_nv_tinh_luong", 0);
+        SqlParameter v_para_da_tinh = v_sp.addDecimalOutputParam("@op_dc_so_luong_da_tinh_luong", 0);
+
+
+        v_sp.ExecuteCommand(this);
+
+        op_sl_nv_can_tinh_luong = CIPConvert.ToDecimal(v_para_all.Value);
+        op_sl_nv_da_tinh_luong = CIPConvert.ToDecimal(v_para_da_tinh.Value);
+    }
 	}
 }

@@ -138,6 +138,7 @@
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
+            this.m_cmd_quy_trinh_tinh_luong = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -235,9 +236,10 @@
             this.m_cmd_xem_cham_cong_lam_them,
             this.barStaticItemServer,
             this.m_cmd_bc_thu_lao_hdqt,
-            this.m_cmd_bang_luong});
+            this.m_cmd_bang_luong,
+            this.m_cmd_quy_trinh_tinh_luong});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 96;
+            this.ribbon.MaxItemId = 97;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1094,6 +1096,7 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_hs_chat_luong_by_nv);
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_hs_chat_luong_xls);
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_xem_cham_cong_lam_them);
+            this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_quy_trinh_tinh_luong);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Chấm công";
             // 
@@ -1237,6 +1240,14 @@
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
             // 
+            // m_cmd_quy_trinh_tinh_luong
+            // 
+            this.m_cmd_quy_trinh_tinh_luong.Caption = "Quy trình tính lương";
+            this.m_cmd_quy_trinh_tinh_luong.Glyph = global::BKI_DichVuMatDat.Properties.Resources._1425906136_315167;
+            this.m_cmd_quy_trinh_tinh_luong.Id = 96;
+            this.m_cmd_quy_trinh_tinh_luong.Name = "m_cmd_quy_trinh_tinh_luong";
+            this.m_cmd_quy_trinh_tinh_luong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // f388_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1374,5 +1385,6 @@
         private DevExpress.XtraBars.BarStaticItem barStaticItemServer;
         private DevExpress.XtraBars.BarButtonItem m_cmd_bc_thu_lao_hdqt;
         private DevExpress.XtraBars.BarButtonItem m_cmd_bang_luong;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_quy_trinh_tinh_luong;
     }
 }

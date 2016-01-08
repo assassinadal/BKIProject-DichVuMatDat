@@ -171,6 +171,23 @@ namespace BKI_DichVuMatDat
             m_cmd_bc_hop_dong_het_han.ItemClick += m_cmd_bc_hop_dong_het_han_ItemClick;
             m_cmd_card_nhan_vien.ItemClick += m_cmd_card_nhan_vien_ItemClick;
             m_cmd_xem_cham_cong_lam_them.ItemClick += m_cmd_xem_cham_cong_lam_them_ItemClick;
+            m_cmd_quy_trinh_tinh_luong.ItemClick += m_cmd_quy_trinh_tinh_luong_ItemClick;
+        }
+
+        void m_cmd_quy_trinh_tinh_luong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f301_quy_trinh_tinh_luong v_frm = new f301_quy_trinh_tinh_luong();
+                if (IsExistFormName(v_frm)) return;
+
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_xem_cham_cong_lam_them_ItemClick(object sender, ItemClickEventArgs e)

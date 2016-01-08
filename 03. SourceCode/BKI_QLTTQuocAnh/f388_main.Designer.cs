@@ -111,6 +111,7 @@
             this.m_cmd_xem_cham_cong_lam_them = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItemServer = new DevExpress.XtraBars.BarStaticItem();
             this.m_cmd_bc_thu_lao_hdqt = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_bang_luong = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -137,7 +138,6 @@
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
-            this.m_cmd_bang_luong = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -249,7 +249,7 @@
             this.ribbon.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.True;
             this.ribbon.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.True;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(1169, 144);
+            this.ribbon.Size = new System.Drawing.Size(1273, 144);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
@@ -979,6 +979,16 @@
             this.m_cmd_bc_thu_lao_hdqt.Name = "m_cmd_bc_thu_lao_hdqt";
             this.m_cmd_bc_thu_lao_hdqt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_bc_thu_lao_hdqt_ItemClick);
             // 
+            // m_cmd_bang_luong
+            // 
+            this.m_cmd_bang_luong.Caption = "Bảng lương mới (V2)";
+            this.m_cmd_bang_luong.Id = 95;
+            this.m_cmd_bang_luong.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_bang_luong_nv_;
+            this.m_cmd_bang_luong.Name = "m_cmd_bang_luong";
+            this.m_cmd_bang_luong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.m_cmd_bang_luong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_bang_luong_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1143,10 +1153,10 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItemServer);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 418);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 400);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1169, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1273, 31);
             // 
             // MdiManager
             // 
@@ -1191,9 +1201,9 @@
             this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.hideContainerRight.Controls.Add(this.dockPanel1);
             this.hideContainerRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.hideContainerRight.Location = new System.Drawing.Point(1150, 144);
+            this.hideContainerRight.Location = new System.Drawing.Point(1254, 144);
             this.hideContainerRight.Name = "hideContainerRight";
-            this.hideContainerRight.Size = new System.Drawing.Size(19, 274);
+            this.hideContainerRight.Size = new System.Drawing.Size(19, 256);
             // 
             // dockPanel1
             // 
@@ -1227,19 +1237,11 @@
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
             // 
-            // m_cmd_bang_luong
-            // 
-            this.m_cmd_bang_luong.Caption = "Bảng lương  ";
-            this.m_cmd_bang_luong.Id = 95;
-            this.m_cmd_bang_luong.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_bang_luong_nv_;
-            this.m_cmd_bang_luong.Name = "m_cmd_bang_luong";
-            this.m_cmd_bang_luong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_bang_luong_ItemClick);
-            // 
             // f388_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1169, 449);
+            this.ClientSize = new System.Drawing.Size(1273, 431);
             this.Controls.Add(this.hideContainerRight);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);

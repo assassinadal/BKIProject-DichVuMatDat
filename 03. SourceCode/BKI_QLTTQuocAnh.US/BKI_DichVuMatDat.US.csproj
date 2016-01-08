@@ -48,6 +48,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="US_BAO_CAO_THAM_SO_BANG_LUONG.cs" />
     <Compile Include="US_CM_DM_TU_DIEN.cs">
       <SubType>Code</SubType>
     </Compile>

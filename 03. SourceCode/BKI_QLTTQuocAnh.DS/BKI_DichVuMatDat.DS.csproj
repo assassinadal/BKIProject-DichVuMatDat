@@ -45,6 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CDBNames.cs" />
+    <Compile Include="DS_BAO_CAO_THAM_SO_BANG_LUONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_BAO_CAO_THAM_SO_BANG_LUONG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_CM_DM_TU_DIEN.cs">
       <DependentUpon>DS_CM_DM_TU_DIEN.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -384,6 +389,17 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="ClassDiagram1.cd" />
+    <None Include="DS_BAO_CAO_THAM_SO_BANG_LUONG.xsc">
+      <DependentUpon>DS_BAO_CAO_THAM_SO_BANG_LUONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_BAO_CAO_THAM_SO_BANG_LUONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_BAO_CAO_THAM_SO_BANG_LUONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_BAO_CAO_THAM_SO_BANG_LUONG.xss">
+      <DependentUpon>DS_BAO_CAO_THAM_SO_BANG_LUONG.xsd</DependentUpon>
+    </None>
     <None Include="DS_CM_DM_TU_DIEN.xsc">
       <DependentUpon>DS_CM_DM_TU_DIEN.xsd</DependentUpon>
     </None>

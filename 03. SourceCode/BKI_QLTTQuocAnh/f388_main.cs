@@ -172,7 +172,7 @@ namespace BKI_DichVuMatDat
             m_cmd_card_nhan_vien.ItemClick += m_cmd_card_nhan_vien_ItemClick;
             m_cmd_xem_cham_cong_lam_them.ItemClick += m_cmd_xem_cham_cong_lam_them_ItemClick;
             m_cmd_quy_trinh_tinh_luong.ItemClick += m_cmd_quy_trinh_tinh_luong_ItemClick;
-            m_cmd_tham_so_bang_luong.ItemClick += m_cmd_tham_so_bang_luong_ItemClick;
+            m_cmd_he_so_bang_luong_thang.ItemClick += m_cmd_tham_so_bang_luong_ItemClick;
         }
 
         void m_cmd_tham_so_bang_luong_ItemClick(object sender, ItemClickEventArgs e)

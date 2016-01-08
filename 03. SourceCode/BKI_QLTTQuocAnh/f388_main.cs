@@ -116,7 +116,8 @@ namespace BKI_DichVuMatDat
         {
             var server = System.Configuration.ConfigurationManager.AppSettings["SERVER"];
             var username = CAppContext_201.getCurrentUserName();
-            barStaticItemServer.Caption = "Server: " + server + " | Username: " + username;
+            var dbname = System.Configuration.ConfigurationManager.AppSettings["INITIAL_DATABASE"];
+            barStaticItemServer.Caption = "Server: " + server + " | Username: " + username + " | DB: " + dbname;
         }
         #endregion
 

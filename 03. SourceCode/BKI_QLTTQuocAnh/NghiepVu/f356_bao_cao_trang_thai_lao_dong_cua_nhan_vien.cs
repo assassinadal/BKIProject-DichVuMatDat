@@ -72,6 +72,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_grid()
         {
+            CHRMCommon.make_stt(m_grv_bao_cao_trang_thai_lao_dong_nhan_vien);
             DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN v_ds_v_f356 = new DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN();
             US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN v_us_v_f356 = new US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN();
             if (m_sle_chon_nhan_vien.EditValue == null)
@@ -121,6 +122,39 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_search.Click += m_cmd_search_Click;
             m_cmd_delete.Click += m_cmd_delete_Click;
             m_cmd_insert.Click += m_cmd_insert_Click;
+            m_cmd_update.Click += m_cmd_update_Click;
+        }
+
+        void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                try
+                {
+                    decimal v_id_gd_trang_thai_lao_dong = CIPConvert.ToDecimal(m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.GetRowCellValue(m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.FocusedRowHandle, "ID"));
+                    if (v_id_gd_trang_thai_lao_dong > 0)
+                    {
+                        US_GD_TRANG_THAI_LAO_DONG v_us = new US_GD_TRANG_THAI_LAO_DONG(v_id_gd_trang_thai_lao_dong);
+                        f357_bao_cao_trang_thai_lao_dong_nhan_vien_de v_frm = new f357_bao_cao_trang_thai_lao_dong_nhan_vien_de();
+                        v_frm.display_4_update(v_us);
+                        load_data_2_grid();
+                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
+                        focus_new_row_created(v_id_gd_trang_thai_lao_dong);
+                    }
+                    else
+                    {
+                        CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CO_DU_LIEU_DE_THUC_HIEN_THAO_TAC);
+                    }
+                }
+                catch (Exception v_e)
+                {
+                    CSystemLog_301.ExceptionHandle(v_e);
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_insert_Click(object sender, EventArgs e)

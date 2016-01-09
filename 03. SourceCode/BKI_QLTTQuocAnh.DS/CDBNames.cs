@@ -408,6 +408,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string ID = "ID";
         public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
         public const string ID_TRANG_THAI_LAO_DONG = "ID_TRANG_THAI_LAO_DONG";
+        public const string NGAY_AP_DUNG = "NGAY_AP_DUNG";
         public const string NGAY_LAP = "NGAY_LAP";
         public const string NGUOI_LAP = "NGUOI_LAP";
         public const string NGAY_SUA = "NGAY_SUA";
@@ -415,6 +416,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string GHI_CHU = "GHI_CHU";
         public const string DA_XOA = "DA_XOA";
     }
+
     public class GD_QUY_TIEN_THUONG
     {
         public const string ID = "ID";
@@ -581,6 +583,19 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     #endregion
 
     #region VIEW
+    public class V_DM_TRANG_THAI_LAO_DONG
+    {
+        public const string ID = "ID";
+        public const string MA_TRANG_THAI_LD = "MA_TRANG_THAI_LD";
+        public const string TEN_TRANG_THAI_LD = "TEN_TRANG_THAI_LD";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string ID_LOAI_TRANG_THAI_LD = "ID_LOAI_TRANG_THAI_LD";
+        public const string MA_TU_DIEN = "MA_TU_DIEN";
+        public const string ID_LOAI_TU_DIEN = "ID_LOAI_TU_DIEN";
+        public const string TEN_NGAN = "TEN_NGAN";
+        public const string TEN = "TEN";
+    }
+
     public class V_PRT_DANH_SACH_NHAN_VIEN_CON_HAN_HOP_DONG
     {
         public const string ID = "ID";

@@ -214,6 +214,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_TIEN_THUONG_NHAN_VIEN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_TRANG_THAI_LAO_DONG.cs">
+      <DependentUpon>DS_GD_TRANG_THAI_LAO_DONG.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DS_GD_TRANG_THAI_LAO_DONG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -282,6 +286,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DM_PHU_CAP_HDH.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_DM_TRANG_THAI_LAO_DONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_DM_TRANG_THAI_LAO_DONG.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_F320_LAP_HOP_DONG.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -894,6 +903,17 @@
     </None>
     <None Include="DS_V_DM_PHU_CAP_HDH.xss">
       <DependentUpon>DS_V_DM_PHU_CAP_HDH.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_TRANG_THAI_LAO_DONG.xsc">
+      <DependentUpon>DS_V_DM_TRANG_THAI_LAO_DONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_TRANG_THAI_LAO_DONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_DM_TRANG_THAI_LAO_DONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_DM_TRANG_THAI_LAO_DONG.xss">
+      <DependentUpon>DS_V_DM_TRANG_THAI_LAO_DONG.xsd</DependentUpon>
     </None>
     <None Include="DS_V_F320_LAP_HOP_DONG.xsc">
       <DependentUpon>DS_V_F320_LAP_HOP_DONG.xsd</DependentUpon>

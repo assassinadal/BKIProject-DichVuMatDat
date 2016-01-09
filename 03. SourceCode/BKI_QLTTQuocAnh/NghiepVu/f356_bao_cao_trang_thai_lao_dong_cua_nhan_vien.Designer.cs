@@ -61,6 +61,7 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -158,6 +159,7 @@
             // 
             this.m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
+            this.STT,
             this.MA_NV,
             this.HO_DEM,
             this.TEN,
@@ -185,7 +187,8 @@
             this.MA_NV.FieldName = "MA_NV";
             this.MA_NV.Name = "MA_NV";
             this.MA_NV.Visible = true;
-            this.MA_NV.VisibleIndex = 0;
+            this.MA_NV.VisibleIndex = 1;
+            this.MA_NV.Width = 90;
             // 
             // HO_DEM
             // 
@@ -196,7 +199,8 @@
             this.HO_DEM.FieldName = "HO_DEM";
             this.HO_DEM.Name = "HO_DEM";
             this.HO_DEM.Visible = true;
-            this.HO_DEM.VisibleIndex = 1;
+            this.HO_DEM.VisibleIndex = 2;
+            this.HO_DEM.Width = 196;
             // 
             // TEN
             // 
@@ -207,7 +211,8 @@
             this.TEN.FieldName = "TEN";
             this.TEN.Name = "TEN";
             this.TEN.Visible = true;
-            this.TEN.VisibleIndex = 2;
+            this.TEN.VisibleIndex = 3;
+            this.TEN.Width = 100;
             // 
             // TEN_TRANG_THAI_LD
             // 
@@ -218,7 +223,8 @@
             this.TEN_TRANG_THAI_LD.FieldName = "TEN_TRANG_THAI_LD";
             this.TEN_TRANG_THAI_LD.Name = "TEN_TRANG_THAI_LD";
             this.TEN_TRANG_THAI_LD.Visible = true;
-            this.TEN_TRANG_THAI_LD.VisibleIndex = 3;
+            this.TEN_TRANG_THAI_LD.VisibleIndex = 4;
+            this.TEN_TRANG_THAI_LD.Width = 227;
             // 
             // TEN_LOAI_TRANG_THAI_LD
             // 
@@ -229,7 +235,8 @@
             this.TEN_LOAI_TRANG_THAI_LD.FieldName = "TEN_LOAI_TRANG_THAI_LD";
             this.TEN_LOAI_TRANG_THAI_LD.Name = "TEN_LOAI_TRANG_THAI_LD";
             this.TEN_LOAI_TRANG_THAI_LD.Visible = true;
-            this.TEN_LOAI_TRANG_THAI_LD.VisibleIndex = 4;
+            this.TEN_LOAI_TRANG_THAI_LD.VisibleIndex = 5;
+            this.TEN_LOAI_TRANG_THAI_LD.Width = 227;
             // 
             // NGAY_AP_DUNG
             // 
@@ -242,7 +249,8 @@
             this.NGAY_AP_DUNG.FieldName = "NGAY_AP_DUNG";
             this.NGAY_AP_DUNG.Name = "NGAY_AP_DUNG";
             this.NGAY_AP_DUNG.Visible = true;
-            this.NGAY_AP_DUNG.VisibleIndex = 5;
+            this.NGAY_AP_DUNG.VisibleIndex = 6;
+            this.NGAY_AP_DUNG.Width = 241;
             // 
             // m_cmd_search
             // 
@@ -418,6 +426,21 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
+            // STT
+            // 
+            this.STT.AppearanceCell.Options.UseTextOptions = true;
+            this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.STT.Caption = "STT";
+            this.STT.FieldName = "STT";
+            this.STT.Name = "STT";
+            this.STT.Visible = true;
+            this.STT.VisibleIndex = 0;
+            this.STT.Width = 38;
+            // 
             // f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,5 +502,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn TEN_TRANG_THAI_LD;
         private DevExpress.XtraGrid.Columns.GridColumn TEN_LOAI_TRANG_THAI_LD;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_AP_DUNG;
+        private DevExpress.XtraGrid.Columns.GridColumn STT;
     }
 }

@@ -49,6 +49,9 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TEN_TRANG_THAI_LD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sle_col_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sle_col_MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sle_col_HO_DEM = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,6 +59,9 @@
             this.sle_col_GIOI_TINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sle_col_SDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sle_col_DIA_CHI_LIEN_LAC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.m_txt_ghi_chu = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -75,6 +81,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_ghi_chu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -110,6 +119,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.m_txt_ghi_chu);
             this.layoutControl1.Controls.Add(this.m_dat_ngay_ap_dung);
             this.layoutControl1.Controls.Add(this.m_sle_chon_trang_thai_lao_dong);
             this.layoutControl1.Controls.Add(this.m_sle_chon_nhan_vien);
@@ -149,6 +159,10 @@
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
+            this.TEN_TRANG_THAI_LD,
+            this.TEN});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -203,7 +217,9 @@
             this.layoutControlItem5,
             this.layoutControlItem6,
             this.layoutControlItem7,
-            this.emptySpaceItem1});
+            this.emptySpaceItem1,
+            this.emptySpaceItem2,
+            this.layoutControlItem8});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(607, 163);
@@ -247,7 +263,7 @@
             this.layoutControlItem7.CustomizationFormText = "Ngày áp dụng";
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 76);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(399, 67);
+            this.layoutControlItem7.Size = new System.Drawing.Size(399, 24);
             this.layoutControlItem7.Text = "Ngày áp dụng";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(75, 13);
             // 
@@ -257,7 +273,7 @@
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
             this.emptySpaceItem1.Location = new System.Drawing.Point(399, 28);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(188, 115);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(188, 72);
             this.emptySpaceItem1.Text = "emptySpaceItem1";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -296,6 +312,28 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(267, 42);
             this.layoutControlItem4.Text = "Chọn nhân viên";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(75, 13);
+            // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
+            // 
+            // TEN_TRANG_THAI_LD
+            // 
+            this.TEN_TRANG_THAI_LD.Caption = "Tên trạng thại LĐ";
+            this.TEN_TRANG_THAI_LD.FieldName = "TEN_TRANG_THAI_LD";
+            this.TEN_TRANG_THAI_LD.Name = "TEN_TRANG_THAI_LD";
+            this.TEN_TRANG_THAI_LD.Visible = true;
+            this.TEN_TRANG_THAI_LD.VisibleIndex = 0;
+            // 
+            // TEN
+            // 
+            this.TEN.Caption = "Loại trạng thái LĐ";
+            this.TEN.FieldName = "TEN";
+            this.TEN.Name = "TEN";
+            this.TEN.Visible = true;
+            this.TEN.VisibleIndex = 1;
             // 
             // sle_col_ID
             // 
@@ -351,6 +389,34 @@
             this.sle_col_DIA_CHI_LIEN_LAC.Visible = true;
             this.sle_col_DIA_CHI_LIEN_LAC.VisibleIndex = 5;
             // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 124);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(587, 19);
+            this.emptySpaceItem2.Text = "emptySpaceItem2";
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // m_txt_ghi_chu
+            // 
+            this.m_txt_ghi_chu.Location = new System.Drawing.Point(90, 112);
+            this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
+            this.m_txt_ghi_chu.Size = new System.Drawing.Size(505, 20);
+            this.m_txt_ghi_chu.StyleController = this.layoutControl1;
+            this.m_txt_ghi_chu.TabIndex = 8;
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.m_txt_ghi_chu;
+            this.layoutControlItem8.CustomizationFormText = "layoutControlItem8";
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 100);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(587, 24);
+            this.layoutControlItem8.Text = "Ghi chú";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(75, 13);
+            // 
             // f357_bao_cao_trang_thai_lao_dong_nhan_vien_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,6 +445,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_ghi_chu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,5 +481,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn sle_col_GIOI_TINH;
         private DevExpress.XtraGrid.Columns.GridColumn sle_col_SDT;
         private DevExpress.XtraGrid.Columns.GridColumn sle_col_DIA_CHI_LIEN_LAC;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn TEN_TRANG_THAI_LD;
+        private DevExpress.XtraGrid.Columns.GridColumn TEN;
+        private DevExpress.XtraEditors.TextEdit m_txt_ghi_chu;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
     }
 }

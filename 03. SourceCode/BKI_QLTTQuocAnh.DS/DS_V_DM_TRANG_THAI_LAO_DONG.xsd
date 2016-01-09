@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_V_DM_TRANG_THAI_LAO_DONG" targetNamespace="http://tempuri.org/DS_V_DM_TRANG_THAI_LAO_DONG.xsd" xmlns:mstns="http://tempuri.org/DS_V_DM_TRANG_THAI_LAO_DONG.xsd" xmlns="http://tempuri.org/DS_V_DM_TRANG_THAI_LAO_DONG.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DVMD_TESTConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DVMD_TESTConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_DichVuMatDat.DS.Properties.Settings.GlobalReference.Default.DVMD_TESTConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_DM_TRANG_THAI_LAO_DONGTableAdapter" GeneratorDataComponentClassName="V_DM_TRANG_THAI_LAO_DONGTableAdapter" Name="V_DM_TRANG_THAI_LAO_DONG" UserDataComponentName="V_DM_TRANG_THAI_LAO_DONGTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DVMD_TESTConnectionString (Settings)" DbObjectName="DVMD_TEST.dbo.V_DM_TRANG_THAI_LAO_DONG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, MA_TRANG_THAI_LD, TEN_TRANG_THAI_LD, GHI_CHU, ID_LOAI_TRANG_THAI_LD, MA_TU_DIEN, ID_LOAI_TU_DIEN, TEN_NGAN, TEN FROM dbo.V_DM_TRANG_THAI_LAO_DONG</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="MA_TRANG_THAI_LD" DataSetColumn="MA_TRANG_THAI_LD" />
+              <Mapping SourceColumn="TEN_TRANG_THAI_LD" DataSetColumn="TEN_TRANG_THAI_LD" />
+              <Mapping SourceColumn="GHI_CHU" DataSetColumn="GHI_CHU" />
+              <Mapping SourceColumn="ID_LOAI_TRANG_THAI_LD" DataSetColumn="ID_LOAI_TRANG_THAI_LD" />
+              <Mapping SourceColumn="MA_TU_DIEN" DataSetColumn="MA_TU_DIEN" />
+              <Mapping SourceColumn="ID_LOAI_TU_DIEN" DataSetColumn="ID_LOAI_TU_DIEN" />
+              <Mapping SourceColumn="TEN_NGAN" DataSetColumn="TEN_NGAN" />
+              <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_V_DM_TRANG_THAI_LAO_DONG" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_DM_TRANG_THAI_LAO_DONG" msprop:Generator_UserDSName="DS_V_DM_TRANG_THAI_LAO_DONG">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_DM_TRANG_THAI_LAO_DONG" msprop:Generator_TableClassName="V_DM_TRANG_THAI_LAO_DONGDataTable" msprop:Generator_TableVarName="tableV_DM_TRANG_THAI_LAO_DONG" msprop:Generator_TablePropName="V_DM_TRANG_THAI_LAO_DONG" msprop:Generator_RowDeletingName="V_DM_TRANG_THAI_LAO_DONGRowDeleting" msprop:Generator_RowChangingName="V_DM_TRANG_THAI_LAO_DONGRowChanging" msprop:Generator_RowEvHandlerName="V_DM_TRANG_THAI_LAO_DONGRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_TRANG_THAI_LAO_DONGRowDeleted" msprop:Generator_UserTableName="V_DM_TRANG_THAI_LAO_DONG" msprop:Generator_RowChangedName="V_DM_TRANG_THAI_LAO_DONGRowChanged" msprop:Generator_RowEvArgName="V_DM_TRANG_THAI_LAO_DONGRowChangeEvent" msprop:Generator_RowClassName="V_DM_TRANG_THAI_LAO_DONGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="MA_TRANG_THAI_LD" msprop:Generator_ColumnVarNameInTable="columnMA_TRANG_THAI_LD" msprop:Generator_ColumnPropNameInRow="MA_TRANG_THAI_LD" msprop:Generator_ColumnPropNameInTable="MA_TRANG_THAI_LDColumn" msprop:Generator_UserColumnName="MA_TRANG_THAI_LD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_TRANG_THAI_LD" msprop:Generator_ColumnVarNameInTable="columnTEN_TRANG_THAI_LD" msprop:Generator_ColumnPropNameInRow="TEN_TRANG_THAI_LD" msprop:Generator_ColumnPropNameInTable="TEN_TRANG_THAI_LDColumn" msprop:Generator_UserColumnName="TEN_TRANG_THAI_LD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GHI_CHU" msprop:Generator_ColumnVarNameInTable="columnGHI_CHU" msprop:Generator_ColumnPropNameInRow="GHI_CHU" msprop:Generator_ColumnPropNameInTable="GHI_CHUColumn" msprop:Generator_UserColumnName="GHI_CHU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_LOAI_TRANG_THAI_LD" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_TRANG_THAI_LD" msprop:Generator_ColumnPropNameInRow="ID_LOAI_TRANG_THAI_LD" msprop:Generator_ColumnPropNameInTable="ID_LOAI_TRANG_THAI_LDColumn" msprop:Generator_UserColumnName="ID_LOAI_TRANG_THAI_LD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MA_TU_DIEN" msprop:Generator_ColumnVarNameInTable="columnMA_TU_DIEN" msprop:Generator_ColumnPropNameInRow="MA_TU_DIEN" msprop:Generator_ColumnPropNameInTable="MA_TU_DIENColumn" msprop:Generator_UserColumnName="MA_TU_DIEN">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_LOAI_TU_DIEN" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_TU_DIEN" msprop:Generator_ColumnPropNameInRow="ID_LOAI_TU_DIEN" msprop:Generator_ColumnPropNameInTable="ID_LOAI_TU_DIENColumn" msprop:Generator_UserColumnName="ID_LOAI_TU_DIEN" type="xs:decimal" />
+              <xs:element name="TEN_NGAN" msprop:Generator_ColumnVarNameInTable="columnTEN_NGAN" msprop:Generator_ColumnPropNameInRow="TEN_NGAN" msprop:Generator_ColumnPropNameInTable="TEN_NGANColumn" msprop:Generator_UserColumnName="TEN_NGAN">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN" msprop:Generator_ColumnVarNameInTable="columnTEN" msprop:Generator_ColumnPropNameInRow="TEN" msprop:Generator_ColumnPropNameInTable="TENColumn" msprop:Generator_UserColumnName="TEN">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_DM_TRANG_THAI_LAO_DONG" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

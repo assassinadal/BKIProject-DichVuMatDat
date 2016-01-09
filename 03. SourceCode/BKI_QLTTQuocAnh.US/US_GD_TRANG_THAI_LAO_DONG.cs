@@ -89,6 +89,28 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["ID_TRANG_THAI_LAO_DONG"] = System.Convert.DBNull;
         }
 
+        public DateTime datNGAY_AP_DUNG
+        {
+            get
+            {
+                return CNull.RowNVLDate(pm_objDR, "NGAY_AP_DUNG", IPConstants.c_DefaultDate);
+            }
+            set
+            {
+                pm_objDR["NGAY_AP_DUNG"] = value;
+            }
+        }
+
+        public bool IsNGAY_AP_DUNGNull()
+        {
+            return pm_objDR.IsNull("NGAY_AP_DUNG");
+        }
+
+        public void SetNGAY_AP_DUNGNull()
+        {
+            pm_objDR["NGAY_AP_DUNG"] = System.Convert.DBNull;
+        }
+
         public DateTime datNGAY_LAP
         {
             get

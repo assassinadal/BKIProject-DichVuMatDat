@@ -202,6 +202,8 @@ namespace BKI_DichVuMatDat.US
         public const int ERROR_DU_LIEU_CHUA_HOAN_THIEN = 317;
         public const int QUESTION_XAC_NHAN_CAP_NHAT_DU_LIEU = 9;
         public const int ERROR_LOI_TRONG_QUA_TRINH_TINH_TOAN_MOI_TINH_LAI = 333;
+        public const int QUESTION_XAC_NHAN_THEM_DU_LIEU_THANH_CONG_TIEP_TUC_INSERT_YN = 16;
+        public const int ERROR_CHUA_CHON_NGAY_AP_DUNG = 17;
         #endregion
 
         #region Danh mục

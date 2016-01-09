@@ -33,6 +33,7 @@
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_exit = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.m_txt_ghi_chu = new DevExpress.XtraEditors.TextEdit();
             this.m_dat_ngay_ap_dung = new DevExpress.XtraEditors.DateEdit();
             this.m_sle_chon_trang_thai_lao_dong = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -45,6 +46,8 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.m_layout_chon_nhan_vien = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -59,12 +62,10 @@
             this.sle_col_GIOI_TINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sle_col_SDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sle_col_DIA_CHI_LIEN_LAC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.m_txt_ghi_chu = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_ghi_chu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ap_dung.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ap_dung.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_trang_thai_lao_dong.Properties)).BeginInit();
@@ -77,13 +78,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_layout_chon_nhan_vien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_ghi_chu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -132,6 +132,14 @@
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // m_txt_ghi_chu
+            // 
+            this.m_txt_ghi_chu.Location = new System.Drawing.Point(90, 112);
+            this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
+            this.m_txt_ghi_chu.Size = new System.Drawing.Size(505, 20);
+            this.m_txt_ghi_chu.StyleController = this.layoutControl1;
+            this.m_txt_ghi_chu.TabIndex = 8;
+            // 
             // m_dat_ngay_ap_dung
             // 
             this.m_dat_ngay_ap_dung.EditValue = null;
@@ -141,6 +149,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_dat_ngay_ap_dung.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_ngay_ap_dung.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.m_dat_ngay_ap_dung.Size = new System.Drawing.Size(317, 20);
             this.m_dat_ngay_ap_dung.StyleController = this.layoutControl1;
             this.m_dat_ngay_ap_dung.TabIndex = 7;
@@ -170,7 +179,6 @@
             // 
             // m_sle_chon_nhan_vien
             // 
-            this.m_sle_chon_nhan_vien.EditValue = "--Chọn nhân viên--";
             this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(90, 40);
             this.m_sle_chon_nhan_vien.Name = "m_sle_chon_nhan_vien";
             this.m_sle_chon_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -276,6 +284,26 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(188, 72);
             this.emptySpaceItem1.Text = "emptySpaceItem1";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 124);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(587, 19);
+            this.emptySpaceItem2.Text = "emptySpaceItem2";
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.m_txt_ghi_chu;
+            this.layoutControlItem8.CustomizationFormText = "layoutControlItem8";
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 100);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(587, 24);
+            this.layoutControlItem8.Text = "Ghi chú";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(75, 13);
             // 
             // m_layout_chon_nhan_vien
             // 
@@ -389,34 +417,6 @@
             this.sle_col_DIA_CHI_LIEN_LAC.Visible = true;
             this.sle_col_DIA_CHI_LIEN_LAC.VisibleIndex = 5;
             // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 124);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(587, 19);
-            this.emptySpaceItem2.Text = "emptySpaceItem2";
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // m_txt_ghi_chu
-            // 
-            this.m_txt_ghi_chu.Location = new System.Drawing.Point(90, 112);
-            this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
-            this.m_txt_ghi_chu.Size = new System.Drawing.Size(505, 20);
-            this.m_txt_ghi_chu.StyleController = this.layoutControl1;
-            this.m_txt_ghi_chu.TabIndex = 8;
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.m_txt_ghi_chu;
-            this.layoutControlItem8.CustomizationFormText = "layoutControlItem8";
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 100);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(587, 24);
-            this.layoutControlItem8.Text = "Ghi chú";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(75, 13);
-            // 
             // f357_bao_cao_trang_thai_lao_dong_nhan_vien_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -429,6 +429,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_ghi_chu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ap_dung.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ap_dung.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_trang_thai_lao_dong.Properties)).EndInit();
@@ -441,13 +442,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_layout_chon_nhan_vien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_ghi_chu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
 
         }

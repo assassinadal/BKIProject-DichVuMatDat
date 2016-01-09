@@ -75,7 +75,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             load_data_2_sle_chon_nhan_vien();
             load_data_2_sle_chon_trang_thai_lao_dong();
-            m_dat_ngay_ap_dung.EditValue = DateTime.Now.Date;
+            if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+            {
+                m_dat_ngay_ap_dung.EditValue = DateTime.Now.Date;
+            }
         }
 
         private DS_V_DM_NHAN_VIEN load_data_2_ds_v_dm_nv()
@@ -123,7 +126,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             v_us_gd_trang_thai_lao_dong.dcID_NHAN_VIEN = (decimal)m_sle_chon_nhan_vien.EditValue;
             v_us_gd_trang_thai_lao_dong.dcID_TRANG_THAI_LAO_DONG = (decimal)m_sle_chon_trang_thai_lao_dong.EditValue;
-            v_us_gd_trang_thai_lao_dong.datNGAY_AP_DUNG = CIPConvert.ToDatetime(m_dat_ngay_ap_dung.EditValue);
+            v_us_gd_trang_thai_lao_dong.datNGAY_AP_DUNG = m_dat_ngay_ap_dung.DateTime.Date;
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
                 v_us_gd_trang_thai_lao_dong.datNGAY_LAP = DateTime.Now.Date;
@@ -135,23 +138,25 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_us_gd_trang_thai_lao_dong.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
             }
             v_us_gd_trang_thai_lao_dong.strGHI_CHU = m_txt_ghi_chu.Text;
+            v_us_gd_trang_thai_lao_dong.strDA_XOA = "N";
         }
 
         private void save_data()
         {
             US_GD_TRANG_THAI_LAO_DONG v_us_gd_trang_thai_lao_dong = new US_GD_TRANG_THAI_LAO_DONG();
-            form_2_us_obj(v_us_gd_trang_thai_lao_dong);
+           
 
             try
             {
                 switch (m_e_form_mode)
                 {
                     case DataEntryFormMode.InsertDataState:
+                        form_2_us_obj(v_us_gd_trang_thai_lao_dong);
                         v_us_gd_trang_thai_lao_dong.BeginTransaction();
                         v_us_gd_trang_thai_lao_dong.Insert();
                         v_us_gd_trang_thai_lao_dong.CommitTransaction();
                         m_id_gd_trang_thai_lao_dong_moi_tao = v_us_gd_trang_thai_lao_dong.dcID;
-                        if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_INSERT_DM_DON_VI_THANH_CONG_TIEP_TUC_INSERT_YN) == true)
+                        if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_THEM_DU_LIEU_THANH_CONG_TIEP_TUC_INSERT_YN) == true)
                         {
                             refresh_form();
                         }
@@ -162,6 +167,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         v_us_gd_trang_thai_lao_dong.dcID = m_id_gd_trang_thai_lao_dong_4_update;
+                        form_2_us_obj(v_us_gd_trang_thai_lao_dong);
                         v_us_gd_trang_thai_lao_dong.BeginTransaction();
                         v_us_gd_trang_thai_lao_dong.Update();
                         v_us_gd_trang_thai_lao_dong.CommitTransaction();
@@ -199,7 +205,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_TRANG_THAI_LAO_DONG);
                 return false;
             }
-            
+
+            if (m_dat_ngay_ap_dung.EditValue == null)
+            {
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NGAY_AP_DUNG);
+                return false;
+            }
+
             return true;
         }
 

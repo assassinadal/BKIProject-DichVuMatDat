@@ -17,7 +17,7 @@ using BKI_DichVuMatDat.DS.CDBNames;
 namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien : Form
-    {       
+    {
         #region Public Interface
 
         #endregion
@@ -123,32 +123,57 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_delete.Click += m_cmd_delete_Click;
             m_cmd_insert.Click += m_cmd_insert_Click;
             m_cmd_update.Click += m_cmd_update_Click;
+            m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
+            m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
+        }
+
+        void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.ExportToXls(saveFileDialog1.FileName);
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_sle_chon_nhan_vien_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_update_Click(object sender, EventArgs e)
         {
             try
             {
-                try
+                decimal v_id_gd_trang_thai_lao_dong = (decimal)m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.GetRowCellValue(m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.FocusedRowHandle, "ID");
+                if (v_id_gd_trang_thai_lao_dong > 0)
                 {
-                    decimal v_id_gd_trang_thai_lao_dong = CIPConvert.ToDecimal(m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.GetRowCellValue(m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.FocusedRowHandle, "ID"));
-                    if (v_id_gd_trang_thai_lao_dong > 0)
-                    {
-                        US_GD_TRANG_THAI_LAO_DONG v_us = new US_GD_TRANG_THAI_LAO_DONG(v_id_gd_trang_thai_lao_dong);
-                        f357_bao_cao_trang_thai_lao_dong_nhan_vien_de v_frm = new f357_bao_cao_trang_thai_lao_dong_nhan_vien_de();
-                        v_frm.display_4_update(v_us);
-                        load_data_2_grid();
-                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
-                        focus_new_row_created(v_id_gd_trang_thai_lao_dong);
-                    }
-                    else
-                    {
-                        CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CO_DU_LIEU_DE_THUC_HIEN_THAO_TAC);
-                    }
+                    US_GD_TRANG_THAI_LAO_DONG v_us = new US_GD_TRANG_THAI_LAO_DONG(v_id_gd_trang_thai_lao_dong);
+                    f357_bao_cao_trang_thai_lao_dong_nhan_vien_de v_frm = new f357_bao_cao_trang_thai_lao_dong_nhan_vien_de();
+                    v_frm.display_4_update(v_us);
+                    load_data_2_grid();
+                    //focus_new_row_created(v_id_gd_trang_thai_lao_dong);
                 }
-                catch (Exception v_e)
+                else
                 {
-                    CSystemLog_301.ExceptionHandle(v_e);
+                    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CO_DU_LIEU_DE_THUC_HIEN_THAO_TAC);
                 }
             }
             catch (Exception v_e)
@@ -166,9 +191,12 @@ namespace BKI_DichVuMatDat.NghiepVu
                     decimal v_id_gd_trang_thai_lao_dong_moi_tao = 0;
                     f357_bao_cao_trang_thai_lao_dong_nhan_vien_de v_frm = new f357_bao_cao_trang_thai_lao_dong_nhan_vien_de();
                     v_frm.display_4_insert(ref v_id_gd_trang_thai_lao_dong_moi_tao);
+                    load_data_2_sle_chon_nhan_vien();
                     load_data_2_grid();
-
-                    focus_new_row_created(v_id_gd_trang_thai_lao_dong_moi_tao);
+                    if (v_id_gd_trang_thai_lao_dong_moi_tao != 0)
+                    {
+                        focus_new_row_created(v_id_gd_trang_thai_lao_dong_moi_tao);
+                    }
                 }
                 catch (Exception v_e)
                 {
@@ -198,6 +226,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                     v_us.Update();
                     v_us.CommitTransaction();
                     CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
+                    m_sle_chon_nhan_vien.EditValue = null;
+                    load_data_2_grid();
                 }
             }
             catch (Exception v_e)

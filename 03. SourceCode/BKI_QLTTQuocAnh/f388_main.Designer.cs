@@ -686,6 +686,7 @@
             this.m_cmd_quyet_toan_the_nam.Id = 59;
             this.m_cmd_quyet_toan_the_nam.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_quyet_toan_thue_nam_;
             this.m_cmd_quyet_toan_the_nam.Name = "m_cmd_quyet_toan_the_nam";
+            this.m_cmd_quyet_toan_the_nam.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_quyet_toan_the_nam_ItemClick);
             // 
             // m_cmd_hs_chat_luong_by_nv
             // 

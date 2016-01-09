@@ -1141,6 +1141,21 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void m_cmd_quyet_toan_the_nam_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru v_f = new f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
 
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)

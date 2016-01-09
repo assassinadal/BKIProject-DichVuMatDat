@@ -345,6 +345,12 @@
     <Compile Include="BaoCao\F420_Bao_cao_nhan_su_theo_don_vi.Designer.cs">
       <DependentUpon>F420_Bao_cao_nhan_su_theo_don_vi.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru.Designer.cs">
+      <DependentUpon>f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\F425_Bao_cao_nhan_su_tong_hop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -934,6 +940,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F420_Bao_cao_nhan_su_theo_don_vi.resx">
       <DependentUpon>F420_Bao_cao_nhan_su_theo_don_vi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru.resx">
+      <DependentUpon>f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F425_Bao_cao_nhan_su_tong_hop.resx">
       <DependentUpon>F425_Bao_cao_nhan_su_tong_hop.cs</DependentUpon>

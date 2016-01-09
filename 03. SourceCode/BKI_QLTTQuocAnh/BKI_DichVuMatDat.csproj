@@ -429,6 +429,18 @@
     <Compile Include="BaoCao\f481_bao_cao_thu_lao_hdqt.Designer.cs">
       <DependentUpon>f481_bao_cao_thu_lao_hdqt.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam.Designer.cs">
+      <DependentUpon>f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam_detail.Designer.cs">
+      <DependentUpon>f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam_detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\frm417_bao_cao_tang_giam_lao_dong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -988,6 +1000,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f481_bao_cao_thu_lao_hdqt.resx">
       <DependentUpon>f481_bao_cao_thu_lao_hdqt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam.resx">
+      <DependentUpon>f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam_detail.resx">
+      <DependentUpon>f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam_detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\frm417_bao_cao_tang_giam_lao_dong.resx">
       <DependentUpon>frm417_bao_cao_tang_giam_lao_dong.cs</DependentUpon>

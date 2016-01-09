@@ -1145,7 +1145,23 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru v_f = new f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru();
+                //f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru v_f = new f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru();
+                f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam v_f = new f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_bao_cao_thu_nhap_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam v_f = new f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam();
                 if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();

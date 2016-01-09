@@ -140,6 +140,7 @@
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
+            this.m_cmd_bao_cao_thu_nhap = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -239,9 +240,10 @@
             this.m_cmd_bc_thu_lao_hdqt,
             this.m_cmd_bang_luong,
             this.m_cmd_quy_trinh_tinh_luong,
-            this.m_cmd_he_so_bang_luong_thang});
+            this.m_cmd_he_so_bang_luong_thang,
+            this.m_cmd_bao_cao_thu_nhap});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 98;
+            this.ribbon.MaxItemId = 99;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1260,6 +1262,14 @@
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
             // 
+            // m_cmd_bao_cao_thu_nhap
+            // 
+            this.m_cmd_bao_cao_thu_nhap.Caption = "Báo cáo thu nhập năm";
+            this.m_cmd_bao_cao_thu_nhap.Id = 98;
+            this.m_cmd_bao_cao_thu_nhap.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.mobile_phone;
+            this.m_cmd_bao_cao_thu_nhap.Name = "m_cmd_bao_cao_thu_nhap";
+            this.m_cmd_bao_cao_thu_nhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_bao_cao_thu_nhap_ItemClick);
+            // 
             // f388_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1399,5 +1409,6 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_bang_luong;
         private DevExpress.XtraBars.BarButtonItem m_cmd_quy_trinh_tinh_luong;
         private DevExpress.XtraBars.BarButtonItem m_cmd_he_so_bang_luong_thang;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_bao_cao_thu_nhap;
     }
 }

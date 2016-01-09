@@ -526,6 +526,21 @@ namespace BKI_DichVuMatDat
             v_cstore.addDecimalInputParam("@id_nhan_vien", v_id_nhan_vien);
             v_cstore.fillDataSetByCommand(this, v_ds);
         }
+
+        internal void FillDatasetProcBaoCaoThuNhapTheoNam(DataSet v_ds, string ip_str_nam)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_bao_cao_tong_hop_thu_nhap_theo_nam");
+            v_cstore.addDecimalInputParam("@nam", CIPConvert.ToDecimal(ip_str_nam));
+            v_cstore.fillDataSetByCommand(this, v_ds);
+        }
+
+        internal void FillDatasetBaoCaoThuNhapDoubleClick(DataSet v_ds, decimal v_id_nhan_vien, string m_txt_nam)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_bao_cao_tong_hop_thu_nhap_theo_nam_detail");
+            v_cstore.addDecimalInputParam("@nam", CIPConvert.ToDecimal(m_txt_nam));
+            v_cstore.addDecimalInputParam("@id_nhan_vien", v_id_nhan_vien);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+        }
     }
 
     public class iParameter

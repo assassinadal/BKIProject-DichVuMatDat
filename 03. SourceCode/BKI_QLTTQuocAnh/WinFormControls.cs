@@ -514,9 +514,16 @@ namespace BKI_DichVuMatDat
 
         internal void FillDatasetProcBangKeKhaiThuNhap(DataSet v_ds, string ip_str_nam)
         {
-            CStoredProc v_cstore = new CStoredProc("pr_bang_ke_khai_thu_nhap");
-           
+            CStoredProc v_cstore = new CStoredProc("pr_bang_ke_khai_thu_nhap");  
             v_cstore.addDecimalInputParam("@nam", CIPConvert.ToDecimal(ip_str_nam));
+            v_cstore.fillDataSetByCommand(this, v_ds);
+        }
+
+        internal void FillDatasetKeKhaiThueDoubleClick(DataSet v_ds, decimal v_id_nhan_vien, string m_txt_nam)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_bang_ke_khai_thu_nhap_detail");
+            v_cstore.addDecimalInputParam("@nam", CIPConvert.ToDecimal(m_txt_nam));
+            v_cstore.addDecimalInputParam("@id_nhan_vien", v_id_nhan_vien);
             v_cstore.fillDataSetByCommand(this, v_ds);
         }
     }

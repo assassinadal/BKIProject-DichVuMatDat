@@ -48,6 +48,7 @@
             this.BO_SUNG_DT_LUONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.m_bgwk = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_lbl_nam_2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_tinh = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -367,6 +368,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_lbl_nam_2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_cmd_tinh);
             this.panel1.Controls.Add(this.label2);
@@ -378,6 +380,15 @@
             this.panel1.Size = new System.Drawing.Size(1318, 90);
             this.panel1.TabIndex = 10;
             // 
+            // m_lbl_nam_2
+            // 
+            this.m_lbl_nam_2.AutoSize = true;
+            this.m_lbl_nam_2.Location = new System.Drawing.Point(655, 5);
+            this.m_lbl_nam_2.Name = "m_lbl_nam_2";
+            this.m_lbl_nam_2.Size = new System.Drawing.Size(35, 13);
+            this.m_lbl_nam_2.TabIndex = 11;
+            this.m_lbl_nam_2.Text = "label4";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -386,9 +397,9 @@
             this.label1.ForeColor = System.Drawing.Color.Maroon;
             this.label1.Location = new System.Drawing.Point(8, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(601, 23);
+            this.label1.Size = new System.Drawing.Size(652, 23);
             this.label1.TabIndex = 10;
-            this.label1.Text = "BẢNG KÊ KHAI THU NHẬP VÀ THUẾ THU NHẬP ĐÃ KHẤU TRỪ";
+            this.label1.Text = "BẢNG KÊ KHAI THU NHẬP VÀ THUẾ THU NHẬP ĐÃ KHẤU TRỪ NĂM";
             // 
             // m_cmd_tinh
             // 
@@ -398,6 +409,7 @@
             this.m_cmd_tinh.Size = new System.Drawing.Size(75, 23);
             this.m_cmd_tinh.TabIndex = 9;
             this.m_cmd_tinh.Text = "Xem báo cáo";
+            this.m_cmd_tinh.Click += new System.EventHandler(this.m_cmd_tinh_Click);
             // 
             // label2
             // 
@@ -793,5 +805,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand8;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand5;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand6;
+        private System.Windows.Forms.Label m_lbl_nam_2;
     }
 }

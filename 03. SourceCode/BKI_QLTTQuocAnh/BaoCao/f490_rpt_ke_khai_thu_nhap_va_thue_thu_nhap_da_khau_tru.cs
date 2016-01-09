@@ -24,6 +24,7 @@ namespace BKI_DichVuMatDat.BaoCao
         private void f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru_Load(object sender, EventArgs e)
         {
             load_data_to_grid();
+           
 
         }
 
@@ -32,12 +33,18 @@ namespace BKI_DichVuMatDat.BaoCao
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetProcBangKeKhaiThuNhap(v_ds, "2015");
-            if (v_ds.Tables[0].Rows.Count != 0)
+            if (m_txt_nam.Text == "")
             {
-                m_grc_tong_hop.DataSource = v_ds.Tables[0];
-                m_grc_tong_hop.RefreshDataSource();
+                m_txt_nam.Text = "2015";
+            }
+            v_us.FillDatasetProcBangKeKhaiThuNhap(v_ds, m_txt_nam.Text);
+            m_grc_tong_hop.DataSource = v_ds.Tables[0];
+            if (v_ds.Tables[0].Rows.Count != 0)
+            {      
                 m_adv_tong_hop.BestFitColumns();
+                m_lbl_nam_2.Text = m_txt_nam.Text;
+                m_lbl_nam_2.ForeColor = Color.Maroon;
+                m_lbl_nam_2.Font = new Font("Tahoma", 18, FontStyle.Bold);
             }
             else
             {
@@ -62,10 +69,9 @@ namespace BKI_DichVuMatDat.BaoCao
             if (info.InRow || info.InRowCell)
             {
                 DataRow v_dr_grv = m_adv_tong_hop.GetDataRow(m_adv_tong_hop.FocusedRowHandle);
-                decimal v_id_mon_hoc = CIPConvert.ToDecimal(v_dr_grv["ID_NHAN_VIEN"].ToString());
-                //F105_DM_VERSION_MON_HOC v_f = new F105_DM_VERSION_MON_HOC();
-                //v_f.display_for_double_click(v_id_mon_hoc);
-                //load_data_to_grid();
+                decimal v_id_nhan_vien = CIPConvert.ToDecimal(v_dr_grv["ID_NHAN_VIEN"].ToString());
+                f490_rpt_ke_khai_thu_nhap_detail v_f = new f490_rpt_ke_khai_thu_nhap_detail();
+                v_f.DisplayForPresent(v_id_nhan_vien, m_txt_nam.Text);
             }
 
 
@@ -76,6 +82,11 @@ namespace BKI_DichVuMatDat.BaoCao
             GridView view = (GridView)sender;
             Point pt = view.GridControl.PointToClient(Control.MousePosition);
             DoRowDoubleClick(view, pt);
+        }
+
+        private void m_cmd_tinh_Click(object sender, EventArgs e)
+        {
+            load_data_to_grid();
         }
     }
 }

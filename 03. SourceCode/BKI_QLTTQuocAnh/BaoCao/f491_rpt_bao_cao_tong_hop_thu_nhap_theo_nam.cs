@@ -45,6 +45,7 @@ namespace BKI_DichVuMatDat.BaoCao
             else
             {
                 MessageBox.Show("Không có dữ liệu cho năm " + m_txt_nam.Text + " . Vui lòng kiểm tra lại thông tin!");
+                m_lbl_nam_2.Text = "";
             }
 
         }

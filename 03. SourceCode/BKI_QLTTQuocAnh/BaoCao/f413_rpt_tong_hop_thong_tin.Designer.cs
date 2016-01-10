@@ -88,6 +88,7 @@
             this.m_prb = new DevExpress.XtraEditors.ProgressBarControl();
             this.m_panel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.TONG_THU_NHAP = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_tong_hop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_adv_tong_hop)).BeginInit();
@@ -178,7 +179,6 @@
             // 
             this.m_adv_tong_hop.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.gridBand1,
-            this.gridBand2,
             this.gridBand3,
             this.gridBand4,
             this.gridBand5,
@@ -392,7 +392,7 @@
             this.gridBand2.Columns.Add(this.CHAM_CONG_KHAC);
             this.gridBand2.Columns.Add(this.bandedGridColumn24);
             this.gridBand2.Name = "gridBand2";
-            this.gridBand2.VisibleIndex = 1;
+            this.gridBand2.VisibleIndex = 0;
             this.gridBand2.Width = 360;
             // 
             // CHAM_CONG_X
@@ -507,7 +507,7 @@
             this.gridBand3.Columns.Add(this.HE_SO_K);
             this.gridBand3.Name = "gridBand3";
             this.gridBand3.OptionsBand.ShowCaption = false;
-            this.gridBand3.VisibleIndex = 2;
+            this.gridBand3.VisibleIndex = 1;
             this.gridBand3.Width = 75;
             // 
             // HE_SO_K
@@ -545,7 +545,7 @@
             this.gridBand4.Columns.Add(this.bandedGridColumn9);
             this.gridBand4.Columns.Add(this.bandedGridColumn10);
             this.gridBand4.Name = "gridBand4";
-            this.gridBand4.VisibleIndex = 3;
+            this.gridBand4.VisibleIndex = 2;
             this.gridBand4.Width = 525;
             // 
             // bandedGridColumn1
@@ -710,7 +710,7 @@
             this.gridBand5.Columns.Add(this.bandedGridColumn17);
             this.gridBand5.Columns.Add(this.bandedGridColumn18);
             this.gridBand5.Name = "gridBand5";
-            this.gridBand5.VisibleIndex = 4;
+            this.gridBand5.VisibleIndex = 3;
             this.gridBand5.Width = 450;
             // 
             // bandedGridColumn11
@@ -850,7 +850,7 @@
             this.gridBand6.Columns.Add(this.bandedGridColumn21);
             this.gridBand6.Columns.Add(this.bandedGridColumn22);
             this.gridBand6.Name = "gridBand6";
-            this.gridBand6.VisibleIndex = 5;
+            this.gridBand6.VisibleIndex = 4;
             this.gridBand6.Width = 300;
             // 
             // bandedGridColumn19
@@ -957,6 +957,22 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Đang tải dữ liệu. Vui lòng chờ trong giây lát ...";
             // 
+            // TONG_THU_NHAP
+            // 
+            this.TONG_THU_NHAP.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.TONG_THU_NHAP.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
+            this.TONG_THU_NHAP.AppearanceHeader.Options.UseFont = true;
+            this.TONG_THU_NHAP.AppearanceHeader.Options.UseForeColor = true;
+            this.TONG_THU_NHAP.AppearanceHeader.Options.UseTextOptions = true;
+            this.TONG_THU_NHAP.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TONG_THU_NHAP.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.TONG_THU_NHAP.Caption = "Tổng thu nhập";
+            this.TONG_THU_NHAP.Children.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
+            this.gridBand2});
+            this.TONG_THU_NHAP.Name = "TONG_THU_NHAP";
+            this.TONG_THU_NHAP.VisibleIndex = -1;
+            this.TONG_THU_NHAP.Width = 1087;
+            // 
             // f413_rpt_tong_hop_thong_tin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1040,5 +1056,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand5;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand6;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand TONG_THU_NHAP;
     }
 }

@@ -72,10 +72,10 @@
             this.m_panel = new System.Windows.Forms.Panel();
             this.m_grc_tong_hop = new DevExpress.XtraGrid.GridControl();
             this.m_adv_tong_hop = new DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView();
+            this.THANG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.m_lbl_nam_2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.THANG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.TONG_THU_NHAP = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -733,7 +733,7 @@
             this.m_grc_tong_hop.Location = new System.Drawing.Point(0, 0);
             this.m_grc_tong_hop.MainView = this.m_adv_tong_hop;
             this.m_grc_tong_hop.Name = "m_grc_tong_hop";
-            this.m_grc_tong_hop.Size = new System.Drawing.Size(925, 399);
+            this.m_grc_tong_hop.Size = new System.Drawing.Size(925, 432);
             this.m_grc_tong_hop.TabIndex = 11;
             this.m_grc_tong_hop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_adv_tong_hop});
@@ -792,12 +792,25 @@
             this.m_adv_tong_hop.OptionsBehavior.Editable = false;
             this.m_adv_tong_hop.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDown;
             this.m_adv_tong_hop.OptionsBehavior.ReadOnly = true;
+            this.m_adv_tong_hop.OptionsView.ShowFooter = true;
             this.m_adv_tong_hop.OptionsView.ShowGroupPanel = false;
             this.m_adv_tong_hop.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.HO_TEN, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.MA_NV, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.TEN_CHUC_VU, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.DON_VI, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // THANG
+            // 
+            this.THANG.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
+            this.THANG.AppearanceHeader.Options.UseForeColor = true;
+            this.THANG.AppearanceHeader.Options.UseTextOptions = true;
+            this.THANG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.THANG.Caption = "THÁNG";
+            this.THANG.FieldName = "THANG";
+            this.THANG.Name = "THANG";
+            this.THANG.Visible = true;
+            this.THANG.Width = 104;
             // 
             // m_lbl_nam_2
             // 
@@ -826,20 +839,8 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 54);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(925, 399);
+            this.panel2.Size = new System.Drawing.Size(925, 432);
             this.panel2.TabIndex = 17;
-            // 
-            // THANG
-            // 
-            this.THANG.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
-            this.THANG.AppearanceHeader.Options.UseForeColor = true;
-            this.THANG.AppearanceHeader.Options.UseTextOptions = true;
-            this.THANG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.THANG.Caption = "THÁNG";
-            this.THANG.FieldName = "THANG";
-            this.THANG.Name = "THANG";
-            this.THANG.Visible = true;
-            this.THANG.Width = 104;
             // 
             // gridBand1
             // 
@@ -1017,7 +1018,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 453);
+            this.ClientSize = new System.Drawing.Size(925, 486);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam_detail";

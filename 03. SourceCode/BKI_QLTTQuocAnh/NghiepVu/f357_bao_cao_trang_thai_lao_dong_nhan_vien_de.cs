@@ -223,6 +223,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_save.Click += m_cmd_save_Click;
             m_cmd_exit.Click += m_cmd_exit_Click;
             this.KeyDown += f357_bao_cao_trang_thai_lao_dong_nhan_vien_de_KeyDown;
+            this.FormClosed += f357_bao_cao_trang_thai_lao_dong_nhan_vien_de_FormClosed;
         }
 
         void f357_bao_cao_trang_thai_lao_dong_nhan_vien_de_KeyDown(object sender, KeyEventArgs e)
@@ -282,7 +283,17 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-
+        void f357_bao_cao_trang_thai_lao_dong_nhan_vien_de_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                this.Dispose();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
     }
 }

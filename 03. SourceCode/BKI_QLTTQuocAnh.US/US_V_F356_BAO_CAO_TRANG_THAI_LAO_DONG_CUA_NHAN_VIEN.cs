@@ -468,21 +468,45 @@ public class US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN : US_Object
 	}
 #endregion
 
-    public void FillDataset_toan_bo_nv(
-                            DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN op_ds
-                            , decimal m_load_data_toan_bo_nv)
-    {
-        CStoredProc v_sp = new CStoredProc("Pr_f365_bao_cao_trang_thai_lao_dong_hien_tai_by_id_nhan_vien");
-        v_sp.addDecimalInputParam("@ip_dc_id_nhan_vien", m_load_data_toan_bo_nv);
-        v_sp.fillDataSetByCommand(this, op_ds); 
-    }
+    //public void FillDataset_toan_bo_nv(
+    //                        DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN op_ds
+    //                        , decimal m_load_data_toan_bo_nv)
+    //{
+    //    CStoredProc v_sp = new CStoredProc("Pr_f365_bao_cao_trang_thai_lao_dong_hien_tai_by_id_nhan_vien");
+    //    v_sp.addDecimalInputParam("@ip_dc_id_nhan_vien", m_load_data_toan_bo_nv);
+    //    v_sp.fillDataSetByCommand(this, op_ds); 
+    //}
+
+
+    //public void FillDataset_toan_bo_nv_theo_trang_thai(
+    //                        DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN op_ds
+    //                        , decimal m_load_data_toan_bo_nv
+    //                        , decimal ip_dc_id_trang_thai_lao_dong)
+    //{
+    //    CStoredProc v_sp = new CStoredProc("Pr_f365_bao_cao_trang_thai_lao_dong_hien_tai_by_id_nhan_vien_and_id_trang_thai_lao_dong");
+    //    v_sp.addDecimalInputParam("@ip_dc_id_nhan_vien", m_load_data_toan_bo_nv);
+    //    v_sp.addDecimalInputParam("@ip_dc_id_trang_thai_lao_dong", ip_dc_id_trang_thai_lao_dong);
+    //    v_sp.fillDataSetByCommand(this, op_ds); 
+    //}
 
     public void FillDataset_by_id_nv(
                             DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN op_ds
                             , decimal ip_dc_id_nhan_vien)
     {
-        CStoredProc v_sp = new CStoredProc("Pr_f365_bao_cao_trang_thai_lao_dong_hien_tai_by_id_nhan_vien");
+        CStoredProc v_sp = new CStoredProc("Pr_f356_bao_cao_trang_thai_lao_dong_hien_tai_by_id_nhan_vien");
         v_sp.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+        v_sp.fillDataSetByCommand(this, op_ds); 
+    }
+
+
+    public void FillDataset_by_id_nv_and_id_trang_thai_ld(
+                            DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN op_ds
+                            , decimal ip_dc_id_nhan_vien
+                            , decimal ip_dc_id_trang_thai_lao_dong)
+    {
+        CStoredProc v_sp = new CStoredProc("Pr_f356_bao_cao_trang_thai_lao_dong_hien_tai_by_id_nhan_vien_and_id_trang_thai_lao_dong");
+        v_sp.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+        v_sp.addDecimalInputParam("@ip_dc_id_trang_thai_lao_dong", ip_dc_id_trang_thai_lao_dong);
         v_sp.fillDataSetByCommand(this, op_ds); 
     }
 }

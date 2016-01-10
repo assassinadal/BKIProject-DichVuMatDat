@@ -47,6 +47,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_init_form_load()
         {
             load_data_2_sle_chon_nhan_vien();
+            load_data_2_sle_chon_trang_thai_lao_dong();
             load_data_2_grid();
         }
 
@@ -70,6 +71,27 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
 
+        private DS_V_DM_TRANG_THAI_LAO_DONG load_data_2_ds_v_dm_trang_thai_ld()
+        {
+            DS_V_DM_TRANG_THAI_LAO_DONG v_ds = new DS_V_DM_TRANG_THAI_LAO_DONG();
+            US_V_DM_TRANG_THAI_LAO_DONG v_us = new US_V_DM_TRANG_THAI_LAO_DONG();
+
+            v_us.FillDataset(v_ds);
+            return v_ds;
+        }
+
+        private void load_data_2_sle_chon_trang_thai_lao_dong()
+        {
+            m_sle_chon_trang_thai_lao_dong.Properties.DataSource = load_data_2_ds_v_dm_trang_thai_ld().V_DM_TRANG_THAI_LAO_DONG;
+            m_sle_chon_trang_thai_lao_dong.Properties.ValueMember = V_DM_TRANG_THAI_LAO_DONG.ID;
+            m_sle_chon_trang_thai_lao_dong.Properties.DisplayMember = V_DM_TRANG_THAI_LAO_DONG.TEN_TRANG_THAI_LD;
+
+            m_sle_chon_trang_thai_lao_dong.Properties.PopulateViewColumns();
+            m_sle_chon_trang_thai_lao_dong.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            m_sle_chon_trang_thai_lao_dong.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+        }
+
+
         private void load_data_2_grid()
         {
             CHRMCommon.make_stt(m_grv_bao_cao_trang_thai_lao_dong_nhan_vien);
@@ -77,11 +99,26 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN v_us_v_f356 = new US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN();
             if (m_sle_chon_nhan_vien.EditValue == null)
             {
-                v_us_v_f356.FillDataset_toan_bo_nv(v_ds_v_f356, m_load_data_toan_bo_nv);
+                if (m_sle_chon_trang_thai_lao_dong.EditValue == null)
+                {
+                    v_us_v_f356.FillDataset_by_id_nv(v_ds_v_f356, m_load_data_toan_bo_nv);
+                }
+                else
+                {
+                    v_us_v_f356.FillDataset_by_id_nv_and_id_trang_thai_ld(v_ds_v_f356, m_load_data_toan_bo_nv, (decimal)m_sle_chon_trang_thai_lao_dong.EditValue);
+                }
             }
             else
             {
-                v_us_v_f356.FillDataset_by_id_nv(v_ds_v_f356, (decimal)m_sle_chon_nhan_vien.EditValue);
+                if (m_sle_chon_trang_thai_lao_dong.EditValue == null)
+                {
+                    v_us_v_f356.FillDataset_by_id_nv(v_ds_v_f356, (decimal)m_sle_chon_nhan_vien.EditValue);
+                }
+                else
+                {
+                    v_us_v_f356.FillDataset_by_id_nv_and_id_trang_thai_ld(v_ds_v_f356, (decimal)m_sle_chon_nhan_vien.EditValue, (decimal)m_sle_chon_trang_thai_lao_dong.EditValue);
+                }
+                
             }
 
             m_grc_bao_cao_trang_thai_lao_dong_nhan_vien.DataSource = v_ds_v_f356.V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN;
@@ -124,7 +161,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_insert.Click += m_cmd_insert_Click;
             m_cmd_update.Click += m_cmd_update_Click;
             m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
-            m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
+            //m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
         }
 
         void m_cmd_xuat_excel_Click(object sender, EventArgs e)

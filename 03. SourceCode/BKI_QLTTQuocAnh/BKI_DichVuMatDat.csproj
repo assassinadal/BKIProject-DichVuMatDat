@@ -321,6 +321,12 @@
     <Compile Include="BaoCao\f410_rpt_bang_luong_nv.Designer.cs">
       <DependentUpon>f410_rpt_bang_luong_nv.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\f412_rpt_tong_hop_tt_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f412_rpt_tong_hop_tt_v2.Designer.cs">
+      <DependentUpon>f412_rpt_tong_hop_tt_v2.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\f413_rpt_tong_hop_thong_tin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -946,6 +952,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f410_rpt_bang_luong_nv.resx">
       <DependentUpon>f410_rpt_bang_luong_nv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f412_rpt_tong_hop_tt_v2.resx">
+      <DependentUpon>f412_rpt_tong_hop_tt_v2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f413_rpt_tong_hop_thong_tin.resx">
       <DependentUpon>f413_rpt_tong_hop_thong_tin.cs</DependentUpon>

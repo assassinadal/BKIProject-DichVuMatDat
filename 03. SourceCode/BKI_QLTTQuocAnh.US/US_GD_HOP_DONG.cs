@@ -324,5 +324,12 @@ namespace BKI_DichVuMatDat.US
             v_sp.fillDataSetByCommand(this, v_op_ds);
             return v_op_ds;
         }
+
+
+
+        public void insert_hop_dong_moi(decimal p1, decimal p2, DateTime dateTime1, DateTime dateTime2, DateTime dateTime3, DateTime dateTime4, Func<string> func)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

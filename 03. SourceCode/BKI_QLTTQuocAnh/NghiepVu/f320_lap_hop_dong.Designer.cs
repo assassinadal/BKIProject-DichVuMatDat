@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f320_lap_hop_dong));
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label2 = new System.Windows.Forms.Label();
             this.m_gr_thong_tin_co_ban = new DevExpress.XtraEditors.GroupControl();
+            this.m_cmd_loc_du_lieu = new DevExpress.XtraEditors.SimpleButton();
             this.m_lbl_kiem_tra_ma_hd = new System.Windows.Forms.Label();
             this.m_txt_ma_hd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -69,7 +71,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.m_cmd_tao_lai = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_lap_hop_dong = new DevExpress.XtraEditors.SimpleButton();
-            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.m_grc_lap_hd = new DevExpress.XtraGrid.GridControl();
             this.m_grv_lap_hd = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -92,8 +94,13 @@
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.ImageList = new System.Windows.Forms.ImageList();
-            this.m_cmd_loc_du_lieu = new DevExpress.XtraEditors.SimpleButton();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.sle_cnv_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_GIOI_TINH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_SDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_DIA_CHI_LIEN_LAC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -192,6 +199,13 @@
             // 
             // searchLookUpEdit1View
             // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.sle_cnv_ID,
+            this.sle_cnv_MA_NV,
+            this.sle_cnv_HO_TEN,
+            this.sle_cnv_GIOI_TINH,
+            this.sle_cnv_SDT,
+            this.sle_cnv_DIA_CHI_LIEN_LAC});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -249,6 +263,15 @@
             this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(439, 192);
             this.m_gr_thong_tin_co_ban.TabIndex = 0;
             this.m_gr_thong_tin_co_ban.Text = "THÔNG TIN CƠ BẢN";
+            // 
+            // m_cmd_loc_du_lieu
+            // 
+            this.m_cmd_loc_du_lieu.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_loc_du_lieu.Image")));
+            this.m_cmd_loc_du_lieu.Location = new System.Drawing.Point(345, 25);
+            this.m_cmd_loc_du_lieu.Name = "m_cmd_loc_du_lieu";
+            this.m_cmd_loc_du_lieu.Size = new System.Drawing.Size(88, 39);
+            this.m_cmd_loc_du_lieu.TabIndex = 9;
+            this.m_cmd_loc_du_lieu.Text = "&Lọc";
             // 
             // m_lbl_kiem_tra_ma_hd
             // 
@@ -842,14 +865,51 @@
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
             // 
-            // m_cmd_loc_du_lieu
+            // sle_cnv_ID
             // 
-            this.m_cmd_loc_du_lieu.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_loc_du_lieu.Image")));
-            this.m_cmd_loc_du_lieu.Location = new System.Drawing.Point(345, 25);
-            this.m_cmd_loc_du_lieu.Name = "m_cmd_loc_du_lieu";
-            this.m_cmd_loc_du_lieu.Size = new System.Drawing.Size(88, 39);
-            this.m_cmd_loc_du_lieu.TabIndex = 9;
-            this.m_cmd_loc_du_lieu.Text = "&Lọc";
+            this.sle_cnv_ID.Caption = "ID";
+            this.sle_cnv_ID.FieldName = "ID";
+            this.sle_cnv_ID.Name = "sle_cnv_ID";
+            // 
+            // sle_cnv_MA_NV
+            // 
+            this.sle_cnv_MA_NV.Caption = "Mã NV";
+            this.sle_cnv_MA_NV.FieldName = "MA_NV";
+            this.sle_cnv_MA_NV.Name = "sle_cnv_MA_NV";
+            this.sle_cnv_MA_NV.Visible = true;
+            this.sle_cnv_MA_NV.VisibleIndex = 0;
+            // 
+            // sle_cnv_HO_TEN
+            // 
+            this.sle_cnv_HO_TEN.Caption = "Họ tên";
+            this.sle_cnv_HO_TEN.FieldName = "HO_TEN";
+            this.sle_cnv_HO_TEN.Name = "sle_cnv_HO_TEN";
+            this.sle_cnv_HO_TEN.Visible = true;
+            this.sle_cnv_HO_TEN.VisibleIndex = 1;
+            // 
+            // sle_cnv_GIOI_TINH
+            // 
+            this.sle_cnv_GIOI_TINH.Caption = "Giới tính";
+            this.sle_cnv_GIOI_TINH.FieldName = "GT";
+            this.sle_cnv_GIOI_TINH.Name = "sle_cnv_GIOI_TINH";
+            this.sle_cnv_GIOI_TINH.Visible = true;
+            this.sle_cnv_GIOI_TINH.VisibleIndex = 2;
+            // 
+            // sle_cnv_SDT
+            // 
+            this.sle_cnv_SDT.Caption = "SĐT";
+            this.sle_cnv_SDT.FieldName = "SDT";
+            this.sle_cnv_SDT.Name = "sle_cnv_SDT";
+            this.sle_cnv_SDT.Visible = true;
+            this.sle_cnv_SDT.VisibleIndex = 3;
+            // 
+            // sle_cnv_DIA_CHI_LIEN_LAC
+            // 
+            this.sle_cnv_DIA_CHI_LIEN_LAC.Caption = "Địa chỉ liên lạc";
+            this.sle_cnv_DIA_CHI_LIEN_LAC.FieldName = "DIA_CHI_LIEN_LAC";
+            this.sle_cnv_DIA_CHI_LIEN_LAC.Name = "sle_cnv_DIA_CHI_LIEN_LAC";
+            this.sle_cnv_DIA_CHI_LIEN_LAC.Visible = true;
+            this.sle_cnv_DIA_CHI_LIEN_LAC.VisibleIndex = 4;
             // 
             // f320_lap_hop_dong
             // 
@@ -961,5 +1021,11 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_lap_hop_dong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tao_lai;
         private DevExpress.XtraEditors.SimpleButton m_cmd_loc_du_lieu;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_MA_NV;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_HO_TEN;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_GIOI_TINH;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_SDT;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_DIA_CHI_LIEN_LAC;
     }
 }

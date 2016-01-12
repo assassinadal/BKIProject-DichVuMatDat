@@ -48,15 +48,6 @@
             this.TAI_KHOAN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.LUONG_CHE_DO_THEO_CHUC_VU = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.HS_LNS_DUOC_HUONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.CHAM_CONG_X = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.CHAM_CONG_OM_CO = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.CHAM_CONG_TS = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.CHAM_CONG_TNLD = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.CHAM_CONG_PHEP_DIDUONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.CHAM_CONG_RO_KO_DC = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.CHAM_CONG_KHAC = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn24 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.HE_SO_K = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -84,6 +75,15 @@
             this.bandedGridColumn20 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn21 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn22 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.CHAM_CONG_X = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.CHAM_CONG_OM_CO = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.CHAM_CONG_TS = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.CHAM_CONG_TNLD = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.CHAM_CONG_PHEP_DIDUONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.CHAM_CONG_RO_KO_DC = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.CHAM_CONG_KHAC = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn24 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.m_bgwk = new System.ComponentModel.BackgroundWorker();
             this.m_prb = new DevExpress.XtraEditors.ProgressBarControl();
             this.m_panel = new System.Windows.Forms.Panel();
@@ -182,7 +182,8 @@
             this.gridBand3,
             this.gridBand4,
             this.gridBand5,
-            this.gridBand6});
+            this.gridBand6,
+            this.gridBand2});
             this.m_adv_tong_hop.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
             this.STT,
             this.MA_NV,
@@ -230,6 +231,7 @@
             this.m_adv_tong_hop.OptionsBehavior.Editable = false;
             this.m_adv_tong_hop.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDown;
             this.m_adv_tong_hop.OptionsBehavior.ReadOnly = true;
+            this.m_adv_tong_hop.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.m_adv_tong_hop.OptionsView.ShowFooter = true;
             this.m_adv_tong_hop.OptionsView.ShowGroupPanel = false;
             this.m_adv_tong_hop.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
@@ -255,7 +257,7 @@
             this.gridBand1.Columns.Add(this.HS_LNS_DUOC_HUONG);
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 645;
+            this.gridBand1.Width = 686;
             // 
             // STT
             // 
@@ -267,7 +269,9 @@
             this.STT.Caption = "STT";
             this.STT.FieldName = "STT";
             this.STT.Name = "STT";
-            this.STT.Width = 30;
+            this.STT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.STT.Visible = true;
+            this.STT.Width = 41;
             // 
             // MA_NV
             // 
@@ -279,6 +283,7 @@
             this.MA_NV.Caption = "Mã nhân viên";
             this.MA_NV.FieldName = "MA_NV";
             this.MA_NV.Name = "MA_NV";
+            this.MA_NV.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.MA_NV.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MA_NV", "SLNV : {0:n0}")});
             this.MA_NV.Visible = true;
@@ -293,6 +298,7 @@
             this.HO_VA_TEN.Caption = "Họ và tên";
             this.HO_VA_TEN.FieldName = "HO_VA_TEN";
             this.HO_VA_TEN.Name = "HO_VA_TEN";
+            this.HO_VA_TEN.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.HO_VA_TEN.Visible = true;
             this.HO_VA_TEN.Width = 99;
             // 
@@ -306,7 +312,9 @@
             this.bandedGridColumn23.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.bandedGridColumn23.Caption = "Đơn vị";
             this.bandedGridColumn23.FieldName = "DON_VI";
+            this.bandedGridColumn23.FieldNameSortGroup = "THU_TU_HIEN_THI";
             this.bandedGridColumn23.Name = "bandedGridColumn23";
+            this.bandedGridColumn23.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn23.Visible = true;
             // 
             // TEN_CHUC_VU
@@ -319,6 +327,7 @@
             this.TEN_CHUC_VU.Caption = "Chức vụ";
             this.TEN_CHUC_VU.FieldName = "TEN_CHUC_VU";
             this.TEN_CHUC_VU.Name = "TEN_CHUC_VU";
+            this.TEN_CHUC_VU.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.TEN_CHUC_VU.Visible = true;
             this.TEN_CHUC_VU.Width = 96;
             // 
@@ -332,6 +341,7 @@
             this.TEN_HOP_DONG.Caption = "Hợp đồng";
             this.TEN_HOP_DONG.FieldName = "TEN_HOP_DONG";
             this.TEN_HOP_DONG.Name = "TEN_HOP_DONG";
+            this.TEN_HOP_DONG.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.TEN_HOP_DONG.Visible = true;
             // 
             // TAI_KHOAN
@@ -344,6 +354,7 @@
             this.TAI_KHOAN.Caption = "Tài khoản";
             this.TAI_KHOAN.FieldName = "TAI_KHOAN";
             this.TAI_KHOAN.Name = "TAI_KHOAN";
+            this.TAI_KHOAN.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.TAI_KHOAN.Visible = true;
             // 
             // LUONG_CHE_DO_THEO_CHUC_VU
@@ -358,6 +369,7 @@
             this.LUONG_CHE_DO_THEO_CHUC_VU.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.LUONG_CHE_DO_THEO_CHUC_VU.FieldName = "LUONG_CHE_DO_THEO_CHUC_VU";
             this.LUONG_CHE_DO_THEO_CHUC_VU.Name = "LUONG_CHE_DO_THEO_CHUC_VU";
+            this.LUONG_CHE_DO_THEO_CHUC_VU.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.LUONG_CHE_DO_THEO_CHUC_VU.Visible = true;
             // 
             // HS_LNS_DUOC_HUONG
@@ -372,133 +384,8 @@
             this.HS_LNS_DUOC_HUONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.HS_LNS_DUOC_HUONG.FieldName = "HS_LUONG_NANG_SUAT_DUOC_HUONG";
             this.HS_LNS_DUOC_HUONG.Name = "HS_LNS_DUOC_HUONG";
+            this.HS_LNS_DUOC_HUONG.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.HS_LNS_DUOC_HUONG.Visible = true;
-            // 
-            // gridBand2
-            // 
-            this.gridBand2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridBand2.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
-            this.gridBand2.AppearanceHeader.Options.UseFont = true;
-            this.gridBand2.AppearanceHeader.Options.UseForeColor = true;
-            this.gridBand2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand2.Caption = "Tổng hợp chấm công";
-            this.gridBand2.Columns.Add(this.CHAM_CONG_X);
-            this.gridBand2.Columns.Add(this.CHAM_CONG_OM_CO);
-            this.gridBand2.Columns.Add(this.CHAM_CONG_TS);
-            this.gridBand2.Columns.Add(this.CHAM_CONG_TNLD);
-            this.gridBand2.Columns.Add(this.CHAM_CONG_PHEP_DIDUONG);
-            this.gridBand2.Columns.Add(this.CHAM_CONG_RO_KO_DC);
-            this.gridBand2.Columns.Add(this.CHAM_CONG_KHAC);
-            this.gridBand2.Columns.Add(this.bandedGridColumn24);
-            this.gridBand2.Name = "gridBand2";
-            this.gridBand2.VisibleIndex = 0;
-            this.gridBand2.Width = 360;
-            // 
-            // CHAM_CONG_X
-            // 
-            this.CHAM_CONG_X.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
-            this.CHAM_CONG_X.AppearanceHeader.Options.UseForeColor = true;
-            this.CHAM_CONG_X.AppearanceHeader.Options.UseTextOptions = true;
-            this.CHAM_CONG_X.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CHAM_CONG_X.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.CHAM_CONG_X.Caption = "X";
-            this.CHAM_CONG_X.FieldName = "CHAM_CONG_X";
-            this.CHAM_CONG_X.Name = "CHAM_CONG_X";
-            this.CHAM_CONG_X.Visible = true;
-            this.CHAM_CONG_X.Width = 45;
-            // 
-            // CHAM_CONG_OM_CO
-            // 
-            this.CHAM_CONG_OM_CO.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
-            this.CHAM_CONG_OM_CO.AppearanceHeader.Options.UseForeColor = true;
-            this.CHAM_CONG_OM_CO.AppearanceHeader.Options.UseTextOptions = true;
-            this.CHAM_CONG_OM_CO.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CHAM_CONG_OM_CO.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.CHAM_CONG_OM_CO.Caption = "Om, Co";
-            this.CHAM_CONG_OM_CO.FieldName = "CHAM_CONG_OM_CO";
-            this.CHAM_CONG_OM_CO.Name = "CHAM_CONG_OM_CO";
-            this.CHAM_CONG_OM_CO.Visible = true;
-            this.CHAM_CONG_OM_CO.Width = 39;
-            // 
-            // CHAM_CONG_TS
-            // 
-            this.CHAM_CONG_TS.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
-            this.CHAM_CONG_TS.AppearanceHeader.Options.UseForeColor = true;
-            this.CHAM_CONG_TS.AppearanceHeader.Options.UseTextOptions = true;
-            this.CHAM_CONG_TS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CHAM_CONG_TS.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.CHAM_CONG_TS.Caption = "TS";
-            this.CHAM_CONG_TS.FieldName = "CHAM_CONG_TS";
-            this.CHAM_CONG_TS.Name = "CHAM_CONG_TS";
-            this.CHAM_CONG_TS.Visible = true;
-            this.CHAM_CONG_TS.Width = 38;
-            // 
-            // CHAM_CONG_TNLD
-            // 
-            this.CHAM_CONG_TNLD.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
-            this.CHAM_CONG_TNLD.AppearanceHeader.Options.UseForeColor = true;
-            this.CHAM_CONG_TNLD.AppearanceHeader.Options.UseTextOptions = true;
-            this.CHAM_CONG_TNLD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CHAM_CONG_TNLD.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.CHAM_CONG_TNLD.Caption = "TNLD";
-            this.CHAM_CONG_TNLD.FieldName = "CHAM_CONG_TNLD";
-            this.CHAM_CONG_TNLD.Name = "CHAM_CONG_TNLD";
-            this.CHAM_CONG_TNLD.Visible = true;
-            this.CHAM_CONG_TNLD.Width = 36;
-            // 
-            // CHAM_CONG_PHEP_DIDUONG
-            // 
-            this.CHAM_CONG_PHEP_DIDUONG.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
-            this.CHAM_CONG_PHEP_DIDUONG.AppearanceHeader.Options.UseForeColor = true;
-            this.CHAM_CONG_PHEP_DIDUONG.AppearanceHeader.Options.UseTextOptions = true;
-            this.CHAM_CONG_PHEP_DIDUONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CHAM_CONG_PHEP_DIDUONG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.CHAM_CONG_PHEP_DIDUONG.Caption = "Phép, đi đường";
-            this.CHAM_CONG_PHEP_DIDUONG.FieldName = "CHAM_CONG_PHEP_DIDUONG";
-            this.CHAM_CONG_PHEP_DIDUONG.Name = "CHAM_CONG_PHEP_DIDUONG";
-            this.CHAM_CONG_PHEP_DIDUONG.Visible = true;
-            this.CHAM_CONG_PHEP_DIDUONG.Width = 39;
-            // 
-            // CHAM_CONG_RO_KO_DC
-            // 
-            this.CHAM_CONG_RO_KO_DC.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
-            this.CHAM_CONG_RO_KO_DC.AppearanceHeader.Options.UseForeColor = true;
-            this.CHAM_CONG_RO_KO_DC.AppearanceHeader.Options.UseTextOptions = true;
-            this.CHAM_CONG_RO_KO_DC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CHAM_CONG_RO_KO_DC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.CHAM_CONG_RO_KO_DC.Caption = "RO, KO, DC";
-            this.CHAM_CONG_RO_KO_DC.FieldName = "CHAM_CONG_RO_KO_DC";
-            this.CHAM_CONG_RO_KO_DC.Name = "CHAM_CONG_RO_KO_DC";
-            this.CHAM_CONG_RO_KO_DC.Visible = true;
-            this.CHAM_CONG_RO_KO_DC.Width = 37;
-            // 
-            // CHAM_CONG_KHAC
-            // 
-            this.CHAM_CONG_KHAC.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
-            this.CHAM_CONG_KHAC.AppearanceHeader.Options.UseForeColor = true;
-            this.CHAM_CONG_KHAC.AppearanceHeader.Options.UseTextOptions = true;
-            this.CHAM_CONG_KHAC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CHAM_CONG_KHAC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.CHAM_CONG_KHAC.Caption = "Khác";
-            this.CHAM_CONG_KHAC.FieldName = "CHAM_CONG_KHAC";
-            this.CHAM_CONG_KHAC.Name = "CHAM_CONG_KHAC";
-            this.CHAM_CONG_KHAC.Visible = true;
-            this.CHAM_CONG_KHAC.Width = 51;
-            // 
-            // bandedGridColumn24
-            // 
-            this.bandedGridColumn24.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
-            this.bandedGridColumn24.AppearanceHeader.Options.UseForeColor = true;
-            this.bandedGridColumn24.AppearanceHeader.Options.UseTextOptions = true;
-            this.bandedGridColumn24.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.bandedGridColumn24.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.bandedGridColumn24.Caption = "Số ngày làm thêm";
-            this.bandedGridColumn24.DisplayFormat.FormatString = "n0";
-            this.bandedGridColumn24.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.bandedGridColumn24.FieldName = "SO_NGAY_LAM_THEM";
-            this.bandedGridColumn24.Name = "bandedGridColumn24";
-            this.bandedGridColumn24.Visible = true;
             // 
             // gridBand3
             // 
@@ -522,6 +409,7 @@
             this.HE_SO_K.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.HE_SO_K.FieldName = "HE_SO_K";
             this.HE_SO_K.Name = "HE_SO_K";
+            this.HE_SO_K.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.HE_SO_K.Visible = true;
             // 
             // gridBand4
@@ -546,7 +434,7 @@
             this.gridBand4.Columns.Add(this.bandedGridColumn10);
             this.gridBand4.Name = "gridBand4";
             this.gridBand4.VisibleIndex = 2;
-            this.gridBand4.Width = 525;
+            this.gridBand4.Width = 750;
             // 
             // bandedGridColumn1
             // 
@@ -560,6 +448,7 @@
             this.bandedGridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn1.FieldName = "LUONG_NS";
             this.bandedGridColumn1.Name = "bandedGridColumn1";
+            this.bandedGridColumn1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn1.Visible = true;
             // 
             // bandedGridColumn2
@@ -574,6 +463,7 @@
             this.bandedGridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn2.FieldName = "LUONG_CD";
             this.bandedGridColumn2.Name = "bandedGridColumn2";
+            this.bandedGridColumn2.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn2.Visible = true;
             // 
             // bandedGridColumn3
@@ -588,6 +478,7 @@
             this.bandedGridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn3.FieldName = "PHU_CAP_TN";
             this.bandedGridColumn3.Name = "bandedGridColumn3";
+            this.bandedGridColumn3.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn3.Visible = true;
             // 
             // bandedGridColumn4
@@ -602,6 +493,7 @@
             this.bandedGridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn4.FieldName = "AN_CA";
             this.bandedGridColumn4.Name = "bandedGridColumn4";
+            this.bandedGridColumn4.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn4.Visible = true;
             // 
             // bandedGridColumn5
@@ -616,6 +508,7 @@
             this.bandedGridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn5.FieldName = "LAM_THEM";
             this.bandedGridColumn5.Name = "bandedGridColumn5";
+            this.bandedGridColumn5.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LAM_THEM", "{0:n0}")});
             this.bandedGridColumn5.Visible = true;
@@ -632,6 +525,7 @@
             this.bandedGridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn6.FieldName = "LAM_THEM_LE_TET";
             this.bandedGridColumn6.Name = "bandedGridColumn6";
+            this.bandedGridColumn6.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn6.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LAM_THEM_LE_TET", "{0:n0}")});
             this.bandedGridColumn6.Visible = true;
@@ -648,6 +542,8 @@
             this.bandedGridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn7.FieldName = "LUONG_KHAC_THUE_5";
             this.bandedGridColumn7.Name = "bandedGridColumn7";
+            this.bandedGridColumn7.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridColumn7.Visible = true;
             // 
             // bandedGridColumn8
             // 
@@ -661,6 +557,8 @@
             this.bandedGridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn8.FieldName = "LUONG_KHAC_THUE_10";
             this.bandedGridColumn8.Name = "bandedGridColumn8";
+            this.bandedGridColumn8.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridColumn8.Visible = true;
             // 
             // bandedGridColumn9
             // 
@@ -674,6 +572,8 @@
             this.bandedGridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn9.FieldName = "LUONG_KHAC_THUE_TINH_THEO_LUONG";
             this.bandedGridColumn9.Name = "bandedGridColumn9";
+            this.bandedGridColumn9.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridColumn9.Visible = true;
             // 
             // bandedGridColumn10
             // 
@@ -687,6 +587,7 @@
             this.bandedGridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn10.FieldName = "THU_NHAP";
             this.bandedGridColumn10.Name = "bandedGridColumn10";
+            this.bandedGridColumn10.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn10.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THU_NHAP", "{0:n0}")});
             this.bandedGridColumn10.Visible = true;
@@ -711,7 +612,7 @@
             this.gridBand5.Columns.Add(this.bandedGridColumn18);
             this.gridBand5.Name = "gridBand5";
             this.gridBand5.VisibleIndex = 3;
-            this.gridBand5.Width = 450;
+            this.gridBand5.Width = 600;
             // 
             // bandedGridColumn11
             // 
@@ -725,6 +626,7 @@
             this.bandedGridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn11.FieldName = "BHXH";
             this.bandedGridColumn11.Name = "bandedGridColumn11";
+            this.bandedGridColumn11.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn11.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHXH", "{0:n0}")});
             this.bandedGridColumn11.Visible = true;
@@ -741,6 +643,7 @@
             this.bandedGridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn12.FieldName = "BHYT";
             this.bandedGridColumn12.Name = "bandedGridColumn12";
+            this.bandedGridColumn12.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn12.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHYT", "{0:n0}")});
             this.bandedGridColumn12.Visible = true;
@@ -757,6 +660,7 @@
             this.bandedGridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn13.FieldName = "BHTN";
             this.bandedGridColumn13.Name = "bandedGridColumn13";
+            this.bandedGridColumn13.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn13.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHTN", "{0:n0}")});
             this.bandedGridColumn13.Visible = true;
@@ -773,6 +677,7 @@
             this.bandedGridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn14.FieldName = "DOAN_PHI_CD";
             this.bandedGridColumn14.Name = "bandedGridColumn14";
+            this.bandedGridColumn14.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn14.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOAN_PHI_CD", "{0:n0}")});
             this.bandedGridColumn14.Visible = true;
@@ -789,6 +694,7 @@
             this.bandedGridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn15.FieldName = "THUE";
             this.bandedGridColumn15.Name = "bandedGridColumn15";
+            this.bandedGridColumn15.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn15.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUE", "{0:n0}")});
             this.bandedGridColumn15.Visible = true;
@@ -805,6 +711,8 @@
             this.bandedGridColumn16.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn16.FieldName = "THUE_TU_LUONG_KHAC_5";
             this.bandedGridColumn16.Name = "bandedGridColumn16";
+            this.bandedGridColumn16.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridColumn16.Visible = true;
             // 
             // bandedGridColumn17
             // 
@@ -818,6 +726,8 @@
             this.bandedGridColumn17.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn17.FieldName = "THUE_TU_LUONG_KHAC_10";
             this.bandedGridColumn17.Name = "bandedGridColumn17";
+            this.bandedGridColumn17.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridColumn17.Visible = true;
             // 
             // bandedGridColumn18
             // 
@@ -831,6 +741,7 @@
             this.bandedGridColumn18.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn18.FieldName = "PHAI_NOP";
             this.bandedGridColumn18.Name = "bandedGridColumn18";
+            this.bandedGridColumn18.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn18.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PHAI_NOP", "{0:n0}")});
             this.bandedGridColumn18.Visible = true;
@@ -865,6 +776,7 @@
             this.bandedGridColumn19.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn19.FieldName = "THUC_LINH";
             this.bandedGridColumn19.Name = "bandedGridColumn19";
+            this.bandedGridColumn19.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn19.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUC_LINH", "{0:n0}")});
             this.bandedGridColumn19.Visible = true;
@@ -881,6 +793,7 @@
             this.bandedGridColumn20.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn20.FieldName = "TRUY_LINH";
             this.bandedGridColumn20.Name = "bandedGridColumn20";
+            this.bandedGridColumn20.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn20.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TRUY_LINH", "{0:n0}")});
             this.bandedGridColumn20.Visible = true;
@@ -897,6 +810,7 @@
             this.bandedGridColumn21.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn21.FieldName = "TRUY_THU";
             this.bandedGridColumn21.Name = "bandedGridColumn21";
+            this.bandedGridColumn21.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn21.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TRUY_THU", "{0:n0}")});
             this.bandedGridColumn21.Visible = true;
@@ -913,9 +827,144 @@
             this.bandedGridColumn22.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn22.FieldName = "THUC_LINH_CUOI_CUNG";
             this.bandedGridColumn22.Name = "bandedGridColumn22";
+            this.bandedGridColumn22.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn22.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUC_LINH_CUOI_CUNG", "{0:n0}")});
             this.bandedGridColumn22.Visible = true;
+            // 
+            // CHAM_CONG_X
+            // 
+            this.CHAM_CONG_X.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
+            this.CHAM_CONG_X.AppearanceHeader.Options.UseForeColor = true;
+            this.CHAM_CONG_X.AppearanceHeader.Options.UseTextOptions = true;
+            this.CHAM_CONG_X.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CHAM_CONG_X.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.CHAM_CONG_X.Caption = "X";
+            this.CHAM_CONG_X.FieldName = "CHAM_CONG_X";
+            this.CHAM_CONG_X.Name = "CHAM_CONG_X";
+            this.CHAM_CONG_X.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.CHAM_CONG_X.Visible = true;
+            this.CHAM_CONG_X.Width = 45;
+            // 
+            // CHAM_CONG_OM_CO
+            // 
+            this.CHAM_CONG_OM_CO.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
+            this.CHAM_CONG_OM_CO.AppearanceHeader.Options.UseForeColor = true;
+            this.CHAM_CONG_OM_CO.AppearanceHeader.Options.UseTextOptions = true;
+            this.CHAM_CONG_OM_CO.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CHAM_CONG_OM_CO.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.CHAM_CONG_OM_CO.Caption = "Om, Co";
+            this.CHAM_CONG_OM_CO.FieldName = "CHAM_CONG_OM_CO";
+            this.CHAM_CONG_OM_CO.Name = "CHAM_CONG_OM_CO";
+            this.CHAM_CONG_OM_CO.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.CHAM_CONG_OM_CO.Visible = true;
+            this.CHAM_CONG_OM_CO.Width = 39;
+            // 
+            // CHAM_CONG_TS
+            // 
+            this.CHAM_CONG_TS.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
+            this.CHAM_CONG_TS.AppearanceHeader.Options.UseForeColor = true;
+            this.CHAM_CONG_TS.AppearanceHeader.Options.UseTextOptions = true;
+            this.CHAM_CONG_TS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CHAM_CONG_TS.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.CHAM_CONG_TS.Caption = "TS";
+            this.CHAM_CONG_TS.FieldName = "CHAM_CONG_TS";
+            this.CHAM_CONG_TS.Name = "CHAM_CONG_TS";
+            this.CHAM_CONG_TS.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.CHAM_CONG_TS.Visible = true;
+            this.CHAM_CONG_TS.Width = 38;
+            // 
+            // CHAM_CONG_TNLD
+            // 
+            this.CHAM_CONG_TNLD.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
+            this.CHAM_CONG_TNLD.AppearanceHeader.Options.UseForeColor = true;
+            this.CHAM_CONG_TNLD.AppearanceHeader.Options.UseTextOptions = true;
+            this.CHAM_CONG_TNLD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CHAM_CONG_TNLD.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.CHAM_CONG_TNLD.Caption = "TNLD";
+            this.CHAM_CONG_TNLD.FieldName = "CHAM_CONG_TNLD";
+            this.CHAM_CONG_TNLD.Name = "CHAM_CONG_TNLD";
+            this.CHAM_CONG_TNLD.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.CHAM_CONG_TNLD.Visible = true;
+            this.CHAM_CONG_TNLD.Width = 36;
+            // 
+            // CHAM_CONG_PHEP_DIDUONG
+            // 
+            this.CHAM_CONG_PHEP_DIDUONG.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
+            this.CHAM_CONG_PHEP_DIDUONG.AppearanceHeader.Options.UseForeColor = true;
+            this.CHAM_CONG_PHEP_DIDUONG.AppearanceHeader.Options.UseTextOptions = true;
+            this.CHAM_CONG_PHEP_DIDUONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CHAM_CONG_PHEP_DIDUONG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.CHAM_CONG_PHEP_DIDUONG.Caption = "Phép, đi đường";
+            this.CHAM_CONG_PHEP_DIDUONG.FieldName = "CHAM_CONG_PHEP_DIDUONG";
+            this.CHAM_CONG_PHEP_DIDUONG.Name = "CHAM_CONG_PHEP_DIDUONG";
+            this.CHAM_CONG_PHEP_DIDUONG.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.CHAM_CONG_PHEP_DIDUONG.Visible = true;
+            this.CHAM_CONG_PHEP_DIDUONG.Width = 39;
+            // 
+            // CHAM_CONG_RO_KO_DC
+            // 
+            this.CHAM_CONG_RO_KO_DC.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
+            this.CHAM_CONG_RO_KO_DC.AppearanceHeader.Options.UseForeColor = true;
+            this.CHAM_CONG_RO_KO_DC.AppearanceHeader.Options.UseTextOptions = true;
+            this.CHAM_CONG_RO_KO_DC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CHAM_CONG_RO_KO_DC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.CHAM_CONG_RO_KO_DC.Caption = "RO, KO, DC";
+            this.CHAM_CONG_RO_KO_DC.FieldName = "CHAM_CONG_RO_KO_DC";
+            this.CHAM_CONG_RO_KO_DC.Name = "CHAM_CONG_RO_KO_DC";
+            this.CHAM_CONG_RO_KO_DC.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.CHAM_CONG_RO_KO_DC.Visible = true;
+            this.CHAM_CONG_RO_KO_DC.Width = 37;
+            // 
+            // CHAM_CONG_KHAC
+            // 
+            this.CHAM_CONG_KHAC.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
+            this.CHAM_CONG_KHAC.AppearanceHeader.Options.UseForeColor = true;
+            this.CHAM_CONG_KHAC.AppearanceHeader.Options.UseTextOptions = true;
+            this.CHAM_CONG_KHAC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CHAM_CONG_KHAC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.CHAM_CONG_KHAC.Caption = "Khác";
+            this.CHAM_CONG_KHAC.FieldName = "CHAM_CONG_KHAC";
+            this.CHAM_CONG_KHAC.Name = "CHAM_CONG_KHAC";
+            this.CHAM_CONG_KHAC.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.CHAM_CONG_KHAC.Visible = true;
+            this.CHAM_CONG_KHAC.Width = 51;
+            // 
+            // bandedGridColumn24
+            // 
+            this.bandedGridColumn24.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
+            this.bandedGridColumn24.AppearanceHeader.Options.UseForeColor = true;
+            this.bandedGridColumn24.AppearanceHeader.Options.UseTextOptions = true;
+            this.bandedGridColumn24.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.bandedGridColumn24.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.bandedGridColumn24.Caption = "Số ngày làm thêm";
+            this.bandedGridColumn24.DisplayFormat.FormatString = "n0";
+            this.bandedGridColumn24.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.bandedGridColumn24.FieldName = "SO_NGAY_LAM_THEM";
+            this.bandedGridColumn24.Name = "bandedGridColumn24";
+            this.bandedGridColumn24.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridColumn24.Visible = true;
+            // 
+            // gridBand2
+            // 
+            this.gridBand2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridBand2.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
+            this.gridBand2.AppearanceHeader.Options.UseFont = true;
+            this.gridBand2.AppearanceHeader.Options.UseForeColor = true;
+            this.gridBand2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand2.Caption = "Tổng hợp chấm công";
+            this.gridBand2.Columns.Add(this.CHAM_CONG_X);
+            this.gridBand2.Columns.Add(this.CHAM_CONG_OM_CO);
+            this.gridBand2.Columns.Add(this.CHAM_CONG_TS);
+            this.gridBand2.Columns.Add(this.CHAM_CONG_TNLD);
+            this.gridBand2.Columns.Add(this.CHAM_CONG_PHEP_DIDUONG);
+            this.gridBand2.Columns.Add(this.CHAM_CONG_RO_KO_DC);
+            this.gridBand2.Columns.Add(this.CHAM_CONG_KHAC);
+            this.gridBand2.Columns.Add(this.bandedGridColumn24);
+            this.gridBand2.Name = "gridBand2";
+            this.gridBand2.VisibleIndex = 5;
+            this.gridBand2.Width = 360;
             // 
             // m_bgwk
             // 
@@ -967,8 +1016,6 @@
             this.TONG_THU_NHAP.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TONG_THU_NHAP.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.TONG_THU_NHAP.Caption = "Tổng thu nhập";
-            this.TONG_THU_NHAP.Children.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.gridBand2});
             this.TONG_THU_NHAP.Name = "TONG_THU_NHAP";
             this.TONG_THU_NHAP.VisibleIndex = -1;
             this.TONG_THU_NHAP.Width = 1087;

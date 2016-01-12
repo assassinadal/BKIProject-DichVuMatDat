@@ -35,7 +35,7 @@ namespace BKI_DichVuMatDat.BaoCao
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            string filter = "SELECT * FROM V_RPT_BAO_CAO_TONG_HOP WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim() + " order by THU_TU_HIEN_THI, TEN_CHUC_VU, MA_NV";
+            string filter = "SELECT * FROM V_RPT_BAO_CAO_TONG_HOP WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim() + " order by THU_TU_HIEN_THI, THU_TU_CHUC_VU, TEN, HO_DEM";
             v_us.FillDatasetWithQuery(v_ds, filter);
             m_grc_tong_hop.DataSource = v_ds.Tables[0];
             m_grc_tong_hop.RefreshDataSource();

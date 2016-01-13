@@ -748,7 +748,7 @@
             this.colGIAM_TRU_GIA_CANH.Caption = "Gia cảnh   (20)";
             this.colGIAM_TRU_GIA_CANH.DisplayFormat.FormatString = "n0";
             this.colGIAM_TRU_GIA_CANH.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colGIAM_TRU_GIA_CANH.FieldName = "GIAM_TRU_GIA_CANH ";
+            this.colGIAM_TRU_GIA_CANH.FieldName = "GIAM_TRU_GIA_CANH";
             this.colGIAM_TRU_GIA_CANH.Name = "colGIAM_TRU_GIA_CANH";
             this.colGIAM_TRU_GIA_CANH.Visible = true;
             // 

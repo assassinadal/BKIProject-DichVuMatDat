@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f409_rpt_bang_luong));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xem_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xem_thong_tin_tinh_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
@@ -103,7 +104,6 @@
             this.colHO_TEN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
@@ -135,6 +135,15 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(1044, 96);
             this.panel1.TabIndex = 6;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(743, 53);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(187, 37);
+            this.simpleButton1.TabIndex = 17;
+            this.simpleButton1.Text = "Import Excel lương";
             // 
             // m_cmd_xem_bang_luong
             // 
@@ -288,7 +297,7 @@
             // 
             // m_prb
             // 
-            this.m_prb.Location = new System.Drawing.Point(96, 137);
+            this.m_prb.Location = new System.Drawing.Point(82, 113);
             this.m_prb.Name = "m_prb";
             this.m_prb.Properties.ShowTitle = true;
             this.m_prb.ShowProgressInTaskBar = true;
@@ -957,15 +966,6 @@
             this.m_grc.TabIndex = 8;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(743, 53);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(187, 37);
-            this.simpleButton1.TabIndex = 17;
-            this.simpleButton1.Text = "Import Excel lương";
             // 
             // f409_rpt_bang_luong
             // 

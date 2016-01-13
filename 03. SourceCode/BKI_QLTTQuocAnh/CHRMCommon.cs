@@ -190,6 +190,15 @@ namespace BKI_DichVuMatDat
             DataRow v_dr = v_ds.Tables[0].Rows[0];
             return v_dr;
         }
+        public static DataRow get_luong_1_nhan_vien_v2(decimal ip_dc_id_nhan_vien, int ip_int_thang, int ip_int_nam)
+        {
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillBangLuongV2(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
+            DataRow v_dr = v_ds.Tables[0].Rows[0];
+            return v_dr;
+        }
         public static DataRow get_thong_tin_tong_hop_1_nhan_vien(decimal ip_dc_id_nhan_vien, int ip_int_thang, int ip_int_nam)
         {
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
@@ -378,6 +387,12 @@ namespace BKI_DichVuMatDat
         {
             US_RPT_LUONG v_us = new US_RPT_LUONG();
             DataRow2US(v_dr_luong_1_nv, v_us);
+            v_us.Insert();
+        }
+        public static void insertLuongNV2RPT_V2(DataRow v_dr_luong_1_nv)
+        {
+            US_RPT_LUONG_V2 v_us = new US_RPT_LUONG_V2();
+            DataRow2US_V2(v_dr_luong_1_nv, v_us);
             v_us.Insert();
         }
         //public static void insertLuongNV2RPT_ThaoTacLai(DataRow v_dr_luong_1_nv)

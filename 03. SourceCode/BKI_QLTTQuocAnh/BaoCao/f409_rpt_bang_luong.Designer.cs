@@ -285,7 +285,7 @@
             this.m_cmd_luu_bang_luong.Name = "m_cmd_luu_bang_luong";
             this.m_cmd_luu_bang_luong.Size = new System.Drawing.Size(154, 46);
             this.m_cmd_luu_bang_luong.TabIndex = 10;
-            this.m_cmd_luu_bang_luong.Text = "Xuất bảng lương";
+            this.m_cmd_luu_bang_luong.Text = "Xuất bảng tính lương";
             // 
             // m_bgwk
             // 

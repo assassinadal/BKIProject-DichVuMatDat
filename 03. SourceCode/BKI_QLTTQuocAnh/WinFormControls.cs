@@ -447,6 +447,14 @@ namespace BKI_DichVuMatDat
             v_cstore.addDecimalInputParam("@NAM", ip_dc_nam);
             v_cstore.fillDataSetByCommand(this, ip_ds);
         }
+        public void FillBangLuongV2(DataSet ip_ds, decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
+        {
+            CStoredProc v_cstore = new CStoredProc("PR_RPT_BANG_LUONG_V2");
+            v_cstore.addDecimalInputParam("@ID_NHAN_VIEN", ip_dc_id_nhan_vien);
+            v_cstore.addDecimalInputParam("@THANG", ip_dc_thang);
+            v_cstore.addDecimalInputParam("@NAM", ip_dc_nam);
+            v_cstore.fillDataSetByCommand(this, ip_ds);
+        }
         public void FillThongTinTongHopNhanVien(DataSet ip_ds, decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
         {
             CStoredProc v_cstore = new CStoredProc("pr_rpt_lay_thong_tin_tong_hop_1_nhan_vien");

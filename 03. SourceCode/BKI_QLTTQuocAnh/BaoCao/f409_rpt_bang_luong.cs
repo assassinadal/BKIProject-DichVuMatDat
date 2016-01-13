@@ -178,11 +178,12 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 DataRow v_dr = ip_dt.Rows[i];
                 decimal v_id_nhan_vien = CIPConvert.ToDecimal(v_dr[RPT_LUONG_V2.ID_NHAN_VIEN]);
-                DataRow v_dr_luong = CHRMCommon.get_luong_1_nhan_vien(v_id_nhan_vien, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
+                DataRow v_dr_luong = CHRMCommon.get_luong_1_nhan_vien_v2(v_id_nhan_vien, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
+
                 var v_dr_luong_nv = m_ds_RPT_LUONG_V2.Tables[0].NewRow();
-                DataRow v_dr_luong_1_nv = CHRMCommon.get_dr(v_dr_luong_nv, v_dr_luong, v_id_nhan_vien, i, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
+                DataRow v_dr_luong_1_nv = CHRMCommon.get_dr_v2(v_dr_luong_nv, v_dr_luong, v_id_nhan_vien, i, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
                 m_ds_RPT_LUONG_V2.Tables[0].Rows.Add(v_dr_luong_1_nv);
-                CHRMCommon.insertLuongNV2RPT(v_dr_luong_1_nv);
+                CHRMCommon.insertLuongNV2RPT_V2(v_dr_luong_1_nv);
                 ip_bgw.ReportProgress((i + 1) * 100 / ip_dt.Rows.Count);
             }
         }
@@ -382,15 +383,15 @@ namespace BKI_DichVuMatDat.BaoCao
                 }
                 decimal v_id_nhan_vien = Convert.ToDecimal(m_grv.GetRowCellValue(m_grv.FocusedRowHandle, "ID_NHAN_VIEN"));
 
-                DataRow v_dr_luong = CHRMCommon.get_luong_1_nhan_vien(v_id_nhan_vien, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
+                DataRow v_dr_luong = CHRMCommon.get_luong_1_nhan_vien_v2(v_id_nhan_vien, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
 
                 var v_dr_luong_nv = m_ds_RPT_LUONG_V2.Tables[0].NewRow();
-                DataRow v_dr_luong_1_nv = CHRMCommon.get_dr(v_dr_luong_nv, v_dr_luong, v_id_nhan_vien, 0, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
+                DataRow v_dr_luong_1_nv = CHRMCommon.get_dr_v2(v_dr_luong_nv, v_dr_luong, v_id_nhan_vien, 0, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
 
                 //Xoa ban ghi truoc khi insert lai
                 US_RPT_LUONG_V2 v_us_2_del = new US_RPT_LUONG_V2();
                 v_us_2_del.XoaBanGhiLuong(v_id_nhan_vien, Convert.ToDecimal(m_txt_thang.EditValue), Convert.ToDecimal(m_txt_nam.EditValue));
-                CHRMCommon.insertLuongNV2RPT(v_dr_luong_1_nv);
+                CHRMCommon.insertLuongNV2RPT_V2(v_dr_luong_1_nv);
                 load_data_2_grid();
                 XtraMessageBox.Show("Cập nhật thành công");
             }

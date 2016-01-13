@@ -40,7 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_tinh_lai_cho_nhan_vien = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_tinh_lai = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_bang_luong = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_tinh_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_cmd_chot_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
@@ -103,6 +103,7 @@
             this.colHO_TEN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
@@ -116,6 +117,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.simpleButton1);
             this.panel1.Controls.Add(this.m_cmd_xem_bang_luong);
             this.panel1.Controls.Add(this.m_cmd_xem_thong_tin_tinh_luong);
             this.panel1.Controls.Add(this.m_txt_nam);
@@ -126,12 +128,12 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_cmd_tinh_lai_cho_nhan_vien);
             this.panel1.Controls.Add(this.m_cmd_tinh_lai);
-            this.panel1.Controls.Add(this.m_cmd_bang_luong);
+            this.panel1.Controls.Add(this.m_cmd_tinh_bang_luong);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(1044, 120);
+            this.panel1.Size = new System.Drawing.Size(1044, 96);
             this.panel1.TabIndex = 6;
             // 
             // m_cmd_xem_bang_luong
@@ -170,7 +172,7 @@
             // 
             this.m_lbl_so_luong_nv_tinh_luong.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.m_lbl_so_luong_nv_tinh_luong.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_so_luong_nv_tinh_luong.Location = new System.Drawing.Point(597, 16);
+            this.m_lbl_so_luong_nv_tinh_luong.Location = new System.Drawing.Point(619, 16);
             this.m_lbl_so_luong_nv_tinh_luong.Name = "m_lbl_so_luong_nv_tinh_luong";
             this.m_lbl_so_luong_nv_tinh_luong.Size = new System.Drawing.Size(9, 13);
             this.m_lbl_so_luong_nv_tinh_luong.TabIndex = 12;
@@ -218,7 +220,7 @@
             // 
             // m_cmd_tinh_lai_cho_nhan_vien
             // 
-            this.m_cmd_tinh_lai_cho_nhan_vien.Image = global::BKI_DichVuMatDat.Properties.Resources.sync;
+            this.m_cmd_tinh_lai_cho_nhan_vien.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tinh_lai_cho_nhan_vien.Image")));
             this.m_cmd_tinh_lai_cho_nhan_vien.Location = new System.Drawing.Point(368, 53);
             this.m_cmd_tinh_lai_cho_nhan_vien.Name = "m_cmd_tinh_lai_cho_nhan_vien";
             this.m_cmd_tinh_lai_cho_nhan_vien.Size = new System.Drawing.Size(176, 37);
@@ -236,15 +238,15 @@
             this.m_cmd_tinh_lai.Text = "Tính lại toàn bộ bảng lương";
             this.m_cmd_tinh_lai.Click += new System.EventHandler(this.m_cmd_tinh_lai_Click);
             // 
-            // m_cmd_bang_luong
+            // m_cmd_tinh_bang_luong
             // 
-            this.m_cmd_bang_luong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_bang_luong.Image")));
-            this.m_cmd_bang_luong.Location = new System.Drawing.Point(190, 53);
-            this.m_cmd_bang_luong.Name = "m_cmd_bang_luong";
-            this.m_cmd_bang_luong.Size = new System.Drawing.Size(172, 37);
-            this.m_cmd_bang_luong.TabIndex = 3;
-            this.m_cmd_bang_luong.Text = "Tiếp tục tính bảng lương";
-            this.m_cmd_bang_luong.Click += new System.EventHandler(this.m_cmd_bang_luong_Click);
+            this.m_cmd_tinh_bang_luong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tinh_bang_luong.Image")));
+            this.m_cmd_tinh_bang_luong.Location = new System.Drawing.Point(190, 53);
+            this.m_cmd_tinh_bang_luong.Name = "m_cmd_tinh_bang_luong";
+            this.m_cmd_tinh_bang_luong.Size = new System.Drawing.Size(172, 37);
+            this.m_cmd_tinh_bang_luong.TabIndex = 3;
+            this.m_cmd_tinh_bang_luong.Text = "Tiếp tục tính bảng lương";
+            this.m_cmd_tinh_bang_luong.Click += new System.EventHandler(this.m_cmd_tinh_bang_luong_Click);
             // 
             // panel2
             // 
@@ -366,6 +368,7 @@
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.GroupCount = 1;
             this.m_grv.Name = "m_grv";
+            this.m_grv.OptionsBehavior.AutoExpandAllGroups = true;
             this.m_grv.OptionsBehavior.Editable = false;
             this.m_grv.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDown;
             this.m_grv.OptionsBehavior.ReadOnly = true;
@@ -945,15 +948,24 @@
             // 
             this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc.Location = new System.Drawing.Point(0, 120);
+            this.m_grc.Location = new System.Drawing.Point(0, 96);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
             this.m_grc.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1});
-            this.m_grc.Size = new System.Drawing.Size(1044, 315);
+            this.m_grc.Size = new System.Drawing.Size(1044, 339);
             this.m_grc.TabIndex = 8;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(743, 53);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(187, 37);
+            this.simpleButton1.TabIndex = 17;
+            this.simpleButton1.Text = "Import Excel lương";
             // 
             // f409_rpt_bang_luong
             // 
@@ -965,7 +977,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "f409_rpt_bang_luong";
-            this.Text = "F409 - Bảng lương nhân viên";
+            this.Text = "F409 - Tính Bảng lương nhân viên";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
@@ -992,7 +1004,7 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tinh_lai_cho_nhan_vien;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tinh_lai;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_bang_luong;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_tinh_bang_luong;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chot_bang_luong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_luu_bang_luong;
@@ -1055,6 +1067,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHO_TEN;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xem_bang_luong;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

@@ -354,12 +354,6 @@ namespace BKI_DichVuMatDat.US
         #region Thông báo các form
         public const int ERROR_DU_LIEU_NHAP_CHUA_HOP_LE = 14;
         #endregion
-
-        
-
-
-
-        
     }
 
     public static class CONST_ID_TRANG_THAI_LAO_DONG

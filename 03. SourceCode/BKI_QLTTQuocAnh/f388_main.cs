@@ -15,6 +15,8 @@ using BKI_DichVuMatDat.BaoCao;
 using BKI_DichVuMatDat.DanhMuc;
 using BKI_DichVuMatDat.HeThong;
 using BKI_DichVuMatDat.DS.CDBNames;
+using System.Deployment;
+using System.Deployment.Application;
 
 namespace BKI_DichVuMatDat
 {
@@ -117,7 +119,22 @@ namespace BKI_DichVuMatDat
             var server = System.Configuration.ConfigurationManager.AppSettings["SERVER"];
             var username = CAppContext_201.getCurrentUserName();
             var dbname = System.Configuration.ConfigurationManager.AppSettings["INITIAL_DATABASE"];
-            barStaticItemServer.Caption = "Server: " + server + " | Username: " + username + " | DB: " + dbname;
+
+            Version myVersion;
+            string myVersionText = "";
+            if(ApplicationDeployment.IsNetworkDeployed)
+            {
+                myVersion = ApplicationDeployment.CurrentDeployment.CurrentVersion;
+                myVersionText = string.Concat("v", myVersion);
+            }
+            if(CAppContext_201.getCurrentUserID() == 1)
+            {
+                barStaticItemServer.Caption = "Server: " + server + " | Username: " + username + " | DB: " + dbname + " | Version: " + myVersionText;
+            }
+            else
+            {
+                barStaticItemServer.Caption = "Username: " + username  + " | Version: " + myVersionText;
+            }
         }
         #endregion
 

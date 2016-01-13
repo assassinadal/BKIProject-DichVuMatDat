@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<DatasetMsg xmlns="http://tempuri.org/DatasetMsg.xsd">
+  <Message>
+    <Message>Mật khẩu cũ không đúng!</Message>
+    <ID>280</ID>
+  </Message>
+  <Message>
+    <Message>Việc nhập lại mật khẩu mới chưa đúng!</Message>
+    <ID>281</ID>
+  </Message>
+  <Message>
+    <Message>Đã đổi mật khẩu thành công!</Message>
+    <ID>282</ID>
+  </Message>
+  <Message>
+    <Message>Đã cấp hết quyền!</Message>
+    <ID>283</ID>
+  </Message>
+  <Message>
+    <Message>Không còn quyền đã cấp để chuyển!</Message>
+    <ID>284</ID>
+  </Message>
+  <Message>
+    <Message>Mật khẩu gõ chưa chính xác!</Message>
+    <ID>285</ID>
+  </Message>
+  <Message>
+    <Message>Bạn có chắc chắn muốn phục hồi dữ liệu tại thời điểm này. Khi phục hồi thì các dữ liệu sau ngày tạo file lưu trữ này sẽ biến mất!</Message>
+    <ID>286</ID>
+  </Message>
+  <Message>
+    <Message>Restore dữ liệu thành công</Message>
+    <ID>287</ID>
+  </Message>
+  <Message>
+    <Message>Backup dữ liệu thành công</Message>
+    <ID>288</ID>
+  </Message>
+</DatasetMsg>

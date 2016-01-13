@@ -31,7 +31,7 @@ namespace BKI_DichVuMatDat
 
         private static DatasetMsg m_DataSet = new DatasetMsg();
         private static Users_DataSet m_dsUser = new Users_DataSet();
-        private const string c_strUserFileName = "NumOfMessage.XML";
+        private const string c_strUserFileName = @"XML_MESSAGE\NumOfMessage.XML";
         private const string c_InfoMsgString = "THÔNG BÁO";
         private const string c_ErrorMsgString = "THÔNG BÁO LỖI";
         private const string c_ConfirmMsgString = "XÁC NHẬN LẠI";
@@ -40,7 +40,7 @@ namespace BKI_DichVuMatDat
         //Các thông số liên quan đến chế độ chạy
         private const string c_RunApp = "RUN";
 
-        private const string c_DeburgMode = "DEBURG";
+        private const string c_DeburgMode = "DEBUG";
         public enum MsgBtnType : int
         {
             MsgBtnOK = 0,
@@ -86,7 +86,7 @@ namespace BKI_DichVuMatDat
         private static void LoadMessagesData(decimal i_NumOFMsg)
         {
             string v_strWhere = null;
-            string v_FileName = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
+            string v_FileName = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "XML_MESSAGE\\";
             v_strWhere = "(FromNum <= " + i_NumOFMsg + ") and (" + i_NumOFMsg + " < ToNum)";
             DataView v_dvUserData = new DataView(m_dsUser.Users_DataSet, v_strWhere, "", DataViewRowState.CurrentRows);
             if (v_dvUserData.Count > 0)

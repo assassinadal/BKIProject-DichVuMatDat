@@ -1317,6 +1317,7 @@
     <None Include="Resources\upload.ico" />
     <None Include="Resources\sum.ico" />
     <None Include="Resources\sum1.ico" />
+    <None Include="Resources\sync.ico" />
     <Content Include="Template\ChamCong.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

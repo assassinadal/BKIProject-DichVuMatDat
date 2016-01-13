@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f409_rpt_bang_luong));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_xem_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xem_thong_tin_tinh_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
             this.m_lbl_so_luong_nv_tinh_luong = new DevExpress.XtraEditors.LabelControl();
@@ -115,6 +116,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cmd_xem_bang_luong);
             this.panel1.Controls.Add(this.m_cmd_xem_thong_tin_tinh_luong);
             this.panel1.Controls.Add(this.m_txt_nam);
             this.panel1.Controls.Add(this.m_lbl_so_luong_nv_tinh_luong);
@@ -132,9 +134,19 @@
             this.panel1.Size = new System.Drawing.Size(1044, 120);
             this.panel1.TabIndex = 6;
             // 
+            // m_cmd_xem_bang_luong
+            // 
+            this.m_cmd_xem_bang_luong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xem_bang_luong.Image")));
+            this.m_cmd_xem_bang_luong.Location = new System.Drawing.Point(16, 53);
+            this.m_cmd_xem_bang_luong.Name = "m_cmd_xem_bang_luong";
+            this.m_cmd_xem_bang_luong.Size = new System.Drawing.Size(172, 37);
+            this.m_cmd_xem_bang_luong.TabIndex = 16;
+            this.m_cmd_xem_bang_luong.Text = "Xem bảng lương";
+            this.m_cmd_xem_bang_luong.Click += new System.EventHandler(this.m_cmd_xem_bang_luong_Click);
+            // 
             // m_cmd_xem_thong_tin_tinh_luong
             // 
-            this.m_cmd_xem_thong_tin_tinh_luong.Location = new System.Drawing.Point(16, 43);
+            this.m_cmd_xem_thong_tin_tinh_luong.Location = new System.Drawing.Point(351, 11);
             this.m_cmd_xem_thong_tin_tinh_luong.Name = "m_cmd_xem_thong_tin_tinh_luong";
             this.m_cmd_xem_thong_tin_tinh_luong.Size = new System.Drawing.Size(131, 23);
             this.m_cmd_xem_thong_tin_tinh_luong.TabIndex = 14;
@@ -158,7 +170,7 @@
             // 
             this.m_lbl_so_luong_nv_tinh_luong.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.m_lbl_so_luong_nv_tinh_luong.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_so_luong_nv_tinh_luong.Location = new System.Drawing.Point(308, 48);
+            this.m_lbl_so_luong_nv_tinh_luong.Location = new System.Drawing.Point(597, 16);
             this.m_lbl_so_luong_nv_tinh_luong.Name = "m_lbl_so_luong_nv_tinh_luong";
             this.m_lbl_so_luong_nv_tinh_luong.Size = new System.Drawing.Size(9, 13);
             this.m_lbl_so_luong_nv_tinh_luong.TabIndex = 12;
@@ -167,7 +179,7 @@
             // m_lbl_thong_bao
             // 
             this.m_lbl_thong_bao.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_thong_bao.Location = new System.Drawing.Point(175, 48);
+            this.m_lbl_thong_bao.Location = new System.Drawing.Point(488, 16);
             this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
             this.m_lbl_thong_bao.Size = new System.Drawing.Size(85, 13);
             this.m_lbl_thong_bao.TabIndex = 11;
@@ -206,18 +218,18 @@
             // 
             // m_cmd_tinh_lai_cho_nhan_vien
             // 
-            this.m_cmd_tinh_lai_cho_nhan_vien.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tinh_lai_cho_nhan_vien.Image")));
-            this.m_cmd_tinh_lai_cho_nhan_vien.Location = new System.Drawing.Point(194, 74);
+            this.m_cmd_tinh_lai_cho_nhan_vien.Image = global::BKI_DichVuMatDat.Properties.Resources.sync;
+            this.m_cmd_tinh_lai_cho_nhan_vien.Location = new System.Drawing.Point(368, 53);
             this.m_cmd_tinh_lai_cho_nhan_vien.Name = "m_cmd_tinh_lai_cho_nhan_vien";
-            this.m_cmd_tinh_lai_cho_nhan_vien.Size = new System.Drawing.Size(219, 37);
+            this.m_cmd_tinh_lai_cho_nhan_vien.Size = new System.Drawing.Size(176, 37);
             this.m_cmd_tinh_lai_cho_nhan_vien.TabIndex = 3;
-            this.m_cmd_tinh_lai_cho_nhan_vien.Text = "Tính lại bảng lương cho nhân viên";
+            this.m_cmd_tinh_lai_cho_nhan_vien.Text = "Tính lại lương cho nhân viên";
             this.m_cmd_tinh_lai_cho_nhan_vien.Click += new System.EventHandler(this.m_cmd_tinh_lai_cho_nhan_vien_Click);
             // 
             // m_cmd_tinh_lai
             // 
             this.m_cmd_tinh_lai.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tinh_lai.Image")));
-            this.m_cmd_tinh_lai.Location = new System.Drawing.Point(419, 74);
+            this.m_cmd_tinh_lai.Location = new System.Drawing.Point(550, 53);
             this.m_cmd_tinh_lai.Name = "m_cmd_tinh_lai";
             this.m_cmd_tinh_lai.Size = new System.Drawing.Size(187, 37);
             this.m_cmd_tinh_lai.TabIndex = 3;
@@ -227,7 +239,7 @@
             // m_cmd_bang_luong
             // 
             this.m_cmd_bang_luong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_bang_luong.Image")));
-            this.m_cmd_bang_luong.Location = new System.Drawing.Point(16, 74);
+            this.m_cmd_bang_luong.Location = new System.Drawing.Point(190, 53);
             this.m_cmd_bang_luong.Name = "m_cmd_bang_luong";
             this.m_cmd_bang_luong.Size = new System.Drawing.Size(172, 37);
             this.m_cmd_bang_luong.TabIndex = 3;
@@ -413,6 +425,7 @@
             // 
             this.colTEN_DON_VI.Caption = "Đơn vị";
             this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
+            this.colTEN_DON_VI.FieldNameSortGroup = "THU_TU_DON_VI";
             this.colTEN_DON_VI.Name = "colTEN_DON_VI";
             this.colTEN_DON_VI.Visible = true;
             this.colTEN_DON_VI.Width = 110;
@@ -924,6 +937,7 @@
             // 
             this.colHO_TEN.Caption = "Họ tên";
             this.colHO_TEN.FieldName = "HO_TEN";
+            this.colHO_TEN.FieldNameSortGroup = "TEN";
             this.colHO_TEN.Name = "colHO_TEN";
             this.colHO_TEN.Visible = true;
             // 
@@ -1040,6 +1054,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHO_TEN;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_xem_bang_luong;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

@@ -22,7 +22,7 @@ namespace BKI_DichVuMatDat.BaoCao
 {
     public partial class f409_rpt_bang_luong : Form
     {
-        
+
         #region Public Interface
         public f409_rpt_bang_luong()
         {
@@ -67,7 +67,7 @@ namespace BKI_DichVuMatDat.BaoCao
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_RPT_LUONG_V2 WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim()+" order by THU_TU_DON_VI, TEN, HO_DEM");
+            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_RPT_LUONG_V2 WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim() + " order by THU_TU_DON_VI, TEN, HO_DEM");
             m_grc.DataSource = v_ds.Tables[0];
         }
 
@@ -154,7 +154,7 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             return false;
         }
-        
+
 
         //Action
         private void tinh_bang_luong(BackgroundWorker ip_bgw)
@@ -174,7 +174,7 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         private void tinh_bang_luong_tat_ca_nhan_vien(DataTable ip_dt, BackgroundWorker ip_bgw)
         {
-            for (int i = 0; i < ip_dt.Rows.Count; i++)
+            for(int i = 0; i < ip_dt.Rows.Count; i++)
             {
                 DataRow v_dr = ip_dt.Rows[i];
                 decimal v_id_nhan_vien = CIPConvert.ToDecimal(v_dr[RPT_LUONG_V2.ID_NHAN_VIEN]);
@@ -288,7 +288,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 m_e_bang_luong_status = e_bang_luong_status.DA_TINH;
             }
         }
-        
+
         #endregion
 
         #region Event Handle
@@ -303,7 +303,7 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 start_tinh_luong_process();
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -315,7 +315,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 BackgroundWorker v_obj_worker = sender as BackgroundWorker;
                 tinh_bang_luong(v_obj_worker);
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Có tý tẹo vấn đề. Bạn chụp ảnh và gửi để chúng tôi hỗ trợ nhé!" + v_e.ToString());
             }
@@ -420,7 +420,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 load_data_2_grid();
                 hien_thi_thong_tin_qtr_tinh_luong();
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -451,6 +451,6 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         #endregion
 
-        
+
     }
 }

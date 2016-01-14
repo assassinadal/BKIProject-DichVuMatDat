@@ -1028,9 +1028,10 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string DON_VI = "DON_VI";
     }
 
-
-
-
-
+    public class THAM_SO_TINH_BANG_LUONG
+    {
+        public const string CO_DON_VI_CONG_TAC = "CO_DON_VI_CONG_TAC";
+        public const string DA_CHAM_CONG = "DA_CHAM_CONG";
+    }
 
 }

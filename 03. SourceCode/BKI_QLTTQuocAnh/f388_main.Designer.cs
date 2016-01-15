@@ -129,11 +129,14 @@
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -143,9 +146,6 @@
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
-            this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -1151,6 +1151,13 @@
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "LƯƠNG & CHẤM CÔNG";
             // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.m_cmd_bang_luong_nv);
+            this.ribbonPageGroup9.ItemLinks.Add(this.m_cmd_bang_luong);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "Tính lương";
+            // 
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_cham_cong_nv);
@@ -1171,13 +1178,6 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_thuong_2014);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Thu nhập khác";
-            // 
-            // ribbonPageGroup9
-            // 
-            this.ribbonPageGroup9.ItemLinks.Add(this.m_cmd_bang_luong_nv);
-            this.ribbonPageGroup9.ItemLinks.Add(this.m_cmd_bang_luong);
-            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            this.ribbonPageGroup9.Text = "Tính lương";
             // 
             // ribbonPage4
             // 
@@ -1202,6 +1202,32 @@
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_bao_cao_dieu_kien_tinh_luong);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Báo cáo nhân sự";
+            // 
+            // ribbonPage6
+            // 
+            this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup13,
+            this.ribbonPageGroup14});
+            this.ribbonPage6.Name = "ribbonPage6";
+            this.ribbonPage6.Text = "BÁO CÁO LƯƠNG";
+            // 
+            // ribbonPageGroup13
+            // 
+            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_bao_cao_tong_hop);
+            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_bao_cao_tong_hop_v2);
+            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_quyet_toan_the_nam);
+            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_bc_nam);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            this.ribbonPageGroup13.Text = "Tổng hợp";
+            // 
+            // ribbonPageGroup14
+            // 
+            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_he_so_bang_luong_thang);
+            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_luong_theo_don_vi);
+            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bc_thu_lao_hdqt);
+            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bc_cac_thang_da_chot_bang_luong);
+            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
+            this.ribbonPageGroup14.Text = "Khác";
             // 
             // ribbonStatusBar
             // 
@@ -1263,12 +1289,12 @@
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel1.ID = new System.Guid("1e0cc779-2952-469d-b59f-b102440e1fde");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel1.Location = new System.Drawing.Point(1030, 144);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(224, 200);
             this.dockPanel1.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel1.SavedIndex = 0;
-            this.dockPanel1.Size = new System.Drawing.Size(224, 274);
+            this.dockPanel1.Size = new System.Drawing.Size(224, 256);
             this.dockPanel1.Text = "Cảnh báo";
             this.dockPanel1.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
             // 
@@ -1277,7 +1303,7 @@
             this.dockPanel1_Container.Controls.Add(this.m_lbl_canh_bao_het_han_hop_dong);
             this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(216, 247);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(216, 229);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // m_lbl_canh_bao_het_han_hop_dong
@@ -1289,32 +1315,6 @@
             this.m_lbl_canh_bao_het_han_hop_dong.TabIndex = 10;
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
-            // 
-            // ribbonPage6
-            // 
-            this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup13,
-            this.ribbonPageGroup14});
-            this.ribbonPage6.Name = "ribbonPage6";
-            this.ribbonPage6.Text = "BÁO CÁO LƯƠNG";
-            // 
-            // ribbonPageGroup13
-            // 
-            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_bao_cao_tong_hop);
-            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_bao_cao_tong_hop_v2);
-            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_quyet_toan_the_nam);
-            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_bc_nam);
-            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
-            this.ribbonPageGroup13.Text = "Tổng hợp";
-            // 
-            // ribbonPageGroup14
-            // 
-            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_he_so_bang_luong_thang);
-            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_luong_theo_don_vi);
-            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bc_thu_lao_hdqt);
-            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bc_cac_thang_da_chot_bang_luong);
-            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
-            this.ribbonPageGroup14.Text = "Khác";
             // 
             // f388_main
             // 

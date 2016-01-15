@@ -926,11 +926,6 @@
       <DependentUpon>frm356_chuyen_trang_thai_lao_dong.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="f388_main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -945,6 +940,34 @@
     </Compile>
     <Compile Include="WinFormControls.cs" />
     <Compile Include="CHRM_BaseMessages210.cs" />
+    <None Include="Resources\1425904361_23923.ico" />
+    <None Include="Resources\1425904406_289616.ico" />
+    <None Include="Resources\1425904521_438788.ico" />
+    <None Include="Resources\1425904521_4387881.ico" />
+    <None Include="Resources\1425904625_416404.ico" />
+    <None Include="Resources\1425904783_54524.ico" />
+    <None Include="Resources\1425904832_45433.ico" />
+    <None Include="Resources\1425904874_44824.ico" />
+    <None Include="Resources\1425904874_448241.ico" />
+    <None Include="Resources\1425905213_379332.ico" />
+    <None Include="Resources\1425905405_243979.ico" />
+    <None Include="Resources\1425905592_196740.ico" />
+    <None Include="Resources\1425905865_103845.ico" />
+    <None Include="Resources\1425905897_25350.ico" />
+    <None Include="Resources\1425905897_253501.ico" />
+    <None Include="Resources\1425906098_24333.ico" />
+    <None Include="Resources\1425906136_315167.ico" />
+    <None Include="Resources\1425906224_17014.ico" />
+    <None Include="Resources\1425912499_173055.ico" />
+    <None Include="Resources\1441439378_06.ico" />
+    <None Include="Resources\1441820610_23.ico" />
+    <None Include="Resources\1441820884_coin-delete.ico" />
+    <None Include="Resources\1444999351_banker.ico" />
+    <None Include="Resources\1447274005_calculator.ico" />
+    <None Include="Resources\1450117506_edit-clear.ico" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\refresh1.png" />
     <Content Include="XML_MESSAGE\bao_cao.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1290,7 +1313,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="f388_main.resx">
       <DependentUpon>f388_main.cs</DependentUpon>
@@ -1457,70 +1479,13 @@
     <None Include="Resources\Icons8-Windows-8-Users-Enter-2.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1425904361_23923.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425904406_289616.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425904521_438788.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425904625_416404.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425904783_54524.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425904874_44824.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425905213_379332.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425905405_243979.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Designbolts-Monsters-University-Monsters-Character-Young-Mikes1.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425905592_196740.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icons8-Ios7-Household-Room1.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1425904832_45433.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425904874_448241.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425905865_103845.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425905897_25350.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425904521_4387881.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425906136_315167.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425906224_17014.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425906098_24333.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425912499_173055.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logo-web.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1425905897_253501.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo luyen thi V4.0.png" />
@@ -1764,18 +1729,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1441439378_06.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1441820610_23.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1441820884_coin-delete.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1444999351_banker.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icon backup.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1920,9 +1873,6 @@
     <None Include="Resources\paper133%281%29.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1447274005_calculator.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\accounting.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -1952,7 +1902,6 @@
   <ItemGroup>
     <None Include="Resources\add.ico" />
     <None Include="Resources\forward.ico" />
-    <None Include="Resources\1450117506_edit-clear.ico" />
     <None Include="Resources\edit-clear.png" />
     <None Include="Resources\brush_24.png" />
     <None Include="Resources\delete_24.png" />

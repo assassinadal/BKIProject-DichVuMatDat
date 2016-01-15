@@ -187,8 +187,7 @@
             this.layoutControl1.Text = "layoutControl1";
             // 
             // m_cmd_xoa_du_lieu_thuong_nv
-            // 
-            this.m_cmd_xoa_du_lieu_thuong_nv.Image = global::BKI_DichVuMatDat.Properties.Resources.Refresh1;
+            //             
             this.m_cmd_xoa_du_lieu_thuong_nv.Location = new System.Drawing.Point(602, 46);
             this.m_cmd_xoa_du_lieu_thuong_nv.Name = "m_cmd_xoa_du_lieu_thuong_nv";
             this.m_cmd_xoa_du_lieu_thuong_nv.Size = new System.Drawing.Size(179, 30);

@@ -307,7 +307,7 @@
             // 
             // m_cmd_save
             // 
-            this.m_cmd_save.Image = global::BKI_DichVuMatDat.Properties.Resources.Save;
+            this.m_cmd_save.Image = global::BKI_DichVuMatDat.Properties.Resources.Save;            
             this.m_cmd_save.Location = new System.Drawing.Point(12, 204);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(116, 41);

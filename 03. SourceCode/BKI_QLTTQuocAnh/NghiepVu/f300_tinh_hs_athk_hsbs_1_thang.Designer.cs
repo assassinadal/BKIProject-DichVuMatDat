@@ -175,8 +175,7 @@
             this.m_txt_thang.TabIndex = 9;
             // 
             // m_cmd_tinh_lai_he_so
-            // 
-            this.m_cmd_tinh_lai_he_so.Image = global::BKI_DichVuMatDat.Properties.Resources.Refresh;
+            //             
             this.m_cmd_tinh_lai_he_so.Location = new System.Drawing.Point(12, 38);
             this.m_cmd_tinh_lai_he_so.Name = "m_cmd_tinh_lai_he_so";
             this.m_cmd_tinh_lai_he_so.Size = new System.Drawing.Size(130, 30);

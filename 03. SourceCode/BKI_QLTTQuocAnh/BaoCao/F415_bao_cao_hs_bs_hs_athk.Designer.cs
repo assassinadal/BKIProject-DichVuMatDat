@@ -163,8 +163,7 @@
             // 
             // m_cmd_tinh_lai
             // 
-            this.m_cmd_tinh_lai.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_tinh_lai.Image = global::BKI_DichVuMatDat.Properties.Resources.Refresh;
+            this.m_cmd_tinh_lai.Dock = System.Windows.Forms.DockStyle.Right;            
             this.m_cmd_tinh_lai.Location = new System.Drawing.Point(633, 4);
             this.m_cmd_tinh_lai.Name = "m_cmd_tinh_lai";
             this.m_cmd_tinh_lai.Size = new System.Drawing.Size(116, 35);

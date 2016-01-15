@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IP.Core.IPCommon;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,7 @@ namespace BKI_DichVuMatDat.HeThong
             tong_thu = 1,
             tri_tra = 2,
             thuc_linh = 3,
-            tro_giup = 4,            
+            tro_giup = 4,
         }
         #endregion DataStructs
 
@@ -36,13 +37,13 @@ namespace BKI_DichVuMatDat.HeThong
 
         #region Private methods
         private void format_controls()
-        {            
+        {
             set_define_events();
             this.MaximizeBox = true;
             this.MinimizeBox = true;
             this.ShowInTaskbar = true;
             this.HelpButton = false;
-            m_panel_hide.Height = 16;
+            m_panel_hide.Height = 23;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             m_tab.SelectedTab = m_tabPage_thuc_linh;
             set_active_button(button_enum.thuc_linh);
@@ -54,7 +55,7 @@ namespace BKI_DichVuMatDat.HeThong
             m_cmd_quy_trinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(12)))), ((int)(((byte)(21)))));
             m_cmd_thuc_linh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(12)))), ((int)(((byte)(21)))));
             m_cmd_tong_thu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(12)))), ((int)(((byte)(21)))));
-            m_cmd_tong_tri_tra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(12)))), ((int)(((byte)(21)))));            
+            m_cmd_tong_tri_tra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(12)))), ((int)(((byte)(21)))));
             switch (i_e_button)
             {
                 case button_enum.thuc_linh:
@@ -68,16 +69,72 @@ namespace BKI_DichVuMatDat.HeThong
                     break;
                 case button_enum.tro_giup:
                     m_cmd_quy_trinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(46)))));
-                    break;                
+                    break;
             }
 
         }
 
         private void set_define_events()
         {
-
+            m_cmd_tong_thu.Click += m_cmd_tong_thu_Click;
+            m_cmd_quy_trinh.Click += m_cmd_quy_trinh_Click;
+            m_cmd_thuc_linh.Click += m_cmd_thuc_linh_Click;
+            m_cmd_tong_tri_tra.Click += m_cmd_tong_tri_tra_Click;
         }
 
         #endregion Private methods
+
+        #region Events
+        void m_cmd_tong_tri_tra_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_tab.SelectedTab = m_tabPage_khoan_tri_tra;
+                set_active_button(button_enum.tri_tra);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_thuc_linh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_tab.SelectedTab = m_tabPage_thuc_linh;
+                set_active_button(button_enum.thuc_linh);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_quy_trinh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                set_active_button(button_enum.tro_giup);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_tong_thu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_tab.SelectedTab = m_tabPage_tong_thu_nhap;
+                set_active_button(button_enum.tong_thu);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        #endregion Events
     }
 }

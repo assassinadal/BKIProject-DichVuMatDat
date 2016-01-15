@@ -932,6 +932,11 @@
     <Compile Include="f388_main.Designer.cs">
       <DependentUpon>f388_main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Report\F800_ReportBangLuong.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1008,7 +1013,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\Refresh.gif" />
-    <None Include="Resources\Refresh.png" />
     <None Include="Resources\Modify.ico" />
     <None Include="Resources\View.ico" />
     <None Include="Resources\Save1.ico" />
@@ -1313,6 +1317,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="f388_main.resx">
       <DependentUpon>f388_main.cs</DependentUpon>

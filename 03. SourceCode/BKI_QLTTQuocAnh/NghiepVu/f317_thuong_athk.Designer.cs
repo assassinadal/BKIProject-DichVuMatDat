@@ -298,8 +298,7 @@
             this.gridColumn7.Width = 99;
             // 
             // m_cmd_xoa_tien_thuong_nv
-            // 
-            this.m_cmd_xoa_tien_thuong_nv.Image = global::BKI_DichVuMatDat.Properties.Resources.Refresh;
+            //             
             this.m_cmd_xoa_tien_thuong_nv.Location = new System.Drawing.Point(303, 70);
             this.m_cmd_xoa_tien_thuong_nv.Name = "m_cmd_xoa_tien_thuong_nv";
             this.m_cmd_xoa_tien_thuong_nv.Size = new System.Drawing.Size(165, 30);

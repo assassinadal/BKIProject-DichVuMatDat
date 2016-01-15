@@ -54,23 +54,23 @@ namespace BKI_DichVuMatDat.HeThong
         private void set_active_button(button_enum i_e_button)
         {
 
-            m_cmd_quy_trinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(12)))), ((int)(((byte)(21)))));
-            m_cmd_thuc_linh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(12)))), ((int)(((byte)(21)))));
-            m_cmd_tong_thu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(12)))), ((int)(((byte)(21)))));
-            m_cmd_tong_tri_tra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(12)))), ((int)(((byte)(21)))));
+            m_cmd_quy_trinh.BackColor = Color.DodgerBlue;
+            m_cmd_thuc_linh.BackColor = Color.DodgerBlue;
+            m_cmd_tong_thu.BackColor = Color.DodgerBlue;
+            m_cmd_tong_tri_tra.BackColor = Color.DodgerBlue;
             switch (i_e_button)
             {
                 case button_enum.thuc_linh:
-                    m_cmd_thuc_linh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+                    m_cmd_thuc_linh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
                     break;
                 case button_enum.tong_thu:
-                    m_cmd_tong_thu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+                    m_cmd_tong_thu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
                     break;
                 case button_enum.tri_tra:
-                    m_cmd_tong_tri_tra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+                    m_cmd_tong_tri_tra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
                     break;
                 case button_enum.tro_giup:
-                    m_cmd_quy_trinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(46)))));
+                    m_cmd_quy_trinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
                     break;
             }
 

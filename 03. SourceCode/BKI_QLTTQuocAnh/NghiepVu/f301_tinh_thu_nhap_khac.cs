@@ -141,7 +141,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             for(int v_i_row = 0; v_i_row < v_i_row_count; v_i_row++)
             {
-                var v_so_tien_tren_hang = Convert.ToDecimal(m_grv_main.GetRowCellValue(v_i_row_count, "THANH_TIEN"));
+                var v_so_tien_tren_hang = Convert.ToDecimal(m_grv_main.GetDataRow(v_i_row)["THANH_TIEN"]);
                 v_tong_tien_tren_grid = v_tong_tien_tren_grid + v_so_tien_tren_hang;
             }
             return v_tong_tien_tren_grid;
@@ -394,6 +394,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 item["THUE_PHAI_NOP"] = v_thue_phai_nop;
                 item["THUC_LINH"] = v_thuc_linh;
             }
+            m_grc_main.RefreshDataSource();
         }
 
         private void set_define_event()

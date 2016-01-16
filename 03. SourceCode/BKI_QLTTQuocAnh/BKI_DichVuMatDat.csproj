@@ -979,6 +979,15 @@
     <None Include="Resources\eye.png" />
     <None Include="Resources\play.png" />
     <None Include="Resources\refresh1.png" />
+    <None Include="Resources\refresh2.png" />
+    <None Include="Resources\male-user.png" />
+    <None Include="Resources\grid.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\dvmd_download.png" />
+    <None Include="Resources\dvmd_upload.png" />
+    <None Include="Resources\dvmd_info.png" />
+    <None Include="Resources\trash.png" />
+    <None Include="Resources\trash1.png" />
     <Content Include="XML_MESSAGE\bao_cao.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

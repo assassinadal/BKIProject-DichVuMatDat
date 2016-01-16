@@ -41,6 +41,13 @@ namespace BKI_DichVuMatDat.BaoCao
             DA_TINH,
             CHUA_TINH
         }
+        enum E_THAO_TAC_CHON
+        {
+            IMPORT_EXCEL = 0,
+            XUAT_EXCEL = 1,
+            CHOT_BANG_LUONG = 2,
+            XEM_BANG_LUONG=3
+        }
         #endregion
 
         #region Members
@@ -354,6 +361,33 @@ namespace BKI_DichVuMatDat.BaoCao
             ip_us_luong_v2.dcTHUC_LINH = ip_us_luong_v2.dcTONG_THU_NHAP_TRONG_LUONG - ip_us_luong_v2.dcTONG_PHAI_NOP;
         }
 
+
+        //procudure & funcion new
+        private void tinh_bang_luong()
+        {
+            //case 1: Tinh tu dau
+            //case 2: Tinh tiep 
+        }
+        private void xem_bang_luong()
+        {
+
+        }
+        private void xem_thong_tin_tinh_luong()
+        {
+
+        }
+        private void luu_bang_luong()
+        {
+
+        }
+        private void xuat_excel_bang_luong()
+        {
+
+        }
+        private void import_excel_bang_luong()
+        {
+
+        }
         #endregion
 
         #region Event Handle
@@ -538,6 +572,44 @@ namespace BKI_DichVuMatDat.BaoCao
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void m_lbl_thong_bao_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_lbl_so_luong_nv_tinh_luong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void popupGalleryEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
+        {
+            try
+            {
+                PopupGalleryEdit v_p = sender as PopupGalleryEdit;
+                switch(e.CloseMode)
+                {
+                    case PopupCloseMode.ButtonClick:
+                        break;
+                    case PopupCloseMode.Cancel:
+                        break;
+                    case PopupCloseMode.CloseUpKey:
+                        break;
+                    case PopupCloseMode.Immediate:
+                        break;
+                    case PopupCloseMode.Normal:
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         #endregion
+
+       
     }
 }

@@ -640,6 +640,12 @@
     <Compile Include="HeThong\f301_quy_trinh_tinh_luong_v2.Designer.cs">
       <DependentUpon>f301_quy_trinh_tinh_luong_v2.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeThong\f301_quy_trinh_tinh_luong_v3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f301_quy_trinh_tinh_luong_v3.Designer.cs">
+      <DependentUpon>f301_quy_trinh_tinh_luong_v3.cs</DependentUpon>
+    </Compile>
     <Compile Include="HeThong\f306_HT_USER_GROUP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1162,6 +1168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f301_quy_trinh_tinh_luong_v2.resx">
       <DependentUpon>f301_quy_trinh_tinh_luong_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f301_quy_trinh_tinh_luong_v3.resx">
+      <DependentUpon>f301_quy_trinh_tinh_luong_v3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f306_HT_USER_GROUP.resx">
       <DependentUpon>f306_HT_USER_GROUP.cs</DependentUpon>

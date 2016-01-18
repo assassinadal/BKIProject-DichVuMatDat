@@ -215,8 +215,12 @@ namespace BKI_DichVuMatDat
             {
                 //F401_he_so_bao_cao_luong v_frm = new F401_he_so_bao_cao_luong();
                 //f301_quy_trinh_tinh_luong_v2 v_frm = new f301_quy_trinh_tinh_luong_v2();
-                f301_quy_trinh_tinh_luong_v3 v_frm = new f301_quy_trinh_tinh_luong_v3();
-                if (IsExistFormName(v_frm)) return;
+                //f301_quy_trinh_tinh_luong_v3 v_frm = new f301_quy_trinh_tinh_luong_v3();
+                //if (IsExistFormName(v_frm)) return;
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
+                f301_quy_trinh_tinh_luong_v2 v_frm = new f301_quy_trinh_tinh_luong_v2();
+                if(IsExistFormName(v_frm)) return;
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }

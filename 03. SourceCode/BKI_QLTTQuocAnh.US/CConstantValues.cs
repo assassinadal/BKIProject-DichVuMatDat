@@ -4,6 +4,11 @@ using System.Text;
 
 namespace BKI_DichVuMatDat.US
 {
+    public enum ENUM_CONFIRM_TINH_BANG_LUONG
+    {
+        TINH_LAI_TOAN_BO,
+        TINH_NHAN_VIEN_CHUA_CO
+    }
     public class CONST_TRANG_THAI_LD
     {
         public const decimal DANG_LAM_VIEC = 167;

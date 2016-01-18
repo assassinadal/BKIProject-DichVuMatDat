@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f409_rpt_bang_luong));
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem1 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem2 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem3 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem4 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f409_rpt_bang_luong));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.imageCollection = new DevExpress.Utils.ImageCollection();
             this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_chot_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -47,7 +49,6 @@
             this.m_cmd_xem_thong_tin_tinh_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_lbl_so_luong_nv_tinh_luong = new DevExpress.XtraEditors.LabelControl();
             this.popupGalleryEdit = new DevExpress.XtraEditors.PopupGalleryEdit();
-            this.imageCollection = new DevExpress.Utils.ImageCollection();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xem_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_tinh_lai_cho_nhan_vien = new DevExpress.XtraEditors.SimpleButton();
@@ -156,14 +157,13 @@
             this.m_grc_main = new DevExpress.XtraGrid.GridControl();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupGalleryEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).BeginInit();
@@ -191,6 +191,33 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(1257, 92);
             this.panel1.TabIndex = 6;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageIndex = 12;
+            this.simpleButton2.ImageList = this.imageCollection;
+            this.simpleButton2.Location = new System.Drawing.Point(457, 8);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(125, 29);
+            this.simpleButton2.TabIndex = 22;
+            this.simpleButton2.Text = "Lưu bảng lương";
+            // 
+            // imageCollection
+            // 
+            this.imageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection.ImageStream")));
+            this.imageCollection.Images.SetKeyName(0, "dvmd_download.png");
+            this.imageCollection.Images.SetKeyName(1, "dvmd_upload.png");
+            this.imageCollection.Images.SetKeyName(2, "lock.png");
+            this.imageCollection.Images.SetKeyName(3, "refresh.png");
+            this.imageCollection.Images.SetKeyName(4, "dvmd_info.png");
+            this.imageCollection.Images.SetKeyName(5, "play.png");
+            this.imageCollection.Images.SetKeyName(6, "pause.png");
+            this.imageCollection.Images.SetKeyName(7, "pencil.png");
+            this.imageCollection.Images.SetKeyName(8, "trash.png");
+            this.imageCollection.Images.SetKeyName(9, "grid.png");
+            this.imageCollection.Images.SetKeyName(10, "list.png");
+            this.imageCollection.Images.SetKeyName(11, "eye.png");
+            this.imageCollection.Images.SetKeyName(12, "note.png");
             // 
             // m_cmd_luu_bang_luong
             // 
@@ -350,23 +377,6 @@
             this.popupGalleryEdit.Size = new System.Drawing.Size(256, 35);
             this.popupGalleryEdit.TabIndex = 20;
             this.popupGalleryEdit.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.popupGalleryEdit1_Closed);
-            // 
-            // imageCollection
-            // 
-            this.imageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection.ImageStream")));
-            this.imageCollection.Images.SetKeyName(0, "dvmd_download.png");
-            this.imageCollection.Images.SetKeyName(1, "dvmd_upload.png");
-            this.imageCollection.Images.SetKeyName(2, "lock.png");
-            this.imageCollection.Images.SetKeyName(3, "refresh.png");
-            this.imageCollection.Images.SetKeyName(4, "dvmd_info.png");
-            this.imageCollection.Images.SetKeyName(5, "play.png");
-            this.imageCollection.Images.SetKeyName(6, "pause.png");
-            this.imageCollection.Images.SetKeyName(7, "pencil.png");
-            this.imageCollection.Images.SetKeyName(8, "trash.png");
-            this.imageCollection.Images.SetKeyName(9, "grid.png");
-            this.imageCollection.Images.SetKeyName(10, "list.png");
-            this.imageCollection.Images.SetKeyName(11, "eye.png");
-            this.imageCollection.Images.SetKeyName(12, "note.png");
             // 
             // simpleButton1
             // 
@@ -1568,16 +1578,6 @@
             this.repositoryItemMemoEdit1.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
             this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
             // 
-            // simpleButton2
-            // 
-            this.simpleButton2.ImageIndex = 12;
-            this.simpleButton2.ImageList = this.imageCollection;
-            this.simpleButton2.Location = new System.Drawing.Point(457, 8);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(125, 29);
-            this.simpleButton2.TabIndex = 22;
-            this.simpleButton2.Text = "Lưu bảng lương";
-            // 
             // f409_rpt_bang_luong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1589,13 +1589,13 @@
             this.Name = "f409_rpt_bang_luong";
             this.Text = "F409 - Tính Bảng lương nhân viên";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupGalleryEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).EndInit();
@@ -1729,7 +1729,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand33;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEditTien;
-        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

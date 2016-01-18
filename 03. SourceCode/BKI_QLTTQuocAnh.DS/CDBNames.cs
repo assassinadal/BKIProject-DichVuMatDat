@@ -829,46 +829,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string SO_NGAY_LAM_THEM = "SO_NGAY_LAM_THEM";
     }
 
-    public class RPT_LUONG_V2
-    {
-        public const string ID = "ID";
-        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
-        public const string THANG = "THANG";
-        public const string NAM = "NAM";
-        public const string MA_NV = "MA_NV";
-        public const string LUONG_NS = "LUONG_NS";
-        public const string LUONG_CD = "LUONG_CD";
-        public const string PHU_CAP_TN = "PHU_CAP_TN";
-        public const string AN_CA = "AN_CA";
-        public const string LAM_THEM = "LAM_THEM";
-        public const string LAM_THEM_200 = "LAM_THEM_200";
-        public const string LAM_THEM_300 = "LAM_THEM_300";
-        public const string THU_NHAP_KHAC_TRONG_LUONG = "THU_NHAP_KHAC_TRONG_LUONG";
-        public const string TONG_THU_NHAP_TRONG_LUONG = "TONG_THU_NHAP_TRONG_LUONG";
-        public const string THUONG = "THUONG";
-        public const string THUONG_ATHK = "THUONG_ATHK";
-        public const string THUONG_LE_TET = "THUONG_LE_TET";
-        public const string BO_SUNG_LUONG = "BO_SUNG_LUONG";
-        public const string THU_NHAP_KHAC_NGOAI_LUONG = "THU_NHAP_KHAC_NGOAI_LUONG";
-        public const string TONG_THU_NHAP_NGOAI_LUONG = "TONG_THU_NHAP_NGOAI_LUONG";
-        public const string TONG_THU_NHAP = "TONG_THU_NHAP";
-        public const string BHXH = "BHXH";
-        public const string BHYT = "BHYT";
-        public const string BHTN = "BHTN";
-        public const string GIAM_TRU_LAM_THEM_150 = "GIAM_TRU_LAM_THEM_150";
-        public const string GIAM_TRU_LAM_THEM_200 = "GIAM_TRU_LAM_THEM_200";
-        public const string GIAM_TRU_LAM_THEM_300 = "GIAM_TRU_LAM_THEM_300";
-        public const string GIAM_TRU_GIA_CANH = "GIAM_TRU_GIA_CANH";
-        public const string GIAM_TRU_PHU_THUOC = "GIAM_TRU_PHU_THUOC";
-        public const string GIAM_TRU_KHAC = "GIAM_TRU_KHAC";
-        public const string TONG_GIAM_TRU = "TONG_GIAM_TRU";
-        public const string THU_NHAP_CHIU_THUE = "THU_NHAP_CHIU_THUE";
-        public const string DOAN_PHI_CD = "DOAN_PHI_CD";
-        public const string THUE = "THUE";
-        public const string PHAI_NOP_KHAC = "PHAI_NOP_KHAC";
-        public const string TONG_PHAI_NOP = "TONG_PHAI_NOP";
-        public const string THUC_LINH = "THUC_LINH";
-    }
+    
 
 
     public class V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG
@@ -1032,6 +993,92 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     {
         public const string CO_DON_VI_CONG_TAC = "CO_DON_VI_CONG_TAC";
         public const string DA_CHAM_CONG = "DA_CHAM_CONG";
+    }
+    public class RPT_LUONG_V2
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string THANG = "THANG";
+        public const string NAM = "NAM";
+        public const string MA_NV = "MA_NV";
+        public const string LUONG_NS = "LUONG_NS";
+        public const string LUONG_CD = "LUONG_CD";
+        public const string PHU_CAP_TN = "PHU_CAP_TN";
+        public const string AN_CA = "AN_CA";
+        public const string LAM_THEM = "LAM_THEM";
+        public const string LAM_THEM_200 = "LAM_THEM_200";
+        public const string LAM_THEM_300 = "LAM_THEM_300";
+        public const string THU_NHAP_KHAC_TRONG_LUONG = "THU_NHAP_KHAC_TRONG_LUONG";
+        public const string TONG_THU_NHAP_TRONG_LUONG = "TONG_THU_NHAP_TRONG_LUONG";
+        public const string THUONG = "THUONG";
+        public const string THUONG_ATHK = "THUONG_ATHK";
+        public const string THUONG_LE_TET = "THUONG_LE_TET";
+        public const string BO_SUNG_LUONG = "BO_SUNG_LUONG";
+        public const string THU_NHAP_KHAC_NGOAI_LUONG = "THU_NHAP_KHAC_NGOAI_LUONG";
+        public const string TONG_THU_NHAP_NGOAI_LUONG = "TONG_THU_NHAP_NGOAI_LUONG";
+        public const string TONG_THU_NHAP = "TONG_THU_NHAP";
+        public const string BHXH = "BHXH";
+        public const string BHYT = "BHYT";
+        public const string BHTN = "BHTN";
+        public const string GIAM_TRU_LAM_THEM_150 = "GIAM_TRU_LAM_THEM_150";
+        public const string GIAM_TRU_LAM_THEM_200 = "GIAM_TRU_LAM_THEM_200";
+        public const string GIAM_TRU_LAM_THEM_300 = "GIAM_TRU_LAM_THEM_300";
+        public const string GIAM_TRU_GIA_CANH = "GIAM_TRU_GIA_CANH";
+        public const string GIAM_TRU_PHU_THUOC = "GIAM_TRU_PHU_THUOC";
+        public const string GIAM_TRU_KHAC = "GIAM_TRU_KHAC";
+        public const string TONG_GIAM_TRU = "TONG_GIAM_TRU";
+        public const string THU_NHAP_CHIU_THUE = "THU_NHAP_CHIU_THUE";
+        public const string DOAN_PHI_CD = "DOAN_PHI_CD";
+        public const string THUE = "THUE";
+        public const string PHAI_NOP_KHAC = "PHAI_NOP_KHAC";
+        public const string TONG_PHAI_NOP = "TONG_PHAI_NOP";
+        public const string THUC_LINH = "THUC_LINH";
+    }
+    public class V_RPT_LUONG_V2
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string THANG = "THANG";
+        public const string NAM = "NAM";
+        public const string MA_NV = "MA_NV";
+        public const string LUONG_NS = "LUONG_NS";
+        public const string LUONG_CD = "LUONG_CD";
+        public const string PHU_CAP_TN = "PHU_CAP_TN";
+        public const string AN_CA = "AN_CA";
+        public const string LAM_THEM = "LAM_THEM";
+        public const string LAM_THEM_200 = "LAM_THEM_200";
+        public const string LAM_THEM_300 = "LAM_THEM_300";
+        public const string THU_NHAP_KHAC_TRONG_LUONG = "THU_NHAP_KHAC_TRONG_LUONG";
+        public const string TONG_THU_NHAP_TRONG_LUONG = "TONG_THU_NHAP_TRONG_LUONG";
+        public const string THUONG = "THUONG";
+        public const string THUONG_ATHK = "THUONG_ATHK";
+        public const string THUONG_LE_TET = "THUONG_LE_TET";
+        public const string BO_SUNG_LUONG = "BO_SUNG_LUONG";
+        public const string THU_NHAP_KHAC_NGOAI_LUONG = "THU_NHAP_KHAC_NGOAI_LUONG";
+        public const string TONG_THU_NHAP_NGOAI_LUONG = "TONG_THU_NHAP_NGOAI_LUONG";
+        public const string TONG_THU_NHAP = "TONG_THU_NHAP";
+        public const string BHXH = "BHXH";
+        public const string BHYT = "BHYT";
+        public const string BHTN = "BHTN";
+        public const string GIAM_TRU_LAM_THEM_150 = "GIAM_TRU_LAM_THEM_150";
+        public const string GIAM_TRU_LAM_THEM_200 = "GIAM_TRU_LAM_THEM_200";
+        public const string GIAM_TRU_LAM_THEM_300 = "GIAM_TRU_LAM_THEM_300";
+        public const string GIAM_TRU_GIA_CANH = "GIAM_TRU_GIA_CANH";
+        public const string GIAM_TRU_PHU_THUOC = "GIAM_TRU_PHU_THUOC";
+        public const string GIAM_TRU_KHAC = "GIAM_TRU_KHAC";
+        public const string TONG_GIAM_TRU = "TONG_GIAM_TRU";
+        public const string THU_NHAP_CHIU_THUE = "THU_NHAP_CHIU_THUE";
+        public const string DOAN_PHI_CD = "DOAN_PHI_CD";
+        public const string THUE = "THUE";
+        public const string PHAI_NOP_KHAC = "PHAI_NOP_KHAC";
+        public const string TONG_PHAI_NOP = "TONG_PHAI_NOP";
+        public const string THUC_LINH = "THUC_LINH";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string HO_TEN = "HO_TEN";
+        public const string SO_TAI_KHOAN = "SO_TAI_KHOAN";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string THU_TU_DON_VI = "THU_TU_DON_VI";
     }
 
 }

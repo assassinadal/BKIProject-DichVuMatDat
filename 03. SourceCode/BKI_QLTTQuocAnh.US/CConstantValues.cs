@@ -7,7 +7,8 @@ namespace BKI_DichVuMatDat.US
     public enum ENUM_CONFIRM_TINH_BANG_LUONG
     {
         TINH_LAI_TOAN_BO,
-        TINH_NHAN_VIEN_CHUA_CO
+        TINH_NHAN_VIEN_CHUA_CO,
+        NONE
     }
     public class CONST_TRANG_THAI_LD
     {

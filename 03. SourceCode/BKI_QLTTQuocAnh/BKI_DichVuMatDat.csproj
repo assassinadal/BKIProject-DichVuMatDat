@@ -601,6 +601,8 @@
     <Compile Include="DanhMuc\f160_them_nhan_vien_nhanh.Designer.cs">
       <DependentUpon>f160_them_nhan_vien_nhanh.cs</DependentUpon>
     </Compile>
+    <Compile Include="DTO\DTO_BANG_LUONG_V2.cs" />
+    <Compile Include="DTO\DTO_THONG_TIN_BANG_LUONG.cs" />
     <Compile Include="DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

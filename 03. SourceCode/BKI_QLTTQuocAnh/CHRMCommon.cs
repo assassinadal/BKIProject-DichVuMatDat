@@ -235,7 +235,7 @@ namespace BKI_DichVuMatDat
             ip_dr_luong_nv[RPT_LUONG.SO_NGAY_LAM_THEM] = ip_dr_luong[RPT_LUONG.SO_NGAY_LAM_THEM];
             return ip_dr_luong_nv;
         }
-        public static DataRow get_dr_v2(DataRow ip_dr_luong_nv, DataRow ip_dr_luong, decimal ip_id_nv, int ip_index, int ip_thang, int ip_nam)
+        public static void get_dr_v2(ref DataRow ip_dr_luong_nv, DataRow ip_dr_luong, decimal ip_id_nv, int ip_index, int ip_thang, int ip_nam)
         {
             ip_dr_luong_nv[RPT_LUONG_V2.ID] = ip_index;
             ip_dr_luong_nv[RPT_LUONG_V2.ID_NHAN_VIEN] = ip_id_nv;
@@ -280,10 +280,6 @@ namespace BKI_DichVuMatDat
             ip_dr_luong_nv[RPT_LUONG_V2.TONG_PHAI_NOP] = ip_dr_luong[RPT_LUONG_V2.TONG_PHAI_NOP];
 
             ip_dr_luong_nv[RPT_LUONG_V2.THUC_LINH] = ip_dr_luong[RPT_LUONG_V2.THUC_LINH];
-
-
-
-            return ip_dr_luong_nv;
         }
 
         public static void DataRow2US(DataRow v_dr_luong_1_nv, US_RPT_LUONG v_us)

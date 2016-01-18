@@ -36,7 +36,7 @@ Public Class CSystemLog_301
                 Case IPConstants.C_RUNMODE_TEST
                     System.Windows.Forms.MessageBox.Show("environment-TEST: " & i_exp.Message, "IP-LOGGING ")
                 Case IPConstants.C_RUNMODE_DEVELOP
-                    System.Windows.Forms.MessageBox.Show("environment-DEVELOPE: " & i_exp.Message, "IP-LOGGING ")
+                    System.Windows.Forms.MessageBox.Show("Có chút sai sót xảy ra: " & i_exp.Message, "THÔNG BÁO", Windows.Forms.MessageBoxButtons.OK, Windows.Forms.MessageBoxIcon.Warning)
                 Case IPConstants.C_RUNMODE_RUNTIME
                     System.Windows.Forms.MessageBox.Show("environment-RUNTIME: " & i_exp.Message, "IP-LOGGING ")
             End Select

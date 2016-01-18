@@ -9,6 +9,7 @@ using IP.Core.IPUserService;
 using BKI_DichVuMatDat;
 //using Form_menu;
 using BKI_DichVuMatDat.NghiepVu;
+using BKI_DichVuMatDat.CONFIRM;
 
 
 
@@ -63,6 +64,8 @@ namespace BKI_DichVuMatDat
                     f388_main v_frm_main = new f388_main();
                     v_frm_main.display(ref v_exitmode);
                     v_frm_main.Dispose();
+                    //msg001_confirm_tinh_bang_luong msg = new msg001_confirm_tinh_bang_luong();
+                    //msg.display();
                     // sau main form hiện thì login hoặc thóat
                     switch (v_exitmode)
                     {

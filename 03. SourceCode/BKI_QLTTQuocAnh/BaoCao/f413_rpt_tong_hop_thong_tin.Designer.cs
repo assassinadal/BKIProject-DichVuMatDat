@@ -38,7 +38,7 @@
             this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_grc_tong_hop = new DevExpress.XtraGrid.GridControl();
             this.m_adv_tong_hop = new DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            //this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.STT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.MA_NV = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.HO_VA_TEN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();

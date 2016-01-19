@@ -1077,16 +1077,16 @@ namespace BKI_DichVuMatDat
 
         private DataSet get_hop_dong_het_han()
         {
-            DateTime v_2_thang_truoc = DateTime.Now.AddMonths(-1);
+            DateTime v_2_thang_truoc = DateTime.Now.AddMonths(-2);
             US_GD_HOP_DONG v_us_gd_hop_dong = new US_GD_HOP_DONG();
             DataSet v_ds = v_us_gd_hop_dong.LayDanhSachHopDongHetHan(v_2_thang_truoc.Date);
-
+            
             return v_ds;
         }
 
         private void m_lbl_canh_bao_het_han_hop_dong_DoubleClick(object sender, EventArgs e)
         {
-            DateTime v_2_thang_truoc = DateTime.Now.AddMonths(-1);
+            DateTime v_2_thang_truoc = DateTime.Now.AddMonths(-2);
             F110_dm_hop_dong_het_han v_f = new F110_dm_hop_dong_het_han();
             v_f.display(v_2_thang_truoc.Date);
         }

@@ -437,7 +437,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 ip_us.strMA_HOP_DONG = m_txt_ma_hd.Text.Trim();
                 ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
                 ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
-                ip_us.datNGAY_KY_HOP_DONG = m_dat_ngay_ky.Value.Date;             
+                ip_us.datNGAY_KY_HOP_DONG = m_dat_ngay_ky.Value.Date;
                 if (m_e_form_mode == DataEntryFormMode.InsertDataState)
                 {
                     ip_us.datNGAY_LAP = DateTime.Now.Date;
@@ -719,8 +719,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void us_obj_2_form(decimal v_id_gd_hd, decimal v_id_gd_lns_lcd)
         {
             US_GD_HOP_DONG v_us_gd_hd = new US_GD_HOP_DONG(v_id_gd_hd);
-            
-            if(v_id_gd_lns_lcd != -1)
+
+            if (v_id_gd_lns_lcd != -1)
             {
                 US_GD_HS_LNS_LCD v_us_gd_lns_lcd = new US_GD_HS_LNS_LCD(v_id_gd_lns_lcd);
                 US_DM_HE_SO_LUONG_NS v_us_dm_hs_lns = new US_DM_HE_SO_LUONG_NS(v_us_gd_lns_lcd.dcID_HS_LNS);
@@ -760,7 +760,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 }
             }
 
-            
+
 
             if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
             {
@@ -950,7 +950,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_lbl_so_tien_lcd.Text = "...";
         }
 
-        
+
         #endregion
 
         private void set_define_events()
@@ -968,7 +968,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chuc_danh_lcd.EditValueChanged += m_sle_chuc_danh_lcd_EditValueChanged;
             m_sle_muc_lcd.EditValueChanged += m_sle_muc_lcd_EditValueChanged;
             //gridcontrol, gridview
-            m_grv_lap_hd.DoubleClick += m_grv_lap_hd_DoubleClick;
+            //m_grv_lap_hd.DoubleClick += m_grv_lap_hd_DoubleClick;
         }
 
         void m_grv_lap_hd_DoubleClick(object sender, EventArgs e)

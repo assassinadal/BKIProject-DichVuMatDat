@@ -64,7 +64,7 @@ namespace BKI_DichVuMatDat.BaoCao
             m_txt_nam.Text = DateTime.Now.Year.ToString();
             m_txt_thang.Text = DateTime.Now.Month.ToString();
             hien_thi_thong_tin_qtr_tinh_luong();
-            load_data_2_grid();
+            //load_data_2_grid();
         }
         private void load_data_2_grid()
         {
@@ -95,7 +95,6 @@ namespace BKI_DichVuMatDat.BaoCao
             if(sl_nv_can_tinh > sl_nv_da_tinh)
             {
                 m_lbl_thong_bao.Text = "Đã tính được lương cho";
-                CHRM_BaseMessages.MsgBox_Infor("Chưa tính lương xong, Ấn tính bảng lương để tính tiếp nhé!");
                 m_lbl_thong_bao.ForeColor = Color.Red;
                 m_lbl_so_luong_nv_tinh_luong.ForeColor = Color.Red;
             }
@@ -311,11 +310,19 @@ namespace BKI_DichVuMatDat.BaoCao
         //Process tinh luong
         private void start_tinh_bang_luong_process()
         {
+            if(!is_valide_data_input())
+            {
+                m_bgwk.CancelAsync();
+                var x  = m_bgwk.CancellationPending;
+                return;
+            }
             if(is_da_chot_bang_luong())
             {
                 XtraMessageBox.Show("Bảng lương đã được chốt rồi, không tính lại được!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                m_bgwk.CancelAsync();
                 return;
             }
+           // m_grc_main.DataSource = null;
             var v_dlg_confirm = confirm_cach_tinh_bang_luong_tu_nguoi_dung();
             var v_ds_danh_sach_nhan_vien = lay_danh_sach_nhan_vien_can_tinh_luong(v_dlg_confirm);
             tinh_bang_luong_tu_dong(v_ds_danh_sach_nhan_vien);
@@ -368,7 +375,7 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         private void tinh_bang_luong_tu_dong(DataSet ip_ds_danh_sach_nv)
         {
-            m_grc_main.DataSource = null;
+            
             int v_i_so_luong_nv = ip_ds_danh_sach_nv.Tables[0].Rows.Count;
             for(int i = 0; i < v_i_so_luong_nv; i++)
             {
@@ -568,9 +575,14 @@ namespace BKI_DichVuMatDat.BaoCao
             try
             {
                 start_tinh_bang_luong_process();
+                if(m_bgwk.CancellationPending)
+                {
+                    e.Cancel = true;
+                }
             }
             catch(Exception v_e)
             {
+                m_bgwk.CancelAsync();
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
@@ -582,13 +594,14 @@ namespace BKI_DichVuMatDat.BaoCao
                 if((e.Cancelled == true))
                 {
                     m_prb.Text = "Thao tác bị hoãn!";
+                    return;
                 }
 
                 else if(!(e.Error == null))
                 {
                     m_prb.Text = ("Lỗi: " + e.Error.Message);
+                    return;
                 }
-
                 else
                 {
                     m_prb.Text = "Đã xong!";

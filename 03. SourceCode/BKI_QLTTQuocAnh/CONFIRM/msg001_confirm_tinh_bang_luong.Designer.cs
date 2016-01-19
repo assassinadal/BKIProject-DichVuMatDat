@@ -31,9 +31,13 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_confirm = new DevExpress.XtraEditors.SimpleButton();
             this.radioGroup = new DevExpress.XtraEditors.RadioGroup();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -58,7 +62,7 @@
             // radioGroup
             // 
             this.radioGroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioGroup.Location = new System.Drawing.Point(0, 0);
+            this.radioGroup.Location = new System.Drawing.Point(0, 66);
             this.radioGroup.Name = "radioGroup";
             this.radioGroup.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.radioGroup.Properties.Appearance.Options.UseBackColor = true;
@@ -66,8 +70,30 @@
             this.radioGroup.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Tính dữ liệu lương tất cả nhân viên"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(2)), "Tính dữ liệu lương các nhân viên chưa có trong bảng lương phần mềm")});
-            this.radioGroup.Size = new System.Drawing.Size(393, 160);
+            this.radioGroup.Size = new System.Drawing.Size(393, 94);
             this.radioGroup.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(2, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(389, 62);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Bảng lương trong phần mềm đã có dữ liệu. Bạn chọn cách tính lương nhé" +
+    "! (Lưu ý việc tính này chưa lưu dữ liệu vào phần mềm)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.label1);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl2.Location = new System.Drawing.Point(0, 0);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(393, 66);
+            this.panelControl2.TabIndex = 5;
             // 
             // msg001_confirm_tinh_bang_luong
             // 
@@ -75,6 +101,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(393, 199);
             this.Controls.Add(this.radioGroup);
+            this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "msg001_confirm_tinh_bang_luong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -82,6 +109,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -91,5 +120,7 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_confirm;
         private DevExpress.XtraEditors.RadioGroup radioGroup;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
     }
 }

@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f409_rpt_bang_luong));
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem1 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem2 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem3 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem4 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem5 = new DevExpress.XtraBars.Ribbon.GalleryItem();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem6 = new DevExpress.XtraBars.Ribbon.GalleryItem();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem7 = new DevExpress.XtraBars.Ribbon.GalleryItem();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem8 = new DevExpress.XtraBars.Ribbon.GalleryItem();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel1 = new System.Windows.Forms.Panel();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
@@ -346,29 +346,29 @@
             // popupGalleryEditGallery1
             // 
             this.popupGalleryEdit.Properties.Gallery.AutoSize = DevExpress.XtraBars.Ribbon.GallerySizeMode.Vertical;
-            galleryItem1.Caption = "Xem bảng lương";
-            galleryItem1.Description = "Xem dữ liệu lương đã tính";
-            galleryItem1.ImageIndex = 11;
-            galleryItem1.Value = "3";
-            galleryItem2.Caption = "Xuất Excel";
-            galleryItem2.ImageIndex = 1;
-            galleryItem2.Value = "1";
-            galleryItem3.Caption = "Import Excel";
-            galleryItem3.Description = "Import dữ liệu lương từ file Excel";
-            galleryItem3.ImageIndex = 0;
-            galleryItem3.Value = "2";
-            galleryItem4.Caption = "Chốt bảng lương";
-            galleryItem4.Description = "Chốt bảng lương cuối tháng";
-            galleryItem4.Image = global::BKI_DichVuMatDat.Properties.Resources._lock;
-            galleryItem4.ImageIndex = 2;
-            galleryItem4.Value = "2";
-            galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem1,
-            galleryItem2,
-            galleryItem3,
-            galleryItem4});
+            galleryItem5.Caption = "Xem bảng lương";
+            galleryItem5.Description = "Xem dữ liệu lương đã tính";
+            galleryItem5.ImageIndex = 11;
+            galleryItem5.Value = "3";
+            galleryItem6.Caption = "Xuất Excel";
+            galleryItem6.ImageIndex = 1;
+            galleryItem6.Value = "1";
+            galleryItem7.Caption = "Import Excel";
+            galleryItem7.Description = "Import dữ liệu lương từ file Excel";
+            galleryItem7.ImageIndex = 0;
+            galleryItem7.Value = "2";
+            galleryItem8.Caption = "Chốt bảng lương";
+            galleryItem8.Description = "Chốt bảng lương cuối tháng";
+            galleryItem8.Image = global::BKI_DichVuMatDat.Properties.Resources._lock;
+            galleryItem8.ImageIndex = 2;
+            galleryItem8.Value = "2";
+            galleryItemGroup2.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem5,
+            galleryItem6,
+            galleryItem7,
+            galleryItem8});
             this.popupGalleryEdit.Properties.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup1});
+            galleryItemGroup2});
             this.popupGalleryEdit.Properties.Gallery.Images = this.imageCollection;
             this.popupGalleryEdit.Properties.Gallery.ImageSize = new System.Drawing.Size(24, 24);
             this.popupGalleryEdit.Properties.Gallery.ItemSize = new System.Drawing.Size(24, 24);
@@ -547,7 +547,7 @@
             // repoBtnXoaLuong
             // 
             this.repoBtnXoaLuong.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::BKI_DichVuMatDat.Properties.Resources.trash1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::BKI_DichVuMatDat.Properties.Resources.trash1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.repoBtnXoaLuong.Name = "repoBtnXoaLuong";
             this.repoBtnXoaLuong.ReadOnly = true;
             this.repoBtnXoaLuong.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;

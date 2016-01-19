@@ -45,6 +45,7 @@ namespace BKI_DichVuMatDat
             {
                 return true;
             }
+
             return false;
         }
         public static void SetVisibleSimpleButton(Form iForm)

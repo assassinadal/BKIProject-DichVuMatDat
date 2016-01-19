@@ -46,6 +46,7 @@
             this.TRUY_LINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TRUY_THU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.THUC_LINH_CUOI_CUNG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_sle_quy_thuong = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -53,7 +54,6 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.TEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_luong_thuong)).BeginInit();
@@ -179,6 +179,7 @@
             this.CHUC_VU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.CHUC_VU.Caption = "Chức vụ";
             this.CHUC_VU.FieldName = "CHUC_VU";
+            this.CHUC_VU.FieldNameSortGroup = "THU_TU_CHUC_VU";
             this.CHUC_VU.Name = "CHUC_VU";
             this.CHUC_VU.Visible = true;
             this.CHUC_VU.VisibleIndex = 3;
@@ -351,6 +352,15 @@
             this.THUC_LINH_CUOI_CUNG.VisibleIndex = 9;
             this.THUC_LINH_CUOI_CUNG.Width = 86;
             // 
+            // TEN_DON_VI
+            // 
+            this.TEN_DON_VI.Caption = "Đơn vị";
+            this.TEN_DON_VI.FieldName = "TEN_DON_VI";
+            this.TEN_DON_VI.FieldNameSortGroup = "THU_TU_HIEN_THI";
+            this.TEN_DON_VI.Name = "TEN_DON_VI";
+            this.TEN_DON_VI.Visible = true;
+            this.TEN_DON_VI.VisibleIndex = 10;
+            // 
             // m_sle_quy_thuong
             // 
             this.m_sle_quy_thuong.Location = new System.Drawing.Point(92, 12);
@@ -432,14 +442,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(849, 34);
             this.emptySpaceItem1.Text = "emptySpaceItem1";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // TEN_DON_VI
-            // 
-            this.TEN_DON_VI.Caption = "Đơn vị";
-            this.TEN_DON_VI.FieldName = "TEN_DON_VI";
-            this.TEN_DON_VI.Name = "TEN_DON_VI";
-            this.TEN_DON_VI.Visible = true;
-            this.TEN_DON_VI.VisibleIndex = 10;
             // 
             // f480_bao_cao_thuong_khac
             // 

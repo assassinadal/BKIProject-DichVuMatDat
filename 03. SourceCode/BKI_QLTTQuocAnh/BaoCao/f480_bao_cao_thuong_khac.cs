@@ -64,7 +64,7 @@ namespace BKI_DichVuMatDat.BaoCao
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add();
 
-            v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_THU_NHAP_KHAC_2 where id_quy_tien_thuong = " + ip_dc_id_quy_tien);
+            v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_THU_NHAP_KHAC_2 where id_quy_tien_thuong = " + ip_dc_id_quy_tien + " order by THU_TU_HIEN_THI, THU_TU_CHUC_VU, TEN, HO_DEM");
             m_grc_luong_thuong.DataSource = v_ds.Tables[0];
             CHRMCommon.make_stt_indicator(m_grv_luong_thuong);
             m_sle_quy_thuong.EditValue = ip_dc_id_quy_tien;

@@ -144,7 +144,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 var v_so_tien_tren_hang = Convert.ToDecimal(m_grv_main.GetDataRow(v_i_row)["THANH_TIEN"]);
                 v_tong_tien_tren_grid = v_tong_tien_tren_grid + v_so_tien_tren_hang;
             }
-            return v_tong_tien_tren_grid;
+            return Math.Round(v_tong_tien_tren_grid);
         }
         private decimal lay_phan_tram_thue()
         {

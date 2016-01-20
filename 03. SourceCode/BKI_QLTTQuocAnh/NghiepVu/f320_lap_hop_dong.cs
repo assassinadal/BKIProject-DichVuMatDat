@@ -716,6 +716,16 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
+        private void form_2_us_gd_trang_thai_lao_dong(US_GD_TRANG_THAI_LAO_DONG ip_us)
+        {
+            ip_us.dcID_NHAN_VIEN = (decimal)m_sle_chon_nhan_vien.EditValue;
+            ip_us.dcID_TRANG_THAI_LAO_DONG = 1;
+            ip_us.datNGAY_AP_DUNG = DateTime.Now.Date;
+            ip_us.datNGAY_LAP = DateTime.Now.Date;
+            ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
+            ip_us.strDA_XOA = "N";
+        }
+
         private void us_obj_2_form(decimal v_id_gd_hd, decimal v_id_gd_lns_lcd)
         {
             US_GD_HOP_DONG v_us_gd_hd = new US_GD_HOP_DONG(v_id_gd_hd);
@@ -835,6 +845,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_GD_HS_LNS_LCD v_us_gd_hs_lns_lcd = new US_GD_HS_LNS_LCD();
             US_GD_HE_SO_LNS v_us_gd_hs_lns = new US_GD_HE_SO_LNS();
             US_GD_LUONG_CHE_DO v_us_gd_lcd = new US_GD_LUONG_CHE_DO();
+            US_GD_TRANG_THAI_LAO_DONG v_us_gd_trang_thai_lao_dong = new US_GD_TRANG_THAI_LAO_DONG();
 
             form_2_us_gd_hop_dong(v_us_gd_hd);
             try
@@ -872,6 +883,12 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us_gd_lcd.BeginTransaction();
                         v_us_gd_lcd.Insert();
                         v_us_gd_lcd.CommitTransaction();
+
+                        //insert gd_trang_thai_ld
+                        form_2_us_gd_trang_thai_lao_dong(v_us_gd_trang_thai_lao_dong);
+                        v_us_gd_trang_thai_lao_dong.BeginTransaction();
+                        v_us_gd_trang_thai_lao_dong.Insert();
+                        v_us_gd_trang_thai_lao_dong.CommitTransaction();
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         v_us_gd_hd.BeginTransaction();

@@ -119,6 +119,7 @@ namespace BKI_DichVuMatDat
             col.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             ip_grv.CustomUnboundColumnData += ip_grv_CustomUnboundColumnData;
         }
+        
         public static void make_stt(int ip_col_index, DevExpress.XtraGrid.Views.Grid.GridView ip_grv)
         {
             var col = ip_grv.Columns[ip_col_index];
@@ -126,7 +127,36 @@ namespace BKI_DichVuMatDat
             ip_grv.CustomUnboundColumnData += ip_grv_CustomUnboundColumnData;
         }
 
-        
+        public static DateTime get_first_day_of_month(DateTime ip_dat_current_date)
+        {
+            DateTime result = ip_dat_current_date;
+            result = result.AddDays((-result.Day) + 1);
+            return result;
+        }
+
+        public static DateTime get_first_day_of_month(int ip_int_month)
+        {
+            DateTime result = new DateTime(DateTime.Now.Year, ip_int_month, 1);
+            result = result.AddDays((-result.Day) + 1);
+            return result;
+        }
+
+        public static DateTime get_last_day_of_month(DateTime ip_dat_current_date)
+        {
+            DateTime result = ip_dat_current_date;
+            result = result.AddMonths(1);
+            result = result.AddDays(-(result.Day));
+            return result;
+        }
+
+        public static DateTime get_last_day_of_month(int ip_int_month)
+        {
+            DateTime result = new DateTime(DateTime.Now.Year, ip_int_month, 1);
+            result = result.AddMonths(1);
+            result = result.AddDays(-(result.Day));
+            return result;
+        } 
+
         static void ip_grv_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
             if(e.IsGetData)

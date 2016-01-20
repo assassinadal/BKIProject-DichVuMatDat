@@ -994,6 +994,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string CO_DON_VI_CONG_TAC = "CO_DON_VI_CONG_TAC";
         public const string DA_CHAM_CONG = "DA_CHAM_CONG";
     }
+
     public class RPT_LUONG_V2
     {
         public const string ID = "ID";
@@ -1034,6 +1035,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string TONG_PHAI_NOP = "TONG_PHAI_NOP";
         public const string THUC_LINH = "THUC_LINH";
     }
+
     public class V_RPT_LUONG_V2
     {
         public const string ID = "ID";
@@ -1080,5 +1082,28 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string TEN = "TEN";
         public const string THU_TU_DON_VI = "THU_TU_DON_VI";
     }
+
+    public class V_F320_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string MA_NV = "MA_NV";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string HO_TEN = "HO_TEN";
+        public const string ID_TRANG_THAI_LAO_DONG = "ID_TRANG_THAI_LAO_DONG";
+        public const string ID_LOAI_HOP_DONG = "ID_LOAI_HOP_DONG";
+        public const string MA_HOP_DONG = "MA_HOP_DONG";
+        public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+        public const string NGAY_KY_HOP_DONG = "NGAY_KY_HOP_DONG";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string NGAY_SUA = "NGAY_SUA";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string NGUOI_SUA = "NGUOI_SUA";
+        public const string DA_XOA = "DA_XOA";
+    }
+
+
 
 }

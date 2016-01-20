@@ -34,6 +34,7 @@
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_gr_LCD = new DevExpress.XtraEditors.GroupControl();
+            this.m_cmd_dat_gia_tri_lcd = new DevExpress.XtraEditors.SimpleButton();
             this.label15 = new System.Windows.Forms.Label();
             this.m_dat_ngay_ket_thuc_lcd = new System.Windows.Forms.DateTimePicker();
             this.m_txt_ghi_chu_lcd = new System.Windows.Forms.TextBox();
@@ -53,6 +54,7 @@
             this.m_sle_muc_lcd = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.m_gr_LNS = new DevExpress.XtraEditors.GroupControl();
+            this.m_cmd_dat_gia_tri_hs_lns = new DevExpress.XtraEditors.SimpleButton();
             this.m_txt_ghi_chu_hs_lns = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.m_dat_ngay_ket_thuc_lns = new System.Windows.Forms.DateTimePicker();
@@ -76,7 +78,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_cmd_dat_gia_tri_hs_lns = new DevExpress.XtraEditors.SimpleButton();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
@@ -110,7 +111,12 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.m_cmd_dat_gia_tri_lcd = new DevExpress.XtraEditors.SimpleButton();
+            this.sle_cnv_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_GIOI_TINH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_SDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_DIA_CHI_LIEN_LAC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_LCD)).BeginInit();
@@ -206,6 +212,15 @@
             this.m_gr_LCD.Size = new System.Drawing.Size(477, 234);
             this.m_gr_LCD.TabIndex = 2;
             this.m_gr_LCD.Text = "THÔNG TIN LƯƠNG CHẾ ĐỘ";
+            // 
+            // m_cmd_dat_gia_tri_lcd
+            // 
+            this.m_cmd_dat_gia_tri_lcd.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_dat_gia_tri_lcd.Image")));
+            this.m_cmd_dat_gia_tri_lcd.Location = new System.Drawing.Point(9, 187);
+            this.m_cmd_dat_gia_tri_lcd.Name = "m_cmd_dat_gia_tri_lcd";
+            this.m_cmd_dat_gia_tri_lcd.Size = new System.Drawing.Size(128, 38);
+            this.m_cmd_dat_gia_tri_lcd.TabIndex = 14;
+            this.m_cmd_dat_gia_tri_lcd.Text = "&Đặt giá trị LCĐ";
             // 
             // label15
             // 
@@ -395,6 +410,15 @@
             this.m_gr_LNS.TabIndex = 1;
             this.m_gr_LNS.Text = "THÔNG TIN LƯƠNG NĂNG SUÂT";
             // 
+            // m_cmd_dat_gia_tri_hs_lns
+            // 
+            this.m_cmd_dat_gia_tri_hs_lns.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_dat_gia_tri_hs_lns.Image")));
+            this.m_cmd_dat_gia_tri_hs_lns.Location = new System.Drawing.Point(7, 187);
+            this.m_cmd_dat_gia_tri_hs_lns.Name = "m_cmd_dat_gia_tri_hs_lns";
+            this.m_cmd_dat_gia_tri_hs_lns.Size = new System.Drawing.Size(128, 38);
+            this.m_cmd_dat_gia_tri_hs_lns.TabIndex = 12;
+            this.m_cmd_dat_gia_tri_hs_lns.Text = "&Đặt giá trị HS LNS";
+            // 
             // m_txt_ghi_chu_hs_lns
             // 
             this.m_txt_ghi_chu_hs_lns.Location = new System.Drawing.Point(95, 123);
@@ -575,6 +599,13 @@
             // 
             // searchLookUpEdit1View
             // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.sle_cnv_ID,
+            this.sle_cnv_MA_NV,
+            this.sle_cnv_HO_TEN,
+            this.sle_cnv_GIOI_TINH,
+            this.sle_cnv_SDT,
+            this.sle_cnv_DIA_CHI_LIEN_LAC});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -642,15 +673,6 @@
             this.ImageList.Images.SetKeyName(19, "");
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
-            // 
-            // m_cmd_dat_gia_tri_hs_lns
-            // 
-            this.m_cmd_dat_gia_tri_hs_lns.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_dat_gia_tri_hs_lns.Image")));
-            this.m_cmd_dat_gia_tri_hs_lns.Location = new System.Drawing.Point(7, 187);
-            this.m_cmd_dat_gia_tri_hs_lns.Name = "m_cmd_dat_gia_tri_hs_lns";
-            this.m_cmd_dat_gia_tri_hs_lns.Size = new System.Drawing.Size(128, 38);
-            this.m_cmd_dat_gia_tri_hs_lns.TabIndex = 12;
-            this.m_cmd_dat_gia_tri_hs_lns.Text = "&Đặt giá trị HS LNS";
             // 
             // m_pnl_out_place_dm
             // 
@@ -1033,14 +1055,51 @@
             this.panel6.Size = new System.Drawing.Size(1274, 194);
             this.panel6.TabIndex = 23;
             // 
-            // m_cmd_dat_gia_tri_lcd
+            // sle_cnv_ID
             // 
-            this.m_cmd_dat_gia_tri_lcd.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_dat_gia_tri_lcd.Image")));
-            this.m_cmd_dat_gia_tri_lcd.Location = new System.Drawing.Point(9, 187);
-            this.m_cmd_dat_gia_tri_lcd.Name = "m_cmd_dat_gia_tri_lcd";
-            this.m_cmd_dat_gia_tri_lcd.Size = new System.Drawing.Size(128, 38);
-            this.m_cmd_dat_gia_tri_lcd.TabIndex = 14;
-            this.m_cmd_dat_gia_tri_lcd.Text = "&Đặt giá trị LCĐ";
+            this.sle_cnv_ID.Caption = "ID";
+            this.sle_cnv_ID.FieldName = "ID";
+            this.sle_cnv_ID.Name = "sle_cnv_ID";
+            // 
+            // sle_cnv_MA_NV
+            // 
+            this.sle_cnv_MA_NV.Caption = "Mã NV";
+            this.sle_cnv_MA_NV.FieldName = "MA_NV";
+            this.sle_cnv_MA_NV.Name = "sle_cnv_MA_NV";
+            this.sle_cnv_MA_NV.Visible = true;
+            this.sle_cnv_MA_NV.VisibleIndex = 0;
+            // 
+            // sle_cnv_HO_TEN
+            // 
+            this.sle_cnv_HO_TEN.Caption = "Họ tên";
+            this.sle_cnv_HO_TEN.FieldName = "HO_TEN";
+            this.sle_cnv_HO_TEN.Name = "sle_cnv_HO_TEN";
+            this.sle_cnv_HO_TEN.Visible = true;
+            this.sle_cnv_HO_TEN.VisibleIndex = 1;
+            // 
+            // sle_cnv_GIOI_TINH
+            // 
+            this.sle_cnv_GIOI_TINH.Caption = "Giới tính";
+            this.sle_cnv_GIOI_TINH.FieldName = "GT";
+            this.sle_cnv_GIOI_TINH.Name = "sle_cnv_GIOI_TINH";
+            this.sle_cnv_GIOI_TINH.Visible = true;
+            this.sle_cnv_GIOI_TINH.VisibleIndex = 2;
+            // 
+            // sle_cnv_SDT
+            // 
+            this.sle_cnv_SDT.Caption = "SĐT";
+            this.sle_cnv_SDT.FieldName = "SDT";
+            this.sle_cnv_SDT.Name = "sle_cnv_SDT";
+            this.sle_cnv_SDT.Visible = true;
+            this.sle_cnv_SDT.VisibleIndex = 3;
+            // 
+            // sle_cnv_DIA_CHI_LIEN_LAC
+            // 
+            this.sle_cnv_DIA_CHI_LIEN_LAC.Caption = "Địa chỉ liên lạc";
+            this.sle_cnv_DIA_CHI_LIEN_LAC.FieldName = "DIA_CHI_LIEN_LAC";
+            this.sle_cnv_DIA_CHI_LIEN_LAC.Name = "sle_cnv_DIA_CHI_LIEN_LAC";
+            this.sle_cnv_DIA_CHI_LIEN_LAC.Visible = true;
+            this.sle_cnv_DIA_CHI_LIEN_LAC.VisibleIndex = 4;
             // 
             // f340_dat_hs_lns_lcd
             // 
@@ -1180,6 +1239,12 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_dat_gia_tri_hs_lns;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_bat_dau_lns;
         private DevExpress.XtraEditors.SimpleButton m_cmd_dat_gia_tri_lcd;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_MA_NV;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_HO_TEN;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_GIOI_TINH;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_SDT;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_DIA_CHI_LIEN_LAC;
 
     }
 }

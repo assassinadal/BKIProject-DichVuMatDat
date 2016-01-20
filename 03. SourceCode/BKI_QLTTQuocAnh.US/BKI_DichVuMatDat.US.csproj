@@ -96,6 +96,7 @@
     <Compile Include="US_V_DM_NHAN_VIEN.cs" />
     <Compile Include="US_V_DM_PHU_CAP_HDH.cs" />
     <Compile Include="US_V_DM_TRANG_THAI_LAO_DONG.cs" />
+    <Compile Include="US_V_F320_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.cs" />
     <Compile Include="US_V_F320_LAP_HOP_DONG.cs" />
     <Compile Include="US_V_F330_LEN_LUONG_CHO_NV.cs" />
     <Compile Include="US_V_F340_DAT_HS_LNS.cs" />

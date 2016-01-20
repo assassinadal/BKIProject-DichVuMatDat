@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -138,14 +137,15 @@
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
+            this.m_cmd_danh_sach_hop_dong = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -249,9 +249,10 @@
             this.m_cmd_bao_cao_thu_nhap,
             this.m_cmd_bc_nam,
             this.m_cmd_bao_cao_dieu_kien_tinh_luong,
-            this.m_cmd_bao_cao_tong_hop_v2});
+            this.m_cmd_bao_cao_tong_hop_v2,
+            this.m_cmd_danh_sach_hop_dong});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 106;
+            this.ribbon.MaxItemId = 107;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1200,6 +1201,7 @@
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_bc_tang_giam_ld);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_card_nhan_vien);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_bao_cao_dieu_kien_tinh_luong);
+            this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_danh_sach_hop_dong);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Báo cáo nhân sự";
             // 
@@ -1315,6 +1317,15 @@
             this.m_lbl_canh_bao_het_han_hop_dong.TabIndex = 10;
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
+            // 
+            // m_cmd_danh_sach_hop_dong
+            // 
+            this.m_cmd_danh_sach_hop_dong.Caption = "Danh sách HĐ của nhân viên";
+            this.m_cmd_danh_sach_hop_dong.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_cham_cong;
+            this.m_cmd_danh_sach_hop_dong.Id = 106;
+            this.m_cmd_danh_sach_hop_dong.Name = "m_cmd_danh_sach_hop_dong";
+            this.m_cmd_danh_sach_hop_dong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // f388_main
             // 
@@ -1461,5 +1472,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_danh_sach_hop_dong;
     }
 }

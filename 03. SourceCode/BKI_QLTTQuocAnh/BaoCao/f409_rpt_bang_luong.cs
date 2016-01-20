@@ -293,6 +293,10 @@ namespace BKI_DichVuMatDat.BaoCao
                     case PopupCloseMode.Immediate:
                         break;
                     case PopupCloseMode.Normal:
+                        if(Convert.ToDecimal(v_p.EditValue) == 1)
+                        {
+                            xuat_excel_bang_luong();
+                        }
                         break;
                     default:
                         break;

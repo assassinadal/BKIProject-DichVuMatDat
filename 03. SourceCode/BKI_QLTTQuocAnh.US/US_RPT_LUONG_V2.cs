@@ -948,5 +948,12 @@ namespace BKI_DichVuMatDat.US
             v_sp.ExecuteCommand(this);
         }
 
+        public void luu_bang_luong_nhan_vien_voi_option_nguoi_dung(ENUM_CONFIRM_LUU_BANG_LUONG ip_confirm)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_xoa_bang_luong_theo_thang_v2");//Chua xoa rpt_tong_hop
+            //v_sp.addDecimalInputParam("@ip_thang", ip_thang);
+            //v_sp.addDecimalInputParam("@ip_nam", ip_nam);
+            v_sp.ExecuteCommand(this);
+        }
     }
 }

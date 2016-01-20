@@ -469,11 +469,18 @@
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="CHRMCommon.cs" />
+    <Compile Include="COMMON\ExcuteFuntion.cs" />
     <Compile Include="CONFIRM\msg001_confirm_tinh_bang_luong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CONFIRM\msg001_confirm_tinh_bang_luong.Designer.cs">
       <DependentUpon>msg001_confirm_tinh_bang_luong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONFIRM\msg002_confirm_luu_du_lieu_bang_luong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONFIRM\msg002_confirm_luu_du_lieu_bang_luong.Designer.cs">
+      <DependentUpon>msg002_confirm_luu_du_lieu_bang_luong.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\F101_dm_don_vi.cs">
       <SubType>Form</SubType>
@@ -1125,6 +1132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CONFIRM\msg001_confirm_tinh_bang_luong.resx">
       <DependentUpon>msg001_confirm_tinh_bang_luong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONFIRM\msg002_confirm_luu_du_lieu_bang_luong.resx">
+      <DependentUpon>msg002_confirm_luu_du_lieu_bang_luong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F101_dm_don_vi.resx">
       <DependentUpon>F101_dm_don_vi.cs</DependentUpon>

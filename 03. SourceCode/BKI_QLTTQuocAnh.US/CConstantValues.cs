@@ -10,6 +10,14 @@ namespace BKI_DichVuMatDat.US
         TINH_NHAN_VIEN_CHUA_CO,
         NONE
     }
+    public enum ENUM_CONFIRM_LUU_BANG_LUONG
+    {
+        TINH_LAI_TOAN_BO,//Tính lại toàn bộ bảng lương, xóa dữ liệu cũ
+        CHUA_CO_THI_GHI_MOI_DA_CO_THI_KHONG_LAM_GI, //Nhân viên chưa có lương trong phần mềm thì ghi mới, đã có lương thì không làm gì
+        CHUA_CO_THI_GHI_MOI_DA_CO_THI_GHI_DE,//Nhân viên chưa có lương trong phần mềm thì ghi mới, đã có lương thì ghi đè
+        CHUA_CO_THI_KHONG_LAM_GI_DA_CO_THI_GHI_DE,//Nhân viên chưa có lương trong phần mềm thì không làm gì, đã có thì ghi đè
+        NONE //Không làm gì
+    }
     public class CONST_TRANG_THAI_LD
     {
         public const decimal DANG_LAM_VIEC = 167;

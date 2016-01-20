@@ -16,7 +16,6 @@ namespace BKI_DichVuMatDat.CONFIRM
     public partial class msg001_confirm_tinh_bang_luong : Form
     {
         //Field
-        private ENUM_CONFIRM_TINH_BANG_LUONG m_confirm;
         public msg001_confirm_tinh_bang_luong()
         {
             InitializeComponent();

@@ -64,8 +64,6 @@ namespace BKI_DichVuMatDat
                     f388_main v_frm_main = new f388_main();
                     v_frm_main.display(ref v_exitmode);
                     v_frm_main.Dispose();
-                    //msg001_confirm_tinh_bang_luong msg = new msg001_confirm_tinh_bang_luong();
-                    //msg.display();
                     // sau main form hiện thì login hoặc thóat
                     switch (v_exitmode)
                     {
@@ -83,7 +81,6 @@ namespace BKI_DichVuMatDat
                             Debug.Assert(false);
                             break;
                     }
-
                 }
             }
             catch (Exception v_e)

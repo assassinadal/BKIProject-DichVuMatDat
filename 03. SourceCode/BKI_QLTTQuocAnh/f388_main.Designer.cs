@@ -117,6 +117,7 @@
             this.m_cmd_bc_nam = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_bao_cao_dieu_kien_tinh_luong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_bao_cao_tong_hop_v2 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_danh_sach_hop_dong = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -145,7 +146,7 @@
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
-            this.m_cmd_danh_sach_hop_dong = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_cm_dm_thu_tu_don_vi = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -250,9 +251,10 @@
             this.m_cmd_bc_nam,
             this.m_cmd_bao_cao_dieu_kien_tinh_luong,
             this.m_cmd_bao_cao_tong_hop_v2,
-            this.m_cmd_danh_sach_hop_dong});
+            this.m_cmd_danh_sach_hop_dong,
+            this.m_cmd_cm_dm_thu_tu_don_vi});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 107;
+            this.ribbon.MaxItemId = 108;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1055,6 +1057,15 @@
             this.m_cmd_bao_cao_tong_hop_v2.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // m_cmd_danh_sach_hop_dong
+            // 
+            this.m_cmd_danh_sach_hop_dong.Caption = "Danh sách HĐ của nhân viên";
+            this.m_cmd_danh_sach_hop_dong.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_cham_cong;
+            this.m_cmd_danh_sach_hop_dong.Id = 106;
+            this.m_cmd_danh_sach_hop_dong.Name = "m_cmd_danh_sach_hop_dong";
+            this.m_cmd_danh_sach_hop_dong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1098,6 +1109,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_danh_muc_don_vi);
             this.ribbonPageGroup3.ItemLinks.Add(this.c_cmd_danh_muc_bao_hiem);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_nhan_vien);
+            this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_cm_dm_thu_tu_don_vi);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // ribbonPage3
@@ -1318,14 +1330,15 @@
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
             // 
-            // m_cmd_danh_sach_hop_dong
+            // m_cmd_cm_dm_thu_tu_don_vi
             // 
-            this.m_cmd_danh_sach_hop_dong.Caption = "Danh sách HĐ của nhân viên";
-            this.m_cmd_danh_sach_hop_dong.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_cham_cong;
-            this.m_cmd_danh_sach_hop_dong.Id = 106;
-            this.m_cmd_danh_sach_hop_dong.Name = "m_cmd_danh_sach_hop_dong";
-            this.m_cmd_danh_sach_hop_dong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.m_cmd_cm_dm_thu_tu_don_vi.Caption = "Thứ tự đơn vị";
+            this.m_cmd_cm_dm_thu_tu_don_vi.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_cm_dm_thu_tu_don_vi.Glyph")));
+            this.m_cmd_cm_dm_thu_tu_don_vi.Id = 107;
+            this.m_cmd_cm_dm_thu_tu_don_vi.Name = "m_cmd_cm_dm_thu_tu_don_vi";
+            this.m_cmd_cm_dm_thu_tu_don_vi.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.m_cmd_cm_dm_thu_tu_don_vi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_cm_dm_thu_tu_don_vi_ItemClick);
             // 
             // f388_main
             // 
@@ -1473,5 +1486,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
         private DevExpress.XtraBars.BarButtonItem m_cmd_danh_sach_hop_dong;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_cm_dm_thu_tu_don_vi;
     }
 }

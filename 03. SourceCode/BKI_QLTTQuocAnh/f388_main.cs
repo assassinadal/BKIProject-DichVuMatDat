@@ -173,6 +173,7 @@ namespace BKI_DichVuMatDat
             m_cmd_danh_muc_don_vi.ItemClick += m_cmd_danh_muc_don_vi_ItemClick;
             m_cmd_dm_tham_so.ItemClick += m_cmd_dm_tham_so_ItemClick;
             m_cmd_them_nhan_vien_nhanh.ItemClick += m_cmd_them_nhan_vien_nhanh_ItemClick;
+            m_cmd_cm_dm_thu_tu_don_vi.ItemClick += m_cmd_cm_dm_thu_tu_don_vi_ItemClick;
             //Bao cao
             m_cmd_bang_luong_nv.ItemClick += m_cmd_bang_luong_nv_ItemClick;
             m_cmd_bc_hs_bs_hs_athk.ItemClick += m_cmd_bc_hs_bs_hs_athk_ItemClick;
@@ -1233,6 +1234,21 @@ namespace BKI_DichVuMatDat
             try
             {
                 f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam v_f = new f491_rpt_bao_cao_tong_hop_thu_nhap_theo_nam();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_cm_dm_thu_tu_don_vi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                F115_dm_thu_tu_don_vi_chuc_vu v_f = new F115_dm_thu_tu_don_vi_chuc_vu();
                 if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();

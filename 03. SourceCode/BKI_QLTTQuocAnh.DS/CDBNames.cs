@@ -200,8 +200,16 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     }
 
     #endregion
-    
+
     #region DANH_MUC
+
+    public class CM_THU_TU_DON_VI
+    {
+        public const string ID = "ID";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string STT = "STT";
+    }
+
     public class DM_COMPANY_INFO
     {
         public const string ID = "ID";

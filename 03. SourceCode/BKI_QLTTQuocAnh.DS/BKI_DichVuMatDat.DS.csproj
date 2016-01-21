@@ -52,12 +52,16 @@
     </Compile>
     <Compile Include="DS_CM_DM_TU_DIEN.cs">
       <DependentUpon>DS_CM_DM_TU_DIEN.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DS_CM_DM_TU_DIEN.Designer.cs">
       <DependentUpon>DS_CM_DM_TU_DIEN.xsd</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DS_CM_THU_TU_DON_VI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_CM_THU_TU_DON_VI.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_DM_BAO_HIEM.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -216,7 +220,6 @@
     </Compile>
     <Compile Include="DS_GD_TRANG_THAI_LAO_DONG.cs">
       <DependentUpon>DS_GD_TRANG_THAI_LAO_DONG.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DS_GD_TRANG_THAI_LAO_DONG.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -275,7 +278,6 @@
     </Compile>
     <Compile Include="DS_V_DM_NHAN_VIEN.cs">
       <DependentUpon>DS_V_DM_NHAN_VIEN.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DS_V_DM_NHAN_VIEN.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -364,7 +366,6 @@
     </Compile>
     <Compile Include="DS_V_GD_QUY_TIEN_THUONG.cs">
       <DependentUpon>DS_V_GD_QUY_TIEN_THUONG.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DS_V_GD_QUY_TIEN_THUONG.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -429,6 +430,17 @@
     </None>
     <None Include="DS_CM_DM_TU_DIEN.xss">
       <DependentUpon>DS_CM_DM_TU_DIEN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_CM_THU_TU_DON_VI.xsc">
+      <DependentUpon>DS_CM_THU_TU_DON_VI.xsd</DependentUpon>
+    </None>
+    <None Include="DS_CM_THU_TU_DON_VI.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_CM_THU_TU_DON_VI.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_CM_THU_TU_DON_VI.xss">
+      <DependentUpon>DS_CM_THU_TU_DON_VI.xsd</DependentUpon>
     </None>
     <None Include="DS_DM_BAO_HIEM.xsc">
       <DependentUpon>DS_DM_BAO_HIEM.xsd</DependentUpon>

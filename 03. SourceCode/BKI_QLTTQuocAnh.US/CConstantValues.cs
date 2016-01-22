@@ -6,9 +6,9 @@ namespace BKI_DichVuMatDat.US
 {
     public enum ENUM_CONFIRM_TINH_BANG_LUONG
     {
-        TINH_LAI_TOAN_BO,
-        TINH_NHAN_VIEN_CHUA_CO,
-        NONE
+        TINH_LAI_TOAN_BO = 1,
+        TINH_NHAN_VIEN_CHUA_CO = 2,
+        NONE = 0
     }
     public enum ENUM_CONFIRM_LUU_BANG_LUONG
     {

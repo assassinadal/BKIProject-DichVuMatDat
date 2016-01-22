@@ -22,7 +22,6 @@ namespace BKI_DichVuMatDat.CONFIRM
         }
         public ENUM_CONFIRM_TINH_BANG_LUONG display()
         {
-            radioGroup.EditValue = ENUM_CONFIRM_TINH_BANG_LUONG.TINH_NHAN_VIEN_CHUA_CO;
             var v_dlg = this.ShowDialog();
             if(v_dlg != System.Windows.Forms.DialogResult.OK)
             {

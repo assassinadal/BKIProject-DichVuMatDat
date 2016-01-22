@@ -20,6 +20,8 @@ using IP.Core.IPSystemAdmin;
 using BKI_DichVuMatDat.DTO;
 using BKI_DichVuMatDat.CONFIRM;
 using BKI_DichVuMatDat.COMMON;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace BKI_DichVuMatDat.BaoCao
 {
@@ -27,8 +29,12 @@ namespace BKI_DichVuMatDat.BaoCao
     {
         //Field & Property
         BindingList<DTO_BANG_LUONG_V2> m_lst_luong_v2 = new BindingList<DTO_BANG_LUONG_V2>();
-
+        List<string> m_lst_nhan_vien_khong_ton_tai = new List<string>();
         #region Public Interface
+        ~f409_rpt_bang_luong()
+        {
+            Dispose(true);
+        }
         public f409_rpt_bang_luong()
         {
             InitializeComponent();
@@ -44,16 +50,40 @@ namespace BKI_DichVuMatDat.BaoCao
         #region Event Handle
         private void set_define_events()
         {
-            //m_cmd_xem_bang_luong.Click += m_cmd_xem_bang_luong_Click;
-            //m_cmd_luu_bang_luong.Click += m_cmd_luu_bang_luong_Click;
-            //m_cmd_xem_thong_tin_tinh_luong.Click += m_cmd_xem_thong_tin_tinh_luong_Click;
+            FormClosed += f409_rpt_bang_luong_FormClosed;
+            Load += f409_rpt_bang_luong_Load;
             m_cmd_tinh_bang_luong.Click += m_cmd_tinh_bang_luong_Click;
-            m_cmd_xem_thong_tin_tinh_luong.Click += m_cmd_xem_thong_tin_tinh_luong_Click;
-            m_cmd_chot_bang_luong.Click += m_cmd_chot_bang_luong_Click;
             m_cmd_luu_du_lieu.Click += m_cmd_luu_du_lieu_Click;
+            popupGalleryEdit.Closed += popupGalleryEdit_Closed;
+            m_txt_thang.Leave += m_txt_thang_Leave;
+            m_txt_nam.Leave += m_txt_nam_Leave;
         }
 
-        //Tinh luong
+        void f409_rpt_bang_luong_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                Dispose();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void f409_rpt_bang_luong_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        //Nghiep vu tinh luong
         void m_cmd_luu_du_lieu_Click(object sender, EventArgs e)
         {
             try
@@ -69,6 +99,25 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
+                if(m_bgwk.IsBusy)
+                {
+                    XtraMessageBox.Show("Chức năng đang thực hiện tính toán dữ liệu lương rồi, bạn đợi chút", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if(m_grc_main.DataSource != null && m_grv_main.RowCount != 0)
+                {
+                    var v_dlg_confirm = XtraMessageBox.Show("Lưới đang có dữ liệu. Việc tính này sẽ xóa dữ liệu đã tính trên lưới. Bạn có muốn tiếp tục?"
+                                                                , "XÁC NHẬN"
+                                                                , MessageBoxButtons.YesNo
+                                                                , MessageBoxIcon.Question);
+                    if(v_dlg_confirm == System.Windows.Forms.DialogResult.No)
+                    {
+                        XtraMessageBox.Show("Bạn đã hủy thao tác", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+                clear_grid();
+                hide_grid();
                 show_progress_bar();
                 m_bgwk.RunWorkerAsync();
             }
@@ -81,15 +130,31 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
+                if(!kiem_tra_tinh_hop_le_du_lieu_tren_giao_dien())
+                {
+                    m_bgwk.CancelAsync();
+                    e.Cancel = true;
+                    return;
+                }
+                if(kiem_tra_bang_luong_da_chot_chua())
+                {
+                    XtraMessageBox.Show("Bảng lương đã được chốt rồi, không tính lại được!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    m_bgwk.CancelAsync();
+                    e.Cancel = true;
+                    return;
+                }
+                
                 start_tinh_bang_luong_process();
                 if(m_bgwk.CancellationPending)
                 {
                     e.Cancel = true;
+                    m_bgwk.CancelAsync();
                 }
             }
             catch(Exception v_e)
             {
                 m_bgwk.CancelAsync();
+                e.Cancel = true;
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
@@ -97,24 +162,30 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
-                hide_progress_bar();
                 if((e.Cancelled == true))
                 {
                     m_prb.Text = "Thao tác bị hoãn!";
+                    hide_progress_bar();
+                    hide_grid();
+                    clear_grid();
                     return;
                 }
 
                 else if(!(e.Error == null))
                 {
                     m_prb.Text = ("Lỗi: " + e.Error.Message);
+                    hide_progress_bar();
+                    hide_grid();
+                    clear_grid();
                     return;
                 }
                 else
                 {
                     m_prb.Text = "Đã xong!";
                 }
+                hide_progress_bar();
                 load_data_2_grid();
-                hien_thi_thong_tin_qtr_tinh_luong();
+                hien_thi_thong_tin_bang_luong();
             }
             catch(Exception v_e)
             {
@@ -130,14 +201,9 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             catch(Exception)
             {
-                throw;
             }
 
         }
-
-
-
-
         private void m_cmd_chot_bang_luong_Click(object sender, EventArgs e)
         {
             try
@@ -151,39 +217,74 @@ namespace BKI_DichVuMatDat.BaoCao
 
         }
 
-
-        private void m_cmd_xem_thong_tin_tinh_luong_Click(object sender, EventArgs e)
+        //Other
+        void m_txt_nam_Leave(object sender, EventArgs e)
         {
             try
             {
-                hien_thi_thong_tin_qtr_tinh_luong();
+                hien_thi_thong_tin_bang_luong();
             }
             catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-
-
-
-        private void m_cmd_luu_bang_luong_Click(object sender, EventArgs e)
+        void m_txt_thang_Leave(object sender, EventArgs e)
         {
             try
             {
-
+                hien_thi_thong_tin_bang_luong();
             }
             catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-        private void m_cmd_tinh_lai_Click(object sender, EventArgs e)
+        void popupGalleryEdit_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
             try
             {
-                tinh_lai_bang_luong();
+                PopupGalleryEdit v_p = sender as PopupGalleryEdit;
+                switch(e.CloseMode)
+                {
+                    case PopupCloseMode.ButtonClick:
+                        break;
+                    case PopupCloseMode.Cancel:
+                        break;
+                    case PopupCloseMode.CloseUpKey:
+                        break;
+                    case PopupCloseMode.Immediate:
+                        break;
+                    case PopupCloseMode.Normal:
+                        if(m_bgwk.IsBusy)
+                        {
+                            XtraMessageBox.Show("Chức năng đang thực hiện tính toán dữ liệu lương rồi, bạn đợi chút", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                        if(v_p.EditValue == null)
+                        {
+                            break;
+                        }
+                        var v_i_thao_tac_chon = Convert.ToInt16(v_p.EditValue);
+                        switch(v_i_thao_tac_chon)
+                        {
+                            case (int)E_THAO_TAC_CHON.XUAT_EXCEL:
+                                xuat_excel_bang_luong();
+                                break;
+                            case (int)E_THAO_TAC_CHON.CHOT_BANG_LUONG:
+                                chot_bang_luong();
+                                break;
+                            case (int)E_THAO_TAC_CHON.XEM_BANG_LUONG:
+                                break;
+                            case (int)E_THAO_TAC_CHON.IMPORT_EXCEL:
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
             catch(Exception v_e)
             {
@@ -254,62 +355,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-
-        private void f410_rpt_bang_luong_nv_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                set_initial_form_load();
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-        private void m_lbl_thong_bao_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void m_lbl_so_luong_nv_tinh_luong_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void popupGalleryEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
-        {
-            try
-            {
-                PopupGalleryEdit v_p = sender as PopupGalleryEdit;
-                switch(e.CloseMode)
-                {
-                    case PopupCloseMode.ButtonClick:
-                        break;
-                    case PopupCloseMode.Cancel:
-                        break;
-                    case PopupCloseMode.CloseUpKey:
-                        break;
-                    case PopupCloseMode.Immediate:
-                        break;
-                    case PopupCloseMode.Normal:
-                        if(Convert.ToDecimal(v_p.EditValue) == 1)
-                        {
-                            xuat_excel_bang_luong();
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
         #endregion
-
-        
 
         #region Data Structure
         enum E_THAO_TAC_CHON
@@ -322,101 +368,119 @@ namespace BKI_DichVuMatDat.BaoCao
         #endregion
 
         #region Private Methods
-        //Load data
+        //Setup Form
         private void format_controls()
         {
             set_define_events();
         }
         private void set_initial_form_load()
         {
-            this.m_prb.Visible = false;
-            m_txt_nam.Text = DateTime.Now.Year.ToString();
-            m_txt_thang.Text = DateTime.Now.Month.ToString();
-            hien_thi_thong_tin_qtr_tinh_luong();
-            //load_data_2_grid();
+            hide_progress_bar();
+            m_txt_nam.EditValue = DateTime.Now.Year;
+            m_txt_thang.EditValue = DateTime.Now.Month;
+            m_txt_thang.Focus();
+            hien_thi_thong_tin_bang_luong();
+            hide_grid();
         }
+
+        //Action giao dien
+        private void hide_progress_bar()
+        {
+            m_prb.Visible = false;
+        }
+        private void show_progress_bar()
+        {
+            m_prb.Visible = true;
+        }
+        private void show_grid()
+        {
+            m_grc_main.Visible = true;
+        }
+        private void hide_grid()
+        {
+            m_grc_main.Visible = false;
+        }
+        private void clear_grid()
+        {
+            m_lst_luong_v2 = new BindingList<DTO_BANG_LUONG_V2>();
+            m_grc_main.DataSource = null;
+            m_grc_main.RefreshDataSource();
+        }
+
+        //Load data
+        private decimal lay_thang()
+        {
+            return Convert.ToDecimal(m_txt_thang.EditValue);
+        }
+        private decimal lay_nam()
+        {
+            return Convert.ToDecimal(m_txt_nam.EditValue);
+        }
+        private DTO_THONG_TIN_BANG_LUONG lay_thong_tin_bang_luong()
+        {
+            DTO_THONG_TIN_BANG_LUONG v_dto_thong_tin_bang_luong = new DTO_THONG_TIN_BANG_LUONG(lay_thang(), lay_nam());
+            return v_dto_thong_tin_bang_luong;
+        }
+
+        //Display data
         private void load_data_2_grid()
         {
             m_grc_main.DataSource = null;
             m_grc_main.DataSource = m_lst_luong_v2;
+            show_grid();
         }
-
-        private void tinh_toan_qtr_tinh_luong(out decimal op_dc_sl_nv_can_tinh, out decimal op_dc_sl_nv_da_tinh)
+        private void hien_thi_thong_tin_bang_luong()
         {
-            US_RPT_LUONG_V2 v_us_rpt = new US_RPT_LUONG_V2();
-            v_us_rpt.get_thong_tin_qua_trinh_tinh_luong(CIPConvert.ToDecimal(m_txt_thang.Text.Trim())
-                                                                , CIPConvert.ToDecimal(m_txt_nam.Text.Trim())
-                                                                , out op_dc_sl_nv_can_tinh
-                                                                , out op_dc_sl_nv_da_tinh);
-        }
-        private void hien_thi_thong_tin_qtr_tinh_luong()
-        {
-            decimal sl_nv_can_tinh;
-            decimal sl_nv_da_tinh;
-            tinh_toan_qtr_tinh_luong(out sl_nv_can_tinh, out sl_nv_da_tinh);
+            if(m_txt_thang.EditValue == null || m_txt_nam.EditValue == null)
+            {
+                return;
+            }
+            var v_dto_thong_tin_bang_luong = lay_thong_tin_bang_luong();
 
-            if(sl_nv_can_tinh <= sl_nv_da_tinh)
+            if(v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_CAN_TINH == v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_DA_TINH)
             {
                 m_lbl_thong_bao.Text = "Đã tính xong lương cho";
                 m_lbl_thong_bao.ForeColor = Color.Green;
                 m_lbl_so_luong_nv_tinh_luong.ForeColor = Color.Green;
             }
-            if(sl_nv_can_tinh > sl_nv_da_tinh)
+            if(v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_CAN_TINH > v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_DA_TINH)
             {
                 m_lbl_thong_bao.Text = "Đã tính được lương cho";
                 m_lbl_thong_bao.ForeColor = Color.Red;
                 m_lbl_so_luong_nv_tinh_luong.ForeColor = Color.Red;
             }
-            m_lbl_so_luong_nv_tinh_luong.Text = sl_nv_da_tinh.ToString() + "/" + sl_nv_can_tinh.ToString() + " (nhân viên)";
+            m_lbl_so_luong_nv_tinh_luong.Text = v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_DA_TINH.ToString() + "/"
+                                                    + v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_CAN_TINH.ToString() + " (nhân viên)";
         }
 
-
         //Check data
-        private bool is_da_chot_bang_luong()
+        private bool kiem_tra_bang_luong_da_chot_chua()
         {
             US_DUNG_CHUNG v_us_dung_chung = new US_DUNG_CHUNG();
             return v_us_dung_chung.IsDaChotBangLuongThang(
                                     CIPConvert.ToDecimal(m_txt_thang.EditValue)
                                     , CIPConvert.ToDecimal(m_txt_nam.EditValue));
         }
-        private bool check_gd_chot_bang_luong_is_exist()
+        private bool kiem_tra_da_tinh_het_luong_nhan_vien_chua()
         {
-            try
-            {
-                DS_GD_CHOT_BANG_LUONG v_ds = new DS_GD_CHOT_BANG_LUONG();
-                US_GD_CHOT_BANG_LUONG v_us = new US_GD_CHOT_BANG_LUONG();
-                v_us.FillDataset(v_ds);
-
-                string v_str_filter = "THANG = " + CIPConvert.ToDecimal(m_txt_thang.Text.Trim()) + " AND NAM = " + CIPConvert.ToDecimal(m_txt_nam.Text.Trim());
-                DataRow[] v_dr = v_ds.GD_CHOT_BANG_LUONG.Select(v_str_filter);
-
-                if(v_dr.Count() == 0)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            catch(Exception v_e)
-            {
-                throw v_e;
-            }
-        }
-        private bool is_da_tinh_het_luong_nhan_vien()
-        {
-            decimal sl_nv_can_tinh;
-            decimal sl_nv_da_tinh;
-            tinh_toan_qtr_tinh_luong(out sl_nv_can_tinh, out sl_nv_da_tinh);
-            if(sl_nv_can_tinh <= sl_nv_da_tinh)
+            var v_dto_thong_tin_bang_luong = lay_thong_tin_bang_luong();
+            decimal v_dc_sl_nv_can_tinh = v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_CAN_TINH;
+            decimal v_dc_sl_nv_da_tinh = v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_DA_TINH;
+            if(v_dc_sl_nv_can_tinh <= v_dc_sl_nv_da_tinh)
             {
                 return true;
             }
             return false;
         }
-
-
+        private bool kiem_tra_tinh_hop_le_du_lieu_tren_giao_dien()
+        {
+            if(m_txt_thang.EditValue == null || m_txt_nam.EditValue == null)
+            {
+                XtraMessageBox.Show("Bạn nhập tháng & năm trước!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
 
         //Action
         private void xoa_bang_luong_thang()
@@ -425,55 +489,30 @@ namespace BKI_DichVuMatDat.BaoCao
             US_RPT_LUONG_V2 v_us_RPT_LUONG_V2_V2 = new US_RPT_LUONG_V2();
             v_us_RPT_LUONG_V2_V2.XoaLuong(Convert.ToDecimal(m_txt_thang.EditValue), Convert.ToDecimal(m_txt_nam.EditValue));
         }
-        private void insert_gd_chot_bang_luong(US_GD_CHOT_BANG_LUONG ip_us_gd_chot_bang_luong)
+        private void chot_bang_luong_thang()
         {
-            ip_us_gd_chot_bang_luong.dcTHANG = CIPConvert.ToDecimal(m_txt_thang.Text.Trim());
-            ip_us_gd_chot_bang_luong.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text.Trim());
-            ip_us_gd_chot_bang_luong.strNGUOI_CHOT = CAppContext_201.getCurrentUserName();
-            ip_us_gd_chot_bang_luong.datNGAY_CHOT = DateTime.Now.Date;
-
-            ip_us_gd_chot_bang_luong.Insert();
+            US_GD_CHOT_BANG_LUONG v_us_gd_chot_bang_luong = new US_GD_CHOT_BANG_LUONG();
+            v_us_gd_chot_bang_luong.dcTHANG = lay_thang();
+            v_us_gd_chot_bang_luong.dcNAM = lay_nam();
+            v_us_gd_chot_bang_luong.strNGUOI_CHOT = CAppContext_201.getCurrentUserName();
+            v_us_gd_chot_bang_luong.datNGAY_CHOT = DateTime.Now.Date;
+            v_us_gd_chot_bang_luong.Insert();
         }
-        private void insert_hs_hs_bs_hs_anhk(decimal ip_dc_thang, decimal ip_dc_nam)
+        private void chot_he_so_bsl_athk_thang()
         {
             US_DUNG_CHUNG v_us_dung_chung = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            v_us_dung_chung.FillDatasetNhanVienCanInsertHeSo(v_ds, ip_dc_thang, ip_dc_nam);
-            //v_us_dung_chung.FillDatasetWithQuery(v_ds, "SELECT DISTINCT * FROM V_RPT_LUONG_V2 WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim());
+            DataSet v_ds_danh_sach_nv_can_insert = new DataSet();
+            v_ds_danh_sach_nv_can_insert.Tables.Add(new DataTable());
+            v_us_dung_chung.FillDatasetNhanVienCanInsertHeSo(v_ds_danh_sach_nv_can_insert, lay_thang(), lay_nam());
 
-            //m_grc.DataSource = v_ds.Tables[0];
-
-            for(int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
+            decimal v_dc_so_luong_nhan_vien = v_ds_danh_sach_nv_can_insert.Tables[0].Rows.Count;
+            for(int i = 0; i < v_dc_so_luong_nhan_vien; i++)
             {
-                decimal v_id_nv = CIPConvert.ToDecimal(v_ds.Tables[0].Rows[i]["ID_NHAN_VIEN"].ToString());
+                decimal v_id_nv = CIPConvert.ToDecimal(v_ds_danh_sach_nv_can_insert.Tables[0].Rows[i]["ID_NHAN_VIEN"].ToString());
                 US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG v_us = new US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG();
-
-                v_us.insert_data_by_proc(v_id_nv, ip_dc_thang, ip_dc_nam);
-            }
-            DevExpress.XtraEditors.XtraMessageBox.Show("Thành công!!!", "THÔNG BÁO");
-            load_data_2_grid();
-        }
-        private void tinh_lai_bang_luong()
-        {
-            if(is_da_chot_bang_luong())
-                return;
-            var dlg = XtraMessageBox.Show("Bạn có chắc chắn muốn tính lại bảng lương?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(dlg == System.Windows.Forms.DialogResult.Yes)
-            {
-                if(m_bgwk.IsBusy)
-                {
-                    m_bgwk.CancelAsync();
-                }
-                else
-                {
-                    xoa_bang_luong_thang();
-                    start_tinh_bang_luong_process();
-                }
+                v_us.insert_data_by_proc(v_id_nv, lay_thang(), lay_nam());
             }
         }
-        
-
         private void update_us_luong_v2_by_datarow_in_grid(ref US_RPT_LUONG_V2 ip_us_luong_v2, DataRow ip_dr_grid)
         {
             //Information (khong can thiet)
@@ -540,60 +579,16 @@ namespace BKI_DichVuMatDat.BaoCao
             ip_us_luong_v2.dcTHUC_LINH = ip_us_luong_v2.dcTONG_THU_NHAP_TRONG_LUONG - ip_us_luong_v2.dcTONG_PHAI_NOP;
         }
 
-
-        //procudure & funcion new
-        //check_data
-        private bool is_valide_data_input()
-        {
-            if(m_txt_thang.EditValue == null || m_txt_nam.EditValue == null)
-            {
-                XtraMessageBox.Show("Bạn nhập tháng & năm trước!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            return true;
-        }
-        //Load Data
-        private decimal lay_thang()
-        {
-            return Convert.ToDecimal(m_txt_thang.EditValue);
-        }
-        private decimal lay_nam()
-        {
-            return Convert.ToDecimal(m_txt_nam.EditValue);
-        }
-        private DTO_THONG_TIN_BANG_LUONG lay_thong_tin_bang_luong()
-        {
-            DTO_THONG_TIN_BANG_LUONG v_dto_thong_tin_bang_luong = new DTO_THONG_TIN_BANG_LUONG(lay_thang(), lay_nam());
-            return v_dto_thong_tin_bang_luong;
-        }
-
-        //Action giao dien
-        private void hide_progress_bar()
-        {
-            m_prb.Visible = false;
-        }
-        private void show_progress_bar()
-        {
-            m_prb.Visible = true;
-        }
-
-        //Process tinh luong
+        //Process tinh bang luong
         private void start_tinh_bang_luong_process()
         {
-            if(!is_valide_data_input())
-            {
-                m_bgwk.CancelAsync();
-                var x  = m_bgwk.CancellationPending;
-                return;
-            }
-            if(is_da_chot_bang_luong())
-            {
-                XtraMessageBox.Show("Bảng lương đã được chốt rồi, không tính lại được!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                m_bgwk.CancelAsync();
-                return;
-            }
-           // m_grc_main.DataSource = null;
+            
             var v_dlg_confirm = confirm_cach_tinh_bang_luong_tu_nguoi_dung();
+            if(v_dlg_confirm == ENUM_CONFIRM_TINH_BANG_LUONG.NONE)
+            {
+                m_bgwk.CancelAsync();
+                return;
+            }
             var v_ds_danh_sach_nhan_vien = lay_danh_sach_nhan_vien_can_tinh_luong(v_dlg_confirm);
             tinh_bang_luong_tu_dong(v_ds_danh_sach_nhan_vien);
         }
@@ -645,7 +640,7 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         private void tinh_bang_luong_tu_dong(DataSet ip_ds_danh_sach_nv)
         {
-            
+
             int v_i_so_luong_nv = ip_ds_danh_sach_nv.Tables[0].Rows.Count;
             for(int i = 0; i < v_i_so_luong_nv; i++)
             {
@@ -711,7 +706,7 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             US_RPT_LUONG_V2 v_us_luong_v2 = new US_RPT_LUONG_V2();
 
-            v_us_luong_v2.dcID_NHAN_VIEN = ip_dto_luong.ID_NHAN_VIEN;
+            v_us_luong_v2.dcID_NHAN_VIEN = ExecuteFuntion.LayNhanVienID(ip_dto_luong.MA_NV); 
             v_us_luong_v2.dcTHANG = ip_dto_luong.THANG;
             v_us_luong_v2.dcNAM = ip_dto_luong.NAM;
 
@@ -757,10 +752,46 @@ namespace BKI_DichVuMatDat.BaoCao
 
             return v_us_luong_v2;
         }
+        private void chot_bang_luong()
+        {
+            DialogResult v_dlg_confirm;
+            string v_str_text_confirm;
 
+            if(!kiem_tra_da_tinh_het_luong_nhan_vien_chua())
+            {
+
+                v_str_text_confirm = "Chưa tính toán xong dữ liệu nhân viên. Bạn có chắc chắn muốn chốt bảng lương tháng ?" + lay_thang() + " năm " + lay_nam();
+            }
+            else
+            {
+                v_str_text_confirm = "Bạn có chắc chắn muốn chốt bảng lương tháng ?" + lay_thang() + " năm " + lay_nam();
+            }
+            v_dlg_confirm = XtraMessageBox.Show(v_str_text_confirm
+                                                            , "XÁC NHẬN"
+                                                            , MessageBoxButtons.YesNo
+                                                            , MessageBoxIcon.Question);
+            if(v_dlg_confirm == System.Windows.Forms.DialogResult.No)
+            {
+                XtraMessageBox.Show("Bạn đã hủy thao tác!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                return;
+            }
+            if(kiem_tra_bang_luong_da_chot_chua())
+            {
+                XtraMessageBox.Show("Bảng lương tháng đã được chốt rồi!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            chot_bang_luong_thang();
+            chot_he_so_bsl_athk_thang();
+        }
+
+        //Process luu bang luong
         private void start_luu_bang_luong_process()
         {
-            
+            if(m_bgwk.IsBusy)
+            {
+                XtraMessageBox.Show("Chức năng đang thực hiện tính toán dữ liệu lương rồi, bạn đợi chút", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             var v_dto_thong_tin_bang_luong = lay_thong_tin_bang_luong();
             msg002_confirm_luu_du_lieu_bang_luong v_msg_confirm;
             ENUM_CONFIRM_LUU_BANG_LUONG v_dlg_confirm_save;
@@ -788,10 +819,59 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 splashScreenManager.CloseWaitForm();
             }
-            
+
+        }
+        private void xuat_excel_nhan_vien_chua_co_trong_csdl()
+        {
+            GridControl v_grc_ds = new GridControl();
+            GridView v_grv_ds = new GridView();
+            v_grv_ds.Columns.AddField("MA_NV");
+            v_grc_ds.ViewCollection.Add(v_grv_ds);
+            v_grc_ds.DataSource = m_lst_nhan_vien_khong_ton_tai;
+
+             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+            saveFileDialog1.RestoreDirectory = true;
+            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                v_grc_ds.ExportToXls(saveFileDialog1.FileName);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Trích xuất thành công. File sẽ tự động mở sau đây!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                open_file_excel_created(saveFileDialog1.FileName);
+            }
+        }
+        private void open_file_excel_created(string ip_str_file_name)
+        {
+            var process = new System.Diagnostics.Process();
+            process.StartInfo.FileName = ip_str_file_name;
+            process.StartInfo.Verb = "Open";
+            process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
+            process.Start();
+        }
+        private bool kiem_tra_du_lieu_nhan_vien_truoc_khi_luu()
+        {
+            var flag = true;
+
+            var v_i_row_count = m_grv_main.RowCount;
+            for(int v_i_row = 0; v_i_row < v_i_row_count; v_i_row++)
+            {
+                var v_dto = (DTO_BANG_LUONG_V2) m_grv_main.GetRow(v_i_row);
+                if(!ExecuteFuntion.KiemTraNhanVienCoTrongCsdlChua(v_dto.MA_NV))
+                {
+                    flag = false;
+                    m_lst_nhan_vien_khong_ton_tai.Add(v_dto.MA_NV);
+                }
+            }
+            return flag;
         }
         private void save_data(ENUM_CONFIRM_LUU_BANG_LUONG ip_confirm_save)
         {
+            if(!kiem_tra_du_lieu_nhan_vien_truoc_khi_luu())
+            {
+                var v_dc_so_nv_khong_co_trong_csdl = m_lst_nhan_vien_khong_ton_tai.Count;
+                XtraMessageBox.Show("Có " + v_dc_so_nv_khong_co_trong_csdl + " mã nhân viên không có trong phần mềm. Bạn lưu danh sách vào nhé!");
+                xuat_excel_nhan_vien_chua_co_trong_csdl();
+                return;
+            }
             US_RPT_LUONG_V2 v_us_rpt_luong_v2 = new US_RPT_LUONG_V2();
             DTO_BANG_LUONG_V2 v_dto_bang_luong_v2 = new DTO_BANG_LUONG_V2();
 
@@ -808,11 +888,11 @@ namespace BKI_DichVuMatDat.BaoCao
 
             for(int v_i_row = 0; v_i_row < v_i_row_count; v_i_row++)
             {
-                if (v_i_row == v_i_row_count) MessageBox.Show(v_i_row.ToString());
-                v_dto_bang_luong_v2 = (DTO_BANG_LUONG_V2) m_grv_main.GetRow(v_i_row);
+                if(v_i_row == v_i_row_count) MessageBox.Show(v_i_row.ToString());
+                v_dto_bang_luong_v2 = (DTO_BANG_LUONG_V2)m_grv_main.GetRow(v_i_row);
                 v_us_rpt_luong_v2 = transfer_dto_2_us_object(v_dto_bang_luong_v2);
 
-                var v_bol_nv_co_trong_bang_luong_chua = ExcuteFuntion.KiemTraNhanVienCoTrongBangLuongChua(v_us_rpt_luong_v2.dcID_NHAN_VIEN, lay_thang(), lay_nam());
+                var v_bol_nv_co_trong_bang_luong_chua = ExecuteFuntion.KiemTraNhanVienCoTrongBangLuongChua(v_us_rpt_luong_v2.dcID_NHAN_VIEN, lay_thang(), lay_nam());
                 switch(ip_confirm_save)
                 {
                     case ENUM_CONFIRM_LUU_BANG_LUONG.TINH_LAI_TOAN_BO:
@@ -843,42 +923,15 @@ namespace BKI_DichVuMatDat.BaoCao
                         }
                         break;
                     default:
-                        break;
+                        throw new Exception("Chưa gán giá trị cho ENUM_CONFIRM_LUU_BANG_LUONG!");
                 }
+                
             }
+            XtraMessageBox.Show("Lưu dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            hien_thi_thong_tin_bang_luong();
         }
-        private void chot_bang_luong()
-        {
-            DialogResult v_dlg_confirm;
-            string v_str_text_confirm;
 
-            if(!is_da_tinh_het_luong_nhan_vien())
-            {
-
-                v_str_text_confirm = "Chưa tính toán xong dữ liệu nhân viên. Bạn có chắc chắn muốn chốt bảng lương tháng ?" + lay_thang() + " năm " + lay_nam();
-            }
-            else
-            {
-                v_str_text_confirm = "Bạn có chắc chắn muốn chốt bảng lương tháng ?" + lay_thang() + " năm " + lay_nam();
-            }
-            v_dlg_confirm = XtraMessageBox.Show(v_str_text_confirm
-                                                            , "XÁC NHẬN"
-                                                            , MessageBoxButtons.YesNo
-                                                            , MessageBoxIcon.Question);
-            if(v_dlg_confirm == System.Windows.Forms.DialogResult.No)
-            {
-                XtraMessageBox.Show("Bạn đã hủy thao tác!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                return;
-            }
-            if(check_gd_chot_bang_luong_is_exist())
-            {
-                XtraMessageBox.Show("Bảng lương tháng đã được chốt rồi!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            US_GD_CHOT_BANG_LUONG v_us_gd_chot_bang_luong = new US_GD_CHOT_BANG_LUONG();
-            insert_gd_chot_bang_luong(v_us_gd_chot_bang_luong);
-            insert_hs_hs_bs_hs_anhk(CIPConvert.ToDecimal(m_txt_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_nam.Text.Trim()));
-        }
+        //Process khac
         private void xuat_excel_bang_luong()
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
@@ -890,7 +943,6 @@ namespace BKI_DichVuMatDat.BaoCao
                 DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
             }
         }
-
         #endregion
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BKI_DichVuMatDat.COMMON
 {
-    public class ExcuteFuntion
+    public class ExecuteFuntion
     {
         public static string ExecuteFuntionSql(string ip_str_funtion_name, params object[] parameters)
         {
@@ -16,7 +16,7 @@ namespace BKI_DichVuMatDat.COMMON
             string v_str_param = "";
             foreach(object item in parameters)
             {
-                v_str_param = v_str_param + item.ToString() + ",";
+                v_str_param = v_str_param + "'" + item.ToString()+ "'" + ",";
             }
             string v_query = v_str_select + "(" + v_str_param;
             if(parameters.Length > 0)
@@ -49,6 +49,29 @@ namespace BKI_DichVuMatDat.COMMON
             {
                 throw new Exception();
             }
+        }
+        public static bool KiemTraNhanVienCoTrongCsdlChua(string ip_str_ma_nv)
+        {
+            var v_str_result = ExecuteFuntionSql("fn_kiem_tra_nhan_vien_co_trong_csdl_chua", ip_str_ma_nv);
+            if(v_str_result == "Y")
+            {
+                return true;
+            }
+            else if(v_str_result == "N")
+            {
+                return false;
+            }
+            else
+            {
+                throw new Exception("Kiểm tra nhân viên có trong csdl chưa bị lỗi tầng CSDL");
+            }
+        }
+        public static decimal LayNhanVienID(string ip_str_ma_nv)
+        {
+            var v_str_result = ExecuteFuntionSql("fn_get_id_nhan_vien", ip_str_ma_nv);
+            var v_dc_result = Convert.ToDecimal(v_str_result);
+
+            return v_dc_result;
         }
     }
 }

@@ -62,6 +62,7 @@
             // radioGroup
             // 
             this.radioGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioGroup.EditValue = ((short)(2));
             this.radioGroup.Location = new System.Drawing.Point(0, 66);
             this.radioGroup.Name = "radioGroup";
             this.radioGroup.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;

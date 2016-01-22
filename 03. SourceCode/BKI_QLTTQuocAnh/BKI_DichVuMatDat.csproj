@@ -468,7 +468,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CHRMCommon.cs" />
+    <Compile Include="COMMON\CHRMCommon.cs" />
     <Compile Include="COMMON\ExcuteFuntion.cs" />
     <Compile Include="CONFIRM\msg001_confirm_tinh_bang_luong.cs">
       <SubType>Form</SubType>
@@ -982,8 +982,8 @@
     <Compile Include="Report\F800_ReportBangLuong.Designer.cs">
       <DependentUpon>F800_ReportBangLuong.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinFormControls.cs" />
-    <Compile Include="CHRM_BaseMessages210.cs" />
+    <Compile Include="COMMON\WinFormControls.cs" />
+    <Compile Include="COMMON\CHRM_BaseMessages210.cs" />
     <None Include="Resources\1425904361_23923.ico" />
     <None Include="Resources\1425904406_289616.ico" />
     <None Include="Resources\1425904521_438788.ico" />

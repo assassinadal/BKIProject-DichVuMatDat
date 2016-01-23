@@ -29,7 +29,7 @@ namespace BKI_DichVuMatDat.BaoCao
     {
         //Field & Property
         BindingList<DTO_BANG_LUONG_V2> m_lst_luong_v2 = new BindingList<DTO_BANG_LUONG_V2>();
-        List<string> m_lst_nhan_vien_khong_ton_tai = new List<string>();
+        BindingList<string> m_lst_nhan_vien_khong_ton_tai = new BindingList<string>();
         #region Public Interface
         ~f409_rpt_bang_luong()
         {
@@ -128,32 +128,34 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         private void m_bgwk_DoWork(object sender, DoWorkEventArgs e)
         {
+            var worker = sender as BackgroundWorker;
             try
             {
+                
                 if(!kiem_tra_tinh_hop_le_du_lieu_tren_giao_dien())
                 {
-                    m_bgwk.CancelAsync();
+                    worker.CancelAsync();
                     e.Cancel = true;
                     return;
                 }
                 if(kiem_tra_bang_luong_da_chot_chua())
                 {
                     XtraMessageBox.Show("Bảng lương đã được chốt rồi, không tính lại được!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    m_bgwk.CancelAsync();
+                    worker.CancelAsync();
                     e.Cancel = true;
                     return;
                 }
                 
                 start_tinh_bang_luong_process();
-                if(m_bgwk.CancellationPending)
+                if(worker.CancellationPending)
                 {
                     e.Cancel = true;
-                    m_bgwk.CancelAsync();
+                    worker.CancelAsync();
                 }
             }
             catch(Exception v_e)
             {
-                m_bgwk.CancelAsync();
+                worker.CancelAsync();
                 e.Cancel = true;
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -162,6 +164,7 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
+                var worker = sender as BackgroundWorker;
                 if((e.Cancelled == true))
                 {
                     m_prb.Text = "Thao tác bị hoãn!";
@@ -196,7 +199,7 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
-                this.m_prb.Text = (e.ProgressPercentage.ToString() + "%");
+                //this.m_prb.Text = (e.ProgressPercentage.ToString() + "%");
                 this.m_prb.EditValue = e.ProgressPercentage;
             }
             catch(Exception)
@@ -403,6 +406,7 @@ namespace BKI_DichVuMatDat.BaoCao
         private void clear_grid()
         {
             m_lst_luong_v2 = new BindingList<DTO_BANG_LUONG_V2>();
+            m_lst_nhan_vien_khong_ton_tai = new BindingList<string>();
             m_grc_main.DataSource = null;
             m_grc_main.RefreshDataSource();
         }
@@ -823,18 +827,21 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         private void xuat_excel_nhan_vien_chua_co_trong_csdl()
         {
-            GridControl v_grc_ds = new GridControl();
-            GridView v_grv_ds = new GridView();
-            v_grv_ds.Columns.AddField("MA_NV");
-            v_grc_ds.ViewCollection.Add(v_grv_ds);
-            v_grc_ds.DataSource = m_lst_nhan_vien_khong_ton_tai;
+            DataTable v_dt_src = new DataTable();
+            v_dt_src.Columns.Add("MA_NV");
+            v_dt_src.Columns["MA_NV"].DataType = typeof(string);
+            foreach(var item in m_lst_nhan_vien_khong_ton_tai)
+            {
+                v_dt_src.Rows.Add(item);
+            }
+            gridControl1.DataSource = v_dt_src;
 
              SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+            saveFileDialog1.Filter = "xlsx files (*.xlsx)|*.xls|All files (*.*)|*.*";
             saveFileDialog1.RestoreDirectory = true;
             if(saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                v_grc_ds.ExportToXls(saveFileDialog1.FileName);
+                gridView1.ExportToXls(saveFileDialog1.FileName);
                 DevExpress.XtraEditors.XtraMessageBox.Show("Trích xuất thành công. File sẽ tự động mở sau đây!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 open_file_excel_created(saveFileDialog1.FileName);
             }
@@ -850,6 +857,7 @@ namespace BKI_DichVuMatDat.BaoCao
         private bool kiem_tra_du_lieu_nhan_vien_truoc_khi_luu()
         {
             var flag = true;
+            m_lst_nhan_vien_khong_ton_tai = new BindingList<string>();
 
             var v_i_row_count = m_grv_main.RowCount;
             for(int v_i_row = 0; v_i_row < v_i_row_count; v_i_row++)

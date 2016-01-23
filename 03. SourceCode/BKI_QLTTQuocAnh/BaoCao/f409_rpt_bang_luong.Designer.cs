@@ -37,6 +37,9 @@
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem4 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_cmd_luu_du_lieu = new DevExpress.XtraEditors.SimpleButton();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -183,6 +186,8 @@
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -200,6 +205,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.gridControl1);
             this.panel1.Controls.Add(this.m_cmd_luu_du_lieu);
             this.panel1.Controls.Add(this.panelControl1);
             this.panel1.Controls.Add(this.popupGalleryEdit);
@@ -210,6 +216,33 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(1257, 92);
             this.panel1.TabIndex = 0;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gridControl1.Location = new System.Drawing.Point(957, 7);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(214, 80);
+            this.gridControl1.TabIndex = 4;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            this.gridControl1.Visible = false;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MA_NV});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
+            // MA_NV
+            // 
+            this.MA_NV.Caption = "Mã NV không có trong phần mềm";
+            this.MA_NV.FieldName = "MA_NV";
+            this.MA_NV.Name = "MA_NV";
+            this.MA_NV.Visible = true;
+            this.MA_NV.VisibleIndex = 0;
             // 
             // m_cmd_luu_du_lieu
             // 
@@ -1974,6 +2007,8 @@
             this.Name = "f409_rpt_bang_luong";
             this.Text = "F409 - Tính Bảng lương nhân viên";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -2139,6 +2174,9 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand17;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand33;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn MA_NV;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

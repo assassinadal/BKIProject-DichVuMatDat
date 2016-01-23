@@ -1977,7 +1977,6 @@
     <None Include="Resources\brush_24.png" />
     <None Include="Resources\delete_24.png" />
     <Content Include="paper1331.ico" />
-    <Content Include="Software_win7.ico" />
   </ItemGroup>
   <ItemGroup>
     <FileAssociation Include=".ico">

@@ -485,6 +485,14 @@ namespace BKI_DichVuMatDat
             v_cstore.addDecimalInputParam("@ip_int_nam", ip_dc_nam);
             v_cstore.fillDataSetByCommand(this, ip_ds);
         }
+        public void FillThongTinTongHopNhanVienV2(DataSet ip_ds, decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_rpt_lay_thong_tin_tong_hop_1_nhan_vien_v2");
+            v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            v_cstore.addDecimalInputParam("@ip_int_thang", ip_dc_thang);
+            v_cstore.addDecimalInputParam("@ip_int_nam", ip_dc_nam);
+            v_cstore.fillDataSetByCommand(this, ip_ds);
+        }
         internal void FillDatasetGDChamCong(DataSet v_ds, DateTime v_dat)
         {
             CStoredProc v_cstore = new CStoredProc("pr_gd_cham_cong");

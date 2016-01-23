@@ -30,18 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f409_rpt_bang_luong));
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem1 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem2 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem3 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem4 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_cmd_luu_du_lieu = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_export_excel = new DevExpress.XtraEditors.SimpleButton();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.m_cmd_chot_bang_luong = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_luu_du_lieu = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
@@ -49,7 +47,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_thong_bao = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_so_luong_nv_tinh_luong = new DevExpress.XtraEditors.LabelControl();
-            this.popupGalleryEdit = new DevExpress.XtraEditors.PopupGalleryEdit();
             this.m_cmd_tinh_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_bgwk = new System.ComponentModel.BackgroundWorker();
             this.spreadsheetBarController1 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetBarController();
@@ -193,7 +190,6 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupGalleryEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).BeginInit();
@@ -206,9 +202,11 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.gridControl1);
+            this.panel1.Controls.Add(this.m_cmd_export_excel);
+            this.panel1.Controls.Add(this.m_cmd_chot_bang_luong);
+            this.panel1.Controls.Add(this.m_cmd_import_excel);
             this.panel1.Controls.Add(this.m_cmd_luu_du_lieu);
             this.panel1.Controls.Add(this.panelControl1);
-            this.panel1.Controls.Add(this.popupGalleryEdit);
             this.panel1.Controls.Add(this.m_cmd_tinh_bang_luong);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -220,7 +218,7 @@
             // gridControl1
             // 
             this.gridControl1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gridControl1.Location = new System.Drawing.Point(957, 7);
+            this.gridControl1.Location = new System.Drawing.Point(1021, 6);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(214, 80);
@@ -244,16 +242,16 @@
             this.MA_NV.Visible = true;
             this.MA_NV.VisibleIndex = 0;
             // 
-            // m_cmd_luu_du_lieu
+            // m_cmd_export_excel
             // 
-            this.m_cmd_luu_du_lieu.ImageIndex = 12;
-            this.m_cmd_luu_du_lieu.ImageList = this.imageCollection;
-            this.m_cmd_luu_du_lieu.Location = new System.Drawing.Point(291, 50);
-            this.m_cmd_luu_du_lieu.Name = "m_cmd_luu_du_lieu";
-            this.m_cmd_luu_du_lieu.Size = new System.Drawing.Size(164, 29);
-            this.m_cmd_luu_du_lieu.TabIndex = 2;
-            this.m_cmd_luu_du_lieu.Text = "Bước 2: Lưu bảng lương";
-            this.m_cmd_luu_du_lieu.ToolTip = "Lưu dữ liệu lương nhân viên đã tính toán, chỉnh sửa";
+            this.m_cmd_export_excel.ImageIndex = 1;
+            this.m_cmd_export_excel.ImageList = this.imageCollection;
+            this.m_cmd_export_excel.Location = new System.Drawing.Point(665, 50);
+            this.m_cmd_export_excel.Name = "m_cmd_export_excel";
+            this.m_cmd_export_excel.Size = new System.Drawing.Size(164, 29);
+            this.m_cmd_export_excel.TabIndex = 2;
+            this.m_cmd_export_excel.Text = "Trích xuất dữ liệu";
+            this.m_cmd_export_excel.ToolTip = "Xuất dữ liệu trên lưới ra file excel";
             // 
             // imageCollection
             // 
@@ -271,6 +269,40 @@
             this.imageCollection.Images.SetKeyName(10, "list.png");
             this.imageCollection.Images.SetKeyName(11, "eye.png");
             this.imageCollection.Images.SetKeyName(12, "note.png");
+            // 
+            // m_cmd_chot_bang_luong
+            // 
+            this.m_cmd_chot_bang_luong.ImageIndex = 2;
+            this.m_cmd_chot_bang_luong.ImageList = this.imageCollection;
+            this.m_cmd_chot_bang_luong.Location = new System.Drawing.Point(482, 11);
+            this.m_cmd_chot_bang_luong.Name = "m_cmd_chot_bang_luong";
+            this.m_cmd_chot_bang_luong.Size = new System.Drawing.Size(164, 29);
+            this.m_cmd_chot_bang_luong.TabIndex = 2;
+            this.m_cmd_chot_bang_luong.Text = "Chốt bảng lương";
+            this.m_cmd_chot_bang_luong.ToolTip = "Chốt bảng lương chỉ thực hiện khi đã chắc chắn về dữ liệu lương tháng" +
+    ". ";
+            // 
+            // m_cmd_import_excel
+            // 
+            this.m_cmd_import_excel.ImageIndex = 0;
+            this.m_cmd_import_excel.ImageList = this.imageCollection;
+            this.m_cmd_import_excel.Location = new System.Drawing.Point(665, 11);
+            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
+            this.m_cmd_import_excel.Size = new System.Drawing.Size(164, 29);
+            this.m_cmd_import_excel.TabIndex = 2;
+            this.m_cmd_import_excel.Text = "Import Excel";
+            this.m_cmd_import_excel.ToolTip = "Lấy dữ liệu bảng lương từ file Excel trước khi Lưu bảng lương";
+            // 
+            // m_cmd_luu_du_lieu
+            // 
+            this.m_cmd_luu_du_lieu.ImageIndex = 12;
+            this.m_cmd_luu_du_lieu.ImageList = this.imageCollection;
+            this.m_cmd_luu_du_lieu.Location = new System.Drawing.Point(291, 50);
+            this.m_cmd_luu_du_lieu.Name = "m_cmd_luu_du_lieu";
+            this.m_cmd_luu_du_lieu.Size = new System.Drawing.Size(164, 29);
+            this.m_cmd_luu_du_lieu.TabIndex = 2;
+            this.m_cmd_luu_du_lieu.Text = "Bước 2: Lưu bảng lương";
+            this.m_cmd_luu_du_lieu.ToolTip = "Lưu dữ liệu lương nhân viên đã tính toán, chỉnh sửa";
             // 
             // panelControl1
             // 
@@ -355,51 +387,6 @@
             this.m_lbl_so_luong_nv_tinh_luong.Size = new System.Drawing.Size(9, 13);
             this.m_lbl_so_luong_nv_tinh_luong.TabIndex = 4;
             this.m_lbl_so_luong_nv_tinh_luong.Text = "...";
-            // 
-            // popupGalleryEdit
-            // 
-            this.popupGalleryEdit.Location = new System.Drawing.Point(472, 48);
-            this.popupGalleryEdit.Name = "popupGalleryEdit";
-            this.popupGalleryEdit.Properties.AutoHeight = false;
-            this.popupGalleryEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            // 
-            // popupGalleryEditGallery1
-            // 
-            this.popupGalleryEdit.Properties.Gallery.AutoSize = DevExpress.XtraBars.Ribbon.GallerySizeMode.Vertical;
-            galleryItem1.Caption = "Xem bảng lương";
-            galleryItem1.Description = "Xem dữ liệu lương đã tính";
-            galleryItem1.ImageIndex = 11;
-            galleryItem1.Value = "3";
-            galleryItem2.Caption = "Xuất Excel";
-            galleryItem2.ImageIndex = 1;
-            galleryItem2.Value = "1";
-            galleryItem3.Caption = "Import Excel";
-            galleryItem3.Description = "Import dữ liệu lương từ file Excel";
-            galleryItem3.ImageIndex = 0;
-            galleryItem3.Value = "2";
-            galleryItem4.Caption = "Chốt bảng lương";
-            galleryItem4.Description = "Chốt bảng lương cuối tháng";
-            galleryItem4.Image = ((System.Drawing.Image)(resources.GetObject("galleryItem4.Image")));
-            galleryItem4.ImageIndex = 2;
-            galleryItem4.Value = "2";
-            galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem1,
-            galleryItem2,
-            galleryItem3,
-            galleryItem4});
-            this.popupGalleryEdit.Properties.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup1});
-            this.popupGalleryEdit.Properties.Gallery.Images = this.imageCollection;
-            this.popupGalleryEdit.Properties.Gallery.ImageSize = new System.Drawing.Size(24, 24);
-            this.popupGalleryEdit.Properties.Gallery.ItemSize = new System.Drawing.Size(24, 24);
-            this.popupGalleryEdit.Properties.Gallery.ShowItemText = true;
-            this.popupGalleryEdit.Properties.Gallery.ShowScrollBar = DevExpress.XtraBars.Ribbon.Gallery.ShowScrollBar.Auto;
-            this.popupGalleryEdit.Properties.NullText = "-> Chọn tao tác khác";
-            this.popupGalleryEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.popupGalleryEdit.Size = new System.Drawing.Size(256, 35);
-            this.popupGalleryEdit.TabIndex = 3;
-            this.popupGalleryEdit.ToolTip = "Các thao tác khác";
             // 
             // m_cmd_tinh_bang_luong
             // 
@@ -949,6 +936,7 @@
             this.colTONG_THU_NHAP_TRONG_LUONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTONG_THU_NHAP_TRONG_LUONG.Caption = "Tổng TN trong bảng lương";
             this.colTONG_THU_NHAP_TRONG_LUONG.ColumnEdit = this.repositoryItemTextEditTien;
+            this.colTONG_THU_NHAP_TRONG_LUONG.FieldName = "TONG_THU_NHAP_TRONG_LUONG";
             this.colTONG_THU_NHAP_TRONG_LUONG.Name = "colTONG_THU_NHAP_TRONG_LUONG";
             this.colTONG_THU_NHAP_TRONG_LUONG.OptionsColumn.ShowCaption = false;
             this.colTONG_THU_NHAP_TRONG_LUONG.Visible = true;
@@ -2015,7 +2003,6 @@
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupGalleryEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).EndInit();
@@ -2086,7 +2073,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colID;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.PopupGalleryEdit popupGalleryEdit;
         private DevExpress.Utils.ImageCollection imageCollection;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
@@ -2177,6 +2163,9 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn MA_NV;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_import_excel;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_export_excel;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_chot_bang_luong;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

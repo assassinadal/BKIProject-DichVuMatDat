@@ -54,9 +54,35 @@ namespace BKI_DichVuMatDat.BaoCao
             Load += f409_rpt_bang_luong_Load;
             m_cmd_tinh_bang_luong.Click += m_cmd_tinh_bang_luong_Click;
             m_cmd_luu_du_lieu.Click += m_cmd_luu_du_lieu_Click;
-            popupGalleryEdit.Closed += popupGalleryEdit_Closed;
             m_txt_thang.Leave += m_txt_thang_Leave;
             m_txt_nam.Leave += m_txt_nam_Leave;
+            m_cmd_chot_bang_luong.Click += m_cmd_chot_bang_luong_Click;
+            m_cmd_import_excel.Click += m_cmd_import_excel_Click;
+            m_cmd_export_excel.Click += m_cmd_export_excel_Click;
+        }
+
+        void m_cmd_export_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                xuat_excel_bang_luong();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_import_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_excel_to_grid(WinFormControls.openFileDialog());
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void f409_rpt_bang_luong_FormClosed(object sender, FormClosedEventArgs e)
@@ -243,57 +269,6 @@ namespace BKI_DichVuMatDat.BaoCao
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        void popupGalleryEdit_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
-        {
-            try
-            {
-                PopupGalleryEdit v_p = sender as PopupGalleryEdit;
-                switch(e.CloseMode)
-                {
-                    case PopupCloseMode.ButtonClick:
-                        break;
-                    case PopupCloseMode.Cancel:
-                        break;
-                    case PopupCloseMode.CloseUpKey:
-                        break;
-                    case PopupCloseMode.Immediate:
-                        break;
-                    case PopupCloseMode.Normal:
-                        if(m_bgwk.IsBusy)
-                        {
-                            XtraMessageBox.Show("Chức năng đang thực hiện tính toán dữ liệu lương rồi, bạn đợi chút", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
-                        if(v_p.EditValue == null)
-                        {
-                            break;
-                        }
-                        var v_i_thao_tac_chon = Convert.ToInt16(v_p.EditValue);
-                        switch(v_i_thao_tac_chon)
-                        {
-                            case (int)E_THAO_TAC_CHON.XUAT_EXCEL:
-                                xuat_excel_bang_luong();
-                                break;
-                            case (int)E_THAO_TAC_CHON.CHOT_BANG_LUONG:
-                                chot_bang_luong();
-                                break;
-                            case (int)E_THAO_TAC_CHON.XEM_BANG_LUONG:
-                                break;
-                            case (int)E_THAO_TAC_CHON.IMPORT_EXCEL:
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
         private void m_cmd_tinh_lai_cho_nhan_vien_Click(object sender, EventArgs e)
         {
             try
@@ -349,8 +324,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 }
                 else
                 {
-                    US_RPT_LUONG_V2 v_us_update = new US_RPT_LUONG_V2(Convert.ToDecimal(v_dr_Focused[RPT_LUONG_V2.ID]));
-                    update_us_luong_v2_by_datarow_in_grid(ref v_us_update, v_dr_Focused);
+                    e.Valid = true;
                 }
             }
             catch(Exception v_e)
@@ -361,12 +335,41 @@ namespace BKI_DichVuMatDat.BaoCao
         #endregion
 
         #region Data Structure
-        enum E_THAO_TAC_CHON
+        enum e_col_thu_tu_bang_luong
         {
-            IMPORT_EXCEL = 0,
-            XUAT_EXCEL = 1,
-            CHOT_BANG_LUONG = 2,
-            XEM_BANG_LUONG = 3
+            MA_NV = 0,
+            LUONG_NS = 1,
+            LUONG_CHE_DO = 2,
+            AN_CA = 3,
+            PHU_CAP_TN = 4,
+            LAM_THEM_150 = 5,
+            THU_NHAP_KHAC_TRONG_LUONG = 6,
+            TONG_THU_NHAP_TRONG_LUONG = 7,
+            THUONG = 8,
+            THUONG_ATHK = 9,
+            THUONG_LE_TET = 10,
+            BO_SUNG_LUONG = 11,
+            THU_NHAP_KHAC_NGOAI_LUONG = 12,
+            TONG_THU_NHAP_NGOAI_LUONG = 13,
+            TONG_THU_NHAP = 14,
+            GIAM_TRU_AN_CA = 15,
+            GIAM_TRU_BHXH = 16,
+            GIAM_TRU_BHYT = 17,
+            GIAM_TRU_BHTN = 18,
+            GIAM_TRU_LAM_THEM = 19,
+            GIAM_TRU_GIA_CANH = 20,
+            GIAM_TRU_PHU_THUOC = 21,
+            GIAM_TRU_KHAC = 22,
+            TONG_GIAM_TRU = 23,
+            THU_NHAP_TINH_THUE = 24,
+            PHAI_THU_BHXH = 25,
+            PHAI_THU_BHYT = 26,
+            PHAI_THU_BHTN = 27,
+            DOAN_PHI = 28,
+            THUE_TNCN = 29,
+            PHAI_THU_KHAC = 30,
+            TONG_PHAI_NOP = 31, 
+            THUC_LINH = 32
         }
         #endregion
 
@@ -652,12 +655,12 @@ namespace BKI_DichVuMatDat.BaoCao
                 decimal v_dc_id_nhan_vien = Convert.ToDecimal(v_dr_nv[0]);
 
                 DataRow v_dr_luong_nv = CHRMCommon.get_luong_1_nhan_vien_v2(v_dc_id_nhan_vien, (int)lay_thang(), (int)lay_nam());
-                DTO_BANG_LUONG_V2 v_dto_luong = transfer_data_row_luong_2_object(v_dr_luong_nv);
+                DTO_BANG_LUONG_V2 v_dto_luong = transfer_data_row_db_luong_2_object(v_dr_luong_nv);
                 m_lst_luong_v2.Add(v_dto_luong);
                 m_bgwk.ReportProgress((i + 1) * 100 / ip_ds_danh_sach_nv.Tables[0].Rows.Count);
             }
         }
-        private DTO_BANG_LUONG_V2 transfer_data_row_luong_2_object(DataRow ip_dr_luong)
+        private DTO_BANG_LUONG_V2 transfer_data_row_db_luong_2_object(DataRow ip_dr_luong)
         {
             DTO_BANG_LUONG_V2 v_dto_luong = new DTO_BANG_LUONG_V2();
             v_dto_luong.ID_NHAN_VIEN = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.ID_NHAN_VIEN]);
@@ -862,11 +865,11 @@ namespace BKI_DichVuMatDat.BaoCao
             var v_i_row_count = m_grv_main.RowCount;
             for(int v_i_row = 0; v_i_row < v_i_row_count; v_i_row++)
             {
-                var v_dto = (DTO_BANG_LUONG_V2) m_grv_main.GetRow(v_i_row);
-                if(!ExecuteFuntion.KiemTraNhanVienCoTrongCsdlChua(v_dto.MA_NV))
+                var v_str_ma_nv = m_grv_main.GetRowCellValue(v_i_row,RPT_LUONG.MA_NV).ToString();
+                if(!ExecuteFuntion.KiemTraNhanVienCoTrongCsdlChua(v_str_ma_nv))
                 {
                     flag = false;
-                    m_lst_nhan_vien_khong_ton_tai.Add(v_dto.MA_NV);
+                    m_lst_nhan_vien_khong_ton_tai.Add(v_str_ma_nv);
                 }
             }
             return flag;
@@ -940,6 +943,133 @@ namespace BKI_DichVuMatDat.BaoCao
         }
 
         //Process khac
+        private void format_table_source_after_import(DataTable ip_dt_src)
+        {
+            ip_dt_src.Rows.RemoveAt(0);
+            ip_dt_src.Rows.RemoveAt(0);
+            if(ip_dt_src.Rows[ip_dt_src.Rows.Count - 1][(int)e_col_thu_tu_bang_luong.LUONG_NS] == DBNull.Value)
+            {
+                ip_dt_src.Rows.RemoveAt(ip_dt_src.Rows.Count - 1);
+            }
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.MA_NV].ColumnName = RPT_LUONG_V2.MA_NV;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.LUONG_NS].ColumnName = RPT_LUONG_V2.LUONG_NS;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.LUONG_CHE_DO].ColumnName = RPT_LUONG_V2.LUONG_CD;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.AN_CA].ColumnName = RPT_LUONG_V2.AN_CA;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.PHU_CAP_TN].ColumnName = RPT_LUONG_V2.PHU_CAP_TN;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.LAM_THEM_150].ColumnName = RPT_LUONG_V2.LAM_THEM;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.THU_NHAP_KHAC_TRONG_LUONG].ColumnName = RPT_LUONG_V2.THU_NHAP_KHAC_TRONG_LUONG;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.TONG_THU_NHAP_TRONG_LUONG].ColumnName = RPT_LUONG_V2.TONG_THU_NHAP_TRONG_LUONG;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.THUONG].ColumnName = RPT_LUONG_V2.THUONG;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.THUONG_ATHK].ColumnName = RPT_LUONG_V2.THUONG_ATHK;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.THUONG_LE_TET].ColumnName = RPT_LUONG_V2.THUONG_LE_TET;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.BO_SUNG_LUONG].ColumnName = RPT_LUONG_V2.BO_SUNG_LUONG;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.THU_NHAP_KHAC_NGOAI_LUONG].ColumnName = RPT_LUONG_V2.THU_NHAP_KHAC_NGOAI_LUONG;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.TONG_THU_NHAP_NGOAI_LUONG].ColumnName = RPT_LUONG_V2.TONG_THU_NHAP_NGOAI_LUONG;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.TONG_THU_NHAP].ColumnName = RPT_LUONG_V2.TONG_THU_NHAP;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.GIAM_TRU_BHXH].ColumnName = RPT_LUONG_V2.BHXH;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.GIAM_TRU_BHYT].ColumnName = RPT_LUONG_V2.BHYT;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.GIAM_TRU_BHTN].ColumnName = RPT_LUONG_V2.BHTN;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.GIAM_TRU_LAM_THEM].ColumnName = RPT_LUONG_V2.GIAM_TRU_LAM_THEM_150;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.GIAM_TRU_GIA_CANH].ColumnName = RPT_LUONG_V2.GIAM_TRU_GIA_CANH;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.GIAM_TRU_PHU_THUOC].ColumnName = RPT_LUONG_V2.GIAM_TRU_PHU_THUOC;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.GIAM_TRU_KHAC].ColumnName = RPT_LUONG_V2.GIAM_TRU_KHAC;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.TONG_GIAM_TRU].ColumnName = RPT_LUONG_V2.TONG_GIAM_TRU;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.THU_NHAP_TINH_THUE].ColumnName = RPT_LUONG_V2.THU_NHAP_CHIU_THUE;
+            //ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.PHAI_THU_BHYT].ColumnName = RPT_LUONG_V2.BHYT;
+            //ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.PHAI_THU_BHXH].ColumnName = RPT_LUONG_V2.BHXH;
+            //ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.PHAI_THU_BHTN].ColumnName = RPT_LUONG_V2.BHTN;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.DOAN_PHI].ColumnName = RPT_LUONG_V2.DOAN_PHI_CD;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.THUE_TNCN].ColumnName = RPT_LUONG_V2.THUE;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.PHAI_THU_KHAC].ColumnName = RPT_LUONG_V2.PHAI_NOP_KHAC;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.TONG_PHAI_NOP].ColumnName = RPT_LUONG_V2.TONG_PHAI_NOP;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.THUC_LINH].ColumnName = RPT_LUONG_V2.THUC_LINH;
+        }
+        private void load_data_excel_to_grid(string ip_path_excel)
+        {
+            try
+            {
+                var v_dlg_confirm = XtraMessageBox.Show("Bạn có chắc chắn muốn import dữ liệu từ file Excel lương?"
+                                                            , "XÁC NHẬN"
+                                                            , MessageBoxButtons.YesNo
+                                                            , MessageBoxIcon.Question);
+                if(v_dlg_confirm == System.Windows.Forms.DialogResult.No)
+                {
+                    XtraMessageBox.Show("Bạn đã hủy thao tác", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                SplashScreenManager.ShowForm(typeof(F_wait_form));
+                m_grc_main.DataSource = null;
+                m_lst_luong_v2 = new BindingList<DTO_BANG_LUONG_V2>();
+                DataTable v_dt_src = new DataTable();
+                WinFormControls.load_xls_to_data_table(ip_path_excel, ref v_dt_src);
+                format_table_source_after_import(v_dt_src);
+                load_data_2_list_bang_luong(v_dt_src);
+                m_grc_main.Visible = true;
+                m_grc_main.DataSource = m_lst_luong_v2;
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm();
+            }
+        }
+        private DTO_BANG_LUONG_V2 transfer_data_row_excel_luong_2_object(DataRow ip_dr_luong)
+        {
+            DTO_BANG_LUONG_V2 v_dto_luong = new DTO_BANG_LUONG_V2();
+            v_dto_luong.THANG = lay_thang();
+            v_dto_luong.NAM = lay_nam();
+
+            v_dto_luong.MA_NV = ip_dr_luong[RPT_LUONG_V2.MA_NV].ToString();
+
+            v_dto_luong.LUONG_NS = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.LUONG_NS]);
+            v_dto_luong.LUONG_CD = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.LUONG_CD]);
+            v_dto_luong.PHU_CAP_TN = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.PHU_CAP_TN]);
+            v_dto_luong.AN_CA = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.AN_CA]);
+            v_dto_luong.LAM_THEM = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.LAM_THEM]);
+            v_dto_luong.THU_NHAP_KHAC_TRONG_LUONG = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.THU_NHAP_KHAC_TRONG_LUONG]);
+            v_dto_luong.TONG_THU_NHAP_TRONG_LUONG = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.TONG_THU_NHAP_TRONG_LUONG]);
+
+            v_dto_luong.THUONG = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.THUONG]);
+            v_dto_luong.THUONG_ATHK = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.THUONG_ATHK]);
+            v_dto_luong.BO_SUNG_LUONG = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.BO_SUNG_LUONG]);
+            v_dto_luong.THUONG_LE_TET = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.THUONG_LE_TET]);
+            v_dto_luong.THU_NHAP_KHAC_NGOAI_LUONG = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.THU_NHAP_KHAC_NGOAI_LUONG]);
+            v_dto_luong.TONG_THU_NHAP_NGOAI_LUONG = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.TONG_THU_NHAP_NGOAI_LUONG]);
+            v_dto_luong.TONG_THU_NHAP = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.TONG_THU_NHAP]);
+
+            v_dto_luong.BHXH = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.BHXH]);
+            v_dto_luong.BHYT = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.BHYT]);
+            v_dto_luong.BHTN = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.BHTN]);
+            v_dto_luong.GIAM_TRU_LAM_THEM_150 = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.GIAM_TRU_LAM_THEM_150]);
+            v_dto_luong.GIAM_TRU_GIA_CANH = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.GIAM_TRU_GIA_CANH]);
+            v_dto_luong.GIAM_TRU_PHU_THUOC = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.GIAM_TRU_PHU_THUOC]);
+            v_dto_luong.GIAM_TRU_KHAC = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.GIAM_TRU_KHAC]);
+            v_dto_luong.TONG_GIAM_TRU = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.TONG_GIAM_TRU]);
+
+            v_dto_luong.THU_NHAP_CHIU_THUE = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.THU_NHAP_CHIU_THUE]);
+
+            v_dto_luong.DOAN_PHI_CD = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.DOAN_PHI_CD]);
+            v_dto_luong.THUE = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.THUE]);
+            v_dto_luong.PHAI_NOP_KHAC = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.PHAI_NOP_KHAC]);
+            v_dto_luong.TONG_PHAI_NOP = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.TONG_PHAI_NOP]);
+
+            v_dto_luong.THUC_LINH = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.THUC_LINH]);
+
+            return v_dto_luong;
+        }
+        private void load_data_2_list_bang_luong(DataTable ip_dt_src)
+        {
+            var v_dc_row_count = ip_dt_src.Rows.Count;
+            for(int i = 0; i < v_dc_row_count; i++)
+            {
+                var v_dr_grid = ip_dt_src.Rows[i];
+                DTO_BANG_LUONG_V2 v_dto_luong = transfer_data_row_excel_luong_2_object(v_dr_grid);
+                m_lst_luong_v2.Add(v_dto_luong);
+            }
+        }
         private void xuat_excel_bang_luong()
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();

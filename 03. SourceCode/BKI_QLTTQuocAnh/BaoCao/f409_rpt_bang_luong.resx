@@ -225,24 +225,13 @@
         52whXWSTDGjlAUAMv0x5nBJQiv8X8KYh53JljDEbrfWJ3Y2IO3EAAAAASUVORK5CYIIL
 </value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="galleryItem4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsSAAALEgHS3X78AAABEUlE
-        QVRIS7WUMQ7CMBRDmcpExUyOAgdAjJwDoR4DNrgTUjdgBA4AEywsMBW7crKElASKJUu/zvtWVbXthGSM
-        yeA5XMJ3mfMMzoTFCQsDeAtXAe/ggfBmAexqgYsneArnMmdmPNvDXa2FBajQwhHuK3ZiBh/EFIrDAsTn
-        RHiqyBPPxJSKwgL0FJwr8oSznpiHorAEVroMKpb7vRAh37c1fLXQF+YuOzIWrhS24QUL7Z2NdNPJ4q46
-        ruFnkSjX86kQZ2P4LI8Ve2IHHVPIoprhrNiTZVILL4o9WSamcGIZzoo9WeZjIZXEJMENckwkvKF1+Vau
-        xw0/6q+FbXx6Q3XUn16bP4clC+3v66bwG3MXHSZ7ARzA9LuT8musAAAAAElFTkSuQmCC
-</value>
-  </data>
   <metadata name="m_bgwk.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>384, 17</value>
   </metadata>
   <metadata name="spreadsheetBarController1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>188, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="repoBtnXoaLuong.Buttons" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6

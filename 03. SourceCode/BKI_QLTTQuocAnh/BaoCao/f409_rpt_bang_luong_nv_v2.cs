@@ -25,17 +25,17 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace BKI_DichVuMatDat.BaoCao
 {
-    public partial class f409_rpt_bang_luong : Form
+    public partial class f409_rpt_bang_luong_nv_v2 : Form
     {
         //Field & Property
         BindingList<DTO_BANG_LUONG_V2> m_lst_luong_v2 = new BindingList<DTO_BANG_LUONG_V2>();
         BindingList<string> m_lst_nhan_vien_khong_ton_tai = new BindingList<string>();
         #region Public Interface
-        ~f409_rpt_bang_luong()
+        ~f409_rpt_bang_luong_nv_v2()
         {
             Dispose(true);
         }
-        public f409_rpt_bang_luong()
+        public f409_rpt_bang_luong_nv_v2()
         {
             InitializeComponent();
             format_controls();

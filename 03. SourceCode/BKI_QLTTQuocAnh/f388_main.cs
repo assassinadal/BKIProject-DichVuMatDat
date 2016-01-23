@@ -1187,7 +1187,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f409_rpt_bang_luong v_f = new f409_rpt_bang_luong();
+                f409_rpt_bang_luong_nv_v2 v_f = new f409_rpt_bang_luong_nv_v2();
                 if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();

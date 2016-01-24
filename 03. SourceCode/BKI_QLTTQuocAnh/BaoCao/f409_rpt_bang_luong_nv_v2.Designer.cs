@@ -1984,7 +1984,7 @@
             this.repositoryItemMemoEdit1.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
             this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
             // 
-            // f409_rpt_bang_luong
+            // f409_rpt_bang_luong_nv_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1992,7 +1992,7 @@
             this.Controls.Add(this.m_prb);
             this.Controls.Add(this.m_grc_main);
             this.Controls.Add(this.panel1);
-            this.Name = "f409_rpt_bang_luong";
+            this.Name = "f409_rpt_bang_luong_nv_v2";
             this.Text = "F409 - Tính Bảng lương nhân viên";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

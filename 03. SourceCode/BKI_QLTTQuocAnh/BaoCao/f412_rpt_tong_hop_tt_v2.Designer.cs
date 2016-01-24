@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f412_rpt_tong_hop_tt_v2));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
+            this.m_txt_thang = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.m_cmd_tinh_lai_nhan_vien = new DevExpress.XtraEditors.SimpleButton();
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.m_cmd_tinh = new DevExpress.XtraEditors.SimpleButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.m_txt_nam = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_txt_thang = new System.Windows.Forms.TextBox();
             this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_bgwk = new System.ComponentModel.BackgroundWorker();
             this.m_panel = new System.Windows.Forms.Panel();
@@ -225,7 +227,11 @@
             this.colLAM_THEM_LE_TET = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repoBtnXoaLuong = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.ID_NHAN_VIEN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             this.m_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_tong_hop)).BeginInit();
@@ -237,11 +243,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.m_cmd_tinh);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.m_txt_nam);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_txt_thang);
+            this.panel1.Controls.Add(this.labelControl1);
+            this.panel1.Controls.Add(this.m_cmd_tinh_lai_nhan_vien);
+            this.panel1.Controls.Add(this.m_cmd_tinh);
             this.panel1.Controls.Add(this.m_cmd_luu_bang_luong);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -250,54 +256,95 @@
             this.panel1.Size = new System.Drawing.Size(907, 47);
             this.panel1.TabIndex = 7;
             // 
+            // m_txt_nam
+            // 
+            this.m_txt_nam.Location = new System.Drawing.Point(116, 10);
+            this.m_txt_nam.Name = "m_txt_nam";
+            this.m_txt_nam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.m_txt_nam.Properties.Appearance.Options.UseFont = true;
+            this.m_txt_nam.Properties.Appearance.Options.UseTextOptions = true;
+            this.m_txt_nam.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.m_txt_nam.Properties.AutoHeight = false;
+            this.m_txt_nam.Properties.Mask.EditMask = "d";
+            this.m_txt_nam.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.m_txt_nam.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_txt_nam.Properties.NullText = "Nhập năm";
+            this.m_txt_nam.Properties.NullValuePrompt = "Nhập năm";
+            this.m_txt_nam.Size = new System.Drawing.Size(100, 29);
+            this.m_txt_nam.TabIndex = 20;
+            // 
+            // m_txt_thang
+            // 
+            this.m_txt_thang.Location = new System.Drawing.Point(15, 10);
+            this.m_txt_thang.Name = "m_txt_thang";
+            this.m_txt_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.m_txt_thang.Properties.Appearance.Options.UseFont = true;
+            this.m_txt_thang.Properties.Appearance.Options.UseTextOptions = true;
+            this.m_txt_thang.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.m_txt_thang.Properties.AutoHeight = false;
+            this.m_txt_thang.Properties.Mask.EditMask = "d";
+            this.m_txt_thang.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.m_txt_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_txt_thang.Properties.NullText = "Nhập tháng";
+            this.m_txt_thang.Properties.NullValuePrompt = "Nhập tháng";
+            this.m_txt_thang.Size = new System.Drawing.Size(84, 29);
+            this.m_txt_thang.TabIndex = 19;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.labelControl1.Location = new System.Drawing.Point(103, 11);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(8, 25);
+            this.labelControl1.TabIndex = 21;
+            this.labelControl1.Text = "/";
+            // 
+            // m_cmd_tinh_lai_nhan_vien
+            // 
+            this.m_cmd_tinh_lai_nhan_vien.ImageIndex = 3;
+            this.m_cmd_tinh_lai_nhan_vien.ImageList = this.imageCollection;
+            this.m_cmd_tinh_lai_nhan_vien.Location = new System.Drawing.Point(334, 10);
+            this.m_cmd_tinh_lai_nhan_vien.Name = "m_cmd_tinh_lai_nhan_vien";
+            this.m_cmd_tinh_lai_nhan_vien.Size = new System.Drawing.Size(149, 29);
+            this.m_cmd_tinh_lai_nhan_vien.TabIndex = 9;
+            this.m_cmd_tinh_lai_nhan_vien.Text = "Tính lại lương nhân viên";
+            this.m_cmd_tinh_lai_nhan_vien.Click += new System.EventHandler(this.m_cmd_tinh_lai_nhan_vien_Click);
+            // 
+            // imageCollection
+            // 
+            this.imageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection.ImageStream")));
+            this.imageCollection.Images.SetKeyName(0, "dvmd_download.png");
+            this.imageCollection.Images.SetKeyName(1, "dvmd_upload.png");
+            this.imageCollection.Images.SetKeyName(2, "lock.png");
+            this.imageCollection.Images.SetKeyName(3, "refresh.png");
+            this.imageCollection.Images.SetKeyName(4, "dvmd_info.png");
+            this.imageCollection.Images.SetKeyName(5, "play.png");
+            this.imageCollection.Images.SetKeyName(6, "pause.png");
+            this.imageCollection.Images.SetKeyName(7, "pencil.png");
+            this.imageCollection.Images.SetKeyName(8, "trash.png");
+            this.imageCollection.Images.SetKeyName(9, "grid.png");
+            this.imageCollection.Images.SetKeyName(10, "list.png");
+            this.imageCollection.Images.SetKeyName(11, "eye.png");
+            this.imageCollection.Images.SetKeyName(12, "note.png");
+            // 
             // m_cmd_tinh
             // 
-            this.m_cmd_tinh.Location = new System.Drawing.Point(394, 13);
+            this.m_cmd_tinh.ImageIndex = 11;
+            this.m_cmd_tinh.ImageList = this.imageCollection;
+            this.m_cmd_tinh.Location = new System.Drawing.Point(222, 10);
             this.m_cmd_tinh.Name = "m_cmd_tinh";
-            this.m_cmd_tinh.Size = new System.Drawing.Size(75, 23);
+            this.m_cmd_tinh.Size = new System.Drawing.Size(106, 29);
             this.m_cmd_tinh.TabIndex = 9;
             this.m_cmd_tinh.Text = "Xem báo cáo";
             this.m_cmd_tinh.Click += new System.EventHandler(this.m_cmd_tinh_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(211, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Nhập năm";
-            // 
-            // m_txt_nam
-            // 
-            this.m_txt_nam.Location = new System.Drawing.Point(273, 15);
-            this.m_txt_nam.Name = "m_txt_nam";
-            this.m_txt_nam.Size = new System.Drawing.Size(100, 20);
-            this.m_txt_nam.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Nhập tháng";
-            // 
-            // m_txt_thang
-            // 
-            this.m_txt_thang.Location = new System.Drawing.Point(91, 15);
-            this.m_txt_thang.Name = "m_txt_thang";
-            this.m_txt_thang.Size = new System.Drawing.Size(100, 20);
-            this.m_txt_thang.TabIndex = 5;
-            // 
             // m_cmd_luu_bang_luong
             // 
-            this.m_cmd_luu_bang_luong.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_luu_bang_luong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_luu_bang_luong.Image")));
-            this.m_cmd_luu_bang_luong.Location = new System.Drawing.Point(748, 5);
+            this.m_cmd_luu_bang_luong.ImageIndex = 1;
+            this.m_cmd_luu_bang_luong.ImageList = this.imageCollection;
+            this.m_cmd_luu_bang_luong.Location = new System.Drawing.Point(489, 10);
             this.m_cmd_luu_bang_luong.Name = "m_cmd_luu_bang_luong";
-            this.m_cmd_luu_bang_luong.Size = new System.Drawing.Size(154, 37);
+            this.m_cmd_luu_bang_luong.Size = new System.Drawing.Size(130, 29);
             this.m_cmd_luu_bang_luong.TabIndex = 4;
             this.m_cmd_luu_bang_luong.Text = "Xuất bảng lương";
             this.m_cmd_luu_bang_luong.Click += new System.EventHandler(this.m_cmd_luu_bang_luong_Click);
@@ -314,7 +361,7 @@
             // 
             this.m_panel.Controls.Add(this.label3);
             this.m_panel.Controls.Add(this.m_prb);
-            this.m_panel.Location = new System.Drawing.Point(149, 170);
+            this.m_panel.Location = new System.Drawing.Point(147, 155);
             this.m_panel.Name = "m_panel";
             this.m_panel.Padding = new System.Windows.Forms.Padding(10);
             this.m_panel.Size = new System.Drawing.Size(649, 73);
@@ -443,7 +490,8 @@
             this.colNGAY_CONG_QUY_DINH,
             this.colLOAI_LAO_DONG,
             this.colSO_NGAY_LAM_THEM,
-            this.STT});
+            this.STT,
+            this.ID_NHAN_VIEN});
             this.m_adv_tong_hop.GridControl = this.m_grc_tong_hop;
             this.m_adv_tong_hop.GroupCount = 1;
             this.m_adv_tong_hop.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -2547,6 +2595,12 @@
             this.repoBtnXoaLuong.ReadOnly = true;
             this.repoBtnXoaLuong.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
+            // ID_NHAN_VIEN
+            // 
+            this.ID_NHAN_VIEN.Caption = "ID_NHAN_VIEN";
+            this.ID_NHAN_VIEN.FieldName = "ID_NHAN_VIEN";
+            this.ID_NHAN_VIEN.Name = "ID_NHAN_VIEN";
+            // 
             // f412_rpt_tong_hop_tt_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2560,6 +2614,9 @@
             this.Load += new System.EventHandler(this.f413_rpt_tong_hop_thong_tin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             this.m_panel.ResumeLayout(false);
             this.m_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).EndInit();
@@ -2576,10 +2633,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tinh;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox m_txt_nam;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox m_txt_thang;
         private DevExpress.XtraEditors.SimpleButton m_cmd_luu_bang_luong;
         private System.ComponentModel.BackgroundWorker m_bgwk;
         private System.Windows.Forms.Panel m_panel;
@@ -2769,5 +2822,11 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand17;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand33;
+        private DevExpress.Utils.ImageCollection imageCollection;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_tinh_lai_nhan_vien;
+        private DevExpress.XtraEditors.TextEdit m_txt_nam;
+        private DevExpress.XtraEditors.TextEdit m_txt_thang;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn ID_NHAN_VIEN;
     }
 }

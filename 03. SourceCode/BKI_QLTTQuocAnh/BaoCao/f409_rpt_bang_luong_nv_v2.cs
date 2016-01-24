@@ -876,6 +876,11 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         private void save_data(ENUM_CONFIRM_LUU_BANG_LUONG ip_confirm_save)
         {
+            if(ip_confirm_save == ENUM_CONFIRM_LUU_BANG_LUONG.NONE)
+            {
+                XtraMessageBox.Show("Bạn đã hủy thao tác!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if(!kiem_tra_du_lieu_nhan_vien_truoc_khi_luu())
             {
                 var v_dc_so_nv_khong_co_trong_csdl = m_lst_nhan_vien_khong_ton_tai.Count;
@@ -899,7 +904,6 @@ namespace BKI_DichVuMatDat.BaoCao
 
             for(int v_i_row = 0; v_i_row < v_i_row_count; v_i_row++)
             {
-                if(v_i_row == v_i_row_count) MessageBox.Show(v_i_row.ToString());
                 v_dto_bang_luong_v2 = (DTO_BANG_LUONG_V2)m_grv_main.GetRow(v_i_row);
                 v_us_rpt_luong_v2 = transfer_dto_2_us_object(v_dto_bang_luong_v2);
 

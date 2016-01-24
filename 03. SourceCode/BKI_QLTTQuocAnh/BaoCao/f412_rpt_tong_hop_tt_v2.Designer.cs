@@ -446,6 +446,39 @@
             this.STT});
             this.m_adv_tong_hop.GridControl = this.m_grc_tong_hop;
             this.m_adv_tong_hop.GroupCount = 1;
+            this.m_adv_tong_hop.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_THU_NHAP", this.colTONG_THU_NHAP, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_THU_NHAP_TRONG_LUONG", this.colTONG_THU_NHAP_TRONG_LUONG, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LUONG_NS", this.colLUONG_NS, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LUONG_CD", this.colLUONG_CD, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PHU_CAP_TN", this.colPHU_CAP_TN, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "AN_CA", this.colAN_CA, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LAM_THEM", this.colLAM_THEM, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THU_NHAP_KHAC_TRONG_LUONG", this.colTHU_NHAP_KHAC_TRONG_LUONG, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_THU_NHAP_NGOAI_LUONG", this.colTONG_THU_NHAP_NGOAI_LUONG, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUONG", this.colTHUONG, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUONG_ATHK", this.colTHUONG_ATHK, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BO_SUNG_LUONG", this.colBO_SUNG_LUONG, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUONG_LE_TET", this.colTHUONG_LE_TET, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THU_NHAP_KHAC_NGOAI_LUONG", this.colTHU_NHAP_KHAC_NGOAI_LUONG, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_GIAM_TRU", this.colTONG_GIAM_TRU, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHXH", this.colGIAM_TRU_BHXH, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHYT", this.colGIAM_TRU_BHYT, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHTN", this.colGIAM_TRU_BHTN, ""),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "AN_CA", this.colGIAM_TRU_AN_CA, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LAM_THEM", this.colGIAM_TRU_LAM_THEM_150, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "GIAM_TRU_GIA_CANH", this.colGIAM_TRU_GIA_CANH, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "GIAM_TRU_PHU_THUOC", this.colGIAM_TRU_PHU_THUOC, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "GIAM_TRU_KHAC", this.colGIAM_TRU_KHAC, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THU_NHAP_CHIU_THE", this.colTHU_NHAP_CHIU_THE, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_PHAI_NOP", this.colTONG_PHAI_NOP, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHXH", this.colPHAI_NOP_BHXH, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHYT", this.colPHAI_NOP_BHYT, ""),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHTN", this.colPHAI_NOP_BHTN, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOAN_PHI_CD", this.colPHAI_NOP_DOAN_PHI_CD, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUE", this.colPHAI_NOP_THUE_TNCN, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PHAI_NOP_KHAC", this.colPHAI_NOP_KHAC, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUC_LINH", this.colTHUC_LINH, "{0:n0}")});
             this.m_adv_tong_hop.Name = "m_adv_tong_hop";
             this.m_adv_tong_hop.OptionsBehavior.AutoExpandAllGroups = true;
             this.m_adv_tong_hop.OptionsBehavior.Editable = false;
@@ -1755,8 +1788,6 @@
             // 
             this.colTONG_THU_NHAP.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(179)))), ((int)(((byte)(217)))));
             this.colTONG_THU_NHAP.AppearanceCell.Options.UseBackColor = true;
-            this.colTONG_THU_NHAP.AppearanceCell.Options.UseTextOptions = true;
-            this.colTONG_THU_NHAP.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTONG_THU_NHAP.AppearanceHeader.Options.UseTextOptions = true;
             this.colTONG_THU_NHAP.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTONG_THU_NHAP.Caption = "Tổng thu nhập";
@@ -2525,7 +2556,7 @@
             this.Controls.Add(this.m_grc_tong_hop);
             this.Controls.Add(this.panel1);
             this.Name = "f412_rpt_tong_hop_tt_v2";
-            this.Text = "f412_rpt_tong_hop_tt_v2";
+            this.Text = "F412 - Báo cáo tổng hợp lương V2";
             this.Load += new System.EventHandler(this.f413_rpt_tong_hop_thong_tin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

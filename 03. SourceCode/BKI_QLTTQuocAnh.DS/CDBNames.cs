@@ -916,7 +916,11 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGAY_BAT_DAU_HS_LNS = "NGAY_BAT_DAU_HS_LNS";
         public const string NGAY_KET_THUC_HS_LNS = "NGAY_KET_THUC_HS_LNS";
         public const string DA_XOA_HS_LNS_YN = "DA_XOA_HS_LNS_YN";
+        public const string ID_LY_DO_CHINH_SUA_HS_LNS = "ID_LY_DO_CHINH_SUA_HS_LNS";
+        public const string LY_DO_CHINH_SUA_HS_LNS = "LY_DO_CHINH_SUA_HS_LNS";
+        public const string GHI_CHU_HS_LNS = "GHI_CHU_HS_LNS";
     }
+
 
     public class V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG
     {
@@ -934,6 +938,9 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGAY_BAT_DAU_LCD = "NGAY_BAT_DAU_LCD";
         public const string NGAY_KET_THUC_LCD = "NGAY_KET_THUC_LCD";
         public const string DA_XOA_LCD = "DA_XOA_LCD";
+        public const string ID_LY_DO_CHINH_SUA_LCD = "ID_LY_DO_CHINH_SUA_LCD";
+        public const string LY_DO_CHINH_SUA_LCD = "LY_DO_CHINH_SUA_LCD";
+        public const string GHI_CHU_LCD = "GHI_CHU_LCD";
     }
 
     public class V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN
@@ -1138,6 +1145,39 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGUOI_LAP = "NGUOI_LAP";
         public const string NGUOI_SUA = "NGUOI_SUA";
         public const string DA_XOA = "DA_XOA";
+    }
+
+    public class V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN
+    {
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string MA_NV = "MA_NV";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string HO_TEN = "HO_TEN";
+        public const string ID_HOP_DONG = "ID_HOP_DONG";
+        public const string ID_TRANG_THAI_LAO_DONG = "ID_TRANG_THAI_LAO_DONG";
+        public const string ID_LOAI_HOP_DONG = "ID_LOAI_HOP_DONG";
+        public const string MA_HOP_DONG = "MA_HOP_DONG";
+        public const string NGAY_BAT_DAU_HOP_DONG = "NGAY_BAT_DAU_HOP_DONG";
+        public const string NGAY_KET_THUC_HOP_DONG = "NGAY_KET_THUC_HOP_DONG";
+        public const string NGAY_KY_HOP_DONG = "NGAY_KY_HOP_DONG";
+        public const string DA_XOA_HOP_DONG_YN = "DA_XOA_HOP_DONG_YN";
+        public const string ID_GD_HS_LNS = "ID_GD_HS_LNS";
+        public const string HE_SO_LNS = "HE_SO_LNS";
+        public const string NGAY_BAT_DAU_HS_LNS = "NGAY_BAT_DAU_HS_LNS";
+        public const string NGAY_KET_THUC_HS_LNS = "NGAY_KET_THUC_HS_LNS";
+        public const string DA_XOA_HS_LNS_YN = "DA_XOA_HS_LNS_YN";
+        public const string ID_LY_DO_CHINH_SUA_HS_LNS = "ID_LY_DO_CHINH_SUA_HS_LNS";
+        public const string LY_DO_CHINH_SUA_HS_LNS = "LY_DO_CHINH_SUA_HS_LNS";
+        public const string GHI_CHU_HS_LNS = "GHI_CHU_HS_LNS";
+        public const string ID_GD_LCD = "ID_GD_LCD";
+        public const string LUONG_CHE_DO = "LUONG_CHE_DO";
+        public const string NGAY_BAT_DAU_LCD = "NGAY_BAT_DAU_LCD";
+        public const string NGAY_KET_THUC_LCD = "NGAY_KET_THUC_LCD";
+        public const string DA_XOA_LCD = "DA_XOA_LCD";
+        public const string ID_LY_DO_CHINH_SUA_LCD = "ID_LY_DO_CHINH_SUA_LCD";
+        public const string LY_DO_CHINH_SUA_LCD = "LY_DO_CHINH_SUA_LCD";
+        public const string GHI_CHU_LCD = "GHI_CHU_LCD";
     }
 
 

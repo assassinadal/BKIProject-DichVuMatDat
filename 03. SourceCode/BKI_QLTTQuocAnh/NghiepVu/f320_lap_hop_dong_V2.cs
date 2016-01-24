@@ -177,6 +177,28 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.FormClosed += f320_lap_hop_dong_V2_FormClosed;
 
             m_cmd_search.Click += m_cmd_search_Click;
+
+            m_grv_thong_tin_hop_dong.DoubleClick += m_grv_thong_tin_hop_dong_DoubleClick;
+        }
+
+        void m_grv_thong_tin_hop_dong_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal v_id_nhan_vien = 0;
+                v_id_nhan_vien = CIPConvert.ToDecimal(m_grv_thong_tin_hop_dong.GetRowCellValue(m_grv_thong_tin_hop_dong.FocusedRowHandle, "ID_NHAN_VIEN"));
+
+                f321_chi_tiet_hop_dong_da_ky_theo_thoi_gian v_frm = new f321_chi_tiet_hop_dong_da_ky_theo_thoi_gian();
+                v_frm.display_from_f320_v2(
+                                    v_id_nhan_vien
+                                    , m_dat_tu_ngay.DateTime.Date
+                                    , m_dat_den_ngay.DateTime.Date);
+
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_search_Click(object sender, EventArgs e)

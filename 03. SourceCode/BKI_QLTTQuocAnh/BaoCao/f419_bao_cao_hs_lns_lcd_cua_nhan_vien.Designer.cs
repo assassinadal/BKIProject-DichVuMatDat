@@ -37,6 +37,7 @@
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.m_chk_hien_lich_su = new DevExpress.XtraEditors.CheckEdit();
             this.m_cmd_xuat_bc_lcd = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_bc_hs_lns = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -103,15 +104,19 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.m_chk_hien_lich_su = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem12 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.LY_DO_CHINH_SUA_HS_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GHI_CHU_HS_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LY_DO_CHINH_SUA_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GHI_CHU_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_chk_hien_lich_su.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_bao_cao_lcd_nhan_vien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_bao_cao_lcd_nhan_vien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
@@ -141,11 +146,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_chk_hien_lich_su.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleLabelItem1
@@ -252,6 +256,15 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // m_chk_hien_lich_su
+            // 
+            this.m_chk_hien_lich_su.Location = new System.Drawing.Point(461, 64);
+            this.m_chk_hien_lich_su.Name = "m_chk_hien_lich_su";
+            this.m_chk_hien_lich_su.Properties.Caption = "Tích vào để xem lịch sử lương năng suất và lương chế độ";
+            this.m_chk_hien_lich_su.Size = new System.Drawing.Size(294, 19);
+            this.m_chk_hien_lich_su.StyleController = this.layoutControl1;
+            this.m_chk_hien_lich_su.TabIndex = 4;
+            // 
             // m_cmd_xuat_bc_lcd
             // 
             this.m_cmd_xuat_bc_lcd.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_bc_lcd.Image")));
@@ -319,7 +332,9 @@
             this.gridColumn14,
             this.gridColumn18,
             this.gridColumn19,
-            this.gridColumn20});
+            this.gridColumn20,
+            this.LY_DO_CHINH_SUA_LCD,
+            this.GHI_CHU_LCD});
             this.m_grv_bao_cao_lcd_nhan_vien.GridControl = this.m_grc_bao_cao_lcd_nhan_vien;
             this.m_grv_bao_cao_lcd_nhan_vien.Name = "m_grv_bao_cao_lcd_nhan_vien";
             this.m_grv_bao_cao_lcd_nhan_vien.OptionsBehavior.Editable = false;
@@ -370,7 +385,7 @@
             this.gridColumn11.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn11.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn11.Caption = "Mã nhân viên";
+            this.gridColumn11.Caption = "Mã NV";
             this.gridColumn11.FieldName = "MA_NV";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
@@ -425,7 +440,7 @@
             this.gridColumn18.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn18.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn18.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn18.Caption = "Lương chế độ";
+            this.gridColumn18.Caption = "Số tiền";
             this.gridColumn18.DisplayFormat.FormatString = "{#,##0}";
             this.gridColumn18.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn18.FieldName = "LUONG_CHE_DO";
@@ -442,7 +457,7 @@
             this.gridColumn19.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn19.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn19.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn19.Caption = "Ngày bắt đầu LCĐ";
+            this.gridColumn19.Caption = "Ngày bắt đầu";
             this.gridColumn19.FieldName = "NGAY_BAT_DAU_LCD";
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.Visible = true;
@@ -457,7 +472,7 @@
             this.gridColumn20.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn20.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn20.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn20.Caption = "Ngày kết thúc LCĐ";
+            this.gridColumn20.Caption = "Ngày kết thúc";
             this.gridColumn20.FieldName = "NGAY_KET_THUC_LCD";
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.Visible = true;
@@ -597,7 +612,9 @@
             this.HO_TEN,
             this.HE_SO_LNS,
             this.NGAY_BAT_DAU_HS_LNS,
-            this.NGAY_KET_THUC_HS_LNS});
+            this.NGAY_KET_THUC_HS_LNS,
+            this.LY_DO_CHINH_SUA_HS_LNS,
+            this.GHI_CHU_HS_LNS});
             this.m_grv_bao_cao_hs_lns_nhan_vien.GridControl = this.m_grc_bao_cao_hs_lns_nhan_vien;
             this.m_grv_bao_cao_hs_lns_nhan_vien.Name = "m_grv_bao_cao_hs_lns_nhan_vien";
             this.m_grv_bao_cao_hs_lns_nhan_vien.OptionsBehavior.Editable = false;
@@ -648,7 +665,7 @@
             this.MA_NV.AppearanceHeader.Options.UseTextOptions = true;
             this.MA_NV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MA_NV.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.MA_NV.Caption = "Mã nhân viên";
+            this.MA_NV.Caption = "Mã NV";
             this.MA_NV.FieldName = "MA_NV";
             this.MA_NV.Name = "MA_NV";
             this.MA_NV.Visible = true;
@@ -703,7 +720,7 @@
             this.HE_SO_LNS.AppearanceHeader.Options.UseTextOptions = true;
             this.HE_SO_LNS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.HE_SO_LNS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.HE_SO_LNS.Caption = "Hệ số LNS";
+            this.HE_SO_LNS.Caption = "Hệ số";
             this.HE_SO_LNS.FieldName = "HE_SO_LNS";
             this.HE_SO_LNS.Name = "HE_SO_LNS";
             this.HE_SO_LNS.Visible = true;
@@ -718,7 +735,7 @@
             this.NGAY_BAT_DAU_HS_LNS.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAY_BAT_DAU_HS_LNS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NGAY_BAT_DAU_HS_LNS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.NGAY_BAT_DAU_HS_LNS.Caption = "Ngày bắt đầu hs lns";
+            this.NGAY_BAT_DAU_HS_LNS.Caption = "Ngày bắt đầu";
             this.NGAY_BAT_DAU_HS_LNS.FieldName = "NGAY_BAT_DAU_HS_LNS";
             this.NGAY_BAT_DAU_HS_LNS.Name = "NGAY_BAT_DAU_HS_LNS";
             this.NGAY_BAT_DAU_HS_LNS.Visible = true;
@@ -733,7 +750,7 @@
             this.NGAY_KET_THUC_HS_LNS.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAY_KET_THUC_HS_LNS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NGAY_KET_THUC_HS_LNS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.NGAY_KET_THUC_HS_LNS.Caption = "Ngày kết thúc hs lns";
+            this.NGAY_KET_THUC_HS_LNS.Caption = "Ngày kết thúc";
             this.NGAY_KET_THUC_HS_LNS.FieldName = "NGAY_KET_THUC_HS_LNS";
             this.NGAY_KET_THUC_HS_LNS.Name = "NGAY_KET_THUC_HS_LNS";
             this.NGAY_KET_THUC_HS_LNS.Visible = true;
@@ -997,35 +1014,6 @@
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
-            // emptySpaceItem4
-            // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.CustomizationFormText = "emptySpaceItem5";
-            this.emptySpaceItem4.Location = new System.Drawing.Point(719, 28);
-            this.emptySpaceItem4.Name = "emptySpaceItem5";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(357, 24);
-            this.emptySpaceItem4.Text = "emptySpaceItem5";
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem7
-            // 
-            this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.CustomizationFormText = "emptySpaceItem7";
-            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 118);
-            this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(1076, 10);
-            this.emptySpaceItem7.Text = "emptySpaceItem7";
-            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // m_chk_hien_lich_su
-            // 
-            this.m_chk_hien_lich_su.Location = new System.Drawing.Point(461, 64);
-            this.m_chk_hien_lich_su.Name = "m_chk_hien_lich_su";
-            this.m_chk_hien_lich_su.Properties.Caption = "Tích vào để xem lịch sử lương năng suất và lương chế độ";
-            this.m_chk_hien_lich_su.Size = new System.Drawing.Size(294, 19);
-            this.m_chk_hien_lich_su.StyleController = this.layoutControl1;
-            this.m_chk_hien_lich_su.TabIndex = 4;
-            // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.m_chk_hien_lich_su;
@@ -1047,6 +1035,58 @@
             this.emptySpaceItem12.Text = "emptySpaceItem12";
             this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.CustomizationFormText = "emptySpaceItem5";
+            this.emptySpaceItem4.Location = new System.Drawing.Point(719, 28);
+            this.emptySpaceItem4.Name = "emptySpaceItem5";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(357, 24);
+            this.emptySpaceItem4.Text = "emptySpaceItem5";
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem7
+            // 
+            this.emptySpaceItem7.AllowHotTrack = false;
+            this.emptySpaceItem7.CustomizationFormText = "emptySpaceItem7";
+            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 118);
+            this.emptySpaceItem7.Name = "emptySpaceItem7";
+            this.emptySpaceItem7.Size = new System.Drawing.Size(1076, 10);
+            this.emptySpaceItem7.Text = "emptySpaceItem7";
+            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // LY_DO_CHINH_SUA_HS_LNS
+            // 
+            this.LY_DO_CHINH_SUA_HS_LNS.Caption = "Lý do chỉnh sửa ";
+            this.LY_DO_CHINH_SUA_HS_LNS.FieldName = "LY_DO_CHINH_SUA_HS_LNS";
+            this.LY_DO_CHINH_SUA_HS_LNS.Name = "LY_DO_CHINH_SUA_HS_LNS";
+            this.LY_DO_CHINH_SUA_HS_LNS.Visible = true;
+            this.LY_DO_CHINH_SUA_HS_LNS.VisibleIndex = 7;
+            // 
+            // GHI_CHU_HS_LNS
+            // 
+            this.GHI_CHU_HS_LNS.Caption = "Ghi chú";
+            this.GHI_CHU_HS_LNS.FieldName = "GHI_CHU_HS_LNS";
+            this.GHI_CHU_HS_LNS.Name = "GHI_CHU_HS_LNS";
+            this.GHI_CHU_HS_LNS.Visible = true;
+            this.GHI_CHU_HS_LNS.VisibleIndex = 8;
+            // 
+            // LY_DO_CHINH_SUA_LCD
+            // 
+            this.LY_DO_CHINH_SUA_LCD.Caption = "Lý do chỉnh sửa";
+            this.LY_DO_CHINH_SUA_LCD.FieldName = "LY_DO_CHINH_SUA_LCD";
+            this.LY_DO_CHINH_SUA_LCD.Name = "LY_DO_CHINH_SUA_LCD";
+            this.LY_DO_CHINH_SUA_LCD.Visible = true;
+            this.LY_DO_CHINH_SUA_LCD.VisibleIndex = 7;
+            // 
+            // GHI_CHU_LCD
+            // 
+            this.GHI_CHU_LCD.Caption = "Ghi chú";
+            this.GHI_CHU_LCD.FieldName = "GHI_CHU_LCD";
+            this.GHI_CHU_LCD.Name = "GHI_CHU_LCD";
+            this.GHI_CHU_LCD.Visible = true;
+            this.GHI_CHU_LCD.VisibleIndex = 8;
+            // 
             // f419_bao_cao_hs_lns_lcd_cua_nhan_vien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1060,6 +1100,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_chk_hien_lich_su.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_bao_cao_lcd_nhan_vien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_bao_cao_lcd_nhan_vien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).EndInit();
@@ -1089,11 +1130,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_chk_hien_lich_su.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1179,6 +1219,10 @@
         private DevExpress.XtraEditors.CheckEdit m_chk_hien_lich_su;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem12;
+        private DevExpress.XtraGrid.Columns.GridColumn LY_DO_CHINH_SUA_LCD;
+        private DevExpress.XtraGrid.Columns.GridColumn GHI_CHU_LCD;
+        private DevExpress.XtraGrid.Columns.GridColumn LY_DO_CHINH_SUA_HS_LNS;
+        private DevExpress.XtraGrid.Columns.GridColumn GHI_CHU_HS_LNS;
 
     }
 }

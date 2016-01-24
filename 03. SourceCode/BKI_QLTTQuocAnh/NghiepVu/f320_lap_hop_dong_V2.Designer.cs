@@ -74,6 +74,8 @@
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -101,6 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // m_pnl_out_place_dm
@@ -161,6 +164,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.labelControl1);
             this.layoutControl1.Controls.Add(this.m_dat_den_ngay);
             this.layoutControl1.Controls.Add(this.m_dat_tu_ngay);
             this.layoutControl1.Controls.Add(this.m_grc_thong_tin_hop_dong);
@@ -215,10 +219,10 @@
             // m_grc_thong_tin_hop_dong
             // 
             this.m_grc_thong_tin_hop_dong.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc_thong_tin_hop_dong.Location = new System.Drawing.Point(12, 140);
+            this.m_grc_thong_tin_hop_dong.Location = new System.Drawing.Point(12, 157);
             this.m_grc_thong_tin_hop_dong.MainView = this.m_grv_thong_tin_hop_dong;
             this.m_grc_thong_tin_hop_dong.Name = "m_grc_thong_tin_hop_dong";
-            this.m_grc_thong_tin_hop_dong.Size = new System.Drawing.Size(936, 315);
+            this.m_grc_thong_tin_hop_dong.Size = new System.Drawing.Size(936, 298);
             this.m_grc_thong_tin_hop_dong.TabIndex = 8;
             this.m_grc_thong_tin_hop_dong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_thong_tin_hop_dong});
@@ -476,7 +480,8 @@
             this.emptySpaceItem3,
             this.emptySpaceItem6,
             this.layoutControlItem6,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.layoutControlItem8});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(960, 467);
@@ -539,9 +544,9 @@
             // 
             this.layoutControlItem5.Control = this.m_grc_thong_tin_hop_dong;
             this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 128);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 145);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(940, 319);
+            this.layoutControlItem5.Size = new System.Drawing.Size(940, 302);
             this.layoutControlItem5.Text = "layoutControlItem5";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
@@ -616,6 +621,27 @@
             this.layoutControlItem7.Text = "Đến ngày";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(92, 13);
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.labelControl1.Location = new System.Drawing.Point(12, 140);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(304, 13);
+            this.labelControl1.StyleController = this.layoutControl1;
+            this.labelControl1.TabIndex = 11;
+            this.labelControl1.Text = "Nháy đúp vào dòng trên lưới để xem thông tin chi tiết hợp đồng";
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.labelControl1;
+            this.layoutControlItem8.CustomizationFormText = "layoutControlItem8";
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 128);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(940, 17);
+            this.layoutControlItem8.Text = "layoutControlItem8";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem8.TextVisible = false;
+            // 
             // f320_lap_hop_dong_V2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -652,6 +678,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -703,5 +730,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_BAT_DAU;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KET_THUC;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KY_HOP_DONG;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
     }
 }

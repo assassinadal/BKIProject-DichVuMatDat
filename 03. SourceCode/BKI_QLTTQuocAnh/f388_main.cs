@@ -1248,10 +1248,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                F115_dm_thu_tu_don_vi_chuc_vu v_f = new F115_dm_thu_tu_don_vi_chuc_vu();
-                if (IsExistFormName(v_f)) return;
-                v_f.MdiParent = this;
-                v_f.Show();
+                //F115_dm_thu_tu_don_vi_chuc_vu v_f = new F115_dm_thu_tu_don_vi_chuc_vu();
+                //if (IsExistFormName(v_f)) return;
+                //v_f.MdiParent = this;
+                //v_f.Show();
             }
             catch (Exception v_e)
             {

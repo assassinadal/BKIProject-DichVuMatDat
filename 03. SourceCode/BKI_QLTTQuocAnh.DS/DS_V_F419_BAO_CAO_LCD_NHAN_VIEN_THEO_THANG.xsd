@@ -2,17 +2,18 @@
 <xs:schema id="DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG" targetNamespace="http://tempuri.org/DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.xsd" xmlns:mstns="http://tempuri.org/DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.xsd" xmlns="http://tempuri.org/DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DVMDConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DVMDConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_DichVuMatDat.DS.Properties.Settings.GlobalReference.Default.DVMDConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DVMD_TESTConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DVMD_TESTConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_DichVuMatDat.DS.Properties.Settings.GlobalReference.Default.DVMD_TESTConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAdapter" GeneratorDataComponentClassName="V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAdapter" Name="V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG" UserDataComponentName="V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DVMDConnectionString (Settings)" DbObjectName="DVMD.dbo.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DVMD_TESTConnectionString (Settings)" DbObjectName="DVMD_TEST.dbo.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID_NHAN_VIEN, MA_NV, HO_DEM, TEN, HO_TEN, ID_HOP_DONG, NGAY_BAT_DAU_HOP_DONG, NGAY_KET_THUC_HOP_DONG, DA_XOA_HOP_DONG_YN, ID_GD_LCD, LUONG_CHE_DO, NGAY_BAT_DAU_LCD, NGAY_KET_THUC_LCD, DA_XOA_LCD FROM dbo.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG</CommandText>
+                    <CommandText>SELECT ID_NHAN_VIEN, MA_NV, HO_DEM, TEN, HO_TEN, ID_HOP_DONG, NGAY_BAT_DAU_HOP_DONG, NGAY_KET_THUC_HOP_DONG, DA_XOA_HOP_DONG_YN, ID_GD_LCD, LUONG_CHE_DO, NGAY_BAT_DAU_LCD, NGAY_KET_THUC_LCD, DA_XOA_LCD, ID_LY_DO_CHINH_SUA_LCD, LY_DO_CHINH_SUA_LCD, GHI_CHU_LCD FROM dbo.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -33,6 +34,9 @@
               <Mapping SourceColumn="NGAY_BAT_DAU_LCD" DataSetColumn="NGAY_BAT_DAU_LCD" />
               <Mapping SourceColumn="NGAY_KET_THUC_LCD" DataSetColumn="NGAY_KET_THUC_LCD" />
               <Mapping SourceColumn="DA_XOA_LCD" DataSetColumn="DA_XOA_LCD" />
+              <Mapping SourceColumn="ID_LY_DO_CHINH_SUA_LCD" DataSetColumn="ID_LY_DO_CHINH_SUA_LCD" />
+              <Mapping SourceColumn="LY_DO_CHINH_SUA_LCD" DataSetColumn="LY_DO_CHINH_SUA_LCD" />
+              <Mapping SourceColumn="GHI_CHU_LCD" DataSetColumn="GHI_CHU_LCD" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -97,16 +101,25 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="ID_LY_DO_CHINH_SUA_LCD" msprop:Generator_ColumnVarNameInTable="columnID_LY_DO_CHINH_SUA_LCD" msprop:Generator_ColumnPropNameInRow="ID_LY_DO_CHINH_SUA_LCD" msprop:Generator_ColumnPropNameInTable="ID_LY_DO_CHINH_SUA_LCDColumn" msprop:Generator_UserColumnName="ID_LY_DO_CHINH_SUA_LCD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LY_DO_CHINH_SUA_LCD" msprop:Generator_ColumnVarNameInTable="columnLY_DO_CHINH_SUA_LCD" msprop:Generator_ColumnPropNameInRow="LY_DO_CHINH_SUA_LCD" msprop:Generator_ColumnPropNameInTable="LY_DO_CHINH_SUA_LCDColumn" msprop:Generator_UserColumnName="LY_DO_CHINH_SUA_LCD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GHI_CHU_LCD" msprop:Generator_ColumnVarNameInTable="columnGHI_CHU_LCD" msprop:Generator_ColumnPropNameInRow="GHI_CHU_LCD" msprop:Generator_ColumnPropNameInTable="GHI_CHU_LCDColumn" msprop:Generator_UserColumnName="GHI_CHU_LCD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1">
-      <xs:selector xpath=".//mstns:V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG" />
-      <xs:field xpath="mstns:ID_NHAN_VIEN" />
-      <xs:field xpath="mstns:ID_HOP_DONG" />
-      <xs:field xpath="mstns:ID_GD_LCD" />
-    </xs:unique>
   </xs:element>
 </xs:schema>

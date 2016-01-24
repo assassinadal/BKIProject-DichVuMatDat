@@ -20,17 +20,17 @@ namespace BKI_DichVuMatDat.DS {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG : global::System.Data.DataSet {
+    public partial class DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN : global::System.Data.DataSet {
         
-        private V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG;
+        private V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG() {
+        public DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace BKI_DichVuMatDat.DS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace BKI_DichVuMatDat.DS {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG"] != null)) {
-                    base.Tables.Add(new V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable(ds.Tables["V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG"]));
+                if ((ds.Tables["V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN"] != null)) {
+                    base.Tables.Add(new V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable(ds.Tables["V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace BKI_DichVuMatDat.DS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG {
+        public V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN {
             get {
-                return this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG;
+                return this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN;
             }
         }
         
@@ -127,7 +127,7 @@ namespace BKI_DichVuMatDat.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG cln = ((DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG)(base.Clone()));
+            DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN cln = ((DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace BKI_DichVuMatDat.DS {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG"] != null)) {
-                    base.Tables.Add(new V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable(ds.Tables["V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG"]));
+                if ((ds.Tables["V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN"] != null)) {
+                    base.Tables.Add(new V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable(ds.Tables["V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace BKI_DichVuMatDat.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG = ((V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable)(base.Tables["V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG"]));
+            this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN = ((V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable)(base.Tables["V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN"]));
             if ((initTable == true)) {
-                if ((this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG != null)) {
-                    this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.InitVars();
+                if ((this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN != null)) {
+                    this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.InitVars();
                 }
             }
         }
@@ -199,18 +199,19 @@ namespace BKI_DichVuMatDat.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG";
+            this.DataSetName = "DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.xsd";
+            this.Namespace = "http://tempuri.org/DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THO" +
+                "I_GIAN.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG = new V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable();
-            base.Tables.Add(this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG);
+            this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN = new V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable();
+            base.Tables.Add(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG() {
+        private bool ShouldSerializeV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN() {
             return false;
         }
         
@@ -225,7 +226,7 @@ namespace BKI_DichVuMatDat.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG ds = new DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG();
+            DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN ds = new DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +271,14 @@ namespace BKI_DichVuMatDat.DS {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChangeEventHandler(object sender, V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChangeEvent e);
+        public delegate void V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChangeEventHandler(object sender, V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable : global::System.Data.TypedTableBase<V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow> {
+        public partial class V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable : global::System.Data.TypedTableBase<V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow> {
             
             private global::System.Data.DataColumn columnID_NHAN_VIEN;
             
@@ -291,11 +292,35 @@ namespace BKI_DichVuMatDat.DS {
             
             private global::System.Data.DataColumn columnID_HOP_DONG;
             
+            private global::System.Data.DataColumn columnID_TRANG_THAI_LAO_DONG;
+            
+            private global::System.Data.DataColumn columnID_LOAI_HOP_DONG;
+            
+            private global::System.Data.DataColumn columnMA_HOP_DONG;
+            
             private global::System.Data.DataColumn columnNGAY_BAT_DAU_HOP_DONG;
             
             private global::System.Data.DataColumn columnNGAY_KET_THUC_HOP_DONG;
             
+            private global::System.Data.DataColumn columnNGAY_KY_HOP_DONG;
+            
             private global::System.Data.DataColumn columnDA_XOA_HOP_DONG_YN;
+            
+            private global::System.Data.DataColumn columnID_GD_HS_LNS;
+            
+            private global::System.Data.DataColumn columnHE_SO_LNS;
+            
+            private global::System.Data.DataColumn columnNGAY_BAT_DAU_HS_LNS;
+            
+            private global::System.Data.DataColumn columnNGAY_KET_THUC_HS_LNS;
+            
+            private global::System.Data.DataColumn columnDA_XOA_HS_LNS_YN;
+            
+            private global::System.Data.DataColumn columnID_LY_DO_CHINH_SUA_HS_LNS;
+            
+            private global::System.Data.DataColumn columnLY_DO_CHINH_SUA_HS_LNS;
+            
+            private global::System.Data.DataColumn columnGHI_CHU_HS_LNS;
             
             private global::System.Data.DataColumn columnID_GD_LCD;
             
@@ -315,8 +340,8 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable() {
-                this.TableName = "V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG";
+            public V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable() {
+                this.TableName = "V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -324,7 +349,7 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable(global::System.Data.DataTable table) {
+            internal V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -341,7 +366,7 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -396,6 +421,30 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_TRANG_THAI_LAO_DONGColumn {
+                get {
+                    return this.columnID_TRANG_THAI_LAO_DONG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_LOAI_HOP_DONGColumn {
+                get {
+                    return this.columnID_LOAI_HOP_DONG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MA_HOP_DONGColumn {
+                get {
+                    return this.columnMA_HOP_DONG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn NGAY_BAT_DAU_HOP_DONGColumn {
                 get {
                     return this.columnNGAY_BAT_DAU_HOP_DONG;
@@ -412,9 +461,81 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NGAY_KY_HOP_DONGColumn {
+                get {
+                    return this.columnNGAY_KY_HOP_DONG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn DA_XOA_HOP_DONG_YNColumn {
                 get {
                     return this.columnDA_XOA_HOP_DONG_YN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_GD_HS_LNSColumn {
+                get {
+                    return this.columnID_GD_HS_LNS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HE_SO_LNSColumn {
+                get {
+                    return this.columnHE_SO_LNS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NGAY_BAT_DAU_HS_LNSColumn {
+                get {
+                    return this.columnNGAY_BAT_DAU_HS_LNS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NGAY_KET_THUC_HS_LNSColumn {
+                get {
+                    return this.columnNGAY_KET_THUC_HS_LNS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DA_XOA_HS_LNS_YNColumn {
+                get {
+                    return this.columnDA_XOA_HS_LNS_YN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_LY_DO_CHINH_SUA_HS_LNSColumn {
+                get {
+                    return this.columnID_LY_DO_CHINH_SUA_HS_LNS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LY_DO_CHINH_SUA_HS_LNSColumn {
+                get {
+                    return this.columnLY_DO_CHINH_SUA_HS_LNS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GHI_CHU_HS_LNSColumn {
+                get {
+                    return this.columnGHI_CHU_HS_LNS;
                 }
             }
             
@@ -493,42 +614,54 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow this[int index] {
+            public V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow this[int index] {
                 get {
-                    return ((V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow)(this.Rows[index]));
+                    return ((V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChangeEventHandler V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChanging;
+            public event V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChangeEventHandler V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChangeEventHandler V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChanged;
+            public event V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChangeEventHandler V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChangeEventHandler V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowDeleting;
+            public event V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChangeEventHandler V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChangeEventHandler V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowDeleted;
+            public event V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChangeEventHandler V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow(V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow row) {
+            public void AddV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow(V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow AddV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow(
+            public V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow AddV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow(
                         decimal ID_NHAN_VIEN, 
                         string MA_NV, 
                         string HO_DEM, 
                         string TEN, 
                         string HO_TEN, 
                         decimal ID_HOP_DONG, 
+                        decimal ID_TRANG_THAI_LAO_DONG, 
+                        decimal ID_LOAI_HOP_DONG, 
+                        string MA_HOP_DONG, 
                         System.DateTime NGAY_BAT_DAU_HOP_DONG, 
                         System.DateTime NGAY_KET_THUC_HOP_DONG, 
+                        System.DateTime NGAY_KY_HOP_DONG, 
                         string DA_XOA_HOP_DONG_YN, 
+                        decimal ID_GD_HS_LNS, 
+                        decimal HE_SO_LNS, 
+                        System.DateTime NGAY_BAT_DAU_HS_LNS, 
+                        System.DateTime NGAY_KET_THUC_HS_LNS, 
+                        string DA_XOA_HS_LNS_YN, 
+                        decimal ID_LY_DO_CHINH_SUA_HS_LNS, 
+                        string LY_DO_CHINH_SUA_HS_LNS, 
+                        string GHI_CHU_HS_LNS, 
                         decimal ID_GD_LCD, 
                         decimal LUONG_CHE_DO, 
                         System.DateTime NGAY_BAT_DAU_LCD, 
@@ -537,7 +670,7 @@ namespace BKI_DichVuMatDat.DS {
                         decimal ID_LY_DO_CHINH_SUA_LCD, 
                         string LY_DO_CHINH_SUA_LCD, 
                         string GHI_CHU_LCD) {
-                V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow rowV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow = ((V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow)(this.NewRow()));
+                V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow rowV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow = ((V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_NHAN_VIEN,
                         MA_NV,
@@ -545,9 +678,21 @@ namespace BKI_DichVuMatDat.DS {
                         TEN,
                         HO_TEN,
                         ID_HOP_DONG,
+                        ID_TRANG_THAI_LAO_DONG,
+                        ID_LOAI_HOP_DONG,
+                        MA_HOP_DONG,
                         NGAY_BAT_DAU_HOP_DONG,
                         NGAY_KET_THUC_HOP_DONG,
+                        NGAY_KY_HOP_DONG,
                         DA_XOA_HOP_DONG_YN,
+                        ID_GD_HS_LNS,
+                        HE_SO_LNS,
+                        NGAY_BAT_DAU_HS_LNS,
+                        NGAY_KET_THUC_HS_LNS,
+                        DA_XOA_HS_LNS_YN,
+                        ID_LY_DO_CHINH_SUA_HS_LNS,
+                        LY_DO_CHINH_SUA_HS_LNS,
+                        GHI_CHU_HS_LNS,
                         ID_GD_LCD,
                         LUONG_CHE_DO,
                         NGAY_BAT_DAU_LCD,
@@ -556,15 +701,15 @@ namespace BKI_DichVuMatDat.DS {
                         ID_LY_DO_CHINH_SUA_LCD,
                         LY_DO_CHINH_SUA_LCD,
                         GHI_CHU_LCD};
-                rowV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow);
-                return rowV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow;
+                rowV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow);
+                return rowV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable cln = ((V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable)(base.Clone()));
+                V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable cln = ((V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -572,7 +717,7 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable();
+                return new V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -584,9 +729,21 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnTEN = base.Columns["TEN"];
                 this.columnHO_TEN = base.Columns["HO_TEN"];
                 this.columnID_HOP_DONG = base.Columns["ID_HOP_DONG"];
+                this.columnID_TRANG_THAI_LAO_DONG = base.Columns["ID_TRANG_THAI_LAO_DONG"];
+                this.columnID_LOAI_HOP_DONG = base.Columns["ID_LOAI_HOP_DONG"];
+                this.columnMA_HOP_DONG = base.Columns["MA_HOP_DONG"];
                 this.columnNGAY_BAT_DAU_HOP_DONG = base.Columns["NGAY_BAT_DAU_HOP_DONG"];
                 this.columnNGAY_KET_THUC_HOP_DONG = base.Columns["NGAY_KET_THUC_HOP_DONG"];
+                this.columnNGAY_KY_HOP_DONG = base.Columns["NGAY_KY_HOP_DONG"];
                 this.columnDA_XOA_HOP_DONG_YN = base.Columns["DA_XOA_HOP_DONG_YN"];
+                this.columnID_GD_HS_LNS = base.Columns["ID_GD_HS_LNS"];
+                this.columnHE_SO_LNS = base.Columns["HE_SO_LNS"];
+                this.columnNGAY_BAT_DAU_HS_LNS = base.Columns["NGAY_BAT_DAU_HS_LNS"];
+                this.columnNGAY_KET_THUC_HS_LNS = base.Columns["NGAY_KET_THUC_HS_LNS"];
+                this.columnDA_XOA_HS_LNS_YN = base.Columns["DA_XOA_HS_LNS_YN"];
+                this.columnID_LY_DO_CHINH_SUA_HS_LNS = base.Columns["ID_LY_DO_CHINH_SUA_HS_LNS"];
+                this.columnLY_DO_CHINH_SUA_HS_LNS = base.Columns["LY_DO_CHINH_SUA_HS_LNS"];
+                this.columnGHI_CHU_HS_LNS = base.Columns["GHI_CHU_HS_LNS"];
                 this.columnID_GD_LCD = base.Columns["ID_GD_LCD"];
                 this.columnLUONG_CHE_DO = base.Columns["LUONG_CHE_DO"];
                 this.columnNGAY_BAT_DAU_LCD = base.Columns["NGAY_BAT_DAU_LCD"];
@@ -612,12 +769,36 @@ namespace BKI_DichVuMatDat.DS {
                 base.Columns.Add(this.columnHO_TEN);
                 this.columnID_HOP_DONG = new global::System.Data.DataColumn("ID_HOP_DONG", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_HOP_DONG);
+                this.columnID_TRANG_THAI_LAO_DONG = new global::System.Data.DataColumn("ID_TRANG_THAI_LAO_DONG", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_TRANG_THAI_LAO_DONG);
+                this.columnID_LOAI_HOP_DONG = new global::System.Data.DataColumn("ID_LOAI_HOP_DONG", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_LOAI_HOP_DONG);
+                this.columnMA_HOP_DONG = new global::System.Data.DataColumn("MA_HOP_DONG", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMA_HOP_DONG);
                 this.columnNGAY_BAT_DAU_HOP_DONG = new global::System.Data.DataColumn("NGAY_BAT_DAU_HOP_DONG", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAY_BAT_DAU_HOP_DONG);
                 this.columnNGAY_KET_THUC_HOP_DONG = new global::System.Data.DataColumn("NGAY_KET_THUC_HOP_DONG", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAY_KET_THUC_HOP_DONG);
+                this.columnNGAY_KY_HOP_DONG = new global::System.Data.DataColumn("NGAY_KY_HOP_DONG", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNGAY_KY_HOP_DONG);
                 this.columnDA_XOA_HOP_DONG_YN = new global::System.Data.DataColumn("DA_XOA_HOP_DONG_YN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDA_XOA_HOP_DONG_YN);
+                this.columnID_GD_HS_LNS = new global::System.Data.DataColumn("ID_GD_HS_LNS", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_GD_HS_LNS);
+                this.columnHE_SO_LNS = new global::System.Data.DataColumn("HE_SO_LNS", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHE_SO_LNS);
+                this.columnNGAY_BAT_DAU_HS_LNS = new global::System.Data.DataColumn("NGAY_BAT_DAU_HS_LNS", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNGAY_BAT_DAU_HS_LNS);
+                this.columnNGAY_KET_THUC_HS_LNS = new global::System.Data.DataColumn("NGAY_KET_THUC_HS_LNS", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNGAY_KET_THUC_HS_LNS);
+                this.columnDA_XOA_HS_LNS_YN = new global::System.Data.DataColumn("DA_XOA_HS_LNS_YN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDA_XOA_HS_LNS_YN);
+                this.columnID_LY_DO_CHINH_SUA_HS_LNS = new global::System.Data.DataColumn("ID_LY_DO_CHINH_SUA_HS_LNS", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_LY_DO_CHINH_SUA_HS_LNS);
+                this.columnLY_DO_CHINH_SUA_HS_LNS = new global::System.Data.DataColumn("LY_DO_CHINH_SUA_HS_LNS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLY_DO_CHINH_SUA_HS_LNS);
+                this.columnGHI_CHU_HS_LNS = new global::System.Data.DataColumn("GHI_CHU_HS_LNS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGHI_CHU_HS_LNS);
                 this.columnID_GD_LCD = new global::System.Data.DataColumn("ID_GD_LCD", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_GD_LCD);
                 this.columnLUONG_CHE_DO = new global::System.Data.DataColumn("LUONG_CHE_DO", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -634,45 +815,48 @@ namespace BKI_DichVuMatDat.DS {
                 base.Columns.Add(this.columnLY_DO_CHINH_SUA_LCD);
                 this.columnGHI_CHU_LCD = new global::System.Data.DataColumn("GHI_CHU_LCD", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGHI_CHU_LCD);
-                this.columnID_NHAN_VIEN.AllowDBNull = false;
-                this.columnMA_NV.AllowDBNull = false;
                 this.columnMA_NV.MaxLength = 15;
-                this.columnHO_DEM.AllowDBNull = false;
                 this.columnHO_DEM.MaxLength = 50;
-                this.columnTEN.AllowDBNull = false;
                 this.columnTEN.MaxLength = 50;
                 this.columnHO_TEN.ReadOnly = true;
                 this.columnHO_TEN.MaxLength = 101;
+                this.columnID_LOAI_HOP_DONG.AllowDBNull = false;
+                this.columnMA_HOP_DONG.MaxLength = 50;
                 this.columnDA_XOA_HOP_DONG_YN.MaxLength = 1;
-                this.columnDA_XOA_LCD.MaxLength = 1;
+                this.columnDA_XOA_HS_LNS_YN.ReadOnly = true;
+                this.columnDA_XOA_HS_LNS_YN.MaxLength = 12;
+                this.columnLY_DO_CHINH_SUA_HS_LNS.MaxLength = 250;
+                this.columnGHI_CHU_HS_LNS.MaxLength = 250;
+                this.columnDA_XOA_LCD.ReadOnly = true;
+                this.columnDA_XOA_LCD.MaxLength = 12;
                 this.columnLY_DO_CHINH_SUA_LCD.MaxLength = 250;
                 this.columnGHI_CHU_LCD.MaxLength = 250;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow NewV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow() {
-                return ((V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow)(this.NewRow()));
+            public V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow NewV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow() {
+                return ((V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow(builder);
+                return new V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow);
+                return typeof(V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChanged != null)) {
-                    this.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChanged(this, new V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChangeEvent(((V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow)(e.Row)), e.Action));
+                if ((this.V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChanged != null)) {
+                    this.V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChanged(this, new V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChangeEvent(((V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow)(e.Row)), e.Action));
                 }
             }
             
@@ -680,8 +864,8 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChanging != null)) {
-                    this.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChanging(this, new V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChangeEvent(((V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow)(e.Row)), e.Action));
+                if ((this.V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChanging != null)) {
+                    this.V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChanging(this, new V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChangeEvent(((V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow)(e.Row)), e.Action));
                 }
             }
             
@@ -689,8 +873,8 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowDeleted != null)) {
-                    this.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowDeleted(this, new V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChangeEvent(((V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow)(e.Row)), e.Action));
+                if ((this.V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowDeleted != null)) {
+                    this.V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowDeleted(this, new V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChangeEvent(((V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow)(e.Row)), e.Action));
                 }
             }
             
@@ -698,14 +882,14 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowDeleting != null)) {
-                    this.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowDeleting(this, new V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChangeEvent(((V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow)(e.Row)), e.Action));
+                if ((this.V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowDeleting != null)) {
+                    this.V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowDeleting(this, new V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChangeEvent(((V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow(V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow row) {
+            public void RemoveV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow(V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -714,7 +898,7 @@ namespace BKI_DichVuMatDat.DS {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG ds = new DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG();
+                DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN ds = new DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -732,7 +916,7 @@ namespace BKI_DichVuMatDat.DS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable";
+                attribute2.FixedValue = "V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -776,25 +960,31 @@ namespace BKI_DichVuMatDat.DS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow : global::System.Data.DataRow {
+        public partial class V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow : global::System.Data.DataRow {
             
-            private V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG;
+            private V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow(global::System.Data.DataRowBuilder rb) : 
+            internal V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG = ((V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable)(this.Table));
+                this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN = ((V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal ID_NHAN_VIEN {
                 get {
-                    return ((decimal)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.ID_NHAN_VIENColumn]));
+                    try {
+                        return ((decimal)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_NHAN_VIENColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_NHAN_VIEN\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_SACH" +
+                                "_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.ID_NHAN_VIENColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_NHAN_VIENColumn] = value;
                 }
             }
             
@@ -802,10 +992,16 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MA_NV {
                 get {
-                    return ((string)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.MA_NVColumn]));
+                    try {
+                        return ((string)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.MA_NVColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MA_NV\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DO" +
+                                "NG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.MA_NVColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.MA_NVColumn] = value;
                 }
             }
             
@@ -813,10 +1009,16 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string HO_DEM {
                 get {
-                    return ((string)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.HO_DEMColumn]));
+                    try {
+                        return ((string)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.HO_DEMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HO_DEM\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_D" +
+                                "ONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.HO_DEMColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.HO_DEMColumn] = value;
                 }
             }
             
@@ -824,10 +1026,16 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TEN {
                 get {
-                    return ((string)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.TENColumn]));
+                    try {
+                        return ((string)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.TENColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TEN\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG" +
+                                "_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.TENColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.TENColumn] = value;
                 }
             }
             
@@ -836,15 +1044,15 @@ namespace BKI_DichVuMatDat.DS {
             public string HO_TEN {
                 get {
                     try {
-                        return ((string)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.HO_TENColumn]));
+                        return ((string)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.HO_TENColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HO_TEN\' in table \'V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG\' " +
-                                "is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'HO_TEN\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_D" +
+                                "ONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.HO_TENColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.HO_TENColumn] = value;
                 }
             }
             
@@ -853,15 +1061,60 @@ namespace BKI_DichVuMatDat.DS {
             public decimal ID_HOP_DONG {
                 get {
                     try {
-                        return ((decimal)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.ID_HOP_DONGColumn]));
+                        return ((decimal)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_HOP_DONGColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID_HOP_DONG\' in table \'V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_TH" +
-                                "ANG\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_HOP_DONG\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_SACH_" +
+                                "HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.ID_HOP_DONGColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_HOP_DONGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_TRANG_THAI_LAO_DONG {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_TRANG_THAI_LAO_DONGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_TRANG_THAI_LAO_DONG\' in table \'V_F320_THONG_TIN_CHI_TIET" +
+                                "_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_TRANG_THAI_LAO_DONGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_LOAI_HOP_DONG {
+                get {
+                    return ((decimal)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_LOAI_HOP_DONGColumn]));
+                }
+                set {
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_LOAI_HOP_DONGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MA_HOP_DONG {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.MA_HOP_DONGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MA_HOP_DONG\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_SACH_" +
+                                "HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.MA_HOP_DONGColumn] = value;
                 }
             }
             
@@ -870,15 +1123,15 @@ namespace BKI_DichVuMatDat.DS {
             public System.DateTime NGAY_BAT_DAU_HOP_DONG {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_BAT_DAU_HOP_DONGColumn]));
+                        return ((global::System.DateTime)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_BAT_DAU_HOP_DONGColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NGAY_BAT_DAU_HOP_DONG\' in table \'V_F419_BAO_CAO_LCD_NHAN_VI" +
-                                "EN_THEO_THANG\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NGAY_BAT_DAU_HOP_DONG\' in table \'V_F320_THONG_TIN_CHI_TIET_" +
+                                "DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_BAT_DAU_HOP_DONGColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_BAT_DAU_HOP_DONGColumn] = value;
                 }
             }
             
@@ -887,15 +1140,32 @@ namespace BKI_DichVuMatDat.DS {
             public System.DateTime NGAY_KET_THUC_HOP_DONG {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_KET_THUC_HOP_DONGColumn]));
+                        return ((global::System.DateTime)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KET_THUC_HOP_DONGColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NGAY_KET_THUC_HOP_DONG\' in table \'V_F419_BAO_CAO_LCD_NHAN_V" +
-                                "IEN_THEO_THANG\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NGAY_KET_THUC_HOP_DONG\' in table \'V_F320_THONG_TIN_CHI_TIET" +
+                                "_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_KET_THUC_HOP_DONGColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KET_THUC_HOP_DONGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime NGAY_KY_HOP_DONG {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KY_HOP_DONGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NGAY_KY_HOP_DONG\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_" +
+                                "SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KY_HOP_DONGColumn] = value;
                 }
             }
             
@@ -904,15 +1174,151 @@ namespace BKI_DichVuMatDat.DS {
             public string DA_XOA_HOP_DONG_YN {
                 get {
                     try {
-                        return ((string)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.DA_XOA_HOP_DONG_YNColumn]));
+                        return ((string)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.DA_XOA_HOP_DONG_YNColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DA_XOA_HOP_DONG_YN\' in table \'V_F419_BAO_CAO_LCD_NHAN_VIEN_" +
-                                "THEO_THANG\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DA_XOA_HOP_DONG_YN\' in table \'V_F320_THONG_TIN_CHI_TIET_DAN" +
+                                "H_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.DA_XOA_HOP_DONG_YNColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.DA_XOA_HOP_DONG_YNColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_GD_HS_LNS {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_GD_HS_LNSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_GD_HS_LNS\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_SACH" +
+                                "_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_GD_HS_LNSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal HE_SO_LNS {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.HE_SO_LNSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HE_SO_LNS\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HO" +
+                                "P_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.HE_SO_LNSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime NGAY_BAT_DAU_HS_LNS {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_BAT_DAU_HS_LNSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NGAY_BAT_DAU_HS_LNS\' in table \'V_F320_THONG_TIN_CHI_TIET_DA" +
+                                "NH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_BAT_DAU_HS_LNSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime NGAY_KET_THUC_HS_LNS {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KET_THUC_HS_LNSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NGAY_KET_THUC_HS_LNS\' in table \'V_F320_THONG_TIN_CHI_TIET_D" +
+                                "ANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KET_THUC_HS_LNSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DA_XOA_HS_LNS_YN {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.DA_XOA_HS_LNS_YNColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DA_XOA_HS_LNS_YN\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_" +
+                                "SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.DA_XOA_HS_LNS_YNColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_LY_DO_CHINH_SUA_HS_LNS {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_LY_DO_CHINH_SUA_HS_LNSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_LY_DO_CHINH_SUA_HS_LNS\' in table \'V_F320_THONG_TIN_CHI_T" +
+                                "IET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_LY_DO_CHINH_SUA_HS_LNSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string LY_DO_CHINH_SUA_HS_LNS {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.LY_DO_CHINH_SUA_HS_LNSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LY_DO_CHINH_SUA_HS_LNS\' in table \'V_F320_THONG_TIN_CHI_TIET" +
+                                "_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.LY_DO_CHINH_SUA_HS_LNSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string GHI_CHU_HS_LNS {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.GHI_CHU_HS_LNSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GHI_CHU_HS_LNS\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_SA" +
+                                "CH_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.GHI_CHU_HS_LNSColumn] = value;
                 }
             }
             
@@ -921,15 +1327,15 @@ namespace BKI_DichVuMatDat.DS {
             public decimal ID_GD_LCD {
                 get {
                     try {
-                        return ((decimal)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.ID_GD_LCDColumn]));
+                        return ((decimal)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_GD_LCDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID_GD_LCD\' in table \'V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THAN" +
-                                "G\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_GD_LCD\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HO" +
+                                "P_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.ID_GD_LCDColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_GD_LCDColumn] = value;
                 }
             }
             
@@ -938,15 +1344,15 @@ namespace BKI_DichVuMatDat.DS {
             public decimal LUONG_CHE_DO {
                 get {
                     try {
-                        return ((decimal)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.LUONG_CHE_DOColumn]));
+                        return ((decimal)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.LUONG_CHE_DOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LUONG_CHE_DO\' in table \'V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_T" +
-                                "HANG\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'LUONG_CHE_DO\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_SACH" +
+                                "_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.LUONG_CHE_DOColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.LUONG_CHE_DOColumn] = value;
                 }
             }
             
@@ -955,15 +1361,15 @@ namespace BKI_DichVuMatDat.DS {
             public System.DateTime NGAY_BAT_DAU_LCD {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_BAT_DAU_LCDColumn]));
+                        return ((global::System.DateTime)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_BAT_DAU_LCDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NGAY_BAT_DAU_LCD\' in table \'V_F419_BAO_CAO_LCD_NHAN_VIEN_TH" +
-                                "EO_THANG\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NGAY_BAT_DAU_LCD\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_" +
+                                "SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_BAT_DAU_LCDColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_BAT_DAU_LCDColumn] = value;
                 }
             }
             
@@ -972,15 +1378,15 @@ namespace BKI_DichVuMatDat.DS {
             public System.DateTime NGAY_KET_THUC_LCD {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_KET_THUC_LCDColumn]));
+                        return ((global::System.DateTime)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KET_THUC_LCDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NGAY_KET_THUC_LCD\' in table \'V_F419_BAO_CAO_LCD_NHAN_VIEN_T" +
-                                "HEO_THANG\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NGAY_KET_THUC_LCD\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH" +
+                                "_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_KET_THUC_LCDColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KET_THUC_LCDColumn] = value;
                 }
             }
             
@@ -989,15 +1395,15 @@ namespace BKI_DichVuMatDat.DS {
             public string DA_XOA_LCD {
                 get {
                     try {
-                        return ((string)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.DA_XOA_LCDColumn]));
+                        return ((string)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.DA_XOA_LCDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DA_XOA_LCD\' in table \'V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THA" +
-                                "NG\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DA_XOA_LCD\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_SACH_H" +
+                                "OP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.DA_XOA_LCDColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.DA_XOA_LCDColumn] = value;
                 }
             }
             
@@ -1006,15 +1412,15 @@ namespace BKI_DichVuMatDat.DS {
             public decimal ID_LY_DO_CHINH_SUA_LCD {
                 get {
                     try {
-                        return ((decimal)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.ID_LY_DO_CHINH_SUA_LCDColumn]));
+                        return ((decimal)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_LY_DO_CHINH_SUA_LCDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID_LY_DO_CHINH_SUA_LCD\' in table \'V_F419_BAO_CAO_LCD_NHAN_V" +
-                                "IEN_THEO_THANG\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_LY_DO_CHINH_SUA_LCD\' in table \'V_F320_THONG_TIN_CHI_TIET" +
+                                "_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.ID_LY_DO_CHINH_SUA_LCDColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_LY_DO_CHINH_SUA_LCDColumn] = value;
                 }
             }
             
@@ -1023,15 +1429,15 @@ namespace BKI_DichVuMatDat.DS {
             public string LY_DO_CHINH_SUA_LCD {
                 get {
                     try {
-                        return ((string)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.LY_DO_CHINH_SUA_LCDColumn]));
+                        return ((string)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.LY_DO_CHINH_SUA_LCDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LY_DO_CHINH_SUA_LCD\' in table \'V_F419_BAO_CAO_LCD_NHAN_VIEN" +
-                                "_THEO_THANG\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'LY_DO_CHINH_SUA_LCD\' in table \'V_F320_THONG_TIN_CHI_TIET_DA" +
+                                "NH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.LY_DO_CHINH_SUA_LCDColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.LY_DO_CHINH_SUA_LCDColumn] = value;
                 }
             }
             
@@ -1040,172 +1446,352 @@ namespace BKI_DichVuMatDat.DS {
             public string GHI_CHU_LCD {
                 get {
                     try {
-                        return ((string)(this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.GHI_CHU_LCDColumn]));
+                        return ((string)(this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.GHI_CHU_LCDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'GHI_CHU_LCD\' in table \'V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_TH" +
-                                "ANG\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'GHI_CHU_LCD\' in table \'V_F320_THONG_TIN_CHI_TIET_DANH_SACH_" +
+                                "HOP_DONG_DA_KY_THEO_THOI_GIAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.GHI_CHU_LCDColumn] = value;
+                    this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.GHI_CHU_LCDColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_NHAN_VIENNull() {
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_NHAN_VIENColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_NHAN_VIENNull() {
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_NHAN_VIENColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMA_NVNull() {
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.MA_NVColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMA_NVNull() {
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.MA_NVColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHO_DEMNull() {
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.HO_DEMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHO_DEMNull() {
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.HO_DEMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTENNull() {
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.TENColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTENNull() {
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.TENColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsHO_TENNull() {
-                return this.IsNull(this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.HO_TENColumn);
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.HO_TENColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetHO_TENNull() {
-                this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.HO_TENColumn] = global::System.Convert.DBNull;
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.HO_TENColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsID_HOP_DONGNull() {
-                return this.IsNull(this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.ID_HOP_DONGColumn);
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_HOP_DONGColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetID_HOP_DONGNull() {
-                this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.ID_HOP_DONGColumn] = global::System.Convert.DBNull;
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_HOP_DONGColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_TRANG_THAI_LAO_DONGNull() {
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_TRANG_THAI_LAO_DONGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_TRANG_THAI_LAO_DONGNull() {
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_TRANG_THAI_LAO_DONGColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMA_HOP_DONGNull() {
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.MA_HOP_DONGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMA_HOP_DONGNull() {
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.MA_HOP_DONGColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNGAY_BAT_DAU_HOP_DONGNull() {
-                return this.IsNull(this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_BAT_DAU_HOP_DONGColumn);
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_BAT_DAU_HOP_DONGColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNGAY_BAT_DAU_HOP_DONGNull() {
-                this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_BAT_DAU_HOP_DONGColumn] = global::System.Convert.DBNull;
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_BAT_DAU_HOP_DONGColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNGAY_KET_THUC_HOP_DONGNull() {
-                return this.IsNull(this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_KET_THUC_HOP_DONGColumn);
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KET_THUC_HOP_DONGColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNGAY_KET_THUC_HOP_DONGNull() {
-                this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_KET_THUC_HOP_DONGColumn] = global::System.Convert.DBNull;
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KET_THUC_HOP_DONGColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNGAY_KY_HOP_DONGNull() {
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KY_HOP_DONGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNGAY_KY_HOP_DONGNull() {
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KY_HOP_DONGColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDA_XOA_HOP_DONG_YNNull() {
-                return this.IsNull(this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.DA_XOA_HOP_DONG_YNColumn);
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.DA_XOA_HOP_DONG_YNColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDA_XOA_HOP_DONG_YNNull() {
-                this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.DA_XOA_HOP_DONG_YNColumn] = global::System.Convert.DBNull;
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.DA_XOA_HOP_DONG_YNColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_GD_HS_LNSNull() {
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_GD_HS_LNSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_GD_HS_LNSNull() {
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_GD_HS_LNSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHE_SO_LNSNull() {
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.HE_SO_LNSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHE_SO_LNSNull() {
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.HE_SO_LNSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNGAY_BAT_DAU_HS_LNSNull() {
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_BAT_DAU_HS_LNSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNGAY_BAT_DAU_HS_LNSNull() {
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_BAT_DAU_HS_LNSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNGAY_KET_THUC_HS_LNSNull() {
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KET_THUC_HS_LNSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNGAY_KET_THUC_HS_LNSNull() {
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KET_THUC_HS_LNSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDA_XOA_HS_LNS_YNNull() {
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.DA_XOA_HS_LNS_YNColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDA_XOA_HS_LNS_YNNull() {
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.DA_XOA_HS_LNS_YNColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_LY_DO_CHINH_SUA_HS_LNSNull() {
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_LY_DO_CHINH_SUA_HS_LNSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_LY_DO_CHINH_SUA_HS_LNSNull() {
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_LY_DO_CHINH_SUA_HS_LNSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLY_DO_CHINH_SUA_HS_LNSNull() {
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.LY_DO_CHINH_SUA_HS_LNSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLY_DO_CHINH_SUA_HS_LNSNull() {
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.LY_DO_CHINH_SUA_HS_LNSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGHI_CHU_HS_LNSNull() {
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.GHI_CHU_HS_LNSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGHI_CHU_HS_LNSNull() {
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.GHI_CHU_HS_LNSColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsID_GD_LCDNull() {
-                return this.IsNull(this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.ID_GD_LCDColumn);
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_GD_LCDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetID_GD_LCDNull() {
-                this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.ID_GD_LCDColumn] = global::System.Convert.DBNull;
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_GD_LCDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsLUONG_CHE_DONull() {
-                return this.IsNull(this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.LUONG_CHE_DOColumn);
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.LUONG_CHE_DOColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetLUONG_CHE_DONull() {
-                this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.LUONG_CHE_DOColumn] = global::System.Convert.DBNull;
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.LUONG_CHE_DOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNGAY_BAT_DAU_LCDNull() {
-                return this.IsNull(this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_BAT_DAU_LCDColumn);
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_BAT_DAU_LCDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNGAY_BAT_DAU_LCDNull() {
-                this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_BAT_DAU_LCDColumn] = global::System.Convert.DBNull;
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_BAT_DAU_LCDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNGAY_KET_THUC_LCDNull() {
-                return this.IsNull(this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_KET_THUC_LCDColumn);
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KET_THUC_LCDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNGAY_KET_THUC_LCDNull() {
-                this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.NGAY_KET_THUC_LCDColumn] = global::System.Convert.DBNull;
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.NGAY_KET_THUC_LCDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDA_XOA_LCDNull() {
-                return this.IsNull(this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.DA_XOA_LCDColumn);
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.DA_XOA_LCDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDA_XOA_LCDNull() {
-                this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.DA_XOA_LCDColumn] = global::System.Convert.DBNull;
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.DA_XOA_LCDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsID_LY_DO_CHINH_SUA_LCDNull() {
-                return this.IsNull(this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.ID_LY_DO_CHINH_SUA_LCDColumn);
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_LY_DO_CHINH_SUA_LCDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetID_LY_DO_CHINH_SUA_LCDNull() {
-                this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.ID_LY_DO_CHINH_SUA_LCDColumn] = global::System.Convert.DBNull;
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.ID_LY_DO_CHINH_SUA_LCDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsLY_DO_CHINH_SUA_LCDNull() {
-                return this.IsNull(this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.LY_DO_CHINH_SUA_LCDColumn);
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.LY_DO_CHINH_SUA_LCDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetLY_DO_CHINH_SUA_LCDNull() {
-                this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.LY_DO_CHINH_SUA_LCDColumn] = global::System.Convert.DBNull;
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.LY_DO_CHINH_SUA_LCDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsGHI_CHU_LCDNull() {
-                return this.IsNull(this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.GHI_CHU_LCDColumn);
+                return this.IsNull(this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.GHI_CHU_LCDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetGHI_CHU_LCDNull() {
-                this[this.tableV_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.GHI_CHU_LCDColumn] = global::System.Convert.DBNull;
+                this[this.tableV_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.GHI_CHU_LCDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1213,22 +1799,22 @@ namespace BKI_DichVuMatDat.DS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChangeEvent : global::System.EventArgs {
+        public class V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChangeEvent : global::System.EventArgs {
             
-            private V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow eventRow;
+            private V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRowChangeEvent(V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow row, global::System.Data.DataRowAction action) {
+            public V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRowChangeEvent(V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGRow Row {
+            public V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1244,7 +1830,7 @@ namespace BKI_DichVuMatDat.DS {
         }
     }
 }
-namespace BKI_DichVuMatDat.DS.DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAdapters {
+namespace BKI_DichVuMatDat.DS.DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANTableAdapters {
     
     
     /// <summary>
@@ -1256,7 +1842,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAda
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAdapter : global::System.ComponentModel.Component {
+    public partial class V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1270,7 +1856,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAda
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAdapter() {
+        public V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1367,16 +1953,28 @@ namespace BKI_DichVuMatDat.DS.DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAda
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG";
+            tableMapping.DataSetTable = "V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN";
             tableMapping.ColumnMappings.Add("ID_NHAN_VIEN", "ID_NHAN_VIEN");
             tableMapping.ColumnMappings.Add("MA_NV", "MA_NV");
             tableMapping.ColumnMappings.Add("HO_DEM", "HO_DEM");
             tableMapping.ColumnMappings.Add("TEN", "TEN");
             tableMapping.ColumnMappings.Add("HO_TEN", "HO_TEN");
             tableMapping.ColumnMappings.Add("ID_HOP_DONG", "ID_HOP_DONG");
+            tableMapping.ColumnMappings.Add("ID_TRANG_THAI_LAO_DONG", "ID_TRANG_THAI_LAO_DONG");
+            tableMapping.ColumnMappings.Add("ID_LOAI_HOP_DONG", "ID_LOAI_HOP_DONG");
+            tableMapping.ColumnMappings.Add("MA_HOP_DONG", "MA_HOP_DONG");
             tableMapping.ColumnMappings.Add("NGAY_BAT_DAU_HOP_DONG", "NGAY_BAT_DAU_HOP_DONG");
             tableMapping.ColumnMappings.Add("NGAY_KET_THUC_HOP_DONG", "NGAY_KET_THUC_HOP_DONG");
+            tableMapping.ColumnMappings.Add("NGAY_KY_HOP_DONG", "NGAY_KY_HOP_DONG");
             tableMapping.ColumnMappings.Add("DA_XOA_HOP_DONG_YN", "DA_XOA_HOP_DONG_YN");
+            tableMapping.ColumnMappings.Add("ID_GD_HS_LNS", "ID_GD_HS_LNS");
+            tableMapping.ColumnMappings.Add("HE_SO_LNS", "HE_SO_LNS");
+            tableMapping.ColumnMappings.Add("NGAY_BAT_DAU_HS_LNS", "NGAY_BAT_DAU_HS_LNS");
+            tableMapping.ColumnMappings.Add("NGAY_KET_THUC_HS_LNS", "NGAY_KET_THUC_HS_LNS");
+            tableMapping.ColumnMappings.Add("DA_XOA_HS_LNS_YN", "DA_XOA_HS_LNS_YN");
+            tableMapping.ColumnMappings.Add("ID_LY_DO_CHINH_SUA_HS_LNS", "ID_LY_DO_CHINH_SUA_HS_LNS");
+            tableMapping.ColumnMappings.Add("LY_DO_CHINH_SUA_HS_LNS", "LY_DO_CHINH_SUA_HS_LNS");
+            tableMapping.ColumnMappings.Add("GHI_CHU_HS_LNS", "GHI_CHU_HS_LNS");
             tableMapping.ColumnMappings.Add("ID_GD_LCD", "ID_GD_LCD");
             tableMapping.ColumnMappings.Add("LUONG_CHE_DO", "LUONG_CHE_DO");
             tableMapping.ColumnMappings.Add("NGAY_BAT_DAU_LCD", "NGAY_BAT_DAU_LCD");
@@ -1392,7 +1990,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAda
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BKI_DichVuMatDat.DS.Properties.Settings.Default.DVMD_TESTConnectionString;
+            this._connection.ConnectionString = global::BKI_DichVuMatDat.DS.Properties.Settings.Default.DVMDConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1401,7 +1999,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAda
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID_NHAN_VIEN, MA_NV, HO_DEM, TEN, HO_TEN, ID_HOP_DONG, NGAY_BAT_DAU_HOP_DONG, NGAY_KET_THUC_HOP_DONG, DA_XOA_HOP_DONG_YN, ID_GD_LCD, LUONG_CHE_DO, NGAY_BAT_DAU_LCD, NGAY_KET_THUC_LCD, DA_XOA_LCD, ID_LY_DO_CHINH_SUA_LCD, LY_DO_CHINH_SUA_LCD, GHI_CHU_LCD FROM dbo.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG";
+            this._commandCollection[0].CommandText = @"SELECT ID_NHAN_VIEN, MA_NV, HO_DEM, TEN, HO_TEN, ID_HOP_DONG, ID_TRANG_THAI_LAO_DONG, ID_LOAI_HOP_DONG, MA_HOP_DONG, NGAY_BAT_DAU_HOP_DONG, NGAY_KET_THUC_HOP_DONG, NGAY_KY_HOP_DONG, DA_XOA_HOP_DONG_YN, ID_GD_HS_LNS, HE_SO_LNS, NGAY_BAT_DAU_HS_LNS, NGAY_KET_THUC_HS_LNS, DA_XOA_HS_LNS_YN, ID_LY_DO_CHINH_SUA_HS_LNS, LY_DO_CHINH_SUA_HS_LNS, GHI_CHU_HS_LNS, ID_GD_LCD, LUONG_CHE_DO, NGAY_BAT_DAU_LCD, NGAY_KET_THUC_LCD, DA_XOA_LCD, ID_LY_DO_CHINH_SUA_LCD, LY_DO_CHINH_SUA_LCD, GHI_CHU_LCD FROM dbo.V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1409,7 +2007,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAda
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable dataTable) {
+        public virtual int Fill(DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1422,9 +2020,9 @@ namespace BKI_DichVuMatDat.DS.DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAda
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable GetData() {
+        public virtual DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable dataTable = new DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGDataTable();
+            DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable dataTable = new DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIANDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1498,7 +2096,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAda
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1508,7 +2106,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAda
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1518,7 +2116,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAda
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1552,7 +2150,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANGTableAda
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG dataSet) {
+        public virtual int UpdateAll(DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

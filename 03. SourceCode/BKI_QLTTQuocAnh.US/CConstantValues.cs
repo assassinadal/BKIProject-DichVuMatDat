@@ -354,6 +354,8 @@ namespace BKI_DichVuMatDat.US
         public const int ERROR_CHUA_CHON_CHUC_DANH_DE_TINH_LNS = 330;
         public const int ERROR_CHUA_CHON_CHUC_DANH_DE_TINH_LCD = 331;
         public const int ERROR_CHUA_CHON_LY_DO_THAY_DOI_LCD = 332;
+        public const int ERROR_NHAN_VIEN_CHUA_CO_HOP_DONG = 337;
+        public const int INFOR_HOP_DONG_HIEN_TAI_LA_HOC_VIEC = 338;
 
         //Thưởng hệ số bổ sung
         public const int INFOR_DA_CO_THUONG_HS_BS_TRONG_NAM_DA_CHON = 334;

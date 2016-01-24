@@ -312,6 +312,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_F320_LAP_HOP_DONG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_F330_LEN_LUONG_CHO_NV.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -978,6 +983,17 @@
     </None>
     <None Include="DS_V_F320_LAP_HOP_DONG.xss">
       <DependentUpon>DS_V_F320_LAP_HOP_DONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.xsc">
+      <DependentUpon>DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.xss">
+      <DependentUpon>DS_V_F320_THONG_TIN_CHI_TIET_DANH_SACH_HOP_DONG_DA_KY_THEO_THOI_GIAN.xsd</DependentUpon>
     </None>
     <None Include="DS_V_F330_LEN_LUONG_CHO_NV.xsc">
       <DependentUpon>DS_V_F330_LEN_LUONG_CHO_NV.xsd</DependentUpon>

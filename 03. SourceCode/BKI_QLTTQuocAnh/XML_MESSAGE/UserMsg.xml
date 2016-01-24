@@ -48,4 +48,12 @@
     <Message>Thành công!</Message>
     <ID>15</ID>
   </Message>
+  <Message>
+    <Message>Bạn đã thêm dữ liệu thành công! Bạn có muốn làm tiếp với nhân viên khác không?</Message>
+    <ID>16</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa chọn ngày áp dụng rồi!</Message>
+    <ID>17</ID>
+  </Message>
 </DatasetMsg>

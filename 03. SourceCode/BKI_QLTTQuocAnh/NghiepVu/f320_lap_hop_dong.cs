@@ -621,6 +621,33 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
+        private decimal find_id_trang_thai_lao_dong_da_co(decimal ip_dc_id_nhan_vien)
+        {
+            try
+            {
+                US_GD_TRANG_THAI_LAO_DONG v_us = new US_GD_TRANG_THAI_LAO_DONG();
+                DS_GD_TRANG_THAI_LAO_DONG v_ds = new DS_GD_TRANG_THAI_LAO_DONG();
+
+                v_us.FillDataset(v_ds);
+
+                string v_str_filter = "ID_NHAN_VIEN = " + ip_dc_id_nhan_vien + "AND DA_XOA = 'N'";
+                DataRow[] v_dr = v_ds.GD_TRANG_THAI_LAO_DONG.Select(v_str_filter);
+
+                if (v_dr.Count() == 0)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return CIPConvert.ToDecimal(v_dr.First()["ID"].ToString());
+                }
+            }
+            catch (Exception v_e)
+            {
+                throw v_e;
+            }
+        }
+
         private void load_data_2_m_variable()
         {
             m_id_gd_hd = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
@@ -885,10 +912,15 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us_gd_lcd.CommitTransaction();
 
                         //insert gd_trang_thai_ld
-                        form_2_us_gd_trang_thai_lao_dong(v_us_gd_trang_thai_lao_dong);
-                        v_us_gd_trang_thai_lao_dong.BeginTransaction();
-                        v_us_gd_trang_thai_lao_dong.Insert();
-                        v_us_gd_trang_thai_lao_dong.CommitTransaction();
+                        decimal v_id_gd_trang_thai_lao_dong_da_co = 0;
+                        v_id_gd_trang_thai_lao_dong_da_co = find_id_trang_thai_lao_dong_da_co((decimal)m_sle_chon_nhan_vien.EditValue);
+                        if (v_id_gd_trang_thai_lao_dong_da_co == -1)
+                        {
+                            form_2_us_gd_trang_thai_lao_dong(v_us_gd_trang_thai_lao_dong);
+                            v_us_gd_trang_thai_lao_dong.BeginTransaction();
+                            v_us_gd_trang_thai_lao_dong.Insert();
+                            v_us_gd_trang_thai_lao_dong.CommitTransaction();
+                        }
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         v_us_gd_hd.BeginTransaction();

@@ -22,6 +22,7 @@ using BKI_DichVuMatDat.CONFIRM;
 using BKI_DichVuMatDat.COMMON;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.Utils;
 
 namespace BKI_DichVuMatDat.BaoCao
 {
@@ -59,6 +60,20 @@ namespace BKI_DichVuMatDat.BaoCao
             m_cmd_chot_bang_luong.Click += m_cmd_chot_bang_luong_Click;
             m_cmd_import_excel.Click += m_cmd_import_excel_Click;
             m_cmd_export_excel.Click += m_cmd_export_excel_Click;
+            m_grv_main.MouseWheel += m_grv_main_MouseWheel;
+        }
+
+        void m_grv_main_MouseWheel(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                m_grv_main.TopRowIndex += e.Delta > 0 ? -3 : 3;
+                ((DXMouseEventArgs)e).Handled = true;
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_export_excel_Click(object sender, EventArgs e)

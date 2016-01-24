@@ -13,6 +13,7 @@ using BKI_DichVuMatDat.DS;
 using DevExpress.XtraEditors;
 using BKI_DichVuMatDat.DTO;
 using BKI_DichVuMatDat.DS.CDBNames;
+using DevExpress.Utils;
 
 namespace BKI_DichVuMatDat.BaoCao
 {
@@ -321,6 +322,20 @@ namespace BKI_DichVuMatDat.BaoCao
 
 
                 load_data_2_grid();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+
+        private void m_adv_tong_hop_MouseWheel(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                m_adv_tong_hop.TopRowIndex += e.Delta > 0 ? -3 : 3;
+                ((DXMouseEventArgs)e).Handled = true;
             }
             catch(Exception v_e)
             {

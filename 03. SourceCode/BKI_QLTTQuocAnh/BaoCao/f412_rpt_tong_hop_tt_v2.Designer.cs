@@ -225,9 +225,9 @@
             this.colTHUC_LINH = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colLAM_THEM_200 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colLAM_THEM_LE_TET = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.ID_NHAN_VIEN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repoBtnXoaLuong = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.ID_NHAN_VIEN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
@@ -538,6 +538,7 @@
             this.m_adv_tong_hop.OptionsView.ShowFooter = true;
             this.m_adv_tong_hop.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDON_VI, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.m_adv_tong_hop.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.m_adv_tong_hop_MouseWheel);
             // 
             // gridBand68
             // 
@@ -2582,6 +2583,12 @@
             this.colLAM_THEM_LE_TET.Visible = true;
             this.colLAM_THEM_LE_TET.Width = 87;
             // 
+            // ID_NHAN_VIEN
+            // 
+            this.ID_NHAN_VIEN.Caption = "ID_NHAN_VIEN";
+            this.ID_NHAN_VIEN.FieldName = "ID_NHAN_VIEN";
+            this.ID_NHAN_VIEN.Name = "ID_NHAN_VIEN";
+            // 
             // repositoryItemMemoEdit1
             // 
             this.repositoryItemMemoEdit1.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
@@ -2594,12 +2601,6 @@
             this.repoBtnXoaLuong.Name = "repoBtnXoaLuong";
             this.repoBtnXoaLuong.ReadOnly = true;
             this.repoBtnXoaLuong.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // ID_NHAN_VIEN
-            // 
-            this.ID_NHAN_VIEN.Caption = "ID_NHAN_VIEN";
-            this.ID_NHAN_VIEN.FieldName = "ID_NHAN_VIEN";
-            this.ID_NHAN_VIEN.Name = "ID_NHAN_VIEN";
             // 
             // f412_rpt_tong_hop_tt_v2
             // 

@@ -41,12 +41,18 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.m_cmd_xoa = new DevExpress.XtraEditors.SimpleButton();
-            this.m_lbl_header = new System.Windows.Forms.Label();
+            this.sle_cnv_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_GIOI_TINH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_SDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_DIA_CHI_THUONG_TRU = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_nhan_vien.Properties)).BeginInit();
@@ -85,14 +91,21 @@
             this.m_sle_nhan_vien.Name = "m_sle_nhan_vien";
             this.m_sle_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_sle_nhan_vien.Properties.NullText = "--Chọn nhân viên--";
             this.m_sle_nhan_vien.Properties.View = this.searchLookUpEdit1View;
             this.m_sle_nhan_vien.Size = new System.Drawing.Size(266, 20);
             this.m_sle_nhan_vien.StyleController = this.layoutControl1;
             this.m_sle_nhan_vien.TabIndex = 4;
-            this.m_sle_nhan_vien.Properties.NullText = "--Chọn nhân viên--";
             // 
             // searchLookUpEdit1View
             // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.sle_cnv_ID,
+            this.sle_cnv_MA_NV,
+            this.sle_cnv_HO_TEN,
+            this.sle_cnv_GIOI_TINH,
+            this.sle_cnv_SDT,
+            this.sle_cnv_DIA_CHI_THUONG_TRU});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -104,11 +117,11 @@
             this.m_sle_quyet_dinh.Name = "m_sle_quyet_dinh";
             this.m_sle_quyet_dinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_sle_quyet_dinh.Properties.NullText = "--Chọn quyết định--";
             this.m_sle_quyet_dinh.Properties.View = this.gridView1;
             this.m_sle_quyet_dinh.Size = new System.Drawing.Size(266, 20);
             this.m_sle_quyet_dinh.StyleController = this.layoutControl1;
             this.m_sle_quyet_dinh.TabIndex = 5;
-            this.m_sle_quyet_dinh.Properties.NullText = "--Chọn quyết định--";
             // 
             // gridView1
             // 
@@ -123,11 +136,11 @@
             this.m_sle_phu_cap.Name = "m_sle_phu_cap";
             this.m_sle_phu_cap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_sle_phu_cap.Properties.NullText = "--Chọn phụ cấp trách nhiệm--";
             this.m_sle_phu_cap.Properties.View = this.gridView2;
             this.m_sle_phu_cap.Size = new System.Drawing.Size(266, 20);
             this.m_sle_phu_cap.StyleController = this.layoutControl1;
             this.m_sle_phu_cap.TabIndex = 6;
-            this.m_sle_phu_cap.Properties.NullText = "--Chọn phụ cấp trách nhiệm--";
             // 
             // gridView2
             // 
@@ -190,6 +203,18 @@
             this.panel1.Size = new System.Drawing.Size(451, 39);
             this.panel1.TabIndex = 4;
             // 
+            // m_lbl_header
+            // 
+            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_header.Name = "m_lbl_header";
+            this.m_lbl_header.Size = new System.Drawing.Size(451, 39);
+            this.m_lbl_header.TabIndex = 2;
+            this.m_lbl_header.Text = "THÊM MỚI PHỤ CẤP TRÁCH NHIỆM";
+            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel6);
@@ -242,17 +267,51 @@
             this.m_cmd_xoa.Text = "Thoát";
             this.m_cmd_xoa.Click += new System.EventHandler(this.m_cmd_xoa_Click);
             // 
-            // m_lbl_header
+            // sle_cnv_ID
             // 
-            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(451, 39);
-            this.m_lbl_header.TabIndex = 2;
-            this.m_lbl_header.Text = "THÊM MỚI PHỤ CẤP TRÁCH NHIỆM";
-            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sle_cnv_ID.Caption = "ID";
+            this.sle_cnv_ID.FieldName = "ID";
+            this.sle_cnv_ID.Name = "sle_cnv_ID";
+            // 
+            // sle_cnv_MA_NV
+            // 
+            this.sle_cnv_MA_NV.Caption = "Mã NV";
+            this.sle_cnv_MA_NV.FieldName = "MA_NV";
+            this.sle_cnv_MA_NV.Name = "sle_cnv_MA_NV";
+            this.sle_cnv_MA_NV.Visible = true;
+            this.sle_cnv_MA_NV.VisibleIndex = 0;
+            // 
+            // sle_cnv_HO_TEN
+            // 
+            this.sle_cnv_HO_TEN.Caption = "Họ tên";
+            this.sle_cnv_HO_TEN.FieldName = "HO_TEN";
+            this.sle_cnv_HO_TEN.Name = "sle_cnv_HO_TEN";
+            this.sle_cnv_HO_TEN.Visible = true;
+            this.sle_cnv_HO_TEN.VisibleIndex = 1;
+            // 
+            // sle_cnv_GIOI_TINH
+            // 
+            this.sle_cnv_GIOI_TINH.Caption = "Giới tính";
+            this.sle_cnv_GIOI_TINH.FieldName = "GT";
+            this.sle_cnv_GIOI_TINH.Name = "sle_cnv_GIOI_TINH";
+            this.sle_cnv_GIOI_TINH.Visible = true;
+            this.sle_cnv_GIOI_TINH.VisibleIndex = 2;
+            // 
+            // sle_cnv_SDT
+            // 
+            this.sle_cnv_SDT.Caption = "SĐT";
+            this.sle_cnv_SDT.FieldName = "SDT";
+            this.sle_cnv_SDT.Name = "sle_cnv_SDT";
+            this.sle_cnv_SDT.Visible = true;
+            this.sle_cnv_SDT.VisibleIndex = 3;
+            // 
+            // sle_cnv_DIA_CHI_THUONG_TRU
+            // 
+            this.sle_cnv_DIA_CHI_THUONG_TRU.Caption = "Địa chỉ thường trú";
+            this.sle_cnv_DIA_CHI_THUONG_TRU.FieldName = "DIA_CHI_THUONG_TRU";
+            this.sle_cnv_DIA_CHI_THUONG_TRU.Name = "sle_cnv_DIA_CHI_THUONG_TRU";
+            this.sle_cnv_DIA_CHI_THUONG_TRU.Visible = true;
+            this.sle_cnv_DIA_CHI_THUONG_TRU.VisibleIndex = 4;
             // 
             // F393_nhan_vien_phu_cap_de
             // 
@@ -305,6 +364,12 @@
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_phu_cap;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.Label m_lbl_header;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_MA_NV;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_HO_TEN;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_GIOI_TINH;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_SDT;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_DIA_CHI_THUONG_TRU;
 
     }
 }

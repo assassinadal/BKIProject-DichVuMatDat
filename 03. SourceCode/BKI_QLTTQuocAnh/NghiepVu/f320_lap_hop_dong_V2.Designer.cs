@@ -35,6 +35,7 @@
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_dat_den_ngay = new DevExpress.XtraEditors.DateEdit();
             this.m_dat_tu_ngay = new DevExpress.XtraEditors.DateEdit();
             this.m_grc_thong_tin_hop_dong = new DevExpress.XtraGrid.GridControl();
@@ -74,8 +75,8 @@
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.m_cmd_xem_thong_tin_tat_ca = new DevExpress.XtraEditors.SimpleButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -108,6 +109,7 @@
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xem_thong_tin_tat_ca);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
@@ -179,6 +181,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(960, 467);
             this.layoutControl1.TabIndex = 2;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.labelControl1.Location = new System.Drawing.Point(12, 140);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(304, 13);
+            this.labelControl1.StyleController = this.layoutControl1;
+            this.labelControl1.TabIndex = 11;
+            this.labelControl1.Text = "Nháy đúp vào dòng trên lưới để xem thông tin chi tiết hợp đồng";
             // 
             // m_dat_den_ngay
             // 
@@ -621,16 +633,6 @@
             this.layoutControlItem7.Text = "Đến ngày";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(92, 13);
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.labelControl1.Location = new System.Drawing.Point(12, 140);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(304, 13);
-            this.labelControl1.StyleController = this.layoutControl1;
-            this.labelControl1.TabIndex = 11;
-            this.labelControl1.Text = "Nháy đúp vào dòng trên lưới để xem thông tin chi tiết hợp đồng";
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.labelControl1;
@@ -641,6 +643,16 @@
             this.layoutControlItem8.Text = "layoutControlItem8";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
+            // 
+            // m_cmd_xem_thong_tin_tat_ca
+            // 
+            this.m_cmd_xem_thong_tin_tat_ca.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xem_thong_tin_tat_ca.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xem_thong_tin_tat_ca.Image")));
+            this.m_cmd_xem_thong_tin_tat_ca.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xem_thong_tin_tat_ca.Name = "m_cmd_xem_thong_tin_tat_ca";
+            this.m_cmd_xem_thong_tin_tat_ca.Size = new System.Drawing.Size(294, 35);
+            this.m_cmd_xem_thong_tin_tat_ca.TabIndex = 7;
+            this.m_cmd_xem_thong_tin_tat_ca.Text = "&Xem thông tin chi tiết tất cả các hợp đồng";
             // 
             // f320_lap_hop_dong_V2
             // 
@@ -732,5 +744,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KY_HOP_DONG;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_xem_thong_tin_tat_ca;
     }
 }

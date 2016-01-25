@@ -221,6 +221,15 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string TAX_CODE = "TAX_CODE";
     }
 
+    public class DM_TRANG_THAI_LD
+    {
+        public const string ID = "ID";
+        public const string MA_TRANG_THAI_LD = "MA_TRANG_THAI_LD";
+        public const string TEN_TRANG_THAI_LD = "TEN_TRANG_THAI_LD";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string ID_LOAI_TRANG_THAI_LD = "ID_LOAI_TRANG_THAI_LD";
+    }
+
     public class DM_LOAI_HOP_DONG
     {
         public const string ID = "ID";

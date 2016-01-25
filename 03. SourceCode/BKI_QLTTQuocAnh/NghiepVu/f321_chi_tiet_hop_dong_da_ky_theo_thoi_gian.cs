@@ -31,7 +31,14 @@ namespace BKI_DichVuMatDat.NghiepVu
                             , DateTime ip_dat_tu_ngay
                             , DateTime ip_dat_den_ngay)
         {
-            m_sle_chon_nhan_vien.EditValue = ip_dc_id_nhan_vien;
+            if (ip_dc_id_nhan_vien != -1)
+            {
+                m_sle_chon_nhan_vien.EditValue = ip_dc_id_nhan_vien;
+            }
+            else
+            {
+                m_sle_chon_nhan_vien.EditValue = null;
+            }
             m_dat_tu_ngay.EditValue = ip_dat_tu_ngay;
             m_dat_den_ngay.EditValue = ip_dat_den_ngay;
             load_data_2_grid();

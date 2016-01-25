@@ -58,6 +58,19 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             Load += f470_bao_cao_thong_ke_lao_dong_Load;
             m_cmd_filter.Click += m_cmd_filter_Click;
+            m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
+        }
+
+        void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+            saveFileDialog1.RestoreDirectory = true;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                m_pvg_main.ExportToXls(saveFileDialog1.FileName);
+                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
+            }
         }
 
         void m_cmd_filter_Click(object sender, EventArgs e)

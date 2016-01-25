@@ -377,13 +377,20 @@ namespace BKI_DichVuMatDat.US
         //public const int DANG_LAM = 622;
         //public const int NGHI_VIEC = 624;
         //public const int NGHI_HUU = 689;
-        public const int DANG_LAM_VIEC = 742;
-        public const int DINH_CHI = 743;
-        public const int NGHI_THAI_SAN = 743;
-        public const int NGHI_TNLD = 743;
-        public const int NGHI_HUU = 744;
-        public const int BUOC_THOI_VIEC = 744;
-        public const int THOI_VIEC = 744;
+        public const int DANG_LAM_VIEC = 1;
+        public const int DINH_CHI = 2;
+        public const int NGHI_THAI_SAN = 3;
+        public const int NGHI_TNLD = 4;
+        public const int NGHI_HUU = 5;
+        public const int BUOC_THOI_VIEC = 6;
+        public const int THOI_VIEC = 7;
     }
 
+    public static class CONST_ID_LOAI_TRANG_THAI_LAO_DONG
+    {
+        
+        public const int DANG_LAM_VIEC = 742;
+        public const int NGHI_TAM_THOI = 743;
+        public const int NGHI_VIEC = 744;
+    }
 }

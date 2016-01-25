@@ -33,6 +33,10 @@
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_gr_LCD = new DevExpress.XtraEditors.GroupControl();
+            this.m_dat_ngay_ket_thuc_lcd = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.m_dat_ngay_bat_dau_lcd = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
             this.m_lbl_so_tien_lcd = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.m_sle_chuc_danh_lcd = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -42,6 +46,10 @@
             this.m_sle_muc_lcd = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.m_gr_LNS = new DevExpress.XtraEditors.GroupControl();
+            this.m_dat_ngay_ket_thuc_lns = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.m_dat_ngay_bat_dau_lns = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_ngay_cham_cong = new System.Windows.Forms.Label();
             this.m_lbl_hs_lns = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.m_sle_chuc_danh_lns = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -53,6 +61,12 @@
             this.m_gr_thong_tin_co_ban = new DevExpress.XtraEditors.GroupControl();
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.sle_cnv_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_GIOI_TINH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_SDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_DIA_CHI_THUONG_TRU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.m_sle_chon_quyet_dinh = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -85,14 +99,6 @@
             this.NGAY_SUA_GD_HS_LNS_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGUOI_LAP_GD_HS_LNS_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGUOI_SUA_GD_HS_LNS_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_dat_ngay_ket_thuc_lns = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.m_lbl_ngay_cham_cong = new System.Windows.Forms.Label();
-            this.m_dat_ngay_bat_dau_lns = new System.Windows.Forms.DateTimePicker();
-            this.m_dat_ngay_ket_thuc_lcd = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
-            this.m_dat_ngay_bat_dau_lcd = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_LCD)).BeginInit();
             this.m_gr_LCD.SuspendLayout();
@@ -162,6 +168,42 @@
             this.m_gr_LCD.TabIndex = 2;
             this.m_gr_LCD.Text = "THÔNG TIN LƯƠNG CHẾ ĐỘ";
             // 
+            // m_dat_ngay_ket_thuc_lcd
+            // 
+            this.m_dat_ngay_ket_thuc_lcd.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_ket_thuc_lcd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_ket_thuc_lcd.Location = new System.Drawing.Point(117, 138);
+            this.m_dat_ngay_ket_thuc_lcd.Name = "m_dat_ngay_ket_thuc_lcd";
+            this.m_dat_ngay_ket_thuc_lcd.Size = new System.Drawing.Size(122, 20);
+            this.m_dat_ngay_ket_thuc_lcd.TabIndex = 18;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(4, 138);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(74, 13);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "Ngày kết thúc";
+            // 
+            // m_dat_ngay_bat_dau_lcd
+            // 
+            this.m_dat_ngay_bat_dau_lcd.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_bat_dau_lcd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_bat_dau_lcd.Location = new System.Drawing.Point(117, 112);
+            this.m_dat_ngay_bat_dau_lcd.Name = "m_dat_ngay_bat_dau_lcd";
+            this.m_dat_ngay_bat_dau_lcd.Size = new System.Drawing.Size(122, 20);
+            this.m_dat_ngay_bat_dau_lcd.TabIndex = 16;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(4, 115);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(85, 13);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "Ngày bắt đầu (*)";
+            // 
             // m_lbl_so_tien_lcd
             // 
             this.m_lbl_so_tien_lcd.AutoSize = true;
@@ -187,7 +229,7 @@
             this.m_sle_chuc_danh_lcd.Name = "m_sle_chuc_danh_lcd";
             this.m_sle_chuc_danh_lcd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_sle_chuc_danh_lcd.Properties.NullText = "";
+            this.m_sle_chuc_danh_lcd.Properties.NullText = "--Chọn chức danh--";
             this.m_sle_chuc_danh_lcd.Properties.View = this.gridView2;
             this.m_sle_chuc_danh_lcd.Size = new System.Drawing.Size(208, 20);
             this.m_sle_chuc_danh_lcd.TabIndex = 1;
@@ -224,7 +266,7 @@
             this.m_sle_muc_lcd.Name = "m_sle_muc_lcd";
             this.m_sle_muc_lcd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_sle_muc_lcd.Properties.NullText = "";
+            this.m_sle_muc_lcd.Properties.NullText = "--Chọn mức--";
             this.m_sle_muc_lcd.Properties.View = this.gridView3;
             this.m_sle_muc_lcd.Size = new System.Drawing.Size(208, 20);
             this.m_sle_muc_lcd.TabIndex = 3;
@@ -257,6 +299,42 @@
             this.m_gr_LNS.TabIndex = 1;
             this.m_gr_LNS.Text = "THÔNG TIN LƯƠNG NĂNG SUÂT";
             // 
+            // m_dat_ngay_ket_thuc_lns
+            // 
+            this.m_dat_ngay_ket_thuc_lns.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_ket_thuc_lns.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_ket_thuc_lns.Location = new System.Drawing.Point(115, 138);
+            this.m_dat_ngay_ket_thuc_lns.Name = "m_dat_ngay_ket_thuc_lns";
+            this.m_dat_ngay_ket_thuc_lns.Size = new System.Drawing.Size(122, 20);
+            this.m_dat_ngay_ket_thuc_lns.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Ngày kết thúc";
+            // 
+            // m_dat_ngay_bat_dau_lns
+            // 
+            this.m_dat_ngay_bat_dau_lns.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_bat_dau_lns.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_bat_dau_lns.Location = new System.Drawing.Point(115, 112);
+            this.m_dat_ngay_bat_dau_lns.Name = "m_dat_ngay_bat_dau_lns";
+            this.m_dat_ngay_bat_dau_lns.Size = new System.Drawing.Size(122, 20);
+            this.m_dat_ngay_bat_dau_lns.TabIndex = 15;
+            // 
+            // m_lbl_ngay_cham_cong
+            // 
+            this.m_lbl_ngay_cham_cong.AutoSize = true;
+            this.m_lbl_ngay_cham_cong.Location = new System.Drawing.Point(3, 118);
+            this.m_lbl_ngay_cham_cong.Name = "m_lbl_ngay_cham_cong";
+            this.m_lbl_ngay_cham_cong.Size = new System.Drawing.Size(85, 13);
+            this.m_lbl_ngay_cham_cong.TabIndex = 14;
+            this.m_lbl_ngay_cham_cong.Text = "Ngày bắt đầu (*)";
+            // 
             // m_lbl_hs_lns
             // 
             this.m_lbl_hs_lns.AutoSize = true;
@@ -282,7 +360,7 @@
             this.m_sle_chuc_danh_lns.Name = "m_sle_chuc_danh_lns";
             this.m_sle_chuc_danh_lns.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_sle_chuc_danh_lns.Properties.NullText = "";
+            this.m_sle_chuc_danh_lns.Properties.NullText = "--Chọn chức danh--";
             this.m_sle_chuc_danh_lns.Properties.View = this.gridView4;
             this.m_sle_chuc_danh_lns.Size = new System.Drawing.Size(208, 20);
             this.m_sle_chuc_danh_lns.TabIndex = 1;
@@ -310,7 +388,7 @@
             this.m_sle_muc_lns.Name = "m_sle_muc_lns";
             this.m_sle_muc_lns.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_sle_muc_lns.Properties.NullText = "";
+            this.m_sle_muc_lns.Properties.NullText = "--Chọn mức--";
             this.m_sle_muc_lns.Properties.View = this.gridView5;
             this.m_sle_muc_lns.Size = new System.Drawing.Size(208, 20);
             this.m_sle_muc_lns.TabIndex = 3;
@@ -353,17 +431,70 @@
             this.m_sle_chon_nhan_vien.Name = "m_sle_chon_nhan_vien";
             this.m_sle_chon_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_sle_chon_nhan_vien.Properties.NullText = "";
+            this.m_sle_chon_nhan_vien.Properties.NullText = "--Chọn nhân viên--";
             this.m_sle_chon_nhan_vien.Properties.View = this.searchLookUpEdit1View;
             this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(208, 20);
             this.m_sle_chon_nhan_vien.TabIndex = 1;
             // 
             // searchLookUpEdit1View
             // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.sle_cnv_ID,
+            this.sle_cnv_MA_NV,
+            this.sle_cnv_HO_TEN,
+            this.sle_cnv_GIOI_TINH,
+            this.sle_cnv_SDT,
+            this.sle_cnv_DIA_CHI_THUONG_TRU});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // sle_cnv_ID
+            // 
+            this.sle_cnv_ID.Caption = "ID";
+            this.sle_cnv_ID.FieldName = "ID";
+            this.sle_cnv_ID.Name = "sle_cnv_ID";
+            // 
+            // sle_cnv_MA_NV
+            // 
+            this.sle_cnv_MA_NV.Caption = "Mã NV";
+            this.sle_cnv_MA_NV.FieldName = "MA_NV";
+            this.sle_cnv_MA_NV.Name = "sle_cnv_MA_NV";
+            this.sle_cnv_MA_NV.Visible = true;
+            this.sle_cnv_MA_NV.VisibleIndex = 0;
+            // 
+            // sle_cnv_HO_TEN
+            // 
+            this.sle_cnv_HO_TEN.Caption = "Họ tên";
+            this.sle_cnv_HO_TEN.FieldName = "HO_TEN";
+            this.sle_cnv_HO_TEN.Name = "sle_cnv_HO_TEN";
+            this.sle_cnv_HO_TEN.Visible = true;
+            this.sle_cnv_HO_TEN.VisibleIndex = 1;
+            // 
+            // sle_cnv_GIOI_TINH
+            // 
+            this.sle_cnv_GIOI_TINH.Caption = "Giới tính";
+            this.sle_cnv_GIOI_TINH.FieldName = "GT";
+            this.sle_cnv_GIOI_TINH.Name = "sle_cnv_GIOI_TINH";
+            this.sle_cnv_GIOI_TINH.Visible = true;
+            this.sle_cnv_GIOI_TINH.VisibleIndex = 2;
+            // 
+            // sle_cnv_SDT
+            // 
+            this.sle_cnv_SDT.Caption = "SĐT";
+            this.sle_cnv_SDT.FieldName = "SDT";
+            this.sle_cnv_SDT.Name = "sle_cnv_SDT";
+            this.sle_cnv_SDT.Visible = true;
+            this.sle_cnv_SDT.VisibleIndex = 3;
+            // 
+            // sle_cnv_DIA_CHI_THUONG_TRU
+            // 
+            this.sle_cnv_DIA_CHI_THUONG_TRU.Caption = "Địa chỉ thường trú";
+            this.sle_cnv_DIA_CHI_THUONG_TRU.FieldName = "DIA_CHI_THUONG_TRU";
+            this.sle_cnv_DIA_CHI_THUONG_TRU.Name = "sle_cnv_DIA_CHI_THUONG_TRU";
+            this.sle_cnv_DIA_CHI_THUONG_TRU.Visible = true;
+            this.sle_cnv_DIA_CHI_THUONG_TRU.VisibleIndex = 4;
             // 
             // label1
             // 
@@ -381,7 +512,7 @@
             this.m_sle_chon_quyet_dinh.Name = "m_sle_chon_quyet_dinh";
             this.m_sle_chon_quyet_dinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_sle_chon_quyet_dinh.Properties.NullText = "";
+            this.m_sle_chon_quyet_dinh.Properties.NullText = "--Chọn quyết định--";
             this.m_sle_chon_quyet_dinh.Properties.View = this.gridView1;
             this.m_sle_chon_quyet_dinh.Size = new System.Drawing.Size(208, 20);
             this.m_sle_chon_quyet_dinh.TabIndex = 3;
@@ -777,78 +908,6 @@
             this.NGUOI_SUA_GD_HS_LNS_LCD.VisibleIndex = 14;
             this.NGUOI_SUA_GD_HS_LNS_LCD.Width = 81;
             // 
-            // m_dat_ngay_ket_thuc_lns
-            // 
-            this.m_dat_ngay_ket_thuc_lns.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_ket_thuc_lns.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_ket_thuc_lns.Location = new System.Drawing.Point(115, 138);
-            this.m_dat_ngay_ket_thuc_lns.Name = "m_dat_ngay_ket_thuc_lns";
-            this.m_dat_ngay_ket_thuc_lns.Size = new System.Drawing.Size(122, 20);
-            this.m_dat_ngay_ket_thuc_lns.TabIndex = 17;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 140);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Ngày kết thúc";
-            // 
-            // m_lbl_ngay_cham_cong
-            // 
-            this.m_lbl_ngay_cham_cong.AutoSize = true;
-            this.m_lbl_ngay_cham_cong.Location = new System.Drawing.Point(3, 118);
-            this.m_lbl_ngay_cham_cong.Name = "m_lbl_ngay_cham_cong";
-            this.m_lbl_ngay_cham_cong.Size = new System.Drawing.Size(85, 13);
-            this.m_lbl_ngay_cham_cong.TabIndex = 14;
-            this.m_lbl_ngay_cham_cong.Text = "Ngày bắt đầu (*)";
-            // 
-            // m_dat_ngay_bat_dau_lns
-            // 
-            this.m_dat_ngay_bat_dau_lns.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_bat_dau_lns.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_bat_dau_lns.Location = new System.Drawing.Point(115, 112);
-            this.m_dat_ngay_bat_dau_lns.Name = "m_dat_ngay_bat_dau_lns";
-            this.m_dat_ngay_bat_dau_lns.Size = new System.Drawing.Size(122, 20);
-            this.m_dat_ngay_bat_dau_lns.TabIndex = 15;
-            // 
-            // m_dat_ngay_ket_thuc_lcd
-            // 
-            this.m_dat_ngay_ket_thuc_lcd.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_ket_thuc_lcd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_ket_thuc_lcd.Location = new System.Drawing.Point(117, 138);
-            this.m_dat_ngay_ket_thuc_lcd.Name = "m_dat_ngay_ket_thuc_lcd";
-            this.m_dat_ngay_ket_thuc_lcd.Size = new System.Drawing.Size(122, 20);
-            this.m_dat_ngay_ket_thuc_lcd.TabIndex = 18;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(4, 138);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 13);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "Ngày kết thúc";
-            // 
-            // m_dat_ngay_bat_dau_lcd
-            // 
-            this.m_dat_ngay_bat_dau_lcd.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_bat_dau_lcd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_bat_dau_lcd.Location = new System.Drawing.Point(117, 112);
-            this.m_dat_ngay_bat_dau_lcd.Name = "m_dat_ngay_bat_dau_lcd";
-            this.m_dat_ngay_bat_dau_lcd.Size = new System.Drawing.Size(122, 20);
-            this.m_dat_ngay_bat_dau_lcd.TabIndex = 16;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(4, 115);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(85, 13);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "Ngày bắt đầu (*)";
-            // 
             // f330_len_luong_cho_nv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -956,6 +1015,12 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_bat_dau_lcd;
         private System.Windows.Forms.Label label14;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_MA_NV;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_HO_TEN;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_GIOI_TINH;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_SDT;
+        private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_DIA_CHI_THUONG_TRU;
 
     }
 }

@@ -140,7 +140,7 @@ namespace BKI_DichVuMatDat.BaoCao
             this.m_pnl_thong_tin_nhan_vien.Controls.Add(this.m_pnl_qua_trinh_lam_viec);
             this.m_pnl_thong_tin_nhan_vien.Controls.Add(this.m_pnl_thong_tin_ca_nhan);
             this.m_pnl_thong_tin_nhan_vien.Controls.Add(this.m_pnl_chon_nhan_vien);
-            this.m_pnl_thong_tin_nhan_vien.Location = new System.Drawing.Point(3, 0);
+            this.m_pnl_thong_tin_nhan_vien.Location = new System.Drawing.Point(-15, 0);
             this.m_pnl_thong_tin_nhan_vien.Name = "m_pnl_thong_tin_nhan_vien";
             this.m_pnl_thong_tin_nhan_vien.Size = new System.Drawing.Size(678, 750);
             this.m_pnl_thong_tin_nhan_vien.TabIndex = 3;
@@ -828,6 +828,7 @@ namespace BKI_DichVuMatDat.BaoCao
             this.m_sle_chon_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_chon_nhan_vien.Properties.DisplayMember = "HO_TEN";
+            this.m_sle_chon_nhan_vien.Properties.NullText = "--Chọn nhân viên--";
             this.m_sle_chon_nhan_vien.Properties.ValueMember = "ID";
             this.m_sle_chon_nhan_vien.Properties.View = this.searchLookUpEdit1View;
             this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(139, 20);
@@ -877,16 +878,12 @@ namespace BKI_DichVuMatDat.BaoCao
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // printDocument1
-            // 
-            
-            // 
             // f450_thong_tin_nhan_vien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(682, 750);
+            this.ClientSize = new System.Drawing.Size(682, 741);
             this.Controls.Add(this.m_pnl_thong_tin_nhan_vien);
             this.Name = "f450_thong_tin_nhan_vien";
             this.Text = "F450 - Thông tin nhân viên";

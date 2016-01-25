@@ -28,6 +28,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
         #region Member
         int m_work_fail = 0;
+        int m_tinh_lai = 0;
         #endregion
 
 
@@ -55,22 +56,29 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             US_RPT_THONG_TIN_TONG_HOP_V2 v_us = new US_RPT_THONG_TIN_TONG_HOP_V2();
             DS_RPT_THONG_TIN_TONG_HOP_V2 v_ds = new DS_RPT_THONG_TIN_TONG_HOP_V2();
-            v_us.Get_tat_ca_nhan_vien_can_tong_hop_thong_tin(v_ds, lay_thang(), lay_nam());
+            v_us.Get_nhan_vien_can_tong_hop_thong_tin(v_ds, lay_thang(), lay_nam());
+            return v_ds;
+        }
+        private DS_RPT_THONG_TIN_TONG_HOP_V2 lay_tat_ca_nhan_vien_trong_bang_luong()
+        {
+            US_RPT_THONG_TIN_TONG_HOP_V2 v_us = new US_RPT_THONG_TIN_TONG_HOP_V2();
+            DS_RPT_THONG_TIN_TONG_HOP_V2 v_ds = new DS_RPT_THONG_TIN_TONG_HOP_V2();
+            v_us.Get_tat_ca_nhan_vien_can_tong_hop_thong_tin_v2(v_ds, lay_thang(), lay_nam());
             return v_ds;
         }
 
         private bool check_validate_data_is_ok(string ip_str_thang_cham_cong)
         {
-            if (m_txt_thang.EditValue == null || m_txt_nam.EditValue == null)
+            if(m_txt_thang.EditValue == null || m_txt_nam.EditValue == null)
             {
                 CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_THANG_NAM);
                 return false;
             }
             else
             {
-                for (int i = 0; i < ip_str_thang_cham_cong.Length; i++)
+                for(int i = 0; i < ip_str_thang_cham_cong.Length; i++)
                 {
-                    if (char.IsDigit(ip_str_thang_cham_cong[i]) == false)
+                    if(char.IsDigit(ip_str_thang_cham_cong[i]) == false)
                     {
                         CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_DU_LIEU_NHAP_CHUA_HOP_LE);
                         return false;
@@ -86,13 +94,13 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             var ip_dt = ip_ds.Tables[0];
 
-            for (int i = 0; i < ip_dt.Rows.Count; i++)
+            for(int i = 0; i < ip_dt.Rows.Count; i++)
             {
                 DataRow v_dr = ip_dt.Rows[i];
                 decimal v_id_nhan_vien = CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"]);
 
                 //B1: Tong hop thong tin 1 nhan vien
-                DataRow v_dr_thong_tin_tong_hop = CHRMCommon.get_thong_tin_tong_hop_1_nhan_vien_v2(v_id_nhan_vien, (int) lay_thang(), (int) lay_nam());
+                DataRow v_dr_thong_tin_tong_hop = CHRMCommon.get_thong_tin_tong_hop_1_nhan_vien_v2(v_id_nhan_vien, (int)lay_thang(), (int)lay_nam());
                 //B2: Insert vao Rpt
                 CHRMCommon.insertThongTinTongHopNV2RPTV2(v_dr_thong_tin_tong_hop);
                 ip_bgw.ReportProgress((i + 1) * 100 / ip_dt.Rows.Count);
@@ -107,13 +115,15 @@ namespace BKI_DichVuMatDat.BaoCao
             try
             {
                 BackgroundWorker worker = sender as BackgroundWorker;
-                if (check_validate_data_is_ok(m_txt_thang.Text.Trim()) && check_validate_data_is_ok(m_txt_nam.Text.Trim()))
+                if(check_validate_data_is_ok(m_txt_thang.Text.Trim()) && check_validate_data_is_ok(m_txt_nam.Text.Trim()))
                 {
-                    var v_ds_nv_can_tong_hop = lay_danh_sach_nhan_vien_can_tong_hop_thong_tin();
+
+                    DS_RPT_THONG_TIN_TONG_HOP_V2 v_ds_nv_can_tong_hop;
+                    v_ds_nv_can_tong_hop = lay_danh_sach_nhan_vien_can_tong_hop_thong_tin();
                     tong_hop_bao_cao(v_ds_nv_can_tong_hop, worker);
                 }
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CHRM_BaseMessages.MsgBox_Infor("Có tý tẹo vấn đề. Bạn chụp ảnh và gửi để chúng tôi hỗ trợ nhé! " + v_e.ToString());
             }
@@ -126,7 +136,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 this.m_prb.Text = (e.ProgressPercentage.ToString() + "%");
                 this.m_prb.EditValue = e.ProgressPercentage;
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -138,13 +148,13 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 this.m_prb.Visible = false;
                 this.m_panel.Visible = false;
-                if (m_work_fail == 1)
+                if(m_work_fail == 1)
                 {
                     load_data_2_grid();
                 }
 
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -157,7 +167,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 m_prb.Visible = false;
                 this.m_panel.Visible = false;
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -167,7 +177,7 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
-                if (m_bgwk.IsBusy)
+                if(m_bgwk.IsBusy)
                 {
                     m_bgwk.CancelAsync();
                     return;
@@ -176,10 +186,15 @@ namespace BKI_DichVuMatDat.BaoCao
                 this.m_panel.Visible = true;
                 m_bgwk.RunWorkerAsync();
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+        private void xoa_bang_tong_hop_thong_tin_thang()
+        {
+            US_RPT_THONG_TIN_TONG_HOP_V2 v_us = new US_RPT_THONG_TIN_TONG_HOP_V2();
+            v_us.xoa_bang_tong_hop_thang(lay_thang(), lay_nam());
         }
         #endregion
 
@@ -190,13 +205,13 @@ namespace BKI_DichVuMatDat.BaoCao
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                 saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
                 saveFileDialog1.RestoreDirectory = true;
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                if(saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     m_grc_tong_hop.ExportToXls(saveFileDialog1.FileName);
                     CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
                 }
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -342,6 +357,32 @@ namespace BKI_DichVuMatDat.BaoCao
                 CSystemLog_301.ExceptionHandle(v_e);
             }
 
+        }
+
+        private void m_cmd_tinh_lai_cham_cong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(m_bgwk.IsBusy)
+                {
+                    m_bgwk.CancelAsync();
+                    return;
+                }
+                this.m_prb.Visible = true;
+                this.m_panel.Visible = true;
+                var v_dlg_confirm = XtraMessageBox.Show("Bạn có chắc chắn muốn tính lại dữ liệu chấm công?", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(v_dlg_confirm == System.Windows.Forms.DialogResult.No)
+                {
+                    XtraMessageBox.Show("Bạn đã hủy thao tác!","THÔNG BÁO",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                xoa_bang_tong_hop_thong_tin_thang();
+                m_bgwk.RunWorkerAsync();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
     }
 }

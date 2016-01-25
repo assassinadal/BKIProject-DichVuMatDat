@@ -1420,7 +1420,7 @@
             this.colGIAM_TRU_LAM_THEM_150.ColumnEdit = this.repositoryItemTextEditTien;
             this.colGIAM_TRU_LAM_THEM_150.DisplayFormat.FormatString = "n0";
             this.colGIAM_TRU_LAM_THEM_150.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colGIAM_TRU_LAM_THEM_150.FieldName = "GIAM_TRU_LAM_THEM";
+            this.colGIAM_TRU_LAM_THEM_150.FieldName = "GIAM_TRU_LAM_THEM_150";
             this.colGIAM_TRU_LAM_THEM_150.Name = "colGIAM_TRU_LAM_THEM_150";
             this.colGIAM_TRU_LAM_THEM_150.OptionsColumn.ShowCaption = false;
             this.colGIAM_TRU_LAM_THEM_150.Visible = true;

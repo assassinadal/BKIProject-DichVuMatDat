@@ -653,6 +653,12 @@
     <Compile Include="EF\V_RPT_LUONG.cs">
       <DependentUpon>ModelDVMD.tt</DependentUpon>
     </Compile>
+    <Compile Include="f304_cac_khoan_khac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f304_cac_khoan_khac.Designer.cs">
+      <DependentUpon>f304_cac_khoan_khac.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormatControl\FormatControl.cs" />
     <Compile Include="HeThong\collection.cs" />
     <Compile Include="HeThong\f301_quy_trinh_tinh_luong.cs">
@@ -1228,6 +1234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f160_them_nhan_vien_nhanh.resx">
       <DependentUpon>f160_them_nhan_vien_nhanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f304_cac_khoan_khac.resx">
+      <DependentUpon>f304_cac_khoan_khac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f301_quy_trinh_tinh_luong.resx">
       <DependentUpon>f301_quy_trinh_tinh_luong.cs</DependentUpon>

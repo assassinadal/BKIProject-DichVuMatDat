@@ -114,6 +114,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_THUE.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_CAC_KHOAN_TIEN_KHAC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_CAC_KHOAN_TIEN_KHAC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_CHAM_CONG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -565,6 +570,17 @@
     </None>
     <None Include="DS_DM_THUE.xss">
       <DependentUpon>DS_DM_THUE.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_CAC_KHOAN_TIEN_KHAC.xsc">
+      <DependentUpon>DS_GD_CAC_KHOAN_TIEN_KHAC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_CAC_KHOAN_TIEN_KHAC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_CAC_KHOAN_TIEN_KHAC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_CAC_KHOAN_TIEN_KHAC.xss">
+      <DependentUpon>DS_GD_CAC_KHOAN_TIEN_KHAC.xsd</DependentUpon>
     </None>
     <None Include="DS_GD_CHAM_CONG.xsc">
       <DependentUpon>DS_GD_CHAM_CONG.xsd</DependentUpon>

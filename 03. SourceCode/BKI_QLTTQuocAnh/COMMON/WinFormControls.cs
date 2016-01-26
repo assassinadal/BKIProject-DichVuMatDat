@@ -584,7 +584,7 @@ namespace BKI_DichVuMatDat
         internal void FillDatasetChamCong(DataSet v_ds, string ip_str_thang, string ip_str_nam)
         {
             CStoredProc v_cstore = new CStoredProc("pr_GET_DU_LIEU_CHAM_CONG");
-            v_cstore.addDecimalInputParam("@nam", CIPConvert.ToDecimal(ip_str_thang));
+            v_cstore.addDecimalInputParam("@thang", CIPConvert.ToDecimal(ip_str_thang));
             v_cstore.addDecimalInputParam("@nam", CIPConvert.ToDecimal(ip_str_nam));
             v_cstore.fillDataSetByCommand(this, v_ds);
         }

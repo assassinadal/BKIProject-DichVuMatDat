@@ -76,6 +76,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                     }
                     else
                     {
+                        LayDuLieuLoaiNgayCong();
+                        LayDuLieuNhanVien();
                         if (checkBangChamCong())
                         {
                             if (check_db_da_cham_cong())
@@ -259,8 +261,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void m_bgwk_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
-            LayDuLieuLoaiNgayCong();
-            LayDuLieuNhanVien();
+            
             //if (checkBangChamCong())//checkBangChamCong())
             //{
             //    if (check_db_da_cham_cong())

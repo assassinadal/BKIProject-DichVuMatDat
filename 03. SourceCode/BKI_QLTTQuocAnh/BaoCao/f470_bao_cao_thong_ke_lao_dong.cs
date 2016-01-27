@@ -59,6 +59,27 @@ namespace BKI_DichVuMatDat.BaoCao
             Load += f470_bao_cao_thong_ke_lao_dong_Load;
             m_cmd_filter.Click += m_cmd_filter_Click;
             m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
+            this.m_pvg_main.FieldValueDisplayText += m_pvg_main_FieldValueDisplayText;
+        }
+
+        void m_pvg_main_FieldValueDisplayText(object sender, PivotFieldDisplayTextEventArgs e)
+        {
+            try
+            {
+                if (e.ValueType == PivotGridValueType.GrandTotal)
+                {
+                    e.DisplayText = "Tổng cộng";
+                }
+                if (e.ValueType == PivotGridValueType.Total)
+                {
+                    //e.DisplayText = e.Field.Caption + " " + e.Value;
+                    e.DisplayText = "Tổng";
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_xuat_excel_Click(object sender, EventArgs e)

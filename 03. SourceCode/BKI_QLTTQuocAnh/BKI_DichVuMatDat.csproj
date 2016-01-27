@@ -772,6 +772,12 @@
     <Compile Include="NghiepVu\F312_dang_ky_giam_tru_nguoi_phu_thuoc.Designer.cs">
       <DependentUpon>F312_dang_ky_giam_tru_nguoi_phu_thuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2.Designer.cs">
+      <DependentUpon>f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f315_card_nhan_vien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -813,6 +819,12 @@
     </Compile>
     <Compile Include="NghiepVu\f321_chi_tiet_hop_dong_da_ky_theo_thoi_gian.Designer.cs">
       <DependentUpon>f321_chi_tiet_hop_dong_da_ky_theo_thoi_gian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\f323_lap_hop_dong_lao_dong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f323_lap_hop_dong_lao_dong.Designer.cs">
+      <DependentUpon>f323_lap_hop_dong_lao_dong.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\f330_len_luong_cho_nv.cs">
       <SubType>Form</SubType>
@@ -1301,6 +1313,9 @@
     <EmbeddedResource Include="NghiepVu\F312_dang_ky_giam_tru_nguoi_phu_thuoc.resx">
       <DependentUpon>F312_dang_ky_giam_tru_nguoi_phu_thuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2.resx">
+      <DependentUpon>f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f315_card_nhan_vien.resx">
       <DependentUpon>f315_card_nhan_vien.cs</DependentUpon>
     </EmbeddedResource>
@@ -1321,6 +1336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f321_chi_tiet_hop_dong_da_ky_theo_thoi_gian.resx">
       <DependentUpon>f321_chi_tiet_hop_dong_da_ky_theo_thoi_gian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f323_lap_hop_dong_lao_dong.resx">
+      <DependentUpon>f323_lap_hop_dong_lao_dong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f330_len_luong_cho_nv.resx">
       <DependentUpon>f330_len_luong_cho_nv.cs</DependentUpon>

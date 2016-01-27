@@ -66,5 +66,17 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_grc_hop_dong_het_han.DataSource = dataSet.Tables[0];
             this.ShowDialog();
         }
+
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+            saveFileDialog1.RestoreDirectory = true;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                m_grv_hop_dong_het_han.ExportToXls(saveFileDialog1.FileName);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
+            }
+        }
     }
 }

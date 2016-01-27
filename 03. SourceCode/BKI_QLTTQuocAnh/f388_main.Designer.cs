@@ -998,7 +998,7 @@
             // 
             // m_cmd_bc_thu_lao_hdqt
             // 
-            this.m_cmd_bc_thu_lao_hdqt.Caption = "Thù lao HĐQT";
+            this.m_cmd_bc_thu_lao_hdqt.Caption = "Thu nhập các nhóm khác";
             this.m_cmd_bc_thu_lao_hdqt.Id = 94;
             this.m_cmd_bc_thu_lao_hdqt.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_nhan_vien;
             this.m_cmd_bc_thu_lao_hdqt.Name = "m_cmd_bc_thu_lao_hdqt";

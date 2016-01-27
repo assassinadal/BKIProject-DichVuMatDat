@@ -542,13 +542,13 @@ namespace BKI_DichVuMatDat
             v_cstore.ExecuteCommand(this);
         }
 
-        internal void filldatasetBaoCaoThuLaoHDQT(DataSet v_ds, string ip_str_thang, string ip_str_nam)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_lay_danh_sach_thu_lao_HDQT");
-            v_cstore.addNVarcharInputParam("@thang", CIPConvert.ToDecimal(ip_str_thang));
-            v_cstore.addNVarcharInputParam("@nam", CIPConvert.ToDecimal(ip_str_nam));
-            v_cstore.fillDataSetByCommand(this, v_ds);
-        }
+        //internal void filldatasetBaoCaoThuLaoHDQT(DataSet v_ds, string ip_str_thang, string ip_str_nam)
+        //{
+        //    CStoredProc v_cstore = new CStoredProc("pr_lay_danh_sach_thu_lao_HDQT");
+        //    v_cstore.addNVarcharInputParam("@thang", CIPConvert.ToDecimal(ip_str_thang));
+        //    v_cstore.addNVarcharInputParam("@nam", CIPConvert.ToDecimal(ip_str_nam));
+        //    v_cstore.fillDataSetByCommand(this, v_ds);
+        //}
 
         internal void FillDatasetProcBangKeKhaiThuNhap(DataSet v_ds, string ip_str_nam)
         {
@@ -586,6 +586,15 @@ namespace BKI_DichVuMatDat
             CStoredProc v_cstore = new CStoredProc("pr_GET_DU_LIEU_CHAM_CONG");
             v_cstore.addDecimalInputParam("@thang", CIPConvert.ToDecimal(ip_str_thang));
             v_cstore.addDecimalInputParam("@nam", CIPConvert.ToDecimal(ip_str_nam));
+            v_cstore.fillDataSetByCommand(this, v_ds);
+        }
+
+        internal void filldatasetBaoCaoThuNhapLDNgoaiBangLuong(DataSet v_ds, string ip_str_thang, string ip_str_nam, string ip_str_id)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_get_thu_nhap_nhom_khac");
+            v_cstore.addNVarcharInputParam("@thang", CIPConvert.ToDecimal(ip_str_thang));
+            v_cstore.addNVarcharInputParam("@nam", CIPConvert.ToDecimal(ip_str_nam));
+            v_cstore.addDecimalInputParam("@id_nhom_ld", CIPConvert.ToDecimal(ip_str_id));
             v_cstore.fillDataSetByCommand(this, v_ds);
         }
     }

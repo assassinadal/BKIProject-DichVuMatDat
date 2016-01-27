@@ -51,14 +51,28 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_quy_tien_thuong.Properties.DataSource = v_dataset.Tables[0];
         }
 
+        private DataSet lay_danh_sach_nhan_vien_tinh_thuong()
+        {
+            int index = m_sle_quy_tien_thuong.Properties.GetIndexByKeyValue(m_sle_quy_tien_thuong.EditValue);
+            DataRow v_dr = (m_sle_quy_tien_thuong.Properties.DataSource as DataTable).Rows[index];
 
+            US_RPT_LUONG_V2 v_us_rpt_luong = new US_RPT_LUONG_V2();
+            DataSet v_ds_danh_sach_nhan_vien;
+            v_us_rpt_luong.lay_ma_nhan_vien_can_tinh_luong_trong_thang(
+                                 out v_ds_danh_sach_nhan_vien
+                                 , Convert.ToDecimal(v_dr["THANG"])
+                                 , Convert.ToDecimal(v_dr["NAM"]));
+            return v_ds_danh_sach_nhan_vien;
+        }
         private void create_excel_file()
         {
-            US_DUNG_CHUNG v_us_dung_chung = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add();
-            v_us_dung_chung.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN_2");
+            if(m_sle_quy_tien_thuong.EditValue== null)
+            {
+                XtraMessageBox.Show("Bạn chọn quỹ tiền trước nhé!");
+                return;
+            }
 
+            DataSet v_ds = lay_danh_sach_nhan_vien_tinh_thuong();
 
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";

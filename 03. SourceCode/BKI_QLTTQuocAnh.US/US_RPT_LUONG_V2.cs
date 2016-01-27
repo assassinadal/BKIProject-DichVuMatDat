@@ -910,6 +910,16 @@ namespace BKI_DichVuMatDat.US
         }
 
         //2. Lay du lieu luong
+        public void lay_ma_nhan_vien_can_tinh_luong_trong_thang(out DataSet op_ds, decimal ip_thang, decimal ip_nam)
+        {
+            op_ds = new DataSet();
+            op_ds.Tables.Add();
+            op_ds.EnforceConstraints = false;
+            CStoredProc v_sp = new CStoredProc("pr_GET_MA_NHAN_VIEN_TINH_LUONG_ALL_V2");
+            v_sp.addDecimalInputParam("@THANG", ip_thang);
+            v_sp.addDecimalInputParam("@NAM", ip_nam);
+            v_sp.fillDataSetByCommand(this, op_ds);
+        }
         public void lay_danh_sach_nhan_vien_can_tinh_luong_trong_thang(out DataSet op_ds, decimal ip_thang, decimal ip_nam)
         {
             op_ds = new DataSet();

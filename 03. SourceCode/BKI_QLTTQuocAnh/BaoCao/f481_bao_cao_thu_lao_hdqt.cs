@@ -44,5 +44,24 @@ namespace BKI_DichVuMatDat.BaoCao
             v_us.filldatasetBaoCaoThuLaoHDQT(v_ds, m_txt_chon_thang.Text, m_txt_chon_nam.Text);
             m_grc_bc_thu_lao.DataSource = v_ds.Tables[0];
         }
+
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+                saveFileDialog1.RestoreDirectory = true;
+                if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    m_grv_hs_bs_hs_athk.ExportToXls(saveFileDialog1.FileName);
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
+                }
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

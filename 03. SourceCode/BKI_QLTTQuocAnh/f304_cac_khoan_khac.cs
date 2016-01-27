@@ -113,32 +113,40 @@ namespace BKI_DichVuMatDat
             }
             catch (Exception v_e)
             {
-                MessageBox.Show("File này đang được mở. Vui lòng đóng file lại để có thể thực hiện được tác vụ này!");
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
         private void m_txt_luu_Click(object sender, EventArgs e)
         {
-            if (m_txt_thang.Text == "" || m_txt_nam.Text == ""|| m_txt_path=="")
+            try
             {
-                MessageBox.Show("Bạn phải điền đầy đủ thông tin ở bước 1 và bước 2!");
-            }
-            else 
-            {
-                if (check_du_lieu())
+                if(m_txt_thang.Text == "" || m_txt_nam.Text == "" || m_txt_path == "")
                 {
-                    delete_du_lieu_cu();
-                    DataTable dataTable = (DataTable)m_grc.DataSource;
-                    dataTable = dataTable.Rows.Cast<DataRow>().Where(row => !row.ItemArray.All(field => field is System.DBNull || string.Compare((field as string).Trim(), string.Empty) == 0)).CopyToDataTable();
-                    for (int i = 0; i < dataTable.Rows.Count; i++)
+                    MessageBox.Show("Bạn phải điền đầy đủ thông tin ở bước 1 và bước 2!");
+                }
+                else
+                {
+                    if(check_du_lieu())
                     {
-                        DataRow v_dr = dataTable.Rows[i];
-                        Gan_du_lieu_cho_us(v_dr);
-                    }
+                        delete_du_lieu_cu();
+                        DataTable dataTable = (DataTable)m_grc.DataSource;
+                        dataTable = dataTable.Rows.Cast<DataRow>().Where(row => !row.ItemArray.All(field => field is System.DBNull || string.Compare((field as string).Trim(), string.Empty) == 0)).CopyToDataTable();
+                        for(int i = 0; i < dataTable.Rows.Count; i++)
+                        {
+                            DataRow v_dr = dataTable.Rows[i];
+                            Gan_du_lieu_cho_us(v_dr);
+                        }
 
-                    MessageBox.Show("Đã hoàn tất!");
+                        MessageBox.Show("Đã hoàn tất!");
+                    }
                 }
             }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+            
         }
 
         private void delete_du_lieu_cu()

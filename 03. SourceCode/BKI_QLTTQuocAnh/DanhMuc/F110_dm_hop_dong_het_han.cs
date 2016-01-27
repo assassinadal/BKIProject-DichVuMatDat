@@ -18,7 +18,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             InitializeComponent();
             Load += F110_dm_hop_dong_het_han_Load;
-            m_dat_lay_tu_ngay.DateTime = DateTime.Now;
+            m_dat_tu_ngay.DateTime = DateTime.Now;
             m_cmd_filter.Click += m_cmd_filter_Click;
         }
 
@@ -38,7 +38,9 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             CHRMCommon.make_stt(m_grv_hop_dong_het_han);
             US_GD_HOP_DONG v_us_gd_hop_dong = new US_GD_HOP_DONG();
-            DataSet v_ds = v_us_gd_hop_dong.LayDanhSachHopDongHetHan(m_dat_lay_tu_ngay.DateTime);
+            DataSet v_ds = v_us_gd_hop_dong.LayDanhSachHopDongHetHan(
+                                        m_dat_tu_ngay.DateTime.Date
+                                        , m_dat_den_ngay.DateTime.Date);
             m_grc_hop_dong_het_han.DataSource = v_ds.Tables[0];
         }
 
@@ -54,9 +56,10 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
-        public void display(DateTime ip_dat_tu_ngay)
+        public void display(DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
         {
-            m_dat_lay_tu_ngay.DateTime = ip_dat_tu_ngay;
+            m_dat_tu_ngay.DateTime = ip_dat_tu_ngay;
+            m_dat_den_ngay.DateTime = ip_dat_den_ngay;
             load_data_2_grid();
             Show();
         }

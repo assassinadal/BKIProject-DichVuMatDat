@@ -35,7 +35,7 @@ namespace BKI_DichVuMatDat
             try
             {
                 int v_so_hop_dong_het_han = get_hop_dong_het_han().Tables[0].Rows.Count;
-                m_lbl_canh_bao_het_han_hop_dong.Text = "Hiện có " + v_so_hop_dong_het_han + " nhân viên đã hết hạn hợp đồng";
+                m_lbl_canh_bao_het_han_hop_dong.Text = "Hiện có " + v_so_hop_dong_het_han + " nhân viên sắp hết hạn hợp đồng trong tháng "+DateTime.Now.Month+" năm "+DateTime.Now.Year;
                 this.ShowDialog();
             }
             catch(Exception v_e)
@@ -88,6 +88,12 @@ namespace BKI_DichVuMatDat
             set_define_events();
         }
 
+        private void set_initial_form_load()
+        {
+            //format_control();
+            setBarStatus();
+        }
+
         private bool IsExistFormName(Form ip_frm)
         {
             foreach(var child in MdiChildren)
@@ -135,6 +141,30 @@ namespace BKI_DichVuMatDat
             {
                 barStaticItemServer.Caption = "Username: " + username  + " | Version: " + myVersionText;
             }
+        }
+
+        private DataSet get_hop_dong_het_han()
+        {
+            //DateTime v_2_thang_truoc = DateTime.Now.AddMonths(-2);
+            DateTime v_ngay_dau_tien_cua_thang_hien_tai = CHRMCommon.get_first_day_of_month(DateTime.Now.Date);
+            DateTime v_ngay_cuoi_cung_cua_thang_hien_tai = CHRMCommon.get_last_day_of_month(DateTime.Now.Date);
+            US_GD_HOP_DONG v_us_gd_hop_dong = new US_GD_HOP_DONG();
+            DataSet v_ds = v_us_gd_hop_dong.LayDanhSachHopDongHetHan(
+                                            v_ngay_dau_tien_cua_thang_hien_tai.Date
+                                            , v_ngay_cuoi_cung_cua_thang_hien_tai.Date);
+
+            return v_ds;
+        }
+
+        private void m_lbl_canh_bao_het_han_hop_dong_DoubleClick(object sender, EventArgs e)
+        {
+            DateTime v_ngay_dau_tien_cua_thang_hien_tai = CHRMCommon.get_first_day_of_month(DateTime.Now.Date);
+            DateTime v_ngay_cuoi_cung_cua_thang_hien_tai = CHRMCommon.get_last_day_of_month(DateTime.Now.Date);
+            //DateTime v_2_thang_truoc = DateTime.Now.AddMonths(-2);
+            F110_dm_hop_dong_het_han v_f = new F110_dm_hop_dong_het_han();
+            v_f.display(
+                        v_ngay_dau_tien_cua_thang_hien_tai.Date
+                        , v_ngay_cuoi_cung_cua_thang_hien_tai.Date);
         }
         #endregion
 
@@ -346,11 +376,13 @@ namespace BKI_DichVuMatDat
         {
             try
             {
+                DateTime v_ngay_dau_tien_cua_thang_hien_tai = CHRMCommon.get_first_day_of_month(DateTime.Now.Date);
+                DateTime v_ngay_cuoi_cung_cua_thang_hien_tai = CHRMCommon.get_last_day_of_month(DateTime.Now.Date);
                 F110_dm_hop_dong_het_han v_frm = new F110_dm_hop_dong_het_han();
                 if(IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
-                v_frm.display(DateTime.Now.Date);
+                v_frm.display(v_ngay_dau_tien_cua_thang_hien_tai, v_ngay_cuoi_cung_cua_thang_hien_tai);
             }
             catch(Exception v_e)
             {
@@ -648,11 +680,6 @@ namespace BKI_DichVuMatDat
             }
         }
 
-        private void set_initial_form_load()
-        {
-            //format_control();
-            setBarStatus();
-        }
 
         void m_cmd_bang_luong_nv_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -1107,21 +1134,7 @@ namespace BKI_DichVuMatDat
             }
         }
 
-        private DataSet get_hop_dong_het_han()
-        {
-            DateTime v_2_thang_truoc = DateTime.Now.AddMonths(-2);
-            US_GD_HOP_DONG v_us_gd_hop_dong = new US_GD_HOP_DONG();
-            DataSet v_ds = v_us_gd_hop_dong.LayDanhSachHopDongHetHan(v_2_thang_truoc.Date);
-            
-            return v_ds;
-        }
-
-        private void m_lbl_canh_bao_het_han_hop_dong_DoubleClick(object sender, EventArgs e)
-        {
-            DateTime v_2_thang_truoc = DateTime.Now.AddMonths(-2);
-            F110_dm_hop_dong_het_han v_f = new F110_dm_hop_dong_het_han();
-            v_f.display(v_2_thang_truoc.Date);
-        }
+        
 
         private void m_cmd_tk_lao_dong_nuoc_ngoai_ItemClick(object sender, ItemClickEventArgs e)
         {

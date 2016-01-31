@@ -66,7 +66,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private void create_excel_file()
         {
-            if(m_sle_quy_tien_thuong.EditValue== null)
+            if(m_sle_quy_tien_thuong.EditValue == null)
             {
                 XtraMessageBox.Show("Bạn chọn quỹ tiền trước nhé!");
                 return;
@@ -170,15 +170,15 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 XtraMessageBox.Show("Bạn chưa chọn quỹ thưởng!", "THIẾU DỮ LIỆU", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 m_sle_quy_tien_thuong.Focus();
-                    return false;
+                return false;
             }
-            
+
             decimal v_tong_he_so = 0;
             for(int i = 0; i < m_grv_main.RowCount; i++)
             {
                 if(m_grv_main.GetRowCellValue(i, "HE_SO") == DBNull.Value)
                 {
-                    XtraMessageBox.Show("Dòng thứ "+(i+1)+" ô hệ số bị trống!", "THIẾU DỮ LIỆU", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("Dòng thứ " + (i + 1) + " ô hệ số bị trống!", "THIẾU DỮ LIỆU", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
                 decimal v_he_so_dong = Convert.ToDecimal(m_grv_main.GetRowCellValue(i, "HE_SO"));
@@ -206,6 +206,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             US_DM_NHAN_VIEN v_us_nhan_vien = new US_DM_NHAN_VIEN();
             ref_us.dcID_NHAN_VIEN = v_us_nhan_vien.getIDNhanVienByMaNV(ip_dr_du_lieu_1_nv["MA_NV"].ToString());
+
 
             ref_us.dcSO_TIEN = Convert.ToDecimal(ip_dr_du_lieu_1_nv["THANH_TIEN"]);
             ref_us.dcTHANG = Convert.ToDecimal(v_dr["THANG"]);
@@ -325,7 +326,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return;
             }
 
-            
+
             if(XetQuyThuongDaChiaNhanVienChua())
             {
                 var dlg = XtraMessageBox.Show("Qũy thưởng đã chia cho nhân viên rồi. \n Ấn Yes để chia lại thưởng (xóa hết dữ liệu thưởng cũ, thêm dữ liệu thưởng mới), \n Ấn No để tiếp tục lưu dữ liệu thưởng (trong trường hợp quá trình lưu dữ liệu bị gián đoạn). \n Ấn Cancle để hủy hành động.", "XÁC NHẬN", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
@@ -346,7 +347,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 save_data_new();
             }
-            
+
             XtraMessageBox.Show("Lưu dữ liệu thưởng thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void handle_tinh_tien_thuong()
@@ -360,7 +361,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 return;
             }
-            var v_datasource =(DataTable) m_grc_main.DataSource;
+            var v_datasource = (DataTable)m_grc_main.DataSource;
             //var v_tong_he_so = tinh_tong_he_so();
             var v_don_gia_thuong = lay_don_gia_thuong();
             var v_phan_tram_thue = lay_phan_tram_thue();
@@ -414,7 +415,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-               
+
             }
             catch(Exception v_e)
             {
@@ -426,7 +427,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-               e.Appearance.BackColor = Color.Pink;
+                e.Appearance.BackColor = Color.Pink;
             }
             catch(Exception v_e)
             {
@@ -457,7 +458,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 //var dlg = XtraMessageBox.Show("Bạn có chắc chắn muốn thay đổi dữ liệu? Việc thay đổi dữ liệu sẽ thay đổi dữ liệu đã tính toán trước đó.", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 //if(dlg == System.Windows.Forms.DialogResult.Yes)
                 //{
-                    
+
                 //}
             }
             catch(Exception v_e)

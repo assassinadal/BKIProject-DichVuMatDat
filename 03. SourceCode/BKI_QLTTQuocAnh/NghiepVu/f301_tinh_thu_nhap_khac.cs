@@ -48,6 +48,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void fill_data_quy_tien_thuong()
         {
             var v_dataset = LayDanhSachQuyTienThuong();
+            m_sle_quy_tien_thuong.Properties.DataSource = null;
+            m_sle_quy_tien_thuong.EditValue = null;
             m_sle_quy_tien_thuong.Properties.DataSource = v_dataset.Tables[0];
         }
 
@@ -626,5 +628,45 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
         #endregion
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(m_sle_quy_tien_thuong.EditValue == null)
+                {
+                    return;
+                }
+                var dlg = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu thưởng của nhân viên để tính lại. Ấn Yes để XÓA!", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(dlg == System.Windows.Forms.DialogResult.Yes)
+                {
+                    US_GD_QUY_TIEN_THUONG v_us_quy = new US_GD_QUY_TIEN_THUONG();
+                    v_us_quy.xoa_du_lieu_thuong(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue));
+                    XtraMessageBox.Show("Xóa dữ liệu quỹ thưởng thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    fill_data_quy_tien_thuong();
+                }
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_xoa_quy_tien_thuong_Click(object sender, EventArgs e)
+        {
+            if(m_sle_quy_tien_thuong.EditValue == null)
+            {
+                return;
+            }
+            var dlg = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa xử liệu quỹ thưởng này. Việc xóa sẽ xóa hết dữ liệu thu nhập khác từ nhân viên. Ấn Yes để XÓA!", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(dlg == System.Windows.Forms.DialogResult.Yes)
+            {
+                US_GD_QUY_TIEN_THUONG v_us_quy = new US_GD_QUY_TIEN_THUONG();
+                v_us_quy.xoa_quy_tien_thuong(Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue));
+                XtraMessageBox.Show("Xóa dữ liệu quỹ thưởng thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                fill_data_quy_tien_thuong();
+                m_sle_quy_tien_thuong.EditValue = null;
+            }
+        }
     }
 }

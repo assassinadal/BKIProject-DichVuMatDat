@@ -140,7 +140,7 @@ namespace BKI_DichVuMatDat.BaoCao
             this.m_pnl_thong_tin_nhan_vien.Controls.Add(this.m_pnl_qua_trinh_lam_viec);
             this.m_pnl_thong_tin_nhan_vien.Controls.Add(this.m_pnl_thong_tin_ca_nhan);
             this.m_pnl_thong_tin_nhan_vien.Controls.Add(this.m_pnl_chon_nhan_vien);
-            this.m_pnl_thong_tin_nhan_vien.Location = new System.Drawing.Point(-15, 0);
+            this.m_pnl_thong_tin_nhan_vien.Location = new System.Drawing.Point(-42, 0);
             this.m_pnl_thong_tin_nhan_vien.Name = "m_pnl_thong_tin_nhan_vien";
             this.m_pnl_thong_tin_nhan_vien.Size = new System.Drawing.Size(678, 750);
             this.m_pnl_thong_tin_nhan_vien.TabIndex = 3;
@@ -883,7 +883,7 @@ namespace BKI_DichVuMatDat.BaoCao
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(682, 741);
+            this.ClientSize = new System.Drawing.Size(682, 733);
             this.Controls.Add(this.m_pnl_thong_tin_nhan_vien);
             this.Name = "f450_thong_tin_nhan_vien";
             this.Text = "F450 - Thông tin nhân viên";

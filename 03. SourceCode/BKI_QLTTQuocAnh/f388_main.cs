@@ -35,7 +35,7 @@ namespace BKI_DichVuMatDat
             try
             {
                 int v_so_hop_dong_het_han = get_hop_dong_het_han().Tables[0].Rows.Count;
-                m_lbl_canh_bao_het_han_hop_dong.Text = "Hiện có " + v_so_hop_dong_het_han + " nhân viên sắp hết hạn hợp đồng trong tháng "+DateTime.Now.Month+" năm "+DateTime.Now.Year;
+                m_lbl_canh_bao_het_han_hop_dong.Text = "Hiện có " + v_so_hop_dong_het_han + " nhân viên sắp hết hạn hợp đồng trong tháng";
                 this.ShowDialog();
             }
             catch(Exception v_e)

@@ -75,6 +75,12 @@
             this.m_gr_thong_tin_co_ban = new DevExpress.XtraEditors.GroupControl();
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.sle_cnv_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_GIOI_TINH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_SDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_cnv_DIA_CHI_LIEN_LAC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -111,12 +117,6 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.sle_cnv_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.sle_cnv_MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.sle_cnv_HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.sle_cnv_GIOI_TINH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.sle_cnv_SDT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.sle_cnv_DIA_CHI_LIEN_LAC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_LCD)).BeginInit();
@@ -611,6 +611,52 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // sle_cnv_ID
+            // 
+            this.sle_cnv_ID.Caption = "ID";
+            this.sle_cnv_ID.FieldName = "ID";
+            this.sle_cnv_ID.Name = "sle_cnv_ID";
+            // 
+            // sle_cnv_MA_NV
+            // 
+            this.sle_cnv_MA_NV.Caption = "Mã NV";
+            this.sle_cnv_MA_NV.FieldName = "MA_NV";
+            this.sle_cnv_MA_NV.Name = "sle_cnv_MA_NV";
+            this.sle_cnv_MA_NV.Visible = true;
+            this.sle_cnv_MA_NV.VisibleIndex = 0;
+            // 
+            // sle_cnv_HO_TEN
+            // 
+            this.sle_cnv_HO_TEN.Caption = "Họ tên";
+            this.sle_cnv_HO_TEN.FieldName = "HO_TEN";
+            this.sle_cnv_HO_TEN.Name = "sle_cnv_HO_TEN";
+            this.sle_cnv_HO_TEN.Visible = true;
+            this.sle_cnv_HO_TEN.VisibleIndex = 1;
+            // 
+            // sle_cnv_GIOI_TINH
+            // 
+            this.sle_cnv_GIOI_TINH.Caption = "Giới tính";
+            this.sle_cnv_GIOI_TINH.FieldName = "GT";
+            this.sle_cnv_GIOI_TINH.Name = "sle_cnv_GIOI_TINH";
+            this.sle_cnv_GIOI_TINH.Visible = true;
+            this.sle_cnv_GIOI_TINH.VisibleIndex = 2;
+            // 
+            // sle_cnv_SDT
+            // 
+            this.sle_cnv_SDT.Caption = "SĐT";
+            this.sle_cnv_SDT.FieldName = "SDT";
+            this.sle_cnv_SDT.Name = "sle_cnv_SDT";
+            this.sle_cnv_SDT.Visible = true;
+            this.sle_cnv_SDT.VisibleIndex = 3;
+            // 
+            // sle_cnv_DIA_CHI_LIEN_LAC
+            // 
+            this.sle_cnv_DIA_CHI_LIEN_LAC.Caption = "Địa chỉ liên lạc";
+            this.sle_cnv_DIA_CHI_LIEN_LAC.FieldName = "DIA_CHI_LIEN_LAC";
+            this.sle_cnv_DIA_CHI_LIEN_LAC.Name = "sle_cnv_DIA_CHI_LIEN_LAC";
+            this.sle_cnv_DIA_CHI_LIEN_LAC.Visible = true;
+            this.sle_cnv_DIA_CHI_LIEN_LAC.VisibleIndex = 4;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -757,7 +803,6 @@
             this.m_grv_hs_lns.GridControl = this.m_grc_f340_hs_lns;
             this.m_grv_hs_lns.Name = "m_grv_hs_lns";
             this.m_grv_hs_lns.OptionsFind.AllowFindPanel = false;
-            this.m_grv_hs_lns.OptionsFind.AlwaysVisible = true;
             this.m_grv_hs_lns.OptionsView.ShowFooter = true;
             // 
             // ID
@@ -921,7 +966,6 @@
             this.m_grv_lcd.GridControl = this.m_grc_f340_lcd;
             this.m_grv_lcd.Name = "m_grv_lcd";
             this.m_grv_lcd.OptionsFind.AllowFindPanel = false;
-            this.m_grv_lcd.OptionsFind.AlwaysVisible = true;
             this.m_grv_lcd.OptionsView.ShowFooter = true;
             // 
             // ID_LCD
@@ -1054,52 +1098,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1274, 194);
             this.panel6.TabIndex = 23;
-            // 
-            // sle_cnv_ID
-            // 
-            this.sle_cnv_ID.Caption = "ID";
-            this.sle_cnv_ID.FieldName = "ID";
-            this.sle_cnv_ID.Name = "sle_cnv_ID";
-            // 
-            // sle_cnv_MA_NV
-            // 
-            this.sle_cnv_MA_NV.Caption = "Mã NV";
-            this.sle_cnv_MA_NV.FieldName = "MA_NV";
-            this.sle_cnv_MA_NV.Name = "sle_cnv_MA_NV";
-            this.sle_cnv_MA_NV.Visible = true;
-            this.sle_cnv_MA_NV.VisibleIndex = 0;
-            // 
-            // sle_cnv_HO_TEN
-            // 
-            this.sle_cnv_HO_TEN.Caption = "Họ tên";
-            this.sle_cnv_HO_TEN.FieldName = "HO_TEN";
-            this.sle_cnv_HO_TEN.Name = "sle_cnv_HO_TEN";
-            this.sle_cnv_HO_TEN.Visible = true;
-            this.sle_cnv_HO_TEN.VisibleIndex = 1;
-            // 
-            // sle_cnv_GIOI_TINH
-            // 
-            this.sle_cnv_GIOI_TINH.Caption = "Giới tính";
-            this.sle_cnv_GIOI_TINH.FieldName = "GT";
-            this.sle_cnv_GIOI_TINH.Name = "sle_cnv_GIOI_TINH";
-            this.sle_cnv_GIOI_TINH.Visible = true;
-            this.sle_cnv_GIOI_TINH.VisibleIndex = 2;
-            // 
-            // sle_cnv_SDT
-            // 
-            this.sle_cnv_SDT.Caption = "SĐT";
-            this.sle_cnv_SDT.FieldName = "SDT";
-            this.sle_cnv_SDT.Name = "sle_cnv_SDT";
-            this.sle_cnv_SDT.Visible = true;
-            this.sle_cnv_SDT.VisibleIndex = 3;
-            // 
-            // sle_cnv_DIA_CHI_LIEN_LAC
-            // 
-            this.sle_cnv_DIA_CHI_LIEN_LAC.Caption = "Địa chỉ liên lạc";
-            this.sle_cnv_DIA_CHI_LIEN_LAC.FieldName = "DIA_CHI_LIEN_LAC";
-            this.sle_cnv_DIA_CHI_LIEN_LAC.Name = "sle_cnv_DIA_CHI_LIEN_LAC";
-            this.sle_cnv_DIA_CHI_LIEN_LAC.Visible = true;
-            this.sle_cnv_DIA_CHI_LIEN_LAC.VisibleIndex = 4;
             // 
             // f340_dat_hs_lns_lcd
             // 

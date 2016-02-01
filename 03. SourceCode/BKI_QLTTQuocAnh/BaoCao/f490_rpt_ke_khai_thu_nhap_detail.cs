@@ -19,18 +19,18 @@ namespace BKI_DichVuMatDat.BaoCao
             InitializeComponent();
         }
 
-        internal void DisplayForPresent(decimal v_id_nhan_vien, string m_txt_nam)
+        internal void DisplayForPresent(decimal v_id_nhan_vien, DateTime ip_dat_tu_thang, DateTime ip_dat_den_thang)
         {
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             DataTable v_dt = new DataTable();
             v_ds.Tables.Add(v_dt);
-            v_us.FillDatasetKeKhaiThueDoubleClick(v_ds, v_id_nhan_vien, m_txt_nam);
+            v_us.FillDatasetKeKhaiThueDoubleClick(v_ds, v_id_nhan_vien, ip_dat_tu_thang, ip_dat_den_thang);
             m_grc_tong_hop.DataSource = v_ds.Tables[0];
             fill_du_lieu(v_ds);
             m_adv_tong_hop.BestFitColumns();
             m_adv_tong_hop.ExpandAllGroups();
-            m_lbl_nam_2.Text = m_txt_nam;
+            m_lbl_nam_2.Text = ip_dat_tu_thang.Year.ToString();
             m_lbl_nam_2.ForeColor = Color.Maroon;
             m_lbl_nam_2.Font = new Font("Tahoma", 18, FontStyle.Bold);
             this.ShowDialog();

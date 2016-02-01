@@ -384,5 +384,10 @@ namespace BKI_DichVuMatDat.BaoCao
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            load_data_2_grid();
+        }
     }
 }

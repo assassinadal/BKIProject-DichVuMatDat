@@ -33,8 +33,6 @@ namespace BKI_DichVuMatDat.BaoCao
         private void f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru_Load(object sender, EventArgs e)
         {
             load_data_to_grid();
-           
-
         }
 
         private void load_data_to_grid()
@@ -46,7 +44,9 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 m_txt_nam.Text = "2015";
             }
-            v_us.FillDatasetProcBangKeKhaiThuNhap(v_ds, m_txt_nam.Text);
+            m_dat_tu_thang.DateTime = new DateTime(2015,06,01);
+            m_dat_den_thang.DateTime = new DateTime(2015, 12,31);
+            v_us.FillDatasetProcBangKeKhaiThuNhap(v_ds, m_dat_tu_thang.DateTime, m_dat_den_thang.DateTime);
             m_grc_tong_hop.DataSource = v_ds.Tables[0];
             if (v_ds.Tables[0].Rows.Count != 0)
             {      
@@ -132,9 +132,16 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void m_txt_nam_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            try
             {
-                e.Handled = true;
+                if(!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -142,28 +149,48 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private  void DoRowDoubleClick(GridView view, Point pt)
         {
-            GridHitInfo info = view.CalcHitInfo(pt);
-            if (info.InRow || info.InRowCell)
+            
+            try
             {
-                DataRow v_dr_grv = m_adv_tong_hop.GetDataRow(m_adv_tong_hop.FocusedRowHandle);
-                decimal v_id_nhan_vien = CIPConvert.ToDecimal(v_dr_grv["ID_NHAN_VIEN"].ToString());
-                f490_rpt_ke_khai_thu_nhap_detail v_f = new f490_rpt_ke_khai_thu_nhap_detail();
-                v_f.DisplayForPresent(v_id_nhan_vien, m_txt_nam.Text);
+                GridHitInfo info = view.CalcHitInfo(pt);
+                if(info.InRow || info.InRowCell)
+                {
+                    DataRow v_dr_grv = m_adv_tong_hop.GetDataRow(m_adv_tong_hop.FocusedRowHandle);
+                    decimal v_id_nhan_vien = CIPConvert.ToDecimal(v_dr_grv["ID_NHAN_VIEN"].ToString());
+                    f490_rpt_ke_khai_thu_nhap_detail v_f = new f490_rpt_ke_khai_thu_nhap_detail();
+                    v_f.DisplayForPresent(v_id_nhan_vien, m_dat_tu_thang.DateTime, m_dat_den_thang.DateTime);
+                }
             }
-
-
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_adv_tong_hop_DoubleClick(object sender, EventArgs e)
         {
-            GridView view = (GridView)sender;
-            Point pt = view.GridControl.PointToClient(Control.MousePosition);
-            DoRowDoubleClick(view, pt);
+            try
+            {
+                GridView view = (GridView)sender;
+                Point pt = view.GridControl.PointToClient(Control.MousePosition);
+                DoRowDoubleClick(view, pt);
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_cmd_tinh_Click(object sender, EventArgs e)
         {
-            load_data_to_grid();
+            try
+            {
+                load_data_to_grid();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_cmd_luu_bang_luong_Click(object sender, EventArgs e)

@@ -353,6 +353,8 @@ namespace BKI_DichVuMatDat.DS {
             
             private global::System.Data.DataColumn columnTHUC_LINH;
             
+            private global::System.Data.DataColumn columnSO_TIEN_DA_NOP_THUE;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public RPT_LUONG_V2DataTable() {
@@ -684,6 +686,14 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SO_TIEN_DA_NOP_THUEColumn {
+                get {
+                    return this.columnSO_TIEN_DA_NOP_THUE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -755,7 +765,8 @@ namespace BKI_DichVuMatDat.DS {
                         decimal THUE, 
                         decimal PHAI_NOP_KHAC, 
                         decimal TONG_PHAI_NOP, 
-                        decimal THUC_LINH) {
+                        decimal THUC_LINH, 
+                        decimal SO_TIEN_DA_NOP_THUE) {
                 RPT_LUONG_V2Row rowRPT_LUONG_V2Row = ((RPT_LUONG_V2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -794,7 +805,8 @@ namespace BKI_DichVuMatDat.DS {
                         THUE,
                         PHAI_NOP_KHAC,
                         TONG_PHAI_NOP,
-                        THUC_LINH};
+                        THUC_LINH,
+                        SO_TIEN_DA_NOP_THUE};
                 rowRPT_LUONG_V2Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRPT_LUONG_V2Row);
                 return rowRPT_LUONG_V2Row;
@@ -861,6 +873,7 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnPHAI_NOP_KHAC = base.Columns["PHAI_NOP_KHAC"];
                 this.columnTONG_PHAI_NOP = base.Columns["TONG_PHAI_NOP"];
                 this.columnTHUC_LINH = base.Columns["THUC_LINH"];
+                this.columnSO_TIEN_DA_NOP_THUE = base.Columns["SO_TIEN_DA_NOP_THUE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -940,6 +953,8 @@ namespace BKI_DichVuMatDat.DS {
                 base.Columns.Add(this.columnTONG_PHAI_NOP);
                 this.columnTHUC_LINH = new global::System.Data.DataColumn("THUC_LINH", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTHUC_LINH);
+                this.columnSO_TIEN_DA_NOP_THUE = new global::System.Data.DataColumn("SO_TIEN_DA_NOP_THUE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSO_TIEN_DA_NOP_THUE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -1670,6 +1685,22 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal SO_TIEN_DA_NOP_THUE {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableRPT_LUONG_V2.SO_TIEN_DA_NOP_THUEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SO_TIEN_DA_NOP_THUE\' in table \'RPT_LUONG_V2\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPT_LUONG_V2.SO_TIEN_DA_NOP_THUEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMA_NVNull() {
                 return this.IsNull(this.tableRPT_LUONG_V2.MA_NVColumn);
             }
@@ -2063,6 +2094,18 @@ namespace BKI_DichVuMatDat.DS {
             public void SetTHUC_LINHNull() {
                 this[this.tableRPT_LUONG_V2.THUC_LINHColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSO_TIEN_DA_NOP_THUENull() {
+                return this.IsNull(this.tableRPT_LUONG_V2.SO_TIEN_DA_NOP_THUEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSO_TIEN_DA_NOP_THUENull() {
+                this[this.tableRPT_LUONG_V2.SO_TIEN_DA_NOP_THUEColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -2261,6 +2304,7 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
             tableMapping.ColumnMappings.Add("PHAI_NOP_KHAC", "PHAI_NOP_KHAC");
             tableMapping.ColumnMappings.Add("TONG_PHAI_NOP", "TONG_PHAI_NOP");
             tableMapping.ColumnMappings.Add("THUC_LINH", "THUC_LINH");
+            tableMapping.ColumnMappings.Add("SO_TIEN_DA_NOP_THUE", "SO_TIEN_DA_NOP_THUE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -2310,8 +2354,9 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
                 "l_THUE)) AND ((@IsNull_PHAI_NOP_KHAC = 1 AND [PHAI_NOP_KHAC] IS NULL) OR ([PHAI_" +
                 "NOP_KHAC] = @Original_PHAI_NOP_KHAC)) AND ((@IsNull_TONG_PHAI_NOP = 1 AND [TONG_" +
                 "PHAI_NOP] IS NULL) OR ([TONG_PHAI_NOP] = @Original_TONG_PHAI_NOP)) AND ((@IsNull" +
-                "_THUC_LINH = 1 AND [THUC_LINH] IS NULL) OR ([THUC_LINH] = @Original_THUC_LINH)))" +
-                "";
+                "_THUC_LINH = 1 AND [THUC_LINH] IS NULL) OR ([THUC_LINH] = @Original_THUC_LINH)) " +
+                "AND ((@IsNull_SO_TIEN_DA_NOP_THUE = 1 AND [SO_TIEN_DA_NOP_THUE] IS NULL) OR ([SO" +
+                "_TIEN_DA_NOP_THUE] = @Original_SO_TIEN_DA_NOP_THUE)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_NHAN_VIEN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_NHAN_VIEN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2383,6 +2428,8 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TONG_PHAI_NOP", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "TONG_PHAI_NOP", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_THUC_LINH", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "THUC_LINH", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_THUC_LINH", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "THUC_LINH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SO_TIEN_DA_NOP_THUE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SO_TIEN_DA_NOP_THUE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SO_TIEN_DA_NOP_THUE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "SO_TIEN_DA_NOP_THUE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[RPT_LUONG_V2] ([ID_NHAN_VIEN], [THANG], [NAM], [MA_NV], [LUONG" +
@@ -2392,22 +2439,22 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
                 "_NHAP_NGOAI_LUONG], [TONG_THU_NHAP], [BHXH], [BHYT], [BHTN], [GIAM_TRU_LAM_THEM_" +
                 "150], [GIAM_TRU_LAM_THEM_200], [GIAM_TRU_LAM_THEM_300], [GIAM_TRU_GIA_CANH], [GI" +
                 "AM_TRU_PHU_THUOC], [GIAM_TRU_KHAC], [TONG_GIAM_TRU], [THU_NHAP_CHIU_THUE], [DOAN" +
-                "_PHI_CD], [THUE], [PHAI_NOP_KHAC], [TONG_PHAI_NOP], [THUC_LINH]) VALUES (@ID_NHA" +
-                "N_VIEN, @THANG, @NAM, @MA_NV, @LUONG_NS, @LUONG_CD, @PHU_CAP_TN, @AN_CA, @LAM_TH" +
-                "EM, @LAM_THEM_200, @LAM_THEM_300, @THU_NHAP_KHAC_TRONG_LUONG, @TONG_THU_NHAP_TRO" +
-                "NG_LUONG, @THUONG, @THUONG_ATHK, @THUONG_LE_TET, @BO_SUNG_LUONG, @THU_NHAP_KHAC_" +
-                "NGOAI_LUONG, @TONG_THU_NHAP_NGOAI_LUONG, @TONG_THU_NHAP, @BHXH, @BHYT, @BHTN, @G" +
-                "IAM_TRU_LAM_THEM_150, @GIAM_TRU_LAM_THEM_200, @GIAM_TRU_LAM_THEM_300, @GIAM_TRU_" +
-                "GIA_CANH, @GIAM_TRU_PHU_THUOC, @GIAM_TRU_KHAC, @TONG_GIAM_TRU, @THU_NHAP_CHIU_TH" +
-                "UE, @DOAN_PHI_CD, @THUE, @PHAI_NOP_KHAC, @TONG_PHAI_NOP, @THUC_LINH);\r\nSELECT ID" +
-                ", ID_NHAN_VIEN, THANG, NAM, MA_NV, LUONG_NS, LUONG_CD, PHU_CAP_TN, AN_CA, LAM_TH" +
-                "EM, LAM_THEM_200, LAM_THEM_300, THU_NHAP_KHAC_TRONG_LUONG, TONG_THU_NHAP_TRONG_L" +
-                "UONG, THUONG, THUONG_ATHK, THUONG_LE_TET, BO_SUNG_LUONG, THU_NHAP_KHAC_NGOAI_LUO" +
-                "NG, TONG_THU_NHAP_NGOAI_LUONG, TONG_THU_NHAP, BHXH, BHYT, BHTN, GIAM_TRU_LAM_THE" +
-                "M_150, GIAM_TRU_LAM_THEM_200, GIAM_TRU_LAM_THEM_300, GIAM_TRU_GIA_CANH, GIAM_TRU" +
-                "_PHU_THUOC, GIAM_TRU_KHAC, TONG_GIAM_TRU, THU_NHAP_CHIU_THUE, DOAN_PHI_CD, THUE," +
-                " PHAI_NOP_KHAC, TONG_PHAI_NOP, THUC_LINH FROM RPT_LUONG_V2 WHERE (ID = SCOPE_IDE" +
-                "NTITY())";
+                "_PHI_CD], [THUE], [PHAI_NOP_KHAC], [TONG_PHAI_NOP], [THUC_LINH], [SO_TIEN_DA_NOP" +
+                "_THUE]) VALUES (@ID_NHAN_VIEN, @THANG, @NAM, @MA_NV, @LUONG_NS, @LUONG_CD, @PHU_" +
+                "CAP_TN, @AN_CA, @LAM_THEM, @LAM_THEM_200, @LAM_THEM_300, @THU_NHAP_KHAC_TRONG_LU" +
+                "ONG, @TONG_THU_NHAP_TRONG_LUONG, @THUONG, @THUONG_ATHK, @THUONG_LE_TET, @BO_SUNG" +
+                "_LUONG, @THU_NHAP_KHAC_NGOAI_LUONG, @TONG_THU_NHAP_NGOAI_LUONG, @TONG_THU_NHAP, " +
+                "@BHXH, @BHYT, @BHTN, @GIAM_TRU_LAM_THEM_150, @GIAM_TRU_LAM_THEM_200, @GIAM_TRU_L" +
+                "AM_THEM_300, @GIAM_TRU_GIA_CANH, @GIAM_TRU_PHU_THUOC, @GIAM_TRU_KHAC, @TONG_GIAM" +
+                "_TRU, @THU_NHAP_CHIU_THUE, @DOAN_PHI_CD, @THUE, @PHAI_NOP_KHAC, @TONG_PHAI_NOP, " +
+                "@THUC_LINH, @SO_TIEN_DA_NOP_THUE);\r\nSELECT ID, ID_NHAN_VIEN, THANG, NAM, MA_NV, " +
+                "LUONG_NS, LUONG_CD, PHU_CAP_TN, AN_CA, LAM_THEM, LAM_THEM_200, LAM_THEM_300, THU" +
+                "_NHAP_KHAC_TRONG_LUONG, TONG_THU_NHAP_TRONG_LUONG, THUONG, THUONG_ATHK, THUONG_L" +
+                "E_TET, BO_SUNG_LUONG, THU_NHAP_KHAC_NGOAI_LUONG, TONG_THU_NHAP_NGOAI_LUONG, TONG" +
+                "_THU_NHAP, BHXH, BHYT, BHTN, GIAM_TRU_LAM_THEM_150, GIAM_TRU_LAM_THEM_200, GIAM_" +
+                "TRU_LAM_THEM_300, GIAM_TRU_GIA_CANH, GIAM_TRU_PHU_THUOC, GIAM_TRU_KHAC, TONG_GIA" +
+                "M_TRU, THU_NHAP_CHIU_THUE, DOAN_PHI_CD, THUE, PHAI_NOP_KHAC, TONG_PHAI_NOP, THUC" +
+                "_LINH, SO_TIEN_DA_NOP_THUE FROM RPT_LUONG_V2 WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_NHAN_VIEN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_NHAN_VIEN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@THANG", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 4, 0, "THANG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2445,6 +2492,7 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PHAI_NOP_KHAC", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "PHAI_NOP_KHAC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TONG_PHAI_NOP", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "TONG_PHAI_NOP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@THUC_LINH", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "THUC_LINH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SO_TIEN_DA_NOP_THUE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "SO_TIEN_DA_NOP_THUE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[RPT_LUONG_V2] SET [ID_NHAN_VIEN] = @ID_NHAN_VIEN, [THANG] = @THANG," +
@@ -2462,60 +2510,63 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
                 "C, [GIAM_TRU_KHAC] = @GIAM_TRU_KHAC, [TONG_GIAM_TRU] = @TONG_GIAM_TRU, [THU_NHAP" +
                 "_CHIU_THUE] = @THU_NHAP_CHIU_THUE, [DOAN_PHI_CD] = @DOAN_PHI_CD, [THUE] = @THUE," +
                 " [PHAI_NOP_KHAC] = @PHAI_NOP_KHAC, [TONG_PHAI_NOP] = @TONG_PHAI_NOP, [THUC_LINH]" +
-                " = @THUC_LINH WHERE (([ID] = @Original_ID) AND ([ID_NHAN_VIEN] = @Original_ID_NH" +
-                "AN_VIEN) AND ([THANG] = @Original_THANG) AND ([NAM] = @Original_NAM) AND ((@IsNu" +
-                "ll_MA_NV = 1 AND [MA_NV] IS NULL) OR ([MA_NV] = @Original_MA_NV)) AND ((@IsNull_" +
-                "LUONG_NS = 1 AND [LUONG_NS] IS NULL) OR ([LUONG_NS] = @Original_LUONG_NS)) AND (" +
-                "(@IsNull_LUONG_CD = 1 AND [LUONG_CD] IS NULL) OR ([LUONG_CD] = @Original_LUONG_C" +
-                "D)) AND ((@IsNull_PHU_CAP_TN = 1 AND [PHU_CAP_TN] IS NULL) OR ([PHU_CAP_TN] = @O" +
-                "riginal_PHU_CAP_TN)) AND ((@IsNull_AN_CA = 1 AND [AN_CA] IS NULL) OR ([AN_CA] = " +
-                "@Original_AN_CA)) AND ((@IsNull_LAM_THEM = 1 AND [LAM_THEM] IS NULL) OR ([LAM_TH" +
-                "EM] = @Original_LAM_THEM)) AND ((@IsNull_LAM_THEM_200 = 1 AND [LAM_THEM_200] IS " +
-                "NULL) OR ([LAM_THEM_200] = @Original_LAM_THEM_200)) AND ((@IsNull_LAM_THEM_300 =" +
-                " 1 AND [LAM_THEM_300] IS NULL) OR ([LAM_THEM_300] = @Original_LAM_THEM_300)) AND" +
-                " ((@IsNull_THU_NHAP_KHAC_TRONG_LUONG = 1 AND [THU_NHAP_KHAC_TRONG_LUONG] IS NULL" +
-                ") OR ([THU_NHAP_KHAC_TRONG_LUONG] = @Original_THU_NHAP_KHAC_TRONG_LUONG)) AND ((" +
-                "@IsNull_TONG_THU_NHAP_TRONG_LUONG = 1 AND [TONG_THU_NHAP_TRONG_LUONG] IS NULL) O" +
-                "R ([TONG_THU_NHAP_TRONG_LUONG] = @Original_TONG_THU_NHAP_TRONG_LUONG)) AND ((@Is" +
-                "Null_THUONG = 1 AND [THUONG] IS NULL) OR ([THUONG] = @Original_THUONG)) AND ((@I" +
-                "sNull_THUONG_ATHK = 1 AND [THUONG_ATHK] IS NULL) OR ([THUONG_ATHK] = @Original_T" +
-                "HUONG_ATHK)) AND ((@IsNull_THUONG_LE_TET = 1 AND [THUONG_LE_TET] IS NULL) OR ([T" +
-                "HUONG_LE_TET] = @Original_THUONG_LE_TET)) AND ((@IsNull_BO_SUNG_LUONG = 1 AND [B" +
-                "O_SUNG_LUONG] IS NULL) OR ([BO_SUNG_LUONG] = @Original_BO_SUNG_LUONG)) AND ((@Is" +
-                "Null_THU_NHAP_KHAC_NGOAI_LUONG = 1 AND [THU_NHAP_KHAC_NGOAI_LUONG] IS NULL) OR (" +
-                "[THU_NHAP_KHAC_NGOAI_LUONG] = @Original_THU_NHAP_KHAC_NGOAI_LUONG)) AND ((@IsNul" +
-                "l_TONG_THU_NHAP_NGOAI_LUONG = 1 AND [TONG_THU_NHAP_NGOAI_LUONG] IS NULL) OR ([TO" +
-                "NG_THU_NHAP_NGOAI_LUONG] = @Original_TONG_THU_NHAP_NGOAI_LUONG)) AND ((@IsNull_T" +
-                "ONG_THU_NHAP = 1 AND [TONG_THU_NHAP] IS NULL) OR ([TONG_THU_NHAP] = @Original_TO" +
-                "NG_THU_NHAP)) AND ((@IsNull_BHXH = 1 AND [BHXH] IS NULL) OR ([BHXH] = @Original_" +
-                "BHXH)) AND ((@IsNull_BHYT = 1 AND [BHYT] IS NULL) OR ([BHYT] = @Original_BHYT)) " +
-                "AND ((@IsNull_BHTN = 1 AND [BHTN] IS NULL) OR ([BHTN] = @Original_BHTN)) AND ((@" +
-                "IsNull_GIAM_TRU_LAM_THEM_150 = 1 AND [GIAM_TRU_LAM_THEM_150] IS NULL) OR ([GIAM_" +
-                "TRU_LAM_THEM_150] = @Original_GIAM_TRU_LAM_THEM_150)) AND ((@IsNull_GIAM_TRU_LAM" +
-                "_THEM_200 = 1 AND [GIAM_TRU_LAM_THEM_200] IS NULL) OR ([GIAM_TRU_LAM_THEM_200] =" +
-                " @Original_GIAM_TRU_LAM_THEM_200)) AND ((@IsNull_GIAM_TRU_LAM_THEM_300 = 1 AND [" +
-                "GIAM_TRU_LAM_THEM_300] IS NULL) OR ([GIAM_TRU_LAM_THEM_300] = @Original_GIAM_TRU" +
-                "_LAM_THEM_300)) AND ((@IsNull_GIAM_TRU_GIA_CANH = 1 AND [GIAM_TRU_GIA_CANH] IS N" +
-                "ULL) OR ([GIAM_TRU_GIA_CANH] = @Original_GIAM_TRU_GIA_CANH)) AND ((@IsNull_GIAM_" +
-                "TRU_PHU_THUOC = 1 AND [GIAM_TRU_PHU_THUOC] IS NULL) OR ([GIAM_TRU_PHU_THUOC] = @" +
-                "Original_GIAM_TRU_PHU_THUOC)) AND ((@IsNull_GIAM_TRU_KHAC = 1 AND [GIAM_TRU_KHAC" +
-                "] IS NULL) OR ([GIAM_TRU_KHAC] = @Original_GIAM_TRU_KHAC)) AND ((@IsNull_TONG_GI" +
-                "AM_TRU = 1 AND [TONG_GIAM_TRU] IS NULL) OR ([TONG_GIAM_TRU] = @Original_TONG_GIA" +
-                "M_TRU)) AND ((@IsNull_THU_NHAP_CHIU_THUE = 1 AND [THU_NHAP_CHIU_THUE] IS NULL) O" +
-                "R ([THU_NHAP_CHIU_THUE] = @Original_THU_NHAP_CHIU_THUE)) AND ((@IsNull_DOAN_PHI_" +
-                "CD = 1 AND [DOAN_PHI_CD] IS NULL) OR ([DOAN_PHI_CD] = @Original_DOAN_PHI_CD)) AN" +
-                "D ((@IsNull_THUE = 1 AND [THUE] IS NULL) OR ([THUE] = @Original_THUE)) AND ((@Is" +
-                "Null_PHAI_NOP_KHAC = 1 AND [PHAI_NOP_KHAC] IS NULL) OR ([PHAI_NOP_KHAC] = @Origi" +
-                "nal_PHAI_NOP_KHAC)) AND ((@IsNull_TONG_PHAI_NOP = 1 AND [TONG_PHAI_NOP] IS NULL)" +
-                " OR ([TONG_PHAI_NOP] = @Original_TONG_PHAI_NOP)) AND ((@IsNull_THUC_LINH = 1 AND" +
-                " [THUC_LINH] IS NULL) OR ([THUC_LINH] = @Original_THUC_LINH)));\r\nSELECT ID, ID_N" +
-                "HAN_VIEN, THANG, NAM, MA_NV, LUONG_NS, LUONG_CD, PHU_CAP_TN, AN_CA, LAM_THEM, LA" +
-                "M_THEM_200, LAM_THEM_300, THU_NHAP_KHAC_TRONG_LUONG, TONG_THU_NHAP_TRONG_LUONG, " +
-                "THUONG, THUONG_ATHK, THUONG_LE_TET, BO_SUNG_LUONG, THU_NHAP_KHAC_NGOAI_LUONG, TO" +
-                "NG_THU_NHAP_NGOAI_LUONG, TONG_THU_NHAP, BHXH, BHYT, BHTN, GIAM_TRU_LAM_THEM_150," +
-                " GIAM_TRU_LAM_THEM_200, GIAM_TRU_LAM_THEM_300, GIAM_TRU_GIA_CANH, GIAM_TRU_PHU_T" +
-                "HUOC, GIAM_TRU_KHAC, TONG_GIAM_TRU, THU_NHAP_CHIU_THUE, DOAN_PHI_CD, THUE, PHAI_" +
-                "NOP_KHAC, TONG_PHAI_NOP, THUC_LINH FROM RPT_LUONG_V2 WHERE (ID = @ID)";
+                " = @THUC_LINH, [SO_TIEN_DA_NOP_THUE] = @SO_TIEN_DA_NOP_THUE WHERE (([ID] = @Orig" +
+                "inal_ID) AND ([ID_NHAN_VIEN] = @Original_ID_NHAN_VIEN) AND ([THANG] = @Original_" +
+                "THANG) AND ([NAM] = @Original_NAM) AND ((@IsNull_MA_NV = 1 AND [MA_NV] IS NULL) " +
+                "OR ([MA_NV] = @Original_MA_NV)) AND ((@IsNull_LUONG_NS = 1 AND [LUONG_NS] IS NUL" +
+                "L) OR ([LUONG_NS] = @Original_LUONG_NS)) AND ((@IsNull_LUONG_CD = 1 AND [LUONG_C" +
+                "D] IS NULL) OR ([LUONG_CD] = @Original_LUONG_CD)) AND ((@IsNull_PHU_CAP_TN = 1 A" +
+                "ND [PHU_CAP_TN] IS NULL) OR ([PHU_CAP_TN] = @Original_PHU_CAP_TN)) AND ((@IsNull" +
+                "_AN_CA = 1 AND [AN_CA] IS NULL) OR ([AN_CA] = @Original_AN_CA)) AND ((@IsNull_LA" +
+                "M_THEM = 1 AND [LAM_THEM] IS NULL) OR ([LAM_THEM] = @Original_LAM_THEM)) AND ((@" +
+                "IsNull_LAM_THEM_200 = 1 AND [LAM_THEM_200] IS NULL) OR ([LAM_THEM_200] = @Origin" +
+                "al_LAM_THEM_200)) AND ((@IsNull_LAM_THEM_300 = 1 AND [LAM_THEM_300] IS NULL) OR " +
+                "([LAM_THEM_300] = @Original_LAM_THEM_300)) AND ((@IsNull_THU_NHAP_KHAC_TRONG_LUO" +
+                "NG = 1 AND [THU_NHAP_KHAC_TRONG_LUONG] IS NULL) OR ([THU_NHAP_KHAC_TRONG_LUONG] " +
+                "= @Original_THU_NHAP_KHAC_TRONG_LUONG)) AND ((@IsNull_TONG_THU_NHAP_TRONG_LUONG " +
+                "= 1 AND [TONG_THU_NHAP_TRONG_LUONG] IS NULL) OR ([TONG_THU_NHAP_TRONG_LUONG] = @" +
+                "Original_TONG_THU_NHAP_TRONG_LUONG)) AND ((@IsNull_THUONG = 1 AND [THUONG] IS NU" +
+                "LL) OR ([THUONG] = @Original_THUONG)) AND ((@IsNull_THUONG_ATHK = 1 AND [THUONG_" +
+                "ATHK] IS NULL) OR ([THUONG_ATHK] = @Original_THUONG_ATHK)) AND ((@IsNull_THUONG_" +
+                "LE_TET = 1 AND [THUONG_LE_TET] IS NULL) OR ([THUONG_LE_TET] = @Original_THUONG_L" +
+                "E_TET)) AND ((@IsNull_BO_SUNG_LUONG = 1 AND [BO_SUNG_LUONG] IS NULL) OR ([BO_SUN" +
+                "G_LUONG] = @Original_BO_SUNG_LUONG)) AND ((@IsNull_THU_NHAP_KHAC_NGOAI_LUONG = 1" +
+                " AND [THU_NHAP_KHAC_NGOAI_LUONG] IS NULL) OR ([THU_NHAP_KHAC_NGOAI_LUONG] = @Ori" +
+                "ginal_THU_NHAP_KHAC_NGOAI_LUONG)) AND ((@IsNull_TONG_THU_NHAP_NGOAI_LUONG = 1 AN" +
+                "D [TONG_THU_NHAP_NGOAI_LUONG] IS NULL) OR ([TONG_THU_NHAP_NGOAI_LUONG] = @Origin" +
+                "al_TONG_THU_NHAP_NGOAI_LUONG)) AND ((@IsNull_TONG_THU_NHAP = 1 AND [TONG_THU_NHA" +
+                "P] IS NULL) OR ([TONG_THU_NHAP] = @Original_TONG_THU_NHAP)) AND ((@IsNull_BHXH =" +
+                " 1 AND [BHXH] IS NULL) OR ([BHXH] = @Original_BHXH)) AND ((@IsNull_BHYT = 1 AND " +
+                "[BHYT] IS NULL) OR ([BHYT] = @Original_BHYT)) AND ((@IsNull_BHTN = 1 AND [BHTN] " +
+                "IS NULL) OR ([BHTN] = @Original_BHTN)) AND ((@IsNull_GIAM_TRU_LAM_THEM_150 = 1 A" +
+                "ND [GIAM_TRU_LAM_THEM_150] IS NULL) OR ([GIAM_TRU_LAM_THEM_150] = @Original_GIAM" +
+                "_TRU_LAM_THEM_150)) AND ((@IsNull_GIAM_TRU_LAM_THEM_200 = 1 AND [GIAM_TRU_LAM_TH" +
+                "EM_200] IS NULL) OR ([GIAM_TRU_LAM_THEM_200] = @Original_GIAM_TRU_LAM_THEM_200))" +
+                " AND ((@IsNull_GIAM_TRU_LAM_THEM_300 = 1 AND [GIAM_TRU_LAM_THEM_300] IS NULL) OR" +
+                " ([GIAM_TRU_LAM_THEM_300] = @Original_GIAM_TRU_LAM_THEM_300)) AND ((@IsNull_GIAM" +
+                "_TRU_GIA_CANH = 1 AND [GIAM_TRU_GIA_CANH] IS NULL) OR ([GIAM_TRU_GIA_CANH] = @Or" +
+                "iginal_GIAM_TRU_GIA_CANH)) AND ((@IsNull_GIAM_TRU_PHU_THUOC = 1 AND [GIAM_TRU_PH" +
+                "U_THUOC] IS NULL) OR ([GIAM_TRU_PHU_THUOC] = @Original_GIAM_TRU_PHU_THUOC)) AND " +
+                "((@IsNull_GIAM_TRU_KHAC = 1 AND [GIAM_TRU_KHAC] IS NULL) OR ([GIAM_TRU_KHAC] = @" +
+                "Original_GIAM_TRU_KHAC)) AND ((@IsNull_TONG_GIAM_TRU = 1 AND [TONG_GIAM_TRU] IS " +
+                "NULL) OR ([TONG_GIAM_TRU] = @Original_TONG_GIAM_TRU)) AND ((@IsNull_THU_NHAP_CHI" +
+                "U_THUE = 1 AND [THU_NHAP_CHIU_THUE] IS NULL) OR ([THU_NHAP_CHIU_THUE] = @Origina" +
+                "l_THU_NHAP_CHIU_THUE)) AND ((@IsNull_DOAN_PHI_CD = 1 AND [DOAN_PHI_CD] IS NULL) " +
+                "OR ([DOAN_PHI_CD] = @Original_DOAN_PHI_CD)) AND ((@IsNull_THUE = 1 AND [THUE] IS" +
+                " NULL) OR ([THUE] = @Original_THUE)) AND ((@IsNull_PHAI_NOP_KHAC = 1 AND [PHAI_N" +
+                "OP_KHAC] IS NULL) OR ([PHAI_NOP_KHAC] = @Original_PHAI_NOP_KHAC)) AND ((@IsNull_" +
+                "TONG_PHAI_NOP = 1 AND [TONG_PHAI_NOP] IS NULL) OR ([TONG_PHAI_NOP] = @Original_T" +
+                "ONG_PHAI_NOP)) AND ((@IsNull_THUC_LINH = 1 AND [THUC_LINH] IS NULL) OR ([THUC_LI" +
+                "NH] = @Original_THUC_LINH)) AND ((@IsNull_SO_TIEN_DA_NOP_THUE = 1 AND [SO_TIEN_D" +
+                "A_NOP_THUE] IS NULL) OR ([SO_TIEN_DA_NOP_THUE] = @Original_SO_TIEN_DA_NOP_THUE))" +
+                ");\r\nSELECT ID, ID_NHAN_VIEN, THANG, NAM, MA_NV, LUONG_NS, LUONG_CD, PHU_CAP_TN, " +
+                "AN_CA, LAM_THEM, LAM_THEM_200, LAM_THEM_300, THU_NHAP_KHAC_TRONG_LUONG, TONG_THU" +
+                "_NHAP_TRONG_LUONG, THUONG, THUONG_ATHK, THUONG_LE_TET, BO_SUNG_LUONG, THU_NHAP_K" +
+                "HAC_NGOAI_LUONG, TONG_THU_NHAP_NGOAI_LUONG, TONG_THU_NHAP, BHXH, BHYT, BHTN, GIA" +
+                "M_TRU_LAM_THEM_150, GIAM_TRU_LAM_THEM_200, GIAM_TRU_LAM_THEM_300, GIAM_TRU_GIA_C" +
+                "ANH, GIAM_TRU_PHU_THUOC, GIAM_TRU_KHAC, TONG_GIAM_TRU, THU_NHAP_CHIU_THUE, DOAN_" +
+                "PHI_CD, THUE, PHAI_NOP_KHAC, TONG_PHAI_NOP, THUC_LINH, SO_TIEN_DA_NOP_THUE FROM " +
+                "RPT_LUONG_V2 WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_NHAN_VIEN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_NHAN_VIEN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@THANG", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 4, 0, "THANG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2553,6 +2604,7 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PHAI_NOP_KHAC", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "PHAI_NOP_KHAC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TONG_PHAI_NOP", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "TONG_PHAI_NOP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@THUC_LINH", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "THUC_LINH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SO_TIEN_DA_NOP_THUE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "SO_TIEN_DA_NOP_THUE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_NHAN_VIEN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_NHAN_VIEN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_THANG", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 4, 0, "THANG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2623,6 +2675,8 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TONG_PHAI_NOP", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "TONG_PHAI_NOP", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_THUC_LINH", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "THUC_LINH", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_THUC_LINH", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "THUC_LINH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SO_TIEN_DA_NOP_THUE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SO_TIEN_DA_NOP_THUE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SO_TIEN_DA_NOP_THUE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "SO_TIEN_DA_NOP_THUE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -2630,7 +2684,7 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BKI_DichVuMatDat.DS.Properties.Settings.Default.DVMD_TESTConnectionString;
+            this._connection.ConnectionString = global::BKI_DichVuMatDat.DS.Properties.Settings.Default.BKI_DVMDConnectionString3;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2639,7 +2693,7 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID, ID_NHAN_VIEN, THANG, NAM, MA_NV, LUONG_NS, LUONG_CD, PHU_CAP_TN, AN_CA, LAM_THEM, LAM_THEM_200, LAM_THEM_300, THU_NHAP_KHAC_TRONG_LUONG, TONG_THU_NHAP_TRONG_LUONG, THUONG, THUONG_ATHK, THUONG_LE_TET, BO_SUNG_LUONG, THU_NHAP_KHAC_NGOAI_LUONG, TONG_THU_NHAP_NGOAI_LUONG, TONG_THU_NHAP, BHXH, BHYT, BHTN, GIAM_TRU_LAM_THEM_150, GIAM_TRU_LAM_THEM_200, GIAM_TRU_LAM_THEM_300, GIAM_TRU_GIA_CANH, GIAM_TRU_PHU_THUOC, GIAM_TRU_KHAC, TONG_GIAM_TRU, THU_NHAP_CHIU_THUE, DOAN_PHI_CD, THUE, PHAI_NOP_KHAC, TONG_PHAI_NOP, THUC_LINH FROM dbo.RPT_LUONG_V2";
+            this._commandCollection[0].CommandText = @"SELECT ID, ID_NHAN_VIEN, THANG, NAM, MA_NV, LUONG_NS, LUONG_CD, PHU_CAP_TN, AN_CA, LAM_THEM, LAM_THEM_200, LAM_THEM_300, THU_NHAP_KHAC_TRONG_LUONG, TONG_THU_NHAP_TRONG_LUONG, THUONG, THUONG_ATHK, THUONG_LE_TET, BO_SUNG_LUONG, THU_NHAP_KHAC_NGOAI_LUONG, TONG_THU_NHAP_NGOAI_LUONG, TONG_THU_NHAP, BHXH, BHYT, BHTN, GIAM_TRU_LAM_THEM_150, GIAM_TRU_LAM_THEM_200, GIAM_TRU_LAM_THEM_300, GIAM_TRU_GIA_CANH, GIAM_TRU_PHU_THUOC, GIAM_TRU_KHAC, TONG_GIAM_TRU, THU_NHAP_CHIU_THUE, DOAN_PHI_CD, THUE, PHAI_NOP_KHAC, TONG_PHAI_NOP, THUC_LINH, SO_TIEN_DA_NOP_THUE FROM dbo.RPT_LUONG_V2";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2737,7 +2791,8 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
                     global::System.Nullable<decimal> Original_THUE, 
                     global::System.Nullable<decimal> Original_PHAI_NOP_KHAC, 
                     global::System.Nullable<decimal> Original_TONG_PHAI_NOP, 
-                    global::System.Nullable<decimal> Original_THUC_LINH) {
+                    global::System.Nullable<decimal> Original_THUC_LINH, 
+                    global::System.Nullable<decimal> Original_SO_TIEN_DA_NOP_THUE) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_ID_NHAN_VIEN));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_THANG));
@@ -3006,6 +3061,14 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
                 this.Adapter.DeleteCommand.Parameters[68].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[69].Value = global::System.DBNull.Value;
             }
+            if ((Original_SO_TIEN_DA_NOP_THUE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[70].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[71].Value = ((decimal)(Original_SO_TIEN_DA_NOP_THUE.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[70].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[71].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3062,7 +3125,8 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
                     global::System.Nullable<decimal> THUE, 
                     global::System.Nullable<decimal> PHAI_NOP_KHAC, 
                     global::System.Nullable<decimal> TONG_PHAI_NOP, 
-                    global::System.Nullable<decimal> THUC_LINH) {
+                    global::System.Nullable<decimal> THUC_LINH, 
+                    global::System.Nullable<decimal> SO_TIEN_DA_NOP_THUE) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(ID_NHAN_VIEN));
             this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(THANG));
             this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(NAM));
@@ -3264,6 +3328,12 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
+            if ((SO_TIEN_DA_NOP_THUE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[36].Value = ((decimal)(SO_TIEN_DA_NOP_THUE.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3321,6 +3391,7 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
                     global::System.Nullable<decimal> PHAI_NOP_KHAC, 
                     global::System.Nullable<decimal> TONG_PHAI_NOP, 
                     global::System.Nullable<decimal> THUC_LINH, 
+                    global::System.Nullable<decimal> SO_TIEN_DA_NOP_THUE, 
                     decimal Original_ID, 
                     decimal Original_ID_NHAN_VIEN, 
                     decimal Original_THANG, 
@@ -3358,6 +3429,7 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
                     global::System.Nullable<decimal> Original_PHAI_NOP_KHAC, 
                     global::System.Nullable<decimal> Original_TONG_PHAI_NOP, 
                     global::System.Nullable<decimal> Original_THUC_LINH, 
+                    global::System.Nullable<decimal> Original_SO_TIEN_DA_NOP_THUE, 
                     decimal ID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(ID_NHAN_VIEN));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(THANG));
@@ -3560,275 +3632,289 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[36].Value = ((decimal)(Original_ID));
-            this.Adapter.UpdateCommand.Parameters[37].Value = ((decimal)(Original_ID_NHAN_VIEN));
-            this.Adapter.UpdateCommand.Parameters[38].Value = ((decimal)(Original_THANG));
-            this.Adapter.UpdateCommand.Parameters[39].Value = ((decimal)(Original_NAM));
-            if ((Original_MA_NV == null)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+            if ((SO_TIEN_DA_NOP_THUE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((decimal)(SO_TIEN_DA_NOP_THUE.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_MA_NV));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[37].Value = ((decimal)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[38].Value = ((decimal)(Original_ID_NHAN_VIEN));
+            this.Adapter.UpdateCommand.Parameters[39].Value = ((decimal)(Original_THANG));
+            this.Adapter.UpdateCommand.Parameters[40].Value = ((decimal)(Original_NAM));
+            if ((Original_MA_NV == null)) {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_MA_NV));
             }
             if ((Original_LUONG_NS.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((decimal)(Original_LUONG_NS.Value));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((decimal)(Original_LUONG_NS.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             if ((Original_LUONG_CD.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((decimal)(Original_LUONG_CD.Value));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((decimal)(Original_LUONG_CD.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             if ((Original_PHU_CAP_TN.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((decimal)(Original_PHU_CAP_TN.Value));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((decimal)(Original_PHU_CAP_TN.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             if ((Original_AN_CA.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((decimal)(Original_AN_CA.Value));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((decimal)(Original_AN_CA.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             if ((Original_LAM_THEM.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((decimal)(Original_LAM_THEM.Value));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((decimal)(Original_LAM_THEM.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             if ((Original_LAM_THEM_200.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((decimal)(Original_LAM_THEM_200.Value));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((decimal)(Original_LAM_THEM_200.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
             }
             if ((Original_LAM_THEM_300.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((decimal)(Original_LAM_THEM_300.Value));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((decimal)(Original_LAM_THEM_300.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
             }
             if ((Original_THU_NHAP_KHAC_TRONG_LUONG.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((decimal)(Original_THU_NHAP_KHAC_TRONG_LUONG.Value));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((decimal)(Original_THU_NHAP_KHAC_TRONG_LUONG.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
             }
             if ((Original_TONG_THU_NHAP_TRONG_LUONG.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((decimal)(Original_TONG_THU_NHAP_TRONG_LUONG.Value));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((decimal)(Original_TONG_THU_NHAP_TRONG_LUONG.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
             }
             if ((Original_THUONG.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((decimal)(Original_THUONG.Value));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((decimal)(Original_THUONG.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
             }
             if ((Original_THUONG_ATHK.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((decimal)(Original_THUONG_ATHK.Value));
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((decimal)(Original_THUONG_ATHK.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[63].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
             }
             if ((Original_THUONG_LE_TET.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((decimal)(Original_THUONG_LE_TET.Value));
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((decimal)(Original_THUONG_LE_TET.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
             }
             if ((Original_BO_SUNG_LUONG.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((decimal)(Original_BO_SUNG_LUONG.Value));
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((decimal)(Original_BO_SUNG_LUONG.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
             }
             if ((Original_THU_NHAP_KHAC_NGOAI_LUONG.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((decimal)(Original_THU_NHAP_KHAC_NGOAI_LUONG.Value));
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((decimal)(Original_THU_NHAP_KHAC_NGOAI_LUONG.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
             }
             if ((Original_TONG_THU_NHAP_NGOAI_LUONG.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((decimal)(Original_TONG_THU_NHAP_NGOAI_LUONG.Value));
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((decimal)(Original_TONG_THU_NHAP_NGOAI_LUONG.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[71].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
             }
             if ((Original_TONG_THU_NHAP.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((decimal)(Original_TONG_THU_NHAP.Value));
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((decimal)(Original_TONG_THU_NHAP.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[73].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
             }
             if ((Original_BHXH.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((decimal)(Original_BHXH.Value));
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((decimal)(Original_BHXH.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[75].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
             }
             if ((Original_BHYT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((decimal)(Original_BHYT.Value));
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((decimal)(Original_BHYT.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[77].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
             }
             if ((Original_BHTN.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((decimal)(Original_BHTN.Value));
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((decimal)(Original_BHTN.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[79].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
             }
             if ((Original_GIAM_TRU_LAM_THEM_150.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((decimal)(Original_GIAM_TRU_LAM_THEM_150.Value));
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((decimal)(Original_GIAM_TRU_LAM_THEM_150.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[81].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
             }
             if ((Original_GIAM_TRU_LAM_THEM_200.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((decimal)(Original_GIAM_TRU_LAM_THEM_200.Value));
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((decimal)(Original_GIAM_TRU_LAM_THEM_200.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[83].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
             }
             if ((Original_GIAM_TRU_LAM_THEM_300.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[85].Value = ((decimal)(Original_GIAM_TRU_LAM_THEM_300.Value));
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[86].Value = ((decimal)(Original_GIAM_TRU_LAM_THEM_300.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[85].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[86].Value = global::System.DBNull.Value;
             }
             if ((Original_GIAM_TRU_GIA_CANH.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[87].Value = ((decimal)(Original_GIAM_TRU_GIA_CANH.Value));
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((decimal)(Original_GIAM_TRU_GIA_CANH.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[87].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[88].Value = global::System.DBNull.Value;
             }
             if ((Original_GIAM_TRU_PHU_THUOC.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[89].Value = ((decimal)(Original_GIAM_TRU_PHU_THUOC.Value));
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[90].Value = ((decimal)(Original_GIAM_TRU_PHU_THUOC.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[89].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[90].Value = global::System.DBNull.Value;
             }
             if ((Original_GIAM_TRU_KHAC.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[90].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[91].Value = ((decimal)(Original_GIAM_TRU_KHAC.Value));
+                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[92].Value = ((decimal)(Original_GIAM_TRU_KHAC.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[90].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[91].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[92].Value = global::System.DBNull.Value;
             }
             if ((Original_TONG_GIAM_TRU.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[92].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[93].Value = ((decimal)(Original_TONG_GIAM_TRU.Value));
+                this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[94].Value = ((decimal)(Original_TONG_GIAM_TRU.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[92].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[93].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[94].Value = global::System.DBNull.Value;
             }
             if ((Original_THU_NHAP_CHIU_THUE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[94].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[95].Value = ((decimal)(Original_THU_NHAP_CHIU_THUE.Value));
+                this.Adapter.UpdateCommand.Parameters[95].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[96].Value = ((decimal)(Original_THU_NHAP_CHIU_THUE.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[94].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[95].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[95].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[96].Value = global::System.DBNull.Value;
             }
             if ((Original_DOAN_PHI_CD.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[96].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[97].Value = ((decimal)(Original_DOAN_PHI_CD.Value));
+                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[98].Value = ((decimal)(Original_DOAN_PHI_CD.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[96].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[97].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[98].Value = global::System.DBNull.Value;
             }
             if ((Original_THUE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[98].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[99].Value = ((decimal)(Original_THUE.Value));
+                this.Adapter.UpdateCommand.Parameters[99].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[100].Value = ((decimal)(Original_THUE.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[98].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[99].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[99].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[100].Value = global::System.DBNull.Value;
             }
             if ((Original_PHAI_NOP_KHAC.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[100].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[101].Value = ((decimal)(Original_PHAI_NOP_KHAC.Value));
+                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[102].Value = ((decimal)(Original_PHAI_NOP_KHAC.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[100].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[101].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[102].Value = global::System.DBNull.Value;
             }
             if ((Original_TONG_PHAI_NOP.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[102].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[103].Value = ((decimal)(Original_TONG_PHAI_NOP.Value));
+                this.Adapter.UpdateCommand.Parameters[103].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[104].Value = ((decimal)(Original_TONG_PHAI_NOP.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[102].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[103].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[103].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[104].Value = global::System.DBNull.Value;
             }
             if ((Original_THUC_LINH.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[104].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[105].Value = ((decimal)(Original_THUC_LINH.Value));
+                this.Adapter.UpdateCommand.Parameters[105].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[106].Value = ((decimal)(Original_THUC_LINH.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[104].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[105].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[105].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[106].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[106].Value = ((decimal)(ID));
+            if ((Original_SO_TIEN_DA_NOP_THUE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[107].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[108].Value = ((decimal)(Original_SO_TIEN_DA_NOP_THUE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[107].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[108].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[109].Value = ((decimal)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3886,6 +3972,7 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
                     global::System.Nullable<decimal> PHAI_NOP_KHAC, 
                     global::System.Nullable<decimal> TONG_PHAI_NOP, 
                     global::System.Nullable<decimal> THUC_LINH, 
+                    global::System.Nullable<decimal> SO_TIEN_DA_NOP_THUE, 
                     decimal Original_ID, 
                     decimal Original_ID_NHAN_VIEN, 
                     decimal Original_THANG, 
@@ -3922,8 +4009,9 @@ namespace BKI_DichVuMatDat.DS.DS_RPT_LUONG_V2TableAdapters {
                     global::System.Nullable<decimal> Original_THUE, 
                     global::System.Nullable<decimal> Original_PHAI_NOP_KHAC, 
                     global::System.Nullable<decimal> Original_TONG_PHAI_NOP, 
-                    global::System.Nullable<decimal> Original_THUC_LINH) {
-            return this.Update(ID_NHAN_VIEN, THANG, NAM, MA_NV, LUONG_NS, LUONG_CD, PHU_CAP_TN, AN_CA, LAM_THEM, LAM_THEM_200, LAM_THEM_300, THU_NHAP_KHAC_TRONG_LUONG, TONG_THU_NHAP_TRONG_LUONG, THUONG, THUONG_ATHK, THUONG_LE_TET, BO_SUNG_LUONG, THU_NHAP_KHAC_NGOAI_LUONG, TONG_THU_NHAP_NGOAI_LUONG, TONG_THU_NHAP, BHXH, BHYT, BHTN, GIAM_TRU_LAM_THEM_150, GIAM_TRU_LAM_THEM_200, GIAM_TRU_LAM_THEM_300, GIAM_TRU_GIA_CANH, GIAM_TRU_PHU_THUOC, GIAM_TRU_KHAC, TONG_GIAM_TRU, THU_NHAP_CHIU_THUE, DOAN_PHI_CD, THUE, PHAI_NOP_KHAC, TONG_PHAI_NOP, THUC_LINH, Original_ID, Original_ID_NHAN_VIEN, Original_THANG, Original_NAM, Original_MA_NV, Original_LUONG_NS, Original_LUONG_CD, Original_PHU_CAP_TN, Original_AN_CA, Original_LAM_THEM, Original_LAM_THEM_200, Original_LAM_THEM_300, Original_THU_NHAP_KHAC_TRONG_LUONG, Original_TONG_THU_NHAP_TRONG_LUONG, Original_THUONG, Original_THUONG_ATHK, Original_THUONG_LE_TET, Original_BO_SUNG_LUONG, Original_THU_NHAP_KHAC_NGOAI_LUONG, Original_TONG_THU_NHAP_NGOAI_LUONG, Original_TONG_THU_NHAP, Original_BHXH, Original_BHYT, Original_BHTN, Original_GIAM_TRU_LAM_THEM_150, Original_GIAM_TRU_LAM_THEM_200, Original_GIAM_TRU_LAM_THEM_300, Original_GIAM_TRU_GIA_CANH, Original_GIAM_TRU_PHU_THUOC, Original_GIAM_TRU_KHAC, Original_TONG_GIAM_TRU, Original_THU_NHAP_CHIU_THUE, Original_DOAN_PHI_CD, Original_THUE, Original_PHAI_NOP_KHAC, Original_TONG_PHAI_NOP, Original_THUC_LINH, Original_ID);
+                    global::System.Nullable<decimal> Original_THUC_LINH, 
+                    global::System.Nullable<decimal> Original_SO_TIEN_DA_NOP_THUE) {
+            return this.Update(ID_NHAN_VIEN, THANG, NAM, MA_NV, LUONG_NS, LUONG_CD, PHU_CAP_TN, AN_CA, LAM_THEM, LAM_THEM_200, LAM_THEM_300, THU_NHAP_KHAC_TRONG_LUONG, TONG_THU_NHAP_TRONG_LUONG, THUONG, THUONG_ATHK, THUONG_LE_TET, BO_SUNG_LUONG, THU_NHAP_KHAC_NGOAI_LUONG, TONG_THU_NHAP_NGOAI_LUONG, TONG_THU_NHAP, BHXH, BHYT, BHTN, GIAM_TRU_LAM_THEM_150, GIAM_TRU_LAM_THEM_200, GIAM_TRU_LAM_THEM_300, GIAM_TRU_GIA_CANH, GIAM_TRU_PHU_THUOC, GIAM_TRU_KHAC, TONG_GIAM_TRU, THU_NHAP_CHIU_THUE, DOAN_PHI_CD, THUE, PHAI_NOP_KHAC, TONG_PHAI_NOP, THUC_LINH, SO_TIEN_DA_NOP_THUE, Original_ID, Original_ID_NHAN_VIEN, Original_THANG, Original_NAM, Original_MA_NV, Original_LUONG_NS, Original_LUONG_CD, Original_PHU_CAP_TN, Original_AN_CA, Original_LAM_THEM, Original_LAM_THEM_200, Original_LAM_THEM_300, Original_THU_NHAP_KHAC_TRONG_LUONG, Original_TONG_THU_NHAP_TRONG_LUONG, Original_THUONG, Original_THUONG_ATHK, Original_THUONG_LE_TET, Original_BO_SUNG_LUONG, Original_THU_NHAP_KHAC_NGOAI_LUONG, Original_TONG_THU_NHAP_NGOAI_LUONG, Original_TONG_THU_NHAP, Original_BHXH, Original_BHYT, Original_BHTN, Original_GIAM_TRU_LAM_THEM_150, Original_GIAM_TRU_LAM_THEM_200, Original_GIAM_TRU_LAM_THEM_300, Original_GIAM_TRU_GIA_CANH, Original_GIAM_TRU_PHU_THUOC, Original_GIAM_TRU_KHAC, Original_TONG_GIAM_TRU, Original_THU_NHAP_CHIU_THUE, Original_DOAN_PHI_CD, Original_THUE, Original_PHAI_NOP_KHAC, Original_TONG_PHAI_NOP, Original_THUC_LINH, Original_SO_TIEN_DA_NOP_THUE, Original_ID);
         }
     }
     

@@ -721,7 +721,7 @@ namespace BKI_DichVuMatDat.BaoCao
             v_dto_luong.TONG_PHAI_NOP = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.TONG_PHAI_NOP]);
 
             v_dto_luong.THUC_LINH = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.THUC_LINH]);
-
+            v_dto_luong.SO_TIEN_DA_NOP_THUE = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.SO_TIEN_DA_NOP_THUE]);
             return v_dto_luong;
         }
         private US_RPT_LUONG_V2 transfer_dto_2_us_object(DTO_BANG_LUONG_V2 ip_dto_luong)
@@ -771,7 +771,7 @@ namespace BKI_DichVuMatDat.BaoCao
             v_us_luong_v2.dcTONG_PHAI_NOP = ip_dto_luong.TONG_PHAI_NOP;
 
             v_us_luong_v2.dcTHUC_LINH = ip_dto_luong.THUC_LINH;
-
+            v_us_luong_v2.dcSO_TIEN_DA_NOP_THUE = ip_dto_luong.SO_TIEN_DA_NOP_THUE;
             return v_us_luong_v2;
         }
         private void chot_bang_luong()

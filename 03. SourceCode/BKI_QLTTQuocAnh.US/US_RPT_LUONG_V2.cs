@@ -837,6 +837,28 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["THUC_LINH"] = System.Convert.DBNull;
         }
 
+        public decimal dcSO_TIEN_DA_NOP_THUE
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "SO_TIEN_DA_NOP_THUE", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["SO_TIEN_DA_NOP_THUE"] = value;
+            }
+        }
+
+        public bool IsSO_TIEN_DA_NOP_THUENull()
+        {
+            return pm_objDR.IsNull("SO_TIEN_DA_NOP_THUE");
+        }
+
+        public void SetSO_TIEN_DA_NOP_THUENull()
+        {
+            pm_objDR["SO_TIEN_DA_NOP_THUE"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_RPT_LUONG_V2()

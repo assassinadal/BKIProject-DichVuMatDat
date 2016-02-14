@@ -1086,7 +1086,9 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string PHAI_NOP_KHAC = "PHAI_NOP_KHAC";
         public const string TONG_PHAI_NOP = "TONG_PHAI_NOP";
         public const string THUC_LINH = "THUC_LINH";
+        public const string SO_TIEN_DA_NOP_THUE = "SO_TIEN_DA_NOP_THUE";
     }
+
 
     public class V_RPT_LUONG_V2
     {

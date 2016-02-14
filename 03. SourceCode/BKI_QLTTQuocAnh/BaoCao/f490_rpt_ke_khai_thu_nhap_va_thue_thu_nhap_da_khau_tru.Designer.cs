@@ -690,6 +690,7 @@
             this.TEN_CHUC_VU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.TEN_CHUC_VU.Caption = "Chức vụ";
             this.TEN_CHUC_VU.FieldName = "CHUC_VU";
+            this.TEN_CHUC_VU.FieldNameSortGroup = "THU_TU_CHUC_VU";
             this.TEN_CHUC_VU.Name = "TEN_CHUC_VU";
             this.TEN_CHUC_VU.Visible = true;
             this.TEN_CHUC_VU.Width = 96;
@@ -714,6 +715,7 @@
             this.DON_VI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.DON_VI.Caption = "Đơn vị";
             this.DON_VI.FieldName = "TEN_DON_VI";
+            this.DON_VI.FieldNameSortGroup = "THU_TU_DON_VI";
             this.DON_VI.Name = "DON_VI";
             this.DON_VI.Visible = true;
             // 

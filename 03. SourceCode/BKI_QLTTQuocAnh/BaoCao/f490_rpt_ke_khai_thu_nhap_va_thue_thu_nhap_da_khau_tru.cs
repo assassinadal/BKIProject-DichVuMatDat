@@ -32,7 +32,14 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru_Load(object sender, EventArgs e)
         {
-            load_data_to_grid();
+            try
+            {
+                load_data_to_grid();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void load_data_to_grid()
@@ -69,6 +76,7 @@ namespace BKI_DichVuMatDat.BaoCao
             for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
             {
                 v_dc_tong_so_TTN_phai_nop += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_SO_PHAI_NOP"].ToString());
+                var x = v_ds.Tables[0].Rows.Count;
                 v_dc_TTN_con_phai_nop+= decimal.Parse(v_ds.Tables[0].Rows[i]["CON_PHAI_NOP"].ToString());
                 if (v_ds.Tables[0].Rows[i]["DA_NOP"].ToString() != "")
                 v_dc_TTN_da_nop+= decimal.Parse(v_ds.Tables[0].Rows[i]["DA_NOP"].ToString());

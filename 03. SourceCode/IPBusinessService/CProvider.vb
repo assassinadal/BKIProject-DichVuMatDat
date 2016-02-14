@@ -48,6 +48,7 @@ Public Class CProvider
                 v_strConnectionString &= "password=" & v_strPwd
         End Select
         m_strDBname = i_str_db_name
+        v_strConnectionString &= " ;Connection Timeout=30"
         Return v_strConnectionString
     End Function
     Shared Function getAdapter() As SqlClient.SqlDataAdapter
@@ -82,7 +83,7 @@ Public Class CProvider
         End Select
         m_strDBname = v_strDatabase
         m_strDBnameAdmin = v_strDatabase
-
+        'v_strConnectionString &= " ;Connection Timeout=0"
         Return v_strConnectionString
     End Function
 

@@ -34,6 +34,8 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
+                m_dat_tu_thang.DateTime = new DateTime(2015, 06, 01);
+                m_dat_den_thang.DateTime = new DateTime(2015, 12, 30);
                 load_data_to_grid();
             }
             catch(Exception v_e)
@@ -47,17 +49,13 @@ namespace BKI_DichVuMatDat.BaoCao
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            if (m_txt_nam.Text == "")
-            {
-                m_txt_nam.Text = "2015";
-            }
-            m_dat_tu_thang.DateTime = new DateTime(2015,06,01);
-            m_dat_den_thang.DateTime = new DateTime(2015, 12,31);
+            //m_dat_tu_thang.DateTime = new DateTime(2015,06,01);
+            //m_dat_den_thang.DateTime = new DateTime(2015, 12,31);
             v_us.FillDatasetProcBangKeKhaiThuNhap(v_ds, m_dat_tu_thang.DateTime, m_dat_den_thang.DateTime);
             m_grc_tong_hop.DataSource = v_ds.Tables[0];
             if (v_ds.Tables[0].Rows.Count != 0)
             {      
-                m_lbl_nam_2.Text = m_txt_nam.Text;
+                m_lbl_nam_2.Text = m_dat_tu_thang.DateTime.Year.ToString();
                 m_lbl_nam_2.ForeColor = Color.Maroon;
                 m_lbl_nam_2.Font = new Font("Tahoma", 18, FontStyle.Bold);
                 format_grid();
@@ -65,7 +63,7 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu cho năm " + m_txt_nam.Text + " . Vui lòng kiểm tra lại thông tin!");
+                MessageBox.Show("Không có dữ liệu cho năm " + m_dat_tu_thang.DateTime.Year.ToString() + " . Vui lòng kiểm tra lại thông tin!");
                 m_lbl_nam_2.Text = "";
             }
 
@@ -73,6 +71,14 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void hien_thi_cac_o_text_box(DataSet v_ds)
         {
+            v_dc_tong_thu_nhap = 0;
+            v_dc_tong_thu_nhap_trong_bang_luong = 0;
+            v_dc_tong_thu_nhap_ngoai_bang_luong = 0;
+            v_dc_tong_giam_tru = 0;
+            v_dc_tong_thu_nhap_chiu_thue = 0;
+            v_dc_tong_so_TTN_phai_nop = 0;
+            v_dc_TTN_da_nop = 0;
+            v_dc_TTN_con_phai_nop = 0;
             for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
             {
                 v_dc_tong_so_TTN_phai_nop += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_SO_PHAI_NOP"].ToString());
@@ -123,7 +129,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 item.Font = new Font("Tahoma", 10, FontStyle.Bold);
                 item.ForeColor = Color.Maroon;
             }
-            m_lbl_nam_2.Text = m_txt_nam.Text;
+            m_lbl_nam_2.Text = m_dat_tu_thang.DateTime.Year.ToString();
             m_lbl_nam_2.ForeColor = Color.Maroon;
             m_lbl_nam_2.Font = new Font("Tahoma", 18, FontStyle.Bold);
         }

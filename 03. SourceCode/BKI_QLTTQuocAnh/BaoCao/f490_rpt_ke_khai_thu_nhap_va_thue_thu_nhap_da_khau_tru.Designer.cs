@@ -1316,6 +1316,8 @@
             this.GIAM_TRU_AN_CA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.GIAM_TRU_AN_CA.FieldName = "AN_CA";
             this.GIAM_TRU_AN_CA.Name = "GIAM_TRU_AN_CA";
+            this.GIAM_TRU_AN_CA.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "AN_CA", "{0:n0}")});
             this.GIAM_TRU_AN_CA.Visible = true;
             // 
             // gridBand25

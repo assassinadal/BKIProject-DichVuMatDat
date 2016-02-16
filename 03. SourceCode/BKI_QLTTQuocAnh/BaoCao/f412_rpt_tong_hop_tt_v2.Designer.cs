@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f412_rpt_tong_hop_tt_v2));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
             this.m_txt_thang = new DevExpress.XtraEditors.TextEdit();
@@ -38,6 +38,7 @@
             this.m_cmd_tinh_lai_nhan_vien = new DevExpress.XtraEditors.SimpleButton();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.m_cmd_tinh_lai_cham_cong = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_tinh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_bgwk = new System.ComponentModel.BackgroundWorker();
@@ -229,7 +230,6 @@
             this.ID_NHAN_VIEN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repoBtnXoaLuong = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
@@ -342,6 +342,16 @@
             this.m_cmd_tinh_lai_cham_cong.Text = "Tổng hợp lại chấm công";
             this.m_cmd_tinh_lai_cham_cong.Click += new System.EventHandler(this.m_cmd_tinh_lai_cham_cong_Click);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageIndex = 11;
+            this.simpleButton1.Location = new System.Drawing.Point(15, 54);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(106, 29);
+            this.simpleButton1.TabIndex = 9;
+            this.simpleButton1.Text = "Xem báo cáo";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // m_cmd_tinh
             // 
             this.m_cmd_tinh.ImageIndex = 11;
@@ -350,7 +360,7 @@
             this.m_cmd_tinh.Name = "m_cmd_tinh";
             this.m_cmd_tinh.Size = new System.Drawing.Size(106, 29);
             this.m_cmd_tinh.TabIndex = 9;
-            this.m_cmd_tinh.Text = "Xem báo cáo";
+            this.m_cmd_tinh.Text = "Tính";
             this.m_cmd_tinh.Click += new System.EventHandler(this.m_cmd_tinh_Click);
             // 
             // m_cmd_luu_bang_luong
@@ -2612,20 +2622,10 @@
             // repoBtnXoaLuong
             // 
             this.repoBtnXoaLuong.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repoBtnXoaLuong.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repoBtnXoaLuong.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.repoBtnXoaLuong.Name = "repoBtnXoaLuong";
             this.repoBtnXoaLuong.ReadOnly = true;
             this.repoBtnXoaLuong.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageIndex = 11;
-            this.simpleButton1.Location = new System.Drawing.Point(15, 54);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(106, 29);
-            this.simpleButton1.TabIndex = 9;
-            this.simpleButton1.Text = "Xem báo cáo";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // f412_rpt_tong_hop_tt_v2
             // 

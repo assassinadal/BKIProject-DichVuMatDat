@@ -28,3 +28,13 @@ F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. So
 F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.dll
 F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.xml
 F:\03. Work\02. Project\02.DichVuMatDat\BKIProject-DichVuMatDat.git\trunk\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.pdb
+D:\PROJECTS\BKI - DVMD v12.10\trunk\03. SourceCode\IPBusinessService\bin\IPBusinessService.dll
+D:\PROJECTS\BKI - DVMD v12.10\trunk\03. SourceCode\IPBusinessService\bin\IPBusinessService.pdb
+D:\PROJECTS\BKI - DVMD v12.10\trunk\03. SourceCode\IPBusinessService\bin\IPBusinessService.xml
+D:\PROJECTS\BKI - DVMD v12.10\trunk\03. SourceCode\IPBusinessService\bin\IPException.dll
+D:\PROJECTS\BKI - DVMD v12.10\trunk\03. SourceCode\IPBusinessService\bin\IPException.pdb
+D:\PROJECTS\BKI - DVMD v12.10\trunk\03. SourceCode\IPBusinessService\bin\IPException.xml
+D:\PROJECTS\BKI - DVMD v12.10\trunk\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.vbprojResolveAssemblyReference.cache
+D:\PROJECTS\BKI - DVMD v12.10\trunk\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.dll
+D:\PROJECTS\BKI - DVMD v12.10\trunk\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.xml
+D:\PROJECTS\BKI - DVMD v12.10\trunk\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.pdb

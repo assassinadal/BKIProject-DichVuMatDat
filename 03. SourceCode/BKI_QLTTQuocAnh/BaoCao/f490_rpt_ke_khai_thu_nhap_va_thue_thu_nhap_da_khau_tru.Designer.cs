@@ -116,7 +116,6 @@
             this.gridBand45 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.GIAM_TRU_AN_CA = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand25 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.BHXH = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand26 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.BHYT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -561,7 +560,6 @@
             this.TONG_SO_PHAI_NOP,
             this.CON_PHAI_NOP,
             this.SO_THANG_LAM_VIEC_TINH_THUE,
-            this.SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE,
             this.GIAM_TRU_AN_CA,
             this.MST});
             this.m_adv_tong_hop.GridControl = this.m_grc_tong_hop;
@@ -593,15 +591,13 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_GIAM_TRU", this.TONG_GIAM_TRU, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOAN_PHI_CD", this.TONG_SO_PHAI_NOP, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PHAI_NOP_KHAC", this.CON_PHAI_NOP, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_SO_PHAI_NOP", this.TONG_SO_PHAI_NOP, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_PHAI_NOP", this.SO_THANG_LAM_VIEC_TINH_THUE, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Min, "THUONG_ATHK", this.THUONG_ATHK, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUONG_LE_TET", this.THUONG_LE_TET, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BO_SUNG_LUONG", this.BO_SUNG_LUONG, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THU_NHAP_KHAC_NGOAI_LUONG", this.THU_NHAP_KHAC_NGOAI_LUONG, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_THU_NHAP_NGOAI_LUONG", this.TONG_THU_NHAP_NGOAI_LUONG_1, "{0:n0}"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "HO_TEN", null, "({0:n0})"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_THANG_LAM_VIEC_TINH_THUE", this.SO_THANG_LAM_VIEC_TINH_THUE, "{0:n0}"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_SO_PHAI_NOP", this.TONG_SO_PHAI_NOP, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DA_NOP", this.DA_NOP, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CON_PHAI_NOP", this.CON_PHAI_NOP, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "AN_CA", this.GIAM_TRU_AN_CA, "{0:n0}"),
@@ -1366,24 +1362,10 @@
             this.gridBand25.AppearanceHeader.Options.UseTextOptions = true;
             this.gridBand25.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridBand25.Caption = "20";
-            this.gridBand25.Columns.Add(this.SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE);
             this.gridBand25.Columns.Add(this.BHXH);
             this.gridBand25.Name = "gridBand25";
             this.gridBand25.VisibleIndex = 1;
             this.gridBand25.Width = 75;
-            // 
-            // SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE
-            // 
-            this.SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
-            this.SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE.AppearanceHeader.Options.UseForeColor = true;
-            this.SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE.AppearanceHeader.Options.UseTextOptions = true;
-            this.SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE.Caption = "Thu nhập đã tính thuế trực tiếp";
-            this.SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE.FieldName = "SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE";
-            this.SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE.Name = "SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE";
-            this.SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE", "{0:n0}")});
             // 
             // BHXH
             // 
@@ -1586,7 +1568,6 @@
             this.GIAM_TRU_LAM_THEM_300.Name = "GIAM_TRU_LAM_THEM_300";
             this.GIAM_TRU_LAM_THEM_300.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "GIAM_TRU_LAM_THEM_300", "{0:n0}")});
-            this.GIAM_TRU_LAM_THEM_300.Visible = true;
             // 
             // gridBand33
             // 
@@ -1861,6 +1842,7 @@
             this.TONG_SO_PHAI_NOP.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.TONG_SO_PHAI_NOP.FieldName = "TONG_SO_PHAI_NOP";
             this.TONG_SO_PHAI_NOP.Name = "TONG_SO_PHAI_NOP";
+            this.TONG_SO_PHAI_NOP.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             this.TONG_SO_PHAI_NOP.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_SO_PHAI_NOP", "{0:n0}")});
             this.TONG_SO_PHAI_NOP.Visible = true;
@@ -2027,7 +2009,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn TONG_SO_PHAI_NOP;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn DA_NOP;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn CON_PHAI_NOP;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn SO_TIEN_NGOAI_BANG_LUONG_DA_TINH_THUE;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label4;
@@ -2052,7 +2033,6 @@
         private DevExpress.XtraEditors.DateEdit m_dat_den_thang;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn GIAM_TRU_AN_CA;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn MST;
-        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand THONG_TIN_CO_BAN;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand6;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
@@ -2108,5 +2088,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand42;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand43;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand41;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

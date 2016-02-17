@@ -107,22 +107,22 @@ namespace BKI_DichVuMatDat.BaoCao
         private void format_grid()
         {
 
-            m_adv_tong_hop.OptionsView.ColumnAutoWidth = true;
+            //m_adv_tong_hop.OptionsView.ColumnAutoWidth = true;
 
-            foreach(DevExpress.XtraGrid.Columns.GridColumn col in ((DevExpress.XtraGrid.Views.Base.ColumnView)m_grc_tong_hop.Views[0]).Columns)
-            {
-                col.MaxWidth = 90;
-                col.MinWidth = 90;
+            //foreach(DevExpress.XtraGrid.Columns.GridColumn col in ((DevExpress.XtraGrid.Views.Base.ColumnView)m_grc_tong_hop.Views[0]).Columns)
+            //{
+            //    col.MaxWidth = 90;
+            //    col.MinWidth = 90;
 
-            }
+            //}
             //    DON_VI.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            gridBand1.Width = 393;
-            HO_TEN.Width = 100;
-            m_adv_tong_hop.OptionsView.AllowHtmlDrawHeaders = true;
-            m_adv_tong_hop.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            m_adv_tong_hop.ColumnPanelRowHeight = 40;
-            m_adv_tong_hop.OptionsView.RowAutoHeight = true;
-            m_adv_tong_hop.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            //gridBand1.Width = 393;
+            //HO_TEN.Width = 100;
+            //m_adv_tong_hop.OptionsView.AllowHtmlDrawHeaders = true;
+            //m_adv_tong_hop.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            //m_adv_tong_hop.ColumnPanelRowHeight = 40;
+            //m_adv_tong_hop.OptionsView.RowAutoHeight = true;
+            //m_adv_tong_hop.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             var list_label = GetAll(groupBox1, typeof(TextBox));
             foreach(var item in list_label)
             {

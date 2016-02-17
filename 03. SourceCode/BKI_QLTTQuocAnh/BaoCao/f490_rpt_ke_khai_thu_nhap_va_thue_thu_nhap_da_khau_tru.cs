@@ -12,6 +12,7 @@ using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using IP.Core.IPCommon;
+using DevExpress.XtraSplashScreen;
 
 namespace BKI_DichVuMatDat.BaoCao
 {
@@ -34,8 +35,8 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
-                m_dat_tu_thang.DateTime = new DateTime(2015, 06, 01);
-                m_dat_den_thang.DateTime = new DateTime(2015, 12, 30);
+                m_dat_tu_thang.DateTime = new DateTime(2015, 01, 01);
+                m_dat_den_thang.DateTime = new DateTime(2015, 12, 31);
                 load_data_to_grid();
             }
             catch(Exception v_e)
@@ -53,8 +54,8 @@ namespace BKI_DichVuMatDat.BaoCao
             //m_dat_den_thang.DateTime = new DateTime(2015, 12,31);
             v_us.FillDatasetProcBangKeKhaiThuNhap(v_ds, m_dat_tu_thang.DateTime, m_dat_den_thang.DateTime);
             m_grc_tong_hop.DataSource = v_ds.Tables[0];
-            if (v_ds.Tables[0].Rows.Count != 0)
-            {      
+            if(v_ds.Tables[0].Rows.Count != 0)
+            {
                 m_lbl_nam_2.Text = m_dat_tu_thang.DateTime.Year.ToString();
                 m_lbl_nam_2.ForeColor = Color.Maroon;
                 m_lbl_nam_2.Font = new Font("Tahoma", 18, FontStyle.Bold);
@@ -66,7 +67,6 @@ namespace BKI_DichVuMatDat.BaoCao
                 MessageBox.Show("Không có dữ liệu cho năm " + m_dat_tu_thang.DateTime.Year.ToString() + " . Vui lòng kiểm tra lại thông tin!");
                 m_lbl_nam_2.Text = "";
             }
-
         }
 
         private void hien_thi_cac_o_text_box(DataSet v_ds)
@@ -79,16 +79,16 @@ namespace BKI_DichVuMatDat.BaoCao
             v_dc_tong_so_TTN_phai_nop = 0;
             v_dc_TTN_da_nop = 0;
             v_dc_TTN_con_phai_nop = 0;
-            for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
+            for(int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
             {
                 v_dc_tong_so_TTN_phai_nop += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_SO_PHAI_NOP"].ToString());
                 var x = v_ds.Tables[0].Rows.Count;
-                v_dc_TTN_con_phai_nop+= decimal.Parse(v_ds.Tables[0].Rows[i]["CON_PHAI_NOP"].ToString());
-                if (v_ds.Tables[0].Rows[i]["DA_NOP"].ToString() != "")
-                v_dc_TTN_da_nop+= decimal.Parse(v_ds.Tables[0].Rows[i]["DA_NOP"].ToString());
+                v_dc_TTN_con_phai_nop += decimal.Parse(v_ds.Tables[0].Rows[i]["CON_PHAI_NOP"].ToString());
+                if(v_ds.Tables[0].Rows[i]["DA_NOP"].ToString() != "")
+                    v_dc_TTN_da_nop += decimal.Parse(v_ds.Tables[0].Rows[i]["DA_NOP"].ToString());
                 v_dc_tong_giam_tru += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_GIAM_TRU"].ToString());
-               
-                if (v_ds.Tables[0].Rows[i]["TONG_THU_NHAP"].ToString() != "")
+
+                if(v_ds.Tables[0].Rows[i]["TONG_THU_NHAP"].ToString() != "")
                     v_dc_tong_thu_nhap += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_THU_NHAP"].ToString());
                 v_dc_tong_thu_nhap_chiu_thue += decimal.Parse(v_ds.Tables[0].Rows[i]["THU_NHAP_CHIU_THUE"].ToString());
                 v_dc_tong_thu_nhap_ngoai_bang_luong += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_THU_NHAP_NGOAI_LUONG"].ToString());
@@ -96,8 +96,8 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             m_txt_tong_so_TTN_phai_nop.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_so_TTN_phai_nop.ToString()));
             m_txt_tong_giam_tru.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_giam_tru.ToString()));
-            m_txt_TTN_con_phai_nop.Text= string.Format("{0:#,##0}", double.Parse(v_dc_TTN_con_phai_nop.ToString()));
-            m_txt_TTN_da_nop.Text =string.Format("{0:#,##0}", double.Parse(v_dc_TTN_da_nop.ToString()));
+            m_txt_TTN_con_phai_nop.Text = string.Format("{0:#,##0}", double.Parse(v_dc_TTN_con_phai_nop.ToString()));
+            m_txt_TTN_da_nop.Text = string.Format("{0:#,##0}", double.Parse(v_dc_TTN_da_nop.ToString()));
             m_txt_tong_thu_nhap.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_thu_nhap.ToString()));
             m_txt_tong_thu_nhap_ngoai_bang_luong.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_thu_nhap_ngoai_bang_luong.ToString()));
             m_txt_tong_thu_nhap_trong_bang_luong.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_thu_nhap_trong_bang_luong.ToString()));
@@ -107,9 +107,9 @@ namespace BKI_DichVuMatDat.BaoCao
         private void format_grid()
         {
 
-         m_adv_tong_hop.OptionsView.ColumnAutoWidth = true;
+            m_adv_tong_hop.OptionsView.ColumnAutoWidth = true;
 
-            foreach (DevExpress.XtraGrid.Columns.GridColumn col in ((DevExpress.XtraGrid.Views.Base.ColumnView)m_grc_tong_hop.Views[0]).Columns)
+            foreach(DevExpress.XtraGrid.Columns.GridColumn col in ((DevExpress.XtraGrid.Views.Base.ColumnView)m_grc_tong_hop.Views[0]).Columns)
             {
                 col.MaxWidth = 90;
                 col.MinWidth = 90;
@@ -124,7 +124,7 @@ namespace BKI_DichVuMatDat.BaoCao
             m_adv_tong_hop.OptionsView.RowAutoHeight = true;
             m_adv_tong_hop.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             var list_label = GetAll(groupBox1, typeof(TextBox));
-            foreach (var item in list_label)
+            foreach(var item in list_label)
             {
                 item.Font = new Font("Tahoma", 10, FontStyle.Bold);
                 item.ForeColor = Color.Maroon;
@@ -161,9 +161,9 @@ namespace BKI_DichVuMatDat.BaoCao
 
 
 
-        private  void DoRowDoubleClick(GridView view, Point pt)
+        private void DoRowDoubleClick(GridView view, Point pt)
         {
-            
+
             try
             {
                 GridHitInfo info = view.CalcHitInfo(pt);
@@ -199,11 +199,17 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
+                splashScreenManager1.ShowWaitForm();
                 load_data_to_grid();
             }
             catch(Exception v_e)
             {
+
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+            finally
+            {
+                splashScreenManager1.CloseWaitForm();
             }
         }
 
@@ -214,13 +220,13 @@ namespace BKI_DichVuMatDat.BaoCao
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                 saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
                 saveFileDialog1.RestoreDirectory = true;
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                if(saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     m_grc_tong_hop.ExportToXls(saveFileDialog1.FileName);
                     CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
                 }
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }

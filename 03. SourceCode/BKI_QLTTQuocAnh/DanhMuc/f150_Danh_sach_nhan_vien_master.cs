@@ -112,7 +112,9 @@ namespace BKI_DichVuMatDat.DanhMuc
                 if (userClickedOK == System.Windows.Forms.DialogResult.OK)
                 {
                     m_txt_path = openFileDialog1.FileName;
-                    WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
+                    F150_DANH_SACH_NHAN_VIEN_EXCEL v_f = new F150_DANH_SACH_NHAN_VIEN_EXCEL();
+                    v_f.displayToInsertExcel(m_txt_path);
+                   // WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
                 }
             }
             catch (Exception v_e)
@@ -120,6 +122,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-       
+
+      
     }
 }

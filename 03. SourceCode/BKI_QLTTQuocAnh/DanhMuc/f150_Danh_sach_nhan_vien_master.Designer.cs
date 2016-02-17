@@ -75,8 +75,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.m_txt_tai_file_excel_mau = new DevExpress.XtraEditors.SimpleButton();
             this.m_txt_chon_file = new DevExpress.XtraEditors.SimpleButton();
+            this.m_txt_tai_file_excel_mau = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVMDDataSet1)).BeginInit();
@@ -97,7 +97,7 @@
             this.m_grc.Location = new System.Drawing.Point(2, 2);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(892, 299);
+            this.m_grc.Size = new System.Drawing.Size(892, 305);
             this.m_grc.TabIndex = 0;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
@@ -470,7 +470,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 64);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(896, 303);
+            this.panelControl2.Size = new System.Drawing.Size(896, 309);
             this.panelControl2.TabIndex = 2;
             // 
             // panelControl3
@@ -478,30 +478,32 @@
             this.panelControl3.Controls.Add(this.m_txt_chon_file);
             this.panelControl3.Controls.Add(this.m_txt_tai_file_excel_mau);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl3.Location = new System.Drawing.Point(0, 367);
+            this.panelControl3.Location = new System.Drawing.Point(0, 373);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(896, 50);
+            this.panelControl3.Size = new System.Drawing.Size(896, 44);
             this.panelControl3.TabIndex = 3;
-            // 
-            // m_txt_tai_file_excel_mau
-            // 
-            this.m_txt_tai_file_excel_mau.Image = ((System.Drawing.Image)(resources.GetObject("m_txt_tai_file_excel_mau.Image")));
-            this.m_txt_tai_file_excel_mau.Location = new System.Drawing.Point(591, 6);
-            this.m_txt_tai_file_excel_mau.Name = "m_txt_tai_file_excel_mau";
-            this.m_txt_tai_file_excel_mau.Size = new System.Drawing.Size(142, 33);
-            this.m_txt_tai_file_excel_mau.TabIndex = 1;
-            this.m_txt_tai_file_excel_mau.Text = "Tải file excel mẫu";
-            this.m_txt_tai_file_excel_mau.Click += new System.EventHandler(this.m_txt_tai_file_excel_mau_Click);
             // 
             // m_txt_chon_file
             // 
+            this.m_txt_chon_file.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_txt_chon_file.Image = ((System.Drawing.Image)(resources.GetObject("m_txt_chon_file.Image")));
-            this.m_txt_chon_file.Location = new System.Drawing.Point(742, 5);
+            this.m_txt_chon_file.Location = new System.Drawing.Point(610, 2);
             this.m_txt_chon_file.Name = "m_txt_chon_file";
-            this.m_txt_chon_file.Size = new System.Drawing.Size(142, 33);
+            this.m_txt_chon_file.Size = new System.Drawing.Size(142, 40);
             this.m_txt_chon_file.TabIndex = 2;
             this.m_txt_chon_file.Text = "Chọn file";
             this.m_txt_chon_file.Click += new System.EventHandler(this.m_txt_chon_file_Click);
+            // 
+            // m_txt_tai_file_excel_mau
+            // 
+            this.m_txt_tai_file_excel_mau.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_txt_tai_file_excel_mau.Image = ((System.Drawing.Image)(resources.GetObject("m_txt_tai_file_excel_mau.Image")));
+            this.m_txt_tai_file_excel_mau.Location = new System.Drawing.Point(752, 2);
+            this.m_txt_tai_file_excel_mau.Name = "m_txt_tai_file_excel_mau";
+            this.m_txt_tai_file_excel_mau.Size = new System.Drawing.Size(142, 40);
+            this.m_txt_tai_file_excel_mau.TabIndex = 1;
+            this.m_txt_tai_file_excel_mau.Text = "Tải file excel mẫu";
+            this.m_txt_tai_file_excel_mau.Click += new System.EventHandler(this.m_txt_tai_file_excel_mau_Click);
             // 
             // f150_Danh_sach_nhan_vien_master
             // 

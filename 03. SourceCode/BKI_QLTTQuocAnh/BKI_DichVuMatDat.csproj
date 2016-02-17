@@ -614,6 +614,12 @@
     <Compile Include="DanhMuc\f150_danh_muc_nhan_su_v2.Designer.cs">
       <DependentUpon>f150_danh_muc_nhan_su_v2.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\f150_Danh_sach_nhan_vien_master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f150_Danh_sach_nhan_vien_master.Designer.cs">
+      <DependentUpon>f150_Danh_sach_nhan_vien_master.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\F150_dm_nhan_vien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1249,6 +1255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f150_danh_muc_nhan_su_v2.resx">
       <DependentUpon>f150_danh_muc_nhan_su_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f150_Danh_sach_nhan_vien_master.resx">
+      <DependentUpon>f150_Danh_sach_nhan_vien_master.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F150_dm_nhan_vien.resx">
       <DependentUpon>F150_dm_nhan_vien.cs</DependentUpon>

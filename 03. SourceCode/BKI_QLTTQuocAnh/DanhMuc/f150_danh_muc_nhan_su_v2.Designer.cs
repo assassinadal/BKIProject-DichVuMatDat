@@ -282,7 +282,7 @@
             // dateEdit7
             // 
             this.dateEdit7.EditValue = null;
-            this.dateEdit7.Location = new System.Drawing.Point(443, 348);
+            this.dateEdit7.Location = new System.Drawing.Point(443, 340);
             this.dateEdit7.Name = "dateEdit7";
             this.dateEdit7.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -295,7 +295,7 @@
             // dateEdit6
             // 
             this.dateEdit6.EditValue = null;
-            this.dateEdit6.Location = new System.Drawing.Point(746, 348);
+            this.dateEdit6.Location = new System.Drawing.Point(746, 340);
             this.dateEdit6.Name = "dateEdit6";
             this.dateEdit6.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -308,7 +308,7 @@
             // dateEdit5
             // 
             this.dateEdit5.EditValue = null;
-            this.dateEdit5.Location = new System.Drawing.Point(141, 348);
+            this.dateEdit5.Location = new System.Drawing.Point(141, 340);
             this.dateEdit5.Name = "dateEdit5";
             this.dateEdit5.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -320,7 +320,7 @@
             // 
             // textEdit18
             // 
-            this.textEdit18.Location = new System.Drawing.Point(141, 324);
+            this.textEdit18.Location = new System.Drawing.Point(141, 316);
             this.textEdit18.Name = "textEdit18";
             this.textEdit18.Size = new System.Drawing.Size(1077, 20);
             this.textEdit18.StyleController = this.layoutControl1;
@@ -328,7 +328,7 @@
             // 
             // textEdit17
             // 
-            this.textEdit17.Location = new System.Drawing.Point(141, 300);
+            this.textEdit17.Location = new System.Drawing.Point(141, 292);
             this.textEdit17.Name = "textEdit17";
             this.textEdit17.Size = new System.Drawing.Size(1077, 20);
             this.textEdit17.StyleController = this.layoutControl1;
@@ -336,7 +336,7 @@
             // 
             // textEdit16
             // 
-            this.textEdit16.Location = new System.Drawing.Point(141, 276);
+            this.textEdit16.Location = new System.Drawing.Point(141, 268);
             this.textEdit16.Name = "textEdit16";
             this.textEdit16.Size = new System.Drawing.Size(1077, 20);
             this.textEdit16.StyleController = this.layoutControl1;
@@ -344,7 +344,7 @@
             // 
             // m_txt_email
             // 
-            this.m_txt_email.Location = new System.Drawing.Point(747, 252);
+            this.m_txt_email.Location = new System.Drawing.Point(747, 244);
             this.m_txt_email.Name = "m_txt_email";
             this.m_txt_email.Size = new System.Drawing.Size(471, 20);
             this.m_txt_email.StyleController = this.layoutControl1;
@@ -352,14 +352,14 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(443, 252);
+            this.textBox5.Location = new System.Drawing.Point(443, 244);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(171, 20);
             this.textBox5.TabIndex = 29;
             // 
             // m_txt_ma_so_thue
             // 
-            this.m_txt_ma_so_thue.Location = new System.Drawing.Point(141, 252);
+            this.m_txt_ma_so_thue.Location = new System.Drawing.Point(141, 244);
             this.m_txt_ma_so_thue.Name = "m_txt_ma_so_thue";
             this.m_txt_ma_so_thue.Size = new System.Drawing.Size(169, 20);
             this.m_txt_ma_so_thue.StyleController = this.layoutControl1;
@@ -368,7 +368,7 @@
             // m_dat_ngay_het_han_the
             // 
             this.m_dat_ngay_het_han_the.EditValue = null;
-            this.m_dat_ngay_het_han_the.Location = new System.Drawing.Point(1049, 228);
+            this.m_dat_ngay_het_han_the.Location = new System.Drawing.Point(1049, 220);
             this.m_dat_ngay_het_han_the.Name = "m_dat_ngay_het_han_the";
             this.m_dat_ngay_het_han_the.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -381,7 +381,7 @@
             // m_dat_ngay_cap_the
             // 
             this.m_dat_ngay_cap_the.EditValue = null;
-            this.m_dat_ngay_cap_the.Location = new System.Drawing.Point(747, 228);
+            this.m_dat_ngay_cap_the.Location = new System.Drawing.Point(747, 220);
             this.m_dat_ngay_cap_the.Name = "m_dat_ngay_cap_the";
             this.m_dat_ngay_cap_the.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -393,7 +393,7 @@
             // 
             // m_txt_ngan_hang
             // 
-            this.m_txt_ngan_hang.Location = new System.Drawing.Point(443, 228);
+            this.m_txt_ngan_hang.Location = new System.Drawing.Point(443, 220);
             this.m_txt_ngan_hang.Name = "m_txt_ngan_hang";
             this.m_txt_ngan_hang.Size = new System.Drawing.Size(171, 20);
             this.m_txt_ngan_hang.StyleController = this.layoutControl1;
@@ -401,7 +401,7 @@
             // 
             // m_txt_so_tai_khoan
             // 
-            this.m_txt_so_tai_khoan.Location = new System.Drawing.Point(141, 228);
+            this.m_txt_so_tai_khoan.Location = new System.Drawing.Point(141, 220);
             this.m_txt_so_tai_khoan.Name = "m_txt_so_tai_khoan";
             this.m_txt_so_tai_khoan.Size = new System.Drawing.Size(169, 20);
             this.m_txt_so_tai_khoan.StyleController = this.layoutControl1;
@@ -409,7 +409,7 @@
             // 
             // m_txt_noi_tot_nghiep
             // 
-            this.m_txt_noi_tot_nghiep.Location = new System.Drawing.Point(747, 204);
+            this.m_txt_noi_tot_nghiep.Location = new System.Drawing.Point(747, 196);
             this.m_txt_noi_tot_nghiep.Name = "m_txt_noi_tot_nghiep";
             this.m_txt_noi_tot_nghiep.Size = new System.Drawing.Size(471, 20);
             this.m_txt_noi_tot_nghiep.StyleController = this.layoutControl1;
@@ -417,14 +417,14 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(141, 204);
+            this.textBox4.Location = new System.Drawing.Point(141, 196);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(169, 20);
             this.textBox4.TabIndex = 22;
             // 
             // m_txt_chuyen_mon
             // 
-            this.m_txt_chuyen_mon.Location = new System.Drawing.Point(747, 180);
+            this.m_txt_chuyen_mon.Location = new System.Drawing.Point(747, 172);
             this.m_txt_chuyen_mon.Name = "m_txt_chuyen_mon";
             this.m_txt_chuyen_mon.Size = new System.Drawing.Size(471, 20);
             this.m_txt_chuyen_mon.StyleController = this.layoutControl1;
@@ -432,7 +432,7 @@
             // 
             // m_sle_trinh_do_van_hoa
             // 
-            this.m_sle_trinh_do_van_hoa.Location = new System.Drawing.Point(141, 180);
+            this.m_sle_trinh_do_van_hoa.Location = new System.Drawing.Point(141, 172);
             this.m_sle_trinh_do_van_hoa.Name = "m_sle_trinh_do_van_hoa";
             this.m_sle_trinh_do_van_hoa.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -451,7 +451,7 @@
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.Location = new System.Drawing.Point(918, 12);
+            this.pictureEdit1.Location = new System.Drawing.Point(918, 4);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Size = new System.Drawing.Size(148, 92);
             this.pictureEdit1.StyleController = this.layoutControl1;
@@ -459,7 +459,7 @@
             // 
             // m_txt_quoc_tich
             // 
-            this.m_txt_quoc_tich.Location = new System.Drawing.Point(1049, 156);
+            this.m_txt_quoc_tich.Location = new System.Drawing.Point(1049, 148);
             this.m_txt_quoc_tich.Name = "m_txt_quoc_tich";
             this.m_txt_quoc_tich.Size = new System.Drawing.Size(169, 20);
             this.m_txt_quoc_tich.StyleController = this.layoutControl1;
@@ -467,7 +467,7 @@
             // 
             // m_txt_ton_giao
             // 
-            this.m_txt_ton_giao.Location = new System.Drawing.Point(747, 156);
+            this.m_txt_ton_giao.Location = new System.Drawing.Point(747, 148);
             this.m_txt_ton_giao.Name = "m_txt_ton_giao";
             this.m_txt_ton_giao.Size = new System.Drawing.Size(169, 20);
             this.m_txt_ton_giao.StyleController = this.layoutControl1;
@@ -475,7 +475,7 @@
             // 
             // m_txt_dan_toc
             // 
-            this.m_txt_dan_toc.Location = new System.Drawing.Point(443, 156);
+            this.m_txt_dan_toc.Location = new System.Drawing.Point(443, 148);
             this.m_txt_dan_toc.Name = "m_txt_dan_toc";
             this.m_txt_dan_toc.Size = new System.Drawing.Size(171, 20);
             this.m_txt_dan_toc.StyleController = this.layoutControl1;
@@ -483,7 +483,7 @@
             // 
             // m_txt_tinh_trang_hon_nhan
             // 
-            this.m_txt_tinh_trang_hon_nhan.Location = new System.Drawing.Point(141, 156);
+            this.m_txt_tinh_trang_hon_nhan.Location = new System.Drawing.Point(141, 148);
             this.m_txt_tinh_trang_hon_nhan.Name = "m_txt_tinh_trang_hon_nhan";
             this.m_txt_tinh_trang_hon_nhan.Size = new System.Drawing.Size(169, 20);
             this.m_txt_tinh_trang_hon_nhan.StyleController = this.layoutControl1;
@@ -491,7 +491,7 @@
             // 
             // m_txt_noi_cap_cmt
             // 
-            this.m_txt_noi_cap_cmt.Location = new System.Drawing.Point(747, 132);
+            this.m_txt_noi_cap_cmt.Location = new System.Drawing.Point(747, 124);
             this.m_txt_noi_cap_cmt.Name = "m_txt_noi_cap_cmt";
             this.m_txt_noi_cap_cmt.Size = new System.Drawing.Size(471, 20);
             this.m_txt_noi_cap_cmt.TabIndex = 14;
@@ -499,7 +499,7 @@
             // m_dat_ngay_cap_cmt
             // 
             this.m_dat_ngay_cap_cmt.EditValue = null;
-            this.m_dat_ngay_cap_cmt.Location = new System.Drawing.Point(443, 132);
+            this.m_dat_ngay_cap_cmt.Location = new System.Drawing.Point(443, 124);
             this.m_dat_ngay_cap_cmt.Name = "m_dat_ngay_cap_cmt";
             this.m_dat_ngay_cap_cmt.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -511,14 +511,14 @@
             // 
             // m_txt_so_cmt
             // 
-            this.m_txt_so_cmt.Location = new System.Drawing.Point(141, 132);
+            this.m_txt_so_cmt.Location = new System.Drawing.Point(141, 124);
             this.m_txt_so_cmt.Name = "m_txt_so_cmt";
             this.m_txt_so_cmt.Size = new System.Drawing.Size(169, 20);
             this.m_txt_so_cmt.TabIndex = 12;
             // 
             // m_txt_que_quan
             // 
-            this.m_txt_que_quan.Location = new System.Drawing.Point(746, 108);
+            this.m_txt_que_quan.Location = new System.Drawing.Point(746, 100);
             this.m_txt_que_quan.Name = "m_txt_que_quan";
             this.m_txt_que_quan.Size = new System.Drawing.Size(472, 20);
             this.m_txt_que_quan.StyleController = this.layoutControl1;
@@ -526,7 +526,7 @@
             // 
             // m_txt_noi_sinh
             // 
-            this.m_txt_noi_sinh.Location = new System.Drawing.Point(141, 108);
+            this.m_txt_noi_sinh.Location = new System.Drawing.Point(141, 100);
             this.m_txt_noi_sinh.Name = "m_txt_noi_sinh";
             this.m_txt_noi_sinh.Size = new System.Drawing.Size(472, 20);
             this.m_txt_noi_sinh.StyleController = this.layoutControl1;
@@ -534,7 +534,7 @@
             // 
             // m_le_gioi_tinh
             // 
-            this.m_le_gioi_tinh.Location = new System.Drawing.Point(141, 60);
+            this.m_le_gioi_tinh.Location = new System.Drawing.Point(141, 52);
             this.m_le_gioi_tinh.Name = "m_le_gioi_tinh";
             this.m_le_gioi_tinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -545,7 +545,7 @@
             // 
             // m_txt_tuoi_nv
             // 
-            this.m_txt_tuoi_nv.Location = new System.Drawing.Point(443, 84);
+            this.m_txt_tuoi_nv.Location = new System.Drawing.Point(443, 76);
             this.m_txt_tuoi_nv.Name = "m_txt_tuoi_nv";
             this.m_txt_tuoi_nv.Size = new System.Drawing.Size(64, 20);
             this.m_txt_tuoi_nv.StyleController = this.layoutControl1;
@@ -554,7 +554,7 @@
             // m_dat_ngay_sinh
             // 
             this.m_dat_ngay_sinh.EditValue = null;
-            this.m_dat_ngay_sinh.Location = new System.Drawing.Point(141, 84);
+            this.m_dat_ngay_sinh.Location = new System.Drawing.Point(141, 76);
             this.m_dat_ngay_sinh.Name = "m_dat_ngay_sinh";
             this.m_dat_ngay_sinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -566,7 +566,7 @@
             // 
             // m_txt_ten_nv
             // 
-            this.m_txt_ten_nv.Location = new System.Drawing.Point(443, 36);
+            this.m_txt_ten_nv.Location = new System.Drawing.Point(443, 28);
             this.m_txt_ten_nv.Name = "m_txt_ten_nv";
             this.m_txt_ten_nv.Size = new System.Drawing.Size(169, 20);
             this.m_txt_ten_nv.StyleController = this.layoutControl1;
@@ -574,7 +574,7 @@
             // 
             // m_txt_ho_dem_nv
             // 
-            this.m_txt_ho_dem_nv.Location = new System.Drawing.Point(141, 36);
+            this.m_txt_ho_dem_nv.Location = new System.Drawing.Point(141, 28);
             this.m_txt_ho_dem_nv.Name = "m_txt_ho_dem_nv";
             this.m_txt_ho_dem_nv.Size = new System.Drawing.Size(169, 20);
             this.m_txt_ho_dem_nv.StyleController = this.layoutControl1;
@@ -582,7 +582,7 @@
             // 
             // m_txt_ma_nv
             // 
-            this.m_txt_ma_nv.Location = new System.Drawing.Point(141, 12);
+            this.m_txt_ma_nv.Location = new System.Drawing.Point(141, 4);
             this.m_txt_ma_nv.Name = "m_txt_ma_nv";
             this.m_txt_ma_nv.Size = new System.Drawing.Size(169, 20);
             this.m_txt_ma_nv.TabIndex = 4;
@@ -635,7 +635,7 @@
             this.layoutControlItem33,
             this.emptySpaceItem3,
             this.emptySpaceItem4});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, -8);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1230, 390);
             this.layoutControlGroup1.Text = "layoutControlGroup1";

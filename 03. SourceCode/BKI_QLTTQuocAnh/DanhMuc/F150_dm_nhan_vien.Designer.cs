@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F150_dm_nhan_vien));
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_gr_thong_tin_tra_cuu = new DevExpress.XtraEditors.GroupControl();
@@ -55,9 +56,9 @@
             this.m_lbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bKI_DVMDDataSet = new BKI_DichVuMatDat.BKI_DVMDDataSet();
-            this.bKIDVMDDataSetBindingSource = new System.Windows.Forms.BindingSource();
-            this.bKIDVMDDataSetBindingSource1 = new System.Windows.Forms.BindingSource();
-            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.bKIDVMDDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bKIDVMDDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.m_xtc_tong = new DevExpress.XtraTab.XtraTabControl();
             this.m_xtp_ly_lich_ca_nha = new DevExpress.XtraTab.XtraTabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -131,12 +132,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.m_cmd_tra_cuu = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_them_nhan_vien = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_tra_cuu = new DevExpress.XtraEditors.SimpleButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_tra_cuu)).BeginInit();
             this.m_gr_thong_tin_tra_cuu.SuspendLayout();
@@ -1170,6 +1171,16 @@
             this.panel3.Size = new System.Drawing.Size(1348, 39);
             this.panel3.TabIndex = 2;
             // 
+            // m_cmd_tra_cuu
+            // 
+            this.m_cmd_tra_cuu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_tra_cuu.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tra_cuu.Image")));
+            this.m_cmd_tra_cuu.Location = new System.Drawing.Point(582, 0);
+            this.m_cmd_tra_cuu.Name = "m_cmd_tra_cuu";
+            this.m_cmd_tra_cuu.Size = new System.Drawing.Size(153, 39);
+            this.m_cmd_tra_cuu.TabIndex = 5;
+            this.m_cmd_tra_cuu.Text = "&Tra cứu";
+            // 
             // m_cmd_them_nhan_vien
             // 
             this.m_cmd_them_nhan_vien.Dock = System.Windows.Forms.DockStyle.Right;
@@ -1222,16 +1233,6 @@
             this.m_cmd_delete.TabIndex = 4;
             this.m_cmd_delete.Text = "&Xóa";
             this.m_cmd_delete.Visible = false;
-            // 
-            // m_cmd_tra_cuu
-            // 
-            this.m_cmd_tra_cuu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_tra_cuu.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tra_cuu.Image")));
-            this.m_cmd_tra_cuu.Location = new System.Drawing.Point(582, 0);
-            this.m_cmd_tra_cuu.Name = "m_cmd_tra_cuu";
-            this.m_cmd_tra_cuu.Size = new System.Drawing.Size(153, 39);
-            this.m_cmd_tra_cuu.TabIndex = 5;
-            this.m_cmd_tra_cuu.Text = "&Tra cứu";
             // 
             // F150_dm_nhan_vien
             // 

@@ -1317,6 +1317,21 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void m_cmd_ds_nhan_vien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f150_Danh_sach_nhan_vien_master v_f = new f150_Danh_sach_nhan_vien_master();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
 
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)

@@ -1556,6 +1556,7 @@
     <Content Include="Template\ThuNhapKhac.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Template\DANH_SACH_NHAN_VIEN.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BKI_QLTTQuocAnh.DS\BKI_DichVuMatDat.DS.csproj">

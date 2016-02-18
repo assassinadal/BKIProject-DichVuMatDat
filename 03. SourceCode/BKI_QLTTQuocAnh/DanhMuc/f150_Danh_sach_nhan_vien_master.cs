@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IP.Core.IPCommon;
+using BKI_DichVuMatDat.DS;
+using BKI_DichVuMatDat.US;
 
 namespace BKI_DichVuMatDat.DanhMuc
 {
@@ -30,6 +32,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         private void set_define_events()
         {
            this.Load+=f150_Danh_sach_nhan_vien_master_Load;
+            
         }
 
        
@@ -121,6 +124,22 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void m_cmd_them_Click(object sender, EventArgs e)
+        {
+            f150_danh_muc_nhan_su_v2 v_f = new f150_danh_muc_nhan_su_v2();
+            v_f.DisplayForInsert();
+            load_data_to_grid();
+        }
+
+        private void m_cmd_sua_Click(object sender, EventArgs e)
+        {
+            DataRow v_dr= m_grv.GetDataRow(m_grv.FocusedRowHandle);
+            US_DM_NHAN_VIEN v_us= new US_DM_NHAN_VIEN(CIPConvert.ToDecimal(v_dr["ID"].ToString()));
+            f150_danh_muc_nhan_su_v2 v_f = new f150_danh_muc_nhan_su_v2();
+            v_f.DisplayForUpdate(v_us);
+            load_data_to_grid();
         }
 
       

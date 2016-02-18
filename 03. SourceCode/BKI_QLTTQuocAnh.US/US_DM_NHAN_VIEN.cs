@@ -775,11 +775,11 @@ namespace BKI_DichVuMatDat.US
 
             v_sp.ExecuteCommand(this);
 
-            if(v_para.Value.ToString() == "Y")
+            if (v_para.Value.ToString() == "Y")
             {
                 return true;
             }
-            else if(v_para.Value.ToString() == "N")
+            else if (v_para.Value.ToString() == "N")
             {
                 return false;
             }
@@ -802,7 +802,7 @@ namespace BKI_DichVuMatDat.US
         public decimal getIDNhanVienByMaNV(string ip_str_ma_nv)
         {
             CStoredProc v_sp = new CStoredProc("pr_get_id_nhan_vien_by_ma_nv");
-             v_sp.addNVarcharInputParam("@ip_str_ma_nv", ip_str_ma_nv);
+            v_sp.addNVarcharInputParam("@ip_str_ma_nv", ip_str_ma_nv);
 
             SqlParameter v_para = v_sp.addDecimalOutputParam("@op_dc_id_nhan_vien", -1);
 

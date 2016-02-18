@@ -1332,6 +1332,21 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void m_cmd_quy_trinh_nhap_nhan_su_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                F500_QUY_TRINH_THEM_MOI_NHAN_SU v_f = new F500_QUY_TRINH_THEM_MOI_NHAN_SU();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
 
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)

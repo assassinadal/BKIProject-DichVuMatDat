@@ -28,7 +28,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void set_define_events()
         {
-           
+            m_cmd_nhap_loai_lao_dong.Enabled = false;
         }
 
 
@@ -48,14 +48,27 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void m_cmd_nhap_thong_tin_nhan_vien_Click(object sender, EventArgs e)
         {
             f150_Danh_sach_nhan_vien_master v_f = new f150_Danh_sach_nhan_vien_master();
-            v_f.ShowDialog();
+            v_f.DisplayForPresent(ref m_trang_thai_buoc_1);
+            if (m_trang_thai_buoc_1 > 0)
+            {
+                m_cmd_nhap_loai_lao_dong.Enabled = true;
+            }
+
         }
 
         #endregion
 
       
         #region Members
+
+        int m_trang_thai_buoc_1 = -1;
         
         #endregion
+
+        private void m_cmd_nhap_loai_lao_dong_Click(object sender, EventArgs e)
+        {
+            F501_THONG_TIN_BO_SUNG_NHAN_VIEN v_f = new F501_THONG_TIN_BO_SUNG_NHAN_VIEN();
+            v_f.ShowForPresent(m_trang_thai_buoc_1);
+        }
     }
 }

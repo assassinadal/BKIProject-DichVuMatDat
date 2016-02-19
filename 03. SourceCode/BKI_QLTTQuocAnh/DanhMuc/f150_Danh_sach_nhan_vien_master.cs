@@ -44,6 +44,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         #region Members
 
         string m_txt_path = "";
+        int m_trang_thai_buoc_1_sau_hien_thi = -2;
         #endregion
 
         #region Private methods
@@ -129,7 +130,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         private void m_cmd_them_Click(object sender, EventArgs e)
         {
             f150_danh_muc_nhan_su_v2 v_f = new f150_danh_muc_nhan_su_v2();
-            v_f.DisplayForInsert();
+            v_f.DisplayForInsert(ref m_trang_thai_buoc_1_sau_hien_thi);
             load_data_to_grid();
         }
 
@@ -142,6 +143,13 @@ namespace BKI_DichVuMatDat.DanhMuc
             load_data_to_grid();
         }
 
-      
+
+
+        internal void DisplayForPresent(ref int m_trang_thai_buoc_1)
+        {
+
+            this.ShowDialog();
+            m_trang_thai_buoc_1 = m_trang_thai_buoc_1_sau_hien_thi;
+        }
     }
 }

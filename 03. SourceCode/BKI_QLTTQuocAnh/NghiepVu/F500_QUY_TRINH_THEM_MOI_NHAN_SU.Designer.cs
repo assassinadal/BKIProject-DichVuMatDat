@@ -42,7 +42,7 @@
             // 
             this.m_cmd_nhap_thong_tin_nhan_vien.Location = new System.Drawing.Point(22, 74);
             this.m_cmd_nhap_thong_tin_nhan_vien.Name = "m_cmd_nhap_thong_tin_nhan_vien";
-            this.m_cmd_nhap_thong_tin_nhan_vien.Size = new System.Drawing.Size(191, 23);
+            this.m_cmd_nhap_thong_tin_nhan_vien.Size = new System.Drawing.Size(424, 23);
             this.m_cmd_nhap_thong_tin_nhan_vien.TabIndex = 0;
             this.m_cmd_nhap_thong_tin_nhan_vien.Text = "Bước 1: Nhập thông tin nhân viên";
             this.m_cmd_nhap_thong_tin_nhan_vien.Click += new System.EventHandler(this.m_cmd_nhap_thong_tin_nhan_vien_Click);
@@ -51,7 +51,7 @@
             // 
             this.m_cmd_lap_hop_dong.Location = new System.Drawing.Point(22, 208);
             this.m_cmd_lap_hop_dong.Name = "m_cmd_lap_hop_dong";
-            this.m_cmd_lap_hop_dong.Size = new System.Drawing.Size(191, 23);
+            this.m_cmd_lap_hop_dong.Size = new System.Drawing.Size(424, 23);
             this.m_cmd_lap_hop_dong.TabIndex = 0;
             this.m_cmd_lap_hop_dong.Text = "Bước 3: Lập hợp đồng";
             // 
@@ -59,15 +59,16 @@
             // 
             this.m_cmd_nhap_loai_lao_dong.Location = new System.Drawing.Point(22, 138);
             this.m_cmd_nhap_loai_lao_dong.Name = "m_cmd_nhap_loai_lao_dong";
-            this.m_cmd_nhap_loai_lao_dong.Size = new System.Drawing.Size(191, 23);
+            this.m_cmd_nhap_loai_lao_dong.Size = new System.Drawing.Size(424, 23);
             this.m_cmd_nhap_loai_lao_dong.TabIndex = 0;
-            this.m_cmd_nhap_loai_lao_dong.Text = "Bước 2: Nhập loại lao động";
+            this.m_cmd_nhap_loai_lao_dong.Text = "Bước 2: Nhập loại lao động, số lượng phụ thuộc, không đóng bảo hiểm";
+            this.m_cmd_nhap_loai_lao_dong.Click += new System.EventHandler(this.m_cmd_nhap_loai_lao_dong_Click);
             // 
             // m_cmd_nhap_quyet_dinh
             // 
             this.m_cmd_nhap_quyet_dinh.Location = new System.Drawing.Point(22, 290);
             this.m_cmd_nhap_quyet_dinh.Name = "m_cmd_nhap_quyet_dinh";
-            this.m_cmd_nhap_quyet_dinh.Size = new System.Drawing.Size(191, 23);
+            this.m_cmd_nhap_quyet_dinh.Size = new System.Drawing.Size(424, 23);
             this.m_cmd_nhap_quyet_dinh.TabIndex = 0;
             this.m_cmd_nhap_quyet_dinh.Text = "Bước 4: Nhập quyết định, công tác";
             // 

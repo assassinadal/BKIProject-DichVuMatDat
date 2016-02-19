@@ -26,6 +26,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         #region Members
         US_DM_NHAN_VIEN m_us = new US_DM_NHAN_VIEN();
         DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
+        int m_trang_thai_buoc_1_sau_hien_thi_f150_v2 = -3;
         #endregion
 
         #region Private Methods
@@ -113,17 +114,17 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_us.strSDT = m_txt_sdt.Text;
             m_us.strSO_TAI_KHOAN = m_txt_so_tai_khoan.Text;
             m_us.strNGAN_HANG = m_txt_ngan_hang.Text;
-            if( m_dat_ngay_cap_the.EditValue!=null)
-            m_us.datNGAY_CAP_THE = CIPConvert.ToDatetime(m_dat_ngay_cap_the.EditValue);
+            if (m_dat_ngay_cap_the.EditValue != null)
+                m_us.datNGAY_CAP_THE = m_dat_ngay_cap_the.DateTime;
             if (m_dat_ngay_het_han_the.EditValue != null)
-            m_us.datNGAY_HET_HAN_THE = CIPConvert.ToDatetime(m_dat_ngay_het_han_the.EditValue);
+                m_us.datNGAY_HET_HAN_THE = m_dat_ngay_het_han_the.DateTime;
             if (m_dat_ngay_sinh.EditValue != null)
             m_us.datNGAY_SINH = m_dat_ngay_sinh.DateTime;
             m_us.strHON_NHAN = m_txt_hon_nhan.Text;
             m_us.strSO_CMT = m_txt_so_cmt.Text;
-           m_us.strTRINH_DO_VAN_HOA= m_txt_trinh_do_van_hoa.Text ;      
-            if (m_dat_ngay_cap_cmt.EditValue != null)
-            m_us.datNGAY_CAP = CIPConvert.ToDatetime(m_dat_ngay_cap_cmt.EditValue);
+           m_us.strTRINH_DO_VAN_HOA= m_txt_trinh_do_van_hoa.Text ;
+           if (m_dat_ngay_cap_cmt.EditValue != null)
+               m_us.datNGAY_CAP = m_dat_ngay_cap_cmt.DateTime;
             m_us.strNOI_CAP = m_txt_noi_cap_cmt.Text;
             m_us.strQUOC_TICH = m_txt_quoc_tich.Text;
             m_us.strDAN_TOC = m_txt_dan_toc.Text;
@@ -164,6 +165,8 @@ namespace BKI_DichVuMatDat.DanhMuc
                         try
                         {
                             m_us.Insert();
+                            get_id_nhan_vien_vua_insert(ref m_trang_thai_buoc_1_sau_hien_thi_f150_v2);
+                           
                             this.Close();
                             MessageBox.Show("Lưu thông tin nhân viên thành công!");
                         }
@@ -208,14 +211,34 @@ namespace BKI_DichVuMatDat.DanhMuc
             
         }
 
+        private void get_id_nhan_vien_vua_insert(ref int m_trang_thai_buoc_1_sau_hien_thi_f150_v2)
+        {
+            try
+            {
+                US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+                DataSet v_ds = new DataSet();
+                v_ds.Tables.Add(new DataTable());
+                v_us.FillDatasetWithQuery(v_ds, "select * from DM_NHAN_VIEN order by ID desc");
+                m_trang_thai_buoc_1_sau_hien_thi_f150_v2 = int.Parse(v_ds.Tables[0].Rows[0]["ID"].ToString());
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Lỗi");
+            }
+           
+        }
+
         private void m_cmd_exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-
-      
-
-       
+        internal void DisplayForInsert(ref int m_trang_thai_buoc_1_sau_hien_thi)
+        {
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.ShowDialog();
+            m_trang_thai_buoc_1_sau_hien_thi = m_trang_thai_buoc_1_sau_hien_thi_f150_v2;
+        }
     }
 }

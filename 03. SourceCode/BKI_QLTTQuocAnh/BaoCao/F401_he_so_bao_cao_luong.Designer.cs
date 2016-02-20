@@ -28,31 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition3 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition4 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition5 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition6 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition7 = new DevExpress.XtraGrid.StyleFormatCondition();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.m_gd_tham_so_bang_luong_thang = new DevExpress.XtraGrid.GridControl();
             this.m_band_tham_so_bang_luong_thang = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn15 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridColumn16 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colMA_NV = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colHO_DEM = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colTEN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colHO_TEN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colDU_DIEU_KIEN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.colDA_CHAM_CONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colCO_HE_SO_K = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colCO_LUONG_CUNG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colTRANG_THAI_HOP_DONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colCO_HE_SO_LNS = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colCO_LUONG_CHE_DO = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colID = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colCO_DON_VI_CONG_TAC = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colCO_LOAI_LAO_DONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colCO_DONG_BAO_HIEM = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colSO_NGAY_LAM_THEM = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colSO_LUONG_PHU_THUOC = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colTRANG_THAI_RPT_TTTH = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colTRANG_THAI_RPT_LUONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.m_lbl_tieu_de_form = new DevExpress.XtraEditors.LabelControl();
             this.label3 = new System.Windows.Forms.Label();
             this.m_cmd_loc = new DevExpress.XtraEditors.SimpleButton();
             this.m_txt_search = new System.Windows.Forms.TextBox();
@@ -63,20 +72,25 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_lbl_tieu_de_form = new DevExpress.XtraEditors.LabelControl();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.gridBand5 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_gd_tham_so_bang_luong_thang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_band_tham_so_bang_luong_thang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -88,17 +102,20 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(389, 286, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(966, 461);
+            this.layoutControl1.Size = new System.Drawing.Size(985, 526);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // m_gd_tham_so_bang_luong_thang
             // 
             this.m_gd_tham_so_bang_luong_thang.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_gd_tham_so_bang_luong_thang.Location = new System.Drawing.Point(12, 113);
+            this.m_gd_tham_so_bang_luong_thang.Location = new System.Drawing.Point(12, 128);
             this.m_gd_tham_so_bang_luong_thang.MainView = this.m_band_tham_so_bang_luong_thang;
             this.m_gd_tham_so_bang_luong_thang.Name = "m_gd_tham_so_bang_luong_thang";
-            this.m_gd_tham_so_bang_luong_thang.Size = new System.Drawing.Size(942, 336);
+            this.m_gd_tham_so_bang_luong_thang.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit1,
+            this.repositoryItemCheckEdit2});
+            this.m_gd_tham_so_bang_luong_thang.Size = new System.Drawing.Size(961, 386);
             this.m_gd_tham_so_bang_luong_thang.TabIndex = 0;
             this.m_gd_tham_so_bang_luong_thang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_band_tham_so_bang_luong_thang});
@@ -107,273 +124,289 @@
             // m_band_tham_so_bang_luong_thang
             // 
             this.m_band_tham_so_bang_luong_thang.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.gridBand1,
-            this.gridBand2,
+            this.gridBand5,
             this.gridBand3,
+            this.gridBand2,
+            this.gridBand1,
             this.gridBand4});
             this.m_band_tham_so_bang_luong_thang.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn11,
-            this.gridColumn12,
-            this.gridColumn13,
-            this.gridColumn14,
-            this.gridColumn15,
-            this.gridColumn16,
-            this.gridColumn17});
+            this.colID,
+            this.colMA_NV,
+            this.colHO_DEM,
+            this.colTEN,
+            this.colHO_TEN,
+            this.colDA_CHAM_CONG,
+            this.colTRANG_THAI_HOP_DONG,
+            this.colCO_HE_SO_LNS,
+            this.colCO_LUONG_CHE_DO,
+            this.colCO_DON_VI_CONG_TAC,
+            this.colCO_HE_SO_K,
+            this.colCO_LUONG_CUNG,
+            this.colSO_NGAY_LAM_THEM,
+            this.colCO_LOAI_LAO_DONG,
+            this.colCO_DONG_BAO_HIEM,
+            this.colSO_LUONG_PHU_THUOC,
+            this.colTRANG_THAI_RPT_TTTH,
+            this.colTRANG_THAI_RPT_LUONG,
+            this.colDU_DIEU_KIEN});
+            this.m_band_tham_so_bang_luong_thang.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            styleFormatCondition1,
+            styleFormatCondition2,
+            styleFormatCondition3,
+            styleFormatCondition4,
+            styleFormatCondition5,
+            styleFormatCondition6,
+            styleFormatCondition7});
             this.m_band_tham_so_bang_luong_thang.GridControl = this.m_gd_tham_so_bang_luong_thang;
             this.m_band_tham_so_bang_luong_thang.Name = "m_band_tham_so_bang_luong_thang";
+            this.m_band_tham_so_bang_luong_thang.OptionsBehavior.Editable = false;
+            this.m_band_tham_so_bang_luong_thang.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.m_band_tham_so_bang_luong_thang.OptionsBehavior.ReadOnly = true;
+            this.m_band_tham_so_bang_luong_thang.OptionsView.ColumnAutoWidth = false;
+            this.m_band_tham_so_bang_luong_thang.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.m_band_tham_so_bang_luong_thang.OptionsView.ShowFooter = true;
             this.m_band_tham_so_bang_luong_thang.OptionsView.ShowGroupPanel = false;
             // 
-            // gridBand1
+            // colMA_NV
             // 
-            this.gridBand1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridBand1.AppearanceHeader.ForeColor = System.Drawing.Color.Red;
-            this.gridBand1.AppearanceHeader.Options.UseFont = true;
-            this.gridBand1.AppearanceHeader.Options.UseForeColor = true;
-            this.gridBand1.Caption = "Thông tin nhân viên";
-            this.gridBand1.Columns.Add(this.gridColumn1);
-            this.gridBand1.Columns.Add(this.gridColumn2);
-            this.gridBand1.Columns.Add(this.gridColumn3);
-            this.gridBand1.Columns.Add(this.gridColumn4);
-            this.gridBand1.Columns.Add(this.gridColumn9);
-            this.gridBand1.Columns.Add(this.gridColumn13);
-            this.gridBand1.Columns.Add(this.gridColumn15);
-            this.gridBand1.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.RowCount = 2;
-            this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 380;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.AppearanceHeader.BackColor = System.Drawing.SystemColors.Highlight;
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn1.AppearanceHeader.Options.UseBackColor = true;
-            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn1.Caption = "ID";
-            this.gridColumn1.FieldName = "ID";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Width = 34;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn2.Caption = "Mã nhân viên";
-            this.gridColumn2.FieldName = "MA_NV";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.colMA_NV.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colMA_NV.AppearanceHeader.Options.UseFont = true;
+            this.colMA_NV.Caption = "Mã NV";
+            this.colMA_NV.FieldName = "MA_NV";
+            this.colMA_NV.Name = "colMA_NV";
+            this.colMA_NV.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MA_NV", "Tổng số = {0}")});
-            this.gridColumn2.ToolTip = "Mã nhân viên";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.Width = 62;
+            this.colMA_NV.ToolTip = "Mã nhân viên";
+            this.colMA_NV.Visible = true;
+            this.colMA_NV.Width = 118;
             // 
-            // gridColumn3
+            // colHO_DEM
             // 
-            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn3.Caption = "Họ đệm";
-            this.gridColumn3.FieldName = "HO_DEM";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.Width = 61;
+            this.colHO_DEM.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colHO_DEM.AppearanceHeader.Options.UseFont = true;
+            this.colHO_DEM.Caption = "Họ đệm";
+            this.colHO_DEM.FieldName = "HO_DEM";
+            this.colHO_DEM.Name = "colHO_DEM";
+            this.colHO_DEM.Width = 103;
             // 
-            // gridColumn4
+            // colTEN
             // 
-            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn4.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn4.Caption = "Tên";
-            this.gridColumn4.FieldName = "TEN";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.Width = 40;
+            this.colTEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colTEN.AppearanceHeader.Options.UseFont = true;
+            this.colTEN.Caption = "Tên";
+            this.colTEN.FieldName = "TEN";
+            this.colTEN.Name = "colTEN";
+            this.colTEN.Width = 65;
             // 
-            // gridColumn9
+            // colHO_TEN
             // 
-            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn9.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn9.Caption = "Có đơn vị công tác";
-            this.gridColumn9.FieldName = "CO_DON_VI_CONG_TAC";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "CO_DON_VI_CONG_TAC", "Thiếu ĐVCT: {0}", 1)});
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.Width = 73;
+            this.colHO_TEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colHO_TEN.AppearanceHeader.Options.UseFont = true;
+            this.colHO_TEN.Caption = "Họ tên";
+            this.colHO_TEN.FieldName = "HO_TEN";
+            this.colHO_TEN.Name = "colHO_TEN";
+            this.colHO_TEN.Visible = true;
+            this.colHO_TEN.Width = 144;
             // 
-            // gridColumn13
+            // colDU_DIEU_KIEN
             // 
-            this.gridColumn13.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn13.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn13.Caption = "Có loại lao động";
-            this.gridColumn13.FieldName = "CO_LOAI_LAO_DONG";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.Width = 54;
+            this.colDU_DIEU_KIEN.AppearanceCell.ForeColor = System.Drawing.Color.Maroon;
+            this.colDU_DIEU_KIEN.AppearanceCell.Options.UseForeColor = true;
+            this.colDU_DIEU_KIEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colDU_DIEU_KIEN.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
+            this.colDU_DIEU_KIEN.AppearanceHeader.Options.UseFont = true;
+            this.colDU_DIEU_KIEN.AppearanceHeader.Options.UseForeColor = true;
+            this.colDU_DIEU_KIEN.Caption = "Đủ điều kiện";
+            this.colDU_DIEU_KIEN.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colDU_DIEU_KIEN.FieldName = "DU_DIEU_KIEN";
+            this.colDU_DIEU_KIEN.Name = "colDU_DIEU_KIEN";
+            this.colDU_DIEU_KIEN.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
+            this.colDU_DIEU_KIEN.Visible = true;
+            this.colDU_DIEU_KIEN.Width = 78;
             // 
-            // gridColumn15
+            // repositoryItemCheckEdit1
             // 
-            this.gridColumn15.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn15.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn15.Caption = "Số lượng phụ thuộc";
-            this.gridColumn15.FieldName = "SO_LUONG_PHU_THUOC";
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.Width = 90;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            this.repositoryItemCheckEdit1.ReadOnly = true;
+            this.repositoryItemCheckEdit1.ValueChecked = "1";
+            this.repositoryItemCheckEdit1.ValueUnchecked = "0";
             // 
-            // gridBand2
+            // colDA_CHAM_CONG
             // 
-            this.gridBand2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridBand2.AppearanceHeader.ForeColor = System.Drawing.Color.Red;
-            this.gridBand2.AppearanceHeader.Options.UseFont = true;
-            this.gridBand2.AppearanceHeader.Options.UseForeColor = true;
-            this.gridBand2.Caption = "Thông tin hợp đồng";
-            this.gridBand2.Columns.Add(this.gridColumn6);
-            this.gridBand2.Columns.Add(this.gridColumn7);
-            this.gridBand2.Columns.Add(this.gridColumn8);
-            this.gridBand2.Name = "gridBand2";
-            this.gridBand2.VisibleIndex = 1;
-            this.gridBand2.Width = 306;
+            this.colDA_CHAM_CONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colDA_CHAM_CONG.AppearanceHeader.Options.UseFont = true;
+            this.colDA_CHAM_CONG.Caption = "Có chấm công";
+            this.colDA_CHAM_CONG.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colDA_CHAM_CONG.FieldName = "DA_CHAM_CONG";
+            this.colDA_CHAM_CONG.Name = "colDA_CHAM_CONG";
+            this.colDA_CHAM_CONG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "DA_CHAM_CONG", "", 7)});
+            this.colDA_CHAM_CONG.Visible = true;
+            this.colDA_CHAM_CONG.Width = 61;
             // 
-            // gridColumn6
+            // colCO_HE_SO_K
             // 
-            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn6.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn6.Caption = "Trạng thái hợp đồng";
-            this.gridColumn6.FieldName = "TRANG_THAI_HOP_DONG";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.Width = 105;
+            this.colCO_HE_SO_K.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colCO_HE_SO_K.AppearanceHeader.Options.UseFont = true;
+            this.colCO_HE_SO_K.Caption = "Có HS K";
+            this.colCO_HE_SO_K.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colCO_HE_SO_K.FieldName = "CO_HE_SO_K";
+            this.colCO_HE_SO_K.Name = "colCO_HE_SO_K";
+            this.colCO_HE_SO_K.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
+            this.colCO_HE_SO_K.Visible = true;
+            this.colCO_HE_SO_K.Width = 44;
             // 
-            // gridColumn7
+            // colCO_LUONG_CUNG
             // 
-            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn7.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn7.Caption = "Có hệ số LNS";
-            this.gridColumn7.FieldName = "CO_HE_SO_LNS";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.Width = 80;
+            this.colCO_LUONG_CUNG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colCO_LUONG_CUNG.AppearanceHeader.Options.UseFont = true;
+            this.colCO_LUONG_CUNG.Caption = "Có lương cứng";
+            this.colCO_LUONG_CUNG.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colCO_LUONG_CUNG.FieldName = "CO_LUONG_CUNG";
+            this.colCO_LUONG_CUNG.Name = "colCO_LUONG_CUNG";
+            this.colCO_LUONG_CUNG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
+            this.colCO_LUONG_CUNG.Visible = true;
+            this.colCO_LUONG_CUNG.Width = 50;
             // 
-            // gridColumn8
+            // colTRANG_THAI_HOP_DONG
             // 
-            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn8.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn8.Caption = "Có hệ số lương chế độ";
-            this.gridColumn8.FieldName = "CO_LUONG_CHE_DO";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.Width = 121;
+            this.colTRANG_THAI_HOP_DONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colTRANG_THAI_HOP_DONG.AppearanceHeader.Options.UseFont = true;
+            this.colTRANG_THAI_HOP_DONG.Caption = "Trạng thái hợp đồng";
+            this.colTRANG_THAI_HOP_DONG.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colTRANG_THAI_HOP_DONG.FieldName = "TRANG_THAI_HOP_DONG";
+            this.colTRANG_THAI_HOP_DONG.Name = "colTRANG_THAI_HOP_DONG";
+            this.colTRANG_THAI_HOP_DONG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
+            this.colTRANG_THAI_HOP_DONG.Visible = true;
+            this.colTRANG_THAI_HOP_DONG.Width = 42;
             // 
-            // gridBand3
+            // colCO_HE_SO_LNS
             // 
-            this.gridBand3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridBand3.AppearanceHeader.ForeColor = System.Drawing.Color.Red;
-            this.gridBand3.AppearanceHeader.Options.UseFont = true;
-            this.gridBand3.AppearanceHeader.Options.UseForeColor = true;
-            this.gridBand3.Caption = "Thông tin tính lương";
-            this.gridBand3.Columns.Add(this.gridColumn5);
-            this.gridBand3.Columns.Add(this.gridColumn10);
-            this.gridBand3.Columns.Add(this.gridColumn11);
-            this.gridBand3.Columns.Add(this.gridColumn12);
-            this.gridBand3.Columns.Add(this.gridColumn14);
-            this.gridBand3.Name = "gridBand3";
-            this.gridBand3.VisibleIndex = 2;
-            this.gridBand3.Width = 386;
+            this.colCO_HE_SO_LNS.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colCO_HE_SO_LNS.AppearanceHeader.Options.UseFont = true;
+            this.colCO_HE_SO_LNS.Caption = "Có HS LNS";
+            this.colCO_HE_SO_LNS.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colCO_HE_SO_LNS.FieldName = "CO_HE_SO_LNS";
+            this.colCO_HE_SO_LNS.Name = "colCO_HE_SO_LNS";
+            this.colCO_HE_SO_LNS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
+            this.colCO_HE_SO_LNS.Visible = true;
+            this.colCO_HE_SO_LNS.Width = 48;
             // 
-            // gridColumn5
+            // colCO_LUONG_CHE_DO
             // 
-            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn5.Caption = "Đã chấm công";
-            this.gridColumn5.FieldName = "DA_CHAM_CONG";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "DA_CHAM_CONG", "Chưa chấm công: {0}", 7)});
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.Width = 81;
+            this.colCO_LUONG_CHE_DO.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colCO_LUONG_CHE_DO.AppearanceHeader.Options.UseFont = true;
+            this.colCO_LUONG_CHE_DO.Caption = "Có HS LCĐ";
+            this.colCO_LUONG_CHE_DO.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colCO_LUONG_CHE_DO.FieldName = "CO_LUONG_CHE_DO";
+            this.colCO_LUONG_CHE_DO.Name = "colCO_LUONG_CHE_DO";
+            this.colCO_LUONG_CHE_DO.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
+            this.colCO_LUONG_CHE_DO.Visible = true;
+            this.colCO_LUONG_CHE_DO.Width = 57;
             // 
-            // gridColumn10
+            // colID
             // 
-            this.gridColumn10.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn10.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn10.Caption = "Có hệ số K";
-            this.gridColumn10.FieldName = "CO_HE_SO_K";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.Width = 81;
+            this.colID.AppearanceHeader.BackColor = System.Drawing.SystemColors.Highlight;
+            this.colID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colID.AppearanceHeader.Options.UseBackColor = true;
+            this.colID.AppearanceHeader.Options.UseFont = true;
+            this.colID.Caption = "ID";
+            this.colID.FieldName = "ID";
+            this.colID.Name = "colID";
+            this.colID.Width = 34;
             // 
-            // gridColumn11
+            // colCO_DON_VI_CONG_TAC
             // 
-            this.gridColumn11.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn11.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn11.Caption = "Có lương cứng";
-            this.gridColumn11.FieldName = "CO_LUONG_CUNG";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.Width = 82;
+            this.colCO_DON_VI_CONG_TAC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colCO_DON_VI_CONG_TAC.AppearanceHeader.Options.UseFont = true;
+            this.colCO_DON_VI_CONG_TAC.Caption = "Có đơn vị công tác";
+            this.colCO_DON_VI_CONG_TAC.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colCO_DON_VI_CONG_TAC.FieldName = "CO_DON_VI_CONG_TAC";
+            this.colCO_DON_VI_CONG_TAC.Name = "colCO_DON_VI_CONG_TAC";
+            this.colCO_DON_VI_CONG_TAC.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "CO_DON_VI_CONG_TAC", "", 1)});
+            this.colCO_DON_VI_CONG_TAC.Visible = true;
+            this.colCO_DON_VI_CONG_TAC.Width = 46;
             // 
-            // gridColumn12
+            // colCO_LOAI_LAO_DONG
             // 
-            this.gridColumn12.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn12.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn12.Caption = "Số ngày làm thêm";
-            this.gridColumn12.FieldName = "SO_NGAY_LAM_THEM";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.Width = 71;
+            this.colCO_LOAI_LAO_DONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colCO_LOAI_LAO_DONG.AppearanceHeader.Options.UseFont = true;
+            this.colCO_LOAI_LAO_DONG.Caption = "Có loại lao động";
+            this.colCO_LOAI_LAO_DONG.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colCO_LOAI_LAO_DONG.FieldName = "CO_LOAI_LAO_DONG";
+            this.colCO_LOAI_LAO_DONG.Name = "colCO_LOAI_LAO_DONG";
+            this.colCO_LOAI_LAO_DONG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
+            this.colCO_LOAI_LAO_DONG.Visible = true;
+            this.colCO_LOAI_LAO_DONG.Width = 50;
             // 
-            // gridColumn14
+            // colCO_DONG_BAO_HIEM
             // 
-            this.gridColumn14.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn14.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn14.Caption = "Có đóng bảo hiểm";
-            this.gridColumn14.FieldName = "CO_DONG_BAO_HIEM";
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.Width = 71;
+            this.colCO_DONG_BAO_HIEM.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colCO_DONG_BAO_HIEM.AppearanceHeader.Options.UseFont = true;
+            this.colCO_DONG_BAO_HIEM.Caption = "Có đóng bảo hiểm";
+            this.colCO_DONG_BAO_HIEM.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colCO_DONG_BAO_HIEM.FieldName = "CO_DONG_BAO_HIEM";
+            this.colCO_DONG_BAO_HIEM.Name = "colCO_DONG_BAO_HIEM";
+            this.colCO_DONG_BAO_HIEM.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
+            this.colCO_DONG_BAO_HIEM.Visible = true;
+            this.colCO_DONG_BAO_HIEM.Width = 68;
             // 
-            // gridBand4
+            // colSO_NGAY_LAM_THEM
             // 
-            this.gridBand4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridBand4.AppearanceHeader.ForeColor = System.Drawing.Color.Red;
-            this.gridBand4.AppearanceHeader.Options.UseFont = true;
-            this.gridBand4.AppearanceHeader.Options.UseForeColor = true;
-            this.gridBand4.Caption = "Thông tin bảng lương";
-            this.gridBand4.Columns.Add(this.gridColumn16);
-            this.gridBand4.Columns.Add(this.gridColumn17);
-            this.gridBand4.Name = "gridBand4";
-            this.gridBand4.VisibleIndex = 3;
-            this.gridBand4.Width = 149;
+            this.colSO_NGAY_LAM_THEM.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colSO_NGAY_LAM_THEM.AppearanceHeader.Options.UseFont = true;
+            this.colSO_NGAY_LAM_THEM.Caption = "Số ngày làm thêm";
+            this.colSO_NGAY_LAM_THEM.FieldName = "SO_NGAY_LAM_THEM";
+            this.colSO_NGAY_LAM_THEM.Name = "colSO_NGAY_LAM_THEM";
+            this.colSO_NGAY_LAM_THEM.Visible = true;
+            this.colSO_NGAY_LAM_THEM.Width = 64;
             // 
-            // gridColumn16
+            // colSO_LUONG_PHU_THUOC
             // 
-            this.gridColumn16.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn16.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn16.Caption = "Có trong bản báo cáo tổng hợp";
-            this.gridColumn16.FieldName = "TRANG_THAI_RPT_TTTH";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.Width = 71;
+            this.colSO_LUONG_PHU_THUOC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colSO_LUONG_PHU_THUOC.AppearanceHeader.Options.UseFont = true;
+            this.colSO_LUONG_PHU_THUOC.Caption = "Số lượng phụ thuộc";
+            this.colSO_LUONG_PHU_THUOC.FieldName = "SO_LUONG_PHU_THUOC";
+            this.colSO_LUONG_PHU_THUOC.Name = "colSO_LUONG_PHU_THUOC";
+            this.colSO_LUONG_PHU_THUOC.Visible = true;
             // 
-            // gridColumn17
+            // colTRANG_THAI_RPT_TTTH
             // 
-            this.gridColumn17.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn17.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn17.Caption = "Có trong báo cáo lương";
-            this.gridColumn17.FieldName = "TRANG_THAI_RPT_LUONG";
-            this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.Width = 78;
+            this.colTRANG_THAI_RPT_TTTH.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colTRANG_THAI_RPT_TTTH.AppearanceHeader.Options.UseFont = true;
+            this.colTRANG_THAI_RPT_TTTH.Caption = "Có trong bản báo cáo tổng hợp";
+            this.colTRANG_THAI_RPT_TTTH.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colTRANG_THAI_RPT_TTTH.FieldName = "TRANG_THAI_RPT_TTTH";
+            this.colTRANG_THAI_RPT_TTTH.Name = "colTRANG_THAI_RPT_TTTH";
+            this.colTRANG_THAI_RPT_TTTH.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
+            this.colTRANG_THAI_RPT_TTTH.Width = 78;
+            // 
+            // colTRANG_THAI_RPT_LUONG
+            // 
+            this.colTRANG_THAI_RPT_LUONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colTRANG_THAI_RPT_LUONG.AppearanceHeader.Options.UseFont = true;
+            this.colTRANG_THAI_RPT_LUONG.Caption = "Có trong báo cáo lương";
+            this.colTRANG_THAI_RPT_LUONG.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colTRANG_THAI_RPT_LUONG.FieldName = "TRANG_THAI_RPT_LUONG";
+            this.colTRANG_THAI_RPT_LUONG.Name = "colTRANG_THAI_RPT_LUONG";
+            this.colTRANG_THAI_RPT_LUONG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
+            this.colTRANG_THAI_RPT_LUONG.Width = 117;
+            // 
+            // repositoryItemCheckEdit2
+            // 
+            this.repositoryItemCheckEdit2.AutoHeight = false;
+            this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
             // 
             // panelControl1
             // 
@@ -390,8 +423,29 @@
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Location = new System.Drawing.Point(12, 12);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(942, 97);
+            this.panelControl1.Size = new System.Drawing.Size(961, 112);
             this.panelControl1.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.m_lbl_tieu_de_form);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(2, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(957, 33);
+            this.panel2.TabIndex = 23;
+            // 
+            // m_lbl_tieu_de_form
+            // 
+            this.m_lbl_tieu_de_form.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_lbl_tieu_de_form.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.m_lbl_tieu_de_form.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_tieu_de_form.Location = new System.Drawing.Point(3, 7);
+            this.m_lbl_tieu_de_form.Name = "m_lbl_tieu_de_form";
+            this.m_lbl_tieu_de_form.Size = new System.Drawing.Size(202, 19);
+            this.m_lbl_tieu_de_form.TabIndex = 21;
+            this.m_lbl_tieu_de_form.Text = "Tham số tính bảng lương";
             // 
             // label3
             // 
@@ -473,7 +527,7 @@
             this.layoutControlItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(966, 461);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(985, 526);
             this.layoutControlGroup1.Text = "Root";
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -483,48 +537,106 @@
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(946, 101);
+            this.layoutControlItem1.Size = new System.Drawing.Size(965, 116);
             this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextToControlDistance = 0;
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.m_gd_tham_so_bang_luong_thang;
             this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 101);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 116);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(946, 340);
+            this.layoutControlItem2.Size = new System.Drawing.Size(965, 390);
             this.layoutControlItem2.Text = "layoutControlItem2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextToControlDistance = 0;
             this.layoutControlItem2.TextVisible = false;
             // 
-            // m_lbl_tieu_de_form
+            // gridBand5
             // 
-            this.m_lbl_tieu_de_form.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_lbl_tieu_de_form.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.m_lbl_tieu_de_form.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_tieu_de_form.Location = new System.Drawing.Point(3, 7);
-            this.m_lbl_tieu_de_form.Name = "m_lbl_tieu_de_form";
-            this.m_lbl_tieu_de_form.Size = new System.Drawing.Size(202, 19);
-            this.m_lbl_tieu_de_form.TabIndex = 21;
-            this.m_lbl_tieu_de_form.Text = "Tham số tính bảng lương";
+            this.gridBand5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridBand5.AppearanceHeader.ForeColor = System.Drawing.Color.Red;
+            this.gridBand5.AppearanceHeader.Options.UseFont = true;
+            this.gridBand5.AppearanceHeader.Options.UseForeColor = true;
+            this.gridBand5.Caption = "Đủ tiêu chuẩn";
+            this.gridBand5.Columns.Add(this.colMA_NV);
+            this.gridBand5.Columns.Add(this.colHO_DEM);
+            this.gridBand5.Columns.Add(this.colTEN);
+            this.gridBand5.Columns.Add(this.colHO_TEN);
+            this.gridBand5.Columns.Add(this.colDU_DIEU_KIEN);
+            this.gridBand5.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.gridBand5.Name = "gridBand5";
+            this.gridBand5.VisibleIndex = 0;
+            this.gridBand5.Width = 340;
             // 
-            // panel2
+            // gridBand3
             // 
-            this.panel2.Controls.Add(this.m_lbl_tieu_de_form);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(2, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(938, 33);
-            this.panel2.TabIndex = 23;
+            this.gridBand3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridBand3.AppearanceHeader.ForeColor = System.Drawing.Color.Red;
+            this.gridBand3.AppearanceHeader.Options.UseFont = true;
+            this.gridBand3.AppearanceHeader.Options.UseForeColor = true;
+            this.gridBand3.Caption = "Thông tin tính lương";
+            this.gridBand3.Columns.Add(this.colDA_CHAM_CONG);
+            this.gridBand3.Columns.Add(this.colCO_HE_SO_K);
+            this.gridBand3.Columns.Add(this.colCO_LUONG_CUNG);
+            this.gridBand3.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.gridBand3.Name = "gridBand3";
+            this.gridBand3.VisibleIndex = 1;
+            this.gridBand3.Width = 155;
+            // 
+            // gridBand2
+            // 
+            this.gridBand2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridBand2.AppearanceHeader.ForeColor = System.Drawing.Color.Red;
+            this.gridBand2.AppearanceHeader.Options.UseFont = true;
+            this.gridBand2.AppearanceHeader.Options.UseForeColor = true;
+            this.gridBand2.Caption = "Thông tin hợp đồng";
+            this.gridBand2.Columns.Add(this.colTRANG_THAI_HOP_DONG);
+            this.gridBand2.Columns.Add(this.colCO_HE_SO_LNS);
+            this.gridBand2.Columns.Add(this.colCO_LUONG_CHE_DO);
+            this.gridBand2.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.gridBand2.Name = "gridBand2";
+            this.gridBand2.VisibleIndex = 2;
+            this.gridBand2.Width = 147;
+            // 
+            // gridBand1
+            // 
+            this.gridBand1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridBand1.AppearanceHeader.ForeColor = System.Drawing.Color.Red;
+            this.gridBand1.AppearanceHeader.Options.UseFont = true;
+            this.gridBand1.AppearanceHeader.Options.UseForeColor = true;
+            this.gridBand1.Caption = "Thông tin nhân viên";
+            this.gridBand1.Columns.Add(this.colID);
+            this.gridBand1.Columns.Add(this.colCO_DON_VI_CONG_TAC);
+            this.gridBand1.Columns.Add(this.colCO_LOAI_LAO_DONG);
+            this.gridBand1.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.RowCount = 2;
+            this.gridBand1.VisibleIndex = 3;
+            this.gridBand1.Width = 96;
+            // 
+            // gridBand4
+            // 
+            this.gridBand4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridBand4.AppearanceHeader.Options.UseFont = true;
+            this.gridBand4.Caption = "Thông tin khác";
+            this.gridBand4.Columns.Add(this.colCO_DONG_BAO_HIEM);
+            this.gridBand4.Columns.Add(this.colSO_NGAY_LAM_THEM);
+            this.gridBand4.Columns.Add(this.colSO_LUONG_PHU_THUOC);
+            this.gridBand4.Columns.Add(this.colTRANG_THAI_RPT_TTTH);
+            this.gridBand4.Columns.Add(this.colTRANG_THAI_RPT_LUONG);
+            this.gridBand4.Name = "gridBand4";
+            this.gridBand4.VisibleIndex = 4;
+            this.gridBand4.Width = 207;
             // 
             // F401_he_so_bao_cao_luong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 461);
+            this.ClientSize = new System.Drawing.Size(985, 526);
             this.Controls.Add(this.layoutControl1);
             this.Name = "F401_he_so_bao_cao_luong";
             this.Text = "F401 Hệ số tính bảng lương";
@@ -532,16 +644,18 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_gd_tham_so_bang_luong_thang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_band_tham_so_bang_luong_thang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -562,28 +676,33 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_loc;
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView m_band_tham_so_bang_luong_thang;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn1;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn2;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn3;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn4;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn9;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn13;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn15;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn6;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn7;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn8;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn5;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn10;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn11;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn12;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn14;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn16;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn17;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colID;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colMA_NV;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHO_DEM;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTEN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colCO_DON_VI_CONG_TAC;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colCO_LOAI_LAO_DONG;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSO_LUONG_PHU_THUOC;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTRANG_THAI_HOP_DONG;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colCO_HE_SO_LNS;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colCO_LUONG_CHE_DO;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colDA_CHAM_CONG;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colCO_HE_SO_K;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colCO_LUONG_CUNG;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSO_NGAY_LAM_THEM;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colCO_DONG_BAO_HIEM;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTRANG_THAI_RPT_TTTH;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTRANG_THAI_RPT_LUONG;
         private DevExpress.XtraEditors.LabelControl m_lbl_tieu_de_form;
         private System.Windows.Forms.Panel panel2;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colDU_DIEU_KIEN;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHO_TEN;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand5;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
     }
 }

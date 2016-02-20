@@ -13,6 +13,7 @@ using BKI_DichVuMatDat.DS;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid;
 using BKI_DichVuMatDat.DS.CDBNames;
+using DevExpress.XtraSplashScreen;
 
 namespace BKI_DichVuMatDat.BaoCao
 {
@@ -22,6 +23,16 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             InitializeComponent();
             format_controls();
+            m_txt_thang.Text = DateTime.Now.Month.ToString();
+            m_txt_nam.Text = DateTime.Now.Year.ToString();
+        }
+        public void hien_thi_ra_soat_tinh_luong(decimal ip_dc_thang, decimal ip_dc_nam)
+        {
+            load_data_2_grid(ip_dc_thang, ip_dc_nam);
+            m_band_tham_so_bang_luong_thang.ActiveFilterString = "[DU_DIEU_KIEN] = '0'";
+            m_txt_thang.Text = ip_dc_thang.ToString();
+            m_txt_nam.Text = ip_dc_nam.ToString();
+            ShowDialog();
         }
         #region Members
         US_BAO_CAO_THAM_SO_BANG_LUONG m_us_tham_so_bang_luong;
@@ -38,16 +49,28 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         private void load_data_2_grid(decimal ip_dc_thang, decimal ip_dc_nam)
         {
-            m_us_tham_so_bang_luong = new US_BAO_CAO_THAM_SO_BANG_LUONG();
-            DS_BAO_CAO_THAM_SO_BANG_LUONG v_ds = new DS_BAO_CAO_THAM_SO_BANG_LUONG();
-            m_us_tham_so_bang_luong.GetThamSoBangLuongThang(v_ds, ip_dc_thang, ip_dc_nam);
-            m_gd_tham_so_bang_luong_thang.DataSource = v_ds.Tables[0];
-            CHRMCommon.make_stt(m_band_tham_so_bang_luong_thang);
+            try
+            {
+                SplashScreenManager.ShowForm(typeof(F_wait_form));
+                m_us_tham_so_bang_luong = new US_BAO_CAO_THAM_SO_BANG_LUONG();
+                DS_BAO_CAO_THAM_SO_BANG_LUONG v_ds = new DS_BAO_CAO_THAM_SO_BANG_LUONG();
+                m_us_tham_so_bang_luong.GetThamSoBangLuongThang(v_ds, ip_dc_thang, ip_dc_nam);
+                m_gd_tham_so_bang_luong_thang.DataSource = v_ds.Tables[0];
+                CHRMCommon.make_stt(m_band_tham_so_bang_luong_thang);
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+               SplashScreenManager.CloseForm();
+            }
         }
         private void set_initial_form_load()
         {
-            m_txt_thang.Text = DateTime.Now.Month.ToString();
-            m_txt_nam.Text = DateTime.Now.Year.ToString();
+            //m_txt_thang.Text = DateTime.Now.Month.ToString();
+            //m_txt_nam.Text = DateTime.Now.Year.ToString();
         }
         private void set_define_events()
         {

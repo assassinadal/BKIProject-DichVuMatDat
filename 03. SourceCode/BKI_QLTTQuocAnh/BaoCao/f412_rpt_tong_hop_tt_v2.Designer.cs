@@ -257,7 +257,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(907, 89);
+            this.panel1.Size = new System.Drawing.Size(911, 89);
             this.panel1.TabIndex = 7;
             // 
             // m_txt_nam
@@ -425,7 +425,7 @@
             this.repositoryItemMemoEdit1,
             this.repoBtnXoaLuong,
             this.repositoryItemTextEditTien});
-            this.m_grc_tong_hop.Size = new System.Drawing.Size(907, 388);
+            this.m_grc_tong_hop.Size = new System.Drawing.Size(911, 396);
             this.m_grc_tong_hop.TabIndex = 11;
             this.m_grc_tong_hop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_adv_tong_hop});
@@ -2631,7 +2631,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 477);
+            this.ClientSize = new System.Drawing.Size(911, 485);
             this.Controls.Add(this.m_panel);
             this.Controls.Add(this.m_grc_tong_hop);
             this.Controls.Add(this.panel1);

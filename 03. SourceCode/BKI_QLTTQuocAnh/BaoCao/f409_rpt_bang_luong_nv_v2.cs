@@ -31,6 +31,7 @@ namespace BKI_DichVuMatDat.BaoCao
         //Field & Property
         BindingList<DTO_BANG_LUONG_V2> m_lst_luong_v2 = new BindingList<DTO_BANG_LUONG_V2>();
         BindingList<string> m_lst_nhan_vien_khong_ton_tai = new BindingList<string>();
+
         #region Public Interface
         ~f409_rpt_bang_luong_nv_v2()
         {
@@ -61,6 +62,19 @@ namespace BKI_DichVuMatDat.BaoCao
             m_cmd_import_excel.Click += m_cmd_import_excel_Click;
             m_cmd_export_excel.Click += m_cmd_export_excel_Click;
             m_grv_main.MouseWheel += m_grv_main_MouseWheel;
+            m_cmd_kiem_tra_du_lieu.Click += m_cmd_kiem_tra_du_lieu_Click;
+        }
+
+        void m_cmd_kiem_tra_du_lieu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ra_soat_thong_tin_du_lieu_tinh_luong();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_grv_main_MouseWheel(object sender, MouseEventArgs e)
@@ -502,6 +516,11 @@ namespace BKI_DichVuMatDat.BaoCao
                 return false;
             }
             return true;
+        }
+        private void ra_soat_thong_tin_du_lieu_tinh_luong()
+        {
+            F401_he_so_bao_cao_luong v_frm = new F401_he_so_bao_cao_luong();
+            v_frm.hien_thi_ra_soat_tinh_luong(lay_thang(), lay_nam());
         }
 
         //Action
@@ -1007,6 +1026,10 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
+                if(ip_path_excel == "")
+                {
+                    return;
+                }
                 var v_dlg_confirm = XtraMessageBox.Show("Bạn có chắc chắn muốn import dữ liệu từ file Excel lương?"
                                                             , "XÁC NHẬN"
                                                             , MessageBoxButtons.YesNo
@@ -1032,7 +1055,11 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             finally
             {
-                SplashScreenManager.CloseForm();
+                if(SplashScreenManager.FormInPendingState)
+                {
+                    SplashScreenManager.CloseForm();
+                }
+                
             }
         }
         private DTO_BANG_LUONG_V2 transfer_data_row_excel_luong_2_object(DataRow ip_dr_luong)

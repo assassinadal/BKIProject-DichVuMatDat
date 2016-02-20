@@ -47,7 +47,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_initial_form_load()
         {
             load_data_2_sle_chon_nv();
-            //load_data_2_grid();
+            load_data_2_grid();
         }
 
         //load data 2 all controls
@@ -116,7 +116,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_LUONG_CUNG");
+            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_LUONG_CUNG WHERE DA_XOA = 'N' ORDER BY ID_NHAN_VIEN");
             m_grc_luong_cung_cua_nhan_vien.DataSource = v_ds.Tables[0];
         }
 

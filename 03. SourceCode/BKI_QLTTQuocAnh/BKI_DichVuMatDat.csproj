@@ -670,10 +670,10 @@
     <Compile Include="EF\V_RPT_LUONG.cs">
       <DependentUpon>ModelDVMD.tt</DependentUpon>
     </Compile>
-    <Compile Include="F150_DANH_SACH_NHAN_VIEN_EXCEL.CS">
+    <Compile Include="DanhMuc\F150_DANH_SACH_NHAN_VIEN_EXCEL.CS">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F150_DANH_SACH_NHAN_VIEN_EXCEL.Designer.CS">
+    <Compile Include="DanhMuc\F150_DANH_SACH_NHAN_VIEN_EXCEL.Designer.CS">
       <DependentUpon>F150_DANH_SACH_NHAN_VIEN_EXCEL.CS</DependentUpon>
     </Compile>
     <Compile Include="f304_cac_khoan_khac.cs">
@@ -1299,7 +1299,7 @@
     <EmbeddedResource Include="DanhMuc\f160_them_nhan_vien_nhanh.resx">
       <DependentUpon>f160_them_nhan_vien_nhanh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F150_DANH_SACH_NHAN_VIEN_EXCEL.resx">
+    <EmbeddedResource Include="DanhMuc\F150_DANH_SACH_NHAN_VIEN_EXCEL.resx">
       <DependentUpon>F150_DANH_SACH_NHAN_VIEN_EXCEL.CS</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f304_cac_khoan_khac.resx">
@@ -1574,7 +1574,9 @@
     <Content Include="Template\ThuNhapKhac.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Template\DANH_SACH_NHAN_VIEN.xlsx" />
+    <None Include="Template\DANH_SACH_NHAN_VIEN.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BKI_QLTTQuocAnh.DS\BKI_DichVuMatDat.DS.csproj">

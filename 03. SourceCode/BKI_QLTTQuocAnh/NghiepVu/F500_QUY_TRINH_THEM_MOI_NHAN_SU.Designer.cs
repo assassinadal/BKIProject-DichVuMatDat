@@ -58,6 +58,7 @@
             this.m_cmd_lap_hop_dong.Size = new System.Drawing.Size(424, 23);
             this.m_cmd_lap_hop_dong.TabIndex = 0;
             this.m_cmd_lap_hop_dong.Text = "Bước 3: Lập hợp đồng";
+            this.m_cmd_lap_hop_dong.Click += new System.EventHandler(this.m_cmd_lap_hop_dong_Click);
             // 
             // m_cmd_nhap_loai_lao_dong
             // 

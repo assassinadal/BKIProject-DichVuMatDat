@@ -40,6 +40,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         decimal m_id_gd_hd = 0;
         decimal m_id_hs_lns = 0;
         decimal m_id_lcd = 0;
+        int m_trang_thai_buoc_3_thanh_cong = 0;
         #endregion
 
         #region Private methods
@@ -350,14 +351,15 @@ namespace BKI_DichVuMatDat.NghiepVu
             if (v_dr.Count() != 0)
             {
                 m_txt_ma_hd.BackColor = Color.Bisque;
-                m_lbl_kiem_tra_ma_hd.Visible = true;
-                m_lbl_kiem_tra_ma_hd.Text = "Đã có mã này rồi...";
+              //  m_lbl_kiem_tra_ma_hd.Visible = true;
+              //  m_lbl_kiem_tra_ma_hd.Text = "Đã có mã này rồi...";
+                MessageBox.Show("Đã có mã này rồi!");
                 return true;
             }
             else
             {
-                m_txt_ma_hd.BackColor = Color.White;
-                m_lbl_kiem_tra_ma_hd.Visible = false;
+              //  m_txt_ma_hd.BackColor = Color.White;
+               // m_lbl_kiem_tra_ma_hd.Visible = false;
                 return false;
             }
         }
@@ -986,7 +988,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void clear_data_without_sle_chon_nv_and_grid()
         {
             m_txt_ma_hd.Text = "";
-            m_lbl_kiem_tra_ma_hd.Visible = false;
+           // m_lbl_kiem_tra_ma_hd.Visible = false;
             m_sle_loai_hop_dong.EditValue = null;
             m_sle_chuc_danh_lns.EditValue = null;
             m_sle_muc_lns.EditValue = null;
@@ -1144,6 +1146,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                             if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
                             {
                                 save_data();
+                                m_trang_thai_buoc_3_thanh_cong = 1;
                             }
                             break;
                         case DataEntryFormMode.UpdateDataState:
@@ -1257,14 +1260,14 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     if (m_insert_click == 0)
                     {
-                        if (m_sle_chuc_danh_lcd.EditValue == null || m_sle_chuc_danh_lcd.EditValue == "")
+                        if (m_sle_chuc_danh_lcd.EditValue == null || m_sle_chuc_danh_lcd.EditValue.ToString() == "")
                         {
                             CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_MA_LCD);
                             return;
                         }
                         else
                         {
-                            if (m_sle_muc_lcd.EditValue == null || m_sle_muc_lcd.EditValue == "")
+                            if (m_sle_muc_lcd.EditValue == null || m_sle_muc_lcd.EditValue.ToString() == "")
                             {
                                 return;
                             }
@@ -1296,6 +1299,19 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        internal void DisplayForQuyTrinhNhapMoiNhanVien(int id_nhan_vien)
+        {
+            m_sle_chon_nhan_vien.EditValue = id_nhan_vien;
+            this.ShowDialog();
+        }
+
+        internal void DisplayForQuyTrinhNhapMoiNhanVien(int id_nhan_vien, ref int m_trang_thai_buoc_3)
+        {
+            m_sle_chon_nhan_vien.EditValue = id_nhan_vien;
+            m_trang_thai_buoc_3 = m_trang_thai_buoc_3_thanh_cong;
+            this.ShowDialog();
         }
     }
 }

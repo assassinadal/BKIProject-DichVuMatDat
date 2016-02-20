@@ -65,6 +65,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         int m_trang_thai_buoc_1 = -1;
         // m_trang_thai_buoc_1 sau bước 1  sẽ trả về id_nhan_vien
         int m_trang_thai_buoc_2 = -1;
+        int m_trang_thai_buoc_3_thanh_cong = -1;
         
         #endregion
 
@@ -83,6 +84,18 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void m_cmd_exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void m_cmd_lap_hop_dong_Click(object sender, EventArgs e)
+        {
+            f320_lap_hop_dong v_f = new f320_lap_hop_dong();
+            v_f.DisplayForQuyTrinhNhapMoiNhanVien(m_trang_thai_buoc_1, ref m_trang_thai_buoc_3_thanh_cong);
+            //m_tran_thai_buoc_1 la id_nhan_vien
+            if (m_trang_thai_buoc_3_thanh_cong > 0)
+            {
+                MessageBox.Show("Nhập hợp đồng thành công!");
+                v_f.Close();
+            }
         }
     }
 }

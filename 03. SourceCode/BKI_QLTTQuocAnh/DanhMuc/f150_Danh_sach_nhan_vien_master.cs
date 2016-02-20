@@ -131,6 +131,10 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             f150_danh_muc_nhan_su_v2 v_f = new f150_danh_muc_nhan_su_v2();
             v_f.DisplayForInsert(ref m_trang_thai_buoc_1_sau_hien_thi);
+            if (m_trang_thai_buoc_1_sau_hien_thi > 0)
+            {
+                this.Close();
+            }
             load_data_to_grid();
         }
 
@@ -147,7 +151,9 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         internal void DisplayForPresent(ref int m_trang_thai_buoc_1)
         {
-
+            m_cmd_sua.Enabled = false;
+            m_cmd_tai_file_excel_mau.Enabled = false;
+            m_cmd_chon_file.Enabled = false;
             this.ShowDialog();
             m_trang_thai_buoc_1 = m_trang_thai_buoc_1_sau_hien_thi;
         }

@@ -255,5 +255,10 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         #endregion
 
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

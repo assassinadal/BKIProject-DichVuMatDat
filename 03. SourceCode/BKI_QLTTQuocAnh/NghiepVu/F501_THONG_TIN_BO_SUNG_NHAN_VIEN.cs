@@ -16,7 +16,12 @@ namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class F501_THONG_TIN_BO_SUNG_NHAN_VIEN : Form
     {
-        int m_dc_id_nhan_vien=0;
+        #region Members
+        int m_dc_id_nhan_vien = 0;
+        double m_so_tien = 0;
+        int m_trang_thai_buoc_2_cua_form_500=0;
+        #endregion
+        
          
         public F501_THONG_TIN_BO_SUNG_NHAN_VIEN()
         {
@@ -72,6 +77,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 luu_du_lieu();
                 MessageBox.Show("Lưu dữ liệu thành công!");
+                m_trang_thai_buoc_2_cua_form_500 = 1;
+                this.Close();
             }
             else
             {
@@ -114,7 +121,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 US_GD_KHONG_DONG_BAO_HIEM v_us = new US_GD_KHONG_DONG_BAO_HIEM();
                 v_us.dcID_NHAN_VIEN = v_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(m_dc_id_nhan_vien.ToString());
                 v_us.dcTHANG = CIPConvert.ToDecimal(m_txt_thang.Text);
-                v_us.dcNAM = CIPConvert.ToDecimal(m_txt_thang.Text);
+                v_us.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text);
                 v_us.strLY_DO = m_txt_ly_do.Text;
                 v_us.Insert();
             }
@@ -133,7 +140,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau_luong_cung.Value;
                 v_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_luong_cung.Value;
                 v_us.dcID_NHAN_VIEN = v_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(m_dc_id_nhan_vien.ToString());
-                v_us.dcSO_TIEN = CIPConvert.ToDecimal(m_txt_so_tien.Text);
+                v_us.dcSO_TIEN = CIPConvert.ToDecimal(m_so_tien);
                 v_us.strDA_XOA = "N";
                 v_us.strGHI_CHU = m_txt_ghi_chu.Text;
                 v_us.Insert();
@@ -264,6 +271,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 e.Handled = true;
             }
+           
         }
 
         private void m_txt_so_luong_phu_thuoc_KeyPress(object sender, KeyPressEventArgs e)
@@ -290,8 +298,31 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-       
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-    
+        private void m_txt_so_tien_Leave(object sender, EventArgs e)
+        {
+            Double value;
+            if (Double.TryParse(m_txt_so_tien.Text, out value))
+            {
+                m_so_tien = value;
+                m_txt_so_tien.Text = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C2}", value);
+            }
+            else
+                m_txt_so_tien.Text = String.Empty;
+        }
+
+
+
+        internal void ShowForPresent(int id_nhan_vien, ref int m_trang_thai_buoc_2)
+        {
+            m_sle_ten_nv.EditValue = id_nhan_vien;
+            m_dc_id_nhan_vien = id_nhan_vien;
+            this.ShowDialog();
+            m_trang_thai_buoc_2 = m_trang_thai_buoc_2_cua_form_500;
+        }
     }
 }

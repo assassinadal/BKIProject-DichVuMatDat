@@ -286,6 +286,7 @@
             this.m_txt_so_tien.StyleController = this.layoutControl1;
             this.m_txt_so_tien.TabIndex = 13;
             this.m_txt_so_tien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_so_tien_KeyPress);
+            this.m_txt_so_tien.Leave += new System.EventHandler(this.m_txt_so_tien_Leave);
             // 
             // m_dat_ngay_ket_thuc
             // 
@@ -700,6 +701,7 @@
             this.m_cmd_exit.Size = new System.Drawing.Size(116, 41);
             this.m_cmd_exit.TabIndex = 23;
             this.m_cmd_exit.Text = "&Thoát";
+            this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
             // 
             // F501_THONG_TIN_BO_SUNG_NHAN_VIEN
             // 

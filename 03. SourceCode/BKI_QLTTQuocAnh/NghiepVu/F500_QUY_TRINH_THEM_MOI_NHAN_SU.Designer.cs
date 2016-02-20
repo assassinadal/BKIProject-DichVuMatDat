@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F500_QUY_TRINH_THEM_MOI_NHAN_SU));
             this.m_cmd_nhap_thong_tin_nhan_vien = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_lap_hop_dong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_nhap_loai_lao_dong = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_nhap_quyet_dinh = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_exit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_cmd_nhap_thong_tin_nhan_vien
@@ -49,6 +52,7 @@
             // 
             // m_cmd_lap_hop_dong
             // 
+            this.m_cmd_lap_hop_dong.Enabled = false;
             this.m_cmd_lap_hop_dong.Location = new System.Drawing.Point(22, 208);
             this.m_cmd_lap_hop_dong.Name = "m_cmd_lap_hop_dong";
             this.m_cmd_lap_hop_dong.Size = new System.Drawing.Size(424, 23);
@@ -61,16 +65,8 @@
             this.m_cmd_nhap_loai_lao_dong.Name = "m_cmd_nhap_loai_lao_dong";
             this.m_cmd_nhap_loai_lao_dong.Size = new System.Drawing.Size(424, 23);
             this.m_cmd_nhap_loai_lao_dong.TabIndex = 0;
-            this.m_cmd_nhap_loai_lao_dong.Text = "Bước 2: Nhập loại lao động, số lượng phụ thuộc, không đóng bảo hiểm";
+            this.m_cmd_nhap_loai_lao_dong.Text = "Bước 2: Nhập thông tin bổ sung";
             this.m_cmd_nhap_loai_lao_dong.Click += new System.EventHandler(this.m_cmd_nhap_loai_lao_dong_Click);
-            // 
-            // m_cmd_nhap_quyet_dinh
-            // 
-            this.m_cmd_nhap_quyet_dinh.Location = new System.Drawing.Point(22, 290);
-            this.m_cmd_nhap_quyet_dinh.Name = "m_cmd_nhap_quyet_dinh";
-            this.m_cmd_nhap_quyet_dinh.Size = new System.Drawing.Size(424, 23);
-            this.m_cmd_nhap_quyet_dinh.TabIndex = 0;
-            this.m_cmd_nhap_quyet_dinh.Text = "Bước 4: Nhập quyết định, công tác";
             // 
             // panelControl1
             // 
@@ -93,14 +89,34 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "THỰC HIỆN THEO CÁC BƯỚC DƯỚI ĐÂY ĐỂ THÊM MỚI 1 NHÂN SỰ\r\n";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.m_cmd_exit);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 340);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(707, 42);
+            this.panel1.TabIndex = 4;
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_exit.Image")));
+            this.m_cmd_exit.Location = new System.Drawing.Point(591, 0);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(116, 42);
+            this.m_cmd_exit.TabIndex = 23;
+            this.m_cmd_exit.Text = "&Thoát";
+            this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
+            // 
             // F500_QUY_TRINH_THEM_MOI_NHAN_SU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(707, 382);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.m_cmd_nhap_loai_lao_dong);
-            this.Controls.Add(this.m_cmd_nhap_quyet_dinh);
             this.Controls.Add(this.m_cmd_lap_hop_dong);
             this.Controls.Add(this.m_cmd_nhap_thong_tin_nhan_vien);
             this.Name = "F500_QUY_TRINH_THEM_MOI_NHAN_SU";
@@ -109,6 +125,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -118,8 +135,9 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_nhap_thong_tin_nhan_vien;
         private DevExpress.XtraEditors.SimpleButton m_cmd_lap_hop_dong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_nhap_loai_lao_dong;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_nhap_quyet_dinh;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_exit;
     }
 }

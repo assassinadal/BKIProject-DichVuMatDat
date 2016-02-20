@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f320_lap_hop_dong_V2));
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_xem_thong_tin_tat_ca = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
@@ -76,7 +77,6 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_cmd_xem_thong_tin_tat_ca = new DevExpress.XtraEditors.SimpleButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -121,6 +121,16 @@
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(960, 43);
             this.m_pnl_out_place_dm.TabIndex = 1;
             // 
+            // m_cmd_xem_thong_tin_tat_ca
+            // 
+            this.m_cmd_xem_thong_tin_tat_ca.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xem_thong_tin_tat_ca.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xem_thong_tin_tat_ca.Image")));
+            this.m_cmd_xem_thong_tin_tat_ca.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xem_thong_tin_tat_ca.Name = "m_cmd_xem_thong_tin_tat_ca";
+            this.m_cmd_xem_thong_tin_tat_ca.Size = new System.Drawing.Size(294, 35);
+            this.m_cmd_xem_thong_tin_tat_ca.TabIndex = 7;
+            this.m_cmd_xem_thong_tin_tat_ca.Text = "&Xem thông tin chi tiết tất cả các hợp đồng";
+            // 
             // m_cmd_insert
             // 
             this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
@@ -131,6 +141,7 @@
             this.m_cmd_insert.TabIndex = 6;
             this.m_cmd_insert.Text = "&Thêm";
             this.m_cmd_insert.Visible = false;
+            this.m_cmd_insert.Click += new System.EventHandler(this.m_cmd_insert_Click);
             // 
             // m_cmd_update
             // 
@@ -643,16 +654,6 @@
             this.layoutControlItem8.Text = "layoutControlItem8";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
-            // 
-            // m_cmd_xem_thong_tin_tat_ca
-            // 
-            this.m_cmd_xem_thong_tin_tat_ca.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xem_thong_tin_tat_ca.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xem_thong_tin_tat_ca.Image")));
-            this.m_cmd_xem_thong_tin_tat_ca.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_xem_thong_tin_tat_ca.Name = "m_cmd_xem_thong_tin_tat_ca";
-            this.m_cmd_xem_thong_tin_tat_ca.Size = new System.Drawing.Size(294, 35);
-            this.m_cmd_xem_thong_tin_tat_ca.TabIndex = 7;
-            this.m_cmd_xem_thong_tin_tat_ca.Text = "&Xem thông tin chi tiết tất cả các hợp đồng";
             // 
             // f320_lap_hop_dong_V2
             // 

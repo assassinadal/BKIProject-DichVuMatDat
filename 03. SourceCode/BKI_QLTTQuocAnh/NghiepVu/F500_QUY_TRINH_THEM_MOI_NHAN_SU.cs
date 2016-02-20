@@ -52,6 +52,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             if (m_trang_thai_buoc_1 > 0)
             {
                 m_cmd_nhap_loai_lao_dong.Enabled = true;
+                m_cmd_nhap_thong_tin_nhan_vien.Enabled = false;
             }
 
         }
@@ -62,13 +63,26 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Members
 
         int m_trang_thai_buoc_1 = -1;
+        // m_trang_thai_buoc_1 sau bước 1  sẽ trả về id_nhan_vien
+        int m_trang_thai_buoc_2 = -1;
         
         #endregion
 
         private void m_cmd_nhap_loai_lao_dong_Click(object sender, EventArgs e)
         {
             F501_THONG_TIN_BO_SUNG_NHAN_VIEN v_f = new F501_THONG_TIN_BO_SUNG_NHAN_VIEN();
-            v_f.ShowForPresent(m_trang_thai_buoc_1);
+            v_f.ShowForPresent(m_trang_thai_buoc_1, ref m_trang_thai_buoc_2);
+            if (m_trang_thai_buoc_2 > 0)
+            {
+                m_cmd_lap_hop_dong.Enabled = true;
+                m_cmd_nhap_loai_lao_dong.Enabled = false;
+            }
+           
+        }
+
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

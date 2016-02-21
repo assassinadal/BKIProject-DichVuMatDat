@@ -172,4 +172,8 @@
     <Message>Bạn chưa nhập tên cho nhân viên rồi!</Message>
     <ID>232</ID>
   </Message>
+<Message>
+    <Message>Mã nhân viên đã bị trùng, vui lòng nhập lại!</Message>
+    <ID>233</ID>
+  </Message>
 </DatasetMsg>

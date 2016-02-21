@@ -189,10 +189,11 @@ namespace BKI_DichVuMatDat.US
         public const int ERROR_CHUA_NHAP_GIA_TRI_BU_TRU = 227;
         public const int ERROR_CHUA_NHAP_GIA_TRI_CHAN_DUOI_NHO_HON_CHAN_TREN = 228;
 
-        //DM_NHAN_VI
+        //DM_NHAN_VIEN
         public const int ERROR_CHUA_NHAP_MA_NHAN_VIEN = 230;
         public const int ERROR_CHUA_NHAP_HO_DEM_NHAN_VIEN = 231;
         public const int ERROR_CHUA_NHAP_TEN_NHAN_VIEN = 232;
+        public const int ERROR_TRUNG_MA_HOP_DONG = 233;
         #endregion
 
         #region Báo cáo

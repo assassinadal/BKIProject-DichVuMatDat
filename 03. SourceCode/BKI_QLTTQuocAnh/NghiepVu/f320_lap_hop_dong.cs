@@ -915,7 +915,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                         //insert gd_trang_thai_ld
                         decimal v_id_gd_trang_thai_lao_dong_da_co = 0;
-                        v_id_gd_trang_thai_lao_dong_da_co = find_id_trang_thai_lao_dong_da_co((decimal)m_sle_chon_nhan_vien.EditValue);
+                        v_id_gd_trang_thai_lao_dong_da_co = find_id_trang_thai_lao_dong_da_co((decimal)m_sle_chon_nhan_vien.EditValue); //sai o day
                         if (v_id_gd_trang_thai_lao_dong_da_co == -1)
                         {
                             form_2_us_gd_trang_thai_lao_dong(v_us_gd_trang_thai_lao_dong);
@@ -1310,8 +1310,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         internal void DisplayForQuyTrinhNhapMoiNhanVien(int id_nhan_vien, ref int m_trang_thai_buoc_3)
         {
             m_sle_chon_nhan_vien.EditValue = id_nhan_vien;
-            m_trang_thai_buoc_3 = m_trang_thai_buoc_3_thanh_cong;
             this.ShowDialog();
+            m_trang_thai_buoc_3 = m_trang_thai_buoc_3_thanh_cong;
         }
     }
 }

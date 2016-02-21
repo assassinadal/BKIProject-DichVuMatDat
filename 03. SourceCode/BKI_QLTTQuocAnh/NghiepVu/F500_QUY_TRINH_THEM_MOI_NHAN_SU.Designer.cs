@@ -43,30 +43,39 @@
             // 
             // m_cmd_nhap_thong_tin_nhan_vien
             // 
+            this.m_cmd_nhap_thong_tin_nhan_vien.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_nhap_thong_tin_nhan_vien.Appearance.Options.UseFont = true;
+            this.m_cmd_nhap_thong_tin_nhan_vien.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.m_cmd_nhap_thong_tin_nhan_vien.Location = new System.Drawing.Point(22, 74);
             this.m_cmd_nhap_thong_tin_nhan_vien.Name = "m_cmd_nhap_thong_tin_nhan_vien";
-            this.m_cmd_nhap_thong_tin_nhan_vien.Size = new System.Drawing.Size(424, 23);
+            this.m_cmd_nhap_thong_tin_nhan_vien.Size = new System.Drawing.Size(424, 39);
             this.m_cmd_nhap_thong_tin_nhan_vien.TabIndex = 0;
             this.m_cmd_nhap_thong_tin_nhan_vien.Text = "Bước 1: Nhập thông tin nhân viên";
             this.m_cmd_nhap_thong_tin_nhan_vien.Click += new System.EventHandler(this.m_cmd_nhap_thong_tin_nhan_vien_Click);
             // 
             // m_cmd_lap_hop_dong
             // 
+            this.m_cmd_lap_hop_dong.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_lap_hop_dong.Appearance.Options.UseFont = true;
+            this.m_cmd_lap_hop_dong.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.m_cmd_lap_hop_dong.Enabled = false;
-            this.m_cmd_lap_hop_dong.Location = new System.Drawing.Point(22, 208);
+            this.m_cmd_lap_hop_dong.Location = new System.Drawing.Point(22, 145);
             this.m_cmd_lap_hop_dong.Name = "m_cmd_lap_hop_dong";
-            this.m_cmd_lap_hop_dong.Size = new System.Drawing.Size(424, 23);
+            this.m_cmd_lap_hop_dong.Size = new System.Drawing.Size(424, 39);
             this.m_cmd_lap_hop_dong.TabIndex = 0;
-            this.m_cmd_lap_hop_dong.Text = "Bước 3: Lập hợp đồng";
+            this.m_cmd_lap_hop_dong.Text = "Bước 2: Lập hợp đồng";
             this.m_cmd_lap_hop_dong.Click += new System.EventHandler(this.m_cmd_lap_hop_dong_Click);
             // 
             // m_cmd_nhap_loai_lao_dong
             // 
-            this.m_cmd_nhap_loai_lao_dong.Location = new System.Drawing.Point(22, 138);
+            this.m_cmd_nhap_loai_lao_dong.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_nhap_loai_lao_dong.Appearance.Options.UseFont = true;
+            this.m_cmd_nhap_loai_lao_dong.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.m_cmd_nhap_loai_lao_dong.Location = new System.Drawing.Point(22, 225);
             this.m_cmd_nhap_loai_lao_dong.Name = "m_cmd_nhap_loai_lao_dong";
-            this.m_cmd_nhap_loai_lao_dong.Size = new System.Drawing.Size(424, 23);
+            this.m_cmd_nhap_loai_lao_dong.Size = new System.Drawing.Size(424, 42);
             this.m_cmd_nhap_loai_lao_dong.TabIndex = 0;
-            this.m_cmd_nhap_loai_lao_dong.Text = "Bước 2: Nhập thông tin bổ sung";
+            this.m_cmd_nhap_loai_lao_dong.Text = "Bước 3: Nhập thông tin bổ sung";
             this.m_cmd_nhap_loai_lao_dong.Click += new System.EventHandler(this.m_cmd_nhap_loai_lao_dong_Click);
             // 
             // panelControl1

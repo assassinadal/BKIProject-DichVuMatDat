@@ -51,7 +51,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_f.DisplayForPresent(ref m_trang_thai_buoc_1);
             if (m_trang_thai_buoc_1 > 0)
             {
-                m_cmd_nhap_loai_lao_dong.Enabled = true;
+                m_cmd_lap_hop_dong.Enabled = true;
                 m_cmd_nhap_thong_tin_nhan_vien.Enabled = false;
             }
 
@@ -73,11 +73,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             F501_THONG_TIN_BO_SUNG_NHAN_VIEN v_f = new F501_THONG_TIN_BO_SUNG_NHAN_VIEN();
             v_f.ShowForPresent(m_trang_thai_buoc_1, ref m_trang_thai_buoc_2);
-            if (m_trang_thai_buoc_2 > 0)
-            {
-                m_cmd_lap_hop_dong.Enabled = true;
-                m_cmd_nhap_loai_lao_dong.Enabled = false;
-            }
+            
            
         }
 
@@ -95,7 +91,10 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 MessageBox.Show("Nhập hợp đồng thành công!");
                 v_f.Close();
+                m_cmd_lap_hop_dong.Enabled = false;
+                m_cmd_nhap_loai_lao_dong.Enabled = true;
             }
+           
         }
     }
 }

@@ -91,10 +91,14 @@ namespace BKI_DichVuMatDat.US
         public const int LOAI_QUYET_DINH = 12;
         public const int LOAI_CACH_TINH_THUE = 13;
         public const int LOAI_THU_NHAP_KHAC = 14;
-
         public const decimal TRANG_THAI_LAO_DONG = 15;
         public const decimal LOAI_QUY_TIEN = 16;
+        public const decimal LOAI_TRANG_THAI_LD = 17;
+        public const decimal NHAN_SU_KHAC = 18;
+        public const decimal KHOAN_TIEN_KHAC = 19;
+        public const decimal TRINH_DO_CHUYEN_MON = 20;
     }
+
     public static class CONST_ID_LOAI_CONG_TAC
     {
         public const decimal CHINH_THUC = 157;
@@ -234,7 +238,7 @@ namespace BKI_DichVuMatDat.US
         public const int ERROR_CHUA_CHON_LOAI_THU_NHAP = 306;
         public const int ERROR_CHUA_NHAP_LY_DO = 307;
         public const int ERROR_CHUA_CHON_NHAN_VIEN = 308;
-        
+
         //Nhân viên loại lao động
         public const int ERROR_CHUA_CHON_LOAI_LAO_DONG = 309;
         public const int ERROR_CHUA_CHON_NGAY_BAT_DAU = 310;
@@ -257,7 +261,7 @@ namespace BKI_DichVuMatDat.US
         public const int QUESTION_XAC_NHAN_HUY_KIEM_NHIEM_CUA_NHAN_VIEN = 322;
 
         //Lập hợp đồng
-        public const int ERROR_CHUA_CHON_LOAI_HOP_DONG= 324;
+        public const int ERROR_CHUA_CHON_LOAI_HOP_DONG = 324;
         public const int ERROR_CHUA_NHAP_MA_HOP_DONG = 325;
         public const int ERROR_CHUA_CHON_MA_LCD = 326;
         public const int ERROR_CHUA_CHON_MA_LNS = 327;
@@ -304,7 +308,7 @@ namespace BKI_DichVuMatDat.US
 
     public static class CONST_ID_LOAI_TRANG_THAI_LAO_DONG
     {
-        
+
         public const int DANG_LAM_VIEC = 742;
         public const int NGHI_TAM_THOI = 743;
         public const int NGHI_VIEC = 744;

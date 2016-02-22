@@ -350,7 +350,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             else
             {
-                //  m_txt_ma_hd.BackColor = Color.White;
+                m_txt_ma_hd.BackColor = Color.White;
                 // m_lbl_kiem_tra_ma_hd.Visible = false;
                 return false;
             }
@@ -740,7 +740,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void form_2_us_gd_trang_thai_lao_dong(US_GD_TRANG_THAI_LAO_DONG ip_us)
         {
             ip_us.dcID_NHAN_VIEN = decimal.Parse(m_sle_chon_nhan_vien.EditValue.ToString());
-            ip_us.dcID_TRANG_THAI_LAO_DONG = 1;
+            ip_us.dcID_TRANG_THAI_LAO_DONG = CONST_ID_TRANG_THAI_LAO_DONG.DANG_LAM_VIEC;
             ip_us.datNGAY_AP_DUNG = m_dat_ngay_bat_dau.Value.Date;
             ip_us.datNGAY_LAP = DateTime.Now.Date;
             ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
@@ -909,6 +909,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         decimal v_id_gd_trang_thai_lao_dong_da_co = 0;
                         
                         v_id_gd_trang_thai_lao_dong_da_co = find_id_trang_thai_lao_dong_da_co(decimal.Parse(m_sle_chon_nhan_vien.EditValue.ToString())); //sai o day
+                        
                         if (v_id_gd_trang_thai_lao_dong_da_co == -1)
                         {
                             form_2_us_gd_trang_thai_lao_dong(v_us_gd_trang_thai_lao_dong);

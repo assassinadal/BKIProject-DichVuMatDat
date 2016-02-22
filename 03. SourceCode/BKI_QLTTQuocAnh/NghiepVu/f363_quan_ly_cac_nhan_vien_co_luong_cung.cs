@@ -360,7 +360,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_luu_tien_luong.Click += m_cmd_luu_tien_luong_Click;
             m_cmd_insert.Click += m_cmd_insert_Click;
             m_txt_so_tien.Leave += m_txt_so_tien_Leave;
-            m_grv_luong_cung_cua_nhan_vien.DoubleClick += m_grv_luong_cung_cua_nhan_vien_DoubleClick;
+            //m_grv_luong_cung_cua_nhan_vien.DoubleClick += m_grv_luong_cung_cua_nhan_vien_DoubleClick;
         }
 
         void f363_quan_ly_cac_nhan_vien_co_luong_cung_Load(object sender, EventArgs e)

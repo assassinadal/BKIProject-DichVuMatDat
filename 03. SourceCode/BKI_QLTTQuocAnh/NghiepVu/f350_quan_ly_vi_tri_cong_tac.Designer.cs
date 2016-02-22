@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f350_quan_ly_vi_tri_cong_tac));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -78,7 +79,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
-            this.ImageList = new System.Windows.Forms.ImageList();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc_v_gd_cong_tac = new DevExpress.XtraGrid.GridControl();
             this.m_grv_v_gd_cong_tac = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -214,7 +215,7 @@
             this.m_sle_chon_loai_cong_tac.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_chon_loai_cong_tac.Properties.DisplayMember = "TEN";
-            this.m_sle_chon_loai_cong_tac.Properties.NullText = "";
+            this.m_sle_chon_loai_cong_tac.Properties.NullText = "--Chọn loại công tác--";
             this.m_sle_chon_loai_cong_tac.Properties.ValueMember = "ID";
             this.m_sle_chon_loai_cong_tac.Properties.View = this.gridView4;
             this.m_sle_chon_loai_cong_tac.Size = new System.Drawing.Size(208, 20);
@@ -287,7 +288,7 @@
             this.m_sle_chon_don_vi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_chon_don_vi.Properties.DisplayMember = "TEN_DON_VI";
-            this.m_sle_chon_don_vi.Properties.NullText = "";
+            this.m_sle_chon_don_vi.Properties.NullText = "--Chọn đơn vị--";
             this.m_sle_chon_don_vi.Properties.ValueMember = "ID";
             this.m_sle_chon_don_vi.Properties.View = this.gridView2;
             this.m_sle_chon_don_vi.Size = new System.Drawing.Size(208, 20);
@@ -343,7 +344,7 @@
             this.m_sle_chon_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_chon_nhan_vien.Properties.DisplayMember = "HO_TEN";
-            this.m_sle_chon_nhan_vien.Properties.NullText = "";
+            this.m_sle_chon_nhan_vien.Properties.NullText = "--Chọn nhân viên--";
             this.m_sle_chon_nhan_vien.Properties.ValueMember = "ID";
             this.m_sle_chon_nhan_vien.Properties.View = this.searchLookUpEdit1View;
             this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(208, 20);
@@ -408,7 +409,7 @@
             this.m_sle_chon_vi_tri.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_chon_vi_tri.Properties.DisplayMember = "TEN";
-            this.m_sle_chon_vi_tri.Properties.NullText = "";
+            this.m_sle_chon_vi_tri.Properties.NullText = "--Chọn vị trí--";
             this.m_sle_chon_vi_tri.Properties.ValueMember = "ID";
             this.m_sle_chon_vi_tri.Properties.View = this.gridView3;
             this.m_sle_chon_vi_tri.Size = new System.Drawing.Size(208, 20);
@@ -482,7 +483,7 @@
             this.m_sle_chon_quyet_dinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_chon_quyet_dinh.Properties.DisplayMember = "MA_TU_DIEN";
-            this.m_sle_chon_quyet_dinh.Properties.NullText = "";
+            this.m_sle_chon_quyet_dinh.Properties.NullText = "--Chọn quyết định--";
             this.m_sle_chon_quyet_dinh.Properties.ValueMember = "ID";
             this.m_sle_chon_quyet_dinh.Properties.View = this.gridView1;
             this.m_sle_chon_quyet_dinh.Size = new System.Drawing.Size(208, 20);

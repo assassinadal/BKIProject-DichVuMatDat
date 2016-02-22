@@ -95,7 +95,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_2_sle_chon_quyet_dinh()
         {
             m_sle_chon_quyet_dinh.Properties.DataSource = load_data_2_ds_v_gd_quyet_dinh().Tables[0];
-            m_sle_chon_quyet_dinh.Properties.DisplayMember = V_GD_QUYET_DINH.NOI_DUNG;
+            m_sle_chon_quyet_dinh.Properties.DisplayMember = V_GD_QUYET_DINH.TEN;
             m_sle_chon_quyet_dinh.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_quyet_dinh.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }

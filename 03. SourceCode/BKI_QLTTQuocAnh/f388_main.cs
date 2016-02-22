@@ -1345,6 +1345,21 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void m_cmd_tong_hop_cham_cong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f402_tong_hop_cham_cong v_f = new f402_tong_hop_cham_cong();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
 
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)

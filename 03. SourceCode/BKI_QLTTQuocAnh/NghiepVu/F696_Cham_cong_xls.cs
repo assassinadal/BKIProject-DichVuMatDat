@@ -198,7 +198,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         private void m_cmd_chon_du_lieu_Click(object sender, EventArgs e)
-        {
+        {           
             try
             {
                 load_data_2_grid(WinFormControls.openFileDialog());
@@ -211,15 +211,22 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void m_cmd_mo_file_mau_Click(object sender, EventArgs e)
         {
-            try
+            if (m_txt_thang.Text == "" || m_txt_nam.Text == "")
             {
-                //WinFormControls.openTemplate("ChamCong.xlsx");
-                tao_file_mau("ChamCong.xlsx");
+                MessageBox.Show("Vui lòng nhập tháng và năm chấm công!");
             }
-            catch (Exception v_e)
+            else
             {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
+                try
+                {
+                    //WinFormControls.openTemplate("ChamCong.xlsx");
+                    tao_file_mau("ChamCong.xlsx");
+                }
+                catch (Exception v_e)
+                {
+                    CSystemLog_301.ExceptionHandle(v_e);
+                }
+            }           
         }
 
         private void tao_file_mau(string ip_str_file_name)
@@ -423,6 +430,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_cmd_nhap_cham_cong.Text = "Lưu chấm công";
             this.m_cmd_nhap_cham_cong.Enabled = true;
 
+        }
+
+        private void F696_Cham_cong_xls_Load(object sender, EventArgs e)
+        {
+            m_txt_thang.Text = DateTime.Now.Month.ToString();
+            m_txt_nam.Text = DateTime.Now.Year.ToString();
+            check_db_da_cham_cong();
+            m_lbl_thong_bao.Text = "Đã chấm công cho " + m_so_nv_da_cham_cong +" nhân viên";
         }
     }
 }

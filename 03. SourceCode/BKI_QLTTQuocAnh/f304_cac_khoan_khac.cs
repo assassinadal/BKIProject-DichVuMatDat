@@ -95,7 +95,7 @@ namespace BKI_DichVuMatDat
             try
             {
 
-                string fileName = "CAC_KHOAN_TIEN_KHAC.xlsx";
+                string fileName = "CacKhoanTienKhac.xlsx";
                 string sourcePath = (Directory.GetCurrentDirectory() + "\\Template");
                 string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 string sourceFile = System.IO.Path.Combine(sourcePath, fileName);
@@ -105,7 +105,7 @@ namespace BKI_DichVuMatDat
                     System.IO.Directory.CreateDirectory(targetPath);
                 }
                 System.IO.File.Copy(sourceFile, destFile, true);
-                string newpath = targetPath + "\\CAC_KHOAN_TIEN_KHAC.xlsx";
+                string newpath = targetPath + "\\CacKhoanTienKhac.xlsx";
                 var excel = new Microsoft.Office.Interop.Excel.Application();
                 excel.Visible = true;
                 Microsoft.Office.Interop.Excel.Workbooks books = excel.Workbooks;

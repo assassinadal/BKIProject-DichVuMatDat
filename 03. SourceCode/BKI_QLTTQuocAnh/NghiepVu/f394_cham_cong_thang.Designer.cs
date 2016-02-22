@@ -33,10 +33,13 @@
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition3 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition4 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition5 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
+            this.pivotGridField3 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_cmd_loc = new DevExpress.XtraEditors.SimpleButton();
             this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -46,10 +49,7 @@
             this.m_pv = new DevExpress.XtraPivotGrid.PivotGridControl();
             this.pivotGridField1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField2 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.pivotGridField3 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
@@ -60,6 +60,20 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_pv)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pivotGridField3
+            // 
+            this.pivotGridField3.Appearance.Cell.Options.UseTextOptions = true;
+            this.pivotGridField3.Appearance.Cell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.pivotGridField3.Appearance.Value.Options.UseTextOptions = true;
+            this.pivotGridField3.Appearance.Value.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.pivotGridField3.Appearance.Value.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.pivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.pivotGridField3.AreaIndex = 0;
+            this.pivotGridField3.Caption = "Mã ngày công";
+            this.pivotGridField3.FieldName = "MA_NGAY_CONG";
+            this.pivotGridField3.Name = "pivotGridField3";
+            this.pivotGridField3.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Max;
             // 
             // panelControl1
             // 
@@ -107,6 +121,22 @@
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "MÃ_NV";
+            this.gridColumn1.FieldName = "MA_NV";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "HỌ TÊN";
+            this.gridColumn2.FieldName = "HO_TEN";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
             // 
             // m_cmd_loc
             // 
@@ -234,6 +264,9 @@
             this.pivotGridField1.Caption = "Mã nhân viên";
             this.pivotGridField1.FieldName = "MA_NV";
             this.pivotGridField1.Name = "pivotGridField1";
+            this.pivotGridField1.Options.AllowFilter = DevExpress.Utils.DefaultBoolean.True;
+            this.pivotGridField1.Options.AllowFilterBySummary = DevExpress.Utils.DefaultBoolean.True;
+            this.pivotGridField1.Options.GroupFilterMode = DevExpress.XtraPivotGrid.PivotGroupFilterMode.Tree;
             this.pivotGridField1.Visible = false;
             // 
             // pivotGridField2
@@ -245,21 +278,6 @@
             this.pivotGridField2.Name = "pivotGridField2";
             this.pivotGridField2.Width = 70;
             // 
-            // pivotGridField3
-            // 
-            this.pivotGridField3.Appearance.Cell.Options.UseTextOptions = true;
-            this.pivotGridField3.Appearance.Cell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.pivotGridField3.Appearance.Value.Options.UseTextOptions = true;
-            this.pivotGridField3.Appearance.Value.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.pivotGridField3.Appearance.Value.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.pivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.pivotGridField3.AreaIndex = 0;
-            this.pivotGridField3.Caption = "Mã ngày công";
-            this.pivotGridField3.FieldName = "MA_NGAY_CONG";
-            this.pivotGridField3.Name = "pivotGridField3";
-            this.pivotGridField3.Options.ShowGrandTotal = false;
-            this.pivotGridField3.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Max;
-            // 
             // pivotGridField4
             // 
             this.pivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
@@ -268,22 +286,6 @@
             this.pivotGridField4.FieldName = "HO_TEN";
             this.pivotGridField4.Name = "pivotGridField4";
             this.pivotGridField4.Width = 200;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "MÃ_NV";
-            this.gridColumn1.FieldName = "MA_NV";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "HỌ TÊN";
-            this.gridColumn2.FieldName = "HO_TEN";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
             // 
             // f394_cham_cong_thang
             // 

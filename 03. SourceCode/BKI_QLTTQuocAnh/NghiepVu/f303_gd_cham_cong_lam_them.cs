@@ -33,8 +33,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             var userClickedOK = openFileDialog1.ShowDialog();
             try
             {
-
-
                 if (userClickedOK == System.Windows.Forms.DialogResult.OK)
                 {
                     m_txt_path = openFileDialog1.FileName;
@@ -133,9 +131,10 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_us_gd_cclt.Insert();
                 v_dr.Delete();
             }
-            catch (Exception)
+            catch (Exception v_e)
             {
-                MessageBox.Show("Đã tồn tại 1 dòng dữ liệu về số ngày làm thêm của nhân viên " + v_dr["MA_NV"].ToString() + " trong tháng "+ m_txt_thang.Text+ ", năm "+ m_txt_nam.Text+ ". Vui lòng kiểm tra lại thông tin!" );
+                CSystemLog_301.ExceptionHandle(v_e);
+                //MessageBox.Show("Đã tồn tại 1 dòng dữ liệu về số ngày làm thêm của nhân viên " + v_dr["MA_NV"].ToString() + " trong tháng "+ m_txt_thang.Text+ ", năm "+ m_txt_nam.Text+ ". Vui lòng kiểm tra lại thông tin!" );
             }
         }
 
@@ -172,7 +171,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
 
-                string fileName = "SO_NGAY_LAM_THEM.xlsx";
+                string fileName = "ChamCongLamThem.xlsx";
                 string sourcePath = (Directory.GetCurrentDirectory() + "\\Template");
                 string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 string sourceFile = System.IO.Path.Combine(sourcePath, fileName);
@@ -182,7 +181,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     System.IO.Directory.CreateDirectory(targetPath);
                 }
                 System.IO.File.Copy(sourceFile, destFile, true);
-                string newpath = targetPath + "\\SO_NGAY_LAM_THEM.xlsx";
+                string newpath = targetPath + "\\ChamCongLamThem.xlsx";
                 var excel = new Microsoft.Office.Interop.Excel.Application();
                 excel.Visible = true;
                 Microsoft.Office.Interop.Excel.Workbooks books = excel.Workbooks;

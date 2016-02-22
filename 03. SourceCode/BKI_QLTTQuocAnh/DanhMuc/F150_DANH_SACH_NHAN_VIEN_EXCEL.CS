@@ -73,19 +73,25 @@ namespace BKI_DichVuMatDat
         private void gan_du_lieu_cho_us_dm_nhan_vien(DataRow dataRow)
         {
             US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
-           
+           if(dataRow["NGAY_CAP"].ToString()!="")
             if((dataRow["NGAY_CAP"].ToString().Substring(0, 10)!=""))
                 v_us.datNGAY_CAP = CIPConvert.ToDatetime(dataRow["NGAY_CAP"].ToString().Substring(0, 10));
+             if (dataRow["NGAY_CAP_THE"].ToString()!="")
             if ((dataRow["NGAY_CAP_THE"].ToString().Substring(0, 10) != ""))
                 v_us.datNGAY_CAP_THE = CIPConvert.ToDatetime(dataRow["NGAY_CAP_THE"].ToString().Substring(0, 10));
+             if (dataRow["NGAY_CHINH_THUC_TIEP_NHAN"].ToString()!="")
             if ((dataRow["NGAY_CHINH_THUC_TIEP_NHAN"].ToString().Substring(0, 10) != ""))
                 v_us.datNGAY_CHINH_THUC_TIEP_NHAN = CIPConvert.ToDatetime(dataRow["NGAY_CHINH_THUC_TIEP_NHAN"].ToString().Substring(0, 10));
+             if (dataRow["NGAY_HET_HAN_THE"].ToString()!="")
             if ((dataRow["NGAY_HET_HAN_THE"].ToString().Substring(0, 10) != ""))
                 v_us.datNGAY_HET_HAN_THE = CIPConvert.ToDatetime(dataRow["NGAY_HET_HAN_THE"].ToString().Substring(0, 10));
+             if (dataRow["NGAY_SINH"].ToString()!="")
             if ((dataRow["NGAY_SINH"].ToString().Substring(0, 10) != ""))
                 v_us.datNGAY_SINH = CIPConvert.ToDatetime(dataRow["NGAY_SINH"].ToString().Substring(0, 10));
+            if (dataRow["NGAY_TIEP_NHAN_VAO_TCT"].ToString()!="")
             if ((dataRow["NGAY_TIEP_NHAN_VAO_TCT"].ToString().Substring(0, 10) != ""))
                 v_us.datNGAY_TIEP_NHAN_VAO_TCT = CIPConvert.ToDatetime(dataRow["NGAY_TIEP_NHAN_VAO_TCT"].ToString().Substring(0, 10));
+             if (dataRow["NGAY_VAO_HANG_KHONG"].ToString()!="")
             if ((dataRow["NGAY_VAO_HANG_KHONG"].ToString().Substring(0, 10) != ""))
                 v_us.datNGAY_VAO_HANG_KHONG = CIPConvert.ToDatetime(dataRow["NGAY_VAO_HANG_KHONG"].ToString().Substring(0, 10));
             v_us.strCHUYEN_MON = dataRow["CHUYEN_MON"].ToString();

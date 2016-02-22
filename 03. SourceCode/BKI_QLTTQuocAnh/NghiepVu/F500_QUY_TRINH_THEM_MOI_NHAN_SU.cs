@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BKI_DichVuMatDat.DanhMuc;
+using BKI_DichVuMatDat.DS;
+using BKI_DichVuMatDat.US;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -66,6 +68,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         // m_trang_thai_buoc_1 sau bước 1  sẽ trả về id_nhan_vien
         int m_trang_thai_buoc_2 = -1;
         int m_trang_thai_buoc_3_thanh_cong = -1;
+        int m_trang_thai_buoc_4 = -1;
         
         #endregion
 
@@ -73,6 +76,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             F501_THONG_TIN_BO_SUNG_NHAN_VIEN v_f = new F501_THONG_TIN_BO_SUNG_NHAN_VIEN();
             v_f.ShowForPresent(m_trang_thai_buoc_1, ref m_trang_thai_buoc_2);
+            CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
             
            
         }
@@ -89,12 +93,25 @@ namespace BKI_DichVuMatDat.NghiepVu
             //m_tran_thai_buoc_1 la id_nhan_vien
             if (m_trang_thai_buoc_3_thanh_cong > 0)
             {
-                MessageBox.Show("Nhập hợp đồng thành công!");
-                v_f.Close();
+                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                 m_cmd_lap_hop_dong.Enabled = false;
-                m_cmd_nhap_loai_lao_dong.Enabled = true;
+                m_cmd_cong_tac.Enabled = true;
             }
            
+        }
+
+        private void m_cmd_cong_tac_Click(object sender, EventArgs e)
+        {
+            f350_quan_ly_vi_tri_cong_tac v_f = new f350_quan_ly_vi_tri_cong_tac();
+            v_f.DisplayForQuyTrinhNhapMoiNhanVien(m_trang_thai_buoc_1, ref m_trang_thai_buoc_4);
+            //m_tran_thai_buoc_1 la id_nhan_vien
+            if (m_trang_thai_buoc_3_thanh_cong > 0)
+            {
+                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                m_cmd_cong_tac.Enabled = false;
+                m_cmd_nhap_loai_lao_dong.Enabled = true;
+               
+            }
         }
     }
 }

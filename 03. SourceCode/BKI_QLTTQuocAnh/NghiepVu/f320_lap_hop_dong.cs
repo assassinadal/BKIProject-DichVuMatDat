@@ -40,8 +40,9 @@ namespace BKI_DichVuMatDat.NghiepVu
         public void DisplayForQuyTrinhNhapMoiNhanVien(int id_nhan_vien, ref int m_trang_thai_buoc_3)
         {
             m_sle_chon_nhan_vien.EditValue = id_nhan_vien;
-            m_trang_thai_buoc_3 = m_trang_thai_buoc_3_thanh_cong;
+            m_trang_thai_them = m_trang_thai_buoc_3;
             this.ShowDialog();
+            m_trang_thai_buoc_3 = m_trang_thai_buoc_3_thanh_cong;
         }
         #endregion
 
@@ -56,6 +57,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         decimal m_id_hs_lns = 0;
         decimal m_id_lcd = 0;
         int m_trang_thai_buoc_3_thanh_cong = 0;
+        int m_trang_thai_them = 0;
         #endregion
 
         #region Data structure
@@ -1147,6 +1149,11 @@ namespace BKI_DichVuMatDat.NghiepVu
                             {
                                 save_data();
                                 m_trang_thai_buoc_3_thanh_cong = 1;
+                                if (m_trang_thai_them == -1)
+                                {
+                                    this.Close();
+                                }
+                               
                             }
                             break;
                         case DataEntryFormMode.UpdateDataState:

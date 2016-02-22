@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_exit = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,11 +72,12 @@
             this.m_cmd_nhap_loai_lao_dong.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_cmd_nhap_loai_lao_dong.Appearance.Options.UseFont = true;
             this.m_cmd_nhap_loai_lao_dong.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.m_cmd_nhap_loai_lao_dong.Location = new System.Drawing.Point(22, 225);
+            this.m_cmd_nhap_loai_lao_dong.Enabled = false;
+            this.m_cmd_nhap_loai_lao_dong.Location = new System.Drawing.Point(22, 288);
             this.m_cmd_nhap_loai_lao_dong.Name = "m_cmd_nhap_loai_lao_dong";
             this.m_cmd_nhap_loai_lao_dong.Size = new System.Drawing.Size(424, 42);
             this.m_cmd_nhap_loai_lao_dong.TabIndex = 0;
-            this.m_cmd_nhap_loai_lao_dong.Text = "Bước 3: Nhập thông tin bổ sung";
+            this.m_cmd_nhap_loai_lao_dong.Text = "Bước 4: Nhập thông tin bổ sung";
             this.m_cmd_nhap_loai_lao_dong.Click += new System.EventHandler(this.m_cmd_nhap_loai_lao_dong_Click);
             // 
             // panelControl1
@@ -103,7 +105,7 @@
             // 
             this.panel1.Controls.Add(this.m_cmd_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 340);
+            this.panel1.Location = new System.Drawing.Point(0, 385);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(707, 42);
             this.panel1.TabIndex = 4;
@@ -119,13 +121,27 @@
             this.m_cmd_exit.Text = "&Thoát";
             this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
             // 
+            // m_cmd_cong_tac
+            // 
+            this.m_cmd_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_cong_tac.Appearance.Options.UseFont = true;
+            this.m_cmd_cong_tac.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.m_cmd_cong_tac.Enabled = false;
+            this.m_cmd_cong_tac.Location = new System.Drawing.Point(22, 216);
+            this.m_cmd_cong_tac.Name = "m_cmd_cong_tac";
+            this.m_cmd_cong_tac.Size = new System.Drawing.Size(424, 42);
+            this.m_cmd_cong_tac.TabIndex = 0;
+            this.m_cmd_cong_tac.Text = "Bước 3: Nhập thông tin công tác";
+            this.m_cmd_cong_tac.Click += new System.EventHandler(this.m_cmd_cong_tac_Click);
+            // 
             // F500_QUY_TRINH_THEM_MOI_NHAN_SU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 382);
+            this.ClientSize = new System.Drawing.Size(707, 427);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.m_cmd_cong_tac);
             this.Controls.Add(this.m_cmd_nhap_loai_lao_dong);
             this.Controls.Add(this.m_cmd_lap_hop_dong);
             this.Controls.Add(this.m_cmd_nhap_thong_tin_nhan_vien);
@@ -149,5 +165,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_exit;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_cong_tac;
     }
 }

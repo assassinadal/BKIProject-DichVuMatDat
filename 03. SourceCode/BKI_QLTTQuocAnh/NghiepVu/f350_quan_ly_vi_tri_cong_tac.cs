@@ -39,6 +39,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         decimal m_if_insert_click = 1;
         decimal m_id_gd_ct = 0;
         bool m_loai_ctac_cthuc = false;
+        int m_trang_thai_them = 0;
+        int m_trang_thai_buoc_4_thanh_cong=0;
         #endregion
 
         #region Private Methods
@@ -459,6 +461,11 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     load_data_2_m_variable();
                     save_data();
+                    m_trang_thai_buoc_4_thanh_cong = 1;
+                    if (m_trang_thai_them == -1)
+                    {
+                        this.Close();
+                    }
                     load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                 }
             }
@@ -491,6 +498,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        internal void DisplayForQuyTrinhNhapMoiNhanVien(int id_nhan_vien, ref int m_trang_thai_buoc_4)
+        {
+            m_sle_chon_nhan_vien.EditValue = id_nhan_vien;
+            m_trang_thai_them = m_trang_thai_buoc_4;
+            this.ShowDialog();
+            m_trang_thai_buoc_4 = m_trang_thai_buoc_4_thanh_cong;
         }
     }
 }

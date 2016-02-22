@@ -233,11 +233,15 @@
             this.pivotGridField1.Caption = "Nhân viên";
             this.pivotGridField1.FieldName = "HO_TEN";
             this.pivotGridField1.Name = "pivotGridField1";
+            this.pivotGridField1.Options.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.pivotGridField1.Options.ShowGrandTotal = false;
+            this.pivotGridField1.SortMode = DevExpress.XtraPivotGrid.PivotSortMode.None;
             this.pivotGridField1.Width = 150;
             // 
             // pivotGridField2
             // 
+            this.pivotGridField2.Appearance.Cell.Options.UseTextOptions = true;
+            this.pivotGridField2.Appearance.Cell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.pivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
             this.pivotGridField2.AreaIndex = 0;
             this.pivotGridField2.Caption = "Mã ngày công";
@@ -245,6 +249,7 @@
             this.pivotGridField2.Name = "pivotGridField2";
             this.pivotGridField2.Options.ShowGrandTotal = false;
             this.pivotGridField2.SortOrder = DevExpress.XtraPivotGrid.PivotSortOrder.Descending;
+            this.pivotGridField2.Width = 60;
             // 
             // pivotGridField3
             // 
@@ -265,6 +270,7 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "f402_tong_hop_cham_cong";
             this.Text = "F402 - Tổng hợp chấm công";
+            this.Load += new System.EventHandler(this.f394_cham_cong_thang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

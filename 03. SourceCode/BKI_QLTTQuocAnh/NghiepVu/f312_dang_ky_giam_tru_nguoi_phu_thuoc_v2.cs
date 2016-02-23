@@ -76,12 +76,13 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void m_cmd_save_Click(object sender, EventArgs e)
         {
+            m_lst_nv_thay_doi_phu_thuoc.Clear();
             try
             {
                 insert_gd_phu_thuoc_details();
                 for (int i = 0; i < m_lst_nv_thay_doi_phu_thuoc.Count; i++)
                 {
-                    update_gd_phu_thuoc(m_lst_nv_thay_doi_phu_thuoc[i]);
+                    tang_so_luong_phu_thuoc(m_lst_nv_thay_doi_phu_thuoc[i]);
                 }
                 XtraMessageBox.Show("Lưu thành công");
             }
@@ -91,18 +92,18 @@ namespace BKI_DichVuMatDat.NghiepVu
             }       
         }
 
-        private void update_gd_phu_thuoc(decimal ip_id_nv)
+        private void tang_so_luong_phu_thuoc(decimal ip_dc_id_nv)
         {
             try
             {
                 US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
                 DataSet v_ds = new DataSet();
                 v_ds.Tables.Add(new DataTable());
-                v_us.FillDatasetWithQuery(v_ds, "select * from gd_phu_thuoc where id_nhan_vien = " + ip_id_nv);
-                if (v_ds.Tables[0].Rows.Count == 0)
+                v_us.FillDatasetWithQuery(v_ds, "select * from gd_phu_thuoc where da_xoa='N' and id_nhan_vien = " + ip_dc_id_nv);
+                if (v_ds.Tables[0].Rows.Count == 0 )
                 {
                     US_GD_PHU_THUOC v_us_gd_phu_thuoc = new US_GD_PHU_THUOC();
-                    v_us_gd_phu_thuoc.dcID_NHAN_VIEN = ip_id_nv;
+                    v_us_gd_phu_thuoc.dcID_NHAN_VIEN = ip_dc_id_nv;
                     v_us_gd_phu_thuoc.dcSO_LUONG = 1;
                     v_us_gd_phu_thuoc.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                     v_us_gd_phu_thuoc.strDA_XOA = "N";
@@ -190,6 +191,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     var v_dr = m_grv1.GetDataRow(m_grv1.FocusedRowHandle);
                     US_GD_PHU_THUOC_DETAILS v_us = new US_GD_PHU_THUOC_DETAILS(CIPConvert.ToDecimal(v_dr[3].ToString()));
                     v_us.Delete();
+                    giam_so_luong_phu_thuoc(CIPConvert.ToDecimal(v_dr[4].ToString()));
                     XtraMessageBox.Show("Xóa thành công!");
                     load_data_to_grid();
                 }              
@@ -198,6 +200,24 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }           
+        }
+
+        private void giam_so_luong_phu_thuoc(decimal ip_dc_id_nv)
+        {
+            try
+            {
+                US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+                DataSet v_ds = new DataSet();
+                v_ds.Tables.Add(new DataTable());
+                v_us.FillDatasetWithQuery(v_ds, "select * from gd_phu_thuoc where da_xoa='N' and id_nhan_vien = " + ip_dc_id_nv);
+                US_GD_PHU_THUOC v_us_gd_phu_thuoc = new US_GD_PHU_THUOC(CIPConvert.ToDecimal(v_ds.Tables[0].Rows[0][0]));
+                v_us_gd_phu_thuoc.dcSO_LUONG = v_us_gd_phu_thuoc.dcSO_LUONG -1;
+                v_us_gd_phu_thuoc.Update();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
     }
 }

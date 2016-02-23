@@ -146,7 +146,7 @@
             this.Controls.Add(this.m_cmd_lap_hop_dong);
             this.Controls.Add(this.m_cmd_nhap_thong_tin_nhan_vien);
             this.Name = "F500_QUY_TRINH_THEM_MOI_NHAN_SU";
-            this.Text = "F500_QUY_TRINH_THEM_MOI_NHAN_SU";
+            this.Text = "F500 - Quy trình thêm mới một nhân sự";
             this.Load += new System.EventHandler(this.F500_QUY_TRINH_THEM_MOI_NHAN_SU_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

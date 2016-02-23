@@ -549,8 +549,7 @@
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl1);
             this.Name = "F150_DANH_SACH_NHAN_VIEN_EXCEL";
-            this.Text = "F150_DANH_SACH_NHAN_VIEN_EXCEL";
-           
+            this.Text = "F150 - Danh sách nhân viên từ excel";
             ((System.ComponentModel.ISupportInitialize)(this.dVMDDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVMDDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDMNHANVIENBindingSource)).EndInit();

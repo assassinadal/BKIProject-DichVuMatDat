@@ -36,6 +36,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Members
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         decimal m_id_gd_loai_ld = 0;
+        string m_txt_path = "";
         #endregion
 
         #region Private Methods
@@ -140,6 +141,59 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_define_event()
         {
             this.Load += f370_nhan_vien_loai_lao_dong_Load;
+            m_cmd_tai_file_excel_mau.Click += m_cmd_tai_file_excel_mau_Click;
+            m_cmd_chon_file.Click += m_cmd_chon_file_Click;
+        }
+
+        void m_cmd_chon_file_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            // Set filter options and filter index.
+            openFileDialog1.Filter = "xlsx Files|*.xlsx|xls Files|*.xls|All Files (*.*)|*.*";
+            openFileDialog1.Multiselect = false;
+            var userClickedOK = openFileDialog1.ShowDialog();
+            try
+            {
+                if (userClickedOK == System.Windows.Forms.DialogResult.OK)
+                {
+                    m_txt_path = openFileDialog1.FileName;
+                    f372_nhan_vien_loai_lao_dong_excel v_f = new f372_nhan_vien_loai_lao_dong_excel();
+                    v_f.displayToInsertExcel(m_txt_path);
+                    // WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
+                }
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_tai_file_excel_mau_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string fileName = "LOAI_LAO_DONG_CUA_NHAN_VIEN.xlsx";
+                string sourcePath = (System.IO.Directory.GetCurrentDirectory() + "\\Template");
+                string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                string sourceFile = System.IO.Path.Combine(sourcePath, fileName);
+                string destFile = System.IO.Path.Combine(targetPath, fileName);
+                if (!System.IO.Directory.Exists(targetPath))
+                {
+                    System.IO.Directory.CreateDirectory(targetPath);
+                }
+                System.IO.File.Copy(sourceFile, destFile, true);
+                string newpath = targetPath + "\\LOAI_LAO_DONG_CUA_NHAN_VIEN.xlsx";
+                var excel = new Microsoft.Office.Interop.Excel.Application();
+                excel.Visible = true;
+                Microsoft.Office.Interop.Excel.Workbooks books = excel.Workbooks;
+                Microsoft.Office.Interop.Excel.Workbook openexcel = books.Open(newpath);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);   
+            }
         }
 
         private void m_cmd_insert_Click(object sender, EventArgs e)

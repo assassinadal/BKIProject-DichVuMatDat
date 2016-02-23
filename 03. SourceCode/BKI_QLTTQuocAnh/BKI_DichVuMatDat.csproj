@@ -939,6 +939,12 @@
     <Compile Include="NghiepVu\f371_nhan_vien_loai_lao_dong_de.Designer.cs">
       <DependentUpon>f371_nhan_vien_loai_lao_dong_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f372_nhan_vien_loai_lao_dong_excel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f372_nhan_vien_loai_lao_dong_excel.Designer.cs">
+      <DependentUpon>f372_nhan_vien_loai_lao_dong_excel.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f380_thay_doi_he_so_chat_luong_xls.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1446,6 +1452,9 @@
     <EmbeddedResource Include="NghiepVu\f371_nhan_vien_loai_lao_dong_de.resx">
       <DependentUpon>f371_nhan_vien_loai_lao_dong_de.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f372_nhan_vien_loai_lao_dong_excel.resx">
+      <DependentUpon>f372_nhan_vien_loai_lao_dong_excel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f380_thay_doi_he_so_chat_luong_xls.resx">
       <DependentUpon>f380_thay_doi_he_so_chat_luong_xls.cs</DependentUpon>
     </EmbeddedResource>
@@ -1584,6 +1593,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Template\DANH_SACH_NHAN_VIEN.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\LOAI_LAO_DONG_CUA_NHAN_VIEN.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

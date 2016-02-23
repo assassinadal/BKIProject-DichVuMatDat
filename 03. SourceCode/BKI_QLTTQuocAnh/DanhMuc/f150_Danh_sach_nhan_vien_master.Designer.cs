@@ -576,7 +576,7 @@
             this.Controls.Add(this.panelControl3);
             this.Name = "f150_Danh_sach_nhan_vien_master";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "F150_DANH_SÁCH_NHÂN_VIÊN";
+            this.Text = "F150 - Danh sách nhân viên";
             this.Load += new System.EventHandler(this.f150_Danh_sach_nhan_vien_master_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();

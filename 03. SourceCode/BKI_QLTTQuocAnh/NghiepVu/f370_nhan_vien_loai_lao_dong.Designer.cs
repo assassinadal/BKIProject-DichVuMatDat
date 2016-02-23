@@ -33,6 +33,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_tai_file_excel_mau = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
@@ -82,6 +84,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.m_cmd_chon_file);
+            this.panel2.Controls.Add(this.m_cmd_tai_file_excel_mau);
             this.panel2.Controls.Add(this.m_cmd_insert);
             this.panel2.Controls.Add(this.m_cmd_update);
             this.panel2.Controls.Add(this.m_cmd_delete);
@@ -91,6 +95,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(782, 38);
             this.panel2.TabIndex = 1;
+            // 
+            // m_cmd_chon_file
+            // 
+            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chon_file.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_file.Image")));
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(142, 0);
+            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
+            this.m_cmd_chon_file.Size = new System.Drawing.Size(142, 38);
+            this.m_cmd_chon_file.TabIndex = 24;
+            this.m_cmd_chon_file.Text = "Chọn file";
+            // 
+            // m_cmd_tai_file_excel_mau
+            // 
+            this.m_cmd_tai_file_excel_mau.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_tai_file_excel_mau.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tai_file_excel_mau.Image")));
+            this.m_cmd_tai_file_excel_mau.Location = new System.Drawing.Point(0, 0);
+            this.m_cmd_tai_file_excel_mau.Name = "m_cmd_tai_file_excel_mau";
+            this.m_cmd_tai_file_excel_mau.Size = new System.Drawing.Size(142, 38);
+            this.m_cmd_tai_file_excel_mau.TabIndex = 23;
+            this.m_cmd_tai_file_excel_mau.Text = "Tải file excel mẫu";
             // 
             // m_cmd_insert
             // 
@@ -395,5 +419,7 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_update;
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_tai_file_excel_mau;
     }
 }

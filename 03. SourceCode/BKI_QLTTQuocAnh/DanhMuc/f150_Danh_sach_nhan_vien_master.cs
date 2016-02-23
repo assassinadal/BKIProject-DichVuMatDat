@@ -120,6 +120,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                     v_f.displayToInsertExcel(m_txt_path);
                    // WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
                 }
+                load_data_to_grid();
             }
             catch (Exception v_e)
             {

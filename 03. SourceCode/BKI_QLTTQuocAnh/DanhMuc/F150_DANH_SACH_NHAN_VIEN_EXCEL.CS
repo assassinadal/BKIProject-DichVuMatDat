@@ -20,10 +20,7 @@ namespace BKI_DichVuMatDat
             InitializeComponent();
         }
 
-        #region Private Methods
-
-       
-
+        #region Public interface
         internal void displayToInsertExcel(string m_txt_path)
         {
             WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
@@ -35,65 +32,72 @@ namespace BKI_DichVuMatDat
             }
             this.ShowDialog();
         }
-
         #endregion
 
         #region Members
-        
+
         #endregion
 
-      
-      
-
+        #region Private Methods
         private void m_cmd_luu_Click(object sender, EventArgs e)
         {
-            if (checked_du_lieu_is_ok())
+            try
             {
-                for (int i = 0; i < m_grv.DataRowCount; i++)
+                if (checked_du_lieu_is_ok())
                 {
-                    if (check_ma_nhan_vien_is_ok(m_grv.GetDataRow(i)))
+                    for (int i = 0; i < m_grv.DataRowCount; i++)
                     {
-                        gan_du_lieu_cho_us_dm_nhan_vien(m_grv.GetDataRow(i));
-                    }
-                    else
-                    {
-                        MessageBox.Show("Mã nhân viên "+ m_grv.GetDataRow(i)["MA_NV"].ToString()+ "  đã tồn tại. Vui lòng kiểm tra lại thông tin!");
-                    }
-                
-                }
+                        if (check_ma_nhan_vien_is_ok(m_grv.GetDataRow(i)))
+                        {
+                            gan_du_lieu_cho_us_dm_nhan_vien(m_grv.GetDataRow(i));
+                        }
+                        else
+                        {
+                            CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + m_grv.GetDataRow(i)["MA_NV"].ToString() + "  đã tồn tại. Vui lòng kiểm tra lại thông tin!");
+                        }
 
-                MessageBox.Show("Đã nhập xong!");
+                    }
+
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                    this.Close();
+                }
+                else
+                {
+                    CHRM_BaseMessages.MsgBox_Error("Kiểm tra lại dữ liệu!");
+                }
             }
-            else
+            catch (Exception v_e)
             {
-                MessageBox.Show("Kiểm tra lại dữ liệu!");
+                CSystemLog_301.ExceptionHandle(v_e);
             }
+            
+
         }
 
         private void gan_du_lieu_cho_us_dm_nhan_vien(DataRow dataRow)
         {
             US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
-           if(dataRow["NGAY_CAP"].ToString()!="")
-            if((dataRow["NGAY_CAP"].ToString().Substring(0, 10)!=""))
-                v_us.datNGAY_CAP = CIPConvert.ToDatetime(dataRow["NGAY_CAP"].ToString().Substring(0, 10));
-             if (dataRow["NGAY_CAP_THE"].ToString()!="")
-            if ((dataRow["NGAY_CAP_THE"].ToString().Substring(0, 10) != ""))
-                v_us.datNGAY_CAP_THE = CIPConvert.ToDatetime(dataRow["NGAY_CAP_THE"].ToString().Substring(0, 10));
-             if (dataRow["NGAY_CHINH_THUC_TIEP_NHAN"].ToString()!="")
-            if ((dataRow["NGAY_CHINH_THUC_TIEP_NHAN"].ToString().Substring(0, 10) != ""))
-                v_us.datNGAY_CHINH_THUC_TIEP_NHAN = CIPConvert.ToDatetime(dataRow["NGAY_CHINH_THUC_TIEP_NHAN"].ToString().Substring(0, 10));
-             if (dataRow["NGAY_HET_HAN_THE"].ToString()!="")
-            if ((dataRow["NGAY_HET_HAN_THE"].ToString().Substring(0, 10) != ""))
-                v_us.datNGAY_HET_HAN_THE = CIPConvert.ToDatetime(dataRow["NGAY_HET_HAN_THE"].ToString().Substring(0, 10));
-             if (dataRow["NGAY_SINH"].ToString()!="")
-            if ((dataRow["NGAY_SINH"].ToString().Substring(0, 10) != ""))
-                v_us.datNGAY_SINH = CIPConvert.ToDatetime(dataRow["NGAY_SINH"].ToString().Substring(0, 10));
-            if (dataRow["NGAY_TIEP_NHAN_VAO_TCT"].ToString()!="")
-            if ((dataRow["NGAY_TIEP_NHAN_VAO_TCT"].ToString().Substring(0, 10) != ""))
-                v_us.datNGAY_TIEP_NHAN_VAO_TCT = CIPConvert.ToDatetime(dataRow["NGAY_TIEP_NHAN_VAO_TCT"].ToString().Substring(0, 10));
-             if (dataRow["NGAY_VAO_HANG_KHONG"].ToString()!="")
-            if ((dataRow["NGAY_VAO_HANG_KHONG"].ToString().Substring(0, 10) != ""))
-                v_us.datNGAY_VAO_HANG_KHONG = CIPConvert.ToDatetime(dataRow["NGAY_VAO_HANG_KHONG"].ToString().Substring(0, 10));
+            if (dataRow["NGAY_CAP"].ToString() != "")
+                if ((dataRow["NGAY_CAP"].ToString().Substring(0, 10) != ""))
+                    v_us.datNGAY_CAP = CIPConvert.ToDatetime(dataRow["NGAY_CAP"].ToString().Substring(0, 10));
+            if (dataRow["NGAY_CAP_THE"].ToString() != "")
+                if ((dataRow["NGAY_CAP_THE"].ToString().Substring(0, 10) != ""))
+                    v_us.datNGAY_CAP_THE = CIPConvert.ToDatetime(dataRow["NGAY_CAP_THE"].ToString().Substring(0, 10));
+            if (dataRow["NGAY_CHINH_THUC_TIEP_NHAN"].ToString() != "")
+                if ((dataRow["NGAY_CHINH_THUC_TIEP_NHAN"].ToString().Substring(0, 10) != ""))
+                    v_us.datNGAY_CHINH_THUC_TIEP_NHAN = CIPConvert.ToDatetime(dataRow["NGAY_CHINH_THUC_TIEP_NHAN"].ToString().Substring(0, 10));
+            if (dataRow["NGAY_HET_HAN_THE"].ToString() != "")
+                if ((dataRow["NGAY_HET_HAN_THE"].ToString().Substring(0, 10) != ""))
+                    v_us.datNGAY_HET_HAN_THE = CIPConvert.ToDatetime(dataRow["NGAY_HET_HAN_THE"].ToString().Substring(0, 10));
+            if (dataRow["NGAY_SINH"].ToString() != "")
+                if ((dataRow["NGAY_SINH"].ToString().Substring(0, 10) != ""))
+                    v_us.datNGAY_SINH = CIPConvert.ToDatetime(dataRow["NGAY_SINH"].ToString().Substring(0, 10));
+            if (dataRow["NGAY_TIEP_NHAN_VAO_TCT"].ToString() != "")
+                if ((dataRow["NGAY_TIEP_NHAN_VAO_TCT"].ToString().Substring(0, 10) != ""))
+                    v_us.datNGAY_TIEP_NHAN_VAO_TCT = CIPConvert.ToDatetime(dataRow["NGAY_TIEP_NHAN_VAO_TCT"].ToString().Substring(0, 10));
+            if (dataRow["NGAY_VAO_HANG_KHONG"].ToString() != "")
+                if ((dataRow["NGAY_VAO_HANG_KHONG"].ToString().Substring(0, 10) != ""))
+                    v_us.datNGAY_VAO_HANG_KHONG = CIPConvert.ToDatetime(dataRow["NGAY_VAO_HANG_KHONG"].ToString().Substring(0, 10));
             v_us.strCHUYEN_MON = dataRow["CHUYEN_MON"].ToString();
             v_us.strDAN_TOC = dataRow["DAN_TOC"].ToString();
             v_us.strDIA_CHI_LIEN_LAC = dataRow["DIA_CHI_LIEN_LAC"].ToString();
@@ -135,8 +139,6 @@ namespace BKI_DichVuMatDat
             }
         }
 
-      
-
         private bool checked_du_lieu_is_ok()
         {// chưa check, mới check số dòng >0
             if (m_grv.DataRowCount > 0)
@@ -144,5 +146,7 @@ namespace BKI_DichVuMatDat
             else
                 return false;
         }
+
+        #endregion
     }
 }

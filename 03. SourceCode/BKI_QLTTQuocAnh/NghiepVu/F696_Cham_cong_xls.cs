@@ -429,7 +429,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_pn.Visible = false;
             this.m_cmd_nhap_cham_cong.Text = "Lưu chấm công";
             this.m_cmd_nhap_cham_cong.Enabled = true;
-
         }
 
         private void F696_Cham_cong_xls_Load(object sender, EventArgs e)

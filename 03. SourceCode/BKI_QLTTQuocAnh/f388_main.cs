@@ -1360,6 +1360,21 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void m_cmd_quan_ly_giam_tru_phu_thuoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2 v_f = new f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
 
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)

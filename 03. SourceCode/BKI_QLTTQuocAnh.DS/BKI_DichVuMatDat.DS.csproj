@@ -751,9 +751,9 @@
       <DependentUpon>DS_GD_PHU_THUOC_DETAILS.xsd</DependentUpon>
     </None>
     <None Include="DS_GD_PHU_THUOC_DETAILS.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DS_GD_PHU_THUOC_DETAILS.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="DS_GD_PHU_THUOC_DETAILS.xss">
       <DependentUpon>DS_GD_PHU_THUOC_DETAILS.xsd</DependentUpon>

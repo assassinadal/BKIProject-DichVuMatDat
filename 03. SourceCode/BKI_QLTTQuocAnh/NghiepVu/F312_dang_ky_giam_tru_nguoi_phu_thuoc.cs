@@ -106,19 +106,19 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
 
 
-            US_GD_PHU_THUOC_DETAILS v_us_2 = new US_GD_PHU_THUOC_DETAILS();
-            v_us_2.strDIA_CHI_NGUOI_PHU_THUOC = m_txt_dia_chi_thuong_tru.Text;
-            v_us_2.strGIAY_TO_DI_KEM = m_txt_giay_to.Text;
-            v_us_2.strMA_SO_THUE_NGUOI_PHU_THUOC = m_txt_mst_ng_pt.Text;
-            v_us_2.strQUAN_HE_VOI_NGUOI_NOP_THUE = m_txt_quan_he.Text;
-            v_us_2.strSO_CMT_NGUOI_PHU_THUOC = m_txt_cmt_nguoi_pt.Text;
-            v_us_2.strTEN_NGUOI_PHU_THUOC = m_txt_ho_ten.Text;
-            v_us_2.datNGAY_SINH_NGUOI_PHU_THUOC = dateTimePicker2.Value;
-            v_us_2.dcID_GD_PHU_THUOC = v_us_pt.dcID;
-            v_us_2.strDA_XOA = "N";
-            v_us_2.Insert();
-            BaseMessages.MsgBox_Infor("90 - Thêm người phụ thuộc thành công");
-            load_data_2_grid(m_slue_nhan_vien.EditValue.ToString());
+            //US_GD_PHU_THUOC_DETAILS v_us_2 = new US_GD_PHU_THUOC_DETAILS();
+            //v_us_2.strDIA_CHI_NGUOI_PHU_THUOC = m_txt_dia_chi_thuong_tru.Text;
+            //v_us_2.strGIAY_TO_DI_KEM = m_txt_giay_to.Text;
+            //v_us_2.strMA_SO_THUE_NGUOI_PHU_THUOC = m_txt_mst_ng_pt.Text;
+            //v_us_2.strQUAN_HE_VOI_NGUOI_NOP_THUE = m_txt_quan_he.Text;
+            //v_us_2.strSO_CMT_NGUOI_PHU_THUOC = m_txt_cmt_nguoi_pt.Text;
+            //v_us_2.strTEN_NGUOI_PHU_THUOC = m_txt_ho_ten.Text;
+            //v_us_2.datNGAY_SINH_NGUOI_PHU_THUOC = dateTimePicker2.Value;
+            //v_us_2.dcID_GD_PHU_THUOC = v_us_pt.dcID;
+            //v_us_2.strDA_XOA = "N";
+            //v_us_2.Insert();
+            //BaseMessages.MsgBox_Infor("90 - Thêm người phụ thuộc thành công");
+            //load_data_2_grid(m_slue_nhan_vien.EditValue.ToString());
         }
 
         private void load_data_2_grid(string id_nhan_vien) {

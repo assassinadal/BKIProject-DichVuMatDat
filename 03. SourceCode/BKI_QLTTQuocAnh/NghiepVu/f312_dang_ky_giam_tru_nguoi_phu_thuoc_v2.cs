@@ -41,6 +41,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2_Load(object sender, EventArgs e)
         {
+            m_lbl_nam_tinh_thue.Text = DateTime.Now.Year.ToString();
             load_data_to_grid();
         }
 
@@ -75,12 +76,19 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void m_cmd_save_Click(object sender, EventArgs e)
         {
-            insert_gd_phu_thuoc_details();
-            for (int i = 0; i < m_lst_nv_thay_doi_phu_thuoc.Count; i++)
+            try
             {
-                update_gd_phu_thuoc(m_lst_nv_thay_doi_phu_thuoc[i]);
+                insert_gd_phu_thuoc_details();
+                for (int i = 0; i < m_lst_nv_thay_doi_phu_thuoc.Count; i++)
+                {
+                    update_gd_phu_thuoc(m_lst_nv_thay_doi_phu_thuoc[i]);
+                }
+                XtraMessageBox.Show("Lưu thành công");
             }
-            
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }       
         }
 
         private void update_gd_phu_thuoc(decimal ip_id_nv)
@@ -106,7 +114,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     v_us_gd_phu_thuoc.dcSO_LUONG = v_us_gd_phu_thuoc.dcSO_LUONG + 1;
                     v_us_gd_phu_thuoc.Update();
                 }
-                XtraMessageBox.Show("Lưu thành công");
+                
             }
             catch (Exception v_e)
             {

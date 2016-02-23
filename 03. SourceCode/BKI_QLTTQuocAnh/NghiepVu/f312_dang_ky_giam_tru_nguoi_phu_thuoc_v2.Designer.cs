@@ -74,11 +74,29 @@
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.m_lbl_nam_tinh_thue = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_pnl_out_place_dm
@@ -92,13 +110,14 @@
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 470);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1010, 43);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1092, 43);
             this.m_pnl_out_place_dm.TabIndex = 2;
             // 
             // m_cmd_tai_file_mau
             // 
+            this.m_cmd_tai_file_mau.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_tai_file_mau.Image = global::BKI_DichVuMatDat.Properties.Resources.Benjigarner_Softdimension_Excel;
-            this.m_cmd_tai_file_mau.Location = new System.Drawing.Point(413, 6);
+            this.m_cmd_tai_file_mau.Location = new System.Drawing.Point(508, 4);
             this.m_cmd_tai_file_mau.Name = "m_cmd_tai_file_mau";
             this.m_cmd_tai_file_mau.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_tai_file_mau.TabIndex = 12;
@@ -107,8 +126,9 @@
             // 
             // m_cmd_save
             // 
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
-            this.m_cmd_save.Location = new System.Drawing.Point(651, 6);
+            this.m_cmd_save.Location = new System.Drawing.Point(624, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_save.TabIndex = 11;
@@ -117,8 +137,9 @@
             // 
             // m_cmd_update
             // 
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
-            this.m_cmd_update.Location = new System.Drawing.Point(770, 6);
+            this.m_cmd_update.Location = new System.Drawing.Point(740, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_update.TabIndex = 10;
@@ -126,8 +147,9 @@
             // 
             // m_cmd_delete
             // 
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
-            this.m_cmd_delete.Location = new System.Drawing.Point(889, 6);
+            this.m_cmd_delete.Location = new System.Drawing.Point(856, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_delete.TabIndex = 9;
@@ -136,8 +158,9 @@
             // 
             // m_cmd_import_excel
             // 
+            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_import_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_excel.Image")));
-            this.m_cmd_import_excel.Location = new System.Drawing.Point(532, 6);
+            this.m_cmd_import_excel.Location = new System.Drawing.Point(972, 4);
             this.m_cmd_import_excel.Name = "m_cmd_import_excel";
             this.m_cmd_import_excel.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_import_excel.TabIndex = 8;
@@ -148,10 +171,10 @@
             // 
             this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grc.Location = new System.Drawing.Point(0, 92);
+            this.m_grc.Location = new System.Drawing.Point(0, 133);
             this.m_grc.MainView = this.m_grv1;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(1010, 378);
+            this.m_grc.Size = new System.Drawing.Size(1092, 337);
             this.m_grc.TabIndex = 7;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv1,
@@ -508,17 +531,227 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl14);
+            this.panelControl1.Controls.Add(this.labelControl16);
+            this.panelControl1.Controls.Add(this.labelControl12);
+            this.panelControl1.Controls.Add(this.labelControl13);
+            this.panelControl1.Controls.Add(this.labelControl15);
+            this.panelControl1.Controls.Add(this.labelControl11);
+            this.panelControl1.Controls.Add(this.labelControl10);
+            this.panelControl1.Controls.Add(this.labelControl9);
+            this.panelControl1.Controls.Add(this.labelControl8);
+            this.panelControl1.Controls.Add(this.labelControl7);
+            this.panelControl1.Controls.Add(this.labelControl6);
+            this.panelControl1.Controls.Add(this.labelControl5);
+            this.panelControl1.Controls.Add(this.m_lbl_nam_tinh_thue);
+            this.panelControl1.Controls.Add(this.labelControl4);
+            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1010, 100);
+            this.panelControl1.Size = new System.Drawing.Size(1092, 141);
             this.panelControl1.TabIndex = 9;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl14.Location = new System.Drawing.Point(635, 106);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Padding = new System.Windows.Forms.Padding(8, 3, 8, 3);
+            this.labelControl14.Size = new System.Drawing.Size(24, 21);
+            this.labelControl14.TabIndex = 32;
+            this.labelControl14.Text = "2";
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl16.Location = new System.Drawing.Point(662, 106);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Padding = new System.Windows.Forms.Padding(8, 3, 8, 3);
+            this.labelControl16.Size = new System.Drawing.Size(24, 21);
+            this.labelControl16.TabIndex = 31;
+            this.labelControl16.Text = "5";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl12.Location = new System.Drawing.Point(554, 106);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Padding = new System.Windows.Forms.Padding(8, 3, 8, 3);
+            this.labelControl12.Size = new System.Drawing.Size(24, 21);
+            this.labelControl12.TabIndex = 30;
+            this.labelControl12.Text = "3";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl13.Location = new System.Drawing.Point(581, 106);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Padding = new System.Windows.Forms.Padding(8, 3, 8, 3);
+            this.labelControl13.Size = new System.Drawing.Size(24, 21);
+            this.labelControl13.TabIndex = 29;
+            this.labelControl13.Text = "8";
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl15.Location = new System.Drawing.Point(608, 106);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Padding = new System.Windows.Forms.Padding(8, 3, 8, 3);
+            this.labelControl15.Size = new System.Drawing.Size(24, 21);
+            this.labelControl15.TabIndex = 27;
+            this.labelControl15.Text = "5";
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl11.Location = new System.Drawing.Point(446, 106);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Padding = new System.Windows.Forms.Padding(8, 3, 8, 3);
+            this.labelControl11.Size = new System.Drawing.Size(24, 21);
+            this.labelControl11.TabIndex = 26;
+            this.labelControl11.Text = "3";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl10.Location = new System.Drawing.Point(473, 106);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Padding = new System.Windows.Forms.Padding(8, 3, 8, 3);
+            this.labelControl10.Size = new System.Drawing.Size(24, 21);
+            this.labelControl10.TabIndex = 25;
+            this.labelControl10.Text = "1";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl9.Location = new System.Drawing.Point(527, 106);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Padding = new System.Windows.Forms.Padding(8, 3, 8, 3);
+            this.labelControl9.Size = new System.Drawing.Size(24, 21);
+            this.labelControl9.TabIndex = 24;
+            this.labelControl9.Text = "6";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl8.Location = new System.Drawing.Point(500, 106);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Padding = new System.Windows.Forms.Padding(8, 3, 8, 3);
+            this.labelControl8.Size = new System.Drawing.Size(24, 21);
+            this.labelControl8.TabIndex = 23;
+            this.labelControl8.Text = "1";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl7.Location = new System.Drawing.Point(419, 106);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Padding = new System.Windows.Forms.Padding(8, 3, 8, 3);
+            this.labelControl7.Size = new System.Drawing.Size(24, 21);
+            this.labelControl7.TabIndex = 22;
+            this.labelControl7.Text = "0";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl6.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl6.Location = new System.Drawing.Point(719, 73);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(209, 17);
+            this.labelControl6.TabIndex = 21;
+            this.labelControl6.Text = "Tổng công ty hàng không Việt Nam";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl5.Location = new System.Drawing.Point(569, 75);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(135, 15);
+            this.labelControl5.TabIndex = 20;
+            this.labelControl5.Text = "[01] Tên người nộp thuế:";
+            // 
+            // m_lbl_nam_tinh_thue
+            // 
+            this.m_lbl_nam_tinh_thue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_lbl_nam_tinh_thue.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_nam_tinh_thue.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.m_lbl_nam_tinh_thue.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.m_lbl_nam_tinh_thue.Location = new System.Drawing.Point(424, 73);
+            this.m_lbl_nam_tinh_thue.Name = "m_lbl_nam_tinh_thue";
+            this.m_lbl_nam_tinh_thue.Size = new System.Drawing.Size(24, 17);
+            this.m_lbl_nam_tinh_thue.TabIndex = 4;
+            this.m_lbl_nam_tinh_thue.Text = "......";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl4.Location = new System.Drawing.Point(319, 112);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(94, 15);
+            this.labelControl4.TabIndex = 3;
+            this.labelControl4.Text = "[03] Mã số thuế:  ";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl3.Location = new System.Drawing.Point(319, 75);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(99, 15);
+            this.labelControl3.TabIndex = 2;
+            this.labelControl3.Text = "[01] Kỳ tính thuế: ";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Location = new System.Drawing.Point(375, 37);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(499, 18);
+            this.labelControl2.TabIndex = 1;
+            this.labelControl2.Text = "(Kèm theo tờ khai quyết toán thuế thu nhập cá nhân mẫu số 05/KK-TNCN)";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl1.Location = new System.Drawing.Point(366, 12);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(518, 19);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "BẢNG KÊ THÔNG TIN NGƯỜI PHỤ THUỘC GIẢM TRỪ GIA CẢNH";
             // 
             // f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 513);
+            this.ClientSize = new System.Drawing.Size(1092, 513);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.m_grc);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -530,6 +763,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_grv1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -581,5 +816,22 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl m_lbl_nam_tinh_thue;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.LabelControl labelControl16;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.LabelControl labelControl15;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
     }
 }

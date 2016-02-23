@@ -41,15 +41,15 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2_Load(object sender, EventArgs e)
         {
-            load_data_to_m_sle_chon_nhan_vien();
+            load_data_to_grid();
         }
 
-        private void load_data_to_m_sle_chon_nhan_vien()
-        {
-            m_sle_chon_nhan_vien.Properties.DataSource = load_data_to_ds_v_dm_nv().Tables[0];
-            m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
-        }
+        //private void load_data_to_m_sle_chon_nhan_vien()
+        //{
+        //    m_sle_chon_nhan_vien.Properties.DataSource = load_data_to_ds_v_dm_nv().Tables[0];
+        //    m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+        //    m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+        //}
 
         private DataSet load_data_to_ds_v_dm_nv()
         {
@@ -60,19 +60,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             return v_ds;
         }
 
-        private void m_cmd_loc_Click(object sender, EventArgs e)
-        {
-            load_data_to_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue.ToString()));
-        }
-
-        private void load_data_to_grid(decimal ip_id_nhan_vien)
-        {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "GD_PHU_THUOC_DETAILS");
-            m_grc.DataSource = v_ds.Tables[0];
-        }
 
         private void m_cmd_import_excel_Click(object sender, EventArgs e)
         {
@@ -86,7 +73,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        private void m_cmd_insert_Click(object sender, EventArgs e)
+        private void m_cmd_save_Click(object sender, EventArgs e)
         {
             insert_gd_phu_thuoc_details();
             for (int i = 0; i < m_lst_nv_thay_doi_phu_thuoc.Count; i++)
@@ -98,27 +85,35 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void update_gd_phu_thuoc(decimal ip_id_nv)
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds, "select * from gd_phu_thuoc where id_nhan_vien = " + ip_id_nv);          
-            if (v_ds.Tables[0].Rows.Count ==0)
+            try
             {
-                US_GD_PHU_THUOC v_us_gd_phu_thuoc = new US_GD_PHU_THUOC();
-                v_us_gd_phu_thuoc.dcID_NHAN_VIEN = ip_id_nv;
-                v_us_gd_phu_thuoc.dcSO_LUONG = 1;
-                v_us_gd_phu_thuoc.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
-                v_us_gd_phu_thuoc.strDA_XOA = "N";
-                v_us_gd_phu_thuoc.Insert();
+                US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+                DataSet v_ds = new DataSet();
+                v_ds.Tables.Add(new DataTable());
+                v_us.FillDatasetWithQuery(v_ds, "select * from gd_phu_thuoc where id_nhan_vien = " + ip_id_nv);
+                if (v_ds.Tables[0].Rows.Count == 0)
+                {
+                    US_GD_PHU_THUOC v_us_gd_phu_thuoc = new US_GD_PHU_THUOC();
+                    v_us_gd_phu_thuoc.dcID_NHAN_VIEN = ip_id_nv;
+                    v_us_gd_phu_thuoc.dcSO_LUONG = 1;
+                    v_us_gd_phu_thuoc.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
+                    v_us_gd_phu_thuoc.strDA_XOA = "N";
+                    v_us_gd_phu_thuoc.Insert();
+                }
+                else
+                {
+                    US_GD_PHU_THUOC v_us_gd_phu_thuoc = new US_GD_PHU_THUOC(CIPConvert.ToDecimal(v_ds.Tables[0].Rows[0][0].ToString()));
+                    v_us_gd_phu_thuoc.dcSO_LUONG = v_us_gd_phu_thuoc.dcSO_LUONG + 1;
+                    v_us_gd_phu_thuoc.Update();
+                }
+                XtraMessageBox.Show("Lưu thành công");
             }
-            else
+            catch (Exception v_e)
             {
-                US_GD_PHU_THUOC v_us_gd_phu_thuoc = new US_GD_PHU_THUOC(CIPConvert.ToDecimal(v_ds.Tables[0].Rows[0][0].ToString()));
-                v_us_gd_phu_thuoc.dcSO_LUONG = v_us_gd_phu_thuoc.dcSO_LUONG + 1;
-                v_us_gd_phu_thuoc.Update();
-            }          
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+                      
         }
-
         
 
         private void insert_gd_phu_thuoc_details()
@@ -143,7 +138,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                     v_us.strTTGKS_QUAN_HUYEN = v_dr[13].ToString();
                     v_us.strTTGKS_PHUONG_XA = v_dr[14].ToString();
                     v_us.datTU_NGAY = DateTime.Parse(v_dr[15].ToString());
-                    //v_us.datDEN_NGAY = DateTime.Parse(v_dr[16].ToString());
                     v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                     v_us.datNGAY_LAP = DateTime.Now;
                     v_us.strDA_XOA = "N";
@@ -168,7 +162,34 @@ namespace BKI_DichVuMatDat.NghiepVu
             return v_id_nv;
         }
 
-     
 
+        private void load_data_to_grid()
+        {
+            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillDatasetWithTableName(v_ds, "V_GD_PHU_THUOC_DETAILS_V2");
+            m_grc.DataSource = v_ds.Tables[0];
+        }
+
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult v_dialog = MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo);
+                if (v_dialog == DialogResult.Yes)
+                {
+                    var v_dr = m_grv1.GetDataRow(m_grv1.FocusedRowHandle);
+                    US_GD_PHU_THUOC_DETAILS v_us = new US_GD_PHU_THUOC_DETAILS(CIPConvert.ToDecimal(v_dr[3].ToString()));
+                    v_us.Delete();
+                    XtraMessageBox.Show("Xóa thành công!");
+                    load_data_to_grid();
+                }              
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }           
+        }
     }
 }

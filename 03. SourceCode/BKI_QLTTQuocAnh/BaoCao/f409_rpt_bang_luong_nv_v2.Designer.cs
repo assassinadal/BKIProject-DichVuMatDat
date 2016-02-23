@@ -35,8 +35,6 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_cmd_export_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
@@ -44,6 +42,8 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_thong_bao = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_so_luong_nv_tinh_luong = new DevExpress.XtraEditors.LabelControl();
+            this.m_cmd_export_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.m_bgwk = new System.ComponentModel.BackgroundWorker();
             this.spreadsheetBarController1 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetBarController();
             this.m_prb = new DevExpress.XtraEditors.ProgressBarControl();
@@ -182,20 +182,20 @@
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_kiem_tra_du_lieu = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_tinh_bang_luong = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_kiem_tra_du_lieu_luong = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_luu_du_lieu = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_chot_bang_luong = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_luu_du_lieu = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_kiem_tra_du_lieu_luong = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_tinh_bang_luong = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_kiem_tra_du_lieu = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).BeginInit();
@@ -245,36 +245,6 @@
             this.MA_NV.Visible = true;
             this.MA_NV.VisibleIndex = 0;
             // 
-            // m_cmd_export_excel
-            // 
-            this.m_cmd_export_excel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_export_excel.ImageIndex = 1;
-            this.m_cmd_export_excel.ImageList = this.imageCollection;
-            this.m_cmd_export_excel.Location = new System.Drawing.Point(1134, 2);
-            this.m_cmd_export_excel.Name = "m_cmd_export_excel";
-            this.m_cmd_export_excel.Size = new System.Drawing.Size(121, 29);
-            this.m_cmd_export_excel.TabIndex = 2;
-            this.m_cmd_export_excel.Text = "Trích xuất dữ liệu";
-            this.m_cmd_export_excel.ToolTip = "Xuất dữ liệu trên lưới ra file excel";
-            // 
-            // imageCollection
-            // 
-            this.imageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection.ImageStream")));
-            this.imageCollection.Images.SetKeyName(0, "dvmd_download.png");
-            this.imageCollection.Images.SetKeyName(1, "dvmd_upload.png");
-            this.imageCollection.Images.SetKeyName(2, "lock.png");
-            this.imageCollection.Images.SetKeyName(3, "refresh.png");
-            this.imageCollection.Images.SetKeyName(4, "dvmd_info.png");
-            this.imageCollection.Images.SetKeyName(5, "play.png");
-            this.imageCollection.Images.SetKeyName(6, "pause.png");
-            this.imageCollection.Images.SetKeyName(7, "pencil.png");
-            this.imageCollection.Images.SetKeyName(8, "trash.png");
-            this.imageCollection.Images.SetKeyName(9, "grid.png");
-            this.imageCollection.Images.SetKeyName(10, "list.png");
-            this.imageCollection.Images.SetKeyName(11, "eye.png");
-            this.imageCollection.Images.SetKeyName(12, "note.png");
-            this.imageCollection.Images.SetKeyName(13, "check.png");
-            // 
             // panelControl1
             // 
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -287,7 +257,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(5, 5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(474, 49);
+            this.panelControl1.Size = new System.Drawing.Size(563, 49);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl2
@@ -358,6 +328,36 @@
             this.m_lbl_so_luong_nv_tinh_luong.Size = new System.Drawing.Size(9, 13);
             this.m_lbl_so_luong_nv_tinh_luong.TabIndex = 4;
             this.m_lbl_so_luong_nv_tinh_luong.Text = "...";
+            // 
+            // m_cmd_export_excel
+            // 
+            this.m_cmd_export_excel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_export_excel.ImageIndex = 1;
+            this.m_cmd_export_excel.ImageList = this.imageCollection;
+            this.m_cmd_export_excel.Location = new System.Drawing.Point(1134, 2);
+            this.m_cmd_export_excel.Name = "m_cmd_export_excel";
+            this.m_cmd_export_excel.Size = new System.Drawing.Size(121, 29);
+            this.m_cmd_export_excel.TabIndex = 2;
+            this.m_cmd_export_excel.Text = "Trích xuất dữ liệu";
+            this.m_cmd_export_excel.ToolTip = "Xuất dữ liệu trên lưới ra file excel";
+            // 
+            // imageCollection
+            // 
+            this.imageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection.ImageStream")));
+            this.imageCollection.Images.SetKeyName(0, "dvmd_download.png");
+            this.imageCollection.Images.SetKeyName(1, "dvmd_upload.png");
+            this.imageCollection.Images.SetKeyName(2, "lock.png");
+            this.imageCollection.Images.SetKeyName(3, "refresh.png");
+            this.imageCollection.Images.SetKeyName(4, "dvmd_info.png");
+            this.imageCollection.Images.SetKeyName(5, "play.png");
+            this.imageCollection.Images.SetKeyName(6, "pause.png");
+            this.imageCollection.Images.SetKeyName(7, "pencil.png");
+            this.imageCollection.Images.SetKeyName(8, "trash.png");
+            this.imageCollection.Images.SetKeyName(9, "grid.png");
+            this.imageCollection.Images.SetKeyName(10, "list.png");
+            this.imageCollection.Images.SetKeyName(11, "eye.png");
+            this.imageCollection.Images.SetKeyName(12, "note.png");
+            this.imageCollection.Images.SetKeyName(13, "check.png");
             // 
             // m_bgwk
             // 
@@ -1965,7 +1965,7 @@
             this.repositoryItemMemoEdit1,
             this.repoBtnXoaLuong,
             this.repositoryItemTextEditTien});
-            this.m_grc_main.Size = new System.Drawing.Size(1257, 389);
+            this.m_grc_main.Size = new System.Drawing.Size(1257, 429);
             this.m_grc_main.TabIndex = 1;
             this.m_grc_main.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_main});
@@ -1990,18 +1990,56 @@
             this.panelControl2.Size = new System.Drawing.Size(1257, 33);
             this.panelControl2.TabIndex = 10;
             // 
-            // m_cmd_kiem_tra_du_lieu
+            // m_cmd_chot_bang_luong
             // 
-            this.m_cmd_kiem_tra_du_lieu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_kiem_tra_du_lieu.ImageIndex = 13;
-            this.m_cmd_kiem_tra_du_lieu.ImageList = this.imageCollection;
-            this.m_cmd_kiem_tra_du_lieu.Location = new System.Drawing.Point(2, 2);
-            this.m_cmd_kiem_tra_du_lieu.Name = "m_cmd_kiem_tra_du_lieu";
-            this.m_cmd_kiem_tra_du_lieu.Size = new System.Drawing.Size(195, 29);
-            this.m_cmd_kiem_tra_du_lieu.TabIndex = 8;
-            this.m_cmd_kiem_tra_du_lieu.Text = "Bước 1: Rà soát dữ liệu tính lương";
-            this.m_cmd_kiem_tra_du_lieu.ToolTip = "Chốt bảng lương chỉ thực hiện khi đã chắc chắn về dữ liệu lương tháng" +
+            this.m_cmd_chot_bang_luong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chot_bang_luong.ImageIndex = 2;
+            this.m_cmd_chot_bang_luong.ImageList = this.imageCollection;
+            this.m_cmd_chot_bang_luong.Location = new System.Drawing.Point(905, 2);
+            this.m_cmd_chot_bang_luong.Name = "m_cmd_chot_bang_luong";
+            this.m_cmd_chot_bang_luong.Size = new System.Drawing.Size(174, 29);
+            this.m_cmd_chot_bang_luong.TabIndex = 16;
+            this.m_cmd_chot_bang_luong.Text = "Bước 4: Chốt bảng lương";
+            this.m_cmd_chot_bang_luong.ToolTip = "Chốt bảng lương chỉ thực hiện khi đã chắc chắn về dữ liệu lương tháng" +
     ". ";
+            // 
+            // m_cmd_luu_du_lieu
+            // 
+            this.m_cmd_luu_du_lieu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_luu_du_lieu.ImageIndex = 12;
+            this.m_cmd_luu_du_lieu.ImageList = this.imageCollection;
+            this.m_cmd_luu_du_lieu.Location = new System.Drawing.Point(742, 2);
+            this.m_cmd_luu_du_lieu.Name = "m_cmd_luu_du_lieu";
+            this.m_cmd_luu_du_lieu.Size = new System.Drawing.Size(163, 29);
+            this.m_cmd_luu_du_lieu.TabIndex = 15;
+            this.m_cmd_luu_du_lieu.Text = "Bước 3: Lưu bảng lương";
+            this.m_cmd_luu_du_lieu.ToolTip = "Lưu dữ liệu lương nhân viên đã tính toán, chỉnh sửa";
+            // 
+            // m_cmd_kiem_tra_du_lieu_luong
+            // 
+            this.m_cmd_kiem_tra_du_lieu_luong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_kiem_tra_du_lieu_luong.ImageIndex = 2;
+            this.m_cmd_kiem_tra_du_lieu_luong.ImageList = this.imageCollection;
+            this.m_cmd_kiem_tra_du_lieu_luong.Location = new System.Drawing.Point(568, 2);
+            this.m_cmd_kiem_tra_du_lieu_luong.Name = "m_cmd_kiem_tra_du_lieu_luong";
+            this.m_cmd_kiem_tra_du_lieu_luong.Size = new System.Drawing.Size(174, 29);
+            this.m_cmd_kiem_tra_du_lieu_luong.TabIndex = 13;
+            this.m_cmd_kiem_tra_du_lieu_luong.Text = "Bước 3: Kiểm tra bảng lương";
+            this.m_cmd_kiem_tra_du_lieu_luong.ToolTip = "Chốt bảng lương chỉ thực hiện khi đã chắc chắn về dữ liệu lương tháng" +
+    ". ";
+            this.m_cmd_kiem_tra_du_lieu_luong.Visible = false;
+            // 
+            // m_cmd_import_excel
+            // 
+            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_import_excel.ImageIndex = 0;
+            this.m_cmd_import_excel.ImageList = this.imageCollection;
+            this.m_cmd_import_excel.Location = new System.Drawing.Point(373, 2);
+            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
+            this.m_cmd_import_excel.Size = new System.Drawing.Size(195, 29);
+            this.m_cmd_import_excel.TabIndex = 10;
+            this.m_cmd_import_excel.Text = "Bước 2.1: Import Excel chỉnh sửa";
+            this.m_cmd_import_excel.ToolTip = "Lấy dữ liệu bảng lương từ file Excel trước khi Lưu bảng lương (nếu cần)";
             // 
             // m_cmd_tinh_bang_luong
             // 
@@ -2016,61 +2054,24 @@
             this.m_cmd_tinh_bang_luong.ToolTip = "Tính toán dữ liệu lương của nhân viên (Việc này chưa lưu vào bảng lương phần mềm)" +
     "";
             // 
-            // m_cmd_import_excel
+            // m_cmd_kiem_tra_du_lieu
             // 
-            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_import_excel.ImageIndex = 0;
-            this.m_cmd_import_excel.ImageList = this.imageCollection;
-            this.m_cmd_import_excel.Location = new System.Drawing.Point(373, 2);
-            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
-            this.m_cmd_import_excel.Size = new System.Drawing.Size(195, 29);
-            this.m_cmd_import_excel.TabIndex = 10;
-            this.m_cmd_import_excel.Text = "Bước 2.1: Import Excel chỉnh sửa";
-            this.m_cmd_import_excel.ToolTip = "Lấy dữ liệu bảng lương từ file Excel trước khi Lưu bảng lương (nếu cần)";
-            // 
-            // m_cmd_kiem_tra_du_lieu_luong
-            // 
-            this.m_cmd_kiem_tra_du_lieu_luong.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_kiem_tra_du_lieu_luong.ImageIndex = 2;
-            this.m_cmd_kiem_tra_du_lieu_luong.ImageList = this.imageCollection;
-            this.m_cmd_kiem_tra_du_lieu_luong.Location = new System.Drawing.Point(568, 2);
-            this.m_cmd_kiem_tra_du_lieu_luong.Name = "m_cmd_kiem_tra_du_lieu_luong";
-            this.m_cmd_kiem_tra_du_lieu_luong.Size = new System.Drawing.Size(174, 29);
-            this.m_cmd_kiem_tra_du_lieu_luong.TabIndex = 13;
-            this.m_cmd_kiem_tra_du_lieu_luong.Text = "Bước 3: Kiểm tra bảng lương";
-            this.m_cmd_kiem_tra_du_lieu_luong.ToolTip = "Chốt bảng lương chỉ thực hiện khi đã chắc chắn về dữ liệu lương tháng" +
-    ". ";
-            // 
-            // m_cmd_luu_du_lieu
-            // 
-            this.m_cmd_luu_du_lieu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_luu_du_lieu.ImageIndex = 12;
-            this.m_cmd_luu_du_lieu.ImageList = this.imageCollection;
-            this.m_cmd_luu_du_lieu.Location = new System.Drawing.Point(742, 2);
-            this.m_cmd_luu_du_lieu.Name = "m_cmd_luu_du_lieu";
-            this.m_cmd_luu_du_lieu.Size = new System.Drawing.Size(163, 29);
-            this.m_cmd_luu_du_lieu.TabIndex = 15;
-            this.m_cmd_luu_du_lieu.Text = "Bước 4: Lưu bảng lương";
-            this.m_cmd_luu_du_lieu.ToolTip = "Lưu dữ liệu lương nhân viên đã tính toán, chỉnh sửa";
-            // 
-            // m_cmd_chot_bang_luong
-            // 
-            this.m_cmd_chot_bang_luong.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chot_bang_luong.ImageIndex = 2;
-            this.m_cmd_chot_bang_luong.ImageList = this.imageCollection;
-            this.m_cmd_chot_bang_luong.Location = new System.Drawing.Point(905, 2);
-            this.m_cmd_chot_bang_luong.Name = "m_cmd_chot_bang_luong";
-            this.m_cmd_chot_bang_luong.Size = new System.Drawing.Size(174, 29);
-            this.m_cmd_chot_bang_luong.TabIndex = 16;
-            this.m_cmd_chot_bang_luong.Text = "Bước 5: Chốt bảng lương";
-            this.m_cmd_chot_bang_luong.ToolTip = "Chốt bảng lương chỉ thực hiện khi đã chắc chắn về dữ liệu lương tháng" +
+            this.m_cmd_kiem_tra_du_lieu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_kiem_tra_du_lieu.ImageIndex = 13;
+            this.m_cmd_kiem_tra_du_lieu.ImageList = this.imageCollection;
+            this.m_cmd_kiem_tra_du_lieu.Location = new System.Drawing.Point(2, 2);
+            this.m_cmd_kiem_tra_du_lieu.Name = "m_cmd_kiem_tra_du_lieu";
+            this.m_cmd_kiem_tra_du_lieu.Size = new System.Drawing.Size(195, 29);
+            this.m_cmd_kiem_tra_du_lieu.TabIndex = 8;
+            this.m_cmd_kiem_tra_du_lieu.Text = "Bước 1: Rà soát dữ liệu tính lương";
+            this.m_cmd_kiem_tra_du_lieu.ToolTip = "Chốt bảng lương chỉ thực hiện khi đã chắc chắn về dữ liệu lương tháng" +
     ". ";
             // 
             // f409_rpt_bang_luong_nv_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1257, 481);
+            this.ClientSize = new System.Drawing.Size(1257, 521);
             this.Controls.Add(this.m_grc_main);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.m_prb);
@@ -2080,12 +2081,12 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).EndInit();
@@ -2254,9 +2255,9 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_kiem_tra_du_lieu;
         private DevExpress.XtraEditors.SimpleButton m_cmd_import_excel;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tinh_bang_luong;
-        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
         private DevExpress.XtraEditors.SimpleButton m_cmd_kiem_tra_du_lieu_luong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chot_bang_luong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_luu_du_lieu;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

@@ -127,6 +127,7 @@
             // m_cmd_save
             // 
             this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_save.Enabled = false;
             this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
             this.m_cmd_save.Location = new System.Drawing.Point(624, 4);
             this.m_cmd_save.Name = "m_cmd_save";

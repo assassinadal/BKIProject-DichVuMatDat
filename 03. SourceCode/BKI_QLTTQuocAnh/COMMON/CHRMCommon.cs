@@ -500,6 +500,13 @@ namespace BKI_DichVuMatDat
             DataRow2USThongTinTongHopV2(v_dr_luong_1_nv, v_us);
             v_us.Insert();
         }
+        public static void insertThongTinTongHopNV2RPTV2(DataRow v_dr_luong_1_nv, US_RPT_LUONG_V2 ip_us_trans)
+        {
+            US_RPT_THONG_TIN_TONG_HOP_V2 v_us = new US_RPT_THONG_TIN_TONG_HOP_V2();
+            DataRow2USThongTinTongHopV2(v_dr_luong_1_nv, v_us);
+            v_us.UseTransOfUSObject(ip_us_trans);
+            v_us.Insert();
+        }
         public static void update_luong_1NV_2_rpt(int ip_id_rpt_luong, DataRow v_dr_luong_1_nv)
         {
             US_RPT_LUONG v_us = new US_RPT_LUONG(ip_id_rpt_luong);

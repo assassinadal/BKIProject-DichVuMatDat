@@ -313,7 +313,7 @@ namespace BKI_DichVuMatDat.BaoCao
             v_dto_luong.TONG_PHAI_NOP = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.TONG_PHAI_NOP]);
 
             v_dto_luong.THUC_LINH = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.THUC_LINH]);
-
+            v_dto_luong.SO_TIEN_DA_NOP_THUE = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.SO_TIEN_DA_NOP_THUE]);
             return v_dto_luong;
         }
         private void m_cmd_tinh_lai_nhan_vien_Click(object sender, EventArgs e)
@@ -333,8 +333,11 @@ namespace BKI_DichVuMatDat.BaoCao
                 v_us_rpt_luong_v2.BeginTransaction();
                 v_us_rpt_luong_v2.XoaBanGhiLuong(v_id_nhan_vien, lay_thang(), lay_nam());
                 v_us_rpt_luong_v2.Insert();
-                v_us_rpt_luong_v2.CommitTransaction();
 
+                //B2: Insert vao Rpt
+                DataRow v_dr_thong_tin_tong_hop = CHRMCommon.get_thong_tin_tong_hop_1_nhan_vien_v2(v_id_nhan_vien, (int)lay_thang(), (int)lay_nam());
+                CHRMCommon.insertThongTinTongHopNV2RPTV2(v_dr_thong_tin_tong_hop, v_us_rpt_luong_v2);
+                v_us_rpt_luong_v2.CommitTransaction();
 
                 load_data_2_grid();
             }

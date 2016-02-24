@@ -655,6 +655,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DVMDDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DVMDDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DVMDDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EF\BACKUP_INFO.cs">
       <DependentUpon>ModelDVMD.tt</DependentUpon>
     </Compile>
@@ -1061,6 +1066,17 @@
     </Compile>
     <Compile Include="COMMON\WinFormControls.cs" />
     <Compile Include="COMMON\CHRM_BaseMessages210.cs" />
+    <None Include="DVMDDataSet1.xsc">
+      <DependentUpon>DVMDDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DVMDDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DVMDDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DVMDDataSet1.xss">
+      <DependentUpon>DVMDDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="DVMDDataSet2.xsc">
       <DependentUpon>DVMDDataSet2.xsd</DependentUpon>
     </None>
@@ -1071,6 +1087,17 @@
     </None>
     <None Include="DVMDDataSet2.xss">
       <DependentUpon>DVMDDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DVMDDataSet3.xsc">
+      <DependentUpon>DVMDDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DVMDDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DVMDDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DVMDDataSet3.xss">
+      <DependentUpon>DVMDDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Resources\1425904361_23923.ico" />
     <None Include="Resources\1425904406_289616.ico" />
@@ -1542,17 +1569,6 @@
     </None>
     <None Include="DVMDDataSet.xss">
       <DependentUpon>DVMDDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DVMDDataSet1.xsc">
-      <DependentUpon>DVMDDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DVMDDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DVMDDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DVMDDataSet1.xss">
-      <DependentUpon>DVMDDataSet1.xsd</DependentUpon>
     </None>
     <None Include="EF\ModelDVMD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

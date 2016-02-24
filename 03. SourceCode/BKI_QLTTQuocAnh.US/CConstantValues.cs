@@ -96,7 +96,7 @@ namespace BKI_DichVuMatDat.US
         public const decimal LOAI_TRANG_THAI_LD = 17;
         public const decimal NHAN_SU_KHAC = 18;
         public const decimal KHOAN_TIEN_KHAC = 19;
-        public const decimal TRINH_DO_CHUYEN_MON = 20;
+        public const int TRINH_DO_CHUYEN_MON = 20;
     }
 
     public static class CONST_ID_LOAI_CONG_TAC
@@ -197,7 +197,7 @@ namespace BKI_DichVuMatDat.US
         public const int ERROR_CHUA_NHAP_MA_NHAN_VIEN = 230;
         public const int ERROR_CHUA_NHAP_HO_DEM_NHAN_VIEN = 231;
         public const int ERROR_CHUA_NHAP_TEN_NHAN_VIEN = 232;
-        public const int ERROR_TRUNG_MA_HOP_DONG = 233;
+        public const int ERROR_TRUNG_MA_NHAN_VIEN = 233;
         #endregion
 
         #region Báo cáo

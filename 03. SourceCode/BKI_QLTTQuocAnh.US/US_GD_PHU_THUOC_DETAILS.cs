@@ -492,5 +492,12 @@ public class US_GD_PHU_THUOC_DETAILS : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void FillDatasetSoLuongPhuThuocDetails(DS_GD_PHU_THUOC_DETAILS v_ds, decimal ip_dc_id_nv)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_get_so_luong_phu_thuoc_details");
+        v_cstore.addDecimalInputParam("@id_nhan_vien", ip_dc_id_nv);
+        v_cstore.fillDataSetByCommand(this, v_ds);
+    }
+}
 }

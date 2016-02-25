@@ -62,9 +62,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             return v_ds;
         }
 
-
         private void m_cmd_import_excel_Click(object sender, EventArgs e)
         {
+            m_grc.DataSource = null;
             try
             {
                 WinFormControls.load_xls_to_gridview(WinFormControls.openFileDialog(), m_grc);
@@ -134,7 +134,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             int v_slg_phu_thuoc_details = get_so_luong_phu_thuoc_details(ip_dc_id_nv);
             DS_GD_PHU_THUOC v_ds = new DS_GD_PHU_THUOC();
             US_GD_PHU_THUOC v_us = new US_GD_PHU_THUOC();
-            v_us.FillDataset(v_ds, "where da_xoa = 'N' and id_nhan_vien=" + ip_dc_id_nv);
+            v_us.FillDatasetPhuThuoc(v_ds, ip_dc_id_nv);
             if (v_ds.Tables[0].Rows.Count == 0)
             {
                 v_us.dcID_NHAN_VIEN = ip_dc_id_nv;
@@ -155,7 +155,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             DS_GD_PHU_THUOC_DETAILS v_ds = new DS_GD_PHU_THUOC_DETAILS();
             US_GD_PHU_THUOC_DETAILS v_us = new US_GD_PHU_THUOC_DETAILS();
-            v_us.FillDataset(v_ds, "where da_xoa = 'N' and id_gd_phu_thuoc=" + ip_dc_id_nv );
+            v_us.FillDatasetSoLuongPhuThuocDetails(v_ds, ip_dc_id_nv );
             return v_ds.Tables[0].Rows.Count;
         }
 
@@ -196,11 +196,15 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private decimal get_id_by_ma_nhan_vien(string ip_str_ma_nv)
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds, "select * from dm_nhan_vien where ma_nv = '" + ip_str_ma_nv + "'");
-            decimal v_id_nv =  CIPConvert.ToDecimal( v_ds.Tables[0].Rows[0][0].ToString());
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+            //v_ds.Tables.Add(new DataTable());
+            //v_us.FillDatasetWithQuery(v_ds, "select * from dm_nhan_vien where ma_nv = '" + ip_str_ma_nv + "'");
+            DS_DM_NHAN_VIEN v_ds = new DS_DM_NHAN_VIEN();
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            v_us.FillDataset(v_ds);
+            decimal v_id_nv = v_us.getIDNhanVienByMaNV(ip_str_ma_nv);
+            //decimal v_id_nv =  CIPConvert.ToDecimal( v_ds.Tables[0].Rows[0][0].ToString());
             if (!m_lst_nv_insert_phu_thuoc.Contains(v_id_nv))
             {
                 m_lst_nv_insert_phu_thuoc.Add(v_id_nv); 

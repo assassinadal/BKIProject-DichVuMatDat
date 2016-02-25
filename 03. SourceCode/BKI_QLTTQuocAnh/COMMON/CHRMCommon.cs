@@ -10,7 +10,6 @@ using IP.Core.IPCommon;
 using System.Windows.Forms;
 using System.Drawing;
 using DevExpress.XtraEditors;
-using BKI_DichVuMatDat.EF;
 
 namespace BKI_DichVuMatDat
 {

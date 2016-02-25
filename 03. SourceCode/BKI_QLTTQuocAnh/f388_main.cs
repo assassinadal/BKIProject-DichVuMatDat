@@ -536,11 +536,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f440_rpt_luong v_frm = new f440_rpt_luong();
-                if(IsExistFormName(v_frm)) return;
+                //f440_rpt_luong v_frm = new f440_rpt_luong();
+                //if(IsExistFormName(v_frm)) return;
 
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
             }
             catch(Exception)
             {

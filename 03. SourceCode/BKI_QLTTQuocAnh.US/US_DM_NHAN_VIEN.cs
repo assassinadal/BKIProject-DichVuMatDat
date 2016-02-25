@@ -776,6 +776,26 @@ namespace BKI_DichVuMatDat.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+
+        public void FillDatasetNhanVienCanInsertHeSo(DataSet op_ds, decimal ip_thang, decimal ip_nam)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_lay_danh_sach_nhan_vien_can_insert_he_so");
+            v_cstore.addDecimalInputParam("@ip_thang", ip_thang);
+            v_cstore.addDecimalInputParam("@ip_nam", ip_nam);
+            v_cstore.fillDataSetByCommand(this, op_ds);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         public DataSet BangThongKeNhanVien(DateTime ip_dat_tai_ngay)
         {
             CStoredProc v_sp = new CStoredProc("pr_thong_ke_nhan_vien");

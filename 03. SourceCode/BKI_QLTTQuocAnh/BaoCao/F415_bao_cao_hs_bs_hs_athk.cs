@@ -80,7 +80,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void tinh_lai_he_so_thang(decimal ip_dc_thang, decimal ip_dc_nam)
         {
-            US_DUNG_CHUNG v_us_dung_chung = new US_DUNG_CHUNG();
+            US_DM_NHAN_VIEN v_us_dung_chung = new US_DM_NHAN_VIEN();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
 

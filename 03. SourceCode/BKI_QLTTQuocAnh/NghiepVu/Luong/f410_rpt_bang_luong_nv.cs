@@ -234,7 +234,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void insert_hs_hs_bs_hs_anhk(decimal ip_dc_thang, decimal ip_dc_nam)
         {
-            US_DUNG_CHUNG v_us_dung_chung = new US_DUNG_CHUNG();
+            US_DM_NHAN_VIEN v_us_dung_chung = new US_DM_NHAN_VIEN();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
             v_us_dung_chung.FillDatasetNhanVienCanInsertHeSo(v_ds, ip_dc_thang, ip_dc_nam);

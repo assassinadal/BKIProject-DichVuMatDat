@@ -541,7 +541,7 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         private void chot_he_so_bsl_athk_thang()
         {
-            US_DUNG_CHUNG v_us_dung_chung = new US_DUNG_CHUNG();
+            US_DM_NHAN_VIEN v_us_dung_chung = new US_DM_NHAN_VIEN();
             DataSet v_ds_danh_sach_nv_can_insert = new DataSet();
             v_ds_danh_sach_nv_can_insert.Tables.Add(new DataTable());
             v_us_dung_chung.FillDatasetNhanVienCanInsertHeSo(v_ds_danh_sach_nv_can_insert, lay_thang(), lay_nam());

@@ -384,13 +384,7 @@ namespace BKI_DichVuMatDat
 
     public class US_DUNG_CHUNG : US_Object
     {
-        public void FillDatasetNhanVienCanInsertHeSo(DataSet op_ds, decimal ip_thang, decimal ip_nam)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_lay_danh_sach_nhan_vien_can_insert_he_so");
-            v_cstore.addDecimalInputParam("@ip_thang", ip_thang);
-            v_cstore.addDecimalInputParam("@ip_nam", ip_nam);
-            v_cstore.fillDataSetByCommand(this, op_ds);
-        }
+        
         public void XoaDuLieuTrongThang_ATHK_BSL(decimal ip_thang, decimal ip_nam)
         {
             CStoredProc v_cstore = new CStoredProc("pr_xoa_du_lieu_athk_bsl_thang");

@@ -310,11 +310,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f697_cham_cong_lam_them v_frm = new f697_cham_cong_lam_them();
-                if(IsExistFormName(v_frm)) return;
+                //f697_cham_cong_lam_them v_frm = new f697_cham_cong_lam_them();
+                //if(IsExistFormName(v_frm)) return;
 
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
             }
             catch(Exception v_e)
             {
@@ -342,11 +342,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f316_tinh_thuong_2014 v_frm = new f316_tinh_thuong_2014();
-                if(IsExistFormName(v_frm)) return;
+                //f316_tinh_thuong_2014 v_frm = new f316_tinh_thuong_2014();
+                //if(IsExistFormName(v_frm)) return;
 
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
             }
             catch(Exception v_e)
             {
@@ -584,11 +584,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                BackupDB v_frm = new BackupDB();
-                if(IsExistFormName(v_frm)) return;
+                //BackupDB v_frm = new BackupDB();
+                //if(IsExistFormName(v_frm)) return;
 
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
             }
             catch(Exception v_e)
             {
@@ -699,11 +699,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f310_cham_cong_theo_danh_sach_nhan_vien v_frm = new f310_cham_cong_theo_danh_sach_nhan_vien();
-                if(IsExistFormName(v_frm)) return;
+                //f310_cham_cong_theo_danh_sach_nhan_vien v_frm = new f310_cham_cong_theo_danh_sach_nhan_vien();
+                //if(IsExistFormName(v_frm)) return;
 
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
             }
             catch(Exception v_e)
             {
@@ -779,11 +779,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f380_thay_doi_he_so_chat_luong_xls v_frm = new f380_thay_doi_he_so_chat_luong_xls();
-                if(IsExistFormName(v_frm)) return;
+                //f380_thay_doi_he_so_chat_luong_xls v_frm = new f380_thay_doi_he_so_chat_luong_xls();
+                //if(IsExistFormName(v_frm)) return;
 
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
             }
             catch(Exception v_e)
             {
@@ -811,11 +811,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f390_gd_thu_nhap_khac v_frm = new f390_gd_thu_nhap_khac();
-                if(IsExistFormName(v_frm)) return;
+                //f390_gd_thu_nhap_khac v_frm = new f390_gd_thu_nhap_khac();
+                //if(IsExistFormName(v_frm)) return;
 
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
             }
             catch(Exception v_e)
             {
@@ -827,11 +827,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f391_thu_nhap_khac_xls v_frm = new f391_thu_nhap_khac_xls();
-                if(IsExistFormName(v_frm)) return;
+                //f391_thu_nhap_khac_xls v_frm = new f391_thu_nhap_khac_xls();
+                //if(IsExistFormName(v_frm)) return;
 
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
             }
             catch(Exception v_e)
             {
@@ -1091,10 +1091,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                F312_dang_ky_giam_tru_nguoi_phu_thuoc v_f = new F312_dang_ky_giam_tru_nguoi_phu_thuoc();
-                if(IsExistFormName(v_f)) return;
-                v_f.MdiParent = this;
-                v_f.Show();
+                //F312_dang_ky_giam_tru_nguoi_phu_thuoc v_f = new F312_dang_ky_giam_tru_nguoi_phu_thuoc();
+                //if(IsExistFormName(v_f)) return;
+                //v_f.MdiParent = this;
+                //v_f.Show();
             }
             catch(Exception v_e)
             {
@@ -1106,10 +1106,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f392_ke_khai_bao_hiem_y_te v_f = new f392_ke_khai_bao_hiem_y_te();
-                if(IsExistFormName(v_f)) return;
-                v_f.MdiParent = this;
-                v_f.Show();
+                //f392_ke_khai_bao_hiem_y_te v_f = new f392_ke_khai_bao_hiem_y_te();
+                //if(IsExistFormName(v_f)) return;
+                //v_f.MdiParent = this;
+                //v_f.Show();
             }
             catch(Exception v_e)
             {

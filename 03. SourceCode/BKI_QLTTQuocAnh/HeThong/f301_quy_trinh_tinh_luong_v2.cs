@@ -145,8 +145,8 @@ namespace BKI_DichVuMatDat.HeThong
         {            
             try
             {
-                F312_dang_ky_giam_tru_nguoi_phu_thuoc v_frm = new F312_dang_ky_giam_tru_nguoi_phu_thuoc();
-                v_frm.ShowDialog();
+                //F312_dang_ky_giam_tru_nguoi_phu_thuoc v_frm = new F312_dang_ky_giam_tru_nguoi_phu_thuoc();
+                //v_frm.ShowDialog();
             }
             catch (Exception v_e)
             {
@@ -184,8 +184,8 @@ namespace BKI_DichVuMatDat.HeThong
         {            
             try
             {
-                f310_cham_cong_theo_danh_sach_nhan_vien v_frm = new f310_cham_cong_theo_danh_sach_nhan_vien();
-                v_frm.ShowDialog();
+                //f310_cham_cong_theo_danh_sach_nhan_vien v_frm = new f310_cham_cong_theo_danh_sach_nhan_vien();
+                //v_frm.ShowDialog();
             }
             catch (Exception v_e)
             {
@@ -223,8 +223,8 @@ namespace BKI_DichVuMatDat.HeThong
         {
             try
             {
-                f697_cham_cong_lam_them v_frm = new f697_cham_cong_lam_them();
-                v_frm.ShowDialog();
+                //f697_cham_cong_lam_them v_frm = new f697_cham_cong_lam_them();
+                //v_frm.ShowDialog();
             }
             catch (Exception v_e)
             {
@@ -249,8 +249,8 @@ namespace BKI_DichVuMatDat.HeThong
         {
             try
             {
-                f390_gd_thu_nhap_khac v_frm = new f390_gd_thu_nhap_khac();
-                v_frm.ShowDialog();
+                //f390_gd_thu_nhap_khac v_frm = new f390_gd_thu_nhap_khac();
+                //v_frm.ShowDialog();
             }
             catch (Exception v_e)
             {
@@ -301,8 +301,8 @@ namespace BKI_DichVuMatDat.HeThong
         {
             try
             {
-                f316_tinh_thuong_2014 v_frm = new f316_tinh_thuong_2014();
-                v_frm.ShowDialog();
+                //f316_tinh_thuong_2014 v_frm = new f316_tinh_thuong_2014();
+                //v_frm.ShowDialog();
             }
             catch (Exception v_e)
             {

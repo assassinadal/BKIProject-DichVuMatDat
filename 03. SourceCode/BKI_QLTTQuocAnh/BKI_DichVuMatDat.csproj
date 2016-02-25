@@ -357,6 +357,12 @@
     <Compile Include="BaoCao\F420_Bao_cao_nhan_su_theo_don_vi.Designer.cs">
       <DependentUpon>F420_Bao_cao_nhan_su_theo_don_vi.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\f441_thuc_linh_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f441_thuc_linh_de.Designer.cs">
+      <DependentUpon>f441_thuc_linh_de.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\f490_rpt_ke_khai_thu_nhap_detail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -392,12 +398,6 @@
     </Compile>
     <Compile Include="BaoCao\f440_rpt_luong.Designer.cs">
       <DependentUpon>f440_rpt_luong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\f441_thuc_linh_de.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCao\f441_thuc_linh_de.Designer.cs">
-      <DependentUpon>f441_thuc_linh_de.cs</DependentUpon>
     </Compile>
     <Compile Include="BaoCao\f445_bien_dong_luong_theo_thang.cs">
       <SubType>Form</SubType>
@@ -758,18 +758,6 @@
     <Compile Include="HeThong\f999_ht_nguoi_su_dung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NghiepVu\BackupDB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\BackupDB.Designer.cs">
-      <DependentUpon>BackupDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\f300_tinh_hs_athk_hsbs_1_thang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\f300_tinh_hs_athk_hsbs_1_thang.Designer.cs">
-      <DependentUpon>f300_tinh_hs_athk_hsbs_1_thang.cs</DependentUpon>
-    </Compile>
     <Compile Include="NghiepVu\f301_tinh_thu_nhap_khac_le_tet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -782,29 +770,11 @@
     <Compile Include="NghiepVu\f301_tinh_thu_nhap_khac.Designer.cs">
       <DependentUpon>f301_tinh_thu_nhap_khac.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\f302_quan_ly_quy_thuong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\f302_quan_ly_quy_thuong.Designer.cs">
-      <DependentUpon>f302_quan_ly_quy_thuong.cs</DependentUpon>
-    </Compile>
     <Compile Include="NghiepVu\f303_gd_cham_cong_lam_them.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NghiepVu\f303_gd_cham_cong_lam_them.Designer.cs">
       <DependentUpon>f303_gd_cham_cong_lam_them.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\f310_cham_cong_theo_danh_sach_nhan_vien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\f310_cham_cong_theo_danh_sach_nhan_vien.Designer.cs">
-      <DependentUpon>f310_cham_cong_theo_danh_sach_nhan_vien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\F312_dang_ky_giam_tru_nguoi_phu_thuoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\F312_dang_ky_giam_tru_nguoi_phu_thuoc.Designer.cs">
-      <DependentUpon>F312_dang_ky_giam_tru_nguoi_phu_thuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2.cs">
       <SubType>Form</SubType>
@@ -817,24 +787,6 @@
     </Compile>
     <Compile Include="NghiepVu\f315_card_nhan_vien.Designer.cs">
       <DependentUpon>f315_card_nhan_vien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\f316_tinh_thuong_2014.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\f316_tinh_thuong_2014.Designer.cs">
-      <DependentUpon>f316_tinh_thuong_2014.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\f317_thuong_athk.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\f317_thuong_athk.Designer.cs">
-      <DependentUpon>f317_thuong_athk.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\f318_thuong_le_tet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\f318_thuong_le_tet.Designer.cs">
-      <DependentUpon>f318_thuong_le_tet.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\f320_lap_hop_dong.cs">
       <SubType>Form</SubType>
@@ -878,23 +830,11 @@
     <Compile Include="NghiepVu\f350_quan_ly_vi_tri_cong_tac.Designer.cs">
       <DependentUpon>f350_quan_ly_vi_tri_cong_tac.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\f354_danh_sach_quy_thuong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\f354_danh_sach_quy_thuong.Designer.cs">
-      <DependentUpon>f354_danh_sach_quy_thuong.cs</DependentUpon>
-    </Compile>
     <Compile Include="NghiepVu\f354_danh_sach_quy_thuong_de.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NghiepVu\f354_danh_sach_quy_thuong_de.Designer.cs">
       <DependentUpon>f354_danh_sach_quy_thuong_de.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\f355_thuong_an_toan_hang_khong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\f355_thuong_an_toan_hang_khong.Designer.cs">
-      <DependentUpon>f355_thuong_an_toan_hang_khong.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien.cs">
       <SubType>Form</SubType>
@@ -920,12 +860,6 @@
     <Compile Include="NghiepVu\f363_quan_ly_cac_nhan_vien_co_luong_cung.Designer.cs">
       <DependentUpon>f363_quan_ly_cac_nhan_vien_co_luong_cung.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\F365_quan_ly_thuong_hs_bo_sung.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\F365_quan_ly_thuong_hs_bo_sung.Designer.cs">
-      <DependentUpon>F365_quan_ly_thuong_hs_bo_sung.cs</DependentUpon>
-    </Compile>
     <Compile Include="NghiepVu\f366_Quan_ly_nhan_vien_khong_dong_bao_hiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -950,29 +884,11 @@
     <Compile Include="NghiepVu\f372_nhan_vien_loai_lao_dong_excel.Designer.cs">
       <DependentUpon>f372_nhan_vien_loai_lao_dong_excel.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\f380_thay_doi_he_so_chat_luong_xls.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\f380_thay_doi_he_so_chat_luong_xls.Designer.cs">
-      <DependentUpon>f380_thay_doi_he_so_chat_luong_xls.cs</DependentUpon>
-    </Compile>
     <Compile Include="NghiepVu\f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NghiepVu\f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien.Designer.cs">
       <DependentUpon>f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\f390_gd_thu_nhap_khac.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\f390_gd_thu_nhap_khac.Designer.cs">
-      <DependentUpon>f390_gd_thu_nhap_khac.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\f391_thu_nhap_khac_xls.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\f391_thu_nhap_khac_xls.Designer.cs">
-      <DependentUpon>f391_thu_nhap_khac_xls.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\f392_ke_khai_bao_hiem_y_te.cs">
       <SubType>Form</SubType>
@@ -1022,23 +938,11 @@
     <Compile Include="NghiepVu\F501_THONG_TIN_BO_SUNG_NHAN_VIEN.Designer.cs">
       <DependentUpon>F501_THONG_TIN_BO_SUNG_NHAN_VIEN.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\f688_truy_linh_truy_thu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\f688_truy_linh_truy_thu.Designer.cs">
-      <DependentUpon>f688_truy_linh_truy_thu.cs</DependentUpon>
-    </Compile>
     <Compile Include="NghiepVu\F696_Cham_cong_xls.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NghiepVu\F696_Cham_cong_xls.Designer.cs">
       <DependentUpon>F696_Cham_cong_xls.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\f697_cham_cong_lam_them.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\f697_cham_cong_lam_them.Designer.cs">
-      <DependentUpon>f697_cham_cong_lam_them.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\frm356_chuyen_trang_thai_lao_dong.cs">
       <SubType>Form</SubType>
@@ -1206,6 +1110,9 @@
     <EmbeddedResource Include="BaoCao\F420_Bao_cao_nhan_su_theo_don_vi.resx">
       <DependentUpon>F420_Bao_cao_nhan_su_theo_don_vi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f441_thuc_linh_de.resx">
+      <DependentUpon>f441_thuc_linh_de.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f490_rpt_ke_khai_thu_nhap_detail.resx">
       <DependentUpon>f490_rpt_ke_khai_thu_nhap_detail.cs</DependentUpon>
     </EmbeddedResource>
@@ -1223,9 +1130,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f440_rpt_luong.resx">
       <DependentUpon>f440_rpt_luong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\f441_thuc_linh_de.resx">
-      <DependentUpon>f441_thuc_linh_de.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f445_bien_dong_luong_theo_thang.resx">
       <DependentUpon>f445_bien_dong_luong_theo_thang.cs</DependentUpon>
@@ -1386,44 +1290,20 @@
     <EmbeddedResource Include="HeThong\f999_ht_nguoi_su_dung.resx">
       <DependentUpon>f999_ht_nguoi_su_dung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\BackupDB.resx">
-      <DependentUpon>BackupDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f300_tinh_hs_athk_hsbs_1_thang.resx">
-      <DependentUpon>f300_tinh_hs_athk_hsbs_1_thang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f301_tinh_thu_nhap_khac_le_tet.resx">
       <DependentUpon>f301_tinh_thu_nhap_khac_le_tet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f301_tinh_thu_nhap_khac.resx">
       <DependentUpon>f301_tinh_thu_nhap_khac.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f302_quan_ly_quy_thuong.resx">
-      <DependentUpon>f302_quan_ly_quy_thuong.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f303_gd_cham_cong_lam_them.resx">
       <DependentUpon>f303_gd_cham_cong_lam_them.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f310_cham_cong_theo_danh_sach_nhan_vien.resx">
-      <DependentUpon>f310_cham_cong_theo_danh_sach_nhan_vien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\F312_dang_ky_giam_tru_nguoi_phu_thuoc.resx">
-      <DependentUpon>F312_dang_ky_giam_tru_nguoi_phu_thuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2.resx">
       <DependentUpon>f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f315_card_nhan_vien.resx">
       <DependentUpon>f315_card_nhan_vien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f316_tinh_thuong_2014.resx">
-      <DependentUpon>f316_tinh_thuong_2014.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f317_thuong_athk.resx">
-      <DependentUpon>f317_thuong_athk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f318_thuong_le_tet.resx">
-      <DependentUpon>f318_thuong_le_tet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f320_lap_hop_dong.resx">
       <DependentUpon>f320_lap_hop_dong.cs</DependentUpon>
@@ -1446,14 +1326,8 @@
     <EmbeddedResource Include="NghiepVu\f350_quan_ly_vi_tri_cong_tac.resx">
       <DependentUpon>f350_quan_ly_vi_tri_cong_tac.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f354_danh_sach_quy_thuong.resx">
-      <DependentUpon>f354_danh_sach_quy_thuong.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f354_danh_sach_quy_thuong_de.resx">
       <DependentUpon>f354_danh_sach_quy_thuong_de.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f355_thuong_an_toan_hang_khong.resx">
-      <DependentUpon>f355_thuong_an_toan_hang_khong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien.resx">
       <DependentUpon>f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien.cs</DependentUpon>
@@ -1467,9 +1341,6 @@
     <EmbeddedResource Include="NghiepVu\f363_quan_ly_cac_nhan_vien_co_luong_cung.resx">
       <DependentUpon>f363_quan_ly_cac_nhan_vien_co_luong_cung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\F365_quan_ly_thuong_hs_bo_sung.resx">
-      <DependentUpon>F365_quan_ly_thuong_hs_bo_sung.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f366_Quan_ly_nhan_vien_khong_dong_bao_hiem.resx">
       <DependentUpon>f366_Quan_ly_nhan_vien_khong_dong_bao_hiem.cs</DependentUpon>
     </EmbeddedResource>
@@ -1482,17 +1353,8 @@
     <EmbeddedResource Include="NghiepVu\f372_nhan_vien_loai_lao_dong_excel.resx">
       <DependentUpon>f372_nhan_vien_loai_lao_dong_excel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f380_thay_doi_he_so_chat_luong_xls.resx">
-      <DependentUpon>f380_thay_doi_he_so_chat_luong_xls.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien.resx">
       <DependentUpon>f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f390_gd_thu_nhap_khac.resx">
-      <DependentUpon>f390_gd_thu_nhap_khac.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f391_thu_nhap_khac_xls.resx">
-      <DependentUpon>f391_thu_nhap_khac_xls.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f392_ke_khai_bao_hiem_y_te.resx">
       <DependentUpon>f392_ke_khai_bao_hiem_y_te.cs</DependentUpon>
@@ -1518,14 +1380,8 @@
     <EmbeddedResource Include="NghiepVu\F501_THONG_TIN_BO_SUNG_NHAN_VIEN.resx">
       <DependentUpon>F501_THONG_TIN_BO_SUNG_NHAN_VIEN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f688_truy_linh_truy_thu.resx">
-      <DependentUpon>f688_truy_linh_truy_thu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F696_Cham_cong_xls.resx">
       <DependentUpon>F696_Cham_cong_xls.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f697_cham_cong_lam_them.resx">
-      <DependentUpon>f697_cham_cong_lam_them.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm356_chuyen_trang_thai_lao_dong.resx">
       <DependentUpon>frm356_chuyen_trang_thai_lao_dong.cs</DependentUpon>

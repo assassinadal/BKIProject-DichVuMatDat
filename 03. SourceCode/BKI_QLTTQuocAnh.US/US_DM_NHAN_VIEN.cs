@@ -727,6 +727,28 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["NGAY_CHINH_THUC_TIEP_NHAN"] = System.Convert.DBNull;
         }
 
+        public string strNGUOI_BAO_LANH
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "NGUOI_BAO_LANH", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["NGUOI_BAO_LANH"] = value;
+            }
+        }
+
+        public bool IsNGUOI_BAO_LANHNull()
+        {
+            return pm_objDR.IsNull("NGUOI_BAO_LANH");
+        }
+
+        public void SetNGUOI_BAO_LANHNull()
+        {
+            pm_objDR["NGUOI_BAO_LANH"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_DM_NHAN_VIEN()

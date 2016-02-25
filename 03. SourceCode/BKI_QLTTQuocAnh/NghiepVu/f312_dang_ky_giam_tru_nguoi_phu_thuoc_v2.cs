@@ -16,6 +16,7 @@ using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraPivotGrid;
 using IP.Core.IPSystemAdmin;
+using DevExpress.XtraSplashScreen;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -77,48 +78,56 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void m_cmd_save_Click(object sender, EventArgs e)
         {
-            m_lst_nv_insert_phu_thuoc.Clear();
+            m_lst_nv_insert_phu_thuoc.Clear();            
             try
             {
+                SplashScreenManager.ShowForm(typeof(BKI_DichVuMatDat.BaoCao.F_wait_form));
                 insert_gd_phu_thuoc_details();
-                List<decimal> v_lst_nv_thay_doi = gd_phu_thuoc_thay_doi_yn(m_lst_nv_insert_phu_thuoc);
-                if (v_lst_nv_thay_doi.Count !=0)
+                for (int i = 0; i < m_lst_nv_insert_phu_thuoc.Count; i++)
                 {
-                    DialogResult v_dialog = XtraMessageBox.Show("Số lượng người phụ thuộc của một vài nhân viên đã thay đổi. Bạn có muốn cập nhật số lượng mới không? ", "Xác nhận", MessageBoxButtons.YesNo);
-                    if (v_dialog == DialogResult.Yes)
-                    {
-                        for (int i = 0; i < v_lst_nv_thay_doi.Count; i++)
-                        {
-                            update_gd_phu_thuoc(v_lst_nv_thay_doi[i]);
-                        }
-                        XtraMessageBox.Show("Lưu thành công");
-                    }                 
-                    m_cmd_save.Enabled = false;
-                }                             
+                    update_gd_phu_thuoc(m_lst_nv_insert_phu_thuoc[i]);
+                }
+                m_cmd_save.Enabled = false;
+                XtraMessageBox.Show("Lưu thành công");
+                //List<decimal> v_lst_nv_thay_doi = gd_phu_thuoc_thay_doi_yn(m_lst_nv_insert_phu_thuoc);
+                //if (v_lst_nv_thay_doi.Count !=0)
+                //{
+                    //DialogResult v_dialog = XtraMessageBox.Show("Số lượng người phụ thuộc của một vài nhân viên đã thay đổi. Sau khi thêm danh sách phụ thuộc thành công, bạn có muốn cập nhật số lượng mới cùng lúc không? ", "Xác nhận", MessageBoxButtons.YesNo);
+                    //if (v_dialog == DialogResult.Yes)
+                    //{
+                    //    for (int i = 0; i < v_lst_nv_thay_doi.Count; i++)
+                    //    {
+                    //        update_gd_phu_thuoc(v_lst_nv_thay_doi[i]);
+                    //    }
+                    //    XtraMessageBox.Show("Lưu thành công");
+                    ////}                 
+                    //m_cmd_save.Enabled = false;
+                    
+                //}                             
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
-            }       
+            }           
         }
 
-        private List<decimal> gd_phu_thuoc_thay_doi_yn(List<decimal> m_lst_nv_insert_phu_thuoc)
-        {
-            List<decimal> v_lst_nv_thay_doi = new List<decimal>();
-            for (int i = 0; i < m_lst_nv_insert_phu_thuoc.Count; i++)
-            {
-                DS_GD_PHU_THUOC v_ds = new DS_GD_PHU_THUOC();
-                US_GD_PHU_THUOC v_us = new US_GD_PHU_THUOC();
-                v_us.FillDataset(v_ds, "where da_xoa = 'N' and id_nhan_vien=" + m_lst_nv_insert_phu_thuoc[i]);
-                int v_slg_phu_thuoc_details = get_so_luong_phu_thuoc_details(m_lst_nv_insert_phu_thuoc[i]);
-                DataTable v_dt = v_ds.Tables[0];
-                if (v_dt.Rows.Count == 0 || (CIPConvert.ToDecimal(v_dt.Rows[0][2].ToString()) < v_slg_phu_thuoc_details))
-                {
-                    v_lst_nv_thay_doi.Add(m_lst_nv_insert_phu_thuoc[i]);
-                }
-            }
-            return v_lst_nv_thay_doi;
-        }
+        //private List<decimal> gd_phu_thuoc_thay_doi_yn(List<decimal> m_lst_nv_insert_phu_thuoc)
+        //{
+        //    List<decimal> v_lst_nv_thay_doi = new List<decimal>();
+        //    for (int i = 0; i < m_lst_nv_insert_phu_thuoc.Count; i++)
+        //    {
+        //        DS_GD_PHU_THUOC v_ds = new DS_GD_PHU_THUOC();
+        //        US_GD_PHU_THUOC v_us = new US_GD_PHU_THUOC();
+        //        v_us.FillDataset(v_ds, "where da_xoa = 'N' and id_nhan_vien=" + m_lst_nv_insert_phu_thuoc[i]);
+        //        int v_slg_phu_thuoc_details = get_so_luong_phu_thuoc_details(m_lst_nv_insert_phu_thuoc[i]);
+        //        DataTable v_dt = v_ds.Tables[0];
+        //        if (v_dt.Rows.Count == 0 || (CIPConvert.ToDecimal(v_dt.Rows[0][2].ToString()) < v_slg_phu_thuoc_details))
+        //        {
+        //            v_lst_nv_thay_doi.Add(m_lst_nv_insert_phu_thuoc[i]);
+        //        }
+        //    }
+        //    return v_lst_nv_thay_doi;
+        //}
 
         private void update_gd_phu_thuoc(decimal ip_dc_id_nv)
         {

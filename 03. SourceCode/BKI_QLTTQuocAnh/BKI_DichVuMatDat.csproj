@@ -749,6 +749,12 @@
     <Compile Include="NghiepVu\f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2.Designer.cs">
       <DependentUpon>f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details.Designer.cs">
+      <DependentUpon>f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f315_card_nhan_vien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1256,6 +1262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2.resx">
       <DependentUpon>f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details.resx">
+      <DependentUpon>f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f315_card_nhan_vien.resx">
       <DependentUpon>f315_card_nhan_vien.cs</DependentUpon>

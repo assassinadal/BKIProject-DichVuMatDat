@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2));
+            this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_tai_file_mau = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
@@ -107,17 +108,17 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_import_excel);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 470);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 435);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1092, 43);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1005, 43);
             this.m_pnl_out_place_dm.TabIndex = 2;
             // 
             // m_cmd_tai_file_mau
             // 
             this.m_cmd_tai_file_mau.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_tai_file_mau.Image = global::BKI_DichVuMatDat.Properties.Resources.Benjigarner_Softdimension_Excel;
-            this.m_cmd_tai_file_mau.Location = new System.Drawing.Point(508, 4);
+            this.m_cmd_tai_file_mau.Location = new System.Drawing.Point(421, 4);
             this.m_cmd_tai_file_mau.Name = "m_cmd_tai_file_mau";
             this.m_cmd_tai_file_mau.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_tai_file_mau.TabIndex = 12;
@@ -129,7 +130,7 @@
             this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_save.Enabled = false;
             this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
-            this.m_cmd_save.Location = new System.Drawing.Point(624, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(537, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_save.TabIndex = 11;
@@ -140,7 +141,7 @@
             // 
             this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
-            this.m_cmd_update.Location = new System.Drawing.Point(740, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(653, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_update.TabIndex = 10;
@@ -150,7 +151,7 @@
             // 
             this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
-            this.m_cmd_delete.Location = new System.Drawing.Point(856, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(769, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_delete.TabIndex = 9;
@@ -161,7 +162,7 @@
             // 
             this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_import_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_excel.Image")));
-            this.m_cmd_import_excel.Location = new System.Drawing.Point(972, 4);
+            this.m_cmd_import_excel.Location = new System.Drawing.Point(885, 4);
             this.m_cmd_import_excel.Name = "m_cmd_import_excel";
             this.m_cmd_import_excel.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_import_excel.TabIndex = 8;
@@ -175,7 +176,7 @@
             this.m_grc.Location = new System.Drawing.Point(0, 133);
             this.m_grc.MainView = this.m_grv1;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(1092, 337);
+            this.m_grc.Size = new System.Drawing.Size(1005, 302);
             this.m_grc.TabIndex = 7;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv1,
@@ -220,7 +221,7 @@
             this.gridBand1.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 233;
+            this.gridBand1.Width = 244;
             // 
             // bandedGridColumn17
             // 
@@ -236,7 +237,7 @@
             this.bandedGridColumn15.FieldName = "HO_TEN_NGUOI_NOP_THUE";
             this.bandedGridColumn15.Name = "bandedGridColumn15";
             this.bandedGridColumn15.Visible = true;
-            this.bandedGridColumn15.Width = 69;
+            this.bandedGridColumn15.Width = 80;
             // 
             // bandedGridColumn16
             // 
@@ -259,7 +260,7 @@
             this.gridBand4.Columns.Add(this.bandedGridColumn6);
             this.gridBand4.Name = "gridBand4";
             this.gridBand4.VisibleIndex = 1;
-            this.gridBand4.Width = 414;
+            this.gridBand4.Width = 394;
             // 
             // bandedGridColumn1
             // 
@@ -267,7 +268,7 @@
             this.bandedGridColumn1.FieldName = "HO_TEN_NGUOI_PHU_THUOC";
             this.bandedGridColumn1.Name = "bandedGridColumn1";
             this.bandedGridColumn1.Visible = true;
-            this.bandedGridColumn1.Width = 58;
+            this.bandedGridColumn1.Width = 78;
             // 
             // bandedGridColumn2
             // 
@@ -275,7 +276,7 @@
             this.bandedGridColumn2.FieldName = "NGAY_SINH";
             this.bandedGridColumn2.Name = "bandedGridColumn2";
             this.bandedGridColumn2.Visible = true;
-            this.bandedGridColumn2.Width = 58;
+            this.bandedGridColumn2.Width = 50;
             // 
             // bandedGridColumn3
             // 
@@ -283,6 +284,7 @@
             this.bandedGridColumn3.FieldName = "MA_SO_THUE";
             this.bandedGridColumn3.Name = "bandedGridColumn3";
             this.bandedGridColumn3.Visible = true;
+            this.bandedGridColumn3.Width = 65;
             // 
             // bandedGridColumn4
             // 
@@ -290,7 +292,7 @@
             this.bandedGridColumn4.FieldName = "QUOC_TICH";
             this.bandedGridColumn4.Name = "bandedGridColumn4";
             this.bandedGridColumn4.Visible = true;
-            this.bandedGridColumn4.Width = 58;
+            this.bandedGridColumn4.Width = 50;
             // 
             // bandedGridColumn5
             // 
@@ -298,7 +300,7 @@
             this.bandedGridColumn5.FieldName = "SO_CMT_HO_CHIEU";
             this.bandedGridColumn5.Name = "bandedGridColumn5";
             this.bandedGridColumn5.Visible = true;
-            this.bandedGridColumn5.Width = 98;
+            this.bandedGridColumn5.Width = 85;
             // 
             // bandedGridColumn6
             // 
@@ -306,7 +308,7 @@
             this.bandedGridColumn6.FieldName = "QUAN_HE_VOI_NGUOI_NOP_THUE";
             this.bandedGridColumn6.Name = "bandedGridColumn6";
             this.bandedGridColumn6.Visible = true;
-            this.bandedGridColumn6.Width = 67;
+            this.bandedGridColumn6.Width = 66;
             // 
             // gridBand2
             // 
@@ -321,7 +323,7 @@
             this.gridBand2.Columns.Add(this.bandedGridColumn12);
             this.gridBand2.Name = "gridBand2";
             this.gridBand2.VisibleIndex = 2;
-            this.gridBand2.Width = 313;
+            this.gridBand2.Width = 254;
             // 
             // bandedGridColumn7
             // 
@@ -329,7 +331,7 @@
             this.bandedGridColumn7.FieldName = "TTGKS_SO";
             this.bandedGridColumn7.Name = "bandedGridColumn7";
             this.bandedGridColumn7.Visible = true;
-            this.bandedGridColumn7.Width = 48;
+            this.bandedGridColumn7.Width = 37;
             // 
             // bandedGridColumn8
             // 
@@ -337,7 +339,7 @@
             this.bandedGridColumn8.FieldName = "TTGKS_QUYEN";
             this.bandedGridColumn8.Name = "bandedGridColumn8";
             this.bandedGridColumn8.Visible = true;
-            this.bandedGridColumn8.Width = 48;
+            this.bandedGridColumn8.Width = 37;
             // 
             // bandedGridColumn9
             // 
@@ -345,7 +347,7 @@
             this.bandedGridColumn9.FieldName = "TTGKS_QUOC_GIA";
             this.bandedGridColumn9.Name = "bandedGridColumn9";
             this.bandedGridColumn9.Visible = true;
-            this.bandedGridColumn9.Width = 48;
+            this.bandedGridColumn9.Width = 37;
             // 
             // bandedGridColumn10
             // 
@@ -353,7 +355,7 @@
             this.bandedGridColumn10.FieldName = "TTGKS_TINH_THANH";
             this.bandedGridColumn10.Name = "bandedGridColumn10";
             this.bandedGridColumn10.Visible = true;
-            this.bandedGridColumn10.Width = 48;
+            this.bandedGridColumn10.Width = 37;
             // 
             // bandedGridColumn11
             // 
@@ -361,7 +363,7 @@
             this.bandedGridColumn11.FieldName = "TTGKS_QUAN_HUYEN";
             this.bandedGridColumn11.Name = "bandedGridColumn11";
             this.bandedGridColumn11.Visible = true;
-            this.bandedGridColumn11.Width = 48;
+            this.bandedGridColumn11.Width = 37;
             // 
             // bandedGridColumn12
             // 
@@ -369,7 +371,7 @@
             this.bandedGridColumn12.FieldName = "TTGKS_PHUONG_XA";
             this.bandedGridColumn12.Name = "bandedGridColumn12";
             this.bandedGridColumn12.Visible = true;
-            this.bandedGridColumn12.Width = 73;
+            this.bandedGridColumn12.Width = 69;
             // 
             // gridBand3
             // 
@@ -380,7 +382,7 @@
             this.gridBand3.Columns.Add(this.bandedGridColumn14);
             this.gridBand3.Name = "gridBand3";
             this.gridBand3.VisibleIndex = 3;
-            this.gridBand3.Width = 112;
+            this.gridBand3.Width = 93;
             // 
             // bandedGridColumn13
             // 
@@ -388,7 +390,7 @@
             this.bandedGridColumn13.FieldName = "TU_NGAY";
             this.bandedGridColumn13.Name = "bandedGridColumn13";
             this.bandedGridColumn13.Visible = true;
-            this.bandedGridColumn13.Width = 55;
+            this.bandedGridColumn13.Width = 44;
             // 
             // bandedGridColumn14
             // 
@@ -396,7 +398,7 @@
             this.bandedGridColumn14.FieldName = "DEN_NGAY";
             this.bandedGridColumn14.Name = "bandedGridColumn14";
             this.bandedGridColumn14.Visible = true;
-            this.bandedGridColumn14.Width = 57;
+            this.bandedGridColumn14.Width = 49;
             // 
             // m_grv
             // 
@@ -552,7 +554,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1092, 141);
+            this.panelControl1.Size = new System.Drawing.Size(1005, 141);
             this.panelControl1.TabIndex = 9;
             // 
             // labelControl14
@@ -681,7 +683,7 @@
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(135, 15);
             this.labelControl5.TabIndex = 20;
-            this.labelControl5.Text = "[01] Tên người nộp thuế:";
+            this.labelControl5.Text = "[02] Tên người nộp thuế:";
             // 
             // m_lbl_nam_tinh_thue
             // 
@@ -752,7 +754,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 513);
+            this.ClientSize = new System.Drawing.Size(1005, 478);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.m_grc);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -834,5 +836,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

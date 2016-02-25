@@ -212,7 +212,7 @@ namespace BKI_DichVuMatDat
         #region Tinh bang luong
         public static DataRow get_luong_1_nhan_vien(decimal ip_dc_id_nhan_vien, int ip_int_thang, int ip_int_nam)
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_RPT_LUONG v_us = new US_RPT_LUONG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
             v_us.FillBangLuong(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
@@ -221,7 +221,7 @@ namespace BKI_DichVuMatDat
         }
         public static DataRow get_luong_1_nhan_vien_v2(decimal ip_dc_id_nhan_vien, int ip_int_thang, int ip_int_nam)
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_RPT_LUONG_V2 v_us = new US_RPT_LUONG_V2();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
             v_us.FillBangLuongV2(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
@@ -230,7 +230,7 @@ namespace BKI_DichVuMatDat
         }
         public static DataRow get_thong_tin_tong_hop_1_nhan_vien(decimal ip_dc_id_nhan_vien, int ip_int_thang, int ip_int_nam)
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_RPT_THONG_TIN_TONG_HOP v_us = new US_RPT_THONG_TIN_TONG_HOP();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
             v_us.FillThongTinTongHopNhanVien(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
@@ -239,7 +239,7 @@ namespace BKI_DichVuMatDat
         }
         public static DataRow get_thong_tin_tong_hop_1_nhan_vien_v2(decimal ip_dc_id_nhan_vien, int ip_int_thang, int ip_int_nam)
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_RPT_THONG_TIN_TONG_HOP_V2 v_us = new US_RPT_THONG_TIN_TONG_HOP_V2();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
             v_us.FillThongTinTongHopNhanVienV2(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);

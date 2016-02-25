@@ -108,19 +108,19 @@ namespace BKI_DichVuMatDat
             }
         }
 
-        public static void load_data_to_auto_complete_source(string ip_str_table_name, string ip_str_column_name, TextBox ip_txt)
-        {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            DataTable v_dt = new DataTable();
-            v_ds.Tables.Add(v_dt);
-            v_us.FillDatasetWithProc(v_ds, ip_str_table_name, ip_str_column_name);
-            for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
-            {
-                DataRow v_dr = v_ds.Tables[0].Rows[i];
-                ip_txt.AutoCompleteCustomSource.Add(v_dr[ip_str_column_name].ToString());
-            }
-        }
+        //public static void load_data_to_auto_complete_source(string ip_str_table_name, string ip_str_column_name, TextBox ip_txt)
+        //{
+        //    US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+        //    DataSet v_ds = new DataSet();
+        //    DataTable v_dt = new DataTable();
+        //    v_ds.Tables.Add(v_dt);
+        //    v_us.FillDatasetWithProc(v_ds, ip_str_table_name, ip_str_column_name);
+        //    for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
+        //    {
+        //        DataRow v_dr = v_ds.Tables[0].Rows[i];
+        //        ip_txt.AutoCompleteCustomSource.Add(v_dr[ip_str_column_name].ToString());
+        //    }
+        //}
 
         public static void load_data_to_combobox(string ip_str_table_name, string ip_str_value_field, string ip_str_display_field, string ip_str_condition, eTAT_CA ip_e_tat_ca, ComboBox ip_cbo)
         {
@@ -383,15 +383,7 @@ namespace BKI_DichVuMatDat
     }
 
     public class US_DUNG_CHUNG : US_Object
-    {
-        
-        public void XoaDuLieuTrongThang_ATHK_BSL(decimal ip_thang, decimal ip_nam)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_xoa_du_lieu_athk_bsl_thang");
-            v_cstore.addDecimalInputParam("@ip_thang", ip_thang);
-            v_cstore.addDecimalInputParam("@ip_nam", ip_nam);
-            v_cstore.ExecuteCommand(this);
-        }
+    {    
         public bool IsDaChotBangLuongThang(decimal ip_i_thang, decimal ip_i_nam)
         {
             DataSet v_ds = new DataSet();
@@ -403,20 +395,14 @@ namespace BKI_DichVuMatDat
             }
             else return true;
         }
-        public void FillDatasetWithProc(DataSet op_ds, string ip_str_table_name, string ip_str_column_name)
-        {
-            CStoredProc v_cstore = new CStoredProc("get_data_to_dataset_with_table_name_and_column_name");
-            v_cstore.addNVarcharInputParam("@TABLE_NAME", ip_str_table_name);
-            v_cstore.addNVarcharInputParam("@COLUMN_NAME", ip_str_column_name);
-            v_cstore.fillDataSetByCommand(this, op_ds);
-        }
+        //public void FillDatasetWithProc(DataSet op_ds, string ip_str_table_name, string ip_str_column_name)
+        //{
+        //    CStoredProc v_cstore = new CStoredProc("get_data_to_dataset_with_table_name_and_column_name");
+        //    v_cstore.addNVarcharInputParam("@TABLE_NAME", ip_str_table_name);
+        //    v_cstore.addNVarcharInputParam("@COLUMN_NAME", ip_str_column_name);
+        //    v_cstore.fillDataSetByCommand(this, op_ds);
+        //}
 
-        public void FillDatasetGDChiTietChucVu(DataSet op_ds, DateTime ip_dat)
-        {
-            CStoredProc v_cstore = new CStoredProc("rpt_tinh_hinh_dao_tao");
-            v_cstore.addDatetimeInputParam("@ip_dat_ngay_bao_cao", ip_dat);
-            v_cstore.fillDataSetByCommand(this, op_ds);
-        }
 
         internal void FillDatasetCBO(DataSet op_ds, string ip_str_table_name, string ip_str_value_field, string ip_str_display_field, string ip_str_condition)
         {
@@ -442,57 +428,16 @@ namespace BKI_DichVuMatDat
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
 
-        internal void FillDatasetChungChiHetHan(DataSet v_ds, DateTime dateTime)
-        {
-            CStoredProc v_cstore = new CStoredProc("get_chung_chi_het_han_theo_ngach");
-            v_cstore.addDatetimeInputParam("@ngay", dateTime);
-            v_cstore.fillDataSetByCommand(this, v_ds);
-        }
-
-        internal void FillDatasetSQLInjection(DataSet v_ds, string p)
-        {
-            CStoredProc v_cstore = new CStoredProc("sqlInjection");
-            v_cstore.addNVarcharInputParam("@str_query", p);
-            v_cstore.fillDataSetByCommand(this, v_ds);
-        }
-
-        public void FillBangLuong(DataSet ip_ds,decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam) {
-            CStoredProc v_cstore = new CStoredProc("PR_RPT_BANG_LUONG");
-            v_cstore.addDecimalInputParam("@ID_NHAN_VIEN", ip_dc_id_nhan_vien);
-            v_cstore.addDecimalInputParam("@THANG", ip_dc_thang);
-            v_cstore.addDecimalInputParam("@NAM", ip_dc_nam);
-            v_cstore.fillDataSetByCommand(this, ip_ds);
-        }
-        public void FillBangLuongV2(DataSet ip_ds, decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
-        {
-            CStoredProc v_cstore = new CStoredProc("PR_RPT_BANG_LUONG_V2");
-            v_cstore.addDecimalInputParam("@ID_NHAN_VIEN", ip_dc_id_nhan_vien);
-            v_cstore.addDecimalInputParam("@THANG", ip_dc_thang);
-            v_cstore.addDecimalInputParam("@NAM", ip_dc_nam);
-            v_cstore.fillDataSetByCommand(this, ip_ds);
-        }
-        public void FillThongTinTongHopNhanVien(DataSet ip_ds, decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_rpt_lay_thong_tin_tong_hop_1_nhan_vien");
-            v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
-            v_cstore.addDecimalInputParam("@ip_int_thang", ip_dc_thang);
-            v_cstore.addDecimalInputParam("@ip_int_nam", ip_dc_nam);
-            v_cstore.fillDataSetByCommand(this, ip_ds);
-        }
-        public void FillThongTinTongHopNhanVienV2(DataSet ip_ds, decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_rpt_lay_thong_tin_tong_hop_1_nhan_vien_v2");
-            v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
-            v_cstore.addDecimalInputParam("@ip_int_thang", ip_dc_thang);
-            v_cstore.addDecimalInputParam("@ip_int_nam", ip_dc_nam);
-            v_cstore.fillDataSetByCommand(this, ip_ds);
-        }
-        internal void FillDatasetGDChamCong(DataSet v_ds, DateTime v_dat)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_gd_cham_cong");
-            v_cstore.addDatetimeInputParam("@ngay_cham_cong", v_dat);
-            v_cstore.fillDataSetByCommand(this, v_ds);
-        }
+        
+        
+        
+        
+        //internal void FillDatasetGDChamCong(DataSet v_ds, DateTime v_dat)
+        //{
+        //    CStoredProc v_cstore = new CStoredProc("pr_gd_cham_cong");
+        //    v_cstore.addDatetimeInputParam("@ngay_cham_cong", v_dat);
+        //    v_cstore.fillDataSetByCommand(this, v_ds);
+        //}
         internal void FillDatasetNgayPhepTieuChuan(DataSet v_ds, string ip_nam_tinh_phep, decimal ip_id_nhan_vien)
         {
             CStoredProc v_cstore = new CStoredProc("PR_GET_PHEP_TIEU_CHUAN");

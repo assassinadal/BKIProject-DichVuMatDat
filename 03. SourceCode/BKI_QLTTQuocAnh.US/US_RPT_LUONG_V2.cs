@@ -886,6 +886,33 @@ namespace BKI_DichVuMatDat.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+
+        public void FillBangLuongV2(DataSet ip_ds, decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
+        {
+            CStoredProc v_cstore = new CStoredProc("PR_RPT_BANG_LUONG_V2");
+            v_cstore.addDecimalInputParam("@ID_NHAN_VIEN", ip_dc_id_nhan_vien);
+            v_cstore.addDecimalInputParam("@THANG", ip_dc_thang);
+            v_cstore.addDecimalInputParam("@NAM", ip_dc_nam);
+            v_cstore.fillDataSetByCommand(this, ip_ds);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //1. Lay thong tin tinh luong
         public void get_thong_tin_qua_trinh_tinh_luong(decimal ip_thang, decimal ip_nam, out decimal op_sl_nv_can_tinh_luong, out decimal op_sl_nv_da_tinh_luong)
         {

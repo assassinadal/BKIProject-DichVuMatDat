@@ -665,6 +665,24 @@ public class US_RPT_LUONG : US_Object
 	}
 #endregion
 
+    public void FillBangLuong(DataSet ip_ds, decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
+    {
+        CStoredProc v_cstore = new CStoredProc("PR_RPT_BANG_LUONG");
+        v_cstore.addDecimalInputParam("@ID_NHAN_VIEN", ip_dc_id_nhan_vien);
+        v_cstore.addDecimalInputParam("@THANG", ip_dc_thang);
+        v_cstore.addDecimalInputParam("@NAM", ip_dc_nam);
+        v_cstore.fillDataSetByCommand(this, ip_ds);
+    }
+
+
+
+
+
+
+
+
+
+
     public void XoaLuong(decimal ip_thang, decimal ip_nam)
     {
         CStoredProc v_sp = new CStoredProc("pr_xoa_bang_luong_theo_thang");

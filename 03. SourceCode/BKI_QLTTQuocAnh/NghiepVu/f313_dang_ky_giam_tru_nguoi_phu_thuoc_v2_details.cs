@@ -16,10 +16,5 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             InitializeComponent();
         }
-
-        private void m_lbl_mst_nguoi_nop_thue_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

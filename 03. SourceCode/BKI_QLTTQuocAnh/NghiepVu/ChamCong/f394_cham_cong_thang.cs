@@ -59,7 +59,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_to_m_pv(decimal m_id_nhan_vien)
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
             v_us.FillDatasetChamCong(v_ds, m_txt_thang.Text, m_txt_nam.Text, m_id_nhan_vien);

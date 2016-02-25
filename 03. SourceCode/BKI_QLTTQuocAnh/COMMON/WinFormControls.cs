@@ -455,32 +455,11 @@ namespace BKI_DichVuMatDat
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
 
-        public void FillDatasetChamCong(DataSet op_ds, string thang, string nam, decimal id_nv)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_GET_GD_CHAM_CONG");
-            //CStoredProc v_cstore = new CStoredProc("pr_GET_CHAM_CONG_TONG_HOP");
-            v_cstore.addNVarcharInputParam("@thang", thang);
-            v_cstore.addNVarcharInputParam("@nam", nam);
-            v_cstore.addDecimalInputParam("@id_nhan_vien", id_nv);
-            v_cstore.fillDataSetByCommand(this, op_ds);
-        }
+       
 
-        internal void get_bang_cham_cong(DataSet v_ds, string ip_str_thang, string ip_str_nam)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_GET_DANH_SACH_NHAN_VIEN_CHAM_CONG");
-            v_cstore.addDecimalInputParam("@THANG", CIPConvert.ToDecimal(ip_str_thang));
-            v_cstore.addDecimalInputParam("@NAM", CIPConvert.ToDecimal(ip_str_nam));
-            v_cstore.fillDataSetByCommand(this, v_ds);
-        }
+       
 
-        internal void xoa_du_lieu_cham_cong(decimal ip_dc_id_nv, string ip_str_thang, string ip_str_nam)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_XOA_DU_LIEU_CHAM_CONG");
-            v_cstore.addDecimalInputParam("@ID_NHAN_VIEN", ip_dc_id_nv);
-            v_cstore.addDecimalInputParam("@THANG", CIPConvert.ToDecimal(ip_str_thang));
-            v_cstore.addDecimalInputParam("@NAM", CIPConvert.ToDecimal(ip_str_nam));
-            v_cstore.ExecuteCommand(this);
-        }
+       
 
         //internal void filldatasetBaoCaoThuLaoHDQT(DataSet v_ds, string ip_str_thang, string ip_str_nam)
         //{
@@ -523,13 +502,7 @@ namespace BKI_DichVuMatDat
         }
 
 
-        internal void FillDatasetChamCong(DataSet v_ds, string ip_str_thang, string ip_str_nam)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_GET_DU_LIEU_CHAM_CONG");
-            v_cstore.addDecimalInputParam("@thang", CIPConvert.ToDecimal(ip_str_thang));
-            v_cstore.addDecimalInputParam("@nam", CIPConvert.ToDecimal(ip_str_nam));
-            v_cstore.fillDataSetByCommand(this, v_ds);
-        }
+        
 
         internal void filldatasetBaoCaoThuNhapLDNgoaiBangLuong(DataSet v_ds, string ip_str_thang, string ip_str_nam, string ip_str_id)
         {
@@ -540,14 +513,7 @@ namespace BKI_DichVuMatDat
             v_cstore.fillDataSetByCommand(this, v_ds);
         }
 
-        internal void FillDatasetChamCongTongHop(DataSet v_ds, string ip_thang, string ip_nam, decimal ip_id_nhan_vien)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_GET_CHAM_CONG_TONG_HOP");
-            v_cstore.addNVarcharInputParam("@thang", ip_thang);
-            v_cstore.addNVarcharInputParam("@nam", ip_nam);
-            v_cstore.addDecimalInputParam("@id_nhan_vien", ip_id_nhan_vien);
-            v_cstore.fillDataSetByCommand(this, v_ds);
-        }
+        
     }
 
     public class iParameter

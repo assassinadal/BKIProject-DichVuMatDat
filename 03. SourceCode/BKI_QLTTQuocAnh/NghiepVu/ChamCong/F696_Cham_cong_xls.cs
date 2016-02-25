@@ -175,7 +175,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void xoa_du_lieu_cham_cong_cu(decimal ip_dc_id_nv)
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             v_us.xoa_du_lieu_cham_cong(ip_dc_id_nv, m_txt_thang.Text, m_txt_nam.Text);
         }
 
@@ -231,7 +231,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void tao_file_mau(string ip_str_file_name)
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
             v_us.get_bang_cham_cong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
@@ -305,7 +305,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             List<string> v_list_nv_da_cham_cong = new List<string>();
             DataSet v_ds = new DataSet();
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             v_ds.Tables.Add(new DataTable());
             v_us.FillDatasetChamCong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
             for (int i = 0; i < m_grv.RowCount; i++)

@@ -1430,6 +1430,7 @@
             this.m_cmd_import_tu_excel.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_tu_excel.LargeGlyph")));
             this.m_cmd_import_tu_excel.LargeWidth = 100;
             this.m_cmd_import_tu_excel.Name = "m_cmd_import_tu_excel";
+            this.m_cmd_import_tu_excel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_import_tu_excel_ItemClick);
             // 
             // f388_main
             // 

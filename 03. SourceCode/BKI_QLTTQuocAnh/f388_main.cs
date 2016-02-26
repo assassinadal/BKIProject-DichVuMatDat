@@ -1375,6 +1375,21 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void m_cmd_import_tu_excel_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                F503_IMPORT_EXCEL v_f = new F503_IMPORT_EXCEL();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
 
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)

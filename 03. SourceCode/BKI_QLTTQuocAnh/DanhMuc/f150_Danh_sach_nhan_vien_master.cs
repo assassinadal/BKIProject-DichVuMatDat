@@ -106,7 +106,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
             // Set filter options and filter index.
-            openFileDialog1.Filter = "xlsx Files|*.xlsx|xls Files|*.xls|All Files (*.*)|*.*";
+            openFileDialog1.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
             openFileDialog1.Multiselect = false;
             var userClickedOK = openFileDialog1.ShowDialog();
             try

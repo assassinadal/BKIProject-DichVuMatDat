@@ -32,11 +32,19 @@ namespace BKI_DichVuMatDat.BaoCao
         private void load_data_2_grid()
         {
             CHRMCommon.make_stt(m_adv_tong_hop);
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+            //v_ds.Tables.Add(new DataTable());
+            //string filter = "SELECT * FROM V_RPT_BAO_CAO_TONG_HOP WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim() + " order by THU_TU_HIEN_THI, THU_TU_CHUC_VU, TEN, HO_DEM";
+            //v_us.FillDatasetWithQuery(v_ds, filter);
+
+
+            US_RPT_THONG_TIN_TONG_HOP v_us = new US_RPT_THONG_TIN_TONG_HOP();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            string filter = "SELECT * FROM V_RPT_BAO_CAO_TONG_HOP WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim() + " order by THU_TU_HIEN_THI, THU_TU_CHUC_VU, TEN, HO_DEM";
-            v_us.FillDatasetWithQuery(v_ds, filter);
+            v_us.HienThiBaoCao(v_ds, Convert.ToDecimal(m_txt_thang.Text), Convert.ToDecimal(m_txt_nam.Text));
+
             m_grc_tong_hop.DataSource = v_ds.Tables[0];
             m_grc_tong_hop.RefreshDataSource();
 

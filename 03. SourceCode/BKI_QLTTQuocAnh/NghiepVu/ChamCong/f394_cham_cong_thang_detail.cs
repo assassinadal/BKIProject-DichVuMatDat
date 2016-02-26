@@ -38,7 +38,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "DM_LOAI_NGAY_CONG");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //v_us.FillDatasetWithTableName(v_ds, "DM_LOAI_NGAY_CONG");
             m_sle_loai_ngay_cong.Properties.DataSource = v_ds.Tables[0];
             m_sle_loai_ngay_cong.Properties.DisplayMember = "MA_NGAY_CONG";
             m_sle_loai_ngay_cong.Properties.ValueMember = "ID";

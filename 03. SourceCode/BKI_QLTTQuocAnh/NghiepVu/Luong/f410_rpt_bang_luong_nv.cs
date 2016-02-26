@@ -67,10 +67,10 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void load_data_2_grid()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_RPT_LUONG v_us = new US_RPT_LUONG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_RPT_LUONG WHERE THANG = " + m_txt_thang.Text.Trim() + " AND NAM = " + m_txt_nam.Text.Trim());
+            v_us.HienThiBangLuong(v_ds, Convert.ToDecimal(m_txt_thang.Text), Convert.ToDecimal(m_txt_nam.Text));
             m_grc.DataSource = v_ds.Tables[0];
         }
         private void tinh_bang_luong(BackgroundWorker ip_bgw)
@@ -91,7 +91,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private bool is_da_chot_bang_luong()
         {
-            US_DUNG_CHUNG v_us_dung_chung = new US_DUNG_CHUNG();
+            US_GD_CHOT_BANG_LUONG v_us_dung_chung = new US_GD_CHOT_BANG_LUONG();
             return v_us_dung_chung.IsDaChotBangLuongThang(
                                     CIPConvert.ToDecimal(m_txt_thang.EditValue)
                                     , CIPConvert.ToDecimal(m_txt_nam.EditValue));

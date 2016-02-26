@@ -80,7 +80,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
 
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
             return v_ds;
         }
 

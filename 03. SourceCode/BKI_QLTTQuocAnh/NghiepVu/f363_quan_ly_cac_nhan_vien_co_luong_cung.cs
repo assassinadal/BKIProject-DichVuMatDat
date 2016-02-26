@@ -112,22 +112,33 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_2_grid()
         {
             CHRMCommon.make_stt(m_grv_luong_cung_cua_nhan_vien);
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+            //v_ds.Tables.Add(new DataTable());
+
+            //v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_LUONG_CUNG WHERE DA_XOA = 'N' ORDER BY ID_NHAN_VIEN");
+            US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_LUONG_CUNG WHERE DA_XOA = 'N' ORDER BY ID_NHAN_VIEN");
+            v_us.LayDanhSach(v_ds);
             m_grc_luong_cung_cua_nhan_vien.DataSource = v_ds.Tables[0];
         }
 
         private void load_data_2_grid(decimal ip_dc_id_nv)
         {
             CHRMCommon.make_stt(m_grv_luong_cung_cua_nhan_vien);
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+            //v_ds.Tables.Add(new DataTable());
+
+            //v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_LUONG_CUNG WHERE ID_NHAN_VIEN = " + ip_dc_id_nv + " AND DA_XOA = 'N'");
+
+            US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_LUONG_CUNG WHERE ID_NHAN_VIEN = " + ip_dc_id_nv + " AND DA_XOA = 'N'");
+            v_us.LayDanhSach(v_ds, ip_dc_id_nv);
             m_grc_luong_cung_cua_nhan_vien.DataSource = v_ds.Tables[0];
         }
 
@@ -244,7 +255,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "GD_LUONG_CUNG");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+           // v_us.FillDatasetWithTableName(v_ds, "GD_LUONG_CUNG");
 
             string v_str_filter = "ID_NHAN_VIEN = " + ip_dc_id_nhan_vien + " AND DA_XOA = 'N'";
             DataRow[] v_dr = v_ds.Tables[0].Select(v_str_filter);
@@ -323,7 +335,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithTableName(v_ds, "V_GD_LUONG_CUNG");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //v_us.FillDatasetWithTableName(v_ds, "V_GD_LUONG_CUNG");
 
             v_id_nv_f363 = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
 

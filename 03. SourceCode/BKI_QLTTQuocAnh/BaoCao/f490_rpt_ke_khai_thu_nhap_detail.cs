@@ -21,7 +21,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
         internal void DisplayForPresent(decimal v_id_nhan_vien, DateTime ip_dat_tu_thang, DateTime ip_dat_den_thang)
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_RPT_LUONG_V2 v_us = new US_RPT_LUONG_V2();
             DataSet v_ds = new DataSet();
             DataTable v_dt = new DataTable();
             v_ds.Tables.Add(v_dt);

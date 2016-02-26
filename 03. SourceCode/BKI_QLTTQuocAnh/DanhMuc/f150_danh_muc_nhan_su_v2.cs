@@ -184,23 +184,23 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         }
 
-        private void get_id_nhan_vien_vua_insert(ref int m_trang_thai_buoc_1_sau_hien_thi_f150_v2)
-        {
-            try
-            {
-                US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-                DataSet v_ds = new DataSet();
-                v_ds.Tables.Add(new DataTable());
-                v_us.FillDatasetWithQuery(v_ds, "select * from DM_NHAN_VIEN order by ID desc");
-                m_trang_thai_buoc_1_sau_hien_thi_f150_v2 = int.Parse(v_ds.Tables[0].Rows[0]["ID"].ToString());
-            }
-            catch (Exception)
-            {
+        //private void get_id_nhan_vien_vua_insert(ref int m_trang_thai_buoc_1_sau_hien_thi_f150_v2)
+        //{
+        //    try
+        //    {
+        //        US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+        //        DataSet v_ds = new DataSet();
+        //        v_ds.Tables.Add(new DataTable());
+        //        v_us.FillDatasetWithQuery(v_ds, "select * from DM_NHAN_VIEN order by ID desc");
+        //        m_trang_thai_buoc_1_sau_hien_thi_f150_v2 = int.Parse(v_ds.Tables[0].Rows[0]["ID"].ToString());
+        //    }
+        //    catch (Exception)
+        //    {
 
-                MessageBox.Show("Lỗi");
-            }
+        //        MessageBox.Show("Lỗi");
+        //    }
 
-        }
+        //}
 
         private void format_controls()
         {
@@ -264,7 +264,8 @@ namespace BKI_DichVuMatDat.DanhMuc
                         try
                         {
                             m_us.Insert();
-                            get_id_nhan_vien_vua_insert(ref m_trang_thai_buoc_1_sau_hien_thi_f150_v2);
+                            m_trang_thai_buoc_1_sau_hien_thi_f150_v2 = (int) m_us.dcID;
+                            //get_id_nhan_vien_vua_insert(ref m_trang_thai_buoc_1_sau_hien_thi_f150_v2);
 
                             this.Close();
                             CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);

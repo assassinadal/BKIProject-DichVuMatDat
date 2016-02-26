@@ -785,7 +785,12 @@ namespace BKI_DichVuMatDat.US
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
 
-
+        public void LayThongTinNhanVien(DataSet op_ds, string ip_str_ma_nv)
+        {
+            CStoredProc v_cstore = new CStoredProc("PR_DM_NHAN_VIEN_SELECT_ONE");
+            v_cstore.addNVarcharInputParam("@ip_str_ma_nv", ip_str_ma_nv);
+            v_cstore.fillDataSetByCommand(this, op_ds);
+        }
 
 
 

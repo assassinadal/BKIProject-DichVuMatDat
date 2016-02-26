@@ -77,8 +77,8 @@ namespace BKI_DichVuMatDat.DanhMuc
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-
-            v_us.FillDatasetWithTableName(v_ds, "V_DM_PHU_CAP");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //v_us.FillDatasetWithTableName(v_ds, "V_DM_PHU_CAP");
             m_grc_dm_phu_cap.DataSource = v_ds.Tables[0];
         }
         #endregion

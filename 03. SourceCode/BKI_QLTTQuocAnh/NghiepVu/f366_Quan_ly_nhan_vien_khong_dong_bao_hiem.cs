@@ -79,7 +79,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_KHONG_DONG_BAO_HIEM WHERE THANG = " + CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()) + " AND NAM = " + CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()) + "");
+           // v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_KHONG_DONG_BAO_HIEM WHERE THANG = " + CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()) + " AND NAM = " + CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()) + "");
             m_grc_luong_cung_cua_nhan_vien.DataSource = v_ds.Tables[0];
         }
 
@@ -89,8 +89,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-
-            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_KHONG_DONG_BAO_HIEM WHERE ID_NHAN_VIEN = " + ip_dc_id_nv + " AND THANG = " + CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()) + " AND NAM = " + CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()) + "");
+            
+            //v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_KHONG_DONG_BAO_HIEM WHERE ID_NHAN_VIEN = " + ip_dc_id_nv + " AND THANG = " + CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()) + " AND NAM = " + CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()) + "");
             m_grc_luong_cung_cua_nhan_vien.DataSource = v_ds.Tables[0];
         }
 
@@ -157,7 +157,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "GD_KHONG_DONG_BAO_HIEM");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //v_us.FillDatasetWithTableName(v_ds, "GD_KHONG_DONG_BAO_HIEM");
 
             string v_str_filter = "ID_NHAN_VIEN = " + ip_dc_id_nhan_vien + " AND THANG = " + CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()) + " AND NAM = " + CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()) + "";
             DataRow[] v_dr = v_ds.Tables[0].Select(v_str_filter);

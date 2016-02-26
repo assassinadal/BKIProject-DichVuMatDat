@@ -113,16 +113,22 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void LayDuLieuNhanVien()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            m_ds_nhan_vien.Tables.Add(new DataTable());
-            v_us.FillDatasetCBO(m_ds_nhan_vien, "DM_NHAN_VIEN", "ID", "MA_NV", "");
+            US_DM_NHAN_VIEN v_us_nv = new US_DM_NHAN_VIEN();
+            m_ds_nhan_vien.EnforceConstraints = false;
+            m_ds_nhan_vien = new DataSet();
+            v_us_nv.FillDataset(m_ds_nhan_vien);
+
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //m_ds_nhan_vien.Tables.Add(new DataTable());
+            //v_us.FillDatasetCBO(m_ds_nhan_vien, "DM_NHAN_VIEN", "ID", "MA_NV", "");
         }
 
         private void LayDuLieuLoaiNgayCong()
         {
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             m_ds_ngay_cong.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(m_ds_ngay_cong, "DM_LOAI_NGAY_CONG");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //v_us.FillDatasetWithTableName(m_ds_ngay_cong, "DM_LOAI_NGAY_CONG");
         }
 
         private void nhapChamCong(DataRow ip_dataRow)

@@ -92,10 +92,13 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void delete_du_lieu_cu()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds, "delete from gd_cham_cong_lam_them where thang="+ m_txt_thang.Text+ " and nam="+ m_txt_nam.Text);
+            US_GD_CHAM_CONG_LAM_THEM v_us = new US_GD_CHAM_CONG_LAM_THEM();
+            v_us.DeleteAllChamCongLamThemThang(Convert.ToDecimal(m_txt_thang.Text), Convert.ToDecimal(m_txt_nam.Text));
+
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+            //v_ds.Tables.Add(new DataTable());
+            //v_us.FillDatasetWithQuery(v_ds, "delete from gd_cham_cong_lam_them where thang="+ m_txt_thang.Text+ " and nam="+ m_txt_nam.Text);
         }
 
         private void luu_du_lieu_so_ngay_lam_them()
@@ -117,10 +120,16 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void insert_vao_csdl(DataRow v_dr)
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds_nhan_vien = new DataSet();
+            //v_ds_nhan_vien.Tables.Add(new DataTable());
+            //v_us.FillDatasetWithQuery(v_ds_nhan_vien, "select * from DM_NHAN_VIEN where MA_NV=" + v_dr["MA_NV"].ToString());
+
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
             DataSet v_ds_nhan_vien = new DataSet();
             v_ds_nhan_vien.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds_nhan_vien, "select * from DM_NHAN_VIEN where MA_NV=" + v_dr["MA_NV"].ToString());
+            v_us.LayThongTinNhanVien(v_ds_nhan_vien, v_dr["MA_NV"].ToString());
+
             US_GD_CHAM_CONG_LAM_THEM v_us_gd_cclt = new US_GD_CHAM_CONG_LAM_THEM();
             v_us_gd_cclt.dcID_NHAN_VIEN = CIPConvert.ToDecimal(v_ds_nhan_vien.Tables[0].Rows[0]["ID"].ToString());
             v_us_gd_cclt.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text);
@@ -151,11 +160,15 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private bool check_ma_nhan_vien(DataRow v_dr)
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds_nhan_vien = new DataSet();
-            v_ds_nhan_vien.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds_nhan_vien,"select * from DM_NHAN_VIEN where MA_NV="+ v_dr["MA_NV"].ToString());
-            if (v_ds_nhan_vien.Tables[0].Rows.Count == 0)
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds_nhan_vien = new DataSet();
+            //v_ds_nhan_vien.Tables.Add(new DataTable());
+            //v_us.FillDatasetWithQuery(v_ds_nhan_vien,"select * from DM_NHAN_VIEN where MA_NV="+ v_dr["MA_NV"].ToString());
+
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            v_us.IsExistNhanVienInDB(v_dr["MA_NV"].ToString());
+
+            if(!v_us.IsExistNhanVienInDB(v_dr["MA_NV"].ToString()))
             {
                 MessageBox.Show("Mã nhân viên "+ v_dr["MA_NV"].ToString()+ " không tồn tại. Vui lòng kiểm tra lại thông tin!");
                 return false;

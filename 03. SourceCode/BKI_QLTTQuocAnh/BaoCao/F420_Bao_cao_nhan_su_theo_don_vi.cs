@@ -26,7 +26,8 @@ namespace BKI_DichVuMatDat.BaoCao
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "V_NHAN_VIEN_DON_VI");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+           // v_us.FillDatasetWithTableName(v_ds, "V_NHAN_VIEN_DON_VI");
             m_pv.DataSource = v_ds.Tables[0];
         }
     }

@@ -15,6 +15,7 @@ using IP.Core.IPCommon;
 
 using DevExpress.XtraEditors;
 using System.Globalization;
+using BKI_DichVuMatDat.COMMON;
 
 namespace BKI_DichVuMatDat.DanhMuc
 {
@@ -56,7 +57,8 @@ namespace BKI_DichVuMatDat.DanhMuc
             DataSet v_ds = new DataSet();
 
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
             return v_ds;
         }
 
@@ -421,12 +423,13 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private bool check_ma_nv_da_ton_tai(string ip_ma_nv)
         {
-            DataSet v_ds = new DataSet();
-            DataTable v_dt = new DataTable();
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            v_ds.Tables.Add(v_dt);
-            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM DM_NHAN_VIEN WHERE MA_NV = '" + ip_ma_nv + "'");
-            if (v_ds.Tables[0].Rows.Count > 0)
+            //DataSet v_ds = new DataSet();
+            //DataTable v_dt = new DataTable();
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //v_ds.Tables.Add(v_dt);
+            //v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM DM_NHAN_VIEN WHERE MA_NV = '" + ip_ma_nv + "'");
+            ExecuteFuntion.KiemTraNhanVienCoTrongCsdlChua(ip_ma_nv);
+            if(ExecuteFuntion.KiemTraNhanVienCoTrongCsdlChua(ip_ma_nv))
             {
                 return true;
             }

@@ -32,81 +32,81 @@ namespace BKI_DichVuMatDat
             // TODO: Add constructor logic here
             //
         }
-        public enum eTAT_CA
-        {
-            YES,
-            NO
-        }
+        //public enum eTAT_CA
+        //{
+        //    YES,
+        //    NO
+        //}
 
-        public enum eLOAI_TU_DIEN
-        {
-            TRANG_THAI_CHUC_VU,
-            LOAI_HOP_DONG,
-            LOAI_DON_VI,
-            CAP_DON_VI,
-            CO_CHE,
-            LOAI_DU_AN,
-            TRANG_THAI_DU_AN,
-            LOAI_QUYET_DINH,
-            TRANG_THAI_LAO_DONG,
-            DM_CA_HOC
-        }
+        //public enum eLOAI_TU_DIEN
+        //{
+        //    TRANG_THAI_CHUC_VU,
+        //    LOAI_HOP_DONG,
+        //    LOAI_DON_VI,
+        //    CAP_DON_VI,
+        //    CO_CHE,
+        //    LOAI_DU_AN,
+        //    TRANG_THAI_DU_AN,
+        //    LOAI_QUYET_DINH,
+        //    TRANG_THAI_LAO_DONG,
+        //    DM_CA_HOC
+        //}
 
-        public static void load_data_to_cbo_tu_dien(
-             eLOAI_TU_DIEN ip_e
-            , eTAT_CA ip_e_tat_ca
-            , ComboBox ip_obj_cbo_trang_thai)
-        {
+        //public static void load_data_to_cbo_tu_dien(
+        //     eLOAI_TU_DIEN ip_e
+        //    , eTAT_CA ip_e_tat_ca
+        //    , ComboBox ip_obj_cbo_trang_thai)
+        //{
 
-            IP.Core.IPUserService.US_CM_DM_TU_DIEN v_us_dm_tu_dien = new IP.Core.IPUserService.US_CM_DM_TU_DIEN();
-            IP.Core.IPData.DS_CM_DM_TU_DIEN v_ds_dm_tu_dien = new IP.Core.IPData.DS_CM_DM_TU_DIEN();
-            string v_str_loai_tu_dien = "";
-            switch (ip_e)
-            {
-                case eLOAI_TU_DIEN.TRANG_THAI_CHUC_VU:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.TRANG_THAI_CHUC_VU;
-                    break;
-                case eLOAI_TU_DIEN.LOAI_HOP_DONG:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_HOP_DONG;
-                    break;
-                case eLOAI_TU_DIEN.LOAI_DON_VI:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_DON_VI;
-                    break;
-                case eLOAI_TU_DIEN.CAP_DON_VI:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.CAP_DON_VI;
-                    break;
-                case eLOAI_TU_DIEN.LOAI_QUYET_DINH:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_QUYET_DINH;
-                    break;
-                case eLOAI_TU_DIEN.TRANG_THAI_LAO_DONG:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.TRANG_THAI_LAO_DONG;
-                    break;
-                case eLOAI_TU_DIEN.DM_CA_HOC:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.DM_CA_HOC;
-                    break;
-            }
-            v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(
-                v_str_loai_tu_dien
-                , CM_DM_TU_DIEN.GHI_CHU
-                , v_ds_dm_tu_dien);
+        //    IP.Core.IPUserService.US_CM_DM_TU_DIEN v_us_dm_tu_dien = new IP.Core.IPUserService.US_CM_DM_TU_DIEN();
+        //    IP.Core.IPData.DS_CM_DM_TU_DIEN v_ds_dm_tu_dien = new IP.Core.IPData.DS_CM_DM_TU_DIEN();
+        //    string v_str_loai_tu_dien = "";
+        //    switch (ip_e)
+        //    {
+        //        case eLOAI_TU_DIEN.TRANG_THAI_CHUC_VU:
+        //            v_str_loai_tu_dien = MA_LOAI_TU_DIEN.TRANG_THAI_CHUC_VU;
+        //            break;
+        //        case eLOAI_TU_DIEN.LOAI_HOP_DONG:
+        //            v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_HOP_DONG;
+        //            break;
+        //        case eLOAI_TU_DIEN.LOAI_DON_VI:
+        //            v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_DON_VI;
+        //            break;
+        //        case eLOAI_TU_DIEN.CAP_DON_VI:
+        //            v_str_loai_tu_dien = MA_LOAI_TU_DIEN.CAP_DON_VI;
+        //            break;
+        //        case eLOAI_TU_DIEN.LOAI_QUYET_DINH:
+        //            v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_QUYET_DINH;
+        //            break;
+        //        case eLOAI_TU_DIEN.TRANG_THAI_LAO_DONG:
+        //            v_str_loai_tu_dien = MA_LOAI_TU_DIEN.TRANG_THAI_LAO_DONG;
+        //            break;
+        //        case eLOAI_TU_DIEN.DM_CA_HOC:
+        //            v_str_loai_tu_dien = MA_LOAI_TU_DIEN.DM_CA_HOC;
+        //            break;
+        //    }
+        //    v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(
+        //        v_str_loai_tu_dien
+        //        , CM_DM_TU_DIEN.GHI_CHU
+        //        , v_ds_dm_tu_dien);
 
-            ip_obj_cbo_trang_thai.DataSource = v_ds_dm_tu_dien.CM_DM_TU_DIEN;
-            ip_obj_cbo_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN;
-            ip_obj_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
+        //    ip_obj_cbo_trang_thai.DataSource = v_ds_dm_tu_dien.CM_DM_TU_DIEN;
+        //    ip_obj_cbo_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN;
+        //    ip_obj_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
 
-            if (ip_e_tat_ca == eTAT_CA.YES)
-            {
-                DataRow v_dr = v_ds_dm_tu_dien.CM_DM_TU_DIEN.NewRow();
-                v_dr[CM_DM_TU_DIEN.ID] = -1;
-                v_dr[CM_DM_TU_DIEN.TEN] = "------ Tất cả ------";
-                v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = "";
-                v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "";
-                v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 1;
-                v_dr[CM_DM_TU_DIEN.GHI_CHU] = "";
-                v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
-                ip_obj_cbo_trang_thai.SelectedIndex = 0;
-            }
-        }
+        //    if (ip_e_tat_ca == eTAT_CA.YES)
+        //    {
+        //        DataRow v_dr = v_ds_dm_tu_dien.CM_DM_TU_DIEN.NewRow();
+        //        v_dr[CM_DM_TU_DIEN.ID] = -1;
+        //        v_dr[CM_DM_TU_DIEN.TEN] = "------ Tất cả ------";
+        //        v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = "";
+        //        v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "";
+        //        v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 1;
+        //        v_dr[CM_DM_TU_DIEN.GHI_CHU] = "";
+        //        v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
+        //        ip_obj_cbo_trang_thai.SelectedIndex = 0;
+        //    }
+        //}
 
         //public static void load_data_to_auto_complete_source(string ip_str_table_name, string ip_str_column_name, TextBox ip_txt)
         //{
@@ -122,57 +122,57 @@ namespace BKI_DichVuMatDat
         //    }
         //}
 
-        public static void load_data_to_combobox(string ip_str_table_name, string ip_str_value_field, string ip_str_display_field, string ip_str_condition, eTAT_CA ip_e_tat_ca, ComboBox ip_cbo)
-        {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            DataTable v_dt = new DataTable();
-            v_ds.Tables.Add(v_dt);
-            v_us.FillDatasetCBO(v_ds, ip_str_table_name, ip_str_value_field, ip_str_display_field, ip_str_condition);
+        //public static void load_data_to_combobox(string ip_str_table_name, string ip_str_value_field, string ip_str_display_field, string ip_str_condition, eTAT_CA ip_e_tat_ca, ComboBox ip_cbo)
+        //{
+        //    US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+        //    DataSet v_ds = new DataSet();
+        //    DataTable v_dt = new DataTable();
+        //    v_ds.Tables.Add(v_dt);
+        //    v_us.FillDatasetCBO(v_ds, ip_str_table_name, ip_str_value_field, ip_str_display_field, ip_str_condition);
 
-            ip_cbo.DisplayMember = ip_str_display_field;
-            ip_cbo.ValueMember = ip_str_value_field;
-            ip_cbo.DataSource = v_ds.Tables[0];
+        //    ip_cbo.DisplayMember = ip_str_display_field;
+        //    ip_cbo.ValueMember = ip_str_value_field;
+        //    ip_cbo.DataSource = v_ds.Tables[0];
 
-            if (ip_e_tat_ca == eTAT_CA.YES)
-            {
-                DataRow v_dr = v_ds.Tables[0].NewRow();
-                v_dr[0] = -1;
-                v_dr[1] = "------ Tất cả ------";
-                v_ds.Tables[0].Rows.InsertAt(v_dr, 0);
-                ip_cbo.SelectedIndex = 0;
-            }
-            else
-            {
-                ip_cbo.SelectedIndex = 0;
-            }
-        }
+        //    if (ip_e_tat_ca == eTAT_CA.YES)
+        //    {
+        //        DataRow v_dr = v_ds.Tables[0].NewRow();
+        //        v_dr[0] = -1;
+        //        v_dr[1] = "------ Tất cả ------";
+        //        v_ds.Tables[0].Rows.InsertAt(v_dr, 0);
+        //        ip_cbo.SelectedIndex = 0;
+        //    }
+        //    else
+        //    {
+        //        ip_cbo.SelectedIndex = 0;
+        //    }
+        //}
 
-        public static void load_data_to_combobox_with_query(ComboBox ip_cbo, string ip_str_value_field, string ip_str_display_field, eTAT_CA ip_e_tat_ca, string ip_query)
-        {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            DataTable v_dt = new DataTable();
-            v_ds.Tables.Add(v_dt);
-            v_us.FillDatasetWithQuery(v_ds, ip_query);
+        //public static void load_data_to_combobox_with_query(ComboBox ip_cbo, string ip_str_value_field, string ip_str_display_field, eTAT_CA ip_e_tat_ca, string ip_query)
+        //{
+        //    US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+        //    DataSet v_ds = new DataSet();
+        //    DataTable v_dt = new DataTable();
+        //    v_ds.Tables.Add(v_dt);
+        //    v_us.FillDatasetWithQuery(v_ds, ip_query);
 
-            ip_cbo.DisplayMember = ip_str_display_field;
-            ip_cbo.ValueMember = ip_str_value_field;
-            ip_cbo.DataSource = v_ds.Tables[0];
+        //    ip_cbo.DisplayMember = ip_str_display_field;
+        //    ip_cbo.ValueMember = ip_str_value_field;
+        //    ip_cbo.DataSource = v_ds.Tables[0];
 
-            if (ip_e_tat_ca == eTAT_CA.YES)
-            {
-                DataRow v_dr = v_ds.Tables[0].NewRow();
-                v_dr[0] = -1;
-                v_dr[1] = "------ Tất cả ------";
-                v_ds.Tables[0].Rows.InsertAt(v_dr, 0);
-                ip_cbo.SelectedIndex = 0;
-            }
-            else
-            {
-                ip_cbo.SelectedIndex = 0;
-            }
-        }
+        //    if (ip_e_tat_ca == eTAT_CA.YES)
+        //    {
+        //        DataRow v_dr = v_ds.Tables[0].NewRow();
+        //        v_dr[0] = -1;
+        //        v_dr[1] = "------ Tất cả ------";
+        //        v_ds.Tables[0].Rows.InsertAt(v_dr, 0);
+        //        ip_cbo.SelectedIndex = 0;
+        //    }
+        //    else
+        //    {
+        //        ip_cbo.SelectedIndex = 0;
+        //    }
+        //}
 
         public static void load_xls_to_gridview(string ip_str_path, DevExpress.XtraGrid.GridControl ip_grc)
         {
@@ -384,17 +384,7 @@ namespace BKI_DichVuMatDat
 
     public class US_DUNG_CHUNG : US_Object
     {    
-        public bool IsDaChotBangLuongThang(decimal ip_i_thang, decimal ip_i_nam)
-        {
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            this.FillDatasetWithQuery(v_ds, "select * from gd_chot_bang_luong where thang = " + ip_i_thang.ToString() + "and nam =" + ip_i_nam.ToString());
-            if(v_ds.Tables[0].Rows.Count == 0)
-            {
-                return false;
-            }
-            else return true;
-        }
+        
         //public void FillDatasetWithProc(DataSet op_ds, string ip_str_table_name, string ip_str_column_name)
         //{
         //    CStoredProc v_cstore = new CStoredProc("get_data_to_dataset_with_table_name_and_column_name");
@@ -404,29 +394,29 @@ namespace BKI_DichVuMatDat
         //}
 
 
-        internal void FillDatasetCBO(DataSet op_ds, string ip_str_table_name, string ip_str_value_field, string ip_str_display_field, string ip_str_condition)
-        {
-            CStoredProc v_cstore = new CStoredProc("get_data_for_cbo");
-            v_cstore.addNVarcharInputParam("@TABLE_NAME", ip_str_table_name);
-            v_cstore.addNVarcharInputParam("@COLUMN_VALUE", ip_str_value_field);
-            v_cstore.addNVarcharInputParam("@COLUMN_DISPLAY", ip_str_display_field);
-            v_cstore.addNVarcharInputParam("@CONDITION", ip_str_condition);
-            v_cstore.fillDataSetByCommand(this, op_ds);
-        }
+        //internal void FillDatasetCBO(DataSet op_ds, string ip_str_table_name, string ip_str_value_field, string ip_str_display_field, string ip_str_condition)
+        //{
+        //    CStoredProc v_cstore = new CStoredProc("get_data_for_cbo");
+        //    v_cstore.addNVarcharInputParam("@TABLE_NAME", ip_str_table_name);
+        //    v_cstore.addNVarcharInputParam("@COLUMN_VALUE", ip_str_value_field);
+        //    v_cstore.addNVarcharInputParam("@COLUMN_DISPLAY", ip_str_display_field);
+        //    v_cstore.addNVarcharInputParam("@CONDITION", ip_str_condition);
+        //    v_cstore.fillDataSetByCommand(this, op_ds);
+        //}
 
-        internal void FillDatasetWithTableName(DataSet op_ds, string ip_str_table_name)
-        {
-            CStoredProc v_cstore = new CStoredProc("get_data_from_table");
-            v_cstore.addNVarcharInputParam("@TABLE_NAME", ip_str_table_name);
-            v_cstore.fillDataSetByCommand(this, op_ds);
-        }
+        //internal void FillDatasetWithTableName(DataSet op_ds, string ip_str_table_name)
+        //{
+        //    CStoredProc v_cstore = new CStoredProc("get_data_from_table");
+        //    v_cstore.addNVarcharInputParam("@TABLE_NAME", ip_str_table_name);
+        //    v_cstore.fillDataSetByCommand(this, op_ds);
+        //}
 
-        internal void FillDatasetWithQuery(DataSet op_ds, string ip_query)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_fill_ds_with_query");
-            v_cstore.addNVarcharInputParam("@SQL_QUERY", ip_query);
-            v_cstore.fillDataSetByCommand(this, op_ds);
-        }
+        //internal void FillDatasetWithQuery(DataSet op_ds, string ip_query)
+        //{
+        //    CStoredProc v_cstore = new CStoredProc("pr_fill_ds_with_query");
+        //    v_cstore.addNVarcharInputParam("@SQL_QUERY", ip_query);
+        //    v_cstore.fillDataSetByCommand(this, op_ds);
+        //}
 
         
         
@@ -438,22 +428,10 @@ namespace BKI_DichVuMatDat
         //    v_cstore.addDatetimeInputParam("@ngay_cham_cong", v_dat);
         //    v_cstore.fillDataSetByCommand(this, v_ds);
         //}
-        internal void FillDatasetNgayPhepTieuChuan(DataSet v_ds, string ip_nam_tinh_phep, decimal ip_id_nhan_vien)
-        {
-            CStoredProc v_cstore = new CStoredProc("PR_GET_PHEP_TIEU_CHUAN");
-            v_cstore.addNVarcharInputParam("@nam_tinh_phep", ip_nam_tinh_phep);
-            v_cstore.addDecimalInputParam("@dc_id_nhan_vien", ip_id_nhan_vien);
-            v_cstore.fillDataSetByCommand(this, v_ds);
-        }
+        
 
 
-        public void FillDatasetBaoCaoTangGiamLaoDong(DataSet op_ds, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_rpt_tang_giam_lao_dong");
-            v_cstore.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
-            v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
-            v_cstore.fillDataSetByCommand(this, op_ds);
-        }
+        
 
        
 
@@ -469,63 +447,21 @@ namespace BKI_DichVuMatDat
         //    v_cstore.fillDataSetByCommand(this, v_ds);
         //}
 
-        internal void FillDatasetProcBangKeKhaiThuNhap(DataSet v_ds, DateTime ip_dat_tu_thang, DateTime ip_dat_den_thang)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_bang_ke_khai_thu_nhap");
-            v_cstore.addDatetimeInputParam("@ngay_bat_dau", ip_dat_tu_thang);
-            v_cstore.addDatetimeInputParam("@ngay_ket_thuc", ip_dat_den_thang);
-            v_cstore.fillDataSetByCommand(this, v_ds);
-        }
-
-        internal void FillDatasetKeKhaiThueDoubleClick(DataSet v_ds, decimal v_id_nhan_vien, DateTime ip_dat_tu_thang, DateTime ip_dat_den_thang)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_bang_ke_khai_thu_nhap_detail");
-            v_cstore.addDatetimeInputParam("@ngay_bat_dau", ip_dat_tu_thang);
-            v_cstore.addDatetimeInputParam("@ngay_ket_thuc", ip_dat_den_thang);
-            v_cstore.addDecimalInputParam("@id_nhan_vien", v_id_nhan_vien);
-            v_cstore.fillDataSetByCommand(this, v_ds);
-        }
-
-        internal void FillDatasetProcBaoCaoThuNhapTheoNam(DataSet v_ds, string ip_str_nam)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_bao_cao_tong_hop_thu_nhap_theo_nam");
-            v_cstore.addDecimalInputParam("@nam", CIPConvert.ToDecimal(ip_str_nam));
-            v_cstore.fillDataSetByCommand(this, v_ds);
-        }
-
-        internal void FillDatasetBaoCaoThuNhapDoubleClick(DataSet v_ds, decimal v_id_nhan_vien, string m_txt_nam)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_bao_cao_tong_hop_thu_nhap_theo_nam_detail");
-            v_cstore.addDecimalInputParam("@nam", CIPConvert.ToDecimal(m_txt_nam));
-            v_cstore.addDecimalInputParam("@id_nhan_vien", v_id_nhan_vien);
-            v_cstore.fillDataSetByCommand(this, v_ds);
-        }
-
-
         
-
-        internal void filldatasetBaoCaoThuNhapLDNgoaiBangLuong(DataSet v_ds, string ip_str_thang, string ip_str_nam, string ip_str_id)
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_get_thu_nhap_nhom_khac");
-            v_cstore.addNVarcharInputParam("@thang", CIPConvert.ToDecimal(ip_str_thang));
-            v_cstore.addNVarcharInputParam("@nam", CIPConvert.ToDecimal(ip_str_nam));
-            v_cstore.addDecimalInputParam("@id_nhom_ld", CIPConvert.ToDecimal(ip_str_id));
-            v_cstore.fillDataSetByCommand(this, v_ds);
-        }
 
         
     }
 
-    public class iParameter
-    {
-        public string ParameterName { get; set; }
-        public string ParameterValue { get; set; }
+    //public class iParameter
+    //{
+    //    public string ParameterName { get; set; }
+    //    public string ParameterValue { get; set; }
 
-        public iParameter(string ip_name, string ip_value)
-        {
-            ParameterName = ip_name;
-            ParameterValue = ip_value;
-        }
-    }
+    //    public iParameter(string ip_name, string ip_value)
+    //    {
+    //        ParameterName = ip_name;
+    //        ParameterValue = ip_value;
+    //    }
+    //}
     
 }

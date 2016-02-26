@@ -42,7 +42,8 @@ namespace BKI_DichVuMatDat.BaoCao
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
             return v_ds;
         }
 
@@ -151,20 +152,30 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private DataTable load_data_to_v_gd_cong_tac(decimal ip_dc_id_nv)
         {
+            US_GD_CONG_TAC v_us = new US_GD_CONG_TAC();
             DataSet v_ds = new DataSet();
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds, "select * from v_gd_cong_tac where id_nhan_vien=" + ip_dc_id_nv);
+            v_us.LayThongTinQuaTrinhCongTac(v_ds, ip_dc_id_nv);
+
             return v_ds.Tables[0];
+
+
+            //DataSet v_ds = new DataSet();
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //v_ds.Tables.Add(new DataTable());
+            //v_us.FillDatasetWithQuery(v_ds, "select * from v_gd_cong_tac where id_nhan_vien=" + ip_dc_id_nv);
+            //return v_ds.Tables[0];
         }
 
         private DataTable load_data_to_v_gd_hop_dong(decimal ip_dc_id_nv)
-        {           
-            DataSet v_ds = new DataSet();
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds, "select * from v_gd_hop_dong where id_nhan_vien=" + ip_dc_id_nv);
-            return v_ds.Tables[0];
+        {
+            US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
+            return v_us.FillDataSetThongTinHopDong(ip_dc_id_nv).Tables[0];
+            //DataSet v_ds = new DataSet();
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //v_ds.Tables.Add(new DataTable());
+            //v_us.FillDatasetWithQuery(v_ds, "select * from v_gd_hop_dong where id_nhan_vien=" + ip_dc_id_nv);
+            //return v_ds.Tables[0];
         }
 
         private void load_data_to_grc_hop_dong(decimal ip_dc_id_nv)

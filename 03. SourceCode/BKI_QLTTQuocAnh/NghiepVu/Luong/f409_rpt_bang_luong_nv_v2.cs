@@ -492,7 +492,7 @@ namespace BKI_DichVuMatDat.BaoCao
         //Check data
         private bool kiem_tra_bang_luong_da_chot_chua()
         {
-            US_DUNG_CHUNG v_us_dung_chung = new US_DUNG_CHUNG();
+            US_GD_CHOT_BANG_LUONG v_us_dung_chung = new US_GD_CHOT_BANG_LUONG();
             return v_us_dung_chung.IsDaChotBangLuongThang(
                                     CIPConvert.ToDecimal(m_txt_thang.EditValue)
                                     , CIPConvert.ToDecimal(m_txt_nam.EditValue));

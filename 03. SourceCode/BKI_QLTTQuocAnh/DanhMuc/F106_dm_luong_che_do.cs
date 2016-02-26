@@ -56,8 +56,8 @@ namespace BKI_DichVuMatDat.DanhMuc
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-
-            v_us.FillDatasetWithTableName(v_ds, "V_DM_LUONG_CHE_DO");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+           // v_us.FillDatasetWithTableName(v_ds, "V_DM_LUONG_CHE_DO");
             m_grc_dm_luong_che_do.DataSource = v_ds.Tables[0];
         }
 

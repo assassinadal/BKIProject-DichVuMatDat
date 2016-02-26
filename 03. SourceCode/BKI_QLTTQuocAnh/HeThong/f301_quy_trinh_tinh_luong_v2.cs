@@ -431,8 +431,8 @@ namespace BKI_DichVuMatDat.HeThong
         {
             try
             {
-                f160_them_nhan_vien_nhanh v_frm = new f160_them_nhan_vien_nhanh();
-                v_frm.ShowDialog();
+                //f160_them_nhan_vien_nhanh v_frm = new f160_them_nhan_vien_nhanh();
+                //v_frm.ShowDialog();
             }
             catch (Exception v_e)
             {

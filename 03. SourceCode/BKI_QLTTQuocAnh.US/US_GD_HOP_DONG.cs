@@ -329,10 +329,16 @@ namespace BKI_DichVuMatDat.US
         }
 
 
-
-        public void insert_hop_dong_moi(decimal p1, decimal p2, DateTime dateTime1, DateTime dateTime2, DateTime dateTime3, DateTime dateTime4, Func<string> func)
+        public DataSet FillDataSetThongTinHopDong(decimal ip_dc_id_nhan_vien)
         {
-            throw new NotImplementedException();
+            CStoredProc v_sp = new CStoredProc("PR_SELECT_ALL_THONG_TIN_HOP_DONG");
+            v_sp.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            DataSet v_op_ds = new DataSet();
+            v_op_ds.Tables.Add();
+
+            v_sp.fillDataSetByCommand(this, v_op_ds);
+            return v_op_ds;
         }
+        
     }
 }

@@ -70,8 +70,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
 
             v_ds.Tables.Add(new DataTable());
-
-            v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
             return v_ds;
         }
 
@@ -88,7 +88,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "V_GD_QUYET_DINH");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //v_us.FillDatasetWithTableName(v_ds, "V_GD_QUYET_DINH");
             return v_ds;
         }
 
@@ -113,8 +114,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-
-            v_us.FillDatasetWithTableName(v_ds, "DM_DON_VI");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+          //  v_us.FillDatasetWithTableName(v_ds, "DM_DON_VI");
             return v_ds;
         }
 
@@ -148,12 +149,19 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             CHRMCommon.make_stt(m_grv_v_gd_cong_tac);
 
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+
+            //v_ds.Tables.Add(new DataTable());
+
+            //v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_CONG_TAC WHere ID_NHAN_VIEN = " + ip_dc_id_nv);
+            US_GD_CONG_TAC v_us = new US_GD_CONG_TAC();
             DataSet v_ds = new DataSet();
 
             v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_CONG_TAC WHere ID_NHAN_VIEN = " + ip_dc_id_nv);
+            v_us.LayThongTinQuaTrinhCongTac(v_ds, ip_dc_id_nv);
+
             m_grc_v_gd_cong_tac.DataSource = v_ds.Tables[0];
         }
 
@@ -161,12 +169,19 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             CHRMCommon.make_stt(m_grv_v_gd_cong_tac);
 
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+
+            //v_ds.Tables.Add(new DataTable());
+
+            //v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_CONG_TAC WHere ID_NHAN_VIEN = " + ip_dc_id_nv + " AND ID_LOAI_CONG_TAC = " + ip_dc_id_loai_ct);
+
+            US_GD_CONG_TAC v_us = new US_GD_CONG_TAC();
             DataSet v_ds = new DataSet();
 
             v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_CONG_TAC WHere ID_NHAN_VIEN = " + ip_dc_id_nv + " AND ID_LOAI_CONG_TAC = " + ip_dc_id_loai_ct);
+            v_us.LayThongTinQuaTrinhCongTac(v_ds, ip_dc_id_nv, ip_dc_id_loai_ct);
             m_grc_v_gd_cong_tac.DataSource = v_ds.Tables[0];
         }
 

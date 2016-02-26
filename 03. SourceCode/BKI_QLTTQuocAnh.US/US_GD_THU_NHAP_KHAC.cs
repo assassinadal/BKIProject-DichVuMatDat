@@ -402,6 +402,16 @@ namespace BKI_DichVuMatDat.US
         }
         #endregion
 
+        public void LayDuLieuThuNhapKhac(DataSet ip_ds, decimal ip_dc_id_quy_tien_thuong)
+        {
+            CStoredProc v_sp = new CStoredProc("PR_SELECT_ALL_THU_NHAP_KHAC");
+            v_sp.addDecimalInputParam("@ip_dc_quy_tien_thuong", ip_dc_id_quy_tien_thuong);
+
+            v_sp.fillDataSetByCommand(this, ip_ds);
+        }
+
+
+
         public void XoaDuLieuChiaThuongNhanVien(decimal ip_dc_id_quy_tien_thuong)
         {
             CStoredProc v_sp = new CStoredProc("pr_xoa_du_lieu_chia_thuong_nhan_vien");

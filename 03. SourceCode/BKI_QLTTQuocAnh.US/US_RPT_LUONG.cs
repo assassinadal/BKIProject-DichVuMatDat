@@ -675,7 +675,13 @@ public class US_RPT_LUONG : US_Object
     }
 
 
-
+    public void HienThiBangLuong(DataSet ip_ds, decimal ip_dc_thang, decimal ip_dc_nam)
+    {
+        CStoredProc v_cstore = new CStoredProc("PR_RPT_BANG_LUONG_SELECT_ALL");
+        v_cstore.addDecimalInputParam("@ip_dc_thang", ip_dc_thang);
+        v_cstore.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
+        v_cstore.fillDataSetByCommand(this, ip_ds);
+    }
 
 
 

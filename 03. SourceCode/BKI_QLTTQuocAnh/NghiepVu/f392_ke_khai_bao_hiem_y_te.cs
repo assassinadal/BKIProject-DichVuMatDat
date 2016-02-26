@@ -90,7 +90,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataTable v_dt = new DataTable();
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             v_ds.Tables.Add(v_dt);
-            v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+           // v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
             m_sle_ten_nhan_vien.Properties.DataSource = v_ds.Tables[0];
             m_sle_ten_nhan_vien.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
         }

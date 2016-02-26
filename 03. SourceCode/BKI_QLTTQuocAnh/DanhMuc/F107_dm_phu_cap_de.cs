@@ -70,13 +70,18 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void get_loai_phu_cap()
         {
-            DataSet v_ds = new DataSet();
-            DataTable v_dt = new DataTable();
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            v_ds.Tables.Add(v_dt);
-            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM CM_DM_TU_DIEN WHERE ID_LOAI_TU_DIEN = 5");
+            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
+            v_us.FillDatasetByIdLoaiTuDien(v_ds, 5);
             m_search_lookup_edit_loai_phu_cap.Properties.DataSource = v_ds.Tables[0];
             m_search_lookup_edit_loai_phu_cap.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
+            //DataSet v_ds = new DataSet();
+            //DataTable v_dt = new DataTable();
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //v_ds.Tables.Add(v_dt);
+            //v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM CM_DM_TU_DIEN WHERE ID_LOAI_TU_DIEN = 5");
+            //m_search_lookup_edit_loai_phu_cap.Properties.DataSource = v_ds.Tables[0];
+            //m_search_lookup_edit_loai_phu_cap.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
         }
 
         private bool check_validate_data()

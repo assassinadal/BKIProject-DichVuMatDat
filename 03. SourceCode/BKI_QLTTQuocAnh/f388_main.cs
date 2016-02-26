@@ -326,11 +326,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f160_them_nhan_vien_nhanh v_frm = new f160_them_nhan_vien_nhanh();
-                if(IsExistFormName(v_frm)) return;
+                //f160_them_nhan_vien_nhanh v_frm = new f160_them_nhan_vien_nhanh();
+                //if(IsExistFormName(v_frm)) return;
 
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
             }
             catch(Exception v_e)
             {
@@ -568,11 +568,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                F415_bao_cao_hs_bs_hs_athk v_frm = new F415_bao_cao_hs_bs_hs_athk();
-                if(IsExistFormName(v_frm)) return;
+                //F415_bao_cao_hs_bs_hs_athk v_frm = new F415_bao_cao_hs_bs_hs_athk();
+                //if(IsExistFormName(v_frm)) return;
 
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
             }
             catch(Exception v_e)
             {

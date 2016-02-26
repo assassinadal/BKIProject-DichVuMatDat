@@ -47,7 +47,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void load_data_to_grid()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_RPT_LUONG_V2 v_us = new US_RPT_LUONG_V2();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
             //m_dat_tu_thang.DateTime = new DateTime(2015,06,01);

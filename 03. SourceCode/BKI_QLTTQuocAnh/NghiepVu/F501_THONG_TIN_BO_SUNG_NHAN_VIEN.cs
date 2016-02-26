@@ -44,11 +44,15 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void fill_datasource_loai_lao_dong()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            DataTable v_dt = new DataTable();
-            v_ds.Tables.Add(v_dt);
-            v_us.FillDatasetWithQuery(v_ds, "select ID,TEN FROM CM_DM_TU_DIEN WHERE ID_LOAI_TU_DIEN=6");
+            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
+            v_us.FillDatasetByIdLoaiTuDien(v_ds, 6);
+
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+            //DataTable v_dt = new DataTable();
+            //v_ds.Tables.Add(v_dt);
+            //v_us.FillDatasetWithQuery(v_ds, "select ID,TEN FROM CM_DM_TU_DIEN WHERE ID_LOAI_TU_DIEN=6");
             m_sle_loai_lao_dong.Properties.DataSource = v_ds.Tables[0];
             m_sle_loai_lao_dong.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
         }
@@ -59,7 +63,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             DataTable v_dt = new DataTable();
             v_ds.Tables.Add(v_dt);
-            v_us.FillDatasetWithQuery(v_ds, "select ID, MA_NV, HO_DEM+ ' '+ TEN AS TEN_NHAN_VIEN FROM DM_NHAN_VIEN");       
+            throw new Exception();
+            //v_us.FillDatasetWithQuery(v_ds, "select ID, MA_NV, HO_DEM+ ' '+ TEN AS TEN_NHAN_VIEN FROM DM_NHAN_VIEN");       
              m_sle_ten_nv.Properties.DataSource = v_ds.Tables[0];
              m_sle_ten_nv.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
         }

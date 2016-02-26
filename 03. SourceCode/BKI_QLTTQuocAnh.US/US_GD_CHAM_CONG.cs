@@ -249,6 +249,14 @@ namespace BKI_DichVuMatDat.US
         }
         #endregion
 
+        public void FillDatasetNgayPhepTieuChuan(DataSet v_ds, string ip_nam_tinh_phep, decimal ip_id_nhan_vien)
+        {
+            CStoredProc v_cstore = new CStoredProc("PR_GET_PHEP_TIEU_CHUAN");
+            v_cstore.addNVarcharInputParam("@nam_tinh_phep", ip_nam_tinh_phep);
+            v_cstore.addDecimalInputParam("@dc_id_nhan_vien", ip_id_nhan_vien);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+        }
+
         public void get_bang_cham_cong(DataSet v_ds, string ip_str_thang, string ip_str_nam)
         {
             CStoredProc v_cstore = new CStoredProc("pr_GET_DANH_SACH_NHAN_VIEN_CHAM_CONG");

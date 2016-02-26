@@ -127,11 +127,15 @@ namespace BKI_DichVuMatDat
 
         private bool check_ma_nhan_vien_is_ok(DataRow dataRow)
         {
-            US_DUNG_CHUNG v_usdc = new US_DUNG_CHUNG();
-            DataSet v_ds_nhan_vien = new DataSet();
-            v_ds_nhan_vien.Tables.Add(new DataTable());
-            v_usdc.FillDatasetWithQuery(v_ds_nhan_vien, "select * from DM_NHAN_VIEN where MA_NV=" + dataRow["MA_NV"].ToString());
-            if (v_ds_nhan_vien.Tables[0].Rows.Count > 0)
+            //US_DUNG_CHUNG v_usdc = new US_DUNG_CHUNG();
+            //DataSet v_ds_nhan_vien = new DataSet();
+            //v_ds_nhan_vien.Tables.Add(new DataTable());
+
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            DS_DM_NHAN_VIEN v_ds_nhan_vien = new DS_DM_NHAN_VIEN();
+            v_us.FillDataset(v_ds_nhan_vien, " where MA_NV= '" + dataRow["MA_NV"].ToString() + "'");
+            //v_usdc.FillDatasetWithQuery(v_ds_nhan_vien, "select * from DM_NHAN_VIEN where MA_NV=" + dataRow["MA_NV"].ToString());
+            if(v_ds_nhan_vien.Tables[0].Rows.Count > 0)
                 return false;
             else
             {

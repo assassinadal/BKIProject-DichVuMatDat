@@ -28,26 +28,42 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             fill_data_quy_tien_thuong();
 
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add();
 
-            v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_THU_NHAP_KHAC_2 where id_quy_tien_thuong = " + ip_dc_id_quy_tien);
+            v_us.LayDuLieuThuNhapKhac(v_ds, ip_dc_id_quy_tien);
             m_grc_luong_thuong.DataSource = v_ds.Tables[0];
             CHRMCommon.make_stt_indicator(m_grv_luong_thuong);
             m_sle_quy_thuong.EditValue = ip_dc_id_quy_tien;
             ShowDialog();
+
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+            //v_ds.Tables.Add();
+
+            //v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_THU_NHAP_KHAC_2 where id_quy_tien_thuong = " + ip_dc_id_quy_tien);
+            //m_grc_luong_thuong.DataSource = v_ds.Tables[0];
+            //CHRMCommon.make_stt_indicator(m_grv_luong_thuong);
+            //m_sle_quy_thuong.EditValue = ip_dc_id_quy_tien;
+            //ShowDialog();
         }
         public void display_athk(decimal ip_dc_id_quy_tien)
         {
             fill_data_quy_tien_thuong();
 
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add();
 
-            v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_THU_NHAP_KHAC_2 where id_quy_tien_thuong = " + ip_dc_id_quy_tien);
+            v_us.LayDuLieuThuNhapKhac(v_ds, ip_dc_id_quy_tien);
             m_grc_luong_thuong.DataSource = v_ds.Tables[0];
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+            //v_ds.Tables.Add();
+
+            //v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_THU_NHAP_KHAC_2 where id_quy_tien_thuong = " + ip_dc_id_quy_tien);
+            //m_grc_luong_thuong.DataSource = v_ds.Tables[0];
             CHRMCommon.make_stt_indicator(m_grv_luong_thuong);
             m_sle_quy_thuong.EditValue = ip_dc_id_quy_tien;
 
@@ -60,12 +76,18 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             fill_data_quy_tien_thuong();
 
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add();
 
-            v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_THU_NHAP_KHAC_2 where id_quy_tien_thuong = " + ip_dc_id_quy_tien + " order by THU_TU_HIEN_THI, THU_TU_CHUC_VU, TEN, HO_DEM");
+            v_us.LayDuLieuThuNhapKhac(v_ds, ip_dc_id_quy_tien);
             m_grc_luong_thuong.DataSource = v_ds.Tables[0];
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+            //v_ds.Tables.Add();
+
+            //v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_THU_NHAP_KHAC_2 where id_quy_tien_thuong = " + ip_dc_id_quy_tien + " order by THU_TU_HIEN_THI, THU_TU_CHUC_VU, TEN, HO_DEM");
+            //m_grc_luong_thuong.DataSource = v_ds.Tables[0];
             CHRMCommon.make_stt_indicator(m_grv_luong_thuong);
             m_sle_quy_thuong.EditValue = ip_dc_id_quy_tien;
 

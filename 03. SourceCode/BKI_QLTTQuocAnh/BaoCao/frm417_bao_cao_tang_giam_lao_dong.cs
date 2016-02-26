@@ -1,4 +1,5 @@
-﻿using IP.Core.IPCommon;
+﻿using BKI_DichVuMatDat.US;
+using IP.Core.IPCommon;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void load_data_to_grid()
         {
-            US_DUNG_CHUNG v_us_dung_chung = new US_DUNG_CHUNG();
+            US_GD_CONG_TAC v_us_dung_chung = new US_GD_CONG_TAC();
             DataSet v_op_ds = new DataSet();
             v_op_ds.Tables.Add();
 

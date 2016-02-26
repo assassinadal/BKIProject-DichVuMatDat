@@ -23,7 +23,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add();
-            v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
 
             m_grc_main.DataSource = v_ds.Tables[0];
 

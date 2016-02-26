@@ -26,7 +26,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             DataSet v_ds = new DataSet();
             DataTable v_dt = new DataTable();
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             v_ds.Tables.Add(v_dt);
             v_us.FillDatasetNgayPhepTieuChuan(v_ds, m_txt_nam_tinh_phep.Text, -1);
             m_grc_phep_tieu_chuan.DataSource = v_ds.Tables[0];

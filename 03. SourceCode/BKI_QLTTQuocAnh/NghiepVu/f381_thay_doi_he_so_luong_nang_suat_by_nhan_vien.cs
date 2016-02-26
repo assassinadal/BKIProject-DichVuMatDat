@@ -119,7 +119,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithQuery(v_ds,"SELECT * FROM V_GD_HE_SO_CHAT_LUONG WHERE ID_NHAN_VIEN = " + ip_dc_id_nv + " AND THANG = " + ip_dc_thang + " AND NAM = " + ip_dc_nam);
+            //v_us.FillDatasetWithQuery(v_ds,"SELECT * FROM V_GD_HE_SO_CHAT_LUONG WHERE ID_NHAN_VIEN = " + ip_dc_id_nv + " AND THANG = " + ip_dc_thang + " AND NAM = " + ip_dc_nam);
             m_grc_hs_chat_luong.DataSource = v_ds.Tables[0];
         }
 
@@ -130,7 +130,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_HE_SO_CHAT_LUONG WHERE THANG = " + ip_dc_thang + " AND NAM = " + ip_dc_nam);
+            //v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_HE_SO_CHAT_LUONG WHERE THANG = " + ip_dc_thang + " AND NAM = " + ip_dc_nam);
             m_grc_hs_chat_luong.DataSource = v_ds.Tables[0];
         }
 

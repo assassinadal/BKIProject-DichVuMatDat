@@ -126,10 +126,15 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private void fill_data_cach_tinh_thue()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add();
-            v_us.FillDatasetWithQuery(v_ds, "select * from CM_DM_TU_DIEN where ID_LOAI_TU_DIEN = 13");
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+            //v_ds.Tables.Add();
+            //v_us.FillDatasetWithQuery(v_ds, "select * from CM_DM_TU_DIEN where ID_LOAI_TU_DIEN = 13");
+
+            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
+
+            v_us.FillDatasetByIdLoaiTuDien(v_ds, 13);
 
             m_le_cach_tinh_thue.Properties.DataSource = v_ds.Tables[0];
         }

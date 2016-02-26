@@ -61,7 +61,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
 
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
             return v_ds;
         }
 
@@ -82,47 +83,48 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
 
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "V_GD_LOAI_LAO_DONG");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //v_us.FillDatasetWithTableName(v_ds, "V_GD_LOAI_LAO_DONG");
             m_grc_v_gd_loai_lao_dong.DataSource = v_ds.Tables[0];
         }
 
         //Load du lieu len luoi theo id nhan vien
-        private void load_data_2_grid(decimal ip_dc_id_nv)
-        {
-            CHRMCommon.make_stt(m_grv_v_gd_loai_lao_dong);
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
+        //private void load_data_2_grid(decimal ip_dc_id_nv)
+        //{
+        //    CHRMCommon.make_stt(m_grv_v_gd_loai_lao_dong);
+        //    US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+        //    DataSet v_ds = new DataSet();
 
-            v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds, "Select * from V_GD_LOAI_LAO_DONG WHERE ID = " + ip_dc_id_nv);
-            m_grc_v_gd_loai_lao_dong.DataSource = v_ds.Tables[0];
-        }
+        //    v_ds.Tables.Add(new DataTable());
+        //    v_us.FillDatasetWithQuery(v_ds, "Select * from V_GD_LOAI_LAO_DONG WHERE ID = " + ip_dc_id_nv);
+        //    m_grc_v_gd_loai_lao_dong.DataSource = v_ds.Tables[0];
+        //}
 
         //Load du lieu len luoi theo id_loai_lao_dong
-        private void load_data_2_grid_with_id_loai_lao_dong(decimal ip_dc_id_loai_ld)
-        {
-            CHRMCommon.make_stt(m_grv_v_gd_loai_lao_dong);
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
+        //private void load_data_2_grid_with_id_loai_lao_dong(decimal ip_dc_id_loai_ld)
+        //{
+        //    CHRMCommon.make_stt(m_grv_v_gd_loai_lao_dong);
+        //    US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+        //    DataSet v_ds = new DataSet();
 
-            v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds, "Select * from V_GD_LOAI_LAO_DONG WHERE ID_LOAI_LAO_DONG = " + ip_dc_id_loai_ld);
-            m_grc_v_gd_loai_lao_dong.DataSource = v_ds.Tables[0];
-        }
+        //    v_ds.Tables.Add(new DataTable());
+        //    v_us.FillDatasetWithQuery(v_ds, "Select * from V_GD_LOAI_LAO_DONG WHERE ID_LOAI_LAO_DONG = " + ip_dc_id_loai_ld);
+        //    m_grc_v_gd_loai_lao_dong.DataSource = v_ds.Tables[0];
+        //}
 
         //Load du lieu len luoi theo id nhan vien va id loai lao dong
-        private void load_data_2_grid(decimal ip_dc_id_nv, decimal ip_dc_id_loai_ld)
-        {
-            CHRMCommon.make_stt(m_grv_v_gd_loai_lao_dong);
+        //private void load_data_2_grid(decimal ip_dc_id_nv, decimal ip_dc_id_loai_ld)
+        //{
+        //    CHRMCommon.make_stt(m_grv_v_gd_loai_lao_dong);
 
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
+        //    US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+        //    DataSet v_ds = new DataSet();
 
-            v_ds.Tables.Add(new DataTable());
+        //    v_ds.Tables.Add(new DataTable());
 
-            v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_LOAI_LAO_DONG WHere ID = " + ip_dc_id_nv + " AND ID_LOAI_LAO_DONG = " + ip_dc_id_loai_ld);
-            m_grc_v_gd_loai_lao_dong.DataSource = v_ds.Tables[0];
-        }
+        //    v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_LOAI_LAO_DONG WHere ID = " + ip_dc_id_nv + " AND ID_LOAI_LAO_DONG = " + ip_dc_id_loai_ld);
+        //    m_grc_v_gd_loai_lao_dong.DataSource = v_ds.Tables[0];
+        //}
 
         #endregion
 

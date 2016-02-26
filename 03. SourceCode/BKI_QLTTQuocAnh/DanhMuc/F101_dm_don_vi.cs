@@ -58,7 +58,8 @@ namespace BKI_DichVuMatDat.DanhMuc
             DataSet v_ds = new DataSet();
 
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithTableName(v_ds, "V_DM_DON_VI");
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //v_us.FillDatasetWithTableName(v_ds, "V_DM_DON_VI");
             m_grc_dm_don_vi.DataSource = v_ds.Tables[0];
         }
 

@@ -90,8 +90,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
+            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //v_us.FillDatasetWithTableName(v_ds, "V_GD_QUYET_DINH");
 
-            v_us.FillDatasetWithTableName(v_ds, "V_GD_QUYET_DINH");
             m_grc_quyet_dinh.DataSource = v_ds.Tables[0];
         }
 

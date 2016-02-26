@@ -64,12 +64,12 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private bool check_ma_nhan_vien_is_ok(DataRow dataRow)
         {
-            US_DUNG_CHUNG v_usdc = new US_DUNG_CHUNG();
-            DataSet v_ds_gd_loai_lao_dong = new DataSet();
             decimal v_id_nhan_vien = find_id_nhan_vien_by_ma_nv(dataRow["MA_NV"].ToString().Trim());
 
-            v_ds_gd_loai_lao_dong.Tables.Add(new DataTable());
-            v_usdc.FillDatasetWithQuery(v_ds_gd_loai_lao_dong, "select * from GD_LOAI_LAO_DONG where ID_NHAN_VIEN = " + v_id_nhan_vien);
+            US_GD_LOAI_LAO_DONG v_us_gd_loai_lao_dong = new US_GD_LOAI_LAO_DONG();
+            DS_GD_LOAI_LAO_DONG v_ds_gd_loai_lao_dong = new DS_GD_LOAI_LAO_DONG();
+            v_us_gd_loai_lao_dong.FillDataset(v_ds_gd_loai_lao_dong, "where id_nhan_vien = " + v_id_nhan_vien);
+
             if (v_ds_gd_loai_lao_dong.Tables[0].Rows.Count > 0)
                 return false;
             else

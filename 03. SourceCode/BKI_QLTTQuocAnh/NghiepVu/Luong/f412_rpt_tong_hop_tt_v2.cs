@@ -44,13 +44,15 @@ namespace BKI_DichVuMatDat.BaoCao
         private void load_data_2_grid()
         {
             CHRMCommon.make_stt(m_adv_tong_hop);
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_RPT_BAO_CAO_TONG_HOP_V2 WHERE THANG = " + lay_thang() + " AND NAM = " + lay_nam() + " order by THU_TU_HIEN_THI, THU_TU_CHUC_VU, THU_TU_HOP_DONG, TEN, HO_DEM");
+            //v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_RPT_BAO_CAO_TONG_HOP_V2 WHERE THANG = " + lay_thang() + " AND NAM = " + lay_nam() + " order by THU_TU_HIEN_THI, THU_TU_CHUC_VU, THU_TU_HOP_DONG, TEN, HO_DEM");
+            US_RPT_THONG_TIN_TONG_HOP_V2 v_us = new US_RPT_THONG_TIN_TONG_HOP_V2();
+            v_us.HienThiBaoCao(v_ds, Convert.ToDecimal(m_txt_thang.Text), Convert.ToDecimal(m_txt_nam.Text));
+
             m_grc_tong_hop.DataSource = v_ds.Tables[0];
             m_grc_tong_hop.RefreshDataSource();
-
         }
         private DS_RPT_THONG_TIN_TONG_HOP_V2 lay_danh_sach_nhan_vien_can_tong_hop_thong_tin()
         {

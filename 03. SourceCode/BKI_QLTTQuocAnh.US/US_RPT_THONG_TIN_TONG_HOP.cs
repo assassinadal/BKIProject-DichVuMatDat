@@ -544,7 +544,14 @@ public class US_RPT_THONG_TIN_TONG_HOP : US_Object
 
 
 
+        public void HienThiBaoCao(DataSet ip_ds, decimal ip_dc_thang, decimal ip_dc_nam)
+        {
+            CStoredProc v_cstore = new CStoredProc("PR_RPT_BAO_CAO_TONG_HOP_SELECT");
+            v_cstore.addDecimalInputParam("@ip_dc_thang", ip_dc_thang);
+            v_cstore.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
 
+            v_cstore.fillDataSetByCommand(this, ip_ds);
+        }
 
 
 

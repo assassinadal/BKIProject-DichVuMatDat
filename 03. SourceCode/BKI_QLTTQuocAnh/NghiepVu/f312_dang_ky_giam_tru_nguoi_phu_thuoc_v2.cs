@@ -53,15 +53,15 @@ namespace BKI_DichVuMatDat.NghiepVu
         //    m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         //}
 
-        private DataSet load_data_to_ds_v_dm_nv()
-        {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
-            //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
-            return v_ds;
-        }
+        //private DataSet load_data_to_ds_v_dm_nv()
+        //{
+        //    US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+        //    DataSet v_ds = new DataSet();
+        //    v_ds.Tables.Add(new DataTable());
+        //    throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+        //    //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
+        //    return v_ds;
+        //}
 
         private void m_cmd_import_excel_Click(object sender, EventArgs e)
         {
@@ -90,21 +90,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 }
                 m_cmd_save.Enabled = false;
                 XtraMessageBox.Show("Lưu thành công");
-                //List<decimal> v_lst_nv_thay_doi = gd_phu_thuoc_thay_doi_yn(m_lst_nv_insert_phu_thuoc);
-                //if (v_lst_nv_thay_doi.Count !=0)
-                //{
-                    //DialogResult v_dialog = XtraMessageBox.Show("Số lượng người phụ thuộc của một vài nhân viên đã thay đổi. Sau khi thêm danh sách phụ thuộc thành công, bạn có muốn cập nhật số lượng mới cùng lúc không? ", "Xác nhận", MessageBoxButtons.YesNo);
-                    //if (v_dialog == DialogResult.Yes)
-                    //{
-                    //    for (int i = 0; i < v_lst_nv_thay_doi.Count; i++)
-                    //    {
-                    //        update_gd_phu_thuoc(v_lst_nv_thay_doi[i]);
-                    //    }
-                    //    XtraMessageBox.Show("Lưu thành công");
-                    ////}                 
-                    //m_cmd_save.Enabled = false;
-                    
-                //}                             
+                                           
             }
             catch (Exception v_e)
             {
@@ -197,10 +183,6 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private decimal get_id_by_ma_nhan_vien(string ip_str_ma_nv)
         {
-            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            //DataSet v_ds = new DataSet();
-            //v_ds.Tables.Add(new DataTable());
-            //v_us.FillDatasetWithQuery(v_ds, "select * from dm_nhan_vien where ma_nv = '" + ip_str_ma_nv + "'");
             DS_DM_NHAN_VIEN v_ds = new DS_DM_NHAN_VIEN();
             US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
             v_us.FillDataset(v_ds);
@@ -216,11 +198,9 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_to_grid()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
-            //v_us.FillDatasetWithTableName(v_ds, "V_GD_PHU_THUOC_DETAILS_V2");
+            DS_V_GD_PHU_THUOC_DETAILS_V2 v_ds = new DS_V_GD_PHU_THUOC_DETAILS_V2();
+            US_V_GD_PHU_THUOC_DETAILS_V2 v_us = new US_V_GD_PHU_THUOC_DETAILS_V2();
+            v_us.FillDataset(v_ds);
             m_grc.DataSource = v_ds.Tables[0];
         }
 
@@ -228,7 +208,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                DialogResult v_dialog = MessageBox.Show("Việc xóa có thể sẽ làm thay đổi số lượng người phụ thuộc của nhân viên. Bạn có chắc chắn muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult v_dialog = MessageBox.Show("Việc xóa sẽ làm thay đổi số lượng người phụ thuộc của nhân viên. Bạn có chắc chắn muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo);
                 if (v_dialog == DialogResult.Yes)
                 {
                     var v_dr = m_grv1.GetDataRow(m_grv1.FocusedRowHandle);

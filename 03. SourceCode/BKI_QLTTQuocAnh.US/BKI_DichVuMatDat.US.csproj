@@ -112,6 +112,7 @@
     <Compile Include="US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.cs" />
     <Compile Include="US_V_GD_CONG_TAC.cs" />
     <Compile Include="US_V_GD_LOAI_LAO_DONG.cs" />
+    <Compile Include="US_V_GD_PHU_THUOC_DETAILS_V2.cs" />
     <Compile Include="US_V_GD_QUYET_DINH.cs" />
     <Compile Include="US_V_GD_QUY_TIEN_THUONG.cs" />
     <Compile Include="US_V_GD_THU_NHAP_KHAC_2.cs" />

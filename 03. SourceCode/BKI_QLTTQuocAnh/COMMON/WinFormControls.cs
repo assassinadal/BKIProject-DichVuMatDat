@@ -198,6 +198,7 @@ namespace BKI_DichVuMatDat
             format_data_header(dt);
             ip_grc.DataSource = dt;
         }
+
         public static void load_xls_to_data_table(string ip_str_path, ref DataTable ip_dt_src)
         {
             string conStr = "";

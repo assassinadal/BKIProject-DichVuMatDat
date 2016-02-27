@@ -285,6 +285,10 @@ namespace BKI_DichVuMatDat.US
 
         //Trạng thái lao động
         public const int ERROR_CHUA_CHON_TRANG_THAI_LAO_DONG = 336;
+
+        //Cập nhật phụ thuộc
+        public const int QUESTION_XAC_NHAN_XOA_PHU_THUOC = 337;
+
         #endregion
 
         #region Thông báo các form

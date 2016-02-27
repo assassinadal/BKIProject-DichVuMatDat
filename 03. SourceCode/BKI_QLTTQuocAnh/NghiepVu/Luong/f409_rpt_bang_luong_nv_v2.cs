@@ -679,6 +679,15 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             return v_ds_danh_sach_nhan_vien;
         }
+        public DataRow get_luong_1_nhan_vien_v2(decimal ip_dc_id_nhan_vien, int ip_int_thang, int ip_int_nam)
+        {
+            US_RPT_LUONG_V2 v_us = new US_RPT_LUONG_V2();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillBangLuongV2(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
+            DataRow v_dr = v_ds.Tables[0].Rows[0];
+            return v_dr;
+        }
         private void tinh_bang_luong_tu_dong(DataSet ip_ds_danh_sach_nv)
         {
 
@@ -688,7 +697,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 DataRow v_dr_nv = ip_ds_danh_sach_nv.Tables[0].Rows[i];
                 decimal v_dc_id_nhan_vien = Convert.ToDecimal(v_dr_nv[0]);
 
-                DataRow v_dr_luong_nv = CHRMCommon.get_luong_1_nhan_vien_v2(v_dc_id_nhan_vien, (int)lay_thang(), (int)lay_nam());
+                DataRow v_dr_luong_nv = get_luong_1_nhan_vien_v2(v_dc_id_nhan_vien, (int)lay_thang(), (int)lay_nam());
                 DTO_BANG_LUONG_V2 v_dto_luong = transfer_data_row_db_luong_2_object(v_dr_luong_nv);
                 m_lst_luong_v2.Add(v_dto_luong);
                 m_bgwk.ReportProgress((i + 1) * 100 / ip_ds_danh_sach_nv.Tables[0].Rows.Count);

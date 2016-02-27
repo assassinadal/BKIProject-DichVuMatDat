@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using IP.Core.IPCommon;
 using BKI_DichVuMatDat.US;
 using BKI_DichVuMatDat.DS;
+using BKI_DichVuMatDat.DS.CDBNames;
 
 namespace BKI_DichVuMatDat.BaoCao
 {
@@ -79,7 +80,46 @@ namespace BKI_DichVuMatDat.BaoCao
                 
             }           
         }
-
+        public void DataRow2USThongTinTongHop(DataRow v_dr_luong_1_nv, US_RPT_THONG_TIN_TONG_HOP v_us)
+        {
+            //v_us.dcID = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.ID].ToString());
+            v_us.dcTHANG = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.THANG]);
+            v_us.dcNAM = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.NAM]);
+            v_us.dcID_NHAN_VIEN = (decimal)v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.ID_NHAN_VIEN];
+            v_us.strMA_NV = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.MA_NV].ToString();
+            v_us.strHO_DEM = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.HO_DEM].ToString();
+            v_us.strTEN = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.TEN].ToString();
+            v_us.strHO_VA_TEN = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.HO_VA_TEN].ToString();
+            v_us.strTEN_CHUC_VU = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.TEN_CHUC_VU].ToString();
+            v_us.strTEN_HOP_DONG = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.TEN_HOP_DONG].ToString();
+            v_us.dcLUONG_CHE_DO_THEO_CHUC_VU = (decimal)v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.LUONG_CHE_DO_THEO_CHUC_VU];
+            v_us.dcHS_LUONG_NANG_SUAT_DUOC_HUONG = (decimal)v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.HS_LUONG_NANG_SUAT_DUOC_HUONG];
+            v_us.strTAI_KHOAN = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.TAI_KHOAN].ToString();
+            v_us.dcCHAM_CONG_X = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_X]);
+            v_us.dcCHAM_CONG_OM_CO = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_OM_CO]);
+            v_us.dcCHAM_CONG_TS = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_TS]);
+            v_us.dcCHAM_CONG_TNLD = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_TNLD]);
+            v_us.dcCHAM_CONG_PHEP_DIDUONG = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_PHEP_DIDUONG]);
+            v_us.dcCHAM_CONG_RO_KO_DC = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_RO_KO_DC]);
+            v_us.dcCHAM_CONG_KHAC = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.CHAM_CONG_KHAC]);
+            v_us.dcHE_SO_K = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.HE_SO_K]);
+            v_us.strDON_VI = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.DON_VI].ToString();
+        }
+        public void insertThongTinTongHopNV2RPT(DataRow v_dr_luong_1_nv)
+        {
+            US_RPT_THONG_TIN_TONG_HOP v_us = new US_RPT_THONG_TIN_TONG_HOP();
+            DataRow2USThongTinTongHop(v_dr_luong_1_nv, v_us);
+            v_us.Insert();
+        }
+        public DataRow get_thong_tin_tong_hop_1_nhan_vien(decimal ip_dc_id_nhan_vien, int ip_int_thang, int ip_int_nam)
+        {
+            US_RPT_THONG_TIN_TONG_HOP v_us = new US_RPT_THONG_TIN_TONG_HOP();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillThongTinTongHopNhanVien(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
+            DataRow v_dr = v_ds.Tables[0].Rows[0];
+            return v_dr;
+        }
         private void tong_hop_bao_cao(DS_RPT_THONG_TIN_TONG_HOP ip_ds, BackgroundWorker ip_bgw)
         {
             var ip_dt = ip_ds.Tables[0];
@@ -90,9 +130,9 @@ namespace BKI_DichVuMatDat.BaoCao
                 decimal v_id_nhan_vien = CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"]);
 
                 //B1: Tong hop thong tin 1 nhan vien
-                DataRow v_dr_thong_tin_tong_hop = CHRMCommon.get_thong_tin_tong_hop_1_nhan_vien(v_id_nhan_vien, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
+                DataRow v_dr_thong_tin_tong_hop = get_thong_tin_tong_hop_1_nhan_vien(v_id_nhan_vien, int.Parse(m_txt_thang.Text.Trim()), int.Parse(m_txt_nam.Text.Trim()));
                 //B2: Insert vao Rpt
-                CHRMCommon.insertThongTinTongHopNV2RPT(v_dr_thong_tin_tong_hop);
+                insertThongTinTongHopNV2RPT(v_dr_thong_tin_tong_hop);
                 ip_bgw.ReportProgress((i + 1) * 100 / ip_dt.Rows.Count);
             }
         }

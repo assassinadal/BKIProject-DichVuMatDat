@@ -887,6 +887,7 @@ namespace BKI_DichVuMatDat.US
         }
         #endregion
 
+        #region Additional
         public void FillBangLuongV2(DataSet ip_ds, decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
         {
             CStoredProc v_cstore = new CStoredProc("PR_RPT_BANG_LUONG_V2");
@@ -1052,5 +1053,7 @@ namespace BKI_DichVuMatDat.US
             //v_sp.addDecimalInputParam("@ip_nam", ip_nam);
             v_sp.ExecuteCommand(this);
         }
+        #endregion
+        
     }
 }

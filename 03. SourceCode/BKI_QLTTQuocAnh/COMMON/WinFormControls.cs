@@ -188,7 +188,7 @@ namespace BKI_DichVuMatDat
             DataTable dt = new DataTable();
             if (ExcelDataSet != null && ExcelDataSet.Rows.Count > 0)
             {
-                string SheetName = ExcelDataSet.Rows[2]["TABLE_NAME"].ToString(); // get sheetname
+                string SheetName = ExcelDataSet.Rows[0]["TABLE_NAME"].ToString(); // get sheetname
                 ExcelCommand.CommandText = "SELECT * From [" + SheetName + "]";
                 OleDbDataAdapter ExcelAdapter = new OleDbDataAdapter(ExcelCommand);
                 ExcelAdapter.SelectCommand = ExcelCommand;

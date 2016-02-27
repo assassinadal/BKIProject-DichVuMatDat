@@ -31,17 +31,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_grv.OptionsPrint.AutoWidth = false;
         }
 
+        #region Members
+        US_GD_CHAM_CONG m_us_gd_cham_cong = new US_GD_CHAM_CONG();
         DataSet m_ds_ngay_cong = new DataSet();
         DataSet m_ds_nhan_vien = new DataSet();
         int m_so_nv_da_cham_cong = 0;
+        #endregion
 
-        private void load_data_2_grid(string ip_path)
-        {
-            m_grv.Columns.Clear();
-            WinFormControls.load_xls_to_gridview(ip_path, m_grc);
-            format_gridview();
-        }
-
+        #region Private Methods
         private void format_gridview()
         {
             foreach (GridColumn item in m_grv.Columns)
@@ -60,181 +57,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grc.Refresh();
         }
 
-        private void m_cmd_nhap_cham_cong_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (m_txt_thang.Text == "" || m_txt_nam.Text=="")
-                {
-                    MessageBox.Show("Vui lòng nhập tháng và năm chấm công!");
-                }
-                else
-                {
-                    if (m_bgwk.IsBusy)
-                    {
-                        m_bgwk.CancelAsync();
-                    }
-                    else
-                    {
-                        LayDuLieuLoaiNgayCong();
-                        LayDuLieuNhanVien();
-                        if (checkBangChamCong())
-                        {
-                            if (check_db_da_cham_cong())
-                            {
-                                this.m_pn.Visible = true;
-                                this.m_prb.Visible = true;
-                                this.m_cmd_nhap_cham_cong.Text = "Đang lưu chấm công ...";
-                                this.m_cmd_nhap_cham_cong.Enabled = false;
-                                m_bgwk.RunWorkerAsync();
-                            }
-                            else
-                            {
-                                DialogResult v_dialog = MessageBox.Show("Hiện có " + m_so_nv_da_cham_cong + " nhân viên đã có dữ liệu chấm công. Bạn có muốn xóa dữ liệu cũ và nhập lại?", "Xác nhận", MessageBoxButtons.YesNo);
-                                if (v_dialog == DialogResult.Yes)
-                                {
-                                    this.m_pn.Visible = true;
-                                    this.m_prb.Visible = true;
-                                    this.m_cmd_nhap_cham_cong.Text = "Đang lưu chấm công ...";
-                                    this.m_cmd_nhap_cham_cong.Enabled = false;
-                                    m_bgwk.RunWorkerAsync();
-                                }
-                            }
-                        }
-
-                    }
-                }               
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void LayDuLieuNhanVien()
-        {
-            US_DM_NHAN_VIEN v_us_nv = new US_DM_NHAN_VIEN();
-            m_ds_nhan_vien.EnforceConstraints = false;
-            m_ds_nhan_vien = new DataSet();
-            v_us_nv.FillDataset(m_ds_nhan_vien);
-
-            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            //m_ds_nhan_vien.Tables.Add(new DataTable());
-            //v_us.FillDatasetCBO(m_ds_nhan_vien, "DM_NHAN_VIEN", "ID", "MA_NV", "");
-        }
-
-        private void LayDuLieuLoaiNgayCong()
-        {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            m_ds_ngay_cong.Tables.Add(new DataTable());
-            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
-            //v_us.FillDatasetWithTableName(m_ds_ngay_cong, "DM_LOAI_NGAY_CONG");
-        }
-
-        private void nhapChamCong(DataRow ip_dataRow)
-        {
-            xoa_du_lieu_cham_cong_cu(get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString()));
-
-            for (int i = 2; i < ip_dataRow.Table.Columns.Count - 1; i++)
-            {
-                try
-                {
-                    US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
-                    v_us.dcID_NHAN_VIEN = get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString());
-                    v_us.datNGAY_CHAM_CONG = CIPConvert.ToDatetime(ip_dataRow.Table.Columns[i].ColumnName, "dd/MM/yyyy");
-                    v_us.strDA_XOA = "N";
-                    v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
-                    v_us.datNGAY_LAP = DateTime.Now;
-                    v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString());
-                    v_us.Insert();
-                }
-                catch (Exception v_e)
-                {
-                    CSystemLog_301.ExceptionHandle(v_e);
-                }
-            }
-            try
-            {
-                US_GD_HE_SO_CHAT_LUONG v_us_hsk = new US_GD_HE_SO_CHAT_LUONG();
-                if (ip_dataRow[ip_dataRow.Table.Columns.Count - 1] != DBNull.Value)
-                {
-                    v_us_hsk.dcHE_SO_K = Convert.ToDecimal(ip_dataRow[ip_dataRow.Table.Columns.Count - 1]);
-                }
-                else
-                {
-                    v_us_hsk.dcHE_SO_K = 0;
-                }
-
-                v_us_hsk.dcID_NHAN_VIEN = get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString());
-                v_us_hsk.dcTHANG = CIPConvert.ToDecimal(m_txt_thang.Text);
-                v_us_hsk.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text);
-                v_us_hsk.datNGAY_LAP = DateTime.Now.Date;
-                v_us_hsk.strDA_XOA = "N";
-                v_us_hsk.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
-                v_us_hsk.Insert();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }            
-        }
-
-        private void xoa_du_lieu_cham_cong_cu(decimal ip_dc_id_nv)
-        {
-            US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
-            v_us.xoa_du_lieu_cham_cong(ip_dc_id_nv, m_txt_thang.Text, m_txt_nam.Text);
-        }
-
-        private decimal get_nhan_vien_by_ma_nv(string ip_ma_nhan_vien)
-        {
-            EnumerableRowCollection<DataRow> res = from row in m_ds_nhan_vien.Tables[0].AsEnumerable()
-                                                   where row.Field<string>(DM_NHAN_VIEN.MA_NV) == ip_ma_nhan_vien
-                                                   select row;
-
-            return CIPConvert.ToDecimal(res.First()[DM_NHAN_VIEN.ID].ToString());
-        }
-
-        private decimal get_loai_ngay_cong(string ip_ma_ngay_cong)
-        {
-            EnumerableRowCollection<DataRow> res = from row in m_ds_ngay_cong.Tables[0].AsEnumerable()
-                                                   where row.Field<string>(DM_LOAI_NGAY_CONG.MA_NGAY_CONG).ToUpper() == ip_ma_ngay_cong.ToUpper()
-                                                   select row;
-
-            return CIPConvert.ToDecimal(res.First()[DM_LOAI_NGAY_CONG.ID].ToString());
-        }
-
-        private void m_cmd_chon_du_lieu_Click(object sender, EventArgs e)
-        {           
-            try
-            {
-                load_data_2_grid(WinFormControls.openFileDialog());
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_cmd_mo_file_mau_Click(object sender, EventArgs e)
-        {
-            if (m_txt_thang.Text == "" || m_txt_nam.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập tháng và năm chấm công!");
-            }
-            else
-            {
-                try
-                {
-                    //WinFormControls.openTemplate("ChamCong.xlsx");
-                    tao_file_mau("ChamCong.xlsx");
-                }
-                catch (Exception v_e)
-                {
-                    CSystemLog_301.ExceptionHandle(v_e);
-                }
-            }           
-        }
-
+        #region Tao file excel mau
         private void tao_file_mau(string ip_str_file_name)
         {
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
@@ -269,61 +92,94 @@ namespace BKI_DichVuMatDat.NghiepVu
             process.StartInfo.Verb = "Open";
             process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
             process.Start();
+        }        
+        #endregion
+
+        #region Load excel to grid
+        private void load_data_2_grid(string ip_path)
+        {
+            m_grv.Columns.Clear();
+            WinFormControls.load_xls_to_gridview(ip_path, m_grc);
+            format_gridview();
+        }
+        #endregion
+
+        #region Lay du lieu tu db
+        private void LayDuLieuNhanVien()
+        {
+            US_DM_NHAN_VIEN v_us_nv = new US_DM_NHAN_VIEN();
+            m_ds_nhan_vien.EnforceConstraints = false;
+            m_ds_nhan_vien = new DS_DM_NHAN_VIEN();
+            v_us_nv.FillDataset(m_ds_nhan_vien);
         }
 
-        private void m_bgwk_DoWork(object sender, DoWorkEventArgs e)
+        private void LayDuLieuLoaiNgayCong()
         {
-            BackgroundWorker worker = sender as BackgroundWorker;
-            
-            //if (checkBangChamCong())//checkBangChamCong())
-            //{
-            //    if (check_db_da_cham_cong())
-            //    {
-                    
-                    for (int i = 0; i < m_grv.RowCount; i++)
-                    {
-                        nhapChamCong(m_grv.GetDataRow(i));
-                        worker.ReportProgress((i + 1) * 100 / m_grv.RowCount);
-                    }
-                //}
-                //else
-                //{
-                //    DialogResult v_dialog = MessageBox.Show("Hiện có " + m_so_nv_da_cham_cong + " nhân viên đã có dữ liệu chấm công. Bạn có muốn xóa dữ liệu cũ và nhập lại?", "Xác nhận", MessageBoxButtons.YesNo);
-                //    if (v_dialog == DialogResult.Yes)
-                //    {
-                //        for (int i = 0; i < m_grv.RowCount; i++)
-                //        {
-                //            nhapChamCong(m_grv.GetDataRow(i));
-                //            worker.ReportProgress((i + 1) * 100 / m_grv.RowCount);
-                //        }
-                //        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-                //    }
+            DS_DM_LOAI_NGAY_CONG v_ds = new DS_DM_LOAI_NGAY_CONG();
+            US_DM_LOAI_NGAY_CONG v_us = new US_DM_LOAI_NGAY_CONG();
+            v_us.FillDataset(v_ds);
+            m_ds_ngay_cong = v_ds;
+        }
 
-                //}
-            //}
-            //else
-            //{
-            //    CHRM_BaseMessages.MsgBox_Warning(CONST_ID_MSGBOX.WAR_KIEM_TRA_LAI_BANG_CHAM_CONG);
-            //}
+        private decimal get_nhan_vien_by_ma_nv(string ip_ma_nhan_vien)
+        {
+            EnumerableRowCollection<DataRow> res = from row in m_ds_nhan_vien.Tables[0].AsEnumerable()
+                                                   where row.Field<string>(DM_NHAN_VIEN.MA_NV) == ip_ma_nhan_vien
+                                                   select row;
+
+            return CIPConvert.ToDecimal(res.First()[DM_NHAN_VIEN.ID].ToString());
+        }
+
+        private decimal get_loai_ngay_cong(string ip_ma_ngay_cong)
+        {
+            EnumerableRowCollection<DataRow> res = from row in m_ds_ngay_cong.Tables[0].AsEnumerable()
+                                                   where row.Field<string>(DM_LOAI_NGAY_CONG.MA_NGAY_CONG).ToUpper() == ip_ma_ngay_cong.ToUpper()
+                                                   select row;
+
+            return CIPConvert.ToDecimal(res.First()[DM_LOAI_NGAY_CONG.ID].ToString());
+        }
+        #endregion
+
+        #region Kiem tra du lieu tren grid
+        private bool kiem_tra_cham_cong()
+        {
+            LayDuLieuLoaiNgayCong();
+            LayDuLieuNhanVien();
+            if (checkBangChamCong())
+            {
+                if (check_db_da_cham_cong())
+                {
+                    return true;
+                }
+                else
+                {
+                    DialogResult v_dialog = MessageBox.Show("Hiện có " + m_so_nv_da_cham_cong + " nhân viên đã có dữ liệu chấm công. Bạn có muốn xóa dữ liệu cũ và nhập lại?", "Xác nhận", MessageBoxButtons.YesNo);
+                    if (v_dialog == DialogResult.Yes)
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            return false;
         }
 
         private bool check_db_da_cham_cong()
         {
             List<string> v_list_nv_da_cham_cong = new List<string>();
-            DataSet v_ds = new DataSet();
+            DS_GD_CHAM_CONG v_ds = new DS_GD_CHAM_CONG();
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
-            v_ds.Tables.Add(new DataTable());
             v_us.FillDatasetChamCong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
             for (int i = 0; i < m_grv.RowCount; i++)
             {
                 var v_dr = m_grv.GetDataRow(i);
                 DataRow[] v_dr_1_nv = v_ds.Tables[0].Select("MA_NV ='" + v_dr[0].ToString() + "'");
-                if (v_dr_1_nv.Count()!=0)
+                if (v_dr_1_nv.Count() != 0)
                 {
                     v_list_nv_da_cham_cong.Add(v_dr[0].ToString());
                 }
             }
-            if (v_list_nv_da_cham_cong.Count ==0)
+            if (v_list_nv_da_cham_cong.Count == 0)
             {
                 return true;
             }
@@ -332,58 +188,20 @@ namespace BKI_DichVuMatDat.NghiepVu
                 m_so_nv_da_cham_cong = v_list_nv_da_cham_cong.Count;
                 return false;
             }
-            //if (v_ds.Tables[0].Rows.Count == 0)
-            //{
-            //    return 0;
-            //}
-            //else
-            //{
-            //    var distinctIds = v_ds.Tables[0].AsEnumerable()
-            //        .Select(s => new
-            //        {
-            //            id = s.Field<string>("ID_NHAN_VIEN"),
-            //        })
-            //        .Distinct().ToList();
-            //    return distinctIds.Count;
-            //}
         }
 
         private bool checkBangChamCong()
         {
             //int v_int_dem_cham_cong_sai = 0;
             List<string> v_list_nv_ko_ton_tai = new List<string>();
-            List<string> v_list_ngay_cong_ko_ton_tai = new List<string>();
-            for (int i = 0; i < m_grv.RowCount; i++)
+            v_list_nv_ko_ton_tai = check_ma_nv_ko_ton_tai();
+            if (v_list_nv_ko_ton_tai.Count() == 0)
             {
-                var v_dr = m_grv.GetDataRow(i);
-                DataRow[] v_dr_1_nv = m_ds_nhan_vien.Tables[0].Select("MA_NV = '" + v_dr[0].ToString() + "'");
-                if (v_dr_1_nv.Count() ==0)
+                List<string> v_list_ngay_cong_ko_ton_tai = new List<string>();
+                v_list_ngay_cong_ko_ton_tai = check_ngay_cong_ton_tai_yn();
+                if (v_list_ngay_cong_ko_ton_tai.Count == 0)
                 {
-                    v_list_nv_ko_ton_tai.Add(v_dr[0].ToString());
-                }
-            }
-            if (v_list_nv_ko_ton_tai.Count == 0)
-            {
-                for (int i = 0; i < m_grv.RowCount; i++)
-                {
-                    var v_dr = m_grv.GetDataRow(i);
-                    for (int j = 2; j < m_grv.Columns.Count-1; j++)
-                    {
-                        //EnumerableRowCollection<DataRow> res = from row in m_ds_ngay_cong.Tables[0].AsEnumerable()
-                        //                                       where row.Field<string>(DM_LOAI_NGAY_CONG.MA_NGAY_CONG).ToUpper() == v_dr[j].ToString().ToUpper()
-                        //                                       select row;
-                        DataRow[] v_dr_cham_cong = m_ds_ngay_cong.Tables[0].Select("MA_NGAY_CONG = '" + v_dr[j].ToString().ToUpper() + "'");
-                        if (v_dr_cham_cong.Count() == 0)
-                        {
-                            v_list_ngay_cong_ko_ton_tai.Add(v_dr[j].ToString());
-                            //m_grv.FocusedRowHandle = i;
-                            //m_grv.FocusedColumn = m_grv.Columns[j];
-                        }                        
-                    }
-                }
-                if (v_list_ngay_cong_ko_ton_tai.Count ==0)
-                {
-                    if (m_grv.Columns[m_grv.Columns.Count -1].GetCaption().ToString().ToUpper() == "HSK")
+                    if (m_grv.Columns[m_grv.Columns.Count - 1].GetCaption().ToString().ToUpper() == "HSK")
                     {
                         return true;
                     }
@@ -395,33 +213,61 @@ namespace BKI_DichVuMatDat.NghiepVu
                 }
                 else
                 {
-                    string v_str_ma_ngay_cong = "";
-                    foreach (var item in v_list_ngay_cong_ko_ton_tai)
-                    {
-                        if (!v_str_ma_ngay_cong.Contains(item))
-                        {
-                            v_str_ma_ngay_cong = v_str_ma_ngay_cong + item + " ";
-                        }
-                    }
-                    MessageBox.Show("Không tồn tại mã ngày công '" + v_str_ma_ngay_cong +"'. Vui lòng kiểm tra lại");
+                    MessageBox.Show("Không tồn tại mã ngày công '" + string.Join(", ", v_list_ngay_cong_ko_ton_tai) + "'");
                     return false;
                 }
             }
             else
             {
-                string v_str_ma_nv = "";
-                foreach (var item in v_list_nv_ko_ton_tai)
-                {
-                    v_str_ma_nv = v_str_ma_nv + item+ " ";
-                }
-                MessageBox.Show("Nhân viên '" + v_str_ma_nv + "' không tồn tại. Vui lòng kiểm tra lại");
+                MessageBox.Show("Không tồn tại mã nhân viên '" + string.Join(", ", v_list_nv_ko_ton_tai) + "'");
                 return false;
             }
         }
 
-        private void m_grv_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
+        private List<string> check_ngay_cong_ton_tai_yn()
         {
-            throw new NotImplementedException();
+            List<string> v_list_ngay_cong_ko_ton_tai = new List<string>();
+            for (int i = 0; i < m_grv.RowCount; i++)
+            {
+                var v_dr = m_grv.GetDataRow(i);
+                for (int j = 2; j < m_grv.Columns.Count - 1; j++)
+                {
+                    DataRow[] v_dr_cham_cong = m_ds_ngay_cong.Tables[0].Select("MA_NGAY_CONG = '" + v_dr[j].ToString().ToUpper() + "'");
+                    if (v_dr_cham_cong.Count() == 0 && !v_list_ngay_cong_ko_ton_tai.Contains(v_dr[j].ToString()))
+                    {
+                        v_list_ngay_cong_ko_ton_tai.Add(v_dr[j].ToString());
+                    }
+                }
+            }
+            return v_list_ngay_cong_ko_ton_tai;
+        }
+
+        private List<string> check_ma_nv_ko_ton_tai()
+        {
+            List<string> v_list_nv_ko_ton_tai = new List<string>();
+            for (int i = 0; i < m_grv.RowCount; i++)
+            {
+                var v_dr = m_grv.GetDataRow(i);
+                DataRow[] v_dr_1_nv = m_ds_nhan_vien.Tables[0].Select("MA_NV = '" + v_dr[0].ToString() + "'");
+                if (v_dr_1_nv.Count() == 0)
+                {
+                    v_list_nv_ko_ton_tai.Add(v_dr[0].ToString());
+                }
+            }
+            return v_list_nv_ko_ton_tai;
+        }
+
+        #endregion
+        
+        #region Luu du lieu vao db
+        private void m_bgwk_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            for (int i = 0; i < m_grv.RowCount; i++)
+            {
+                luuChamCong(m_grv.GetDataRow(i));
+                worker.ReportProgress((i + 1) * 100 / m_grv.RowCount);
+            }
         }
 
         private void m_bgwk_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -435,14 +281,159 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_pn.Visible = false;
             this.m_cmd_nhap_cham_cong.Text = "Lưu chấm công";
             this.m_cmd_nhap_cham_cong.Enabled = true;
+            XtraMessageBox.Show("Lưu thành công!");
         }
 
+        private void luuChamCong(DataRow ip_dataRow)
+        {
+            xoa_du_lieu_cham_cong_cu(get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString()));
+            insert_gd_cham_cong(ip_dataRow);
+            insert_gd_he_so_chat_luong(ip_dataRow);
+        }
+
+        private void xoa_du_lieu_cham_cong_cu(decimal ip_dc_id_nv)
+        {
+            US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
+            v_us.xoa_du_lieu_cham_cong(ip_dc_id_nv, m_txt_thang.Text, m_txt_nam.Text);
+        }
+
+        private void insert_gd_cham_cong(DataRow ip_dataRow)
+        {
+            for (int i = 2; i < ip_dataRow.Table.Columns.Count - 1; i++)
+            {
+                try
+                {
+                    US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
+                    v_us.dcID_NHAN_VIEN = get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString());
+                    v_us.datNGAY_CHAM_CONG = CIPConvert.ToDatetime(ip_dataRow.Table.Columns[i].ColumnName, "dd/MM/yyyy");
+                    v_us.strDA_XOA = "N";
+                    v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
+                    v_us.datNGAY_LAP = DateTime.Now;
+                    v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString());
+                    if (i == 2)
+                    {
+                        v_us.BeginTransaction();
+                    }
+                    else
+                    {
+                        v_us.UseTransOfUSObject(m_us_gd_cham_cong);
+                    }
+                    m_us_gd_cham_cong = v_us;
+                    v_us.Insert();
+                }
+                catch (Exception v_e)
+                {
+                    CSystemLog_301.ExceptionHandle(v_e);
+                }
+            }
+        }
+
+        private void insert_gd_he_so_chat_luong(DataRow ip_dataRow)
+        {
+            try
+            {
+                US_GD_HE_SO_CHAT_LUONG v_us_hsk = new US_GD_HE_SO_CHAT_LUONG();
+                if (ip_dataRow[ip_dataRow.Table.Columns.Count - 1] != DBNull.Value)
+                {
+                    v_us_hsk.dcHE_SO_K = Convert.ToDecimal(ip_dataRow[ip_dataRow.Table.Columns.Count - 1]);
+                }
+                else
+                {
+                    v_us_hsk.dcHE_SO_K = 0;
+                }
+                v_us_hsk.dcID_NHAN_VIEN = get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString());
+                v_us_hsk.dcTHANG = CIPConvert.ToDecimal(m_txt_thang.Text);
+                v_us_hsk.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text);
+                v_us_hsk.datNGAY_LAP = DateTime.Now.Date;
+                v_us_hsk.strDA_XOA = "N";
+                v_us_hsk.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
+                v_us_hsk.UseTransOfUSObject(m_us_gd_cham_cong);
+                v_us_hsk.Insert();
+                v_us_hsk.CommitTransaction();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        #endregion
+
+        #endregion
+
+        #region Events Handle
         private void F696_Cham_cong_xls_Load(object sender, EventArgs e)
         {
             m_txt_thang.Text = DateTime.Now.Month.ToString();
             m_txt_nam.Text = DateTime.Now.Year.ToString();
             check_db_da_cham_cong();
-            m_lbl_thong_bao.Text = "Đã chấm công cho " + m_so_nv_da_cham_cong +" nhân viên";
+            m_lbl_thong_bao.Text = "Đã chấm công cho " + m_so_nv_da_cham_cong + " nhân viên";
         }
+
+
+        private void m_cmd_nhap_cham_cong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_thang.Text == "" || m_txt_nam.Text=="")
+                {
+                    MessageBox.Show("Vui lòng nhập tháng và năm chấm công!");
+                }
+                else
+                {
+                    if (m_bgwk.IsBusy)
+                    {
+                        m_bgwk.CancelAsync();
+                    }
+                    else
+                    {
+                        if (kiem_tra_cham_cong())
+                        {
+                            this.m_pn.Visible = true;
+                            this.m_prb.Visible = true;
+                            this.m_cmd_nhap_cham_cong.Text = "Đang lưu chấm công ...";
+                            this.m_cmd_nhap_cham_cong.Enabled = false;
+                            m_bgwk.RunWorkerAsync();
+                        }
+                    }
+                }               
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_chon_du_lieu_Click(object sender, EventArgs e)
+        {           
+            try
+            {
+                load_data_2_grid(WinFormControls.openFileDialog());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_mo_file_mau_Click(object sender, EventArgs e)
+        {
+            if (m_txt_thang.Text == "" || m_txt_nam.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập tháng và năm chấm công!");
+            }
+            else
+            {
+                try
+                {
+                    tao_file_mau("ChamCong.xlsx");
+                }
+                catch (Exception v_e)
+                {
+                    CSystemLog_301.ExceptionHandle(v_e);
+                }
+            }
+        }
+        #endregion
+
     }
 }

@@ -188,8 +188,7 @@ namespace BKI_DichVuMatDat
             m_cmd_quan_ly_luong_cung.ItemClick += m_cmd_quan_ly_luong_cung_ItemClick;
             m_cmd_quan_ly_khong_dong_bh.ItemClick += m_cmd_quan_ly_khong_dong_bh_ItemClick;
             m_cmd_thuong_thu_nhap_khac.ItemClick += m_cmd_luong_hs_athk_ItemClick;
-            m_cmd_ql_thuong_le_tet.ItemClick += m_cmd_ql_thuong_hsbs_ItemClick;
-            m_cmd_dang_ky_giam_tru_phu_thuoc.ItemClick += m_cmd_dang_ky_giam_tru_phu_thuoc_ItemClick;
+            m_cmd_ql_thuong_le_tet.ItemClick += m_cmd_ql_thuong_hsbs_ItemClick;          
             m_cmd_thuong_2014.ItemClick += m_cmd_thuong_2014_ItemClick;
             //Hệ thống
             m_cmd_thoat.ItemClick += m_cmd_thoat_ItemClick;

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BKI_DichVuMatDat.DS;
+using BKI_DichVuMatDat.US;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,15 +21,11 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void f315_card_nhan_vien_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dVMDDataSet1.V_DM_NHAN_VIEN' table. You can move, or remove it, as needed.
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add();
-            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
-            //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
-
+            //// TODO: This line of code loads data into the 'dVMDDataSet1.V_DM_NHAN_VIEN' table. You can move, or remove it, as needed.
+            DS_V_GD_MA_TRA_CUU_NHAN_VIEN v_ds = new DS_V_GD_MA_TRA_CUU_NHAN_VIEN();
+            US_V_GD_MA_TRA_CUU_NHAN_VIEN v_us = new US_V_GD_MA_TRA_CUU_NHAN_VIEN();
+            v_us.FillDataset(v_ds);
             m_grc_main.DataSource = v_ds.Tables[0];
-
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

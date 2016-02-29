@@ -405,12 +405,12 @@ namespace BKI_DichVuMatDat
         //    v_cstore.fillDataSetByCommand(this, op_ds);
         //}
 
-        //internal void FillDatasetWithTableName(DataSet op_ds, string ip_str_table_name)
-        //{
-        //    CStoredProc v_cstore = new CStoredProc("get_data_from_table");
-        //    v_cstore.addNVarcharInputParam("@TABLE_NAME", ip_str_table_name);
-        //    v_cstore.fillDataSetByCommand(this, op_ds);
-        //}
+        internal void FillDatasetWithTableName(DataSet op_ds, string ip_str_table_name)
+        {
+            CStoredProc v_cstore = new CStoredProc("get_data_from_table");
+            v_cstore.addNVarcharInputParam("@TABLE_NAME", ip_str_table_name);
+            v_cstore.fillDataSetByCommand(this, op_ds);
+        }
 
         //internal void FillDatasetWithQuery(DataSet op_ds, string ip_query)
         //{

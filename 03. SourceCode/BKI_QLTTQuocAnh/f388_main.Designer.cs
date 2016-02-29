@@ -126,6 +126,7 @@
             this.m_cmd_quy_trinh_nhap_nhan_su = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_tong_hop_cham_cong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_quan_ly_giam_tru_phu_thuoc = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_import_tu_excel = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -136,6 +137,7 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -154,8 +156,6 @@
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
-            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.m_cmd_import_tu_excel = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -1145,6 +1145,16 @@
             this.m_cmd_quan_ly_giam_tru_phu_thuoc.Name = "m_cmd_quan_ly_giam_tru_phu_thuoc";
             this.m_cmd_quan_ly_giam_tru_phu_thuoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_quan_ly_giam_tru_phu_thuoc_ItemClick);
             // 
+            // m_cmd_import_tu_excel
+            // 
+            this.m_cmd_import_tu_excel.Caption = "Import từ excel";
+            this.m_cmd_import_tu_excel.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_tu_excel.Glyph")));
+            this.m_cmd_import_tu_excel.Id = 114;
+            this.m_cmd_import_tu_excel.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_tu_excel.LargeGlyph")));
+            this.m_cmd_import_tu_excel.LargeWidth = 100;
+            this.m_cmd_import_tu_excel.Name = "m_cmd_import_tu_excel";
+            this.m_cmd_import_tu_excel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_import_tu_excel_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1229,7 +1239,6 @@
             // 
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_quan_ly_luong_cung);
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_quan_ly_khong_dong_bh);
-            this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_dang_ky_giam_tru_phu_thuoc);
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_quan_ly_giam_tru_phu_thuoc);
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_dang_ky_bao_hiem_y_te);
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_tinh_phep_tieu_chuan);
@@ -1237,6 +1246,12 @@
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_quy_trinh_nhap_nhan_su);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Khác";
+            // 
+            // ribbonPageGroup11
+            // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_import_tu_excel);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup11.Text = "Import excel";
             // 
             // ribbonPage5
             // 
@@ -1415,22 +1430,6 @@
             this.m_lbl_canh_bao_het_han_hop_dong.TabIndex = 10;
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
-            // 
-            // ribbonPageGroup11
-            // 
-            this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_import_tu_excel);
-            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
-            this.ribbonPageGroup11.Text = "Import excel";
-            // 
-            // m_cmd_import_tu_excel
-            // 
-            this.m_cmd_import_tu_excel.Caption = "Import từ excel";
-            this.m_cmd_import_tu_excel.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_tu_excel.Glyph")));
-            this.m_cmd_import_tu_excel.Id = 114;
-            this.m_cmd_import_tu_excel.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_tu_excel.LargeGlyph")));
-            this.m_cmd_import_tu_excel.LargeWidth = 100;
-            this.m_cmd_import_tu_excel.Name = "m_cmd_import_tu_excel";
-            this.m_cmd_import_tu_excel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_import_tu_excel_ItemClick);
             // 
             // f388_main
             // 

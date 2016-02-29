@@ -1,4 +1,4 @@
-<?xml version="1.0" standalone="yes"?>
+﻿<?xml version="1.0" standalone="yes"?>
 <DatasetMsg xmlns="http://tempuri.org/DatasetMsg.xsd">
   <Message>
     <Message>Chưa có dữ liệu trên lưới!</Message>
@@ -143,5 +143,9 @@
   <Message>
     <Message>Bạn chưa chọn loại phụ cấp rồi!</Message>
     <ID>335</ID>
+  </Message>
+  <Message>
+    <Message>Việc xóa sẽ làm thay đổi số lượng người phụ thuộc của nhân viên. Bạn có chắc chắn muốn xóa?</Message>
+    <ID>337</ID>
   </Message>
 </DatasetMsg>

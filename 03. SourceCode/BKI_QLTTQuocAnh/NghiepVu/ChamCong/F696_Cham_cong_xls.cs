@@ -232,11 +232,14 @@ namespace BKI_DichVuMatDat.NghiepVu
                 var v_dr = m_grv.GetDataRow(i);
                 for (int j = 2; j < m_grv.Columns.Count - 1; j++)
                 {
-                    DataRow[] v_dr_cham_cong = m_ds_ngay_cong.Tables[0].Select("MA_NGAY_CONG = '" + v_dr[j].ToString().ToUpper() + "'");
-                    if (v_dr_cham_cong.Count() == 0 && !v_list_ngay_cong_ko_ton_tai.Contains(v_dr[j].ToString()))
+                    if (v_dr[j].ToString().Trim() != "")
                     {
-                        v_list_ngay_cong_ko_ton_tai.Add(v_dr[j].ToString());
-                    }
+                        DataRow[] v_dr_cham_cong = m_ds_ngay_cong.Tables[0].Select("MA_NGAY_CONG = '" + v_dr[j].ToString().Substring(2).ToUpper() + "'");
+                        if (v_dr_cham_cong.Count() == 0 && !v_list_ngay_cong_ko_ton_tai.Contains(v_dr[j].ToString()))
+                        {
+                            v_list_ngay_cong_ko_ton_tai.Add(v_dr[j].ToString());
+                        }  
+                    }           
                 }
             }
             return v_list_ngay_cong_ko_ton_tai;
@@ -309,7 +312,14 @@ namespace BKI_DichVuMatDat.NghiepVu
                     v_us.strDA_XOA = "N";
                     v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                     v_us.datNGAY_LAP = DateTime.Now;
-                    v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString());
+                    if (ip_dataRow[i].ToString().Trim() == "")
+                    {
+                        v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString());
+                    }
+                    else
+                    {
+                        v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString().Substring(2));
+                    }                   
                     if (i == 2)
                     {
                         v_us.BeginTransaction();

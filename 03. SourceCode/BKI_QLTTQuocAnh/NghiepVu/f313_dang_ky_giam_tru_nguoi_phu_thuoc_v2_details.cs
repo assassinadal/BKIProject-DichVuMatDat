@@ -171,8 +171,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_define_events()
         {
             this.Load += f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details_Load;
-            m_cmd_save.Click += m_cmd_save_Click;
-            m_cmd_exit.Click += m_cmd_exit_Click;
             this.KeyDown += f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details_KeyDown;
             this.FormClosed += f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details_FormClosed;
         }

@@ -248,7 +248,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                 }
                 m_cmd_save.Enabled = false;
                 XtraMessageBox.Show("Lưu thành công");
-
             }
             catch (Exception v_e)
             {

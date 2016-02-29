@@ -92,6 +92,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.ID = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv1)).BeginInit();
@@ -146,6 +147,7 @@
             this.m_cmd_update.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_update.TabIndex = 10;
             this.m_cmd_update.Text = "&Sửa";
+            this.m_cmd_update.Click += new System.EventHandler(this.m_cmd_update_Click);
             // 
             // m_cmd_delete
             // 
@@ -190,6 +192,7 @@
             this.gridBand2,
             this.gridBand3});
             this.m_grv1.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.ID,
             this.bandedGridColumn1,
             this.bandedGridColumn2,
             this.bandedGridColumn3,
@@ -750,6 +753,12 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "BẢNG KÊ THÔNG TIN NGƯỜI PHỤ THUỘC GIẢM TRỪ GIA CẢNH";
             // 
+            // ID
+            // 
+            this.ID.Caption = "bandedGridColumn18";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
+            // 
             // f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -836,6 +845,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn ID;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

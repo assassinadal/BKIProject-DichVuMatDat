@@ -22,28 +22,40 @@ namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2 : Form
     {
-        List<decimal> m_lst_nv_insert_phu_thuoc = new List<decimal>();
+        #region Public Interface
+
         public f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2()
         {
             InitializeComponent();
+            format_controls();
         }
 
-        private void m_cmd_tai_file_mau_Click(object sender, EventArgs e)
+        #endregion
+
+        #region Members
+
+        List<decimal> m_lst_nv_insert_phu_thuoc = new List<decimal>();
+
+        #endregion
+
+        #region Private Methods
+
+        private void format_controls()
         {
-            try
-            {
-                WinFormControls.openTemplate("DangKyPhuThuoc.xlsx");
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
+            FormatControl.SetVisibleSimpleButton(this);
+            set_define_events();
+            this.KeyPreview = true;
         }
 
-        private void f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2_Load(object sender, EventArgs e)
+        private void set_define_events()
         {
-            m_lbl_nam_tinh_thue.Text = DateTime.Now.Year.ToString();
-            load_data_to_grid();
+            this.Load += f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2_Load;
+            //m_cmd_update.Click += m_cmd_update_Click;
+            //m_cmd_delete.Click += m_cmd_delete_Click;
+            //m_cmd_import_excel.Click += m_cmd_import_excel_Click;
+            //m_cmd_save.Click += m_cmd_save_Click;
+            //m_cmd_tai_file_mau.Click += m_cmd_tai_file_mau_Click;
+            m_grv1.DoubleClick += new EventHandler(m_grv1_DoubleClick);
         }
 
         //private void load_data_to_m_sle_chon_nhan_vien()
@@ -62,41 +74,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         //    //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
         //    return v_ds;
         //}
-
-        private void m_cmd_import_excel_Click(object sender, EventArgs e)
-        {
-            m_grc.DataSource = null;
-            try
-            {
-                WinFormControls.load_xls_to_gridview(WinFormControls.openFileDialog(), m_grc);
-                m_cmd_save.Enabled = true;
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_cmd_save_Click(object sender, EventArgs e)
-        {
-            m_lst_nv_insert_phu_thuoc.Clear();            
-            try
-            {
-                SplashScreenManager.ShowForm(typeof(BKI_DichVuMatDat.BaoCao.F_wait_form));
-                insert_gd_phu_thuoc_details();
-                for (int i = 0; i < m_lst_nv_insert_phu_thuoc.Count; i++)
-                {
-                    update_gd_phu_thuoc(m_lst_nv_insert_phu_thuoc[i]);
-                }
-                m_cmd_save.Enabled = false;
-                XtraMessageBox.Show("Lưu thành công");
-                                           
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }           
-        }
 
         //private List<decimal> gd_phu_thuoc_thay_doi_yn(List<decimal> m_lst_nv_insert_phu_thuoc)
         //{
@@ -179,7 +156,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                 }
             }
         }
-      
 
         private decimal get_id_by_ma_nhan_vien(string ip_str_ma_nv)
         {
@@ -195,13 +171,89 @@ namespace BKI_DichVuMatDat.NghiepVu
             return v_id_nv;
         }
 
-
         private void load_data_to_grid()
         {
             DS_V_GD_PHU_THUOC_DETAILS_V2 v_ds = new DS_V_GD_PHU_THUOC_DETAILS_V2();
             US_V_GD_PHU_THUOC_DETAILS_V2 v_us = new US_V_GD_PHU_THUOC_DETAILS_V2();
             v_us.FillDataset(v_ds);
             m_grc.DataSource = v_ds.Tables[0];
+        }
+
+        private void focus_new_row_created(decimal ip_dc_id_gd_phu_thuoc_details)
+        {
+            int v_row_index = 0;
+            decimal v_id_qd_moi_lap = 0;
+
+            US_DM_THUE v_us = new US_DM_THUE();
+            DS_DM_THUE v_ds = new DS_DM_THUE();
+
+            v_id_qd_moi_lap = ip_dc_id_gd_phu_thuoc_details;
+
+            v_us.FillDataset(v_ds);
+
+            for (v_row_index = 0; v_row_index < v_ds.Tables[0].Rows.Count; v_row_index++)
+            {
+                var v_id_gd_qd = CIPConvert.ToDecimal(m_grv1.GetDataRow(v_row_index)["ID"].ToString());
+
+                if (v_id_gd_qd == v_id_qd_moi_lap)
+                {
+                    break;
+                }
+            }
+
+            m_grv1.FocusedRowHandle = v_row_index;
+        }
+
+        private void set_initial_form_load()
+        {
+            m_lbl_nam_tinh_thue.Text = DateTime.Now.Year.ToString();
+            load_data_to_grid();
+        }
+
+        private void update_gd_phu_thuoc()
+        {
+
+        }
+
+        #endregion
+
+        //
+        //
+        // EVENT HANDLERS
+        //
+        //
+
+        private void m_grv1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                update_gd_phu_thuoc();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_save_Click(object sender, EventArgs e)
+        {
+            m_lst_nv_insert_phu_thuoc.Clear();
+            try
+            {
+                SplashScreenManager.ShowForm(typeof(BKI_DichVuMatDat.BaoCao.F_wait_form));
+                insert_gd_phu_thuoc_details();
+                for (int i = 0; i < m_lst_nv_insert_phu_thuoc.Count; i++)
+                {
+                    update_gd_phu_thuoc(m_lst_nv_insert_phu_thuoc[i]);
+                }
+                m_cmd_save.Enabled = false;
+                XtraMessageBox.Show("Lưu thành công");
+
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_cmd_delete_Click(object sender, EventArgs e)
@@ -217,12 +269,68 @@ namespace BKI_DichVuMatDat.NghiepVu
                     update_gd_phu_thuoc(CIPConvert.ToDecimal(v_dr[4].ToString()));
                     XtraMessageBox.Show("Xóa thành công!");
                     load_data_to_grid();
-                }              
+                }
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
-            }           
+            }
+        }
+
+        private void m_cmd_import_excel_Click(object sender, EventArgs e)
+        {
+            m_grc.DataSource = null;
+            try
+            {
+                WinFormControls.load_xls_to_gridview(WinFormControls.openFileDialog(), m_grc);
+                m_cmd_save.Enabled = true;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2_Load(object sender, EventArgs e)
+        {
+            set_initial_form_load();
+        }
+
+        private void m_cmd_tai_file_mau_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                WinFormControls.openTemplate("DangKyPhuThuoc.xlsx");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal v_id_gd_phu_thuoc_details = CIPConvert.ToDecimal(m_grv1.GetRowCellValue(m_grv1.FocusedRowHandle, "ID"));
+
+                if (v_id_gd_phu_thuoc_details > 0)
+                {
+                    US_GD_PHU_THUOC_DETAILS v_us = new US_GD_PHU_THUOC_DETAILS(v_id_gd_phu_thuoc_details);
+                    f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details v_frm = new f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details();
+                    v_frm.display_4_update(v_us);
+                    load_data_to_grid();
+                    focus_new_row_created(v_id_gd_phu_thuoc_details);
+                }
+                else
+                {
+                    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_DONG_TREN_LUOI_DE_SUA);
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
     }
 }

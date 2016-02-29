@@ -26,7 +26,6 @@ namespace BKI_DichVuMatDat.DanhMuc
             format_controls();
         }
 
-
         #region Public Interface
 
         #endregion

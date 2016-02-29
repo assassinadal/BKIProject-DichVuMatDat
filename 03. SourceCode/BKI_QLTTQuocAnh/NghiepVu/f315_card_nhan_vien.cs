@@ -28,7 +28,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grc_main.DataSource = v_ds.Tables[0];
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void m_cmd_xuat_pdf_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "xls files (*.pdf)|*.pdf|All files (*.*)|*.*";

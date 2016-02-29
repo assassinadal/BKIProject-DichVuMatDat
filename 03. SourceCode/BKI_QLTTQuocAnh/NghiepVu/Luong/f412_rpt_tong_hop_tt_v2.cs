@@ -308,7 +308,7 @@ namespace BKI_DichVuMatDat.BaoCao
             v_us_luong_v2.dcTONG_PHAI_NOP = ip_dto_luong.TONG_PHAI_NOP;
 
             v_us_luong_v2.dcTHUC_LINH = ip_dto_luong.THUC_LINH;
-
+            v_us_luong_v2.dcSO_TIEN_DA_NOP_THUE = ip_dto_luong.SO_TIEN_DA_NOP_THUE;
             return v_us_luong_v2;
         }
         private DTO_BANG_LUONG_V2 transfer_data_row_db_luong_2_object(DataRow ip_dr_luong)

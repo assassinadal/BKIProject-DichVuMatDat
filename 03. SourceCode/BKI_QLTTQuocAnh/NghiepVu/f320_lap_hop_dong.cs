@@ -372,11 +372,11 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return false;
             }
 
-            if (m_txt_ma_hd.Text == null)
-            {
-                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_MA_HOP_DONG);
-                return false;
-            }
+            //if (m_txt_ma_hd.Text == null)
+            //{
+            //    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_MA_HOP_DONG);
+            //    return false;
+            //}
 
             if (m_loai_hop_dong == 1)
             {
@@ -432,7 +432,10 @@ namespace BKI_DichVuMatDat.NghiepVu
                 ip_us.dcID_LOAI_HOP_DONG = CIPConvert.ToDecimal(m_sle_loai_hop_dong.EditValue);
                 ip_us.strMA_HOP_DONG = m_txt_ma_hd.Text.Trim();
                 ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
-                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
+                if (m_dat_ngay_ket_thuc.Checked == true)
+                {
+                    ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
+                }
                 ip_us.datNGAY_KY_HOP_DONG = m_dat_ngay_ky.Value.Date;
                 if (m_e_form_mode == DataEntryFormMode.InsertDataState)
                 {
@@ -687,8 +690,10 @@ namespace BKI_DichVuMatDat.NghiepVu
                 ip_us.dcHE_SO = CIPConvert.ToDecimal(find_hs_lns(CIPConvert.ToDecimal(m_sle_chuc_danh_lns.EditValue), CIPConvert.ToDecimal(m_sle_muc_lns.EditValue)));
                 //ip_us.dcID_LY_DO_CHINH_SUA =
                 ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
-                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
-
+                if (m_dat_ngay_ket_thuc.Checked == true)
+                {
+                    ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
+                }
                 if (m_e_form_mode == DataEntryFormMode.InsertDataState)
                 {
                     ip_us.datNGAY_LAP = DateTime.Now.Date;
@@ -717,8 +722,10 @@ namespace BKI_DichVuMatDat.NghiepVu
                 ip_us.dcSO_TIEN = CIPConvert.ToDecimal(find_so_tien_lcd(CIPConvert.ToDecimal(m_sle_chuc_danh_lcd.EditValue), CIPConvert.ToDecimal(m_sle_muc_lcd.EditValue)));
                 //ip_us.dcID_LY_DO_CHINH_SUA =
                 ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
-                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
-
+                if (m_dat_ngay_ket_thuc.Checked == true)
+                {
+                    ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
+                }
                 if (m_e_form_mode == DataEntryFormMode.InsertDataState)
                 {
                     ip_us.datNGAY_LAP = DateTime.Now.Date;
@@ -909,9 +916,9 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                         //insert gd_trang_thai_ld
                         decimal v_id_gd_trang_thai_lao_dong_da_co = 0;
-                        
+
                         v_id_gd_trang_thai_lao_dong_da_co = find_id_trang_thai_lao_dong_da_co(decimal.Parse(m_sle_chon_nhan_vien.EditValue.ToString())); //sai o day
-                        
+
                         if (v_id_gd_trang_thai_lao_dong_da_co == -1)
                         {
                             form_2_us_gd_trang_thai_lao_dong(v_us_gd_trang_thai_lao_dong);
@@ -1014,6 +1021,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_muc_lns.EditValueChanged += m_sle_muc_lns_EditValueChanged;
             m_sle_chuc_danh_lcd.EditValueChanged += m_sle_chuc_danh_lcd_EditValueChanged;
             m_sle_muc_lcd.EditValueChanged += m_sle_muc_lcd_EditValueChanged;
+            m_dat_ngay_bat_dau.ValueChanged += m_dat_ngay_bat_dau_ValueChanged;
             //gridcontrol, gridview
             //m_grv_lap_hd.DoubleClick += m_grv_lap_hd_DoubleClick;
         }
@@ -1153,7 +1161,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                                 {
                                     this.Close();
                                 }
-                               
+
                             }
                             break;
                         case DataEntryFormMode.UpdateDataState:
@@ -1197,8 +1205,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     //if (m_cmd_tao_lai_is_click == (decimal)MyEnum.NUT_TAO_LAI_KHONG_DUOC_CLICK)
                     //{
-                        m_sle_muc_lns.EditValue = null;
-                        m_lbl_hs_lns.Text = "...";
+                    m_sle_muc_lns.EditValue = null;
+                    m_lbl_hs_lns.Text = "...";
                     //}
                 }
             }
@@ -1263,8 +1271,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     //if (m_cmd_tao_lai_is_click == (decimal)MyEnum.NUT_TAO_LAI_KHONG_DUOC_CLICK)
                     //{
-                        m_sle_muc_lcd.EditValue = null;
-                        m_lbl_so_tien_lcd.Text = "...";
+                    m_sle_muc_lcd.EditValue = null;
+                    m_lbl_so_tien_lcd.Text = "...";
                     //}
                 }
             }
@@ -1316,6 +1324,33 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                 }
 
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_dat_ngay_bat_dau_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (decimal.Parse(m_sle_loai_hop_dong.EditValue.ToString()) == CONST_ID_LOAI_HOP_DONG.HOP_DONG_MOT_NAM)
+                {
+                    m_dat_ngay_ket_thuc.Value = m_dat_ngay_ket_thuc.Value.AddYears(1).AddDays(-1);
+                }
+                else if (decimal.Parse(m_sle_loai_hop_dong.EditValue.ToString()) == CONST_ID_LOAI_HOP_DONG.HOP_DONG_3_NAM)
+                {
+                    m_dat_ngay_ket_thuc.Value = m_dat_ngay_ket_thuc.Value.AddYears(3).AddDays(-1);
+                }
+                else if (decimal.Parse(m_sle_loai_hop_dong.EditValue.ToString()) == CONST_ID_LOAI_HOP_DONG.HOP_DONG_KHONG_XAC_DINH)
+                {
+                    m_dat_ngay_ket_thuc.Checked = false;
+                }
+                else
+                {
+                    return;
+                }
             }
             catch (Exception v_e)
             {

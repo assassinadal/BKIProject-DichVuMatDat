@@ -60,6 +60,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (BaseMessages.MsgBox_Confirm("Bạn có chắc chắn muốn xóa phụ cấp trách nhiệm này?") == false) return;
                 US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP(CIPConvert.ToDecimal(m_grv.GetDataRow(m_grv.FocusedRowHandle)["ID"].ToString()));
+                v_us.datNGAY_SUA = CHRMCommon.get_first_day_of_month(DateTime.Now.Date);
                 v_us.strDA_XOA = "Y";
                 v_us.Update();
                 XtraMessageBox.Show("Đã xóa thành công phụ cấp!");

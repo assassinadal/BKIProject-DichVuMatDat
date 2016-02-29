@@ -56,6 +56,8 @@
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LY_DO_CHINH_SUA_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GHI_CHU_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -82,6 +84,8 @@
             this.HE_SO_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_BAT_DAU_HS_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_KET_THUC_HS_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LY_DO_CHINH_SUA_HS_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GHI_CHU_HS_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -108,10 +112,6 @@
             this.emptySpaceItem12 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.LY_DO_CHINH_SUA_HS_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.GHI_CHU_HS_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.LY_DO_CHINH_SUA_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.GHI_CHU_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -479,6 +479,22 @@
             this.gridColumn20.VisibleIndex = 6;
             this.gridColumn20.Width = 122;
             // 
+            // LY_DO_CHINH_SUA_LCD
+            // 
+            this.LY_DO_CHINH_SUA_LCD.Caption = "Lý do chỉnh sửa";
+            this.LY_DO_CHINH_SUA_LCD.FieldName = "LY_DO_CHINH_SUA_LCD";
+            this.LY_DO_CHINH_SUA_LCD.Name = "LY_DO_CHINH_SUA_LCD";
+            this.LY_DO_CHINH_SUA_LCD.Visible = true;
+            this.LY_DO_CHINH_SUA_LCD.VisibleIndex = 7;
+            // 
+            // GHI_CHU_LCD
+            // 
+            this.GHI_CHU_LCD.Caption = "Ghi chú";
+            this.GHI_CHU_LCD.FieldName = "GHI_CHU_LCD";
+            this.GHI_CHU_LCD.Name = "GHI_CHU_LCD";
+            this.GHI_CHU_LCD.Visible = true;
+            this.GHI_CHU_LCD.VisibleIndex = 8;
+            // 
             // m_sle_chon_nhan_vien
             // 
             this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(102, 64);
@@ -756,6 +772,22 @@
             this.NGAY_KET_THUC_HS_LNS.Visible = true;
             this.NGAY_KET_THUC_HS_LNS.VisibleIndex = 6;
             this.NGAY_KET_THUC_HS_LNS.Width = 118;
+            // 
+            // LY_DO_CHINH_SUA_HS_LNS
+            // 
+            this.LY_DO_CHINH_SUA_HS_LNS.Caption = "Lý do chỉnh sửa ";
+            this.LY_DO_CHINH_SUA_HS_LNS.FieldName = "LY_DO_CHINH_SUA_HS_LNS";
+            this.LY_DO_CHINH_SUA_HS_LNS.Name = "LY_DO_CHINH_SUA_HS_LNS";
+            this.LY_DO_CHINH_SUA_HS_LNS.Visible = true;
+            this.LY_DO_CHINH_SUA_HS_LNS.VisibleIndex = 7;
+            // 
+            // GHI_CHU_HS_LNS
+            // 
+            this.GHI_CHU_HS_LNS.Caption = "Ghi chú";
+            this.GHI_CHU_HS_LNS.FieldName = "GHI_CHU_HS_LNS";
+            this.GHI_CHU_HS_LNS.Name = "GHI_CHU_HS_LNS";
+            this.GHI_CHU_HS_LNS.Visible = true;
+            this.GHI_CHU_HS_LNS.VisibleIndex = 8;
             // 
             // layoutControlGroup1
             // 
@@ -1055,38 +1087,6 @@
             this.emptySpaceItem7.Text = "emptySpaceItem7";
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // LY_DO_CHINH_SUA_HS_LNS
-            // 
-            this.LY_DO_CHINH_SUA_HS_LNS.Caption = "Lý do chỉnh sửa ";
-            this.LY_DO_CHINH_SUA_HS_LNS.FieldName = "LY_DO_CHINH_SUA_HS_LNS";
-            this.LY_DO_CHINH_SUA_HS_LNS.Name = "LY_DO_CHINH_SUA_HS_LNS";
-            this.LY_DO_CHINH_SUA_HS_LNS.Visible = true;
-            this.LY_DO_CHINH_SUA_HS_LNS.VisibleIndex = 7;
-            // 
-            // GHI_CHU_HS_LNS
-            // 
-            this.GHI_CHU_HS_LNS.Caption = "Ghi chú";
-            this.GHI_CHU_HS_LNS.FieldName = "GHI_CHU_HS_LNS";
-            this.GHI_CHU_HS_LNS.Name = "GHI_CHU_HS_LNS";
-            this.GHI_CHU_HS_LNS.Visible = true;
-            this.GHI_CHU_HS_LNS.VisibleIndex = 8;
-            // 
-            // LY_DO_CHINH_SUA_LCD
-            // 
-            this.LY_DO_CHINH_SUA_LCD.Caption = "Lý do chỉnh sửa";
-            this.LY_DO_CHINH_SUA_LCD.FieldName = "LY_DO_CHINH_SUA_LCD";
-            this.LY_DO_CHINH_SUA_LCD.Name = "LY_DO_CHINH_SUA_LCD";
-            this.LY_DO_CHINH_SUA_LCD.Visible = true;
-            this.LY_DO_CHINH_SUA_LCD.VisibleIndex = 7;
-            // 
-            // GHI_CHU_LCD
-            // 
-            this.GHI_CHU_LCD.Caption = "Ghi chú";
-            this.GHI_CHU_LCD.FieldName = "GHI_CHU_LCD";
-            this.GHI_CHU_LCD.Name = "GHI_CHU_LCD";
-            this.GHI_CHU_LCD.Visible = true;
-            this.GHI_CHU_LCD.VisibleIndex = 8;
-            // 
             // f419_bao_cao_hs_lns_lcd_cua_nhan_vien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1095,7 +1095,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.panel1);
             this.Name = "f419_bao_cao_hs_lns_lcd_cua_nhan_vien";
-            this.Text = "F417 - Báo cáo hệ số lương năng suất và Lương chế độ của nhân viên theo tháng";
+            this.Text = "F419 - Báo cáo hệ số lương năng suất và Lương chế độ của nhân viên theo tháng";
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

@@ -316,7 +316,9 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGAY_VAO_HANG_KHONG = "NGAY_VAO_HANG_KHONG";
         public const string NGAY_TIEP_NHAN_VAO_TCT = "NGAY_TIEP_NHAN_VAO_TCT";
         public const string NGAY_CHINH_THUC_TIEP_NHAN = "NGAY_CHINH_THUC_TIEP_NHAN";
+        public const string NGUOI_BAO_LANH = "NGUOI_BAO_LANH";
     }
+
     public class DM_PHU_CAP
     {
         public const string ID = "ID";
@@ -665,11 +667,13 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGAY_VAO_HANG_KHONG = "NGAY_VAO_HANG_KHONG";
         public const string NGAY_TIEP_NHAN_VAO_TCT = "NGAY_TIEP_NHAN_VAO_TCT";
         public const string NGAY_CHINH_THUC_TIEP_NHAN = "NGAY_CHINH_THUC_TIEP_NHAN";
+        public const string NGUOI_BAO_LANH = "NGUOI_BAO_LANH";
         public const string HO_TEN = "HO_TEN";
         public const string TEN_DON_VI = "TEN_DON_VI";
         public const string CHUC_VU = "CHUC_VU";
         public const string GT = "GT";
     }
+
 
 
 

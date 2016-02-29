@@ -348,6 +348,7 @@
             this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(333, 101);
             this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
+            this.m_dat_ngay_ket_thuc.ShowCheckBox = true;
             this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(110, 20);
             this.m_dat_ngay_ket_thuc.TabIndex = 10;
             // 
@@ -583,7 +584,6 @@
             this.m_cmd_lap_hop_dong.Size = new System.Drawing.Size(116, 40);
             this.m_cmd_lap_hop_dong.TabIndex = 7;
             this.m_cmd_lap_hop_dong.Text = "&Lập hợp đồng";
-           
             // 
             // imageList1
             // 

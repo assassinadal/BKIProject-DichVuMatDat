@@ -58,14 +58,14 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             US_RPT_THONG_TIN_TONG_HOP_V2 v_us = new US_RPT_THONG_TIN_TONG_HOP_V2();
             DS_RPT_THONG_TIN_TONG_HOP_V2 v_ds = new DS_RPT_THONG_TIN_TONG_HOP_V2();
-            v_us.Get_nhan_vien_can_tong_hop_thong_tin(v_ds, lay_thang(), lay_nam());
+            v_us.LayDanhSachNhanVienChuaDuocTongHopThongTin(v_ds, lay_thang(), lay_nam());
             return v_ds;
         }
         private DS_RPT_THONG_TIN_TONG_HOP_V2 lay_tat_ca_nhan_vien_trong_bang_luong()
         {
             US_RPT_THONG_TIN_TONG_HOP_V2 v_us = new US_RPT_THONG_TIN_TONG_HOP_V2();
             DS_RPT_THONG_TIN_TONG_HOP_V2 v_ds = new DS_RPT_THONG_TIN_TONG_HOP_V2();
-            v_us.Get_tat_ca_nhan_vien_can_tong_hop_thong_tin_v2(v_ds, lay_thang(), lay_nam());
+            v_us.LayDanhSachTatCaNhanVienTongHopThongTin(v_ds, lay_thang(), lay_nam());
             return v_ds;
         }
 
@@ -238,7 +238,7 @@ namespace BKI_DichVuMatDat.BaoCao
         private void xoa_bang_tong_hop_thong_tin_thang()
         {
             US_RPT_THONG_TIN_TONG_HOP_V2 v_us = new US_RPT_THONG_TIN_TONG_HOP_V2();
-            v_us.xoa_bang_tong_hop_thang(lay_thang(), lay_nam());
+            v_us.XoaToanBoDuLieuTongHop(lay_thang(), lay_nam());
         }
         #endregion
 

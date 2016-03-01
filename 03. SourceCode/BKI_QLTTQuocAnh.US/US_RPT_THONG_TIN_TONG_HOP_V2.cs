@@ -619,34 +619,33 @@ namespace BKI_DichVuMatDat.US
 
             v_cstore.fillDataSetByCommand(this, ip_ds);
         }
-
-
-
-
-
-
-
-
-        public void Get_nhan_vien_can_tong_hop_thong_tin(DS_RPT_THONG_TIN_TONG_HOP_V2 op_ds, decimal ip_thang, decimal ip_nam)
+        public void LayDanhSachNhanVienChuaDuocTongHopThongTin(DS_RPT_THONG_TIN_TONG_HOP_V2 op_ds, decimal ip_thang, decimal ip_nam)
         {
             op_ds.EnforceConstraints = false;
-            CStoredProc v_sp = new CStoredProc("pr_GET_DANH_SACH_NHAN_VIEN_CAN_TONG_HOP_THONG_TIN_V2");
+            CStoredProc v_sp = new CStoredProc("pr_TL_thong_tin_nhan_vien_chua_tong_hop_GetAll");
             v_sp.addDecimalInputParam("@THANG", ip_thang);
             v_sp.addDecimalInputParam("@NAM", ip_nam);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
-        public void Get_tat_ca_nhan_vien_can_tong_hop_thong_tin_v2(DS_RPT_THONG_TIN_TONG_HOP_V2 op_ds, decimal ip_thang, decimal ip_nam)
+        public void LayDanhSachTatCaNhanVienTongHopThongTin(DS_RPT_THONG_TIN_TONG_HOP_V2 op_ds, decimal ip_thang, decimal ip_nam)
         {
             op_ds.EnforceConstraints = false;
-            CStoredProc v_sp = new CStoredProc("pr_GET_TAT_CA_NHAN_VIEN_CAN_TONG_HOP_THONG_TIN_V2");
+            CStoredProc v_sp = new CStoredProc("pr_TL_thong_tin_tong_hop_nhan_vien_GetAll");
             v_sp.addDecimalInputParam("@THANG", ip_thang);
             v_sp.addDecimalInputParam("@NAM", ip_nam);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
-
-        public void xoa_bang_tong_hop_thang(decimal ip_thang, decimal ip_nam)
+        public void XoaDuLieuTongHopNhanVien(decimal ip_dc_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
         {
-            CStoredProc v_sp = new CStoredProc("pr_xoa_bang_tong_hop_thang");
+            CStoredProc v_sp = new CStoredProc("pr_TL_bang_tong_hop_thong_tin_Delete");
+            v_sp.addDecimalInputParam("@ID_NHAN_VIEN", ip_dc_nhan_vien);
+            v_sp.addDecimalInputParam("@THANG", ip_dc_thang);
+            v_sp.addDecimalInputParam("@NAM", ip_dc_nam);
+            v_sp.ExecuteCommand(this);
+        }
+        public void XoaToanBoDuLieuTongHop(decimal ip_thang, decimal ip_nam)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_TL_bang_tong_hop_thong_tin_DeleteAll");
             v_sp.addDecimalInputParam("@THANG", ip_thang);
             v_sp.addDecimalInputParam("@NAM", ip_nam);
             v_sp.ExecuteCommand(this);

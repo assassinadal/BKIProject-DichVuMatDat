@@ -30,18 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f409_rpt_bang_luong_nv_v2));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_lbl_trang_thai_bang_luong = new DevExpress.XtraEditors.LabelControl();
+            this.m_lbl_so_luong_nv_tinh_luong = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
             this.m_txt_thang = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_thong_bao = new DevExpress.XtraEditors.LabelControl();
-            this.m_lbl_so_luong_nv_tinh_luong = new DevExpress.XtraEditors.LabelControl();
             this.m_cmd_export_excel = new DevExpress.XtraEditors.SimpleButton();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.m_bgwk = new System.ComponentModel.BackgroundWorker();
@@ -215,7 +216,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(1257, 59);
+            this.panel1.Size = new System.Drawing.Size(1257, 87);
             this.panel1.TabIndex = 0;
             // 
             // gridControl1
@@ -248,17 +249,38 @@
             // panelControl1
             // 
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.m_lbl_trang_thai_bang_luong);
+            this.panelControl1.Controls.Add(this.m_lbl_so_luong_nv_tinh_luong);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.m_txt_nam);
             this.panelControl1.Controls.Add(this.m_txt_thang);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.m_lbl_thong_bao);
-            this.panelControl1.Controls.Add(this.m_lbl_so_luong_nv_tinh_luong);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(5, 5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(563, 49);
+            this.panelControl1.Size = new System.Drawing.Size(941, 77);
             this.panelControl1.TabIndex = 0;
+            // 
+            // m_lbl_trang_thai_bang_luong
+            // 
+            this.m_lbl_trang_thai_bang_luong.Appearance.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
+            this.m_lbl_trang_thai_bang_luong.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_trang_thai_bang_luong.Location = new System.Drawing.Point(250, 5);
+            this.m_lbl_trang_thai_bang_luong.Name = "m_lbl_trang_thai_bang_luong";
+            this.m_lbl_trang_thai_bang_luong.Size = new System.Drawing.Size(24, 33);
+            this.m_lbl_trang_thai_bang_luong.TabIndex = 21;
+            this.m_lbl_trang_thai_bang_luong.Text = "...";
+            // 
+            // m_lbl_so_luong_nv_tinh_luong
+            // 
+            this.m_lbl_so_luong_nv_tinh_luong.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_lbl_so_luong_nv_tinh_luong.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_so_luong_nv_tinh_luong.Location = new System.Drawing.Point(399, 53);
+            this.m_lbl_so_luong_nv_tinh_luong.Name = "m_lbl_so_luong_nv_tinh_luong";
+            this.m_lbl_so_luong_nv_tinh_luong.Size = new System.Drawing.Size(9, 13);
+            this.m_lbl_so_luong_nv_tinh_luong.TabIndex = 4;
+            this.m_lbl_so_luong_nv_tinh_luong.Text = "...";
             // 
             // labelControl2
             // 
@@ -269,7 +291,7 @@
             // 
             // m_txt_nam
             // 
-            this.m_txt_nam.Location = new System.Drawing.Point(120, 6);
+            this.m_txt_nam.Location = new System.Drawing.Point(120, 13);
             this.m_txt_nam.Name = "m_txt_nam";
             this.m_txt_nam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.m_txt_nam.Properties.Appearance.Options.UseFont = true;
@@ -286,7 +308,7 @@
             // 
             // m_txt_thang
             // 
-            this.m_txt_thang.Location = new System.Drawing.Point(19, 6);
+            this.m_txt_thang.Location = new System.Drawing.Point(19, 13);
             this.m_txt_thang.Name = "m_txt_thang";
             this.m_txt_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.m_txt_thang.Properties.Appearance.Options.UseFont = true;
@@ -304,7 +326,7 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.labelControl1.Location = new System.Drawing.Point(107, 7);
+            this.labelControl1.Location = new System.Drawing.Point(107, 14);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(8, 25);
             this.labelControl1.TabIndex = 18;
@@ -313,21 +335,11 @@
             // m_lbl_thong_bao
             // 
             this.m_lbl_thong_bao.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_thong_bao.Location = new System.Drawing.Point(236, 14);
+            this.m_lbl_thong_bao.Location = new System.Drawing.Point(250, 53);
             this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
             this.m_lbl_thong_bao.Size = new System.Drawing.Size(113, 13);
             this.m_lbl_thong_bao.TabIndex = 3;
             this.m_lbl_thong_bao.Text = "Đã có dữ liệu lương của";
-            // 
-            // m_lbl_so_luong_nv_tinh_luong
-            // 
-            this.m_lbl_so_luong_nv_tinh_luong.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_lbl_so_luong_nv_tinh_luong.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_so_luong_nv_tinh_luong.Location = new System.Drawing.Point(387, 14);
-            this.m_lbl_so_luong_nv_tinh_luong.Name = "m_lbl_so_luong_nv_tinh_luong";
-            this.m_lbl_so_luong_nv_tinh_luong.Size = new System.Drawing.Size(9, 13);
-            this.m_lbl_so_luong_nv_tinh_luong.TabIndex = 4;
-            this.m_lbl_so_luong_nv_tinh_luong.Text = "...";
             // 
             // m_cmd_export_excel
             // 
@@ -1949,7 +1961,7 @@
             // repoBtnXoaLuong
             // 
             this.repoBtnXoaLuong.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repoBtnXoaLuong.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repoBtnXoaLuong.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.repoBtnXoaLuong.Name = "repoBtnXoaLuong";
             this.repoBtnXoaLuong.ReadOnly = true;
             this.repoBtnXoaLuong.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
@@ -1958,14 +1970,14 @@
             // 
             this.m_grc_main.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc_main.Location = new System.Drawing.Point(0, 92);
+            this.m_grc_main.Location = new System.Drawing.Point(0, 120);
             this.m_grc_main.MainView = this.m_grv_main;
             this.m_grc_main.Name = "m_grc_main";
             this.m_grc_main.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1,
             this.repoBtnXoaLuong,
             this.repositoryItemTextEditTien});
-            this.m_grc_main.Size = new System.Drawing.Size(1257, 429);
+            this.m_grc_main.Size = new System.Drawing.Size(1257, 401);
             this.m_grc_main.TabIndex = 1;
             this.m_grc_main.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_main});
@@ -1985,7 +1997,7 @@
             this.panelControl2.Controls.Add(this.m_cmd_kiem_tra_du_lieu);
             this.panelControl2.Controls.Add(this.m_cmd_export_excel);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(0, 59);
+            this.panelControl2.Location = new System.Drawing.Point(0, 87);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1257, 33);
             this.panelControl2.TabIndex = 10;
@@ -2258,6 +2270,7 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_kiem_tra_du_lieu_luong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chot_bang_luong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_luu_du_lieu;
+        private DevExpress.XtraEditors.LabelControl m_lbl_trang_thai_bang_luong;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

@@ -61,7 +61,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             US_RPT_LUONG_V2 v_us_rpt_luong = new US_RPT_LUONG_V2();
             DataSet v_ds_danh_sach_nhan_vien;
-            v_us_rpt_luong.lay_ma_nhan_vien_can_tinh_luong_trong_thang(
+            v_us_rpt_luong.LayDanhSachMaNVDuocTinhLuong(
                                  out v_ds_danh_sach_nhan_vien
                                  , Convert.ToDecimal(v_dr["THANG"])
                                  , Convert.ToDecimal(v_dr["NAM"]));

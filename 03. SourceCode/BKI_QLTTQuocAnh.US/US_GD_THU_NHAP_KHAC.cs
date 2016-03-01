@@ -409,7 +409,14 @@ namespace BKI_DichVuMatDat.US
 
             v_sp.fillDataSetByCommand(this, ip_ds);
         }
-
+        public void filldatasetBaoCaoThuNhapLDNgoaiBangLuong(DataSet v_ds, string ip_str_thang, string ip_str_nam, string ip_str_id)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_TNK_thu_nhap_nhom_khac_GetAll");
+            v_cstore.addNVarcharInputParam("@thang", CIPConvert.ToDecimal(ip_str_thang));
+            v_cstore.addNVarcharInputParam("@nam", CIPConvert.ToDecimal(ip_str_nam));
+            v_cstore.addDecimalInputParam("@id_nhom_ld", CIPConvert.ToDecimal(ip_str_id));
+            v_cstore.fillDataSetByCommand(this, v_ds);
+        }
 
 
         public void XoaDuLieuChiaThuongNhanVien(decimal ip_dc_id_quy_tien_thuong)

@@ -365,7 +365,7 @@ namespace BKI_DichVuMatDat.BaoCao
             US_RPT_LUONG_V2 v_us = new US_RPT_LUONG_V2();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillBangLuongV2(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
+            v_us.TaoBangLuongNhanVien(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
             DataRow v_dr = v_ds.Tables[0].Rows[0];
             return v_dr;
         }
@@ -391,7 +391,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 var v_us_rpt_luong_v2 = transfer_dto_2_us_object(v_dto_luong);
 
                 v_us_rpt_luong_v2.BeginTransaction();
-                v_us_rpt_luong_v2.XoaBanGhiLuong(v_id_nhan_vien, lay_thang(), lay_nam());
+                v_us_rpt_luong_v2.XoaBangLuongNhanVien(v_id_nhan_vien, lay_thang(), lay_nam());
                 v_us_rpt_luong_v2.Insert();
 
                 //B2: Insert vao Rpt

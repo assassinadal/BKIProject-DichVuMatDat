@@ -487,6 +487,16 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             m_lbl_so_luong_nv_tinh_luong.Text = v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_DA_TINH.ToString() + "/"
                                                     + v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_CAN_TINH.ToString() + " (nhân viên)";
+            if(v_dto_thong_tin_bang_luong.CHOT_BANG_LUONG)
+            {
+                m_lbl_trang_thai_bang_luong.ForeColor = Color.Gray;
+                m_lbl_trang_thai_bang_luong.Text = "|Đã chốt, không chỉnh sửa";
+            }
+            else
+            {
+                m_lbl_trang_thai_bang_luong.ForeColor = Color.Green;
+                m_lbl_trang_thai_bang_luong.Text = "|Chưa chốt, có thể chỉnh sửa";
+            }
         }
 
         //Check data
@@ -528,7 +538,7 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             //B1: Xoa het bang luong thang do
             US_RPT_LUONG_V2 v_us_RPT_LUONG_V2_V2 = new US_RPT_LUONG_V2();
-            v_us_RPT_LUONG_V2_V2.XoaLuong(Convert.ToDecimal(m_txt_thang.EditValue), Convert.ToDecimal(m_txt_nam.EditValue));
+            v_us_RPT_LUONG_V2_V2.XoaToanBoBangLuong(Convert.ToDecimal(m_txt_thang.EditValue), Convert.ToDecimal(m_txt_nam.EditValue));
         }
         private void chot_bang_luong_thang()
         {
@@ -553,71 +563,6 @@ namespace BKI_DichVuMatDat.BaoCao
                 US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG v_us = new US_GD_HS_BO_SUNG_AN_TOAN_HANG_KHONG();
                 v_us.insert_data_by_proc(v_id_nv, lay_thang(), lay_nam());
             }
-        }
-        private void update_us_luong_v2_by_datarow_in_grid(ref US_RPT_LUONG_V2 ip_us_luong_v2, DataRow ip_dr_grid)
-        {
-            //Information (khong can thiet)
-            //ip_us_luong_v2.strMA_NV=;
-            //ip_us_luong_v2.dcTHANG=;
-            //ip_us_luong_v2.dcNAM=;
-            //ip_us_luong_v2.dcID=;
-            //ip_us_luong_v2.dcID_NHAN_VIEN=;
-
-
-            //Tong thu nhap trong luong
-            ip_us_luong_v2.dcLUONG_CD = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.LUONG_CD]);
-            ip_us_luong_v2.dcLUONG_NS = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.LUONG_NS]);
-            ip_us_luong_v2.dcPHU_CAP_TN = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.PHU_CAP_TN]);
-            ip_us_luong_v2.dcAN_CA = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.AN_CA]);
-            ip_us_luong_v2.dcLAM_THEM = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.LAM_THEM]);
-            ip_us_luong_v2.dcLAM_THEM_200 = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.LAM_THEM_200]);
-            ip_us_luong_v2.dcLAM_THEM_300 = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.LAM_THEM_300]);
-            ip_us_luong_v2.dcTHU_NHAP_KHAC_TRONG_LUONG = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.THU_NHAP_KHAC_TRONG_LUONG]);
-            ip_us_luong_v2.dcTONG_THU_NHAP_TRONG_LUONG = ip_us_luong_v2.dcLUONG_CD + ip_us_luong_v2.dcLUONG_NS
-                                                                    + ip_us_luong_v2.dcPHU_CAP_TN + ip_us_luong_v2.dcAN_CA +
-                                                                        +ip_us_luong_v2.dcLAM_THEM + ip_us_luong_v2.dcLAM_THEM_200
-                                                                        + ip_us_luong_v2.dcLAM_THEM_300 + ip_us_luong_v2.dcTHU_NHAP_KHAC_TRONG_LUONG;
-
-            //Tong thu nhap ngoai luong chua tinh thue
-            ip_us_luong_v2.dcTHUONG = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.THUONG]);
-            ip_us_luong_v2.dcTHUONG_ATHK = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.THUONG_ATHK]);
-            ip_us_luong_v2.dcTHUONG_LE_TET = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.THUONG_LE_TET]);
-            ip_us_luong_v2.dcBO_SUNG_LUONG = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.BO_SUNG_LUONG]);
-            ip_us_luong_v2.dcTHU_NHAP_KHAC_NGOAI_LUONG = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.TONG_THU_NHAP_NGOAI_LUONG]);
-            ip_us_luong_v2.dcTONG_THU_NHAP_NGOAI_LUONG = ip_us_luong_v2.dcTHUONG + ip_us_luong_v2.dcTHUONG_ATHK +
-                                                        +ip_us_luong_v2.dcTHUONG_LE_TET + ip_us_luong_v2.dcBO_SUNG_LUONG +
-                                                        +ip_us_luong_v2.dcTHU_NHAP_KHAC_NGOAI_LUONG;
-
-            //Tong thu nhap chua tinh thue
-            ip_us_luong_v2.dcTONG_THU_NHAP = ip_us_luong_v2.dcTONG_THU_NHAP_TRONG_LUONG + ip_us_luong_v2.dcTONG_THU_NHAP_NGOAI_LUONG;
-
-            //Tong giam tru thue
-            ip_us_luong_v2.dcBHTN = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.BHTN]);
-            ip_us_luong_v2.dcBHXH = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.BHXH]);
-            ip_us_luong_v2.dcBHYT = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.BHYT]);
-            ip_us_luong_v2.dcGIAM_TRU_GIA_CANH = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.GIAM_TRU_GIA_CANH]);
-            ip_us_luong_v2.dcGIAM_TRU_PHU_THUOC = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.GIAM_TRU_PHU_THUOC]);
-            ip_us_luong_v2.dcGIAM_TRU_LAM_THEM_150 = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.GIAM_TRU_LAM_THEM_150]);
-            ip_us_luong_v2.dcGIAM_TRU_LAM_THEM_200 = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.GIAM_TRU_LAM_THEM_200]);
-            ip_us_luong_v2.dcGIAM_TRU_LAM_THEM_300 = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.GIAM_TRU_LAM_THEM_300]);
-            ip_us_luong_v2.dcGIAM_TRU_KHAC = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.GIAM_TRU_KHAC]);
-            ip_us_luong_v2.dcTONG_GIAM_TRU = ip_us_luong_v2.dcBHTN + ip_us_luong_v2.dcBHXH + ip_us_luong_v2.dcBHYT +
-                                                +ip_us_luong_v2.dcGIAM_TRU_GIA_CANH + ip_us_luong_v2.dcGIAM_TRU_PHU_THUOC +
-                                                +ip_us_luong_v2.dcGIAM_TRU_LAM_THEM_150 + ip_us_luong_v2.dcGIAM_TRU_LAM_THEM_200 + ip_us_luong_v2.dcGIAM_TRU_LAM_THEM_300 +
-                                                +ip_us_luong_v2.dcGIAM_TRU_KHAC
-                                                + ip_us_luong_v2.dcAN_CA;
-            //Thu nhap chiu thue
-            ip_us_luong_v2.dcTHU_NHAP_CHIU_THUE = ip_us_luong_v2.dcTONG_THU_NHAP - ip_us_luong_v2.dcTONG_GIAM_TRU;
-            //Tong phai thu
-            ip_us_luong_v2.dcDOAN_PHI_CD = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.DOAN_PHI_CD]);
-            ip_us_luong_v2.dcPHAI_NOP_KHAC = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.PHAI_NOP_KHAC]); ;
-            ip_us_luong_v2.dcTHUE = Convert.ToDecimal(ip_dr_grid[RPT_LUONG_V2.THUE]);
-
-            ip_us_luong_v2.dcTONG_PHAI_NOP = ip_us_luong_v2.dcDOAN_PHI_CD + ip_us_luong_v2.dcPHAI_NOP_KHAC + ip_us_luong_v2.dcTHUE
-                                                + ip_us_luong_v2.dcBHXH + ip_us_luong_v2.dcBHYT + ip_us_luong_v2.dcBHTN;
-
-            //Thuc linh
-            ip_us_luong_v2.dcTHUC_LINH = ip_us_luong_v2.dcTONG_THU_NHAP_TRONG_LUONG - ip_us_luong_v2.dcTONG_PHAI_NOP;
         }
 
         //Process tinh bang luong
@@ -661,14 +606,14 @@ namespace BKI_DichVuMatDat.BaoCao
             DataSet v_ds_danh_sach_nhan_vien;
             if(ip_confirm_cach_tinh == ENUM_CONFIRM_TINH_BANG_LUONG.TINH_NHAN_VIEN_CHUA_CO)
             {
-                v_us_rpt_luong.lay_danh_sach_nhan_vien_can_tinh_luong_con_lai_trong_thang(
+                v_us_rpt_luong.LayDanhSachNhanVienIDChuaTinhLuong(
                                  out v_ds_danh_sach_nhan_vien
                                  , CIPConvert.ToDecimal(m_txt_thang.EditValue)
                                  , CIPConvert.ToDecimal(m_txt_nam.EditValue));
             }
             else if(ip_confirm_cach_tinh == ENUM_CONFIRM_TINH_BANG_LUONG.TINH_LAI_TOAN_BO)
             {
-                v_us_rpt_luong.lay_danh_sach_nhan_vien_can_tinh_luong_trong_thang(
+                v_us_rpt_luong.LayToanBoNhanVienIDTinhLuong(
                                  out v_ds_danh_sach_nhan_vien
                                  , CIPConvert.ToDecimal(m_txt_thang.EditValue)
                                  , CIPConvert.ToDecimal(m_txt_nam.EditValue));
@@ -684,7 +629,7 @@ namespace BKI_DichVuMatDat.BaoCao
             US_RPT_LUONG_V2 v_us = new US_RPT_LUONG_V2();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillBangLuongV2(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
+            v_us.TaoBangLuongNhanVien(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
             DataRow v_dr = v_ds.Tables[0].Rows[0];
             return v_dr;
         }
@@ -917,6 +862,63 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             return flag;
         }
+
+
+        //Lay va xu ly du lieu RPT_THONG_TIN_TONG_HOP_V2
+        private DataRow get_thong_tin_tong_hop_1_nhan_vien_v2(decimal ip_dc_id_nhan_vien, decimal ip_int_thang, decimal ip_int_nam)
+        {
+            US_RPT_THONG_TIN_TONG_HOP_V2 v_us = new US_RPT_THONG_TIN_TONG_HOP_V2();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillThongTinTongHopNhanVienV2(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
+            DataRow v_dr = v_ds.Tables[0].Rows[0];
+            return v_dr;
+        }
+        private void DataRow2USThongTinTongHopV2(DataRow v_dr_luong_1_nv, US_RPT_THONG_TIN_TONG_HOP_V2 v_us)
+        {
+            //v_us.dcID = CIPConvert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2_V2.ID].ToString());
+            v_us.dcTHANG = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.THANG]);
+            v_us.dcNAM = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.NAM]);
+            v_us.dcID_NHAN_VIEN = (decimal)v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.ID_NHAN_VIEN];
+            v_us.strMA_NV = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.MA_NV].ToString();
+            v_us.strHO_DEM = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.HO_DEM].ToString();
+            v_us.strTEN = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.TEN].ToString();
+            v_us.strHO_VA_TEN = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.HO_VA_TEN].ToString();
+            v_us.strTEN_CHUC_VU = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.TEN_CHUC_VU].ToString();
+            v_us.strTEN_HOP_DONG = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.TEN_HOP_DONG].ToString();
+            v_us.dcLUONG_CHE_DO_THEO_CHUC_VU = (decimal)v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.LUONG_CHE_DO_THEO_CHUC_VU];
+            v_us.dcHS_LUONG_NANG_SUAT_DUOC_HUONG = (decimal)v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.HS_LUONG_NANG_SUAT_DUOC_HUONG];
+            v_us.strTAI_KHOAN = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.TAI_KHOAN].ToString();
+            v_us.dcCHAM_CONG_X = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.CHAM_CONG_X]);
+            v_us.dcCHAM_CONG_OM_CO = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.CHAM_CONG_OM_CO]);
+            v_us.dcCHAM_CONG_TS = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.CHAM_CONG_TS]);
+            v_us.dcCHAM_CONG_TNLD = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.CHAM_CONG_TNLD]);
+            v_us.dcCHAM_CONG_PHEP_DIDUONG = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.CHAM_CONG_PHEP_DIDUONG]);
+            v_us.dcCHAM_CONG_RO_KO_DC = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.CHAM_CONG_RO_KO_DC]);
+            v_us.dcCHAM_CONG_KHAC = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.CHAM_CONG_KHAC]);
+            v_us.dcHE_SO_K = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.HE_SO_K]);
+            v_us.strDON_VI = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.DON_VI].ToString();
+            v_us.dcSO_NGAY_LAM_THEM = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.SO_NGAY_LAM_THEM]);
+            v_us.strLOAI_LAO_DONG = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.LOAI_LAO_DONG].ToString();
+            v_us.dcNGAY_CONG_QUY_DINH = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.NGAY_CONG_QUY_DINH]);
+        }
+
+
+
+        private void insert_bang_luong_kem_du_lieu_tong_hop(US_RPT_LUONG_V2 ip_us_rpt_luong_v2)
+        {
+            US_RPT_THONG_TIN_TONG_HOP_V2 v_us_rpt_tong_hop_v2 = new US_RPT_THONG_TIN_TONG_HOP_V2();
+
+            DataRow v_dr_thong_tin_db = get_thong_tin_tong_hop_1_nhan_vien_v2(ip_us_rpt_luong_v2.dcID_NHAN_VIEN, ip_us_rpt_luong_v2.dcTHANG, ip_us_rpt_luong_v2.dcNAM);
+            DataRow2USThongTinTongHopV2(v_dr_thong_tin_db, v_us_rpt_tong_hop_v2);
+
+            ip_us_rpt_luong_v2.BeginTransaction();
+            v_us_rpt_tong_hop_v2.UseTransOfUSObject(ip_us_rpt_luong_v2);
+            v_us_rpt_tong_hop_v2.Insert();
+            ip_us_rpt_luong_v2.Insert();
+            ip_us_rpt_luong_v2.CommitTransaction();
+        }
+        
         private void save_data(ENUM_CONFIRM_LUU_BANG_LUONG ip_confirm_save)
         {
             if(ip_confirm_save == ENUM_CONFIRM_LUU_BANG_LUONG.NONE)
@@ -954,30 +956,30 @@ namespace BKI_DichVuMatDat.BaoCao
                 switch(ip_confirm_save)
                 {
                     case ENUM_CONFIRM_LUU_BANG_LUONG.TINH_LAI_TOAN_BO:
-                        v_us_rpt_luong_v2.Insert();
+                        insert_bang_luong_kem_du_lieu_tong_hop(v_us_rpt_luong_v2);
                         break;
                     case ENUM_CONFIRM_LUU_BANG_LUONG.CHUA_CO_THI_GHI_MOI_DA_CO_THI_KHONG_LAM_GI:
                         if(!v_bol_nv_co_trong_bang_luong_chua)
                         {
-                            v_us_rpt_luong_v2.Insert();
+                            insert_bang_luong_kem_du_lieu_tong_hop(v_us_rpt_luong_v2);
                         }
                         break;
                     case ENUM_CONFIRM_LUU_BANG_LUONG.CHUA_CO_THI_GHI_MOI_DA_CO_THI_GHI_DE:
                         if(!v_bol_nv_co_trong_bang_luong_chua)
                         {
-                            v_us_rpt_luong_v2.Insert();
+                            insert_bang_luong_kem_du_lieu_tong_hop(v_us_rpt_luong_v2);
                         }
                         else
                         {
-                            v_us_rpt_luong_v2.XoaBanGhiLuong(v_us_rpt_luong_v2.dcID_NHAN_VIEN, lay_thang(), lay_nam());
-                            v_us_rpt_luong_v2.Insert();
+                            v_us_rpt_luong_v2.XoaBangLuongNhanVien(v_us_rpt_luong_v2.dcID_NHAN_VIEN, lay_thang(), lay_nam());
+                            insert_bang_luong_kem_du_lieu_tong_hop(v_us_rpt_luong_v2);
                         }
                         break;
                     case ENUM_CONFIRM_LUU_BANG_LUONG.CHUA_CO_THI_KHONG_LAM_GI_DA_CO_THI_GHI_DE:
                         if(v_bol_nv_co_trong_bang_luong_chua)
                         {
-                            v_us_rpt_luong_v2.XoaBanGhiLuong(v_us_rpt_luong_v2.dcID_NHAN_VIEN, lay_thang(), lay_nam());
-                            v_us_rpt_luong_v2.Insert();
+                            v_us_rpt_luong_v2.XoaBangLuongNhanVien(v_us_rpt_luong_v2.dcID_NHAN_VIEN, lay_thang(), lay_nam());
+                            insert_bang_luong_kem_du_lieu_tong_hop(v_us_rpt_luong_v2);
                         }
                         break;
                     default:
@@ -985,7 +987,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 }
                 
             }
-            XtraMessageBox.Show("Lưu dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            XtraMessageBox.Show("Lưu dữ liệu lương thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             hien_thi_thong_tin_bang_luong();
         }
 
@@ -1137,5 +1139,6 @@ namespace BKI_DichVuMatDat.BaoCao
             }
         }
         #endregion
+
     }
 }

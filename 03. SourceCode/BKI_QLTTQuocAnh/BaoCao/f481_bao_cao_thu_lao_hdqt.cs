@@ -47,7 +47,7 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             CHRMCommon.make_stt(m_grv_hs_bs_hs_athk);
             DataSet v_ds = new DataSet();
-            US_RPT_LUONG_V2 v_us = new US_RPT_LUONG_V2();
+            US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
             v_ds.Tables.Add(new DataTable());
             v_us.filldatasetBaoCaoThuNhapLDNgoaiBangLuong(v_ds, m_txt_chon_thang.Text, m_txt_chon_nam.Text, m_sle_nhom_ld.EditValue.ToString());
             m_grc_bc_thu_lao.DataSource = v_ds.Tables[0];

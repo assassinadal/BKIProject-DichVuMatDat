@@ -15,6 +15,7 @@ using BKI_DichVuMatDat.DS.CDBNames;
 using System.Globalization;
 using DevExpress.XtraEditors;
 using IP.Core.IPCommon;
+using IP.Core.IPSystemAdmin;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -32,8 +33,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_us_phu_thuoc_details = ip_us;
             us_obj_2_form();
-            this.ShowDialog();
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            this.ShowDialog();          
         }
 
         #endregion
@@ -83,6 +84,9 @@ namespace BKI_DichVuMatDat.NghiepVu
                 case DataEntryFormMode.UpdateDataState:
                     m_sle_chon_nhan_vien.Enabled = false;
                     us_obj_2_form();
+                    break;
+                case DataEntryFormMode.InsertDataState:
+                    m_sle_chon_nhan_vien.Enabled = true;
                     break;
                 default:
                     break;
@@ -158,6 +162,17 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_us_phu_thuoc_details.strTTGKS_PHUONG_XA = m_txt_phuong.Text;
             m_us_phu_thuoc_details.strSO_CMT_HO_CHIEU = m_txt_CMND_npt.Text;
             m_us_phu_thuoc_details.dcID_GD_PHU_THUOC = (decimal)m_sle_chon_nhan_vien.EditValue;
+            m_us_phu_thuoc_details.strDA_XOA = "N";
+            if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+            {
+                m_us_phu_thuoc_details.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
+                m_us_phu_thuoc_details.datNGAY_LAP = DateTime.Now;
+            }
+            else if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
+            {
+                m_us_phu_thuoc_details.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
+                m_us_phu_thuoc_details.datNGAY_SUA = DateTime.Now;
+            }
         }
 
         #endregion
@@ -242,6 +257,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        internal void display_4_insert()
+        {
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.ShowDialog();                     
         }
     }
 }

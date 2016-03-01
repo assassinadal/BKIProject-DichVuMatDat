@@ -30,12 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2));
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
-            this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_tai_file_mau = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -93,83 +87,24 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.m_pnl_out_place_dm.SuspendLayout();
+            this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.m_cmd_tai_file_mau = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            this.m_pnl_out_place_dm.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // m_pnl_out_place_dm
-            // 
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_tai_file_mau);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_import_excel);
-            this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 435);
-            this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
-            this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1005, 43);
-            this.m_pnl_out_place_dm.TabIndex = 2;
-            // 
-            // m_cmd_tai_file_mau
-            // 
-            this.m_cmd_tai_file_mau.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_tai_file_mau.Image = global::BKI_DichVuMatDat.Properties.Resources.Benjigarner_Softdimension_Excel;
-            this.m_cmd_tai_file_mau.Location = new System.Drawing.Point(421, 4);
-            this.m_cmd_tai_file_mau.Name = "m_cmd_tai_file_mau";
-            this.m_cmd_tai_file_mau.Size = new System.Drawing.Size(116, 35);
-            this.m_cmd_tai_file_mau.TabIndex = 12;
-            this.m_cmd_tai_file_mau.Text = "&File mẫu";
-            this.m_cmd_tai_file_mau.Click += new System.EventHandler(this.m_cmd_tai_file_mau_Click);
-            // 
-            // m_cmd_save
-            // 
-            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_save.Enabled = false;
-            this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
-            this.m_cmd_save.Location = new System.Drawing.Point(537, 4);
-            this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(116, 35);
-            this.m_cmd_save.TabIndex = 11;
-            this.m_cmd_save.Text = "&Lưu";
-            this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
-            // 
-            // m_cmd_update
-            // 
-            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
-            this.m_cmd_update.Location = new System.Drawing.Point(653, 4);
-            this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(116, 35);
-            this.m_cmd_update.TabIndex = 10;
-            this.m_cmd_update.Text = "&Sửa";
-            this.m_cmd_update.Click += new System.EventHandler(this.m_cmd_update_Click);
-            // 
-            // m_cmd_delete
-            // 
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
-            this.m_cmd_delete.Location = new System.Drawing.Point(769, 4);
-            this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(116, 35);
-            this.m_cmd_delete.TabIndex = 9;
-            this.m_cmd_delete.Text = "&Xóa";
-            this.m_cmd_delete.Click += new System.EventHandler(this.m_cmd_delete_Click);
-            // 
-            // m_cmd_import_excel
-            // 
-            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_import_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_excel.Image")));
-            this.m_cmd_import_excel.Location = new System.Drawing.Point(885, 4);
-            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
-            this.m_cmd_import_excel.Size = new System.Drawing.Size(116, 35);
-            this.m_cmd_import_excel.TabIndex = 8;
-            this.m_cmd_import_excel.Text = "&Import Excel";
-            this.m_cmd_import_excel.Click += new System.EventHandler(this.m_cmd_import_excel_Click);
             // 
             // m_grc
             // 
@@ -759,6 +694,100 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "BẢNG KÊ THÔNG TIN NGƯỜI PHỤ THUỘC GIẢM TRỪ GIA CẢNH";
             // 
+            // m_pnl_out_place_dm
+            // 
+            this.m_pnl_out_place_dm.Controls.Add(this.panel2);
+            this.m_pnl_out_place_dm.Controls.Add(this.panel1);
+            this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 435);
+            this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
+            this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1005, 43);
+            this.m_pnl_out_place_dm.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.m_cmd_insert);
+            this.panel1.Controls.Add(this.m_cmd_update);
+            this.panel1.Controls.Add(this.m_cmd_delete);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(650, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(351, 35);
+            this.panel1.TabIndex = 17;
+            // 
+            // m_cmd_insert
+            // 
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
+            this.m_cmd_insert.Location = new System.Drawing.Point(3, 0);
+            this.m_cmd_insert.Name = "m_cmd_insert";
+            this.m_cmd_insert.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_insert.TabIndex = 17;
+            this.m_cmd_insert.Text = "&Thêm";
+            // 
+            // m_cmd_update
+            // 
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
+            this.m_cmd_update.Location = new System.Drawing.Point(119, 0);
+            this.m_cmd_update.Name = "m_cmd_update";
+            this.m_cmd_update.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_update.TabIndex = 16;
+            this.m_cmd_update.Text = "&Sửa";
+            // 
+            // m_cmd_delete
+            // 
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
+            this.m_cmd_delete.Location = new System.Drawing.Point(235, 0);
+            this.m_cmd_delete.Name = "m_cmd_delete";
+            this.m_cmd_delete.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_delete.TabIndex = 15;
+            this.m_cmd_delete.Text = "&Xóa";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.m_cmd_tai_file_mau);
+            this.panel2.Controls.Add(this.m_cmd_import_excel);
+            this.panel2.Controls.Add(this.m_cmd_save);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(300, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(350, 35);
+            this.panel2.TabIndex = 20;
+            // 
+            // m_cmd_tai_file_mau
+            // 
+            this.m_cmd_tai_file_mau.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_tai_file_mau.Image = global::BKI_DichVuMatDat.Properties.Resources.Benjigarner_Softdimension_Excel;
+            this.m_cmd_tai_file_mau.Location = new System.Drawing.Point(3, 0);
+            this.m_cmd_tai_file_mau.Name = "m_cmd_tai_file_mau";
+            this.m_cmd_tai_file_mau.Size = new System.Drawing.Size(111, 35);
+            this.m_cmd_tai_file_mau.TabIndex = 24;
+            this.m_cmd_tai_file_mau.Text = "&Tải file mẫu";
+            // 
+            // m_cmd_import_excel
+            // 
+            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_import_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_excel.Image")));
+            this.m_cmd_import_excel.Location = new System.Drawing.Point(114, 0);
+            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
+            this.m_cmd_import_excel.Size = new System.Drawing.Size(118, 35);
+            this.m_cmd_import_excel.TabIndex = 23;
+            this.m_cmd_import_excel.Text = "&Import Excel";
+            // 
+            // m_cmd_save
+            // 
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_save.Enabled = false;
+            this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
+            this.m_cmd_save.Location = new System.Drawing.Point(232, 0);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(118, 35);
+            this.m_cmd_save.TabIndex = 22;
+            this.m_cmd_save.Text = "&Lưu";
+            // 
             // f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -770,20 +799,21 @@
             this.Name = "f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2";
             this.Text = "F312 - Đăng ký giảm trừ người phụ thuộc";
             this.Load += new System.EventHandler(this.f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2_Load);
-            this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private DevExpress.XtraGrid.GridControl m_grc;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView m_grv1;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1;
@@ -816,11 +846,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_tai_file_mau;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_save;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_update;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_import_excel;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn17;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn15;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn16;
@@ -846,6 +871,15 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn ID;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_update;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
+        private System.Windows.Forms.Panel panel2;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_tai_file_mau;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_import_excel;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_save;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

@@ -667,7 +667,7 @@ public class US_RPT_LUONG : US_Object
 
     public void FillBangLuong(DataSet ip_ds, decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
     {
-        CStoredProc v_cstore = new CStoredProc("PR_RPT_BANG_LUONG");
+        CStoredProc v_cstore = new CStoredProc("pr_old_rpt_bang_luong");
         v_cstore.addDecimalInputParam("@ID_NHAN_VIEN", ip_dc_id_nhan_vien);
         v_cstore.addDecimalInputParam("@THANG", ip_dc_thang);
         v_cstore.addDecimalInputParam("@NAM", ip_dc_nam);
@@ -677,7 +677,7 @@ public class US_RPT_LUONG : US_Object
 
     public void HienThiBangLuong(DataSet ip_ds, decimal ip_dc_thang, decimal ip_dc_nam)
     {
-        CStoredProc v_cstore = new CStoredProc("PR_RPT_BANG_LUONG_SELECT_ALL");
+        CStoredProc v_cstore = new CStoredProc("pr_old_rpt_bang_luong_SelectAll");
         v_cstore.addDecimalInputParam("@ip_dc_thang", ip_dc_thang);
         v_cstore.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
         v_cstore.fillDataSetByCommand(this, ip_ds);

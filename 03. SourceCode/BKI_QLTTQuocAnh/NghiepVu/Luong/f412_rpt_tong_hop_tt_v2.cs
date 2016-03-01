@@ -96,7 +96,7 @@ namespace BKI_DichVuMatDat.BaoCao
             US_RPT_THONG_TIN_TONG_HOP_V2 v_us = new US_RPT_THONG_TIN_TONG_HOP_V2();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillThongTinTongHopNhanVienV2(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
+            v_us.LayThongTinTongHopNhanVien(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
             DataRow v_dr = v_ds.Tables[0].Rows[0];
             return v_dr;
         }

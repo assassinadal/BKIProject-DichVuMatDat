@@ -371,8 +371,9 @@ namespace BKI_DichVuMatDat.BaoCao
             DOAN_PHI = 28,
             THUE_TNCN = 29,
             PHAI_THU_KHAC = 30,
-            TONG_PHAI_NOP = 31, 
-            THUC_LINH = 32
+            DA_NOP_THUE_TNCN = 31,
+            TONG_PHAI_NOP = 32, 
+            THUC_LINH = 33
         }
         #endregion
 
@@ -789,6 +790,7 @@ namespace BKI_DichVuMatDat.BaoCao
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.DOAN_PHI].ColumnName = RPT_LUONG_V2.DOAN_PHI_CD;
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.THUE_TNCN].ColumnName = RPT_LUONG_V2.THUE;
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.PHAI_THU_KHAC].ColumnName = RPT_LUONG_V2.PHAI_NOP_KHAC;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.DA_NOP_THUE_TNCN].ColumnName = RPT_LUONG_V2.SO_TIEN_DA_NOP_THUE;
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.TONG_PHAI_NOP].ColumnName = RPT_LUONG_V2.TONG_PHAI_NOP;
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.THUC_LINH].ColumnName = RPT_LUONG_V2.THUC_LINH;
         }
@@ -825,11 +827,7 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             finally
             {
-                if(SplashScreenManager.FormInPendingState)
-                {
                     SplashScreenManager.CloseForm();
-                }
-                
             }
         }
         

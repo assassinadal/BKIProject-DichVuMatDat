@@ -94,6 +94,24 @@ namespace BKI_DichVuMatDat.NghiepVu.Luong
             v_us_rpt_tong_hop_v2.Insert();
             v_us_rpt_luong_v2.CommitTransaction();
         }
+        public void ReplaceBanGhiLuongNhanVien(decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
+        {
+            var v_dr_luong_nv = get_luong_1_nhan_vien_v2(ip_dc_id_nhan_vien, ip_dc_thang, ip_dc_nam);
+            var v_dto_luong_nv = transfer_data_row_db_luong_2_object(v_dr_luong_nv, ip_dc_thang, ip_dc_nam);
+            US_RPT_LUONG_V2 v_us_rpt_luong_v2 = transfer_dto_2_us_object(v_dto_luong_nv);
+
+            DataRow v_dr_thong_tin_tong_hop_nv = get_thong_tin_tong_hop_1_nhan_vien_v2(ip_dc_id_nhan_vien, ip_dc_thang, ip_dc_nam);
+            US_RPT_THONG_TIN_TONG_HOP_V2 v_us_rpt_tong_hop_v2 = DataRow2USThongTinTongHopV2(v_dr_thong_tin_tong_hop_nv);
+
+            v_us_rpt_luong_v2.BeginTransaction();
+            v_us_rpt_luong_v2.XoaBangLuongNhanVien(ip_dc_id_nhan_vien, ip_dc_thang, ip_dc_nam);
+            v_us_rpt_luong_v2.Insert();
+            v_us_rpt_tong_hop_v2.UseTransOfUSObject(v_us_rpt_luong_v2);
+            v_us_rpt_tong_hop_v2.XoaDuLieuTongHopNhanVien(ip_dc_id_nhan_vien, ip_dc_thang, ip_dc_nam);
+            v_us_rpt_tong_hop_v2.Insert();
+            v_us_rpt_luong_v2.CommitTransaction();
+        }
+
         public void XoaBanGhiLuongNhanVien(DTO_BANG_LUONG_V2 ip_dto_bang_luong)
         {
             US_RPT_LUONG_V2 v_us_rpt_luong_v2 = new US_RPT_LUONG_V2();

@@ -194,13 +194,13 @@ namespace BKI_DichVuMatDat.BaoCao
                     e.Cancel = true;
                     return;
                 }
-                if(kiem_tra_bang_luong_da_chot_chua())
-                {
-                    XtraMessageBox.Show("Bảng lương đã được chốt rồi, không tính lại được!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    worker.CancelAsync();
-                    e.Cancel = true;
-                    return;
-                }
+                //if(kiem_tra_bang_luong_da_chot_chua())
+                //{
+                //    XtraMessageBox.Show("Bảng lương đã được chốt rồi, không tính lại được!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    worker.CancelAsync();
+                //    e.Cancel = true;
+                //    return;
+                //}
                 
                 start_tinh_bang_luong_process();
                 if(worker.CancellationPending)
@@ -341,39 +341,44 @@ namespace BKI_DichVuMatDat.BaoCao
         enum e_col_thu_tu_bang_luong
         {
             MA_NV = 0,
-            LUONG_NS = 1,
-            LUONG_CHE_DO = 2,
-            AN_CA = 3,
-            PHU_CAP_TN = 4,
-            LAM_THEM_150 = 5,
-            THU_NHAP_KHAC_TRONG_LUONG = 6,
-            TONG_THU_NHAP_TRONG_LUONG = 7,
-            THUONG = 8,
-            THUONG_ATHK = 9,
-            THUONG_LE_TET = 10,
-            BO_SUNG_LUONG = 11,
-            THU_NHAP_KHAC_NGOAI_LUONG = 12,
-            TONG_THU_NHAP_NGOAI_LUONG = 13,
-            TONG_THU_NHAP = 14,
-            GIAM_TRU_AN_CA = 15,
-            GIAM_TRU_BHXH = 16,
-            GIAM_TRU_BHYT = 17,
-            GIAM_TRU_BHTN = 18,
-            GIAM_TRU_LAM_THEM = 19,
-            GIAM_TRU_GIA_CANH = 20,
-            GIAM_TRU_PHU_THUOC = 21,
-            GIAM_TRU_KHAC = 22,
-            TONG_GIAM_TRU = 23,
-            THU_NHAP_TINH_THUE = 24,
-            PHAI_THU_BHXH = 25,
-            PHAI_THU_BHYT = 26,
-            PHAI_THU_BHTN = 27,
-            DOAN_PHI = 28,
-            THUE_TNCN = 29,
-            PHAI_THU_KHAC = 30,
-            DA_NOP_THUE_TNCN = 31,
-            TONG_PHAI_NOP = 32, 
-            THUC_LINH = 33
+
+            HO_TEN = 1,
+            DON_VI = 2,
+            CHUC_VU = 3,
+
+            LUONG_NS = 4,
+            LUONG_CHE_DO = 5,
+            AN_CA = 6,
+            PHU_CAP_TN = 7,
+            LAM_THEM_150 = 8,
+            THU_NHAP_KHAC_TRONG_LUONG = 9,
+            TONG_THU_NHAP_TRONG_LUONG = 10,
+            THUONG = 11,
+            THUONG_ATHK = 12,
+            THUONG_LE_TET = 13,
+            BO_SUNG_LUONG = 14,
+            THU_NHAP_KHAC_NGOAI_LUONG = 15,
+            TONG_THU_NHAP_NGOAI_LUONG = 16,
+            TONG_THU_NHAP = 17,
+            GIAM_TRU_AN_CA = 18,
+            GIAM_TRU_BHXH = 19,
+            GIAM_TRU_BHYT = 20,
+            GIAM_TRU_BHTN = 21,
+            GIAM_TRU_LAM_THEM = 22,
+            GIAM_TRU_GIA_CANH = 23,
+            GIAM_TRU_PHU_THUOC = 24,
+            GIAM_TRU_KHAC = 25,
+            TONG_GIAM_TRU = 26,
+            THU_NHAP_TINH_THUE = 27,
+            PHAI_THU_BHXH = 28,
+            PHAI_THU_BHYT = 29,
+            PHAI_THU_BHTN = 30,
+            DOAN_PHI = 31,
+            THUE_TNCN = 32,
+            PHAI_THU_KHAC = 33,
+            DA_NOP_THUE_TNCN = 34,
+            TONG_PHAI_NOP = 35, 
+            THUC_LINH = 36
         }
         #endregion
 
@@ -530,11 +535,11 @@ namespace BKI_DichVuMatDat.BaoCao
             ENUM_CONFIRM_TINH_BANG_LUONG v_dlg_confirm;
             var v_dto_thong_tin_bang_luong = TinhLuongQL.Instance.LayThongTinBangLuong(lay_thang(), lay_nam());
 
-            if(v_dto_thong_tin_bang_luong.CHOT_BANG_LUONG)
-            {
-                XtraMessageBox.Show("Bạn không thể tính toán lương nhân viên khi bảng lương đã được chốt!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                v_dlg_confirm = ENUM_CONFIRM_TINH_BANG_LUONG.NONE;
-            }
+            //if(v_dto_thong_tin_bang_luong.CHOT_BANG_LUONG)
+            //{
+            //    XtraMessageBox.Show("Bạn không thể tính toán lương nhân viên khi bảng lương đã được chốt!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    v_dlg_confirm = ENUM_CONFIRM_TINH_BANG_LUONG.NONE;
+            //}
             if(v_dto_thong_tin_bang_luong.CO_DU_LIEU_LUONG)
             {
                 v_dlg_confirm = v_msg_confirm.display();
@@ -608,6 +613,19 @@ namespace BKI_DichVuMatDat.BaoCao
             msg002_confirm_luu_du_lieu_bang_luong v_msg_confirm;
             ENUM_CONFIRM_LUU_BANG_LUONG v_dlg_confirm_save;
 
+            if(v_dto_thong_tin_bang_luong.CHOT_BANG_LUONG)
+            {
+                var v_yn_tiep_tuc = XtraMessageBox.Show("Bảng lương đã được chốt! Bạn có muốn chỉnh sửa dữ liệu lương không? (Việc này có thể dẫn đến việc sai lệch với dữ liệu lương đã chốt)", "CẢNH BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                if(v_yn_tiep_tuc == System.Windows.Forms.DialogResult.No)
+                {
+                    XtraMessageBox.Show("Bạn đã hủy thao tác!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else
+                {
+                    XtraMessageBox.Show("Bạn đã chọn việc sửa lại bảng lương sau khi đã chốt!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
             if(v_dto_thong_tin_bang_luong.CO_DU_LIEU_LUONG)
             {
                 v_msg_confirm = new msg002_confirm_luu_du_lieu_bang_luong();
@@ -761,6 +779,10 @@ namespace BKI_DichVuMatDat.BaoCao
                 ip_dt_src.Rows.RemoveAt(ip_dt_src.Rows.Count - 1);
             }
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.MA_NV].ColumnName = RPT_LUONG_V2.MA_NV;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.HO_TEN].ColumnName = RPT_LUONG_V2.HO_TEN;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.DON_VI].ColumnName = RPT_LUONG_V2.TEN_DON_VI;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.CHUC_VU].ColumnName = RPT_LUONG_V2.TEN_CHUC_VU;
+
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.LUONG_NS].ColumnName = RPT_LUONG_V2.LUONG_NS;
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.LUONG_CHE_DO].ColumnName = RPT_LUONG_V2.LUONG_CD;
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.AN_CA].ColumnName = RPT_LUONG_V2.AN_CA;

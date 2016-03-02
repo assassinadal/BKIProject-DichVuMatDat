@@ -144,6 +144,13 @@ namespace BKI_DichVuMatDat.NghiepVu.Luong
             v_dto_luong.NAM = ip_dc_nam;
 
             v_dto_luong.MA_NV = ip_dr_luong[RPT_LUONG_V2.MA_NV].ToString();
+            v_dto_luong.HO_TEN = ip_dr_luong[RPT_LUONG_V2.HO_TEN].ToString();
+
+            v_dto_luong.TEN_DON_VI = ip_dr_luong[RPT_LUONG_V2.TEN_DON_VI].ToString();
+            //v_dto_luong.THU_TU_DON_VI = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.THU_TU_DON_VI]);
+
+            v_dto_luong.TEN_CHUC_VU = ip_dr_luong[RPT_LUONG_V2.TEN_CHUC_VU].ToString();
+            //v_dto_luong.THU_TU_CHUC_VU = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.THU_TU_CHUC_VU]);
 
             v_dto_luong.LUONG_NS = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.LUONG_NS]);
             v_dto_luong.LUONG_CD = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.LUONG_CD]);
@@ -201,6 +208,11 @@ namespace BKI_DichVuMatDat.NghiepVu.Luong
             v_dto_luong.NAM = ip_dc_nam;
 
             v_dto_luong.MA_NV = ip_dr_luong[RPT_LUONG_V2.MA_NV].ToString();
+            v_dto_luong.HO_TEN = ip_dr_luong[RPT_LUONG_V2.HO_TEN].ToString();
+            v_dto_luong.TEN_CHUC_VU = ip_dr_luong[RPT_LUONG_V2.TEN_CHUC_VU].ToString();
+            v_dto_luong.THU_TU_CHUC_VU = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.THU_TU_CHUC_VU]);
+            v_dto_luong.TEN_DON_VI = ip_dr_luong[RPT_LUONG_V2.TEN_DON_VI].ToString();
+            v_dto_luong.THU_TU_DON_VI = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.THU_TU_DON_VI]);
 
             v_dto_luong.LUONG_NS = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.LUONG_NS]);
             v_dto_luong.LUONG_CD = Convert.ToDecimal(ip_dr_luong[RPT_LUONG_V2.LUONG_CD]);

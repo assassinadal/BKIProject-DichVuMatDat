@@ -1053,6 +1053,11 @@ namespace BKI_DichVuMatDat.DS.CDBNames
 
     public class RPT_LUONG_V2
     {
+        public const string HO_TEN = "HO_TEN";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string THU_TU_DON_VI = "THU_TU_DON_VI";
+        public const string TEN_CHUC_VU = "TEN_CHUC_VU";
+        public const string THU_TU_CHUC_VU = "THU_TU_CHUC_VU";
         public const string ID = "ID";
         public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
         public const string THANG = "THANG";

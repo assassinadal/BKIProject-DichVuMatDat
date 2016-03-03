@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPBusinessService", "IPBusinessService\IPBusinessService.vbproj", "{73CA732C-2CFB-4A14-B0B9-F43763B1C2F3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4AEBA63F-E5B5-4D0C-B1B5-E6BCB13E1B5A} = {4AEBA63F-E5B5-4D0C-B1B5-E6BCB13E1B5A}
+		{9ACEDD70-FDA2-44D8-A004-3A7EAF86A954} = {9ACEDD70-FDA2-44D8-A004-3A7EAF86A954}
+		{2A74F1D1-C0EE-41FE-A708-A83B285ACCF2} = {2A74F1D1-C0EE-41FE-A708-A83B285ACCF2}
+	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPData", "IPData\IPData.vbproj", "{9ACEDD70-FDA2-44D8-A004-3A7EAF86A954}"
 EndProject

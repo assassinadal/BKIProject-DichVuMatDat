@@ -746,7 +746,8 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f340_dat_hs_lns_lcd v_frm = new f340_dat_hs_lns_lcd();
+                //f340_dat_hs_lns_lcd v_frm = new f340_dat_hs_lns_lcd();
+                f341_dat_he_so_lns_lcd_v2 v_frm = new f341_dat_he_so_lns_lcd_v2();
                 if(IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
@@ -842,7 +843,8 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f363_quan_ly_cac_nhan_vien_co_luong_cung v_frm = new f363_quan_ly_cac_nhan_vien_co_luong_cung();
+                //f363_quan_ly_cac_nhan_vien_co_luong_cung v_frm = new f363_quan_ly_cac_nhan_vien_co_luong_cung();
+                f365_quan_ly_nhan_vien_co_luong_cung_v2 v_frm = new f365_quan_ly_nhan_vien_co_luong_cung_v2();
                 if(IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;

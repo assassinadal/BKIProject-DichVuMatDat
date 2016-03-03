@@ -1285,6 +1285,37 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string GHI_CHU_LCD = "GHI_CHU_LCD";
     }
 
-
+    public class GD_LUONG_CUNG
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+        public const string SO_TIEN = "SO_TIEN";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string NGAY_SUA = "NGAY_SUA";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string NGUOI_SUA = "NGUOI_SUA";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string DA_XOA = "DA_XOA";
+    }
+    public class V_GD_LUONG_CUNG
+    {
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string MA_NV = "MA_NV";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string HO_TEN = "HO_TEN";
+        public const string ID = "ID";
+        public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+        public const string SO_TIEN = "SO_TIEN";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string NGAY_SUA = "NGAY_SUA";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string NGUOI_SUA = "NGUOI_SUA";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string DA_XOA = "DA_XOA";
+    }
 
 }

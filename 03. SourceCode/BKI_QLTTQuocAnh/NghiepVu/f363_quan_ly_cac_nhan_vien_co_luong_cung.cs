@@ -32,6 +32,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         #region Members
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
+        US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG();
         #endregion
 
         #region Private methods
@@ -117,10 +118,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             //v_ds.Tables.Add(new DataTable());
 
             //v_us.FillDatasetWithQuery(v_ds, "SELECT * FROM V_GD_LUONG_CUNG WHERE DA_XOA = 'N' ORDER BY ID_NHAN_VIEN");
-            US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG();
+            //US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-
             v_us.LayDanhSach(v_ds);
             m_grc_luong_cung_cua_nhan_vien.DataSource = v_ds.Tables[0];
         }
@@ -256,7 +256,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
             throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
-           // v_us.FillDatasetWithTableName(v_ds, "GD_LUONG_CUNG");
+            // v_us.FillDatasetWithTableName(v_ds, "GD_LUONG_CUNG");
 
             string v_str_filter = "ID_NHAN_VIEN = " + ip_dc_id_nhan_vien + " AND DA_XOA = 'N'";
             DataRow[] v_dr = v_ds.Tables[0].Select(v_str_filter);
@@ -373,6 +373,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_luu_tien_luong.Click += m_cmd_luu_tien_luong_Click;
             m_cmd_insert.Click += m_cmd_insert_Click;
             m_txt_so_tien.Leave += m_txt_so_tien_Leave;
+            m_cmd_delete.Click += m_cmd_delete_Click;
+            m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
             //m_grv_luong_cung_cua_nhan_vien.DoubleClick += m_grv_luong_cung_cua_nhan_vien_DoubleClick;
         }
 
@@ -412,6 +414,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                f364_quan_ly_cac_nhan_vien_co_luong_cung_de frm = new f364_quan_ly_cac_nhan_vien_co_luong_cung_de();
+                frm.display_4_update(v_us);
                 load_data_2_form_4_udate();
             }
             catch (Exception v_e)
@@ -424,8 +428,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                m_e_form_mode = DataEntryFormMode.InsertDataState;
-                refresh_form();
+                f364_quan_ly_cac_nhan_vien_co_luong_cung_de frm = new f364_quan_ly_cac_nhan_vien_co_luong_cung_de();
+                frm.display_4_insert();
+                //m_e_form_mode = DataEntryFormMode.InsertDataState;
+                //refresh_form();
             }
             catch (Exception v_e)
             {
@@ -471,6 +477,46 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                     //load_luong_cung_nv_2_form(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Lay ID cua dong du lieu muon xoa
+                DataRow v_dr = m_grv_luong_cung_cua_nhan_vien.GetDataRow(m_grv_luong_cung_cua_nhan_vien.FocusedRowHandle);
+                //Lay ID cua dong du lieu tren
+                decimal v_id = CIPConvert.ToDecimal(v_dr[GD_LUONG_CUNG.ID]);           
+                if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_DU_LIEU) == true)
+                {
+                    US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG(v_id);
+                    v_us.strDA_XOA = "Y";
+                    v_us.BeginTransaction();
+                    v_us.Update();
+                    v_us.CommitTransaction();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    m_grv_luong_cung_cua_nhan_vien.ExportToXls(saveFileDialog1.FileName);
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
                 }
             }
             catch (Exception v_e)

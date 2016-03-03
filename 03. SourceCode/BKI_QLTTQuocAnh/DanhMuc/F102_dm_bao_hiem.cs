@@ -53,12 +53,15 @@ namespace BKI_DichVuMatDat.DanhMuc
         private void load_data_2_grid()
         {
             CHRMCommon.make_stt(m_grv_dm_bao_hiem);
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
 
-            v_ds.Tables.Add(new DataTable());
-            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
-            //v_us.FillDatasetWithTableName(v_ds, "DM_BAO_HIEM");
+            //v_ds.Tables.Add(new DataTable());
+            //throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            ////v_us.FillDatasetWithTableName(v_ds, "DM_BAO_HIEM");
+            US_DM_BAO_HIEM v_us = new US_DM_BAO_HIEM();
+            DS_DM_BAO_HIEM v_ds = new DS_DM_BAO_HIEM();
+            v_us.FillDataset(v_ds);
             m_grc_dm_bao_hiem.DataSource = v_ds.Tables[0];
 
         }

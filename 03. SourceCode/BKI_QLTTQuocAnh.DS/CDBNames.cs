@@ -1317,5 +1317,71 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string GHI_CHU = "GHI_CHU";
         public const string DA_XOA = "DA_XOA";
     }
+    public class V_DM_DON_VI
+    {
+        public const string ID_DV_0 = "ID_DV_0";
+        public const string ID_DV_1 = "ID_DV_1";
+        public const string ID_DV_2 = "ID_DV_2";
+        public const string ID_DV_3 = "ID_DV_3";
+        public const string ID_DV_4 = "ID_DV_4";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string Expr1 = "Expr1";
+        public const string Expr2 = "Expr2";
+        public const string Expr3 = "Expr3";
+        public const string Expr4 = "Expr4";
+    }
+
+    public class V_DM_HE_SO_LUONG_NS
+    {
+        public const string ID = "ID";
+        public const string ID_MA_LNS = "ID_MA_LNS";
+        public const string TEN_NGAN_LNS = "TEN_NGAN_LNS";
+        public const string TEN_LNS = "TEN_LNS";
+        public const string ID_MUC_LNS = "ID_MUC_LNS";
+        public const string MUC_LNS_NGAN = "MUC_LNS_NGAN";
+        public const string MUC_LNS = "MUC_LNS";
+        public const string HE_SO = "HE_SO";
+        public const string ID_LOAI_LAO_DONG = "ID_LOAI_LAO_DONG";
+        public const string LOAI_LAO_DONG = "LOAI_LAO_DONG";
+        public const string TEN = "TEN";
+    }
+    public class V_DM_LOAI_HOP_DONG
+    {
+        public const string ID = "ID";
+        public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
+        public const string MA_LOAI_HOP_DONG = "MA_LOAI_HOP_DONG";
+        public const string TI_LE = "TI_LE";
+        public const string SO_TIEN = "SO_TIEN";
+        public const string HS_LNS_YN = "HS_LNS_YN";
+        public const string AN_CA_YN = "AN_CA_YN";
+        public const string LCD_YN = "LCD_YN";
+    }
+    public class V_DM_LOAI_NGAY_CONG
+    {
+        public const string ID = "ID";
+        public const string MA_NGAY_CONG = "MA_NGAY_CONG";
+        public const string TEN_NGAY_CONG = "TEN_NGAY_CONG";
+        public const string TI_LE_LNS = "TI_LE_LNS";
+        public const string TI_LE_LCD = "TI_LE_LCD";
+    }
+
+    public class V_DM_LUONG_CHE_DO
+    {
+        public const string ID = "ID";
+        public const string ID_MA_LCD = "ID_MA_LCD";
+        public const string ID_MUC_LCD = "ID_MUC_LCD";
+        public const string MA_LCD = "MA_LCD";
+        public const string MUC_LCD = "MUC_LCD";
+        public const string SO_TIEN = "SO_TIEN";
+    }
+
+    public class V_DM_PHU_CAP
+    {
+        public const string DOI_TUONG_HUONG_PHU_CAP = "DOI_TUONG_HUONG_PHU_CAP";
+        public const string TEN = "TEN";
+        public const string TI_LE = "TI_LE";
+        public const string ID = "ID";
+        public const string ID_LOAI_PHU_CAP = "ID_LOAI_PHU_CAP";
+    }
 
 }

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_V_DM_LOAI_HOP_DONG" targetNamespace="http://tempuri.org/DS_V_DM_LOAI_HOP_DONG.xsd" xmlns:mstns="http://tempuri.org/DS_V_DM_LOAI_HOP_DONG.xsd" xmlns="http://tempuri.org/DS_V_DM_LOAI_HOP_DONG.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DVMDConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DVMDConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_DichVuMatDat.DS.Properties.Settings.GlobalReference.Default.DVMDConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_DM_LOAI_HOP_DONGTableAdapter" GeneratorDataComponentClassName="V_DM_LOAI_HOP_DONGTableAdapter" Name="V_DM_LOAI_HOP_DONG" UserDataComponentName="V_DM_LOAI_HOP_DONGTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DVMDConnectionString1 (Settings)" DbObjectName="DVMD.dbo.V_DM_LOAI_HOP_DONG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, LOAI_HOP_DONG, MA_LOAI_HOP_DONG, TI_LE, SO_TIEN, HS_LNS_YN, AN_CA_YN, LCD_YN FROM dbo.V_DM_LOAI_HOP_DONG</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="LOAI_HOP_DONG" DataSetColumn="LOAI_HOP_DONG" />
+              <Mapping SourceColumn="MA_LOAI_HOP_DONG" DataSetColumn="MA_LOAI_HOP_DONG" />
+              <Mapping SourceColumn="TI_LE" DataSetColumn="TI_LE" />
+              <Mapping SourceColumn="SO_TIEN" DataSetColumn="SO_TIEN" />
+              <Mapping SourceColumn="HS_LNS_YN" DataSetColumn="HS_LNS_YN" />
+              <Mapping SourceColumn="AN_CA_YN" DataSetColumn="AN_CA_YN" />
+              <Mapping SourceColumn="LCD_YN" DataSetColumn="LCD_YN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_V_DM_LOAI_HOP_DONG" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_DM_LOAI_HOP_DONG" msprop:Generator_UserDSName="DS_V_DM_LOAI_HOP_DONG">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_DM_LOAI_HOP_DONG" msprop:Generator_TableClassName="V_DM_LOAI_HOP_DONGDataTable" msprop:Generator_TableVarName="tableV_DM_LOAI_HOP_DONG" msprop:Generator_TablePropName="V_DM_LOAI_HOP_DONG" msprop:Generator_RowDeletingName="V_DM_LOAI_HOP_DONGRowDeleting" msprop:Generator_RowChangingName="V_DM_LOAI_HOP_DONGRowChanging" msprop:Generator_RowEvHandlerName="V_DM_LOAI_HOP_DONGRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_LOAI_HOP_DONGRowDeleted" msprop:Generator_UserTableName="V_DM_LOAI_HOP_DONG" msprop:Generator_RowChangedName="V_DM_LOAI_HOP_DONGRowChanged" msprop:Generator_RowEvArgName="V_DM_LOAI_HOP_DONGRowChangeEvent" msprop:Generator_RowClassName="V_DM_LOAI_HOP_DONGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="LOAI_HOP_DONG" msprop:Generator_ColumnVarNameInTable="columnLOAI_HOP_DONG" msprop:Generator_ColumnPropNameInRow="LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInTable="LOAI_HOP_DONGColumn" msprop:Generator_UserColumnName="LOAI_HOP_DONG">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MA_LOAI_HOP_DONG" msprop:Generator_ColumnVarNameInTable="columnMA_LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInRow="MA_LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInTable="MA_LOAI_HOP_DONGColumn" msprop:Generator_UserColumnName="MA_LOAI_HOP_DONG">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TI_LE" msprop:Generator_ColumnVarNameInTable="columnTI_LE" msprop:Generator_ColumnPropNameInRow="TI_LE" msprop:Generator_ColumnPropNameInTable="TI_LEColumn" msprop:Generator_UserColumnName="TI_LE" type="xs:decimal" />
+              <xs:element name="SO_TIEN" msprop:Generator_ColumnVarNameInTable="columnSO_TIEN" msprop:Generator_ColumnPropNameInRow="SO_TIEN" msprop:Generator_ColumnPropNameInTable="SO_TIENColumn" msprop:Generator_UserColumnName="SO_TIEN" type="xs:decimal" />
+              <xs:element name="HS_LNS_YN" msprop:Generator_ColumnVarNameInTable="columnHS_LNS_YN" msprop:Generator_ColumnPropNameInRow="HS_LNS_YN" msprop:Generator_ColumnPropNameInTable="HS_LNS_YNColumn" msprop:Generator_UserColumnName="HS_LNS_YN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AN_CA_YN" msprop:Generator_ColumnVarNameInTable="columnAN_CA_YN" msprop:Generator_ColumnPropNameInRow="AN_CA_YN" msprop:Generator_ColumnPropNameInTable="AN_CA_YNColumn" msprop:Generator_UserColumnName="AN_CA_YN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LCD_YN" msprop:Generator_ColumnVarNameInTable="columnLCD_YN" msprop:Generator_ColumnPropNameInRow="LCD_YN" msprop:Generator_ColumnPropNameInTable="LCD_YNColumn" msprop:Generator_UserColumnName="LCD_YN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_DM_LOAI_HOP_DONG" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

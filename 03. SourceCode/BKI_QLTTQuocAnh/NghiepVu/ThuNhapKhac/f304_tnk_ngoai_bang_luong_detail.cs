@@ -30,7 +30,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 
         #region Members
         DataEntryFormMode m_e_form_mode;
-        US_GD_THU_NHAP_KHAC m_us_gd_tnk;
+        US_GD_THU_NHAP_KHAC m_us_gd_tnk = new US_GD_THU_NHAP_KHAC();
         #endregion
 
         #region Private Method

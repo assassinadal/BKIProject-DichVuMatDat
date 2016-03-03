@@ -22,23 +22,15 @@ namespace BKI_DichVuMatDat.DanhMuc
             format_controls();
         }
 
-        private void format_controls()
-        {
-            FormatControl.SetVisibleSimpleButton(this);
-            set_define_events();
-            this.KeyPreview = true;
-        }
-
-        private void set_define_events()
-        {
-           this.Load+=f150_Danh_sach_nhan_vien_master_Load;
-            
-        }
-
-       
-
         #region Public Interface
-        
+        internal void DisplayForPresent(ref int m_trang_thai_buoc_1)
+        {
+            m_cmd_sua.Enabled = false;
+            m_cmd_tai_file_excel_mau.Enabled = false;
+            m_cmd_chon_file.Enabled = false;
+            this.ShowDialog();
+            m_trang_thai_buoc_1 = m_trang_thai_buoc_1_sau_hien_thi;
+        }
         #endregion
 
         #region Members
@@ -48,19 +40,20 @@ namespace BKI_DichVuMatDat.DanhMuc
         #endregion
 
         #region Private methods
-
-        private void f150_Danh_sach_nhan_vien_master_Load(object sender, EventArgs e)
+        private void format_controls()
         {
-            load_data_to_grid();
+            FormatControl.SetVisibleSimpleButton(this);
+            set_define_events();
+            this.KeyPreview = true;
         }
-
 
         private void load_data_to_grid()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            US_V_GD_MA_TRA_CUU_NHAN_VIEN v_us = new US_V_GD_MA_TRA_CUU_NHAN_VIEN();
+            DS_V_GD_MA_TRA_CUU_NHAN_VIEN v_ds = new DS_V_GD_MA_TRA_CUU_NHAN_VIEN();
+
+            v_us.FillDataset(v_ds);
+            //throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
             //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
             m_grc.DataSource = v_ds.Tables[0];
 
@@ -72,8 +65,16 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
-
         #endregion
+        private void set_define_events()
+        {
+            this.Load += f150_Danh_sach_nhan_vien_master_Load;
+        }
+
+        private void f150_Danh_sach_nhan_vien_master_Load(object sender, EventArgs e)
+        {
+            load_data_to_grid();
+        }
 
         private void m_txt_tai_file_excel_mau_Click(object sender, EventArgs e)
         {
@@ -150,14 +151,5 @@ namespace BKI_DichVuMatDat.DanhMuc
         }
 
 
-
-        internal void DisplayForPresent(ref int m_trang_thai_buoc_1)
-        {
-            m_cmd_sua.Enabled = false;
-            m_cmd_tai_file_excel_mau.Enabled = false;
-            m_cmd_chon_file.Enabled = false;
-            this.ShowDialog();
-            m_trang_thai_buoc_1 = m_trang_thai_buoc_1_sau_hien_thi;
-        }
     }
 }

@@ -27,9 +27,17 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         #region Public Interface
-        private void display()
+        public void display()
         {
             this.ShowDialog();
+        }
+
+        public void DisplayForQuyTrinhNhapMoiNhanVien(int id_nhan_vien, ref int m_trang_thai_buoc_4)
+        {
+            m_sle_chon_nhan_vien.EditValue = id_nhan_vien;
+            m_trang_thai_them = m_trang_thai_buoc_4;
+            this.ShowDialog();
+            m_trang_thai_buoc_4 = m_trang_thai_buoc_4_thanh_cong;
         }
         #endregion
 
@@ -40,7 +48,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         decimal m_id_gd_ct = 0;
         bool m_loai_ctac_cthuc = false;
         int m_trang_thai_them = 0;
-        int m_trang_thai_buoc_4_thanh_cong=0;
+        int m_trang_thai_buoc_4_thanh_cong = 0;
         #endregion
 
         #region Private Methods
@@ -66,29 +74,27 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private DataSet load_data_2_ds_v_dm_nv()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
+            US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
+            DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
 
-            v_ds.Tables.Add(new DataTable());
-            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
-            //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
+            v_us.FillDataset(v_ds);
+ 
             return v_ds;
         }
 
         private void load_data_2_sle_chon_nv()
         {
             m_sle_chon_nhan_vien.Properties.DataSource = load_data_2_ds_v_dm_nv().Tables[0];
-            
+
             m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
 
         private DataSet load_data_2_ds_v_gd_quyet_dinh()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            US_V_GD_QUYET_DINH v_us = new US_V_GD_QUYET_DINH();
+            DS_V_GD_QUYET_DINH v_ds = new DS_V_GD_QUYET_DINH();
+            v_us.FillDataset(v_ds);
             //v_us.FillDatasetWithTableName(v_ds, "V_GD_QUYET_DINH");
             return v_ds;
         }
@@ -111,11 +117,9 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private DataSet load_data_2_ds_v_dm_don_vi()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
-          //  v_us.FillDatasetWithTableName(v_ds, "DM_DON_VI");
+            US_DM_DON_VI v_us = new US_DM_DON_VI();
+            DS_DM_DON_VI v_ds = new DS_DM_DON_VI();
+            v_us.FillDataset(v_ds);
             return v_ds;
         }
 
@@ -220,6 +224,26 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             string v_str_filter = "ID_NHAN_VIEN = " + ip_dc_id_nv + "AND DA_XOA = 'N'";
             DataRow[] v_dr = v_ds.GD_CONG_TAC.Select(v_str_filter);
+
+            if (v_dr.Count() == 0)
+            {
+                return -1;
+            }
+            else
+            {
+                return CIPConvert.ToDecimal(v_dr.First()["ID"].ToString());
+            }
+        }
+
+        private decimal find_id_gd_ma_tra_cuu_nhan_vien(decimal ip_dc_id_nhan_vien)
+        {
+            US_GD_MA_TRA_CUU_NHAN_VIEN v_us = new US_GD_MA_TRA_CUU_NHAN_VIEN();
+            DS_GD_MA_TRA_CUU_NHAN_VIEN v_ds = new DS_GD_MA_TRA_CUU_NHAN_VIEN();
+
+            v_us.FillDataset(v_ds);
+
+            string v_str_filter = "ID_NHAN_VIEN = " + ip_dc_id_nhan_vien + "AND DA_XOA = 'N'";
+            DataRow[] v_dr = v_ds.GD_MA_TRA_CUU_NHAN_VIEN.Select(v_str_filter);
 
             if (v_dr.Count() == 0)
             {
@@ -355,6 +379,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                                 cho_gd_ct_da_xoa_Y();
                             }
                         }
+
                         v_us_gd_ct.BeginTransaction();
                         v_us_gd_ct.Insert();
                         v_us_gd_ct.CommitTransaction();
@@ -382,6 +407,19 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.Update();
             v_us.CommitTransaction();
         }
+
+        private void display_m_cmd_huy_kiem_nhiem_yn()
+        {
+            if (CIPConvert.ToDecimal(m_sle_chon_loai_cong_tac.EditValue.ToString()) == CONST_ID_LOAI_CONG_TAC.KIEM_NHIEM)
+            {
+                m_cmd_huy_kiem_nhiem.Visible = true;
+            }
+            else
+            {
+                m_cmd_huy_kiem_nhiem.Visible = false;
+            }
+        }
+
         #endregion
 
         private void set_define_events()
@@ -391,6 +429,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
             m_sle_chon_loai_cong_tac.EditValueChanged += m_sle_chon_loai_cong_tac_EditValueChanged;
             m_cmd_insert.Click += m_cmd_insert_Click;
+            m_cmd_huy_kiem_nhiem.Click += m_cmd_huy_kiem_nhiem_Click;
         }
 
         void m_sle_chon_loai_cong_tac_EditValueChanged(object sender, EventArgs e)
@@ -456,18 +495,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        private void display_m_cmd_huy_kiem_nhiem_yn()
-        {
-            if (CIPConvert.ToDecimal(m_sle_chon_loai_cong_tac.EditValue.ToString()) == CONST_ID_LOAI_CONG_TAC.KIEM_NHIEM)
-            {
-                m_cmd_huy_kiem_nhiem.Visible = true;
-            }
-            else
-            {
-                m_cmd_huy_kiem_nhiem.Visible = false;
-            }
-        }
-
         private void m_cmd_insert_Click(object sender, EventArgs e)
         {
             try
@@ -515,12 +542,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        internal void DisplayForQuyTrinhNhapMoiNhanVien(int id_nhan_vien, ref int m_trang_thai_buoc_4)
-        {
-            m_sle_chon_nhan_vien.EditValue = id_nhan_vien;
-            m_trang_thai_them = m_trang_thai_buoc_4;
-            this.ShowDialog();
-            m_trang_thai_buoc_4 = m_trang_thai_buoc_4_thanh_cong;
-        }
+
     }
 }

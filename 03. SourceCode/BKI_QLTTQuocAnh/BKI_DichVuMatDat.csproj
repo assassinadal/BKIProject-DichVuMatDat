@@ -315,6 +315,12 @@
     <Compile Include="BaoCao\f402_tong_hop_cham_cong.Designer.cs">
       <DependentUpon>f402_tong_hop_cham_cong.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f351_quan_ly_cong_tac_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f351_quan_ly_cong_tac_de.Designer.cs">
+      <DependentUpon>f351_quan_ly_cong_tac_de.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\F502_HOP_DONG_EXCEL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1056,6 +1062,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f402_tong_hop_cham_cong.resx">
       <DependentUpon>f402_tong_hop_cham_cong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f351_quan_ly_cong_tac_de.resx">
+      <DependentUpon>f351_quan_ly_cong_tac_de.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F502_HOP_DONG_EXCEL.resx">
       <DependentUpon>F502_HOP_DONG_EXCEL.cs</DependentUpon>

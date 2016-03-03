@@ -77,6 +77,7 @@
     <Compile Include="US_GD_LOAI_LAO_DONG.cs" />
     <Compile Include="US_GD_LUONG_CHE_DO.cs" />
     <Compile Include="US_GD_LUONG_CUNG.cs" />
+    <Compile Include="US_GD_MA_TRA_CUU_NHAN_VIEN.cs" />
     <Compile Include="US_GD_NHAN_VIEN_PHU_CAP.cs" />
     <Compile Include="US_GD_PHU_THUOC.cs" />
     <Compile Include="US_GD_PHU_THUOC_DETAILS.cs" />

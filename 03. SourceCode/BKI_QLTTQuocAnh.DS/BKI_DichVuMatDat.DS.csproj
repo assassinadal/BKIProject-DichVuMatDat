@@ -188,6 +188,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_LUONG_CUNG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_MA_TRA_CUU_NHAN_VIEN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_MA_TRA_CUU_NHAN_VIEN.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_NHAN_VIEN_PHU_CAP.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -738,6 +743,17 @@
     </None>
     <None Include="DS_GD_LUONG_CUNG.xss">
       <DependentUpon>DS_GD_LUONG_CUNG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_MA_TRA_CUU_NHAN_VIEN.xsc">
+      <DependentUpon>DS_GD_MA_TRA_CUU_NHAN_VIEN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_MA_TRA_CUU_NHAN_VIEN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_MA_TRA_CUU_NHAN_VIEN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_MA_TRA_CUU_NHAN_VIEN.xss">
+      <DependentUpon>DS_GD_MA_TRA_CUU_NHAN_VIEN.xsd</DependentUpon>
     </None>
     <None Include="DS_GD_NHAN_VIEN_PHU_CAP.xsc">
       <DependentUpon>DS_GD_NHAN_VIEN_PHU_CAP.xsd</DependentUpon>

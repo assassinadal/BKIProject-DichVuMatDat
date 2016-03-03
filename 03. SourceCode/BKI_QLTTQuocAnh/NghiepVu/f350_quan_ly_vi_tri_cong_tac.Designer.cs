@@ -870,7 +870,6 @@
             this.m_cmd_huy_kiem_nhiem.TabIndex = 1;
             this.m_cmd_huy_kiem_nhiem.Text = "&Hủy kiêm nhiệm";
             this.m_cmd_huy_kiem_nhiem.Visible = false;
-            this.m_cmd_huy_kiem_nhiem.Click += new System.EventHandler(this.m_cmd_huy_kiem_nhiem_Click);
             // 
             // f350_quan_ly_vi_tri_cong_tac
             // 

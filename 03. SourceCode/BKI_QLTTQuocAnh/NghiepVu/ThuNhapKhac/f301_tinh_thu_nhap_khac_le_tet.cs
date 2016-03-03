@@ -215,7 +215,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             ref_us.dcID_LOAI_THU_NHAP_KHAC = Convert.ToDecimal(v_dr["ID_LOAI_QUY_TIEN"]);
             ref_us.dcID_QUY_TIEN_THUONG = Convert.ToDecimal(m_sle_quy_tien_thuong.EditValue);
 
-            ref_us.dcSO_TIEN_NOP_THE = Convert.ToDecimal(ip_dr_du_lieu_1_nv["THUE_PHAI_NOP"]);
+            ref_us.dcSO_TIEN_NOP_THUE = Convert.ToDecimal(ip_dr_du_lieu_1_nv["THUE_PHAI_NOP"]);
             ref_us.dcSO_TIEN_THUC_LINH = Convert.ToDecimal(ip_dr_du_lieu_1_nv["THUC_LINH"]);
             ref_us.dcTRUY_LINH = 0;
             ref_us.dcTRUY_THU = 0;

@@ -29,147 +29,37 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f303_tnk_ngoai_bang_luong));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.m_sle_nhom_ld = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_cmd_search = new DevExpress.XtraEditors.SimpleButton();
-            this.m_txt_chon_nam = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.m_txt_chon_thang = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.m_grc_bc_thu_lao = new DevExpress.XtraGrid.GridControl();
-            this.m_grv_hs_bs_hs_athk = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
+            this.m_txt_thang = new DevExpress.XtraEditors.TextEdit();
+            this.m_cmd_search = new DevExpress.XtraEditors.SimpleButton();
+            this.m_lbl_nam = new System.Windows.Forms.Label();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_grc = new DevExpress.XtraGrid.GridControl();
+            this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.THANG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NAM = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ID_NHAN_VIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SO_TIEN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SO_TIEN_GIAM_TRU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SO_TIEN_NOP_THUE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SO_TAI_KHOAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.THUC_LINH_CUOI_CUNG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_sle_nhom_ld.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_pnl_out_place_dm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc_bc_thu_lao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_hs_bs_hs_athk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.m_sle_nhom_ld);
-            this.panel1.Controls.Add(this.m_cmd_search);
-            this.panel1.Controls.Add(this.m_txt_chon_nam);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.m_txt_chon_thang);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(925, 95);
-            this.panel1.TabIndex = 13;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(464, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Nhóm (*)";
-            // 
-            // m_sle_nhom_ld
-            // 
-            this.m_sle_nhom_ld.EditValue = "";
-            this.m_sle_nhom_ld.Location = new System.Drawing.Point(518, 35);
-            this.m_sle_nhom_ld.Name = "m_sle_nhom_ld";
-            this.m_sle_nhom_ld.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_sle_nhom_ld.Properties.DisplayMember = "TEN";
-            this.m_sle_nhom_ld.Properties.NullText = "";
-            this.m_sle_nhom_ld.Properties.ValueMember = "ID";
-            this.m_sle_nhom_ld.Properties.View = this.searchLookUpEdit1View;
-            this.m_sle_nhom_ld.Size = new System.Drawing.Size(156, 20);
-            this.m_sle_nhom_ld.TabIndex = 8;
-            // 
-            // searchLookUpEdit1View
-            // 
-            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2});
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "MÃ NHÓM";
-            this.gridColumn1.FieldName = "MA_TU_DIEN";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "TÊN NHÓM";
-            this.gridColumn2.FieldName = "TEN";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            // 
-            // m_cmd_search
-            // 
-            this.m_cmd_search.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_search.Image")));
-            this.m_cmd_search.Location = new System.Drawing.Point(747, 27);
-            this.m_cmd_search.Name = "m_cmd_search";
-            this.m_cmd_search.Size = new System.Drawing.Size(116, 35);
-            this.m_cmd_search.TabIndex = 7;
-            this.m_cmd_search.Text = "&Lọc";
-            // 
-            // m_txt_chon_nam
-            // 
-            this.m_txt_chon_nam.Location = new System.Drawing.Point(301, 34);
-            this.m_txt_chon_nam.Name = "m_txt_chon_nam";
-            this.m_txt_chon_nam.Size = new System.Drawing.Size(111, 20);
-            this.m_txt_chon_nam.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(253, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Năm (*)";
-            // 
-            // m_txt_chon_thang
-            // 
-            this.m_txt_chon_thang.Location = new System.Drawing.Point(95, 35);
-            this.m_txt_chon_thang.Name = "m_txt_chon_thang";
-            this.m_txt_chon_thang.Size = new System.Drawing.Size(111, 20);
-            this.m_txt_chon_thang.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tháng (*)";
             // 
             // m_pnl_out_place_dm
             // 
@@ -193,7 +83,6 @@
             this.m_cmd_insert.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_insert.TabIndex = 6;
             this.m_cmd_insert.Text = "&Thêm";
-            this.m_cmd_insert.Visible = false;
             // 
             // m_cmd_update
             // 
@@ -214,7 +103,6 @@
             this.m_cmd_delete.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_delete.TabIndex = 4;
             this.m_cmd_delete.Text = "&Xóa";
-            this.m_cmd_delete.Visible = false;
             // 
             // m_cmd_xuat_excel
             // 
@@ -226,39 +114,86 @@
             this.m_cmd_xuat_excel.TabIndex = 3;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
             // 
-            // m_grc_bc_thu_lao
+            // m_txt_nam
             // 
-            this.m_grc_bc_thu_lao.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc_bc_thu_lao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc_bc_thu_lao.Location = new System.Drawing.Point(0, 95);
-            this.m_grc_bc_thu_lao.MainView = this.m_grv_hs_bs_hs_athk;
-            this.m_grc_bc_thu_lao.Name = "m_grc_bc_thu_lao";
-            this.m_grc_bc_thu_lao.Size = new System.Drawing.Size(925, 337);
-            this.m_grc_bc_thu_lao.TabIndex = 21;
-            this.m_grc_bc_thu_lao.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.m_grv_hs_bs_hs_athk});
+            this.m_txt_nam.Location = new System.Drawing.Point(349, 30);
+            this.m_txt_nam.Name = "m_txt_nam";
+            this.m_txt_nam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_nam.Properties.Appearance.Options.UseFont = true;
+            this.m_txt_nam.Size = new System.Drawing.Size(115, 22);
+            this.m_txt_nam.TabIndex = 26;
             // 
-            // m_grv_hs_bs_hs_athk
+            // m_txt_thang
             // 
-            this.m_grv_hs_bs_hs_athk.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.m_txt_thang.Location = new System.Drawing.Point(122, 30);
+            this.m_txt_thang.Name = "m_txt_thang";
+            this.m_txt_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_thang.Properties.Appearance.Options.UseFont = true;
+            this.m_txt_thang.Size = new System.Drawing.Size(111, 22);
+            this.m_txt_thang.TabIndex = 25;
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_search.Image")));
+            this.m_cmd_search.Location = new System.Drawing.Point(529, 22);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_search.TabIndex = 24;
+            this.m_cmd_search.Text = "&Lọc";
+            // 
+            // m_lbl_nam
+            // 
+            this.m_lbl_nam.AutoSize = true;
+            this.m_lbl_nam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_nam.Location = new System.Drawing.Point(287, 33);
+            this.m_lbl_nam.Name = "m_lbl_nam";
+            this.m_lbl_nam.Size = new System.Drawing.Size(56, 16);
+            this.m_lbl_nam.TabIndex = 23;
+            this.m_lbl_nam.Text = "Năm (*)";
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.label1);
+            this.panelControl1.Controls.Add(this.m_cmd_search);
+            this.panelControl1.Controls.Add(this.m_txt_thang);
+            this.panelControl1.Controls.Add(this.m_txt_nam);
+            this.panelControl1.Controls.Add(this.m_lbl_nam);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(925, 94);
+            this.panelControl1.TabIndex = 27;
+            // 
+            // m_grc
+            // 
+            this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
+            this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_grc.Location = new System.Drawing.Point(0, 94);
+            this.m_grc.MainView = this.m_grv;
+            this.m_grc.Name = "m_grc";
+            this.m_grc.Size = new System.Drawing.Size(925, 338);
+            this.m_grc.TabIndex = 28;
+            this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.m_grv});
+            // 
+            // m_grv
+            // 
+            this.m_grv.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
             this.MA_NV,
             this.HO_TEN,
-            this.THANG,
-            this.NAM,
-            this.ID_NHAN_VIEN,
             this.SO_TIEN,
-            this.SO_TIEN_GIAM_TRU,
+            this.SO_TIEN_NOP_THUE,
             this.SO_TAI_KHOAN,
             this.THUC_LINH_CUOI_CUNG,
             this.CHUC_VU,
             this.STT,
-            this.gridColumn3});
-            this.m_grv_hs_bs_hs_athk.GridControl = this.m_grc_bc_thu_lao;
-            this.m_grv_hs_bs_hs_athk.Name = "m_grv_hs_bs_hs_athk";
-            this.m_grv_hs_bs_hs_athk.OptionsFind.AllowFindPanel = false;
-            this.m_grv_hs_bs_hs_athk.OptionsFind.AlwaysVisible = true;
-            this.m_grv_hs_bs_hs_athk.OptionsView.ShowFooter = true;
+            this.gridColumn1});
+            this.m_grv.GridControl = this.m_grc;
+            this.m_grv.Name = "m_grv";
+            this.m_grv.OptionsFind.AllowFindPanel = false;
+            this.m_grv.OptionsFind.AlwaysVisible = true;
+            this.m_grv.OptionsView.ShowFooter = true;
             // 
             // ID
             // 
@@ -277,7 +212,9 @@
             this.MA_NV.FieldName = "MA_NV";
             this.MA_NV.Name = "MA_NV";
             this.MA_NV.OptionsColumn.AllowEdit = false;
-            this.MA_NV.Width = 50;
+            this.MA_NV.Visible = true;
+            this.MA_NV.VisibleIndex = 1;
+            this.MA_NV.Width = 78;
             // 
             // HO_TEN
             // 
@@ -291,42 +228,8 @@
             this.HO_TEN.Name = "HO_TEN";
             this.HO_TEN.OptionsColumn.AllowEdit = false;
             this.HO_TEN.Visible = true;
-            this.HO_TEN.VisibleIndex = 1;
-            this.HO_TEN.Width = 130;
-            // 
-            // THANG
-            // 
-            this.THANG.AppearanceCell.Options.UseTextOptions = true;
-            this.THANG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.THANG.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.THANG.AppearanceHeader.Options.UseTextOptions = true;
-            this.THANG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.THANG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.THANG.Caption = "Tháng";
-            this.THANG.FieldName = "THANG";
-            this.THANG.Name = "THANG";
-            this.THANG.OptionsColumn.AllowEdit = false;
-            this.THANG.Width = 70;
-            // 
-            // NAM
-            // 
-            this.NAM.AppearanceCell.Options.UseTextOptions = true;
-            this.NAM.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NAM.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.NAM.AppearanceHeader.Options.UseTextOptions = true;
-            this.NAM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NAM.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.NAM.Caption = "Năm";
-            this.NAM.FieldName = "NAM";
-            this.NAM.Name = "NAM";
-            this.NAM.OptionsColumn.AllowEdit = false;
-            this.NAM.Width = 70;
-            // 
-            // ID_NHAN_VIEN
-            // 
-            this.ID_NHAN_VIEN.Caption = "ID NHÂN VIÊN";
-            this.ID_NHAN_VIEN.FieldName = "ID_NHAN_VIEN";
-            this.ID_NHAN_VIEN.Name = "ID_NHAN_VIEN";
+            this.HO_TEN.VisibleIndex = 2;
+            this.HO_TEN.Width = 204;
             // 
             // SO_TIEN
             // 
@@ -344,27 +247,27 @@
             this.SO_TIEN.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN", "{0:n0}")});
             this.SO_TIEN.Visible = true;
-            this.SO_TIEN.VisibleIndex = 5;
-            this.SO_TIEN.Width = 108;
+            this.SO_TIEN.VisibleIndex = 3;
+            this.SO_TIEN.Width = 170;
             // 
-            // SO_TIEN_GIAM_TRU
+            // SO_TIEN_NOP_THUE
             // 
-            this.SO_TIEN_GIAM_TRU.AppearanceCell.Options.UseTextOptions = true;
-            this.SO_TIEN_GIAM_TRU.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.SO_TIEN_GIAM_TRU.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.SO_TIEN_GIAM_TRU.AppearanceHeader.Options.UseTextOptions = true;
-            this.SO_TIEN_GIAM_TRU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.SO_TIEN_GIAM_TRU.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.SO_TIEN_GIAM_TRU.Caption = "Số tiền nộp thuế";
-            this.SO_TIEN_GIAM_TRU.DisplayFormat.FormatString = "n0";
-            this.SO_TIEN_GIAM_TRU.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.SO_TIEN_GIAM_TRU.FieldName = "SO_TIEN_NOP_THE";
-            this.SO_TIEN_GIAM_TRU.Name = "SO_TIEN_GIAM_TRU";
-            this.SO_TIEN_GIAM_TRU.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.SO_TIEN_NOP_THUE.AppearanceCell.Options.UseTextOptions = true;
+            this.SO_TIEN_NOP_THUE.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SO_TIEN_NOP_THUE.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.SO_TIEN_NOP_THUE.AppearanceHeader.Options.UseTextOptions = true;
+            this.SO_TIEN_NOP_THUE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SO_TIEN_NOP_THUE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.SO_TIEN_NOP_THUE.Caption = "Số tiền nộp thuế";
+            this.SO_TIEN_NOP_THUE.DisplayFormat.FormatString = "n0";
+            this.SO_TIEN_NOP_THUE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.SO_TIEN_NOP_THUE.FieldName = "SO_TIEN_NOP_THUE";
+            this.SO_TIEN_NOP_THUE.Name = "SO_TIEN_NOP_THUE";
+            this.SO_TIEN_NOP_THUE.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_NOP_THUE", "{0:n0}")});
-            this.SO_TIEN_GIAM_TRU.Visible = true;
-            this.SO_TIEN_GIAM_TRU.VisibleIndex = 6;
-            this.SO_TIEN_GIAM_TRU.Width = 108;
+            this.SO_TIEN_NOP_THUE.Visible = true;
+            this.SO_TIEN_NOP_THUE.VisibleIndex = 4;
+            this.SO_TIEN_NOP_THUE.Width = 170;
             // 
             // SO_TAI_KHOAN
             // 
@@ -375,8 +278,6 @@
             this.SO_TAI_KHOAN.Caption = "Tài khoản";
             this.SO_TAI_KHOAN.FieldName = "SO_TAI_KHOAN";
             this.SO_TAI_KHOAN.Name = "SO_TAI_KHOAN";
-            this.SO_TAI_KHOAN.Visible = true;
-            this.SO_TAI_KHOAN.VisibleIndex = 3;
             this.SO_TAI_KHOAN.Width = 122;
             // 
             // THUC_LINH_CUOI_CUNG
@@ -390,13 +291,13 @@
             this.THUC_LINH_CUOI_CUNG.Caption = "Thực lĩnh cuối cùng";
             this.THUC_LINH_CUOI_CUNG.DisplayFormat.FormatString = "n0";
             this.THUC_LINH_CUOI_CUNG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.THUC_LINH_CUOI_CUNG.FieldName = "THUC_LINH_CUOI_CUNG";
+            this.THUC_LINH_CUOI_CUNG.FieldName = "SO_TIEN_THUC_LINH";
             this.THUC_LINH_CUOI_CUNG.Name = "THUC_LINH_CUOI_CUNG";
             this.THUC_LINH_CUOI_CUNG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUC_LINH_CUOI_CUNG", "{0:n0}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_THUC_LINH", "{0:n0}")});
             this.THUC_LINH_CUOI_CUNG.Visible = true;
-            this.THUC_LINH_CUOI_CUNG.VisibleIndex = 7;
-            this.THUC_LINH_CUOI_CUNG.Width = 114;
+            this.THUC_LINH_CUOI_CUNG.VisibleIndex = 5;
+            this.THUC_LINH_CUOI_CUNG.Width = 184;
             // 
             // CHUC_VU
             // 
@@ -409,8 +310,6 @@
             this.CHUC_VU.Caption = "Chức vụ";
             this.CHUC_VU.FieldName = "CHUC_VU";
             this.CHUC_VU.Name = "CHUC_VU";
-            this.CHUC_VU.Visible = true;
-            this.CHUC_VU.VisibleIndex = 2;
             this.CHUC_VU.Width = 100;
             // 
             // STT
@@ -424,71 +323,72 @@
             this.STT.Name = "STT";
             this.STT.Visible = true;
             this.STT.VisibleIndex = 0;
+            this.STT.Width = 101;
             // 
-            // gridColumn3
+            // label1
             // 
-            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.Caption = "Loại thu nhập";
-            this.gridColumn3.FieldName = "LOAI_THU_NHAP";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 4;
-            this.gridColumn3.Width = 120;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(51, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Tháng (*)";
             // 
-            // f303_thu_nhap_khac_ngoai_bang_luong
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Lý do";
+            this.gridColumn1.FieldName = "LY_DO";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 6;
+            // 
+            // f303_tnk_ngoai_bang_luong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 475);
-            this.Controls.Add(this.m_grc_bc_thu_lao);
+            this.Controls.Add(this.m_grc);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Controls.Add(this.panel1);
-            this.Name = "f303_thu_nhap_khac_ngoai_bang_luong";
+            this.Name = "f303_tnk_ngoai_bang_luong";
             this.Text = "F303 - Thu nhập khác ngoài bảng lương";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_sle_nhom_ld.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.m_pnl_out_place_dm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc_bc_thu_lao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_hs_bs_hs_athk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private DevExpress.XtraEditors.SearchLookUpEdit m_sle_nhom_ld;
-        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_search;
-        private System.Windows.Forms.TextBox m_txt_chon_nam;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox m_txt_chon_thang;
-        private System.Windows.Forms.Label label1;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
         private DevExpress.XtraEditors.SimpleButton m_cmd_update;
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
-        private DevExpress.XtraGrid.GridControl m_grc_bc_thu_lao;
-        private DevExpress.XtraGrid.Views.Grid.GridView m_grv_hs_bs_hs_athk;
+        private DevExpress.XtraEditors.TextEdit m_txt_nam;
+        private DevExpress.XtraEditors.TextEdit m_txt_thang;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_search;
+        private System.Windows.Forms.Label m_lbl_nam;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraGrid.GridControl m_grc;
+        private DevExpress.XtraGrid.Views.Grid.GridView m_grv;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraGrid.Columns.GridColumn MA_NV;
         private DevExpress.XtraGrid.Columns.GridColumn HO_TEN;
-        private DevExpress.XtraGrid.Columns.GridColumn THANG;
-        private DevExpress.XtraGrid.Columns.GridColumn NAM;
-        private DevExpress.XtraGrid.Columns.GridColumn ID_NHAN_VIEN;
         private DevExpress.XtraGrid.Columns.GridColumn SO_TIEN;
-        private DevExpress.XtraGrid.Columns.GridColumn SO_TIEN_GIAM_TRU;
+        private DevExpress.XtraGrid.Columns.GridColumn SO_TIEN_NOP_THUE;
         private DevExpress.XtraGrid.Columns.GridColumn SO_TAI_KHOAN;
         private DevExpress.XtraGrid.Columns.GridColumn THUC_LINH_CUOI_CUNG;
         private DevExpress.XtraGrid.Columns.GridColumn CHUC_VU;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

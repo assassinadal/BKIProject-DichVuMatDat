@@ -64,14 +64,6 @@ namespace BKI_DichVuMatDat.BaoCao
             DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
             v_us.FillDatasetByIdLoaiTuDien(v_ds, 18);
             m_sle_nhom_ld.Properties.DataSource = v_ds.Tables[0];
-
-            //DataSet v_ds = new DataSet();
-            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            //v_ds.Tables.Add(new DataTable());
-            //v_us.FillDatasetWithQuery(v_ds, "Select * from CM_DM_TU_DIEN where ID_LOAI_TU_DIEN= 18");
-            //m_sle_nhom_ld.Properties.DataSource = v_ds.Tables[0];
-            //m_sle_nhom_ld.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            //m_sle_nhom_ld.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
 
         private void m_cmd_xuat_excel_Click(object sender, EventArgs e)

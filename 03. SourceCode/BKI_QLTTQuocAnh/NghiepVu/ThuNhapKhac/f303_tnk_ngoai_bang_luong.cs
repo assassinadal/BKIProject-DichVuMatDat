@@ -41,29 +41,16 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             m_cmd_insert.Click +=m_cmd_insert_Click;
             m_cmd_update.Click += m_cmd_update_Click;
             m_cmd_delete.Click += m_cmd_delete_Click;
+            this.Load += f303_tnk_ngoai_bang_luong_Load;
         }
 
-        void m_cmd_delete_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        void m_cmd_update_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void m_cmd_insert_Click(object sender, EventArgs e)
-        {
-            f304_tnk_ngoai_bang_luong_detail v_f = new f304_tnk_ngoai_bang_luong_detail();
-            v_f.display_for_insert();
-        }
-
-        private void f481_bao_cao_thu_lao_hdqt_Load(object sender, EventArgs e)
+        void f303_tnk_ngoai_bang_luong_Load(object sender, EventArgs e)
         {
             try
             {
-                load_data_to_sle_nhom_ld();
+                m_txt_thang.Text = DateTime.Now.Month.ToString();
+                m_txt_nam.Text = DateTime.Now.Year.ToString();
+                load_data_to_grid();
             }
             catch (Exception v_e)
             {
@@ -71,12 +58,40 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             }
         }
 
+        void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            DialogResult v_dialog = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa khoản thu nhập này?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (v_dialog == DialogResult.Yes)
+            {
+                var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+                US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[2].ToString()));
+                v_us.Delete();
+                XtraMessageBox.Show("Xóa thành công!");
+                load_data_to_grid();
+            }
+        }
+
+        void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+            US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[2].ToString()));
+            f304_tnk_ngoai_bang_luong_detail v_f = new f304_tnk_ngoai_bang_luong_detail();
+            v_f.display_for_update(v_us);
+            load_data_to_grid();
+        }
+
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            f304_tnk_ngoai_bang_luong_detail v_f = new f304_tnk_ngoai_bang_luong_detail();
+            v_f.display_for_insert();
+            load_data_to_grid();
+        }
+
         private void m_cmd_search_Click(object sender, EventArgs e)
         {
             try
             {
-                string s = m_sle_nhom_ld.EditValue.ToString();
-                if (m_txt_chon_thang.Text.Trim() != "" && m_txt_chon_nam.Text.Trim() != "" && m_sle_nhom_ld.EditValue.ToString() != "")
+                if (m_txt_thang.Text.Trim() != "" && m_txt_nam.Text.Trim() != "" )
                 {
                     load_data_to_grid();
                 }
@@ -100,7 +115,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                 saveFileDialog1.RestoreDirectory = true;
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    m_grv_hs_bs_hs_athk.ExportToXls(saveFileDialog1.FileName);
+                    m_grv.ExportToXls(saveFileDialog1.FileName);
                     CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
                 }
             }
@@ -119,21 +134,14 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 
         private void load_data_to_grid()
         {
-            CHRMCommon.make_stt(m_grv_hs_bs_hs_athk);
+            CHRMCommon.make_stt(m_grv);
             DataSet v_ds = new DataSet();
             US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
             v_ds.Tables.Add(new DataTable());
-            v_us.filldatasetBaoCaoThuNhapLDNgoaiBangLuong(v_ds, m_txt_chon_thang.Text, m_txt_chon_nam.Text, m_sle_nhom_ld.EditValue.ToString());
-            m_grc_bc_thu_lao.DataSource = v_ds.Tables[0];
+            v_us.filldatasetTNKNgoaiBangLuong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
+            m_grc.DataSource = v_ds.Tables[0];
         }
 
-        private void load_data_to_sle_nhom_ld()
-        {
-            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
-            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
-            v_us.FillDatasetByIdLoaiTuDien(v_ds, 18);
-            m_sle_nhom_ld.Properties.DataSource = v_ds.Tables[0];
-        }
         #endregion
 
         

@@ -494,6 +494,7 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -835,6 +836,18 @@
     </Compile>
     <Compile Include="NghiepVu\f350_quan_ly_vi_tri_cong_tac.Designer.cs">
       <DependentUpon>f350_quan_ly_vi_tri_cong_tac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\ThuNhapKhac\f303_tnk_ngoai_bang_luong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\ThuNhapKhac\f303_tnk_ngoai_bang_luong.Designer.cs">
+      <DependentUpon>f303_tnk_ngoai_bang_luong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\ThuNhapKhac\f304_tnk_ngoai_bang_luong_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\ThuNhapKhac\f304_tnk_ngoai_bang_luong_detail.Designer.cs">
+      <DependentUpon>f304_tnk_ngoai_bang_luong_detail.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\ThuNhapKhac\f354_danh_sach_quy_thuong_de.cs">
       <SubType>Form</SubType>
@@ -1337,6 +1350,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f350_quan_ly_vi_tri_cong_tac.resx">
       <DependentUpon>f350_quan_ly_vi_tri_cong_tac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\ThuNhapKhac\f303_tnk_ngoai_bang_luong.resx">
+      <DependentUpon>f303_tnk_ngoai_bang_luong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\ThuNhapKhac\f304_tnk_ngoai_bang_luong_detail.resx">
+      <DependentUpon>f304_tnk_ngoai_bang_luong_detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\ThuNhapKhac\f354_danh_sach_quy_thuong_de.resx">
       <DependentUpon>f354_danh_sach_quy_thuong_de.cs</DependentUpon>

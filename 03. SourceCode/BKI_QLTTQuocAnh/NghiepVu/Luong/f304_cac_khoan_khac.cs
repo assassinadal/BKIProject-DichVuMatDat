@@ -60,15 +60,9 @@ namespace BKI_DichVuMatDat
             US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
             DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
             v_us.FillDatasetByIdLoaiTuDien(v_ds, 19);
-
-
-            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            //DataSet v_ds = new DataSet();
-            //v_ds.Tables.Add(new DataTable());
-            //v_us.FillDatasetCBO(v_ds, "CM_DM_TU_DIEN", "ID", "TEN", "WHERE ID_LOAI_TU_DIEN=19");
-            //m_cmb_khoan_tien.DataSource = v_ds.Tables[0];
-            //m_cmb_khoan_tien.DisplayMember = "TEN";
-            //m_cmb_khoan_tien.ValueMember = "ID";
+            m_cmb_khoan_tien.DataSource = v_ds.Tables[0];
+            m_cmb_khoan_tien.DisplayMember = "TEN";
+            m_cmb_khoan_tien.ValueMember = "ID";
         }
 
         private void m_txt_chon_file_Click(object sender, EventArgs e)

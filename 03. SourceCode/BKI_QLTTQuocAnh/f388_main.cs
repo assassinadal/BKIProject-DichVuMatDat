@@ -17,6 +17,7 @@ using BKI_DichVuMatDat.HeThong;
 using BKI_DichVuMatDat.DS.CDBNames;
 using System.Deployment;
 using System.Deployment.Application;
+using BKI_DichVuMatDat.NghiepVu.ThuNhapKhac;
 
 namespace BKI_DichVuMatDat
 {
@@ -1381,6 +1382,21 @@ namespace BKI_DichVuMatDat
             try
             {
                 F503_IMPORT_EXCEL v_f = new F503_IMPORT_EXCEL();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_tnk_ngoai_bang_luong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f303_tnk_ngoai_bang_luong v_f = new f303_tnk_ngoai_bang_luong();
                 if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();

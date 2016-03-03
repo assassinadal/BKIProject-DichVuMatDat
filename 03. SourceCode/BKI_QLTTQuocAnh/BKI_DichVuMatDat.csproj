@@ -75,6 +75,9 @@
   <PropertyGroup>
     <ApplicationIcon>paper1331.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="C1.Common, Version=1.0.20031.116, Culture=neutral, PublicKeyToken=e272bb32d11b1948">
       <SpecificVersion>False</SpecificVersion>
@@ -315,11 +318,35 @@
     <Compile Include="BaoCao\f402_tong_hop_cham_cong.Designer.cs">
       <DependentUpon>f402_tong_hop_cham_cong.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f341_dat_he_so_lns_lcd_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f341_dat_he_so_lns_lcd_v2.Designer.cs">
+      <DependentUpon>f341_dat_he_so_lns_lcd_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\f342_dat_he_so_lns_lcd_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f342_dat_he_so_lns_lcd_de.Designer.cs">
+      <DependentUpon>f342_dat_he_so_lns_lcd_de.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f351_quan_ly_cong_tac_de.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NghiepVu\f351_quan_ly_cong_tac_de.Designer.cs">
       <DependentUpon>f351_quan_ly_cong_tac_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\f364_quan_ly_cac_nhan_vien_co_luong_cung_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f364_quan_ly_cac_nhan_vien_co_luong_cung_de.Designer.cs">
+      <DependentUpon>f364_quan_ly_cac_nhan_vien_co_luong_cung_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\f365_quan_ly_nhan_vien_co_luong_cung_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f365_quan_ly_nhan_vien_co_luong_cung_v2.Designer.cs">
+      <DependentUpon>f365_quan_ly_nhan_vien_co_luong_cung_v2.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\F502_HOP_DONG_EXCEL.cs">
       <SubType>Form</SubType>
@@ -1062,8 +1089,20 @@
     <EmbeddedResource Include="BaoCao\f402_tong_hop_cham_cong.resx">
       <DependentUpon>f402_tong_hop_cham_cong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f341_dat_he_so_lns_lcd_v2.resx">
+      <DependentUpon>f341_dat_he_so_lns_lcd_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f342_dat_he_so_lns_lcd_de.resx">
+      <DependentUpon>f342_dat_he_so_lns_lcd_de.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f351_quan_ly_cong_tac_de.resx">
       <DependentUpon>f351_quan_ly_cong_tac_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f364_quan_ly_cac_nhan_vien_co_luong_cung_de.resx">
+      <DependentUpon>f364_quan_ly_cac_nhan_vien_co_luong_cung_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f365_quan_ly_nhan_vien_co_luong_cung_v2.resx">
+      <DependentUpon>f365_quan_ly_nhan_vien_co_luong_cung_v2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F502_HOP_DONG_EXCEL.resx">
       <DependentUpon>F502_HOP_DONG_EXCEL.cs</DependentUpon>

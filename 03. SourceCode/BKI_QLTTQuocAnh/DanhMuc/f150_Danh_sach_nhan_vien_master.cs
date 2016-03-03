@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using IP.Core.IPCommon;
 using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.US;
+using IP.Core.IPUserService;
+using DevExpress.XtraEditors;
 
 namespace BKI_DichVuMatDat.DanhMuc
 {
@@ -45,6 +47,15 @@ namespace BKI_DichVuMatDat.DanhMuc
             FormatControl.SetVisibleSimpleButton(this);
             set_define_events();
             this.KeyPreview = true;
+        }
+
+        private string gen_ma_nhan_vien()
+        {
+            string v_str_op_ma_nhan_vien = "";
+            US_V_GD_MA_TRA_CUU_NHAN_VIEN v_us = new US_V_GD_MA_TRA_CUU_NHAN_VIEN();
+            v_us.gen_ma_nhan_vien(ref v_str_op_ma_nhan_vien);
+            int v_int_ma_nhan_vien_tiep_theo = int.Parse(v_str_op_ma_nhan_vien) + 1;
+            return v_int_ma_nhan_vien_tiep_theo.ToString();
         }
 
         private void load_data_to_grid()
@@ -120,7 +131,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                     m_txt_path = openFileDialog1.FileName;
                     F150_DANH_SACH_NHAN_VIEN_EXCEL v_f = new F150_DANH_SACH_NHAN_VIEN_EXCEL();
                     v_f.displayToInsertExcel(m_txt_path);
-                   // WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
+                    // WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
                 }
                 load_data_to_grid();
             }
@@ -133,7 +144,8 @@ namespace BKI_DichVuMatDat.DanhMuc
         private void m_cmd_them_Click(object sender, EventArgs e)
         {
             f150_danh_muc_nhan_su_v2 v_f = new f150_danh_muc_nhan_su_v2();
-            v_f.DisplayForInsert(ref m_trang_thai_buoc_1_sau_hien_thi);
+            string v_str_ma_nhan_vien = gen_ma_nhan_vien();
+            v_f.DisplayForInsert(ref m_trang_thai_buoc_1_sau_hien_thi, v_str_ma_nhan_vien);
             if (m_trang_thai_buoc_1_sau_hien_thi > 0)
             {
                 this.Close();
@@ -143,13 +155,28 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void m_cmd_sua_Click(object sender, EventArgs e)
         {
-            DataRow v_dr= m_grv.GetDataRow(m_grv.FocusedRowHandle);
-            US_DM_NHAN_VIEN v_us= new US_DM_NHAN_VIEN(CIPConvert.ToDecimal(v_dr["ID"].ToString()));
+            DataRow v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN(CIPConvert.ToDecimal(v_dr["ID"].ToString()));
             f150_danh_muc_nhan_su_v2 v_f = new f150_danh_muc_nhan_su_v2();
             v_f.DisplayForUpdate(v_us);
             load_data_to_grid();
         }
 
+        private void m_grc_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void m_cmd_ma_nv_tiep_theo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                XtraMessageBox.Show("Mã nhân viên tiếp theo là : " + gen_ma_nhan_vien());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

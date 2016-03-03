@@ -50,10 +50,13 @@ namespace BKI_DichVuMatDat.DanhMuc
         private void load_data_2_grid()
         {
             CHRMCommon.make_stt(m_grv_dm_thue);
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            US_DM_THUE v_us = new US_DM_THUE();
+            DS_DM_THUE v_ds = new DS_DM_THUE();
+            v_us.FillDataset(v_ds);
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+            //v_ds.Tables.Add(new DataTable());
+            //throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
             //v_us.FillDatasetWithTableName(v_ds, "DM_THUE");
             m_grc_dm_thue.DataSource = v_ds.Tables[0];
         }

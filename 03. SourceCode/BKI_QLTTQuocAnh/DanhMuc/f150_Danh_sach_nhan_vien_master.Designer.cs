@@ -33,9 +33,11 @@
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMA_TRA_CUU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO_DEM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEMAIL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSO_TAI_KHOAN = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,7 +68,6 @@
             this.colHO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dVMDDataSet1 = new BKI_DichVuMatDat.DVMDDataSet1();
             this.dVMDDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vDMNHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -75,11 +76,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_sua = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_tai_file_excel_mau = new DevExpress.XtraEditors.SimpleButton();
-            this.colMA_TRA_CUU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.m_cmd_ma_nv_tiep_theo = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_sua = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVMDDataSet1)).BeginInit();
@@ -104,6 +105,7 @@
             this.m_grc.TabIndex = 0;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
+            this.m_grc.Click += new System.EventHandler(this.m_grc_Click);
             // 
             // m_grv
             // 
@@ -155,6 +157,16 @@
             this.colID.Name = "colID";
             this.colID.Width = 72;
             // 
+            // colMA_TRA_CUU
+            // 
+            this.colMA_TRA_CUU.Caption = "Mã tra cứu";
+            this.colMA_TRA_CUU.FieldName = "MA_TRA_CUU";
+            this.colMA_TRA_CUU.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.colMA_TRA_CUU.Name = "colMA_TRA_CUU";
+            this.colMA_TRA_CUU.OptionsColumn.AllowEdit = false;
+            this.colMA_TRA_CUU.Visible = true;
+            this.colMA_TRA_CUU.VisibleIndex = 0;
+            // 
             // colMA_NV
             // 
             this.colMA_NV.Caption = "Mã nhân viên";
@@ -187,6 +199,17 @@
             this.colTEN.Visible = true;
             this.colTEN.VisibleIndex = 3;
             this.colTEN.Width = 31;
+            // 
+            // colGT
+            // 
+            this.colGT.Caption = "Giới tính";
+            this.colGT.FieldName = "GT";
+            this.colGT.Name = "colGT";
+            this.colGT.OptionsColumn.AllowEdit = false;
+            this.colGT.OptionsColumn.ReadOnly = true;
+            this.colGT.Visible = true;
+            this.colGT.VisibleIndex = 4;
+            this.colGT.Width = 113;
             // 
             // colEMAIL
             // 
@@ -486,17 +509,6 @@
             this.colCHUC_VU.VisibleIndex = 32;
             this.colCHUC_VU.Width = 22;
             // 
-            // colGT
-            // 
-            this.colGT.Caption = "Giới tính";
-            this.colGT.FieldName = "GT";
-            this.colGT.Name = "colGT";
-            this.colGT.OptionsColumn.AllowEdit = false;
-            this.colGT.OptionsColumn.ReadOnly = true;
-            this.colGT.Visible = true;
-            this.colGT.VisibleIndex = 4;
-            this.colGT.Width = 113;
-            // 
             // dVMDDataSet1
             // 
             this.dVMDDataSet1.DataSetName = "DVMDDataSet1";
@@ -548,15 +560,47 @@
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.m_cmd_sua);
-            this.panelControl3.Controls.Add(this.m_cmd_them);
             this.panelControl3.Controls.Add(this.m_cmd_chon_file);
             this.panelControl3.Controls.Add(this.m_cmd_tai_file_excel_mau);
+            this.panelControl3.Controls.Add(this.m_cmd_ma_nv_tiep_theo);
+            this.panelControl3.Controls.Add(this.m_cmd_sua);
+            this.panelControl3.Controls.Add(this.m_cmd_them);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl3.Location = new System.Drawing.Point(0, 373);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(896, 44);
             this.panelControl3.TabIndex = 3;
+            // 
+            // m_cmd_chon_file
+            // 
+            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chon_file.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_file.Image")));
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(302, 2);
+            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
+            this.m_cmd_chon_file.Size = new System.Drawing.Size(142, 40);
+            this.m_cmd_chon_file.TabIndex = 30;
+            this.m_cmd_chon_file.Text = "Chọn file";
+            // 
+            // m_cmd_tai_file_excel_mau
+            // 
+            this.m_cmd_tai_file_excel_mau.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_tai_file_excel_mau.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tai_file_excel_mau.Image")));
+            this.m_cmd_tai_file_excel_mau.Location = new System.Drawing.Point(160, 2);
+            this.m_cmd_tai_file_excel_mau.Name = "m_cmd_tai_file_excel_mau";
+            this.m_cmd_tai_file_excel_mau.Size = new System.Drawing.Size(142, 40);
+            this.m_cmd_tai_file_excel_mau.TabIndex = 29;
+            this.m_cmd_tai_file_excel_mau.Text = "Tải file excel mẫu";
+            // 
+            // m_cmd_ma_nv_tiep_theo
+            // 
+            this.m_cmd_ma_nv_tiep_theo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_ma_nv_tiep_theo.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_ma_nv_tiep_theo.Image")));
+            this.m_cmd_ma_nv_tiep_theo.Location = new System.Drawing.Point(2, 2);
+            this.m_cmd_ma_nv_tiep_theo.Name = "m_cmd_ma_nv_tiep_theo";
+            this.m_cmd_ma_nv_tiep_theo.Size = new System.Drawing.Size(158, 40);
+            this.m_cmd_ma_nv_tiep_theo.TabIndex = 28;
+            this.m_cmd_ma_nv_tiep_theo.Text = "Mã nhân viên tiếp theo";
+            this.m_cmd_ma_nv_tiep_theo.Click += new System.EventHandler(this.m_cmd_ma_nv_tiep_theo_Click);
             // 
             // m_cmd_sua
             // 
@@ -579,38 +623,6 @@
             this.m_cmd_them.TabIndex = 3;
             this.m_cmd_them.Text = "Thêm";
             this.m_cmd_them.Click += new System.EventHandler(this.m_cmd_them_Click);
-            // 
-            // m_cmd_chon_file
-            // 
-            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chon_file.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_file.Image")));
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(144, 2);
-            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
-            this.m_cmd_chon_file.Size = new System.Drawing.Size(142, 40);
-            this.m_cmd_chon_file.TabIndex = 2;
-            this.m_cmd_chon_file.Text = "Chọn file";
-            this.m_cmd_chon_file.Click += new System.EventHandler(this.m_txt_chon_file_Click);
-            // 
-            // m_cmd_tai_file_excel_mau
-            // 
-            this.m_cmd_tai_file_excel_mau.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_tai_file_excel_mau.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tai_file_excel_mau.Image")));
-            this.m_cmd_tai_file_excel_mau.Location = new System.Drawing.Point(2, 2);
-            this.m_cmd_tai_file_excel_mau.Name = "m_cmd_tai_file_excel_mau";
-            this.m_cmd_tai_file_excel_mau.Size = new System.Drawing.Size(142, 40);
-            this.m_cmd_tai_file_excel_mau.TabIndex = 1;
-            this.m_cmd_tai_file_excel_mau.Text = "Tải file excel mẫu";
-            this.m_cmd_tai_file_excel_mau.Click += new System.EventHandler(this.m_txt_tai_file_excel_mau_Click);
-            // 
-            // colMA_TRA_CUU
-            // 
-            this.colMA_TRA_CUU.Caption = "Mã tra cứu";
-            this.colMA_TRA_CUU.FieldName = "MA_TRA_CUU";
-            this.colMA_TRA_CUU.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.colMA_TRA_CUU.Name = "colMA_TRA_CUU";
-            this.colMA_TRA_CUU.OptionsColumn.AllowEdit = false;
-            this.colMA_TRA_CUU.Visible = true;
-            this.colMA_TRA_CUU.VisibleIndex = 0;
             // 
             // f150_Danh_sach_nhan_vien_master
             // 
@@ -687,10 +699,11 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_tai_file_excel_mau;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
         private DevExpress.XtraEditors.SimpleButton m_cmd_sua;
         private DevExpress.XtraEditors.SimpleButton m_cmd_them;
         private DevExpress.XtraGrid.Columns.GridColumn colMA_TRA_CUU;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_tai_file_excel_mau;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_ma_nv_tiep_theo;
     }
 }

@@ -1062,5 +1062,13 @@ public class US_V_GD_MA_TRA_CUU_NHAN_VIEN : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+        public void gen_ma_nhan_vien(ref string v_str_op_ma_nhan_vien)
+        {
+            CStoredProc v_obj_csp = new CStoredProc("pr_gen_ma_nhan_vien");
+            SqlParameter v_op_str = v_obj_csp.addNVarcharOutputParam("@op_ma_nhan_vien", "");
+            v_obj_csp.ExecuteCommand(this);
+            v_str_op_ma_nhan_vien = v_op_str.Value.ToString();
+        }
+    }
 }

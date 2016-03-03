@@ -29,9 +29,10 @@ namespace BKI_DichVuMatDat.DanhMuc
             this.ShowDialog();
         }
 
-        public void DisplayForInsert(ref int m_trang_thai_buoc_1_sau_hien_thi)
+        public void DisplayForInsert(ref int m_trang_thai_buoc_1_sau_hien_thi, string ip_str_ma_nhan_vien)
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_txt_ma_nv.Text = ip_str_ma_nhan_vien;
             this.ShowDialog();
             m_trang_thai_buoc_1_sau_hien_thi = m_trang_thai_buoc_1_sau_hien_thi_f150_v2;
         }

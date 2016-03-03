@@ -250,7 +250,7 @@
             this.m_sle_loai_quyet_dinh.Name = "m_sle_loai_quyet_dinh";
             this.m_sle_loai_quyet_dinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_sle_loai_quyet_dinh.Properties.NullText = "";
+            this.m_sle_loai_quyet_dinh.Properties.NullText = "--Chọn loại quyết định--";
             this.m_sle_loai_quyet_dinh.Properties.View = this.gridView1;
             this.m_sle_loai_quyet_dinh.Size = new System.Drawing.Size(208, 20);
             this.m_sle_loai_quyet_dinh.TabIndex = 6;

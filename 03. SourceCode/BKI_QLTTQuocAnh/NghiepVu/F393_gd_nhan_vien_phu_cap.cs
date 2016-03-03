@@ -29,10 +29,10 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_grid()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add();
-            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            US_V_GD_NHAN_VIEN_PHU_CAP v_us = new US_V_GD_NHAN_VIEN_PHU_CAP();
+            DS_V_GD_NHAN_VIEN_PHU_CAP v_ds = new DS_V_GD_NHAN_VIEN_PHU_CAP();
+
+            v_us.FillDataset(v_ds, " WHERE DA_XOA = 'N'");
             //v_us.FillDatasetWithTableName(v_ds, "V_GD_NHAN_VIEN_PHU_CAP where DA_XOA = 'N'");
             m_grc.DataSource = v_ds.Tables[0];
         }

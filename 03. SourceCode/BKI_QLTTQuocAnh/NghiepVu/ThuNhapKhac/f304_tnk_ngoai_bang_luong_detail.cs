@@ -70,7 +70,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             m_txt_ly_do.Text = v_us.strLY_DO;
             m_txt_thang.Text = v_us.dcTHANG.ToString();
             m_txt_nam.Text = v_us.dcNAM.ToString();
-            m_sle_loai_thue.EditValue = v_us.dcID_CACH_TINH_THUE;
+           // m_sle_loai_thue.EditValue = v_us.dcID_CACH_TINH_THUE;
             m_txt_so_tien_thue.Text = v_us.dcSO_TIEN_NOP_THUE.ToString();
             m_txt_thuc_linh.Text = v_us.dcSO_TIEN_THUC_LINH.ToString();
         }
@@ -121,12 +121,12 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             m_us_gd_tnk.dcTHANG = CIPConvert.ToDecimal(m_txt_thang.Text);
             m_us_gd_tnk.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text);
             m_us_gd_tnk.strLY_DO = m_txt_ly_do.Text;
-            m_us_gd_tnk.dcID_CACH_TINH_THUE = CIPConvert.ToDecimal(m_sle_loai_thue.EditValue.ToString());
+           // m_us_gd_tnk.dcID_CACH_TINH_THUE = CIPConvert.ToDecimal(m_sle_loai_thue.EditValue.ToString());
             m_us_gd_tnk.dcID_LOAI_THU_NHAP_KHAC = 756;
-            m_us_gd_tnk.dcSO_TIEN_GIAM_TRU = 0;
+          //  m_us_gd_tnk.dcSO_TIEN_GIAM_TRU = 0;
             m_us_gd_tnk.dcSO_TIEN_NOP_THUE = CIPConvert.ToDecimal(m_txt_so_tien_thue.Text);
             m_us_gd_tnk.dcSO_TIEN_THUC_LINH = CIPConvert.ToDecimal(m_txt_thuc_linh.Text);
-            m_us_gd_tnk.dcTHUC_LINH_CUOI_CUNG = CIPConvert.ToDecimal(m_txt_thuc_linh.Text);
+           // m_us_gd_tnk.dcTHUC_LINH_CUOI_CUNG = CIPConvert.ToDecimal(m_txt_thuc_linh.Text);
         }
 
         #endregion

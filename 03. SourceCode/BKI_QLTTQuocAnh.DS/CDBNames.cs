@@ -387,29 +387,24 @@ namespace BKI_DichVuMatDat.DS.CDBNames
 
 
 
-
-
-
-
     public class GD_THU_NHAP_KHAC
     {
         public const string ID = "ID";
         public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
-        public const string SO_TIEN = "SO_TIEN";
         public const string THANG = "THANG";
         public const string NAM = "NAM";
-        public const string LY_DO = "LY_DO";
-        public const string ID_CACH_TINH_THUE = "ID_CACH_TINH_THUE";
-        public const string ID_LOAI_THU_NHAP_KHAC = "ID_LOAI_THU_NHAP_KHAC";
-        public const string ID_QUY_TIEN_THUONG = "ID_QUY_TIEN_THUONG";
-        public const string SO_TIEN_GIAM_TRU = "SO_TIEN_GIAM_TRU";
-        public const string SO_TIEN_NOP_THE = "SO_TIEN_NOP_THE";
+        public const string HE_SO = "HE_SO";
+        public const string SO_TIEN = "SO_TIEN";
+        public const string SO_TIEN_NOP_THUE = "SO_TIEN_NOP_THUE";
         public const string SO_TIEN_THUC_LINH = "SO_TIEN_THUC_LINH";
-        public const string TONG_HS_ATHK = "TONG_HS_ATHK";
-        public const string TRUY_LINH = "TRUY_LINH";
-        public const string TRUY_THU = "TRUY_THU";
-        public const string THUC_LINH_CUOI_CUNG = "THUC_LINH_CUOI_CUNG";
+        public const string ID_LOAI_THU_NHAP_KHAC = "ID_LOAI_THU_NHAP_KHAC";
+        public const string ID_QUY_THU_NHAP_KHAC = "ID_QUY_THU_NHAP_KHAC";
+        public const string LY_DO = "LY_DO";
     }
+
+
+
+   
 
     public class V_GD_THU_NHAP_KHAC_2
     {
@@ -1066,6 +1061,25 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     }
 
     #endregion
+
+    public class GD_QUY_THU_NHAP_KHAC
+    {
+        public const string ID = "ID";
+        public const string TEN_QUY = "TEN_QUY";
+        public const string THANG = "THANG";
+        public const string NAM = "NAM";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string NGAY_LAP_PHAN_MEM = "NGAY_LAP_PHAN_MEM";
+        public const string NGUOI_LAP_PHAN_MEM = "NGUOI_LAP_PHAN_MEM";
+        public const string TU_NGAY_XET_THUONG = "TU_NGAY_XET_THUONG";
+        public const string DEN_NGAY_XET_THUONG = "DEN_NGAY_XET_THUONG";
+        public const string LY_DO_THUONG = "LY_DO_THUONG";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string DA_XOA = "DA_XOA";
+    }
+
+    
 
     public class GD_CHAM_CONG_LAM_THEM
     {

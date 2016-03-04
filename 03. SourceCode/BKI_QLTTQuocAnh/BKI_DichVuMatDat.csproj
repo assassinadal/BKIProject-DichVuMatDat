@@ -969,6 +969,7 @@
     <Compile Include="NghiepVu\frm356_chuyen_trang_thai_lao_dong.Designer.cs">
       <DependentUpon>frm356_chuyen_trang_thai_lao_dong.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\ThuNhapKhac\TnkQL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="f388_main.cs">
       <SubType>Form</SubType>

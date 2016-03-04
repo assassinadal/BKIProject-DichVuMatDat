@@ -849,6 +849,12 @@
     <Compile Include="NghiepVu\ThuNhapKhac\f304_tnk_ngoai_bang_luong_detail.Designer.cs">
       <DependentUpon>f304_tnk_ngoai_bang_luong_detail.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\ThuNhapKhac\f353_quan_ly_quy_tien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\ThuNhapKhac\f353_quan_ly_quy_tien.Designer.cs">
+      <DependentUpon>f353_quan_ly_quy_tien.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\ThuNhapKhac\f354_danh_sach_quy_thuong_de.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1357,6 +1363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\ThuNhapKhac\f304_tnk_ngoai_bang_luong_detail.resx">
       <DependentUpon>f304_tnk_ngoai_bang_luong_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\ThuNhapKhac\f353_quan_ly_quy_tien.resx">
+      <DependentUpon>f353_quan_ly_quy_tien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\ThuNhapKhac\f354_danh_sach_quy_thuong_de.resx">
       <DependentUpon>f354_danh_sach_quy_thuong_de.cs</DependentUpon>

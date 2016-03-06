@@ -2,17 +2,18 @@
 <xs:schema id="DS_V_GD_MA_TRA_CUU_NHAN_VIEN" targetNamespace="http://tempuri.org/DS_V_GD_MA_TRA_CUU_NHAN_VIEN.xsd" xmlns:mstns="http://tempuri.org/DS_V_GD_MA_TRA_CUU_NHAN_VIEN.xsd" xmlns="http://tempuri.org/DS_V_GD_MA_TRA_CUU_NHAN_VIEN.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DVMDConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DVMDConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_DichVuMatDat.DS.Properties.Settings.GlobalReference.Default.DVMDConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DVMDConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DVMDConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_DichVuMatDat.DS.Properties.Settings.GlobalReference.Default.DVMDConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_GD_MA_TRA_CUU_NHAN_VIENTableAdapter" GeneratorDataComponentClassName="V_GD_MA_TRA_CUU_NHAN_VIENTableAdapter" Name="V_GD_MA_TRA_CUU_NHAN_VIEN" UserDataComponentName="V_GD_MA_TRA_CUU_NHAN_VIENTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DVMDConnectionString1 (Settings)" DbObjectName="DVMD.dbo.V_GD_MA_TRA_CUU_NHAN_VIEN" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DVMDConnectionString (Settings)" DbObjectName="DVMD.dbo.V_GD_MA_TRA_CUU_NHAN_VIEN" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, MA_NV, HO_DEM, TEN, GIOI_TINH, EMAIL, SDT, SO_TAI_KHOAN, NGAN_HANG, NGAY_CAP_THE, NGAY_HET_HAN_THE, NGAY_SINH, HON_NHAN, SO_CMT, NGAY_CAP, NOI_CAP, QUOC_TICH, DAN_TOC, TON_GIAO, NOI_SINH, QUE_QUAN, DIA_CHI_THUONG_TRU, DIA_CHI_TAM_TRU, DIA_CHI_LIEN_LAC, MA_SO_THUE_CA_NHAN, CHUYEN_MON, TRINH_DO_VAN_HOA, NAM_TOT_NGHIEP, TOT_NGHIEP_TAI, NGAY_VAO_HANG_KHONG, NGAY_TIEP_NHAN_VAO_TCT, NGAY_CHINH_THUC_TIEP_NHAN, NGUOI_BAO_LANH, HO_TEN, TEN_DON_VI, CHUC_VU, GT, ID_GD_MA_TRA_CUU_NHAN_VIEN, MA_PHONG, MA_DOI, MA_CHUC_VU, SO_HO_SO, MA_TRA_CUU, NGUOI_LAP, NGAY_LAP, NGUOI_SUA, NGAY_SUA, DA_XOA FROM dbo.V_GD_MA_TRA_CUU_NHAN_VIEN</CommandText>
+                    <CommandText>SELECT ID, MA_NV, HO_DEM, TEN, GIOI_TINH, EMAIL, SDT, SO_TAI_KHOAN, NGAN_HANG, NGAY_CAP_THE, NGAY_HET_HAN_THE, NGAY_SINH, HON_NHAN, SO_CMT, NGAY_CAP, NOI_CAP, QUOC_TICH, DAN_TOC, TON_GIAO, NOI_SINH, QUE_QUAN, DIA_CHI_THUONG_TRU, DIA_CHI_TAM_TRU, DIA_CHI_LIEN_LAC, MA_SO_THUE_CA_NHAN, CHUYEN_MON, TRINH_DO_VAN_HOA, NAM_TOT_NGHIEP, TOT_NGHIEP_TAI, NGAY_VAO_HANG_KHONG, NGAY_TIEP_NHAN_VAO_TCT, NGAY_CHINH_THUC_TIEP_NHAN, NGUOI_BAO_LANH, HO_TEN, TEN_DON_VI, CHUC_VU, GT, ID_GD_MA_TRA_CUU_NHAN_VIEN, MA_PHONG, MA_DOI, MA_CHUC_VU, THU_TU_CHUC_VU, SO_HO_SO, MA_TRA_CUU, NGUOI_LAP, NGAY_LAP, NGUOI_SUA, NGAY_SUA, DA_XOA FROM dbo.V_GD_MA_TRA_CUU_NHAN_VIEN</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -60,6 +61,7 @@
               <Mapping SourceColumn="MA_PHONG" DataSetColumn="MA_PHONG" />
               <Mapping SourceColumn="MA_DOI" DataSetColumn="MA_DOI" />
               <Mapping SourceColumn="MA_CHUC_VU" DataSetColumn="MA_CHUC_VU" />
+              <Mapping SourceColumn="THU_TU_CHUC_VU" DataSetColumn="THU_TU_CHUC_VU" />
               <Mapping SourceColumn="SO_HO_SO" DataSetColumn="SO_HO_SO" />
               <Mapping SourceColumn="MA_TRA_CUU" DataSetColumn="MA_TRA_CUU" />
               <Mapping SourceColumn="NGUOI_LAP" DataSetColumn="NGUOI_LAP" />
@@ -314,6 +316,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="THU_TU_CHUC_VU" msprop:Generator_ColumnVarNameInTable="columnTHU_TU_CHUC_VU" msprop:Generator_ColumnPropNameInRow="THU_TU_CHUC_VU" msprop:Generator_ColumnPropNameInTable="THU_TU_CHUC_VUColumn" msprop:Generator_UserColumnName="THU_TU_CHUC_VU" type="xs:decimal" minOccurs="0" />
               <xs:element name="SO_HO_SO" msprop:Generator_ColumnVarNameInTable="columnSO_HO_SO" msprop:Generator_ColumnPropNameInRow="SO_HO_SO" msprop:Generator_ColumnPropNameInTable="SO_HO_SOColumn" msprop:Generator_UserColumnName="SO_HO_SO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

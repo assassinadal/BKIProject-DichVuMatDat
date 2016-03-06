@@ -28,11 +28,22 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         #region Public Methods
-
+        public void display_4_insert(ref decimal v_id_gd_cong_tac_moi_tao)
+        {
+            this.Text = "F351 - Thêm thông tin công tác cho nhân viên";
+            m_lbl_header.Text = "THÊM THÔNG TIN CÔNG TÁC CHO NHÂN VIÊN";
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.CenterToScreen();
+            this.ShowDialog();
+            v_id_gd_cong_tac_moi_tao = m_id_gd_cong_tac_moi_tao;
+        }
         #endregion
 
         #region Members
-
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
+        decimal m_id_gd_cong_tac_moi_tao = 0;
+        decimal m_id_gd_ct = 0;
+        bool m_loai_ctac_cthuc = false;
         #endregion
 
         #region Data structure
@@ -134,10 +145,193 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chon_loai_cong_tac.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_loai_cong_tac.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
+        
+        //
+        private void form_2_us_gd_cong_tac(US_GD_CONG_TAC ip_us)
+        {
+
+            if (m_sle_chon_quyet_dinh.EditValue != null && m_sle_chon_quyet_dinh.EditValue != "")
+            {
+                ip_us.dcID_QUYET_DINH = CIPConvert.ToDecimal(m_sle_chon_quyet_dinh.EditValue);
+            }
+
+            if (m_sle_chon_nhan_vien.EditValue != null && m_sle_chon_nhan_vien.EditValue != "")
+            {
+                ip_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
+            }
+
+            if (m_sle_chon_don_vi.EditValue != null && m_sle_chon_don_vi.EditValue != "")
+            {
+                ip_us.dcID_DON_VI = CIPConvert.ToDecimal(m_sle_chon_don_vi.EditValue);
+            }
+
+            if (m_sle_chon_vi_tri.EditValue != null && m_sle_chon_vi_tri.EditValue != "")
+            {
+                ip_us.dcID_VI_TRI = CIPConvert.ToDecimal(m_sle_chon_vi_tri.EditValue);
+            }
+
+            if (m_sle_chon_loai_cong_tac.EditValue != null && m_sle_chon_loai_cong_tac.EditValue != "")
+            {
+                ip_us.dcID_LOAI_CONG_TAC = CIPConvert.ToDecimal(m_sle_chon_loai_cong_tac.EditValue);
+            }
+
+            if (m_dat_ngay_bat_dau.Value.Date != null && m_dat_ngay_bat_dau.Value.Date.ToString() != "")
+            {
+                //Ngay bat dau
+                ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
+            }
+
+            if (m_dat_ngay_ket_thuc.Value.Date != null && m_dat_ngay_ket_thuc.Value.Date.ToString() != "")
+            {
+                //Ngay ket thuc
+                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
+            }
+
+            if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+            {
+                //Ngay lap
+                ip_us.datNGAY_LAP = DateTime.Now.Date;
+                ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
+            }
+            else if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
+            {
+                //Ngay sua
+                ip_us.datNGAY_SUA = DateTime.Now.Date;
+                ip_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
+            }
+            ip_us.strDA_XOA = "N";
+        }
 
         private void save_data()
         {
-            throw new NotImplementedException();
+            US_GD_CONG_TAC v_us_gd_ct = new US_GD_CONG_TAC();
+            form_2_us_gd_cong_tac(v_us_gd_ct);
+            try
+            {
+                switch (m_e_form_mode)
+                {
+                    case DataEntryFormMode.InsertDataState:
+                        if (m_id_gd_ct != -1)
+                        {
+                            //Nhan vien da co GD cong tac
+                            if (m_loai_ctac_cthuc == true && CIPConvert.ToDecimal(m_sle_chon_loai_cong_tac.EditValue) == CONST_ID_LOAI_CONG_TAC.CHINH_THUC)
+                            {
+                                cho_gd_ct_da_xoa_Y();
+                            }
+                        }
+
+                        v_us_gd_ct.BeginTransaction();
+                        v_us_gd_ct.Insert();
+                        v_us_gd_ct.CommitTransaction();
+                        break;
+                    case DataEntryFormMode.UpdateDataState:
+                        v_us_gd_ct.BeginTransaction();
+                        v_us_gd_ct.Update();
+                        v_us_gd_ct.CommitTransaction();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void cho_gd_ct_da_xoa_Y()
+        {
+            US_GD_CONG_TAC v_us = new US_GD_CONG_TAC(m_id_gd_ct);
+            v_us.strDA_XOA = "Y";
+            v_us.BeginTransaction();
+            v_us.Update();
+            v_us.CommitTransaction();
+        }
+
+        private void load_data_2_m_variable()
+        {
+            m_id_gd_ct = find_id_gd_ct(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+            m_loai_ctac_cthuc = loai_ctac_cthuc_isExist(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CONST_ID_LOAI_CONG_TAC.CHINH_THUC);
+        }
+
+        private bool loai_ctac_cthuc_isExist(decimal ip_dc_id_nv, decimal ip_dc_id_loai_ct)
+        {
+            US_GD_CONG_TAC v_us = new US_GD_CONG_TAC();
+            DS_GD_CONG_TAC v_ds = new DS_GD_CONG_TAC();
+
+            v_us.FillDataset(v_ds);
+
+            string v_str_filter = "ID_NHAN_VIEN = " + ip_dc_id_nv + "AND DA_XOA = 'N' AND ID_LOAI_CONG_TAC = " + ip_dc_id_loai_ct;
+            DataRow[] v_dr = v_ds.GD_CONG_TAC.Select(v_str_filter);
+
+            if (v_dr.Count() == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private decimal find_id_gd_ct(decimal ip_dc_id_nv)
+        {
+            US_GD_CONG_TAC v_us = new US_GD_CONG_TAC();
+            DS_GD_CONG_TAC v_ds = new DS_GD_CONG_TAC();
+
+            v_us.FillDataset(v_ds);
+
+            string v_str_filter = "ID_NHAN_VIEN = " + ip_dc_id_nv + "AND DA_XOA = 'N'";
+            DataRow[] v_dr = v_ds.GD_CONG_TAC.Select(v_str_filter);
+
+            if (v_dr.Count() == 0)
+            {
+                return -1;
+            }
+            else
+            {
+                return CIPConvert.ToDecimal(v_dr.First()["ID"].ToString());
+            }
+        }
+
+
+        //Check validate data
+        private bool check_data_is_ok()
+        {
+            if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
+            {
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NHAN_VIEN);
+                return false;
+            }
+            //GD quyet dinh dang chua co du lieu
+            //if (m_sle_chon_quyet_dinh.EditValue == null || m_sle_chon_quyet_dinh.EditValue == "")
+            //{
+            //    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_QUYET_DINH);
+            //    return false;
+            //}
+            if (m_sle_chon_don_vi.EditValue == null || m_sle_chon_don_vi.EditValue == "")
+            {
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_DON_VI);
+                return false;
+            }
+
+            if (m_sle_chon_vi_tri.EditValue == null || m_sle_chon_vi_tri.EditValue == "")
+            {
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_VI_TRI);
+                return false;
+            }
+
+            if (m_sle_chon_loai_cong_tac.EditValue == null || m_sle_chon_loai_cong_tac.EditValue == "")
+            {
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_LOAI_CONG_TAC);
+                return false;
+            }
+
+            if (m_dat_ngay_bat_dau.Value.Date == null || m_dat_ngay_bat_dau.Value.Date.ToString() == "")
+            {
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NGAY_BAT_DAU);
+            }
+            return true;
         }
 
         #endregion
@@ -199,7 +393,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                save_data();
+                if (check_data_is_ok() == true)
+                {
+                    load_data_2_m_variable();
+                    save_data();
+                }
             }
             catch (Exception v_e)
             {
@@ -220,5 +418,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         #endregion
+
+       
     }
 }

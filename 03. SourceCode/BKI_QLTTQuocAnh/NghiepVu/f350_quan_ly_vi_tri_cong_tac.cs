@@ -499,6 +499,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                decimal v_id_gd_cong_tac_moi_tao = 0;
+                f351_quan_ly_cong_tac_de v_frm = new f351_quan_ly_cong_tac_de();
+                v_frm.display_4_insert(ref v_id_gd_cong_tac_moi_tao);
+                load_data_2_grid(v_id_gd_cong_tac_moi_tao);
+
                 if (check_data_is_ok() == true)
                 {
                     load_data_2_m_variable();

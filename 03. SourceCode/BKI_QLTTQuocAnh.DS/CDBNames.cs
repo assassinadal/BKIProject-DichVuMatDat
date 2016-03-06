@@ -351,6 +351,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string MA_PHONG = "MA_PHONG";
         public const string MA_DOI = "MA_DOI";
         public const string MA_CHUC_VU = "MA_CHUC_VU";
+        public const string THU_TU_CHUC_VU = "THU_TU_CHUC_VU";
         public const string SO_HO_SO = "SO_HO_SO";
         public const string NGUOI_LAP = "NGUOI_LAP";
         public const string NGAY_LAP = "NGAY_LAP";
@@ -358,6 +359,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGAY_SUA = "NGAY_SUA";
         public const string DA_XOA = "DA_XOA";
     }
+
 
     public class V_GD_QUY_TIEN_THUONG
     {
@@ -673,6 +675,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string MA_PHONG = "MA_PHONG";
         public const string MA_DOI = "MA_DOI";
         public const string MA_CHUC_VU = "MA_CHUC_VU";
+        public const string THU_TU_CHUC_VU = "THU_TU_CHUC_VU";
         public const string SO_HO_SO = "SO_HO_SO";
         public const string MA_TRA_CUU = "MA_TRA_CUU";
         public const string NGUOI_LAP = "NGUOI_LAP";
@@ -681,6 +684,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGAY_SUA = "NGAY_SUA";
         public const string DA_XOA = "DA_XOA";
     }
+
 
         public class V_DM_TRANG_THAI_LAO_DONG
     {

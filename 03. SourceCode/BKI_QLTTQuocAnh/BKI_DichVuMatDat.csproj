@@ -320,6 +320,18 @@
     <Compile Include="BaoCao\f402_tong_hop_cham_cong.Designer.cs">
       <DependentUpon>f402_tong_hop_cham_cong.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\f403_bao_cao_hs_athk_bsl_le_tet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f403_bao_cao_hs_athk_bsl_le_tet.Designer.cs">
+      <DependentUpon>f403_bao_cao_hs_athk_bsl_le_tet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\SplashScreen1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\SplashScreen1.Designer.cs">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </Compile>
     <Compile Include="DTO\DTO_QUY_THU_NHAP_KHAC.cs" />
     <Compile Include="NghiepVu\f341_dat_he_so_lns_lcd_v2.cs">
       <SubType>Form</SubType>
@@ -1135,6 +1147,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f402_tong_hop_cham_cong.resx">
       <DependentUpon>f402_tong_hop_cham_cong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f403_bao_cao_hs_athk_bsl_le_tet.resx">
+      <DependentUpon>f403_bao_cao_hs_athk_bsl_le_tet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f341_dat_he_so_lns_lcd_v2.resx">
       <DependentUpon>f341_dat_he_so_lns_lcd_v2.cs</DependentUpon>

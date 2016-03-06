@@ -127,6 +127,7 @@
             this.m_cmd_tong_hop_cham_cong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_quan_ly_giam_tru_phu_thuoc = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_import_tu_excel = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_tnk_ngoai_bang_luong = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -160,7 +161,7 @@
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
-            this.m_cmd_tnk_ngoai_bang_luong = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_quan_ly_quy_tnk = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -274,9 +275,10 @@
             this.m_cmd_tong_hop_cham_cong,
             this.m_cmd_quan_ly_giam_tru_phu_thuoc,
             this.m_cmd_import_tu_excel,
-            this.m_cmd_tnk_ngoai_bang_luong});
+            this.m_cmd_tnk_ngoai_bang_luong,
+            this.m_cmd_quan_ly_quy_tnk});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 116;
+            this.ribbon.MaxItemId = 117;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1169,6 +1171,14 @@
             this.m_cmd_import_tu_excel.Name = "m_cmd_import_tu_excel";
             this.m_cmd_import_tu_excel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_import_tu_excel_ItemClick);
             // 
+            // m_cmd_tnk_ngoai_bang_luong
+            // 
+            this.m_cmd_tnk_ngoai_bang_luong.Caption = "Thu nhập khác ngoài bảng lương";
+            this.m_cmd_tnk_ngoai_bang_luong.Id = 115;
+            this.m_cmd_tnk_ngoai_bang_luong.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_luong_che_do_;
+            this.m_cmd_tnk_ngoai_bang_luong.Name = "m_cmd_tnk_ngoai_bang_luong";
+            this.m_cmd_tnk_ngoai_bang_luong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tnk_ngoai_bang_luong_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1313,6 +1323,7 @@
             // 
             // ribbonPageGroup16
             // 
+            this.ribbonPageGroup16.ItemLinks.Add(this.m_cmd_quan_ly_quy_tnk);
             this.ribbonPageGroup16.ItemLinks.Add(this.m_cmd_thuong_thu_nhap_khac);
             this.ribbonPageGroup16.ItemLinks.Add(this.m_cmd_ql_thuong_le_tet);
             this.ribbonPageGroup16.ItemLinks.Add(this.m_cmd_cac_khoan_khac);
@@ -1471,13 +1482,12 @@
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
             // 
-            // m_cmd_tnk_ngoai_bang_luong
+            // m_cmd_quan_ly_quy_tnk
             // 
-            this.m_cmd_tnk_ngoai_bang_luong.Caption = "Thu nhập khác ngoài bảng lương";
-            this.m_cmd_tnk_ngoai_bang_luong.Id = 115;
-            this.m_cmd_tnk_ngoai_bang_luong.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_luong_che_do_;
-            this.m_cmd_tnk_ngoai_bang_luong.Name = "m_cmd_tnk_ngoai_bang_luong";
-            this.m_cmd_tnk_ngoai_bang_luong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tnk_ngoai_bang_luong_ItemClick);
+            this.m_cmd_quan_ly_quy_tnk.Caption = "Quản lý quỹ thu nhập khác";
+            this.m_cmd_quan_ly_quy_tnk.Id = 116;
+            this.m_cmd_quan_ly_quy_tnk.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_he_so_luong_;
+            this.m_cmd_quan_ly_quy_tnk.Name = "m_cmd_quan_ly_quy_tnk";
             // 
             // f388_main
             // 
@@ -1639,5 +1649,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage8;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
         private DevExpress.XtraBars.BarButtonItem m_cmd_tnk_ngoai_bang_luong;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_quan_ly_quy_tnk;
     }
 }

@@ -224,6 +224,24 @@ namespace BKI_DichVuMatDat
             m_cmd_bao_cao_tong_hop_v2.ItemClick += m_cmd_bao_cao_tong_hop_v2_ItemClick;
             m_cmd_danh_sach_hop_dong.ItemClick += m_cmd_danh_sach_hop_dong_ItemClick;
             m_cmd_bao_cao_dieu_kien_tinh_luong.ItemClick += m_cmd_bao_cao_dieu_kien_tinh_luong_ItemClick;
+
+            //Thu nhap khac
+            m_cmd_quan_ly_quy_tnk.ItemClick += m_cmd_quan_ly_quy_tnk_ItemClick;
+        }
+
+        void m_cmd_quan_ly_quy_tnk_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f353_quan_ly_quy_tien v_frm = new f353_quan_ly_quy_tien();
+                if (IsExistFormName(v_frm)) return;
+                v_frm.MdiParent = this;
+                v_frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_bao_cao_dieu_kien_tinh_luong_ItemClick(object sender, ItemClickEventArgs e)

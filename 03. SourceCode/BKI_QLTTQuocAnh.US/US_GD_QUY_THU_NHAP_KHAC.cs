@@ -345,5 +345,12 @@ public class US_GD_QUY_THU_NHAP_KHAC : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+
+    public void FillDatasetQuyTNK(DataSet v_ds)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_TNK_quy_tien_GetAll");
+        v_cstore.fillDataSetByCommand(this, v_ds);
+    }
+}
 }

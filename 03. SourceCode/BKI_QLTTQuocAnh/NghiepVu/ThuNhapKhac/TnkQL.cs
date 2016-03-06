@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using BKI_DichVuMatDat.DS;
+using BKI_DichVuMatDat.US;
+
 namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 {
     public class TnkQL
@@ -22,9 +25,13 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         }
         #endregion
 
-        public DataTable HienThiDanhSachQuy(DateTime ip_dat_ngay_lap_min, DateTime ip_dat_ngay_lap_max)
+        public DataTable HienThiDanhSachQuy()
         {
-            return new DataTable();
+            US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillDatasetQuyTNK(v_ds);
+            return v_ds.Tables[0];
         }
         #region Private Method
         

@@ -21,7 +21,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details : Form
     {
-        #region Interface
+        #region Public Interface
 
         public f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details()
         {

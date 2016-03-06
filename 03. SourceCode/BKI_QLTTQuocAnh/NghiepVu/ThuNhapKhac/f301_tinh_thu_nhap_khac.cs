@@ -105,12 +105,13 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void hien_thi_form_them_quy_tien()
         {
             f354_danh_sach_quy_thuong_de v_frm = new f354_danh_sach_quy_thuong_de();
-            var v_us_quy_tien = v_frm.Display_for_all();
-            if(v_us_quy_tien.dcID > 0)
-            {
-                fill_data_quy_tien_thuong();
-                m_sle_quy_tien_thuong.EditValue = v_us_quy_tien.dcID;
-            }
+            throw (new Exception("Ko duoc dung quy tien cua em nua nhe"));
+            //var v_us_quy_tien = v_frm.Display_for_all();
+            //if(v_us_quy_tien.dcID > 0)
+            //{
+            //    fill_data_quy_tien_thuong();
+            //    m_sle_quy_tien_thuong.EditValue = v_us_quy_tien.dcID;
+            //}
         }
 
         private void fill_data_2_grid(string ip_path_excel)

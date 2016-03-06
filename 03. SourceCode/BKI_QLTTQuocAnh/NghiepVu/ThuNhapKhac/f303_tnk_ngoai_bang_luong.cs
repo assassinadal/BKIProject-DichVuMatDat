@@ -57,7 +57,6 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             {
                 m_txt_thang.Text = DateTime.Now.Month.ToString();
                 m_txt_nam.Text = DateTime.Now.Year.ToString();
-                load_data_to_grid();
             }
             catch (Exception v_e)
             {
@@ -68,7 +67,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         void m_cmd_delete_Click(object sender, EventArgs e)
         {
             string v_str_confirm = "Bạn có chắc chắn muốn xóa khoản thu nhập này";
-            if (!CHRM_BaseMessages.MsgBox_Confirm (v_str_confirm))
+            if (CHRM_BaseMessages.MsgBox_Confirm (v_str_confirm))
             {
                 var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
                 US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[2].ToString()));

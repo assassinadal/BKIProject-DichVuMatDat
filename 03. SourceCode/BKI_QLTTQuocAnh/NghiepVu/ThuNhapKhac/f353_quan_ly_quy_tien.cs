@@ -39,12 +39,14 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         private void set_init_form_load()
         {
             set_define_events();
+            m_txt_thang.Text = DateTime.Now.Month.ToString();
+            m_txt_nam.Text = DateTime.Now.Year.ToString();
         }
 
         private void load_data_to_grid()
         {
             CHRMCommon.make_stt(m_grv);
-            m_grc.DataSource = TnkQL.Instance.HienThiDanhSachQuy();
+            m_grc.DataSource = TnkQL.Instance.HienThiDanhSachQuy(m_txt_thang.Text, m_txt_nam.Text);
         }
 
         private bool check_quy_tien_dang_su_dung_yn(US_GD_QUY_THU_NHAP_KHAC v_us)
@@ -84,11 +86,40 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         #region Event Handle
         private void set_define_events()
         {
-            this.Load += f353_quan_ly_quy_tien_Load;
             m_cmd_insert.Click += m_cmd_insert_Click;
             m_cmd_update.Click += m_cmd_update_Click;
             m_cmd_delete.Click += m_cmd_delete_Click;
+            m_cmd_search.Click += m_cmd_search_Click;
             m_grc.DoubleClick += m_grc_DoubleClick;
+            m_grc.Click += m_grc_Click;
+        }
+
+        void m_grc_Click(object sender, EventArgs e)
+        {
+            var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+            US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
+            DS_GD_THU_NHAP_KHAC v_ds = new DS_GD_THU_NHAP_KHAC();
+            v_us.FillDatasetTheoQuyThangNam(v_ds, v_dr[0].ToString(), v_dr[2].ToString(), v_dr[3].ToString());
+            //v_us.FillDataset(v_ds, "where ID_QUY_THU_NHAP_KHAC =" + v_dr[0].ToString() + "and thang=" + v_dr[2].ToString() + "and nam=" + v_dr[3].ToString());
+            int v_slg_nv = v_ds.Tables[0].Rows.Count;
+            decimal v_tong_so_tien=0;
+            for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
+            {
+                v_tong_so_tien += decimal.Parse(v_ds.Tables[0].Rows[i][7].ToString());
+            }
+            m_lbl_trang_thai_quy.Text = "Quỹ đã chi tiền cho " + v_slg_nv + " nhân viên. Tổng tiền: " + v_tong_so_tien;
+        }
+
+        void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_to_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e) ;
+            }
         }
 
         void m_grc_DoubleClick(object sender, EventArgs e)
@@ -108,8 +139,8 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                 if (check_quy_tien_dang_su_dung_yn(v_us))
                 {
                     int v_slg_nvien = m_lst_id_gd_thu_nhap_khac.Count;
-                    string v_str_confirm = "Quỹ tiền đang được sử dụng cho " + v_slg_nvien + " nhân viên.\nBạn có muốn xóa cả khoản thu nhập của " + v_slg_nvien + " nhân viên đang sử dụng quỹ tiền này?";
-                    if (!CHRM_BaseMessages.MsgBox_Confirm(v_str_confirm))
+                    string v_str_confirm = "Quỹ tiền đang được sử dụng cho " + v_slg_nvien + " nhân viên.\nBạn có muốn xóa khoản thu nhập của " + v_slg_nvien + " nhân viên đang sử dụng quỹ tiền này?";
+                    if (CHRM_BaseMessages.MsgBox_Confirm(v_str_confirm))
                     {
                         xoa_thu_nhap_khac();
                         xoa_quy_tien(v_us);
@@ -118,7 +149,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                 else
                 {
                     string v_str_confirm = "Bạn có chắc chắn muốn xóa quỹ tiền này?";
-                    if (!CHRM_BaseMessages.MsgBox_Confirm(v_str_confirm))
+                    if (CHRM_BaseMessages.MsgBox_Confirm(v_str_confirm))
                     {
                         xoa_quy_tien(v_us);
                     }
@@ -159,19 +190,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-
-        void f353_quan_ly_quy_tien_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                load_data_to_grid();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }       
+      
         #endregion
     }
 }

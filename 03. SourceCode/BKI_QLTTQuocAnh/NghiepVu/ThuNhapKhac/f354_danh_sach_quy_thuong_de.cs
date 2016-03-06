@@ -67,6 +67,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                     m_sle_loai_quy_thu_nhap.Enabled = true;
                     m_dat_ngay_lap_quy.DateTime = DateTime.Now;
                     m_dat_thang_ap_dung_quy.DateTime = DateTime.Now;
+                    m_dat_tu_ngay.DateTime = DateTime.Now;
+                    m_dat_den_ngay.DateTime = DateTime.Now.AddMonths(1);
                     break;
                 case DataEntryFormMode.UpdateDataState:
                     m_sle_loai_quy_thu_nhap.Enabled = false;
@@ -77,21 +79,26 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         void m_cmd_save_Click(object sender, EventArgs e)
-        {
-            form_to_us();
-            switch (m_e_form_mode)
+        {            
+            if (m_sle_loai_quy_thu_nhap.EditValue == null)
+                CHRM_BaseMessages.MsgBox_Error("Vui lòng chọn loại quỹ thu nhập");
+            else
             {
-                case DataEntryFormMode.InsertDataState:
-                    m_us.Insert();
-                    break;
-                case DataEntryFormMode.UpdateDataState:
-                    m_us.Update();
-                    break;
-                default:
-                    break;
-            }
-            MessageBox.Show("Lưu thành công!");
-            this.Close();
+                form_to_us();
+                switch (m_e_form_mode)
+                {
+                    case DataEntryFormMode.InsertDataState:
+                        m_us.Insert();
+                        break;
+                    case DataEntryFormMode.UpdateDataState:
+                        m_us.Update();
+                        break;
+                    default:
+                        break;
+                }
+                MessageBox.Show("Lưu thành công!");
+                this.Close();
+            }         
         }
 
 

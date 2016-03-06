@@ -54,7 +54,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         {
             set_define_events();
             load_data_to_sle_chon_nv();
-            load_data_to_sle_loai_thue();
+            load_data_to_sle_quy_tien();
             if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
             {
                 m_sle_chon_nhan_vien.Enabled = false;
@@ -66,6 +66,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         private void us_2_form(US_GD_THU_NHAP_KHAC v_us)
         {
             m_sle_chon_nhan_vien.EditValue = v_us.dcID_NHAN_VIEN;
+            m_sle_quy_tien.EditValue = v_us.dcID_QUY_THU_NHAP_KHAC;
             m_txt_so_tien.Text = v_us.dcSO_TIEN.ToString();
             m_txt_ly_do.Text = v_us.strLY_DO;
             m_txt_thang.Text = v_us.dcTHANG.ToString();
@@ -82,20 +83,21 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             this.Load += f304_tnk_ngoai_bang_luong_detail_Load;
         }
 
-        private void load_data_to_sle_loai_thue()
+        private void load_data_to_sle_quy_tien()
         {
-            DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
-            US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
-            v_us.FillDataset(v_ds);
-            m_sle_chon_nhan_vien.Properties.DataSource = v_ds.Tables[0];
+            DS_GD_QUY_THU_NHAP_KHAC v_ds = new DS_GD_QUY_THU_NHAP_KHAC();
+            US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC();
+            v_us.FillDatasetQuyTNKbyIDLoaiQuy(v_ds, 756);
+            m_sle_quy_tien.Properties.DataSource = v_ds.Tables[0];
         }
 
         private void load_data_to_sle_chon_nv()
         {
-            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
-            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
-            v_us.FillDatasetByIdLoaiTuDien(v_ds, 13);
-            m_sle_loai_thue.Properties.DataSource = v_ds.Tables[0];
+            
+            DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
+            US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();           
+            v_us.FillDataset(v_ds);
+            m_sle_chon_nhan_vien.Properties.DataSource = v_ds.Tables[0];
         }
 
         private void save_data()
@@ -121,6 +123,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             m_us_gd_tnk.dcTHANG = CIPConvert.ToDecimal(m_txt_thang.Text);
             m_us_gd_tnk.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text);
             m_us_gd_tnk.strLY_DO = m_txt_ly_do.Text;
+            m_us_gd_tnk.dcID_QUY_THU_NHAP_KHAC = CIPConvert.ToDecimal(m_sle_quy_tien.EditValue.ToString());
            // m_us_gd_tnk.dcID_CACH_TINH_THUE = CIPConvert.ToDecimal(m_sle_loai_thue.EditValue.ToString());
             m_us_gd_tnk.dcID_LOAI_THU_NHAP_KHAC = 756;
           //  m_us_gd_tnk.dcSO_TIEN_GIAM_TRU = 0;
@@ -137,7 +140,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             try
             {
                 load_data_to_sle_chon_nv();
-                load_data_to_sle_loai_thue();
+                load_data_to_sle_quy_tien();
             }
             catch (Exception v_e)
             {

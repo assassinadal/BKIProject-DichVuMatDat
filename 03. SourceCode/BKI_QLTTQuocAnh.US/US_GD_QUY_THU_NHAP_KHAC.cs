@@ -357,9 +357,11 @@ public class US_GD_QUY_THU_NHAP_KHAC : US_Object
         var v_bol_ket_qua = v_para_yn.Value.ToString() == "Y" ? true : false;
         return v_bol_ket_qua;
     }
-    public void FillDatasetQuyTNK(DataSet v_ds)
+    public void FillDatasetQuyTNK(DataSet v_ds, string ip_thang, string ip_nam)
     {
         CStoredProc v_cstore = new CStoredProc("pr_TNK_quy_tien_GetAll");
+        v_cstore.addDecimalInputParam("@ip_thang", ip_thang);
+        v_cstore.addDecimalInputParam("@ip_nam", ip_nam);
         v_cstore.fillDataSetByCommand(this, v_ds);
     }
 

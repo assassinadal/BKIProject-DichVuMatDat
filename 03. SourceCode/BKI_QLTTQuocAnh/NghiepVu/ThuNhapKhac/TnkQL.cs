@@ -28,12 +28,12 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         }
         #endregion
 
-        public DataTable HienThiDanhSachQuy()
+        public DataTable HienThiDanhSachQuy(string ip_thang, string ip_nam)
         {
             US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetQuyTNK(v_ds);
+            v_us.FillDatasetQuyTNK(v_ds, ip_thang, ip_nam);
             return v_ds.Tables[0];
         }
         public DataTable LayChiTietQuy(decimal ip_dc_id_quy_thu_nhap_khac)

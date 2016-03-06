@@ -29,6 +29,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         #endregion
 
         #region Members
+        US_GD_THU_NHAP_KHAC m_us = new US_GD_THU_NHAP_KHAC();
         #endregion
 
         #region Data Structure
@@ -39,8 +40,24 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         {
             m_cmd_tai_file_mau.Click += m_cmd_tai_file_mau_Click;
             m_cmd_import_excel.Click +=m_cmd_import_excel_Click;
-            m_cmd_luu.Click += m_cmd_luu_Click;
+            m_cmd_luu.Click +=m_cmd_luu_Click;
             this.Load += f305_tnk_ngoai_bang_luong_xls_Load;
+            m_sle_quy_tien.EditValueChanged += m_sle_quy_tien_EditValueChanged;
+        }
+
+        void m_sle_quy_tien_EditValueChanged(object sender, EventArgs e)
+        {
+            US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
+            DS_GD_THU_NHAP_KHAC v_ds = new DS_GD_THU_NHAP_KHAC();
+            v_us.FillDatasetTheoQuyThangNam(v_ds, m_sle_quy_tien.EditValue.ToString(), m_dat_thang.DateTime.Month.ToString(), m_dat_thang.DateTime.Year.ToString());
+            //v_us.FillDataset(v_ds, "where ID_QUY_THU_NHAP_KHAC =" +m_sle_quy_tien.EditValue.ToString()+ "and thang=" + m_dat_thang.DateTime.Month + "and nam=" + m_dat_thang.DateTime.Year);
+            int v_slg_nv = v_ds.Tables[0].Rows.Count;
+            decimal v_tong_so_tien = 0;
+            for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
+            {
+                v_tong_so_tien += decimal.Parse(v_ds.Tables[0].Rows[i][7].ToString());
+            }
+            m_lbl_trang_thai.Text += "\n Quỹ đã chi tiền cho " + v_slg_nv + " nhân viên. Tổng tiền: " + v_tong_so_tien;
         }
 
         void f305_tnk_ngoai_bang_luong_xls_Load(object sender, EventArgs e)
@@ -72,11 +89,15 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         {
             try
             {
-                if (m_sle_quy_tien.EditValue.ToString() == "")
+                if (m_sle_quy_tien.EditValue == null)
                     CHRM_BaseMessages.MsgBox_Error("Vui lòng chọn quỹ tiền cần chi!");
                 else
                 {
                     save_data();
+                    XtraMessageBox.Show("Lưu thành công!");
+                    m_grc.DataSource = null;
+                    m_cmd_luu.Enabled = false;
+                    m_lbl_trang_thai.Text = "";
                 }
             }
             catch (Exception v_e)
@@ -93,6 +114,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                 m_grc.DataSource = null;
                 WinFormControls.load_xls_to_gridview(WinFormControls.openFileDialog(), m_grc);
                 m_cmd_luu.Enabled = true;
+                m_lbl_trang_thai.Text += "\n File excel đã được import...";
             }
             catch (Exception v_e)
             {
@@ -128,23 +150,25 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             {
                 var v_dr = m_grv.GetDataRow(i);
                 US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
-                v_us.dcID_NHAN_VIEN = get_id_nhan_vien_by_ma_nv(v_dr[0].ToString());
+                v_us.dcID_NHAN_VIEN = get_id_nhan_vien_by_ma_nv(v_dr[1].ToString());
                 v_us.dcTHANG = m_dat_thang.DateTime.Month;
                 v_us.dcNAM = m_dat_thang.DateTime.Year;
                 v_us.dcHE_SO = 0;
-                v_us.dcSO_TIEN = return_so_tien(v_dr[2].ToString());
-                v_us.dcSO_TIEN_NOP_THUE = return_so_tien(v_dr[3].ToString());
-                v_us.dcSO_TIEN_THUC_LINH = return_so_tien(v_dr[4].ToString());
+                v_us.dcSO_TIEN = return_so_tien(v_dr[3].ToString());
+                v_us.dcSO_TIEN_NOP_THUE = return_so_tien(v_dr[4].ToString());
+                v_us.dcSO_TIEN_THUC_LINH = return_so_tien(v_dr[5].ToString());
                 v_us.dcID_LOAI_THU_NHAP_KHAC = 756;
                 v_us.dcID_QUY_THU_NHAP_KHAC = decimal.Parse(m_sle_quy_tien.EditValue.ToString());
                 if (i == 0)
                     v_us.BeginTransaction();
                 else
                 {
-                    v_us.UseTransOfUSObject(v_us);
+                    v_us.UseTransOfUSObject(m_us);
                 }
+                m_us = v_us;
                 v_us.Insert();
             }
+            m_us.CommitTransaction();
         }
 
         private decimal return_so_tien(string ip_str_so_tien)
@@ -158,7 +182,9 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         private decimal get_id_nhan_vien_by_ma_nv(string ip_str_ma_nv)
         {
             US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
-            return v_us.getIDNhanVienByMaNV(ip_str_ma_nv);          
+            DS_DM_NHAN_VIEN v_ds = new DS_DM_NHAN_VIEN();
+            v_us.FillDataset(v_ds, "where ma_nv =" + ip_str_ma_nv);
+            return decimal.Parse(v_ds.Tables[0].Rows[0][0].ToString());          
         }
 
         private void load_data_to_grid()

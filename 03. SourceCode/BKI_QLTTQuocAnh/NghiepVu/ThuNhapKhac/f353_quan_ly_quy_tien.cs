@@ -41,17 +41,9 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             set_define_events();
         }
 
-        private void set_define_events()
-        {
-            this.Load += f353_quan_ly_quy_tien_Load;
-            m_cmd_insert.Click += m_cmd_insert_Click;
-            m_cmd_update.Click += m_cmd_update_Click;
-            m_cmd_delete.Click += m_cmd_delete_Click;
-        }
-
         private void load_data_to_grid()
         {
-            //CHRMCommon.make_stt(m_grv);
+            CHRMCommon.make_stt(m_grv);
             m_grc.DataSource = TnkQL.Instance.HienThiDanhSachQuy();
         }
 
@@ -59,7 +51,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         {
             US_GD_THU_NHAP_KHAC v_us_gd_tnk = new US_GD_THU_NHAP_KHAC();
             DS_GD_THU_NHAP_KHAC v_ds_gd_tnk = new DS_GD_THU_NHAP_KHAC();
-            v_us.FillDataset(v_ds_gd_tnk, "where ID_QUY_THU_NHAP_KHAC = " + v_us.dcID);
+            v_us_gd_tnk.FillDataset(v_ds_gd_tnk, "where ID_QUY_THU_NHAP_KHAC = " + v_us.dcID);
             if (v_ds_gd_tnk.Tables[0].Rows.Count != 0)
             {
                 for (int i = 0; i < v_ds_gd_tnk.Tables[0].Rows.Count; i++)
@@ -73,13 +65,9 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 
         private void xoa_quy_tien(US_GD_QUY_THU_NHAP_KHAC v_us)
         {
-            DialogResult v_dialog = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa quỹ tiền này?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (v_dialog == DialogResult.Yes)
-            {
-                v_us.strDA_XOA = "Y";
-                v_us.Update();
-                load_data_to_grid();
-            }
+            v_us.strDA_XOA = "Y";
+            v_us.Update();
+            load_data_to_grid();
         }
 
         private void xoa_thu_nhap_khac()
@@ -94,6 +82,23 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         #endregion
 
         #region Event Handle
+        private void set_define_events()
+        {
+            this.Load += f353_quan_ly_quy_tien_Load;
+            m_cmd_insert.Click += m_cmd_insert_Click;
+            m_cmd_update.Click += m_cmd_update_Click;
+            m_cmd_delete.Click += m_cmd_delete_Click;
+            m_grc.DoubleClick += m_grc_DoubleClick;
+        }
+
+        void m_grc_DoubleClick(object sender, EventArgs e)
+        {
+            var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+            decimal v_id_quy_tnk = CIPConvert.ToDecimal(v_dr[0].ToString());
+            f355_tnk_chi_tiet_quy_thu_nhap_khac v_f = new f355_tnk_chi_tiet_quy_thu_nhap_khac(v_id_quy_tnk);
+            v_f.ShowDialog();
+        }
+
         void m_cmd_delete_Click(object sender, EventArgs e)
         {
             try
@@ -102,8 +107,9 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                 US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[0].ToString()));
                 if (check_quy_tien_dang_su_dung_yn(v_us))
                 {
-                    DialogResult v_dialog = XtraMessageBox.Show("Quỹ tiền đang được sử dụng. Bạn có muốn xóa cả khoản thu nhập đang sử dụng quỹ tiền này?", "Xác nhận", MessageBoxButtons.YesNo);
-                    if (v_dialog == DialogResult.Yes)
+                    int v_slg_nvien = m_lst_id_gd_thu_nhap_khac.Count;
+                    string v_str_confirm = "Quỹ tiền đang được sử dụng cho " + v_slg_nvien + " nhân viên.\nBạn có muốn xóa cả khoản thu nhập của " + v_slg_nvien + " nhân viên đang sử dụng quỹ tiền này?";
+                    if (!CHRM_BaseMessages.MsgBox_Confirm(v_str_confirm))
                     {
                         xoa_thu_nhap_khac();
                         xoa_quy_tien(v_us);
@@ -111,7 +117,11 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                 }
                 else
                 {
-                    xoa_quy_tien(v_us);                   
+                    string v_str_confirm = "Bạn có chắc chắn muốn xóa quỹ tiền này?";
+                    if (!CHRM_BaseMessages.MsgBox_Confirm(v_str_confirm))
+                    {
+                        xoa_quy_tien(v_us);
+                    }
                 }
             }
             catch (Exception v_e)

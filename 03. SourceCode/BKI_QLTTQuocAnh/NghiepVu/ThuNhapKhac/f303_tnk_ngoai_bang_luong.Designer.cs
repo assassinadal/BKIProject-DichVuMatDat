@@ -34,12 +34,6 @@
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
-            this.m_txt_thang = new DevExpress.XtraEditors.TextEdit();
-            this.m_cmd_search = new DevExpress.XtraEditors.SimpleButton();
-            this.m_lbl_nam = new System.Windows.Forms.Label();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.label1 = new System.Windows.Forms.Label();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,17 +46,25 @@
             this.CHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_lbl_nam = new System.Windows.Forms.Label();
+            this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
+            this.m_txt_thang = new DevExpress.XtraEditors.TextEdit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_cmd_search = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_pnl_out_place_dm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_import_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
@@ -113,66 +115,6 @@
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_xuat_excel.TabIndex = 3;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
-            // 
-            // m_txt_nam
-            // 
-            this.m_txt_nam.Location = new System.Drawing.Point(349, 30);
-            this.m_txt_nam.Name = "m_txt_nam";
-            this.m_txt_nam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_txt_nam.Properties.Appearance.Options.UseFont = true;
-            this.m_txt_nam.Size = new System.Drawing.Size(115, 22);
-            this.m_txt_nam.TabIndex = 26;
-            // 
-            // m_txt_thang
-            // 
-            this.m_txt_thang.Location = new System.Drawing.Point(122, 30);
-            this.m_txt_thang.Name = "m_txt_thang";
-            this.m_txt_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_txt_thang.Properties.Appearance.Options.UseFont = true;
-            this.m_txt_thang.Size = new System.Drawing.Size(111, 22);
-            this.m_txt_thang.TabIndex = 25;
-            // 
-            // m_cmd_search
-            // 
-            this.m_cmd_search.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_search.Image")));
-            this.m_cmd_search.Location = new System.Drawing.Point(529, 22);
-            this.m_cmd_search.Name = "m_cmd_search";
-            this.m_cmd_search.Size = new System.Drawing.Size(116, 35);
-            this.m_cmd_search.TabIndex = 24;
-            this.m_cmd_search.Text = "&Lọc";
-            // 
-            // m_lbl_nam
-            // 
-            this.m_lbl_nam.AutoSize = true;
-            this.m_lbl_nam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_nam.Location = new System.Drawing.Point(287, 33);
-            this.m_lbl_nam.Name = "m_lbl_nam";
-            this.m_lbl_nam.Size = new System.Drawing.Size(56, 16);
-            this.m_lbl_nam.TabIndex = 23;
-            this.m_lbl_nam.Text = "Năm (*)";
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.label1);
-            this.panelControl1.Controls.Add(this.m_cmd_search);
-            this.panelControl1.Controls.Add(this.m_txt_thang);
-            this.panelControl1.Controls.Add(this.m_txt_nam);
-            this.panelControl1.Controls.Add(this.m_lbl_nam);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(834, 94);
-            this.panelControl1.TabIndex = 27;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(51, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 16);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Tháng (*)";
             // 
             // m_grc
             // 
@@ -343,6 +285,76 @@
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 6;
             // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.label1);
+            this.panelControl1.Controls.Add(this.m_cmd_search);
+            this.panelControl1.Controls.Add(this.m_txt_thang);
+            this.panelControl1.Controls.Add(this.m_txt_nam);
+            this.panelControl1.Controls.Add(this.m_lbl_nam);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(834, 94);
+            this.panelControl1.TabIndex = 27;
+            // 
+            // m_lbl_nam
+            // 
+            this.m_lbl_nam.AutoSize = true;
+            this.m_lbl_nam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_nam.Location = new System.Drawing.Point(287, 33);
+            this.m_lbl_nam.Name = "m_lbl_nam";
+            this.m_lbl_nam.Size = new System.Drawing.Size(56, 16);
+            this.m_lbl_nam.TabIndex = 23;
+            this.m_lbl_nam.Text = "Năm (*)";
+            // 
+            // m_txt_nam
+            // 
+            this.m_txt_nam.Location = new System.Drawing.Point(349, 30);
+            this.m_txt_nam.Name = "m_txt_nam";
+            this.m_txt_nam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_nam.Properties.Appearance.Options.UseFont = true;
+            this.m_txt_nam.Size = new System.Drawing.Size(115, 22);
+            this.m_txt_nam.TabIndex = 26;
+            // 
+            // m_txt_thang
+            // 
+            this.m_txt_thang.Location = new System.Drawing.Point(122, 30);
+            this.m_txt_thang.Name = "m_txt_thang";
+            this.m_txt_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_thang.Properties.Appearance.Options.UseFont = true;
+            this.m_txt_thang.Size = new System.Drawing.Size(111, 22);
+            this.m_txt_thang.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(51, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Tháng (*)";
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_search.Image")));
+            this.m_cmd_search.Location = new System.Drawing.Point(529, 22);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_search.TabIndex = 24;
+            this.m_cmd_search.Text = "&Lọc";
+            // 
+            // m_cmd_import_excel
+            // 
+            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_import_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_excel.Image")));
+            this.m_cmd_import_excel.Location = new System.Drawing.Point(250, 4);
+            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
+            this.m_cmd_import_excel.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_import_excel.TabIndex = 7;
+            this.m_cmd_import_excel.Text = "&Import excel";
+            // 
             // f303_tnk_ngoai_bang_luong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,13 +366,13 @@
             this.Name = "f303_tnk_ngoai_bang_luong";
             this.Text = "F303 - Thu nhập khác ngoài bảng lương";
             this.m_pnl_out_place_dm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -372,11 +384,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_update;
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
-        private DevExpress.XtraEditors.TextEdit m_txt_nam;
-        private DevExpress.XtraEditors.TextEdit m_txt_thang;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_search;
-        private System.Windows.Forms.Label m_lbl_nam;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraGrid.GridControl m_grc;
         private DevExpress.XtraGrid.Views.Grid.GridView m_grv;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
@@ -388,7 +395,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn THUC_LINH_CUOI_CUNG;
         private DevExpress.XtraGrid.Columns.GridColumn CHUC_VU;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_import_excel;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_search;
+        private DevExpress.XtraEditors.TextEdit m_txt_thang;
+        private DevExpress.XtraEditors.TextEdit m_txt_nam;
+        private System.Windows.Forms.Label m_lbl_nam;
     }
 }

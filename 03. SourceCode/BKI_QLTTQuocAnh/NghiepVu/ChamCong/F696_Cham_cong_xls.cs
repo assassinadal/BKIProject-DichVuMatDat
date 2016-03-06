@@ -321,9 +321,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString().Substring(2));
                     }                   
                     if (i == 2)
-                    {
                         v_us.BeginTransaction();
-                    }
                     else
                     {
                         v_us.UseTransOfUSObject(m_us_gd_cham_cong);

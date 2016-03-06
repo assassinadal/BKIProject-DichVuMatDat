@@ -388,5 +388,13 @@ public class US_GD_QUY_THU_NHAP_KHAC : US_Object
         return v_ds_ouput.Tables[0];
     }
     #endregion
-	}
+
+
+    public void FillDatasetQuyTNKbyIDLoaiQuy(DS_GD_QUY_THU_NHAP_KHAC v_ds, decimal ip_id_loai_quy)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_TNK_quy_tien_GetTheoIDLoaiQuy");
+        v_cstore.addDecimalInputParam("@id_loai_quy", ip_id_loai_quy);
+        v_cstore.fillDataSetByCommand(this, v_ds);
+    }
+}
 }

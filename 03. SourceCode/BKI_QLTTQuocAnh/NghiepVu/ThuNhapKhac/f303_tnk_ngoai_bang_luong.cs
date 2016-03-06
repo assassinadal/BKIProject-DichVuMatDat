@@ -41,7 +41,14 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             m_cmd_insert.Click +=m_cmd_insert_Click;
             m_cmd_update.Click += m_cmd_update_Click;
             m_cmd_delete.Click += m_cmd_delete_Click;
+            m_cmd_import_excel.Click += m_cmd_import_excel_Click;
             this.Load += f303_tnk_ngoai_bang_luong_Load;
+        }
+
+        void m_cmd_import_excel_Click(object sender, EventArgs e)
+        {
+            f305_tnk_ngoai_bang_luong_xls v_f = new f305_tnk_ngoai_bang_luong_xls();
+            v_f.Show();
         }
 
         void f303_tnk_ngoai_bang_luong_Load(object sender, EventArgs e)
@@ -60,8 +67,8 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 
         void m_cmd_delete_Click(object sender, EventArgs e)
         {
-            DialogResult v_dialog = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa khoản thu nhập này?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (v_dialog == DialogResult.Yes)
+            string v_str_confirm = "Bạn có chắc chắn muốn xóa khoản thu nhập này";
+            if (!CHRM_BaseMessages.MsgBox_Confirm (v_str_confirm))
             {
                 var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
                 US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[2].ToString()));

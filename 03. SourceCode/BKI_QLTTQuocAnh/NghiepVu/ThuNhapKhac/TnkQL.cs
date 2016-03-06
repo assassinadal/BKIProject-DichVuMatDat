@@ -30,7 +30,11 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 
         public DataTable HienThiDanhSachQuy()
         {
-            return new DataTable();
+            US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillDatasetQuyTNK(v_ds);
+            return v_ds.Tables[0];
         }
         public DataTable LayChiTietQuy(decimal ip_dc_id_quy_thu_nhap_khac)
         {

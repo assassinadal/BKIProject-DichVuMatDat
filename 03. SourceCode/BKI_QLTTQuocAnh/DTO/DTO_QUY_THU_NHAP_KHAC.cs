@@ -31,5 +31,6 @@ namespace BKI_DichVuMatDat.DTO
         public decimal SO_LUONG_NV_TRONG_QUY { get; set; }
         public decimal TONG_TIEN { get; set; }
         public bool CO_DU_LIEU { get; set; }
+
     }
 }

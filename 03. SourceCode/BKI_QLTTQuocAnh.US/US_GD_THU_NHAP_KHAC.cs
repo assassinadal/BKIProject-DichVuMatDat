@@ -290,6 +290,7 @@ public class US_GD_THU_NHAP_KHAC : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+    
     public void LayDuLieuThuNhapKhac(DataSet ip_ds, decimal ip_dc_id_quy_tien_thuong)
     {
         CStoredProc v_sp = new CStoredProc("PR_SELECT_ALL_THU_NHAP_KHAC");

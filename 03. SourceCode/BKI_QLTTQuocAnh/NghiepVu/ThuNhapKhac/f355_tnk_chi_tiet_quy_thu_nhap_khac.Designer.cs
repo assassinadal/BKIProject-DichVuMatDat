@@ -32,19 +32,6 @@
             this.imageCollection = new DevExpress.Utils.ImageCollection();
             this.m_grc_main = new DevExpress.XtraGrid.GridControl();
             this.m_grv_main = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.m_lbl_so_luong_nv_trong_quy = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.m_lbl_tong_tien = new DevExpress.XtraEditors.LabelControl();
-            this.m_lbl_ten_quy = new DevExpress.XtraEditors.LabelControl();
-            this.colSTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,6 +40,19 @@
             this.colSO_TIEN_NOP_THUE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSO_TIEN_THUC_LINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHE_SO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSO_TAI_KHOAN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_lbl_ten_quy = new DevExpress.XtraEditors.LabelControl();
+            this.m_lbl_tong_tien = new DevExpress.XtraEditors.LabelControl();
+            this.m_lbl_so_luong_nv_trong_quy = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).BeginInit();
@@ -87,7 +87,7 @@
             this.m_grc_main.Location = new System.Drawing.Point(0, 105);
             this.m_grc_main.MainView = this.m_grv_main;
             this.m_grc_main.Name = "m_grc_main";
-            this.m_grc_main.Size = new System.Drawing.Size(892, 479);
+            this.m_grc_main.Size = new System.Drawing.Size(892, 485);
             this.m_grc_main.TabIndex = 4;
             this.m_grc_main.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_main});
@@ -95,7 +95,6 @@
             // m_grv_main
             // 
             this.m_grv_main.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colSTT,
             this.colMA_NV,
             this.colHO_TEN,
             this.colTEN_DON_VI,
@@ -103,7 +102,8 @@
             this.colSO_TIEN,
             this.colSO_TIEN_NOP_THUE,
             this.colSO_TIEN_THUC_LINH,
-            this.colHE_SO});
+            this.colHE_SO,
+            this.colSO_TAI_KHOAN});
             this.m_grv_main.GridControl = this.m_grc_main;
             this.m_grv_main.GroupCount = 1;
             this.m_grv_main.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -121,139 +121,6 @@
             this.m_grv_main.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTEN_DON_VI, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.m_lbl_ten_quy);
-            this.panelControl1.Controls.Add(this.m_lbl_tong_tien);
-            this.panelControl1.Controls.Add(this.m_lbl_so_luong_nv_trong_quy);
-            this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.label1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(892, 105);
-            this.panelControl1.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Quỹ";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.simpleButton5);
-            this.panel1.Controls.Add(this.m_cmd_insert);
-            this.panel1.Controls.Add(this.m_cmd_update);
-            this.panel1.Controls.Add(this.m_cmd_delete);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 584);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(892, 42);
-            this.panel1.TabIndex = 6;
-            // 
-            // m_cmd_delete
-            // 
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_delete.ImageIndex = 14;
-            this.m_cmd_delete.ImageList = this.imageCollection;
-            this.m_cmd_delete.Location = new System.Drawing.Point(788, 0);
-            this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(104, 42);
-            this.m_cmd_delete.TabIndex = 1;
-            this.m_cmd_delete.Text = "Xóa";
-            // 
-            // m_cmd_update
-            // 
-            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_update.ImageIndex = 13;
-            this.m_cmd_update.ImageList = this.imageCollection;
-            this.m_cmd_update.Location = new System.Drawing.Point(684, 0);
-            this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(104, 42);
-            this.m_cmd_update.TabIndex = 2;
-            this.m_cmd_update.Text = "Sửa";
-            // 
-            // m_cmd_insert
-            // 
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_insert.ImageIndex = 13;
-            this.m_cmd_insert.ImageList = this.imageCollection;
-            this.m_cmd_insert.Location = new System.Drawing.Point(580, 0);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(104, 42);
-            this.m_cmd_insert.TabIndex = 3;
-            this.m_cmd_insert.Text = "Thêm";
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton5.ImageIndex = 9;
-            this.simpleButton5.ImageList = this.imageCollection;
-            this.simpleButton5.Location = new System.Drawing.Point(0, 0);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(104, 42);
-            this.simpleButton5.TabIndex = 4;
-            this.simpleButton5.Text = "Import Excel";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(25, 49);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(146, 13);
-            this.labelControl1.TabIndex = 4;
-            this.labelControl1.Text = "Số lượng nhân viên trong quỹ:";
-            // 
-            // m_lbl_so_luong_nv_trong_quy
-            // 
-            this.m_lbl_so_luong_nv_trong_quy.Location = new System.Drawing.Point(192, 49);
-            this.m_lbl_so_luong_nv_trong_quy.Name = "m_lbl_so_luong_nv_trong_quy";
-            this.m_lbl_so_luong_nv_trong_quy.Size = new System.Drawing.Size(12, 13);
-            this.m_lbl_so_luong_nv_trong_quy.TabIndex = 5;
-            this.m_lbl_so_luong_nv_trong_quy.Text = "...";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(25, 73);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(49, 13);
-            this.labelControl2.TabIndex = 4;
-            this.labelControl2.Text = "Tổng tiền:";
-            // 
-            // m_lbl_tong_tien
-            // 
-            this.m_lbl_tong_tien.Location = new System.Drawing.Point(192, 73);
-            this.m_lbl_tong_tien.Name = "m_lbl_tong_tien";
-            this.m_lbl_tong_tien.Size = new System.Drawing.Size(12, 13);
-            this.m_lbl_tong_tien.TabIndex = 6;
-            this.m_lbl_tong_tien.Text = "...";
-            // 
-            // m_lbl_ten_quy
-            // 
-            this.m_lbl_ten_quy.Location = new System.Drawing.Point(192, 22);
-            this.m_lbl_ten_quy.Name = "m_lbl_ten_quy";
-            this.m_lbl_ten_quy.Size = new System.Drawing.Size(12, 13);
-            this.m_lbl_ten_quy.TabIndex = 7;
-            this.m_lbl_ten_quy.Text = "...";
-            // 
-            // colSTT
-            // 
-            this.colSTT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colSTT.AppearanceHeader.Options.UseFont = true;
-            this.colSTT.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSTT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSTT.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colSTT.Caption = "STT";
-            this.colSTT.FieldName = "STT";
-            this.colSTT.Name = "colSTT";
-            this.colSTT.Visible = true;
-            this.colSTT.VisibleIndex = 0;
-            this.colSTT.Width = 45;
-            // 
             // colMA_NV
             // 
             this.colMA_NV.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -264,8 +131,10 @@
             this.colMA_NV.Caption = "Mã NV";
             this.colMA_NV.FieldName = "MA_NV";
             this.colMA_NV.Name = "colMA_NV";
+            this.colMA_NV.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
             this.colMA_NV.Visible = true;
-            this.colMA_NV.VisibleIndex = 1;
+            this.colMA_NV.VisibleIndex = 0;
             this.colMA_NV.Width = 92;
             // 
             // colHO_TEN
@@ -279,7 +148,7 @@
             this.colHO_TEN.FieldName = "HO_VA_TEN";
             this.colHO_TEN.Name = "colHO_TEN";
             this.colHO_TEN.Visible = true;
-            this.colHO_TEN.VisibleIndex = 2;
+            this.colHO_TEN.VisibleIndex = 1;
             this.colHO_TEN.Width = 169;
             // 
             // colTEN_DON_VI
@@ -380,6 +249,138 @@
             this.colHE_SO.VisibleIndex = 4;
             this.colHE_SO.Width = 123;
             // 
+            // colSO_TAI_KHOAN
+            // 
+            this.colSO_TAI_KHOAN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colSO_TAI_KHOAN.AppearanceHeader.Options.UseFont = true;
+            this.colSO_TAI_KHOAN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSO_TAI_KHOAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSO_TAI_KHOAN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colSO_TAI_KHOAN.Caption = "TK";
+            this.colSO_TAI_KHOAN.FieldName = "SO_TAI_KHOAN";
+            this.colSO_TAI_KHOAN.Name = "colSO_TAI_KHOAN";
+            this.colSO_TAI_KHOAN.Visible = true;
+            this.colSO_TAI_KHOAN.VisibleIndex = 2;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.m_lbl_ten_quy);
+            this.panelControl1.Controls.Add(this.m_lbl_tong_tien);
+            this.panelControl1.Controls.Add(this.m_lbl_so_luong_nv_trong_quy);
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.label1);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(892, 105);
+            this.panelControl1.TabIndex = 5;
+            // 
+            // m_lbl_ten_quy
+            // 
+            this.m_lbl_ten_quy.Location = new System.Drawing.Point(192, 22);
+            this.m_lbl_ten_quy.Name = "m_lbl_ten_quy";
+            this.m_lbl_ten_quy.Size = new System.Drawing.Size(12, 13);
+            this.m_lbl_ten_quy.TabIndex = 7;
+            this.m_lbl_ten_quy.Text = "...";
+            // 
+            // m_lbl_tong_tien
+            // 
+            this.m_lbl_tong_tien.Location = new System.Drawing.Point(192, 73);
+            this.m_lbl_tong_tien.Name = "m_lbl_tong_tien";
+            this.m_lbl_tong_tien.Size = new System.Drawing.Size(12, 13);
+            this.m_lbl_tong_tien.TabIndex = 6;
+            this.m_lbl_tong_tien.Text = "...";
+            // 
+            // m_lbl_so_luong_nv_trong_quy
+            // 
+            this.m_lbl_so_luong_nv_trong_quy.Location = new System.Drawing.Point(192, 49);
+            this.m_lbl_so_luong_nv_trong_quy.Name = "m_lbl_so_luong_nv_trong_quy";
+            this.m_lbl_so_luong_nv_trong_quy.Size = new System.Drawing.Size(12, 13);
+            this.m_lbl_so_luong_nv_trong_quy.TabIndex = 5;
+            this.m_lbl_so_luong_nv_trong_quy.Text = "...";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(25, 73);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(49, 13);
+            this.labelControl2.TabIndex = 4;
+            this.labelControl2.Text = "Tổng tiền:";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(25, 49);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(146, 13);
+            this.labelControl1.TabIndex = 4;
+            this.labelControl1.Text = "Số lượng nhân viên trong quỹ:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Quỹ";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.simpleButton5);
+            this.panel1.Controls.Add(this.m_cmd_insert);
+            this.panel1.Controls.Add(this.m_cmd_update);
+            this.panel1.Controls.Add(this.m_cmd_delete);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 590);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(892, 36);
+            this.panel1.TabIndex = 6;
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.simpleButton5.ImageIndex = 9;
+            this.simpleButton5.ImageList = this.imageCollection;
+            this.simpleButton5.Location = new System.Drawing.Point(0, 0);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(104, 36);
+            this.simpleButton5.TabIndex = 4;
+            this.simpleButton5.Text = "Import Excel";
+            // 
+            // m_cmd_insert
+            // 
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_insert.ImageIndex = 12;
+            this.m_cmd_insert.ImageList = this.imageCollection;
+            this.m_cmd_insert.Location = new System.Drawing.Point(583, 0);
+            this.m_cmd_insert.Name = "m_cmd_insert";
+            this.m_cmd_insert.Size = new System.Drawing.Size(103, 36);
+            this.m_cmd_insert.TabIndex = 3;
+            this.m_cmd_insert.Text = "Thêm";
+            // 
+            // m_cmd_update
+            // 
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_update.ImageIndex = 7;
+            this.m_cmd_update.ImageList = this.imageCollection;
+            this.m_cmd_update.Location = new System.Drawing.Point(686, 0);
+            this.m_cmd_update.Name = "m_cmd_update";
+            this.m_cmd_update.Size = new System.Drawing.Size(103, 36);
+            this.m_cmd_update.TabIndex = 2;
+            this.m_cmd_update.Text = "Sửa";
+            // 
+            // m_cmd_delete
+            // 
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_delete.ImageIndex = 14;
+            this.m_cmd_delete.ImageList = this.imageCollection;
+            this.m_cmd_delete.Location = new System.Drawing.Point(789, 0);
+            this.m_cmd_delete.Name = "m_cmd_delete";
+            this.m_cmd_delete.Size = new System.Drawing.Size(103, 36);
+            this.m_cmd_delete.TabIndex = 1;
+            this.m_cmd_delete.Text = "Xóa";
+            // 
             // f355_tnk_chi_tiet_quy_thu_nhap_khac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,7 +419,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl m_lbl_tong_tien;
         private DevExpress.XtraEditors.LabelControl m_lbl_ten_quy;
-        private DevExpress.XtraGrid.Columns.GridColumn colSTT;
         private DevExpress.XtraGrid.Columns.GridColumn colMA_NV;
         private DevExpress.XtraGrid.Columns.GridColumn colHO_TEN;
         private DevExpress.XtraGrid.Columns.GridColumn colTEN_DON_VI;
@@ -427,5 +427,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSO_TIEN_NOP_THUE;
         private DevExpress.XtraGrid.Columns.GridColumn colSO_TIEN_THUC_LINH;
         private DevExpress.XtraGrid.Columns.GridColumn colHE_SO;
+        private DevExpress.XtraGrid.Columns.GridColumn colSO_TAI_KHOAN;
     }
 }

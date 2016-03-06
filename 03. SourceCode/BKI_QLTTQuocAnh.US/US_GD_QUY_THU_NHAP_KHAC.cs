@@ -346,7 +346,17 @@ public class US_GD_QUY_THU_NHAP_KHAC : US_Object
 	}
 #endregion
 
+    public bool KiemTraQuyCoNhanVienChua(decimal ip_dc_id_quy, decimal ip_dc_id_nhan_vien)
+    {
+        CStoredProc v_obj = new CStoredProc("pr_TNK_nhan_vien_ton_tai_trong_quy_Check");
 
+        v_obj.addDecimalInputParam("@ip_dc_id_quy_tien", ip_dc_id_quy);
+        v_obj.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+        SqlParameter v_para_yn = v_obj.addNVarcharOutputParam("@op_yn", "");
+        v_obj.ExecuteCommand(this);
+        var v_bol_ket_qua = v_para_yn.Value.ToString() == "Y" ? true : false;
+        return v_bol_ket_qua;
+    }
     public void FillDatasetQuyTNK(DataSet v_ds)
     {
         CStoredProc v_cstore = new CStoredProc("pr_TNK_quy_tien_GetAll");

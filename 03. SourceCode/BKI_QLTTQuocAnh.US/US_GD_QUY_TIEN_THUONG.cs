@@ -403,7 +403,18 @@ namespace BKI_DichVuMatDat.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
-        
+
+        public bool KiemTraQuyCoNhanVienChua(decimal ip_dc_id_quy, decimal ip_dc_id_nhan_vien)
+        {
+            CStoredProc v_obj = new CStoredProc("pr_TNK_nhan_vien_ton_tai_trong_quy_Check");
+
+            v_obj.addDecimalInputParam("@ip_dc_id_quy_tien", ip_dc_id_quy);
+            v_obj.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            SqlParameter v_para_yn = v_obj.addNVarcharOutputParam("@op_yn", "");
+            v_obj.ExecuteCommand(this);
+            var v_bol_ket_qua = v_para_yn.Value.ToString() == "Y" ? true: false;
+            return v_bol_ket_qua;
+        }
         public void kiem_tra_nam_das_thuong_hs_bo_sung(decimal ip_dc_nam, ref string op_str_nam_da_thuong_hs_bo_sung)
         {
             CStoredProc v_obj = new CStoredProc("pr_CHECK_NAM_DA_CO_THUONG_HS_BO_SUNG_YN");

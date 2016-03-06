@@ -352,5 +352,31 @@ public class US_GD_QUY_THU_NHAP_KHAC : US_Object
         CStoredProc v_cstore = new CStoredProc("pr_TNK_quy_tien_GetAll");
         v_cstore.fillDataSetByCommand(this, v_ds);
     }
-}
+
+    #region Additional
+    public DataRow LayThongTinQuyThuNhapKhac(decimal ip_dc_id_quy_thu_nhap_khac)
+    {
+        CStoredProc v_pr = new CStoredProc("pr_TNK_thong_tin_quy_Get");
+        v_pr.addDecimalInputParam("@ip_dc_id_quy_thu_nhap_khac", ip_dc_id_quy_thu_nhap_khac);
+
+        DataSet v_ds_ouput = new DataSet();
+        v_ds_ouput.Tables.Add();
+
+        v_pr.fillDataSetByCommand(this, v_ds_ouput);
+        return v_ds_ouput.Tables[0].Rows[0];
+    }
+    public DataTable LayChiTietQuy(decimal ip_dc_id_quy_thu_nhap_khac)
+    {
+
+        CStoredProc v_pr = new CStoredProc("pr_TNK_chi_tiet_quy_GetAll");
+        v_pr.addDecimalInputParam("@ip_dc_id_quy_thu_nhap_khac", ip_dc_id_quy_thu_nhap_khac);
+
+        DataSet v_ds_ouput = new DataSet();
+        v_ds_ouput.Tables.Add();
+
+        v_pr.fillDataSetByCommand(this, v_ds_ouput);
+        return v_ds_ouput.Tables[0];
+    }
+    #endregion
+	}
 }

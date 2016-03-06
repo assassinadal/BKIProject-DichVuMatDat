@@ -318,6 +318,7 @@
     <Compile Include="BaoCao\f402_tong_hop_cham_cong.Designer.cs">
       <DependentUpon>f402_tong_hop_cham_cong.cs</DependentUpon>
     </Compile>
+    <Compile Include="DTO\DTO_QUY_THU_NHAP_KHAC.cs" />
     <Compile Include="NghiepVu\f341_dat_he_so_lns_lcd_v2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -975,6 +976,12 @@
     <Compile Include="NghiepVu\frm356_chuyen_trang_thai_lao_dong.Designer.cs">
       <DependentUpon>frm356_chuyen_trang_thai_lao_dong.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\ThuNhapKhac\f355_tnk_chi_tiet_quy_thu_nhap_khac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\ThuNhapKhac\f355_tnk_chi_tiet_quy_thu_nhap_khac.Designer.cs">
+      <DependentUpon>f355_tnk_chi_tiet_quy_thu_nhap_khac.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\ThuNhapKhac\TnkQL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="f388_main.cs">
@@ -1426,6 +1433,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm356_chuyen_trang_thai_lao_dong.resx">
       <DependentUpon>frm356_chuyen_trang_thai_lao_dong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\ThuNhapKhac\f355_tnk_chi_tiet_quy_thu_nhap_khac.resx">
+      <DependentUpon>f355_tnk_chi_tiet_quy_thu_nhap_khac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -1066,6 +1066,28 @@ namespace BKI_DichVuMatDat.DS.CDBNames
 
     #endregion
 
+    public class V_TNK_GD_QUY_THU_NHAP_KHAC
+    {
+        public const string ID = "ID";
+        public const string TEN_QUY = "TEN_QUY";
+        public const string THANG = "THANG";
+        public const string NAM = "NAM";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string NGAY_LAP_PHAN_MEM = "NGAY_LAP_PHAN_MEM";
+        public const string NGUOI_LAP_PHAN_MEM = "NGUOI_LAP_PHAN_MEM";
+        public const string TU_NGAY_XET_THUONG = "TU_NGAY_XET_THUONG";
+        public const string DEN_NGAY_XET_THUONG = "DEN_NGAY_XET_THUONG";
+        public const string LY_DO_THUONG = "LY_DO_THUONG";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string DA_XOA = "DA_XOA";
+        public const string ID_LOAI_THU_NHAP_KHAC = "ID_LOAI_THU_NHAP_KHAC";
+        public const string TEN_LOAI_THU_NHAP_KHAC = "TEN_LOAI_THU_NHAP_KHAC";
+        public const string SO_LUONG_NV_TRONG_QUY = "SO_LUONG_NV_TRONG_QUY";
+        public const string CO_DU_LIEU = "CO_DU_LIEU";
+        public const string TONG_TIEN = "TONG_TIEN";
+    }
+
     public class GD_QUY_THU_NHAP_KHAC
     {
         public const string ID = "ID";

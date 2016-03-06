@@ -278,25 +278,29 @@
             // 
             // m_lbl_ten_quy
             // 
+            this.m_lbl_ten_quy.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.m_lbl_ten_quy.Location = new System.Drawing.Point(192, 22);
             this.m_lbl_ten_quy.Name = "m_lbl_ten_quy";
-            this.m_lbl_ten_quy.Size = new System.Drawing.Size(12, 13);
+            this.m_lbl_ten_quy.Size = new System.Drawing.Size(15, 19);
             this.m_lbl_ten_quy.TabIndex = 7;
             this.m_lbl_ten_quy.Text = "...";
             // 
             // m_lbl_tong_tien
             // 
+            this.m_lbl_tong_tien.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.m_lbl_tong_tien.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_tong_tien.Location = new System.Drawing.Point(192, 73);
             this.m_lbl_tong_tien.Name = "m_lbl_tong_tien";
-            this.m_lbl_tong_tien.Size = new System.Drawing.Size(12, 13);
+            this.m_lbl_tong_tien.Size = new System.Drawing.Size(12, 16);
             this.m_lbl_tong_tien.TabIndex = 6;
             this.m_lbl_tong_tien.Text = "...";
             // 
             // m_lbl_so_luong_nv_trong_quy
             // 
+            this.m_lbl_so_luong_nv_trong_quy.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.m_lbl_so_luong_nv_trong_quy.Location = new System.Drawing.Point(192, 49);
             this.m_lbl_so_luong_nv_trong_quy.Name = "m_lbl_so_luong_nv_trong_quy";
-            this.m_lbl_so_luong_nv_trong_quy.Size = new System.Drawing.Size(12, 13);
+            this.m_lbl_so_luong_nv_trong_quy.Size = new System.Drawing.Size(9, 13);
             this.m_lbl_so_luong_nv_trong_quy.TabIndex = 5;
             this.m_lbl_so_luong_nv_trong_quy.Text = "...";
             // 

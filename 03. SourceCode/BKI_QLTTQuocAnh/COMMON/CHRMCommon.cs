@@ -10,11 +10,24 @@ using IP.Core.IPCommon;
 using System.Windows.Forms;
 using System.Drawing;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace BKI_DichVuMatDat
 {
     class CHRMCommon
     {
+        public static void ExportExcel(GridView ip_grv)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+            saveFileDialog1.RestoreDirectory = true;
+            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                ip_grv.ExportToXls(saveFileDialog1.FileName);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Trích xuất dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         /// <summary>
         /// Trả về danh sách các nhân viên được quyền chọn theo user người sử dụng
         /// </summary>
@@ -117,7 +130,7 @@ namespace BKI_DichVuMatDat
             col.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             ip_grv.CustomUnboundColumnData += ip_grv_CustomUnboundColumnData;
         }
-        
+
 
         public static DateTime get_first_day_of_month(DateTime ip_dat_current_date)
         {
@@ -147,7 +160,7 @@ namespace BKI_DichVuMatDat
             result = result.AddMonths(1);
             result = result.AddDays(-(result.Day));
             return result;
-        } 
+        }
 
         static void ip_grv_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
@@ -410,7 +423,7 @@ namespace BKI_DichVuMatDat
         //    v_us.dcHE_SO_K = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.HE_SO_K]);
         //    v_us.strDON_VI = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP.DON_VI].ToString();
         //}
-        
+
         //public static void insertLuongNV2RPT(DataRow v_dr_luong_1_nv)
         //{
         //    US_RPT_LUONG v_us = new US_RPT_LUONG();

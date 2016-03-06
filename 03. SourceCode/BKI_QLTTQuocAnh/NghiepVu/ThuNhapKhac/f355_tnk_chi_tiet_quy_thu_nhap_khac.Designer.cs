@@ -53,6 +53,7 @@
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).BeginInit();
@@ -331,6 +332,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cmd_xuat_excel);
             this.panel1.Controls.Add(this.simpleButton5);
             this.panel1.Controls.Add(this.m_cmd_insert);
             this.panel1.Controls.Add(this.m_cmd_update);
@@ -385,6 +387,17 @@
             this.m_cmd_delete.TabIndex = 1;
             this.m_cmd_delete.Text = "Xóa";
             // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.ImageIndex = 1;
+            this.m_cmd_xuat_excel.ImageList = this.imageCollection;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(104, 0);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(127, 36);
+            this.m_cmd_xuat_excel.TabIndex = 5;
+            this.m_cmd_xuat_excel.Text = "Trích xuất dữ liệu";
+            // 
             // f355_tnk_chi_tiet_quy_thu_nhap_khac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,5 +445,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSO_TIEN_THUC_LINH;
         private DevExpress.XtraGrid.Columns.GridColumn colHE_SO;
         private DevExpress.XtraGrid.Columns.GridColumn colSO_TAI_KHOAN;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
     }
 }

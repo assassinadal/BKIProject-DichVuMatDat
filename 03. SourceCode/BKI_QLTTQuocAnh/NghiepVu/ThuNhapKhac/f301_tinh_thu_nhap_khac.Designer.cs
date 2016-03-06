@@ -135,6 +135,7 @@
             this.m_cmd_xoa_quy_tien_thuong.StyleController = this.layoutControlMain;
             this.m_cmd_xoa_quy_tien_thuong.TabIndex = 22;
             this.m_cmd_xoa_quy_tien_thuong.Text = "Xóa quỹ tiền thưởng này";
+            this.m_cmd_xoa_quy_tien_thuong.Visible = false;
             this.m_cmd_xoa_quy_tien_thuong.Click += new System.EventHandler(this.m_cmd_xoa_quy_tien_thuong_Click);
             // 
             // simpleButton1
@@ -146,6 +147,7 @@
             this.simpleButton1.StyleController = this.layoutControlMain;
             this.simpleButton1.TabIndex = 21;
             this.simpleButton1.Text = "Xóa tiền đã chia NV";
+            this.simpleButton1.Visible = false;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // m_cmd_xuat_excel
@@ -167,6 +169,7 @@
             this.m_cmd_xem_chi_tiet_quy.StyleController = this.layoutControlMain;
             this.m_cmd_xem_chi_tiet_quy.TabIndex = 19;
             this.m_cmd_xem_chi_tiet_quy.Text = "Xem chi tiết";
+            this.m_cmd_xem_chi_tiet_quy.Visible = false;
             // 
             // m_cmd_tinh_tien_thuong
             // 
@@ -226,6 +229,7 @@
             this.m_cmd_them_quy_tien.StyleController = this.layoutControlMain;
             this.m_cmd_them_quy_tien.TabIndex = 10;
             this.m_cmd_them_quy_tien.Text = "Thêm quỹ thưởng";
+            this.m_cmd_them_quy_tien.Visible = false;
             // 
             // m_grc_main
             // 

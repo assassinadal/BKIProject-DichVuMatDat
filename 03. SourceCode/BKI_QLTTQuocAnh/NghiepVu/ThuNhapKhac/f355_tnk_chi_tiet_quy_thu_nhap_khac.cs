@@ -36,6 +36,19 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             m_cmd_insert.Click += m_cmd_insert_Click;
             m_cmd_update.Click += m_cmd_update_Click;
             m_cmd_delete.Click += m_cmd_delete_Click;
+            m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
+        }
+
+        void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CHRMCommon.ExportExcel(m_grv_main);
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_delete_Click(object sender, EventArgs e)

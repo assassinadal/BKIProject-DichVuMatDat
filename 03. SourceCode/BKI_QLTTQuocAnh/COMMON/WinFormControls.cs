@@ -173,7 +173,29 @@ namespace BKI_DichVuMatDat
         //        ip_cbo.SelectedIndex = 0;
         //    }
         //}
-
+        public static void load_xls_to_gridview_v2(string ip_str_path, DevExpress.XtraGrid.GridControl ip_grc)
+        {
+            string conStr = "";
+            conStr = ConfigurationManager.ConnectionStrings["Excel07ConString"].ConnectionString;
+            conStr = String.Format(conStr, ip_str_path, "Yes");
+            OleDbConnection con = new OleDbConnection(conStr);
+            OleDbCommand ExcelCommand = new OleDbCommand();
+            ExcelCommand.Connection = con;
+            con.Open();
+            DataTable ExcelDataSet = new DataTable();
+            ExcelDataSet = con.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+            DataTable dt = new DataTable();
+            if(ExcelDataSet != null && ExcelDataSet.Rows.Count > 0)
+            {
+                string SheetName = ExcelDataSet.Rows[0]["TABLE_NAME"].ToString(); // get sheetname
+                ExcelCommand.CommandText = "SELECT * From [" + SheetName + "]";
+                OleDbDataAdapter ExcelAdapter = new OleDbDataAdapter(ExcelCommand);
+                ExcelAdapter.SelectCommand = ExcelCommand;
+                ExcelAdapter.Fill(dt);
+            }
+            con.Close();
+            ip_grc.DataSource = dt;
+        }
         public static void load_xls_to_gridview(string ip_str_path, DevExpress.XtraGrid.GridControl ip_grc)
         {
             string conStr = "";

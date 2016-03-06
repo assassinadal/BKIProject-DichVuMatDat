@@ -4,6 +4,13 @@ using System.Text;
 
 namespace BKI_DichVuMatDat.US
 {
+    public enum option_tinh_tnk
+    {
+        CHUA_CHON,
+        TONG_TIEN,
+        DON_GIA,
+        KHONG_TINH
+    }
     public enum ENUM_CONFIRM_TINH_BANG_LUONG
     {
         TINH_LAI_TOAN_BO = 1,

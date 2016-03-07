@@ -34,5 +34,6 @@ namespace BKI_DichVuMatDat.DTO
         public decimal TONG_TIEN_THUC_LINH { get; set; }
         public bool CO_DU_LIEU { get; set; }
 
+        public bool DA_CHOT { get; set; }
     }
 }

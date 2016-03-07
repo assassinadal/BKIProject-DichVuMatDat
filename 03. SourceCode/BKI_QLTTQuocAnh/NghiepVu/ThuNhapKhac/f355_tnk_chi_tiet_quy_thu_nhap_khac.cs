@@ -39,6 +39,19 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
             m_cmd_exit.Click += m_cmd_exit_Click;
             m_cmd_import_excel.Click += m_cmd_import_excel_Click;
+            m_grv_main.DoubleClick += m_grv_main_DoubleClick;
+        }
+
+        void m_grv_main_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                handle_btn_update_clicked();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_import_excel_Click(object sender, EventArgs e)
@@ -202,7 +215,12 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         }
         private void delete_tnk()
         {
-            var dlg = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(m_grv_main.FocusedRowHandle < 0)
+            {
+                XtraMessageBox.Show("Bạn chưa chọn dòng dữ liệu nào để xóa!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            var dlg = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu? Dữ liệu đã xóa không thể khôi phục được!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(dlg == System.Windows.Forms.DialogResult.Yes)
             {
                 var v_dc_id_gd_thu_nhap_khac = Convert.ToDecimal(m_grv_main.GetFocusedDataRow()[GD_THU_NHAP_KHAC.ID]);

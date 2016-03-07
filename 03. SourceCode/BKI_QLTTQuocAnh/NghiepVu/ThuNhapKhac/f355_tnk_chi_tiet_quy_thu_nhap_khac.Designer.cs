@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f355_tnk_chi_tiet_quy_thu_nhap_khac));
-            this.imageCollection = new DevExpress.Utils.ImageCollection();
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.m_grc_main = new DevExpress.XtraGrid.GridControl();
             this.m_grv_main = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -141,7 +142,7 @@
             this.colMA_NV.FieldName = "MA_NV";
             this.colMA_NV.Name = "colMA_NV";
             this.colMA_NV.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MA_NV", "{0} nhân viên")});
             this.colMA_NV.Visible = true;
             this.colMA_NV.VisibleIndex = 0;
             this.colMA_NV.Width = 88;

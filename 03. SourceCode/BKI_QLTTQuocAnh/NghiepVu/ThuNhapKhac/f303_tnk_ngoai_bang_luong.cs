@@ -55,8 +55,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         {
             try
             {
-                m_txt_thang.Text = DateTime.Now.Month.ToString();
-                m_txt_nam.Text = DateTime.Now.Year.ToString();
+                load_data_to_grid();
             }
             catch (Exception v_e)
             {
@@ -135,7 +134,14 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         #region Private Method
         private void format_controls()
         {
+            set_initial_form_load();
             set_define_events();
+        }
+
+        private void set_initial_form_load()
+        {
+            m_txt_thang.Text = DateTime.Now.Month.ToString();
+            m_txt_nam.Text = DateTime.Now.Year.ToString();
         }
 
         private void load_data_to_grid()

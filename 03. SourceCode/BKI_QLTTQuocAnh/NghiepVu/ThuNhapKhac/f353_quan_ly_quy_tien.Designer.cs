@@ -34,6 +34,8 @@
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_dat_den_thang = new DevExpress.XtraEditors.DateEdit();
+            this.m_dat_tu_thang = new DevExpress.XtraEditors.DateEdit();
             this.m_lbl_trang_thai_quy = new DevExpress.XtraEditors.LabelControl();
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_search = new DevExpress.XtraEditors.SimpleButton();
@@ -50,17 +52,15 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_dat_tu_thang = new DevExpress.XtraEditors.DateEdit();
-            this.m_dat_den_thang = new DevExpress.XtraEditors.DateEdit();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             this.SuspendLayout();
             // 
             // m_pnl_out_place_dm
@@ -116,173 +116,29 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(796, 87);
+            this.panelControl1.Size = new System.Drawing.Size(796, 69);
             this.panelControl1.TabIndex = 32;
             // 
-            // m_lbl_trang_thai_quy
+            // m_dat_den_thang
             // 
-            this.m_lbl_trang_thai_quy.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_trang_thai_quy.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_trang_thai_quy.Location = new System.Drawing.Point(63, 63);
-            this.m_lbl_trang_thai_quy.Name = "m_lbl_trang_thai_quy";
-            this.m_lbl_trang_thai_quy.Size = new System.Drawing.Size(0, 14);
-            this.m_lbl_trang_thai_quy.TabIndex = 33;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(60, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 16);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Từ tháng";
-            // 
-            // m_cmd_search
-            // 
-            this.m_cmd_search.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_search.Image")));
-            this.m_cmd_search.Location = new System.Drawing.Point(538, 17);
-            this.m_cmd_search.Name = "m_cmd_search";
-            this.m_cmd_search.Size = new System.Drawing.Size(116, 35);
-            this.m_cmd_search.TabIndex = 29;
-            this.m_cmd_search.Text = "&Lọc";
-            // 
-            // m_lbl_nam
-            // 
-            this.m_lbl_nam.AutoSize = true;
-            this.m_lbl_nam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_nam.Location = new System.Drawing.Point(296, 28);
-            this.m_lbl_nam.Name = "m_lbl_nam";
-            this.m_lbl_nam.Size = new System.Drawing.Size(71, 16);
-            this.m_lbl_nam.TabIndex = 28;
-            this.m_lbl_nam.Text = "Đến tháng ";
-            // 
-            // m_grc
-            // 
-            this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc.Location = new System.Drawing.Point(0, 87);
-            this.m_grc.MainView = this.m_grv;
-            this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(796, 343);
-            this.m_grc.TabIndex = 33;
-            this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.m_grv});
-            // 
-            // m_grv
-            // 
-            this.m_grv.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.m_grv.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.m_grv.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn10,
-            this.gridColumn9,
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn8,
-            this.gridColumn7});
-            this.m_grv.GridControl = this.m_grc;
-            this.m_grv.Name = "m_grv";
-            this.m_grv.OptionsBehavior.Editable = false;
-            this.m_grv.OptionsFind.AllowFindPanel = false;
-            this.m_grv.OptionsFind.AlwaysVisible = true;
-            this.m_grv.OptionsView.ShowFooter = true;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "Người lập quỹ";
-            this.gridColumn10.FieldName = "NGUOI_LAP";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 7;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "Ngày lập quỹ";
-            this.gridColumn9.FieldName = "NGAY_LAP";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 8;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Tên quỹ";
-            this.gridColumn1.FieldName = "TEN_QUY";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 2;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Tháng áp dụng";
-            this.gridColumn2.FieldName = "THANG";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 3;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Năm áp dụng";
-            this.gridColumn3.FieldName = "NAM";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 4;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Quỹ xét từ ngày";
-            this.gridColumn4.FieldName = "TU_NGAY_XET_THUONG";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 5;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Đến ngày";
-            this.gridColumn5.FieldName = "DEN_NGAY_XET_THUONG";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 6;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Lý do";
-            this.gridColumn6.FieldName = "LY_DO_THUONG";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 9;
-            this.gridColumn6.Width = 106;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "Loại quỹ";
-            this.gridColumn8.FieldName = "LOAI_THU_NHAP";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 1;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn7.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn7.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn7.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn7.Caption = "STT";
-            this.gridColumn7.FieldName = "STT";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 0;
-            this.gridColumn7.Width = 60;
+            this.m_dat_den_thang.EditValue = null;
+            this.m_dat_den_thang.Location = new System.Drawing.Point(330, 20);
+            this.m_dat_den_thang.Name = "m_dat_den_thang";
+            this.m_dat_den_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dat_den_thang.Properties.Appearance.Options.UseFont = true;
+            this.m_dat_den_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_den_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_den_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
+            this.m_dat_den_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_den_thang.Size = new System.Drawing.Size(122, 20);
+            this.m_dat_den_thang.TabIndex = 35;
             // 
             // m_dat_tu_thang
             // 
             this.m_dat_tu_thang.EditValue = null;
-            this.m_dat_tu_thang.Location = new System.Drawing.Point(126, 24);
+            this.m_dat_tu_thang.Location = new System.Drawing.Point(102, 20);
             this.m_dat_tu_thang.Name = "m_dat_tu_thang";
             this.m_dat_tu_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_dat_tu_thang.Properties.Appearance.Options.UseFont = true;
@@ -298,21 +154,192 @@
             this.m_dat_tu_thang.Size = new System.Drawing.Size(122, 20);
             this.m_dat_tu_thang.TabIndex = 34;
             // 
-            // m_dat_den_thang
+            // m_lbl_trang_thai_quy
             // 
-            this.m_dat_den_thang.EditValue = null;
-            this.m_dat_den_thang.Location = new System.Drawing.Point(373, 24);
-            this.m_dat_den_thang.Name = "m_dat_den_thang";
-            this.m_dat_den_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dat_den_thang.Properties.Appearance.Options.UseFont = true;
-            this.m_dat_den_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_den_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_den_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
-            this.m_dat_den_thang.Properties.Mask.EditMask = "MM/yyyy";
-            this.m_dat_den_thang.Size = new System.Drawing.Size(123, 20);
-            this.m_dat_den_thang.TabIndex = 35;
+            this.m_lbl_trang_thai_quy.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_trang_thai_quy.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_trang_thai_quy.Location = new System.Drawing.Point(39, 59);
+            this.m_lbl_trang_thai_quy.Name = "m_lbl_trang_thai_quy";
+            this.m_lbl_trang_thai_quy.Size = new System.Drawing.Size(0, 14);
+            this.m_lbl_trang_thai_quy.TabIndex = 33;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(36, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 14);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Từ tháng";
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_search.Image")));
+            this.m_cmd_search.Location = new System.Drawing.Point(484, 13);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_search.TabIndex = 29;
+            this.m_cmd_search.Text = "&Lọc";
+            // 
+            // m_lbl_nam
+            // 
+            this.m_lbl_nam.AutoSize = true;
+            this.m_lbl_nam.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_nam.Location = new System.Drawing.Point(255, 24);
+            this.m_lbl_nam.Name = "m_lbl_nam";
+            this.m_lbl_nam.Size = new System.Drawing.Size(69, 14);
+            this.m_lbl_nam.TabIndex = 28;
+            this.m_lbl_nam.Text = "Đến tháng ";
+            // 
+            // m_grc
+            // 
+            this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
+            this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_grc.Location = new System.Drawing.Point(0, 69);
+            this.m_grc.MainView = this.m_grv;
+            this.m_grc.Name = "m_grc";
+            this.m_grc.Size = new System.Drawing.Size(796, 361);
+            this.m_grc.TabIndex = 33;
+            this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.m_grv});
+            // 
+            // m_grv
+            // 
+            this.m_grv.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_grv.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.m_grv.Appearance.HeaderPanel.Options.UseFont = true;
+            this.m_grv.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.m_grv.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.m_grv.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.m_grv.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn10,
+            this.gridColumn9,
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn8,
+            this.gridColumn7});
+            this.m_grv.GridControl = this.m_grc;
+            this.m_grv.GroupCount = 1;
+            this.m_grv.Name = "m_grv";
+            this.m_grv.OptionsBehavior.AutoExpandAllGroups = true;
+            this.m_grv.OptionsBehavior.Editable = false;
+            this.m_grv.OptionsFind.AllowFindPanel = false;
+            this.m_grv.OptionsFind.AlwaysVisible = true;
+            this.m_grv.OptionsView.ShowFooter = true;
+            this.m_grv.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn8, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Người lập quỹ";
+            this.gridColumn10.FieldName = "NGUOI_LAP";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 6;
+            this.gridColumn10.Width = 60;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Ngày lập quỹ";
+            this.gridColumn9.FieldName = "NGAY_LAP";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 7;
+            this.gridColumn9.Width = 60;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Tên quỹ";
+            this.gridColumn1.FieldName = "TEN_QUY";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 91;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.gridColumn2.Caption = "Tháng áp dụng";
+            this.gridColumn2.FieldName = "THANG";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.Width = 57;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.gridColumn3.Caption = "Năm áp dụng";
+            this.gridColumn3.FieldName = "NAM";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.Width = 52;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn4.Caption = "Quỹ xét từ ngày";
+            this.gridColumn4.FieldName = "TU_NGAY_XET_THUONG";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.Width = 80;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.Caption = "Đến ngày";
+            this.gridColumn5.FieldName = "DEN_NGAY_XET_THUONG";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.Width = 80;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Lý do";
+            this.gridColumn6.FieldName = "LY_DO_THUONG";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 8;
+            this.gridColumn6.Width = 173;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Loại quỹ";
+            this.gridColumn8.FieldName = "LOAI_THU_NHAP";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 1;
+            this.gridColumn8.Width = 85;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn7.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn7.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn7.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn7.Caption = "STT";
+            this.gridColumn7.FieldName = "STT";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "STT", "Số quỹ: {0}")});
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 0;
+            this.gridColumn7.Width = 41;
             // 
             // f353_quan_ly_quy_tien
             // 
@@ -328,12 +355,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
             this.ResumeLayout(false);
 
         }

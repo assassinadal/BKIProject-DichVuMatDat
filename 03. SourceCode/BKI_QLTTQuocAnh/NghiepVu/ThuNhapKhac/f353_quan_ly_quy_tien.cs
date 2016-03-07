@@ -38,14 +38,14 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 
         private void set_init_form_load()
         {
-            set_define_events();
             m_dat_tu_thang.DateTime = DateTime.Now.AddYears(-1);
             m_dat_den_thang.DateTime = DateTime.Now;
+            set_define_events();            
         }
 
         private void load_data_to_grid()
         {
-            CHRMCommon.make_stt(m_grv);
+            CHRMCommon.make_stt_indicator(m_grv);
             US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC();
             DS_GD_QUY_THU_NHAP_KHAC v_ds = new DS_GD_QUY_THU_NHAP_KHAC();
             v_us.FillDatasetQuyTNK(v_ds, m_dat_tu_thang.DateTime, m_dat_den_thang.DateTime);
@@ -54,6 +54,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 
         private bool check_quy_tien_dang_su_dung_yn(US_GD_QUY_THU_NHAP_KHAC v_us)
         {
+            m_lst_id_gd_thu_nhap_khac.Clear();
             US_GD_THU_NHAP_KHAC v_us_gd_tnk = new US_GD_THU_NHAP_KHAC();
             DS_GD_THU_NHAP_KHAC v_ds_gd_tnk = new DS_GD_THU_NHAP_KHAC();
             v_us_gd_tnk.FillDataset(v_ds_gd_tnk, "where ID_QUY_THU_NHAP_KHAC = " + v_us.dcID);
@@ -84,6 +85,11 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             }
         }
 
+        private bool check_quy_tien_da_chot_yn()
+        {
+            return false;
+        }
+
         #endregion
 
         #region Event Handle
@@ -94,7 +100,20 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             m_cmd_delete.Click += m_cmd_delete_Click;
             m_cmd_search.Click += m_cmd_search_Click;
             m_grc.DoubleClick += m_grc_DoubleClick;
+            this.Load += f353_quan_ly_quy_tien_Load;
             //m_grc.Click += m_grc_Click;
+        }
+
+        void f353_quan_ly_quy_tien_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_to_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         //void m_grc_Click(object sender, EventArgs e)
@@ -129,15 +148,15 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         {
             try
             {
-            var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
-            decimal v_id_quy_tnk = CIPConvert.ToDecimal(v_dr[0].ToString());
-            f355_tnk_chi_tiet_quy_thu_nhap_khac v_f = new f355_tnk_chi_tiet_quy_thu_nhap_khac(v_id_quy_tnk);
-            v_f.ShowDialog();
-        }
+                var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+                decimal v_id_quy_tnk = CIPConvert.ToDecimal(v_dr[0].ToString());
+                f355_tnk_chi_tiet_quy_thu_nhap_khac v_f = new f355_tnk_chi_tiet_quy_thu_nhap_khac(v_id_quy_tnk);
+                v_f.ShowDialog();
+            }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
-            }            
+            }
         }
 
         void m_cmd_delete_Click(object sender, EventArgs e)
@@ -146,25 +165,21 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             {
                 var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
                 US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[0].ToString()));
-                if (check_quy_tien_dang_su_dung_yn(v_us))
+                string v_str_confirm = "Bạn có chắc chắn muốn xóa quỹ tiền này?";
+                if (CHRM_BaseMessages.MsgBox_Confirm(v_str_confirm))
                 {
-                    int v_slg_nvien = m_lst_id_gd_thu_nhap_khac.Count;
-                    string v_str_confirm = "Quỹ tiền đang được sử dụng cho " + v_slg_nvien + " nhân viên.\nBạn có muốn xóa khoản thu nhập của " + v_slg_nvien + " nhân viên đang sử dụng quỹ tiền này?";
-                    if (CHRM_BaseMessages.MsgBox_Confirm(v_str_confirm))
+                    if (check_quy_tien_dang_su_dung_yn(v_us))
                     {
-                        xoa_thu_nhap_khac();
-                        xoa_quy_tien(v_us);
+                        int v_slg_nvien = m_lst_id_gd_thu_nhap_khac.Count;
+                        string v_str_confirms = "Quỹ tiền đang được sử dụng cho " + v_slg_nvien + " nhân viên.\nBạn có muốn xóa cả khoản thu nhập của " + v_slg_nvien + " nhân viên đang sử dụng quỹ tiền này?";
+                        if (CHRM_BaseMessages.MsgBox_Confirm(v_str_confirms))
+                        {
+                            xoa_thu_nhap_khac();
+                            xoa_quy_tien(v_us);
+                        }                       
                     }
+                    else xoa_quy_tien(v_us);
                 }
-                else
-                {
-                    string v_str_confirm = "Bạn có chắc chắn muốn xóa quỹ tiền này?";
-                    if (CHRM_BaseMessages.MsgBox_Confirm(v_str_confirm))
-                    {
-                        xoa_quy_tien(v_us);
-                    }
-                }
-                load_data_to_grid();
             }
             catch (Exception v_e)
             {
@@ -176,11 +191,16 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         {
             try
             {
-                f354_danh_sach_quy_thuong_de v_f = new f354_danh_sach_quy_thuong_de();
-                var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
-                US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[0].ToString()));
-                v_f.display_for_update(v_us);
-                load_data_to_grid();
+                if (check_quy_tien_da_chot_yn())
+                    CHRM_BaseMessages.MsgBox_Confirm("Quỹ tiền hiện đã chốt, vui lòng không cập nhật!");
+                else
+                {
+                    f354_danh_sach_quy_thuong_de v_f = new f354_danh_sach_quy_thuong_de();
+                    var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+                    US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[0].ToString()));
+                    v_f.display_for_update(v_us);
+                    load_data_to_grid();
+                }               
             }
             catch (Exception v_e)
             {

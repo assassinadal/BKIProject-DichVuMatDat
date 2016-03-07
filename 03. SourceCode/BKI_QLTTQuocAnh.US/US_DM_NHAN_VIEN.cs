@@ -791,7 +791,11 @@ namespace BKI_DichVuMatDat.US
             v_cstore.addNVarcharInputParam("@ip_str_ma_nv", ip_str_ma_nv);
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
-
+        public void LayDanhSachMaNhanVienInDB(DataSet op_ds)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_NS_danh_sach_ma_nhan_vien_GetAll");
+            v_cstore.fillDataSetByCommand(this, op_ds);
+        }
 
 
 

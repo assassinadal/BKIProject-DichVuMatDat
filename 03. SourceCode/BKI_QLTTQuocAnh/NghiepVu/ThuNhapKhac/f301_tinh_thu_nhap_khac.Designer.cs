@@ -28,13 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.layoutControlMain = new DevExpress.XtraLayout.LayoutControl();
-            this.m_lbl_ten_quy = new DevExpress.XtraEditors.LabelControl();
-            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_tinh_tien_thuong = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f301_tinh_thu_nhap_khac));
             this.m_lbl_download_template = new DevExpress.XtraEditors.LabelControl();
-            this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_grc_main = new DevExpress.XtraGrid.GridControl();
             this.m_grv_main = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,128 +43,54 @@
             this.SO_TAI_KHOAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItemGrid = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItemSave = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_cmd_xuat_excel_layout = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItemDownload = new DevExpress.XtraLayout.LayoutControlItem();
+            this.m_lbl_ten_quy = new DevExpress.XtraEditors.LabelControl();
+            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.imageCollection = new DevExpress.Utils.ImageCollection();
+            this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlMain)).BeginInit();
-            this.layoutControlMain.SuspendLayout();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.m_cmd_tinh_tien_thuong = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.m_lbl_trang_thai_soan_thao = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemSave)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_cmd_xuat_excel_layout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemDownload)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // layoutControlMain
-            // 
-            this.layoutControlMain.Controls.Add(this.m_lbl_ten_quy);
-            this.layoutControlMain.Controls.Add(this.m_cmd_xuat_excel);
-            this.layoutControlMain.Controls.Add(this.m_cmd_tinh_tien_thuong);
-            this.layoutControlMain.Controls.Add(this.m_cmd_save);
-            this.layoutControlMain.Controls.Add(this.m_lbl_download_template);
-            this.layoutControlMain.Controls.Add(this.m_cmd_import_excel);
-            this.layoutControlMain.Controls.Add(this.m_grc_main);
-            this.layoutControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControlMain.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlMain.Name = "layoutControlMain";
-            this.layoutControlMain.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(676, 297, 250, 337);
-            this.layoutControlMain.Root = this.layoutControlGroup1;
-            this.layoutControlMain.Size = new System.Drawing.Size(1158, 554);
-            this.layoutControlMain.TabIndex = 0;
-            this.layoutControlMain.Text = "layoutControl1";
-            // 
-            // m_lbl_ten_quy
-            // 
-            this.m_lbl_ten_quy.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.m_lbl_ten_quy.Location = new System.Drawing.Point(43, 20);
-            this.m_lbl_ten_quy.Name = "m_lbl_ten_quy";
-            this.m_lbl_ten_quy.Size = new System.Drawing.Size(85, 16);
-            this.m_lbl_ten_quy.StyleController = this.layoutControlMain;
-            this.m_lbl_ten_quy.TabIndex = 21;
-            this.m_lbl_ten_quy.Text = "...";
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.Image = global::BKI_DichVuMatDat.Properties.Resources.grid;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(1004, 48);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(142, 30);
-            this.m_cmd_xuat_excel.StyleController = this.layoutControlMain;
-            this.m_cmd_xuat_excel.TabIndex = 20;
-            this.m_cmd_xuat_excel.Text = "Trích xuất dữ liệu";
-            // 
-            // m_cmd_tinh_tien_thuong
-            // 
-            this.m_cmd_tinh_tien_thuong.Image = global::BKI_DichVuMatDat.Properties.Resources.sum;
-            this.m_cmd_tinh_tien_thuong.Location = new System.Drawing.Point(221, 48);
-            this.m_cmd_tinh_tien_thuong.Name = "m_cmd_tinh_tien_thuong";
-            this.m_cmd_tinh_tien_thuong.Size = new System.Drawing.Size(203, 30);
-            this.m_cmd_tinh_tien_thuong.StyleController = this.layoutControlMain;
-            this.m_cmd_tinh_tien_thuong.TabIndex = 16;
-            this.m_cmd_tinh_tien_thuong.Text = "Bước 2: Tính tiền thưởng";
-            // 
-            // m_cmd_save
-            // 
-            this.m_cmd_save.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_save.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.m_cmd_save.Appearance.Options.UseFont = true;
-            this.m_cmd_save.Appearance.Options.UseForeColor = true;
-            this.m_cmd_save.Image = global::BKI_DichVuMatDat.Properties.Resources.Save;
-            this.m_cmd_save.Location = new System.Drawing.Point(12, 504);
-            this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(222, 38);
-            this.m_cmd_save.StyleController = this.layoutControlMain;
-            this.m_cmd_save.TabIndex = 15;
-            this.m_cmd_save.Text = "Bước 3: Lưu tiền thưởng đã tính";
             // 
             // m_lbl_download_template
             // 
-            this.m_lbl_download_template.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.m_lbl_download_template.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
             this.m_lbl_download_template.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_download_template.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.m_lbl_download_template.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.m_lbl_download_template.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.m_lbl_download_template.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_lbl_download_template.LineVisible = true;
-            this.m_lbl_download_template.Location = new System.Drawing.Point(846, 56);
+            this.m_lbl_download_template.Location = new System.Drawing.Point(2, 2);
             this.m_lbl_download_template.Name = "m_lbl_download_template";
-            this.m_lbl_download_template.Size = new System.Drawing.Size(154, 14);
-            this.m_lbl_download_template.StyleController = this.layoutControlMain;
+            this.m_lbl_download_template.Size = new System.Drawing.Size(154, 33);
             this.m_lbl_download_template.TabIndex = 14;
-            this.m_lbl_download_template.Text = "Tạo file Excel import mới!";
-            // 
-            // m_cmd_import_excel
-            // 
-            this.m_cmd_import_excel.Image = global::BKI_DichVuMatDat.Properties.Resources.upload;
-            this.m_cmd_import_excel.Location = new System.Drawing.Point(12, 48);
-            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
-            this.m_cmd_import_excel.Size = new System.Drawing.Size(205, 30);
-            this.m_cmd_import_excel.StyleController = this.layoutControlMain;
-            this.m_cmd_import_excel.TabIndex = 13;
-            this.m_cmd_import_excel.Text = "Bước 1: Import Excel tiền thưởng";
+            this.m_lbl_download_template.Text = "Bước 1: Tạo file Excel import mới!";
             // 
             // m_grc_main
             // 
             this.m_grc_main.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc_main.Location = new System.Drawing.Point(12, 82);
+            this.m_grc_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_grc_main.Location = new System.Drawing.Point(0, 115);
             this.m_grc_main.MainView = this.m_grv_main;
             this.m_grc_main.Name = "m_grc_main";
             this.m_grc_main.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
-            this.m_grc_main.Size = new System.Drawing.Size(1134, 418);
+            this.m_grc_main.Size = new System.Drawing.Size(1158, 439);
             this.m_grc_main.TabIndex = 11;
             this.m_grc_main.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_main});
@@ -343,165 +264,162 @@
             this.STT.VisibleIndex = 0;
             this.STT.Width = 35;
             // 
-            // layoutControlGroup1
+            // m_lbl_ten_quy
             // 
-            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItemGrid,
-            this.layoutControlItem5,
-            this.emptySpaceItem1,
-            this.layoutControlItemSave,
-            this.layoutControlItem3,
-            this.layoutControlItem1,
-            this.m_cmd_xuat_excel_layout,
-            this.layoutControlItemDownload});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1158, 554);
-            this.layoutControlGroup1.Text = "Root";
-            this.layoutControlGroup1.TextVisible = false;
+            this.m_lbl_ten_quy.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.m_lbl_ten_quy.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_ten_quy.Location = new System.Drawing.Point(2, 2);
+            this.m_lbl_ten_quy.Name = "m_lbl_ten_quy";
+            this.m_lbl_ten_quy.Padding = new System.Windows.Forms.Padding(10);
+            this.m_lbl_ten_quy.Size = new System.Drawing.Size(35, 39);
+            this.m_lbl_ten_quy.TabIndex = 21;
+            this.m_lbl_ten_quy.Text = "...";
             // 
-            // layoutControlItemGrid
+            // m_cmd_xuat_excel
             // 
-            this.layoutControlItemGrid.Control = this.m_grc_main;
-            this.layoutControlItemGrid.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItemGrid.Location = new System.Drawing.Point(0, 70);
-            this.layoutControlItemGrid.Name = "layoutControlItemGrid";
-            this.layoutControlItemGrid.Size = new System.Drawing.Size(1138, 422);
-            this.layoutControlItemGrid.Text = "layoutControlItemGrid";
-            this.layoutControlItemGrid.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItemGrid.TextToControlDistance = 0;
-            this.layoutControlItemGrid.TextVisible = false;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_xuat_excel.ImageIndex = 1;
+            this.m_cmd_xuat_excel.ImageList = this.imageCollection;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(1004, 2);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(148, 33);
+            this.m_cmd_xuat_excel.TabIndex = 20;
+            this.m_cmd_xuat_excel.Text = "Trích xuất dữ liệu";
             // 
-            // layoutControlItem5
+            // imageCollection
             // 
-            this.layoutControlItem5.Control = this.m_cmd_import_excel;
-            this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 36);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(209, 34);
-            this.layoutControlItem5.Text = "layoutControlItem5";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextToControlDistance = 0;
-            this.layoutControlItem5.TextVisible = false;
+            this.imageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection.ImageStream")));
+            this.imageCollection.Images.SetKeyName(0, "dvmd_download.png");
+            this.imageCollection.Images.SetKeyName(1, "dvmd_upload.png");
+            this.imageCollection.Images.SetKeyName(2, "lock.png");
+            this.imageCollection.Images.SetKeyName(3, "refresh.png");
+            this.imageCollection.Images.SetKeyName(4, "dvmd_info.png");
+            this.imageCollection.Images.SetKeyName(5, "play.png");
+            this.imageCollection.Images.SetKeyName(6, "pause.png");
+            this.imageCollection.Images.SetKeyName(7, "pencil.png");
+            this.imageCollection.Images.SetKeyName(8, "trash.png");
+            this.imageCollection.Images.SetKeyName(9, "grid.png");
+            this.imageCollection.Images.SetKeyName(10, "list.png");
+            this.imageCollection.Images.SetKeyName(11, "eye.png");
+            this.imageCollection.Images.SetKeyName(12, "note.png");
+            this.imageCollection.Images.SetKeyName(13, "magnifier.png");
+            this.imageCollection.Images.SetKeyName(14, "close.png");
+            this.imageCollection.Images.SetKeyName(15, "login.png");
+            this.imageCollection.Images.SetKeyName(16, "logout.png");
+            this.imageCollection.Images.SetKeyName(19, "1457269765_save.ico");
             // 
-            // emptySpaceItem1
+            // m_cmd_import_excel
             // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(416, 36);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(418, 34);
-            this.emptySpaceItem1.Text = "emptySpaceItem1";
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_import_excel.ImageIndex = 0;
+            this.m_cmd_import_excel.ImageList = this.imageCollection;
+            this.m_cmd_import_excel.Location = new System.Drawing.Point(156, 2);
+            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
+            this.m_cmd_import_excel.Size = new System.Drawing.Size(205, 33);
+            this.m_cmd_import_excel.TabIndex = 13;
+            this.m_cmd_import_excel.Text = "Bước 2: Import dữ liệu Excel";
             // 
-            // layoutControlItemSave
+            // panelControl1
             // 
-            this.layoutControlItemSave.Control = this.m_cmd_save;
-            this.layoutControlItemSave.CustomizationFormText = "layoutControlItemSave";
-            this.layoutControlItemSave.Location = new System.Drawing.Point(0, 492);
-            this.layoutControlItemSave.MaxSize = new System.Drawing.Size(226, 42);
-            this.layoutControlItemSave.MinSize = new System.Drawing.Size(226, 42);
-            this.layoutControlItemSave.Name = "layoutControlItemSave";
-            this.layoutControlItemSave.Size = new System.Drawing.Size(1138, 42);
-            this.layoutControlItemSave.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItemSave.Text = "layoutControlItemSave";
-            this.layoutControlItemSave.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItemSave.TextToControlDistance = 0;
-            this.layoutControlItemSave.TextVisible = false;
+            this.panelControl1.Controls.Add(this.panelControl3);
+            this.panelControl1.Controls.Add(this.m_lbl_ten_quy);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1158, 78);
+            this.panelControl1.TabIndex = 22;
             // 
-            // layoutControlItem3
+            // panelControl3
             // 
-            this.layoutControlItem3.Control = this.m_cmd_tinh_tien_thuong;
-            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(209, 36);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(207, 34);
-            this.layoutControlItem3.Text = "layoutControlItem3";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextToControlDistance = 0;
-            this.layoutControlItem3.TextVisible = false;
+            this.panelControl3.Controls.Add(this.m_cmd_xuat_excel);
+            this.panelControl3.Controls.Add(this.m_cmd_save);
+            this.panelControl3.Controls.Add(this.m_cmd_tinh_tien_thuong);
+            this.panelControl3.Controls.Add(this.m_cmd_import_excel);
+            this.panelControl3.Controls.Add(this.m_lbl_download_template);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl3.Location = new System.Drawing.Point(2, 39);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(1154, 37);
+            this.panelControl3.TabIndex = 23;
             // 
-            // layoutControlItem1
+            // m_cmd_tinh_tien_thuong
             // 
-            this.layoutControlItem1.Control = this.m_lbl_ten_quy;
-            this.layoutControlItem1.CustomizationFormText = "Quỹ";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.MaxSize = new System.Drawing.Size(128, 36);
-            this.layoutControlItem1.MinSize = new System.Drawing.Size(128, 36);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem1.Size = new System.Drawing.Size(1138, 36);
-            this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem1.Text = "Quỹ";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(20, 13);
+            this.m_cmd_tinh_tien_thuong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_tinh_tien_thuong.ImageIndex = 18;
+            this.m_cmd_tinh_tien_thuong.ImageList = this.imageCollection;
+            this.m_cmd_tinh_tien_thuong.Location = new System.Drawing.Point(361, 2);
+            this.m_cmd_tinh_tien_thuong.Name = "m_cmd_tinh_tien_thuong";
+            this.m_cmd_tinh_tien_thuong.Size = new System.Drawing.Size(203, 33);
+            this.m_cmd_tinh_tien_thuong.TabIndex = 17;
+            this.m_cmd_tinh_tien_thuong.Text = "Bước 3: Tính thành tiền";
             // 
-            // m_cmd_xuat_excel_layout
+            // m_cmd_save
             // 
-            this.m_cmd_xuat_excel_layout.Control = this.m_cmd_xuat_excel;
-            this.m_cmd_xuat_excel_layout.CustomizationFormText = "Trích xuất dữ liệu";
-            this.m_cmd_xuat_excel_layout.Location = new System.Drawing.Point(992, 36);
-            this.m_cmd_xuat_excel_layout.Name = "m_cmd_xuat_excel_layout";
-            this.m_cmd_xuat_excel_layout.Size = new System.Drawing.Size(146, 34);
-            this.m_cmd_xuat_excel_layout.Text = "Trích xuất dữ liệu";
-            this.m_cmd_xuat_excel_layout.TextSize = new System.Drawing.Size(0, 0);
-            this.m_cmd_xuat_excel_layout.TextToControlDistance = 0;
-            this.m_cmd_xuat_excel_layout.TextVisible = false;
+            this.m_cmd_save.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_save.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_cmd_save.Appearance.Options.UseFont = true;
+            this.m_cmd_save.Appearance.Options.UseForeColor = true;
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_save.ImageIndex = 19;
+            this.m_cmd_save.ImageList = this.imageCollection;
+            this.m_cmd_save.Location = new System.Drawing.Point(564, 2);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(222, 33);
+            this.m_cmd_save.TabIndex = 18;
+            this.m_cmd_save.Text = "Bước 4: Lưu vào phần mềm";
             // 
-            // layoutControlItemDownload
+            // panelControl2
             // 
-            this.layoutControlItemDownload.Control = this.m_lbl_download_template;
-            this.layoutControlItemDownload.ControlAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.layoutControlItemDownload.CustomizationFormText = "Tải File Excel mẫu!";
-            this.layoutControlItemDownload.Location = new System.Drawing.Point(834, 36);
-            this.layoutControlItemDownload.Name = "layoutControlItemDownload";
-            this.layoutControlItemDownload.Size = new System.Drawing.Size(158, 34);
-            this.layoutControlItemDownload.Text = "Tải File Excel mẫu!";
-            this.layoutControlItemDownload.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItemDownload.TextToControlDistance = 0;
-            this.layoutControlItemDownload.TextVisible = false;
-            this.layoutControlItemDownload.TrimClientAreaToControl = false;
+            this.panelControl2.Controls.Add(this.m_lbl_trang_thai_soan_thao);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl2.Location = new System.Drawing.Point(0, 78);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(1158, 37);
+            this.panelControl2.TabIndex = 23;
+            // 
+            // m_lbl_trang_thai_soan_thao
+            // 
+            this.m_lbl_trang_thai_soan_thao.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.m_lbl_trang_thai_soan_thao.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.m_lbl_trang_thai_soan_thao.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_trang_thai_soan_thao.Location = new System.Drawing.Point(2, 2);
+            this.m_lbl_trang_thai_soan_thao.Name = "m_lbl_trang_thai_soan_thao";
+            this.m_lbl_trang_thai_soan_thao.Padding = new System.Windows.Forms.Padding(10);
+            this.m_lbl_trang_thai_soan_thao.Size = new System.Drawing.Size(138, 33);
+            this.m_lbl_trang_thai_soan_thao.TabIndex = 0;
+            this.m_lbl_trang_thai_soan_thao.Text = "...";
             // 
             // f301_tinh_thu_nhap_khac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 554);
-            this.Controls.Add(this.layoutControlMain);
+            this.Controls.Add(this.m_grc_main);
+            this.Controls.Add(this.panelControl2);
+            this.Controls.Add(this.panelControl1);
             this.Name = "f301_tinh_thu_nhap_khac";
             this.Text = "F301 - Tính thưởng nhân viên";
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlMain)).EndInit();
-            this.layoutControlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_main)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemSave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_cmd_xuat_excel_layout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemDownload)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraLayout.LayoutControl layoutControlMain;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraGrid.GridControl m_grc_main;
         private DevExpress.XtraGrid.Views.Grid.GridView m_grv_main;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemGrid;
         private DevExpress.XtraEditors.SimpleButton m_cmd_import_excel;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraEditors.LabelControl m_lbl_download_template;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemDownload;
         private DevExpress.XtraGrid.Columns.GridColumn MA_NV;
         private DevExpress.XtraGrid.Columns.GridColumn HE_SO;
         private DevExpress.XtraGrid.Columns.GridColumn THANH_TIEN;
@@ -511,16 +429,17 @@
         private DevExpress.XtraGrid.Columns.GridColumn CHUC_VU;
         private DevExpress.XtraGrid.Columns.GridColumn SO_TAI_KHOAN;
         private DevExpress.XtraGrid.Columns.GridColumn HO_TEN;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_save;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemSave;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_tinh_tien_thuong;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
-        private DevExpress.XtraLayout.LayoutControlItem m_cmd_xuat_excel_layout;
         private DevExpress.XtraEditors.LabelControl m_lbl_ten_quy;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.Utils.ImageCollection imageCollection;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_save;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_tinh_tien_thuong;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.LabelControl m_lbl_trang_thai_soan_thao;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

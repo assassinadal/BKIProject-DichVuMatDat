@@ -4,6 +4,19 @@ using System.Text;
 
 namespace BKI_DichVuMatDat.US
 {
+    public class CONST_COLUMN_NAME_IMPORT_TNK
+    {
+        public const string STT = "STT";
+        public const string MA_NV = "MA_NV";
+        public const string HE_SO = "HE_SO";
+        public const string THANH_TIEN = "THANH_TIEN";
+        public const string THUE_PHAI_NOP = "THUE_PHAI_NOP";
+        public const string THUC_LINH = "THUC_LINH";
+        public const string HO_TEN = "HO_TEN";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string CHUC_VU = "CHUC_VU";
+        public const string SO_TAI_KHOAN = "SO_TAI_KHOAN";
+    }
     public enum option_tinh_tnk
     {
         CHUA_CHON,

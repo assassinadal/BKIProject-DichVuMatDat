@@ -69,14 +69,14 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             else return false;
         }
 
-        private void xoa_quy_tien(US_GD_QUY_THU_NHAP_KHAC v_us)
+        private void delete_gd_quy_tien(US_GD_QUY_THU_NHAP_KHAC v_us)
         {
             v_us.strDA_XOA = "Y";
             v_us.Update();
             load_data_to_grid();
         }
 
-        private void xoa_thu_nhap_khac()
+        private void delete_gd_thu_nhap_khac()
         {
             foreach (var item in m_lst_id_gd_thu_nhap_khac)
             {
@@ -85,9 +85,29 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             }
         }
 
-        private bool check_quy_tien_da_chot_yn()
+        private bool check_quy_tien_da_chot_yn(string ip_str_thang)
         {
-            return false;
+            US_GD_CHOT_BANG_LUONG v_us = new US_GD_CHOT_BANG_LUONG();
+            DS_GD_CHOT_BANG_LUONG v_ds = new DS_GD_CHOT_BANG_LUONG();
+            v_us.FillDataset(v_ds, "where thang =" + ip_str_thang);
+            if (v_ds.Tables[0].Rows.Count == 0)
+                return false;
+            else return true;
+        }
+
+        private void xoa_quy_tien(US_GD_QUY_THU_NHAP_KHAC v_us)
+        {
+            if (check_quy_tien_dang_su_dung_yn(v_us))
+            {
+                int v_slg_nvien = m_lst_id_gd_thu_nhap_khac.Count;
+                string v_str_confirms = "Quỹ tiền đang được sử dụng cho " + v_slg_nvien + " nhân viên.\nBạn có muốn xóa cả khoản thu nhập của " + v_slg_nvien + " nhân viên đang sử dụng quỹ tiền này?";
+                if (CHRM_BaseMessages.MsgBox_Confirm(v_str_confirms))
+                {
+                    delete_gd_thu_nhap_khac();
+                    delete_gd_quy_tien(v_us);
+                }
+            }
+            else delete_gd_quy_tien(v_us);
         }
 
         #endregion
@@ -164,22 +184,17 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             try
             {
                 var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
-                US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[0].ToString()));
-                string v_str_confirm = "Bạn có chắc chắn muốn xóa quỹ tiền này?";
-                if (CHRM_BaseMessages.MsgBox_Confirm(v_str_confirm))
+                if (check_quy_tien_da_chot_yn(v_dr[2].ToString()))
+                    XtraMessageBox.Show("Quỹ tiền hiện đã chốt. Vui lòng không cập nhật!");
+                else
                 {
-                    if (check_quy_tien_dang_su_dung_yn(v_us))
+                    US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[0].ToString()));
+                    string v_str_confirm = "Bạn có chắc chắn muốn xóa quỹ tiền này?";
+                    if (CHRM_BaseMessages.MsgBox_Confirm(v_str_confirm))
                     {
-                        int v_slg_nvien = m_lst_id_gd_thu_nhap_khac.Count;
-                        string v_str_confirms = "Quỹ tiền đang được sử dụng cho " + v_slg_nvien + " nhân viên.\nBạn có muốn xóa cả khoản thu nhập của " + v_slg_nvien + " nhân viên đang sử dụng quỹ tiền này?";
-                        if (CHRM_BaseMessages.MsgBox_Confirm(v_str_confirms))
-                        {
-                            xoa_thu_nhap_khac();
-                            xoa_quy_tien(v_us);
-                        }                       
+                        xoa_quy_tien(v_us);                        
                     }
-                    else xoa_quy_tien(v_us);
-                }
+                }             
             }
             catch (Exception v_e)
             {
@@ -191,12 +206,12 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         {
             try
             {
-                if (check_quy_tien_da_chot_yn())
-                    CHRM_BaseMessages.MsgBox_Confirm("Quỹ tiền hiện đã chốt, vui lòng không cập nhật!");
+                var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+                if (check_quy_tien_da_chot_yn(v_dr[2].ToString()))
+                    XtraMessageBox.Show("Quỹ tiền hiện đã chốt, vui lòng không cập nhật!");
                 else
                 {
-                    f354_danh_sach_quy_thuong_de v_f = new f354_danh_sach_quy_thuong_de();
-                    var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+                    f354_danh_sach_quy_thuong_de v_f = new f354_danh_sach_quy_thuong_de();                  
                     US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[0].ToString()));
                     v_f.display_for_update(v_us);
                     load_data_to_grid();

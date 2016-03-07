@@ -42,23 +42,23 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             m_cmd_import_excel.Click +=m_cmd_import_excel_Click;
             m_cmd_luu.Click +=m_cmd_luu_Click;
             this.Load += f305_tnk_ngoai_bang_luong_xls_Load;
-            m_sle_quy_tien.EditValueChanged += m_sle_quy_tien_EditValueChanged;
+            //m_sle_quy_tien.EditValueChanged += m_sle_quy_tien_EditValueChanged;
         }
 
-        void m_sle_quy_tien_EditValueChanged(object sender, EventArgs e)
-        {
-            US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
-            DS_GD_THU_NHAP_KHAC v_ds = new DS_GD_THU_NHAP_KHAC();
-            v_us.FillDatasetTheoQuyThangNam(v_ds, m_sle_quy_tien.EditValue.ToString(), m_dat_thang.DateTime.Month.ToString(), m_dat_thang.DateTime.Year.ToString());
-            //v_us.FillDataset(v_ds, "where ID_QUY_THU_NHAP_KHAC =" +m_sle_quy_tien.EditValue.ToString()+ "and thang=" + m_dat_thang.DateTime.Month + "and nam=" + m_dat_thang.DateTime.Year);
-            int v_slg_nv = v_ds.Tables[0].Rows.Count;
-            decimal v_tong_so_tien = 0;
-            for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
-            {
-                v_tong_so_tien += decimal.Parse(v_ds.Tables[0].Rows[i][7].ToString());
-            }
-            m_lbl_trang_thai.Text += "\n Quỹ đã chi tiền cho " + v_slg_nv + " nhân viên. Tổng tiền: " + v_tong_so_tien;
-        }
+        //void m_sle_quy_tien_EditValueChanged(object sender, EventArgs e)
+        //{
+        //    US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
+        //    DS_GD_THU_NHAP_KHAC v_ds = new DS_GD_THU_NHAP_KHAC();
+        //    v_us.FillDatasetTheoQuyThangNam(v_ds, m_sle_quy_tien.EditValue.ToString(), m_dat_thang.DateTime.Month.ToString(), m_dat_thang.DateTime.Year.ToString());
+        //    //v_us.FillDataset(v_ds, "where ID_QUY_THU_NHAP_KHAC =" +m_sle_quy_tien.EditValue.ToString()+ "and thang=" + m_dat_thang.DateTime.Month + "and nam=" + m_dat_thang.DateTime.Year);
+        //    int v_slg_nv = v_ds.Tables[0].Rows.Count;
+        //    decimal v_tong_so_tien = 0;
+        //    for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
+        //    {
+        //        v_tong_so_tien += decimal.Parse(v_ds.Tables[0].Rows[i][7].ToString());
+        //    }
+        //    m_lbl_trang_thai.Text += "\n Quỹ đã chi tiền cho " + v_slg_nv + " nhân viên. Tổng tiền: " + v_tong_so_tien;
+        //}
 
         void f305_tnk_ngoai_bang_luong_xls_Load(object sender, EventArgs e)
         {

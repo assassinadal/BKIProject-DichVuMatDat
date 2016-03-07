@@ -78,29 +78,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        void m_cmd_save_Click(object sender, EventArgs e)
-        {            
-            if (m_sle_loai_quy_thu_nhap.EditValue == null)
-                CHRM_BaseMessages.MsgBox_Error("Vui lòng chọn loại quỹ thu nhập");
-            else
-            {
-                form_to_us();
-                switch (m_e_form_mode)
-                {
-                    case DataEntryFormMode.InsertDataState:
-                        m_us.Insert();
-                        break;
-                    case DataEntryFormMode.UpdateDataState:
-                        m_us.Update();
-                        break;
-                    default:
-                        break;
-                }
-                MessageBox.Show("Lưu thành công!");
-                this.Close();
-            }         
-        }
-
 
         internal void display_for_insert()
         {
@@ -144,6 +121,24 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_us.strDA_XOA = "N";
             m_us.dcID_LOAI_THU_NHAP_KHAC = CIPConvert.ToDecimal(m_sle_loai_quy_thu_nhap.EditValue.ToString());
         }
+
+        private bool check_validate_data_is_ok()
+        {
+            if (m_sle_loai_quy_thu_nhap.EditValue == null)
+            {
+                CHRM_BaseMessages.MsgBox_Error("Vui lòng chọn loại quỹ thu nhập!");
+                return false;
+            }
+            else
+            {
+                if (m_txt_ten_quy.Text.Trim() == "")
+                {
+                    CHRM_BaseMessages.MsgBox_Error("Vui lòng nhập tên quỹ!");
+                    return false;
+                }
+                return true;
+            }           
+        }
         #endregion
 
         #region Event handle
@@ -166,6 +161,35 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        void m_cmd_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (check_validate_data_is_ok())
+                {
+                    form_to_us();
+                    switch (m_e_form_mode)
+                    {
+                        case DataEntryFormMode.InsertDataState:
+                            m_us.Insert();
+                            break;
+                        case DataEntryFormMode.UpdateDataState:
+                            m_us.Update();
+                            break;
+                        default:
+                            break;
+                    }
+                    MessageBox.Show("Lưu thành công!");
+                    this.Close();
+                }
+                else return;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }           
         }
 
         void f354_danh_sach_quy_thuong_de_Load(object sender, EventArgs e)

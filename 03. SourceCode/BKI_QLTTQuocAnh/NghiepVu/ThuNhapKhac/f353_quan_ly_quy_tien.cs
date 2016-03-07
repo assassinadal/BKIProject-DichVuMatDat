@@ -39,14 +39,17 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         private void set_init_form_load()
         {
             set_define_events();
-            m_txt_thang.Text = DateTime.Now.Month.ToString();
-            m_txt_nam.Text = DateTime.Now.Year.ToString();
+            m_dat_tu_thang.DateTime = DateTime.Now.AddYears(-1);
+            m_dat_den_thang.DateTime = DateTime.Now;
         }
 
         private void load_data_to_grid()
         {
             CHRMCommon.make_stt(m_grv);
-            m_grc.DataSource = TnkQL.Instance.HienThiDanhSachQuy(m_txt_thang.Text, m_txt_nam.Text);
+            US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC();
+            DS_GD_QUY_THU_NHAP_KHAC v_ds = new DS_GD_QUY_THU_NHAP_KHAC();
+            v_us.FillDatasetQuyTNK(v_ds, m_dat_tu_thang.DateTime, m_dat_den_thang.DateTime);
+            m_grc.DataSource = v_ds.Tables[0];
         }
 
         private bool check_quy_tien_dang_su_dung_yn(US_GD_QUY_THU_NHAP_KHAC v_us)
@@ -91,31 +94,24 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             m_cmd_delete.Click += m_cmd_delete_Click;
             m_cmd_search.Click += m_cmd_search_Click;
             m_grc.DoubleClick += m_grc_DoubleClick;
-            m_grc.Click += m_grc_Click;
+            //m_grc.Click += m_grc_Click;
         }
 
-        void m_grc_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
-                US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
-                DS_GD_THU_NHAP_KHAC v_ds = new DS_GD_THU_NHAP_KHAC();
-                v_us.FillDatasetTheoQuyThangNam(v_ds, v_dr[0].ToString(), v_dr[2].ToString(), v_dr[3].ToString());
-                //v_us.FillDataset(v_ds, "where ID_QUY_THU_NHAP_KHAC =" + v_dr[0].ToString() + "and thang=" + v_dr[2].ToString() + "and nam=" + v_dr[3].ToString());
-                int v_slg_nv = v_ds.Tables[0].Rows.Count;
-                decimal v_tong_so_tien = 0;
-                for(int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
-                {
-                    v_tong_so_tien += decimal.Parse(v_ds.Tables[0].Rows[i][7].ToString());
-                }
-                m_lbl_trang_thai_quy.Text = "Quỹ đã chi tiền cho " + v_slg_nv + " nhân viên. Tổng tiền: " + v_tong_so_tien;
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+        //void m_grc_Click(object sender, EventArgs e)
+        //{
+        //    var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+        //    US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
+        //    DS_GD_THU_NHAP_KHAC v_ds = new DS_GD_THU_NHAP_KHAC();
+        //    v_us.FillDatasetTheoQuyThangNam(v_ds, v_dr[0].ToString(), v_dr[2].ToString(), v_dr[3].ToString());
+        //    //v_us.FillDataset(v_ds, "where ID_QUY_THU_NHAP_KHAC =" + v_dr[0].ToString() + "and thang=" + v_dr[2].ToString() + "and nam=" + v_dr[3].ToString());
+        //    int v_slg_nv = v_ds.Tables[0].Rows.Count;
+        //    decimal v_tong_so_tien=0;
+        //    for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
+        //    {
+        //        v_tong_so_tien += decimal.Parse(v_ds.Tables[0].Rows[i][7].ToString());
+        //    }
+        //    m_lbl_trang_thai_quy.Text = "Quỹ đã chi tiền cho " + v_slg_nv + " nhân viên. Tổng tiền: " + v_tong_so_tien;
+        //}
 
         void m_cmd_search_Click(object sender, EventArgs e)
         {
@@ -133,15 +129,15 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         {
             try
             {
-                var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
-                decimal v_id_quy_tnk = CIPConvert.ToDecimal(v_dr[0].ToString());
-                f355_tnk_chi_tiet_quy_thu_nhap_khac v_f = new f355_tnk_chi_tiet_quy_thu_nhap_khac(v_id_quy_tnk);
-                v_f.ShowDialog();
-            }
-            catch(Exception v_e)
+            var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+            decimal v_id_quy_tnk = CIPConvert.ToDecimal(v_dr[0].ToString());
+            f355_tnk_chi_tiet_quy_thu_nhap_khac v_f = new f355_tnk_chi_tiet_quy_thu_nhap_khac(v_id_quy_tnk);
+            v_f.ShowDialog();
+        }
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
-            }
+            }            
         }
 
         void m_cmd_delete_Click(object sender, EventArgs e)
@@ -168,6 +164,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                         xoa_quy_tien(v_us);
                     }
                 }
+                load_data_to_grid();
             }
             catch (Exception v_e)
             {

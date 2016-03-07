@@ -34,10 +34,9 @@
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_lbl_trang_thai_quy = new DevExpress.XtraEditors.LabelControl();
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_search = new DevExpress.XtraEditors.SimpleButton();
-            this.m_txt_thang = new DevExpress.XtraEditors.TextEdit();
-            this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
             this.m_lbl_nam = new System.Windows.Forms.Label();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -51,14 +50,17 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_lbl_trang_thai_quy = new DevExpress.XtraEditors.LabelControl();
+            this.m_dat_tu_thang = new DevExpress.XtraEditors.DateEdit();
+            this.m_dat_den_thang = new DevExpress.XtraEditors.DateEdit();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // m_pnl_out_place_dm
@@ -105,11 +107,11 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.m_dat_den_thang);
+            this.panelControl1.Controls.Add(this.m_dat_tu_thang);
             this.panelControl1.Controls.Add(this.m_lbl_trang_thai_quy);
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Controls.Add(this.m_cmd_search);
-            this.panelControl1.Controls.Add(this.m_txt_thang);
-            this.panelControl1.Controls.Add(this.m_txt_nam);
             this.panelControl1.Controls.Add(this.m_lbl_nam);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
@@ -117,15 +119,24 @@
             this.panelControl1.Size = new System.Drawing.Size(796, 87);
             this.panelControl1.TabIndex = 32;
             // 
+            // m_lbl_trang_thai_quy
+            // 
+            this.m_lbl_trang_thai_quy.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_trang_thai_quy.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_trang_thai_quy.Location = new System.Drawing.Point(63, 63);
+            this.m_lbl_trang_thai_quy.Name = "m_lbl_trang_thai_quy";
+            this.m_lbl_trang_thai_quy.Size = new System.Drawing.Size(0, 14);
+            this.m_lbl_trang_thai_quy.TabIndex = 33;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(60, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.Size = new System.Drawing.Size(60, 16);
             this.label1.TabIndex = 32;
-            this.label1.Text = "Tháng (*)";
+            this.label1.Text = "Từ tháng";
             // 
             // m_cmd_search
             // 
@@ -136,33 +147,15 @@
             this.m_cmd_search.TabIndex = 29;
             this.m_cmd_search.Text = "&Lọc";
             // 
-            // m_txt_thang
-            // 
-            this.m_txt_thang.Location = new System.Drawing.Point(131, 25);
-            this.m_txt_thang.Name = "m_txt_thang";
-            this.m_txt_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_txt_thang.Properties.Appearance.Options.UseFont = true;
-            this.m_txt_thang.Size = new System.Drawing.Size(111, 22);
-            this.m_txt_thang.TabIndex = 30;
-            // 
-            // m_txt_nam
-            // 
-            this.m_txt_nam.Location = new System.Drawing.Point(358, 25);
-            this.m_txt_nam.Name = "m_txt_nam";
-            this.m_txt_nam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_txt_nam.Properties.Appearance.Options.UseFont = true;
-            this.m_txt_nam.Size = new System.Drawing.Size(115, 22);
-            this.m_txt_nam.TabIndex = 31;
-            // 
             // m_lbl_nam
             // 
             this.m_lbl_nam.AutoSize = true;
             this.m_lbl_nam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_nam.Location = new System.Drawing.Point(296, 28);
             this.m_lbl_nam.Name = "m_lbl_nam";
-            this.m_lbl_nam.Size = new System.Drawing.Size(56, 16);
+            this.m_lbl_nam.Size = new System.Drawing.Size(71, 16);
             this.m_lbl_nam.TabIndex = 28;
-            this.m_lbl_nam.Text = "Năm (*)";
+            this.m_lbl_nam.Text = "Đến tháng ";
             // 
             // m_grc
             // 
@@ -200,19 +193,19 @@
             // 
             // gridColumn10
             // 
-            this.gridColumn10.Caption = "Người lập";
+            this.gridColumn10.Caption = "Người lập quỹ";
             this.gridColumn10.FieldName = "NGUOI_LAP";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 3;
+            this.gridColumn10.VisibleIndex = 7;
             // 
             // gridColumn9
             // 
-            this.gridColumn9.Caption = "Ngày lập";
+            this.gridColumn9.Caption = "Ngày lập quỹ";
             this.gridColumn9.FieldName = "NGAY_LAP";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 4;
+            this.gridColumn9.VisibleIndex = 8;
             // 
             // gridColumn1
             // 
@@ -228,7 +221,7 @@
             this.gridColumn2.FieldName = "THANG";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 5;
+            this.gridColumn2.VisibleIndex = 3;
             // 
             // gridColumn3
             // 
@@ -236,7 +229,7 @@
             this.gridColumn3.FieldName = "NAM";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 6;
+            this.gridColumn3.VisibleIndex = 4;
             // 
             // gridColumn4
             // 
@@ -244,7 +237,7 @@
             this.gridColumn4.FieldName = "TU_NGAY_XET_THUONG";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 7;
+            this.gridColumn4.VisibleIndex = 5;
             // 
             // gridColumn5
             // 
@@ -252,7 +245,7 @@
             this.gridColumn5.FieldName = "DEN_NGAY_XET_THUONG";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 8;
+            this.gridColumn5.VisibleIndex = 6;
             // 
             // gridColumn6
             // 
@@ -265,7 +258,7 @@
             // 
             // gridColumn8
             // 
-            this.gridColumn8.Caption = "Loại thu nhập";
+            this.gridColumn8.Caption = "Loại quỹ";
             this.gridColumn8.FieldName = "LOAI_THU_NHAP";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
@@ -286,14 +279,40 @@
             this.gridColumn7.VisibleIndex = 0;
             this.gridColumn7.Width = 60;
             // 
-            // m_lbl_trang_thai_quy
+            // m_dat_tu_thang
             // 
-            this.m_lbl_trang_thai_quy.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_trang_thai_quy.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_trang_thai_quy.Location = new System.Drawing.Point(63, 63);
-            this.m_lbl_trang_thai_quy.Name = "m_lbl_trang_thai_quy";
-            this.m_lbl_trang_thai_quy.Size = new System.Drawing.Size(0, 14);
-            this.m_lbl_trang_thai_quy.TabIndex = 33;
+            this.m_dat_tu_thang.EditValue = null;
+            this.m_dat_tu_thang.Location = new System.Drawing.Point(126, 24);
+            this.m_dat_tu_thang.Name = "m_dat_tu_thang";
+            this.m_dat_tu_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dat_tu_thang.Properties.Appearance.Options.UseFont = true;
+            this.m_dat_tu_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_tu_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_tu_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
+            this.m_dat_tu_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_tu_thang.Properties.EditFormat.FormatString = "MM/yyyy";
+            this.m_dat_tu_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_tu_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_tu_thang.Size = new System.Drawing.Size(122, 20);
+            this.m_dat_tu_thang.TabIndex = 34;
+            // 
+            // m_dat_den_thang
+            // 
+            this.m_dat_den_thang.EditValue = null;
+            this.m_dat_den_thang.Location = new System.Drawing.Point(373, 24);
+            this.m_dat_den_thang.Name = "m_dat_den_thang";
+            this.m_dat_den_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dat_den_thang.Properties.Appearance.Options.UseFont = true;
+            this.m_dat_den_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_den_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_den_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
+            this.m_dat_den_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_den_thang.Size = new System.Drawing.Size(123, 20);
+            this.m_dat_den_thang.TabIndex = 35;
             // 
             // f353_quan_ly_quy_tien
             // 
@@ -309,10 +328,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,11 +357,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_search;
-        private DevExpress.XtraEditors.TextEdit m_txt_thang;
-        private DevExpress.XtraEditors.TextEdit m_txt_nam;
         private System.Windows.Forms.Label m_lbl_nam;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraEditors.LabelControl m_lbl_trang_thai_quy;
+        private DevExpress.XtraEditors.DateEdit m_dat_den_thang;
+        private DevExpress.XtraEditors.DateEdit m_dat_tu_thang;
     }
 }

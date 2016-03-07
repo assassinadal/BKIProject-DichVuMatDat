@@ -357,13 +357,6 @@ public class US_GD_QUY_THU_NHAP_KHAC : US_Object
         var v_bol_ket_qua = v_para_yn.Value.ToString() == "Y" ? true : false;
         return v_bol_ket_qua;
     }
-    public void FillDatasetQuyTNK(DataSet v_ds, string ip_thang, string ip_nam)
-    {
-        CStoredProc v_cstore = new CStoredProc("pr_TNK_quy_tien_GetAll");
-        v_cstore.addDecimalInputParam("@ip_thang", ip_thang);
-        v_cstore.addDecimalInputParam("@ip_nam", ip_nam);
-        v_cstore.fillDataSetByCommand(this, v_ds);
-    }
 
     #region Additional
     public DataRow LayThongTinQuyThuNhapKhac(decimal ip_dc_id_quy_thu_nhap_khac)
@@ -396,6 +389,14 @@ public class US_GD_QUY_THU_NHAP_KHAC : US_Object
     {
         CStoredProc v_cstore = new CStoredProc("pr_TNK_quy_tien_GetTheoIDLoaiQuy");
         v_cstore.addDecimalInputParam("@id_loai_quy", ip_id_loai_quy);
+        v_cstore.fillDataSetByCommand(this, v_ds);
+    }
+
+    public void FillDatasetQuyTNK(DS_GD_QUY_THU_NHAP_KHAC v_ds, DateTime ip_dat_tu_thang, DateTime ip_dat_den_thang)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_TNK_quy_tien_GetAll");
+        v_cstore.addDatetimeInputParam("@ip_tu_thang", @ip_dat_tu_thang);
+        v_cstore.addDatetimeInputParam("@ip_den_thang", @ip_dat_den_thang);
         v_cstore.fillDataSetByCommand(this, v_ds);
     }
 }

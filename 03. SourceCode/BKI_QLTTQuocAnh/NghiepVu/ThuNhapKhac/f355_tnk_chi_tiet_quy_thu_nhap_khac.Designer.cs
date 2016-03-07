@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f355_tnk_chi_tiet_quy_thu_nhap_khac));
-            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollection = new DevExpress.Utils.ImageCollection();
             this.m_grc_main = new DevExpress.XtraGrid.GridControl();
             this.m_grv_main = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -156,6 +155,7 @@
             this.colHO_TEN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colHO_TEN.Caption = "Họ tên";
             this.colHO_TEN.FieldName = "HO_VA_TEN";
+            this.colHO_TEN.FieldNameSortGroup = "TEN";
             this.colHO_TEN.Name = "colHO_TEN";
             this.colHO_TEN.Visible = true;
             this.colHO_TEN.VisibleIndex = 1;
@@ -170,9 +170,10 @@
             this.colTEN_DON_VI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colTEN_DON_VI.Caption = "Đơn vị";
             this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
+            this.colTEN_DON_VI.FieldNameSortGroup = "THU_TU_DON_VI";
             this.colTEN_DON_VI.Name = "colTEN_DON_VI";
             this.colTEN_DON_VI.Visible = true;
-            this.colTEN_DON_VI.VisibleIndex = 3;
+            this.colTEN_DON_VI.VisibleIndex = 2;
             // 
             // colTEN_CHUC_VU
             // 
@@ -183,6 +184,7 @@
             this.colTEN_CHUC_VU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colTEN_CHUC_VU.Caption = "Chức vụ";
             this.colTEN_CHUC_VU.FieldName = "CHUC_VU";
+            this.colTEN_CHUC_VU.FieldNameSortGroup = "THU_TU_CHUC_VU";
             this.colTEN_CHUC_VU.Name = "colTEN_CHUC_VU";
             this.colTEN_CHUC_VU.Visible = true;
             this.colTEN_CHUC_VU.VisibleIndex = 3;

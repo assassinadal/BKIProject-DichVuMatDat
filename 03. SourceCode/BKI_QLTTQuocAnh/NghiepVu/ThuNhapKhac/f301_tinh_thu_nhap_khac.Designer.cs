@@ -398,7 +398,7 @@
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "f301_tinh_thu_nhap_khac";
-            this.Text = "F301 - Tính thưởng nhân viên";
+            this.Text = "F301 - Tính tiền thu nhập khác nhân viên";
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_main)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

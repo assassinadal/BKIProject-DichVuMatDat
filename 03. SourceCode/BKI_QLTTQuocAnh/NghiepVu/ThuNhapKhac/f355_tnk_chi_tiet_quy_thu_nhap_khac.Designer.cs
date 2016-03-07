@@ -42,24 +42,24 @@
             this.colHE_SO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSO_TAI_KHOAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_ten_quy = new DevExpress.XtraEditors.LabelControl();
+            this.m_lbl_tong_tien_thuc_linh = new DevExpress.XtraEditors.LabelControl();
+            this.m_lbl_tong_tien_nop_thue = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_tong_tien = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_so_luong_nv_trong_quy = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_exit = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.m_lbl_tong_tien_nop_thue = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.m_lbl_tong_tien_thuc_linh = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.m_cmd_exit = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).BeginInit();
@@ -144,7 +144,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
             this.colMA_NV.Visible = true;
             this.colMA_NV.VisibleIndex = 0;
-            this.colMA_NV.Width = 92;
+            this.colMA_NV.Width = 88;
             // 
             // colHO_TEN
             // 
@@ -158,7 +158,7 @@
             this.colHO_TEN.Name = "colHO_TEN";
             this.colHO_TEN.Visible = true;
             this.colHO_TEN.VisibleIndex = 1;
-            this.colHO_TEN.Width = 169;
+            this.colHO_TEN.Width = 163;
             // 
             // colTEN_DON_VI
             // 
@@ -185,7 +185,7 @@
             this.colTEN_CHUC_VU.Name = "colTEN_CHUC_VU";
             this.colTEN_CHUC_VU.Visible = true;
             this.colTEN_CHUC_VU.VisibleIndex = 3;
-            this.colTEN_CHUC_VU.Width = 144;
+            this.colTEN_CHUC_VU.Width = 135;
             // 
             // colSO_TIEN
             // 
@@ -203,7 +203,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN", "{0:n0}")});
             this.colSO_TIEN.Visible = true;
             this.colSO_TIEN.VisibleIndex = 5;
-            this.colSO_TIEN.Width = 101;
+            this.colSO_TIEN.Width = 94;
             // 
             // colSO_TIEN_NOP_THUE
             // 
@@ -221,7 +221,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_NOP_THUE", "{0:n0}")});
             this.colSO_TIEN_NOP_THUE.Visible = true;
             this.colSO_TIEN_NOP_THUE.VisibleIndex = 6;
-            this.colSO_TIEN_NOP_THUE.Width = 92;
+            this.colSO_TIEN_NOP_THUE.Width = 85;
             // 
             // colSO_TIEN_THUC_LINH
             // 
@@ -256,7 +256,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HE_SO", "{0:n0}")});
             this.colHE_SO.Visible = true;
             this.colHE_SO.VisibleIndex = 4;
-            this.colHE_SO.Width = 123;
+            this.colHE_SO.Width = 114;
             // 
             // colSO_TAI_KHOAN
             // 
@@ -270,6 +270,7 @@
             this.colSO_TAI_KHOAN.Name = "colSO_TAI_KHOAN";
             this.colSO_TAI_KHOAN.Visible = true;
             this.colSO_TAI_KHOAN.VisibleIndex = 2;
+            this.colSO_TAI_KHOAN.Width = 87;
             // 
             // panelControl1
             // 
@@ -290,14 +291,44 @@
             this.panelControl1.Size = new System.Drawing.Size(892, 148);
             this.panelControl1.TabIndex = 5;
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 3F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.labelControl4.Location = new System.Drawing.Point(17, 113);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(264, 5);
+            this.labelControl4.TabIndex = 10;
+            this.labelControl4.Text = resources.GetString("labelControl4.Text");
+            // 
             // m_lbl_ten_quy
             // 
-            this.m_lbl_ten_quy.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.m_lbl_ten_quy.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.m_lbl_ten_quy.Location = new System.Drawing.Point(59, 6);
             this.m_lbl_ten_quy.Name = "m_lbl_ten_quy";
-            this.m_lbl_ten_quy.Size = new System.Drawing.Size(15, 19);
+            this.m_lbl_ten_quy.Size = new System.Drawing.Size(18, 23);
             this.m_lbl_ten_quy.TabIndex = 7;
             this.m_lbl_ten_quy.Text = "...";
+            // 
+            // m_lbl_tong_tien_thuc_linh
+            // 
+            this.m_lbl_tong_tien_thuc_linh.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.m_lbl_tong_tien_thuc_linh.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_tong_tien_thuc_linh.Location = new System.Drawing.Point(148, 123);
+            this.m_lbl_tong_tien_thuc_linh.Name = "m_lbl_tong_tien_thuc_linh";
+            this.m_lbl_tong_tien_thuc_linh.Size = new System.Drawing.Size(15, 18);
+            this.m_lbl_tong_tien_thuc_linh.TabIndex = 6;
+            this.m_lbl_tong_tien_thuc_linh.Text = "...";
+            // 
+            // m_lbl_tong_tien_nop_thue
+            // 
+            this.m_lbl_tong_tien_nop_thue.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.m_lbl_tong_tien_nop_thue.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_tong_tien_nop_thue.Location = new System.Drawing.Point(148, 89);
+            this.m_lbl_tong_tien_nop_thue.Name = "m_lbl_tong_tien_nop_thue";
+            this.m_lbl_tong_tien_nop_thue.Size = new System.Drawing.Size(15, 18);
+            this.m_lbl_tong_tien_nop_thue.TabIndex = 6;
+            this.m_lbl_tong_tien_nop_thue.Text = "...";
             // 
             // m_lbl_tong_tien
             // 
@@ -317,6 +348,22 @@
             this.m_lbl_so_luong_nv_trong_quy.Size = new System.Drawing.Size(9, 13);
             this.m_lbl_so_luong_nv_trong_quy.TabIndex = 5;
             this.m_lbl_so_luong_nv_trong_quy.Text = "...";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(15, 125);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(93, 13);
+            this.labelControl5.TabIndex = 4;
+            this.labelControl5.Text = "Tổng tiền thực lĩnh:";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(15, 92);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(95, 13);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "Tổng tiền nộp thuế:";
             // 
             // labelControl2
             // 
@@ -352,54 +399,21 @@
             this.panel1.Controls.Add(this.m_cmd_delete);
             this.panel1.Controls.Add(this.m_cmd_exit);
             this.panel1.Controls.Add(this.m_cmd_xuat_excel);
-            this.panel1.Controls.Add(this.simpleButton5);
+            this.panel1.Controls.Add(this.m_cmd_import_excel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 590);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(892, 36);
             this.panel1.TabIndex = 6;
             // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_excel.ImageIndex = 1;
-            this.m_cmd_xuat_excel.ImageList = this.imageCollection;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(104, 0);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(127, 36);
-            this.m_cmd_xuat_excel.TabIndex = 5;
-            this.m_cmd_xuat_excel.Text = "Trích xuất dữ liệu";
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton5.ImageIndex = 0;
-            this.simpleButton5.ImageList = this.imageCollection;
-            this.simpleButton5.Location = new System.Drawing.Point(0, 0);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(104, 36);
-            this.simpleButton5.TabIndex = 4;
-            this.simpleButton5.Text = "Import Excel";
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageIndex = 15;
-            this.m_cmd_exit.ImageList = this.imageCollection;
-            this.m_cmd_exit.Location = new System.Drawing.Point(789, 0);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(103, 36);
-            this.m_cmd_exit.TabIndex = 6;
-            this.m_cmd_exit.Text = "Thoát";
-            // 
             // m_cmd_insert
             // 
             this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_insert.ImageIndex = 12;
             this.m_cmd_insert.ImageList = this.imageCollection;
-            this.m_cmd_insert.Location = new System.Drawing.Point(480, 0);
+            this.m_cmd_insert.Location = new System.Drawing.Point(478, 0);
             this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(103, 36);
+            this.m_cmd_insert.Size = new System.Drawing.Size(105, 36);
             this.m_cmd_insert.TabIndex = 9;
             this.m_cmd_insert.Text = "Thêm";
             // 
@@ -425,53 +439,38 @@
             this.m_cmd_delete.TabIndex = 7;
             this.m_cmd_delete.Text = "Xóa";
             // 
-            // labelControl3
+            // m_cmd_exit
             // 
-            this.labelControl3.Location = new System.Drawing.Point(15, 92);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(95, 13);
-            this.labelControl3.TabIndex = 4;
-            this.labelControl3.Text = "Tổng tiền nộp thuế:";
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageIndex = 15;
+            this.m_cmd_exit.ImageList = this.imageCollection;
+            this.m_cmd_exit.Location = new System.Drawing.Point(789, 0);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(103, 36);
+            this.m_cmd_exit.TabIndex = 6;
+            this.m_cmd_exit.Text = "Thoát";
             // 
-            // m_lbl_tong_tien_nop_thue
+            // m_cmd_xuat_excel
             // 
-            this.m_lbl_tong_tien_nop_thue.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.m_lbl_tong_tien_nop_thue.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tong_tien_nop_thue.Location = new System.Drawing.Point(148, 89);
-            this.m_lbl_tong_tien_nop_thue.Name = "m_lbl_tong_tien_nop_thue";
-            this.m_lbl_tong_tien_nop_thue.Size = new System.Drawing.Size(15, 18);
-            this.m_lbl_tong_tien_nop_thue.TabIndex = 6;
-            this.m_lbl_tong_tien_nop_thue.Text = "...";
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.ImageIndex = 1;
+            this.m_cmd_xuat_excel.ImageList = this.imageCollection;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(123, 0);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(127, 36);
+            this.m_cmd_xuat_excel.TabIndex = 5;
+            this.m_cmd_xuat_excel.Text = "Trích xuất dữ liệu";
             // 
-            // labelControl5
+            // m_cmd_import_excel
             // 
-            this.labelControl5.Location = new System.Drawing.Point(15, 125);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(93, 13);
-            this.labelControl5.TabIndex = 4;
-            this.labelControl5.Text = "Tổng tiền thực lĩnh:";
-            // 
-            // m_lbl_tong_tien_thuc_linh
-            // 
-            this.m_lbl_tong_tien_thuc_linh.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.m_lbl_tong_tien_thuc_linh.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tong_tien_thuc_linh.Location = new System.Drawing.Point(148, 123);
-            this.m_lbl_tong_tien_thuc_linh.Name = "m_lbl_tong_tien_thuc_linh";
-            this.m_lbl_tong_tien_thuc_linh.Size = new System.Drawing.Size(15, 18);
-            this.m_lbl_tong_tien_thuc_linh.TabIndex = 6;
-            this.m_lbl_tong_tien_thuc_linh.Text = "...";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 3F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.labelControl4.Location = new System.Drawing.Point(17, 113);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(197, 5);
-            this.labelControl4.TabIndex = 10;
-            this.labelControl4.Text = "                                                                                 " +
-    "                                                                                " +
-    "                                    ";
+            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_import_excel.ImageIndex = 0;
+            this.m_cmd_import_excel.ImageList = this.imageCollection;
+            this.m_cmd_import_excel.Location = new System.Drawing.Point(0, 0);
+            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
+            this.m_cmd_import_excel.Size = new System.Drawing.Size(123, 36);
+            this.m_cmd_import_excel.TabIndex = 4;
+            this.m_cmd_import_excel.Text = "Import Excel";
             // 
             // f355_tnk_chi_tiet_quy_thu_nhap_khac
             // 
@@ -504,7 +503,7 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_import_excel;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl m_lbl_so_luong_nv_trong_quy;
         private DevExpress.XtraEditors.LabelControl labelControl2;

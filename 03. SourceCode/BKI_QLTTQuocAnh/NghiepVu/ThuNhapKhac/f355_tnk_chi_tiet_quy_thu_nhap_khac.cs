@@ -38,6 +38,19 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             m_cmd_delete.Click += m_cmd_delete_Click;
             m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
             m_cmd_exit.Click += m_cmd_exit_Click;
+            m_cmd_import_excel.Click += m_cmd_import_excel_Click;
+        }
+
+        void m_cmd_import_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                import_excel();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_exit_Click(object sender, EventArgs e)
@@ -146,6 +159,11 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         //Method bool
 
         //Event handle
+        private void import_excel()
+        {
+            f301_tinh_thu_nhap_khac v_frm = new f301_tinh_thu_nhap_khac(m_dc_id_quy);
+            v_frm.ShowDialog();
+        }
         private void handle_form_loaded()
         {
             load_data_to_grid();
@@ -178,7 +196,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             var v_dto = TnkQL.Instance.LayThongTinQuy(m_dc_id_quy);
             m_lbl_ten_quy.Text = v_dto.TEN_QUY;
             m_lbl_tong_tien.Text = string.Format("{0:#,##0}", v_dto.TONG_TIEN);
-            m_lbl_so_luong_nv_trong_quy.Text = v_dto.SO_LUONG_NV_TRONG_QUY.ToString();
+            m_lbl_so_luong_nv_trong_quy.Text = v_dto.SO_LUONG_NV_TRONG_QUY.ToString() + " NV";
             m_lbl_tong_tien_nop_thue.Text = string.Format("{0:#,##0}", v_dto.TONG_TIEN_NOP_THUE);
             m_lbl_tong_tien_thuc_linh.Text = string.Format("{0:#,##0}", v_dto.TONG_TIEN_THUC_LINH);
         }

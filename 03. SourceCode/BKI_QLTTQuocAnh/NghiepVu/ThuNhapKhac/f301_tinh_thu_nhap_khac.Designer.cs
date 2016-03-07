@@ -50,8 +50,8 @@
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_tinh_tien_thuong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_tinh_tien_thuong = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_lbl_trang_thai_soan_thao = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_main)).BeginInit();
@@ -85,12 +85,12 @@
             // 
             this.m_grc_main.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc_main.Location = new System.Drawing.Point(0, 115);
+            this.m_grc_main.Location = new System.Drawing.Point(0, 129);
             this.m_grc_main.MainView = this.m_grv_main;
             this.m_grc_main.Name = "m_grc_main";
             this.m_grc_main.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
-            this.m_grc_main.Size = new System.Drawing.Size(1158, 439);
+            this.m_grc_main.Size = new System.Drawing.Size(1158, 425);
             this.m_grc_main.TabIndex = 11;
             this.m_grc_main.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_main});
@@ -266,12 +266,12 @@
             // 
             // m_lbl_ten_quy
             // 
-            this.m_lbl_ten_quy.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.m_lbl_ten_quy.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.m_lbl_ten_quy.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_lbl_ten_quy.Location = new System.Drawing.Point(2, 2);
             this.m_lbl_ten_quy.Name = "m_lbl_ten_quy";
             this.m_lbl_ten_quy.Padding = new System.Windows.Forms.Padding(10);
-            this.m_lbl_ten_quy.Size = new System.Drawing.Size(35, 39);
+            this.m_lbl_ten_quy.Size = new System.Drawing.Size(38, 43);
             this.m_lbl_ten_quy.TabIndex = 21;
             this.m_lbl_ten_quy.Text = "...";
             // 
@@ -326,7 +326,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1158, 78);
+            this.panelControl1.Size = new System.Drawing.Size(1158, 92);
             this.panelControl1.TabIndex = 22;
             // 
             // panelControl3
@@ -337,21 +337,10 @@
             this.panelControl3.Controls.Add(this.m_cmd_import_excel);
             this.panelControl3.Controls.Add(this.m_lbl_download_template);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl3.Location = new System.Drawing.Point(2, 39);
+            this.panelControl3.Location = new System.Drawing.Point(2, 53);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1154, 37);
             this.panelControl3.TabIndex = 23;
-            // 
-            // m_cmd_tinh_tien_thuong
-            // 
-            this.m_cmd_tinh_tien_thuong.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_tinh_tien_thuong.ImageIndex = 18;
-            this.m_cmd_tinh_tien_thuong.ImageList = this.imageCollection;
-            this.m_cmd_tinh_tien_thuong.Location = new System.Drawing.Point(361, 2);
-            this.m_cmd_tinh_tien_thuong.Name = "m_cmd_tinh_tien_thuong";
-            this.m_cmd_tinh_tien_thuong.Size = new System.Drawing.Size(203, 33);
-            this.m_cmd_tinh_tien_thuong.TabIndex = 17;
-            this.m_cmd_tinh_tien_thuong.Text = "Bước 3: Tính thành tiền";
             // 
             // m_cmd_save
             // 
@@ -368,11 +357,22 @@
             this.m_cmd_save.TabIndex = 18;
             this.m_cmd_save.Text = "Bước 4: Lưu vào phần mềm";
             // 
+            // m_cmd_tinh_tien_thuong
+            // 
+            this.m_cmd_tinh_tien_thuong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_tinh_tien_thuong.ImageIndex = 18;
+            this.m_cmd_tinh_tien_thuong.ImageList = this.imageCollection;
+            this.m_cmd_tinh_tien_thuong.Location = new System.Drawing.Point(361, 2);
+            this.m_cmd_tinh_tien_thuong.Name = "m_cmd_tinh_tien_thuong";
+            this.m_cmd_tinh_tien_thuong.Size = new System.Drawing.Size(203, 33);
+            this.m_cmd_tinh_tien_thuong.TabIndex = 17;
+            this.m_cmd_tinh_tien_thuong.Text = "Bước 3: Tính thành tiền";
+            // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.m_lbl_trang_thai_soan_thao);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(0, 78);
+            this.panelControl2.Location = new System.Drawing.Point(0, 92);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1158, 37);
             this.panelControl2.TabIndex = 23;
@@ -385,7 +385,7 @@
             this.m_lbl_trang_thai_soan_thao.Location = new System.Drawing.Point(2, 2);
             this.m_lbl_trang_thai_soan_thao.Name = "m_lbl_trang_thai_soan_thao";
             this.m_lbl_trang_thai_soan_thao.Padding = new System.Windows.Forms.Padding(10);
-            this.m_lbl_trang_thai_soan_thao.Size = new System.Drawing.Size(138, 33);
+            this.m_lbl_trang_thai_soan_thao.Size = new System.Drawing.Size(470, 33);
             this.m_lbl_trang_thai_soan_thao.TabIndex = 0;
             this.m_lbl_trang_thai_soan_thao.Text = "...";
             // 

@@ -46,6 +46,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private void set_initial_form_load()
         {
+            m_lbl_ten_quy.Text = m_us_gd_quy.strTEN_QUY;
         }
         private void set_grid_dang_soan_thao()
         {
@@ -56,7 +57,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_grid_da_luu_du_lieu()
         {
             m_lbl_trang_thai_soan_thao.Text = "Dữ liệu đã được lưu!";
-            this.m_lbl_download_template.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | FontStyle.Regular))));
+            this.m_lbl_trang_thai_soan_thao.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | FontStyle.Regular))));
             m_lbl_trang_thai_soan_thao.ForeColor = Color.Gray;
         }
         //Tao Template

@@ -60,5 +60,17 @@ namespace BKI_DichVuMatDat.BaoCao
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_cmd_export_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CHRMCommon.ExportExcel(m_grv);
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

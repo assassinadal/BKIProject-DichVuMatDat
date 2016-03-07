@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.BandedGrid;
 
 namespace BKI_DichVuMatDat
 {
@@ -27,7 +28,17 @@ namespace BKI_DichVuMatDat
                 DevExpress.XtraEditors.XtraMessageBox.Show("Trích xuất dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
+        public static void ExportExcel(BandedGridView ip_grv)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+            saveFileDialog1.RestoreDirectory = true;
+            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                ip_grv.ExportToXls(saveFileDialog1.FileName);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Trích xuất dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
         /// <summary>
         /// Trả về danh sách các nhân viên được quyền chọn theo user người sử dụng
         /// </summary>

@@ -1086,6 +1086,8 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string SO_LUONG_NV_TRONG_QUY = "SO_LUONG_NV_TRONG_QUY";
         public const string CO_DU_LIEU = "CO_DU_LIEU";
         public const string TONG_TIEN = "TONG_TIEN";
+        public const string TONG_TIEN_NOP_THUE = "TONG_TIEN_NOP_THUE";
+        public const string TONG_TIEN_THUC_LINH = "TONG_TIEN_THUC_LINH";
     }
 
     public class GD_QUY_THU_NHAP_KHAC

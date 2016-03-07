@@ -74,7 +74,8 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             v_dto_quy.NAM = Convert.ToDecimal(v_dr_quy[V_TNK_GD_QUY_THU_NHAP_KHAC.NAM]);
             v_dto_quy.SO_LUONG_NV_TRONG_QUY = Convert.ToDecimal(v_dr_quy[V_TNK_GD_QUY_THU_NHAP_KHAC.SO_LUONG_NV_TRONG_QUY]);
             v_dto_quy.TONG_TIEN = Convert.ToDecimal(v_dr_quy[V_TNK_GD_QUY_THU_NHAP_KHAC.TONG_TIEN]);
-            
+            v_dto_quy.TONG_TIEN_NOP_THUE = Convert.ToDecimal(v_dr_quy[V_TNK_GD_QUY_THU_NHAP_KHAC.TONG_TIEN_NOP_THUE]);
+            v_dto_quy.TONG_TIEN_THUC_LINH = Convert.ToDecimal(v_dr_quy[V_TNK_GD_QUY_THU_NHAP_KHAC.TONG_TIEN_THUC_LINH]);
             return v_dto_quy;
         }
         private DataTable create_data_chi_tiet_quy(decimal ip_dc_id_quy_thu_nhap_khac)

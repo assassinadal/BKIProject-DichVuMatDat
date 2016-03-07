@@ -13,9 +13,9 @@ using IP.Core.IPCommon;
 
 namespace BKI_DichVuMatDat
 {
-    public partial class F150_DANH_SACH_NHAN_VIEN_EXCEL : Form
+    public partial class F152_DANH_SACH_NHAN_VIEN_EXCEL : Form
     {
-        public F150_DANH_SACH_NHAN_VIEN_EXCEL()
+        public F152_DANH_SACH_NHAN_VIEN_EXCEL()
         {
             InitializeComponent();
         }

@@ -59,7 +59,6 @@
             this.m_cmd_nhap_thong_tin_nhan_vien.Size = new System.Drawing.Size(281, 49);
             this.m_cmd_nhap_thong_tin_nhan_vien.TabIndex = 0;
             this.m_cmd_nhap_thong_tin_nhan_vien.Text = "Bước 1: Nhập thông tin nhân viên";
-            this.m_cmd_nhap_thong_tin_nhan_vien.Click += new System.EventHandler(this.m_cmd_nhap_thong_tin_nhan_vien_Click);
             // 
             // m_cmd_lap_hop_dong
             // 
@@ -72,7 +71,6 @@
             this.m_cmd_lap_hop_dong.Size = new System.Drawing.Size(281, 47);
             this.m_cmd_lap_hop_dong.TabIndex = 0;
             this.m_cmd_lap_hop_dong.Text = "Bước 2: Lập hợp đồng";
-            this.m_cmd_lap_hop_dong.Click += new System.EventHandler(this.m_cmd_lap_hop_dong_Click);
             // 
             // m_cmd_nhap_loai_lao_dong
             // 
@@ -85,7 +83,6 @@
             this.m_cmd_nhap_loai_lao_dong.Size = new System.Drawing.Size(281, 46);
             this.m_cmd_nhap_loai_lao_dong.TabIndex = 0;
             this.m_cmd_nhap_loai_lao_dong.Text = "Bước 4: Nhập thông tin bổ sung";
-            this.m_cmd_nhap_loai_lao_dong.Click += new System.EventHandler(this.m_cmd_nhap_loai_lao_dong_Click);
             // 
             // panelControl1
             // 
@@ -126,7 +123,6 @@
             this.m_cmd_exit.Size = new System.Drawing.Size(116, 42);
             this.m_cmd_exit.TabIndex = 23;
             this.m_cmd_exit.Text = "&Thoát";
-            this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
             // 
             // m_cmd_cong_tac
             // 
@@ -139,7 +135,6 @@
             this.m_cmd_cong_tac.Size = new System.Drawing.Size(281, 46);
             this.m_cmd_cong_tac.TabIndex = 0;
             this.m_cmd_cong_tac.Text = "Bước 3: Nhập thông tin công tác";
-            this.m_cmd_cong_tac.Click += new System.EventHandler(this.m_cmd_cong_tac_Click);
             // 
             // groupBox1
             // 
@@ -216,7 +211,6 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "F500_QUY_TRINH_THEM_MOI_NHAN_SU";
             this.Text = "F500 - Quy trình thêm mới một nhân sự";
-            this.Load += new System.EventHandler(this.F500_QUY_TRINH_THEM_MOI_NHAN_SU_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

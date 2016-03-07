@@ -1,6 +1,6 @@
 ﻿namespace BKI_DichVuMatDat
 {
-    partial class F150_DANH_SACH_NHAN_VIEN_EXCEL
+    partial class F152_DANH_SACH_NHAN_VIEN_EXCEL
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F150_DANH_SACH_NHAN_VIEN_EXCEL));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F152_DANH_SACH_NHAN_VIEN_EXCEL));
             this.m_cmd_luu = new DevExpress.XtraEditors.SimpleButton();
             this.colDIA_CHI_LIEN_LAC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMA_SO_THUE_CA_NHAN = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -540,7 +540,7 @@
             // 
             this.dM_NHAN_VIENTableAdapter.ClearBeforeFill = true;
             // 
-            // F150_DANH_SACH_NHAN_VIEN_EXCEL
+            // F152_DANH_SACH_NHAN_VIEN_EXCEL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -548,8 +548,8 @@
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl1);
-            this.Name = "F150_DANH_SACH_NHAN_VIEN_EXCEL";
-            this.Text = "F150 - Danh sách nhân viên từ excel";
+            this.Name = "F152_DANH_SACH_NHAN_VIEN_EXCEL";
+            this.Text = "F152 - Danh sách nhân viên từ excel";
             ((System.ComponentModel.ISupportInitialize)(this.dVMDDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVMDDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDMNHANVIENBindingSource)).EndInit();

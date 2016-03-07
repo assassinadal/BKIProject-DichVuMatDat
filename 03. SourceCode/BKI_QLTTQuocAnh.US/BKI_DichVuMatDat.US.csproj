@@ -105,6 +105,7 @@
     <Compile Include="US_V_DM_LOAI_NGAY_CONG.cs" />
     <Compile Include="US_V_DM_LUONG_CHE_DO.cs" />
     <Compile Include="US_V_DM_NHAN_VIEN.cs" />
+    <Compile Include="US_V_DM_NHAN_VIEN_3.cs" />
     <Compile Include="US_V_DM_PHU_CAP.cs" />
     <Compile Include="US_V_DM_PHU_CAP_HDH.cs" />
     <Compile Include="US_V_DM_TRANG_THAI_LAO_DONG.cs" />

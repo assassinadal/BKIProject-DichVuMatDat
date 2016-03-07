@@ -1337,15 +1337,15 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (decimal.Parse(m_sle_loai_hop_dong.EditValue.ToString()) == CONST_ID_LOAI_HOP_DONG.HOP_DONG_MOT_NAM)
                 {
-                    m_dat_ngay_ket_thuc.Value = m_dat_ngay_ket_thuc.Value.AddYears(1).AddDays(-1);
+                    m_dat_ngay_ket_thuc.Value = m_dat_ngay_bat_dau.Value.AddYears(1).AddDays(-1);
                 }
                 else if (decimal.Parse(m_sle_loai_hop_dong.EditValue.ToString()) == CONST_ID_LOAI_HOP_DONG.HOP_DONG_3_NAM)
                 {
-                    m_dat_ngay_ket_thuc.Value = m_dat_ngay_ket_thuc.Value.AddYears(3).AddDays(-1);
+                    m_dat_ngay_ket_thuc.Value = m_dat_ngay_bat_dau.Value.AddYears(3).AddDays(-1);
                 }
                 else if (decimal.Parse(m_sle_loai_hop_dong.EditValue.ToString()) == CONST_ID_LOAI_HOP_DONG.HOP_DONG_KHONG_XAC_DINH)
                 {
-                    m_dat_ngay_ket_thuc.Checked = false;
+                    m_dat_ngay_ket_thuc.Value = m_dat_ngay_bat_dau.Value.AddYears(45);
                 }
                 else
                 {

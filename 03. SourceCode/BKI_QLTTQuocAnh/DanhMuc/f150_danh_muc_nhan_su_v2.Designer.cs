@@ -1128,7 +1128,6 @@
             this.Name = "f150_danh_muc_nhan_su_v2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F150 - Hồ sơ nhân viên";
-            this.Load += new System.EventHandler(this.f150_danh_muc_nhan_su_v2_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dS_HT_NGAY_TRONG_TUAN1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

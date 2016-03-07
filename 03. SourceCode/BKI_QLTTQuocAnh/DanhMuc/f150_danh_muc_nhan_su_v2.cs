@@ -29,10 +29,12 @@ namespace BKI_DichVuMatDat.DanhMuc
             this.ShowDialog();
         }
 
-        public void DisplayForInsert(ref int m_trang_thai_buoc_1_sau_hien_thi, string ip_str_ma_nhan_vien)
+        public void DisplayForInsert(ref int m_trang_thai_buoc_1_sau_hien_thi
+           // , string ip_str_ma_nhan_vien
+            )
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            m_txt_ma_nv.Text = ip_str_ma_nhan_vien;
+            //m_txt_ma_nv.Text = ip_str_ma_nhan_vien;
             this.ShowDialog();
             m_trang_thai_buoc_1_sau_hien_thi = m_trang_thai_buoc_1_sau_hien_thi_f150_v2;
         }
@@ -55,9 +57,15 @@ namespace BKI_DichVuMatDat.DanhMuc
         #endregion
 
         #region Private Methods
+        private void format_controls()
+        {
+            this.KeyPreview = true;
+            set_define_events();
+        }
 
         private void set_init_form_load()
         {
+            this.cM_DM_TU_DIENTableAdapter.Fill(this.dVMDDataSet3.CM_DM_TU_DIEN);
             fill_combobox_gioi_tinh();
             load_data_2_sle_trinh_do();
         }
@@ -202,13 +210,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         //    }
 
         //}
-
-        private void format_controls()
-        {
-            this.KeyPreview = true;
-            set_define_events();
-        }
-
+ 
         private void tinh_tuoi_nhan_vien()
         {
             decimal v_so_tuoi = CIPConvert.ToDecimal(DateTime.Now.Year - m_dat_ngay_sinh.DateTime.Year);
@@ -217,6 +219,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
 
         #endregion
+
         private void set_define_events()
         {
             this.Load += f150_danh_muc_nhan_su_v2_Load;
@@ -305,14 +308,5 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             this.Close();
         }
-
-        private void f150_danh_muc_nhan_su_v2_Load_1(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'dVMDDataSet3.CM_DM_TU_DIEN' table. You can move, or remove it, as needed.
-            this.cM_DM_TU_DIENTableAdapter.Fill(this.dVMDDataSet3.CM_DM_TU_DIEN);
-
-        }
-
-
     }
 }

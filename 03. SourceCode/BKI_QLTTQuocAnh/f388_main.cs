@@ -1354,7 +1354,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f150_Danh_sach_nhan_vien_master v_f = new f150_Danh_sach_nhan_vien_master();
+                f151_Danh_sach_nhan_vien_master v_f = new f151_Danh_sach_nhan_vien_master();
                 if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();

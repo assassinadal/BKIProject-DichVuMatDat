@@ -509,6 +509,7 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1544,9 +1545,11 @@
     <Content Include="Template\ThuNhapKhac.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Template\CONG_TAC.xlsx" />
     <None Include="Template\DANH_SACH_NHAN_VIEN.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Template\HOP_DONG.xlsx" />
     <None Include="Template\LOAI_LAO_DONG_CUA_NHAN_VIEN.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

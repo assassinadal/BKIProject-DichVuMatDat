@@ -112,8 +112,9 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     f151_Danh_sach_nhan_vien_master v_frm_f151 = new f151_Danh_sach_nhan_vien_master();
                     v_frm_f151.Display_With_ID_NV(decimal.Parse(m_trang_thai_buoc_1.ToString().Trim()));
-                //Buoc 3: Cho hien cac button buoc 2, 3, 4
+                //Buoc 3: Cho hien cac button buoc 2, an button 3,4
                     m_cmd_lap_hop_dong.Enabled = true;
+                    m_cmd_cong_tac.Enabled = false;
                     m_cmd_nhap_thong_tin_nhan_vien.Enabled = false;
                 }
             }

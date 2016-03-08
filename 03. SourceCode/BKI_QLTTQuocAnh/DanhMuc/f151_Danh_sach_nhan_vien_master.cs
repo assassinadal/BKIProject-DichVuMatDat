@@ -36,7 +36,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             this.ShowDialog();
             m_trang_thai_buoc_1 = m_trang_thai_buoc_1_sau_hien_thi;
         }
-        
+
         public void Display_With_ID_NV(decimal ip_dc_id_nhan_vien)
         {
             m_cmd_ma_nv_tiep_theo.Enabled = false;
@@ -44,7 +44,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_cmd_sua.Enabled = false;
             m_cmd_tai_file_excel_mau.Enabled = false;
             m_cmd_chon_file.Enabled = false;
-            load_data_to_grid(ip_dc_id_nhan_vien);
+            m_id_nhan_vien = ip_dc_id_nhan_vien;
             this.CenterToScreen();
             this.ShowDialog();
         }
@@ -55,6 +55,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         string m_txt_path = "";
         int m_trang_thai_buoc_1_sau_hien_thi = -2;
+        decimal m_id_nhan_vien = 0;
         #endregion
 
         #region Private methods
@@ -67,7 +68,14 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void set_init_form_load()
         {
-            load_data_to_grid();
+            if (m_id_nhan_vien > 0)
+            {
+                load_data_to_grid(m_id_nhan_vien);
+            }
+            else
+            {
+                load_data_to_grid();
+            }
         }
 
         private void load_data_to_grid()
@@ -84,7 +92,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             US_V_DM_NHAN_VIEN_3 v_us = new US_V_DM_NHAN_VIEN_3();
             DS_V_DM_NHAN_VIEN_3 v_ds = new DS_V_DM_NHAN_VIEN_3();
             v_ds.Clear();
-            v_us.FillDataset(v_ds,"WHERE ID = "+ip_dc_id_nhan_vien);
+            v_us.FillDataset(v_ds, "WHERE ID = " + ip_dc_id_nhan_vien);
             m_grc.DataSource = v_ds.Tables[0];
         }
         #endregion

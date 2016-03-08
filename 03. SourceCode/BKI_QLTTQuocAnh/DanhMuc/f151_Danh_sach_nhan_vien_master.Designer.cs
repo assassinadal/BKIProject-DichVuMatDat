@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f151_Danh_sach_nhan_vien_master));
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -69,8 +68,8 @@
             this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dVMDDataSet1 = new BKI_DichVuMatDat.DVMDDataSet1();
-            this.dVMDDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vDMNHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dVMDDataSet1BindingSource = new System.Windows.Forms.BindingSource();
+            this.vDMNHANVIENBindingSource = new System.Windows.Forms.BindingSource();
             this.v_DM_NHAN_VIENTableAdapter = new BKI_DichVuMatDat.DVMDDataSet1TableAdapters.V_DM_NHAN_VIENTableAdapter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label1 = new System.Windows.Forms.Label();

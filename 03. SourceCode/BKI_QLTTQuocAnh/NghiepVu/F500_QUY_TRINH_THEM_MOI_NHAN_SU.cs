@@ -39,7 +39,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         enum Trang_thai_cac_button
         {
             CHUA_HOAN_THANH = -1,
-            DA_HOAN_THANH,
+            
         }
         #endregion
 
@@ -63,6 +63,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
 
         #endregion
+
         private void set_define_events()
         {
             this.Load += F500_QUY_TRINH_THEM_MOI_NHAN_SU_Load;
@@ -100,51 +101,84 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void m_cmd_nhap_thong_tin_nhan_vien_Click(object sender, EventArgs e)
         {
-            f151_Danh_sach_nhan_vien_master v_f = new f151_Danh_sach_nhan_vien_master();
-            v_f.DisplayForPresent(ref m_trang_thai_buoc_1);
-            if (m_trang_thai_buoc_1 > 0)
+            try
             {
-                m_cmd_lap_hop_dong.Enabled = true;
-                m_cmd_nhap_thong_tin_nhan_vien.Enabled = false;
-            }
+                //Buoc 1: Hien thi form F150 danh muc nhan vien v2 de insert them nhan vien moi
+                f150_danh_muc_nhan_su_v2 v_frm_f150_v2 = new f150_danh_muc_nhan_su_v2();
+                v_frm_f150_v2.DisplayForInsert(ref m_trang_thai_buoc_1);
 
+                //Buoc 2: Hien thi from F151 luoi danh sach nhan vien
+                if (m_trang_thai_buoc_1 > 0)
+                {
+                    f151_Danh_sach_nhan_vien_master v_frm_f151 = new f151_Danh_sach_nhan_vien_master();
+                    v_frm_f151.Display_With_ID_NV(decimal.Parse(m_trang_thai_buoc_1.ToString().Trim()));
+                //Buoc 3: Cho hien cac button buoc 2, 3, 4
+                    m_cmd_lap_hop_dong.Enabled = true;
+                    m_cmd_nhap_thong_tin_nhan_vien.Enabled = false;
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_cmd_lap_hop_dong_Click(object sender, EventArgs e)
         {
-            f320_lap_hop_dong v_f = new f320_lap_hop_dong();
-            v_f.DisplayForQuyTrinhNhapMoiNhanVien(m_trang_thai_buoc_1, ref m_trang_thai_buoc_3_thanh_cong);
-            //m_tran_thai_buoc_1 la id_nhan_vien
-            if (m_trang_thai_buoc_3_thanh_cong > 0)
+            try
             {
-                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-                m_cmd_lap_hop_dong.Enabled = false;
-                m_cmd_cong_tac.Enabled = true;
+                f320_lap_hop_dong v_f = new f320_lap_hop_dong();
+                v_f.DisplayForQuyTrinhNhapMoiNhanVien(m_trang_thai_buoc_1, ref m_trang_thai_buoc_3_thanh_cong);
+                //m_tran_thai_buoc_1 la id_nhan_vien
+                if (m_trang_thai_buoc_3_thanh_cong > 0)
+                {
+
+                    v_f.display();
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                    m_cmd_lap_hop_dong.Enabled = false;
+                    m_cmd_cong_tac.Enabled = true;
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
             }
 
         }
 
         private void m_cmd_cong_tac_Click(object sender, EventArgs e)
         {
-            f350_quan_ly_vi_tri_cong_tac v_f = new f350_quan_ly_vi_tri_cong_tac();
-            v_f.DisplayForQuyTrinhNhapMoiNhanVien(m_trang_thai_buoc_1, ref m_trang_thai_buoc_4);
-            //m_tran_thai_buoc_1 la id_nhan_vien
-            if (m_trang_thai_buoc_3_thanh_cong > 0)
+            try
             {
-                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-                m_cmd_cong_tac.Enabled = false;
-                m_cmd_nhap_loai_lao_dong.Enabled = true;
+                f350_quan_ly_vi_tri_cong_tac v_f = new f350_quan_ly_vi_tri_cong_tac();
+                v_f.DisplayForQuyTrinhNhapMoiNhanVien(m_trang_thai_buoc_1, ref m_trang_thai_buoc_4);
+                //m_tran_thai_buoc_1 la id_nhan_vien
+                if (m_trang_thai_buoc_3_thanh_cong > 0)
+                {
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                    m_cmd_cong_tac.Enabled = false;
+                    m_cmd_nhap_loai_lao_dong.Enabled = true;
 
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
         private void m_cmd_nhap_loai_lao_dong_Click(object sender, EventArgs e)
         {
-            F501_THONG_TIN_BO_SUNG_NHAN_VIEN v_f = new F501_THONG_TIN_BO_SUNG_NHAN_VIEN();
-            v_f.ShowForPresent(m_trang_thai_buoc_1, ref m_trang_thai_buoc_2);
-            CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-
-
+            try
+            {
+                F501_THONG_TIN_BO_SUNG_NHAN_VIEN v_f = new F501_THONG_TIN_BO_SUNG_NHAN_VIEN();
+                v_f.ShowForPresent(m_trang_thai_buoc_1, ref m_trang_thai_buoc_2);
+                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_cmd_exit_Click(object sender, EventArgs e)

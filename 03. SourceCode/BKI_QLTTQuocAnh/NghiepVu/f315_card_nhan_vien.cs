@@ -24,7 +24,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             //// TODO: This line of code loads data into the 'dVMDDataSet1.V_DM_NHAN_VIEN' table. You can move, or remove it, as needed.
             DS_V_GD_MA_TRA_CUU_NHAN_VIEN v_ds = new DS_V_GD_MA_TRA_CUU_NHAN_VIEN();
             US_V_GD_MA_TRA_CUU_NHAN_VIEN v_us = new US_V_GD_MA_TRA_CUU_NHAN_VIEN();
-            v_us.FillDataset(v_ds,"Order by MA_PHONG, MA_DOI, THU_TU_CHUC_VU, MA_CHUC_VU, SO_HO_SO");
+            v_us.FillDataset(v_ds, "Order by MA_PHONG, MA_DOI, THU_TU_CHUC_VU, MA_CHUC_VU, SO_HO_SO");
             m_grc_main.DataSource = v_ds.Tables[0];
         }
 
@@ -33,9 +33,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "xls files (*.pdf)|*.pdf|All files (*.*)|*.*";
             saveFileDialog1.RestoreDirectory = true;
-            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-               layoutView1.ExportToPdf(saveFileDialog1.FileName);
+                layoutView1.ExportToPdf(saveFileDialog1.FileName);
                 DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
             }
         }

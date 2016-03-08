@@ -13,6 +13,8 @@ using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.US;
 using IP.Core.IPUserService;
 using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
+using BKI_DichVuMatDat.BaoCao;
 
 namespace BKI_DichVuMatDat.DanhMuc
 {
@@ -30,9 +32,23 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_cmd_sua.Enabled = false;
             m_cmd_tai_file_excel_mau.Enabled = false;
             m_cmd_chon_file.Enabled = false;
+            this.CenterToScreen();
             this.ShowDialog();
             m_trang_thai_buoc_1 = m_trang_thai_buoc_1_sau_hien_thi;
         }
+        
+        public void Display_With_ID_NV(decimal ip_dc_id_nhan_vien)
+        {
+            m_cmd_ma_nv_tiep_theo.Enabled = false;
+            m_cmd_them.Enabled = false;
+            m_cmd_sua.Enabled = false;
+            m_cmd_tai_file_excel_mau.Enabled = false;
+            m_cmd_chon_file.Enabled = false;
+            load_data_to_grid(ip_dc_id_nhan_vien);
+            this.CenterToScreen();
+            this.ShowDialog();
+        }
+
         #endregion
 
         #region Members
@@ -54,15 +70,6 @@ namespace BKI_DichVuMatDat.DanhMuc
             load_data_to_grid();
         }
 
-        private string gen_ma_nhan_vien()
-        {
-            string v_str_op_ma_nhan_vien = "";
-            US_V_GD_MA_TRA_CUU_NHAN_VIEN v_us = new US_V_GD_MA_TRA_CUU_NHAN_VIEN();
-            v_us.gen_ma_nhan_vien(ref v_str_op_ma_nhan_vien);
-            int v_int_ma_nhan_vien_tiep_theo = int.Parse(v_str_op_ma_nhan_vien) + 1;
-            return v_int_ma_nhan_vien_tiep_theo.ToString();
-        }
-
         private void load_data_to_grid()
         {
             US_V_DM_NHAN_VIEN_3 v_us = new US_V_DM_NHAN_VIEN_3();
@@ -72,6 +79,14 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_grc.DataSource = v_ds.Tables[0];
         }
 
+        private void load_data_to_grid(decimal ip_dc_id_nhan_vien)
+        {
+            US_V_DM_NHAN_VIEN_3 v_us = new US_V_DM_NHAN_VIEN_3();
+            DS_V_DM_NHAN_VIEN_3 v_ds = new DS_V_DM_NHAN_VIEN_3();
+            v_ds.Clear();
+            v_us.FillDataset(v_ds,"WHERE ID = "+ip_dc_id_nhan_vien);
+            m_grc.DataSource = v_ds.Tables[0];
+        }
         #endregion
         private void set_define_events()
         {
@@ -100,7 +115,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                CHRM_BaseMessages.MsgBox_Infor("Mã nhân viên tiếp theo là : " + gen_ma_nhan_vien());
+                CHRM_BaseMessages.MsgBox_Infor("Mã nhân viên tiếp theo là : " + CHRMCommon.gen_ma_nhan_vien());
             }
             catch (Exception v_e)
             {
@@ -112,6 +127,8 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
+                SplashScreenManager.ShowForm(typeof(F_wait_form));
+
                 string fileName = "DANH_SACH_NHAN_VIEN.xlsx";
                 string sourcePath = (Directory.GetCurrentDirectory() + "\\Template");
                 string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -165,7 +182,6 @@ namespace BKI_DichVuMatDat.DanhMuc
             try
             {
                 f150_danh_muc_nhan_su_v2 v_f = new f150_danh_muc_nhan_su_v2();
-                string v_str_ma_nhan_vien = gen_ma_nhan_vien();
                 v_f.DisplayForInsert();
                 load_data_to_grid();
             }

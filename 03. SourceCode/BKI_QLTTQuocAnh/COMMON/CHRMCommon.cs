@@ -173,6 +173,15 @@ namespace BKI_DichVuMatDat
             return result;
         }
 
+        public static string gen_ma_nhan_vien()
+        {
+            string v_str_op_ma_nhan_vien = "";
+            US_V_GD_MA_TRA_CUU_NHAN_VIEN v_us = new US_V_GD_MA_TRA_CUU_NHAN_VIEN();
+            v_us.gen_ma_nhan_vien(ref v_str_op_ma_nhan_vien);
+            int v_int_ma_nhan_vien_tiep_theo = int.Parse(v_str_op_ma_nhan_vien) + 1;
+            return v_int_ma_nhan_vien_tiep_theo.ToString();
+        }
+
         static void ip_grv_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
             if(e.IsGetData)

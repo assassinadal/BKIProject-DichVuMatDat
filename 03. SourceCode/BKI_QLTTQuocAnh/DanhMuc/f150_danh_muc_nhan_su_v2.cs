@@ -26,15 +26,15 @@ namespace BKI_DichVuMatDat.DanhMuc
         public void DisplayForInsert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.CenterToScreen();
             this.ShowDialog();
         }
 
-        public void DisplayForInsert(ref int m_trang_thai_buoc_1_sau_hien_thi
-           // , string ip_str_ma_nhan_vien
-            )
+        public void DisplayForInsert(ref int m_trang_thai_buoc_1_sau_hien_thi)
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            //m_txt_ma_nv.Text = ip_str_ma_nhan_vien;
+            m_txt_ma_nv.Text = CHRMCommon.gen_ma_nhan_vien();
+            this.CenterToScreen();
             this.ShowDialog();
             m_trang_thai_buoc_1_sau_hien_thi = m_trang_thai_buoc_1_sau_hien_thi_f150_v2;
         }
@@ -46,8 +46,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             us_to_form(v_us);
             this.ShowDialog();
         }
-
-
+        
         #endregion
 
         #region Members
@@ -141,8 +140,6 @@ namespace BKI_DichVuMatDat.DanhMuc
                 m_dat_ngay_tiep_nhan_vao_tct.EditValue = m_us.datNGAY_TIEP_NHAN_VAO_TCT;
             if (m_us.datNGAY_CHINH_THUC_TIEP_NHAN != new DateTime(1900, 01, 01))
                 m_dat_ngay_chinh_thuc_tiep_nhan.EditValue = m_us.datNGAY_CHINH_THUC_TIEP_NHAN;
-
-
         }
 
         private void form_to_us()
@@ -193,30 +190,11 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         }
 
-        //private void get_id_nhan_vien_vua_insert(ref int m_trang_thai_buoc_1_sau_hien_thi_f150_v2)
-        //{
-        //    try
-        //    {
-        //        US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-        //        DataSet v_ds = new DataSet();
-        //        v_ds.Tables.Add(new DataTable());
-        //        v_us.FillDatasetWithQuery(v_ds, "select * from DM_NHAN_VIEN order by ID desc");
-        //        m_trang_thai_buoc_1_sau_hien_thi_f150_v2 = int.Parse(v_ds.Tables[0].Rows[0]["ID"].ToString());
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //        MessageBox.Show("Lỗi");
-        //    }
-
-        //}
- 
         private void tinh_tuoi_nhan_vien()
         {
             decimal v_so_tuoi = CIPConvert.ToDecimal(DateTime.Now.Year - m_dat_ngay_sinh.DateTime.Year);
             m_txt_tuoi_nv.Text = v_so_tuoi.ToString();
         }
-
 
         #endregion
 
@@ -228,11 +206,11 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_dat_ngay_sinh.EditValueChanged += m_dat_ngay_sinh_EditValueChanged;
         }
 
-        void m_dat_ngay_sinh_EditValueChanged(object sender, EventArgs e)
+        void f150_danh_muc_nhan_su_v2_Load(object sender, EventArgs e)
         {
             try
             {
-                tinh_tuoi_nhan_vien();
+                set_init_form_load();
             }
             catch (Exception v_e)
             {
@@ -240,11 +218,11 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
-        void f150_danh_muc_nhan_su_v2_Load(object sender, EventArgs e)
+        void m_dat_ngay_sinh_EditValueChanged(object sender, EventArgs e)
         {
             try
             {
-                set_init_form_load();
+                tinh_tuoi_nhan_vien();
             }
             catch (Exception v_e)
             {

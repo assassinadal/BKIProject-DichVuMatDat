@@ -26,7 +26,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         #region Public Interface
-        private void display()
+        public void display()
         {
             this.ShowDialog();
         }

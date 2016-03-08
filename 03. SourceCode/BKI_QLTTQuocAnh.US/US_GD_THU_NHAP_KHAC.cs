@@ -408,5 +408,14 @@ namespace BKI_DichVuMatDat.US
             v_cstore.addDecimalInputParam("@id_quy_tnk", ip_id_quy_tnk);
             v_cstore.fillDataSetByCommand(this, v_ds);
         }
+
+        public void LayDuLieuThuNhapKhacTheoIDQuy(DataSet ip_ds, decimal ip_dc_id_quy_tien_thuong)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_TNK_thu_nhap_khac_getTheoIdQuy");
+            v_sp.addDecimalInputParam("@ip_dc_id_quy", ip_dc_id_quy_tien_thuong);
+
+            v_sp.fillDataSetByCommand(this, ip_ds);
+        }
+
     }
 }

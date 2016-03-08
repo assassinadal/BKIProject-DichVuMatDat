@@ -129,6 +129,8 @@
             this.m_txt_tong_tien.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.m_txt_tong_tien.Properties.EditFormat.FormatString = "n0";
             this.m_txt_tong_tien.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.m_txt_tong_tien.Properties.Mask.EditMask = "n0";
+            this.m_txt_tong_tien.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_tong_tien.Size = new System.Drawing.Size(219, 26);
             this.m_txt_tong_tien.TabIndex = 2;
             // 
@@ -160,6 +162,8 @@
             this.m_txt_don_gia.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.m_txt_don_gia.Properties.EditFormat.FormatString = "n0";
             this.m_txt_don_gia.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.m_txt_don_gia.Properties.Mask.EditMask = "n0";
+            this.m_txt_don_gia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_don_gia.Size = new System.Drawing.Size(219, 26);
             this.m_txt_don_gia.TabIndex = 2;
             // 
@@ -175,6 +179,8 @@
             this.m_txt_thue_tong_tien.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.m_txt_thue_tong_tien.Properties.EditFormat.FormatString = "n0";
             this.m_txt_thue_tong_tien.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.m_txt_thue_tong_tien.Properties.Mask.EditMask = "n0";
+            this.m_txt_thue_tong_tien.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_thue_tong_tien.Size = new System.Drawing.Size(219, 26);
             this.m_txt_thue_tong_tien.TabIndex = 2;
             // 

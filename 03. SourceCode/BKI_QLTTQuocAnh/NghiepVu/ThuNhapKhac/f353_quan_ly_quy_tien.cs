@@ -31,7 +31,8 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         #region Members
         DataEntryFormMode m_e_form_mode;
         US_GD_THU_NHAP_KHAC m_us_gd_tnk = new US_GD_THU_NHAP_KHAC();
-        List<decimal> m_lst_id_gd_thu_nhap_khac = new List<decimal>();
+        //List<decimal> m_lst_id_gd_thu_nhap_khac = new List<decimal>();
+        DataTable m_dt_thu_nhap_khac = new DataTable();
         #endregion
 
         #region Private Method
@@ -54,16 +55,13 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 
         private bool check_quy_tien_dang_su_dung_yn(US_GD_QUY_THU_NHAP_KHAC v_us)
         {
-            m_lst_id_gd_thu_nhap_khac.Clear();
+            m_dt_thu_nhap_khac.Clear();
             US_GD_THU_NHAP_KHAC v_us_gd_tnk = new US_GD_THU_NHAP_KHAC();
             DS_GD_THU_NHAP_KHAC v_ds_gd_tnk = new DS_GD_THU_NHAP_KHAC();
-            v_us_gd_tnk.FillDataset(v_ds_gd_tnk, "where ID_QUY_THU_NHAP_KHAC = " + v_us.dcID);
+            v_us_gd_tnk.LayDuLieuThuNhapKhacTheoIDQuy(v_ds_gd_tnk, v_us.dcID);
             if (v_ds_gd_tnk.Tables[0].Rows.Count != 0)
             {
-                for (int i = 0; i < v_ds_gd_tnk.Tables[0].Rows.Count; i++)
-                {
-                    m_lst_id_gd_thu_nhap_khac.Add(CIPConvert.ToDecimal(v_ds_gd_tnk.Tables[0].Rows[i][0].ToString()));
-                }
+                m_dt_thu_nhap_khac = v_ds_gd_tnk.Tables[0];
                 return true;
             }
             else return false;
@@ -78,9 +76,9 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 
         private void delete_gd_thu_nhap_khac()
         {
-            foreach (var item in m_lst_id_gd_thu_nhap_khac)
+            for (int i = 0; i < m_dt_thu_nhap_khac.Rows.Count; i++)
             {
-                US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC(item);
+                US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC(decimal.Parse(m_dt_thu_nhap_khac.Rows[i][0].ToString()));
                 v_us.Delete();
             }
         }
@@ -99,9 +97,10 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         {
             if (check_quy_tien_dang_su_dung_yn(v_us))
             {
-                int v_slg_nvien = m_lst_id_gd_thu_nhap_khac.Count;
+                int v_slg_nvien = m_dt_thu_nhap_khac.Rows.Count;
                 string v_str_confirms = "Quỹ tiền đang được sử dụng cho " + v_slg_nvien + " nhân viên.\nBạn có muốn xóa cả khoản thu nhập của " + v_slg_nvien + " nhân viên đang sử dụng quỹ tiền này?";
-                if (CHRM_BaseMessages.MsgBox_Confirm(v_str_confirms))
+                DialogResult v_dialog = XtraMessageBox.Show(v_str_confirms, "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (v_dialog == DialogResult.Yes)
                 {
                     delete_gd_thu_nhap_khac();
                     delete_gd_quy_tien(v_us);
@@ -185,12 +184,13 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             {
                 var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
                 if (check_quy_tien_da_chot_yn(v_dr[2].ToString()))
-                    XtraMessageBox.Show("Quỹ tiền hiện đã chốt. Vui lòng không cập nhật!");
+                    XtraMessageBox.Show("Quỹ tiền hiện đã chốt. Vui lòng không cập nhật!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Stop);
                 else
                 {
                     US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[0].ToString()));
                     string v_str_confirm = "Bạn có chắc chắn muốn xóa quỹ tiền này?";
-                    if (CHRM_BaseMessages.MsgBox_Confirm(v_str_confirm))
+                    DialogResult v_dialog = XtraMessageBox.Show(v_str_confirm,"Xác nhận",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                    if (v_dialog == DialogResult.Yes)
                     {
                         xoa_quy_tien(v_us);                        
                     }
@@ -207,12 +207,14 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             try
             {
                 var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+                US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[0].ToString()));
                 if (check_quy_tien_da_chot_yn(v_dr[2].ToString()))
-                    XtraMessageBox.Show("Quỹ tiền hiện đã chốt, vui lòng không cập nhật!");
+                    XtraMessageBox.Show("Quỹ tiền hiện đã chốt. Vui lòng không cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                else if (check_quy_tien_dang_su_dung_yn(v_us))
+                    XtraMessageBox.Show("Quỹ đã chi tiền cho nhân viên, vui lòng không cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 else
                 {
                     f354_danh_sach_quy_thuong_de v_f = new f354_danh_sach_quy_thuong_de();                  
-                    US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[0].ToString()));
                     v_f.display_for_update(v_us);
                     load_data_to_grid();
                 }               

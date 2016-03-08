@@ -114,7 +114,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                 m_grc.DataSource = null;
                 WinFormControls.load_xls_to_gridview(WinFormControls.openFileDialog(), m_grc);
                 m_cmd_luu.Enabled = true;
-                m_lbl_trang_thai.Text += "\n File excel đã được import...";
+                //m_lbl_trang_thai.Text += "\n File excel đã được import...";
             }
             catch (Exception v_e)
             {
@@ -154,9 +154,9 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                 v_us.dcTHANG = m_dat_thang.DateTime.Month;
                 v_us.dcNAM = m_dat_thang.DateTime.Year;
                 v_us.dcHE_SO = 0;
-                v_us.dcSO_TIEN = return_so_tien(v_dr[3].ToString());
-                v_us.dcSO_TIEN_NOP_THUE = return_so_tien(v_dr[4].ToString());
-                v_us.dcSO_TIEN_THUC_LINH = return_so_tien(v_dr[5].ToString());
+                v_us.dcSO_TIEN = return_so_tien(v_dr[4].ToString());
+                v_us.dcSO_TIEN_NOP_THUE = return_so_tien(v_dr[5].ToString());
+                v_us.dcSO_TIEN_THUC_LINH = return_so_tien(v_dr[6].ToString());
                 v_us.dcID_LOAI_THU_NHAP_KHAC = 756;
                 v_us.dcID_QUY_THU_NHAP_KHAC = decimal.Parse(m_sle_quy_tien.EditValue.ToString());
                 if (i == 0)

@@ -58,7 +58,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         {
             try
             {
-                import_excel();
+                import_excel();               
             }
             catch(Exception v_e)
             {
@@ -176,6 +176,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         {
             f301_tinh_thu_nhap_khac v_frm = new f301_tinh_thu_nhap_khac(m_dc_id_quy);
             v_frm.ShowDialog();
+            load_data_to_grid();
         }
         private void handle_form_loaded()
         {

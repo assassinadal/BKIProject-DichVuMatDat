@@ -320,7 +320,15 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2_Load(object sender, EventArgs e)
         {
-            set_initial_form_load();
+            try
+            {
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
         }
 
         private void m_cmd_tai_file_mau_Click(object sender, EventArgs e)

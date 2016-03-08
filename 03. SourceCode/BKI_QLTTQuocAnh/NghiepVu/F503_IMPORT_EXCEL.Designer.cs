@@ -71,9 +71,9 @@
             this.label1.ForeColor = System.Drawing.Color.Maroon;
             this.label1.Location = new System.Drawing.Point(5, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(483, 23);
+            this.label1.Size = new System.Drawing.Size(423, 23);
             this.label1.TabIndex = 12;
-            this.label1.Text = "CHỌN TÙY Ý 1 TRONG CÁC THAO TÁC DƯỚI ĐÂY";
+            this.label1.Text = "QUY TRÌNH THÊM MỚI NHIỀU NHÂN VIÊN";
             // 
             // m_cmd_nhap_thong_tin_tong_hop
             // 
@@ -85,7 +85,7 @@
             this.m_cmd_nhap_thong_tin_tong_hop.Name = "m_cmd_nhap_thong_tin_tong_hop";
             this.m_cmd_nhap_thong_tin_tong_hop.Size = new System.Drawing.Size(300, 42);
             this.m_cmd_nhap_thong_tin_tong_hop.TabIndex = 5;
-            this.m_cmd_nhap_thong_tin_tong_hop.Text = "Nhập thông tin tổng hợp";
+            this.m_cmd_nhap_thong_tin_tong_hop.Text = "Bước 4 : Nhập thông tin tổng hợp";
             // 
             // m_cmd_nhap_thong_tin_hop_dong
             // 
@@ -97,7 +97,7 @@
             this.m_cmd_nhap_thong_tin_hop_dong.Name = "m_cmd_nhap_thong_tin_hop_dong";
             this.m_cmd_nhap_thong_tin_hop_dong.Size = new System.Drawing.Size(300, 46);
             this.m_cmd_nhap_thong_tin_hop_dong.TabIndex = 6;
-            this.m_cmd_nhap_thong_tin_hop_dong.Text = "Nhập thông tin hợp đồng";
+            this.m_cmd_nhap_thong_tin_hop_dong.Text = "Bước 2 : Nhập thông tin hợp đồng";
             // 
             // m_cmd_nhap_thong_tin_nhan_vien
             // 
@@ -108,7 +108,7 @@
             this.m_cmd_nhap_thong_tin_nhan_vien.Name = "m_cmd_nhap_thong_tin_nhan_vien";
             this.m_cmd_nhap_thong_tin_nhan_vien.Size = new System.Drawing.Size(300, 47);
             this.m_cmd_nhap_thong_tin_nhan_vien.TabIndex = 7;
-            this.m_cmd_nhap_thong_tin_nhan_vien.Text = "Nhập thông tin nhân viên";
+            this.m_cmd_nhap_thong_tin_nhan_vien.Text = "Bước 1 : Nhập thông tin nhân viên";
             // 
             // panel1
             // 
@@ -139,7 +139,7 @@
             this.m_cmd_nhap_thong_tin_cong_tac.Name = "m_cmd_nhap_thong_tin_cong_tac";
             this.m_cmd_nhap_thong_tin_cong_tac.Size = new System.Drawing.Size(300, 42);
             this.m_cmd_nhap_thong_tin_cong_tac.TabIndex = 8;
-            this.m_cmd_nhap_thong_tin_cong_tac.Text = "NHập thông tin công tác";
+            this.m_cmd_nhap_thong_tin_cong_tac.Text = "Bước 3 : Nhập thông tin công tác";
             // 
             // label2
             // 
@@ -281,7 +281,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_cmd_nhap_thong_tin_cong_tac);
             this.Name = "F503_IMPORT_EXCEL";
-            this.Text = "F503_IMPORT_EXCEL";
+            this.Text = "F503 - Nhập dữ liệu bằng file excel";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

@@ -53,7 +53,6 @@
     </Compile>
     <Compile Include="DS_CM_DM_TU_DIEN.cs">
       <DependentUpon>DS_CM_DM_TU_DIEN.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DS_CM_DM_TU_DIEN.Designer.cs">
       <DependentUpon>DS_CM_DM_TU_DIEN.xsd</DependentUpon>
@@ -122,7 +121,6 @@
     </Compile>
     <Compile Include="DS_GD_CHAM_CONG.cs">
       <DependentUpon>DS_GD_CHAM_CONG.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DS_GD_CHAM_CONG.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -241,7 +239,6 @@
     </Compile>
     <Compile Include="DS_GD_TRANG_THAI_LAO_DONG.cs">
       <DependentUpon>DS_GD_TRANG_THAI_LAO_DONG.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DS_GD_TRANG_THAI_LAO_DONG.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -330,7 +327,6 @@
     </Compile>
     <Compile Include="DS_V_DM_NHAN_VIEN.cs">
       <DependentUpon>DS_V_DM_NHAN_VIEN.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DS_V_DM_NHAN_VIEN.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -454,7 +450,6 @@
     </Compile>
     <Compile Include="DS_V_GD_QUY_TIEN_THUONG.cs">
       <DependentUpon>DS_V_GD_QUY_TIEN_THUONG.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DS_V_GD_QUY_TIEN_THUONG.Designer.cs">
       <AutoGen>True</AutoGen>

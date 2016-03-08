@@ -68,11 +68,14 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private DataSet load_data_to_ds_v_dm_nv()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+            //v_ds.Tables.Add(new DataTable());
+            //throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
             //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
+            US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
+            DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
+            v_us.FillDataset(v_ds);
             return v_ds;
         }
 

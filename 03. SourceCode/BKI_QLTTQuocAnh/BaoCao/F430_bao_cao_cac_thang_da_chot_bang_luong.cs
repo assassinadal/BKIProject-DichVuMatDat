@@ -52,12 +52,14 @@ namespace BKI_DichVuMatDat.BaoCao
         private void load_data_2_grid()
         {
             CHRMCommon.make_stt(m_grv_bc_cac_thang_da_chot_bang_luong);
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+            //v_ds.Tables.Add(new DataTable());
+            //throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
             //v_us.FillDatasetWithTableName(v_ds, "GD_CHOT_BANG_LUONG");
-
+            US_GD_CHOT_BANG_LUONG v_us = new US_GD_CHOT_BANG_LUONG();
+            DS_GD_CHOT_BANG_LUONG v_ds = new DS_GD_CHOT_BANG_LUONG();
+            v_us.FillDataset(v_ds);
             m_grc_bc_cac_thang_da_chot_bang_luong.DataSource = v_ds.Tables[0];
         }
 

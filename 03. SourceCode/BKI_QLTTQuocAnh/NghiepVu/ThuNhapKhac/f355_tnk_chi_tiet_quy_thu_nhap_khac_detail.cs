@@ -84,7 +84,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         {
             try
             {
-
+               
             }
             catch(Exception v_e)
             {

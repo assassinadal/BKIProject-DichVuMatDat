@@ -48,6 +48,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_initial_form_load()
         {
             m_lbl_ten_quy.Text = m_us_gd_quy.strTEN_QUY;
+            m_lbl_download_template.Select();
         }
         private void set_grid_dang_soan_thao()
         {

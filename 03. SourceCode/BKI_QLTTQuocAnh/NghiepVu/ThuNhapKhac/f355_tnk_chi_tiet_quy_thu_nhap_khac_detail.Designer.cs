@@ -103,7 +103,7 @@
             this.m_cmd_save.Location = new System.Drawing.Point(267, 2);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(104, 37);
-            this.m_cmd_save.TabIndex = 4;
+            this.m_cmd_save.TabIndex = 6;
             this.m_cmd_save.Text = "Lưu";
             // 
             // imageCollection
@@ -135,7 +135,7 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(371, 2);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(104, 37);
-            this.m_cmd_exit.TabIndex = 3;
+            this.m_cmd_exit.TabIndex = 7;
             this.m_cmd_exit.Text = "Thoát";
             // 
             // layoutControl1
@@ -205,7 +205,7 @@
             this.m_sle_chon_nhan_vien.Properties.View = this.searchLookUpEdit1View;
             this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(371, 20);
             this.m_sle_chon_nhan_vien.StyleController = this.layoutControl1;
-            this.m_sle_chon_nhan_vien.TabIndex = 12;
+            this.m_sle_chon_nhan_vien.TabIndex = 0;
             // 
             // searchLookUpEdit1View
             // 
@@ -232,7 +232,7 @@
             this.m_txt_he_so.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_he_so.Size = new System.Drawing.Size(371, 20);
             this.m_txt_he_so.StyleController = this.layoutControl1;
-            this.m_txt_he_so.TabIndex = 11;
+            this.m_txt_he_so.TabIndex = 2;
             // 
             // m_txt_so_tien_thuc_linh
             // 
@@ -246,7 +246,7 @@
             this.m_txt_so_tien_thuc_linh.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_so_tien_thuc_linh.Size = new System.Drawing.Size(371, 20);
             this.m_txt_so_tien_thuc_linh.StyleController = this.layoutControl1;
-            this.m_txt_so_tien_thuc_linh.TabIndex = 10;
+            this.m_txt_so_tien_thuc_linh.TabIndex = 5;
             // 
             // m_txt_so_tien_nop_thue
             // 
@@ -260,7 +260,7 @@
             this.m_txt_so_tien_nop_thue.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_so_tien_nop_thue.Size = new System.Drawing.Size(371, 20);
             this.m_txt_so_tien_nop_thue.StyleController = this.layoutControl1;
-            this.m_txt_so_tien_nop_thue.TabIndex = 9;
+            this.m_txt_so_tien_nop_thue.TabIndex = 4;
             // 
             // m_txt_so_tien
             // 
@@ -274,7 +274,7 @@
             this.m_txt_so_tien.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_so_tien.Size = new System.Drawing.Size(371, 20);
             this.m_txt_so_tien.StyleController = this.layoutControl1;
-            this.m_txt_so_tien.TabIndex = 8;
+            this.m_txt_so_tien.TabIndex = 3;
             // 
             // layoutControlGroup1
             // 

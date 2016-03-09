@@ -68,7 +68,7 @@
             this.radioButton2.Location = new System.Drawing.Point(34, 106);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(191, 17);
-            this.radioButton2.TabIndex = 0;
+            this.radioButton2.TabIndex = 10;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Lấy hệ số từng nhân viên * đơn giá";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -80,7 +80,7 @@
             this.radioButton3.Location = new System.Drawing.Point(34, 204);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(288, 17);
-            this.radioButton3.TabIndex = 0;
+            this.radioButton3.TabIndex = 11;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Không tính bằng hệ số (Tự nhập tay/import bằng excel)";
             this.radioButton3.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 242);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(420, 39);
-            this.panelControl1.TabIndex = 1;
+            this.panelControl1.TabIndex = 10;
             // 
             // m_cmd_continue
             // 
@@ -102,7 +102,7 @@
             this.m_cmd_continue.Location = new System.Drawing.Point(212, 2);
             this.m_cmd_continue.Name = "m_cmd_continue";
             this.m_cmd_continue.Size = new System.Drawing.Size(103, 35);
-            this.m_cmd_continue.TabIndex = 4;
+            this.m_cmd_continue.TabIndex = 0;
             this.m_cmd_continue.Text = "Tiếp tục";
             this.m_cmd_continue.Click += new System.EventHandler(this.m_cmd_continue_Click);
             // 
@@ -113,7 +113,7 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(315, 2);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(103, 35);
-            this.m_cmd_exit.TabIndex = 3;
+            this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Thoát";
             this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
             // 
@@ -132,14 +132,14 @@
             this.m_txt_tong_tien.Properties.Mask.EditMask = "n0";
             this.m_txt_tong_tien.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_tong_tien.Size = new System.Drawing.Size(219, 26);
-            this.m_txt_tong_tien.TabIndex = 2;
+            this.m_txt_tong_tien.TabIndex = 1;
             // 
             // m_lbl_tong_tien
             // 
             this.m_lbl_tong_tien.Location = new System.Drawing.Point(70, 40);
             this.m_lbl_tong_tien.Name = "m_lbl_tong_tien";
             this.m_lbl_tong_tien.Size = new System.Drawing.Size(45, 13);
-            this.m_lbl_tong_tien.TabIndex = 3;
+            this.m_lbl_tong_tien.TabIndex = 4;
             this.m_lbl_tong_tien.Text = "Tổng tiền";
             // 
             // m_lbl_don_gia
@@ -165,7 +165,7 @@
             this.m_txt_don_gia.Properties.Mask.EditMask = "n0";
             this.m_txt_don_gia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_don_gia.Size = new System.Drawing.Size(219, 26);
-            this.m_txt_don_gia.TabIndex = 2;
+            this.m_txt_don_gia.TabIndex = 1;
             // 
             // m_txt_thue_tong_tien
             // 

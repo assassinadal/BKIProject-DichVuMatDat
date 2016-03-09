@@ -70,16 +70,18 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         {
             v_us.strDA_XOA = "Y";
             v_us.Update();
-            load_data_to_grid();
         }
 
-        private void delete_gd_thu_nhap_khac()
+        private void delete_gd_thu_nhap_khac(US_GD_QUY_THU_NHAP_KHAC v_us_gd_quy_tnk)
         {
-            for (int i = 0; i < m_dt_thu_nhap_khac.Rows.Count; i++)
-            {
-                US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC(decimal.Parse(m_dt_thu_nhap_khac.Rows[i][0].ToString()));
-                v_us.Delete();
-            }
+            US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
+            DS_GD_THU_NHAP_KHAC v_ds = new DS_GD_THU_NHAP_KHAC();
+            v_us.XoaTNKTheoIDQuy(v_us_gd_quy_tnk.dcID);
+            //for (int i = 0; i < m_dt_thu_nhap_khac.Rows.Count; i++)
+            //{
+            //    US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC(decimal.Parse(m_dt_thu_nhap_khac.Rows[i][0].ToString()));
+            //    v_us.Delete();
+            //}
         }
 
         private bool check_quy_tien_da_chot_yn(string ip_str_thang)
@@ -100,10 +102,11 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                 string v_str_confirms = "Quỹ tiền đang được sử dụng cho " + v_slg_nvien + " nhân viên.\nBạn có muốn xóa cả khoản thu nhập của " + v_slg_nvien + " nhân viên đang sử dụng quỹ tiền này?";
                 DialogResult v_dialog = XtraMessageBox.Show(v_str_confirms, "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (v_dialog == DialogResult.Yes)
-                    delete_gd_thu_nhap_khac();
+                    delete_gd_thu_nhap_khac(v_us);
                 else return;
             }
             delete_gd_quy_tien(v_us);
+
         }
 
         #endregion
@@ -183,15 +186,19 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                 if (m_grv.FocusedRowHandle < 0)
                     XtraMessageBox.Show("Bạn chưa chọn dòng dữ liệu để sửa", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if (check_quy_tien_da_chot_yn(v_dr[2].ToString()))
-                    XtraMessageBox.Show("Quỹ tiền hiện đã chốt. Vui lòng không cập nhật!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                    XtraMessageBox.Show("Bạn không thể xóa quỹ tiền đã chốt!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Stop);
                 else
                 {
                     US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[0].ToString()));
                     string v_str_confirm = "Bạn có chắc chắn muốn xóa quỹ tiền này?";
                     DialogResult v_dialog = XtraMessageBox.Show(v_str_confirm,"Xác nhận",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                     if (v_dialog == DialogResult.Yes)
-                        xoa_quy_tien(v_us);                        
-                }             
+                    {
+                        xoa_quy_tien(v_us);
+                        XtraMessageBox.Show("Đã xóa thành công!");
+                        load_data_to_grid();
+                    }
+                }
             }
             catch (Exception v_e)
             {

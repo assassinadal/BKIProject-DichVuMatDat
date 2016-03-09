@@ -417,5 +417,12 @@ namespace BKI_DichVuMatDat.US
             v_sp.fillDataSetByCommand(this, ip_ds);
         }
 
+
+        public void XoaTNKTheoIDQuy(decimal ip_dc_id_quy)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_TNK_xoa_theoIDQuy");
+            v_cstore.addDecimalInputParam("@ip_dc_id_quy", ip_dc_id_quy);
+            v_cstore.ExecuteCommand(this);
+        }
     }
 }

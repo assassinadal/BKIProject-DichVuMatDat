@@ -50,6 +50,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             set_define_event();
             load_data_to_sle_loai_quy();
+            load_data_to_sle_cach_tinh_thue();
         }
         private void load_data_to_sle_loai_quy()
         {
@@ -59,19 +60,25 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_loai_quy_thu_nhap.Properties.DataSource = v_ds.Tables[0];
         }
 
+        private void load_data_to_sle_cach_tinh_thue()
+        {
+            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
+            v_us.FillDatasetByIdLoaiTuDien(v_ds, 13);
+            m_sle_cach_tinh_thue.Properties.DataSource = v_ds.Tables[0];
+        }
+
         private void set_initial_form_load()
         {
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
-                    m_sle_loai_quy_thu_nhap.Enabled = true;
                     m_dat_ngay_lap_quy.DateTime = DateTime.Now;
                     m_dat_thang_ap_dung_quy.DateTime = DateTime.Now;
                     m_dat_tu_ngay.DateTime = DateTime.Now;
                     m_dat_den_ngay.DateTime = DateTime.Now.AddMonths(1);
                     break;
-                case DataEntryFormMode.UpdateDataState:
-                    m_sle_loai_quy_thu_nhap.Enabled = false;
+                case DataEntryFormMode.UpdateDataState:                   
                     break;
                 default:
                     break;
@@ -97,6 +104,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void us_to_form(US_GD_QUY_THU_NHAP_KHAC v_us)
         {
             m_sle_loai_quy_thu_nhap.EditValue = v_us.dcID_LOAI_QUY_THU_NHAP_KHAC;
+            m_sle_cach_tinh_thue.EditValue = v_us.dcID_CACH_QUYET_TOAN;
             m_txt_ten_quy.Text = v_us.strTEN_QUY;
             m_dat_thang_ap_dung_quy.DateTime = new DateTime(int.Parse(v_us.strNAM), int.Parse(v_us.strTHANG), 30);
             m_dat_ngay_lap_quy.DateTime = v_us.datNGAY_LAP;
@@ -119,7 +127,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_us.datDEN_NGAY_XET_THUONG = m_dat_den_ngay.DateTime;
             m_us.strLY_DO_THUONG = m_txt_ly_do_lap_quy.Text;
             m_us.strDA_XOA = "N";
-            m_us.dcID_LOAI_QUY_THU_NHAP_KHAC = CIPConvert.ToDecimal(m_sle_loai_quy_thu_nhap.EditValue.ToString());
+            m_us.dcID_LOAI_QUY_THU_NHAP_KHAC = decimal.Parse(m_sle_loai_quy_thu_nhap.EditValue.ToString());
+            m_us.dcID_CACH_QUYET_TOAN = decimal.Parse(m_sle_cach_tinh_thue.EditValue.ToString());
         }
 
         private bool check_validate_data_is_ok()
@@ -129,15 +138,17 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CHRM_BaseMessages.MsgBox_Error("Vui lòng chọn loại quỹ thu nhập!");
                 return false;
             }
-            else
+            else if (m_sle_cach_tinh_thue.EditValue == null)
             {
-                if (m_txt_ten_quy.Text.Trim() == "")
-                {
-                    CHRM_BaseMessages.MsgBox_Error("Vui lòng nhập tên quỹ!");
-                    return false;
-                }
-                return true;
-            }           
+                CHRM_BaseMessages.MsgBox_Error("Vui lòng chọn cách tính thuế!");
+                return false;
+            }
+            else if (m_txt_ten_quy.Text.Trim() == "")
+            {
+                CHRM_BaseMessages.MsgBox_Error("Vui lòng nhập tên quỹ!");
+                return false;
+            }
+            return true;          
         }
         #endregion
 

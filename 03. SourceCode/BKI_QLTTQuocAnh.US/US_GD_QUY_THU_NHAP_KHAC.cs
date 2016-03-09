@@ -319,6 +319,28 @@ public class US_GD_QUY_THU_NHAP_KHAC : US_Object
     {
         pm_objDR["ID_LOAI_QUY_THU_NHAP_KHAC"] = System.Convert.DBNull;
     }
+
+    public decimal dcID_CACH_QUYET_TOAN
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_CACH_QUYET_TOAN", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_CACH_QUYET_TOAN"] = value;
+        }
+    }
+
+    public bool IsID_CACH_QUYET_TOANNull()
+    {
+        return pm_objDR.IsNull("ID_CACH_QUYET_TOAN");
+    }
+
+    public void SetID_CACH_QUYET_TOANNull()
+    {
+        pm_objDR["ID_CACH_QUYET_TOAN"] = System.Convert.DBNull;
+    }
 #endregion
 #region "Init Functions"
 	public US_GD_QUY_THU_NHAP_KHAC() 

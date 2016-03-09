@@ -75,8 +75,9 @@ namespace BKI_DichVuMatDat.NghiepVu
                 case DataEntryFormMode.InsertDataState:
                     m_dat_ngay_lap_quy.DateTime = DateTime.Now;
                     m_dat_thang_ap_dung_quy.DateTime = DateTime.Now;
-                    m_dat_tu_ngay.DateTime = DateTime.Now;
-                    m_dat_den_ngay.DateTime = DateTime.Now.AddMonths(1);
+                    m_dat_tu_ngay.DateTime = new DateTime(DateTime.Now.Year,1,1);
+                    m_dat_den_ngay.DateTime = DateTime.Now;
+                    m_sle_cach_tinh_thue.EditValue = 759;
                     break;
                 case DataEntryFormMode.UpdateDataState:                   
                     break;

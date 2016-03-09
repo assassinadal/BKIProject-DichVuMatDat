@@ -38,7 +38,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 
         private void set_init_form_load()
         {
-            m_dat_tu_thang.DateTime = DateTime.Now.AddYears(-1);
+            m_dat_tu_thang.DateTime = DateTime.Now.AddMonths(1-DateTime.Now.Month);
             m_dat_den_thang.DateTime = DateTime.Now;
             set_define_events();            
         }

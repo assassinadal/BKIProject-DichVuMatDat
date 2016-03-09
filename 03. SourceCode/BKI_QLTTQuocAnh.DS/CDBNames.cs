@@ -610,7 +610,9 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string ID_LOAI_LAO_DONG = "ID_LOAI_LAO_DONG";
         public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
         public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+        public const string DA_XOA = "DA_XOA";
     }
+
     #endregion
 
     #region VIEW

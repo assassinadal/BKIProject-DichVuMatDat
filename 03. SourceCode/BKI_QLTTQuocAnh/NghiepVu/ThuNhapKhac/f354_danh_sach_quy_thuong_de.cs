@@ -96,7 +96,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void us_to_form(US_GD_QUY_THU_NHAP_KHAC v_us)
         {
-            m_sle_loai_quy_thu_nhap.EditValue = v_us.dcID_LOAI_THU_NHAP_KHAC;
+            m_sle_loai_quy_thu_nhap.EditValue = v_us.dcID_LOAI_QUY_THU_NHAP_KHAC;
             m_txt_ten_quy.Text = v_us.strTEN_QUY;
             m_dat_thang_ap_dung_quy.DateTime = new DateTime(int.Parse(v_us.strNAM), int.Parse(v_us.strTHANG), 30);
             m_dat_ngay_lap_quy.DateTime = v_us.datNGAY_LAP;
@@ -119,7 +119,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_us.datDEN_NGAY_XET_THUONG = m_dat_den_ngay.DateTime;
             m_us.strLY_DO_THUONG = m_txt_ly_do_lap_quy.Text;
             m_us.strDA_XOA = "N";
-            m_us.dcID_LOAI_THU_NHAP_KHAC = CIPConvert.ToDecimal(m_sle_loai_quy_thu_nhap.EditValue.ToString());
+            m_us.dcID_LOAI_QUY_THU_NHAP_KHAC = CIPConvert.ToDecimal(m_sle_loai_quy_thu_nhap.EditValue.ToString());
         }
 
         private bool check_validate_data_is_ok()

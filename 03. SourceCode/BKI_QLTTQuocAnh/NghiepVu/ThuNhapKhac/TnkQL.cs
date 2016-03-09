@@ -69,7 +69,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             v_dto_quy.DEN_NGAY_XET_THUONG = v_dr_quy[V_TNK_GD_QUY_THU_NHAP_KHAC.DEN_NGAY_XET_THUONG] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(v_dr_quy[V_TNK_GD_QUY_THU_NHAP_KHAC.DEN_NGAY_XET_THUONG]);
             
             v_dto_quy.ID = Convert.ToDecimal(v_dr_quy[V_TNK_GD_QUY_THU_NHAP_KHAC.ID]);
-            v_dto_quy.ID_LOAI_THU_NHAP_KHAC = Convert.ToDecimal(v_dr_quy[V_TNK_GD_QUY_THU_NHAP_KHAC.ID_LOAI_THU_NHAP_KHAC]);
+            v_dto_quy.ID_LOAI_THU_NHAP_KHAC = Convert.ToDecimal(v_dr_quy[V_TNK_GD_QUY_THU_NHAP_KHAC.ID_LOAI_QUY_THU_NHAP_KHAC]);
             v_dto_quy.THANG = Convert.ToDecimal(v_dr_quy[V_TNK_GD_QUY_THU_NHAP_KHAC.THANG]);
             v_dto_quy.NAM = Convert.ToDecimal(v_dr_quy[V_TNK_GD_QUY_THU_NHAP_KHAC.NAM]);
             v_dto_quy.SO_LUONG_NV_TRONG_QUY = Convert.ToDecimal(v_dr_quy[V_TNK_GD_QUY_THU_NHAP_KHAC.SO_LUONG_NV_TRONG_QUY]);

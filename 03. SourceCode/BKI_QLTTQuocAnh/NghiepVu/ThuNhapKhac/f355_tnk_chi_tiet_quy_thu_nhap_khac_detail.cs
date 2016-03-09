@@ -36,7 +36,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 
             m_us_gd_tnk = new US_GD_THU_NHAP_KHAC();
             m_us_gd_tnk.dcID_QUY_THU_NHAP_KHAC = v_us_quy.dcID;
-            m_us_gd_tnk.dcID_LOAI_THU_NHAP_KHAC = v_us_quy.dcID_LOAI_THU_NHAP_KHAC;
+            m_us_gd_tnk.dcID_LOAI_THU_NHAP_KHAC = v_us_quy.dcID_LOAI_QUY_THU_NHAP_KHAC;
             m_us_gd_tnk.dcNAM = Convert.ToDecimal(v_us_quy.strNAM);
             m_us_gd_tnk.dcTHANG = Convert.ToDecimal(v_us_quy.strTHANG);
             m_e_form_mode = DataEntryFormMode.InsertDataState;

@@ -339,7 +339,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_us_tnk.dcSO_TIEN = Convert.ToDecimal(m_grv_main.GetRowCellValue(v_i_row, CONST_COLUMN_NAME_IMPORT_TNK.THANH_TIEN)); ;
                 v_us_tnk.dcSO_TIEN_NOP_THUE = Convert.ToDecimal(m_grv_main.GetRowCellValue(v_i_row, CONST_COLUMN_NAME_IMPORT_TNK.THUE_PHAI_NOP));
                 v_us_tnk.dcSO_TIEN_THUC_LINH = Convert.ToDecimal(m_grv_main.GetRowCellValue(v_i_row, CONST_COLUMN_NAME_IMPORT_TNK.THUC_LINH)); ;
-                v_us_tnk.dcID_LOAI_THU_NHAP_KHAC = m_us_gd_quy.dcID_LOAI_THU_NHAP_KHAC;
+                v_us_tnk.dcID_LOAI_THU_NHAP_KHAC = m_us_gd_quy.dcID_LOAI_QUY_THU_NHAP_KHAC;
                 v_us_tnk.dcID_QUY_THU_NHAP_KHAC = m_us_gd_quy.dcID;
                 v_us_tnk.strLY_DO = m_us_gd_quy.strLY_DO_THUONG;
                 v_us_tnk.Insert();

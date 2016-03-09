@@ -298,26 +298,26 @@ public class US_GD_QUY_THU_NHAP_KHAC : US_Object
 		pm_objDR["DA_XOA"] = System.Convert.DBNull;
 	}
 
-    public decimal dcID_LOAI_THU_NHAP_KHAC
+    public decimal dcID_LOAI_QUY_THU_NHAP_KHAC
     {
         get
         {
-            return CNull.RowNVLDecimal(pm_objDR, "ID_LOAI_THU_NHAP_KHAC", IPConstants.c_DefaultDecimal);
+            return CNull.RowNVLDecimal(pm_objDR, "ID_LOAI_QUY_THU_NHAP_KHAC", IPConstants.c_DefaultDecimal);
         }
         set
         {
-            pm_objDR["ID_LOAI_THU_NHAP_KHAC"] = value;
+            pm_objDR["ID_LOAI_QUY_THU_NHAP_KHAC"] = value;
         }
     }
 
-    public bool IsID_LOAI_THU_NHAP_KHACNull()
+    public bool IsID_LOAI_QUY_THU_NHAP_KHACNull()
     {
-        return pm_objDR.IsNull("ID_LOAI_THU_NHAP_KHAC");
+        return pm_objDR.IsNull("ID_LOAI_QUY_THU_NHAP_KHAC");
     }
 
-    public void SetID_LOAI_THU_NHAP_KHACNull()
+    public void SetID_LOAI_QUY_THU_NHAP_KHACNull()
     {
-        pm_objDR["ID_LOAI_THU_NHAP_KHAC"] = System.Convert.DBNull;
+        pm_objDR["ID_LOAI_QUY_THU_NHAP_KHAC"] = System.Convert.DBNull;
     }
 #endregion
 #region "Init Functions"

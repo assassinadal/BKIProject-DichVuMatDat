@@ -31,7 +31,6 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         #region Members
         DataEntryFormMode m_e_form_mode;
         US_GD_THU_NHAP_KHAC m_us_gd_tnk = new US_GD_THU_NHAP_KHAC();
-        //List<decimal> m_lst_id_gd_thu_nhap_khac = new List<decimal>();
         DataTable m_dt_thu_nhap_khac = new DataTable();
         #endregion
 
@@ -101,12 +100,10 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                 string v_str_confirms = "Quỹ tiền đang được sử dụng cho " + v_slg_nvien + " nhân viên.\nBạn có muốn xóa cả khoản thu nhập của " + v_slg_nvien + " nhân viên đang sử dụng quỹ tiền này?";
                 DialogResult v_dialog = XtraMessageBox.Show(v_str_confirms, "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (v_dialog == DialogResult.Yes)
-                {
                     delete_gd_thu_nhap_khac();
-                    delete_gd_quy_tien(v_us);
-                }
+                else return;
             }
-            else delete_gd_quy_tien(v_us);
+            delete_gd_quy_tien(v_us);
         }
 
         #endregion
@@ -183,7 +180,9 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             try
             {
                 var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
-                if (check_quy_tien_da_chot_yn(v_dr[2].ToString()))
+                if (m_grv.FocusedRowHandle < 0)
+                    XtraMessageBox.Show("Bạn chưa chọn dòng dữ liệu để sửa", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (check_quy_tien_da_chot_yn(v_dr[2].ToString()))
                     XtraMessageBox.Show("Quỹ tiền hiện đã chốt. Vui lòng không cập nhật!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Stop);
                 else
                 {
@@ -191,9 +190,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                     string v_str_confirm = "Bạn có chắc chắn muốn xóa quỹ tiền này?";
                     DialogResult v_dialog = XtraMessageBox.Show(v_str_confirm,"Xác nhận",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                     if (v_dialog == DialogResult.Yes)
-                    {
                         xoa_quy_tien(v_us);                        
-                    }
                 }             
             }
             catch (Exception v_e)
@@ -208,7 +205,9 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             {
                 var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
                 US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[0].ToString()));
-                if (check_quy_tien_da_chot_yn(v_dr[2].ToString()))
+                if (m_grv.FocusedRowHandle < 0)
+                    XtraMessageBox.Show("Bạn chưa chọn dòng dữ liệu để sửa", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);               
+                else if (check_quy_tien_da_chot_yn(v_dr[2].ToString()))
                     XtraMessageBox.Show("Quỹ tiền hiện đã chốt. Vui lòng không cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 else if (check_quy_tien_dang_su_dung_yn(v_us))
                     XtraMessageBox.Show("Quỹ đã chi tiền cho nhân viên, vui lòng không cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);

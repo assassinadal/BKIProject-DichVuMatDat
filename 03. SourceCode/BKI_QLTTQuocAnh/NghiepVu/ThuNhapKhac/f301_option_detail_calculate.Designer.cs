@@ -233,6 +233,7 @@
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Name = "f301_option_detail_calculate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F301 - Chọn cách tính thu nhập khác";
             this.Load += new System.EventHandler(this.f301_option_detail_calculate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

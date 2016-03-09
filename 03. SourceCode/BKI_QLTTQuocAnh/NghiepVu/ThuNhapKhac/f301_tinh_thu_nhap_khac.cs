@@ -227,8 +227,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             var v_datasource = (DataTable)m_grc_main.DataSource;
             var v_tong_he_so = tinh_tong_he_so();
-            foreach(DataRow item in v_datasource.Rows)
+            decimal v_tong_thanh_tien_without_last = 0;
+            decimal v_tong_thue_phai_nop_without_last = 0;
+            for(int i = 0; i < v_datasource.Rows.Count - 1; i++)
             {
+                var item = v_datasource.Rows[i];
                 var v_thanh_tien = Math.Round(Convert.ToDecimal(item[CONST_COLUMN_NAME_IMPORT_TNK.HE_SO]) / v_tong_he_so * ip_dc_tong_tien, 0, MidpointRounding.AwayFromZero);
                 var v_thue_phai_nop = Math.Round(v_thanh_tien * ip_dc_phan_tram_thue / 100, MidpointRounding.AwayFromZero);
                 var v_thuc_linh = v_thanh_tien - v_thue_phai_nop;
@@ -236,14 +239,38 @@ namespace BKI_DichVuMatDat.NghiepVu
                 item[CONST_COLUMN_NAME_IMPORT_TNK.THANH_TIEN] = v_thanh_tien;
                 item[CONST_COLUMN_NAME_IMPORT_TNK.THUE_PHAI_NOP] = v_thue_phai_nop;
                 item[CONST_COLUMN_NAME_IMPORT_TNK.THUC_LINH] = v_thuc_linh;
+                v_tong_thanh_tien_without_last = v_tong_thanh_tien_without_last + v_thanh_tien;
+                v_tong_thue_phai_nop_without_last = v_tong_thue_phai_nop_without_last + v_thue_phai_nop;
             }
+            int v_index_last = v_datasource.Rows.Count - 1;
+            var item_last = v_datasource.Rows[v_index_last];
+            var v_thanh_tien_last = ip_dc_tong_tien - v_tong_thanh_tien_without_last;//Math.Round(Convert.ToDecimal(item_last[CONST_COLUMN_NAME_IMPORT_TNK.HE_SO]) / v_tong_he_so * ip_dc_tong_tien, 0, MidpointRounding.AwayFromZero);
+            var v_thue_phai_nop_last = ip_dc_tong_tien * ip_dc_phan_tram_thue / 100 - v_tong_thue_phai_nop_without_last;//Math.Round(v_thanh_tien_last * ip_dc_phan_tram_thue / 100, MidpointRounding.AwayFromZero);
+            var v_thuc_linh_last = v_thanh_tien_last - v_thue_phai_nop_last;
+
+            item_last[CONST_COLUMN_NAME_IMPORT_TNK.THANH_TIEN] = v_thanh_tien_last;
+            item_last[CONST_COLUMN_NAME_IMPORT_TNK.THUE_PHAI_NOP] = v_thue_phai_nop_last;
+            item_last[CONST_COLUMN_NAME_IMPORT_TNK.THUC_LINH] = v_thuc_linh_last;
+
+            //foreach(DataRow item in v_datasource.Rows)
+            //{
+            //    var v_thanh_tien = Math.Round(Convert.ToDecimal(item[CONST_COLUMN_NAME_IMPORT_TNK.HE_SO]) / v_tong_he_so * ip_dc_tong_tien, 0, MidpointRounding.AwayFromZero);
+            //    var v_thue_phai_nop = Math.Round(v_thanh_tien * ip_dc_phan_tram_thue / 100, MidpointRounding.AwayFromZero);
+            //    var v_thuc_linh = v_thanh_tien - v_thue_phai_nop;
+
+            //    item[CONST_COLUMN_NAME_IMPORT_TNK.THANH_TIEN] = v_thanh_tien;
+            //    item[CONST_COLUMN_NAME_IMPORT_TNK.THUE_PHAI_NOP] = v_thue_phai_nop;
+            //    item[CONST_COLUMN_NAME_IMPORT_TNK.THUC_LINH] = v_thuc_linh;
+            //}
         }
         private void tinh_theo_don_gia(decimal ip_dc_don_gia, decimal ip_dc_phan_tram_thue)
         {
             var v_datasource = (DataTable)m_grc_main.DataSource;
             var v_tong_he_so = tinh_tong_he_so();
+
             foreach(DataRow item in v_datasource.Rows)
             {
+
                 var v_thanh_tien = Math.Round(Convert.ToDecimal(item[CONST_COLUMN_NAME_IMPORT_TNK.HE_SO]) * ip_dc_don_gia, 0, MidpointRounding.AwayFromZero);
                 var v_thue_phai_nop = Math.Round(v_thanh_tien * ip_dc_phan_tram_thue / 100, 0, MidpointRounding.AwayFromZero);
                 var v_thuc_linh = v_thanh_tien - v_thue_phai_nop;
@@ -318,13 +345,13 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void delete_du_lieu_cu(decimal ip_dc_id_quy)
         {
             US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
-            DS_GD_THU_NHAP_KHAC v_ds = new DS_GD_THU_NHAP_KHAC();
-            v_us.LayDuLieuThuNhapKhacTheoIDQuy(v_ds, ip_dc_id_quy);
-            for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
-            {
-                v_us = new US_GD_THU_NHAP_KHAC(decimal.Parse(v_ds.Tables[0].Rows[i][0].ToString()));
-                v_us.Delete();
-            }
+            v_us.XoaTNKTheoIDQuy(ip_dc_id_quy);
+            //v_us.LayDuLieuThuNhapKhacTheoIDQuy(v_ds, ip_dc_id_quy);
+            //for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
+            //{
+            //    v_us = new US_GD_THU_NHAP_KHAC(decimal.Parse(v_ds.Tables[0].Rows[i][0].ToString()));
+            //    v_us.Delete();
+            //}
         }
 
         private void insert_gd_thu_nhap_khac()

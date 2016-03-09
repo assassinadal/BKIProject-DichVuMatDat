@@ -94,6 +94,8 @@
             this.THU_NHAP_KHAC_TRONG_LUONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand7 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.TONG_THU_NHAP_TRONG_LUONG_1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand48 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colTONG_THU_NHAP_TRONG_LUONG_CHIU_THUE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.TONG_THU_NHAP_NGOAI_LUONG = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand17 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.THUONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -107,10 +109,14 @@
             this.THU_NHAP_KHAC_NGOAI_LUONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand16 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.TONG_THU_NHAP_NGOAI_LUONG_1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand49 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colTONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand44 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.TONG_THU_NHAP_BAN_1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand22 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.TONG_THU_NHAP_1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand50 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colTONG_THU_NHAP_CHIU_THUE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.GIAM_TRU = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand23 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand45 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -138,7 +144,7 @@
             this.THU_NHAP_CHIU_THUE_BAN = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand34 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand35 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.THU_NHAP_CHIU_THUE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.THU_NHAP_TINH_THUE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.THUC_LINH_BAN = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand36 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand37 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -536,7 +542,7 @@
             this.THU_NHAP_CHIU_THUE_BINH_QUAN,
             this.AN_CA,
             this.BHXH,
-            this.THU_NHAP_CHIU_THUE,
+            this.THU_NHAP_TINH_THUE,
             this.DA_NOP,
             this.TONG_THU_NHAP_1,
             this.DON_VI,
@@ -561,7 +567,10 @@
             this.CON_PHAI_NOP,
             this.SO_THANG_LAM_VIEC_TINH_THUE,
             this.GIAM_TRU_AN_CA,
-            this.MST});
+            this.MST,
+            this.colTONG_THU_NHAP_TRONG_LUONG_CHIU_THUE,
+            this.colTONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE,
+            this.colTONG_THU_NHAP_CHIU_THUE});
             this.m_adv_tong_hop.GridControl = this.m_grc_tong_hop;
             this.m_adv_tong_hop.GroupCount = 1;
             this.m_adv_tong_hop.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -574,7 +583,7 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUC_LINH", this.THU_NHAP_CHIU_THUE_BINH_QUAN, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "AN_CA", this.AN_CA, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHXH", this.BHXH, "{0:n0}"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THU_NHAP_CHIU_THUE", this.THU_NHAP_CHIU_THUE, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THU_NHAP_CHIU_THUE", this.THU_NHAP_TINH_THUE, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUE", this.DA_NOP, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_THU_NHAP", this.TONG_THU_NHAP_1, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LAM_THEM_300", this.LAM_THEM_300, "{0:n0}"),
@@ -601,7 +610,10 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DA_NOP", this.DA_NOP, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CON_PHAI_NOP", this.CON_PHAI_NOP, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "AN_CA", this.GIAM_TRU_AN_CA, "{0:n0}"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THU_NHAP_CHIU_THUE_BINH_QUAN", this.THU_NHAP_CHIU_THUE_BINH_QUAN, "{0:n0}")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THU_NHAP_CHIU_THUE_BINH_QUAN", this.THU_NHAP_CHIU_THUE_BINH_QUAN, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_THU_NHAP_TRONG_LUONG_CHIU_THUE", this.colTONG_THU_NHAP_TRONG_LUONG_CHIU_THUE, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE", this.colTONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_THU_NHAP_CHIU_THUE", this.colTONG_THU_NHAP_CHIU_THUE, "{0:n0}")});
             this.m_adv_tong_hop.Name = "m_adv_tong_hop";
             this.m_adv_tong_hop.OptionsBehavior.Editable = false;
             this.m_adv_tong_hop.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDown;
@@ -772,7 +784,7 @@
             this.TONG_THU_NHAP_BAN_1});
             this.TONG_THU_NHAP.Name = "TONG_THU_NHAP";
             this.TONG_THU_NHAP.VisibleIndex = 1;
-            this.TONG_THU_NHAP.Width = 1082;
+            this.TONG_THU_NHAP.Width = 1343;
             // 
             // TONG_THU_NHAP_TRONG_LUONG
             // 
@@ -792,10 +804,11 @@
             this.gridBand13,
             this.gridBand14,
             this.gridBand15,
-            this.gridBand7});
+            this.gridBand7,
+            this.gridBand48});
             this.TONG_THU_NHAP_TRONG_LUONG.Name = "TONG_THU_NHAP_TRONG_LUONG";
             this.TONG_THU_NHAP_TRONG_LUONG.VisibleIndex = 0;
-            this.TONG_THU_NHAP_TRONG_LUONG.Width = 504;
+            this.TONG_THU_NHAP_TRONG_LUONG.Width = 605;
             // 
             // gridBand8
             // 
@@ -1047,6 +1060,26 @@
             this.TONG_THU_NHAP_TRONG_LUONG_1.Visible = true;
             this.TONG_THU_NHAP_TRONG_LUONG_1.Width = 90;
             // 
+            // gridBand48
+            // 
+            this.gridBand48.Caption = "11\'";
+            this.gridBand48.Columns.Add(this.colTONG_THU_NHAP_TRONG_LUONG_CHIU_THUE);
+            this.gridBand48.Name = "gridBand48";
+            this.gridBand48.VisibleIndex = 7;
+            this.gridBand48.Width = 101;
+            // 
+            // colTONG_THU_NHAP_TRONG_LUONG_CHIU_THUE
+            // 
+            this.colTONG_THU_NHAP_TRONG_LUONG_CHIU_THUE.Caption = "Tổng thu nhập trong lương chịu thuế";
+            this.colTONG_THU_NHAP_TRONG_LUONG_CHIU_THUE.DisplayFormat.FormatString = "n0";
+            this.colTONG_THU_NHAP_TRONG_LUONG_CHIU_THUE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colTONG_THU_NHAP_TRONG_LUONG_CHIU_THUE.FieldName = "TONG_THU_NHAP_TRONG_LUONG_CHIU_THUE";
+            this.colTONG_THU_NHAP_TRONG_LUONG_CHIU_THUE.Name = "colTONG_THU_NHAP_TRONG_LUONG_CHIU_THUE";
+            this.colTONG_THU_NHAP_TRONG_LUONG_CHIU_THUE.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_THU_NHAP_TRONG_LUONG_CHIU_THUE", "{0:n0}")});
+            this.colTONG_THU_NHAP_TRONG_LUONG_CHIU_THUE.Visible = true;
+            this.colTONG_THU_NHAP_TRONG_LUONG_CHIU_THUE.Width = 101;
+            // 
             // TONG_THU_NHAP_NGOAI_LUONG
             // 
             this.TONG_THU_NHAP_NGOAI_LUONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -1063,10 +1096,11 @@
             this.gridBand20,
             this.gridBand21,
             this.gridBand16,
+            this.gridBand49,
             this.gridBand44});
             this.TONG_THU_NHAP_NGOAI_LUONG.Name = "TONG_THU_NHAP_NGOAI_LUONG";
             this.TONG_THU_NHAP_NGOAI_LUONG.VisibleIndex = 1;
-            this.TONG_THU_NHAP_NGOAI_LUONG.Width = 468;
+            this.TONG_THU_NHAP_NGOAI_LUONG.Width = 553;
             // 
             // gridBand17
             // 
@@ -1235,6 +1269,26 @@
             this.TONG_THU_NHAP_NGOAI_LUONG_1.Visible = true;
             this.TONG_THU_NHAP_NGOAI_LUONG_1.Width = 78;
             // 
+            // gridBand49
+            // 
+            this.gridBand49.Caption = "17\'";
+            this.gridBand49.Columns.Add(this.colTONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE);
+            this.gridBand49.Name = "gridBand49";
+            this.gridBand49.VisibleIndex = 6;
+            this.gridBand49.Width = 85;
+            // 
+            // colTONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE
+            // 
+            this.colTONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE.Caption = "Tổng thu nhập ngoài lương chịu thuế";
+            this.colTONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE.DisplayFormat.FormatString = "n0";
+            this.colTONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colTONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE.FieldName = "TONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE";
+            this.colTONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE.Name = "colTONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE";
+            this.colTONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE", "{0:n0}")});
+            this.colTONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE.Visible = true;
+            this.colTONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE.Width = 85;
+            // 
             // gridBand44
             // 
             this.gridBand44.AppearanceHeader.Options.UseTextOptions = true;
@@ -1256,10 +1310,11 @@
             this.TONG_THU_NHAP_BAN_1.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.TONG_THU_NHAP_BAN_1.Caption = "Tổng thu nhập ";
             this.TONG_THU_NHAP_BAN_1.Children.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.gridBand22});
+            this.gridBand22,
+            this.gridBand50});
             this.TONG_THU_NHAP_BAN_1.Name = "TONG_THU_NHAP_BAN_1";
             this.TONG_THU_NHAP_BAN_1.VisibleIndex = 2;
-            this.TONG_THU_NHAP_BAN_1.Width = 110;
+            this.TONG_THU_NHAP_BAN_1.Width = 185;
             // 
             // gridBand22
             // 
@@ -1294,6 +1349,30 @@
             this.TONG_THU_NHAP_1.Visible = true;
             this.TONG_THU_NHAP_1.Width = 110;
             // 
+            // gridBand50
+            // 
+            this.gridBand50.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
+            this.gridBand50.AppearanceHeader.Options.UseForeColor = true;
+            this.gridBand50.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand50.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand50.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridBand50.Caption = "18\'";
+            this.gridBand50.Columns.Add(this.colTONG_THU_NHAP_CHIU_THUE);
+            this.gridBand50.Name = "gridBand50";
+            this.gridBand50.VisibleIndex = 1;
+            this.gridBand50.Width = 75;
+            // 
+            // colTONG_THU_NHAP_CHIU_THUE
+            // 
+            this.colTONG_THU_NHAP_CHIU_THUE.Caption = "Tổng thu nhập chịu thuế";
+            this.colTONG_THU_NHAP_CHIU_THUE.DisplayFormat.FormatString = "n0";
+            this.colTONG_THU_NHAP_CHIU_THUE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colTONG_THU_NHAP_CHIU_THUE.FieldName = "TONG_THU_NHAP_CHIU_THUE";
+            this.colTONG_THU_NHAP_CHIU_THUE.Name = "colTONG_THU_NHAP_CHIU_THUE";
+            this.colTONG_THU_NHAP_CHIU_THUE.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_THU_NHAP_CHIU_THUE", "{0:n0}")});
+            this.colTONG_THU_NHAP_CHIU_THUE.Visible = true;
+            // 
             // GIAM_TRU
             // 
             this.GIAM_TRU.AppearanceHeader.BackColor = System.Drawing.Color.Maroon;
@@ -1312,7 +1391,7 @@
             this.gridBand23});
             this.GIAM_TRU.Name = "GIAM_TRU";
             this.GIAM_TRU.VisibleIndex = 2;
-            this.GIAM_TRU.Width = 774;
+            this.GIAM_TRU.Width = 699;
             // 
             // gridBand23
             // 
@@ -1330,7 +1409,7 @@
             this.gridBand24});
             this.gridBand23.Name = "gridBand23";
             this.gridBand23.VisibleIndex = 0;
-            this.gridBand23.Width = 774;
+            this.gridBand23.Width = 699;
             // 
             // gridBand45
             // 
@@ -1339,7 +1418,8 @@
             this.gridBand45.Caption = "19";
             this.gridBand45.Columns.Add(this.GIAM_TRU_AN_CA);
             this.gridBand45.Name = "gridBand45";
-            this.gridBand45.VisibleIndex = 0;
+            this.gridBand45.Visible = false;
+            this.gridBand45.VisibleIndex = -1;
             this.gridBand45.Width = 75;
             // 
             // GIAM_TRU_AN_CA
@@ -1364,7 +1444,7 @@
             this.gridBand25.Caption = "20";
             this.gridBand25.Columns.Add(this.BHXH);
             this.gridBand25.Name = "gridBand25";
-            this.gridBand25.VisibleIndex = 1;
+            this.gridBand25.VisibleIndex = 0;
             this.gridBand25.Width = 75;
             // 
             // BHXH
@@ -1390,7 +1470,7 @@
             this.gridBand26.Caption = "21";
             this.gridBand26.Columns.Add(this.BHYT);
             this.gridBand26.Name = "gridBand26";
-            this.gridBand26.VisibleIndex = 2;
+            this.gridBand26.VisibleIndex = 1;
             this.gridBand26.Width = 75;
             // 
             // BHYT
@@ -1416,7 +1496,7 @@
             this.gridBand27.Caption = "22";
             this.gridBand27.Columns.Add(this.BHTN);
             this.gridBand27.Name = "gridBand27";
-            this.gridBand27.VisibleIndex = 3;
+            this.gridBand27.VisibleIndex = 2;
             this.gridBand27.Width = 75;
             // 
             // BHTN
@@ -1442,7 +1522,7 @@
             this.gridBand28.Caption = "23";
             this.gridBand28.Columns.Add(this.GIAM_TRU_GIA_CANH);
             this.gridBand28.Name = "gridBand28";
-            this.gridBand28.VisibleIndex = 4;
+            this.gridBand28.VisibleIndex = 3;
             this.gridBand28.Width = 93;
             // 
             // GIAM_TRU_GIA_CANH
@@ -1470,7 +1550,7 @@
             this.gridBand29.Caption = "24";
             this.gridBand29.Columns.Add(this.GIAM_TRU_PHU_THUOC);
             this.gridBand29.Name = "gridBand29";
-            this.gridBand29.VisibleIndex = 5;
+            this.gridBand29.VisibleIndex = 4;
             this.gridBand29.Width = 108;
             // 
             // GIAM_TRU_PHU_THUOC
@@ -1497,7 +1577,7 @@
             this.gridBand30.Caption = "25";
             this.gridBand30.Columns.Add(this.GIAM_TRU_LAM_THEM_150);
             this.gridBand30.Name = "gridBand30";
-            this.gridBand30.VisibleIndex = 6;
+            this.gridBand30.VisibleIndex = 5;
             this.gridBand30.Width = 102;
             // 
             // GIAM_TRU_LAM_THEM_150
@@ -1576,7 +1656,7 @@
             this.gridBand33.Caption = "26";
             this.gridBand33.Columns.Add(this.GIAM_TRU_KHAC);
             this.gridBand33.Name = "gridBand33";
-            this.gridBand33.VisibleIndex = 7;
+            this.gridBand33.VisibleIndex = 6;
             this.gridBand33.Width = 75;
             // 
             // GIAM_TRU_KHAC
@@ -1602,7 +1682,7 @@
             this.gridBand24.Caption = "27";
             this.gridBand24.Columns.Add(this.TONG_GIAM_TRU);
             this.gridBand24.Name = "gridBand24";
-            this.gridBand24.VisibleIndex = 8;
+            this.gridBand24.VisibleIndex = 7;
             this.gridBand24.Width = 96;
             // 
             // TONG_GIAM_TRU
@@ -1636,7 +1716,7 @@
             this.THU_NHAP_CHIU_THUE_BAN.AppearanceHeader.Options.UseForeColor = true;
             this.THU_NHAP_CHIU_THUE_BAN.AppearanceHeader.Options.UseTextOptions = true;
             this.THU_NHAP_CHIU_THUE_BAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.THU_NHAP_CHIU_THUE_BAN.Caption = "Thu nhập chịu thuế";
+            this.THU_NHAP_CHIU_THUE_BAN.Caption = "Thu nhập tính thuế";
             this.THU_NHAP_CHIU_THUE_BAN.Children.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.gridBand34});
             this.THU_NHAP_CHIU_THUE_BAN.Name = "THU_NHAP_CHIU_THUE_BAN";
@@ -1656,33 +1736,33 @@
             this.gridBand35.AppearanceHeader.Options.UseTextOptions = true;
             this.gridBand35.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridBand35.Caption = "28";
-            this.gridBand35.Columns.Add(this.THU_NHAP_CHIU_THUE);
+            this.gridBand35.Columns.Add(this.THU_NHAP_TINH_THUE);
             this.gridBand35.Name = "gridBand35";
             this.gridBand35.VisibleIndex = 0;
             this.gridBand35.Width = 137;
             // 
-            // THU_NHAP_CHIU_THUE
+            // THU_NHAP_TINH_THUE
             // 
-            this.THU_NHAP_CHIU_THUE.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.THU_NHAP_CHIU_THUE.AppearanceCell.ForeColor = System.Drawing.Color.White;
-            this.THU_NHAP_CHIU_THUE.AppearanceCell.Options.UseBackColor = true;
-            this.THU_NHAP_CHIU_THUE.AppearanceCell.Options.UseForeColor = true;
-            this.THU_NHAP_CHIU_THUE.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.THU_NHAP_CHIU_THUE.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
-            this.THU_NHAP_CHIU_THUE.AppearanceHeader.Options.UseFont = true;
-            this.THU_NHAP_CHIU_THUE.AppearanceHeader.Options.UseForeColor = true;
-            this.THU_NHAP_CHIU_THUE.AppearanceHeader.Options.UseTextOptions = true;
-            this.THU_NHAP_CHIU_THUE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.THU_NHAP_CHIU_THUE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.THU_NHAP_CHIU_THUE.Caption = "Thu nhập chịu thuế";
-            this.THU_NHAP_CHIU_THUE.DisplayFormat.FormatString = "n0";
-            this.THU_NHAP_CHIU_THUE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.THU_NHAP_CHIU_THUE.FieldName = "THU_NHAP_CHIU_THUE";
-            this.THU_NHAP_CHIU_THUE.Name = "THU_NHAP_CHIU_THUE";
-            this.THU_NHAP_CHIU_THUE.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THU_NHAP_CHIU_THUE", "{0:n0}")});
-            this.THU_NHAP_CHIU_THUE.Visible = true;
-            this.THU_NHAP_CHIU_THUE.Width = 137;
+            this.THU_NHAP_TINH_THUE.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.THU_NHAP_TINH_THUE.AppearanceCell.ForeColor = System.Drawing.Color.White;
+            this.THU_NHAP_TINH_THUE.AppearanceCell.Options.UseBackColor = true;
+            this.THU_NHAP_TINH_THUE.AppearanceCell.Options.UseForeColor = true;
+            this.THU_NHAP_TINH_THUE.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.THU_NHAP_TINH_THUE.AppearanceHeader.ForeColor = System.Drawing.Color.Maroon;
+            this.THU_NHAP_TINH_THUE.AppearanceHeader.Options.UseFont = true;
+            this.THU_NHAP_TINH_THUE.AppearanceHeader.Options.UseForeColor = true;
+            this.THU_NHAP_TINH_THUE.AppearanceHeader.Options.UseTextOptions = true;
+            this.THU_NHAP_TINH_THUE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.THU_NHAP_TINH_THUE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.THU_NHAP_TINH_THUE.Caption = "Thu nhập tính thuế";
+            this.THU_NHAP_TINH_THUE.DisplayFormat.FormatString = "n0";
+            this.THU_NHAP_TINH_THUE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.THU_NHAP_TINH_THUE.FieldName = "THU_NHAP_TINH_THUE";
+            this.THU_NHAP_TINH_THUE.Name = "THU_NHAP_TINH_THUE";
+            this.THU_NHAP_TINH_THUE.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THU_NHAP_TINH_THUE", "{0:n0}")});
+            this.THU_NHAP_TINH_THUE.Visible = true;
+            this.THU_NHAP_TINH_THUE.Width = 137;
             // 
             // THUC_LINH_BAN
             // 
@@ -1778,7 +1858,7 @@
             this.THU_NHAP_CHIU_THUE_BINH_QUAN.AppearanceHeader.Options.UseTextOptions = true;
             this.THU_NHAP_CHIU_THUE_BINH_QUAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.THU_NHAP_CHIU_THUE_BINH_QUAN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.THU_NHAP_CHIU_THUE_BINH_QUAN.Caption = "Thu nhập chịu thuế bình quân/ tháng";
+            this.THU_NHAP_CHIU_THUE_BINH_QUAN.Caption = "Thu nhập tính thuế bình quân/ tháng";
             this.THU_NHAP_CHIU_THUE_BINH_QUAN.DisplayFormat.FormatString = "n0";
             this.THU_NHAP_CHIU_THUE_BINH_QUAN.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.THU_NHAP_CHIU_THUE_BINH_QUAN.FieldName = "THU_NHAP_CHIU_THUE_BINH_QUAN";
@@ -2003,7 +2083,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn GIAM_TRU_LAM_THEM_300;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn GIAM_TRU_KHAC;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn TONG_GIAM_TRU;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn THU_NHAP_CHIU_THUE;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn THU_NHAP_TINH_THUE;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn SO_THANG_LAM_VIEC_TINH_THUE;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn THU_NHAP_CHIU_THUE_BINH_QUAN;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn TONG_SO_PHAI_NOP;
@@ -2051,6 +2131,8 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand14;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand15;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand7;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand48;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTONG_THU_NHAP_TRONG_LUONG_CHIU_THUE;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand TONG_THU_NHAP_NGOAI_LUONG;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand17;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand18;
@@ -2058,9 +2140,13 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand20;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand21;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand16;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand49;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTONG_THU_NHAP_NGOAI_LUONG_CHIU_THUE;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand44;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand TONG_THU_NHAP_BAN_1;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand22;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand50;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTONG_THU_NHAP_CHIU_THUE;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand GIAM_TRU;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand23;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand45;

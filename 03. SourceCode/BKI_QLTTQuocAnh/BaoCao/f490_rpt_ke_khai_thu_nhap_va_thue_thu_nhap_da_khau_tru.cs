@@ -71,37 +71,37 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void hien_thi_cac_o_text_box(DataSet v_ds)
         {
-            v_dc_tong_thu_nhap = 0;
-            v_dc_tong_thu_nhap_trong_bang_luong = 0;
-            v_dc_tong_thu_nhap_ngoai_bang_luong = 0;
-            v_dc_tong_giam_tru = 0;
-            v_dc_tong_thu_nhap_chiu_thue = 0;
-            v_dc_tong_so_TTN_phai_nop = 0;
-            v_dc_TTN_da_nop = 0;
-            v_dc_TTN_con_phai_nop = 0;
-            for(int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
-            {
-                v_dc_tong_so_TTN_phai_nop += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_SO_PHAI_NOP"].ToString());
-                var x = v_ds.Tables[0].Rows.Count;
-                v_dc_TTN_con_phai_nop += decimal.Parse(v_ds.Tables[0].Rows[i]["CON_PHAI_NOP"].ToString());
-                if(v_ds.Tables[0].Rows[i]["DA_NOP"].ToString() != "")
-                    v_dc_TTN_da_nop += decimal.Parse(v_ds.Tables[0].Rows[i]["DA_NOP"].ToString());
-                v_dc_tong_giam_tru += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_GIAM_TRU"].ToString());
+            //v_dc_tong_thu_nhap = 0;
+            //v_dc_tong_thu_nhap_trong_bang_luong = 0;
+            //v_dc_tong_thu_nhap_ngoai_bang_luong = 0;
+            //v_dc_tong_giam_tru = 0;
+            //v_dc_tong_thu_nhap_chiu_thue = 0;
+            //v_dc_tong_so_TTN_phai_nop = 0;
+            //v_dc_TTN_da_nop = 0;
+            //v_dc_TTN_con_phai_nop = 0;
+            //for(int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
+            //{
+            //    v_dc_tong_so_TTN_phai_nop += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_SO_PHAI_NOP"].ToString());
+            //    var x = v_ds.Tables[0].Rows.Count;
+            //    v_dc_TTN_con_phai_nop += decimal.Parse(v_ds.Tables[0].Rows[i]["CON_PHAI_NOP"].ToString());
+            //    if(v_ds.Tables[0].Rows[i]["DA_NOP"].ToString() != "")
+            //        v_dc_TTN_da_nop += decimal.Parse(v_ds.Tables[0].Rows[i]["DA_NOP"].ToString());
+            //    v_dc_tong_giam_tru += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_GIAM_TRU"].ToString());
 
-                if(v_ds.Tables[0].Rows[i]["TONG_THU_NHAP"].ToString() != "")
-                    v_dc_tong_thu_nhap += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_THU_NHAP"].ToString());
-                v_dc_tong_thu_nhap_chiu_thue += decimal.Parse(v_ds.Tables[0].Rows[i]["THU_NHAP_CHIU_THUE"].ToString());
-                v_dc_tong_thu_nhap_ngoai_bang_luong += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_THU_NHAP_NGOAI_LUONG"].ToString());
-                v_dc_tong_thu_nhap_trong_bang_luong += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_THU_NHAP_TRONG_LUONG"].ToString());
-            }
-            m_txt_tong_so_TTN_phai_nop.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_so_TTN_phai_nop.ToString()));
-            m_txt_tong_giam_tru.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_giam_tru.ToString()));
-            m_txt_TTN_con_phai_nop.Text = string.Format("{0:#,##0}", double.Parse(v_dc_TTN_con_phai_nop.ToString()));
-            m_txt_TTN_da_nop.Text = string.Format("{0:#,##0}", double.Parse(v_dc_TTN_da_nop.ToString()));
-            m_txt_tong_thu_nhap.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_thu_nhap.ToString()));
-            m_txt_tong_thu_nhap_ngoai_bang_luong.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_thu_nhap_ngoai_bang_luong.ToString()));
-            m_txt_tong_thu_nhap_trong_bang_luong.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_thu_nhap_trong_bang_luong.ToString()));
-            m_txt_tong_thu_nhap_chiu_thue.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_thu_nhap_chiu_thue.ToString()));
+            //    if(v_ds.Tables[0].Rows[i]["TONG_THU_NHAP"].ToString() != "")
+            //        v_dc_tong_thu_nhap += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_THU_NHAP"].ToString());
+            //    v_dc_tong_thu_nhap_chiu_thue += decimal.Parse(v_ds.Tables[0].Rows[i]["THU_NHAP_TINH_THUE"].ToString());
+            //    v_dc_tong_thu_nhap_ngoai_bang_luong += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_THU_NHAP_NGOAI_LUONG"].ToString());
+            //    v_dc_tong_thu_nhap_trong_bang_luong += decimal.Parse(v_ds.Tables[0].Rows[i]["TONG_THU_NHAP_TRONG_LUONG"].ToString());
+            //}
+            //m_txt_tong_so_TTN_phai_nop.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_so_TTN_phai_nop.ToString()));
+            //m_txt_tong_giam_tru.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_giam_tru.ToString()));
+            //m_txt_TTN_con_phai_nop.Text = string.Format("{0:#,##0}", double.Parse(v_dc_TTN_con_phai_nop.ToString()));
+            //m_txt_TTN_da_nop.Text = string.Format("{0:#,##0}", double.Parse(v_dc_TTN_da_nop.ToString()));
+            //m_txt_tong_thu_nhap.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_thu_nhap.ToString()));
+            //m_txt_tong_thu_nhap_ngoai_bang_luong.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_thu_nhap_ngoai_bang_luong.ToString()));
+            //m_txt_tong_thu_nhap_trong_bang_luong.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_thu_nhap_trong_bang_luong.ToString()));
+            //m_txt_tong_thu_nhap_chiu_thue.Text = string.Format("{0:#,##0}", double.Parse(v_dc_tong_thu_nhap_chiu_thue.ToString()));
         }
 
         private void format_grid()

@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f355_tnk_chi_tiet_quy_thu_nhap_khac));
-            this.imageCollection = new DevExpress.Utils.ImageCollection();
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.m_grc_main = new DevExpress.XtraGrid.GridControl();
             this.m_grv_main = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -252,6 +253,7 @@
             this.colHE_SO.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colHE_SO.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colHE_SO.Caption = "Hệ số";
+            this.colHE_SO.DisplayFormat.FormatString = "n0";
             this.colHE_SO.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colHE_SO.FieldName = "HE_SO";
             this.colHE_SO.Name = "colHE_SO";

@@ -96,6 +96,26 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_grc.DataSource = v_ds.Tables[0];
         }
         #endregion
+
+        public void import_excel()
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            // Set filter options and filter index.
+            openFileDialog1.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
+            openFileDialog1.Multiselect = false;
+            var userClickedOK = openFileDialog1.ShowDialog();
+
+            if (userClickedOK == System.Windows.Forms.DialogResult.OK)
+            {
+                m_txt_path = openFileDialog1.FileName;
+                F152_DANH_SACH_NHAN_VIEN_EXCEL v_f = new F152_DANH_SACH_NHAN_VIEN_EXCEL();
+                v_f.displayToInsertExcel(m_txt_path);
+                // WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
+            }
+            load_data_to_grid();
+        }
+
         private void set_define_events()
         {
             this.Load += f150_Danh_sach_nhan_vien_master_Load;
@@ -163,21 +183,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                OpenFileDialog openFileDialog1 = new OpenFileDialog();
-
-                // Set filter options and filter index.
-                openFileDialog1.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
-                openFileDialog1.Multiselect = false;
-                var userClickedOK = openFileDialog1.ShowDialog();
-
-                if (userClickedOK == System.Windows.Forms.DialogResult.OK)
-                {
-                    m_txt_path = openFileDialog1.FileName;
-                    F152_DANH_SACH_NHAN_VIEN_EXCEL v_f = new F152_DANH_SACH_NHAN_VIEN_EXCEL();
-                    v_f.displayToInsertExcel(m_txt_path);
-                    // WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
-                }
-                load_data_to_grid();
+                import_excel();
             }
             catch (Exception v_e)
             {

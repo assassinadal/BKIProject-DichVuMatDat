@@ -86,6 +86,7 @@
             this.m_cmd_nhap_thong_tin_tong_hop.Size = new System.Drawing.Size(300, 42);
             this.m_cmd_nhap_thong_tin_tong_hop.TabIndex = 5;
             this.m_cmd_nhap_thong_tin_tong_hop.Text = "Bước 4 : Nhập thông tin tổng hợp";
+            this.m_cmd_nhap_thong_tin_tong_hop.Visible = false;
             // 
             // m_cmd_nhap_thong_tin_hop_dong
             // 
@@ -187,6 +188,7 @@
             this.label5.Size = new System.Drawing.Size(95, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "( Tải file excel mẫu";
+            this.label5.Visible = false;
             // 
             // m_cmd_file_excel_ntthd
             // 
@@ -220,6 +222,7 @@
             this.m_cmd_file_excel_nttth.Size = new System.Drawing.Size(349, 47);
             this.m_cmd_file_excel_nttth.TabIndex = 7;
             this.m_cmd_file_excel_nttth.Text = "File excel mẫu để nhập thông tin tổng hợp";
+            this.m_cmd_file_excel_nttth.Visible = false;
             // 
             // label6
             // 
@@ -247,6 +250,7 @@
             this.label8.Size = new System.Drawing.Size(10, 13);
             this.label8.TabIndex = 12;
             this.label8.Text = ")";
+            this.label8.Visible = false;
             // 
             // label9
             // 

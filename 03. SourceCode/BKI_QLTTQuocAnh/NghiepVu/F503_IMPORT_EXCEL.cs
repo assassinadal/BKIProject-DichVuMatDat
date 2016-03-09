@@ -29,11 +29,25 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         #region Members
 
-        int m_trang_thai_buoc_1 = -1;
-        // m_trang_thai_buoc_1 sau bước 1  sẽ trả về id_nhan_vien
-        int m_trang_thai_buoc_2 = -1;
-        int m_trang_thai_buoc_3_thanh_cong = -1;
-        int m_trang_thai_buoc_4 = -1;
+        buoc_hien_tai m_e_buoc_hien_tai = buoc_hien_tai.buoc_1_nhap_ttnv;
+
+        #endregion
+
+        #region Datastructure
+
+        enum trang_thai_cac_buoc
+        {
+            da_hoan_thanh = 1,
+            chua_hoan_thanh = 0,
+        }
+
+        enum buoc_hien_tai
+        {
+            buoc_1_nhap_ttnv = 1,
+            buoc_2_nhap_tthd = 2,
+            buoc_3_nhap_ttct = 3,
+            buoc_4_nhap_ttbs = 4,
+        }
 
         #endregion
 
@@ -41,7 +55,20 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void set_init_form_load()
         {
-
+            switch (m_e_buoc_hien_tai)
+            {
+                case buoc_hien_tai.buoc_1_nhap_ttnv:
+                    m_cmd_nhap_thong_tin_nhan_vien.Enabled = true;
+                    break;
+                case buoc_hien_tai.buoc_2_nhap_tthd:
+                    m_cmd_nhap_thong_tin_hop_dong.Enabled = true;
+                    break;
+                case buoc_hien_tai.buoc_3_nhap_ttct:
+                    m_cmd_nhap_thong_tin_cong_tac.Enabled = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void format_controls()
@@ -76,6 +103,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 F501_THONG_TIN_BO_SUNG_NHAN_VIEN v_frm = new F501_THONG_TIN_BO_SUNG_NHAN_VIEN();
                 v_frm.Show();
+                set_init_form_load();
             }
             catch (Exception v_e)
             {
@@ -89,6 +117,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 f320_lap_hop_dong_V2 v_frm = new f320_lap_hop_dong_V2();
                 v_frm.Show();
+                m_e_buoc_hien_tai = buoc_hien_tai.buoc_3_nhap_ttct;
+                set_init_form_load();
             }
             catch (Exception v_e)
             {
@@ -102,6 +132,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 f350_quan_ly_vi_tri_cong_tac v_frm = new f350_quan_ly_vi_tri_cong_tac();
                 v_frm.Show();
+                m_e_buoc_hien_tai = buoc_hien_tai.buoc_4_nhap_ttbs;
+                set_init_form_load();
             }
             catch (Exception v_e)
             {
@@ -114,7 +146,10 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 f151_Danh_sach_nhan_vien_master v_frm = new f151_Danh_sach_nhan_vien_master();
+                v_frm.import_excel();
                 v_frm.Show();
+                m_e_buoc_hien_tai = buoc_hien_tai.buoc_2_nhap_tthd;
+                set_init_form_load();
             }
             catch (Exception v_e)
             {
@@ -138,7 +173,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                WinFormControls.openTemplate(".xlxs");
+                WinFormControls.openTemplate("HOP_DONG.xlxs");
             }
             catch (Exception v_e)
             {
@@ -150,7 +185,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                WinFormControls.openTemplate(".xlxs");
+                WinFormControls.openTemplate("CONG_TAC.xlxs");
             }
             catch (Exception v_e)
             {

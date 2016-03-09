@@ -65,7 +65,7 @@ namespace BKI_DichVuMatDat.BaoCao
             US_V_DM_LAO_DONG_NUOC_NGOAI v_us = new US_V_DM_LAO_DONG_NUOC_NGOAI();
             DS_V_DM_LAO_DONG_NUOC_NGOAI v_ds = new DS_V_DM_LAO_DONG_NUOC_NGOAI();
             v_us.FillDataset(v_ds);
-            m_grc.DataSource = m_ds.Tables[0];          
+            m_grc.DataSource = v_ds.Tables[0];          
         }
 
       

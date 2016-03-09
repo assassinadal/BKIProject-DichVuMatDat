@@ -59,12 +59,15 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void fill_datasource_danh_sach_nhan_vien()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            DataTable v_dt = new DataTable();
-            v_ds.Tables.Add(v_dt);
-            throw new Exception();
-            //v_us.FillDatasetWithQuery(v_ds, "select ID, MA_NV, HO_DEM+ ' '+ TEN AS TEN_NHAN_VIEN FROM DM_NHAN_VIEN");       
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+            //DataTable v_dt = new DataTable();
+            //v_ds.Tables.Add(v_dt);
+            //throw new Exception();
+            ////v_us.FillDatasetWithQuery(v_ds, "select ID, MA_NV, HO_DEM+ ' '+ TEN AS TEN_NHAN_VIEN FROM DM_NHAN_VIEN");  
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            DS_DM_NHAN_VIEN v_ds = new DS_DM_NHAN_VIEN();
+            v_us.FillDataset(v_ds);   
              m_sle_ten_nv.Properties.DataSource = v_ds.Tables[0];
              m_sle_ten_nv.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
         }

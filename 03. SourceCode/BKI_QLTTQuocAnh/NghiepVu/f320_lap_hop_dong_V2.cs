@@ -11,6 +11,7 @@ using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.US;
 using IP.Core.IPCommon;
 using BKI_DichVuMatDat.DS.CDBNames;
+using BKI_DichVuMatDat.COMMON;
 using DevExpress.XtraEditors;
 using System.Globalization;
 using IP.Core.IPSystemAdmin;
@@ -168,6 +169,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grc_thong_tin_hop_dong.DataSource = v_ds.Tables[0];
         }
 
+        private void import_excel()
+        {
+            string m_txt_path = WinFormControls.openFileDialog();
+            F152_DANH_SACH_NHAN_VIEN_EXCEL v_f = new F152_DANH_SACH_NHAN_VIEN_EXCEL();
+            v_f.displayToInsertExcel(m_txt_path);
+            load_data_2_grid();
+        }
+
         #endregion
 
         #region Events Handle
@@ -179,6 +188,19 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_search.Click += m_cmd_search_Click;
             m_cmd_xem_thong_tin_tat_ca.Click += m_cmd_xem_thong_tin_tat_ca_Click;
             m_grv_thong_tin_hop_dong.DoubleClick += m_grv_thong_tin_hop_dong_DoubleClick;
+            m_cmd_chon_file.Click += m_cmd_chon_file_Click;
+        }
+
+        private void m_cmd_chon_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                import_excel();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_xem_thong_tin_tat_ca_Click(object sender, EventArgs e)

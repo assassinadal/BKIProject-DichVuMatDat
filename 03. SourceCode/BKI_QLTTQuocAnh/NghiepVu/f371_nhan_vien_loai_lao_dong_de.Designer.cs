@@ -202,6 +202,7 @@
             this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(124, 90);
             this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
+            this.m_dat_ngay_ket_thuc.ShowCheckBox = true;
             this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(208, 20);
             this.m_dat_ngay_ket_thuc.TabIndex = 7;
             // 
@@ -231,7 +232,7 @@
             this.m_sle_chon_loai_lao_dong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_chon_loai_lao_dong.Properties.DisplayMember = "TEN";
-            this.m_sle_chon_loai_lao_dong.Properties.NullText = "";
+            this.m_sle_chon_loai_lao_dong.Properties.NullText = "--Chọn loại lao động--";
             this.m_sle_chon_loai_lao_dong.Properties.ValueMember = "ID";
             this.m_sle_chon_loai_lao_dong.Properties.View = this.gridView4;
             this.m_sle_chon_loai_lao_dong.Size = new System.Drawing.Size(208, 20);
@@ -298,7 +299,7 @@
             this.m_sle_chon_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_chon_nhan_vien.Properties.DisplayMember = "HO_TEN";
-            this.m_sle_chon_nhan_vien.Properties.NullText = "";
+            this.m_sle_chon_nhan_vien.Properties.NullText = "--Chọn nhân viên--";
             this.m_sle_chon_nhan_vien.Properties.ValueMember = "ID";
             this.m_sle_chon_nhan_vien.Properties.View = this.searchLookUpEdit1View;
             this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(210, 20);
@@ -363,24 +364,18 @@
             this.gridColumn16.Caption = "Email";
             this.gridColumn16.FieldName = "EMAIL";
             this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 4;
             // 
             // gridColumn17
             // 
             this.gridColumn17.Caption = "SĐT";
             this.gridColumn17.FieldName = "SDT";
             this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 5;
             // 
             // gridColumn18
             // 
             this.gridColumn18.Caption = "Địa chỉ";
             this.gridColumn18.FieldName = "DIA_CHI_THUONG_TRU";
             this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 6;
             // 
             // label1
             // 

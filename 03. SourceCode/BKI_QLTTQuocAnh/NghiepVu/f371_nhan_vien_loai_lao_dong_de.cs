@@ -41,12 +41,13 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.ShowDialog();
         }
 
-        public void DisplayForUpdate(US_GD_LOAI_LAO_DONG v_us)
+        public void DisplayForUpdate(US_GD_LOAI_LAO_DONG ip_us)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             this.Text = "F371 - Sửa nhân viên loại lao động";
             m_lbl_header.Text = "SỬA NHÂN VIÊN LOẠI LAO ĐỘNG";
-            m_us = v_us;
+            
+            m_us = ip_us;
             us_2_form(m_us);
             this.CenterToScreen();
             this.ShowDialog();
@@ -56,6 +57,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Members
         DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
         decimal m_id_gd_loai_ld = 0;
+        DateTime m_dat_ngay_ket_thuc_from_us;
         US_GD_LOAI_LAO_DONG m_us = new US_GD_LOAI_LAO_DONG();
         #endregion
 
@@ -72,16 +74,19 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             load_data_2_sle_chon_nv();
             load_data_2_sle_chon_loai_lao_dong();
+            if (m_dat_ngay_ket_thuc_from_us == CIPConvert.ToDatetime("01/01/1900"))
+            {
+                m_dat_ngay_ket_thuc.Checked = false;
+            }
         }
 
         private DataSet load_data_2_ds_v_dm_nv()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
+            US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
+            DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
 
-            v_ds.Tables.Add(new DataTable());
-            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
-            //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
+          
+            v_us.FillDataset(v_ds);
             return v_ds;
         }
 
@@ -115,8 +120,30 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
             m_us.dcID_LOAI_LAO_DONG = CIPConvert.ToDecimal(m_sle_chon_loai_lao_dong.EditValue);
             m_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
-            m_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
+            if (m_dat_ngay_ket_thuc.Checked == true)
+            {
+                m_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
+            }
+            m_us.strDA_XOA = "N";
         }
+
+        private void us_2_form(US_GD_LOAI_LAO_DONG m_us)
+        {
+            m_sle_chon_nhan_vien.EditValue = m_us.dcID_NHAN_VIEN;
+            m_sle_chon_nhan_vien.ReadOnly = true;
+            m_sle_chon_loai_lao_dong.EditValue = m_us.dcID_LOAI_LAO_DONG;
+            m_dat_ngay_bat_dau.Value = m_us.datNGAY_BAT_DAU;
+            if (m_us.datNGAY_KET_THUC.Date != CIPConvert.ToDatetime("01/01/1900"))
+            {
+                m_dat_ngay_ket_thuc.Value = m_us.datNGAY_KET_THUC;
+            }
+            else
+            {
+                m_dat_ngay_ket_thuc_from_us = m_us.datNGAY_KET_THUC;
+            }
+           
+        }
+
 
         //Check data is ok?
         private bool check_data_is_ok()
@@ -188,15 +215,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-        }
-
-        private void us_2_form(US_GD_LOAI_LAO_DONG m_us)
-        {
-            m_sle_chon_nhan_vien.EditValue = m_us.dcID_NHAN_VIEN;
-            m_sle_chon_nhan_vien.ReadOnly = true;
-            m_sle_chon_loai_lao_dong.EditValue = m_us.dcID_LOAI_LAO_DONG;
-            m_dat_ngay_bat_dau.Value = m_us.datNGAY_BAT_DAU;
-            m_dat_ngay_ket_thuc.Value = m_us.datNGAY_KET_THUC;
         }
 
         private void m_cmd_save_Click(object sender, EventArgs e)

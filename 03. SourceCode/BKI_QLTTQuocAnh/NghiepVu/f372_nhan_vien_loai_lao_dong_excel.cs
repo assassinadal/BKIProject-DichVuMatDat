@@ -98,7 +98,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             if (dataRow["NGAY_KET_THUC"].ToString() != "")
                 if ((dataRow["NGAY_KET_THUC"].ToString().Substring(0, 10) != ""))
                     v_us.datNGAY_KET_THUC = CIPConvert.ToDatetime(dataRow["NGAY_KET_THUC"].ToString().Substring(0, 10));
-
+            v_us.strDA_XOA = "N";
             v_us.Insert();
         }
 

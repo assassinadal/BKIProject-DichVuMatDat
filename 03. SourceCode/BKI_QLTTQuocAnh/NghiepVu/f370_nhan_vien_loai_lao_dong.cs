@@ -15,6 +15,8 @@ using IP.Core.IPCommon;
 
 using System.Globalization;
 using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
+using BKI_DichVuMatDat.BaoCao;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -171,6 +173,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                SplashScreenManager.ShowForm(typeof(F_wait_form));
                 string fileName = "LOAI_LAO_DONG_CUA_NHAN_VIEN.xlsx";
                 string sourcePath = (System.IO.Directory.GetCurrentDirectory() + "\\Template");
                 string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -212,9 +215,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 DataRow v_dr = m_grv_v_gd_loai_lao_dong.GetDataRow(m_grv_v_gd_loai_lao_dong.FocusedRowHandle);
-                decimal v_id = CIPConvert.ToDecimal(v_dr[GD_LOAI_LAO_DONG.ID]);
+                decimal v_id_gd_loai_lao_dong = CIPConvert.ToDecimal(v_dr[GD_LOAI_LAO_DONG.ID]);
+                US_GD_LOAI_LAO_DONG v_us = new US_GD_LOAI_LAO_DONG(v_id_gd_loai_lao_dong);
 
-                US_GD_LOAI_LAO_DONG v_us = new US_GD_LOAI_LAO_DONG(v_id);
                 f371_nhan_vien_loai_lao_dong_de v_frm = new f371_nhan_vien_loai_lao_dong_de();
                 v_frm.DisplayForUpdate(v_us);
                 load_data_2_grid();

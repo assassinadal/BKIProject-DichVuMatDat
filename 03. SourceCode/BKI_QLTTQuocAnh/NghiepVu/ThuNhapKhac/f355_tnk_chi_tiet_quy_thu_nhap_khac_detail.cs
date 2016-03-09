@@ -142,10 +142,10 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         }
         private void load_data_nhan_vien()
         {
-            US_V_DM_NHAN_VIEN v_us_nv = new US_V_DM_NHAN_VIEN();
-            DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
+            US_DM_NHAN_VIEN v_us_nv = new US_DM_NHAN_VIEN();
+            DS_DM_NHAN_VIEN v_ds = new DS_DM_NHAN_VIEN();
             v_ds.Tables.Add();
-            v_us_nv.FillDataset(v_ds);
+            v_us_nv.LayDanhSachNhanVienKemChucVuDonVi(v_ds);
 
             m_sle_chon_nhan_vien.Properties.DataSource = v_ds.Tables[0];
         }

@@ -221,13 +221,17 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             this.searchLookUpEdit1View.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTEN_DON_VI, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTEN_DON_VI, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colCHUC_VU, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colCHUC_VU
             // 
             this.colCHUC_VU.Caption = "Chức vụ";
             this.colCHUC_VU.FieldName = "CHUC_VU";
+            this.colCHUC_VU.FieldNameSortGroup = "THU_TU_CHUC_VU";
             this.colCHUC_VU.Name = "colCHUC_VU";
+            this.colCHUC_VU.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.colCHUC_VU.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.colCHUC_VU.Visible = true;
             this.colCHUC_VU.VisibleIndex = 2;
             this.colCHUC_VU.Width = 354;
@@ -251,10 +255,11 @@
             // 
             this.colTEN_DON_VI.Caption = "Đơn vị";
             this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
+            this.colTEN_DON_VI.FieldNameSortGroup = "THU_TU_DON_VI";
             this.colTEN_DON_VI.Name = "colTEN_DON_VI";
             this.colTEN_DON_VI.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             this.colTEN_DON_VI.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.colTEN_DON_VI.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
+            this.colTEN_DON_VI.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
             this.colTEN_DON_VI.Visible = true;
             this.colTEN_DON_VI.VisibleIndex = 3;
             this.colTEN_DON_VI.Width = 359;

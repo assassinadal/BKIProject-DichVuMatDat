@@ -41,6 +41,11 @@
             this.m_lbl_ma_nv = new DevExpress.XtraEditors.LabelControl();
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_txt_he_so = new DevExpress.XtraEditors.TextEdit();
             this.m_txt_so_tien_thuc_linh = new DevExpress.XtraEditors.TextEdit();
             this.m_txt_so_tien_nop_thue = new DevExpress.XtraEditors.TextEdit();
@@ -55,11 +60,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colCHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
@@ -91,7 +91,7 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 231);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(477, 41);
-            this.panelControl1.TabIndex = 0;
+            this.panelControl1.TabIndex = 1;
             // 
             // m_cmd_save
             // 
@@ -103,7 +103,7 @@
             this.m_cmd_save.Location = new System.Drawing.Point(267, 2);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(104, 37);
-            this.m_cmd_save.TabIndex = 6;
+            this.m_cmd_save.TabIndex = 0;
             this.m_cmd_save.Text = "Lưu";
             // 
             // imageCollection
@@ -135,7 +135,7 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(371, 2);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(104, 37);
-            this.m_cmd_exit.TabIndex = 7;
+            this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Thoát";
             // 
             // layoutControl1
@@ -154,7 +154,7 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
             this.layoutControl1.Size = new System.Drawing.Size(477, 231);
-            this.layoutControl1.TabIndex = 1;
+            this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // m_lbl_chuc_vu
@@ -223,6 +223,51 @@
             this.searchLookUpEdit1View.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTEN_DON_VI, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
+            // colCHUC_VU
+            // 
+            this.colCHUC_VU.Caption = "Chức vụ";
+            this.colCHUC_VU.FieldName = "CHUC_VU";
+            this.colCHUC_VU.Name = "colCHUC_VU";
+            this.colCHUC_VU.Visible = true;
+            this.colCHUC_VU.VisibleIndex = 2;
+            this.colCHUC_VU.Width = 354;
+            // 
+            // colHO_TEN
+            // 
+            this.colHO_TEN.Caption = "Họ tên";
+            this.colHO_TEN.FieldName = "HO_TEN";
+            this.colHO_TEN.Name = "colHO_TEN";
+            this.colHO_TEN.Visible = true;
+            this.colHO_TEN.VisibleIndex = 1;
+            this.colHO_TEN.Width = 250;
+            // 
+            // colID
+            // 
+            this.colID.Caption = "ID";
+            this.colID.FieldName = "ID";
+            this.colID.Name = "colID";
+            // 
+            // colTEN_DON_VI
+            // 
+            this.colTEN_DON_VI.Caption = "Đơn vị";
+            this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
+            this.colTEN_DON_VI.Name = "colTEN_DON_VI";
+            this.colTEN_DON_VI.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.colTEN_DON_VI.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.colTEN_DON_VI.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
+            this.colTEN_DON_VI.Visible = true;
+            this.colTEN_DON_VI.VisibleIndex = 3;
+            this.colTEN_DON_VI.Width = 359;
+            // 
+            // colMA_NV
+            // 
+            this.colMA_NV.Caption = "Mã NV";
+            this.colMA_NV.FieldName = "MA_NV";
+            this.colMA_NV.Name = "colMA_NV";
+            this.colMA_NV.Visible = true;
+            this.colMA_NV.VisibleIndex = 0;
+            this.colMA_NV.Width = 99;
+            // 
             // m_txt_he_so
             // 
             this.m_txt_he_so.Location = new System.Drawing.Point(94, 104);
@@ -232,7 +277,7 @@
             this.m_txt_he_so.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_he_so.Size = new System.Drawing.Size(371, 20);
             this.m_txt_he_so.StyleController = this.layoutControl1;
-            this.m_txt_he_so.TabIndex = 2;
+            this.m_txt_he_so.TabIndex = 1;
             // 
             // m_txt_so_tien_thuc_linh
             // 
@@ -246,7 +291,7 @@
             this.m_txt_so_tien_thuc_linh.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_so_tien_thuc_linh.Size = new System.Drawing.Size(371, 20);
             this.m_txt_so_tien_thuc_linh.StyleController = this.layoutControl1;
-            this.m_txt_so_tien_thuc_linh.TabIndex = 5;
+            this.m_txt_so_tien_thuc_linh.TabIndex = 4;
             // 
             // m_txt_so_tien_nop_thue
             // 
@@ -260,7 +305,7 @@
             this.m_txt_so_tien_nop_thue.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_so_tien_nop_thue.Size = new System.Drawing.Size(371, 20);
             this.m_txt_so_tien_nop_thue.StyleController = this.layoutControl1;
-            this.m_txt_so_tien_nop_thue.TabIndex = 4;
+            this.m_txt_so_tien_nop_thue.TabIndex = 3;
             // 
             // m_txt_so_tien
             // 
@@ -274,7 +319,7 @@
             this.m_txt_so_tien.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_so_tien.Size = new System.Drawing.Size(371, 20);
             this.m_txt_so_tien.StyleController = this.layoutControl1;
-            this.m_txt_so_tien.TabIndex = 3;
+            this.m_txt_so_tien.TabIndex = 2;
             // 
             // layoutControlGroup1
             // 
@@ -386,51 +431,6 @@
             this.layoutControlItem9.Size = new System.Drawing.Size(457, 17);
             this.layoutControlItem9.Text = "Chức vụ";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(79, 13);
-            // 
-            // colCHUC_VU
-            // 
-            this.colCHUC_VU.Caption = "Chức vụ";
-            this.colCHUC_VU.FieldName = "CHUC_VU";
-            this.colCHUC_VU.Name = "colCHUC_VU";
-            this.colCHUC_VU.Visible = true;
-            this.colCHUC_VU.VisibleIndex = 2;
-            this.colCHUC_VU.Width = 354;
-            // 
-            // colHO_TEN
-            // 
-            this.colHO_TEN.Caption = "Họ tên";
-            this.colHO_TEN.FieldName = "HO_TEN";
-            this.colHO_TEN.Name = "colHO_TEN";
-            this.colHO_TEN.Visible = true;
-            this.colHO_TEN.VisibleIndex = 1;
-            this.colHO_TEN.Width = 250;
-            // 
-            // colID
-            // 
-            this.colID.Caption = "ID";
-            this.colID.FieldName = "ID";
-            this.colID.Name = "colID";
-            // 
-            // colTEN_DON_VI
-            // 
-            this.colTEN_DON_VI.Caption = "Đơn vị";
-            this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
-            this.colTEN_DON_VI.Name = "colTEN_DON_VI";
-            this.colTEN_DON_VI.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
-            this.colTEN_DON_VI.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.colTEN_DON_VI.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
-            this.colTEN_DON_VI.Visible = true;
-            this.colTEN_DON_VI.VisibleIndex = 3;
-            this.colTEN_DON_VI.Width = 359;
-            // 
-            // colMA_NV
-            // 
-            this.colMA_NV.Caption = "Mã NV";
-            this.colMA_NV.FieldName = "MA_NV";
-            this.colMA_NV.Name = "colMA_NV";
-            this.colMA_NV.Visible = true;
-            this.colMA_NV.VisibleIndex = 0;
-            this.colMA_NV.Width = 99;
             // 
             // f355_tnk_chi_tiet_quy_thu_nhap_khac_detail
             // 

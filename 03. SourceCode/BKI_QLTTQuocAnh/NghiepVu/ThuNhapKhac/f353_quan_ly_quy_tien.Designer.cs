@@ -73,7 +73,7 @@
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(796, 43);
-            this.m_pnl_out_place_dm.TabIndex = 30;
+            this.m_pnl_out_place_dm.TabIndex = 2;
             // 
             // m_cmd_insert
             // 
@@ -82,7 +82,7 @@
             this.m_cmd_insert.Location = new System.Drawing.Point(444, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(116, 35);
-            this.m_cmd_insert.TabIndex = 6;
+            this.m_cmd_insert.TabIndex = 0;
             this.m_cmd_insert.Text = "&Thêm";
             // 
             // m_cmd_update
@@ -92,7 +92,7 @@
             this.m_cmd_update.Location = new System.Drawing.Point(560, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(116, 35);
-            this.m_cmd_update.TabIndex = 5;
+            this.m_cmd_update.TabIndex = 1;
             this.m_cmd_update.Text = "&Sửa";
             // 
             // m_cmd_delete
@@ -102,7 +102,7 @@
             this.m_cmd_delete.Location = new System.Drawing.Point(676, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(116, 35);
-            this.m_cmd_delete.TabIndex = 4;
+            this.m_cmd_delete.TabIndex = 2;
             this.m_cmd_delete.Text = "&Xóa";
             // 
             // panelControl1
@@ -117,7 +117,7 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(796, 69);
-            this.panelControl1.TabIndex = 32;
+            this.panelControl1.TabIndex = 0;
             // 
             // m_dat_den_thang
             // 
@@ -133,7 +133,7 @@
             this.m_dat_den_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
             this.m_dat_den_thang.Properties.Mask.EditMask = "MM/yyyy";
             this.m_dat_den_thang.Size = new System.Drawing.Size(122, 20);
-            this.m_dat_den_thang.TabIndex = 35;
+            this.m_dat_den_thang.TabIndex = 1;
             // 
             // m_dat_tu_thang
             // 
@@ -152,7 +152,7 @@
             this.m_dat_tu_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.m_dat_tu_thang.Properties.Mask.EditMask = "MM/yyyy";
             this.m_dat_tu_thang.Size = new System.Drawing.Size(122, 20);
-            this.m_dat_tu_thang.TabIndex = 34;
+            this.m_dat_tu_thang.TabIndex = 0;
             // 
             // m_lbl_trang_thai_quy
             // 
@@ -161,7 +161,7 @@
             this.m_lbl_trang_thai_quy.Location = new System.Drawing.Point(39, 59);
             this.m_lbl_trang_thai_quy.Name = "m_lbl_trang_thai_quy";
             this.m_lbl_trang_thai_quy.Size = new System.Drawing.Size(0, 14);
-            this.m_lbl_trang_thai_quy.TabIndex = 33;
+            this.m_lbl_trang_thai_quy.TabIndex = 3;
             // 
             // label1
             // 
@@ -179,7 +179,7 @@
             this.m_cmd_search.Location = new System.Drawing.Point(484, 13);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(116, 35);
-            this.m_cmd_search.TabIndex = 29;
+            this.m_cmd_search.TabIndex = 2;
             this.m_cmd_search.Text = "&Lọc";
             // 
             // m_lbl_nam
@@ -200,7 +200,7 @@
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
             this.m_grc.Size = new System.Drawing.Size(796, 361);
-            this.m_grc.TabIndex = 33;
+            this.m_grc.TabIndex = 1;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
             // 
@@ -249,7 +249,7 @@
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 5;
-            this.gridColumn10.Width = 60;
+            this.gridColumn10.Width = 74;
             // 
             // gridColumn9
             // 
@@ -258,7 +258,7 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 6;
-            this.gridColumn9.Width = 60;
+            this.gridColumn9.Width = 74;
             // 
             // gridColumn1
             // 
@@ -282,7 +282,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 57;
+            this.gridColumn2.Width = 70;
             // 
             // gridColumn3
             // 
@@ -293,7 +293,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 52;
+            this.gridColumn3.Width = 64;
             // 
             // gridColumn4
             // 
@@ -304,7 +304,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 80;
+            this.gridColumn4.Width = 100;
             // 
             // gridColumn5
             // 
@@ -315,7 +315,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 80;
+            this.gridColumn5.Width = 100;
             // 
             // gridColumn6
             // 

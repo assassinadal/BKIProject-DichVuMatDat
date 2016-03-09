@@ -32,6 +32,7 @@
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_exit = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.m_txt_nguoi_lap_quy = new DevExpress.XtraEditors.TextEdit();
             this.m_dat_ngay_lap_quy = new DevExpress.XtraEditors.DateEdit();
             this.m_txt_ly_do_lap_quy = new DevExpress.XtraEditors.TextEdit();
             this.m_dat_den_ngay = new DevExpress.XtraEditors.DateEdit();
@@ -47,13 +48,13 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_txt_nguoi_lap_quy = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nguoi_lap_quy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_lap_quy.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_lap_quy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_ly_do_lap_quy.Properties)).BeginInit();
@@ -73,9 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nguoi_lap_quy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -127,6 +127,14 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // m_txt_nguoi_lap_quy
+            // 
+            this.m_txt_nguoi_lap_quy.Location = new System.Drawing.Point(117, 60);
+            this.m_txt_nguoi_lap_quy.Name = "m_txt_nguoi_lap_quy";
+            this.m_txt_nguoi_lap_quy.Size = new System.Drawing.Size(352, 20);
+            this.m_txt_nguoi_lap_quy.StyleController = this.layoutControl1;
+            this.m_txt_nguoi_lap_quy.TabIndex = 2;
+            // 
             // m_dat_ngay_lap_quy
             // 
             this.m_dat_ngay_lap_quy.EditValue = null;
@@ -138,7 +146,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_dat_ngay_lap_quy.Size = new System.Drawing.Size(352, 20);
             this.m_dat_ngay_lap_quy.StyleController = this.layoutControl1;
-            this.m_dat_ngay_lap_quy.TabIndex = 7;
+            this.m_dat_ngay_lap_quy.TabIndex = 3;
             // 
             // m_txt_ly_do_lap_quy
             // 
@@ -146,7 +154,7 @@
             this.m_txt_ly_do_lap_quy.Name = "m_txt_ly_do_lap_quy";
             this.m_txt_ly_do_lap_quy.Size = new System.Drawing.Size(352, 20);
             this.m_txt_ly_do_lap_quy.StyleController = this.layoutControl1;
-            this.m_txt_ly_do_lap_quy.TabIndex = 6;
+            this.m_txt_ly_do_lap_quy.TabIndex = 7;
             // 
             // m_dat_den_ngay
             // 
@@ -159,7 +167,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_dat_den_ngay.Size = new System.Drawing.Size(352, 20);
             this.m_dat_den_ngay.StyleController = this.layoutControl1;
-            this.m_dat_den_ngay.TabIndex = 5;
+            this.m_dat_den_ngay.TabIndex = 6;
             // 
             // m_dat_tu_ngay
             // 
@@ -172,7 +180,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_dat_tu_ngay.Size = new System.Drawing.Size(352, 20);
             this.m_dat_tu_ngay.StyleController = this.layoutControl1;
-            this.m_dat_tu_ngay.TabIndex = 4;
+            this.m_dat_tu_ngay.TabIndex = 5;
             // 
             // m_sle_loai_quy_thu_nhap
             // 
@@ -207,7 +215,7 @@
             this.m_dat_thang_ap_dung_quy.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.m_dat_thang_ap_dung_quy.Size = new System.Drawing.Size(352, 20);
             this.m_dat_thang_ap_dung_quy.StyleController = this.layoutControl1;
-            this.m_dat_thang_ap_dung_quy.TabIndex = 3;
+            this.m_dat_thang_ap_dung_quy.TabIndex = 4;
             // 
             // m_txt_ten_quy
             // 
@@ -307,24 +315,6 @@
             this.layoutControlItem9.Text = "Ngày lập quỹ";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(102, 13);
             // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.m_dat_thang_ap_dung_quy;
-            this.layoutControlItem8.CustomizationFormText = "Thưởng cho tháng";
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem8.Name = "layoutControlItem4";
-            this.layoutControlItem8.Size = new System.Drawing.Size(461, 24);
-            this.layoutControlItem8.Text = "Tháng áp dụng quỹ *";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(102, 13);
-            // 
-            // m_txt_nguoi_lap_quy
-            // 
-            this.m_txt_nguoi_lap_quy.Location = new System.Drawing.Point(117, 60);
-            this.m_txt_nguoi_lap_quy.Name = "m_txt_nguoi_lap_quy";
-            this.m_txt_nguoi_lap_quy.Size = new System.Drawing.Size(352, 20);
-            this.m_txt_nguoi_lap_quy.StyleController = this.layoutControl1;
-            this.m_txt_nguoi_lap_quy.TabIndex = 8;
-            // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.m_txt_nguoi_lap_quy;
@@ -334,6 +324,16 @@
             this.layoutControlItem10.Size = new System.Drawing.Size(461, 24);
             this.layoutControlItem10.Text = "Người lập quỹ";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(102, 13);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.m_dat_thang_ap_dung_quy;
+            this.layoutControlItem8.CustomizationFormText = "Thưởng cho tháng";
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem8.Name = "layoutControlItem4";
+            this.layoutControlItem8.Size = new System.Drawing.Size(461, 24);
+            this.layoutControlItem8.Text = "Tháng áp dụng quỹ *";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(102, 13);
             // 
             // f354_danh_sach_quy_thuong_de
             // 
@@ -350,6 +350,7 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nguoi_lap_quy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_lap_quy.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_lap_quy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_ly_do_lap_quy.Properties)).EndInit();
@@ -369,9 +370,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nguoi_lap_quy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
 
         }

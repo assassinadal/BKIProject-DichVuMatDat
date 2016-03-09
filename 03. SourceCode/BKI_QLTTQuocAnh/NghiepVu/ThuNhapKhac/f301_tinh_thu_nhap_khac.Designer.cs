@@ -79,7 +79,7 @@
             this.m_lbl_download_template.Location = new System.Drawing.Point(2, 2);
             this.m_lbl_download_template.Name = "m_lbl_download_template";
             this.m_lbl_download_template.Size = new System.Drawing.Size(154, 33);
-            this.m_lbl_download_template.TabIndex = 1;
+            this.m_lbl_download_template.TabIndex = 0;
             this.m_lbl_download_template.Text = "Bước 1: Tạo file Excel import mới!";
             // 
             // m_grc_main
@@ -92,7 +92,7 @@
             this.m_grc_main.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             this.m_grc_main.Size = new System.Drawing.Size(1158, 425);
-            this.m_grc_main.TabIndex = 11;
+            this.m_grc_main.TabIndex = 2;
             this.m_grc_main.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_main});
             // 
@@ -273,7 +273,7 @@
             this.m_lbl_ten_quy.Name = "m_lbl_ten_quy";
             this.m_lbl_ten_quy.Padding = new System.Windows.Forms.Padding(10);
             this.m_lbl_ten_quy.Size = new System.Drawing.Size(38, 43);
-            this.m_lbl_ten_quy.TabIndex = 21;
+            this.m_lbl_ten_quy.TabIndex = 1;
             this.m_lbl_ten_quy.Text = "...";
             // 
             // m_cmd_xuat_excel
@@ -317,7 +317,7 @@
             this.m_cmd_import_excel.Location = new System.Drawing.Point(156, 2);
             this.m_cmd_import_excel.Name = "m_cmd_import_excel";
             this.m_cmd_import_excel.Size = new System.Drawing.Size(205, 33);
-            this.m_cmd_import_excel.TabIndex = 2;
+            this.m_cmd_import_excel.TabIndex = 1;
             this.m_cmd_import_excel.Text = "Bước 2: Import dữ liệu Excel";
             // 
             // panelControl1
@@ -328,7 +328,7 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1158, 92);
-            this.panelControl1.TabIndex = 22;
+            this.panelControl1.TabIndex = 0;
             // 
             // panelControl3
             // 
@@ -341,7 +341,7 @@
             this.panelControl3.Location = new System.Drawing.Point(2, 53);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1154, 37);
-            this.panelControl3.TabIndex = 23;
+            this.panelControl3.TabIndex = 0;
             // 
             // m_cmd_save
             // 
@@ -355,7 +355,7 @@
             this.m_cmd_save.Location = new System.Drawing.Point(564, 2);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(222, 33);
-            this.m_cmd_save.TabIndex = 4;
+            this.m_cmd_save.TabIndex = 3;
             this.m_cmd_save.Text = "Bước 4: Lưu vào phần mềm";
             // 
             // m_cmd_tinh_tien_thuong
@@ -366,7 +366,7 @@
             this.m_cmd_tinh_tien_thuong.Location = new System.Drawing.Point(361, 2);
             this.m_cmd_tinh_tien_thuong.Name = "m_cmd_tinh_tien_thuong";
             this.m_cmd_tinh_tien_thuong.Size = new System.Drawing.Size(203, 33);
-            this.m_cmd_tinh_tien_thuong.TabIndex = 3;
+            this.m_cmd_tinh_tien_thuong.TabIndex = 2;
             this.m_cmd_tinh_tien_thuong.Text = "Bước 3: Tính thành tiền";
             // 
             // panelControl2

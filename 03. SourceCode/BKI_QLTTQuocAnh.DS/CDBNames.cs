@@ -1482,4 +1482,18 @@ namespace BKI_DichVuMatDat.DS.CDBNames
             public const string ID_LOAI_PHU_CAP = "ID_LOAI_PHU_CAP";
         }
 
+    public class V_DM_LAO_DONG_NUOC_NGOAI
+    {
+        public const string ID = "ID";
+        public const string MA_NV = "MA_NV";
+        public const string HO_TEN = "HO_TEN";
+        public const string GIOI_TINH = "GIOI_TINH";
+        public const string QUOC_TICH = "QUOC_TICH";
+        public const string MA_HOP_DONG = "MA_HOP_DONG";
+        public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string CHUC_VU = "CHUC_VU";
+        public const string NGAY_KY_HOP_DONG = "NGAY_KY_HOP_DONG";
+    }
+
 }

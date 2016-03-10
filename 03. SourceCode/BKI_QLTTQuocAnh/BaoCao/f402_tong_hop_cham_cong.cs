@@ -66,19 +66,17 @@ namespace BKI_DichVuMatDat.BaoCao
             m_pv.DataSource = v_ds.Tables[0];
         }
 
-        private DataSet load_data_to_ds_v_dm_nv()
+        private DataTable load_data_to_ds_v_dm_nv()
         {
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
-            //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
-            return v_ds;
+            US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
+            DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
+            v_us.FillDataset(v_ds);
+            return v_ds.Tables[0];
         }
 
         private void load_data_to_sle_chon_nhan_vien()
         {
-            m_sle_chon_nhan_vien.Properties.DataSource = load_data_to_ds_v_dm_nv().Tables[0];
+            m_sle_chon_nhan_vien.Properties.DataSource = load_data_to_ds_v_dm_nv();
             m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }

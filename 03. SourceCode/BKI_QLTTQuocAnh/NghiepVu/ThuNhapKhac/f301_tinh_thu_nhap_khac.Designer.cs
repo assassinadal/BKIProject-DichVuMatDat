@@ -55,6 +55,10 @@
             this.m_cmd_tinh_tien_thuong = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_lbl_trang_thai_soan_thao = new DevExpress.XtraEditors.LabelControl();
+            this.m_pn = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_prb = new DevExpress.XtraEditors.ProgressBarControl();
+            this.m_bgw = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -65,6 +69,8 @@
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            this.m_pn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // m_lbl_download_template
@@ -390,11 +396,49 @@
             this.m_lbl_trang_thai_soan_thao.TabIndex = 0;
             this.m_lbl_trang_thai_soan_thao.Text = "...";
             // 
+            // m_pn
+            // 
+            this.m_pn.Controls.Add(this.label1);
+            this.m_pn.Controls.Add(this.m_prb);
+            this.m_pn.Location = new System.Drawing.Point(170, 216);
+            this.m_pn.Name = "m_pn";
+            this.m_pn.Padding = new System.Windows.Forms.Padding(10);
+            this.m_pn.Size = new System.Drawing.Size(618, 68);
+            this.m_pn.TabIndex = 24;
+            this.m_pn.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(221, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Đang lưu dữ liệu. Vui lòng chờ trong giây lát...";
+            // 
+            // m_prb
+            // 
+            this.m_prb.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_prb.Location = new System.Drawing.Point(10, 10);
+            this.m_prb.Name = "m_prb";
+            this.m_prb.Properties.DisplayFormat.FormatString = "00";
+            this.m_prb.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.m_prb.ShowProgressInTaskBar = true;
+            this.m_prb.Size = new System.Drawing.Size(598, 30);
+            this.m_prb.TabIndex = 2;
+            this.m_prb.Visible = false;
+            // 
+            // m_bgw
+            // 
+            this.m_bgw.WorkerReportsProgress = true;
+            this.m_bgw.WorkerSupportsCancellation = true;
+            // 
             // f301_tinh_thu_nhap_khac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 554);
+            this.Controls.Add(this.m_pn);
             this.Controls.Add(this.m_grc_main);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
@@ -411,6 +455,9 @@
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            this.m_pn.ResumeLayout(false);
+            this.m_pn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -441,6 +488,10 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_tinh_tien_thuong;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl m_lbl_trang_thai_soan_thao;
+        private System.Windows.Forms.Panel m_pn;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.ProgressBarControl m_prb;
+        private System.ComponentModel.BackgroundWorker m_bgw;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

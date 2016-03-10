@@ -24,7 +24,7 @@ namespace BKI_DichVuMatDat.NghiepVu
     {
         //Field & Property
         US_GD_QUY_THU_NHAP_KHAC m_us_gd_quy;
-
+        US_GD_THU_NHAP_KHAC m_us_gd_tnk;
         #region Public Interfaces
         public f301_tinh_thu_nhap_khac()
         {
@@ -336,18 +336,23 @@ namespace BKI_DichVuMatDat.NghiepVu
                     return;
                 }
             }
-            splashScreenManager1.ShowWaitForm();
             delete_du_lieu_cu(m_us_gd_quy.dcID);
-            insert_gd_thu_nhap_khac();
-            splashScreenManager1.CloseWaitForm();
-            set_grid_da_luu_du_lieu();
-            XtraMessageBox.Show("Lưu dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (m_bgw.IsBusy)
+                m_bgw.CancelAsync();
+            else
+            {
+                this.m_pn.Visible = true;
+                this.m_prb.Visible = true;
+                m_bgw.RunWorkerAsync();
+            }
         }
 
         private void delete_du_lieu_cu(decimal ip_dc_id_quy)
         {
             US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
             v_us.XoaTNKTheoIDQuy(ip_dc_id_quy);
+            m_us_gd_tnk = v_us;
+            v_us.BeginTransaction();
             //v_us.LayDuLieuThuNhapKhacTheoIDQuy(v_ds, ip_dc_id_quy);
             //for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
             //{
@@ -356,23 +361,22 @@ namespace BKI_DichVuMatDat.NghiepVu
             //}
         }
 
-        private void insert_gd_thu_nhap_khac()
+        private void insert_gd_thu_nhap_khac(int v_i_row)
         {
-            for (int v_i_row = 0; v_i_row < m_grv_main.RowCount; v_i_row++)
-            {
-                US_GD_THU_NHAP_KHAC v_us_tnk = new US_GD_THU_NHAP_KHAC();
-                v_us_tnk.dcID_NHAN_VIEN = ExecuteFuntion.LayNhanVienID(m_grv_main.GetRowCellValue(v_i_row, CONST_COLUMN_NAME_IMPORT_TNK.MA_NV).ToString());
-                v_us_tnk.dcTHANG = Convert.ToDecimal(m_us_gd_quy.strTHANG);
-                v_us_tnk.dcNAM = Convert.ToDecimal(m_us_gd_quy.strNAM);
-                v_us_tnk.dcHE_SO = Convert.ToDecimal(m_grv_main.GetRowCellValue(v_i_row, CONST_COLUMN_NAME_IMPORT_TNK.HE_SO));
-                v_us_tnk.dcSO_TIEN = Convert.ToDecimal(m_grv_main.GetRowCellValue(v_i_row, CONST_COLUMN_NAME_IMPORT_TNK.THANH_TIEN)); ;
-                v_us_tnk.dcSO_TIEN_NOP_THUE = Convert.ToDecimal(m_grv_main.GetRowCellValue(v_i_row, CONST_COLUMN_NAME_IMPORT_TNK.THUE_PHAI_NOP));
-                v_us_tnk.dcSO_TIEN_THUC_LINH = Convert.ToDecimal(m_grv_main.GetRowCellValue(v_i_row, CONST_COLUMN_NAME_IMPORT_TNK.THUC_LINH)); ;
-                v_us_tnk.dcID_LOAI_THU_NHAP_KHAC = m_us_gd_quy.dcID_LOAI_QUY_THU_NHAP_KHAC;
-                v_us_tnk.dcID_QUY_THU_NHAP_KHAC = m_us_gd_quy.dcID;
-                v_us_tnk.strLY_DO = m_us_gd_quy.strLY_DO_THUONG;
-                v_us_tnk.Insert();
-            }
+            US_GD_THU_NHAP_KHAC v_us_tnk = new US_GD_THU_NHAP_KHAC();
+            v_us_tnk.dcID_NHAN_VIEN = ExecuteFuntion.LayNhanVienID(m_grv_main.GetRowCellValue(v_i_row, CONST_COLUMN_NAME_IMPORT_TNK.MA_NV).ToString());
+            v_us_tnk.dcTHANG = Convert.ToDecimal(m_us_gd_quy.strTHANG);
+            v_us_tnk.dcNAM = Convert.ToDecimal(m_us_gd_quy.strNAM);
+            v_us_tnk.dcHE_SO = Convert.ToDecimal(m_grv_main.GetRowCellValue(v_i_row, CONST_COLUMN_NAME_IMPORT_TNK.HE_SO));
+            v_us_tnk.dcSO_TIEN = Convert.ToDecimal(m_grv_main.GetRowCellValue(v_i_row, CONST_COLUMN_NAME_IMPORT_TNK.THANH_TIEN)); ;
+            v_us_tnk.dcSO_TIEN_NOP_THUE = Convert.ToDecimal(m_grv_main.GetRowCellValue(v_i_row, CONST_COLUMN_NAME_IMPORT_TNK.THUE_PHAI_NOP));
+            v_us_tnk.dcSO_TIEN_THUC_LINH = Convert.ToDecimal(m_grv_main.GetRowCellValue(v_i_row, CONST_COLUMN_NAME_IMPORT_TNK.THUC_LINH)); ;
+            v_us_tnk.dcID_LOAI_THU_NHAP_KHAC = m_us_gd_quy.dcID_LOAI_QUY_THU_NHAP_KHAC;
+            v_us_tnk.dcID_QUY_THU_NHAP_KHAC = m_us_gd_quy.dcID;
+            v_us_tnk.strLY_DO = m_us_gd_quy.strLY_DO_THUONG;
+            v_us_tnk.UseTransOfUSObject(m_us_gd_tnk);
+            v_us_tnk.Insert();
+            m_us_gd_tnk = v_us_tnk;
         }
         #endregion
 
@@ -386,6 +390,40 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_tinh_tien_thuong.Click += m_cmd_tinh_tien_thuong_Click;
             m_grv_main.ValidatingEditor += m_grv_main_ValidatingEditor;
             m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
+            m_bgw.DoWork += m_bgw_DoWork;
+            m_bgw.ProgressChanged += m_bgw_ProgressChanged;
+            m_bgw.RunWorkerCompleted += m_bgw_RunWorkerCompleted;
+        }
+
+        void m_bgw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            m_us_gd_tnk.CommitTransaction();
+            m_pn.Visible = false;
+            m_prb.Visible = false;
+            XtraMessageBox.Show("Lưu dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            set_grid_da_luu_du_lieu();
+        }
+
+        void m_bgw_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            this.m_prb.EditValue = e.ProgressPercentage;
+        }
+
+        void m_bgw_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                BackgroundWorker worker = sender as BackgroundWorker;
+                for (int v_i_row = 0; v_i_row < m_grv_main.RowCount; v_i_row++)
+                {
+                    insert_gd_thu_nhap_khac(v_i_row);
+                    worker.ReportProgress((v_i_row+1)*100/m_grv_main.RowCount);
+                }              
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         void m_cmd_xuat_excel_Click(object sender, EventArgs e)
         {

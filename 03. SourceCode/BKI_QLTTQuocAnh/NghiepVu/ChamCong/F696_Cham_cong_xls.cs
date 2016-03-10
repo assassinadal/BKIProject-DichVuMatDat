@@ -23,40 +23,35 @@ namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class F696_Cham_cong_xls : Form
     {
+        #region Public Interface
         public F696_Cham_cong_xls()
         {
             InitializeComponent();
             FormatControl.SetVisibleSimpleButton(this);
             this.m_grv.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
             this.m_grv.OptionsPrint.AutoWidth = false;
+            set_initial_form_load();
         }
+        private void set_initial_form_load()
+        {
+            m_txt_thang.Text = DateTime.Now.Month.ToString();
+            m_txt_nam.Text = DateTime.Now.Year.ToString();
+            check_db_da_cham_cong();
+            m_lbl_trang_thai_cham_cong.Text = "Đã chấm công cho " + m_so_nv_da_cham_cong + " nhân viên";
+            set_define_events();
+        }
+        #endregion
 
         #region Members
         US_GD_CHAM_CONG m_us_gd_cham_cong = new US_GD_CHAM_CONG();
         DataSet m_ds_ngay_cong = new DataSet();
         DataSet m_ds_nhan_vien = new DataSet();
+        List<string> m_list_ngay_cong_ko_ton_tai = new List<string>();
         int m_so_nv_da_cham_cong = 0;
         #endregion
 
         #region Private Methods
-        private void format_gridview()
-        {
-            foreach (GridColumn item in m_grv.Columns)
-            {
-                DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition(DevExpress.XtraGrid.FormatConditionEnum.Expression);
-                styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Red;
-                styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.White;
-                styleFormatCondition1.Appearance.Options.UseBackColor = true;
-                styleFormatCondition1.Appearance.Options.UseForeColor = true;
-                styleFormatCondition1.Column = item;
-                styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-                styleFormatCondition1.Expression = "[" + item.Name + "] > 3";
-                this.m_grv.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-                styleFormatCondition1});
-            }
-            m_grc.Refresh();
-        }
-
+        
         #region Tao file excel mau
         private void tao_file_mau(string ip_str_file_name)
         {
@@ -99,8 +94,28 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_2_grid(string ip_path)
         {
             m_grv.Columns.Clear();
+            splashScreenManager1.ShowWaitForm();
             WinFormControls.load_xls_to_gridview(ip_path, m_grc);
             format_gridview();
+            splashScreenManager1.CloseWaitForm();
+        }
+
+        private void format_gridview()
+        {
+            foreach (GridColumn item in m_grv.Columns)
+            {
+                DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition(DevExpress.XtraGrid.FormatConditionEnum.Expression);
+                styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Red;
+                styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.White;
+                styleFormatCondition1.Appearance.Options.UseBackColor = true;
+                styleFormatCondition1.Appearance.Options.UseForeColor = true;
+                styleFormatCondition1.Column = item;
+                styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+                styleFormatCondition1.Expression = "[" + item.Name + "] > 3";
+                this.m_grv.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+                styleFormatCondition1});
+            }
+            m_grc.Refresh();
         }
         #endregion
 
@@ -145,104 +160,89 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             LayDuLieuLoaiNgayCong();
             LayDuLieuNhanVien();
-            if (checkBangChamCong())
+            if (!checkBangChamCong())
+                return false;
+            int v_so_nv_da_cham_cong = check_db_da_cham_cong();
+            if (v_so_nv_da_cham_cong !=0)
             {
-                if (check_db_da_cham_cong())
-                {
-                    return true;
-                }
-                else
-                {
-                    DialogResult v_dialog = MessageBox.Show("Hiện có " + m_so_nv_da_cham_cong + " nhân viên đã có dữ liệu chấm công. Bạn có muốn xóa dữ liệu cũ và nhập lại?", "Xác nhận", MessageBoxButtons.YesNo);
-                    if (v_dialog == DialogResult.Yes)
-                    {
-                        return true;
-                    }
-                    return false;
-                }
+                string v_str_confirm = "Hiện có " + v_so_nv_da_cham_cong + "/"+ m_grv.RowCount+ " nhân viên trong bảng chấm công đã có dữ liệu. \nBạn có muốn xóa dữ liệu cũ của những nhân viên này và nhập lại?";
+                DialogResult v_dialog = XtraMessageBox.Show(v_str_confirm, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (v_dialog == DialogResult.No)
+                    return false;                
             }
-            return false;
+            return true;
         }
 
-        private bool check_db_da_cham_cong()
+        private int check_db_da_cham_cong()
         {
-            List<string> v_list_nv_da_cham_cong = new List<string>();
+            int v_so_nv_da_cham_cong = 0;
             DS_GD_CHAM_CONG v_ds = new DS_GD_CHAM_CONG();
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             v_us.FillDatasetChamCong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
+            DataTable v_dt = v_ds.Tables[0].DefaultView.ToTable(true, "ID_NHAN_VIEN");
+            m_so_nv_da_cham_cong = v_dt.Rows.Count;
             for (int i = 0; i < m_grv.RowCount; i++)
             {
                 var v_dr = m_grv.GetDataRow(i);
                 DataRow[] v_dr_1_nv = v_ds.Tables[0].Select("MA_NV ='" + v_dr[0].ToString() + "'");
                 if (v_dr_1_nv.Count() != 0)
-                {
-                    v_list_nv_da_cham_cong.Add(v_dr[0].ToString());
-                }
+                    v_so_nv_da_cham_cong++;
             }
-            if (v_list_nv_da_cham_cong.Count == 0)
-            {
-                return true;
-            }
-            else
-            {
-                m_so_nv_da_cham_cong = v_list_nv_da_cham_cong.Count;
-                return false;
-            }
+            return v_so_nv_da_cham_cong;
         }
 
         private bool checkBangChamCong()
         {
             //int v_int_dem_cham_cong_sai = 0;
-            List<string> v_list_nv_ko_ton_tai = new List<string>();
-            v_list_nv_ko_ton_tai = check_ma_nv_ko_ton_tai();
-            if (v_list_nv_ko_ton_tai.Count() == 0)
+            if (m_grv.Columns[m_grv.Columns.Count - 1].GetCaption().ToString().ToUpper() != "HSK")
             {
-                List<string> v_list_ngay_cong_ko_ton_tai = new List<string>();
-                v_list_ngay_cong_ko_ton_tai = check_ngay_cong_ton_tai_yn();
-                if (v_list_ngay_cong_ko_ton_tai.Count == 0)
-                {
-                    if (m_grv.Columns[m_grv.Columns.Count - 1].GetCaption().ToString().ToUpper() == "HSK")
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Bạn chưa nhập hệ số chất lượng. Vui lòng kiểm tra lại");
-                        return false;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Không tồn tại mã ngày công '" + string.Join(", ", v_list_ngay_cong_ko_ton_tai) + "'");
-                    return false;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Không tồn tại mã nhân viên '" + string.Join(", ", v_list_nv_ko_ton_tai) + "'");
+                XtraMessageBox.Show("Bạn chưa nhập hệ số chất lượng. \nVui lòng kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            List<string> v_list_nv_ko_ton_tai = check_ma_nv_ko_ton_tai();
+            if (v_list_nv_ko_ton_tai.Count !=0)
+            {
+                string v_str_error = "Không tồn tại mã nhân viên '" + string.Join(", ", v_list_nv_ko_ton_tai)+ "'\nVui lòng kiểm tra lại!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }                           
+            if (check_ngay_cong_ko_ton_tai())
+            {
+                string v_str_error = "Không tồn tại mã ngày công '" + string.Join(" ", m_list_ngay_cong_ko_ton_tai) + "'\nVui Lòng kiểm tra lại!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }           
+            return true;
         }
 
-        private List<string> check_ngay_cong_ton_tai_yn()
+        private bool check_ngay_cong_ko_ton_tai()
         {
-            List<string> v_list_ngay_cong_ko_ton_tai = new List<string>();
+            m_list_ngay_cong_ko_ton_tai.Clear();
             for (int i = 0; i < m_grv.RowCount; i++)
             {
                 var v_dr = m_grv.GetDataRow(i);
                 for (int j = 2; j < m_grv.Columns.Count - 1; j++)
                 {
-                    if (v_dr[j].ToString().Trim() != "")
-                    {
-                        DataRow[] v_dr_cham_cong = m_ds_ngay_cong.Tables[0].Select("MA_NGAY_CONG = '" + v_dr[j].ToString().Substring(2).ToUpper() + "'");
-                        if (v_dr_cham_cong.Count() == 0 && !v_list_ngay_cong_ko_ton_tai.Contains(v_dr[j].ToString()))
-                        {
-                            v_list_ngay_cong_ko_ton_tai.Add(v_dr[j].ToString());
-                        }  
-                    }           
+                    get_lst_ngay_cong_ko_ton_tai(v_dr[j].ToString());      
                 }
             }
-            return v_list_ngay_cong_ko_ton_tai;
+            if (m_list_ngay_cong_ko_ton_tai.Count == 0)
+                return false;
+            return true;
+        }
+
+        private void get_lst_ngay_cong_ko_ton_tai(string ip_str_ngay_cong)
+        {
+            if (ip_str_ngay_cong.Trim() != "" && !m_list_ngay_cong_ko_ton_tai.Contains(ip_str_ngay_cong))
+            {
+                if (ip_str_ngay_cong.Trim().Length >=3)
+                {
+                    DataRow[] v_dr_cham_cong = m_ds_ngay_cong.Tables[0].Select("MA_NGAY_CONG = '" + ip_str_ngay_cong.Substring(2).ToUpper() + "'");
+                    if (v_dr_cham_cong.Count() != 0)
+                        return;
+                }
+                m_list_ngay_cong_ko_ton_tai.Add(ip_str_ngay_cong);
+            } 
         }
 
         private List<string> check_ma_nv_ko_ton_tai()
@@ -253,9 +253,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 var v_dr = m_grv.GetDataRow(i);
                 DataRow[] v_dr_1_nv = m_ds_nhan_vien.Tables[0].Select("MA_NV = '" + v_dr[0].ToString() + "'");
                 if (v_dr_1_nv.Count() == 0)
-                {
                     v_list_nv_ko_ton_tai.Add(v_dr[0].ToString());
-                }
             }
             return v_list_nv_ko_ton_tai;
         }
@@ -313,19 +311,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                     v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                     v_us.datNGAY_LAP = DateTime.Now;
                     if (ip_dataRow[i].ToString().Trim() == "")
-                    {
                         v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString());
-                    }
                     else
-                    {
-                        v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString().Substring(2));
-                    }                   
+                        v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString().Substring(2));                   
                     if (i == 2)
                         v_us.BeginTransaction();
                     else
-                    {
                         v_us.UseTransOfUSObject(m_us_gd_cham_cong);
-                    }
                     m_us_gd_cham_cong = v_us;
                     v_us.Insert();
                 }
@@ -342,13 +334,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 US_GD_HE_SO_CHAT_LUONG v_us_hsk = new US_GD_HE_SO_CHAT_LUONG();
                 if (ip_dataRow[ip_dataRow.Table.Columns.Count - 1] != DBNull.Value)
-                {
                     v_us_hsk.dcHE_SO_K = Convert.ToDecimal(ip_dataRow[ip_dataRow.Table.Columns.Count - 1]);
-                }
                 else
-                {
                     v_us_hsk.dcHE_SO_K = 0;
-                }
                 v_us_hsk.dcID_NHAN_VIEN = get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString());
                 v_us_hsk.dcTHANG = CIPConvert.ToDecimal(m_txt_thang.Text);
                 v_us_hsk.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text);
@@ -369,14 +357,19 @@ namespace BKI_DichVuMatDat.NghiepVu
         #endregion
 
         #region Events Handle
-        private void F696_Cham_cong_xls_Load(object sender, EventArgs e)
+        private void set_define_events()
         {
-            m_txt_thang.Text = DateTime.Now.Month.ToString();
-            m_txt_nam.Text = DateTime.Now.Year.ToString();
-            check_db_da_cham_cong();
-            m_lbl_thong_bao.Text = "Đã chấm công cho " + m_so_nv_da_cham_cong + " nhân viên";
+            m_cmd_mo_file_mau.Click +=m_cmd_mo_file_mau_Click;
+            m_cmd_chon_du_lieu.Click +=m_cmd_chon_du_lieu_Click;
+            m_cmd_nhap_cham_cong.Click +=m_cmd_nhap_cham_cong_Click;
+            this.Load +=F696_Cham_cong_xls_Load;
         }
 
+
+        private void F696_Cham_cong_xls_Load(object sender, EventArgs e)
+        {
+            
+        }
 
         private void m_cmd_nhap_cham_cong_Click(object sender, EventArgs e)
         {

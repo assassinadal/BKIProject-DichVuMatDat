@@ -79,6 +79,7 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dM_NHAN_VIENTableAdapter = new BKI_DichVuMatDat.DVMDDataSet2TableAdapters.DM_NHAN_VIENTableAdapter();
+            this.colNGUOI_BAO_LANH = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dVMDDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVMDDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDMNHANVIENBindingSource)).BeginInit();
@@ -147,7 +148,7 @@
             this.colNAM_TOT_NGHIEP.FieldName = "NAM_TOT_NGHIEP";
             this.colNAM_TOT_NGHIEP.Name = "colNAM_TOT_NGHIEP";
             this.colNAM_TOT_NGHIEP.Visible = true;
-            this.colNAM_TOT_NGHIEP.VisibleIndex = 28;
+            this.colNAM_TOT_NGHIEP.VisibleIndex = 29;
             this.colNAM_TOT_NGHIEP.Width = 27;
             // 
             // colTOT_NGHIEP_TAI
@@ -156,7 +157,7 @@
             this.colTOT_NGHIEP_TAI.FieldName = "TOT_NGHIEP_TAI";
             this.colTOT_NGHIEP_TAI.Name = "colTOT_NGHIEP_TAI";
             this.colTOT_NGHIEP_TAI.Visible = true;
-            this.colTOT_NGHIEP_TAI.VisibleIndex = 29;
+            this.colTOT_NGHIEP_TAI.VisibleIndex = 30;
             this.colTOT_NGHIEP_TAI.Width = 27;
             // 
             // colNGAY_VAO_HANG_KHONG
@@ -314,6 +315,7 @@
             this.colNGAY_VAO_HANG_KHONG,
             this.colNGAY_TIEP_NHAN_VAO_TCT,
             this.colNGAY_CHINH_THUC_TIEP_NHAN,
+            this.colNGUOI_BAO_LANH,
             this.colHO_TEN,
             this.colTEN_DON_VI,
             this.colCHUC_VU,
@@ -391,7 +393,7 @@
             this.colNGAN_HANG.FieldName = "NGAN_HANG";
             this.colNGAN_HANG.Name = "colNGAN_HANG";
             this.colNGAN_HANG.Visible = true;
-            this.colNGAN_HANG.VisibleIndex = 17;
+            this.colNGAN_HANG.VisibleIndex = 18;
             this.colNGAN_HANG.Width = 27;
             // 
             // colNGAY_CAP_THE
@@ -400,7 +402,7 @@
             this.colNGAY_CAP_THE.FieldName = "NGAY_CAP_THE";
             this.colNGAY_CAP_THE.Name = "colNGAY_CAP_THE";
             this.colNGAY_CAP_THE.Visible = true;
-            this.colNGAY_CAP_THE.VisibleIndex = 18;
+            this.colNGAY_CAP_THE.VisibleIndex = 19;
             this.colNGAY_CAP_THE.Width = 27;
             // 
             // colNGAY_HET_HAN_THE
@@ -409,7 +411,7 @@
             this.colNGAY_HET_HAN_THE.FieldName = "NGAY_HET_HAN_THE";
             this.colNGAY_HET_HAN_THE.Name = "colNGAY_HET_HAN_THE";
             this.colNGAY_HET_HAN_THE.Visible = true;
-            this.colNGAY_HET_HAN_THE.VisibleIndex = 19;
+            this.colNGAY_HET_HAN_THE.VisibleIndex = 20;
             this.colNGAY_HET_HAN_THE.Width = 27;
             // 
             // colNGAY_SINH
@@ -418,7 +420,7 @@
             this.colNGAY_SINH.FieldName = "NGAY_SINH";
             this.colNGAY_SINH.Name = "colNGAY_SINH";
             this.colNGAY_SINH.Visible = true;
-            this.colNGAY_SINH.VisibleIndex = 20;
+            this.colNGAY_SINH.VisibleIndex = 21;
             this.colNGAY_SINH.Width = 27;
             // 
             // colHON_NHAN
@@ -427,7 +429,7 @@
             this.colHON_NHAN.FieldName = "HON_NHAN";
             this.colHON_NHAN.Name = "colHON_NHAN";
             this.colHON_NHAN.Visible = true;
-            this.colHON_NHAN.VisibleIndex = 21;
+            this.colHON_NHAN.VisibleIndex = 22;
             this.colHON_NHAN.Width = 27;
             // 
             // colSO_CMT
@@ -445,7 +447,7 @@
             this.colNGAY_CAP.FieldName = "NGAY_CAP";
             this.colNGAY_CAP.Name = "colNGAY_CAP";
             this.colNGAY_CAP.Visible = true;
-            this.colNGAY_CAP.VisibleIndex = 22;
+            this.colNGAY_CAP.VisibleIndex = 23;
             this.colNGAY_CAP.Width = 27;
             // 
             // colNOI_CAP
@@ -454,7 +456,7 @@
             this.colNOI_CAP.FieldName = "NOI_CAP";
             this.colNOI_CAP.Name = "colNOI_CAP";
             this.colNOI_CAP.Visible = true;
-            this.colNOI_CAP.VisibleIndex = 23;
+            this.colNOI_CAP.VisibleIndex = 24;
             this.colNOI_CAP.Width = 27;
             // 
             // colQUOC_TICH
@@ -463,7 +465,7 @@
             this.colQUOC_TICH.FieldName = "QUOC_TICH";
             this.colQUOC_TICH.Name = "colQUOC_TICH";
             this.colQUOC_TICH.Visible = true;
-            this.colQUOC_TICH.VisibleIndex = 24;
+            this.colQUOC_TICH.VisibleIndex = 25;
             this.colQUOC_TICH.Width = 27;
             // 
             // colDAN_TOC
@@ -472,7 +474,7 @@
             this.colDAN_TOC.FieldName = "DAN_TOC";
             this.colDAN_TOC.Name = "colDAN_TOC";
             this.colDAN_TOC.Visible = true;
-            this.colDAN_TOC.VisibleIndex = 25;
+            this.colDAN_TOC.VisibleIndex = 26;
             this.colDAN_TOC.Width = 27;
             // 
             // colTON_GIAO
@@ -481,7 +483,7 @@
             this.colTON_GIAO.FieldName = "TON_GIAO";
             this.colTON_GIAO.Name = "colTON_GIAO";
             this.colTON_GIAO.Visible = true;
-            this.colTON_GIAO.VisibleIndex = 26;
+            this.colTON_GIAO.VisibleIndex = 27;
             this.colTON_GIAO.Width = 27;
             // 
             // colNOI_SINH
@@ -490,7 +492,7 @@
             this.colNOI_SINH.FieldName = "NOI_SINH";
             this.colNOI_SINH.Name = "colNOI_SINH";
             this.colNOI_SINH.Visible = true;
-            this.colNOI_SINH.VisibleIndex = 27;
+            this.colNOI_SINH.VisibleIndex = 28;
             this.colNOI_SINH.Width = 27;
             // 
             // colQUE_QUAN
@@ -539,6 +541,14 @@
             // dM_NHAN_VIENTableAdapter
             // 
             this.dM_NHAN_VIENTableAdapter.ClearBeforeFill = true;
+            // 
+            // colNGUOI_BAO_LANH
+            // 
+            this.colNGUOI_BAO_LANH.Caption = "Người bảo lãnh";
+            this.colNGUOI_BAO_LANH.FieldName = "NGUOI_BAO_LANH";
+            this.colNGUOI_BAO_LANH.Name = "colNGUOI_BAO_LANH";
+            this.colNGUOI_BAO_LANH.Visible = true;
+            this.colNGUOI_BAO_LANH.VisibleIndex = 17;
             // 
             // F152_DANH_SACH_NHAN_VIEN_EXCEL
             // 
@@ -619,6 +629,7 @@
         private DVMDDataSet2 dVMDDataSet2;
         private System.Windows.Forms.BindingSource dMNHANVIENBindingSource;
         private DVMDDataSet2TableAdapters.DM_NHAN_VIENTableAdapter dM_NHAN_VIENTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGUOI_BAO_LANH;
 
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f151_Danh_sach_nhan_vien_master));
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -68,8 +69,8 @@
             this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dVMDDataSet1 = new BKI_DichVuMatDat.DVMDDataSet1();
-            this.dVMDDataSet1BindingSource = new System.Windows.Forms.BindingSource();
-            this.vDMNHANVIENBindingSource = new System.Windows.Forms.BindingSource();
+            this.dVMDDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vDMNHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.v_DM_NHAN_VIENTableAdapter = new BKI_DichVuMatDat.DVMDDataSet1TableAdapters.V_DM_NHAN_VIENTableAdapter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label1 = new System.Windows.Forms.Label();
@@ -80,6 +81,7 @@
             this.m_cmd_ma_nv_tiep_theo = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_sua = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
+            this.colNGUOI_BAO_LANH = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVMDDataSet1)).BeginInit();
@@ -141,6 +143,7 @@
             this.colNGAY_VAO_HANG_KHONG,
             this.colNGAY_TIEP_NHAN_VAO_TCT,
             this.colNGAY_CHINH_THUC_TIEP_NHAN,
+            this.colNGUOI_BAO_LANH,
             this.colHO_TEN,
             this.colTEN_DON_VI,
             this.colCHUC_VU});
@@ -565,7 +568,7 @@
             this.colTEN_DON_VI.Name = "colTEN_DON_VI";
             this.colTEN_DON_VI.OptionsColumn.AllowEdit = false;
             this.colTEN_DON_VI.Visible = true;
-            this.colTEN_DON_VI.VisibleIndex = 32;
+            this.colTEN_DON_VI.VisibleIndex = 33;
             this.colTEN_DON_VI.Width = 100;
             // 
             // colCHUC_VU
@@ -577,7 +580,7 @@
             this.colCHUC_VU.Name = "colCHUC_VU";
             this.colCHUC_VU.OptionsColumn.AllowEdit = false;
             this.colCHUC_VU.Visible = true;
-            this.colCHUC_VU.VisibleIndex = 33;
+            this.colCHUC_VU.VisibleIndex = 34;
             this.colCHUC_VU.Width = 100;
             // 
             // dVMDDataSet1
@@ -692,6 +695,14 @@
             this.m_cmd_them.TabIndex = 3;
             this.m_cmd_them.Text = "Thêm";
             // 
+            // colNGUOI_BAO_LANH
+            // 
+            this.colNGUOI_BAO_LANH.Caption = "Người bảo lãnh";
+            this.colNGUOI_BAO_LANH.FieldName = "NGUOI_BAO_LANH";
+            this.colNGUOI_BAO_LANH.Name = "colNGUOI_BAO_LANH";
+            this.colNGUOI_BAO_LANH.Visible = true;
+            this.colNGUOI_BAO_LANH.VisibleIndex = 32;
+            // 
             // f151_Danh_sach_nhan_vien_master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -773,5 +784,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tai_file_excel_mau;
         private DevExpress.XtraEditors.SimpleButton m_cmd_ma_nv_tiep_theo;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGUOI_BAO_LANH;
     }
 }

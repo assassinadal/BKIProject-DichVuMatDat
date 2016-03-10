@@ -13,6 +13,7 @@ using BKI_DichVuMatDat.US;
 using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.DS.CDBNames;
 using IP.Core.IPCommon;
+using DevExpress.XtraEditors;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -23,7 +24,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             InitializeComponent();
         }
 
-        public void display_for_update(ref decimal ip_id_loai_ngay_cong){
+        public void display_for_update(ref decimal ip_id_loai_ngay_cong)
+        {
             get_loai_ngay_cong();
             m_sle_loai_ngay_cong.EditValue = ip_id_loai_ngay_cong;
             this.ShowDialog();

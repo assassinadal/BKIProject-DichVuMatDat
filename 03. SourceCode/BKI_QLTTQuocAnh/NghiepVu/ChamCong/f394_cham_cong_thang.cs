@@ -24,38 +24,9 @@ namespace BKI_DichVuMatDat.NghiepVu
         public f394_cham_cong_thang()
         {
             InitializeComponent();
+            set_initial_form_load();
         }
         
-        private void m_cmd_loc_Click(object sender, EventArgs e)
-        {
-            if (check_validate_data_is_ok(m_txt_thang.Text) && check_validate_data_is_ok(m_txt_nam.Text))
-            {           
-                if (m_sle_chon_nhan_vien.EditValue.ToString() == "" || m_sle_chon_nhan_vien.EditValue == null)
-                {
-                    m_id_nhan_vien = -1;                   
-                }
-                else
-                {
-                    m_id_nhan_vien = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue.ToString());
-                }
-                load_data_to_m_pv(m_id_nhan_vien);        
-            }
-            else
-            {
-                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_DU_LIEU_NHAP_CHUA_HOP_LE);
-            }    
-        }
-
-
-        private bool check_validate_data_is_ok(string ip_str_thang_cham_cong)
-        {
-            for (int i = 0; i < ip_str_thang_cham_cong.Length; i++)
-            {
-                if (char.IsDigit(ip_str_thang_cham_cong[i]) == false)
-                    return false;
-            }
-            return true;
-        }
 
         private void load_data_to_m_pv(decimal m_id_nhan_vien)
         {
@@ -68,11 +39,6 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private DataSet load_data_to_ds_v_dm_nv()
         {
-            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            //DataSet v_ds = new DataSet();
-            //v_ds.Tables.Add(new DataTable());
-            //throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
-            //v_us.FillDatasetWithTableName(v_ds, "V_DM_NHAN_VIEN");
             US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
             DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
             v_us.FillDataset(v_ds);
@@ -86,6 +52,33 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
 
+        private void set_initial_form_load()
+        {
+            m_txt_thang.Text = DateTime.Now.Month.ToString();
+            m_txt_nam.Text = DateTime.Now.Year.ToString();
+            set_define_events();
+        }
+
+        private void set_define_events()
+        {
+            m_cmd_search.Click += m_cmd_search_Click;
+            this.Load +=f394_cham_cong_thang_Load;
+        }
+
+        void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            if (m_txt_thang.Text.Trim() != "" && m_txt_nam.Text.Trim() !="")
+            {
+                if (m_sle_chon_nhan_vien.EditValue.ToString() == "" || m_sle_chon_nhan_vien.EditValue == null)
+                    m_id_nhan_vien = -1;
+                else
+                    m_id_nhan_vien = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue.ToString());
+                load_data_to_m_pv(m_id_nhan_vien);
+            }
+            else
+                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_DU_LIEU_NHAP_CHUA_HOP_LE); 
+        }
+
         private void m_pv_CellDoubleClick(object sender, DevExpress.XtraPivotGrid.PivotCellEventArgs e)
         {
             try
@@ -94,12 +87,16 @@ namespace BKI_DichVuMatDat.NghiepVu
                 PivotDrillDownDataSource v_ds = e.CreateDrillDownDataSource();
                 PivotDrillDownDataRow v_dr = v_ds[0];
                 var v_id_loai_ngay_cong = CIPConvert.ToDecimal(v_dr["ID_LOAI_NGAY_CONG"].ToString());
+                //var v_id_nhan_vien = CIPConvert.ToDecimal(v_dr["ID_NHAN_VIEN"].ToString());
                 v_f.display_for_update(ref v_id_loai_ngay_cong);
                 US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG(CIPConvert.ToDecimal(v_dr["ID"].ToString()));
-                v_us.dcID_LOAI_NGAY_CONG = v_id_loai_ngay_cong;
-                v_us.Update();
-                XtraMessageBox.Show("Sửa dữ liệu chấm công thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                load_data_to_m_pv(Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                if (v_us.dcID_LOAI_NGAY_CONG != v_id_loai_ngay_cong)
+                {
+                    v_us.dcID_LOAI_NGAY_CONG = v_id_loai_ngay_cong;
+                    v_us.Update();
+                    XtraMessageBox.Show("Sửa dữ liệu chấm công thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    load_data_to_m_pv(Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                }               
             }
             catch (Exception v_e)
             {
@@ -110,7 +107,15 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void f394_cham_cong_thang_Load(object sender, EventArgs e)
         {
-            load_data_to_sle_chon_nhan_vien();
+            try
+            {
+                load_data_to_m_pv(-1);
+                load_data_to_sle_chon_nhan_vien();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }     
         }
         
 

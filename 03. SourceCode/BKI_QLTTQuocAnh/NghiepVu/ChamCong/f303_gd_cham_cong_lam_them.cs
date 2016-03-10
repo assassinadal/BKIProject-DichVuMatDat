@@ -21,23 +21,39 @@ namespace BKI_DichVuMatDat.NghiepVu
         public f303_gd_cham_cong_lam_them()
         {
             InitializeComponent();
+            set_initial_form_load();
         }
 
-        private void m_txt_chon_file_Click(object sender, EventArgs e)
+        private void set_initial_form_load()
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            m_txt_thang.Text = DateTime.Now.Month.ToString();
+            m_txt_nam.Text = DateTime.Now.Year.ToString();
+            set_define_events();
+        }
 
-            // Set filter options and filter index.
-            openFileDialog1.Filter = "xlsx Files|*.xlsx|xls Files|*.xls|All Files (*.*)|*.*";
-            openFileDialog1.Multiselect = false;
-            var userClickedOK = openFileDialog1.ShowDialog();
+        private void set_define_events()
+        {
+            m_cmd_tai_file_mau.Click += m_cmd_tai_file_mau_Click;
+            m_cmd_chon_du_lieu.Click += m_cmd_chon_du_lieu_Click;
+        }
+
+        void m_cmd_chon_du_lieu_Click(object sender, EventArgs e)
+        {
             try
             {
-                if (userClickedOK == System.Windows.Forms.DialogResult.OK)
-                {
-                    m_txt_path = openFileDialog1.FileName;
-                    WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
-                }
+                WinFormControls.load_xls_to_gridview(WinFormControls.openFileDialog(), m_grc);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_tai_file_mau_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                WinFormControls.openTemplate("ChamCongLamThem.xlsx");
             }
             catch (Exception v_e)
             {
@@ -120,11 +136,6 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void insert_vao_csdl(DataRow v_dr)
         {
-            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            //DataSet v_ds_nhan_vien = new DataSet();
-            //v_ds_nhan_vien.Tables.Add(new DataTable());
-            //v_us.FillDatasetWithQuery(v_ds_nhan_vien, "select * from DM_NHAN_VIEN where MA_NV=" + v_dr["MA_NV"].ToString());
-
             US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
             DataSet v_ds_nhan_vien = new DataSet();
             v_ds_nhan_vien.Tables.Add(new DataTable());
@@ -181,29 +192,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void m_txt_tai_file_excel_mau_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                string fileName = "ChamCongLamThem.xlsx";
-                string sourcePath = (Directory.GetCurrentDirectory() + "\\Template");
-                string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                string sourceFile = System.IO.Path.Combine(sourcePath, fileName);
-                string destFile = System.IO.Path.Combine(targetPath, fileName);
-                if (!System.IO.Directory.Exists(targetPath))
-                {
-                    System.IO.Directory.CreateDirectory(targetPath);
-                }
-                System.IO.File.Copy(sourceFile, destFile, true);
-                string newpath = targetPath + "\\ChamCongLamThem.xlsx";
-                var excel = new Microsoft.Office.Interop.Excel.Application();
-                excel.Visible = true;
-                Microsoft.Office.Interop.Excel.Workbooks books = excel.Workbooks;
-                Microsoft.Office.Interop.Excel.Workbook openexcel = books.Open(newpath);
-            }
-            catch (Exception v_e)
-            {
-                MessageBox.Show("File này đang được mở. Vui lòng đóng file lại để có thể thực hiện được tác vụ này!");
-            }
+            
         }
 
       

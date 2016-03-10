@@ -49,7 +49,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(383, 191);
+            this.panel2.Size = new System.Drawing.Size(383, 123);
             this.panel2.TabIndex = 0;
             // 
             // panel1
@@ -57,7 +57,7 @@
             this.panel1.Controls.Add(this.m_cmd_save);
             this.panel1.Controls.Add(this.m_cmd_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 154);
+            this.panel1.Location = new System.Drawing.Point(0, 86);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(383, 37);
             this.panel1.TabIndex = 1;
@@ -89,6 +89,8 @@
             this.m_sle_loai_ngay_cong.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_sle_loai_ngay_cong.Location = new System.Drawing.Point(0, 0);
             this.m_sle_loai_ngay_cong.Name = "m_sle_loai_ngay_cong";
+            this.m_sle_loai_ngay_cong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_sle_loai_ngay_cong.Properties.Appearance.Options.UseFont = true;
             this.m_sle_loai_ngay_cong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_loai_ngay_cong.Properties.NullText = "--Chọn loại ngày công--";
@@ -127,7 +129,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(383, 191);
+            this.ClientSize = new System.Drawing.Size(383, 123);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "f394_cham_cong_thang_detail";

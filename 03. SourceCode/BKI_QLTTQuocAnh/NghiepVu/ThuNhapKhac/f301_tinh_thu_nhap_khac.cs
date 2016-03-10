@@ -336,8 +336,10 @@ namespace BKI_DichVuMatDat.NghiepVu
                     return;
                 }
             }
+            splashScreenManager1.ShowWaitForm();
             delete_du_lieu_cu(m_us_gd_quy.dcID);
-            insert_gd_thu_nhap_khac();          
+            insert_gd_thu_nhap_khac();
+            splashScreenManager1.CloseWaitForm();
             set_grid_da_luu_du_lieu();
             XtraMessageBox.Show("Lưu dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

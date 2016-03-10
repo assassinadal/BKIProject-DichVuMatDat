@@ -171,6 +171,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                 decimal v_id_quy_tnk = CIPConvert.ToDecimal(v_dr[0].ToString());
                 f355_tnk_chi_tiet_quy_thu_nhap_khac v_f = new f355_tnk_chi_tiet_quy_thu_nhap_khac(v_id_quy_tnk);
                 v_f.ShowDialog();
+                load_data_to_grid();
             }
             catch (Exception v_e)
             {

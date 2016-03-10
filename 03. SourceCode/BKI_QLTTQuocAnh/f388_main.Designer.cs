@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -128,6 +129,7 @@
             this.m_cmd_import_tu_excel = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_tnk_ngoai_bang_luong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_quan_ly_quy_tnk = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_bc_athk_bsl_lt = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -153,16 +155,16 @@
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.m_cmd_bc_athk_bsl_lt = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -280,7 +282,7 @@
             this.m_cmd_quan_ly_quy_tnk,
             this.m_cmd_bc_athk_bsl_lt});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 118;
+            this.ribbon.MaxItemId = 121;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1188,6 +1190,15 @@
             this.m_cmd_quan_ly_quy_tnk.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_he_so_luong_;
             this.m_cmd_quan_ly_quy_tnk.Name = "m_cmd_quan_ly_quy_tnk";
             // 
+            // m_cmd_bc_athk_bsl_lt
+            // 
+            this.m_cmd_bc_athk_bsl_lt.Caption = "Hệ số ATHK, BSL, LT";
+            this.m_cmd_bc_athk_bsl_lt.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_tham_so_;
+            this.m_cmd_bc_athk_bsl_lt.Id = 117;
+            this.m_cmd_bc_athk_bsl_lt.Name = "m_cmd_bc_athk_bsl_lt";
+            this.m_cmd_bc_athk_bsl_lt.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1502,14 +1513,13 @@
             this.barButtonItem6.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // m_cmd_bc_athk_bsl_lt
+            // ribbonPageGroup17
             // 
-            this.m_cmd_bc_athk_bsl_lt.Caption = "Hệ số ATHK, BSL, LT";
-            this.m_cmd_bc_athk_bsl_lt.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_tham_so_;
-            this.m_cmd_bc_athk_bsl_lt.Id = 117;
-            this.m_cmd_bc_athk_bsl_lt.Name = "m_cmd_bc_athk_bsl_lt";
-            this.m_cmd_bc_athk_bsl_lt.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.ribbonPageGroup17.ItemLinks.Add(this.m_cmd_bao_cao_dieu_kien_tinh_luong);
+            this.ribbonPageGroup17.ItemLinks.Add(this.m_cmd_bang_luong);
+            this.ribbonPageGroup17.ItemLinks.Add(this.m_cmd_bao_cao_tong_hop_v2);
+            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
+            this.ribbonPageGroup17.Text = "Tính lương";
             // 
             // f388_main
             // 
@@ -1674,5 +1684,6 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_quan_ly_quy_tnk;
         private DevExpress.XtraBars.BarButtonItem m_cmd_bc_athk_bsl_lt;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
     }
 }

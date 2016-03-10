@@ -120,7 +120,7 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN", this.colSO_TIEN, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_NOP_THUE", this.colSO_TIEN_NOP_THUE, "{0:n0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_THUC_LINH", this.colSO_TIEN_THUC_LINH, "{0:n0}"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HE_SO", this.colHE_SO, "")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HE_SO", this.colHE_SO, "{0:n2}")});
             this.m_grv_main.Name = "m_grv_main";
             this.m_grv_main.OptionsBehavior.AutoExpandAllGroups = true;
             this.m_grv_main.OptionsBehavior.Editable = false;
@@ -253,12 +253,12 @@
             this.colHE_SO.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colHE_SO.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colHE_SO.Caption = "Hệ số";
-            this.colHE_SO.DisplayFormat.FormatString = "n0";
+            this.colHE_SO.DisplayFormat.FormatString = "{0:n2}";
             this.colHE_SO.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colHE_SO.FieldName = "HE_SO";
             this.colHE_SO.Name = "colHE_SO";
             this.colHE_SO.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HE_SO", "{0:n0}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HE_SO", "{0:n2}")});
             this.colHE_SO.Visible = true;
             this.colHE_SO.VisibleIndex = 4;
             this.colHE_SO.Width = 114;

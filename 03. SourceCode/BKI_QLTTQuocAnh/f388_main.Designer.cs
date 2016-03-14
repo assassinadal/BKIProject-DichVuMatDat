@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -155,10 +154,10 @@
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
@@ -831,6 +830,7 @@
             this.m_cmd_thuong_thu_nhap_khac.Name = "m_cmd_thuong_thu_nhap_khac";
             this.m_cmd_thuong_thu_nhap_khac.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.m_cmd_thuong_thu_nhap_khac.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_chuyen_trang_thai_LD
             // 
@@ -851,6 +851,7 @@
             this.m_cmd_ql_thuong_le_tet.Name = "m_cmd_ql_thuong_le_tet";
             this.m_cmd_ql_thuong_le_tet.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.m_cmd_ql_thuong_le_tet.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_bao_cao_tong_hop
             // 
@@ -1129,6 +1130,7 @@
             this.m_cmd_cac_khoan_khac.Id = 109;
             this.m_cmd_cac_khoan_khac.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.accounting;
             this.m_cmd_cac_khoan_khac.Name = "m_cmd_cac_khoan_khac";
+            this.m_cmd_cac_khoan_khac.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.m_cmd_cac_khoan_khac.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_cac_khoan_khac_ItemClick);
             // 
             // m_cmd_ds_nhan_vien
@@ -1181,6 +1183,7 @@
             this.m_cmd_tnk_ngoai_bang_luong.Id = 115;
             this.m_cmd_tnk_ngoai_bang_luong.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_luong_che_do_;
             this.m_cmd_tnk_ngoai_bang_luong.Name = "m_cmd_tnk_ngoai_bang_luong";
+            this.m_cmd_tnk_ngoai_bang_luong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.m_cmd_tnk_ngoai_bang_luong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tnk_ngoai_bang_luong_ItemClick);
             // 
             // m_cmd_quan_ly_quy_tnk

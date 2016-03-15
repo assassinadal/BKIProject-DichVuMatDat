@@ -86,6 +86,24 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             load_data_to_sle_chon_nhan_vien();
         }
+
+        private void m_cmd_xuat_bao_cao_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK )
+                {
+                    m_pv.ExportToXlsx(saveFileDialog1.FileName);
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         
 
         //private DataTable get_gd_cham_cong(string ip_str_ngay_cham_cong)

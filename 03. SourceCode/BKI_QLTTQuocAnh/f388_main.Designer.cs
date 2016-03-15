@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -154,10 +155,10 @@
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
@@ -1320,11 +1321,11 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_cham_cong_nv);
-            this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_cham_cong_thang);
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_cham_cong_xls);
+            this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_cham_cong_thang);
+            this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_cham_cong_lam_them);
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_hs_chat_luong_by_nv);
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_hs_chat_luong_xls);
-            this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_cham_cong_lam_them);
             this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_so_ngay_lam_them);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Chấm công";

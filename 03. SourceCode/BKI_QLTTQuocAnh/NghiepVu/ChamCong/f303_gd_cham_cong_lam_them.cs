@@ -221,14 +221,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (!System.IO.Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)))
-                {
-                    WinFormControls.openTemplate("ChamCongLamThem.xlsx");
-                }
-                else
-                {
-                    XtraMessageBox.Show("File excel đang được mở. \nVui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
+                WinFormControls.openTemplate("ChamCongLamThem.xlsx");
             }
             catch (Exception v_e)
             {

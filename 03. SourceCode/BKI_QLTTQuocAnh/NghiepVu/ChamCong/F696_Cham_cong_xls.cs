@@ -36,17 +36,16 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_txt_thang.Text = DateTime.Now.Month.ToString();
             m_txt_nam.Text = DateTime.Now.Year.ToString();
-            check_db_da_cham_cong();
-            m_lbl_trang_thai_cham_cong.Text = "Đã chấm công cho " + m_so_nv_da_cham_cong + " nhân viên";
+            set_trang_thai_cham_cong();
             set_define_events();
         }
         #endregion
 
         #region Members
         US_GD_CHAM_CONG m_us_gd_cham_cong = new US_GD_CHAM_CONG();
+        List<string> m_list_ngay_cong_ko_ton_tai = new List<string>();
         DataSet m_ds_ngay_cong = new DataSet();
         DataSet m_ds_nhan_vien = new DataSet();
-        List<string> m_list_ngay_cong_ko_ton_tai = new List<string>();
         int m_so_nv_da_cham_cong = 0;
         #endregion
 
@@ -96,7 +95,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grv.Columns.Clear();
             splashScreenManager1.ShowWaitForm();
             WinFormControls.load_xls_to_gridview(ip_path, m_grc);
-            format_gridview();
+            CHRMCommon.make_stt_indicator(m_grv);
+            //format_gridview();
             splashScreenManager1.CloseWaitForm();
         }
 
@@ -173,14 +173,21 @@ namespace BKI_DichVuMatDat.NghiepVu
             return true;
         }
 
+        private decimal get_so_luong_cham_cong()
+        {
+            DS_GD_CHAM_CONG v_ds = new DS_GD_CHAM_CONG();
+            US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
+            v_us.FillDatasetChamCong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
+            DataTable v_dt = v_ds.Tables[0].DefaultView.ToTable(true, "ID_NHAN_VIEN");
+            return v_dt.Rows.Count;
+        }
+
         private int check_db_da_cham_cong()
         {
             int v_so_nv_da_cham_cong = 0;
             DS_GD_CHAM_CONG v_ds = new DS_GD_CHAM_CONG();
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             v_us.FillDatasetChamCong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
-            DataTable v_dt = v_ds.Tables[0].DefaultView.ToTable(true, "ID_NHAN_VIEN");
-            m_so_nv_da_cham_cong = v_dt.Rows.Count;
             for (int i = 0; i < m_grv.RowCount; i++)
             {
                 var v_dr = m_grv.GetDataRow(i);
@@ -193,26 +200,60 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private bool checkBangChamCong()
         {
-            //int v_int_dem_cham_cong_sai = 0;
             if (m_grv.Columns[m_grv.Columns.Count - 1].GetCaption().ToString().ToUpper() != "HSK")
             {
                 XtraMessageBox.Show("Bạn chưa nhập hệ số chất lượng. \nVui lòng kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            List<string> v_list_nv_ko_ton_tai = check_ma_nv_ko_ton_tai();
-            if (v_list_nv_ko_ton_tai.Count !=0)
-            {
-                string v_str_error = "Không tồn tại mã nhân viên '" + string.Join(", ", v_list_nv_ko_ton_tai)+ "'\nVui lòng kiểm tra lại!";
-                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (check_he_so_chat_luong_sai())
                 return false;
-            }                           
-            if (check_ngay_cong_ko_ton_tai())
-            {
-                string v_str_error = "Không tồn tại mã ngày công '" + string.Join(" ", m_list_ngay_cong_ko_ton_tai) + "'\nVui Lòng kiểm tra lại!";
-                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (check_ma_nv_duplicate())
                 return false;
-            }           
+            else if (check_ma_nv_ko_ton_tai())
+                return false;
+            else if (check_ngay_cong_ko_ton_tai())
+                return false;          
             return true;
+            
+        }
+
+        private bool check_ma_nv_duplicate()
+        {
+            DataTable v_dt = new DataTable();
+            v_dt.Columns.Add();
+            for (int i = 0; i < m_grv.RowCount; i++)
+            {
+                var v_dr = m_grv.GetDataRow(i);
+                v_dt.Rows.Add(v_dr[0]);
+            }
+            var duplicate = v_dt.AsEnumerable().GroupBy(r => r[0]).Where(gr => gr.Count() > 1).ToList();
+            if (duplicate.Any())
+            {
+                string v_str = "Mã nhân viên '" + string.Join(",", duplicate.Select(dupl => dupl.Key)) + "' đang bị trùng. \nVui lòng kiểm tra lại!";
+                XtraMessageBox.Show(v_str, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            return false;
+        }
+
+        private bool check_he_so_chat_luong_sai()
+        {
+            List<string> v_lst_nv_sai_hsk = new List<string>();
+            for (int i = 0; i < m_grv.RowCount; i++)
+            {
+                var v_dr = m_grv.GetDataRow(i);
+                decimal v_dc_he_so_k;
+                if (v_dr[32].ToString().Trim()!="" && !decimal.TryParse(v_dr[4].ToString(), out v_dc_he_so_k))
+                    v_lst_nv_sai_hsk.Add(v_dr[0].ToString());
+            }
+            if (v_lst_nv_sai_hsk.Count == 0)
+                return false;
+            else
+            {
+                string v_str = "Vui lòng kiểm tra lại hệ số chất lượng của nhân viên '" + string.Join(",", v_lst_nv_sai_hsk) + "'";
+                XtraMessageBox.Show(v_str, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
         }
 
         private bool check_ngay_cong_ko_ton_tai()
@@ -228,7 +269,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             if (m_list_ngay_cong_ko_ton_tai.Count == 0)
                 return false;
-            return true;
+            string v_str_error = "Không tồn tại mã ngày công '" + string.Join(" ", m_list_ngay_cong_ko_ton_tai) + "'\nVui lòng kiểm tra lại!";
+            XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return true;            
         }
 
         private void get_lst_ngay_cong_ko_ton_tai(string ip_str_ngay_cong)
@@ -245,7 +288,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             } 
         }
 
-        private List<string> check_ma_nv_ko_ton_tai()
+        private bool check_ma_nv_ko_ton_tai()
         {
             List<string> v_list_nv_ko_ton_tai = new List<string>();
             for (int i = 0; i < m_grv.RowCount; i++)
@@ -255,12 +298,17 @@ namespace BKI_DichVuMatDat.NghiepVu
                 if (v_dr_1_nv.Count() == 0)
                     v_list_nv_ko_ton_tai.Add(v_dr[0].ToString());
             }
-            return v_list_nv_ko_ton_tai;
+            if (v_list_nv_ko_ton_tai.Count == 0)
+                return false;
+            string v_str_error = "Không tồn tại mã nhân viên '" + string.Join(", ", v_list_nv_ko_ton_tai)+ "'\nVui lòng kiểm tra lại!";
+            XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return true;
         }
 
         #endregion
         
         #region Luu du lieu vao db
+
         private void m_bgwk_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
@@ -283,6 +331,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_cmd_nhap_cham_cong.Text = "Lưu chấm công";
             this.m_cmd_nhap_cham_cong.Enabled = true;
             XtraMessageBox.Show("Lưu thành công!");
+            set_trang_thai_cham_cong();
         }
 
         private void luuChamCong(DataRow ip_dataRow)
@@ -352,6 +401,12 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void set_trang_thai_cham_cong()
+        {
+            m_grc.DataSource = null;
+            m_lbl_trang_thai_cham_cong.Text = "Đã chấm công cho " + get_so_luong_cham_cong() + " nhân viên";
+        }
         #endregion
 
         #endregion
@@ -408,7 +463,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         {           
             try
             {
-                load_data_2_grid(WinFormControls.openFileDialog());
+                string ip_path = WinFormControls.openFileDialog();
+                if (ip_path != "")
+                {
+                    load_data_2_grid(ip_path);
+                }
             }
             catch (Exception v_e)
             {

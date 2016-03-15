@@ -33,21 +33,23 @@
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition3 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition4 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition5 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f402_tong_hop_cham_cong));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.m_cmd_loc = new DevExpress.XtraEditors.SimpleButton();
             this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_txt_thang = new DevExpress.XtraEditors.TextEdit();
             this.m_lbl_thang = new DevExpress.XtraEditors.LabelControl();
             this.m_pv = new DevExpress.XtraPivotGrid.PivotGridControl();
-            this.m_cmd_loc = new DevExpress.XtraEditors.SimpleButton();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pivotGridField1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField2 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField3 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.m_cmd_xuat_bao_cao = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
@@ -59,6 +61,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.m_cmd_xuat_bao_cao);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.m_sle_chon_nhan_vien);
             this.panelControl1.Controls.Add(this.m_cmd_loc);
@@ -104,6 +107,32 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "MÃ_NV";
+            this.gridColumn1.FieldName = "MA_NV";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "HỌ TÊN";
+            this.gridColumn2.FieldName = "HO_TEN";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // m_cmd_loc
+            // 
+            this.m_cmd_loc.Image = global::BKI_DichVuMatDat.Properties.Resources.find;
+            this.m_cmd_loc.Location = new System.Drawing.Point(12, 81);
+            this.m_cmd_loc.Name = "m_cmd_loc";
+            this.m_cmd_loc.Size = new System.Drawing.Size(105, 38);
+            this.m_cmd_loc.TabIndex = 6;
+            this.m_cmd_loc.Text = "Lọc dữ liệu";
+            this.m_cmd_loc.Click += new System.EventHandler(this.m_cmd_loc_Click);
+            // 
             // m_txt_nam
             // 
             this.m_txt_nam.Location = new System.Drawing.Point(254, 19);
@@ -148,7 +177,7 @@
             pivotGridStyleFormatCondition1.ApplyToTotalCell = false;
             pivotGridStyleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
             pivotGridStyleFormatCondition1.Enabled = false;
-            pivotGridStyleFormatCondition1.FieldName = "pivotGridField3";
+            pivotGridStyleFormatCondition1.FieldName = "";
             pivotGridStyleFormatCondition1.Name = "NGAY_NGHI";
             pivotGridStyleFormatCondition1.Value1 = "";
             pivotGridStyleFormatCondition2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -177,7 +206,7 @@
             pivotGridStyleFormatCondition4.ApplyToTotalCell = false;
             pivotGridStyleFormatCondition4.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
             pivotGridStyleFormatCondition4.Expression = "[MA_NGAY_CONG] != \'X\' And [MA_NGAY_CONG]  != \'\'";
-            pivotGridStyleFormatCondition4.FieldName = "pivotGridField3";
+            pivotGridStyleFormatCondition4.FieldName = "";
             pivotGridStyleFormatCondition4.Name = "Khac_X";
             pivotGridStyleFormatCondition5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             pivotGridStyleFormatCondition5.Appearance.Options.UseBackColor = true;
@@ -199,32 +228,6 @@
             this.m_pv.Name = "m_pv";
             this.m_pv.Size = new System.Drawing.Size(758, 327);
             this.m_pv.TabIndex = 2;
-            // 
-            // m_cmd_loc
-            // 
-            this.m_cmd_loc.Image = global::BKI_DichVuMatDat.Properties.Resources.find;
-            this.m_cmd_loc.Location = new System.Drawing.Point(12, 81);
-            this.m_cmd_loc.Name = "m_cmd_loc";
-            this.m_cmd_loc.Size = new System.Drawing.Size(105, 38);
-            this.m_cmd_loc.TabIndex = 6;
-            this.m_cmd_loc.Text = "Lọc dữ liệu";
-            this.m_cmd_loc.Click += new System.EventHandler(this.m_cmd_loc_Click);
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "MÃ_NV";
-            this.gridColumn1.FieldName = "MA_NV";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "HỌ TÊN";
-            this.gridColumn2.FieldName = "HO_TEN";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
             // 
             // pivotGridField1
             // 
@@ -260,6 +263,16 @@
             this.pivotGridField3.Name = "pivotGridField3";
             this.pivotGridField3.Options.ShowGrandTotal = false;
             this.pivotGridField3.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Max;
+            // 
+            // m_cmd_xuat_bao_cao
+            // 
+            this.m_cmd_xuat_bao_cao.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_bao_cao.Image")));
+            this.m_cmd_xuat_bao_cao.Location = new System.Drawing.Point(137, 81);
+            this.m_cmd_xuat_bao_cao.Name = "m_cmd_xuat_bao_cao";
+            this.m_cmd_xuat_bao_cao.Size = new System.Drawing.Size(117, 38);
+            this.m_cmd_xuat_bao_cao.TabIndex = 7;
+            this.m_cmd_xuat_bao_cao.Text = "Xuất báo cáo";
+            this.m_cmd_xuat_bao_cao.Click += new System.EventHandler(this.m_cmd_xuat_bao_cao_Click);
             // 
             // f402_tong_hop_cham_cong
             // 
@@ -300,5 +313,6 @@
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField1;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField2;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField3;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_bao_cao;
     }
 }

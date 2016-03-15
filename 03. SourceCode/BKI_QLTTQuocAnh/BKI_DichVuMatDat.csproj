@@ -345,6 +345,12 @@
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\DTO_QUY_THU_NHAP_KHAC.cs" />
+    <Compile Include="NghiepVu\f322_lap_hop_dong_excel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f322_lap_hop_dong_excel.Designer.cs">
+      <DependentUpon>f322_lap_hop_dong_excel.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f341_dat_he_so_lns_lcd_v2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -362,6 +368,12 @@
     </Compile>
     <Compile Include="NghiepVu\f351_quan_ly_cong_tac_de.Designer.cs">
       <DependentUpon>f351_quan_ly_cong_tac_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\f352_quan_ly_cong_tac_excel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f352_quan_ly_cong_tac_excel.Designer.cs">
+      <DependentUpon>f352_quan_ly_cong_tac_excel.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\f364_quan_ly_cac_nhan_vien_co_luong_cung_de.cs">
       <SubType>Form</SubType>
@@ -521,7 +533,6 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1172,6 +1183,9 @@
     <EmbeddedResource Include="BaoCao\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f322_lap_hop_dong_excel.resx">
+      <DependentUpon>f322_lap_hop_dong_excel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f341_dat_he_so_lns_lcd_v2.resx">
       <DependentUpon>f341_dat_he_so_lns_lcd_v2.cs</DependentUpon>
     </EmbeddedResource>
@@ -1180,6 +1194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f351_quan_ly_cong_tac_de.resx">
       <DependentUpon>f351_quan_ly_cong_tac_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f352_quan_ly_cong_tac_excel.resx">
+      <DependentUpon>f352_quan_ly_cong_tac_excel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f364_quan_ly_cac_nhan_vien_co_luong_cung_de.resx">
       <DependentUpon>f364_quan_ly_cac_nhan_vien_co_luong_cung_de.cs</DependentUpon>

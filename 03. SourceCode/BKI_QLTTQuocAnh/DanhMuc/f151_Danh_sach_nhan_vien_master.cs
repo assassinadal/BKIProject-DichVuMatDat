@@ -99,19 +99,25 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         public void import_excel()
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            //OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
-            // Set filter options and filter index.
-            openFileDialog1.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
-            openFileDialog1.Multiselect = false;
-            var userClickedOK = openFileDialog1.ShowDialog();
+            //// Set filter options and filter index.
+            //openFileDialog1.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
+            //openFileDialog1.Multiselect = false;
+            //var userClickedOK = openFileDialog1.ShowDialog();
 
-            if (userClickedOK == System.Windows.Forms.DialogResult.OK)
+            //if (userClickedOK == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    m_txt_path = openFileDialog1.FileName;
+            //    F152_DANH_SACH_NHAN_VIEN_EXCEL v_f = new F152_DANH_SACH_NHAN_VIEN_EXCEL();
+            //    v_f.displayToInsertExcel(m_txt_path);
+            //    // WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
+            //}
+            m_txt_path = WinFormControls.openFileDialog();
+            if (m_txt_path != "")
             {
-                m_txt_path = openFileDialog1.FileName;
                 F152_DANH_SACH_NHAN_VIEN_EXCEL v_f = new F152_DANH_SACH_NHAN_VIEN_EXCEL();
                 v_f.displayToInsertExcel(m_txt_path);
-                // WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
             }
             load_data_to_grid();
         }

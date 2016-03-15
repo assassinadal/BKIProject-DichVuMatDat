@@ -339,6 +339,40 @@ namespace BKI_DichVuMatDat.US
             v_sp.fillDataSetByCommand(this, v_op_ds);
             return v_op_ds;
         }
-        
+
+        public void lap_hop_dong_moi_cho_nhan_vien( decimal ID_NHAN_VIEN
+                                                    , decimal ID_LOAI_HOP_DONG
+                                                    , string MA_HOP_DONG
+                                                    , DateTime NGAY_BAT_DAU
+                                                    , DateTime NGAY_KET_THUC
+                                                    , DateTime NGAY_KY_HOP_DONG
+                                                    , DateTime NGAY_LAP
+                                                    , string NGUOI_LAP
+                                                    , string DA_XOA
+                                                    , decimal ID_CD_LCD
+                                                    , decimal ID_MUC_LCD
+                                                    , decimal ID_CD_LNS
+                                                    , decimal ID_MUC_LNS
+                                                    , ref string op_str_mess)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_lap_hop_dong_moi_cho_nhan_vien");
+            v_sp.addDecimalInputParam("@ID_NHAN_VIEN", ID_NHAN_VIEN);
+            v_sp.addDecimalInputParam("@ID_LOAI_HOP_DONG", ID_LOAI_HOP_DONG);
+            v_sp.addNVarcharInputParam("@MA_HOP_DONG", MA_HOP_DONG);
+            v_sp.addDatetimeInputParam("@NGAY_BAT_DAU", NGAY_BAT_DAU);
+            v_sp.addDatetimeInputParam("@NGAY_KET_THUC", NGAY_KET_THUC);
+            v_sp.addDatetimeInputParam("@NGAY_KY_HOP_DONG", NGAY_KY_HOP_DONG);
+            v_sp.addDatetimeInputParam("@NGAY_LAP", NGAY_LAP);
+            v_sp.addNVarcharInputParam("@NGUOI_LAP", NGUOI_LAP);
+            v_sp.addNVarcharInputParam("@DA_XOA", DA_XOA);
+            v_sp.addDecimalInputParam("@ID_CD_LCD", ID_CD_LCD);
+            v_sp.addDecimalInputParam("@ID_MUC_LCD", ID_MUC_LCD);
+            v_sp.addDecimalInputParam("@ID_CD_LNS", ID_CD_LNS);
+            v_sp.addDecimalInputParam("@ID_MUC_LNS", ID_MUC_LNS);
+            SqlParameter v_op_str = v_sp.addNVarcharOutputParam("@OP_STR_MESSAGE", op_str_mess);
+            v_sp.ExecuteCommand(this);
+            op_str_mess = v_op_str.Value.ToString();
+        }
+
     }
 }

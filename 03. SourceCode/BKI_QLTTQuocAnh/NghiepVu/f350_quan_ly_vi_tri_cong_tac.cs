@@ -420,6 +420,16 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
+        public void import_excel()
+        {
+            string m_txt_path = WinFormControls.openFileDialog();
+            if (m_txt_path != "")
+            {
+                f352_quan_ly_cong_tac_excel v_f = new f352_quan_ly_cong_tac_excel();
+                v_f.displayToInsertExcel(m_txt_path);
+            }
+        }
+
         #endregion
 
         private void set_define_events()
@@ -430,6 +440,19 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chon_loai_cong_tac.EditValueChanged += m_sle_chon_loai_cong_tac_EditValueChanged;
             m_cmd_insert.Click += m_cmd_insert_Click;
             m_cmd_huy_kiem_nhiem.Click += m_cmd_huy_kiem_nhiem_Click;
+            m_cmd_chon_file.Click += m_cmd_chon_file_Click;
+        }
+
+        private void m_cmd_chon_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                import_excel();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_sle_chon_loai_cong_tac_EditValueChanged(object sender, EventArgs e)

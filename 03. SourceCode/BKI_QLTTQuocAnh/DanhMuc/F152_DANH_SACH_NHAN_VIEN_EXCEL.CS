@@ -54,6 +54,7 @@ namespace BKI_DichVuMatDat
                         else
                         {
                             CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + m_grv.GetDataRow(i)["MA_NV"].ToString() + "  đã tồn tại. Vui lòng kiểm tra lại thông tin!");
+                            return;
                         }
 
                     }

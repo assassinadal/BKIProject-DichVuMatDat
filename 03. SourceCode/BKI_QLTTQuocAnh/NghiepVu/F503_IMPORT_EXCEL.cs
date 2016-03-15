@@ -115,7 +115,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                f320_lap_hop_dong_V2 v_frm = new f320_lap_hop_dong_V2();
+                f320_lap_hop_dong v_frm = new f320_lap_hop_dong();
+                v_frm.import_excel();
                 v_frm.Show();
                 m_e_buoc_hien_tai = buoc_hien_tai.buoc_3_nhap_ttct;
                 set_init_form_load();
@@ -131,6 +132,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 f350_quan_ly_vi_tri_cong_tac v_frm = new f350_quan_ly_vi_tri_cong_tac();
+                v_frm.import_excel();
                 v_frm.Show();
                 m_e_buoc_hien_tai = buoc_hien_tai.buoc_4_nhap_ttbs;
                 set_init_form_load();
@@ -161,7 +163,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                WinFormControls.openTemplate(".xlxs");
+                WinFormControls.openTemplate("");
             }
             catch (Exception v_e)
             {
@@ -173,7 +175,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                WinFormControls.openTemplate("HOP_DONG.xlxs");
+                WinFormControls.openTemplate(CONST_EXCEL_TEMPLATE.HOP_DONG_TEMPLATE);
             }
             catch (Exception v_e)
             {
@@ -185,7 +187,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                WinFormControls.openTemplate("CONG_TAC.xlxs");
+                WinFormControls.openTemplate(CONST_EXCEL_TEMPLATE.CONG_TAC_TEMPLATE);
             }
             catch (Exception v_e)
             {
@@ -197,7 +199,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                WinFormControls.openTemplate("DANH_SACH_NHAN_VIEN.xlsx");
+                WinFormControls.openTemplate(CONST_EXCEL_TEMPLATE.DANH_SACH_NHAN_VIEN_TEMPLATE);
             }
             catch (Exception v_e)
             {

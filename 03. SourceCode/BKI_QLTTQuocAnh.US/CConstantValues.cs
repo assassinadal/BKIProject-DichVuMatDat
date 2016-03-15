@@ -4,6 +4,17 @@ using System.Text;
 
 namespace BKI_DichVuMatDat.US
 {
+    public class CONST_EXCEL_TEMPLATE
+    {
+        public const string CHAM_CONG_TEMPLATE = "ChamCong.xlsx";
+        public const string CONG_TAC_TEMPLATE = "CONG_TAC.xlsx";
+        public const string DANH_SACH_NHAN_VIEN_TEMPLATE = "DANH_SACH_NHAN_VIEN.xlsx";
+        public const string HOP_DONG_TEMPLATE = "HOP_DONG.xlsx";
+        public const string LOAI_LAO_DONG_CUA_NHAN_VIEN_TEMPLATE = "LOAI_LAO_DONG_CUA_NHAN_VIEN.xlsx";
+        public const string THU_NHAP_KHAC_TEMPLATE = "ThuNhapKhac.xlxs";
+        public const string HeSoChatLuong_TEMPLATE = "HeSoChatLuong.xlsx";
+    }
+
     public class CONST_COLUMN_NAME_IMPORT_TNK
     {
         public const string STT = "STT";

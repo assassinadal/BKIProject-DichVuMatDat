@@ -171,10 +171,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void import_excel()
         {
-            string m_txt_path = WinFormControls.openFileDialog();
-            F152_DANH_SACH_NHAN_VIEN_EXCEL v_f = new F152_DANH_SACH_NHAN_VIEN_EXCEL();
-            v_f.displayToInsertExcel(m_txt_path);
-            load_data_2_grid();
+
         }
 
         #endregion

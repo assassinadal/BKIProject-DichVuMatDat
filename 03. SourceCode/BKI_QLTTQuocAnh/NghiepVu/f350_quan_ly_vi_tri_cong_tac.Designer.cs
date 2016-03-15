@@ -99,10 +99,11 @@
             this.c_ngay_bat_dau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_da_xoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_cmd_huy_kiem_nhiem = new SIS.Controls.Button.SiSButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_huy_kiem_nhiem = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -851,6 +852,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cmd_chon_file);
             this.panel1.Controls.Add(this.simpleButton1);
             this.panel1.Controls.Add(this.m_cmd_update);
             this.panel1.Controls.Add(this.m_cmd_delete);
@@ -860,22 +862,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(839, 36);
             this.panel1.TabIndex = 6;
-            // 
-            // m_cmd_huy_kiem_nhiem
-            // 
-            this.m_cmd_huy_kiem_nhiem.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_huy_kiem_nhiem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_huy_kiem_nhiem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_huy_kiem_nhiem.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_huy_kiem_nhiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_huy_kiem_nhiem.ImageIndex = 2;
-            this.m_cmd_huy_kiem_nhiem.ImageList = this.ImageList;
-            this.m_cmd_huy_kiem_nhiem.Location = new System.Drawing.Point(0, 0);
-            this.m_cmd_huy_kiem_nhiem.Name = "m_cmd_huy_kiem_nhiem";
-            this.m_cmd_huy_kiem_nhiem.Size = new System.Drawing.Size(133, 36);
-            this.m_cmd_huy_kiem_nhiem.TabIndex = 1;
-            this.m_cmd_huy_kiem_nhiem.Text = "&Hủy kiêm nhiệm";
-            this.m_cmd_huy_kiem_nhiem.Visible = false;
             // 
             // simpleButton1
             // 
@@ -908,6 +894,32 @@
             this.m_cmd_delete.TabIndex = 15;
             this.m_cmd_delete.Text = "&Xóa";
             this.m_cmd_delete.Visible = false;
+            // 
+            // m_cmd_huy_kiem_nhiem
+            // 
+            this.m_cmd_huy_kiem_nhiem.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_huy_kiem_nhiem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_huy_kiem_nhiem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_huy_kiem_nhiem.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_huy_kiem_nhiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_huy_kiem_nhiem.ImageIndex = 2;
+            this.m_cmd_huy_kiem_nhiem.ImageList = this.ImageList;
+            this.m_cmd_huy_kiem_nhiem.Location = new System.Drawing.Point(0, 0);
+            this.m_cmd_huy_kiem_nhiem.Name = "m_cmd_huy_kiem_nhiem";
+            this.m_cmd_huy_kiem_nhiem.Size = new System.Drawing.Size(133, 36);
+            this.m_cmd_huy_kiem_nhiem.TabIndex = 1;
+            this.m_cmd_huy_kiem_nhiem.Text = "&Hủy kiêm nhiệm";
+            this.m_cmd_huy_kiem_nhiem.Visible = false;
+            // 
+            // m_cmd_chon_file
+            // 
+            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_chon_file.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_file.Image")));
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(349, 0);
+            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
+            this.m_cmd_chon_file.Size = new System.Drawing.Size(142, 36);
+            this.m_cmd_chon_file.TabIndex = 31;
+            this.m_cmd_chon_file.Text = "Chọn file";
             // 
             // f350_quan_ly_vi_tri_cong_tac
             // 
@@ -1026,5 +1038,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_update;
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
     }
 }

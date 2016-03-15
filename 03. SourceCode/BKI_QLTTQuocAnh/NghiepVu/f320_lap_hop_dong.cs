@@ -47,6 +47,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #endregion
 
         #region Members
+        string m_txt_path = "";
         int m_id_lns_lcd_trong_loai_td = 0; //1: LNS va 2:LCD
         decimal m_loai_hop_dong = (decimal)MyEnum.KHAC_HOP_DONG_HOC_VIEC; //0: hoc viec va 1: Cac loai khac
         decimal m_cmd_tao_lai_is_click = (decimal)MyEnum.NUT_TAO_LAI_KHONG_DUOC_CLICK; //0: ko click, 1:click nut tao lai
@@ -58,6 +59,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         decimal m_id_lcd = 0;
         int m_trang_thai_buoc_3_thanh_cong = 0;
         int m_trang_thai_them = 0;
+        string op_str_mess = "";
         #endregion
 
         #region Data structure
@@ -871,84 +873,112 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void save_data()
         {
 
-            US_GD_HOP_DONG v_us_gd_hd = new US_GD_HOP_DONG();
-            US_GD_HS_LNS_LCD v_us_gd_hs_lns_lcd = new US_GD_HS_LNS_LCD();
-            US_GD_HE_SO_LNS v_us_gd_hs_lns = new US_GD_HE_SO_LNS();
-            US_GD_LUONG_CHE_DO v_us_gd_lcd = new US_GD_LUONG_CHE_DO();
-            US_GD_TRANG_THAI_LAO_DONG v_us_gd_trang_thai_lao_dong = new US_GD_TRANG_THAI_LAO_DONG();
-
-            form_2_us_gd_hop_dong(v_us_gd_hd);
-            try
+            US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
+            switch (m_e_form_mode)
             {
-                switch (m_e_form_mode)
-                {
-                    case DataEntryFormMode.InsertDataState:
-                        if (m_id_gd_hd != -1)
-                        {
-                            cho_hop_dong_da_co_ve_trang_thai_delete_Y();
-                            cho_gd_hs_lns_lcd_da_xoa_Y();
-                            cho_gd_hs_lns_da_xoa_Y();
-                            cho_gd_lcd_da_xoa_Y();
-                        }
-
-                        //lap hop dong moi
-                        v_us_gd_hd.BeginTransaction();
-                        v_us_gd_hd.Insert();
-                        v_us_gd_hd.CommitTransaction();
-
-                        //insert gd_hs_lns_lcd
-                        form_2_us_gd_hs_lns_lcd(v_us_gd_hs_lns_lcd);
-                        v_us_gd_hs_lns_lcd.BeginTransaction();
-                        v_us_gd_hs_lns_lcd.Insert();
-                        v_us_gd_hs_lns_lcd.CommitTransaction();
-
-                        //insert gd_hs_lns
-                        form_2_us_gd_hs_lns(v_us_gd_hs_lns);
-                        v_us_gd_hs_lns.BeginTransaction();
-                        v_us_gd_hs_lns.Insert();
-                        v_us_gd_hs_lns.CommitTransaction();
-
-                        //insert gd_lcd
-                        form_2_us_gd_lcd(v_us_gd_lcd);
-                        v_us_gd_lcd.BeginTransaction();
-                        v_us_gd_lcd.Insert();
-                        v_us_gd_lcd.CommitTransaction();
-
-                        //insert gd_trang_thai_ld
-                        decimal v_id_gd_trang_thai_lao_dong_da_co = 0;
-
-                        v_id_gd_trang_thai_lao_dong_da_co = find_id_trang_thai_lao_dong_da_co(decimal.Parse(m_sle_chon_nhan_vien.EditValue.ToString())); //sai o day
-
-                        if (v_id_gd_trang_thai_lao_dong_da_co == -1)
-                        {
-                            form_2_us_gd_trang_thai_lao_dong(v_us_gd_trang_thai_lao_dong);
-                            v_us_gd_trang_thai_lao_dong.BeginTransaction();
-                            v_us_gd_trang_thai_lao_dong.Insert();
-                            v_us_gd_trang_thai_lao_dong.CommitTransaction();
-                        }
-                        break;
-                    case DataEntryFormMode.UpdateDataState:
-                        v_us_gd_hd.BeginTransaction();
-                        v_us_gd_hd.dcID = CIPConvert.ToDecimal(m_grv_lap_hd.GetRowCellValue(m_grv_lap_hd.FocusedRowHandle, "ID"));
-                        v_us_gd_hd.Update();
-                        v_us_gd_hd.CommitTransaction();
-
-                        //
-                        form_2_us_gd_hs_lns_lcd(v_us_gd_hs_lns_lcd);
-                        v_us_gd_hs_lns_lcd.BeginTransaction();
-                        v_us_gd_hs_lns_lcd.dcID = find_id_gd_lns_lcd(CIPConvert.ToDecimal(m_grv_lap_hd.GetRowCellValue(m_grv_lap_hd.FocusedRowHandle, "ID")));
-                        v_us_gd_hs_lns_lcd.Update();
-                        v_us_gd_hs_lns_lcd.CommitTransaction();
-                        break;
-                    default:
-                        break;
-                }
+                case DataEntryFormMode.UpdateDataState:
+                    break;
+                case DataEntryFormMode.InsertDataState:
+                    v_us.lap_hop_dong_moi_cho_nhan_vien(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue)
+                                                        , CIPConvert.ToDecimal(m_sle_loai_hop_dong.EditValue)
+                                                        , m_txt_ma_hd.Text.Trim()
+                                                        , m_dat_ngay_bat_dau.Value.Date
+                                                        , m_dat_ngay_ket_thuc.Value.Date
+                                                        , m_dat_ngay_ky.Value.Date
+                                                        , DateTime.Now.Date
+                                                        , CAppContext_201.getCurrentUserName()
+                                                        , "N"
+                                                        , CIPConvert.ToDecimal(m_sle_chuc_danh_lcd.EditValue)
+                                                        , CIPConvert.ToDecimal(m_sle_muc_lcd.EditValue)
+                                                        , CIPConvert.ToDecimal(m_sle_chuc_danh_lns.EditValue)
+                                                        , CIPConvert.ToDecimal(m_sle_muc_lns.EditValue)
+                                                        , ref op_str_mess);
+                    break;
+                case DataEntryFormMode.ViewDataState:
+                    break;
+                case DataEntryFormMode.SelectDataState:
+                    break;
+                default:
+                    break;
             }
-            catch (Exception v_e)
-            {
 
-                throw v_e;
-            }
+            //US_GD_HS_LNS_LCD v_us_gd_hs_lns_lcd = new US_GD_HS_LNS_LCD();
+            //US_GD_HE_SO_LNS v_us_gd_hs_lns = new US_GD_HE_SO_LNS();
+            //US_GD_LUONG_CHE_DO v_us_gd_lcd = new US_GD_LUONG_CHE_DO();
+            //US_GD_TRANG_THAI_LAO_DONG v_us_gd_trang_thai_lao_dong = new US_GD_TRANG_THAI_LAO_DONG();
+
+            //form_2_us_gd_hop_dong(v_us_gd_hd);
+            //try
+            //{
+            //    switch (m_e_form_mode)
+            //    {
+            //        case DataEntryFormMode.InsertDataState:
+            //            if (m_id_gd_hd != -1)
+            //            {
+            //                cho_hop_dong_da_co_ve_trang_thai_delete_Y();
+            //                cho_gd_hs_lns_lcd_da_xoa_Y();
+            //                cho_gd_hs_lns_da_xoa_Y();
+            //                cho_gd_lcd_da_xoa_Y();
+            //            }
+
+            //            //lap hop dong moi
+            //            v_us_gd_hd.BeginTransaction();
+            //            v_us_gd_hd.Insert();
+            //            v_us_gd_hd.CommitTransaction();
+
+            //            //insert gd_hs_lns_lcd
+            //            form_2_us_gd_hs_lns_lcd(v_us_gd_hs_lns_lcd);
+            //            v_us_gd_hs_lns_lcd.BeginTransaction();
+            //            v_us_gd_hs_lns_lcd.Insert();
+            //            v_us_gd_hs_lns_lcd.CommitTransaction();
+
+            //            //insert gd_hs_lns
+            //            form_2_us_gd_hs_lns(v_us_gd_hs_lns);
+            //            v_us_gd_hs_lns.BeginTransaction();
+            //            v_us_gd_hs_lns.Insert();
+            //            v_us_gd_hs_lns.CommitTransaction();
+
+            //            //insert gd_lcd
+            //            form_2_us_gd_lcd(v_us_gd_lcd);
+            //            v_us_gd_lcd.BeginTransaction();
+            //            v_us_gd_lcd.Insert();
+            //            v_us_gd_lcd.CommitTransaction();
+
+            //            //insert gd_trang_thai_ld
+            //            decimal v_id_gd_trang_thai_lao_dong_da_co = 0;
+
+            //            v_id_gd_trang_thai_lao_dong_da_co = find_id_trang_thai_lao_dong_da_co(decimal.Parse(m_sle_chon_nhan_vien.EditValue.ToString())); //sai o day
+
+            //            if (v_id_gd_trang_thai_lao_dong_da_co == -1)
+            //            {
+            //                form_2_us_gd_trang_thai_lao_dong(v_us_gd_trang_thai_lao_dong);
+            //                v_us_gd_trang_thai_lao_dong.BeginTransaction();
+            //                v_us_gd_trang_thai_lao_dong.Insert();
+            //                v_us_gd_trang_thai_lao_dong.CommitTransaction();
+            //            }
+            //            break;
+            //        case DataEntryFormMode.UpdateDataState:
+            //            v_us_gd_hd.BeginTransaction();
+            //            v_us_gd_hd.dcID = CIPConvert.ToDecimal(m_grv_lap_hd.GetRowCellValue(m_grv_lap_hd.FocusedRowHandle, "ID"));
+            //            v_us_gd_hd.Update();
+            //            v_us_gd_hd.CommitTransaction();
+
+            //            //
+            //            form_2_us_gd_hs_lns_lcd(v_us_gd_hs_lns_lcd);
+            //            v_us_gd_hs_lns_lcd.BeginTransaction();
+            //            v_us_gd_hs_lns_lcd.dcID = find_id_gd_lns_lcd(CIPConvert.ToDecimal(m_grv_lap_hd.GetRowCellValue(m_grv_lap_hd.FocusedRowHandle, "ID")));
+            //            v_us_gd_hs_lns_lcd.Update();
+            //            v_us_gd_hs_lns_lcd.CommitTransaction();
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //}
+            //catch (Exception v_e)
+            //{
+
+            //    throw v_e;
+            //}
         }
 
         private void focus_new_row_created()
@@ -1004,7 +1034,30 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_lbl_so_tien_lcd.Text = "...";
         }
 
+        public void import_excel()
+        {
+            //m_txt_path = WinFormControls.openFileDialog();
+            //if (m_txt_path != "")
+            //{
+            //    f322_lap_hop_dong_excel v_f = new f322_lap_hop_dong_excel();
+            //    v_f.displayToInsertExcel(m_txt_path);
+            //}
+            //load_data_2_grid();
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
+            // Set filter options and filter index.
+            openFileDialog1.Filter = "xlsx Files|*.xlsx|xls Files|*.xls|All Files (*.*)|*.*";
+            openFileDialog1.Multiselect = false;
+            var userClickedOK = openFileDialog1.ShowDialog();
+            if (userClickedOK == System.Windows.Forms.DialogResult.OK)
+            {
+                m_txt_path = openFileDialog1.FileName;
+                f322_lap_hop_dong_excel v_f = new f322_lap_hop_dong_excel();
+                v_f.displayToInsertExcel(m_txt_path);
+                // WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
+            }
+            load_data_2_grid();
+        }
         #endregion
 
         private void set_define_events()
@@ -1014,6 +1067,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_lap_hop_dong.Click += m_cmd_lap_hop_dong_Click;
             m_cmd_insert.Click += m_cmd_insert_Click;
             m_cmd_update.Click += m_cmd_update_Click;
+            m_cmd_chon_file.Click += m_cmd_chon_file_Click;
             //control
             m_sle_loai_hop_dong.EditValueChanged += m_sle_loai_hop_dong_EditValueChanged;
             m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
@@ -1024,6 +1078,18 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_dat_ngay_bat_dau.ValueChanged += m_dat_ngay_bat_dau_ValueChanged;
             //gridcontrol, gridview
             //m_grv_lap_hd.DoubleClick += m_grv_lap_hd_DoubleClick;
+        }
+
+        private void m_cmd_chon_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                import_excel();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_grv_lap_hd_DoubleClick(object sender, EventArgs e)

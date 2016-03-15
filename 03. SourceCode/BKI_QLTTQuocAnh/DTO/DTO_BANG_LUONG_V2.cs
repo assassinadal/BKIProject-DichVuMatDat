@@ -56,5 +56,9 @@ namespace BKI_DichVuMatDat.DTO
 
         public string TEN_CHUC_VU { get; set;}
         public decimal THU_TU_CHUC_VU { get; set; }
+
+        public decimal HS_ATHK { get; set; }
+        public decimal HS_BSL { get; set; }
+        public string LE_TET_YN { get; set; }
     }
 }

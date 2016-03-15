@@ -1259,6 +1259,9 @@ namespace BKI_DichVuMatDat.DS.CDBNames
             public const string NGAY_CONG_QUY_DINH = "NGAY_CONG_QUY_DINH";
             public const string LOAI_LAO_DONG = "LOAI_LAO_DONG";
             public const string SO_NGAY_LAM_THEM = "SO_NGAY_LAM_THEM";
+            public const string HS_ATHK = "HS_ATHK";
+            public const string HS_BSL = "HS_BSL";
+            public const string LE_TET_YN = "LE_TET_YN";
         }
 
         public class RPT_THONG_TIN_TONG_HOP
@@ -1295,6 +1298,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
 
         public class RPT_LUONG_V2
         {
+            //Tu viet, ko gen tu gen_columns_name
             public const string HO_TEN = "HO_TEN";
             public const string TEN_DON_VI = "TEN_DON_VI";
             public const string THU_TU_DON_VI = "THU_TU_DON_VI";
@@ -1338,6 +1342,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
             public const string TONG_PHAI_NOP = "TONG_PHAI_NOP";
             public const string THUC_LINH = "THUC_LINH";
             public const string SO_TIEN_DA_NOP_THUE = "SO_TIEN_DA_NOP_THUE";
+
         }
 
 

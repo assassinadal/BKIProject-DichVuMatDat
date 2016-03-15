@@ -573,6 +573,72 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["SO_NGAY_LAM_THEM"] = System.Convert.DBNull;
         }
 
+        public decimal dcHS_ATHK
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "HS_ATHK", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["HS_ATHK"] = value;
+            }
+        }
+
+        public bool IsHS_ATHKNull()
+        {
+            return pm_objDR.IsNull("HS_ATHK");
+        }
+
+        public void SetHS_ATHKNull()
+        {
+            pm_objDR["HS_ATHK"] = System.Convert.DBNull;
+        }
+
+        public decimal dcHS_BSL
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "HS_BSL", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["HS_BSL"] = value;
+            }
+        }
+
+        public bool IsHS_BSLNull()
+        {
+            return pm_objDR.IsNull("HS_BSL");
+        }
+
+        public void SetHS_BSLNull()
+        {
+            pm_objDR["HS_BSL"] = System.Convert.DBNull;
+        }
+
+        public string strLE_TET_YN
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "LE_TET_YN", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["LE_TET_YN"] = value;
+            }
+        }
+
+        public bool IsLE_TET_YNNull()
+        {
+            return pm_objDR.IsNull("LE_TET_YN");
+        }
+
+        public void SetLE_TET_YNNull()
+        {
+            pm_objDR["LE_TET_YN"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_RPT_THONG_TIN_TONG_HOP_V2()

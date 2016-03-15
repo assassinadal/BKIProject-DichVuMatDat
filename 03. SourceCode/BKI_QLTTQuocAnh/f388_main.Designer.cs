@@ -281,7 +281,7 @@
             this.m_cmd_quan_ly_quy_tnk,
             this.m_cmd_bc_athk_bsl_lt});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 121;
+            this.ribbon.MaxItemId = 122;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -924,7 +924,7 @@
             // 
             // m_cmd_bao_cao_hs_lns_lcd_nhan_vien
             // 
-            this.m_cmd_bao_cao_hs_lns_lcd_nhan_vien.Caption = "Báo cáo hệ số lương năng suất và lương chế độ nhân viên";
+            this.m_cmd_bao_cao_hs_lns_lcd_nhan_vien.Caption = "Báo cáo hệ số LNS và LCĐ nhân viên";
             this.m_cmd_bao_cao_hs_lns_lcd_nhan_vien.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_dat_he_so_LNS_;
             this.m_cmd_bao_cao_hs_lns_lcd_nhan_vien.Id = 81;
             this.m_cmd_bao_cao_hs_lns_lcd_nhan_vien.Name = "m_cmd_bao_cao_hs_lns_lcd_nhan_vien";

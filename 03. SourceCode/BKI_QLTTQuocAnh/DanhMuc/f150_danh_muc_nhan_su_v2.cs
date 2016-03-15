@@ -190,9 +190,10 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         }
 
-        private void tinh_tuoi_nhan_vien()
+        private void tinh_tuoi_nhan_vien(DateTime ip_dat_ngay_sinh)
         {
-            decimal v_so_tuoi = CIPConvert.ToDecimal(DateTime.Now.Year - m_dat_ngay_sinh.DateTime.Year);
+            decimal v_so_tuoi = 0;
+            m_us.tinh_tuoi_nhan_vien(ip_dat_ngay_sinh, ref v_so_tuoi);
             m_txt_tuoi_nv.Text = v_so_tuoi.ToString();
         }
 
@@ -203,7 +204,20 @@ namespace BKI_DichVuMatDat.DanhMuc
             this.Load += f150_danh_muc_nhan_su_v2_Load;
             m_cmd_save.Click += m_cmd_save_Click;
             m_cmd_exit.Click += m_cmd_exit_Click;
-            m_dat_ngay_sinh.EditValueChanged += m_dat_ngay_sinh_EditValueChanged;
+            //m_dat_ngay_sinh.EditValueChanged += m_dat_ngay_sinh_EditValueChanged;
+            m_dat_ngay_sinh.Leave += m_dat_ngay_sinh_Leave;
+        }
+
+        void m_dat_ngay_sinh_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                tinh_tuoi_nhan_vien(m_dat_ngay_sinh.DateTime.Date);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void f150_danh_muc_nhan_su_v2_Load(object sender, EventArgs e)
@@ -222,7 +236,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                tinh_tuoi_nhan_vien();
+                tinh_tuoi_nhan_vien(m_dat_ngay_sinh.DateTime.Date);
             }
             catch (Exception v_e)
             {

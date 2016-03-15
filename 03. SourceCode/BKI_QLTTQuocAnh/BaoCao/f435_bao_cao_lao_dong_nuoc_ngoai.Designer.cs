@@ -165,9 +165,11 @@
             // gridColumn10
             // 
             this.gridColumn10.Caption = "NGÀY KÝ HỢP ĐỒNG";
-            this.gridColumn10.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.gridColumn10.DisplayFormat.FormatString = "g";
             this.gridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn10.FieldName = "NGAY_KY_HOP_DONG";
+            this.gridColumn10.GroupFormat.FormatString = "g";
+            this.gridColumn10.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.AllowEdit = false;
             this.gridColumn10.Visible = true;

@@ -118,6 +118,7 @@
     <Compile Include="US_V_F340_DAT_LCD.cs" />
     <Compile Include="US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN.cs" />
     <Compile Include="US_V_F395_QUAN_LY_PHU_CAP_NHAN_VIEN.cs" />
+    <Compile Include="US_V_F410_BAO_CAO_SO_LUONG_CHAT_LUONG_NHAN_VIEN.cs" />
     <Compile Include="US_V_F419_BAO_CAO_HS_LNS_LCD_NHAN_VIEN_THEO_THANG.cs" />
     <Compile Include="US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG.cs" />
     <Compile Include="US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.cs" />

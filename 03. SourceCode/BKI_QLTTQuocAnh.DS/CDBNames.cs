@@ -616,6 +616,36 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     #endregion
 
     #region VIEW
+    public class V_F410_BAO_CAO_SO_LUONG_CHAT_LUONG_NHAN_VIEN
+    {
+        public const string ID_DON_VI = "ID_DON_VI";
+        public const string ID_DON_VI_CAP_TREN = "ID_DON_VI_CAP_TREN";
+        public const string MA_DON_VI = "MA_DON_VI";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string THU_TU_DON_VI = "THU_TU_DON_VI";
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string MA_NV = "MA_NV";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string HO_TEN = "HO_TEN";
+        public const string GIOI_TINH = "GIOI_TINH";
+        public const string NGAY_SINH = "NGAY_SINH";
+        public const string TUOI_NHAN_VIEN = "TUOI_NHAN_VIEN";
+        public const string TRINH_DO_VAN_HOA = "TRINH_DO_VAN_HOA";
+        public const string ID_VI_TRI = "ID_VI_TRI";
+        public const string MA_VI_TRI = "MA_VI_TRI";
+        public const string TEN_VI_TRI = "TEN_VI_TRI";
+        public const string THU_TU_CHUC_VU = "THU_TU_CHUC_VU";
+        public const string ID_LOAI_CONG_TAC = "ID_LOAI_CONG_TAC";
+        public const string MA_LOAI_CONG_TAC = "MA_LOAI_CONG_TAC";
+        public const string TEN_LOAI_CONG_TAC = "TEN_LOAI_CONG_TAC";
+        public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+        public const string ID_LOAI_HOP_DONG = "ID_LOAI_HOP_DONG";
+        public const string MA_LOAI_HOP_DONG = "MA_LOAI_HOP_DONG";
+    }
+
+
     public class V_DM_NHAN_VIEN_3
     {
         public const string ID = "ID";

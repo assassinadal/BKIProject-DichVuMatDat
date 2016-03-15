@@ -75,6 +75,7 @@ namespace BKI_DichVuMatDat.BaoCao
             gridView1.BestFitColumns();
         }
         #endregion
+
         private void set_define_event()
         {
             m_cmd_xuat_bao_cao.Click += m_cmd_xuat_bao_cao_Click;

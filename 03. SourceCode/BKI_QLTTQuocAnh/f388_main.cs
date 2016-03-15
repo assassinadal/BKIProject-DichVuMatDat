@@ -1110,16 +1110,19 @@ namespace BKI_DichVuMatDat
 
         private void m_cmd_tk_ns_dv_ItemClick(object sender, ItemClickEventArgs e)
         {
-            F420_Bao_cao_nhan_su_theo_don_vi v_f = new F420_Bao_cao_nhan_su_theo_don_vi();
-            v_f.MdiParent = this;
-            v_f.Show();
+            //F420_Bao_cao_nhan_su_theo_don_vi v_f = new F420_Bao_cao_nhan_su_theo_don_vi();
+            f410_bao_cao_so_luong_chat_luong_lao_dong v_frm = new f410_bao_cao_so_luong_chat_luong_lao_dong();
+            if (IsExistFormName(v_frm)) return;
+            v_frm.MdiParent = this;
+            v_frm.Show();
         }
 
         private void m_cmd_tk_ns_tong_hop_ItemClick(object sender, ItemClickEventArgs e)
         {
-            F425_Bao_cao_nhan_su_tong_hop v_f = new F425_Bao_cao_nhan_su_tong_hop();
-            v_f.MdiParent = this;
-            v_f.Show();
+            F425_Bao_cao_nhan_su_tong_hop v_frm = new F425_Bao_cao_nhan_su_tong_hop();
+            if (IsExistFormName(v_frm)) return;
+            v_frm.MdiParent = this;
+            v_frm.Show();
         }
 
         private void m_cmd_dang_ky_giam_tru_phu_thuoc_ItemClick(object sender, ItemClickEventArgs e)

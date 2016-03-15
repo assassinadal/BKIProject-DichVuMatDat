@@ -866,5 +866,17 @@ namespace BKI_DichVuMatDat.US
 
             return Convert.ToDecimal(v_para.Value);
         }
+
+        public void tinh_tuoi_nhan_vien(DateTime ip_dat_ngay_sinh, ref decimal op_dc_so_tuoi)
+        {
+            CStoredProc v_obj_csp = new CStoredProc("pr_get_so_tuoi_nhan_vien");
+            v_obj_csp.addDatetimeInputParam("@ip_dat_ngay_sinh", ip_dat_ngay_sinh);
+
+            SqlParameter v_op_result = v_obj_csp.addDecimalOutputParam("@op_dc_so_tuoi", 0);
+
+            v_obj_csp.ExecuteCommand(this);
+
+            op_dc_so_tuoi = Convert.ToDecimal(v_op_result.Value);
+        }
     }
 }

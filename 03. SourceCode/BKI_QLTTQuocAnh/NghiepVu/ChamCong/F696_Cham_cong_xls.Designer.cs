@@ -191,7 +191,7 @@
             this.m_cmd_mo_file_mau.Name = "m_cmd_mo_file_mau";
             this.m_cmd_mo_file_mau.Size = new System.Drawing.Size(190, 36);
             this.m_cmd_mo_file_mau.TabIndex = 2;
-            this.m_cmd_mo_file_mau.Text = "Mở file mẫu";
+            this.m_cmd_mo_file_mau.Text = "Tải file mẫu";
             // 
             // panelControl1
             // 
@@ -223,6 +223,7 @@
             this.m_txt_nam.Properties.Appearance.Options.UseTextOptions = true;
             this.m_txt_nam.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.m_txt_nam.Properties.AutoHeight = false;
+            this.m_txt_nam.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.m_txt_nam.Properties.Mask.EditMask = "d";
             this.m_txt_nam.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_nam.Properties.Mask.UseMaskAsDisplayFormat = true;
@@ -240,6 +241,7 @@
             this.m_txt_thang.Properties.Appearance.Options.UseTextOptions = true;
             this.m_txt_thang.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.m_txt_thang.Properties.AutoHeight = false;
+            this.m_txt_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.m_txt_thang.Properties.Mask.EditMask = "d";
             this.m_txt_thang.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
@@ -260,7 +262,7 @@
             // m_lbl_trang_thai_cham_cong
             // 
             this.m_lbl_trang_thai_cham_cong.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_trang_thai_cham_cong.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.m_lbl_trang_thai_cham_cong.Appearance.ForeColor = System.Drawing.Color.ForestGreen;
             this.m_lbl_trang_thai_cham_cong.Location = new System.Drawing.Point(27, 64);
             this.m_lbl_trang_thai_cham_cong.Name = "m_lbl_trang_thai_cham_cong";
             this.m_lbl_trang_thai_cham_cong.Size = new System.Drawing.Size(0, 14);
@@ -275,7 +277,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel7);
             this.Name = "F696_Cham_cong_xls";
-            this.Text = "F696 Chấm công từ excel";
+            this.Text = "F696 - Chấm công từ excel";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

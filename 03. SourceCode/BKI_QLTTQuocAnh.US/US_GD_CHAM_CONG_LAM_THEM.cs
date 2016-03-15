@@ -169,5 +169,13 @@ namespace BKI_DichVuMatDat.US
 
             v_sp.ExecuteCommand(this);
         }
+
+        public void FillDatasetGetChamCongTheoThang(DS_GD_CHAM_CONG_LAM_THEM v_ds, string ip_str_thang, string ip_str_nam)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_CC_lam_them_Get_theo_thang");
+            v_cstore.addDecimalInputParam("@ip_thang", ip_str_thang);
+            v_cstore.addDecimalInputParam("@ip_nam", ip_str_nam);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+        }
     }
 }

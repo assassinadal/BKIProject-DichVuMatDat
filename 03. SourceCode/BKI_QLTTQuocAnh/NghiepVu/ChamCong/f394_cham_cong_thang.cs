@@ -69,7 +69,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             if (m_txt_thang.Text.Trim() != "" && m_txt_nam.Text.Trim() !="")
             {
-                if (m_sle_chon_nhan_vien.EditValue.ToString() == "" || m_sle_chon_nhan_vien.EditValue == null)
+                if (m_sle_chon_nhan_vien.EditValue == null)
                     m_id_nhan_vien = -1;
                 else
                     m_id_nhan_vien = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue.ToString());

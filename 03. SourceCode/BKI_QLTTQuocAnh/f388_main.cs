@@ -218,7 +218,7 @@ namespace BKI_DichVuMatDat
             m_cmd_bc_qua_trinh_ct.ItemClick += m_cmd_bc_qua_trinh_ct_ItemClick;
             m_cmd_bc_hop_dong_het_han.ItemClick += m_cmd_bc_hop_dong_het_han_ItemClick;
             m_cmd_card_nhan_vien.ItemClick += m_cmd_card_nhan_vien_ItemClick;
-            m_cmd_xem_cham_cong_lam_them.ItemClick += m_cmd_xem_cham_cong_lam_them_ItemClick;
+            m_cmd_cham_cong_lam_them.ItemClick += m_cmd_cham_cong_lam_them_ItemClick;
             m_cmd_quy_trinh_tinh_luong.ItemClick += m_cmd_quy_trinh_tinh_luong_ItemClick;
             m_cmd_he_so_bang_luong_thang.ItemClick += m_cmd_tham_so_bang_luong_ItemClick;
             m_cmd_bao_cao_tong_hop_v2.ItemClick += m_cmd_bao_cao_tong_hop_v2_ItemClick;
@@ -227,6 +227,21 @@ namespace BKI_DichVuMatDat
             m_cmd_bc_athk_bsl_lt.ItemClick += m_cmd_bc_athk_bsl_lt_ItemClick;
             //Thu nhap khac
             m_cmd_quan_ly_quy_tnk.ItemClick += m_cmd_quan_ly_quy_tnk_ItemClick;
+        }
+
+        void m_cmd_cham_cong_lam_them_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f303_gd_cham_cong_lam_them v_f = new f303_gd_cham_cong_lam_them();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_bc_athk_bsl_lt_ItemClick(object sender, ItemClickEventArgs e)
@@ -339,21 +354,6 @@ namespace BKI_DichVuMatDat
             }
         }
 
-        void m_cmd_xem_cham_cong_lam_them_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            try
-            {
-                //f697_cham_cong_lam_them v_frm = new f697_cham_cong_lam_them();
-                //if(IsExistFormName(v_frm)) return;
-
-                //v_frm.MdiParent = this;
-                //v_frm.Show();
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
 
         void m_cmd_them_nhan_vien_nhanh_ItemClick(object sender, ItemClickEventArgs e)
         {

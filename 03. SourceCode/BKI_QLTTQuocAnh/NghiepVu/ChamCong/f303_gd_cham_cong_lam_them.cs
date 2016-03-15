@@ -11,37 +11,205 @@ using IP.Core.IPCommon;
 using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.US;
 using System.IO;
+using DevExpress.XtraEditors;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class f303_gd_cham_cong_lam_them : Form
     {
-        string m_txt_path;
-        int m_so_dong;
+
+        #region Members
+        US_GD_CHAM_CONG_LAM_THEM m_us = new US_GD_CHAM_CONG_LAM_THEM();
+        #endregion
+
+        #region Public Interface
         public f303_gd_cham_cong_lam_them()
         {
             InitializeComponent();
             set_initial_form_load();
         }
+        #endregion
 
+        #region Private method
         private void set_initial_form_load()
         {
             m_txt_thang.Text = DateTime.Now.Month.ToString();
             m_txt_nam.Text = DateTime.Now.Year.ToString();
+            set_trang_thai_cham_cong();           
             set_define_events();
         }
+
+        private void set_trang_thai_cham_cong()
+        {
+            m_lbl_trang_thai_cham_cong.Text = "Đã chấm công cho " + get_so_luong_cham_cong() + " nhân viên.";
+            m_grc.DataSource = null;
+        }
+
+        private decimal get_so_luong_cham_cong()
+        {
+            US_GD_CHAM_CONG_LAM_THEM v_us = new US_GD_CHAM_CONG_LAM_THEM();
+            DS_GD_CHAM_CONG_LAM_THEM v_ds = new DS_GD_CHAM_CONG_LAM_THEM();
+            v_us.FillDatasetGetChamCongTheoThang(v_ds, m_txt_thang.Text, m_txt_nam.Text);
+            return v_ds.Tables[0].Rows.Count;
+        }
+
+        private bool kiem_tra_du_lieu()
+        {
+            if (m_txt_thang.Text.Trim() == "" || m_txt_nam.Text.Trim() == "")
+            {
+                XtraMessageBox.Show("Vui lòng nhập tháng và năm chấm công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (check_ma_nhan_vien_ko_ton_tai())
+                return false;
+            else if (check_ma_nhan_vien_duplicate())
+                return false;
+            else if (check_so_ngay_lam_them_sai())             
+                return false;
+            return true;
+        }
+
+        private void save_data()
+        {
+            splashScreenManager1.ShowWaitForm();
+            delete_du_lieu_cu();
+            insert_gd_cham_cong_lam_them();
+            splashScreenManager1.CloseWaitForm();
+            XtraMessageBox.Show("Lưu thành công");
+            m_cmd_luu_cham_cong_lam_them.Enabled = false;
+        }
+
+        private void delete_du_lieu_cu()
+        {
+            US_GD_CHAM_CONG_LAM_THEM v_us = new US_GD_CHAM_CONG_LAM_THEM();
+            v_us.BeginTransaction();
+            m_us = v_us;
+            v_us.DeleteAllChamCongLamThemThang(Convert.ToDecimal(m_txt_thang.Text), Convert.ToDecimal(m_txt_nam.Text));
+        }
+
+        private void insert_gd_cham_cong_lam_them()
+        {
+            for (int i = 0; i < m_grv.RowCount; i++)
+            {
+                var v_dr = m_grv.GetDataRow(i);
+                US_GD_CHAM_CONG_LAM_THEM v_us = new US_GD_CHAM_CONG_LAM_THEM();
+                v_us.dcID_NHAN_VIEN = get_id_nv_by_ma_nv(v_dr[0].ToString());
+                v_us.dcTHANG = decimal.Parse(m_txt_thang.Text);
+                v_us.dcNAM = decimal.Parse(m_txt_nam.Text);
+                v_us.dcSO_NGAY_LAM_THEM = decimal.Parse(v_dr[4].ToString());
+                v_us.UseTransOfUSObject(m_us);
+                m_us = v_us;
+                v_us.Insert();
+            }
+            m_us.CommitTransaction();
+        }
+
+        private decimal get_id_nv_by_ma_nv(string ip_str_ma_nv)
+        {
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            return v_us.getIDNhanVienByMaNV(ip_str_ma_nv);
+        }
+
+        private bool check_so_ngay_lam_them_sai()
+        {
+            List<string> v_lst_nv_cham_cong_sai = new List<string>();
+            for (int i = 0; i < m_grv.RowCount; i++)
+            {
+                var v_dr = m_grv.GetDataRow(i);
+                decimal v_dc_so_ngay_lam_them;
+                if (!decimal.TryParse(v_dr[4].ToString(), out v_dc_so_ngay_lam_them))
+                    v_lst_nv_cham_cong_sai.Add(v_dr[0].ToString());
+            }
+            if (v_lst_nv_cham_cong_sai.Count == 0)
+                return false;
+            else
+            {
+                string v_str = "Vui lòng kiểm tra lại số ngày làm thêm của nhân viên '" + string.Join(",", v_lst_nv_cham_cong_sai) + "'";
+                XtraMessageBox.Show(v_str, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+        }
+
+        private bool check_ma_nhan_vien_ko_ton_tai()
+        {
+            List<string> v_lst_nv_ko_ton_tai = new List<string>();
+            for (int i = 0; i < m_grv.RowCount; i++)
+            {
+                var v_dr = m_grv.GetDataRow(i);
+                US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+                if (!v_us.IsExistNhanVienInDB(v_dr[0].ToString()))
+                    v_lst_nv_ko_ton_tai.Add(v_dr[0].ToString());
+            }
+            if (v_lst_nv_ko_ton_tai.Count == 0)
+                return false;
+            else
+            {
+                string v_str = "Mã nhân viên '" + string.Join(",", v_lst_nv_ko_ton_tai) + "' không tồn tại. \nVui lòng kiểm tra lại!";
+                XtraMessageBox.Show(v_str, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+        }
+
+        private bool check_ma_nhan_vien_duplicate()
+        {
+            DataTable v_dt = new DataTable();
+            v_dt.Columns.Add();
+            for (int i = 0; i < m_grv.RowCount; i++)
+            {
+                var v_dr = m_grv.GetDataRow(i);
+                v_dt.Rows.Add(v_dr[0]);
+            }
+            var duplicate = v_dt.AsEnumerable().GroupBy(r => r[0]).Where(gr => gr.Count() > 1).ToList();
+            if (duplicate.Any())
+            {
+                string v_str = "Mã nhân viên '" + string.Join(",", duplicate.Select(dupl => dupl.Key)) + "' đang bị trùng. \nVui lòng kiểm tra lại!";
+                XtraMessageBox.Show(v_str, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            return false;
+        }
+        #endregion
+
+        #region Events Handler
 
         private void set_define_events()
         {
             m_cmd_tai_file_mau.Click += m_cmd_tai_file_mau_Click;
             m_cmd_chon_du_lieu.Click += m_cmd_chon_du_lieu_Click;
+            m_cmd_luu_cham_cong_lam_them.Click += m_cmd_luu_cham_cong_lam_them_Click;
+        }
+
+        void m_cmd_luu_cham_cong_lam_them_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (kiem_tra_du_lieu())
+                {
+                    string v_str = "Việc import sẽ xóa dữ liệu cũ đã có trong tháng này và thêm dữ liệu mới từ file excel vừa import.\nBạn có chắc chắn muốn thực hiện?";
+                    DialogResult v_dialog = XtraMessageBox.Show(v_str, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (v_dialog == DialogResult.Yes)
+                    {
+                        save_data();
+                        set_trang_thai_cham_cong();
+                    }
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_chon_du_lieu_Click(object sender, EventArgs e)
         {
             try
             {
-                WinFormControls.load_xls_to_gridview(WinFormControls.openFileDialog(), m_grc);
+                string source_file = WinFormControls.openFileDialog();
+                if (source_file != "")
+                {
+                    WinFormControls.load_xls_to_gridview(source_file, m_grc);
+                    CHRMCommon.make_stt_indicator(m_grv);
+                    m_cmd_luu_cham_cong_lam_them.Enabled = true;
+                }
             }
             catch (Exception v_e)
             {
@@ -53,7 +221,14 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                WinFormControls.openTemplate("ChamCongLamThem.xlsx");
+                if (!System.IO.Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)))
+                {
+                    WinFormControls.openTemplate("ChamCongLamThem.xlsx");
+                }
+                else
+                {
+                    XtraMessageBox.Show("File excel đang được mở. \nVui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
             }
             catch (Exception v_e)
             {
@@ -61,140 +236,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        private void m_txt_thang_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
+        #endregion 
 
-        private void m_txt_nam_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void m_txt_luu_Click(object sender, EventArgs e)
-        {
-            if ((m_txt_thang.Text == "") ||( m_txt_nam.Text == "") || (m_txt_path == ""))
-            {
-                MessageBox.Show("Bạn phải hoàn tất bước 1 và bước 2 trước khi lưu dữ liệu!");
-            }
-            else
-            {
-                luu_du_lieu();
-            }
-        }
-
-        private void luu_du_lieu()
-        {
-            m_so_dong = m_grv.RowCount;
-            if (m_so_dong > 0)
-            {
-                DialogResult dialogResult = MessageBox.Show("Khi thực hiện tác vụ này, phần mềm sẽ xóa dữ liệu cũ về số ngày làm thêm của tất cả nhân viên trong tháng " +m_txt_thang.Text+ ", năm "+ m_txt_nam.Text+", và nhập lại dữ liệu giống như file excel vừa tải lên. Bạn có chắc chắn muốn thực hiện tác vụ này?", "Cảnh báo", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    delete_du_lieu_cu();
-                    luu_du_lieu_so_ngay_lam_them();
-
-                    //load_data_2_grid();
-
-                }
-            }
-        }
-
-        private void delete_du_lieu_cu()
-        {
-            US_GD_CHAM_CONG_LAM_THEM v_us = new US_GD_CHAM_CONG_LAM_THEM();
-            v_us.DeleteAllChamCongLamThemThang(Convert.ToDecimal(m_txt_thang.Text), Convert.ToDecimal(m_txt_nam.Text));
-
-            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            //DataSet v_ds = new DataSet();
-            //v_ds.Tables.Add(new DataTable());
-            //v_us.FillDatasetWithQuery(v_ds, "delete from gd_cham_cong_lam_them where thang="+ m_txt_thang.Text+ " and nam="+ m_txt_nam.Text);
-        }
-
-        private void luu_du_lieu_so_ngay_lam_them()
-        {
-            for (int i = m_so_dong - 1; i >= 0; i--)
-            {
-                DataRow v_dr = m_grv.GetDataRow(i);
-                if (check_ma_nhan_vien(v_dr))
-                {
-                    if (check_so_ngay_lam_them(v_dr))
-                    {
-                        insert_vao_csdl(v_dr);
-                    }
-                }
-            }
-
-            MessageBox.Show("Nhập thành công dữ liệu về số ngày làm thêm của "+ (m_so_dong- m_grv.DataRowCount) + " nhân viên. Kiểm tra lại dữ liệu của những nhân viên còn lại trên lưới( nếu có)! ");
-        }
-
-        private void insert_vao_csdl(DataRow v_dr)
-        {
-            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
-            DataSet v_ds_nhan_vien = new DataSet();
-            v_ds_nhan_vien.Tables.Add(new DataTable());
-            v_us.LayThongTinNhanVien(v_ds_nhan_vien, v_dr["MA_NV"].ToString());
-
-            US_GD_CHAM_CONG_LAM_THEM v_us_gd_cclt = new US_GD_CHAM_CONG_LAM_THEM();
-            v_us_gd_cclt.dcID_NHAN_VIEN = CIPConvert.ToDecimal(v_ds_nhan_vien.Tables[0].Rows[0]["ID"].ToString());
-            v_us_gd_cclt.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text);
-            v_us_gd_cclt.dcTHANG = CIPConvert.ToDecimal(m_txt_thang.Text);
-            v_us_gd_cclt.dcSO_NGAY_LAM_THEM=CIPConvert.ToDecimal(v_dr["SO_NGAY_LAM_THEM"].ToString());
-            try
-            {
-                v_us_gd_cclt.Insert();
-                v_dr.Delete();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-                //MessageBox.Show("Đã tồn tại 1 dòng dữ liệu về số ngày làm thêm của nhân viên " + v_dr["MA_NV"].ToString() + " trong tháng "+ m_txt_thang.Text+ ", năm "+ m_txt_nam.Text+ ". Vui lòng kiểm tra lại thông tin!" );
-            }
-        }
-
-        private bool check_so_ngay_lam_them(DataRow v_dr)
-        {
-            decimal  v_dc_so_ngay_lam_them;
-            if (!decimal.TryParse(v_dr["SO_NGAY_LAM_THEM"].ToString(),out v_dc_so_ngay_lam_them))
-            {
-                MessageBox.Show("Kiểm tra lại dữ liệu về Số ngày làm thêm của nhân viên có mã "+ v_dr["MA_NV"].ToString());
-                return false;
-            }
-            return true;
-        }
-
-        private bool check_ma_nhan_vien(DataRow v_dr)
-        {
-            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            //DataSet v_ds_nhan_vien = new DataSet();
-            //v_ds_nhan_vien.Tables.Add(new DataTable());
-            //v_us.FillDatasetWithQuery(v_ds_nhan_vien,"select * from DM_NHAN_VIEN where MA_NV="+ v_dr["MA_NV"].ToString());
-
-            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
-            v_us.IsExistNhanVienInDB(v_dr["MA_NV"].ToString());
-
-            if(!v_us.IsExistNhanVienInDB(v_dr["MA_NV"].ToString()))
-            {
-                MessageBox.Show("Mã nhân viên "+ v_dr["MA_NV"].ToString()+ " không tồn tại. Vui lòng kiểm tra lại thông tin!");
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        private void m_txt_tai_file_excel_mau_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-      
     }
 }

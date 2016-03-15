@@ -323,7 +323,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                F401_he_so_bao_cao_luong v_frm = new F401_he_so_bao_cao_luong();
+                f405_bao_cao_thong_tin_tinh_luong v_frm = new f405_bao_cao_thong_tin_tinh_luong();
                 if(IsExistFormName(v_frm)) return;
                 v_frm.MdiParent = this;
                 v_frm.Show();

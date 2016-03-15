@@ -326,6 +326,12 @@
     <Compile Include="BaoCao\f403_bao_cao_hs_athk_bsl_le_tet.Designer.cs">
       <DependentUpon>f403_bao_cao_hs_athk_bsl_le_tet.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\f405_bao_cao_thong_tin_tinh_luong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f405_bao_cao_thong_tin_tinh_luong.Designer.cs">
+      <DependentUpon>f405_bao_cao_thong_tin_tinh_luong.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\f410_bao_cao_so_luong_chat_luong_lao_dong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1156,6 +1162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f403_bao_cao_hs_athk_bsl_le_tet.resx">
       <DependentUpon>f403_bao_cao_hs_athk_bsl_le_tet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f405_bao_cao_thong_tin_tinh_luong.resx">
+      <DependentUpon>f405_bao_cao_thong_tin_tinh_luong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f410_bao_cao_so_luong_chat_luong_lao_dong.resx">
       <DependentUpon>f410_bao_cao_so_luong_chat_luong_lao_dong.cs</DependentUpon>

@@ -397,6 +397,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_F395_QUAN_LY_PHU_CAP_NHAN_VIEN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_F405_BAO_CAO_THONG_TIN_TINH_LUONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_F405_BAO_CAO_THONG_TIN_TINH_LUONG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_F410_BAO_CAO_SO_LUONG_CHAT_LUONG_NHAN_VIEN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1239,6 +1244,17 @@
     </None>
     <None Include="DS_V_F395_QUAN_LY_PHU_CAP_NHAN_VIEN.xss">
       <DependentUpon>DS_V_F395_QUAN_LY_PHU_CAP_NHAN_VIEN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F405_BAO_CAO_THONG_TIN_TINH_LUONG.xsc">
+      <DependentUpon>DS_V_F405_BAO_CAO_THONG_TIN_TINH_LUONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F405_BAO_CAO_THONG_TIN_TINH_LUONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_F405_BAO_CAO_THONG_TIN_TINH_LUONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_F405_BAO_CAO_THONG_TIN_TINH_LUONG.xss">
+      <DependentUpon>DS_V_F405_BAO_CAO_THONG_TIN_TINH_LUONG.xsd</DependentUpon>
     </None>
     <None Include="DS_V_F410_BAO_CAO_SO_LUONG_CHAT_LUONG_NHAN_VIEN.xsc">
       <DependentUpon>DS_V_F410_BAO_CAO_SO_LUONG_CHAT_LUONG_NHAN_VIEN.xsd</DependentUpon>

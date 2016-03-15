@@ -616,6 +616,35 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     #endregion
 
     #region VIEW
+    public class V_F405_BAO_CAO_THONG_TIN_TINH_LUONG
+    {
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string MA_NV = "MA_NV";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string HO_TEN = "HO_TEN";
+        public const string ID_DON_VI = "ID_DON_VI";
+        public const string MA_DON_VI = "MA_DON_VI";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string THU_TU_DON_VI = "THU_TU_DON_VI";
+        public const string ID_VI_TRI = "ID_VI_TRI";
+        public const string MA_VI_TRI = "MA_VI_TRI";
+        public const string TEN_VI_TRI = "TEN_VI_TRI";
+        public const string THU_TU_CHUC_VU = "THU_TU_CHUC_VU";
+        public const string ID_LOAI_LAO_DONG = "ID_LOAI_LAO_DONG";
+        public const string TEN_LOAI_LAO_DONG = "TEN_LOAI_LAO_DONG";
+        public const string ID_LOAI_HOP_DONG = "ID_LOAI_HOP_DONG";
+        public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
+        public const string MA_LOAI_HOP_DONG = "MA_LOAI_HOP_DONG";
+        public const string TI_LE_HOP_DONG = "TI_LE_HOP_DONG";
+        public const string HE_SO_LNS = "HE_SO_LNS";
+        public const string SO_TIEN_LCD = "SO_TIEN_LCD";
+        public const string TI_LE_PHU_CAP = "TI_LE_PHU_CAP";
+        public const string SO_NGUOI_PHU_THUOC = "SO_NGUOI_PHU_THUOC";
+        public const string SO_TIEN_LUONG_CUNG = "SO_TIEN_LUONG_CUNG";
+        public const string NHAN_VIEN_KHONG_DONG_BAO_HIEM = "NHAN_VIEN_KHONG_DONG_BAO_HIEM";
+    }
+    
     public class V_F410_BAO_CAO_SO_LUONG_CHAT_LUONG_NHAN_VIEN
     {
         public const string ID_DON_VI = "ID_DON_VI";

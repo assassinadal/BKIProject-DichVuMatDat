@@ -73,5 +73,12 @@ namespace BKI_DichVuMatDat.COMMON
 
             return v_dc_result;
         }
+        public static bool IsLockBangLuong(decimal ip_dc_thang, decimal ip_dc_nam)
+        {
+            var v_str_result = ExecuteFuntionSql("fn_TL_infor_lock_bang_luong_Get", ip_dc_thang, ip_dc_nam);
+            var v_bol_result = v_str_result == "Y" ? true : false;
+
+            return v_bol_result;
+        }
     }
 }

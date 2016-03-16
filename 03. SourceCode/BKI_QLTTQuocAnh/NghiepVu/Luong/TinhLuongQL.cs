@@ -137,18 +137,13 @@ namespace BKI_DichVuMatDat.NghiepVu.Luong
                 //XtraMessageBox.Show("Bạn đã hủy thao tác!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            US_GD_CHOT_BANG_LUONG v_us_gd_chot_bang_luong = new US_GD_CHOT_BANG_LUONG();
-            if(v_us_gd_chot_bang_luong.IsDaChotBangLuongThang(ip_dc_thang, ip_dc_nam))
+            US_RPT_CHOT_BANG_LUONG v_us_rpt_chot_bang_luong = new US_RPT_CHOT_BANG_LUONG();
+            if(v_us_rpt_chot_bang_luong.IsLockBangLuong(ip_dc_thang, ip_dc_nam))
             {
                 XtraMessageBox.Show("Bảng lương đã được chốt!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            chot_he_so_bsl_athk_thang(ip_dc_thang, ip_dc_nam);
-            v_us_gd_chot_bang_luong.dcTHANG = ip_dc_thang;
-            v_us_gd_chot_bang_luong.dcNAM = ip_dc_nam;
-            v_us_gd_chot_bang_luong.strNGUOI_CHOT = CAppContext_201.getCurrentUserName();
-            v_us_gd_chot_bang_luong.datNGAY_CHOT = DateTime.Now.Date;
-            v_us_gd_chot_bang_luong.Insert();
+            v_us_rpt_chot_bang_luong.LockBangLuongThang(ip_dc_thang, ip_dc_nam, CAppContext_201.getCurrentUserName());
             XtraMessageBox.Show("Đã chốt bảng lương tháng thành công! ", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         public void XoaToanBoBangLuong(decimal ip_dc_thang, decimal ip_dc_nam)

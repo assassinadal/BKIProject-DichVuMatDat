@@ -48,6 +48,15 @@ namespace BKI_DichVuMatDat.BaoCao
             this.m_grv_main.BestFitColumns(true);
             this.ShowDialog();
         }
+        public void Display(decimal ip_dc_thang, decimal ip_dc_nam)
+        {
+            this.m_grv_main.BestFitColumns(true);
+            m_txt_thang.EditValue = ip_dc_thang;
+            m_txt_nam.EditValue = ip_dc_nam;
+            m_txt_thang.Enabled = false;
+            m_txt_nam.Enabled = false;
+            this.ShowDialog();
+        }
         #endregion
 
         #region Event Handle

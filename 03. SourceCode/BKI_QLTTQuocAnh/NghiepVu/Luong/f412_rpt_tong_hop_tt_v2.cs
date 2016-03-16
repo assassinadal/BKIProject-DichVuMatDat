@@ -89,8 +89,6 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         #endregion
 
-        #region Event Handle
-
         private void f413_rpt_tong_hop_thong_tin_Load(object sender, EventArgs e)
         {
             try
@@ -103,7 +101,6 @@ namespace BKI_DichVuMatDat.BaoCao
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
 
         private void m_cmd_luu_bang_luong_Click(object sender, EventArgs e)
         {
@@ -173,18 +170,6 @@ namespace BKI_DichVuMatDat.BaoCao
 
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                load_data_2_grid();
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
         private void m_txt_thang_Leave(object sender, EventArgs e)
         {
             try
@@ -202,6 +187,31 @@ namespace BKI_DichVuMatDat.BaoCao
             try
             {
                 hien_thi_thong_tin_bang_luong();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_soan_thao_bang_luong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f409_rpt_bang_luong_nv_v2 v_frm = new f409_rpt_bang_luong_nv_v2();
+                v_frm.Display(lay_thang(), lay_nam());
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_view_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
             }
             catch(Exception v_e)
             {

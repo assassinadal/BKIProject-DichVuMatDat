@@ -459,15 +459,20 @@ namespace BKI_DichVuMatDat.BaoCao
                 m_lbl_thong_bao.ForeColor = Color.Red;
                 m_lbl_so_luong_nv_tinh_luong.ForeColor = Color.Red;
             }
-            m_lbl_so_luong_nv_tinh_luong.Text = v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_DA_TINH.ToString() + "/"
-                                                    + v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_CAN_TINH.ToString() + " (nhân viên)";
+            
             if(v_dto_thong_tin_bang_luong.CHOT_BANG_LUONG)
             {
                 m_lbl_trang_thai_bang_luong.ForeColor = Color.Gray;
                 m_lbl_trang_thai_bang_luong.Text = "|Đã chốt, không chỉnh sửa";
+                m_lbl_so_luong_nv_tinh_luong.Text = v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_DA_TINH.ToString();
+                m_lbl_so_luong_nv_tinh_luong.ForeColor = Color.Gray;
             }
+
             else
             {
+                m_lbl_so_luong_nv_tinh_luong.ForeColor = Color.Gray;
+                m_lbl_so_luong_nv_tinh_luong.Text = v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_DA_TINH.ToString() + "/"
+                                                    + v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_CAN_TINH.ToString() + " (nhân viên)";
                 m_lbl_trang_thai_bang_luong.ForeColor = Color.Green;
                 m_lbl_trang_thai_bang_luong.Text = "|Chưa chốt, có thể chỉnh sửa";
             }

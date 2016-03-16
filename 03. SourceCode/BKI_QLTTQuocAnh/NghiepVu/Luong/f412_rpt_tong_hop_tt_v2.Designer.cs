@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f412_rpt_tong_hop_tt_v2));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,7 +38,7 @@
             this.m_txt_thang = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_cmd_tinh_lai_nhan_vien = new DevExpress.XtraEditors.SimpleButton();
-            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollection = new DevExpress.Utils.ImageCollection();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_bgwk = new System.ComponentModel.BackgroundWorker();
@@ -70,6 +69,9 @@
             this.colCHAM_CONG_RO_KO_DC = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colCHAM_CONG_KHAC = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colSO_NGAY_LAM_THEM = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colHS_ATHK = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colHS_BSL = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colLE_TET_YN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colLUONG_NS = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.repositoryItemTextEditTien = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.colLUONG_CD = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -109,9 +111,6 @@
             this.ID_NHAN_VIEN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repoBtnXoaLuong = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.colHS_ATHK = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colHS_BSL = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colLE_TET_YN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand68 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.MA_NV = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand38 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -817,6 +816,35 @@
             this.colSO_NGAY_LAM_THEM.Visible = true;
             this.colSO_NGAY_LAM_THEM.Width = 102;
             // 
+            // colHS_ATHK
+            // 
+            this.colHS_ATHK.Caption = "HS ATHK";
+            this.colHS_ATHK.FieldName = "HS_ATHK";
+            this.colHS_ATHK.Name = "colHS_ATHK";
+            this.colHS_ATHK.OptionsColumn.ShowCaption = false;
+            this.colHS_ATHK.Visible = true;
+            this.colHS_ATHK.Width = 52;
+            // 
+            // colHS_BSL
+            // 
+            this.colHS_BSL.Caption = "HS BSL";
+            this.colHS_BSL.FieldName = "HS_BSL";
+            this.colHS_BSL.Name = "colHS_BSL";
+            this.colHS_BSL.OptionsColumn.ShowCaption = false;
+            this.colHS_BSL.Visible = true;
+            this.colHS_BSL.Width = 44;
+            // 
+            // colLE_TET_YN
+            // 
+            this.colLE_TET_YN.AppearanceCell.Options.UseTextOptions = true;
+            this.colLE_TET_YN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLE_TET_YN.Caption = "Lễ tết";
+            this.colLE_TET_YN.FieldName = "LE_TET_YN";
+            this.colLE_TET_YN.Name = "colLE_TET_YN";
+            this.colLE_TET_YN.OptionsColumn.ShowCaption = false;
+            this.colLE_TET_YN.Visible = true;
+            this.colLE_TET_YN.Width = 40;
+            // 
             // colLUONG_NS
             // 
             this.colLUONG_NS.AppearanceHeader.Options.UseTextOptions = true;
@@ -1348,35 +1376,6 @@
             this.repoBtnXoaLuong.Name = "repoBtnXoaLuong";
             this.repoBtnXoaLuong.ReadOnly = true;
             this.repoBtnXoaLuong.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // colHS_ATHK
-            // 
-            this.colHS_ATHK.Caption = "HS ATHK";
-            this.colHS_ATHK.FieldName = "HS_ATHK";
-            this.colHS_ATHK.Name = "colHS_ATHK";
-            this.colHS_ATHK.OptionsColumn.ShowCaption = false;
-            this.colHS_ATHK.Visible = true;
-            this.colHS_ATHK.Width = 52;
-            // 
-            // colHS_BSL
-            // 
-            this.colHS_BSL.Caption = "HS BSL";
-            this.colHS_BSL.FieldName = "HS_BSL";
-            this.colHS_BSL.Name = "colHS_BSL";
-            this.colHS_BSL.OptionsColumn.ShowCaption = false;
-            this.colHS_BSL.Visible = true;
-            this.colHS_BSL.Width = 44;
-            // 
-            // colLE_TET_YN
-            // 
-            this.colLE_TET_YN.AppearanceCell.Options.UseTextOptions = true;
-            this.colLE_TET_YN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colLE_TET_YN.Caption = "Lễ tết";
-            this.colLE_TET_YN.FieldName = "LE_TET_YN";
-            this.colLE_TET_YN.Name = "colLE_TET_YN";
-            this.colLE_TET_YN.OptionsColumn.ShowCaption = false;
-            this.colLE_TET_YN.Visible = true;
-            this.colLE_TET_YN.Width = 40;
             // 
             // gridBand68
             // 
@@ -2747,19 +2746,22 @@
             // 
             this.gridBand131.Caption = "gridBand131";
             this.gridBand131.Name = "gridBand131";
-            this.gridBand131.VisibleIndex = 10;
+            this.gridBand131.Visible = false;
+            this.gridBand131.VisibleIndex = -1;
             // 
             // gridBand132
             // 
             this.gridBand132.Caption = "gridBand132";
             this.gridBand132.Name = "gridBand132";
-            this.gridBand132.VisibleIndex = 11;
+            this.gridBand132.Visible = false;
+            this.gridBand132.VisibleIndex = -1;
             // 
             // gridBand133
             // 
             this.gridBand133.Caption = "gridBand133";
             this.gridBand133.Name = "gridBand133";
-            this.gridBand133.VisibleIndex = 12;
+            this.gridBand133.Visible = false;
+            this.gridBand133.VisibleIndex = -1;
             // 
             // gridBand4
             // 
@@ -2778,7 +2780,7 @@
             this.gridBand4.RowCount = 2;
             this.gridBand4.ToolTip = "Là tiền lương nhân viên nhận được và bằng Thu nhập trong bảng lương trừ các khoản" +
     " phải thu";
-            this.gridBand4.VisibleIndex = 13;
+            this.gridBand4.VisibleIndex = 10;
             this.gridBand4.Width = 108;
             // 
             // gridBand33
@@ -2899,6 +2901,9 @@
         private DevExpress.XtraEditors.LabelControl m_lbl_trang_thai_bang_luong;
         private DevExpress.XtraEditors.LabelControl m_lbl_so_luong_nv_tinh_luong;
         private DevExpress.XtraEditors.LabelControl m_lbl_thong_bao;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHS_ATHK;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHS_BSL;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colLE_TET_YN;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand68;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand MA_NV;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand38;
@@ -2955,13 +2960,10 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand123;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand125;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand126;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHS_ATHK;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand129;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand130;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHS_BSL;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand127;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand128;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colLE_TET_YN;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand10;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand53;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand54;

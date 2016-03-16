@@ -109,7 +109,6 @@
             this.m_cmd_delete.Size = new System.Drawing.Size(116, 41);
             this.m_cmd_delete.TabIndex = 2;
             this.m_cmd_delete.Text = "&Xóa";
-            this.m_cmd_delete.Visible = false;
             // 
             // m_cmd_xuat_excel
             // 
@@ -120,7 +119,6 @@
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 41);
             this.m_cmd_xuat_excel.TabIndex = 3;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
-            this.m_cmd_xuat_excel.Visible = false;
             // 
             // m_grc_luong_cung_cua_nhan_vien
             // 
@@ -346,7 +344,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.m_lbl_header);
             this.Name = "f365_quan_ly_nhan_vien_co_luong_cung_v2";
-            this.Text = "f365_quan_ly_nhan_vien_co_luong_cung_v2";
+            this.Text = "F365 - Quản lý nhân viên có lương cứng";
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_luong_cung_cua_nhan_vien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_luong_cung_cua_nhan_vien)).EndInit();

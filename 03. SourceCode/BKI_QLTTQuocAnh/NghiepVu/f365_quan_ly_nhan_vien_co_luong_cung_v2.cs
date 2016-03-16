@@ -13,6 +13,7 @@ using BKI_DichVuMatDat.US;
 using BKI_DichVuMatDat.DS.CDBNames;
 using DevExpress.XtraEditors;
 using IP.Core.IPSystemAdmin;
+using System.Data.SqlClient;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -60,7 +61,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             return v_ds;
         }
 
-
         private void load_data_2_grid()
         {
             CHRMCommon.make_stt(m_grv_luong_cung_cua_nhan_vien);
@@ -71,7 +71,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             //v_v_us_luong_cung = new US_V_GD_LUONG_CUNG();
             DS_V_GD_LUONG_CUNG v_ds = new DS_V_GD_LUONG_CUNG();
             //v_ds.Tables.Add(new DataTable());
-            v_v_us_luong_cung.FillDataset(v_ds);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM V_GD_LUONG_CUNG WHERE DA_XOA = 'N' ORDER BY ID_NHAN_VIEN");
+            v_v_us_luong_cung.FillDatasetByCommand(v_ds, cmd);
             m_grc_luong_cung_cua_nhan_vien.DataSource = v_ds.Tables[0];
         }
 
@@ -162,7 +163,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         //    throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
         //    //v_us.FillDatasetWithTableName(v_ds, "V_GD_LUONG_CUNG");
 
-        //    v_id_nv_f363 = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
+        //    v_id_nv_f363 = CIPConvert.ToDecimal(.EditValue);
 
         //    for (v_row_index = 0; v_row_index < v_ds.Tables[0].Rows.Count; v_row_index++)
         //    {
@@ -209,9 +210,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 decimal v_id_nv = CIPConvert.ToDecimal(m_grv_luong_cung_cua_nhan_vien.GetRowCellValue(m_grv_luong_cung_cua_nhan_vien.FocusedRowHandle, "ID_NHAN_VIEN"));
-                if (v_id_nv > 0)
-                {
-                    decimal v_id_gd_luong_cung = find_id_gd_luong_cung(v_id_nv);
+                decimal v_id_gd_luong_cung = find_id_gd_luong_cung(v_id_nv);
                     if (v_id_gd_luong_cung != -1)
                     {
                         v_us = new US_GD_LUONG_CUNG(v_id_gd_luong_cung);
@@ -221,17 +220,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                     }
                     else
                     {
-                        f364_quan_ly_cac_nhan_vien_co_luong_cung_de frm = new f364_quan_ly_cac_nhan_vien_co_luong_cung_de();
-                        frm.display_4_insert(v_id_nv);
-                        load_data_2_grid();
+                    //f364_quan_ly_cac_nhan_vien_co_luong_cung_de frm = new f364_quan_ly_cac_nhan_vien_co_luong_cung_de();
+                    //frm.display_4_insert(v_id_nv);
+                    //load_data_2_grid();
+                    CHRM_BaseMessages.MsgBox_Error("Nhân viên không có lương cứng!");
                     }
                 }
-                else
-                {
-                    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_DONG_TREN_LUOI_DE_SUA);
-                    return;
-                }                  
-            }
+                             
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
@@ -246,6 +241,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 frm.display_4_insert();
                 //m_e_form_mode = DataEntryFormMode.InsertDataState;
                 //refresh_form();
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {
@@ -292,18 +288,27 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                //Lay ID cua dong du lieu muon xoa
-                DataRow v_dr = m_grv_luong_cung_cua_nhan_vien.GetDataRow(m_grv_luong_cung_cua_nhan_vien.FocusedRowHandle);
-                //Lay ID cua dong du lieu tren
-                decimal v_id = CIPConvert.ToDecimal(v_dr[GD_LUONG_CUNG.ID]);
-                if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_DU_LIEU) == true)
+                if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_DU_LIEU))
                 {
-                    US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG(v_id);
-                    v_us.strDA_XOA = "Y";
-                    v_us.BeginTransaction();
-                    v_us.Update();
-                    v_us.CommitTransaction();
+                    //Lay ID cua dong du lieu muon xoa
+                    DataRow v_dr = m_grv_luong_cung_cua_nhan_vien.GetDataRow(m_grv_luong_cung_cua_nhan_vien.FocusedRowHandle);
+                    //Lay ID cua dong du lieu tren
+                    decimal v_id = CIPConvert.ToDecimal(v_dr[GD_LUONG_CUNG.ID]);
+                    if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_DU_LIEU) == true)
+                    {
+                        US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG(v_id);
+                        v_us.strDA_XOA = "Y";
+                        v_us.BeginTransaction();
+                        v_us.Update();
+                        v_us.CommitTransaction();
+                    }
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_XOA_DU_LIEU_THANH_CONG);
+                    load_data_2_grid();
                 }
+                else
+                {
+                    return;
+                } 
             }
             catch (Exception v_e)
             {

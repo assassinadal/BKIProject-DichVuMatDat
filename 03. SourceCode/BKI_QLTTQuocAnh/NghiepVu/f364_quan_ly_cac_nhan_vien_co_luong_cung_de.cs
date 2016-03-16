@@ -31,28 +31,30 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         public void display_4_update(US_GD_LUONG_CUNG ip_us)
         {
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
             this.m_lbl_header.Text = "SỬA THÔNG TIN LƯƠNG CỨNG";
             m_us_gd_luong_cung = ip_us;
             us_obj_2_form();
-            this.ShowDialog();
-            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            this.ShowDialog();         
         }
+
         public void display_4_insert()
         {
-            this.m_lbl_header.Text = "THÊM THÔNG TIN LƯƠNG CỨNG";
-            this.m_txt_so_tien.Text = "";
-            this.m_txt_ghi_chu.Text = "";
-            this.ShowDialog();
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.m_lbl_header.Text = "THÊM THÔNG TIN LƯƠNG CỨNG";
+            clear_data_in_form();
+            this.ShowDialog();
+          
         }
         public void display_4_insert(decimal ip_id_nv)
         {
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.m_lbl_header.Text = "THÊM THÔNG TIN LƯƠNG CỨNG";
             m_sle_chon_nhan_vien.EditValue = ip_id_nv;
             this.m_txt_so_tien.Text = "";
             this.m_txt_ghi_chu.Text = "";
             this.ShowDialog();
-            m_e_form_mode = DataEntryFormMode.InsertDataState;
+
         }
 
         #endregion
@@ -62,7 +64,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         US_GD_LUONG_CUNG m_us_gd_luong_cung = new US_GD_LUONG_CUNG();
         DialogResult m_dgl_result = DialogResult.Cancel;
-
         #endregion
 
         #region Private Methods
@@ -78,7 +79,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void format_controls()
         {
-            FormatControl.SetVisibleSimpleButton(this);
+            //FormatControl.SetVisibleSimpleButton(this);
             set_define_events();
             this.CenterToScreen();
             this.KeyPreview = true;
@@ -150,6 +151,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                 default:
                     break;
             }
+        }
+
+        private void clear_data_in_form()
+        {
+            m_sle_chon_nhan_vien.EditValue = null;
+            m_txt_ghi_chu.Text = "";
+            m_txt_so_tien.Text = "";
         }
 
         private void form_2_us_obj(US_GD_LUONG_CUNG ip_us)
@@ -276,20 +284,32 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                if (m_sle_chon_nhan_vien.EditValue == null) return;
                 decimal id_nv = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
                 decimal id_gd = find_id_gd_luong_cung(id_nv);
-                if(id_gd!=-1)
+                if(id_gd!=-1 & m_e_form_mode == DataEntryFormMode.InsertDataState)
                 {
                     if (CHRM_BaseMessages.MsgBox_Confirm("Hiện tại nhân viên này đã có lương cứng. Bạn có muốn cập nhật thông tin?") == true)
                     {
+                        m_e_form_mode = DataEntryFormMode.UpdateDataState;
                         m_us_gd_luong_cung = new US_GD_LUONG_CUNG(id_gd);
                         us_obj_2_form();
+                    }
+                    else
+                    {
+                        if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+                        {
+                            clear_data_in_form();
+                        }
+                        if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
+                        {
+                            this.Close();
+                        }
                     }
                 }
                 else
                 {
-                    m_txt_ghi_chu.Text = "";
-                    m_txt_so_tien.Text = "";
+                    
                 }
             }
             catch (Exception v_e)
@@ -299,11 +319,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private decimal find_id_gd_luong_cung(decimal ip_dc_id_nhan_vien)
         {
-            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            //DataSet v_ds = new DataSet();
-            //v_ds.Tables.Add(new DataTable());
-            //throw new Exception("Sua lai khong dung FillDataSetWithTableName nua nhe");
-            // v_us.FillDatasetWithTableName(v_ds, "GD_LUONG_CUNG");
             US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG();
             DS_GD_LUONG_CUNG v_ds = new DS_GD_LUONG_CUNG();
             v_us.FillDataset(v_ds);

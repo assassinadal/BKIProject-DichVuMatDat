@@ -317,6 +317,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 luuChamCong(m_grv.GetDataRow(i));
                 worker.ReportProgress((i + 1) * 100 / m_grv.RowCount);
             }
+            m_us_gd_cham_cong.CommitTransaction();
         }
 
         private void m_bgwk_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -394,7 +395,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_us_hsk.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                 v_us_hsk.UseTransOfUSObject(m_us_gd_cham_cong);
                 v_us_hsk.Insert();
-                v_us_hsk.CommitTransaction();
             }
             catch (Exception v_e)
             {

@@ -259,7 +259,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             //string v_current_date = DateTime.Now.Date.ToShortDateString();
 
             //v_us.FillDataset(v_ds, "WHERE NGAY_BAT_DAU <= '" + v_current_date + "' AND (NGAY_KET_THUC >= '" + v_current_date + "' OR NGAY_KET_THUC IS NULL)");
-            v_us.FillDataset_by_ngay_hien_tai(v_ds, DateTime.Now.Date);
+            v_us.FillDataset_by_ngay_hien_tai(v_ds);
 
             m_grc_lap_hd.DataSource = v_ds.Tables[0];
         }
@@ -273,7 +273,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             //string v_current_date = DateTime.Now.Date.ToShortDateString();
 
             //v_us.FillDataset(v_ds, "WHERE ID_NHAN_VIEN = " + ip_dc_id_nhan_vien + " AND NGAY_BAT_DAU <= '" + v_current_date + "' AND (NGAY_KET_THUC >= '" + v_current_date + "' OR NGAY_KET_THUC IS NULL)");
-            v_us.FillDataset_by_ngay_hien_tai(v_ds, ip_dc_id_nhan_vien, DateTime.Now.Date);
+            v_us.FillDataset_by_ngay_hien_tai(v_ds, ip_dc_id_nhan_vien);
             m_grc_lap_hd.DataSource = v_ds.Tables[0];
         }
 
@@ -407,18 +407,10 @@ namespace BKI_DichVuMatDat.NghiepVu
                 }
             }
 
-            if (m_dat_ngay_bat_dau.Value.Date == m_dat_ngay_ket_thuc.Value.Date)
+            if (m_dat_ngay_bat_dau.Value.Date >= m_dat_ngay_ket_thuc.Value.Date)
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_NGAY_KET_THUC_NHO_HON_NGAY_BAT_DAU);
                 return false;
-            }
-
-            if (m_e_form_mode == DataEntryFormMode.InsertDataState)
-            {
-                if (check_ma_hd())
-                {
-                    return false;
-                }
             }
 
             return true;
@@ -906,7 +898,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             //US_GD_HE_SO_LNS v_us_gd_hs_lns = new US_GD_HE_SO_LNS();
             //US_GD_LUONG_CHE_DO v_us_gd_lcd = new US_GD_LUONG_CHE_DO();
             //US_GD_TRANG_THAI_LAO_DONG v_us_gd_trang_thai_lao_dong = new US_GD_TRANG_THAI_LAO_DONG();
-
+            //US_GD_HOP_DONG v_us_gd_hd = new US_GD_HOP_DONG();
             //form_2_us_gd_hop_dong(v_us_gd_hd);
             //try
             //{
@@ -1011,7 +1003,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         //clear data in form
         private void clear_data_in_form()
         {
-            m_sle_chon_nhan_vien.EditValue = null;
+            m_sle_chon_nhan_vien.EditValue = "";
             clear_data_without_sle_chon_nv_and_grid();
             load_data_2_grid();
             //DS_V_F320_LAP_HOP_DONG v_ds = new DS_V_F320_LAP_HOP_DONG();
@@ -1058,6 +1050,30 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             load_data_2_grid();
         }
+
+        private void datetimechange()
+        {
+            if (m_sle_loai_hop_dong.EditValue != null && m_sle_loai_hop_dong.EditValue != "")
+            {
+                if (decimal.Parse(m_sle_loai_hop_dong.EditValue.ToString()) == CONST_ID_LOAI_HOP_DONG.HOP_DONG_MOT_NAM)
+                {
+                    m_dat_ngay_ket_thuc.Value = m_dat_ngay_bat_dau.Value.AddYears(1).AddDays(-1);
+                }
+                else if (decimal.Parse(m_sle_loai_hop_dong.EditValue.ToString()) == CONST_ID_LOAI_HOP_DONG.HOP_DONG_3_NAM)
+                {
+                    m_dat_ngay_ket_thuc.Value = m_dat_ngay_bat_dau.Value.AddYears(3).AddDays(-1);
+                }
+                else if (decimal.Parse(m_sle_loai_hop_dong.EditValue.ToString()) == CONST_ID_LOAI_HOP_DONG.HOP_DONG_KHONG_XAC_DINH)
+                {
+                    m_dat_ngay_ket_thuc.Value = m_dat_ngay_bat_dau.Value.AddYears(45);
+                }
+                else
+                {
+                    return;
+                }
+            }
+        }
+
         #endregion
 
         private void set_define_events()
@@ -1180,6 +1196,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                     return;
                 }
 
+                datetimechange();
+
                 if (CIPConvert.ToDecimal(m_sle_loai_hop_dong.EditValue) == CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
                 {
                     m_gr_LNS.Enabled = false;
@@ -1222,6 +1240,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                             if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
                             {
                                 save_data();
+                                CHRM_BaseMessages.MsgBox_Infor(op_str_mess);
                                 m_trang_thai_buoc_3_thanh_cong = 1;
                                 if (m_trang_thai_them == -1)
                                 {
@@ -1234,6 +1253,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                             if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_CAP_NHAT_DU_LIEU) == true)
                             {
                                 save_data();
+                                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                             }
                             break;
                         default:
@@ -1401,22 +1421,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (decimal.Parse(m_sle_loai_hop_dong.EditValue.ToString()) == CONST_ID_LOAI_HOP_DONG.HOP_DONG_MOT_NAM)
-                {
-                    m_dat_ngay_ket_thuc.Value = m_dat_ngay_bat_dau.Value.AddYears(1).AddDays(-1);
-                }
-                else if (decimal.Parse(m_sle_loai_hop_dong.EditValue.ToString()) == CONST_ID_LOAI_HOP_DONG.HOP_DONG_3_NAM)
-                {
-                    m_dat_ngay_ket_thuc.Value = m_dat_ngay_bat_dau.Value.AddYears(3).AddDays(-1);
-                }
-                else if (decimal.Parse(m_sle_loai_hop_dong.EditValue.ToString()) == CONST_ID_LOAI_HOP_DONG.HOP_DONG_KHONG_XAC_DINH)
-                {
-                    m_dat_ngay_ket_thuc.Value = m_dat_ngay_bat_dau.Value.AddYears(45);
-                }
-                else
-                {
-                    return;
-                }
+                datetimechange();
             }
             catch (Exception v_e)
             {

@@ -123,6 +123,7 @@
             // 
             // m_sle_ten_nv
             // 
+            this.m_sle_ten_nv.EditValue = "";
             this.m_sle_ten_nv.Location = new System.Drawing.Point(147, 68);
             this.m_sle_ten_nv.Name = "m_sle_ten_nv";
             this.m_sle_ten_nv.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -162,6 +163,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.m_sle_ten_nv);
             this.layoutControl1.Controls.Add(this.m_chk_khong_dong_BH);
             this.layoutControl1.Controls.Add(this.m_txt_ly_do);
             this.layoutControl1.Controls.Add(this.m_txt_nam);
@@ -178,7 +180,6 @@
             this.layoutControl1.Controls.Add(this.m_dat_ngay_bat_dau);
             this.layoutControl1.Controls.Add(this.label2);
             this.layoutControl1.Controls.Add(this.m_sle_loai_lao_dong);
-            this.layoutControl1.Controls.Add(this.m_sle_ten_nv);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -430,6 +431,7 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(876, 24);
             this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextToControlDistance = 0;
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem3
@@ -525,6 +527,7 @@
             this.layoutControlItem12.Size = new System.Drawing.Size(120, 24);
             this.layoutControlItem12.Text = "layoutControlItem12";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem12.TextToControlDistance = 0;
             this.layoutControlItem12.TextVisible = false;
             // 
             // layoutControlItem13
@@ -536,6 +539,7 @@
             this.layoutControlItem13.Size = new System.Drawing.Size(120, 24);
             this.layoutControlItem13.Text = "layoutControlItem13";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem13.TextToControlDistance = 0;
             this.layoutControlItem13.TextVisible = false;
             // 
             // emptySpaceItem3
@@ -599,6 +603,7 @@
             this.layoutControlItem17.Size = new System.Drawing.Size(120, 24);
             this.layoutControlItem17.Text = "layoutControlItem17";
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem17.TextToControlDistance = 0;
             this.layoutControlItem17.TextVisible = false;
             // 
             // emptySpaceItem5

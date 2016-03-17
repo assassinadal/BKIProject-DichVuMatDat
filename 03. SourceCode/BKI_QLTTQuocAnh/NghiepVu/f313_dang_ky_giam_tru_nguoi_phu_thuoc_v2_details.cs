@@ -100,6 +100,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chon_nhan_vien.Properties.DisplayMember = V_DM_NHAN_VIEN.HO_TEN;
 
             m_sle_chon_nhan_vien.Properties.PopulateViewColumns();
+
             m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
@@ -108,7 +109,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
             US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
-
+            v_ds.EnforceConstraints = false;
+            v_ds.Clear();
             v_us.FillDataset(v_ds);
             return v_ds;
         }

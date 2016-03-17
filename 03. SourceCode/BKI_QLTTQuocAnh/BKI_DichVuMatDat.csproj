@@ -338,12 +338,6 @@
     <Compile Include="BaoCao\f410_bao_cao_so_luong_chat_luong_lao_dong.Designer.cs">
       <DependentUpon>f410_bao_cao_so_luong_chat_luong_lao_dong.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaoCao\Luong\f495_thong_tin_chot_bang_luong_thang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCao\Luong\f495_thong_tin_chot_bang_luong_thang.Designer.cs">
-      <DependentUpon>f495_thong_tin_chot_bang_luong_thang.cs</DependentUpon>
-    </Compile>
     <Compile Include="BaoCao\SplashScreen1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -539,7 +533,6 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1186,9 +1179,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f410_bao_cao_so_luong_chat_luong_lao_dong.resx">
       <DependentUpon>f410_bao_cao_so_luong_chat_luong_lao_dong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\Luong\f495_thong_tin_chot_bang_luong_thang.resx">
-      <DependentUpon>f495_thong_tin_chot_bang_luong_thang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
@@ -2123,7 +2113,9 @@
       <DefaultIcon>paper1331.ico</DefaultIcon>
     </FileAssociation>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="BaoCao\Luong\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

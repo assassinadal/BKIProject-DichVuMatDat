@@ -133,9 +133,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                 //m_tran_thai_buoc_1 la id_nhan_vien
                 if (m_trang_thai_buoc_3_thanh_cong > 0)
                 {
-
-                    v_f.display();
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                     m_cmd_lap_hop_dong.Enabled = false;
                     m_cmd_cong_tac.Enabled = true;
                 }
@@ -156,10 +153,9 @@ namespace BKI_DichVuMatDat.NghiepVu
                 //m_tran_thai_buoc_1 la id_nhan_vien
                 if (m_trang_thai_buoc_3_thanh_cong > 0)
                 {
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                     m_cmd_cong_tac.Enabled = false;
                     m_cmd_nhap_loai_lao_dong.Enabled = true;
-
+                    v_f.display();
                 }
             }
             catch (Exception v_e)
@@ -174,7 +170,17 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 F501_THONG_TIN_BO_SUNG_NHAN_VIEN v_f = new F501_THONG_TIN_BO_SUNG_NHAN_VIEN();
                 v_f.ShowForPresent(m_trang_thai_buoc_1, ref m_trang_thai_buoc_2);
-                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                if (CHRM_BaseMessages.MsgBox_Confirm("Bạn có muốn thêm nhân viên mới nữa không ?") == true)
+                {
+                    m_cmd_nhap_loai_lao_dong.Enabled = false;
+                    m_cmd_lap_hop_dong.Enabled = false;
+                    m_cmd_cong_tac.Enabled = false;
+                    m_cmd_nhap_thong_tin_nhan_vien.Enabled = true;
+                }
+                else
+                {
+                    this.Close();
+                }
             }
             catch (Exception v_e)
             {

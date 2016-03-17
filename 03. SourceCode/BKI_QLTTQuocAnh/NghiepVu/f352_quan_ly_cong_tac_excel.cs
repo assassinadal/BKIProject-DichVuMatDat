@@ -37,7 +37,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region members
 
         US_GD_CONG_TAC v_us_ct = new US_GD_CONG_TAC();
-        string op_str_mess = "";
+        //string op_str_mess = "";
         decimal m_id_gd_ct = 0;
         bool m_loai_ctac_cthuc = false;
 
@@ -132,7 +132,10 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us_ct.datNGAY_KET_THUC = Convert.ToDateTime(dataRow["NGAY_KET_THUC"].ToString());
             v_us_ct.dcID_DON_VI = CIPConvert.ToDecimal(dataRow["ID_DON_VI"].ToString());
             v_us_ct.dcID_NHAN_VIEN = find_id_nhan_vien_by_ma_nv(dataRow["MA_NHAN_VIEN"].ToString().Trim());
-            v_us_ct.dcID_QUYET_DINH = CIPConvert.ToDecimal(dataRow["ID_QUYET_DINH"].ToString());
+            if (dataRow["ID_QUYET_DINH"].ToString() != "")
+            {
+                v_us_ct.dcID_QUYET_DINH = CIPConvert.ToDecimal(dataRow["ID_QUYET_DINH"].ToString());
+            }
             v_us_ct.dcID_LOAI_CONG_TAC = CIPConvert.ToDecimal(dataRow["ID_LOAI_CONG_TAC"].ToString());
             v_us_ct.dcID_VI_TRI = CIPConvert.ToDecimal(dataRow["ID_VI_TRI"].ToString());
 
@@ -179,6 +182,24 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return false;
         }
 
+        private bool insertdone(DataRow dataRow)
+        {
+            if (dataRow["ID_VI_TRI"].ToString().Trim() == ""
+                && dataRow["NGAY_BAT_DAU"].ToString().Trim() == ""
+                && dataRow["NGAY_KET_THUC"].ToString().Trim() == ""
+                && dataRow["ID_LOAI_CONG_TAC"].ToString().Trim() == ""
+                && dataRow["MA_NHAN_VIEN"].ToString().Trim() == ""
+                && dataRow["ID_DON_VI"].ToString().Trim() == ""
+                && dataRow["ID_QUYET_DINH"].ToString().Trim() == "")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         #endregion
 
         //
@@ -200,22 +221,22 @@ namespace BKI_DichVuMatDat.NghiepVu
                     {
                         if (check_ma_nhan_vien_is_ok(m_grv_v_gd_cong_tac.GetDataRow(i)))
                         {
+                            load_data_2_m_variable(m_grv_v_gd_cong_tac.GetDataRow(i));
                             insert_data(m_grv_v_gd_cong_tac.GetDataRow(i));
-                            CHRM_BaseMessages.MsgBox_Error(op_str_mess);
+                            //CHRM_BaseMessages.MsgBox_Error(op_str_mess);
                         }
                         else
                         {
-                            if (m_grv_v_gd_cong_tac.GetDataRow(i)["MA_NHAN_VIEN"].ToString() == "")
+                            if (insertdone(m_grv_v_gd_cong_tac.GetDataRow(i)))
                             {
+                                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                                this.Close();
                                 return;
                             }
                             CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + m_grv_v_gd_cong_tac.GetDataRow(i)["MA_NHAN_VIEN"].ToString() + "  chưa tồn tại. Vui lòng kiểm tra lại thông tin!");
                             return;
                         }
                     }
-
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-                    this.Close();
                 }
                 else
                 {

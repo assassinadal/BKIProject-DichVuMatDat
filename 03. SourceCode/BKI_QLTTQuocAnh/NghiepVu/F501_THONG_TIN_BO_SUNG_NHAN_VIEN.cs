@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors.Controls;
+using BKI_DichVuMatDat;
 using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.US;
+using BKI_DichVuMatDat.DS.CDBNames;
 using IP.Core.IPCommon;
 
 namespace BKI_DichVuMatDat.NghiepVu
@@ -19,10 +21,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Members
         int m_dc_id_nhan_vien = 0;
         double m_so_tien = 0;
-        int m_trang_thai_buoc_2_cua_form_500=0;
+        int m_trang_thai_buoc_2_cua_form_500 = 0;
         #endregion
-        
-         
+
+
         public F501_THONG_TIN_BO_SUNG_NHAN_VIEN()
         {
             InitializeComponent();
@@ -64,12 +66,25 @@ namespace BKI_DichVuMatDat.NghiepVu
             //DataTable v_dt = new DataTable();
             //v_ds.Tables.Add(v_dt);
             //throw new Exception();
-            ////v_us.FillDatasetWithQuery(v_ds, "select ID, MA_NV, HO_DEM+ ' '+ TEN AS TEN_NHAN_VIEN FROM DM_NHAN_VIEN");  
-            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
-            DS_DM_NHAN_VIEN v_ds = new DS_DM_NHAN_VIEN();
-            v_us.FillDataset(v_ds);   
-             m_sle_ten_nv.Properties.DataSource = v_ds.Tables[0];
-             m_sle_ten_nv.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
+            //v_us.FillDatasetWithQuery(v_ds, "select ID, MA_NV, HO_DEM+ ' '+ TEN AS TEN_NHAN_VIEN FROM DM_NHAN_VIEN");
+            m_sle_ten_nv.Properties.DataSource = load_data_2_ds_v_dm_nv().V_DM_NHAN_VIEN;
+            m_sle_ten_nv.Properties.ValueMember = V_DM_NHAN_VIEN.ID;
+            m_sle_ten_nv.Properties.DisplayMember = V_DM_NHAN_VIEN.HO_TEN;
+
+            m_sle_ten_nv.Properties.PopulateViewColumns();
+
+            m_sle_ten_nv.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            m_sle_ten_nv.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+        }
+
+        private DS_V_DM_NHAN_VIEN load_data_2_ds_v_dm_nv()
+        {
+            DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
+            US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
+            v_ds.EnforceConstraints = false;
+            v_ds.Clear();
+            v_us.FillDataset(v_ds);
+            return v_ds;
         }
 
         internal void ShowForPresent(int id_nhan_vien)
@@ -77,21 +92,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_ten_nv.EditValue = id_nhan_vien;
             m_dc_id_nhan_vien = id_nhan_vien;
             this.ShowDialog();
-        }
-
-        private void m_cmd_save_Click(object sender, EventArgs e)
-        {
-            if (check_du_lieu_is_ok())
-            {
-                luu_du_lieu();
-                MessageBox.Show("Lưu dữ liệu thành công!");
-                m_trang_thai_buoc_2_cua_form_500 = 1;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-            }
         }
 
         private void luu_du_lieu()
@@ -119,7 +119,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                 MessageBox.Show("Có lỗi!");
             }
-          
+
         }
 
         private void luu_khong_dong_bao_hiem()
@@ -137,7 +137,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 MessageBox.Show("Sai bảo hiểm!");
             }
-           
+
         }
 
         private void luu_luong_cung()
@@ -158,7 +158,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                 MessageBox.Show("Lỗi lương cứng");
             }
-          
+
         }
 
         private void luu_gd_phu_thuoc()
@@ -180,10 +180,10 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                 MessageBox.Show("Lỗi người phụ thuộc");
             }
-           
+
         }
 
-     
+
         private void luu_gd_loai_lao_dong()
         {
             try
@@ -202,12 +202,12 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                 MessageBox.Show("Lỗi loại lao động!");
             }
-           
+
         }
 
         private bool check_du_lieu_is_ok()
         {
-            if (m_sle_loai_lao_dong.Text == "" )
+            if (m_sle_loai_lao_dong.Text == "")
                 return false;
             if (m_chk_nguoi_phu_thuoc.Checked == true && m_txt_so_luong_phu_thuoc.Text == "")
                 return false;
@@ -218,6 +218,21 @@ namespace BKI_DichVuMatDat.NghiepVu
             else return true;
         }
 
+        private void m_cmd_save_Click(object sender, EventArgs e)
+        {
+            if (check_du_lieu_is_ok())
+            {
+                luu_du_lieu();
+                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                m_trang_thai_buoc_2_cua_form_500 = 1;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+            }
+        }
+
         private void m_chk_nguoi_phu_thuoc_CheckedChanged(object sender, EventArgs e)
         {
             if (m_chk_nguoi_phu_thuoc.Checked == true)
@@ -225,7 +240,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 m_txt_so_luong_phu_thuoc.Enabled = true;
                 m_dat_ngay_ap_dung.Enabled = true;
             }
-          else
+            else
             {
                 m_txt_so_luong_phu_thuoc.Text = "";
                 m_dat_ngay_ap_dung.Enabled = false;
@@ -235,7 +250,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void m_chk_luong_cung_CheckedChanged(object sender, EventArgs e)
         {
-            if( m_chk_luong_cung.Checked==true)
+            if (m_chk_luong_cung.Checked == true)
             {
                 m_txt_so_tien.Enabled = true;
                 m_dat_ngay_bat_dau_luong_cung.Enabled = true;
@@ -279,7 +294,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 e.Handled = true;
             }
-           
+
         }
 
         private void m_txt_so_luong_phu_thuoc_KeyPress(object sender, KeyPressEventArgs e)
@@ -322,8 +337,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             else
                 m_txt_so_tien.Text = String.Empty;
         }
-
-
 
         internal void ShowForPresent(int id_nhan_vien, ref int m_trang_thai_buoc_2)
         {

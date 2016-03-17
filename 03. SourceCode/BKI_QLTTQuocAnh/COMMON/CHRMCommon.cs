@@ -12,11 +12,37 @@ using System.Drawing;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.BandedGrid;
+using DevExpress.XtraGrid;
 
 namespace BKI_DichVuMatDat
 {
     class CHRMCommon
     {
+        public static void SelectRowInGrid(GridView pview, string pColumnName, decimal pValue)
+        {
+
+            int rowhandle = GetRowHandleByColumnValue(pview, pColumnName, pValue);
+
+            if(rowhandle != GridControl.InvalidRowHandle)
+            {
+                pview.FocusedRowHandle = rowhandle;
+                return;
+            }
+
+        }
+        public static int GetRowHandleByColumnValue(GridView view, string ColumnFieldName, object value)
+        {
+            int result = GridControl.InvalidRowHandle;
+
+            for(int i = 0; i < view.RowCount; i++)
+            {
+                if(view.GetRowCellValue(i, ColumnFieldName).Equals(value))
+
+                    return i;
+            }
+            return result;
+        }
+
         public static void ExportExcel(GridView ip_grv)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();

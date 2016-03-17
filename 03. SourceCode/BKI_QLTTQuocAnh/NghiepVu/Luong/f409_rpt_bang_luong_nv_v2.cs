@@ -68,7 +68,6 @@ namespace BKI_DichVuMatDat.BaoCao
             m_cmd_luu_du_lieu.Click += m_cmd_luu_du_lieu_Click;
             m_txt_thang.Leave += m_txt_thang_Leave;
             m_txt_nam.Leave += m_txt_nam_Leave;
-            m_cmd_chot_bang_luong.Click += m_cmd_chot_bang_luong_Click;
             m_cmd_import_excel.Click += m_cmd_import_excel_Click;
             m_cmd_export_excel.Click += m_cmd_export_excel_Click;
             m_grv_main.MouseWheel += m_grv_main_MouseWheel;
@@ -272,18 +271,7 @@ namespace BKI_DichVuMatDat.BaoCao
             }
 
         }
-        private void m_cmd_chot_bang_luong_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                chot_bang_luong();
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-
-        }
+        
 
         //Other
         void m_txt_nam_Leave(object sender, EventArgs e)
@@ -400,9 +388,9 @@ namespace BKI_DichVuMatDat.BaoCao
         private void set_initial_form_load()
         {
             hide_progress_bar();
-            m_txt_nam.EditValue = DateTime.Now.Year;
-            m_txt_thang.EditValue = DateTime.Now.Month;
-            m_txt_thang.Focus();
+            //m_txt_nam.EditValue = DateTime.Now.Year;
+            //m_txt_thang.EditValue = DateTime.Now.Month;
+            //m_txt_thang.Focus();
             hien_thi_thong_tin_bang_luong();
             hide_grid();
         }
@@ -488,22 +476,7 @@ namespace BKI_DichVuMatDat.BaoCao
         }
 
         //Check data
-        private bool kiem_tra_bang_luong_da_chot_chua()
-        {
-            var v_dto_thong_tin_bang_luong = TinhLuongQL.Instance.LayThongTinBangLuong(lay_thang(), lay_nam());
-            return v_dto_thong_tin_bang_luong.CHOT_BANG_LUONG;
-        }
-        private bool kiem_tra_da_tinh_het_luong_nhan_vien_chua()
-        {
-            var v_dto_thong_tin_bang_luong = TinhLuongQL.Instance.LayThongTinBangLuong(lay_thang(), lay_nam());
-            decimal v_dc_sl_nv_can_tinh = v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_CAN_TINH;
-            decimal v_dc_sl_nv_da_tinh = v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_DA_TINH;
-            if(v_dc_sl_nv_can_tinh <= v_dc_sl_nv_da_tinh)
-            {
-                return true;
-            }
-            return false;
-        }
+       
         private bool kiem_tra_tinh_hop_le_du_lieu_tren_giao_dien()
         {
             if(m_txt_thang.EditValue == null || m_txt_nam.EditValue == null)
@@ -524,11 +497,7 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             TinhLuongQL.Instance.XoaToanBoBangLuong(lay_thang(), lay_nam());
         }
-        private void chot_bang_luong_thang()
-        {
-            TinhLuongQL.Instance.ChotBangLuongThang(lay_thang(), lay_nam());
-        }
-      
+        
 
         //Process tinh bang luong
         private void start_tinh_bang_luong_process()
@@ -583,37 +552,7 @@ namespace BKI_DichVuMatDat.BaoCao
             }
         }
         
-        private void chot_bang_luong()
-        {
-            DialogResult v_dlg_confirm;
-            string v_str_text_confirm;
-
-            if(!kiem_tra_da_tinh_het_luong_nhan_vien_chua())
-            {
-
-                v_str_text_confirm = "Chưa tính toán xong dữ liệu nhân viên. Bạn có chắc chắn muốn chốt bảng lương tháng ?" + lay_thang() + " năm " + lay_nam();
-            }
-            else
-            {
-                v_str_text_confirm = "Bạn có chắc chắn muốn chốt bảng lương tháng ?" + lay_thang() + " năm " + lay_nam();
-            }
-            v_dlg_confirm = XtraMessageBox.Show(v_str_text_confirm
-                                                            , "XÁC NHẬN"
-                                                            , MessageBoxButtons.YesNo
-                                                            , MessageBoxIcon.Question);
-            if(v_dlg_confirm == System.Windows.Forms.DialogResult.No)
-            {
-                XtraMessageBox.Show("Bạn đã hủy thao tác!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                return;
-            }
-            if(kiem_tra_bang_luong_da_chot_chua())
-            {
-                XtraMessageBox.Show("Bảng lương tháng đã được chốt rồi!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            chot_bang_luong_thang();
-            //chot_he_so_bsl_athk_thang();
-        }
+        
 
         //Process luu bang luong
         private void start_luu_bang_luong_process()

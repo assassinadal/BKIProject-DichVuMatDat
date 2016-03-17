@@ -860,6 +860,7 @@ namespace BKI_DichVuMatDat.US
         }
 
         #endregion
+
         #region "Init Functions"
         public US_RPT_LUONG_V2()
         {

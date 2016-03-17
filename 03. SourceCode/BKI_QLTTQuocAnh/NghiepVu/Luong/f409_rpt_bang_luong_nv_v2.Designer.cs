@@ -180,7 +180,6 @@
             this.repoBtnXoaLuong = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_chot_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_luu_du_lieu = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_kiem_tra_du_lieu_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
@@ -2040,7 +2039,6 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.m_cmd_chot_bang_luong);
             this.panelControl2.Controls.Add(this.m_cmd_luu_du_lieu);
             this.panelControl2.Controls.Add(this.m_cmd_kiem_tra_du_lieu_luong);
             this.panelControl2.Controls.Add(this.m_cmd_import_excel);
@@ -2052,19 +2050,6 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1257, 33);
             this.panelControl2.TabIndex = 10;
-            // 
-            // m_cmd_chot_bang_luong
-            // 
-            this.m_cmd_chot_bang_luong.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chot_bang_luong.ImageIndex = 2;
-            this.m_cmd_chot_bang_luong.ImageList = this.imageCollection;
-            this.m_cmd_chot_bang_luong.Location = new System.Drawing.Point(905, 2);
-            this.m_cmd_chot_bang_luong.Name = "m_cmd_chot_bang_luong";
-            this.m_cmd_chot_bang_luong.Size = new System.Drawing.Size(174, 29);
-            this.m_cmd_chot_bang_luong.TabIndex = 16;
-            this.m_cmd_chot_bang_luong.Text = "Bước 4: Chốt bảng lương";
-            this.m_cmd_chot_bang_luong.ToolTip = "Chốt bảng lương chỉ thực hiện khi đã chắc chắn về dữ liệu lương tháng" +
-    ". ";
             // 
             // m_cmd_luu_du_lieu
             // 
@@ -2237,7 +2222,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_import_excel;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tinh_bang_luong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_kiem_tra_du_lieu_luong;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_chot_bang_luong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_luu_du_lieu;
         private DevExpress.XtraEditors.LabelControl m_lbl_trang_thai_bang_luong;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand50;

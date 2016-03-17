@@ -995,6 +995,17 @@ namespace BKI_DichVuMatDat.US
             v_pr.ExecuteCommand(this);
             return v_para.Value.ToString() == "Y" ? true : false;
         }
+        public DataTable LayDuLieuChotBangLuong(decimal ip_dc_nam)
+        {
+            CStoredProc v_pr = new CStoredProc("pr_TL_du_lieu_chot_bang_luong_GetAll");
+            v_pr.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
+
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+            v_pr.fillDataSetByCommand(this, v_ds);
+
+            return v_ds.Tables[0];
+        }
         #endregion
     }
 }

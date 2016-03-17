@@ -165,6 +165,7 @@
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.m_cmd_ds_chot_bang_luong = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -280,9 +281,10 @@
             this.m_cmd_import_tu_excel,
             this.m_cmd_tnk_ngoai_bang_luong,
             this.m_cmd_quan_ly_quy_tnk,
-            this.m_cmd_bc_athk_bsl_lt});
+            this.m_cmd_bc_athk_bsl_lt,
+            this.m_cmd_ds_chot_bang_luong});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 122;
+            this.ribbon.MaxItemId = 123;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1091,7 +1093,7 @@
             // 
             // m_cmd_bao_cao_tong_hop_v2
             // 
-            this.m_cmd_bao_cao_tong_hop_v2.Caption = "Tính lại lương nhân viên";
+            this.m_cmd_bao_cao_tong_hop_v2.Caption = "Quản lý lương";
             this.m_cmd_bao_cao_tong_hop_v2.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_he_so_luong_;
             this.m_cmd_bao_cao_tong_hop_v2.Id = 102;
             this.m_cmd_bao_cao_tong_hop_v2.Name = "m_cmd_bao_cao_tong_hop_v2";
@@ -1364,9 +1366,10 @@
             // 
             // ribbonPageGroup15
             // 
+            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_bao_cao_tong_hop_v2);
             this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_bao_cao_dieu_kien_tinh_luong);
             this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_bang_luong);
-            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_bao_cao_tong_hop_v2);
+            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_ds_chot_bang_luong);
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
             this.ribbonPageGroup15.Text = "Tính lương";
             // 
@@ -1525,6 +1528,15 @@
             this.ribbonPageGroup17.ItemLinks.Add(this.m_cmd_bao_cao_tong_hop_v2);
             this.ribbonPageGroup17.Name = "ribbonPageGroup17";
             this.ribbonPageGroup17.Text = "Tính lương";
+            // 
+            // m_cmd_ds_chot_bang_luong
+            // 
+            this.m_cmd_ds_chot_bang_luong.Caption = "Thông tin chốt bảng lương";
+            this.m_cmd_ds_chot_bang_luong.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_cac_thang_da_chot_bang_luong_;
+            this.m_cmd_ds_chot_bang_luong.Id = 122;
+            this.m_cmd_ds_chot_bang_luong.Name = "m_cmd_ds_chot_bang_luong";
+            this.m_cmd_ds_chot_bang_luong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // f388_main
             // 
@@ -1690,5 +1702,6 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_bc_athk_bsl_lt;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_ds_chot_bang_luong;
     }
 }

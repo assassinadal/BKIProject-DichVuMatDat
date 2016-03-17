@@ -131,12 +131,12 @@ namespace BKI_DichVuMatDat.NghiepVu.Luong
         
         public void ChotBangLuongThang(decimal ip_dc_thang, decimal ip_dc_nam)
         {
-            var v_dlg = XtraMessageBox.Show("Bạn có muốn chốt các dữ liệu lương tháng này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(v_dlg == DialogResult.No)
-            {
-                //XtraMessageBox.Show("Bạn đã hủy thao tác!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            //var v_dlg = XtraMessageBox.Show("Bạn có muốn chốt các dữ liệu lương tháng này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //if(v_dlg == DialogResult.No)
+            //{
+            //    //XtraMessageBox.Show("Bạn đã hủy thao tác!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return;
+            //}
             US_RPT_CHOT_BANG_LUONG v_us_rpt_chot_bang_luong = new US_RPT_CHOT_BANG_LUONG();
             if(v_us_rpt_chot_bang_luong.IsLockBangLuong(ip_dc_thang, ip_dc_nam))
             {

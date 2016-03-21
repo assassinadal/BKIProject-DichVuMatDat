@@ -264,7 +264,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_lst_nv_insert_phu_thuoc.Clear();
             try
             {
-                SplashScreenManager.ShowForm(typeof(BKI_DichVuMatDat.BaoCao.F_wait_form));
+                splashScreenManager.ShowWaitForm();
                 insert_gd_phu_thuoc_details();
                 //for (int i = 0; i < m_lst_nv_insert_phu_thuoc.Count; i++)
                 //{
@@ -272,6 +272,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 //}
                 m_cmd_save.Enabled = false;
                 panel1.Enabled = true;
+                splashScreenManager.CloseWaitForm();
                 XtraMessageBox.Show("Lưu thành công");
                 load_data_to_grid();
             }

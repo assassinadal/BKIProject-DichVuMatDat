@@ -88,22 +88,22 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_cmd_tai_file_mau = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_grc
@@ -705,6 +705,48 @@
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1005, 43);
             this.m_pnl_out_place_dm.TabIndex = 2;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.m_cmd_tai_file_mau);
+            this.panel2.Controls.Add(this.m_cmd_import_excel);
+            this.panel2.Controls.Add(this.m_cmd_save);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(4, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(350, 35);
+            this.panel2.TabIndex = 20;
+            // 
+            // m_cmd_tai_file_mau
+            // 
+            this.m_cmd_tai_file_mau.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_tai_file_mau.Image = global::BKI_DichVuMatDat.Properties.Resources.Benjigarner_Softdimension_Excel;
+            this.m_cmd_tai_file_mau.Location = new System.Drawing.Point(3, 0);
+            this.m_cmd_tai_file_mau.Name = "m_cmd_tai_file_mau";
+            this.m_cmd_tai_file_mau.Size = new System.Drawing.Size(111, 35);
+            this.m_cmd_tai_file_mau.TabIndex = 24;
+            this.m_cmd_tai_file_mau.Text = "&Tải file mẫu";
+            // 
+            // m_cmd_import_excel
+            // 
+            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_import_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_excel.Image")));
+            this.m_cmd_import_excel.Location = new System.Drawing.Point(114, 0);
+            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
+            this.m_cmd_import_excel.Size = new System.Drawing.Size(118, 35);
+            this.m_cmd_import_excel.TabIndex = 23;
+            this.m_cmd_import_excel.Text = "&Import Excel";
+            // 
+            // m_cmd_save
+            // 
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_save.Enabled = false;
+            this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
+            this.m_cmd_save.Location = new System.Drawing.Point(232, 0);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(118, 35);
+            this.m_cmd_save.TabIndex = 22;
+            this.m_cmd_save.Text = "&Lưu";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.m_cmd_insert);
@@ -746,48 +788,6 @@
             this.m_cmd_delete.TabIndex = 15;
             this.m_cmd_delete.Text = "&Xóa";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.m_cmd_tai_file_mau);
-            this.panel2.Controls.Add(this.m_cmd_import_excel);
-            this.panel2.Controls.Add(this.m_cmd_save);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(300, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(350, 35);
-            this.panel2.TabIndex = 20;
-            // 
-            // m_cmd_tai_file_mau
-            // 
-            this.m_cmd_tai_file_mau.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_tai_file_mau.Image = global::BKI_DichVuMatDat.Properties.Resources.Benjigarner_Softdimension_Excel;
-            this.m_cmd_tai_file_mau.Location = new System.Drawing.Point(3, 0);
-            this.m_cmd_tai_file_mau.Name = "m_cmd_tai_file_mau";
-            this.m_cmd_tai_file_mau.Size = new System.Drawing.Size(111, 35);
-            this.m_cmd_tai_file_mau.TabIndex = 24;
-            this.m_cmd_tai_file_mau.Text = "&Tải file mẫu";
-            // 
-            // m_cmd_import_excel
-            // 
-            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_import_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_excel.Image")));
-            this.m_cmd_import_excel.Location = new System.Drawing.Point(114, 0);
-            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
-            this.m_cmd_import_excel.Size = new System.Drawing.Size(118, 35);
-            this.m_cmd_import_excel.TabIndex = 23;
-            this.m_cmd_import_excel.Text = "&Import Excel";
-            // 
-            // m_cmd_save
-            // 
-            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_save.Enabled = false;
-            this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
-            this.m_cmd_save.Location = new System.Drawing.Point(232, 0);
-            this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(118, 35);
-            this.m_cmd_save.TabIndex = 22;
-            this.m_cmd_save.Text = "&Lưu";
-            // 
             // f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -806,8 +806,8 @@
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             this.m_pnl_out_place_dm.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

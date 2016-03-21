@@ -248,7 +248,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 var v_dr = m_grv.GetDataRow(i);
                 decimal v_dc_he_so_k;
-                if (v_dr[v_dr.Table.Columns.Count-1].ToString().Trim()!="" && !decimal.TryParse(v_dr[4].ToString(), out v_dc_he_so_k))
+                if(v_dr[v_dr.Table.Columns.Count - 1].ToString().Trim() != "" && !decimal.TryParse(v_dr[v_dr.Table.Columns.Count - 1].ToString().Trim(), out v_dc_he_so_k))
                     v_lst_nv_sai_hsk.Add(v_dr[0].ToString());
             }
             if (v_lst_nv_sai_hsk.Count == 0)

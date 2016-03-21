@@ -368,7 +368,7 @@ namespace BKI_DichVuMatDat.NghiepVu.Luong
 
             v_us.dcHS_ATHK = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.HS_ATHK]);
             v_us.dcHS_BSL = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.HS_BSL]);
-            v_us.strLE_TET_YN = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.LE_TET_YN].ToString();
+            v_us.dcLE_TET_YN = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.LE_TET_YN]);
             return v_us;
         }
 

@@ -338,11 +338,23 @@
     <Compile Include="BaoCao\f410_bao_cao_so_luong_chat_luong_lao_dong.Designer.cs">
       <DependentUpon>f410_bao_cao_so_luong_chat_luong_lao_dong.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\Luong\f495_thong_tin_chot_bang_luong_thang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\Luong\f495_thong_tin_chot_bang_luong_thang.Designer.cs">
+      <DependentUpon>f495_thong_tin_chot_bang_luong_thang.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\SplashScreen1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaoCao\SplashScreen1.Designer.cs">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\ThuNhapKhac\f492_bao_cao_cac_he_so.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\ThuNhapKhac\f492_bao_cao_cac_he_so.Designer.cs">
+      <DependentUpon>f492_bao_cao_cac_he_so.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\DTO_QUY_THU_NHAP_KHAC.cs" />
     <Compile Include="NghiepVu\f322_lap_hop_dong_excel.cs">
@@ -1181,8 +1193,14 @@
     <EmbeddedResource Include="BaoCao\f410_bao_cao_so_luong_chat_luong_lao_dong.resx">
       <DependentUpon>f410_bao_cao_so_luong_chat_luong_lao_dong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\Luong\f495_thong_tin_chot_bang_luong_thang.resx">
+      <DependentUpon>f495_thong_tin_chot_bang_luong_thang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\ThuNhapKhac\f492_bao_cao_cac_he_so.resx">
+      <DependentUpon>f492_bao_cao_cac_he_so.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f322_lap_hop_dong_excel.resx">
       <DependentUpon>f322_lap_hop_dong_excel.cs</DependentUpon>
@@ -1573,23 +1591,29 @@
     <None Include="Resources\sum1.ico" />
     <None Include="Resources\sync.ico" />
     <Content Include="Template\ChamCong.xlsx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Template\HeSoChatLuong.xlsx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Template\ThuNhapKhac.xlsx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Template\ChamCongLamThem.xlsx" />
-    <None Include="Template\CONG_TAC.xlsx" />
-    <None Include="Template\DANH_SACH_NHAN_VIEN.xlsx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Template\HOP_DONG.xlsx" />
-    <None Include="Template\LOAI_LAO_DONG_CUA_NHAN_VIEN.xlsx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <Content Include="Template\ChamCongLamThem.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\CONG_TAC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\DANH_SACH_NHAN_VIEN.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\HOP_DONG.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\LOAI_LAO_DONG_CUA_NHAN_VIEN.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BKI_QLTTQuocAnh.DS\BKI_DichVuMatDat.DS.csproj">

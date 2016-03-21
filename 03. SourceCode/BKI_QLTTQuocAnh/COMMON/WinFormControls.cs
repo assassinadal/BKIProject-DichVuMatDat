@@ -380,7 +380,7 @@ namespace BKI_DichVuMatDat
 
         #region copy & open Template
         public static void openTemplate(string ip_file_name) {
-            string sourcePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Template\");
+            string sourcePath = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"Template";//Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Template\");
             string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string sourceFile = System.IO.Path.Combine(sourcePath, ip_file_name);
             string destFile = System.IO.Path.Combine(targetPath, ip_file_name);
@@ -389,7 +389,9 @@ namespace BKI_DichVuMatDat
                 System.IO.Directory.CreateDirectory(targetPath);
             }
             System.IO.File.Copy(sourceFile, destFile, true);
+
             string newpath = targetPath + "\\" + ip_file_name;
+
             var excel = new Excel.Application();
             excel.Visible = true;
             Excel.Workbooks books = excel.Workbooks;

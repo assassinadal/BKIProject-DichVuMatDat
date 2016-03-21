@@ -617,11 +617,11 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["HS_BSL"] = System.Convert.DBNull;
         }
 
-        public string strLE_TET_YN
+        public decimal dcLE_TET_YN
         {
             get
             {
-                return CNull.RowNVLString(pm_objDR, "LE_TET_YN", IPConstants.c_DefaultString);
+                return CNull.RowNVLDecimal(pm_objDR, "LE_TET_YN", IPConstants.c_DefaultDecimal);
             }
             set
             {
@@ -640,6 +640,7 @@ namespace BKI_DichVuMatDat.US
         }
 
         #endregion
+
         #region "Init Functions"
         public US_RPT_THONG_TIN_TONG_HOP_V2()
         {
@@ -676,7 +677,6 @@ namespace BKI_DichVuMatDat.US
             v_cstore.addDecimalInputParam("@ip_int_nam", ip_dc_nam);
             v_cstore.fillDataSetByCommand(this, ip_ds);
         }
-
         public void HienThiBaoCao(DataSet ip_ds, decimal ip_dc_thang, decimal ip_dc_nam)
         {
             CStoredProc v_cstore = new CStoredProc("pr_TL_bao_cao_tong_hop_SelectAll");
@@ -717,6 +717,5 @@ namespace BKI_DichVuMatDat.US
             v_sp.ExecuteCommand(this);
         }
         #endregion
-        
     }
 }

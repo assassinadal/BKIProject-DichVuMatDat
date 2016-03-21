@@ -54,6 +54,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Tao file excel mau
         private void tao_file_mau(string ip_str_file_name)
         {
+            m_grv.Columns.Clear();
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
@@ -65,13 +66,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             for (DateTime i = v_dat_bat_dau; i < v_dat_ket_thuc; i = i.AddDays(1))
             {
                 var v_c = new DataColumn();
-                v_c.ColumnName = i.ToString("dd/MM/yyyy");
+                v_c.ColumnName = i.ToString("dd/MM");
                 v_ds.Tables[0].Columns.Add(v_c);
             }
             var v_c_hsk = new DataColumn();
             v_c_hsk.ColumnName = "HSK";
             v_ds.Tables[0].Columns.Add(v_c_hsk);
             m_grc.DataSource = v_ds.Tables[0];
+            format_gridview();
             SaveXLSX(ip_str_file_name);
         }
 
@@ -96,24 +98,19 @@ namespace BKI_DichVuMatDat.NghiepVu
             splashScreenManager1.ShowWaitForm();
             WinFormControls.load_xls_to_gridview(ip_path, m_grc);
             CHRMCommon.make_stt_indicator(m_grv);
-            //format_gridview();
+            format_gridview();
             splashScreenManager1.CloseWaitForm();
         }
 
         private void format_gridview()
         {
-            foreach (GridColumn item in m_grv.Columns)
+            m_grv.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            m_grv.Columns[0].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            m_grv.Columns[1].Width = 120;
+            for (int i = 2; i < m_grv.Columns.Count; i++)
             {
-                DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition(DevExpress.XtraGrid.FormatConditionEnum.Expression);
-                styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Red;
-                styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.White;
-                styleFormatCondition1.Appearance.Options.UseBackColor = true;
-                styleFormatCondition1.Appearance.Options.UseForeColor = true;
-                styleFormatCondition1.Column = item;
-                styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-                styleFormatCondition1.Expression = "[" + item.Name + "] > 3";
-                this.m_grv.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-                styleFormatCondition1});
+                m_grv.Columns[i].Width = 50;
+                m_grv.Columns[i].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             }
             m_grc.Refresh();
         }
@@ -156,7 +153,15 @@ namespace BKI_DichVuMatDat.NghiepVu
         #endregion
 
         #region Kiem tra du lieu tren grid
-        private bool kiem_tra_cham_cong()
+        private bool check_bang_luong_da_chot(string ip_thang, string ip_nam)
+        {
+            US_GD_CHOT_BANG_LUONG v_us = new US_GD_CHOT_BANG_LUONG();
+            if (v_us.IsDaChotBangLuongThang(decimal.Parse(ip_thang), decimal.Parse(ip_nam)))
+                return true;
+            else return false;
+        }
+
+        private bool check_cham_cong_hop_le()
         {
             LayDuLieuLoaiNgayCong();
             LayDuLieuNhanVien();
@@ -243,7 +248,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 var v_dr = m_grv.GetDataRow(i);
                 decimal v_dc_he_so_k;
-                if (v_dr[32].ToString().Trim()!="" && !decimal.TryParse(v_dr[4].ToString(), out v_dc_he_so_k))
+                if (v_dr[v_dr.Table.Columns.Count-1].ToString().Trim()!="" && !decimal.TryParse(v_dr[4].ToString(), out v_dc_he_so_k))
                     v_lst_nv_sai_hsk.Add(v_dr[0].ToString());
             }
             if (v_lst_nv_sai_hsk.Count == 0)
@@ -312,6 +317,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void m_bgwk_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
+            m_us_gd_cham_cong.BeginTransaction();
             for (int i = 0; i < m_grv.RowCount; i++)
             {
                 luuChamCong(m_grv.GetDataRow(i));
@@ -330,9 +336,10 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_prb.Visible = false;
             this.m_pn.Visible = false;
             this.m_cmd_nhap_cham_cong.Text = "Lưu chấm công";
-            this.m_cmd_nhap_cham_cong.Enabled = true;
+            //this.m_cmd_nhap_cham_cong.Enabled = false;
             XtraMessageBox.Show("Lưu thành công!");
-            set_trang_thai_cham_cong();
+            m_grc.DataSource = null; 
+            set_trang_thai_cham_cong();          
         }
 
         private void luuChamCong(DataRow ip_dataRow)
@@ -345,6 +352,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void xoa_du_lieu_cham_cong_cu(decimal ip_dc_id_nv)
         {
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
+            v_us.UseTransOfUSObject(m_us_gd_cham_cong);
             v_us.xoa_du_lieu_cham_cong(ip_dc_id_nv, m_txt_thang.Text, m_txt_nam.Text);
         }
 
@@ -356,7 +364,9 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
                     v_us.dcID_NHAN_VIEN = get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString());
-                    v_us.datNGAY_CHAM_CONG = CIPConvert.ToDatetime(ip_dataRow.Table.Columns[i].ColumnName, "dd/MM/yyyy");
+                    int v_thang_cham_cong = int.Parse(ip_dataRow.Table.Columns[i].ColumnName.ToString().Substring(3, 2));
+                    int v_ngay_cham_cong = int.Parse(ip_dataRow.Table.Columns[i].ColumnName.ToString().Substring(0, 2));
+                    v_us.datNGAY_CHAM_CONG = new DateTime(int.Parse(m_txt_nam.Text), v_thang_cham_cong, v_ngay_cham_cong);
                     v_us.strDA_XOA = "N";
                     v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                     v_us.datNGAY_LAP = DateTime.Now;
@@ -364,11 +374,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString());
                     else
                         v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString().Substring(2));                   
-                    if (i == 2)
-                        v_us.BeginTransaction();
-                    else
-                        v_us.UseTransOfUSObject(m_us_gd_cham_cong);
-                    m_us_gd_cham_cong = v_us;
+                    v_us.UseTransOfUSObject(m_us_gd_cham_cong);
                     v_us.Insert();
                 }
                 catch (Exception v_e)
@@ -404,7 +410,6 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void set_trang_thai_cham_cong()
         {
-            m_grc.DataSource = null;
             m_lbl_trang_thai_cham_cong.Text = "Đã chấm công cho " + get_so_luong_cham_cong() + " nhân viên";
         }
         #endregion
@@ -418,11 +423,63 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_chon_du_lieu.Click +=m_cmd_chon_du_lieu_Click;
             m_cmd_nhap_cham_cong.Click +=m_cmd_nhap_cham_cong_Click;
             this.Load +=F696_Cham_cong_xls_Load;
+            m_txt_thang.EditValueChanged += m_txt_thang_EditValueChanged;
+            m_txt_nam.EditValueChanged += m_txt_nam_EditValueChanged;
+            m_cmd_tong_hop_cham_cong.Click += m_cmd_tong_hop_cham_cong_Click;
         }
 
+        void m_cmd_tong_hop_cham_cong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (int.Parse(m_txt_thang.Text) <= 0 || int.Parse(m_txt_thang.Text) > 12 || int.Parse(m_txt_nam.Text) < 0)
+                {
+                    XtraMessageBox.Show("Vui lòng nhập tháng và năm chấm công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                BaoCao.f402_tong_hop_cham_cong v_f = new BaoCao.f402_tong_hop_cham_cong(m_txt_thang.Text, m_txt_nam.Text);
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_txt_nam_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                set_trang_thai_cham_cong();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_txt_thang_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                set_trang_thai_cham_cong();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         private void F696_Cham_cong_xls_Load(object sender, EventArgs e)
         {
+            try
+            {
+                set_trang_thai_cham_cong();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
             
         }
 
@@ -430,28 +487,20 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (m_txt_thang.Text == "" || m_txt_nam.Text=="")
+                if (int.Parse(m_txt_thang.Text) <= 0 || int.Parse(m_txt_thang.Text) > 12 || int.Parse(m_txt_nam.Text) < 0)
+                    XtraMessageBox.Show("Vui lòng nhập tháng và năm chấm công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (check_bang_luong_da_chot(m_txt_thang.Text, m_txt_nam.Text))
+                    XtraMessageBox.Show("Tháng đã chốt bảng lương. \nVui lòng ko cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                else if (m_bgwk.IsBusy)
+                    m_bgwk.CancelAsync();
+                else if (check_cham_cong_hop_le())
                 {
-                    MessageBox.Show("Vui lòng nhập tháng và năm chấm công!");
-                }
-                else
-                {
-                    if (m_bgwk.IsBusy)
-                    {
-                        m_bgwk.CancelAsync();
-                    }
-                    else
-                    {
-                        if (kiem_tra_cham_cong())
-                        {
-                            this.m_pn.Visible = true;
-                            this.m_prb.Visible = true;
-                            this.m_cmd_nhap_cham_cong.Text = "Đang lưu chấm công ...";
-                            this.m_cmd_nhap_cham_cong.Enabled = false;
-                            m_bgwk.RunWorkerAsync();
-                        }
-                    }
-                }               
+                    this.m_pn.Visible = true;
+                    this.m_prb.Visible = true;
+                    this.m_cmd_nhap_cham_cong.Text = "Đang lưu chấm công ...";
+                    this.m_cmd_nhap_cham_cong.Enabled = false;
+                    m_bgwk.RunWorkerAsync();
+                }       
             }
             catch (Exception v_e)
             {
@@ -467,6 +516,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 if (ip_path != "")
                 {
                     load_data_2_grid(ip_path);
+                    m_cmd_nhap_cham_cong.Enabled = true;
                 }
             }
             catch (Exception v_e)
@@ -477,20 +527,15 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void m_cmd_mo_file_mau_Click(object sender, EventArgs e)
         {
-            if (m_txt_thang.Text == "" || m_txt_nam.Text == "")
+            try
             {
-                MessageBox.Show("Vui lòng nhập tháng và năm chấm công!");
+                if (int.Parse(m_txt_thang.Text)<=0 || int.Parse(m_txt_thang.Text)>12 || int.Parse(m_txt_nam.Text) <0)
+                    XtraMessageBox.Show("Vui lòng nhập tháng và năm chấm công!","Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else tao_file_mau("ChamCong.xlsx");
             }
-            else
+            catch (Exception v_e)
             {
-                try
-                {
-                    tao_file_mau("ChamCong.xlsx");
-                }
-                catch (Exception v_e)
-                {
-                    CSystemLog_301.ExceptionHandle(v_e);
-                }
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         #endregion

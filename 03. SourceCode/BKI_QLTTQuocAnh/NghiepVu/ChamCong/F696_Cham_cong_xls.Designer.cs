@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F696_Cham_cong_xls));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.m_cmd_tong_hop_cham_cong = new DevExpress.XtraEditors.SimpleButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.m_cmd_nhap_cham_cong = new DevExpress.XtraEditors.SimpleButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,6 +52,7 @@
             this.m_lbl_trang_thai_cham_cong = new DevExpress.XtraEditors.LabelControl();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.m_pn.SuspendLayout();
@@ -65,6 +68,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 384);
@@ -72,23 +76,44 @@
             this.panel1.Size = new System.Drawing.Size(878, 52);
             this.panel1.TabIndex = 0;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.m_cmd_tong_hop_cham_cong);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(514, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Padding = new System.Windows.Forms.Padding(5);
+            this.panel4.Size = new System.Drawing.Size(182, 52);
+            this.panel4.TabIndex = 1;
+            // 
+            // m_cmd_tong_hop_cham_cong
+            // 
+            this.m_cmd_tong_hop_cham_cong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_cmd_tong_hop_cham_cong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tong_hop_cham_cong.Image")));
+            this.m_cmd_tong_hop_cham_cong.Location = new System.Drawing.Point(5, 5);
+            this.m_cmd_tong_hop_cham_cong.Name = "m_cmd_tong_hop_cham_cong";
+            this.m_cmd_tong_hop_cham_cong.Size = new System.Drawing.Size(172, 42);
+            this.m_cmd_tong_hop_cham_cong.TabIndex = 0;
+            this.m_cmd_tong_hop_cham_cong.Text = "Tổng hợp chấm công";
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.m_cmd_nhap_cham_cong);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(678, 0);
+            this.panel3.Location = new System.Drawing.Point(696, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(5);
-            this.panel3.Size = new System.Drawing.Size(200, 52);
+            this.panel3.Size = new System.Drawing.Size(182, 52);
             this.panel3.TabIndex = 0;
             // 
             // m_cmd_nhap_cham_cong
             // 
             this.m_cmd_nhap_cham_cong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_cmd_nhap_cham_cong.Enabled = false;
             this.m_cmd_nhap_cham_cong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_nhap_cham_cong.Image")));
             this.m_cmd_nhap_cham_cong.Location = new System.Drawing.Point(5, 5);
             this.m_cmd_nhap_cham_cong.Name = "m_cmd_nhap_cham_cong";
-            this.m_cmd_nhap_cham_cong.Size = new System.Drawing.Size(190, 42);
+            this.m_cmd_nhap_cham_cong.Size = new System.Drawing.Size(172, 42);
             this.m_cmd_nhap_cham_cong.TabIndex = 0;
             this.m_cmd_nhap_cham_cong.Text = "Lưu chấm công";
             // 
@@ -279,6 +304,7 @@
             this.Name = "F696_Cham_cong_xls";
             this.Text = "F696 - Chấm công từ excel";
             this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.m_pn.ResumeLayout(false);
@@ -317,6 +343,8 @@
         private DevExpress.XtraEditors.LabelControl m_lbl_trang_thai_cham_cong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_du_lieu;
         private DevExpress.XtraEditors.SimpleButton m_cmd_mo_file_mau;
+        private System.Windows.Forms.Panel panel4;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_tong_hop_cham_cong;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

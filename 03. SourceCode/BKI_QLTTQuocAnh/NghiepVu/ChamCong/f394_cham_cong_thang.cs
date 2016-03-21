@@ -20,7 +20,6 @@ namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class f394_cham_cong_thang : Form
     {
-        decimal m_id_nhan_vien;
         public f394_cham_cong_thang()
         {
             InitializeComponent();
@@ -28,12 +27,17 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         
 
-        private void load_data_to_m_pv(decimal m_id_nhan_vien)
+        private void load_data_to_m_pv()
         {
+            decimal v_id_nhan_vien;
+            if (m_sle_chon_nhan_vien.EditValue == null)
+                v_id_nhan_vien = -1;
+            else
+                v_id_nhan_vien = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue.ToString());
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetChamCong(v_ds, m_txt_thang.Text, m_txt_nam.Text, m_id_nhan_vien);
+            v_us.FillDatasetChamCong(v_ds, m_txt_thang.Text, m_txt_nam.Text, v_id_nhan_vien);
             m_pv.DataSource = v_ds.Tables[0];
         }
 
@@ -63,20 +67,37 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_cmd_search.Click += m_cmd_search_Click;
             this.Load +=f394_cham_cong_thang_Load;
+            m_pv.CellDoubleClick +=m_pv_CellDoubleClick;
+            m_cmd_tong_hop_cham_cong.Click += m_cmd_tong_hop_cham_cong_Click;
+        }
+
+        void m_cmd_tong_hop_cham_cong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal v_id_nv;
+                if (m_sle_chon_nhan_vien.EditValue == null)
+                    v_id_nv = -1;
+                else v_id_nv = decimal.Parse(m_sle_chon_nhan_vien.EditValue.ToString());
+                BaoCao.f402_tong_hop_cham_cong v_f = new BaoCao.f402_tong_hop_cham_cong(m_txt_thang.Text, m_txt_nam.Text, v_id_nv);
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_search_Click(object sender, EventArgs e)
         {
-            if (m_txt_thang.Text.Trim() != "" && m_txt_nam.Text.Trim() !="")
+            try
             {
-                if (m_sle_chon_nhan_vien.EditValue == null)
-                    m_id_nhan_vien = -1;
-                else
-                    m_id_nhan_vien = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue.ToString());
-                load_data_to_m_pv(m_id_nhan_vien);
+                load_data_to_m_pv();
             }
-            else
-                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_DU_LIEU_NHAP_CHUA_HOP_LE); 
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_pv_CellDoubleClick(object sender, DevExpress.XtraPivotGrid.PivotCellEventArgs e)
@@ -95,7 +116,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     v_us.dcID_LOAI_NGAY_CONG = v_id_loai_ngay_cong;
                     v_us.Update();
                     XtraMessageBox.Show("Sửa dữ liệu chấm công thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    load_data_to_m_pv(Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                    load_data_to_m_pv();
                 }               
             }
             catch (Exception v_e)
@@ -109,7 +130,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                load_data_to_m_pv(-1);
+                load_data_to_m_pv();
                 load_data_to_sle_chon_nhan_vien();
             }
             catch (Exception v_e)

@@ -232,6 +232,8 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn1.Caption = "Mã nhân viên";
             this.gridColumn1.FieldName = "MA_NV";
             this.gridColumn1.Name = "gridColumn1";

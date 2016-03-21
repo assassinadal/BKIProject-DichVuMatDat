@@ -35,14 +35,14 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_txt_thang.Text = DateTime.Now.Month.ToString();
             m_txt_nam.Text = DateTime.Now.Year.ToString();
-            set_trang_thai_cham_cong();           
+            set_trang_thai_cham_cong();
             set_define_events();
         }
 
         private void set_trang_thai_cham_cong()
         {
             m_lbl_trang_thai_cham_cong.Text = "Đã chấm công cho " + get_so_luong_cham_cong() + " nhân viên.";
-            m_grc.DataSource = null;
+            //m_grc.DataSource = null;
         }
 
         private decimal get_so_luong_cham_cong()
@@ -51,6 +51,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             DS_GD_CHAM_CONG_LAM_THEM v_ds = new DS_GD_CHAM_CONG_LAM_THEM();
             v_us.FillDatasetGetChamCongTheoThang(v_ds, m_txt_thang.Text, m_txt_nam.Text);
             return v_ds.Tables[0].Rows.Count;
+        }
+
+        private bool check_bang_luong_da_chot(string ip_thang, string ip_nam)
+        {
+            US_GD_CHOT_BANG_LUONG v_us = new US_GD_CHOT_BANG_LUONG();
+            if (v_us.IsDaChotBangLuongThang(decimal.Parse(ip_thang), decimal.Parse(ip_nam)))
+                return true;
+            else return false;
         }
 
         private bool kiem_tra_du_lieu()
@@ -76,6 +84,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             splashScreenManager1.CloseWaitForm();
             XtraMessageBox.Show("Lưu thành công");
             m_cmd_luu_cham_cong_lam_them.Enabled = false;
+            m_grc.DataSource = null;
         }
 
         private void delete_du_lieu_cu()
@@ -176,13 +185,41 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_tai_file_mau.Click += m_cmd_tai_file_mau_Click;
             m_cmd_chon_du_lieu.Click += m_cmd_chon_du_lieu_Click;
             m_cmd_luu_cham_cong_lam_them.Click += m_cmd_luu_cham_cong_lam_them_Click;
+            m_txt_thang.EditValueChanged += m_txt_thang_EditValueChanged;
+            m_txt_nam.EditValueChanged += m_txt_nam_EditValueChanged;
+        }
+
+        void m_txt_nam_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                set_trang_thai_cham_cong();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_txt_thang_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                set_trang_thai_cham_cong();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_luu_cham_cong_lam_them_Click(object sender, EventArgs e)
         {
             try
             {
-                if (kiem_tra_du_lieu())
+                if (check_bang_luong_da_chot(m_txt_thang.Text, m_txt_nam.Text))
+                    XtraMessageBox.Show("Tháng đã chốt bảng lương. \nVui lòng ko cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                else if (kiem_tra_du_lieu())
                 {
                     string v_str = "Việc import sẽ xóa dữ liệu cũ đã có trong tháng này và thêm dữ liệu mới từ file excel vừa import.\nBạn có chắc chắn muốn thực hiện?";
                     DialogResult v_dialog = XtraMessageBox.Show(v_str, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

@@ -131,7 +131,6 @@
             this.m_cmd_loc.Size = new System.Drawing.Size(105, 38);
             this.m_cmd_loc.TabIndex = 6;
             this.m_cmd_loc.Text = "Lọc dữ liệu";
-            this.m_cmd_loc.Click += new System.EventHandler(this.m_cmd_loc_Click);
             // 
             // m_txt_nam
             // 
@@ -283,7 +282,6 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "f402_tong_hop_cham_cong";
             this.Text = "F402 - Tổng hợp chấm công";
-            this.Load += new System.EventHandler(this.f394_cham_cong_thang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

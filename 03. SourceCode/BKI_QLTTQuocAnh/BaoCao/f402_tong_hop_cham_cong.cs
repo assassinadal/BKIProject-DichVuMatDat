@@ -21,48 +21,47 @@ namespace BKI_DichVuMatDat.BaoCao
 {
     public partial class f402_tong_hop_cham_cong : Form
     {
-        decimal m_id_nhan_vien;
-        public f402_tong_hop_cham_cong()
+        #region Members
+        string m_str_thang = "";
+        string m_str_nam = "";
+        #endregion
+
+        #region Public Interface
+        public f402_tong_hop_cham_cong(string ip_thang, string ip_nam)
         {
             InitializeComponent();
+            set_initial_form_load(ip_thang, ip_nam);
         }
-         private void m_cmd_loc_Click(object sender, EventArgs e)
+
+        public f402_tong_hop_cham_cong(string ip_thang, string ip_nam, decimal ip_id_nv)
         {
-            if (check_validate_data_is_ok(m_txt_thang.Text) && check_validate_data_is_ok(m_txt_nam.Text))
-            {           
-                if (m_sle_chon_nhan_vien.EditValue.ToString() == "" || m_sle_chon_nhan_vien.EditValue == null)
-                {
-                    m_id_nhan_vien = -1;                   
-                }
-                else
-                {
-                    m_id_nhan_vien = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue.ToString());
-                }
-                load_data_to_m_pv(m_id_nhan_vien);        
-            }
+            InitializeComponent();
+            set_initial_form_load(ip_thang, ip_nam);
+            m_sle_chon_nhan_vien.EditValue = ip_id_nv;
+            panelControl1.Visible = false;
+        }
+
+        #endregion
+
+        #region Private Method
+        private void set_initial_form_load(string ip_thang, string ip_nam)
+        {
+            m_str_thang = ip_thang;
+            m_str_nam = ip_nam;
+            set_define_events();
+        }
+
+        private void load_data_to_m_pv()
+        {
+            decimal v_id_nhan_vien;
+            if (m_sle_chon_nhan_vien.EditValue == null)
+                v_id_nhan_vien = -1;
             else
-            {
-                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_DU_LIEU_NHAP_CHUA_HOP_LE);
-            }    
-        }
-
-
-        private bool check_validate_data_is_ok(string ip_str_thang_cham_cong)
-        {
-            for (int i = 0; i < ip_str_thang_cham_cong.Length; i++)
-            {
-                if (char.IsDigit(ip_str_thang_cham_cong[i]) == false)
-                    return false;
-            }
-            return true;
-        }
-
-        private void load_data_to_m_pv(decimal m_id_nhan_vien)
-        {
+                v_id_nhan_vien = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue.ToString());
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetChamCongTongHop(v_ds, m_txt_thang.Text, m_txt_nam.Text, m_id_nhan_vien);
+            v_us.FillDatasetChamCongTongHop(v_ds, m_str_thang, m_str_nam, v_id_nhan_vien);
             m_pv.DataSource = v_ds.Tables[0];
         }
 
@@ -81,20 +80,49 @@ namespace BKI_DichVuMatDat.BaoCao
             m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
 
+        #endregion
 
-        private void f394_cham_cong_thang_Load(object sender, EventArgs e)
+        #region Event Handle
+        private void set_define_events()
         {
-            load_data_to_sle_chon_nhan_vien();
+            this.Load += f402_tong_hop_cham_cong_Load;
+            m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
+            //m_cmd_xuat_bao_cao.Click +=m_cmd_xuat_bao_cao_Click;
         }
 
-        private void m_cmd_xuat_bao_cao_Click(object sender, EventArgs e)
+        void m_sle_chon_nhan_vien_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_to_m_pv();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void f402_tong_hop_cham_cong_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_to_sle_chon_nhan_vien();
+                load_data_to_m_pv();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_xuat_bao_cao_Click(object sender, EventArgs e)
         {
             try
             {
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                 saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
                 saveFileDialog1.RestoreDirectory = true;
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK )
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     m_pv.ExportToXlsx(saveFileDialog1.FileName);
                 }
@@ -104,15 +132,6 @@ namespace BKI_DichVuMatDat.BaoCao
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        
-
-        //private DataTable get_gd_cham_cong(string ip_str_ngay_cham_cong)
-        //{
-        //    US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-        //    DataSet v_ds = new DataSet();
-        //    v_ds.Tables.Add(new DataTable());
-        //    v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_CHAM_CONG where NGAY_CHAM_CONG = '" + ip_str_ngay_cham_cong + "' ORDER BY MA_NV");
-        //    return v_ds.Tables[0];
-        //}
+        #endregion
     }
 }

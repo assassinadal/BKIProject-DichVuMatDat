@@ -130,6 +130,8 @@ namespace BKI_DichVuMatDat.BaoCao
                 m_txt_thang.EditValue = DateTime.Now.Month;
                 m_txt_nam.EditValue = DateTime.Now.Year;
                 m_cmd_view.Focus();
+                hien_thi_thong_tin_bang_luong();
+                load_data_2_grid();
             }
             catch(Exception v_e)
             {
@@ -238,6 +240,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 f409_rpt_bang_luong_nv_v2 v_frm = new f409_rpt_bang_luong_nv_v2();
                 v_frm.Display(lay_thang(), lay_nam());
                 hien_thi_thong_tin_bang_luong();
+                load_data_2_grid();
             }
             catch(Exception v_e)
             {

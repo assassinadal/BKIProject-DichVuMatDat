@@ -29,6 +29,7 @@ namespace BKI_DichVuMatDat.DTO
         public decimal THU_NHAP_KHAC_NGOAI_LUONG { get; set; }
         public decimal TONG_THU_NHAP_NGOAI_LUONG { get; set; }
         public decimal TONG_THU_NHAP { get; set; }
+        public decimal TONG_THU_NHAP_CHIU_THUE { get; set; }
         public decimal BHXH { get; set; }
         public decimal BHYT { get; set; }
         public decimal BHTN { get; set; }
@@ -39,7 +40,7 @@ namespace BKI_DichVuMatDat.DTO
         public decimal GIAM_TRU_PHU_THUOC { get; set; }
         public decimal GIAM_TRU_KHAC { get; set; }
         public decimal TONG_GIAM_TRU { get; set; }
-        public decimal THU_NHAP_CHIU_THUE { get; set; }
+        public decimal THU_NHAP_TINH_THUE { get; set; }
         public decimal DOAN_PHI_CD { get; set; }
         public decimal THUE { get; set; }
         public decimal PHAI_NOP_KHAC { get; set; }

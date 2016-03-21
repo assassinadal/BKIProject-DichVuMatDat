@@ -2201,7 +2201,7 @@
             this.gridBand3.Name = "gridBand3";
             this.gridBand3.ToolTip = "Bao gồm các khoản phải nộp lại từ lương";
             this.gridBand3.VisibleIndex = 8;
-            this.gridBand3.Width = 530;
+            this.gridBand3.Width = 559;
             // 
             // gridBand75
             // 
@@ -2213,7 +2213,7 @@
             this.gridBand75.Name = "gridBand75";
             this.gridBand75.RowCount = 2;
             this.gridBand75.VisibleIndex = 0;
-            this.gridBand75.Width = 60;
+            this.gridBand75.Width = 62;
             // 
             // gridBand14
             // 
@@ -2223,7 +2223,7 @@
             this.gridBand14.Columns.Add(this.colPHAI_NOP_BHXH);
             this.gridBand14.Name = "gridBand14";
             this.gridBand14.VisibleIndex = 0;
-            this.gridBand14.Width = 60;
+            this.gridBand14.Width = 62;
             // 
             // colPHAI_NOP_BHXH
             // 
@@ -2244,7 +2244,7 @@
             this.colPHAI_NOP_BHXH.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHXH", "{0:n0}")});
             this.colPHAI_NOP_BHXH.Visible = true;
-            this.colPHAI_NOP_BHXH.Width = 60;
+            this.colPHAI_NOP_BHXH.Width = 62;
             // 
             // gridBand74
             // 
@@ -2256,7 +2256,7 @@
             this.gridBand74.Name = "gridBand74";
             this.gridBand74.RowCount = 2;
             this.gridBand74.VisibleIndex = 1;
-            this.gridBand74.Width = 57;
+            this.gridBand74.Width = 59;
             // 
             // gridBand13
             // 
@@ -2266,7 +2266,7 @@
             this.gridBand13.Columns.Add(this.colPHAI_NOP_BHYT);
             this.gridBand13.Name = "gridBand13";
             this.gridBand13.VisibleIndex = 0;
-            this.gridBand13.Width = 57;
+            this.gridBand13.Width = 59;
             // 
             // colPHAI_NOP_BHYT
             // 
@@ -2287,7 +2287,7 @@
             this.colPHAI_NOP_BHYT.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHYT", "{0:n0}")});
             this.colPHAI_NOP_BHYT.Visible = true;
-            this.colPHAI_NOP_BHYT.Width = 57;
+            this.colPHAI_NOP_BHYT.Width = 59;
             // 
             // gridBand73
             // 
@@ -2299,7 +2299,7 @@
             this.gridBand73.Name = "gridBand73";
             this.gridBand73.RowCount = 2;
             this.gridBand73.VisibleIndex = 2;
-            this.gridBand73.Width = 59;
+            this.gridBand73.Width = 61;
             // 
             // gridBand12
             // 
@@ -2309,7 +2309,7 @@
             this.gridBand12.Columns.Add(this.colPHAI_NOP_BHTN);
             this.gridBand12.Name = "gridBand12";
             this.gridBand12.VisibleIndex = 0;
-            this.gridBand12.Width = 59;
+            this.gridBand12.Width = 61;
             // 
             // colPHAI_NOP_BHTN
             // 
@@ -2330,7 +2330,7 @@
             this.colPHAI_NOP_BHTN.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BHTN", "{0:n0}")});
             this.colPHAI_NOP_BHTN.Visible = true;
-            this.colPHAI_NOP_BHTN.Width = 59;
+            this.colPHAI_NOP_BHTN.Width = 61;
             // 
             // gridBand72
             // 
@@ -2343,7 +2343,7 @@
             this.gridBand72.Name = "gridBand72";
             this.gridBand72.RowCount = 2;
             this.gridBand72.VisibleIndex = 3;
-            this.gridBand72.Width = 59;
+            this.gridBand72.Width = 61;
             // 
             // gridBand8
             // 
@@ -2353,7 +2353,7 @@
             this.gridBand8.Columns.Add(this.colPHAI_NOP_DOAN_PHI_CD);
             this.gridBand8.Name = "gridBand8";
             this.gridBand8.VisibleIndex = 0;
-            this.gridBand8.Width = 59;
+            this.gridBand8.Width = 61;
             // 
             // colPHAI_NOP_DOAN_PHI_CD
             // 
@@ -2374,7 +2374,7 @@
             this.colPHAI_NOP_DOAN_PHI_CD.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOAN_PHI_CD", "{0:n0}")});
             this.colPHAI_NOP_DOAN_PHI_CD.Visible = true;
-            this.colPHAI_NOP_DOAN_PHI_CD.Width = 59;
+            this.colPHAI_NOP_DOAN_PHI_CD.Width = 61;
             // 
             // gridBand71
             // 
@@ -2386,7 +2386,7 @@
             this.gridBand71.Name = "gridBand71";
             this.gridBand71.RowCount = 2;
             this.gridBand71.VisibleIndex = 4;
-            this.gridBand71.Width = 62;
+            this.gridBand71.Width = 64;
             // 
             // gridBand15
             // 
@@ -2396,7 +2396,7 @@
             this.gridBand15.Columns.Add(this.colPHAI_NOP_THUE_TNCN);
             this.gridBand15.Name = "gridBand15";
             this.gridBand15.VisibleIndex = 0;
-            this.gridBand15.Width = 62;
+            this.gridBand15.Width = 64;
             // 
             // colPHAI_NOP_THUE_TNCN
             // 
@@ -2419,7 +2419,7 @@
             this.colPHAI_NOP_THUE_TNCN.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THUE", "{0:n0}")});
             this.colPHAI_NOP_THUE_TNCN.Visible = true;
-            this.colPHAI_NOP_THUE_TNCN.Width = 62;
+            this.colPHAI_NOP_THUE_TNCN.Width = 64;
             // 
             // gridBand70
             // 
@@ -2431,7 +2431,7 @@
             this.gridBand70.Name = "gridBand70";
             this.gridBand70.RowCount = 2;
             this.gridBand70.VisibleIndex = 5;
-            this.gridBand70.Width = 72;
+            this.gridBand70.Width = 74;
             // 
             // gridBand16
             // 
@@ -2441,7 +2441,7 @@
             this.gridBand16.Columns.Add(this.colPHAI_NOP_KHAC);
             this.gridBand16.Name = "gridBand16";
             this.gridBand16.VisibleIndex = 0;
-            this.gridBand16.Width = 72;
+            this.gridBand16.Width = 74;
             // 
             // colPHAI_NOP_KHAC
             // 
@@ -2462,7 +2462,7 @@
             this.colPHAI_NOP_KHAC.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PHAI_NOP_KHAC", "{0:n0}")});
             this.colPHAI_NOP_KHAC.Visible = true;
-            this.colPHAI_NOP_KHAC.Width = 72;
+            this.colPHAI_NOP_KHAC.Width = 74;
             // 
             // gridBand52
             // 
@@ -2475,7 +2475,7 @@
             this.gridBand52.Name = "gridBand52";
             this.gridBand52.RowCount = 2;
             this.gridBand52.VisibleIndex = 6;
-            this.gridBand52.Width = 75;
+            this.gridBand52.Width = 77;
             // 
             // gridBand124
             // 
@@ -2485,7 +2485,7 @@
             this.gridBand124.Columns.Add(this.colSO_TIEN_DA_NOP_THUE);
             this.gridBand124.Name = "gridBand124";
             this.gridBand124.VisibleIndex = 0;
-            this.gridBand124.Width = 75;
+            this.gridBand124.Width = 77;
             // 
             // colSO_TIEN_DA_NOP_THUE
             // 
@@ -2505,6 +2505,7 @@
             this.colSO_TIEN_DA_NOP_THUE.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_DA_NOP_THUE", "{0:n0}")});
             this.colSO_TIEN_DA_NOP_THUE.Visible = true;
+            this.colSO_TIEN_DA_NOP_THUE.Width = 77;
             // 
             // gridBand69
             // 
@@ -2519,17 +2520,17 @@
             this.gridBand69.Name = "gridBand69";
             this.gridBand69.RowCount = 2;
             this.gridBand69.VisibleIndex = 7;
-            this.gridBand69.Width = 86;
+            this.gridBand69.Width = 101;
             // 
             // gridBand17
             // 
             this.gridBand17.AppearanceHeader.Options.UseTextOptions = true;
             this.gridBand17.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand17.Caption = "32";
+            this.gridBand17.Caption = "32=SUM(25:30)-31";
             this.gridBand17.Columns.Add(this.colTONG_PHAI_NOP);
             this.gridBand17.Name = "gridBand17";
             this.gridBand17.VisibleIndex = 0;
-            this.gridBand17.Width = 86;
+            this.gridBand17.Width = 101;
             // 
             // colTONG_PHAI_NOP
             // 
@@ -2553,7 +2554,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONG_PHAI_NOP", "{0:n0}")});
             this.colTONG_PHAI_NOP.ToolTip = "= (25) + (26) + (27) + (28) + (29) + (30)";
             this.colTONG_PHAI_NOP.Visible = true;
-            this.colTONG_PHAI_NOP.Width = 86;
+            this.colTONG_PHAI_NOP.Width = 101;
             // 
             // gridBand131
             // 
@@ -3590,6 +3591,7 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_luu_bang_luong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chot_bang_luong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tinh_lai_nhan_vien;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTHU_NHAP_CHIU_THUE;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand68;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand134;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand MA_NV;
@@ -3644,7 +3646,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand51;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand137;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand138;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTHU_NHAP_CHIU_THUE;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand5;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand79;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand22;

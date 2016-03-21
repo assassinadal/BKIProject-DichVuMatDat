@@ -20,13 +20,15 @@ namespace BKI_DichVuMatDat.BaoCao
 
         public override void ProcessCommand(Enum cmd, object arg)
         {
-            base.ProcessCommand(cmd, arg);
+            //base.ProcessCommand(cmd, arg);
+            progressBarControl1.EditValue = arg;
         }
 
         #endregion
 
         public enum SplashScreenCommand
         {
+            SetProgress
         }
     }
 }

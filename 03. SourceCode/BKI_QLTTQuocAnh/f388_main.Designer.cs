@@ -1161,7 +1161,7 @@
             this.m_cmd_tong_hop_cham_cong.Id = 112;
             this.m_cmd_tong_hop_cham_cong.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_cac_thang_da_chot_bang_luong_;
             this.m_cmd_tong_hop_cham_cong.Name = "m_cmd_tong_hop_cham_cong";
-            this.m_cmd_tong_hop_cham_cong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tong_hop_cham_cong_ItemClick);
+            this.m_cmd_tong_hop_cham_cong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_quan_ly_giam_tru_phu_thuoc
             // 

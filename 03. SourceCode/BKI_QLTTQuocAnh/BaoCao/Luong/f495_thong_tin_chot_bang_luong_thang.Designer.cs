@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f495_thong_tin_chot_bang_luong_thang));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.m_dat_nam = new DevExpress.XtraEditors.DateEdit();
             this.m_cmd_view = new DevExpress.XtraEditors.SimpleButton();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.m_dat_nam = new DevExpress.XtraEditors.DateEdit();
             this.m_grc_main = new DevExpress.XtraGrid.GridControl();
             this.m_grv_main = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -79,9 +79,9 @@
             this.colLE_TET_YN = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_nam.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_nam.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).BeginInit();
             this.SuspendLayout();
@@ -96,25 +96,6 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(791, 55);
             this.panelControl1.TabIndex = 0;
-            // 
-            // m_dat_nam
-            // 
-            this.m_dat_nam.EditValue = null;
-            this.m_dat_nam.Location = new System.Drawing.Point(12, 12);
-            this.m_dat_nam.Name = "m_dat_nam";
-            this.m_dat_nam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.m_dat_nam.Properties.Appearance.Options.UseFont = true;
-            this.m_dat_nam.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_nam.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_nam.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Strong;
-            this.m_dat_nam.Properties.Mask.BeepOnError = true;
-            this.m_dat_nam.Properties.Mask.EditMask = "yyyy";
-            this.m_dat_nam.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_dat_nam.ShowToolTips = false;
-            this.m_dat_nam.Size = new System.Drawing.Size(100, 30);
-            this.m_dat_nam.TabIndex = 0;
             // 
             // m_cmd_view
             // 
@@ -143,6 +124,25 @@
             this.imageCollection.Images.SetKeyName(10, "list.png");
             this.imageCollection.Images.SetKeyName(11, "eye.png");
             this.imageCollection.Images.SetKeyName(12, "note.png");
+            // 
+            // m_dat_nam
+            // 
+            this.m_dat_nam.EditValue = null;
+            this.m_dat_nam.Location = new System.Drawing.Point(12, 12);
+            this.m_dat_nam.Name = "m_dat_nam";
+            this.m_dat_nam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.m_dat_nam.Properties.Appearance.Options.UseFont = true;
+            this.m_dat_nam.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_nam.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_nam.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Strong;
+            this.m_dat_nam.Properties.Mask.BeepOnError = true;
+            this.m_dat_nam.Properties.Mask.EditMask = "yyyy";
+            this.m_dat_nam.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_dat_nam.ShowToolTips = false;
+            this.m_dat_nam.Size = new System.Drawing.Size(100, 30);
+            this.m_dat_nam.TabIndex = 0;
             // 
             // m_grc_main
             // 
@@ -260,8 +260,6 @@
             this.colNGAY_CHOT.Caption = "Ngày chốt";
             this.colNGAY_CHOT.FieldName = "NGAY_CHOT";
             this.colNGAY_CHOT.Name = "colNGAY_CHOT";
-            this.colNGAY_CHOT.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NGAY_CHOT", "0:n0")});
             this.colNGAY_CHOT.Visible = true;
             this.colNGAY_CHOT.VisibleIndex = 2;
             // 
@@ -922,9 +920,9 @@
             this.Text = "F495 - Thông tin các tháng đã chốt bảng lương";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_nam.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_nam.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_main)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).EndInit();
             this.ResumeLayout(false);

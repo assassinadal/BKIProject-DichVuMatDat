@@ -42,15 +42,15 @@ namespace BKI_DichVuMatDat.BaoCao
         private void load_data_2_grid()
         {
             CHRMCommon.make_stt(m_adv_tong_hop);
-           
+
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-           
+
             US_RPT_THONG_TIN_TONG_HOP_V2 v_us = new US_RPT_THONG_TIN_TONG_HOP_V2();
             v_us.HienThiBaoCao(v_ds, lay_thang(), lay_nam());
             m_grc_tong_hop.DataSource = v_ds.Tables[0];
             m_grc_tong_hop.RefreshDataSource();
-            m_lbl_thang.Text = "Dữ liệu tháng " + lay_thang().ToString() + "/"+lay_nam().ToString();
+            m_lbl_thang.Text = "Dữ liệu tháng " + lay_thang().ToString() + "/" + lay_nam().ToString();
         }
         private void resetText()
         {
@@ -85,7 +85,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 return;
             }
             var v_dto_thong_tin_bang_luong = TinhLuongQL.Instance.LayThongTinBangLuong(lay_thang(), lay_nam());
-            
+
             if(v_dto_thong_tin_bang_luong.CHOT_BANG_LUONG)
             {
                 m_lbl_trang_thai_bang_luong.ForeColor = Color.Gray;
@@ -131,7 +131,7 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             else
             {
-                v_str_text_confirm = "Bạn có chắc chắn muốn chốt bảng lương tháng " + lay_thang() + " năm " + lay_nam()+"?";
+                v_str_text_confirm = "Bạn có chắc chắn muốn chốt bảng lương tháng " + lay_thang() + " năm " + lay_nam() + "?";
             }
             v_dlg_confirm = XtraMessageBox.Show(v_str_text_confirm
                                                             , "XÁC NHẬN"
@@ -139,7 +139,7 @@ namespace BKI_DichVuMatDat.BaoCao
                                                             , MessageBoxIcon.Question);
             if(v_dlg_confirm == System.Windows.Forms.DialogResult.No)
             {
-                XtraMessageBox.Show("Bạn đã hủy thao tác!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Bạn đã hủy thao tác!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             TinhLuongQL.Instance.ChotBangLuongThang(lay_thang(), lay_nam());
@@ -308,14 +308,14 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void m_dat_thang_EditValueChanged(object sender, EventArgs e)
         {
-            try 
-	{	        
-		hien_thi_thong_tin_bang_luong();
-	}
-	catch (Exception v_e)
-	{
-		CSystemLog_301.ExceptionHandle(v_e);
-	}
+            try
+            {
+                hien_thi_thong_tin_bang_luong();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
     }
 }

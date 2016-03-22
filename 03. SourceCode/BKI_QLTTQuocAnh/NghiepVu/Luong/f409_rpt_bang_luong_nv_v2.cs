@@ -448,13 +448,13 @@ namespace BKI_DichVuMatDat.BaoCao
 
             if(v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_CAN_TINH == v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_DA_TINH)
             {
-                m_lbl_thong_bao.Text = "Đã tính xong lương cho";
+                m_lbl_thong_bao.Text = "Bảng lương trong Phần mềm đã có lương của ";
                 m_lbl_thong_bao.ForeColor = Color.Green;
                 m_lbl_so_luong_nv_tinh_luong.ForeColor = Color.Green;
             }
             if(v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_CAN_TINH > v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_DA_TINH)
             {
-                m_lbl_thong_bao.Text = "Đã tính được lương cho";
+                m_lbl_thong_bao.Text = "Bảng lương trong Phần mềm đã có lương của ";
                 m_lbl_thong_bao.ForeColor = Color.Red;
                 m_lbl_so_luong_nv_tinh_luong.ForeColor = Color.Red;
             }
@@ -538,7 +538,7 @@ namespace BKI_DichVuMatDat.BaoCao
         }
 
 
-        private void tinh_bang_luong_tu_dong(DataSet ip_ds_danh_sach_nv)
+         private void tinh_bang_luong_tu_dong(DataSet ip_ds_danh_sach_nv)
         {
 
             int v_i_so_luong_nv = ip_ds_danh_sach_nv.Tables[0].Rows.Count;
@@ -661,6 +661,7 @@ namespace BKI_DichVuMatDat.BaoCao
         private void save_data(ENUM_CONFIRM_LUU_BANG_LUONG ip_confirm_save)
         {
             SplashScreenManager.ShowForm(this, typeof(SplashScreen1), true, true, false);
+            string v_str_msg="";
             try
             {
                 if(ip_confirm_save == ENUM_CONFIRM_LUU_BANG_LUONG.NONE)
@@ -689,6 +690,8 @@ namespace BKI_DichVuMatDat.BaoCao
                     TinhLuongQL.Instance.XoaToanBoBangLuong(lay_thang(), lay_nam());
                 }
 
+                int v_i_so_luong_ghi_moi = 0;
+                int v_i_so_luong_ghi_de = 0;
                 for(int v_i_row = 0; v_i_row < v_i_row_count; v_i_row++)
                 {
                     v_dto_bang_luong_v2 = (DTO_BANG_LUONG_V2)m_grv_main.GetRow(v_i_row);
@@ -699,27 +702,32 @@ namespace BKI_DichVuMatDat.BaoCao
                     {
                         case ENUM_CONFIRM_LUU_BANG_LUONG.TINH_LAI_TOAN_BO:
                             TinhLuongQL.Instance.InsertBanGhiLuongNhanVien(v_dto_bang_luong_v2);
+                            v_i_so_luong_ghi_moi = v_i_so_luong_ghi_moi + 1;
                             break;
                         case ENUM_CONFIRM_LUU_BANG_LUONG.CHUA_CO_THI_GHI_MOI_DA_CO_THI_KHONG_LAM_GI:
                             if(!v_bol_nv_co_trong_bang_luong_chua)
                             {
                                 TinhLuongQL.Instance.InsertBanGhiLuongNhanVien(v_dto_bang_luong_v2);
+                                v_i_so_luong_ghi_moi = v_i_so_luong_ghi_moi + 1;
                             }
                             break;
                         case ENUM_CONFIRM_LUU_BANG_LUONG.CHUA_CO_THI_GHI_MOI_DA_CO_THI_GHI_DE:
                             if(!v_bol_nv_co_trong_bang_luong_chua)
                             {
                                 TinhLuongQL.Instance.InsertBanGhiLuongNhanVien(v_dto_bang_luong_v2);
+                                v_i_so_luong_ghi_moi = v_i_so_luong_ghi_moi + 1;
                             }
                             else
                             {
                                 TinhLuongQL.Instance.ReplaceBanGhiLuongNhanVien(v_dto_bang_luong_v2);
+                                v_i_so_luong_ghi_de = v_i_so_luong_ghi_de + 1;
                             }
                             break;
                         case ENUM_CONFIRM_LUU_BANG_LUONG.CHUA_CO_THI_KHONG_LAM_GI_DA_CO_THI_GHI_DE:
                             if(v_bol_nv_co_trong_bang_luong_chua)
                             {
                                 TinhLuongQL.Instance.ReplaceBanGhiLuongNhanVien(v_dto_bang_luong_v2);
+                                v_i_so_luong_ghi_de = v_i_so_luong_ghi_de + 1;
                             }
                             break;
                         default:
@@ -730,6 +738,7 @@ namespace BKI_DichVuMatDat.BaoCao
                     SplashScreenManager.Default.SendCommand(SplashScreen1.SplashScreenCommand.SetProgress, (int)((decimal)v_i_row / (decimal)v_i_row_count * 100));
                     //progressBarControl1.EditValue = (int)((decimal)v_i_row / (decimal)v_i_row_count * 100);
                 }
+                v_str_msg = "Lưu dữ liệu lương thành công. Có " + v_i_so_luong_ghi_moi + " bản ghi lương nhân viên mới, có " + v_i_so_luong_ghi_de + " bản ghi lương nhân viên ghi đè!";
             }
             catch(Exception)
             {
@@ -739,7 +748,8 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 SplashScreenManager.CloseForm(false);
             }
-            XtraMessageBox.Show("Lưu dữ liệu lương thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+            XtraMessageBox.Show(v_str_msg, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             hien_thi_thong_tin_bang_luong();
         }
 

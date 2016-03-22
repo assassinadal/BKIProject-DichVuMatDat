@@ -304,8 +304,6 @@ namespace BKI_DichVuMatDat.BaoCao
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
-
         private void m_dat_thang_EditValueChanged(object sender, EventArgs e)
         {
             try
@@ -317,5 +315,8 @@ namespace BKI_DichVuMatDat.BaoCao
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        #endregion
+
+        
     }
 }

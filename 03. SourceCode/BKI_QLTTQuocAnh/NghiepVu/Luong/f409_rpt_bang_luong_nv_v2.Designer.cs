@@ -275,7 +275,7 @@
             // 
             this.m_lbl_so_luong_nv_tinh_luong.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.m_lbl_so_luong_nv_tinh_luong.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_so_luong_nv_tinh_luong.Location = new System.Drawing.Point(399, 53);
+            this.m_lbl_so_luong_nv_tinh_luong.Location = new System.Drawing.Point(520, 53);
             this.m_lbl_so_luong_nv_tinh_luong.Name = "m_lbl_so_luong_nv_tinh_luong";
             this.m_lbl_so_luong_nv_tinh_luong.Size = new System.Drawing.Size(9, 13);
             this.m_lbl_so_luong_nv_tinh_luong.TabIndex = 4;
@@ -336,9 +336,9 @@
             this.m_lbl_thong_bao.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_thong_bao.Location = new System.Drawing.Point(250, 53);
             this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
-            this.m_lbl_thong_bao.Size = new System.Drawing.Size(113, 13);
+            this.m_lbl_thong_bao.Size = new System.Drawing.Size(173, 13);
             this.m_lbl_thong_bao.TabIndex = 3;
-            this.m_lbl_thong_bao.Text = "Đã có dữ liệu lương của";
+            this.m_lbl_thong_bao.Text = "Bảng lương phần mềm đã có dữ liệu ";
             // 
             // m_prb
             // 

@@ -34,9 +34,9 @@ namespace BKI_DichVuMatDat.COMMON
 
             return v_ds.Tables[0].Rows[0][0].ToString();
         }
-        public static bool KiemTraNhanVienCoTrongBangLuongChua(decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
+        public static bool KiemTraNhanVienCoTrongBangLuongChua(string ip_str_ma_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
         {
-            var v_str_result = ExecuteFuntionSql("fn_kiem_tra_nhan_vien_co_trong_bang_luong_chua", ip_dc_id_nhan_vien, ip_dc_thang, ip_dc_nam);
+            var v_str_result = ExecuteFuntionSql("fn_kiem_tra_nhan_vien_co_trong_bang_luong_chua", ip_str_ma_nhan_vien, ip_dc_thang, ip_dc_nam);
             if(v_str_result == "Y")
             {
                 return true;
@@ -72,6 +72,12 @@ namespace BKI_DichVuMatDat.COMMON
             var v_dc_result = Convert.ToDecimal(v_str_result);
 
             return v_dc_result;
+        }
+        public static string LayMaNhanVien(decimal ip_dc_id_nhan_vien)
+        {
+            var v_str_result = ExecuteFuntionSql("FN_GET_MA_NHAN_VIEN", ip_dc_id_nhan_vien);
+
+            return v_str_result;
         }
         public static bool IsLockBangLuong(decimal ip_dc_thang, decimal ip_dc_nam)
         {

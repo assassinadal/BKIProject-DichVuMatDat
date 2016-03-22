@@ -69,7 +69,7 @@ namespace BKI_DichVuMatDat.NghiepVu.Luong
             ip_dto_bang_luong.ID_NHAN_VIEN = ExecuteFuntion.LayNhanVienID(ip_dto_bang_luong.MA_NV);
             US_RPT_LUONG_V2 v_us_rpt_luong_v2 = transfer_dto_2_us_object(ip_dto_bang_luong);
 
-            DataRow v_dr_thong_tin_tong_hop_nv = get_thong_tin_tong_hop_1_nhan_vien_v2(ip_dto_bang_luong.ID_NHAN_VIEN, ip_dto_bang_luong.THANG, ip_dto_bang_luong.NAM);
+            DataRow v_dr_thong_tin_tong_hop_nv = get_thong_tin_tong_hop_1_nhan_vien_v2(ip_dto_bang_luong.MA_NV, ip_dto_bang_luong.THANG, ip_dto_bang_luong.NAM);
             US_RPT_THONG_TIN_TONG_HOP_V2 v_us_rpt_tong_hop_v2 = DataRow2USThongTinTongHopV2(v_dr_thong_tin_tong_hop_nv);
 
             v_us_rpt_luong_v2.BeginTransaction();
@@ -83,7 +83,9 @@ namespace BKI_DichVuMatDat.NghiepVu.Luong
         {
             US_RPT_LUONG_V2 v_us_rpt_luong_v2 = transfer_dto_2_us_object(ip_dto_bang_luong);
 
-            DataRow v_dr_thong_tin_tong_hop_nv = get_thong_tin_tong_hop_1_nhan_vien_v2(ip_dto_bang_luong.ID_NHAN_VIEN, ip_dto_bang_luong.THANG, ip_dto_bang_luong.NAM);
+            ip_dto_bang_luong.ID_NHAN_VIEN = ExecuteFuntion.LayNhanVienID(ip_dto_bang_luong.MA_NV);
+
+            DataRow v_dr_thong_tin_tong_hop_nv = get_thong_tin_tong_hop_1_nhan_vien_v2(ip_dto_bang_luong.MA_NV, ip_dto_bang_luong.THANG, ip_dto_bang_luong.NAM);
             US_RPT_THONG_TIN_TONG_HOP_V2 v_us_rpt_tong_hop_v2 = DataRow2USThongTinTongHopV2(v_dr_thong_tin_tong_hop_nv);
 
             v_us_rpt_luong_v2.BeginTransaction();
@@ -100,7 +102,7 @@ namespace BKI_DichVuMatDat.NghiepVu.Luong
             var v_dto_luong_nv = transfer_data_row_db_luong_2_object(v_dr_luong_nv, ip_dc_thang, ip_dc_nam);
             US_RPT_LUONG_V2 v_us_rpt_luong_v2 = transfer_dto_2_us_object(v_dto_luong_nv);
 
-            DataRow v_dr_thong_tin_tong_hop_nv = get_thong_tin_tong_hop_1_nhan_vien_v2(ip_dc_id_nhan_vien, ip_dc_thang, ip_dc_nam);
+            DataRow v_dr_thong_tin_tong_hop_nv = get_thong_tin_tong_hop_1_nhan_vien_v2(ExecuteFuntion.LayMaNhanVien(ip_dc_id_nhan_vien), ip_dc_thang, ip_dc_nam);
             US_RPT_THONG_TIN_TONG_HOP_V2 v_us_rpt_tong_hop_v2 = DataRow2USThongTinTongHopV2(v_dr_thong_tin_tong_hop_nv);
 
             v_us_rpt_luong_v2.BeginTransaction();
@@ -126,7 +128,7 @@ namespace BKI_DichVuMatDat.NghiepVu.Luong
 
         public bool KiemTraNhanVienCoTrongBangLuongChua(DTO_BANG_LUONG_V2 ip_dto_bang_luong)
         {
-            return ExecuteFuntion.KiemTraNhanVienCoTrongBangLuongChua(ip_dto_bang_luong.ID_NHAN_VIEN, ip_dto_bang_luong.THANG, ip_dto_bang_luong.NAM);
+            return ExecuteFuntion.KiemTraNhanVienCoTrongBangLuongChua(ip_dto_bang_luong.MA_NV, ip_dto_bang_luong.THANG, ip_dto_bang_luong.NAM);
         }
         
         public void ChotBangLuongThang(decimal ip_dc_thang, decimal ip_dc_nam)
@@ -337,12 +339,12 @@ namespace BKI_DichVuMatDat.NghiepVu.Luong
        
 
 
-        private DataRow get_thong_tin_tong_hop_1_nhan_vien_v2(decimal ip_dc_id_nhan_vien, decimal ip_int_thang, decimal ip_int_nam)
+        private DataRow get_thong_tin_tong_hop_1_nhan_vien_v2(string ip_str_ma_nhan_vien, decimal ip_int_thang, decimal ip_int_nam)
         {
             US_RPT_THONG_TIN_TONG_HOP_V2 v_us = new US_RPT_THONG_TIN_TONG_HOP_V2();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.LayThongTinTongHopNhanVien(v_ds, ip_dc_id_nhan_vien, ip_int_thang, ip_int_nam);
+            v_us.LayThongTinTongHopNhanVien(v_ds, ip_str_ma_nhan_vien, ip_int_thang, ip_int_nam);
             DataRow v_dr = v_ds.Tables[0].Rows[0];
             return v_dr;
         }

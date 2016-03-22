@@ -792,12 +792,12 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         private void load_data_excel_to_grid(string ip_path_excel)
         {
+            if(ip_path_excel == "")
+            {
+                return;
+            }
             try
             {
-                if(ip_path_excel == "")
-                {
-                    return;
-                }
                 var v_dlg_confirm = XtraMessageBox.Show("Bạn có chắc chắn muốn import dữ liệu từ file Excel lương?"
                                                             , "XÁC NHẬN"
                                                             , MessageBoxButtons.YesNo

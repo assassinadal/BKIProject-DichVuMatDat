@@ -669,10 +669,10 @@ namespace BKI_DichVuMatDat.US
         #endregion
 
         #region Additional
-        public void LayThongTinTongHopNhanVien(DataSet ip_ds, decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
+        public void LayThongTinTongHopNhanVien(DataSet ip_ds, string ip_str_ma_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
         {
             CStoredProc v_cstore = new CStoredProc("pr_TL_thong_tin_tong_hop_nhan_vien_Get");
-            v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            v_cstore.addNVarcharInputParam("@ip_str_ma_nhan_vien", ip_str_ma_nhan_vien);
             v_cstore.addDecimalInputParam("@ip_int_thang", ip_dc_thang);
             v_cstore.addDecimalInputParam("@ip_int_nam", ip_dc_nam);
             v_cstore.fillDataSetByCommand(this, ip_ds);

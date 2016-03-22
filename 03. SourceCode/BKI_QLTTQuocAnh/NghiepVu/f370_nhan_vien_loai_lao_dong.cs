@@ -189,6 +189,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 excel.Visible = true;
                 Microsoft.Office.Interop.Excel.Workbooks books = excel.Workbooks;
                 Microsoft.Office.Interop.Excel.Workbook openexcel = books.Open(newpath);
+                SplashScreenManager.CloseForm();
             }
             catch (Exception v_e)
             {

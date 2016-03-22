@@ -457,5 +457,17 @@ namespace BKI_DichVuMatDat.US
 
             v_cstore.fillDataSetByCommand(this, op_ds_bc_lcd_nv_theo_thang);
         }
+
+        public DataSet LayDanhSachNhanVienHetHanLuongCheDo(
+          DateTime ip_dat_ngay_hien_tai)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_lay_danh_sach_nv_het_han_lcd");
+            v_sp.addDatetimeInputParam("@ip_dat_ngay_hien_tai", ip_dat_ngay_hien_tai);
+            DataSet v_op_ds = new DataSet();
+            v_op_ds.Tables.Add();
+
+            v_sp.fillDataSetByCommand(this, v_op_ds);
+            return v_op_ds;
+        }
     }
 }

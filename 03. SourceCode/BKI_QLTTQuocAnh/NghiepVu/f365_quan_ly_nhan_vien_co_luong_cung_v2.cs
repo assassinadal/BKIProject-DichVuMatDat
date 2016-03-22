@@ -71,8 +71,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             //v_v_us_luong_cung = new US_V_GD_LUONG_CUNG();
             DS_V_GD_LUONG_CUNG v_ds = new DS_V_GD_LUONG_CUNG();
             //v_ds.Tables.Add(new DataTable());
-            SqlCommand cmd = new SqlCommand("SELECT * FROM V_GD_LUONG_CUNG WHERE DA_XOA = 'N' ORDER BY ID_NHAN_VIEN");
-            v_v_us_luong_cung.FillDatasetByCommand(v_ds, cmd);
+            //SqlCommand cmd = new SqlCommand("SELECT * FROM V_GD_LUONG_CUNG WHERE DA_XOA = 'N' ORDER BY ID_NHAN_VIEN");
+            v_v_us_luong_cung.FillDataset(v_ds, "WHERE DA_XOA = 'N' ORDER BY ID_NHAN_VIEN");
             m_grc_luong_cung_cua_nhan_vien.DataSource = v_ds.Tables[0];
         }
 

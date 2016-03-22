@@ -130,6 +130,7 @@
             this.m_cmd_tnk_ngoai_bang_luong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_quan_ly_quy_tnk = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_bc_athk_bsl_lt = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_ds_chot_bang_luong = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -162,10 +163,11 @@
             this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.m_lbl_canh_bao_het_han_hs_lns = new DevExpress.XtraEditors.LabelControl();
+            this.m_lbl_canh_bao_het_han_luong_che_do = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.m_cmd_ds_chot_bang_luong = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -791,6 +793,7 @@
             this.m_cmd_tk_ns_tong_hop.Id = 65;
             this.m_cmd_tk_ns_tong_hop.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_thong_ke_tong_hop_;
             this.m_cmd_tk_ns_tong_hop.Name = "m_cmd_tk_ns_tong_hop";
+            this.m_cmd_tk_ns_tong_hop.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInCustomizing;
             this.m_cmd_tk_ns_tong_hop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tk_ns_tong_hop_ItemClick);
             // 
             // m_cmd_bc_hs_bs_hs_athk
@@ -1206,6 +1209,15 @@
             this.m_cmd_bc_athk_bsl_lt.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // m_cmd_ds_chot_bang_luong
+            // 
+            this.m_cmd_ds_chot_bang_luong.Caption = "Thông tin chốt bảng lương";
+            this.m_cmd_ds_chot_bang_luong.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_cac_thang_da_chot_bang_luong_;
+            this.m_cmd_ds_chot_bang_luong.Id = 122;
+            this.m_cmd_ds_chot_bang_luong.Name = "m_cmd_ds_chot_bang_luong";
+            this.m_cmd_ds_chot_bang_luong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1495,18 +1507,44 @@
             // 
             // dockPanel1_Container
             // 
+            this.dockPanel1_Container.Controls.Add(this.m_lbl_canh_bao_het_han_hs_lns);
+            this.dockPanel1_Container.Controls.Add(this.m_lbl_canh_bao_het_han_luong_che_do);
             this.dockPanel1_Container.Controls.Add(this.m_lbl_canh_bao_het_han_hop_dong);
             this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
             this.dockPanel1_Container.Size = new System.Drawing.Size(216, 229);
             this.dockPanel1_Container.TabIndex = 0;
             // 
+            // m_lbl_canh_bao_het_han_hs_lns
+            // 
+            this.m_lbl_canh_bao_het_han_hs_lns.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.m_lbl_canh_bao_het_han_hs_lns.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.m_lbl_canh_bao_het_han_hs_lns.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_canh_bao_het_han_hs_lns.Location = new System.Drawing.Point(0, 26);
+            this.m_lbl_canh_bao_het_han_hs_lns.Name = "m_lbl_canh_bao_het_han_hs_lns";
+            this.m_lbl_canh_bao_het_han_hs_lns.Size = new System.Drawing.Size(216, 13);
+            this.m_lbl_canh_bao_het_han_hs_lns.TabIndex = 12;
+            this.m_lbl_canh_bao_het_han_hs_lns.Text = "labelControl2";
+            // 
+            // m_lbl_canh_bao_het_han_luong_che_do
+            // 
+            this.m_lbl_canh_bao_het_han_luong_che_do.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.m_lbl_canh_bao_het_han_luong_che_do.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.m_lbl_canh_bao_het_han_luong_che_do.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_canh_bao_het_han_luong_che_do.Location = new System.Drawing.Point(0, 13);
+            this.m_lbl_canh_bao_het_han_luong_che_do.Name = "m_lbl_canh_bao_het_han_luong_che_do";
+            this.m_lbl_canh_bao_het_han_luong_che_do.Size = new System.Drawing.Size(216, 13);
+            this.m_lbl_canh_bao_het_han_luong_che_do.TabIndex = 11;
+            this.m_lbl_canh_bao_het_han_luong_che_do.Text = "labelControl1";
+            // 
             // m_lbl_canh_bao_het_han_hop_dong
             // 
+            this.m_lbl_canh_bao_het_han_hop_dong.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
             this.m_lbl_canh_bao_het_han_hop_dong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.m_lbl_canh_bao_het_han_hop_dong.Location = new System.Drawing.Point(12, 12);
+            this.m_lbl_canh_bao_het_han_hop_dong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_canh_bao_het_han_hop_dong.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_canh_bao_het_han_hop_dong.Name = "m_lbl_canh_bao_het_han_hop_dong";
-            this.m_lbl_canh_bao_het_han_hop_dong.Size = new System.Drawing.Size(63, 13);
+            this.m_lbl_canh_bao_het_han_hop_dong.Size = new System.Drawing.Size(216, 13);
             this.m_lbl_canh_bao_het_han_hop_dong.TabIndex = 10;
             this.m_lbl_canh_bao_het_han_hop_dong.Text = "labelControl1";
             this.m_lbl_canh_bao_het_han_hop_dong.DoubleClick += new System.EventHandler(this.m_lbl_canh_bao_het_han_hop_dong_DoubleClick);
@@ -1529,15 +1567,6 @@
             this.ribbonPageGroup17.Name = "ribbonPageGroup17";
             this.ribbonPageGroup17.Text = "Tính lương";
             // 
-            // m_cmd_ds_chot_bang_luong
-            // 
-            this.m_cmd_ds_chot_bang_luong.Caption = "Thông tin chốt bảng lương";
-            this.m_cmd_ds_chot_bang_luong.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_cac_thang_da_chot_bang_luong_;
-            this.m_cmd_ds_chot_bang_luong.Id = 122;
-            this.m_cmd_ds_chot_bang_luong.Name = "m_cmd_ds_chot_bang_luong";
-            this.m_cmd_ds_chot_bang_luong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
             // f388_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1559,7 +1588,6 @@
             this.hideContainerRight.ResumeLayout(false);
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
-            this.dockPanel1_Container.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1703,5 +1731,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
         private DevExpress.XtraBars.BarButtonItem m_cmd_ds_chot_bang_luong;
+        private DevExpress.XtraEditors.LabelControl m_lbl_canh_bao_het_han_hs_lns;
+        private DevExpress.XtraEditors.LabelControl m_lbl_canh_bao_het_han_luong_che_do;
     }
 }

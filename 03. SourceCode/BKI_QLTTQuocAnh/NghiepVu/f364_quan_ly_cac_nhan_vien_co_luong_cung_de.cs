@@ -35,7 +35,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_lbl_header.Text = "SỬA THÔNG TIN LƯƠNG CỨNG";
             m_us_gd_luong_cung = ip_us;
             us_obj_2_form();
-            this.ShowDialog();         
+            this.ShowDialog();
         }
 
         public void display_4_insert()
@@ -44,7 +44,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_lbl_header.Text = "THÊM THÔNG TIN LƯƠNG CỨNG";
             clear_data_in_form();
             this.ShowDialog();
-          
+
         }
         public void display_4_insert(decimal ip_id_nv)
         {
@@ -273,7 +273,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                CHRMCommon.format_text_2_money(m_txt_so_tien);
+                if (m_txt_so_tien.Text != "")
+                {
+                    CHRMCommon.format_text_2_money(m_txt_so_tien);
+                }
             }
             catch (Exception v_e)
             {
@@ -287,30 +290,25 @@ namespace BKI_DichVuMatDat.NghiepVu
                 if (m_sle_chon_nhan_vien.EditValue == null) return;
                 decimal id_nv = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
                 decimal id_gd = find_id_gd_luong_cung(id_nv);
-                if(id_gd!=-1 & m_e_form_mode == DataEntryFormMode.InsertDataState)
+                if (id_gd == -1)
                 {
-                    if (CHRM_BaseMessages.MsgBox_Confirm("Hiện tại nhân viên này đã có lương cứng. Bạn có muốn cập nhật thông tin?") == true)
-                    {
-                        m_e_form_mode = DataEntryFormMode.UpdateDataState;
-                        m_us_gd_luong_cung = new US_GD_LUONG_CUNG(id_gd);
-                        us_obj_2_form();
-                    }
-                    else
-                    {
-                        if (m_e_form_mode == DataEntryFormMode.InsertDataState)
-                        {
-                            clear_data_in_form();
-                        }
-                        if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
-                        {
-                            this.Close();
-                        }
-                    }
+                    m_e_form_mode = DataEntryFormMode.InsertDataState;
                 }
                 else
                 {
-                    
-                }
+             
+                        if (CHRM_BaseMessages.MsgBox_Confirm("Hiện tại nhân viên này đã có lương cứng. Bạn có muốn cập nhật thông tin?") == true)
+                        {
+                            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+                            m_us_gd_luong_cung = new US_GD_LUONG_CUNG(id_gd);
+                            us_obj_2_form();
+                        }
+                        else
+                        {
+                           
+                                clear_data_in_form();
+                        }
+                    }
             }
             catch (Exception v_e)
             {

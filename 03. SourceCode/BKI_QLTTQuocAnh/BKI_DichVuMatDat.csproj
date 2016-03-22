@@ -338,11 +338,11 @@
     <Compile Include="BaoCao\f410_bao_cao_so_luong_chat_luong_lao_dong.Designer.cs">
       <DependentUpon>f410_bao_cao_so_luong_chat_luong_lao_dong.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaoCao\Luong\f495_thong_tin_chot_bang_luong_thang.cs">
+    <Compile Include="BaoCao\f419_bao_cao_hs_lns_lcd_v2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaoCao\Luong\f495_thong_tin_chot_bang_luong_thang.Designer.cs">
-      <DependentUpon>f495_thong_tin_chot_bang_luong_thang.cs</DependentUpon>
+    <Compile Include="BaoCao\f419_bao_cao_hs_lns_lcd_v2.Designer.cs">
+      <DependentUpon>f419_bao_cao_hs_lns_lcd_v2.cs</DependentUpon>
     </Compile>
     <Compile Include="BaoCao\SplashScreen1.cs">
       <SubType>Form</SubType>
@@ -398,6 +398,18 @@
     </Compile>
     <Compile Include="NghiepVu\f365_quan_ly_nhan_vien_co_luong_cung_v2.Designer.cs">
       <DependentUpon>f365_quan_ly_nhan_vien_co_luong_cung_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\f367_quan_li_nv_ko_dong_bao_hiem_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f367_quan_li_nv_ko_dong_bao_hiem_v2.Designer.cs">
+      <DependentUpon>f367_quan_li_nv_ko_dong_bao_hiem_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\f368_quan_ly_nv_ko_dong_bao_hiem_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f368_quan_ly_nv_ko_dong_bao_hiem_de.Designer.cs">
+      <DependentUpon>f368_quan_ly_nv_ko_dong_bao_hiem_de.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\F502_HOP_DONG_EXCEL.cs">
       <SubType>Form</SubType>
@@ -545,7 +557,6 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1193,8 +1204,8 @@
     <EmbeddedResource Include="BaoCao\f410_bao_cao_so_luong_chat_luong_lao_dong.resx">
       <DependentUpon>f410_bao_cao_so_luong_chat_luong_lao_dong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\Luong\f495_thong_tin_chot_bang_luong_thang.resx">
-      <DependentUpon>f495_thong_tin_chot_bang_luong_thang.cs</DependentUpon>
+    <EmbeddedResource Include="BaoCao\f419_bao_cao_hs_lns_lcd_v2.resx">
+      <DependentUpon>f419_bao_cao_hs_lns_lcd_v2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
@@ -1222,6 +1233,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f365_quan_ly_nhan_vien_co_luong_cung_v2.resx">
       <DependentUpon>f365_quan_ly_nhan_vien_co_luong_cung_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f367_quan_li_nv_ko_dong_bao_hiem_v2.resx">
+      <DependentUpon>f367_quan_li_nv_ko_dong_bao_hiem_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f368_quan_ly_nv_ko_dong_bao_hiem_de.resx">
+      <DependentUpon>f368_quan_ly_nv_ko_dong_bao_hiem_de.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F502_HOP_DONG_EXCEL.resx">
       <DependentUpon>F502_HOP_DONG_EXCEL.cs</DependentUpon>
@@ -2138,7 +2155,9 @@
       <DefaultIcon>paper1331.ico</DefaultIcon>
     </FileAssociation>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="BaoCao\Luong\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

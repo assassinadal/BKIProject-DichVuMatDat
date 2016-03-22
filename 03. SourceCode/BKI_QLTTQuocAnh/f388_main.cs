@@ -37,7 +37,11 @@ namespace BKI_DichVuMatDat
             try
             {
                 int v_so_hop_dong_het_han = get_hop_dong_het_han().Tables[0].Rows.Count;
+                int v_so_nv_het_han_hs_lns = get_nv_het_han_hs_lns().Tables[0].Rows.Count;
+                int v_so_nv_han_han_lcd = get_nv_het_han_lcd().Tables[0].Rows.Count;
                 m_lbl_canh_bao_het_han_hop_dong.Text = "Hiện có " + v_so_hop_dong_het_han + " nhân viên sắp hết hạn hợp đồng trong tháng";
+                m_lbl_canh_bao_het_han_luong_che_do.Text = "Hiện có " + v_so_nv_han_han_lcd + " nhân viên sắp hết hạn lương chế độ trong tháng";
+                m_lbl_canh_bao_het_han_hs_lns.Text = "Hiện có " + v_so_nv_het_han_hs_lns + " nhân viên sắp hết hạn hệ số lương năng suất trong tháng";
                 this.ShowDialog();
             }
             catch(Exception v_e)
@@ -168,6 +172,71 @@ namespace BKI_DichVuMatDat
                         v_ngay_dau_tien_cua_thang_hien_tai.Date
                         , v_ngay_cuoi_cung_cua_thang_hien_tai.Date);
         }
+      
+        private DataSet get_nv_het_han_hs_lns()
+        {
+            try
+            {
+                //DateTime v_ngay_hien_tai = DateTime.Now.Date;
+                DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
+                US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG v_us_f419_hs_lns = new US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG();
+                DataSet v_ds = v_us_f419_hs_lns.LayDanhSachNhanVienHetHanHeSoLuongNangSuat(v_ngay_hien_tai);
+
+                return v_ds;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+                return null;
+            }
+           
+        }
+
+        private DataSet get_nv_het_han_lcd()
+        {
+            try
+            {
+                //DateTime v_ngay_hien_tai = DateTime.Now.Date;
+                DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
+                US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG v_us_f419_lcd = new US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG();
+                DataSet v_ds = v_us_f419_lcd.LayDanhSachNhanVienHetHanLuongCheDo(v_ngay_hien_tai);
+
+                return v_ds;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+                return null;
+            }
+           
+        }
+
+        private void m_lbl_canh_bao_het_han_luong_che_do_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f419_bao_cao_hs_lns_lcd_v2 v_f = new f419_bao_cao_hs_lns_lcd_v2();
+                v_f.display_nv_het_han_lcd(get_nv_het_han_lcd());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+
+        private void m_lbl_canh_bao_het_han_hs_lns_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f419_bao_cao_hs_lns_lcd_v2 v_f = new f419_bao_cao_hs_lns_lcd_v2();
+                v_f.display_nv_het_han_hs_lns(get_nv_het_han_hs_lns());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         #endregion
 
         ///
@@ -177,6 +246,8 @@ namespace BKI_DichVuMatDat
         private void set_define_events()
         {
             this.Load += f388_main_Load;
+            m_lbl_canh_bao_het_han_hs_lns.DoubleClick += m_lbl_canh_bao_het_han_hs_lns_Click;
+            m_lbl_canh_bao_het_han_luong_che_do.DoubleClick += m_lbl_canh_bao_het_han_luong_che_do_Click;
             //Nghiệp vụ
             m_cmd_cham_cong_nv.ItemClick += m_cmd_cham_cong_nv_ItemClick;
             m_cmd_lap_hop_dong.ItemClick += m_cmd_lap_hop_dong_ItemClick;
@@ -231,6 +302,22 @@ namespace BKI_DichVuMatDat
             //m_cmd_ds_chot_bang_luong.ItemClick += m_cmd_ds_chot_bang_luong_ItemClick;
         }
 
+
+        void m_cmd_ds_chot_bang_luong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                ////f495_thong_tin_chot_bang_luong_thang v_f = new f495_thong_tin_chot_bang_luong_thang();
+                //if (IsExistFormName(v_f)) return;
+                //v_f.MdiParent = this;
+                //v_f.Show();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
         //void m_cmd_ds_chot_bang_luong_ItemClick(object sender, ItemClickEventArgs e)
         //{
         //    try
@@ -245,6 +332,7 @@ namespace BKI_DichVuMatDat
         //        CSystemLog_301.ExceptionHandle(v_e);
         //    }
         //}
+
 
         void m_cmd_cham_cong_lam_them_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -490,7 +578,8 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f419_bao_cao_hs_lns_lcd_cua_nhan_vien v_frm = new f419_bao_cao_hs_lns_lcd_cua_nhan_vien();
+                //f419_bao_cao_hs_lns_lcd_cua_nhan_vien v_frm = new f419_bao_cao_hs_lns_lcd_cua_nhan_vien();
+                f419_bao_cao_hs_lns_lcd_v2 v_frm = new f419_bao_cao_hs_lns_lcd_v2();
                 if(IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
@@ -911,7 +1000,8 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f366_quan_ly_nhan_vien_khong_dong_bao_hiem v_frm = new f366_quan_ly_nhan_vien_khong_dong_bao_hiem();
+                //f366_quan_ly_nhan_vien_khong_dong_bao_hiem v_frm = new f366_quan_ly_nhan_vien_khong_dong_bao_hiem();
+                f367_quan_li_nv_ko_dong_bao_hiem_v2 v_frm = new f367_quan_li_nv_ko_dong_bao_hiem_v2();
                 if(IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;

@@ -433,6 +433,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_GD_HOP_DONG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_GD_KHONG_DONG_BAO_HIEM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_KHONG_DONG_BAO_HIEM.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_GD_LOAI_LAO_DONG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1332,6 +1337,17 @@
     </None>
     <None Include="DS_V_GD_HOP_DONG.xss">
       <DependentUpon>DS_V_GD_HOP_DONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_KHONG_DONG_BAO_HIEM.xsc">
+      <DependentUpon>DS_V_GD_KHONG_DONG_BAO_HIEM.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_KHONG_DONG_BAO_HIEM.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_KHONG_DONG_BAO_HIEM.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_KHONG_DONG_BAO_HIEM.xss">
+      <DependentUpon>DS_V_GD_KHONG_DONG_BAO_HIEM.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_LOAI_LAO_DONG.xsc">
       <DependentUpon>DS_V_GD_LOAI_LAO_DONG.xsd</DependentUpon>

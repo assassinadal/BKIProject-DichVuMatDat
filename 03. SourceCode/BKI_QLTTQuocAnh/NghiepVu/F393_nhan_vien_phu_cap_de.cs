@@ -18,6 +18,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         public F393_nhan_vien_phu_cap_de()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void F393_nhan_vien_phu_cap_de_Load(object sender, EventArgs e)
@@ -79,9 +80,31 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_nhan_vien.Properties.DisplayMember = V_DM_NHAN_VIEN.HO_TEN;
 
             m_sle_nhan_vien.Properties.PopulateViewColumns();
-          
+
             m_sle_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+        }
+
+        private bool check_data()
+        {
+            if (m_sle_nhan_vien.EditValue == "" | (m_sle_nhan_vien.EditValue == null))
+            {
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NHAN_VIEN);
+                return false;
+            }
+
+            if (m_sle_phu_cap.EditValue == "" | (m_sle_phu_cap.EditValue == null))
+            {
+                CHRM_BaseMessages.MsgBox_Error("Chưa chọn chức vụ hưởng phụ cấp");
+                return false;
+            }
+
+            if (m_sle_quyet_dinh.EditValue == "" | (m_sle_quyet_dinh.EditValue == null))
+            {
+                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_QUYET_DINH);
+                return false;
+            }
+            return true;
         }
 
         private DS_V_DM_NHAN_VIEN load_data_2_ds_v_dm_nv()
@@ -115,25 +138,32 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP();
-                v_us.dcID_NHAN_VIEN = IP.Core.IPCommon.CIPConvert.ToDecimal(m_sle_nhan_vien.EditValue.ToString());
-                v_us.dcID_PHU_CAP = IP.Core.IPCommon.CIPConvert.ToDecimal(m_sle_phu_cap.EditValue);
-                if (m_sle_quyet_dinh.EditValue != null)
+                if (!check_data())
                 {
-                    v_us.dcID_QUYET_DINH = IP.Core.IPCommon.CIPConvert.ToDecimal(m_sle_quyet_dinh.EditValue);
+                    return;
                 }
-                v_us.strDA_XOA = "N";
-                
-                v_us.Insert();
-                IP.Core.IPCommon.BaseMessages.MsgBox_Infor(50);
-                DialogResult = System.Windows.Forms.DialogResult.OK;
-                this.Close();
+                else if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
+                {
+                    US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP();
+                    v_us.dcID_NHAN_VIEN = IP.Core.IPCommon.CIPConvert.ToDecimal(m_sle_nhan_vien.EditValue.ToString());
+                    v_us.dcID_PHU_CAP = IP.Core.IPCommon.CIPConvert.ToDecimal(m_sle_phu_cap.EditValue);
+                    if (m_sle_quyet_dinh.EditValue != null)
+                    {
+                        v_us.dcID_QUYET_DINH = IP.Core.IPCommon.CIPConvert.ToDecimal(m_sle_quyet_dinh.EditValue);
+                    }
+                    v_us.strDA_XOA = "N";
+
+                    v_us.Insert();
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                    //DialogResult = System.Windows.Forms.DialogResult.OK;
+                    this.Close();
+                }
             }
             catch (Exception v_e)
             {
                 IP.Core.IPCommon.CSystemLog_301.ExceptionHandle(v_e);
             }
-            
+
         }
 
         private void m_cmd_xoa_Click(object sender, EventArgs e)

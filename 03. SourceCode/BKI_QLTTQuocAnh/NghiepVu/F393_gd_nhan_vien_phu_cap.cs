@@ -37,16 +37,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grc.DataSource = v_ds.Tables[0];
         }
 
+     
         private void m_cmd_them_Click(object sender, EventArgs e)
         {
             try
             {
                 F393_nhan_vien_phu_cap_de v_f = new F393_nhan_vien_phu_cap_de();
-                v_f.ShowDialog();
-                if (v_f.DialogResult == System.Windows.Forms.DialogResult.OK)
-                {
-                    load_data_2_grid();
-                }
+                v_f.ShowDialog();               
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {

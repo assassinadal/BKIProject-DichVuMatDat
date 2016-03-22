@@ -356,8 +356,6 @@
             this.gridColumn15.Caption = "Giới tính";
             this.gridColumn15.FieldName = "GIOI_TINH";
             this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 3;
             // 
             // gridColumn16
             // 
@@ -396,7 +394,7 @@
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "f371_nhan_vien_loai_lao_dong_de";
-            this.Text = "f371 - THÊM NHÂN VIÊN LOẠI LAO ĐỘNG";
+            this.Text = "F371 - THÊM  LOẠI LAO ĐỘNG CHO NHÂN VIÊN";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

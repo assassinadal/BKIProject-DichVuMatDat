@@ -131,6 +131,7 @@
             this.m_cmd_delete.Size = new System.Drawing.Size(116, 39);
             this.m_cmd_delete.TabIndex = 2;
             this.m_cmd_delete.Text = "&Xóa";
+            this.m_cmd_delete.Visible = false;
             // 
             // m_cmd_xuat_excel
             // 
@@ -438,10 +439,10 @@
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.labelControl1.Location = new System.Drawing.Point(12, 12);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(729, 24);
+            this.labelControl1.Size = new System.Drawing.Size(630, 24);
             this.labelControl1.StyleController = this.layoutControl1;
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "BÁO CÁO TRẠNG THÁI LAO ĐỘNG CỦA NHÂN VIÊN Ở THỜI ĐIỂM HIỆN TẠI";
+            this.labelControl1.Text = "TRẠNG THÁI LAO ĐỘNG CỦA NHÂN VIÊN Ở THỜI ĐIỂM HIỆN TẠI";
             // 
             // layoutControlGroup1
             // 
@@ -472,6 +473,7 @@
             this.m_lbl_header.Size = new System.Drawing.Size(1141, 28);
             this.m_lbl_header.Text = "m_lbl_header";
             this.m_lbl_header.TextSize = new System.Drawing.Size(0, 0);
+            this.m_lbl_header.TextToControlDistance = 0;
             this.m_lbl_header.TextVisible = false;
             // 
             // m_layout_chon_nhan_vien
@@ -503,6 +505,7 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(1141, 263);
             this.layoutControlItem2.Text = "layoutControlItem2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextToControlDistance = 0;
             this.layoutControlItem2.TextVisible = false;
             // 
             // emptySpaceItem1
@@ -534,6 +537,7 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(108, 42);
             this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextToControlDistance = 0;
             this.layoutControlItem1.TextVisible = false;
             // 
             // emptySpaceItem3
@@ -554,7 +558,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.panel1);
             this.Name = "f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien";
-            this.Text = "F356 - Báo cáo trạng thái lao động của nhân viên ở thời điểm hiện tại";
+            this.Text = "F356 - Trạng thái lao động của nhân viên ở thời điểm hiện tại";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

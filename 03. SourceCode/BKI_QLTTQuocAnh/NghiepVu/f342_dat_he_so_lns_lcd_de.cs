@@ -25,26 +25,35 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             InitializeComponent();
             format_controls();
-        }      
+        }
         private void display()
         {
             this.ShowDialog();
         }
         public void display_4_insert()
         {
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.Text = "F342 - Đặt hệ số lương năng suất, lương chế độ cho nhân viên";
             m_lbl_header.Text = "ĐẶT HỆ SỐ LƯƠNG NĂNG SUẤT, LƯƠNG CHẾ ĐÔ";
-            m_e_form_mode = DataEntryFormMode.InsertDataState;
             clear_data_in_form();
             this.CenterToScreen();
             this.ShowDialog();
         }
-
+        public void display_4_insert(decimal id_nv)
+        {
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.Text = "F342 - Đặt hệ số lương năng suất, lương chế độ cho nhân viên";
+            m_lbl_header.Text = "ĐẶT HỆ SỐ LƯƠNG NĂNG SUẤT, LƯƠNG CHẾ ĐÔ";
+            m_sle_chon_nhan_vien.EditValue = id_nv;
+            this.CenterToScreen();
+            this.ShowDialog();
+        }
         public void display_4_update(decimal mid_nv)
         {
             this.Text = "F342 - Sửa hệ số lương năng suất, lương chế độ";
             m_lbl_header.Text = "SỬA HỆ SỐ LƯƠNG NĂNG SUẤT";
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            m_sle_chon_nhan_vien.EditValue = mid_nv;
             this.CenterToScreen();
             this.ShowDialog();
         }
@@ -52,7 +61,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         #region Members
         DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
-        decimal id_nv_hien_tai = 0;
+        public decimal id_nv_hien_tai = 0;
         decimal m_insert_click = 0;
         decimal m_id_gd_hd = 0;
         decimal m_id_loai_hop_dong = 0;
@@ -65,10 +74,14 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         decimal m_id_gd_hs_lns_hien_tai = 0;
         decimal m_id_gd_lcd_hien_tai = 0;
+
+        US_GD_HE_SO_LNS v_us_hs_lns = new US_GD_HE_SO_LNS();
+        US_GD_LUONG_CHE_DO v_us_lcd = new US_GD_LUONG_CHE_DO();
+
         #endregion
 
         #region Private methods
-     
+
         private void format_controls()
         {
             FormatControl.SetVisibleSimpleButton(this);
@@ -588,7 +601,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     m_id_ma_hs_lns_hien_tai = find_id_ma_hs_lns_hien_tai(m_id_gd_hs_lns_lcd_hien_tai);
                     m_id_muc_hs_lns_hien_tai = find_id_muc_hs_lns_hien_tai(m_id_gd_hs_lns_lcd_hien_tai);
-                    m_id_ma_lcd_hien_tai = find_id_ma_lcd_hien_tai(m_id_gd_hs_lns_lcd_hien_tai); ;
+                    m_id_ma_lcd_hien_tai = find_id_ma_lcd_hien_tai(m_id_gd_hs_lns_lcd_hien_tai);
                     m_id_muc_lcd_hien_tai = find_id_muc_lcd_hien_tai(m_id_gd_hs_lns_lcd_hien_tai);
 
                     m_id_gd_hs_lns_hien_tai = find_id_gd_hs_lns_hien_tai(m_id_gd_hd);
@@ -657,25 +670,38 @@ namespace BKI_DichVuMatDat.NghiepVu
             //thong tin lns
             m_sle_chuc_danh_lns.EditValue = m_id_ma_hs_lns_hien_tai;
             m_sle_muc_lns.EditValue = m_id_muc_hs_lns_hien_tai;
-            US_GD_HE_SO_LNS v_us_gd_hs_lns = new US_GD_HE_SO_LNS(m_id_gd_hs_lns_hien_tai);
-
-            m_txt_hs_lns.Text = v_us_gd_hs_lns.dcHE_SO.ToString();
-            m_sle_chon_ly_do_chinh_sua_hs_lns.EditValue = v_us_gd_hs_lns.dcID_LY_DO_CHINH_SUA;
-            m_txt_ghi_chu_hs_lns.Text = v_us_gd_hs_lns.strGHI_CHU.ToString();
-            m_dat_ngay_bat_dau_lns.Value = v_us_gd_hs_lns.datNGAY_BAT_DAU;
-            m_dat_ngay_ket_thuc_lns.Value = v_us_gd_hs_lns.datNGAY_KET_THUC;
+            if (m_id_gd_hs_lns_hien_tai != -1)
+            {
+                US_GD_HE_SO_LNS v_us_gd_hs_lns = new US_GD_HE_SO_LNS(m_id_gd_hs_lns_hien_tai);
+                m_txt_hs_lns.Text = v_us_gd_hs_lns.dcHE_SO.ToString();
+                m_sle_chon_ly_do_chinh_sua_hs_lns.EditValue = v_us_gd_hs_lns.dcID_LY_DO_CHINH_SUA;
+                m_txt_ghi_chu_hs_lns.Text = v_us_gd_hs_lns.strGHI_CHU.ToString();
+                m_dat_ngay_bat_dau_lns.Value = v_us_gd_hs_lns.datNGAY_BAT_DAU;
+                m_dat_ngay_ket_thuc_lns.Value = v_us_gd_hs_lns.datNGAY_KET_THUC;
+            }
+            else
+            {
+                clear_data_hs_lns();
+            }
             //Thong tin lcd
             m_sle_chuc_danh_lcd.EditValue = m_id_ma_lcd_hien_tai;
             m_sle_muc_lcd.EditValue = m_id_muc_lcd_hien_tai;
-            US_GD_LUONG_CHE_DO v_us_gd_lcd = new US_GD_LUONG_CHE_DO(m_id_gd_lcd_hien_tai);
+            if (m_id_gd_lcd_hien_tai != -1)
+            {
+                US_GD_LUONG_CHE_DO v_us_gd_lcd = new US_GD_LUONG_CHE_DO(m_id_gd_lcd_hien_tai);
+                m_txt_so_tien_lcd.Text = string.Format("{0:#,##0}", v_us_gd_lcd.dcSO_TIEN);
+                m_sle_chon_ly_do_chinh_sua_so_tien_lcd.EditValue = v_us_gd_lcd.dcID_LY_DO_CHINH_SUA;
+                m_txt_ghi_chu_lcd.Text = v_us_gd_lcd.strGHI_CHU.ToString();
+                m_dat_ngay_bat_dau_lcd.Value = v_us_gd_lcd.datNGAY_BAT_DAU;
+                m_dat_ngay_ket_thuc_lcd.Value = v_us_gd_lcd.datNGAY_KET_THUC;
+            }
+            else
+            {
+                clear_data_lcd();
+            }
 
-            m_txt_so_tien_lcd.Text = string.Format("{0:#,##0}", v_us_gd_lcd.dcSO_TIEN);
-            m_sle_chon_ly_do_chinh_sua_so_tien_lcd.EditValue = v_us_gd_lcd.dcID_LY_DO_CHINH_SUA;
-            m_txt_ghi_chu_lcd.Text = v_us_gd_lcd.strGHI_CHU.ToString();
-            m_dat_ngay_bat_dau_lcd.Value = v_us_gd_lcd.datNGAY_BAT_DAU;
-            m_dat_ngay_ket_thuc_lcd.Value = v_us_gd_lcd.datNGAY_KET_THUC;
         }
-
+     
         private void cho_us_gd_hs_lns_da_xoa_Y()
         {
             US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS(m_id_gd_hs_lns_hien_tai);
@@ -685,9 +711,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.datNGAY_KET_THUC = v_dat_ngay_ket_thuc_hs_lns_hien_tai.Date;
             v_us.datNGAY_SUA = DateTime.Now.Date;
             v_us.strDA_XOA = "Y";
-            v_us.BeginTransaction();
             v_us.Update();
-            v_us.CommitTransaction();
         }
 
         private void cho_us_gd_lcd_da_xoa_Y()
@@ -698,15 +722,13 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.dcID = m_id_gd_lcd_hien_tai;
             v_us.datNGAY_KET_THUC = v_dat_ngay_ket_thuc_lcd_hien_tai.Date;
             v_us.datNGAY_SUA = DateTime.Now.Date;
-            v_us.strDA_XOA = "Y";
-            v_us.BeginTransaction();
+            v_us.strDA_XOA = "Y";                   
             v_us.Update();
-            v_us.CommitTransaction();
+           
         }
 
         private void save_data_hs_lns()
         {
-            US_GD_HE_SO_LNS v_us_hs_lns = new US_GD_HE_SO_LNS();
 
             form_2_us_gd_hs_lns(v_us_hs_lns);
 
@@ -714,11 +736,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 case DataEntryFormMode.InsertDataState:
                     //delete us_gd_hs_lns
+                    v_us_hs_lns.BeginTransaction();
                     cho_us_gd_hs_lns_da_xoa_Y();
                     //insert us_gd_hs_lns
-                    v_us_hs_lns.BeginTransaction();
                     v_us_hs_lns.Insert();
                     v_us_hs_lns.CommitTransaction();
+                    id_nv_hien_tai = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
                     break;
                 case DataEntryFormMode.UpdateDataState:
                     break;
@@ -729,7 +752,6 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void save_data_lcd()
         {
-            US_GD_LUONG_CHE_DO v_us_lcd = new US_GD_LUONG_CHE_DO();
 
             form_2_us_gd_lcd(v_us_lcd);
 
@@ -737,11 +759,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 case DataEntryFormMode.InsertDataState:
                     //delete us_gd_lcd
-                    cho_us_gd_lcd_da_xoa_Y();
-                    //insert us_gd_lcd
                     v_us_lcd.BeginTransaction();
+                    cho_us_gd_lcd_da_xoa_Y();
+                    //insert us_gd_lcd                   
                     v_us_lcd.Insert();
                     v_us_lcd.CommitTransaction();
+                    id_nv_hien_tai = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
                     break;
                 case DataEntryFormMode.UpdateDataState:
                     break;
@@ -770,6 +793,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_txt_ghi_chu_hs_lns.Text = "";
             m_dat_ngay_bat_dau_lns.Value = DateTime.Now.Date;
             m_dat_ngay_ket_thuc_lns.Value = DateTime.Now.Date;
+            m_txt_hs_lns.Text = "";
             DS_V_F340_DAT_HS_LNS v_ds_gd_lns = new DS_V_F340_DAT_HS_LNS();
             //lcd
             m_sle_chuc_danh_lcd.EditValue = null;
@@ -778,7 +802,26 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_txt_ghi_chu_lcd.Text = "";
             m_dat_ngay_bat_dau_lcd.Value = DateTime.Now.Date;
             m_dat_ngay_ket_thuc_lcd.Value = DateTime.Now.Date;
+            m_txt_so_tien_lcd.Text = "";
             DS_V_F340_DAT_LCD v_ds_gd_lcd = new DS_V_F340_DAT_LCD();
+        }
+
+        private void clear_data_lcd()
+        {
+            m_txt_so_tien_lcd.Text = "";
+            m_txt_ghi_chu_lcd.Text = "";
+            m_sle_chon_ly_do_chinh_sua_so_tien_lcd.EditValue = null;
+            m_sle_chuc_danh_lcd.EditValue = null;
+            m_sle_muc_lcd.EditValue = null;
+        }
+
+        private void clear_data_hs_lns()
+        {
+            m_txt_hs_lns.Text = "";
+            m_txt_ghi_chu_hs_lns.Text = "";
+            m_sle_chon_ly_do_chinh_sua_hs_lns.EditValue = null;
+            m_sle_chuc_danh_lns.EditValue = null;
+            m_sle_muc_lns.EditValue = null;
         }
 
         #endregion
@@ -801,7 +844,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         void m_cmd_save_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         void f342_dat_hs_lns_lcd_Load(object sender, EventArgs e)
@@ -832,12 +875,14 @@ namespace BKI_DichVuMatDat.NghiepVu
                             if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn điều chỉnh hệ số LNS như trên?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 save_data_hs_lns();
+                                CHRM_BaseMessages.MsgBox_Infor("Lưu thành công");
                             }
                             break;
                         case DataEntryFormMode.UpdateDataState:
                             if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn cập nhật hệ số LNS như trên?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 save_data_hs_lns();
+                                CHRM_BaseMessages.MsgBox_Infor("Lưu thành công");
                             }
                             break;
                         default:
@@ -847,6 +892,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
+                v_us_hs_lns.Rollback();
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
@@ -868,12 +914,14 @@ namespace BKI_DichVuMatDat.NghiepVu
                             if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn điều chỉnh LCĐ như trên?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 save_data_lcd();
+                                CHRM_BaseMessages.MsgBox_Infor("Lưu thành công");
                             }
                             break;
                         case DataEntryFormMode.UpdateDataState:
                             if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn cập nhật LCĐ như trên?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 save_data_lcd();
+                                CHRM_BaseMessages.MsgBox_Infor("Lưu thành công");
                             }
                             break;
                         default:
@@ -883,6 +931,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
+                v_us_lcd.Rollback();
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
@@ -908,13 +957,15 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     return;
                 }
-                if (m_id_loai_hop_dong != CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
+                if (find_id_loai_hop_dong_cua_nhan_vien(find_id_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue))) != CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
                 {
                     load_data_2_m_variable();
                     load_data_hs_lns_lcd_now_2_form();
                 }
                 else
                 {
+                    CHRM_BaseMessages.MsgBox_Infor("Nhân viên có hợp đồng học việc. Ko có lương chế độ, lương năng suất");
+                    m_sle_chon_nhan_vien.EditValue = null;
                     clear_data_in_form();
                 }
             }
@@ -928,6 +979,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                if (m_e_form_mode == DataEntryFormMode.InsertDataState) return;
                 if (m_insert_click == 0)
                 {
                     m_sle_muc_lns.EditValue = null;
@@ -944,6 +996,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                if (m_e_form_mode == DataEntryFormMode.InsertDataState) return;
                 if (m_insert_click == 0)
                 {
                     if (m_sle_chuc_danh_lns.EditValue == null || m_sle_chuc_danh_lns.EditValue == "")
@@ -974,6 +1027,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                if (m_e_form_mode == DataEntryFormMode.InsertDataState) return;
                 if (m_insert_click == 0)
                 {
                     m_sle_muc_lcd.EditValue = null;
@@ -990,6 +1044,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                if (m_e_form_mode == DataEntryFormMode.InsertDataState) return;
                 if (m_insert_click == 0)
                 {
                     if (m_sle_chuc_danh_lcd.EditValue == null || m_sle_chuc_danh_lcd.EditValue == "")

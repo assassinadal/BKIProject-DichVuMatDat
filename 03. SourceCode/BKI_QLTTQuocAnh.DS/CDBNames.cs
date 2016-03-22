@@ -1560,4 +1560,19 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGAY_KY_HOP_DONG = "NGAY_KY_HOP_DONG";
     }
 
+    public class V_GD_KHONG_DONG_BAO_HIEM
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string MA_NV = "MA_NV";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string HO_TEN = "HO_TEN";
+        public const string THANG = "THANG";
+        public const string NAM = "NAM";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string LY_DO = "LY_DO";
+    }
+
 }

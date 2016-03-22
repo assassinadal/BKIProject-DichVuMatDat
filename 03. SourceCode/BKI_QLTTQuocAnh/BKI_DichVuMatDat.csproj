@@ -1641,6 +1641,7 @@
     <Content Include="Template\LOAI_LAO_DONG_CUA_NHAN_VIEN.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Template\DangKyPhuThuoc.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BKI_QLTTQuocAnh.DS\BKI_DichVuMatDat.DS.csproj">

@@ -33,6 +33,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.m_dat_thang = new DevExpress.XtraEditors.DateEdit();
             this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_trang_thai_bang_luong = new DevExpress.XtraEditors.LabelControl();
@@ -260,6 +261,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -290,6 +293,7 @@
             // panelControl2
             // 
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl2.Controls.Add(this.m_dat_thang);
             this.panelControl2.Controls.Add(this.m_txt_nam);
             this.panelControl2.Controls.Add(this.labelControl1);
             this.panelControl2.Controls.Add(this.m_lbl_trang_thai_bang_luong);
@@ -300,6 +304,28 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(901, 40);
             this.panelControl2.TabIndex = 26;
+            // 
+            // m_dat_thang
+            // 
+            this.m_dat_thang.EditValue = null;
+            this.m_dat_thang.Location = new System.Drawing.Point(798, 8);
+            this.m_dat_thang.Name = "m_dat_thang";
+            this.m_dat_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.m_dat_thang.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_thang.Properties.Appearance.Options.UseFont = true;
+            this.m_dat_thang.Properties.Appearance.Options.UseForeColor = true;
+            this.m_dat_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
+            this.m_dat_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_thang.Properties.EditFormat.FormatString = "MM/yyyy";
+            this.m_dat_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_dat_thang.Size = new System.Drawing.Size(81, 26);
+            this.m_dat_thang.TabIndex = 25;
             // 
             // m_txt_nam
             // 
@@ -3484,6 +3510,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -3731,5 +3759,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand130;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand127;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand128;
+        private DevExpress.XtraEditors.DateEdit m_dat_thang;
     }
 }

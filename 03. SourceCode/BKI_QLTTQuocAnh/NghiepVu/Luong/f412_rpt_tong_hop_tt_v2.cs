@@ -259,6 +259,11 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
+                if(!isValidInputDate())
+                {
+                    XtraMessageBox.Show("Ngày tháng nhập vào chưa hợp lệ", ")
+                    return;
+                }
                 f409_rpt_bang_luong_nv_v2 v_frm = new f409_rpt_bang_luong_nv_v2();
                 v_frm.Display(lay_thang(), lay_nam());
                 hien_thi_thong_tin_bang_luong();

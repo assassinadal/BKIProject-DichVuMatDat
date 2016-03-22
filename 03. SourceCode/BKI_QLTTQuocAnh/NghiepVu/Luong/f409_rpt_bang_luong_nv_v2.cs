@@ -804,7 +804,7 @@ namespace BKI_DichVuMatDat.BaoCao
                                                             , MessageBoxIcon.Question);
                 if(v_dlg_confirm == System.Windows.Forms.DialogResult.No)
                 {
-                    XtraMessageBox.Show("Bạn đã hủy thao tác", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("Bạn đã hủy thao tác!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 SplashScreenManager.ShowForm(typeof(F_wait_form));
@@ -833,8 +833,23 @@ namespace BKI_DichVuMatDat.BaoCao
             for(int i = 0; i < v_dc_row_count; i++)
             {
                 var v_dr_grid = ip_dt_src.Rows[i];
-                DTO_BANG_LUONG_V2 v_dto_luong = TinhLuongQL.Instance.transfer_data_row_excel_luong_2_object(v_dr_grid, lay_thang(), lay_nam());
-                m_lst_luong_v2.Add(v_dto_luong);
+                try
+                {
+                    DTO_BANG_LUONG_V2 v_dto_luong = TinhLuongQL.Instance.transfer_data_row_excel_luong_2_object(v_dr_grid, lay_thang(), lay_nam());
+                    m_lst_luong_v2.Add(v_dto_luong);
+                }
+                catch(Exception)
+                {
+                    if(v_dr_grid[RPT_LUONG_V2.MA_NV] != DBNull.Value)
+                    {
+                        var v_str_msg = "Dữ liệu lương của nhân viên " + v_dr_grid[RPT_LUONG_V2.MA_NV].ToString() + " bị sai hoặc bị rỗng. Bạn xem lại nhé!";
+                        throw new Exception(v_str_msg);
+                    }
+                    else
+                    {
+                        throw new Exception("Có mã nhân viên bị rỗng, bạn xem lại nhé!");
+                    }
+                }
             }
         }
         private void xuat_excel_bang_luong()

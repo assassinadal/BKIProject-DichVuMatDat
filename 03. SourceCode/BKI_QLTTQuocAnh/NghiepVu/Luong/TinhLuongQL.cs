@@ -156,12 +156,19 @@ namespace BKI_DichVuMatDat.NghiepVu.Luong
             v_us_rpt_tong_hop.XoaToanBoDuLieuTongHop(ip_dc_thang, ip_dc_nam);
             v_us_luong.CommitTransaction();
         }
+        private bool isNull(Object ip_obj)
+        {
+            if(ip_obj == DBNull.Value)
+            {
+                return true;
+            }
+            return false;
+        }
         public DTO_BANG_LUONG_V2 transfer_data_row_excel_luong_2_object(DataRow ip_dr_luong, decimal ip_dc_thang, decimal ip_dc_nam)
         {
             DTO_BANG_LUONG_V2 v_dto_luong = new DTO_BANG_LUONG_V2();
             v_dto_luong.THANG = ip_dc_thang;
             v_dto_luong.NAM = ip_dc_nam;
-
             v_dto_luong.MA_NV = ip_dr_luong[RPT_LUONG_V2.MA_NV].ToString();
             v_dto_luong.HO_TEN = ip_dr_luong[RPT_LUONG_V2.HO_TEN].ToString();
 

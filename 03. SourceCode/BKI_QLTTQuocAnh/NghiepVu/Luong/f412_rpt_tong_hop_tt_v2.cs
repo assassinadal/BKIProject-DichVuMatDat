@@ -33,11 +33,11 @@ namespace BKI_DichVuMatDat.BaoCao
         #region Private Method
         private decimal lay_thang()
         {
-            return Convert.ToDecimal(m_txt_thang.EditValue);
+            return Convert.ToDecimal(m_dat_thang.DateTime.Month);
         }
         private decimal lay_nam()
         {
-            return Convert.ToDecimal(m_txt_nam.EditValue);
+            return Convert.ToDecimal(m_dat_thang.DateTime.Year);
         }
         private void load_data_2_grid()
         {
@@ -59,15 +59,19 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         private bool isValidInputDate()
         {
-            if(m_txt_thang.EditValue == null || m_txt_nam.EditValue == null)
-            {
-                return false;
-            }
-            if(Convert.ToDecimal(m_txt_thang.EditValue) <= 0 || Convert.ToDecimal(m_txt_thang.EditValue) > 12)
-            {
-                return false;
-            }
-            if(Convert.ToDecimal(m_txt_nam.EditValue) <= 2014 || Convert.ToDecimal(m_txt_nam.EditValue) > 9999)
+            //if(m_txt_thang.EditValue == null || m_txt_nam.EditValue == null)
+            //{
+            //    return false;
+            //}
+            //if(Convert.ToDecimal(m_txt_thang.EditValue) <= 0 || Convert.ToDecimal(m_txt_thang.EditValue) > 12)
+            //{
+            //    return false;
+            //}
+            //if(Convert.ToDecimal(m_txt_nam.EditValue) <= 2014 || Convert.ToDecimal(m_txt_nam.EditValue) > 9999)
+            //{
+            //    return false;
+            //}
+            if(m_dat_thang.EditValue == null)
             {
                 return false;
             }
@@ -149,8 +153,9 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 m_prb.Visible = false;
                 this.m_panel.Visible = false;
-                m_txt_thang.EditValue = DateTime.Now.Month;
-                m_txt_nam.EditValue = DateTime.Now.Year;
+                //m_txt_thang.EditValue = DateTime.Now.Month;
+                //m_txt_nam.EditValue = DateTime.Now.Year;
+                m_dat_thang.DateTime = DateTime.Now.Date;
                 m_cmd_view.Focus();
                 hien_thi_thong_tin_bang_luong();
                 load_data_2_grid();
@@ -231,29 +236,29 @@ namespace BKI_DichVuMatDat.BaoCao
 
         }
 
-        private void m_txt_thang_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                hien_thi_thong_tin_bang_luong();
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+        //private void m_txt_thang_Leave(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        hien_thi_thong_tin_bang_luong();
+        //    }
+        //    catch(Exception v_e)
+        //    {
+        //        CSystemLog_301.ExceptionHandle(v_e);
+        //    }
+        //}
 
-        private void m_txt_nam_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                hien_thi_thong_tin_bang_luong();
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+        //private void m_txt_nam_Leave(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        hien_thi_thong_tin_bang_luong();
+        //    }
+        //    catch(Exception v_e)
+        //    {
+        //        CSystemLog_301.ExceptionHandle(v_e);
+        //    }
+        //}
 
         private void m_cmd_soan_thao_bang_luong_Click(object sender, EventArgs e)
         {
@@ -261,7 +266,7 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 if(!isValidInputDate())
                 {
-                    XtraMessageBox.Show("Ngày tháng nhập vào chưa hợp lệ", ")
+                    XtraMessageBox.Show("Ngày tháng nhập vào chưa hợp lệ", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 f409_rpt_bang_luong_nv_v2 v_frm = new f409_rpt_bang_luong_nv_v2();
@@ -300,5 +305,17 @@ namespace BKI_DichVuMatDat.BaoCao
             }
         }
         #endregion
+
+        private void m_dat_thang_EditValueChanged(object sender, EventArgs e)
+        {
+            try 
+	{	        
+		hien_thi_thong_tin_bang_luong();
+	}
+	catch (Exception v_e)
+	{
+		CSystemLog_301.ExceptionHandle(v_e);
+	}
+        }
     }
 }

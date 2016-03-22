@@ -34,10 +34,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_dat_thang = new DevExpress.XtraEditors.DateEdit();
-            this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_trang_thai_bang_luong = new DevExpress.XtraEditors.LabelControl();
-            this.m_txt_thang = new DevExpress.XtraEditors.TextEdit();
             this.m_lbl_so_luong_nv_tinh_luong = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
@@ -263,8 +260,6 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
@@ -294,10 +289,7 @@
             // 
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl2.Controls.Add(this.m_dat_thang);
-            this.panelControl2.Controls.Add(this.m_txt_nam);
-            this.panelControl2.Controls.Add(this.labelControl1);
             this.panelControl2.Controls.Add(this.m_lbl_trang_thai_bang_luong);
-            this.panelControl2.Controls.Add(this.m_txt_thang);
             this.panelControl2.Controls.Add(this.m_lbl_so_luong_nv_tinh_luong);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(5, 5);
@@ -308,7 +300,7 @@
             // m_dat_thang
             // 
             this.m_dat_thang.EditValue = null;
-            this.m_dat_thang.Location = new System.Drawing.Point(798, 8);
+            this.m_dat_thang.Location = new System.Drawing.Point(7, 8);
             this.m_dat_thang.Name = "m_dat_thang";
             this.m_dat_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.m_dat_thang.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
@@ -324,35 +316,9 @@
             this.m_dat_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.m_dat_thang.Properties.Mask.EditMask = "MM/yyyy";
             this.m_dat_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_dat_thang.Size = new System.Drawing.Size(81, 26);
+            this.m_dat_thang.Size = new System.Drawing.Size(141, 26);
             this.m_dat_thang.TabIndex = 25;
-            // 
-            // m_txt_nam
-            // 
-            this.m_txt_nam.Location = new System.Drawing.Point(105, 5);
-            this.m_txt_nam.Name = "m_txt_nam";
-            this.m_txt_nam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.m_txt_nam.Properties.Appearance.Options.UseFont = true;
-            this.m_txt_nam.Properties.Appearance.Options.UseTextOptions = true;
-            this.m_txt_nam.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.m_txt_nam.Properties.AutoHeight = false;
-            this.m_txt_nam.Properties.Mask.EditMask = "d";
-            this.m_txt_nam.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.m_txt_nam.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_txt_nam.Properties.NullText = "Nhập năm";
-            this.m_txt_nam.Properties.NullValuePrompt = "Nhập năm";
-            this.m_txt_nam.Size = new System.Drawing.Size(100, 29);
-            this.m_txt_nam.TabIndex = 20;
-            this.m_txt_nam.Leave += new System.EventHandler(this.m_txt_nam_Leave);
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.labelControl1.Location = new System.Drawing.Point(92, 6);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(8, 25);
-            this.labelControl1.TabIndex = 21;
-            this.labelControl1.Text = "/";
+            this.m_dat_thang.EditValueChanged += new System.EventHandler(this.m_dat_thang_EditValueChanged);
             // 
             // m_lbl_trang_thai_bang_luong
             // 
@@ -363,24 +329,6 @@
             this.m_lbl_trang_thai_bang_luong.Size = new System.Drawing.Size(24, 33);
             this.m_lbl_trang_thai_bang_luong.TabIndex = 24;
             this.m_lbl_trang_thai_bang_luong.Text = "...";
-            // 
-            // m_txt_thang
-            // 
-            this.m_txt_thang.Location = new System.Drawing.Point(4, 5);
-            this.m_txt_thang.Name = "m_txt_thang";
-            this.m_txt_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.m_txt_thang.Properties.Appearance.Options.UseFont = true;
-            this.m_txt_thang.Properties.Appearance.Options.UseTextOptions = true;
-            this.m_txt_thang.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.m_txt_thang.Properties.AutoHeight = false;
-            this.m_txt_thang.Properties.Mask.EditMask = "d";
-            this.m_txt_thang.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.m_txt_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_txt_thang.Properties.NullText = "Nhập tháng";
-            this.m_txt_thang.Properties.NullValuePrompt = "Nhập tháng";
-            this.m_txt_thang.Size = new System.Drawing.Size(84, 29);
-            this.m_txt_thang.TabIndex = 19;
-            this.m_txt_thang.Leave += new System.EventHandler(this.m_txt_thang_Leave);
             // 
             // m_lbl_so_luong_nv_tinh_luong
             // 
@@ -3512,8 +3460,6 @@
             this.panelControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
@@ -3600,9 +3546,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSO_NGAY_LAM_THEM;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn STT;
         private DevExpress.Utils.ImageCollection imageCollection;
-        private DevExpress.XtraEditors.TextEdit m_txt_nam;
-        private DevExpress.XtraEditors.TextEdit m_txt_thang;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn ID_NHAN_VIEN;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSO_TIEN_DA_NOP_THUE;
         private DevExpress.XtraEditors.LabelControl m_lbl_trang_thai_bang_luong;

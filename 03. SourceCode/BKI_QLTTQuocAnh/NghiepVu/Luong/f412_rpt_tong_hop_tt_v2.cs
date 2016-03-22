@@ -52,10 +52,32 @@ namespace BKI_DichVuMatDat.BaoCao
             m_grc_tong_hop.RefreshDataSource();
             m_lbl_thang.Text = "Dữ liệu tháng " + lay_thang().ToString() + "/"+lay_nam().ToString();
         }
-        private void hien_thi_thong_tin_bang_luong()
+        private void resetText()
+        {
+            m_lbl_so_luong_nv_tinh_luong.ResetText();
+            m_lbl_trang_thai_bang_luong.ResetText();
+        }
+        private bool isValidInputDate()
         {
             if(m_txt_thang.EditValue == null || m_txt_nam.EditValue == null)
             {
+                return false;
+            }
+            if(Convert.ToDecimal(m_txt_thang.EditValue) <= 0 || Convert.ToDecimal(m_txt_thang.EditValue) > 12)
+            {
+                return false;
+            }
+            if(Convert.ToDecimal(m_txt_nam.EditValue) <= 2014 || Convert.ToDecimal(m_txt_nam.EditValue) > 9999)
+            {
+                return false;
+            }
+            return true;
+        }
+        private void hien_thi_thong_tin_bang_luong()
+        {
+            if(!isValidInputDate())
+            {
+                resetText();
                 return;
             }
             var v_dto_thong_tin_bang_luong = TinhLuongQL.Instance.LayThongTinBangLuong(lay_thang(), lay_nam());

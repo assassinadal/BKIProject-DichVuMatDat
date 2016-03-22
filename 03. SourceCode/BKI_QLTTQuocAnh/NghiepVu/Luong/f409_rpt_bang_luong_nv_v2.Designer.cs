@@ -36,7 +36,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.m_prb = new DevExpress.XtraEditors.ProgressBarControl();
             this.m_lbl_trang_thai_bang_luong = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_so_luong_nv_tinh_luong = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -44,6 +43,7 @@
             this.m_txt_thang = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_thong_bao = new DevExpress.XtraEditors.LabelControl();
+            this.m_prb = new DevExpress.XtraEditors.ProgressBarControl();
             this.m_cmd_export_excel = new DevExpress.XtraEditors.SimpleButton();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.m_bgwk = new System.ComponentModel.BackgroundWorker();
@@ -193,9 +193,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).BeginInit();
@@ -260,16 +260,6 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(941, 77);
             this.panelControl1.TabIndex = 0;
-            // 
-            // m_prb
-            // 
-            this.m_prb.Location = new System.Drawing.Point(315, 212);
-            this.m_prb.Name = "m_prb";
-            this.m_prb.Properties.ShowTitle = true;
-            this.m_prb.ShowProgressInTaskBar = true;
-            this.m_prb.Size = new System.Drawing.Size(605, 34);
-            this.m_prb.TabIndex = 9;
-            this.m_prb.Visible = false;
             // 
             // m_lbl_trang_thai_bang_luong
             // 
@@ -349,6 +339,16 @@
             this.m_lbl_thong_bao.Size = new System.Drawing.Size(113, 13);
             this.m_lbl_thong_bao.TabIndex = 3;
             this.m_lbl_thong_bao.Text = "Đã có dữ liệu lương của";
+            // 
+            // m_prb
+            // 
+            this.m_prb.Location = new System.Drawing.Point(315, 212);
+            this.m_prb.Name = "m_prb";
+            this.m_prb.Properties.ShowTitle = true;
+            this.m_prb.ShowProgressInTaskBar = true;
+            this.m_prb.Size = new System.Drawing.Size(605, 34);
+            this.m_prb.TabIndex = 9;
+            this.m_prb.Visible = false;
             // 
             // m_cmd_export_excel
             // 
@@ -2170,9 +2170,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_main)).EndInit();

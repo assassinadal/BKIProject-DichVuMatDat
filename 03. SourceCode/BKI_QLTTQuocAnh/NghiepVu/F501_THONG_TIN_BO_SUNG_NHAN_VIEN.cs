@@ -36,6 +36,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             FormatControl.SetVisibleSimpleButton(this);
             set_define_events();
             this.KeyPreview = true;
+            CenterToScreen();
         }
 
         private void set_define_events()
@@ -225,6 +226,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 luu_du_lieu();
                 CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                 m_trang_thai_buoc_2_cua_form_500 = 1;
+                F500_QUY_TRINH_THEM_MOI_NHAN_SU.done();
                 this.Close();
             }
             else

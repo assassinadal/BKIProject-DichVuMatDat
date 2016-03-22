@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.US;
 using IP.Core.IPCommon;
+using BKI_DichVuMatDat.NghiepVu;
 
 namespace BKI_DichVuMatDat
 {
@@ -18,6 +19,7 @@ namespace BKI_DichVuMatDat
         public F152_DANH_SACH_NHAN_VIEN_EXCEL()
         {
             InitializeComponent();
+            format_controll();
         }
 
         #region Public interface
@@ -39,6 +41,11 @@ namespace BKI_DichVuMatDat
         #endregion
 
         #region Private Methods
+        private void format_controll()
+        {
+            CenterToScreen();
+        }
+
         private void m_cmd_luu_Click(object sender, EventArgs e)
         {
             try
@@ -60,6 +67,7 @@ namespace BKI_DichVuMatDat
                     }
 
                     CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                    F503_IMPORT_EXCEL.da_hoan_thanh = true;
                     this.Close();
                 }
                 else

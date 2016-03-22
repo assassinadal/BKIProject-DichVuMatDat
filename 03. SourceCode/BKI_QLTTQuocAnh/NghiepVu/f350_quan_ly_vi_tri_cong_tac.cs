@@ -39,6 +39,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.ShowDialog();
             m_trang_thai_buoc_4 = m_trang_thai_buoc_4_thanh_cong;
         }
+
+        public void DisplayForQuyTrinhNhapMoiNhanVien(int id_nhan_vien)
+        {
+            m_sle_chon_nhan_vien.EditValue = id_nhan_vien;
+
+            this.ShowDialog();
+
+        }
         #endregion
 
         #region Members
@@ -59,6 +67,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_grv_v_gd_cong_tac.OptionsPrint.AutoWidth = false;
             set_define_events();
             this.KeyPreview = true;
+            CenterToScreen();
         }
 
         private void set_initial_form_load()
@@ -430,6 +439,17 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
+        public void import_excel(ref bool trang_thai_hien_tai)
+        {
+            string m_txt_path = WinFormControls.openFileDialog();
+            if (m_txt_path != "")
+            {
+                f352_quan_ly_cong_tac_excel v_f = new f352_quan_ly_cong_tac_excel();
+                v_f.displayToInsertExcel(m_txt_path);
+                trang_thai_hien_tai = true;
+            }
+        }
+
         #endregion
 
         private void set_define_events()
@@ -533,6 +553,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     save_data();
                     CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                     m_trang_thai_buoc_4_thanh_cong = 1;
+                    F500_QUY_TRINH_THEM_MOI_NHAN_SU.done();
                     if (m_trang_thai_them == -1)
                     {
                         this.Close();

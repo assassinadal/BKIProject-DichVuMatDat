@@ -84,6 +84,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_grv_lap_hd.OptionsPrint.AutoWidth = false;
             set_define_events();
             this.KeyPreview = true;
+            CenterToScreen();
         }
 
         private void set_initial_form_load()
@@ -864,11 +865,27 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void save_data()
         {
-
+            US_GD_HS_LNS_LCD v_us_gd_hs_lns_lcd = new US_GD_HS_LNS_LCD();
+            US_GD_HE_SO_LNS v_us_gd_hs_lns = new US_GD_HE_SO_LNS();
+            US_GD_LUONG_CHE_DO v_us_gd_lcd = new US_GD_LUONG_CHE_DO();
+            US_GD_TRANG_THAI_LAO_DONG v_us_gd_trang_thai_lao_dong = new US_GD_TRANG_THAI_LAO_DONG();
+            US_GD_HOP_DONG v_us_gd_hd = new US_GD_HOP_DONG();
+            form_2_us_gd_hop_dong(v_us_gd_hd);
             US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.UpdateDataState:
+                    v_us_gd_hd.BeginTransaction();
+                    v_us_gd_hd.dcID = CIPConvert.ToDecimal(m_grv_lap_hd.GetRowCellValue(m_grv_lap_hd.FocusedRowHandle, "ID"));
+                    v_us_gd_hd.Update();
+                    v_us_gd_hd.CommitTransaction();
+
+                    //
+                    form_2_us_gd_hs_lns_lcd(v_us_gd_hs_lns_lcd);
+                    v_us_gd_hs_lns_lcd.BeginTransaction();
+                    v_us_gd_hs_lns_lcd.dcID = find_id_gd_lns_lcd(CIPConvert.ToDecimal(m_grv_lap_hd.GetRowCellValue(m_grv_lap_hd.FocusedRowHandle, "ID")));
+                    v_us_gd_hs_lns_lcd.Update();
+                    v_us_gd_hs_lns_lcd.CommitTransaction();
                     break;
                 case DataEntryFormMode.InsertDataState:
                     v_us.lap_hop_dong_moi_cho_nhan_vien(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue)
@@ -1028,25 +1045,37 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         public void import_excel()
         {
-            //m_txt_path = WinFormControls.openFileDialog();
-            //if (m_txt_path != "")
-            //{
-            //    f322_lap_hop_dong_excel v_f = new f322_lap_hop_dong_excel();
-            //    v_f.displayToInsertExcel(m_txt_path);
-            //}
-            //load_data_2_grid();
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-
-            // Set filter options and filter index.
-            openFileDialog1.Filter = "xlsx Files|*.xlsx|xls Files|*.xls|All Files (*.*)|*.*";
-            openFileDialog1.Multiselect = false;
-            var userClickedOK = openFileDialog1.ShowDialog();
-            if (userClickedOK == System.Windows.Forms.DialogResult.OK)
+            m_txt_path = WinFormControls.openFileDialog();
+            if (m_txt_path != "")
             {
-                m_txt_path = openFileDialog1.FileName;
                 f322_lap_hop_dong_excel v_f = new f322_lap_hop_dong_excel();
                 v_f.displayToInsertExcel(m_txt_path);
-                // WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
+            }
+            load_data_2_grid();
+            //OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            //// Set filter options and filter index.
+            //openFileDialog1.Filter = "xlsx Files|*.xlsx|xls Files|*.xls|All Files (*.*)|*.*";
+            //openFileDialog1.Multiselect = false;
+            //var userClickedOK = openFileDialog1.ShowDialog();
+            //if (userClickedOK == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    m_txt_path = openFileDialog1.FileName;
+            //    f322_lap_hop_dong_excel v_f = new f322_lap_hop_dong_excel();
+            //    v_f.displayToInsertExcel(m_txt_path);
+            //    // WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
+            //}
+            //load_data_2_grid();
+        }
+
+        public void import_excel(ref bool trang_thai_buoc_hien_tai)
+        {
+            m_txt_path = WinFormControls.openFileDialog();
+            if (m_txt_path != "")
+            {
+                f322_lap_hop_dong_excel v_f = new f322_lap_hop_dong_excel();
+                v_f.displayToInsertExcel(m_txt_path);
+                trang_thai_buoc_hien_tai = true;
             }
             load_data_2_grid();
         }
@@ -1240,8 +1269,18 @@ namespace BKI_DichVuMatDat.NghiepVu
                             if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
                             {
                                 save_data();
-                                CHRM_BaseMessages.MsgBox_Infor(op_str_mess);
+                                if (op_str_mess != "-1")
+                                {
+                                    CHRM_BaseMessages.MsgBox_Infor("Kiểm tra lại dữ liệu nhân viên " + op_str_mess + ".");
+                                    return;
+                                }
+                                else
+                                {
+                                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
+                                }
+
                                 m_trang_thai_buoc_3_thanh_cong = 1;
+                                F500_QUY_TRINH_THEM_MOI_NHAN_SU.done();
                                 if (m_trang_thai_them == -1)
                                 {
                                     this.Close();

@@ -30,16 +30,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Members
 
         buoc_hien_tai m_e_buoc_hien_tai = buoc_hien_tai.buoc_1_nhap_ttnv;
+        public static bool da_hoan_thanh = false;
 
         #endregion
 
         #region Datastructure
-
-        enum trang_thai_cac_buoc
-        {
-            da_hoan_thanh = 1,
-            chua_hoan_thanh = 0,
-        }
 
         enum buoc_hien_tai
         {
@@ -58,13 +53,39 @@ namespace BKI_DichVuMatDat.NghiepVu
             switch (m_e_buoc_hien_tai)
             {
                 case buoc_hien_tai.buoc_1_nhap_ttnv:
+                    m_cmd_nhap_thong_tin_cong_tac.Enabled = false;
+                    m_cmd_nhap_thong_tin_hop_dong.Enabled = false;
                     m_cmd_nhap_thong_tin_nhan_vien.Enabled = true;
+                    m_cmd_file_excel_nttnv.Enabled = true;
+                    m_cmd_file_excel_nttct.Enabled = false;
+                    m_cmd_file_excel_ntthd.Enabled = false;
                     break;
                 case buoc_hien_tai.buoc_2_nhap_tthd:
+                    m_cmd_nhap_thong_tin_cong_tac.Enabled = false;
                     m_cmd_nhap_thong_tin_hop_dong.Enabled = true;
+                    m_cmd_nhap_thong_tin_nhan_vien.Enabled = false;
+                    m_cmd_file_excel_ntthd.Enabled = true;
+                    m_cmd_file_excel_nttct.Enabled = false;
+                    m_cmd_file_excel_nttnv.Enabled = false;
                     break;
                 case buoc_hien_tai.buoc_3_nhap_ttct:
                     m_cmd_nhap_thong_tin_cong_tac.Enabled = true;
+                    m_cmd_nhap_thong_tin_hop_dong.Enabled = false;
+                    m_cmd_nhap_thong_tin_nhan_vien.Enabled = false;
+                    m_cmd_file_excel_nttct.Enabled = true;
+                    m_cmd_file_excel_nttnv.Enabled = false;
+                    m_cmd_file_excel_ntthd.Enabled = false;
+                    break;
+                case buoc_hien_tai.buoc_4_nhap_ttbs:
+                    if (CHRM_BaseMessages.MsgBox_Confirm("Bạn có muốn thêm nhân viên mới nữa không ?") == true)
+                    {
+                        m_e_buoc_hien_tai = buoc_hien_tai.buoc_1_nhap_ttnv;
+                        set_init_form_load();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
                     break;
                 default:
                     break;
@@ -74,6 +95,17 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void format_controls()
         {
             set_define_event();
+        }
+
+        private bool chuyen_buoc_tiep_theo()
+        {
+            if (da_hoan_thanh)
+            {
+                m_e_buoc_hien_tai++;
+                da_hoan_thanh = false;
+                return true;
+            }
+            return false;
         }
 
         #endregion
@@ -117,8 +149,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 f320_lap_hop_dong v_frm = new f320_lap_hop_dong();
                 v_frm.import_excel();
-                v_frm.Show();
-                m_e_buoc_hien_tai = buoc_hien_tai.buoc_3_nhap_ttct;
+                if (chuyen_buoc_tiep_theo())
+                {
+                    v_frm.ShowDialog();
+                }
+                //v_frm.Show();
+                //m_e_buoc_hien_tai++;
                 set_init_form_load();
             }
             catch (Exception v_e)
@@ -133,8 +169,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 f350_quan_ly_vi_tri_cong_tac v_frm = new f350_quan_ly_vi_tri_cong_tac();
                 v_frm.import_excel();
-                v_frm.Show();
-                m_e_buoc_hien_tai = buoc_hien_tai.buoc_4_nhap_ttbs;
+                if (chuyen_buoc_tiep_theo())
+                {
+                    v_frm.ShowDialog();
+                }
+                //v_frm.Show();
+                //m_e_buoc_hien_tai++;
                 set_init_form_load();
             }
             catch (Exception v_e)
@@ -149,8 +189,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 f151_Danh_sach_nhan_vien_master v_frm = new f151_Danh_sach_nhan_vien_master();
                 v_frm.import_excel();
-                v_frm.Show();
-                m_e_buoc_hien_tai = buoc_hien_tai.buoc_2_nhap_tthd;
+                if (chuyen_buoc_tiep_theo())
+                {
+                    v_frm.ShowDialog();
+                }
+                //v_frm.Show();
+                //m_e_buoc_hien_tai++;
                 set_init_form_load();
             }
             catch (Exception v_e)

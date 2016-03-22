@@ -11,6 +11,7 @@ using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.US;
 using IP.Core.IPCommon;
 using BKI_DichVuMatDat.DS.CDBNames;
+using BKI_DichVuMatDat.NghiepVu;
 
 namespace BKI_DichVuMatDat.DanhMuc
 {
@@ -192,9 +193,12 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void tinh_tuoi_nhan_vien(DateTime ip_dat_ngay_sinh)
         {
-            decimal v_so_tuoi = 0;
-            m_us.tinh_tuoi_nhan_vien(ip_dat_ngay_sinh, ref v_so_tuoi);
-            m_txt_tuoi_nv.Text = v_so_tuoi.ToString();
+            if (m_txt_tuoi_nv.Text != null && m_txt_tuoi_nv.Text != "")
+            {
+                decimal v_so_tuoi = 0;
+                m_us.tinh_tuoi_nhan_vien(ip_dat_ngay_sinh, ref v_so_tuoi);
+                m_txt_tuoi_nv.Text = v_so_tuoi.ToString();
+            }
         }
 
         #endregion
@@ -261,6 +265,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                         {
                             m_us.Insert();
                             m_trang_thai_buoc_1_sau_hien_thi_f150_v2 = (int) m_us.dcID;
+                            F500_QUY_TRINH_THEM_MOI_NHAN_SU.done();
                             //get_id_nhan_vien_vua_insert(ref m_trang_thai_buoc_1_sau_hien_thi_f150_v2);
 
                             this.Close();

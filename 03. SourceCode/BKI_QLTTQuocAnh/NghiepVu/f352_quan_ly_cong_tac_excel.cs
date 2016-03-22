@@ -48,6 +48,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void format_control()
         {
             set_define_events();
+            CenterToScreen();
         }
 
         private void insert_data(DataRow dataRow)
@@ -230,6 +231,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                             if (insertdone(m_grv_v_gd_cong_tac.GetDataRow(i)))
                             {
                                 CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                                F503_IMPORT_EXCEL.da_hoan_thanh = true;
                                 this.Close();
                                 return;
                             }

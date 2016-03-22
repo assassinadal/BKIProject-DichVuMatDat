@@ -46,6 +46,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void format_control()
         {
             set_define_events();
+            CenterToScreen();
         }
 
         private void gan_du_lieu_cho_us_gd_lns(DataRow dataRow)
@@ -256,24 +257,36 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void insert_data(DataRow dataRow)
         {
             US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
-            v_us.lap_hop_dong_moi_cho_nhan_vien(find_id_nhan_vien_by_ma_nv(dataRow["MA_NHAN_VIEN"].ToString().Trim())
-                , CIPConvert.ToDecimal(dataRow["LOAI_HOP_DONG"].ToString())
-                , dataRow["MA_HOP_DONG"].ToString()
-                , DateTime.Parse(dataRow["NGAY_BAT_DAU"].ToString())
-                , DateTime.Parse(dataRow["NGAY_KET_THUC"].ToString())
-                , DateTime.Parse(dataRow["NGAY_KI_HOP_DONG"].ToString())
-                //, DateTime.FromOADate(Convert.ToDouble(dataRow["NGAY_BAT_DAU"]))
-                //, DateTime.FromOADate(Convert.ToDouble(dataRow["NGAY_KET_THUC"]))
-                //, DateTime.FromOADate(Convert.ToDouble(dataRow["NGAY_KI_HOP_DONG"]))
-                , DateTime.Now.Date
-                , CAppContext_201.getCurrentUserName()
-                , "N"
-                , CIPConvert.ToDecimal(dataRow["CHUC_DANH_LCD"].ToString())
-                , CIPConvert.ToDecimal(dataRow["MUC_LCD"].ToString())
-                , CIPConvert.ToDecimal(dataRow["CHUC_DANH_LNS"].ToString())
-                , CIPConvert.ToDecimal(dataRow["MUC_LUONG_NS"].ToString())
-                , ref op_str_mess
-                );
+            if(checked_du_lieu_is_ok(dataRow))
+            {
+                v_us.lap_hop_dong_moi_cho_nhan_vien(find_id_nhan_vien_by_ma_nv(dataRow["MA_NHAN_VIEN"].ToString().Trim())
+                    , CIPConvert.ToDecimal(dataRow["LOAI_HOP_DONG"].ToString())
+                    , dataRow["MA_HOP_DONG"].ToString()
+                    , WinFormControls.FormatPostingDate(dataRow["NGAY_BAT_DAU"].ToString())
+                    , WinFormControls.FormatPostingDate(dataRow["NGAY_KET_THUC"].ToString())
+                    , WinFormControls.FormatPostingDate(dataRow["NGAY_KI_HOP_DONG"].ToString())
+                    //, DateTime.FromOADate(Convert.ToDouble(dataRow["NGAY_BAT_DAU"]))
+                    //, DateTime.FromOADate(Convert.ToDouble(dataRow["NGAY_KET_THUC"]))
+                    //, DateTime.FromOADate(Convert.ToDouble(dataRow["NGAY_KI_HOP_DONG"]))
+                    , DateTime.Now.Date
+                    , CAppContext_201.getCurrentUserName()
+                    , "N"
+                    , CIPConvert.ToDecimal(dataRow["CHUC_DANH_LCD"].ToString())
+                    , CIPConvert.ToDecimal(dataRow["MUC_LCD"].ToString())
+                    , CIPConvert.ToDecimal(dataRow["CHUC_DANH_LNS"].ToString())
+                    , CIPConvert.ToDecimal(dataRow["MUC_LUONG_NS"].ToString())
+                    , ref op_str_mess
+                    );
+            }
+            else
+            {
+                CHRM_BaseMessages.MsgBox_Error("Kiểm tra lại dữ liệu!");
+            }
+        }
+
+        private bool checked_du_lieu_is_ok(DataRow dataRow)
+        {
+            return true;
         }
 
         #endregion
@@ -300,9 +313,9 @@ namespace BKI_DichVuMatDat.NghiepVu
                             //gan_du_lieu_cho_us_gd_lns(m_grv_lap_hd.GetDataRow(i));
                             //gan_du_lieu_cho_us_gd_lcd(m_grv_lap_hd.GetDataRow(i));
                             insert_data(m_grv_lap_hd.GetDataRow(i));
-                            if (op_str_mess != "")
+                            if (op_str_mess != "-1")
                             {
-                                CHRM_BaseMessages.MsgBox_Infor(op_str_mess);
+                                CHRM_BaseMessages.MsgBox_Infor("Kiểm tra lại dữ liệu nhân viên " + op_str_mess + ".");
                                 return;
                             }
                         }
@@ -310,15 +323,15 @@ namespace BKI_DichVuMatDat.NghiepVu
                         {
                             if (m_grv_lap_hd.GetDataRow(i)["MA_NHAN_VIEN"].ToString() == "")
                             {
+                                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                                F503_IMPORT_EXCEL.da_hoan_thanh = true;
+                                this.Close();
                                 return;
                             }
                             CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + m_grv_lap_hd.GetDataRow(i)["MA_NHAN_VIEN"].ToString() + "  chưa tồn tại. Vui lòng kiểm tra lại thông tin!");
                             return;
                         }
                     }
-
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-                    this.Close();
                 }
                 else
                 {

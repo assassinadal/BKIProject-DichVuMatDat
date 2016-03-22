@@ -284,6 +284,21 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        public static DateTime FormatPostingDate(string txtdate)
+        {
+            int date;
+            if (txtdate != null && txtdate != string.Empty)
+            {
+                if (int.TryParse(txtdate, out date))
+                {
+                    return DateTime.FromOADate(date);
+                }
+                DateTime postingDate = Convert.ToDateTime(txtdate);
+                return postingDate;
+            }
+            return Convert.ToDateTime(txtdate);
+        }
+
         #region Report
         static GridView m_grv;
         public static void m_grv_PopupMenuShowing(object sender, PopupMenuShowingEventArgs e)

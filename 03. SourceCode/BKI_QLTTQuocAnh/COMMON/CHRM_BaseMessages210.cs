@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using IP.Core.IPCommon.MessageForms;
 using IP.Core.IPCommon;
 using DevExpress.XtraEditors;
+using System.Deployment.Application;
 
 
 namespace BKI_DichVuMatDat
@@ -31,7 +32,7 @@ namespace BKI_DichVuMatDat
 
         private static DatasetMsg m_DataSet = new DatasetMsg();
         private static Users_DataSet m_dsUser = new Users_DataSet();
-        private const string c_strUserFileName = @"XML_MESSAGE\NumOfMessage.XML";
+        private const string c_strUserFileName = "XML_MESSAGE\\NumOfMessage.XML";
         private const string c_InfoMsgString = "THÔNG BÁO";
         private const string c_ErrorMsgString = "THÔNG BÁO LỖI";
         private const string c_ConfirmMsgString = "XÁC NHẬN LẠI";
@@ -64,14 +65,23 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                string v_UserFileName = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + i_UserFileName;
+                string v_UserFileName;
+                if(ApplicationDeployment.IsNetworkDeployed)
+                {
+                    v_UserFileName = ApplicationDeployment.CurrentDeployment.DataDirectory + "\\" + i_UserFileName;
+                }
+                else
+                {
+                    v_UserFileName = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + i_UserFileName;
+                }
+                //MessageBox.Show("b1:" + v_UserFileName);
                 m_dsUser.ReadXml(v_UserFileName);
+                //XtraMessageBox.Show("Số lượng " + m_dsUser.Users_DataSet.Count);
                 m_IntialedClass = true;
-
             }
-            catch (Exception v_Ex)
+            catch(Exception v_Ex)
             {
-                return;
+                throw new Exception("Could not read file. Error message: " + v_Ex.Message);
             }
             finally
             {
@@ -86,13 +96,25 @@ namespace BKI_DichVuMatDat
         private static void LoadMessagesData(decimal i_NumOFMsg)
         {
             string v_strWhere = null;
-            string v_FileName = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "XML_MESSAGE\\";
+
+            string v_FileName = null;
+            if(ApplicationDeployment.IsNetworkDeployed)
+            {
+                v_FileName = ApplicationDeployment.CurrentDeployment.DataDirectory + "\\XML_MESSAGE\\";
+            }
+            else
+            {
+                v_FileName = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"XML_MESSAGE\";
+            }
+            //MessageBox.Show("v_FileName: " + v_FileName);
             v_strWhere = "(FromNum <= " + i_NumOFMsg + ") and (" + i_NumOFMsg + " < ToNum)";
             DataView v_dvUserData = new DataView(m_dsUser.Users_DataSet, v_strWhere, "", DataViewRowState.CurrentRows);
-            if (v_dvUserData.Count > 0)
+            //MessageBox.Show("Count: " + v_dvUserData.Count);
+            if(v_dvUserData.Count > 0)
             {
                 v_FileName += Convert.ToString(v_dvUserData[0]["FileName"]);
                 m_DataSet.ReadXml(v_FileName);
+                //MessageBox.Show("v_FileName: " + v_FileName);
             }
         }
         #endregion
@@ -103,19 +125,19 @@ namespace BKI_DichVuMatDat
         {
             string v_strValue = null;
             string v_strWhere = "ID=" + i_MsgNumber;
-            if (!m_IntialedClass)
+            if(!m_IntialedClass)
             {
                 InitClass(c_strUserFileName);
             }
             LoadMessagesData(i_MsgNumber);
             DataView v_dvMessage = new DataView(m_DataSet.Message, v_strWhere, "", DataViewRowState.CurrentRows);
-            if (v_dvMessage.Count > 0)
+            if(v_dvMessage.Count > 0)
             {
                 v_strValue = Convert.ToString(v_dvMessage[0]["Message"]);
             }
             else
             {
-                v_strValue = "Chương trình chưa tìm thấy nội dung thông báo! Bạn vui lòng sao chép thư mục XML message đính kèm vào thư mục chương trình";
+                v_strValue = "Chương trình chưa tìm thấy nội dung thông báo! Bạn vui lòng liên hệ với đội IT để sửa nhé!";
             }
             return v_strValue;
         }
@@ -125,7 +147,7 @@ namespace BKI_DichVuMatDat
         // MsgBox_OK
         private static void CHRM_MsgBox_OK(string i_strMsg, string i_titleMsg, Msgs.MsgIconType i_IconType)
         {
-            switch (i_IconType)
+            switch(i_IconType)
             {
                 case Msgs.MsgIconType.ErrorIcon:
                     XtraMessageBox.Show(i_strMsg, i_titleMsg, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -147,7 +169,7 @@ namespace BKI_DichVuMatDat
         private static DialogResult CHRM_MsgBox_Yes_No(string i_strMsg, string i_titleMsg, Msgs.MsgIconType i_IconType)
         {
             DialogResult v_Result = default(DialogResult);
-            switch (i_IconType)
+            switch(i_IconType)
             {
                 case Msgs.MsgIconType.ErrorIcon:
                     v_Result = XtraMessageBox.Show(i_strMsg, i_titleMsg, MessageBoxButtons.YesNo, MessageBoxIcon.Error);
@@ -169,7 +191,7 @@ namespace BKI_DichVuMatDat
         private static DialogResult CHRM_MsgBox_Yes_No_Cancel(string i_strMsg, string i_titleMsg, Msgs.MsgIconType i_IconType)
         {
             DialogResult v_Result = default(DialogResult);
-            switch (i_IconType)
+            switch(i_IconType)
             {
                 case Msgs.MsgIconType.ErrorIcon:
                     v_Result = XtraMessageBox.Show(i_strMsg, i_titleMsg, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Error);
@@ -218,7 +240,7 @@ namespace BKI_DichVuMatDat
         public static bool MsgBox_Confirm(int MsgNumber)
         {
             string v_StrMsg = MsgNumber + " - " + GetMsg(MsgNumber);
-            v_StrMsg = MsgNumber + " - " + GetMsg(MsgNumber);
+            //v_StrMsg = MsgNumber + " - " + GetMsg(MsgNumber);
             return MsgBox_Confirm(v_StrMsg);
         }
         //Hàm xác nhận lại yêu cầu  dùng chuỗi
@@ -227,7 +249,7 @@ namespace BKI_DichVuMatDat
             bool v_Result = false;
             DialogResult v_confirm = default(DialogResult);
             v_confirm = CHRM_MsgBox_Yes_No(i_strMsg, c_ConfirmMsgString, Msgs.MsgIconType.QuestionIcon);
-            switch (v_confirm)
+            switch(v_confirm)
             {
                 case DialogResult.Yes:
                     v_Result = true;
@@ -238,7 +260,7 @@ namespace BKI_DichVuMatDat
             }
             return v_Result;
         }
-        
+
         //Hàm cảnh báo dùng chỉ số lỗi
         public static void MsgBox_Warning(int MsgNumber) //bool
         {
@@ -250,7 +272,7 @@ namespace BKI_DichVuMatDat
         {
             CHRM_MsgBox_OK(i_strMsg, c_WarningMsgString, Msgs.MsgIconType.WarningIcon);
         }
-        
+
         //Hàm confirm "Yes","No","Cancel"
         public static DialogResult MsgBox_YES_NO_CANCEL(int MsgNumber)
         {
@@ -258,7 +280,7 @@ namespace BKI_DichVuMatDat
             DialogResult v_confirm = MsgBox_YES_NO_CANCEL(v_StrMsg);
             return v_confirm;
         }
-                //Hàm confirm "Yes","No","Cancel"
+        //Hàm confirm "Yes","No","Cancel"
         public static DialogResult MsgBox_YES_NO_CANCEL(string i_strMsg)
         {
             MsgBoxFormYes_No_Cancel v_FormMsg = new MsgBoxFormYes_No_Cancel();
@@ -269,7 +291,7 @@ namespace BKI_DichVuMatDat
         // Hàm hỏi có xoá dữ liệu không
         public static IsDataCouldBeDeleted askUser_DataCouldBeDeleted(int i_MsgNumber = 8)
         {
-            if (MsgBox_Confirm(i_MsgNumber))
+            if(MsgBox_Confirm(i_MsgNumber))
             {
                 return IsDataCouldBeDeleted.CouldBeDeleted;
             }

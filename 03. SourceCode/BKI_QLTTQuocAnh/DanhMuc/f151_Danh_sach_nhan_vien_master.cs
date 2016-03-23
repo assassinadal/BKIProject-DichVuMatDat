@@ -172,27 +172,15 @@ namespace BKI_DichVuMatDat.DanhMuc
             try
             {
                 SplashScreenManager.ShowForm(typeof(F_wait_form));
-
-                string fileName = "DANH_SACH_NHAN_VIEN.xlsx";
-                string sourcePath = (Directory.GetCurrentDirectory() + "\\Template");
-                string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                string sourceFile = System.IO.Path.Combine(sourcePath, fileName);
-                string destFile = System.IO.Path.Combine(targetPath, fileName);
-                if (!System.IO.Directory.Exists(targetPath))
-                {
-                    System.IO.Directory.CreateDirectory(targetPath);
-                }
-                System.IO.File.Copy(sourceFile, destFile, true);
-                string newpath = targetPath + "\\DANH_SACH_NHAN_VIEN.xlsx";
-                var excel = new Microsoft.Office.Interop.Excel.Application();
-                excel.Visible = true;
-                Microsoft.Office.Interop.Excel.Workbooks books = excel.Workbooks;
-                Microsoft.Office.Interop.Excel.Workbook openexcel = books.Open(newpath);
-                SplashScreenManager.CloseForm();
+                WinFormControls.openTemplate(CONST_EXCEL_TEMPLATE.DANH_SACH_NHAN_VIEN_TEMPLATE);
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm();
             }
         }
 

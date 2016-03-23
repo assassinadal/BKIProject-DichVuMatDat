@@ -92,8 +92,8 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void fill_combobox_gioi_tinh()
         {
-            m_cbo_gioi_tinh.Items.Add("Nam");
-            m_cbo_gioi_tinh.Items.Add("Nữ");
+            m_cbo_gioi_tinh.Properties.Items.Add("Nam");
+            m_cbo_gioi_tinh.Properties.Items.Add("Nữ");
         }
 
         private void us_to_form(US_DM_NHAN_VIEN v_us)
@@ -193,7 +193,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void tinh_tuoi_nhan_vien(DateTime ip_dat_ngay_sinh)
         {
-            if (m_txt_tuoi_nv.Text != null && m_txt_tuoi_nv.Text != "")
+            if (m_dat_ngay_sinh.Text != null && m_dat_ngay_sinh.Text != "")
             {
                 decimal v_so_tuoi = 0;
                 m_us.tinh_tuoi_nhan_vien(ip_dat_ngay_sinh, ref v_so_tuoi);

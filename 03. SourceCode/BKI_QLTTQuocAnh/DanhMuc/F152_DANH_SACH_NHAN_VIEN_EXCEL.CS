@@ -113,7 +113,10 @@ namespace BKI_DichVuMatDat
             v_us.strDIA_CHI_TAM_TRU = dataRow["DIA_CHI_TAM_TRU"].ToString();
             v_us.strDIA_CHI_THUONG_TRU = dataRow["DIA_CHI_THUONG_TRU"].ToString();
             v_us.strEMAIL = dataRow["EMAIL"].ToString();
-            v_us.strGIOI_TINH = dataRow["GIOI_TINH"].ToString();
+            //v_us.strGIOI_TINH = dataRow["GIOI_TINH"].ToString();
+            if (dataRow["GIOI_TINH"].ToString() == "Nam")
+                v_us.strGIOI_TINH = "Y";
+            else v_us.strGIOI_TINH = "N";
             v_us.strHO_DEM = dataRow["HO_DEM"].ToString();
             v_us.strHON_NHAN = dataRow["HON_NHAN"].ToString();
             v_us.strMA_NV = dataRow["MA_NV"].ToString();

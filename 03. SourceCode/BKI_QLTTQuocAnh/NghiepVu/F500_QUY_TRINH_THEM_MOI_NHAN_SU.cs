@@ -209,22 +209,29 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void m_cmd_sua_ttbs_Click(object sender, EventArgs e)
         {
-
+            F501_THONG_TIN_BO_SUNG_NHAN_VIEN v_frm = new F501_THONG_TIN_BO_SUNG_NHAN_VIEN();
+            v_frm.DisplayForUpdate(ip_id_nv_update);
         }
 
         private void m_cmd_sua_ttct_Click(object sender, EventArgs e)
         {
-
+            f350_quan_ly_vi_tri_cong_tac v_frm = new f350_quan_ly_vi_tri_cong_tac();
+            v_frm.DisplayForQuyTrinhNhapMoiNhanVien(ip_id_nv_update);
         }
 
         private void m_cmd_sua_tthd_Click(object sender, EventArgs e)
         {
-
+            f320_lap_hop_dong v_frm = new f320_lap_hop_dong();
+            v_frm.DisplayForSuaHopDongNhanVien(ip_id_nv_update);
         }
 
         private void m_cmd_sua_ttnv_Click(object sender, EventArgs e)
         {
-
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN(ip_id_nv_update);
+            f150_danh_muc_nhan_su_v2 v_f = new f150_danh_muc_nhan_su_v2();
+            v_f.DisplayForUpdate(v_us);
+            f151_Danh_sach_nhan_vien_master v_frm = new f151_Danh_sach_nhan_vien_master();
+            v_frm.Display_With_ID_NV(ip_id_nv_update);
         }
 
         private void F500_QUY_TRINH_THEM_MOI_NHAN_SU_Load(object sender, EventArgs e)

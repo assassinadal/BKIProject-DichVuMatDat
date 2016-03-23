@@ -37,6 +37,18 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.ShowDialog();
         }
 
+        public void DisplayForSuaHopDongNhanVien(int id_nhan_vien)
+        {
+            m_lbl_header.Text = "SỬA HỢP ĐỒNG";
+            this.Text = "F320 - Sửa hợp đồng";
+            m_cmd_lap_hop_dong.Enabled = false;
+            m_cmd_tao_lai.Enabled = false;
+            m_cmd_lap_hop_dong.Text = "Lưu";
+            m_sle_chon_nhan_vien.EditValue = id_nhan_vien;
+            m_sle_chon_nhan_vien.Enabled = false;
+            this.ShowDialog();
+        }
+
         public void DisplayForQuyTrinhNhapMoiNhanVien(int id_nhan_vien, ref int m_trang_thai_buoc_3)
         {
             m_sle_chon_nhan_vien.EditValue = id_nhan_vien;
@@ -95,7 +107,10 @@ namespace BKI_DichVuMatDat.NghiepVu
             load_data_2_sle_muc_lns();
             load_data_2_sle_chuc_danh_lcd();
             load_data_2_sle_muc_lcd();
-            load_data_2_grid();
+            if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
+            {
+                load_data_2_grid();
+            }
         }
 
         //load data 2 all control
@@ -1168,6 +1183,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_id_gd_lns_lcd = find_id_gd_lns_lcd(v_id_gd_hd);
 
                 us_obj_2_form(v_id_gd_hd, v_id_gd_lns_lcd);
+                m_cmd_lap_hop_dong.Enabled = true;
             }
             catch (Exception v_e)
             {

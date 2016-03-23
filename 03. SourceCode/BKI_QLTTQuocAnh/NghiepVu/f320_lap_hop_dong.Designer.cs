@@ -94,7 +94,7 @@
             this.NGAY_SUA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGUOI_LAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGUOI_SUA = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SU_DUNG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DA_XOA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
@@ -653,7 +653,7 @@
             this.NGAY_SUA,
             this.NGUOI_LAP,
             this.NGUOI_SUA,
-            this.SU_DUNG});
+            this.DA_XOA});
             this.m_grv_lap_hd.GridControl = this.m_grc_lap_hd;
             this.m_grv_lap_hd.Name = "m_grv_lap_hd";
             this.m_grv_lap_hd.OptionsFind.AllowFindPanel = false;
@@ -820,13 +820,13 @@
             this.NGUOI_SUA.Visible = true;
             this.NGUOI_SUA.VisibleIndex = 11;
             // 
-            // SU_DUNG
+            // DA_XOA
             // 
-            this.SU_DUNG.Caption = "Đang sử dụng";
-            this.SU_DUNG.FieldName = "SU_DUNG";
-            this.SU_DUNG.Name = "SU_DUNG";
-            this.SU_DUNG.Visible = true;
-            this.SU_DUNG.VisibleIndex = 12;
+            this.DA_XOA.Caption = "Đã xóa";
+            this.DA_XOA.FieldName = "DA_XOA";
+            this.DA_XOA.Name = "DA_XOA";
+            this.DA_XOA.Visible = true;
+            this.DA_XOA.VisibleIndex = 12;
             // 
             // m_pnl_out_place_dm
             // 
@@ -1038,6 +1038,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_SDT;
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_DIA_CHI_LIEN_LAC;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
-        private DevExpress.XtraGrid.Columns.GridColumn SU_DUNG;
+        private DevExpress.XtraGrid.Columns.GridColumn DA_XOA;
     }
 }

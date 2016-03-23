@@ -22,6 +22,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         int m_dc_id_nhan_vien = 0;
         double m_so_tien = 0;
         int m_trang_thai_buoc_2_cua_form_500 = 0;
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         #endregion
 
 
@@ -29,6 +30,12 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             InitializeComponent();
             format_controls();
+        }
+
+        private void set_init_form_load()
+        {
+            fill_datasource_danh_sach_nhan_vien();
+            fill_datasource_loai_lao_dong();
         }
 
         private void format_controls()
@@ -41,8 +48,20 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void set_define_events()
         {
-            fill_datasource_danh_sach_nhan_vien();
-            fill_datasource_loai_lao_dong();
+            this.Load += F501_THONG_TIN_BO_SUNG_NHAN_VIEN_Load;
+        }
+
+        private void F501_THONG_TIN_BO_SUNG_NHAN_VIEN_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                set_init_form_load();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void fill_datasource_loai_lao_dong()
@@ -88,11 +107,53 @@ namespace BKI_DichVuMatDat.NghiepVu
             return v_ds;
         }
 
-        internal void ShowForPresent(int id_nhan_vien)
+        public void ShowForPresent(int id_nhan_vien)
         {
             m_sle_ten_nv.EditValue = id_nhan_vien;
             m_dc_id_nhan_vien = id_nhan_vien;
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.ShowDialog();
+        }
+
+        public void DisplayForUpdate(int id_nhan_vien)
+        {
+            m_sle_ten_nv.EditValue = id_nhan_vien;
+            m_sle_ten_nv.Enabled = false;
+            m_dc_id_nhan_vien = id_nhan_vien;
+            load_data(id_nhan_vien);
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            this.ShowDialog();
+        }
+
+        private void load_data(int id_nhan_vien)
+        {
+            load_data_luong_cung(id_nhan_vien);
+            load_gd_phu_thuoc(id_nhan_vien);
+            //load_khong_dong_bao_hiem(id_nhan_vien);
+        }
+
+        private void load_data_luong_cung(int id_nhan_vien)
+        {
+            US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG();
+            m_dat_ngay_bat_dau_luong_cung.Value = v_us.datNGAY_BAT_DAU;
+            m_dat_ngay_ket_thuc_luong_cung.Value = v_us.datNGAY_KET_THUC;
+            m_txt_ghi_chu.Text = v_us.strGHI_CHU;
+            m_txt_so_tien.Text = v_us.dcSO_TIEN.ToString();
+        }
+
+        private void load_gd_phu_thuoc(int id_nhan_vien)
+        {
+            US_GD_PHU_THUOC v_us = new US_GD_PHU_THUOC();
+            m_txt_so_luong_phu_thuoc.Text = v_us.dcSO_LUONG.ToString();
+            m_dat_ngay_ap_dung.Value = v_us.datNGAY_SUA;
+        }
+
+        private void load_khong_dong_bao_hiem(int id_nhan_vien)
+        {
+            US_GD_KHONG_DONG_BAO_HIEM v_us = new US_GD_KHONG_DONG_BAO_HIEM(id_nhan_vien);
+            m_txt_nam.Text = v_us.dcNAM.ToString();
+            m_txt_thang.Text = v_us.dcTHANG.ToString();
+            m_txt_ly_do.Text = v_us.strLY_DO;
         }
 
         private void luu_du_lieu()
@@ -132,7 +193,16 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_us.dcTHANG = CIPConvert.ToDecimal(m_txt_thang.Text);
                 v_us.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text);
                 v_us.strLY_DO = m_txt_ly_do.Text;
-                v_us.Insert();
+                switch (m_e_form_mode)
+                {
+                    case DataEntryFormMode.UpdateDataState:
+                        break;
+                    case DataEntryFormMode.InsertDataState:
+                        v_us.Insert();
+                        break;
+                    default:
+                        break;
+                }
             }
             catch (Exception)
             {
@@ -152,7 +222,16 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_us.dcSO_TIEN = CIPConvert.ToDecimal(m_so_tien);
                 v_us.strDA_XOA = "N";
                 v_us.strGHI_CHU = m_txt_ghi_chu.Text;
-                v_us.Insert();
+                switch (m_e_form_mode)
+                {
+                    case DataEntryFormMode.UpdateDataState:
+                        break;
+                    case DataEntryFormMode.InsertDataState:
+                        v_us.Insert();
+                        break;
+                    default:
+                        break;
+                }
             }
             catch (Exception)
             {
@@ -174,7 +253,16 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_us.strNGUOI_SUA = "admin";
                 v_us.datNGAY_SUA = DateTime.Now.Date;
                 v_us.strDA_XOA = "N";
-                v_us.Insert();
+                switch (m_e_form_mode)
+                {
+                    case DataEntryFormMode.UpdateDataState:
+                        break;
+                    case DataEntryFormMode.InsertDataState:
+                        v_us.Insert();
+                        break;
+                    default:
+                        break;
+                }
             }
             catch (Exception)
             {
@@ -196,7 +284,16 @@ namespace BKI_DichVuMatDat.NghiepVu
                     v_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value;
                 if (m_dat_ngay_ket_thuc.Checked == true)
                     v_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value;
-                v_us.Insert();
+                switch (m_e_form_mode)
+                {
+                    case DataEntryFormMode.UpdateDataState:
+                        break;
+                    case DataEntryFormMode.InsertDataState:
+                        v_us.Insert();
+                        break;
+                    default:
+                        break;
+                }
             }
             catch (Exception)
             {

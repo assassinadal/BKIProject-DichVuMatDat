@@ -257,6 +257,27 @@ namespace BKI_DichVuMatDat.US
             v_cstore.addDecimalInputParam("@ip_dc_id_loai_tien_khac", ip_dc_id_loai_tien_khac);
             v_cstore.ExecuteCommand(this);
         }
+        public DataTable LayDuLieuTheoThang(decimal ip_dc_thang, decimal ip_dc_nam, decimal ip_dc_id_loai_tien_khac)
+        {
+            CStoredProc v_cstore = new CStoredProc("PR_TL_du_lieu_tien_khac_GetAll");
+            v_cstore.addDecimalInputParam("@ip_dc_thang", ip_dc_thang);
+            v_cstore.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
+            v_cstore.addDecimalInputParam("@ip_dc_id_loai_tien_khac", ip_dc_id_loai_tien_khac);
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+            v_cstore.fillDataSetByCommand(this, v_ds);
+            return v_ds.Tables[0];
+        }
+        public bool KiemTraCoDuLieu(decimal ip_dc_thang, decimal ip_dc_nam, decimal ip_dc_id_loai_tien_khac)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_TL_infor_du_lieu_khoan_tien_khac_Get");
+            v_cstore.addDecimalInputParam("@ip_dc_thang", ip_dc_thang);
+            v_cstore.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
+            v_cstore.addDecimalInputParam("@ip_dc_id_loai_tien_khac", ip_dc_id_loai_tien_khac);
 
+            SqlParameter v_para = v_cstore.addNVarcharOutputParam("@op_ton_tai_yn", "");
+            v_cstore.ExecuteCommand(this);
+            return v_para.Value.ToString() == "Y" ? true : false;
+        }
     }
 }

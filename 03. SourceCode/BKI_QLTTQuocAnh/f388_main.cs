@@ -20,6 +20,7 @@ using System.Deployment.Application;
 using BKI_DichVuMatDat.NghiepVu.ThuNhapKhac;
 using BKI_DichVuMatDat.BaoCao.Luong;
 using BKI_DichVuMatDat.BaoCao.ThuNhapKhac;
+using BKI_DichVuMatDat.NghiepVu.Luong;
 
 namespace BKI_DichVuMatDat
 {
@@ -1450,7 +1451,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f304_cac_khoan_khac v_f = new f304_cac_khoan_khac();
+                f303_cac_khoan_tien_khac v_f = new f303_cac_khoan_tien_khac();
                 if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();

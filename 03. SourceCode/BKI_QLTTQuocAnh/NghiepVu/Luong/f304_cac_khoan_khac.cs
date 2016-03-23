@@ -14,7 +14,7 @@ using System.IO;
 using BKI_DichVuMatDat.COMMON;
 using BKI_DichVuMatDat.CONFIRM;
 using DevExpress.XtraEditors;
-
+using BKI_DichVuMatDat.NghiepVu.Luong;
 namespace BKI_DichVuMatDat
 {
     public partial class f304_cac_khoan_khac : Form
@@ -22,8 +22,15 @@ namespace BKI_DichVuMatDat
         public f304_cac_khoan_khac()
         {
             InitializeComponent();
+            //m_dat_time.EditValue = DateTime.Now.Date;
+            load_data_to_combobox_khoan_tien();
         }
-
+        public void Display(DateTime ip_dat_thang, decimal ip_dc_id_loai_khoan_tien)
+        {
+            m_dat_time.EditValue = ip_dat_thang.Date;
+            m_cmb_khoan_tien.SelectedValue = ip_dc_id_loai_khoan_tien;
+            ShowDialog();
+        }
         #region Member
         BindingList<string> m_lst_nhan_vien_khong_ton_tai;
         #endregion
@@ -109,8 +116,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                m_dat_time.EditValue = DateTime.Now.Date;
-                load_data_to_combobox_khoan_tien();
+                
             }
             catch(Exception v_e)
             {
@@ -170,8 +176,22 @@ namespace BKI_DichVuMatDat
         {
             try
             {
+                if(TinhLuongQL.Instance.LayThongTinBangLuong(lay_thang(), lay_nam()).CHOT_BANG_LUONG);
+                {
+                    XtraMessageBox.Show("Bảng lương đã được chốt, bạn không thể thay đổi dữ liệu. Cần bỏ chốt bảng lương trước!", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
                 if(check_du_lieu())
                 {
+                    US_GD_CAC_KHOAN_TIEN_KHAC v_us = new US_GD_CAC_KHOAN_TIEN_KHAC();
+                    if(v_us.KiemTraCoDuLieu(lay_thang(), lay_nam(), Convert.ToDecimal(m_cmb_khoan_tien.SelectedValue)))
+                    {
+                        var v_dlg_confirm = XtraMessageBox.Show("Tháng này đã có dữ liệu, bạn có muốn xóa dữ liệu này đi và cập nhật dữ liệu mới?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if(v_dlg_confirm == System.Windows.Forms.DialogResult.No)
+                        {
+                            return;
+                        }
+                    }
                     delete_du_lieu_cu();
                     DataTable dataTable = (DataTable)m_grc_main.DataSource;
                     //dataTable = dataTable.Rows.Cast<DataRow>().Where(row => !row.ItemArray.All(field => field is System.DBNull || string.Compare((field as string).Trim(), string.Empty) == 0)).CopyToDataTable();
@@ -181,7 +201,7 @@ namespace BKI_DichVuMatDat
                         Gan_du_lieu_cho_us(v_dr);
                     }
 
-                    MessageBox.Show("Đã hoàn tất!");
+                    XtraMessageBox.Show("Đã hoàn tất việc lưu dữ liệu!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch(Exception v_e)

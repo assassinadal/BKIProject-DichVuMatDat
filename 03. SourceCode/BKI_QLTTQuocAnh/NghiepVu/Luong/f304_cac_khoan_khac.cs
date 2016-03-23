@@ -176,7 +176,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                if(TinhLuongQL.Instance.LayThongTinBangLuong(lay_thang(), lay_nam()).CHOT_BANG_LUONG);
+                if(TinhLuongQL.Instance.LayThongTinBangLuong(lay_thang(), lay_nam()).CHOT_BANG_LUONG)
                 {
                     XtraMessageBox.Show("Bảng lương đã được chốt, bạn không thể thay đổi dữ liệu. Cần bỏ chốt bảng lương trước!", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     return;

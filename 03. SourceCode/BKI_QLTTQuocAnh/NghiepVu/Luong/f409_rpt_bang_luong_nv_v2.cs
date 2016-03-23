@@ -656,7 +656,7 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             return flag;
         }
-
+        
 
         private void save_data(ENUM_CONFIRM_LUU_BANG_LUONG ip_confirm_save)
         {

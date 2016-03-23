@@ -11,48 +11,112 @@ using IP.Core.IPCommon;
 using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.US;
 using System.IO;
+using BKI_DichVuMatDat.COMMON;
+using BKI_DichVuMatDat.CONFIRM;
+using DevExpress.XtraEditors;
 
 namespace BKI_DichVuMatDat
 {
     public partial class f304_cac_khoan_khac : Form
     {
-
-        string m_txt_path = "";
         public f304_cac_khoan_khac()
         {
             InitializeComponent();
-
         }
 
-    
-       
-        private void m_txt_thang_KeyPress(object sender, KeyPressEventArgs e)
+        #region Member
+        BindingList<string> m_lst_nhan_vien_khong_ton_tai;
+        #endregion
+
+        #region Private Method
+        private decimal lay_thang()
         {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            return m_dat_time.DateTime.Month;
         }
-
-        private void m_txt_nam_KeyPress(object sender, KeyPressEventArgs e)
+        private decimal lay_nam()
         {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            return m_dat_time.DateTime.Year;
         }
+        private bool kiem_tra_du_lieu_ma_nhan_vien_truoc_khi_luu()
+        {
+            var flag = true;
+            m_lst_nhan_vien_khong_ton_tai = new BindingList<string>();
+
+            var v_i_row_count = m_grv_main.RowCount;
+            for(int v_i_row = 0; v_i_row < v_i_row_count; v_i_row++)
+            {
+                var v_str_ma_nv = m_grv_main.GetRowCellValue(v_i_row, "MA_NV").ToString();
+                if(!ExecuteFuntion.KiemTraNhanVienCoTrongCsdlChua(v_str_ma_nv))
+                {
+                    flag = false;
+                    m_lst_nhan_vien_khong_ton_tai.Add(v_str_ma_nv);
+                }
+            }
+            return flag;
+        }
+        private bool check_du_lieu()
+        {
+            var v_i_row_count = m_grv_main.RowCount;
+            for(int v_i_row = 0; v_i_row < v_i_row_count; v_i_row++)
+            {
+                var v_dr = m_grv_main.GetDataRow(v_i_row);
+                if(v_dr["MA_NV"] == DBNull.Value)
+                {
+                    XtraMessageBox.Show("Dữ liệu tại dòng thứ " + v_i_row + 2 + " cột MA_NV bị trống!", "LỖI DỮ LIỆU", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                if(v_dr["SO_TIEN"] == DBNull.Value)
+                {
+                    XtraMessageBox.Show("Dữ liệu tại dòng thứ " + v_i_row + 2 + " cột SO_TIEN bị trống!", "LỖI DỮ LIỆU", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+            if(!kiem_tra_du_lieu_ma_nhan_vien_truoc_khi_luu())
+            {
+                msg003_hien_thi_danh_sach v_msg = new msg003_hien_thi_danh_sach();
+                v_msg.Display("THÔNG BÁO", "Các mã nhân viên sau chưa có trong dữ liệu phần mềm", convert_list_to_string(m_lst_nhan_vien_khong_ton_tai));
+                return false;
+            }
+            return true;
+        }
+        private string convert_list_to_string(BindingList<string> ip_lst_str)
+        {
+            if(ip_lst_str.Count == 0)
+            {
+                return "";
+            }
+            string v_str_op = "";
+            foreach(var item in ip_lst_str)
+            {
+                v_str_op = v_str_op + item + ", ";
+            }
+            v_str_op = v_str_op.Substring(0, v_str_op.Length - 2);
+            return v_str_op;
+        }
+        
+        #endregion
+
+
+        #region DataStructure
+        enum e_col_number
+        {
+            MA_NV = 0,
+            SO_TIEN = 1
+        }
+        #endregion
 
         private void f304_cac_khoan_khac_Load(object sender, EventArgs e)
         {
             try
             {
+                m_dat_time.EditValue = DateTime.Now.Date;
                 load_data_to_combobox_khoan_tien();
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-           
+
         }
 
         private void load_data_to_combobox_khoan_tien()
@@ -70,20 +134,21 @@ namespace BKI_DichVuMatDat
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
             // Set filter options and filter index.
-            openFileDialog1.Filter = "xlsx Files|*.xlsx|xls Files|*.xls|All Files (*.*)|*.*";
+            openFileDialog1.Filter = "xls Files|*.xls|xlsx Files|*.xls|All Files (*.*)|*.*";
             openFileDialog1.Multiselect = false;
             var userClickedOK = openFileDialog1.ShowDialog();
             try
             {
 
 
-                if (userClickedOK == System.Windows.Forms.DialogResult.OK)
+                if(userClickedOK == System.Windows.Forms.DialogResult.OK)
                 {
-                    m_txt_path = openFileDialog1.FileName;
-                    WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
+                    DataTable v_dt_source = new DataTable();
+                    WinFormControls.load_xls_to_data_table(openFileDialog1.FileName, ref v_dt_source);
+                    m_grc_main.DataSource = v_dt_source;
                 }
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -93,24 +158,9 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-
-                string fileName = "CacKhoanTienKhac.xlsx";
-                string sourcePath = (Directory.GetCurrentDirectory() + "\\Template");
-                string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                string sourceFile = System.IO.Path.Combine(sourcePath, fileName);
-                string destFile = System.IO.Path.Combine(targetPath, fileName);
-                if (!System.IO.Directory.Exists(targetPath))
-                {
-                    System.IO.Directory.CreateDirectory(targetPath);
-                }
-                System.IO.File.Copy(sourceFile, destFile, true);
-                string newpath = targetPath + "\\CacKhoanTienKhac.xlsx";
-                var excel = new Microsoft.Office.Interop.Excel.Application();
-                excel.Visible = true;
-                Microsoft.Office.Interop.Excel.Workbooks books = excel.Workbooks;
-                Microsoft.Office.Interop.Excel.Workbook openexcel = books.Open(newpath);
+                WinFormControls.openTemplate("Template_Import_cac_khoan_tien_khac.xls");
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -120,66 +170,43 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                if(m_txt_thang.Text == "" || m_txt_nam.Text == "" || m_txt_path == "")
+                if(check_du_lieu())
                 {
-                    MessageBox.Show("Bạn phải điền đầy đủ thông tin ở bước 1 và bước 2!");
-                }
-                else
-                {
-                    if(check_du_lieu())
+                    delete_du_lieu_cu();
+                    DataTable dataTable = (DataTable)m_grc_main.DataSource;
+                    //dataTable = dataTable.Rows.Cast<DataRow>().Where(row => !row.ItemArray.All(field => field is System.DBNull || string.Compare((field as string).Trim(), string.Empty) == 0)).CopyToDataTable();
+                    for(int i = 0; i < dataTable.Rows.Count; i++)
                     {
-                        delete_du_lieu_cu();
-                        DataTable dataTable = (DataTable)m_grc.DataSource;
-                        dataTable = dataTable.Rows.Cast<DataRow>().Where(row => !row.ItemArray.All(field => field is System.DBNull || string.Compare((field as string).Trim(), string.Empty) == 0)).CopyToDataTable();
-                        for(int i = 0; i < dataTable.Rows.Count; i++)
-                        {
-                            DataRow v_dr = dataTable.Rows[i];
-                            Gan_du_lieu_cho_us(v_dr);
-                        }
-
-                        MessageBox.Show("Đã hoàn tất!");
+                        DataRow v_dr = dataTable.Rows[i];
+                        Gan_du_lieu_cho_us(v_dr);
                     }
+
+                    MessageBox.Show("Đã hoàn tất!");
                 }
             }
             catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-            
+
         }
 
         private void delete_du_lieu_cu()
         {
             US_GD_CAC_KHOAN_TIEN_KHAC v_us = new US_GD_CAC_KHOAN_TIEN_KHAC();
-            v_us.DeleteDuLieuCu(Convert.ToDecimal(m_txt_thang.Text), Convert.ToDecimal(m_txt_nam.Text));
+            v_us.DeleteDuLieuCu(lay_thang(), lay_nam(), Convert.ToDecimal(m_cmb_khoan_tien.SelectedValue));
         }
 
         private void Gan_du_lieu_cho_us(DataRow v_dr)
         {
             US_GD_CAC_KHOAN_TIEN_KHAC v_us_gdcktk = new US_GD_CAC_KHOAN_TIEN_KHAC();
 
-
-            //US_DUNG_CHUNG v_usdc = new US_DUNG_CHUNG();
-            //DataSet v_ds_nhan_vien = new DataSet();
-            //v_ds_nhan_vien.Tables.Add(new DataTable());
-            //v_usdc.FillDatasetWithQuery(v_ds_nhan_vien, "select * from DM_NHAN_VIEN where MA_NV=" + v_dr["MA_NV"].ToString());
-
-            US_DM_NHAN_VIEN v_us_nv = new US_DM_NHAN_VIEN();
-            DataSet v_ds_nhan_vien = new DataSet();
-            v_ds_nhan_vien.Tables.Add(new DataTable());
-            v_us_nv.LayThongTinNhanVien(v_ds_nhan_vien, v_dr["MA_NV"].ToString());
-
-            v_us_gdcktk.dcID_NHAN_VIEN = CIPConvert.ToDecimal(v_ds_nhan_vien.Tables[0].Rows[0]["ID"].ToString());
-            v_us_gdcktk.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text);
-            v_us_gdcktk.dcTHANG = CIPConvert.ToDecimal(m_txt_thang.Text);
-            v_us_gdcktk.dcID_LOAI_KHOAN_TIEN_KHAC = CIPConvert.ToDecimal(m_cmb_khoan_tien.SelectedValue);
-            v_us_gdcktk.dcSO_TIEN= CIPConvert.ToDecimal(v_dr["SO_TIEN"].ToString());
+            v_us_gdcktk.dcID_NHAN_VIEN = ExecuteFuntion.LayNhanVienID(v_dr["MA_NV"].ToString());
+            v_us_gdcktk.dcNAM = lay_nam();
+            v_us_gdcktk.dcTHANG = lay_thang();
+            v_us_gdcktk.dcID_LOAI_KHOAN_TIEN_KHAC = Convert.ToDecimal(m_cmb_khoan_tien.SelectedValue);
+            v_us_gdcktk.dcSO_TIEN = Convert.ToDecimal(v_dr["SO_TIEN"]);
             v_us_gdcktk.Insert();
-        }
-
-        private bool check_du_lieu()
-        {
-            return true;
         }
     }
 }

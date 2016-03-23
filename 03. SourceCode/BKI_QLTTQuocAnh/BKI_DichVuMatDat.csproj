@@ -362,6 +362,12 @@
     <Compile Include="BaoCao\ThuNhapKhac\f492_bao_cao_cac_he_so.Designer.cs">
       <DependentUpon>f492_bao_cao_cac_he_so.cs</DependentUpon>
     </Compile>
+    <Compile Include="CONFIRM\msg003_hien_thi_danh_sach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONFIRM\msg003_hien_thi_danh_sach.Designer.cs">
+      <DependentUpon>msg003_hien_thi_danh_sach.cs</DependentUpon>
+    </Compile>
     <Compile Include="DTO\DTO_QUY_THU_NHAP_KHAC.cs" />
     <Compile Include="NghiepVu\f322_lap_hop_dong_excel.cs">
       <SubType>Form</SubType>
@@ -1223,6 +1229,9 @@
     <EmbeddedResource Include="BaoCao\ThuNhapKhac\f492_bao_cao_cac_he_so.resx">
       <DependentUpon>f492_bao_cao_cac_he_so.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CONFIRM\msg003_hien_thi_danh_sach.resx">
+      <DependentUpon>msg003_hien_thi_danh_sach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f322_lap_hop_dong_excel.resx">
       <DependentUpon>f322_lap_hop_dong_excel.cs</DependentUpon>
     </EmbeddedResource>
@@ -1642,6 +1651,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Template\DangKyPhuThuoc.xlsx" />
+    <Content Include="Template\Template_Import_cac_khoan_tien_khac.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BKI_QLTTQuocAnh.DS\BKI_DichVuMatDat.DS.csproj">

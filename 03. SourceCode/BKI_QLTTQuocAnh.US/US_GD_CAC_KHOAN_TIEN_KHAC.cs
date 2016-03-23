@@ -249,11 +249,12 @@ namespace BKI_DichVuMatDat.US
         }
         #endregion
 
-        public void DeleteDuLieuCu(decimal ip_dc_thang, decimal ip_dc_nam)
+        public void DeleteDuLieuCu(decimal ip_dc_thang, decimal ip_dc_nam, decimal ip_dc_id_loai_tien_khac)
         {
             CStoredProc v_cstore = new CStoredProc("PR_GD_CAC_KHOAN_TIEN_KHAC_DELETE_ALL");
             v_cstore.addDecimalInputParam("@ip_dc_thang", ip_dc_thang);
             v_cstore.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
+            v_cstore.addDecimalInputParam("@ip_dc_id_loai_tien_khac", ip_dc_id_loai_tien_khac);
             v_cstore.ExecuteCommand(this);
         }
 

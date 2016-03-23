@@ -86,8 +86,8 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 
         private bool check_quy_tien_da_chot_yn(string ip_thang, string ip_nam)
         {
-            US_GD_CHOT_BANG_LUONG v_us = new US_GD_CHOT_BANG_LUONG();
-            if (v_us.IsDaChotBangLuongThang(decimal.Parse(ip_thang), decimal.Parse(ip_nam)))
+            US_RPT_CHOT_BANG_LUONG v_us = new US_RPT_CHOT_BANG_LUONG();
+            if (v_us.IsLockBangLuong(decimal.Parse(ip_thang), decimal.Parse(ip_nam)))
                 return true;
             else return false;
         }
@@ -99,13 +99,12 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                 int v_slg_nvien = m_dt_thu_nhap_khac.Rows.Count;
                 string v_str_confirms = "Quỹ tiền đang được sử dụng cho " + v_slg_nvien + " nhân viên.\nBạn có muốn xóa cả khoản thu nhập của " + v_slg_nvien + " nhân viên đang sử dụng quỹ tiền này?";
                 DialogResult v_dialog = XtraMessageBox.Show(v_str_confirms, "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (v_dialog == DialogResult.Yes)
-                {
-                    delete_gd_thu_nhap_khac(v_us);
-                    delete_gd_quy_tien(v_us);
-                    XtraMessageBox.Show("Đã xóa thành công!");
-                }
+                if (v_dialog == DialogResult.No)
+                    return;
             }
+            delete_gd_thu_nhap_khac(v_us);
+            delete_gd_quy_tien(v_us);
+            XtraMessageBox.Show("Đã xóa thành công!");
         }
 
         #endregion
@@ -213,10 +212,10 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
                 US_GD_QUY_THU_NHAP_KHAC v_us = new US_GD_QUY_THU_NHAP_KHAC(CIPConvert.ToDecimal(v_dr[0].ToString()));
                 if (m_grv.FocusedRowHandle < 0)
                     XtraMessageBox.Show("Bạn chưa chọn dòng dữ liệu để sửa", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);               
-                else if (check_quy_tien_da_chot_yn(v_dr[2].ToString(), v_dr[3].ToString()))
-                    XtraMessageBox.Show("Quỹ tiền hiện đã chốt. Vui lòng không cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                else if (check_quy_tien_dang_su_dung_yn(v_us))
-                    XtraMessageBox.Show("Quỹ đã chi tiền cho nhân viên, vui lòng không cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                //else if (check_quy_tien_da_chot_yn(v_dr[2].ToString(), v_dr[3].ToString()))
+                //    XtraMessageBox.Show("Quỹ tiền hiện đã chốt. Vui lòng không cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                //else if (check_quy_tien_dang_su_dung_yn(v_us))
+                //    XtraMessageBox.Show("Quỹ đã chi tiền cho nhân viên, vui lòng không cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 else
                 {
                     f354_danh_sach_quy_thuong_de v_f = new f354_danh_sach_quy_thuong_de();                  

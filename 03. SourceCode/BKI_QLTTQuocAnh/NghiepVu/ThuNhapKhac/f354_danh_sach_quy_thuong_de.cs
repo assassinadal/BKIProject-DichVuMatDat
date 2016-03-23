@@ -97,9 +97,32 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         internal void display_for_update(US_GD_QUY_THU_NHAP_KHAC v_us)
         {
+            if (check_quy_tien_dang_su_dung_yn(v_us.dcID) || check_quy_tien_da_chot_yn(v_us.strTHANG, v_us.strNAM))
+            {
+                m_dat_thang_ap_dung_quy.Enabled = false;
+                m_sle_loai_quy_thu_nhap.Enabled = false;
+            }
             m_us = v_us;
             us_to_form(v_us);
             this.ShowDialog();
+        }
+
+        private bool check_quy_tien_dang_su_dung_yn(decimal id_quy_tnk)
+        {
+            US_GD_THU_NHAP_KHAC v_us_gd_tnk = new US_GD_THU_NHAP_KHAC();
+            DS_GD_THU_NHAP_KHAC v_ds_gd_tnk = new DS_GD_THU_NHAP_KHAC();
+            v_us_gd_tnk.LayDuLieuThuNhapKhacTheoIDQuy(v_ds_gd_tnk, id_quy_tnk);
+            if (v_ds_gd_tnk.Tables[0].Rows.Count != 0)
+                return true;
+            else return false;
+        }
+
+        private bool check_quy_tien_da_chot_yn(string ip_thang, string ip_nam)
+        {
+            US_RPT_CHOT_BANG_LUONG v_us = new US_RPT_CHOT_BANG_LUONG();
+            if (v_us.IsLockBangLuong(decimal.Parse(ip_thang), decimal.Parse(ip_nam)))
+                return true;
+            else return false;
         }
 
         private void us_to_form(US_GD_QUY_THU_NHAP_KHAC v_us)
@@ -107,7 +130,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_loai_quy_thu_nhap.EditValue = v_us.dcID_LOAI_QUY_THU_NHAP_KHAC;
             m_sle_cach_tinh_thue.EditValue = v_us.dcID_CACH_QUYET_TOAN;
             m_txt_ten_quy.Text = v_us.strTEN_QUY;
-            m_dat_thang_ap_dung_quy.DateTime = new DateTime(int.Parse(v_us.strNAM), int.Parse(v_us.strTHANG), 30);
+            m_dat_thang_ap_dung_quy.DateTime = new DateTime(int.Parse(v_us.strNAM), int.Parse(v_us.strTHANG), 1);
             m_dat_ngay_lap_quy.DateTime = v_us.datNGAY_LAP;
             m_txt_nguoi_lap_quy.Text = v_us.strNGUOI_LAP;
             m_dat_tu_ngay.DateTime = v_us.datTU_NGAY_XET_THUONG;
@@ -193,10 +216,9 @@ namespace BKI_DichVuMatDat.NghiepVu
                         default:
                             break;
                     }
-                    MessageBox.Show("Lưu thành công!");
+                    XtraMessageBox.Show("Lưu thành công!");
                     this.Close();
                 }
-                else return;
             }
             catch (Exception v_e)
             {

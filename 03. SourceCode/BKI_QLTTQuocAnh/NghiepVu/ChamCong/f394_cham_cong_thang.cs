@@ -63,6 +63,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             set_define_events();
         }
 
+        private bool check_bang_luong_da_chot(string ip_thang, string ip_nam)
+        {
+            US_RPT_CHOT_BANG_LUONG v_us = new US_RPT_CHOT_BANG_LUONG();
+            if (v_us.IsLockBangLuong(decimal.Parse(ip_thang), decimal.Parse(ip_nam)))
+                return true;
+            else return false;
+        }
+
         private void set_define_events()
         {
             m_cmd_search.Click += m_cmd_search_Click;
@@ -104,6 +112,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                if (check_bang_luong_da_chot(m_txt_thang.Text, m_txt_nam.Text))
+                {
+                    XtraMessageBox.Show("Tháng đã chốt bảng lương. Vui lòng không cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
                 f394_cham_cong_thang_detail v_f = new f394_cham_cong_thang_detail();
                 PivotDrillDownDataSource v_ds = e.CreateDrillDownDataSource();
                 PivotDrillDownDataRow v_dr = v_ds[0];

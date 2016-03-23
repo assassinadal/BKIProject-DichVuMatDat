@@ -55,8 +55,8 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private bool check_bang_luong_da_chot(string ip_thang, string ip_nam)
         {
-            US_GD_CHOT_BANG_LUONG v_us = new US_GD_CHOT_BANG_LUONG();
-            if (v_us.IsDaChotBangLuongThang(decimal.Parse(ip_thang), decimal.Parse(ip_nam)))
+            US_RPT_CHOT_BANG_LUONG v_us = new US_RPT_CHOT_BANG_LUONG();
+            if (v_us.IsLockBangLuong(decimal.Parse(ip_thang), decimal.Parse(ip_nam)))
                 return true;
             else return false;
         }

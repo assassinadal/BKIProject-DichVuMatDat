@@ -154,8 +154,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Kiem tra du lieu tren grid
         private bool check_bang_luong_da_chot(string ip_thang, string ip_nam)
         {
-            US_GD_CHOT_BANG_LUONG v_us = new US_GD_CHOT_BANG_LUONG();
-            if (v_us.IsDaChotBangLuongThang(decimal.Parse(ip_thang), decimal.Parse(ip_nam)))
+            US_RPT_CHOT_BANG_LUONG v_us = new US_RPT_CHOT_BANG_LUONG();
+            if (v_us.IsLockBangLuong(decimal.Parse(ip_thang), decimal.Parse(ip_nam)))
                 return true;
             else return false;
         }
@@ -346,7 +346,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_cmd_nhap_cham_cong.Text = "Lưu chấm công";
             //this.m_cmd_nhap_cham_cong.Enabled = false;
             XtraMessageBox.Show("Lưu thành công!");
-            m_grc.DataSource = null; 
+            //m_grc.DataSource = null; 
             set_trang_thai_cham_cong();          
         }
 

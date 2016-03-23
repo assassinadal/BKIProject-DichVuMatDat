@@ -30,6 +30,8 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         #region Members
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
+        string m_thang_goi_y = DateTime.Now.Month.ToString();
+        string m_nam_goi_y = DateTime.Now.Year.ToString();
         #endregion
 
         #region Private methods
@@ -45,8 +47,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_initial_form_load()
         {
             //load_data_2_sle_chon_nv();
-            m_txt_chon_thang.Text = DateTime.Now.Month.ToString();
-            m_txt_chon_nam.Text = DateTime.Now.Year.ToString();
+            m_txt_chon_thang.Text = m_nam_goi_y;
+            m_txt_chon_nam.Text = m_thang_goi_y;
             load_data_2_grid();
         }
 
@@ -122,7 +124,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                 v_us.FillDataset(v_ds);
 
-                string v_str_filter = "ID_NHAN_VIEN = '" + id_nv + "' AND THANG = '" + ip_thang + "' AND NAM = '" + ip_nam+"'";
+                string v_str_filter = "ID_NHAN_VIEN = '" + id_nv + "' AND THANG = '" + ip_thang + "' AND NAM = '" + ip_nam + "'";
                 DataRow[] v_dr = v_ds.GD_KHONG_DONG_BAO_HIEM.Select(v_str_filter);
 
                 if (v_dr.Count() == 0)
@@ -168,9 +170,13 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grv_luong_cung_cua_nhan_vien.DoubleClick += m_grv_luong_cung_cua_nhan_vien_DoubleClick;
             m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
             m_cmd_delete.Click += m_cmd_delete_Click;
+            m_txt_chon_thang.Leave += M_txt_chon_thang_Leave;
+            m_txt_chon_nam.Leave += M_txt_chon_nam_Leave;
         }
 
-      
+
+
+
 
         //private void load_data_2_form_4_udate()
         //{
@@ -277,7 +283,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 f368_quan_ly_nv_ko_dong_bao_hiem_de v_f = new f368_quan_ly_nv_ko_dong_bao_hiem_de();
-                v_f.display_4_insert(m_txt_chon_thang.Text,m_txt_chon_nam.Text);
+                v_f.display_4_insert(m_txt_chon_thang.Text, m_txt_chon_nam.Text);
                 load_data_2_grid();
             }
             catch (Exception v_e)
@@ -325,7 +331,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if(CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_DU_LIEU))
+                if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_DU_LIEU))
                 {
                     US_GD_KHONG_DONG_BAO_HIEM v_us = new US_GD_KHONG_DONG_BAO_HIEM();
                     form_2_us_luong_cung(v_us);
@@ -336,7 +342,40 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-                CSystemLog_301.ExceptionHandle(v_e);                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void M_txt_chon_nam_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_chon_nam.Text == "" |Convert.ToInt16(m_txt_chon_nam.Text) < 0)
+                {
+                    CHRM_BaseMessages.MsgBox_Warning("Năm không hợp lệ!");
+                    m_txt_chon_nam.Text = m_nam_goi_y;
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void M_txt_chon_thang_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_chon_thang.Text == "" | Convert.ToInt16(m_txt_chon_thang.Text) < 1 | Convert.ToInt16(m_txt_chon_thang.Text) > 12)
+                {
+                    CHRM_BaseMessages.MsgBox_Warning("Tháng không hợp lệ!");
+                    m_txt_chon_thang.Text = m_thang_goi_y;
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 

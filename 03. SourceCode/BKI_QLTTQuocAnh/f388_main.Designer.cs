@@ -759,6 +759,7 @@
             this.m_cmd_dm_nhan_vien.Id = 61;
             this.m_cmd_dm_nhan_vien.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_nhan_vien;
             this.m_cmd_dm_nhan_vien.Name = "m_cmd_dm_nhan_vien";
+            this.m_cmd_dm_nhan_vien.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInCustomizing;
             this.m_cmd_dm_nhan_vien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_dm_nhan_vien_ItemClick);
             // 
             // m_cmd_quan_ly_luong_cung

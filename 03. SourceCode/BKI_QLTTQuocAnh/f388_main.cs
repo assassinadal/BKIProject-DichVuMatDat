@@ -18,7 +18,7 @@ using BKI_DichVuMatDat.DS.CDBNames;
 using System.Deployment;
 using System.Deployment.Application;
 using BKI_DichVuMatDat.NghiepVu.ThuNhapKhac;
-using BKI_DichVuMatDat.BaoCao.Luong;
+//using BKI_DichVuMatDat.BaoCao.Luong;
 using BKI_DichVuMatDat.BaoCao.ThuNhapKhac;
 using BKI_DichVuMatDat.NghiepVu.Luong;
 
@@ -179,8 +179,8 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                //DateTime v_ngay_hien_tai = DateTime.Now.Date;
-                DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
+                DateTime v_ngay_hien_tai = DateTime.Now.Date;
+                //DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
                 US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG v_us_f419_hs_lns = new US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG();
                 DataSet v_ds = v_us_f419_hs_lns.LayDanhSachNhanVienHetHanHeSoLuongNangSuat(v_ngay_hien_tai);
 
@@ -198,8 +198,8 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                //DateTime v_ngay_hien_tai = DateTime.Now.Date;
-                DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
+                DateTime v_ngay_hien_tai = DateTime.Now.Date;
+                //DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
                 US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG v_us_f419_lcd = new US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG();
                 DataSet v_ds = v_us_f419_lcd.LayDanhSachNhanVienHetHanLuongCheDo(v_ngay_hien_tai);
 
@@ -324,10 +324,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f495_thong_tin_chot_bang_luong_thang v_f = new f495_thong_tin_chot_bang_luong_thang();
-                if(IsExistFormName(v_f)) return;
-                v_f.MdiParent = this;
-                v_f.Show();
+                //f495_thong_tin_chot_bang_luong_thang v_f = new f495_thong_tin_chot_bang_luong_thang();
+                //if(IsExistFormName(v_f)) return;
+                //v_f.MdiParent = this;
+                //v_f.Show();
             }
             catch(Exception v_e)
             {

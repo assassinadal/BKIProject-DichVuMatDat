@@ -196,16 +196,18 @@ namespace BKI_DichVuMatDat.BaoCao
                 }
                 if(TinhLuongQL.Instance.LayThongTinBangLuong(lay_thang(), lay_nam()).CHOT_BANG_LUONG)
                 {
-                    var v_dlg_tiep_tuc = XtraMessageBox.Show("Bảng lương đã được chốt, bạn có chắc chắn muốn tính lại lương cho nhân viên. Nếu tính lại sẽ dẫn dến sai sót với bảng lương đã chốt trước đó!", "CẢNH BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
-                    if(v_dlg_tiep_tuc == System.Windows.Forms.DialogResult.No)
-                    {
-                        XtraMessageBox.Show("Bạn đã hủy thao tác!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show("Bạn đã chọn tính lại lương nhân viên khi bảng lương đã được chốt!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    //var v_dlg_tiep_tuc = XtraMessageBox.Show("Bảng lương đã được chốt, bạn có chắc chắn muốn tính lại lương cho nhân viên. Nếu tính lại sẽ dẫn dến sai sót với bảng lương đã chốt trước đó!", "CẢNH BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                    //if(v_dlg_tiep_tuc == System.Windows.Forms.DialogResult.No)
+                    //{
+                    //    XtraMessageBox.Show("Bạn đã hủy thao tác!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //    return;
+                    //}
+                    //else
+                    //{
+                    //    XtraMessageBox.Show("Bạn đã chọn tính lại lương nhân viên khi bảng lương đã được chốt!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //}
+                    XtraMessageBox.Show("Bảng lương đã được chốt, bạn không được lại lương cho nhân viên. (Nếu muốn tính lại, cần bỏ chốt bảng lương)!", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
                 }
                 decimal v_id_nhan_vien = Convert.ToDecimal(m_adv_tong_hop.GetRowCellValue(m_adv_tong_hop.FocusedRowHandle, "ID_NHAN_VIEN"));
                 TinhLuongQL.Instance.ReplaceBanGhiLuongNhanVien(v_id_nhan_vien, lay_thang(), lay_nam());
@@ -267,6 +269,11 @@ namespace BKI_DichVuMatDat.BaoCao
                 if(!isValidInputDate())
                 {
                     XtraMessageBox.Show("Ngày tháng nhập vào chưa hợp lệ", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if(TinhLuongQL.Instance.LayThongTinBangLuong(lay_thang(), lay_nam()).CHOT_BANG_LUONG)
+                {
+                    XtraMessageBox.Show("Bảng lương đã được chốt, bạn không được soạn thảo bảng lương. (Nếu muốn soạn thảo lại, cần bỏ chốt bảng lương)!", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     return;
                 }
                 f409_rpt_bang_luong_nv_v2 v_frm = new f409_rpt_bang_luong_nv_v2();

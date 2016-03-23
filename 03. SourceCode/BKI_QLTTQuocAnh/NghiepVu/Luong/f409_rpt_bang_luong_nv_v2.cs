@@ -78,6 +78,11 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
+                if(TinhLuongQL.Instance.LayThongTinBangLuong(lay_thang(), lay_nam()).CHOT_BANG_LUONG)
+                {
+                    XtraMessageBox.Show("Bảng lương đã được chốt, bạn không được thực hiện thao tác này. (Nếu muốn thực hiện, cần bỏ chốt bảng lương)!", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
                 ra_soat_thong_tin_du_lieu_tinh_luong();
             }
             catch(Exception v_e)
@@ -115,6 +120,11 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
+                if(TinhLuongQL.Instance.LayThongTinBangLuong(lay_thang(), lay_nam()).CHOT_BANG_LUONG)
+                {
+                    XtraMessageBox.Show("Bảng lương đã được chốt, bạn không được thực hiện thao tác này. (Nếu muốn thực hiện, cần bỏ chốt bảng lương)!", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
                 load_data_excel_to_grid(WinFormControls.openFileDialog());
             }
             catch(Exception v_e)
@@ -152,6 +162,11 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
+                if(TinhLuongQL.Instance.LayThongTinBangLuong(lay_thang(), lay_nam()).CHOT_BANG_LUONG)
+                {
+                    XtraMessageBox.Show("Bảng lương đã được chốt, bạn không được thực hiện thao tác này. (Nếu muốn thực hiện, cần bỏ chốt bảng lương)!", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
                 start_luu_bang_luong_process();
             }
             catch(Exception v_e)
@@ -163,6 +178,11 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
+                if(TinhLuongQL.Instance.LayThongTinBangLuong(lay_thang(), lay_nam()).CHOT_BANG_LUONG)
+                {
+                    XtraMessageBox.Show("Bảng lương đã được chốt, bạn không được thực hiện thao tác này. (Nếu muốn thực hiện, cần bỏ chốt bảng lương)!", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
                 if(m_bgwk.IsBusy)
                 {
                     XtraMessageBox.Show("Chức năng đang thực hiện tính toán dữ liệu lương rồi, bạn đợi chút", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);

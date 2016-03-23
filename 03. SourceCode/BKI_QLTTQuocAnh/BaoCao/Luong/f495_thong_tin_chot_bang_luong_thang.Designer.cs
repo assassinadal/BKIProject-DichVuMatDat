@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f495_thong_tin_chot_bang_luong_thang));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_view = new DevExpress.XtraEditors.SimpleButton();
-            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollection = new DevExpress.Utils.ImageCollection();
             this.m_dat_nam = new DevExpress.XtraEditors.DateEdit();
             this.m_grc_main = new DevExpress.XtraGrid.GridControl();
             this.m_grv_main = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -77,6 +76,7 @@
             this.colHS_ATHK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHS_BSL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLE_TET_YN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.m_cmd_unlock = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
@@ -89,12 +89,13 @@
             // panelControl1
             // 
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.m_cmd_unlock);
             this.panelControl1.Controls.Add(this.m_cmd_view);
             this.panelControl1.Controls.Add(this.m_dat_nam);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(791, 55);
+            this.panelControl1.Size = new System.Drawing.Size(791, 82);
             this.panelControl1.TabIndex = 0;
             // 
             // m_cmd_view
@@ -148,10 +149,10 @@
             // 
             this.m_grc_main.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc_main.Location = new System.Drawing.Point(0, 55);
+            this.m_grc_main.Location = new System.Drawing.Point(0, 82);
             this.m_grc_main.MainView = this.m_grv_main;
             this.m_grc_main.Name = "m_grc_main";
-            this.m_grc_main.Size = new System.Drawing.Size(791, 524);
+            this.m_grc_main.Size = new System.Drawing.Size(791, 497);
             this.m_grc_main.TabIndex = 1;
             this.m_grc_main.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_main});
@@ -909,6 +910,16 @@
             this.colLE_TET_YN.Visible = true;
             this.colLE_TET_YN.VisibleIndex = 36;
             // 
+            // m_cmd_unlock
+            // 
+            this.m_cmd_unlock.ImageIndex = 11;
+            this.m_cmd_unlock.Location = new System.Drawing.Point(12, 48);
+            this.m_cmd_unlock.Name = "m_cmd_unlock";
+            this.m_cmd_unlock.Size = new System.Drawing.Size(108, 30);
+            this.m_cmd_unlock.TabIndex = 11;
+            this.m_cmd_unlock.Text = "Bỏ chốt bảng lương";
+            this.m_cmd_unlock.Click += new System.EventHandler(this.m_cmd_unlock_Click);
+            // 
             // f495_thong_tin_chot_bang_luong_thang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -918,6 +929,7 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "f495_thong_tin_chot_bang_luong_thang";
             this.Text = "F495 - Thông tin các tháng đã chốt bảng lương";
+            this.Load += new System.EventHandler(this.f495_thong_tin_chot_bang_luong_thang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
@@ -978,5 +990,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colHS_ATHK;
         private DevExpress.XtraGrid.Columns.GridColumn colHS_BSL;
         private DevExpress.XtraGrid.Columns.GridColumn colLE_TET_YN;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_unlock;
     }
 }

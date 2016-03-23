@@ -19,7 +19,7 @@ using System.Deployment;
 using System.Deployment.Application;
 using BKI_DichVuMatDat.NghiepVu.ThuNhapKhac;
 using BKI_DichVuMatDat.BaoCao.Luong;
-//using BKI_DichVuMatDat.BaoCao.Luong;
+using BKI_DichVuMatDat.BaoCao.ThuNhapKhac;
 
 namespace BKI_DichVuMatDat
 {
@@ -301,6 +301,22 @@ namespace BKI_DichVuMatDat
             //Thu nhap khac
             m_cmd_quan_ly_quy_tnk.ItemClick += m_cmd_quan_ly_quy_tnk_ItemClick;
             m_cmd_ds_chot_bang_luong.ItemClick += m_cmd_ds_chot_bang_luong_ItemClick;
+            m_cmd_bc_hs.ItemClick += m_cmd_bc_hs_ItemClick;
+        }
+
+        void m_cmd_bc_hs_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f492_bao_cao_cac_he_so v_f = new f492_bao_cao_cac_he_so();
+                if(IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_ds_chot_bang_luong_ItemClick(object sender, ItemClickEventArgs e)

@@ -716,6 +716,19 @@ namespace BKI_DichVuMatDat.US
             v_sp.addDecimalInputParam("@NAM", ip_nam);
             v_sp.ExecuteCommand(this);
         }
+
+        public DataTable LayDuLieuHeSo(DateTime ip_dat_tu_thang, DateTime ip_dat_den_thang)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_TL_he_so_athk_bsl_le_tet_GetAll");
+            v_sp.addDatetimeInputParam("@ip_dat_tu_thang", ip_dat_tu_thang);
+            v_sp.addDatetimeInputParam("@ip_dat_den_thang", ip_dat_den_thang);
+
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+            v_sp.fillDataSetByCommand(this, v_ds);
+
+            return v_ds.Tables[0];
+        }
         #endregion
     }
 }

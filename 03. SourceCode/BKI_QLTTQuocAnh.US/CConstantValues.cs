@@ -134,6 +134,7 @@ namespace BKI_DichVuMatDat.US
     {
         public const decimal CHINH_THUC = 157;
         public const decimal KIEM_NHIEM = 164;
+        public const decimal LAM_THOI = 793;
     }
 
     public static class CONST_ID_LOAI_LAO_DONG

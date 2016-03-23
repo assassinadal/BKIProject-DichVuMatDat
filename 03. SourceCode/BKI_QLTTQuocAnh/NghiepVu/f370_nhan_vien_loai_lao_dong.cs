@@ -173,7 +173,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                SplashScreenManager.ShowForm(typeof(F_wait_form));
+                //SplashScreenManager.ShowForm(typeof(F_wait_form));
                 string fileName = "LOAI_LAO_DONG_CUA_NHAN_VIEN.xlsx";
                 string sourcePath = (System.IO.Directory.GetCurrentDirectory() + "\\Template");
                 string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);

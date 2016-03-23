@@ -131,6 +131,7 @@
             this.m_cmd_quan_ly_quy_tnk = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_bc_athk_bsl_lt = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_ds_chot_bang_luong = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_bc_hs = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -168,7 +169,6 @@
             this.m_lbl_canh_bao_het_han_hop_dong = new DevExpress.XtraEditors.LabelControl();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.m_cmd_bc_hs = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -1052,6 +1052,7 @@
             this.m_cmd_bang_luong.Name = "m_cmd_bang_luong";
             this.m_cmd_bang_luong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.m_cmd_bang_luong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.m_cmd_bang_luong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_bang_luong_ItemClick);
             // 
             // m_cmd_quy_trinh_tinh_luong
@@ -1095,6 +1096,7 @@
             this.m_cmd_bao_cao_dieu_kien_tinh_luong.Name = "m_cmd_bao_cao_dieu_kien_tinh_luong";
             this.m_cmd_bao_cao_dieu_kien_tinh_luong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.m_cmd_bao_cao_dieu_kien_tinh_luong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_bao_cao_tong_hop_v2
             // 
@@ -1135,11 +1137,12 @@
             // 
             // m_cmd_cac_khoan_khac
             // 
-            this.m_cmd_cac_khoan_khac.Caption = "Các khoản khác";
+            this.m_cmd_cac_khoan_khac.Caption = "Import các khoản tiền khác tính lương";
+            this.m_cmd_cac_khoan_khac.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_bao_hiem;
             this.m_cmd_cac_khoan_khac.Id = 109;
-            this.m_cmd_cac_khoan_khac.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.accounting;
             this.m_cmd_cac_khoan_khac.Name = "m_cmd_cac_khoan_khac";
-            this.m_cmd_cac_khoan_khac.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.m_cmd_cac_khoan_khac.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.m_cmd_cac_khoan_khac.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_cac_khoan_khac_ItemClick);
             // 
             // m_cmd_ds_nhan_vien
@@ -1218,6 +1221,15 @@
             this.m_cmd_ds_chot_bang_luong.Id = 122;
             this.m_cmd_ds_chot_bang_luong.Name = "m_cmd_ds_chot_bang_luong";
             this.m_cmd_ds_chot_bang_luong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // m_cmd_bc_hs
+            // 
+            this.m_cmd_bc_hs.Caption = "HS BSL, ATHK, Lễ tết";
+            this.m_cmd_bc_hs.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_bang_luong_nv_;
+            this.m_cmd_bc_hs.Id = 123;
+            this.m_cmd_bc_hs.Name = "m_cmd_bc_hs";
+            this.m_cmd_bc_hs.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // ribbonPage1
@@ -1367,7 +1379,6 @@
             this.ribbonPageGroup16.ItemLinks.Add(this.m_cmd_quan_ly_quy_tnk);
             this.ribbonPageGroup16.ItemLinks.Add(this.m_cmd_thuong_thu_nhap_khac);
             this.ribbonPageGroup16.ItemLinks.Add(this.m_cmd_ql_thuong_le_tet);
-            this.ribbonPageGroup16.ItemLinks.Add(this.m_cmd_cac_khoan_khac);
             this.ribbonPageGroup16.ItemLinks.Add(this.m_cmd_tnk_ngoai_bang_luong);
             this.ribbonPageGroup16.ItemLinks.Add(this.m_cmd_bc_hs);
             this.ribbonPageGroup16.Name = "ribbonPageGroup16";
@@ -1382,9 +1393,10 @@
             // ribbonPageGroup15
             // 
             this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_bao_cao_tong_hop_v2);
+            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_cac_khoan_khac);
+            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_ds_chot_bang_luong);
             this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_bao_cao_dieu_kien_tinh_luong);
             this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_bang_luong);
-            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_ds_chot_bang_luong);
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
             this.ribbonPageGroup15.Text = "Tính lương";
             // 
@@ -1569,15 +1581,6 @@
             this.ribbonPageGroup17.ItemLinks.Add(this.m_cmd_bao_cao_tong_hop_v2);
             this.ribbonPageGroup17.Name = "ribbonPageGroup17";
             this.ribbonPageGroup17.Text = "Tính lương";
-            // 
-            // m_cmd_bc_hs
-            // 
-            this.m_cmd_bc_hs.Caption = "HS BSL, ATHK, Lễ tết";
-            this.m_cmd_bc_hs.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_bang_luong_nv_;
-            this.m_cmd_bc_hs.Id = 123;
-            this.m_cmd_bc_hs.Name = "m_cmd_bc_hs";
-            this.m_cmd_bc_hs.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // f388_main
             // 

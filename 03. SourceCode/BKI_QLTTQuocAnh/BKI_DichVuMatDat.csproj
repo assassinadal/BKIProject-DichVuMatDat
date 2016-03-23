@@ -1659,7 +1659,9 @@
     <Content Include="Template\LOAI_LAO_DONG_CUA_NHAN_VIEN.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Template\DangKyPhuThuoc.xlsx" />
+    <None Include="Template\DangKyPhuThuoc.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Template\Template_Import_cac_khoan_tien_khac.xls">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -240,12 +240,9 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         #endregion
-
-        //
-        //
-        // EVENT HANDLERS
-        //
-        //
+       
+        #region Event handle
+    
 
         private void m_grv1_DoubleClick(object sender, EventArgs e)
         {
@@ -368,5 +365,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+#endregion
     }
 }

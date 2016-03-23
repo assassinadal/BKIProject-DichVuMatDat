@@ -47,31 +47,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.KeyPreview = true;
         }
 
-        private void set_define_events()
-        {
-            this.Load += f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2_Load;
-            m_cmd_update.Click += m_cmd_update_Click;
-            m_cmd_delete.Click += m_cmd_delete_Click;
-            m_cmd_import_excel.Click += m_cmd_import_excel_Click;
-            m_cmd_save.Click += m_cmd_save_Click;
-            m_cmd_tai_file_mau.Click += m_cmd_tai_file_mau_Click;
-            m_grv1.DoubleClick += new EventHandler(m_grv1_DoubleClick);
-            m_cmd_insert.Click += m_cmd_them_click;
-        }
 
-        private void m_cmd_them_click(object sender, EventArgs e)
-        {
-            try
-            {
-                f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details v_f = new f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details();
-                v_f.display_4_insert();
-                load_data_to_grid();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }           
-        }
 
         //private void load_data_to_m_sle_chon_nhan_vien()
         //{
@@ -241,14 +217,38 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         #endregion
        
-        #region Event handle
-    
+        #region Event handle 
+        
+        private void set_define_events()
+        {
+            this.Load += f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2_Load;
+            m_cmd_update.Click += m_cmd_update_Click;
+            m_cmd_delete.Click += m_cmd_delete_Click;
+            m_cmd_import_excel.Click += m_cmd_import_excel_Click;
+            m_grv1.DoubleClick += new EventHandler(m_grv1_DoubleClick);
+            m_cmd_insert.Click += m_cmd_them_click;
+        }
 
-        private void m_grv1_DoubleClick(object sender, EventArgs e)
+        void m_cmd_import_excel_Click(object sender, EventArgs e)
         {
             try
             {
-                update_gd_phu_thuoc();
+                f314_dang_ky_giam_tru_nguoi_phu_thuoc_xls v_f = new f314_dang_ky_giam_tru_nguoi_phu_thuoc_xls();
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        
+        private void m_cmd_them_click(object sender, EventArgs e)
+        {
+            try
+            {
+                f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details v_f = new f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details();
+                v_f.display_4_insert();
+                load_data_to_grid();
             }
             catch (Exception v_e)
             {
@@ -256,22 +256,11 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        private void m_cmd_save_Click(object sender, EventArgs e)
+        private void m_grv1_DoubleClick(object sender, EventArgs e)
         {
-            m_lst_nv_insert_phu_thuoc.Clear();
             try
             {
-                splashScreenManager.ShowWaitForm();
-                insert_gd_phu_thuoc_details();
-                //for (int i = 0; i < m_lst_nv_insert_phu_thuoc.Count; i++)
-                //{
-                //    update_gd_phu_thuoc(m_lst_nv_insert_phu_thuoc[i]);
-                //}
-                m_cmd_save.Enabled = false;
-                panel1.Enabled = true;
-                splashScreenManager.CloseWaitForm();
-                XtraMessageBox.Show("Lưu thành công");
-                load_data_to_grid();
+                update_gd_phu_thuoc();
             }
             catch (Exception v_e)
             {
@@ -301,21 +290,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        private void m_cmd_import_excel_Click(object sender, EventArgs e)
-        {
-            m_grc.DataSource = null;
-            panel1.Enabled = false;
-            try
-            {
-                WinFormControls.load_xls_to_gridview(WinFormControls.openFileDialog(), m_grc);
-                m_cmd_save.Enabled = true;
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
         private void f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2_Load(object sender, EventArgs e)
         {
             try
@@ -327,18 +301,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
 
-        }
-
-        private void m_cmd_tai_file_mau_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                WinFormControls.openTemplate("DangKyPhuThuoc.xlsx");
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
         }
 
         private void m_cmd_update_Click(object sender, EventArgs e)
@@ -365,6 +327,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-#endregion
+        #endregion
     }
 }

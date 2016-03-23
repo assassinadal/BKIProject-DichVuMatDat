@@ -363,6 +363,12 @@
       <DependentUpon>msg003_hien_thi_danh_sach.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\DTO_QUY_THU_NHAP_KHAC.cs" />
+    <Compile Include="NghiepVu\f314_dang_ky_giam_tru_nguoi_phu_thuoc_xls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f314_dang_ky_giam_tru_nguoi_phu_thuoc_xls.Designer.cs">
+      <DependentUpon>f314_dang_ky_giam_tru_nguoi_phu_thuoc_xls.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f322_lap_hop_dong_excel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1228,6 +1234,9 @@
     <EmbeddedResource Include="CONFIRM\msg003_hien_thi_danh_sach.resx">
       <DependentUpon>msg003_hien_thi_danh_sach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f314_dang_ky_giam_tru_nguoi_phu_thuoc_xls.resx">
+      <DependentUpon>f314_dang_ky_giam_tru_nguoi_phu_thuoc_xls.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f322_lap_hop_dong_excel.resx">
       <DependentUpon>f322_lap_hop_dong_excel.cs</DependentUpon>
     </EmbeddedResource>
@@ -1634,9 +1643,6 @@
     <Content Include="Template\ThuNhapKhac.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Template\ChamCongLamThem.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Template\CONG_TAC.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1649,10 +1655,13 @@
     <Content Include="Template\LOAI_LAO_DONG_CUA_NHAN_VIEN.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Template\DangKyPhuThuoc.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <Content Include="Template\Template_Import_cac_khoan_tien_khac.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\ChamCongLamThem.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\DangKyPhuThuoc.xls">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

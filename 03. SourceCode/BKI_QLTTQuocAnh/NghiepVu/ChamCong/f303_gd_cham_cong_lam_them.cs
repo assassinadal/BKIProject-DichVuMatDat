@@ -178,7 +178,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         #endregion
 
-        #region Events Handler
+        #region Events Handle
 
         private void set_define_events()
         {
@@ -258,7 +258,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                WinFormControls.openTemplate("ChamCongLamThem.xlsx");
+                WinFormControls.openTemplate("ChamCongLamThem.xls");
             }
             catch (Exception v_e)
             {

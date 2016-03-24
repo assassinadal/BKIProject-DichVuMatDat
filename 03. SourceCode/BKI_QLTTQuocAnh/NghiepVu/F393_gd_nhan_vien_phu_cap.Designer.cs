@@ -38,21 +38,18 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.m_cmd_xoa = new DevExpress.XtraEditors.SimpleButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_xoa = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_grc
@@ -136,58 +133,6 @@
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 6;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 366);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(708, 52);
-            this.panel1.TabIndex = 1;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.m_cmd_them);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(368, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(5);
-            this.panel6.Size = new System.Drawing.Size(170, 52);
-            this.panel6.TabIndex = 3;
-            // 
-            // m_cmd_them
-            // 
-            this.m_cmd_them.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_cmd_them.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_them.Image")));
-            this.m_cmd_them.Location = new System.Drawing.Point(5, 5);
-            this.m_cmd_them.Name = "m_cmd_them";
-            this.m_cmd_them.Size = new System.Drawing.Size(160, 42);
-            this.m_cmd_them.TabIndex = 0;
-            this.m_cmd_them.Text = "Thêm";
-            this.m_cmd_them.Click += new System.EventHandler(this.m_cmd_them_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.m_cmd_xoa);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(538, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(5);
-            this.panel4.Size = new System.Drawing.Size(170, 52);
-            this.panel4.TabIndex = 1;
-            // 
-            // m_cmd_xoa
-            // 
-            this.m_cmd_xoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_cmd_xoa.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xoa.Image")));
-            this.m_cmd_xoa.Location = new System.Drawing.Point(5, 5);
-            this.m_cmd_xoa.Name = "m_cmd_xoa";
-            this.m_cmd_xoa.Size = new System.Drawing.Size(160, 42);
-            this.m_cmd_xoa.TabIndex = 0;
-            this.m_cmd_xoa.Text = "Xóa";
-            this.m_cmd_xoa.Click += new System.EventHandler(this.m_cmd_xoa_Click);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.m_grc);
@@ -218,6 +163,49 @@
             this.m_lbl_header.Text = "QUẢN LÝ PHỤ CẤP TRÁCH NHIỆM";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.m_cmd_them);
+            this.panel1.Controls.Add(this.m_cmd_xoa);
+            this.panel1.Controls.Add(this.m_cmd_xuat_excel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 366);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(708, 52);
+            this.panel1.TabIndex = 1;
+            // 
+            // m_cmd_xoa
+            // 
+            this.m_cmd_xoa.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_xoa.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xoa.Image")));
+            this.m_cmd_xoa.Location = new System.Drawing.Point(463, 0);
+            this.m_cmd_xoa.Name = "m_cmd_xoa";
+            this.m_cmd_xoa.Size = new System.Drawing.Size(122, 52);
+            this.m_cmd_xoa.TabIndex = 9;
+            this.m_cmd_xoa.Text = "Xóa";
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_xuat_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_excel.Image")));
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(585, 0);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(123, 52);
+            this.m_cmd_xuat_excel.TabIndex = 8;
+            this.m_cmd_xuat_excel.Text = "&Xuất Excel";
+            this.m_cmd_xuat_excel.Visible = false;
+            this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
+            // 
+            // m_cmd_them
+            // 
+            this.m_cmd_them.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_them.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_them.Image")));
+            this.m_cmd_them.Location = new System.Drawing.Point(337, 0);
+            this.m_cmd_them.Name = "m_cmd_them";
+            this.m_cmd_them.Size = new System.Drawing.Size(126, 52);
+            this.m_cmd_them.TabIndex = 10;
+            this.m_cmd_them.Text = "Thêm";
+            // 
             // F393_gd_nhan_vien_phu_cap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,11 +219,9 @@
             this.Load += new System.EventHandler(this.F393_gd_nhan_vien_phu_cap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -244,7 +230,6 @@
 
         private DevExpress.XtraGrid.GridControl m_grc;
         private DevExpress.XtraGrid.Views.Grid.GridView m_grv;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
@@ -254,11 +239,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private System.Windows.Forms.Panel panel6;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_them;
-        private System.Windows.Forms.Panel panel4;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_xoa;
         private System.Windows.Forms.Label m_lbl_header;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_them;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_xoa;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
 
     }
 }

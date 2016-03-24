@@ -69,5 +69,17 @@ namespace BKI_DichVuMatDat.NghiepVu
                 IP.Core.IPCommon.CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CHRMCommon.ExportExcel(m_grv);
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

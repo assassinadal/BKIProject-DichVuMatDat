@@ -89,6 +89,7 @@
             // 
             // layoutView1
             // 
+            this.layoutView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.layoutView1.CardHorzInterval = 3;
             this.layoutView1.CardMinSize = new System.Drawing.Size(296, 100);
             this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
@@ -213,7 +214,7 @@
             this.layoutViewField_colHO_TEN,
             this.layoutViewField_colNGAY_SINH,
             this.layoutViewField_colSO_CMT});
-            this.layoutViewCard1.Name = "layoutViewCard1";
+            this.layoutViewCard1.Name = "layoutViewTemplateCard";
             this.layoutViewCard1.OptionsItemText.TextToControlDistance = 6;
             this.layoutViewCard1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.layoutViewCard1.Text = "TemplateCard";

@@ -346,6 +346,8 @@ namespace BKI_DichVuMatDat.US
             v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
+
+
         public void LayThongTinQuaTrinhCongTac(DataSet op_ds, decimal ip_dc_id_nhan_vien)
         {
             CStoredProc v_cstore = new CStoredProc("PR_SELECT_ALL_QUA_TRINH_CONG_TAC");
@@ -357,6 +359,13 @@ namespace BKI_DichVuMatDat.US
             CStoredProc v_cstore = new CStoredProc("PR_SELECT_QUA_TRINH_CONG_TAC_THEO_LOAI");
             v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
             v_cstore.addDecimalInputParam("@ip_dc_id_loai_cong_tac", ip_dc_id_nhan_vien);
+            v_cstore.fillDataSetByCommand(this, op_ds);
+        }
+
+        public void LayThongTinQuaTrinhCongTacTatCaNV(DataSet op_ds)
+        {
+            CStoredProc v_cstore = new CStoredProc("PR_SELECT_ALL_QUA_TRINH_CONG_TAC_TAT_CA_NV");
+
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
     }

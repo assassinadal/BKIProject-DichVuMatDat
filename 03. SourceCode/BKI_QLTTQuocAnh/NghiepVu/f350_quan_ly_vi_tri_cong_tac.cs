@@ -77,6 +77,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             load_data_2_sle_chon_don_vi();
             load_data_2_sle_chon_vi_tri();
             load_data_2_sle_chon_loai_cong_tac();
+            load_data_2_grid();
         }
 
         //load data to all controls
@@ -156,6 +157,26 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             m_sle_chon_loai_cong_tac.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_loai_cong_tac.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+        }
+
+        private void load_data_2_grid()
+        {
+            CHRMCommon.make_stt(m_grv_v_gd_cong_tac);
+
+            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            //DataSet v_ds = new DataSet();
+
+            //v_ds.Tables.Add(new DataTable());
+
+            //v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_CONG_TAC WHere ID_NHAN_VIEN = " + ip_dc_id_nv);
+            US_GD_CONG_TAC v_us = new US_GD_CONG_TAC();
+            DataSet v_ds = new DataSet();
+
+            v_ds.Tables.Add(new DataTable());
+
+            v_us.LayThongTinQuaTrinhCongTacTatCaNV(v_ds);
+
+            m_grc_v_gd_cong_tac.DataSource = v_ds.Tables[0];
         }
 
         private void load_data_2_grid(decimal ip_dc_id_nv)

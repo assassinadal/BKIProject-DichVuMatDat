@@ -57,6 +57,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void load_data_2_grid()
         {
+            CHRMCommon.make_stt(m_grv_f405);
             US_V_F405_BAO_CAO_THONG_TIN_TINH_LUONG v_us = new US_V_F405_BAO_CAO_THONG_TIN_TINH_LUONG();
             DS_V_F405_BAO_CAO_THONG_TIN_TINH_LUONG v_ds = new DS_V_F405_BAO_CAO_THONG_TIN_TINH_LUONG();
 

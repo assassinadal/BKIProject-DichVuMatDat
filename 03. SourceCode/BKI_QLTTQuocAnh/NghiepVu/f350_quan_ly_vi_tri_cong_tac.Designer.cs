@@ -400,7 +400,7 @@
             // GIOI_TINH
             // 
             this.GIOI_TINH.Caption = "Giới tính";
-            this.GIOI_TINH.FieldName = "GIOI_TINH";
+            this.GIOI_TINH.FieldName = "GT";
             this.GIOI_TINH.Name = "GIOI_TINH";
             this.GIOI_TINH.Visible = true;
             this.GIOI_TINH.VisibleIndex = 3;

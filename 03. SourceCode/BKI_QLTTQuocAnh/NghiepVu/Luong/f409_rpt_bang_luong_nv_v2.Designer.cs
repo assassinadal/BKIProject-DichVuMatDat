@@ -140,7 +140,7 @@
             this.colGIAM_TRU_KHAC = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand84 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand26 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.colTONG_GIAM_TRU = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colTONG_GIAM_TRU_THUE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand6 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand18 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colTHU_NHAP_CHIU_THE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -430,7 +430,7 @@
             this.colBO_SUNG_LUONG,
             this.colTHUONG_LE_TET,
             this.colTHU_NHAP_KHAC_NGOAI_LUONG,
-            this.colTONG_GIAM_TRU,
+            this.colTONG_GIAM_TRU_THUE,
             this.colGIAM_TRU_BHXH,
             this.colGIAM_TRU_BHYT,
             this.colGIAM_TRU_BHTN,
@@ -1570,25 +1570,25 @@
             this.gridBand26.AppearanceHeader.Options.UseTextOptions = true;
             this.gridBand26.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridBand26.Caption = "23=SUM(16:22)";
-            this.gridBand26.Columns.Add(this.colTONG_GIAM_TRU);
+            this.gridBand26.Columns.Add(this.colTONG_GIAM_TRU_THUE);
             this.gridBand26.Name = "gridBand26";
             this.gridBand26.VisibleIndex = 0;
             this.gridBand26.Width = 101;
             // 
-            // colTONG_GIAM_TRU
+            // colTONG_GIAM_TRU_THUE
             // 
-            this.colTONG_GIAM_TRU.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(179)))), ((int)(((byte)(217)))));
-            this.colTONG_GIAM_TRU.AppearanceCell.Options.UseBackColor = true;
-            this.colTONG_GIAM_TRU.Caption = "Tổng giảm trừ";
-            this.colTONG_GIAM_TRU.ColumnEdit = this.repositoryItemTextEditTien;
-            this.colTONG_GIAM_TRU.DisplayFormat.FormatString = "n0";
-            this.colTONG_GIAM_TRU.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colTONG_GIAM_TRU.FieldName = "TONG_GIAM_TRU";
-            this.colTONG_GIAM_TRU.Name = "colTONG_GIAM_TRU";
-            this.colTONG_GIAM_TRU.OptionsColumn.ShowCaption = false;
-            this.colTONG_GIAM_TRU.ToolTip = "= (15) + (16) + (17) + (18) + (19) + (20) + (21) + (22) ";
-            this.colTONG_GIAM_TRU.Visible = true;
-            this.colTONG_GIAM_TRU.Width = 101;
+            this.colTONG_GIAM_TRU_THUE.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(179)))), ((int)(((byte)(217)))));
+            this.colTONG_GIAM_TRU_THUE.AppearanceCell.Options.UseBackColor = true;
+            this.colTONG_GIAM_TRU_THUE.Caption = "Tổng giảm trừ";
+            this.colTONG_GIAM_TRU_THUE.ColumnEdit = this.repositoryItemTextEditTien;
+            this.colTONG_GIAM_TRU_THUE.DisplayFormat.FormatString = "n0";
+            this.colTONG_GIAM_TRU_THUE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colTONG_GIAM_TRU_THUE.FieldName = "TONG_GIAM_TRU_THUE";
+            this.colTONG_GIAM_TRU_THUE.Name = "colTONG_GIAM_TRU_THUE";
+            this.colTONG_GIAM_TRU_THUE.OptionsColumn.ShowCaption = false;
+            this.colTONG_GIAM_TRU_THUE.ToolTip = "= (15) + (16) + (17) + (18) + (19) + (20) + (21) + (22) ";
+            this.colTONG_GIAM_TRU_THUE.Visible = true;
+            this.colTONG_GIAM_TRU_THUE.Width = 101;
             // 
             // gridBand6
             // 
@@ -2226,7 +2226,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colGIAM_TRU_GIA_CANH;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colGIAM_TRU_PHU_THUOC;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colGIAM_TRU_KHAC;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTONG_GIAM_TRU;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTONG_GIAM_TRU_THUE;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTHU_NHAP_CHIU_THE;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTONG_THU_NHAP;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colLAM_THEM_200;

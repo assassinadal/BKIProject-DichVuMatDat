@@ -40,6 +40,7 @@ namespace BKI_DichVuMatDat.DTO
         public decimal GIAM_TRU_PHU_THUOC { get; set; }
         public decimal GIAM_TRU_KHAC { get; set; }
         public decimal TONG_GIAM_TRU { get; set; }
+        public decimal TONG_GIAM_TRU_THUE { get; set; }
         public decimal THU_NHAP_TINH_THUE { get; set; }
         public decimal DOAN_PHI_CD { get; set; }
         public decimal THUE { get; set; }

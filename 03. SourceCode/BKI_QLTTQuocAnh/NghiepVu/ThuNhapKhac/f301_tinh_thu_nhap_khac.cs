@@ -80,6 +80,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
             saveFileDialog1.RestoreDirectory = true;
+            saveFileDialog1.FileName = "File_Import_Thu_Nhap_Khac_Ap_Dung_" + m_us_gd_quy.strNAM.Trim()+"."+m_us_gd_quy.strTHANG.Trim();
             if(saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 CHRMCommon.make_stt(m_grv_main);

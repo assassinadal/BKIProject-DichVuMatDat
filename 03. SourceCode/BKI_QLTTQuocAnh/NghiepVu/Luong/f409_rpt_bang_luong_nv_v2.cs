@@ -386,7 +386,7 @@ namespace BKI_DichVuMatDat.BaoCao
             GIAM_TRU_GIA_CANH = 23,
             GIAM_TRU_PHU_THUOC = 24,
             GIAM_TRU_KHAC = 25,
-            TONG_GIAM_TRU = 26,
+            TONG_GIAM_TRU_THUE = 26,
             THU_NHAP_TINH_THUE = 27,
             PHAI_THU_BHXH = 28,
             PHAI_THU_BHYT = 29,
@@ -808,7 +808,7 @@ namespace BKI_DichVuMatDat.BaoCao
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.GIAM_TRU_GIA_CANH].ColumnName = RPT_LUONG_V2.GIAM_TRU_GIA_CANH;
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.GIAM_TRU_PHU_THUOC].ColumnName = RPT_LUONG_V2.GIAM_TRU_PHU_THUOC;
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.GIAM_TRU_KHAC].ColumnName = RPT_LUONG_V2.GIAM_TRU_KHAC;
-            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.TONG_GIAM_TRU].ColumnName = RPT_LUONG_V2.TONG_GIAM_TRU;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.TONG_GIAM_TRU_THUE].ColumnName = RPT_LUONG_V2.TONG_GIAM_TRU_THUE;
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.THU_NHAP_TINH_THUE].ColumnName = RPT_LUONG_V2.THU_NHAP_CHIU_THUE;
             //ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.PHAI_THU_BHYT].ColumnName = RPT_LUONG_V2.BHYT;
             //ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.PHAI_THU_BHXH].ColumnName = RPT_LUONG_V2.BHXH;

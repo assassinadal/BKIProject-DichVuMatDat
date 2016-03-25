@@ -801,6 +801,7 @@ namespace BKI_DichVuMatDat.BaoCao
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.THU_NHAP_KHAC_NGOAI_LUONG].ColumnName = RPT_LUONG_V2.THU_NHAP_KHAC_NGOAI_LUONG;
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.TONG_THU_NHAP_NGOAI_LUONG].ColumnName = RPT_LUONG_V2.TONG_THU_NHAP_NGOAI_LUONG;
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.TONG_THU_NHAP].ColumnName = RPT_LUONG_V2.TONG_THU_NHAP;
+            ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.TONG_THU_NHAP_CHIU_THUE].ColumnName = RPT_LUONG_V2.TONG_THU_NHAP_CHIU_THUE;
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.GIAM_TRU_BHXH].ColumnName = RPT_LUONG_V2.BHXH;
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.GIAM_TRU_BHYT].ColumnName = RPT_LUONG_V2.BHYT;
             ip_dt_src.Columns[(int)e_col_thu_tu_bang_luong.GIAM_TRU_BHTN].ColumnName = RPT_LUONG_V2.BHTN;

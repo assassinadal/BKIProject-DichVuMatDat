@@ -43,6 +43,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         public void DisplayForUpdate(US_DM_NHAN_VIEN v_us)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            m_txt_nguoi_bao_lanh.Enabled = false;
             m_us = v_us;
             us_to_form(v_us);
             this.ShowDialog();
@@ -164,8 +165,8 @@ namespace BKI_DichVuMatDat.DanhMuc
                 m_us.datNGAY_SINH = m_dat_ngay_sinh.DateTime;
             m_us.strHON_NHAN = m_txt_hon_nhan.Text;
             m_us.strSO_CMT = m_txt_so_cmt.Text;
-
-            m_us.strTRINH_DO_VAN_HOA = m_sle_trinh_do.Text;
+            if (m_sle_trinh_do.EditValue != null)
+                m_us.strTRINH_DO_VAN_HOA = m_sle_trinh_do.EditValue.ToString();
             if (m_dat_ngay_cap_cmt.EditValue != null)
                 m_us.datNGAY_CAP = m_dat_ngay_cap_cmt.DateTime;
             m_us.strNOI_CAP = m_txt_noi_cap_cmt.Text;

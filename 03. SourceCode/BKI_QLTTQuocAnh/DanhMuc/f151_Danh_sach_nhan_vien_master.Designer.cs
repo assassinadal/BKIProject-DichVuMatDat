@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f151_Danh_sach_nhan_vien_master));
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -65,12 +64,13 @@
             this.colNGAY_VAO_HANG_KHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY_TIEP_NHAN_VAO_TCT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY_CHINH_THUC_TIEP_NHAN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGUOI_BAO_LANH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dVMDDataSet1 = new BKI_DichVuMatDat.DVMDDataSet1();
-            this.dVMDDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vDMNHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dVMDDataSet1BindingSource = new System.Windows.Forms.BindingSource();
+            this.vDMNHANVIENBindingSource = new System.Windows.Forms.BindingSource();
             this.v_DM_NHAN_VIENTableAdapter = new BKI_DichVuMatDat.DVMDDataSet1TableAdapters.V_DM_NHAN_VIENTableAdapter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label1 = new System.Windows.Forms.Label();
@@ -81,7 +81,6 @@
             this.m_cmd_ma_nv_tiep_theo = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_sua = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
-            this.colNGUOI_BAO_LANH = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVMDDataSet1)).BeginInit();
@@ -549,6 +548,14 @@
             this.colNGAY_CHINH_THUC_TIEP_NHAN.VisibleIndex = 31;
             this.colNGAY_CHINH_THUC_TIEP_NHAN.Width = 100;
             // 
+            // colNGUOI_BAO_LANH
+            // 
+            this.colNGUOI_BAO_LANH.Caption = "Người bảo lãnh";
+            this.colNGUOI_BAO_LANH.FieldName = "NGUOI_BAO_LANH";
+            this.colNGUOI_BAO_LANH.Name = "colNGUOI_BAO_LANH";
+            this.colNGUOI_BAO_LANH.Visible = true;
+            this.colNGUOI_BAO_LANH.VisibleIndex = 32;
+            // 
             // colHO_TEN
             // 
             this.colHO_TEN.FieldName = "HO_TEN";
@@ -673,7 +680,7 @@
             this.m_cmd_ma_nv_tiep_theo.Name = "m_cmd_ma_nv_tiep_theo";
             this.m_cmd_ma_nv_tiep_theo.Size = new System.Drawing.Size(158, 40);
             this.m_cmd_ma_nv_tiep_theo.TabIndex = 28;
-            this.m_cmd_ma_nv_tiep_theo.Text = "Mã nhân viên tiếp theo";
+            this.m_cmd_ma_nv_tiep_theo.Text = "Tra cứu \r\nmã nhân viên tiếp theo";
             // 
             // m_cmd_sua
             // 
@@ -694,14 +701,6 @@
             this.m_cmd_them.Size = new System.Drawing.Size(142, 40);
             this.m_cmd_them.TabIndex = 3;
             this.m_cmd_them.Text = "Thêm";
-            // 
-            // colNGUOI_BAO_LANH
-            // 
-            this.colNGUOI_BAO_LANH.Caption = "Người bảo lãnh";
-            this.colNGUOI_BAO_LANH.FieldName = "NGUOI_BAO_LANH";
-            this.colNGUOI_BAO_LANH.Name = "colNGUOI_BAO_LANH";
-            this.colNGUOI_BAO_LANH.Visible = true;
-            this.colNGUOI_BAO_LANH.VisibleIndex = 32;
             // 
             // f151_Danh_sach_nhan_vien_master
             // 

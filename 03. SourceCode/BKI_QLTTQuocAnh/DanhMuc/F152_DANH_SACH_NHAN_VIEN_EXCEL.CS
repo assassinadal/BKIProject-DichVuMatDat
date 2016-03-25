@@ -25,7 +25,7 @@ namespace BKI_DichVuMatDat
         #region Public interface
         internal void displayToInsertExcel(string m_txt_path)
         {
-            WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
+            WinFormControls.load_xls_to_gridview_v3(m_txt_path, m_grc, "NHAP_LIEU");
             foreach (DevExpress.XtraGrid.Columns.GridColumn col in ((DevExpress.XtraGrid.Views.Base.ColumnView)m_grc.Views[0]).Columns)
             {
                 col.MaxWidth = 100;
@@ -79,7 +79,7 @@ namespace BKI_DichVuMatDat
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-            
+
 
         }
 
@@ -133,7 +133,7 @@ namespace BKI_DichVuMatDat
             v_us.strTEN = dataRow["TEN"].ToString();
             v_us.strTON_GIAO = dataRow["TON_GIAO"].ToString();
             v_us.strTOT_NGHIEP_TAI = dataRow["TOT_NGHIEP_TAI"].ToString();
-            v_us.strTRINH_DO_VAN_HOA = dataRow["TRINH_DO_VAN_HOA"].ToString();
+            v_us.strTRINH_DO_VAN_HOA = find_id_cm_dm_tu_dien_by_trinh_do_van_hoa(dataRow["TRINH_DO_VAN_HOA"].ToString());
             v_us.Insert();
         }
 
@@ -147,7 +147,7 @@ namespace BKI_DichVuMatDat
             DS_DM_NHAN_VIEN v_ds_nhan_vien = new DS_DM_NHAN_VIEN();
             v_us.FillDataset(v_ds_nhan_vien, " where MA_NV= '" + dataRow["MA_NV"].ToString() + "'");
             //v_usdc.FillDatasetWithQuery(v_ds_nhan_vien, "select * from DM_NHAN_VIEN where MA_NV=" + dataRow["MA_NV"].ToString());
-            if(v_ds_nhan_vien.Tables[0].Rows.Count > 0)
+            if (v_ds_nhan_vien.Tables[0].Rows.Count > 0)
                 return false;
             else
             {
@@ -161,6 +161,26 @@ namespace BKI_DichVuMatDat
                 return true;
             else
                 return false;
+        }
+
+        private string find_id_cm_dm_tu_dien_by_trinh_do_van_hoa(string ip_str_trinh_do_van_hoa)
+        {
+            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
+
+            v_us.FillDataset(v_ds);
+
+            string v_str_filter = "TEN = '" + ip_str_trinh_do_van_hoa + "'";
+            DataRow[] v_dr = v_ds.CM_DM_TU_DIEN.Select(v_str_filter);
+
+            if (v_dr.Count() == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return v_dr.First()["ID"].ToString();
+            }
         }
 
         #endregion

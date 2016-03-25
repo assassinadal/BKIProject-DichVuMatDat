@@ -44,17 +44,17 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_txt_ghi_chu = new System.Windows.Forms.TextBox();
             this.m_txt_so_tien = new System.Windows.Forms.TextBox();
-            this.m_dat_ngay_ket_thuc = new System.Windows.Forms.DateTimePicker();
             this.m_dat_ngay_bat_dau = new System.Windows.Forms.DateTimePicker();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.m_dat_ngay_ket_thuc = new System.Windows.Forms.DateTimePicker();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -63,12 +63,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // m_lbl_header
@@ -116,10 +116,10 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.m_dat_ngay_ket_thuc);
             this.layoutControl1.Controls.Add(this.m_sle_chon_nhan_vien);
             this.layoutControl1.Controls.Add(this.m_txt_ghi_chu);
             this.layoutControl1.Controls.Add(this.m_txt_so_tien);
-            this.layoutControl1.Controls.Add(this.m_dat_ngay_ket_thuc);
             this.layoutControl1.Controls.Add(this.m_dat_ngay_bat_dau);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 40);
@@ -218,20 +218,13 @@
             this.m_txt_so_tien.Size = new System.Drawing.Size(178, 20);
             this.m_txt_so_tien.TabIndex = 6;
             // 
-            // m_dat_ngay_ket_thuc
-            // 
-            this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(90, 60);
-            this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
-            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(289, 20);
-            this.m_dat_ngay_ket_thuc.TabIndex = 6;
-            // 
             // m_dat_ngay_bat_dau
             // 
+            this.m_dat_ngay_bat_dau.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_bat_dau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_bat_dau.Location = new System.Drawing.Point(461, 60);
+            this.m_dat_ngay_bat_dau.Location = new System.Drawing.Point(90, 60);
             this.m_dat_ngay_bat_dau.Name = "m_dat_ngay_bat_dau";
-            this.m_dat_ngay_bat_dau.Size = new System.Drawing.Size(264, 20);
+            this.m_dat_ngay_bat_dau.Size = new System.Drawing.Size(276, 20);
             this.m_dat_ngay_bat_dau.TabIndex = 6;
             // 
             // layoutControlGroup1
@@ -242,12 +235,12 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem2,
             this.layoutControlItem3,
-            this.layoutControlItem5,
             this.layoutControlItem6,
             this.layoutControlItem1,
             this.emptySpaceItem3,
             this.emptySpaceItem1,
-            this.simpleLabelItem1});
+            this.simpleLabelItem1,
+            this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(737, 256);
@@ -266,23 +259,13 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.m_dat_ngay_ket_thuc;
+            this.layoutControlItem3.Control = this.m_dat_ngay_bat_dau;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(371, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(358, 24);
             this.layoutControlItem3.Text = "Ngày bắt đầu";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(75, 13);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.m_dat_ngay_bat_dau;
-            this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
-            this.layoutControlItem5.Location = new System.Drawing.Point(371, 48);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(346, 24);
-            this.layoutControlItem5.Text = "Ngày kết thúc";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(75, 13);
             // 
             // layoutControlItem6
             // 
@@ -334,6 +317,26 @@
             this.simpleLabelItem1.Text = "VND";
             this.simpleLabelItem1.TextSize = new System.Drawing.Size(75, 13);
             // 
+            // m_dat_ngay_ket_thuc
+            // 
+            this.m_dat_ngay_ket_thuc.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(448, 60);
+            this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
+            this.m_dat_ngay_ket_thuc.ShowCheckBox = true;
+            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(277, 20);
+            this.m_dat_ngay_ket_thuc.TabIndex = 11;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.m_dat_ngay_ket_thuc;
+            this.layoutControlItem4.CustomizationFormText = "Ngày kết thúc";
+            this.layoutControlItem4.Location = new System.Drawing.Point(358, 48);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(359, 24);
+            this.layoutControlItem4.Text = "Ngày kết thúc";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(75, 13);
+            // 
             // f364_quan_ly_cac_nhan_vien_co_luong_cung_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,12 +355,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -379,16 +382,16 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private System.Windows.Forms.TextBox m_txt_so_tien;
-        private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc;
-        private System.Windows.Forms.TextBox m_txt_ghi_chu;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_bat_dau;
+        private System.Windows.Forms.TextBox m_txt_ghi_chu;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
+        private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

@@ -172,6 +172,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_txt_chon_nam.Text = m_nam_goi_y;
             m_txt_chon_thang.Text = m_thang_goi_y;
             m_txt_ly_do.Text = "";
+            m_sle_chon_nhan_vien.EditValue = null;
         }
 
         private void save_data()
@@ -286,6 +287,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 if (m_sle_chon_nhan_vien.EditValue == null | m_sle_chon_nhan_vien.EditValue == "")
                 {
                     clear_data_in_form();
+                    return;
                 }
                 else
                 {

@@ -245,6 +245,8 @@
             this.STT.FieldName = "STT";
             this.STT.Name = "STT";
             this.STT.OptionsColumn.AllowEdit = false;
+            this.STT.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "STT", "SL: {0}")});
             this.STT.Visible = true;
             this.STT.VisibleIndex = 0;
             this.STT.Width = 38;

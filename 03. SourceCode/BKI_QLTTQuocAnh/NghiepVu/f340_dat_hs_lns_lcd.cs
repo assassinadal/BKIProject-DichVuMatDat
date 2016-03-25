@@ -53,6 +53,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             FormatControl.SetVisibleSimpleButton(this);
             this.m_grv_hs_lns.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
             this.m_grv_hs_lns.OptionsPrint.AutoWidth = false;
+            splitContainerControl1.SplitterPosition = splitContainerControl1.Width / 2;
             set_define_events();
             this.KeyPreview = true;
         }
@@ -66,6 +67,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             load_data_2_sle_chuc_danh_lcd();
             load_data_2_sle_muc_lcd();
             load_data_2_sle_chon_ly_do_chinh_sua_so_tien_lcd();
+            //            
+            m_dat_ngay_ket_thuc_lcd.Checked = m_dat_ngay_ket_thuc_lns.Checked = false;
         }
 
         //load data 2 all control
@@ -240,6 +243,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.FillDataset(v_ds, "WHERE ID = " + ip_dc_id_nhan_vien);
 
             m_grc_f340_hs_lns.DataSource = v_ds.Tables[0];
+            m_grv_hs_lns.BestFitColumns();
         }
 
         private void load_data_2_grc_lcd(decimal ip_dc_id_nhan_vien)
@@ -251,6 +255,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.FillDataset(v_ds, "WHERE ID = " + ip_dc_id_nhan_vien);
 
             m_grc_f340_lcd.DataSource = v_ds.Tables[0];
+            m_grv_lcd.BestFitColumns();
         }
 
         private decimal find_hs_lns(decimal ip_dc_id_ma_lns, decimal ip_dc_id_muc_lns)
@@ -620,7 +625,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             ip_us.dcHE_SO = CIPConvert.ToDecimal(m_txt_hs_lns.Text.Trim()); ;
             ip_us.dcID_LY_DO_CHINH_SUA = CIPConvert.ToDecimal(m_sle_chon_ly_do_chinh_sua_hs_lns.EditValue);
             ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau_lns.Value.Date;
-            ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lns.Value.Date;
+            if (m_dat_ngay_ket_thuc_lns.Checked == false)
+            {
+                ip_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau_lns.Value.AddYears(45);
+            }
+            else
+            {
+                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lns.Value.Date;
+            }
             ip_us.strGHI_CHU = m_txt_ghi_chu_hs_lns.Text;
             ip_us.strDA_XOA = "N";
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
@@ -644,7 +656,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             ip_us.dcSO_TIEN = CIPConvert.ToDecimal(m_txt_so_tien_lcd.Text.Trim()); ;
             ip_us.dcID_LY_DO_CHINH_SUA = CIPConvert.ToDecimal(m_sle_chon_ly_do_chinh_sua_so_tien_lcd.EditValue);
             ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau_lcd.Value.Date;
-            ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lcd.Value.Date;
+            if (m_dat_ngay_ket_thuc_lcd.Checked == false)
+            {
+                ip_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau_lcd.Value.AddYears(45);
+            }
+            else
+            {
+                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lcd.Value.Date;
+            }            
             ip_us.strGHI_CHU = m_txt_ghi_chu_lcd.Text;
             ip_us.strDA_XOA = "N";
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
@@ -822,6 +841,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chuc_danh_lns.EditValue = null;
             m_sle_muc_lns.EditValue = null;
             m_sle_chon_ly_do_chinh_sua_hs_lns.EditValue = null;
+            m_txt_hs_lns.Text = "";
             m_txt_ghi_chu_hs_lns.Text = "";
             m_dat_ngay_bat_dau_lns.Value = DateTime.Now.Date;
             m_dat_ngay_ket_thuc_lns.Value = DateTime.Now.Date;
@@ -831,12 +851,42 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chuc_danh_lcd.EditValue = null;
             m_sle_muc_lcd.EditValue = null;
             m_sle_chon_ly_do_chinh_sua_so_tien_lcd.EditValue = null;
+            m_txt_so_tien_lcd.Text = "";
             m_txt_ghi_chu_lcd.Text = "";
             m_dat_ngay_bat_dau_lcd.Value = DateTime.Now.Date;
             m_dat_ngay_ket_thuc_lcd.Value = DateTime.Now.Date;
             DS_V_F340_DAT_LCD v_ds_gd_lcd = new DS_V_F340_DAT_LCD();
             m_grc_f340_lcd.DataSource = v_ds_gd_lns.Tables[0];
         }
+
+        private void clear_data_hs_lns_in_form()
+        {
+            //lns
+            m_sle_chuc_danh_lns.EditValue = null;
+            m_sle_muc_lns.EditValue = null;
+            m_sle_chon_ly_do_chinh_sua_hs_lns.EditValue = null;
+            m_txt_hs_lns.Text = "";
+            m_txt_ghi_chu_hs_lns.Text = "";
+            m_dat_ngay_bat_dau_lns.Value = DateTime.Now.Date;
+            m_dat_ngay_ket_thuc_lns.Value = DateTime.Now.Date;
+            DS_V_F340_DAT_HS_LNS v_ds_gd_lns = new DS_V_F340_DAT_HS_LNS();
+            m_grc_f340_hs_lns.DataSource = v_ds_gd_lns.Tables[0];
+        }
+
+        private void clear_data_lcd_in_form()
+        {
+            //lcd
+            m_sle_chuc_danh_lcd.EditValue = null;
+            m_sle_muc_lcd.EditValue = null;
+            m_sle_chon_ly_do_chinh_sua_so_tien_lcd.EditValue = null;
+            m_txt_so_tien_lcd.Text = "";
+            m_txt_ghi_chu_lcd.Text = "";
+            m_dat_ngay_bat_dau_lcd.Value = DateTime.Now.Date;
+            m_dat_ngay_ket_thuc_lcd.Value = DateTime.Now.Date;
+            DS_V_F340_DAT_LCD v_ds_gd_lcd = new DS_V_F340_DAT_LCD();
+            m_grc_f340_lcd.DataSource = v_ds_gd_lcd.Tables[0];
+        }
+
 
         #endregion
 
@@ -885,12 +935,14 @@ namespace BKI_DichVuMatDat.NghiepVu
                             if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn điều chỉnh hệ số LNS như trên?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 save_data_hs_lns();
+                                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                             }
                             break;
                         case DataEntryFormMode.UpdateDataState:
                             if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn cập nhật hệ số LNS như trên?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 save_data_hs_lns();
+                                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                             }
                             break;
                         default:
@@ -923,12 +975,14 @@ namespace BKI_DichVuMatDat.NghiepVu
                             if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn điều chỉnh LCĐ như trên?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 save_data_lcd();
+                                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                             }
                             break;
                         case DataEntryFormMode.UpdateDataState:
                             if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có chắc chắn muốn cập nhật LCĐ như trên?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 save_data_lcd();
+                                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                             }
                             break;
                         default:
@@ -963,19 +1017,41 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
                 {
-                    return;
-                }
-                if (m_id_loai_hop_dong != CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
-                {
-                    load_data_2_m_variable();
-                    load_data_2_grc_hs_lns(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
-                    load_data_2_grc_lcd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
-                    load_data_hs_lns_lcd_now_2_form();
+                    m_insert_click = -1;
+                    clear_data_in_form();
+                    m_insert_click = 0;
                 }
                 else
                 {
-                    m_grc_f340_hs_lns.Enabled = false;
-                    m_grc_f340_lcd.Enabled = false;
+                    m_id_gd_hd = find_id_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                    if (m_id_gd_hd != -1)
+                    {
+                        m_id_loai_hop_dong = find_id_loai_hop_dong_cua_nhan_vien(m_id_gd_hd);
+                        if (m_id_loai_hop_dong != CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
+                        {
+                            load_data_2_m_variable();
+                            load_data_2_grc_hs_lns(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                            load_data_2_grc_lcd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                            load_data_hs_lns_lcd_now_2_form();
+                        }
+                        else
+                        {
+                            CHRM_BaseMessages.MsgBox_Infor("Nhân viên có hợp đồng học việc. Ko có lương chế độ, lương năng suất");
+                            m_insert_click = -1;
+                            clear_data_in_form();
+                            m_insert_click = 0;
+                        }
+                    }
+                    else
+                    {
+                        CHRM_BaseMessages.MsgBox_Infor("Nhân viên chưa có hợp đồng hoặc đã hết hạn hợp đồng!");
+                        load_data_2_grc_hs_lns(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                        load_data_2_grc_lcd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                        m_insert_click = -1;
+                        clear_data_hs_lns_in_form();
+                        clear_data_lcd_in_form();
+                        m_insert_click = 0;
+                    }
                 }
             }
             catch (Exception v_e)

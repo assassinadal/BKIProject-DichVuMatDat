@@ -888,8 +888,8 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                //f340_dat_hs_lns_lcd v_frm = new f340_dat_hs_lns_lcd();
-                f341_dat_he_so_lns_lcd_v2 v_frm = new f341_dat_he_so_lns_lcd_v2();
+                f340_dat_hs_lns_lcd v_frm = new f340_dat_hs_lns_lcd();
+                //f341_dat_he_so_lns_lcd_v2 v_frm = new f341_dat_he_so_lns_lcd_v2();
                 if(IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;

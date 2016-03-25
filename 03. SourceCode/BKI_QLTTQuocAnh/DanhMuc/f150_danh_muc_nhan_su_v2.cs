@@ -43,7 +43,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         public void DisplayForUpdate(US_DM_NHAN_VIEN v_us)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
-            m_txt_nguoi_bao_lanh.Enabled = false;
+            layoutControlItem16.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             m_us = v_us;
             us_to_form(v_us);
             this.ShowDialog();

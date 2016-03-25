@@ -1206,10 +1206,14 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                F150_dm_nhan_vien v_frm = new F150_dm_nhan_vien();
-                if(IsExistFormName(v_frm)) return;
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                //F150_dm_nhan_vien v_frm = new F150_dm_nhan_vien();
+                //if(IsExistFormName(v_frm)) return;
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
+                F153_dm_nguoi_bao_lanh v_f = new F153_dm_nguoi_bao_lanh();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
             }
             catch(Exception v_e)
             {

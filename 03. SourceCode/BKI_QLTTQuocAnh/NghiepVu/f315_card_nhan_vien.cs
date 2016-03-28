@@ -31,12 +31,13 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void m_cmd_xuat_pdf_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "xls files (*.pdf)|*.pdf|All files (*.*)|*.*";
+            saveFileDialog1.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
             saveFileDialog1.RestoreDirectory = true;
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                layoutView1.ExportToPdf(saveFileDialog1.FileName);
-                DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
+                layoutView1.ShowPrintPreview();
+                //layoutView1.ExportToPdf(saveFileDialog1.FileName);
+                //DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
             }
         }
     }

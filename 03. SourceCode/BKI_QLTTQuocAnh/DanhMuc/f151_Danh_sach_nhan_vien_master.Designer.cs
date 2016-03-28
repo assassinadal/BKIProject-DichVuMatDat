@@ -149,9 +149,17 @@
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
             this.m_grv.OptionsBehavior.ReadOnly = true;
+            this.m_grv.OptionsView.ColumnAutoWidth = false;
+            this.m_grv.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.m_grv.OptionsView.ShowFooter = true;
+            this.m_grv.OptionsView.ShowGroupPanel = false;
             // 
             // colID
             // 
+            this.colID.AppearanceHeader.Options.UseTextOptions = true;
+            this.colID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colID.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colID.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colID.FieldName = "ID";
             this.colID.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.colID.MaxWidth = 100;
@@ -161,32 +169,42 @@
             // 
             // colMA_TRA_CUU
             // 
+            this.colMA_TRA_CUU.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMA_TRA_CUU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMA_TRA_CUU.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colMA_TRA_CUU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colMA_TRA_CUU.Caption = "Mã tra cứu";
             this.colMA_TRA_CUU.FieldName = "MA_TRA_CUU";
             this.colMA_TRA_CUU.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.colMA_TRA_CUU.MaxWidth = 100;
             this.colMA_TRA_CUU.MinWidth = 100;
             this.colMA_TRA_CUU.Name = "colMA_TRA_CUU";
-            this.colMA_TRA_CUU.OptionsColumn.AllowEdit = false;
             this.colMA_TRA_CUU.Visible = true;
             this.colMA_TRA_CUU.VisibleIndex = 0;
             this.colMA_TRA_CUU.Width = 100;
             // 
             // colMA_NV
             // 
+            this.colMA_NV.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMA_NV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMA_NV.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colMA_NV.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colMA_NV.Caption = "Mã nhân viên";
             this.colMA_NV.FieldName = "MA_NV";
             this.colMA_NV.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.colMA_NV.MaxWidth = 100;
             this.colMA_NV.MinWidth = 100;
             this.colMA_NV.Name = "colMA_NV";
-            this.colMA_NV.OptionsColumn.AllowEdit = false;
             this.colMA_NV.Visible = true;
             this.colMA_NV.VisibleIndex = 1;
             this.colMA_NV.Width = 100;
             // 
             // colHO_DEM
             // 
+            this.colHO_DEM.AppearanceHeader.Options.UseTextOptions = true;
+            this.colHO_DEM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colHO_DEM.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colHO_DEM.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colHO_DEM.Caption = "Họ đệm";
             this.colHO_DEM.FieldName = "HO_DEM";
             this.colHO_DEM.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
@@ -200,6 +218,10 @@
             // 
             // colTEN
             // 
+            this.colTEN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTEN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colTEN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colTEN.Caption = "Tên";
             this.colTEN.FieldName = "TEN";
             this.colTEN.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
@@ -213,6 +235,10 @@
             // 
             // colGT
             // 
+            this.colGT.AppearanceHeader.Options.UseTextOptions = true;
+            this.colGT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colGT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colGT.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colGT.Caption = "Giới tính";
             this.colGT.FieldName = "GT";
             this.colGT.MaxWidth = 100;
@@ -226,6 +252,10 @@
             // 
             // colEMAIL
             // 
+            this.colEMAIL.AppearanceHeader.Options.UseTextOptions = true;
+            this.colEMAIL.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colEMAIL.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colEMAIL.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colEMAIL.Caption = "Email";
             this.colEMAIL.FieldName = "EMAIL";
             this.colEMAIL.MaxWidth = 100;
@@ -238,6 +268,10 @@
             // 
             // colSDT
             // 
+            this.colSDT.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSDT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSDT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colSDT.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colSDT.Caption = "Số điện thoại";
             this.colSDT.FieldName = "SDT";
             this.colSDT.MaxWidth = 100;
@@ -250,6 +284,10 @@
             // 
             // colSO_TAI_KHOAN
             // 
+            this.colSO_TAI_KHOAN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSO_TAI_KHOAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSO_TAI_KHOAN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colSO_TAI_KHOAN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colSO_TAI_KHOAN.Caption = "Số tài khoản";
             this.colSO_TAI_KHOAN.FieldName = "SO_TAI_KHOAN";
             this.colSO_TAI_KHOAN.MaxWidth = 100;
@@ -262,6 +300,10 @@
             // 
             // colNGAN_HANG
             // 
+            this.colNGAN_HANG.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNGAN_HANG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNGAN_HANG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colNGAN_HANG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAN_HANG.Caption = "Ngân hàng";
             this.colNGAN_HANG.FieldName = "NGAN_HANG";
             this.colNGAN_HANG.MaxWidth = 100;
@@ -274,6 +316,10 @@
             // 
             // colNGAY_CAP_THE
             // 
+            this.colNGAY_CAP_THE.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNGAY_CAP_THE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNGAY_CAP_THE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colNGAY_CAP_THE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAY_CAP_THE.Caption = "Ngày cấp thẻ";
             this.colNGAY_CAP_THE.FieldName = "NGAY_CAP_THE";
             this.colNGAY_CAP_THE.MaxWidth = 100;
@@ -286,6 +332,10 @@
             // 
             // colNGAY_HET_HAN_THE
             // 
+            this.colNGAY_HET_HAN_THE.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNGAY_HET_HAN_THE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNGAY_HET_HAN_THE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colNGAY_HET_HAN_THE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAY_HET_HAN_THE.Caption = "Hết hạn thẻ";
             this.colNGAY_HET_HAN_THE.FieldName = "NGAY_HET_HAN_THE";
             this.colNGAY_HET_HAN_THE.MaxWidth = 100;
@@ -298,6 +348,10 @@
             // 
             // colNGAY_SINH
             // 
+            this.colNGAY_SINH.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNGAY_SINH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNGAY_SINH.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colNGAY_SINH.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAY_SINH.Caption = "Ngày sinh";
             this.colNGAY_SINH.FieldName = "NGAY_SINH";
             this.colNGAY_SINH.MaxWidth = 100;
@@ -310,6 +364,10 @@
             // 
             // colHON_NHAN
             // 
+            this.colHON_NHAN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colHON_NHAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colHON_NHAN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colHON_NHAN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colHON_NHAN.Caption = "Hôn nhân";
             this.colHON_NHAN.FieldName = "HON_NHAN";
             this.colHON_NHAN.MaxWidth = 100;
@@ -322,6 +380,10 @@
             // 
             // colSO_CMT
             // 
+            this.colSO_CMT.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSO_CMT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSO_CMT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colSO_CMT.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colSO_CMT.Caption = "Số CMT";
             this.colSO_CMT.FieldName = "SO_CMT";
             this.colSO_CMT.MaxWidth = 100;
@@ -334,6 +396,10 @@
             // 
             // colNGAY_CAP
             // 
+            this.colNGAY_CAP.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNGAY_CAP.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNGAY_CAP.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colNGAY_CAP.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAY_CAP.Caption = "Ngày cấp";
             this.colNGAY_CAP.FieldName = "NGAY_CAP";
             this.colNGAY_CAP.MaxWidth = 100;
@@ -346,6 +412,10 @@
             // 
             // colNOI_CAP
             // 
+            this.colNOI_CAP.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNOI_CAP.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNOI_CAP.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colNOI_CAP.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNOI_CAP.Caption = "Nơi cấp";
             this.colNOI_CAP.FieldName = "NOI_CAP";
             this.colNOI_CAP.MaxWidth = 100;
@@ -358,6 +428,10 @@
             // 
             // colQUOC_TICH
             // 
+            this.colQUOC_TICH.AppearanceHeader.Options.UseTextOptions = true;
+            this.colQUOC_TICH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colQUOC_TICH.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colQUOC_TICH.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colQUOC_TICH.Caption = "Quốc tịch";
             this.colQUOC_TICH.FieldName = "QUOC_TICH";
             this.colQUOC_TICH.MaxWidth = 100;
@@ -370,6 +444,10 @@
             // 
             // colDAN_TOC
             // 
+            this.colDAN_TOC.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDAN_TOC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDAN_TOC.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDAN_TOC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colDAN_TOC.Caption = "Dân tộc";
             this.colDAN_TOC.FieldName = "DAN_TOC";
             this.colDAN_TOC.MaxWidth = 100;
@@ -382,6 +460,10 @@
             // 
             // colTON_GIAO
             // 
+            this.colTON_GIAO.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTON_GIAO.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTON_GIAO.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colTON_GIAO.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colTON_GIAO.Caption = "Tôn giáo";
             this.colTON_GIAO.FieldName = "TON_GIAO";
             this.colTON_GIAO.MaxWidth = 100;
@@ -394,6 +476,10 @@
             // 
             // colNOI_SINH
             // 
+            this.colNOI_SINH.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNOI_SINH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNOI_SINH.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colNOI_SINH.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNOI_SINH.Caption = "Nơi sinh";
             this.colNOI_SINH.FieldName = "NOI_SINH";
             this.colNOI_SINH.MaxWidth = 100;
@@ -406,6 +492,10 @@
             // 
             // colQUE_QUAN
             // 
+            this.colQUE_QUAN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colQUE_QUAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colQUE_QUAN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colQUE_QUAN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colQUE_QUAN.Caption = "Quê quán";
             this.colQUE_QUAN.FieldName = "QUE_QUAN";
             this.colQUE_QUAN.MaxWidth = 100;
@@ -418,6 +508,10 @@
             // 
             // colDIA_CHI_THUONG_TRU
             // 
+            this.colDIA_CHI_THUONG_TRU.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDIA_CHI_THUONG_TRU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDIA_CHI_THUONG_TRU.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDIA_CHI_THUONG_TRU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colDIA_CHI_THUONG_TRU.Caption = "Địa chỉ thường trú";
             this.colDIA_CHI_THUONG_TRU.FieldName = "DIA_CHI_THUONG_TRU";
             this.colDIA_CHI_THUONG_TRU.MaxWidth = 100;
@@ -430,6 +524,10 @@
             // 
             // colDIA_CHI_TAM_TRU
             // 
+            this.colDIA_CHI_TAM_TRU.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDIA_CHI_TAM_TRU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDIA_CHI_TAM_TRU.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDIA_CHI_TAM_TRU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colDIA_CHI_TAM_TRU.Caption = "Địa chỉ tạm trú";
             this.colDIA_CHI_TAM_TRU.FieldName = "DIA_CHI_TAM_TRU";
             this.colDIA_CHI_TAM_TRU.MaxWidth = 100;
@@ -442,6 +540,10 @@
             // 
             // colDIA_CHI_LIEN_LAC
             // 
+            this.colDIA_CHI_LIEN_LAC.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDIA_CHI_LIEN_LAC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDIA_CHI_LIEN_LAC.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDIA_CHI_LIEN_LAC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colDIA_CHI_LIEN_LAC.Caption = "Địa chỉ liên lạc";
             this.colDIA_CHI_LIEN_LAC.FieldName = "DIA_CHI_LIEN_LAC";
             this.colDIA_CHI_LIEN_LAC.MaxWidth = 100;
@@ -454,6 +556,10 @@
             // 
             // colMA_SO_THUE_CA_NHAN
             // 
+            this.colMA_SO_THUE_CA_NHAN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMA_SO_THUE_CA_NHAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMA_SO_THUE_CA_NHAN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colMA_SO_THUE_CA_NHAN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colMA_SO_THUE_CA_NHAN.Caption = "Số thuế cá nhân";
             this.colMA_SO_THUE_CA_NHAN.FieldName = "MA_SO_THUE_CA_NHAN";
             this.colMA_SO_THUE_CA_NHAN.MaxWidth = 100;
@@ -466,6 +572,10 @@
             // 
             // colCHUYEN_MON
             // 
+            this.colCHUYEN_MON.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCHUYEN_MON.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCHUYEN_MON.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCHUYEN_MON.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colCHUYEN_MON.Caption = "Chuyên môn";
             this.colCHUYEN_MON.FieldName = "CHUYEN_MON";
             this.colCHUYEN_MON.MaxWidth = 100;
@@ -478,6 +588,10 @@
             // 
             // colTRINH_DO_VAN_HOA
             // 
+            this.colTRINH_DO_VAN_HOA.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTRINH_DO_VAN_HOA.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTRINH_DO_VAN_HOA.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colTRINH_DO_VAN_HOA.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colTRINH_DO_VAN_HOA.Caption = "Trình độ văn hóa";
             this.colTRINH_DO_VAN_HOA.FieldName = "TRINH_DO_VAN_HOA";
             this.colTRINH_DO_VAN_HOA.MaxWidth = 100;
@@ -490,6 +604,10 @@
             // 
             // colNAM_TOT_NGHIEP
             // 
+            this.colNAM_TOT_NGHIEP.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNAM_TOT_NGHIEP.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNAM_TOT_NGHIEP.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colNAM_TOT_NGHIEP.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNAM_TOT_NGHIEP.Caption = "Năm tốt nghiệp";
             this.colNAM_TOT_NGHIEP.FieldName = "NAM_TOT_NGHIEP";
             this.colNAM_TOT_NGHIEP.MaxWidth = 100;
@@ -502,6 +620,10 @@
             // 
             // colTOT_NGHIEP_TAI
             // 
+            this.colTOT_NGHIEP_TAI.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTOT_NGHIEP_TAI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTOT_NGHIEP_TAI.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colTOT_NGHIEP_TAI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colTOT_NGHIEP_TAI.Caption = "Tốt nghiệp tại";
             this.colTOT_NGHIEP_TAI.FieldName = "TOT_NGHIEP_TAI";
             this.colTOT_NGHIEP_TAI.MaxWidth = 100;
@@ -514,6 +636,10 @@
             // 
             // colNGAY_VAO_HANG_KHONG
             // 
+            this.colNGAY_VAO_HANG_KHONG.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNGAY_VAO_HANG_KHONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNGAY_VAO_HANG_KHONG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colNGAY_VAO_HANG_KHONG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAY_VAO_HANG_KHONG.Caption = "Ngày vào hàng không";
             this.colNGAY_VAO_HANG_KHONG.FieldName = "NGAY_VAO_HANG_KHONG";
             this.colNGAY_VAO_HANG_KHONG.MaxWidth = 100;
@@ -526,6 +652,10 @@
             // 
             // colNGAY_TIEP_NHAN_VAO_TCT
             // 
+            this.colNGAY_TIEP_NHAN_VAO_TCT.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNGAY_TIEP_NHAN_VAO_TCT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNGAY_TIEP_NHAN_VAO_TCT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colNGAY_TIEP_NHAN_VAO_TCT.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAY_TIEP_NHAN_VAO_TCT.Caption = "Ngày tiếp nhận vào tổng công ty";
             this.colNGAY_TIEP_NHAN_VAO_TCT.FieldName = "NGAY_TIEP_NHAN_VAO_TCT";
             this.colNGAY_TIEP_NHAN_VAO_TCT.MaxWidth = 100;
@@ -538,6 +668,10 @@
             // 
             // colNGAY_CHINH_THUC_TIEP_NHAN
             // 
+            this.colNGAY_CHINH_THUC_TIEP_NHAN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNGAY_CHINH_THUC_TIEP_NHAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNGAY_CHINH_THUC_TIEP_NHAN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colNGAY_CHINH_THUC_TIEP_NHAN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAY_CHINH_THUC_TIEP_NHAN.Caption = "Ngày chính thức tiếp nhận";
             this.colNGAY_CHINH_THUC_TIEP_NHAN.FieldName = "NGAY_CHINH_THUC_TIEP_NHAN";
             this.colNGAY_CHINH_THUC_TIEP_NHAN.MaxWidth = 100;
@@ -550,6 +684,10 @@
             // 
             // colNGUOI_BAO_LANH
             // 
+            this.colNGUOI_BAO_LANH.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNGUOI_BAO_LANH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNGUOI_BAO_LANH.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colNGUOI_BAO_LANH.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGUOI_BAO_LANH.Caption = "Người bảo lãnh";
             this.colNGUOI_BAO_LANH.FieldName = "NGUOI_BAO_LANH";
             this.colNGUOI_BAO_LANH.Name = "colNGUOI_BAO_LANH";
@@ -558,6 +696,10 @@
             // 
             // colHO_TEN
             // 
+            this.colHO_TEN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colHO_TEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colHO_TEN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colHO_TEN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colHO_TEN.FieldName = "HO_TEN";
             this.colHO_TEN.MaxWidth = 100;
             this.colHO_TEN.MinWidth = 100;
@@ -568,6 +710,10 @@
             // 
             // colTEN_DON_VI
             // 
+            this.colTEN_DON_VI.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTEN_DON_VI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTEN_DON_VI.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colTEN_DON_VI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colTEN_DON_VI.Caption = "Đơn vị";
             this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
             this.colTEN_DON_VI.MaxWidth = 100;
@@ -580,6 +726,10 @@
             // 
             // colCHUC_VU
             // 
+            this.colCHUC_VU.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCHUC_VU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCHUC_VU.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCHUC_VU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colCHUC_VU.Caption = "Chức vụ";
             this.colCHUC_VU.FieldName = "CHUC_VU";
             this.colCHUC_VU.MaxWidth = 100;

@@ -51,8 +51,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_BAO_CAO_THAM_SO_BANG_LUONG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_BT_DM_DON_VI_DE_LAM_BAO_CAO_DAC_TRUNG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_BT_DM_DON_VI_DE_LAM_BAO_CAO_DAC_TRUNG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_CM_DM_TU_DIEN.cs">
       <DependentUpon>DS_CM_DM_TU_DIEN.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DS_CM_DM_TU_DIEN.Designer.cs">
       <DependentUpon>DS_CM_DM_TU_DIEN.xsd</DependentUpon>
@@ -121,6 +127,7 @@
     </Compile>
     <Compile Include="DS_GD_CHAM_CONG.cs">
       <DependentUpon>DS_GD_CHAM_CONG.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DS_GD_CHAM_CONG.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -239,6 +246,7 @@
     </Compile>
     <Compile Include="DS_GD_TRANG_THAI_LAO_DONG.cs">
       <DependentUpon>DS_GD_TRANG_THAI_LAO_DONG.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DS_GD_TRANG_THAI_LAO_DONG.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -290,6 +298,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_RPT_LUONG_V2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_RPT_SO_LUONG_CHAT_LUONG_NHAN_VIEN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_RPT_SO_LUONG_CHAT_LUONG_NHAN_VIEN.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_RPT_THONG_TIN_TONG_HOP.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -332,6 +345,7 @@
     </Compile>
     <Compile Include="DS_V_DM_NHAN_VIEN.cs">
       <DependentUpon>DS_V_DM_NHAN_VIEN.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DS_V_DM_NHAN_VIEN.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -470,6 +484,7 @@
     </Compile>
     <Compile Include="DS_V_GD_QUY_TIEN_THUONG.cs">
       <DependentUpon>DS_V_GD_QUY_TIEN_THUONG.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DS_V_GD_QUY_TIEN_THUONG.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -528,6 +543,17 @@
     </None>
     <None Include="DS_BAO_CAO_THAM_SO_BANG_LUONG.xss">
       <DependentUpon>DS_BAO_CAO_THAM_SO_BANG_LUONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_BT_DM_DON_VI_DE_LAM_BAO_CAO_DAC_TRUNG.xsc">
+      <DependentUpon>DS_BT_DM_DON_VI_DE_LAM_BAO_CAO_DAC_TRUNG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_BT_DM_DON_VI_DE_LAM_BAO_CAO_DAC_TRUNG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_BT_DM_DON_VI_DE_LAM_BAO_CAO_DAC_TRUNG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_BT_DM_DON_VI_DE_LAM_BAO_CAO_DAC_TRUNG.xss">
+      <DependentUpon>DS_BT_DM_DON_VI_DE_LAM_BAO_CAO_DAC_TRUNG.xsd</DependentUpon>
     </None>
     <None Include="DS_CM_DM_TU_DIEN.xsc">
       <DependentUpon>DS_CM_DM_TU_DIEN.xsd</DependentUpon>
@@ -1034,6 +1060,17 @@
     </None>
     <None Include="DS_RPT_LUONG_V2.xss">
       <DependentUpon>DS_RPT_LUONG_V2.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_SO_LUONG_CHAT_LUONG_NHAN_VIEN.xsc">
+      <DependentUpon>DS_RPT_SO_LUONG_CHAT_LUONG_NHAN_VIEN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_SO_LUONG_CHAT_LUONG_NHAN_VIEN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_RPT_SO_LUONG_CHAT_LUONG_NHAN_VIEN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_RPT_SO_LUONG_CHAT_LUONG_NHAN_VIEN.xss">
+      <DependentUpon>DS_RPT_SO_LUONG_CHAT_LUONG_NHAN_VIEN.xsd</DependentUpon>
     </None>
     <None Include="DS_RPT_THONG_TIN_TONG_HOP.xsc">
       <DependentUpon>DS_RPT_THONG_TIN_TONG_HOP.xsd</DependentUpon>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f412_rpt_tong_hop_tt_v2));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -37,7 +38,7 @@
             this.m_lbl_so_luong_nv_tinh_luong = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
-            this.imageCollection = new DevExpress.Utils.ImageCollection();
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.m_cmd_chot_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_tinh_lai_nhan_vien = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_soan_thao_bang_luong = new DevExpress.XtraEditors.SimpleButton();
@@ -1672,6 +1673,7 @@
             this.colTHU_NHAP_CHIU_THUE.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(179)))), ((int)(((byte)(217)))));
             this.colTHU_NHAP_CHIU_THUE.AppearanceCell.Options.UseBackColor = true;
             this.colTHU_NHAP_CHIU_THUE.Caption = "Thu nhập chịu thuế";
+            this.colTHU_NHAP_CHIU_THUE.ColumnEdit = this.repositoryItemTextEditTien;
             this.colTHU_NHAP_CHIU_THUE.DisplayFormat.FormatString = "n0";
             this.colTHU_NHAP_CHIU_THUE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTHU_NHAP_CHIU_THUE.FieldName = "THU_NHAP_CHIU_THUE";
@@ -2442,7 +2444,7 @@
             this.gridBand52.AppearanceHeader.Options.UseTextOptions = true;
             this.gridBand52.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridBand52.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridBand52.Caption = "Đã nộp";
+            this.gridBand52.Caption = "Đã nộp thuế TNCN";
             this.gridBand52.Children.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.gridBand124});
             this.gridBand52.Name = "gridBand52";
@@ -2470,6 +2472,7 @@
             this.colSO_TIEN_DA_NOP_THUE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSO_TIEN_DA_NOP_THUE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colSO_TIEN_DA_NOP_THUE.Caption = "Đã nộp";
+            this.colSO_TIEN_DA_NOP_THUE.ColumnEdit = this.repositoryItemTextEditTien;
             this.colSO_TIEN_DA_NOP_THUE.DisplayFormat.FormatString = "n0";
             this.colSO_TIEN_DA_NOP_THUE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSO_TIEN_DA_NOP_THUE.FieldName = "SO_TIEN_DA_NOP_THUE";
@@ -2487,7 +2490,7 @@
             this.gridBand69.AppearanceHeader.Options.UseTextOptions = true;
             this.gridBand69.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridBand69.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridBand69.Caption = "Tổng phải nộp";
+            this.gridBand69.Caption = "Còn phải nộp";
             this.gridBand69.Children.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.gridBand17});
             this.gridBand69.Name = "gridBand69";
@@ -3562,6 +3565,7 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_chot_bang_luong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tinh_lai_nhan_vien;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTHU_NHAP_CHIU_THUE;
+        private DevExpress.XtraEditors.DateEdit m_dat_thang;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand68;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand134;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand MA_NV;
@@ -3701,6 +3705,5 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand130;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand127;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand128;
-        private DevExpress.XtraEditors.DateEdit m_dat_thang;
     }
 }

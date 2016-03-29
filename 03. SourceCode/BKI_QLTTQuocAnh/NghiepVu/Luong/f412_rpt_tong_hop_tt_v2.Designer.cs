@@ -3237,6 +3237,7 @@
             this.colLUONG_CHE_DO_THEO_CHUC_VU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colLUONG_CHE_DO_THEO_CHUC_VU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colLUONG_CHE_DO_THEO_CHUC_VU.Caption = "LCĐ";
+            this.colLUONG_CHE_DO_THEO_CHUC_VU.ColumnEdit = this.repositoryItemTextEditTien;
             this.colLUONG_CHE_DO_THEO_CHUC_VU.DisplayFormat.FormatString = "n0";
             this.colLUONG_CHE_DO_THEO_CHUC_VU.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colLUONG_CHE_DO_THEO_CHUC_VU.FieldName = "LUONG_CHE_DO_THEO_CHUC_VU";

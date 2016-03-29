@@ -1308,6 +1308,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string HS_ATHK = "HS_ATHK";
         public const string HS_BSL = "HS_BSL";
         public const string LE_TET_YN = "LE_TET_YN";
+        public const string TI_LE_HOP_DONG = "TI_LE_HOP_DONG";
     }
 
     public class RPT_THONG_TIN_TONG_HOP

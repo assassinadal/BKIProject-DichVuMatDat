@@ -384,9 +384,17 @@ namespace BKI_DichVuMatDat.NghiepVu.Luong
             v_us.strLOAI_LAO_DONG = v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.LOAI_LAO_DONG].ToString();
             v_us.dcNGAY_CONG_QUY_DINH = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.NGAY_CONG_QUY_DINH]);
 
-            v_us.dcHS_ATHK = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.HS_ATHK]);
-            v_us.dcHS_BSL = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.HS_BSL]);
+            v_us.dcHS_ATHK = Math.Round(Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.HS_ATHK]),3, MidpointRounding.AwayFromZero);
+            v_us.dcHS_BSL = Math.Round(Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.HS_BSL]), 3, MidpointRounding.AwayFromZero);
             v_us.dcLE_TET_YN = Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.LE_TET_YN]);
+            if(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.TI_LE_HOP_DONG] != DBNull.Value)
+            {
+                v_us.dcTI_LE_HOP_DONG = Math.Round(Convert.ToDecimal(v_dr_luong_1_nv[RPT_THONG_TIN_TONG_HOP_V2.TI_LE_HOP_DONG]), 3, MidpointRounding.AwayFromZero);
+            }
+            else
+            {
+                v_us.SetTI_LE_HOP_DONGNull();
+            }
             return v_us;
         }
 

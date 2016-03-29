@@ -639,6 +639,28 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["LE_TET_YN"] = System.Convert.DBNull;
         }
 
+        public decimal dcTI_LE_HOP_DONG
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "TI_LE_HOP_DONG", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["TI_LE_HOP_DONG"] = value;
+            }
+        }
+
+        public bool IsTI_LE_HOP_DONGNull()
+        {
+            return pm_objDR.IsNull("TI_LE_HOP_DONG");
+        }
+
+        public void SetTI_LE_HOP_DONGNull()
+        {
+            pm_objDR["TI_LE_HOP_DONG"] = System.Convert.DBNull;
+        }
+
         #endregion
 
         #region "Init Functions"

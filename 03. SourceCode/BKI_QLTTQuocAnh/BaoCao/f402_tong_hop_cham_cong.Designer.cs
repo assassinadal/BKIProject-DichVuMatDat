@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f402_tong_hop_cham_cong));
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition1 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition2 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition3 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition4 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition5 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_cmd_export_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_pv = new DevExpress.XtraPivotGrid.PivotGridControl();
             this.pivotGridField1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField2 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField3 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
@@ -51,17 +54,28 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.m_cmd_export_excel);
             this.panelControl1.Controls.Add(this.m_sle_chon_nhan_vien);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl1.Location = new System.Drawing.Point(0, 421);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(758, 24);
+            this.panelControl1.Size = new System.Drawing.Size(857, 48);
             this.panelControl1.TabIndex = 1;
+            // 
+            // m_cmd_export_excel
+            // 
+            this.m_cmd_export_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_export_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_export_excel.Image")));
+            this.m_cmd_export_excel.ImageIndex = 1;
+            this.m_cmd_export_excel.Location = new System.Drawing.Point(2, 2);
+            this.m_cmd_export_excel.Name = "m_cmd_export_excel";
+            this.m_cmd_export_excel.Size = new System.Drawing.Size(142, 44);
+            this.m_cmd_export_excel.TabIndex = 23;
+            this.m_cmd_export_excel.Text = "Trích xuất dữ liệu";
             // 
             // m_sle_chon_nhan_vien
             // 
-            this.m_sle_chon_nhan_vien.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(2, 2);
+            this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(28, 20);
             this.m_sle_chon_nhan_vien.Name = "m_sle_chon_nhan_vien";
             this.m_sle_chon_nhan_vien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_sle_chon_nhan_vien.Properties.Appearance.Options.UseFont = true;
@@ -84,13 +98,30 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "MÃ_NV";
+            this.gridColumn1.FieldName = "MA_NV";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "HỌ TÊN";
+            this.gridColumn2.FieldName = "HO_TEN";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
             // m_pv
             // 
             this.m_pv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_pv.Fields.AddRange(new DevExpress.XtraPivotGrid.PivotGridField[] {
             this.pivotGridField1,
             this.pivotGridField2,
-            this.pivotGridField3});
+            this.pivotGridField3,
+            this.pivotGridField4});
             pivotGridStyleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Silver;
             pivotGridStyleFormatCondition1.Appearance.Options.UseBackColor = true;
             pivotGridStyleFormatCondition1.ApplyToCustomTotalCell = false;
@@ -145,9 +176,9 @@
             pivotGridStyleFormatCondition3,
             pivotGridStyleFormatCondition4,
             pivotGridStyleFormatCondition5});
-            this.m_pv.Location = new System.Drawing.Point(0, 24);
+            this.m_pv.Location = new System.Drawing.Point(0, 0);
             this.m_pv.Name = "m_pv";
-            this.m_pv.Size = new System.Drawing.Size(758, 428);
+            this.m_pv.Size = new System.Drawing.Size(857, 421);
             this.m_pv.TabIndex = 2;
             // 
             // pivotGridField1
@@ -160,7 +191,7 @@
             this.pivotGridField1.Options.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.pivotGridField1.Options.ShowGrandTotal = false;
             this.pivotGridField1.SortMode = DevExpress.XtraPivotGrid.PivotSortMode.None;
-            this.pivotGridField1.Width = 150;
+            this.pivotGridField1.Width = 170;
             // 
             // pivotGridField2
             // 
@@ -185,31 +216,31 @@
             this.pivotGridField3.Options.ShowGrandTotal = false;
             this.pivotGridField3.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Max;
             // 
-            // gridColumn1
+            // pivotGridField4
             // 
-            this.gridColumn1.Caption = "MÃ_NV";
-            this.gridColumn1.FieldName = "MA_NV";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "HỌ TÊN";
-            this.gridColumn2.FieldName = "HO_TEN";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.pivotGridField4.Appearance.Cell.Options.UseTextOptions = true;
+            this.pivotGridField4.Appearance.Cell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.pivotGridField4.Appearance.Value.Options.UseTextOptions = true;
+            this.pivotGridField4.Appearance.Value.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.pivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.pivotGridField4.AreaIndex = 1;
+            this.pivotGridField4.Caption = "Số NC tiêu chuẩn";
+            this.pivotGridField4.FieldName = "SO_NGAY_CONG_TIEU_CHUAN";
+            this.pivotGridField4.Name = "pivotGridField4";
+            this.pivotGridField4.Options.ShowGrandTotal = false;
+            this.pivotGridField4.Width = 120;
             // 
             // f402_tong_hop_cham_cong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 452);
+            this.ClientSize = new System.Drawing.Size(857, 469);
             this.Controls.Add(this.m_pv);
             this.Controls.Add(this.panelControl1);
             this.Name = "f402_tong_hop_cham_cong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F402 - Tổng hợp chấm công";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).EndInit();
@@ -230,5 +261,7 @@
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField1;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField2;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField3;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField4;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_export_excel;
     }
 }

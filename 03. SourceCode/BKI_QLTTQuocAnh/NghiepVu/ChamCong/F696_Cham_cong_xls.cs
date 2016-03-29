@@ -51,14 +51,13 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Private Methods
         
         #region Tao file excel mau
-        private void tao_file_mau(string ip_str_file_name)
+        private void tao_file_mau(string ip_file_name)
         {
             m_grv.Columns.Clear();
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
             v_us.get_bang_cham_cong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
-
             DateTime v_dat_bat_dau = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1);
             DateTime v_dat_ket_thuc = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1).AddMonths(1);
 
@@ -73,20 +72,24 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_ds.Tables[0].Columns.Add(v_c_hsk);
             m_grc.DataSource = v_ds.Tables[0];
             format_gridview();
-            SaveXLSX(ip_str_file_name);
+            SaveXLSX(ip_file_name);
         }
 
-        private void SaveXLSX(string ip_str_file_name)
+        private void SaveXLSX(string ip_file_name)
         {
-            string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string newpath = targetPath + "\\" + "Chấm công tháng " + m_txt_thang.Text + "-" + m_txt_nam.Text + ".xls";
-            m_grv.ExportToXls(newpath);
-            DevExpress.XtraEditors.XtraMessageBox.Show("Đã lưu file mẫu tại " + newpath);
-            var process = new System.Diagnostics.Process();
-            process.StartInfo.FileName = newpath;
-            process.StartInfo.Verb = "Open";
-            process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
-            process.Start();
+            //string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string targetPath = WinFormControls.saveFileDialog(ip_file_name);
+            if (targetPath !="")
+            {
+                //string newpath = targetPath + "\\" + "Chấm công tháng " + m_txt_thang.Text + "-" + m_txt_nam.Text + ".xls";
+                m_grv.ExportToXls(targetPath);
+                XtraMessageBox.Show("Đã lưu file mẫu tại " + targetPath+".\nFile sẽ tự động mở ngay sau đây!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var process = new System.Diagnostics.Process();
+                process.StartInfo.FileName = targetPath;
+                process.StartInfo.Verb = "Open";
+                process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
+                process.Start();
+            }           
         }        
         #endregion
 
@@ -539,7 +542,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (int.Parse(m_txt_thang.Text)<=0 || int.Parse(m_txt_thang.Text)>12 || int.Parse(m_txt_nam.Text) <0)
                     XtraMessageBox.Show("Vui lòng nhập tháng và năm chấm công!","Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else tao_file_mau("ChamCong.xlsx");
+                else tao_file_mau("Chấm công tháng " + m_txt_thang.Text + "-" + m_txt_nam.Text + ".xls");
             }
             catch (Exception v_e)
             {

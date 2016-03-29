@@ -49,8 +49,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
@@ -93,7 +93,6 @@
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -323,7 +322,6 @@
             // 
             // m_pnl_out_place_dm
             // 
-            this.m_pnl_out_place_dm.Controls.Add(this.panel2);
             this.m_pnl_out_place_dm.Controls.Add(this.panel1);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 477);
@@ -332,14 +330,6 @@
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1005, 43);
             this.m_pnl_out_place_dm.TabIndex = 2;
             // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(4, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(350, 35);
-            this.panel2.TabIndex = 20;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.m_cmd_import_excel);
@@ -347,16 +337,26 @@
             this.panel1.Controls.Add(this.m_cmd_update);
             this.panel1.Controls.Add(this.m_cmd_delete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(538, 4);
+            this.panel1.Location = new System.Drawing.Point(527, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(463, 35);
+            this.panel1.Size = new System.Drawing.Size(474, 35);
             this.panel1.TabIndex = 17;
+            // 
+            // m_cmd_import_excel
+            // 
+            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_import_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_excel.Image")));
+            this.m_cmd_import_excel.Location = new System.Drawing.Point(8, 0);
+            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
+            this.m_cmd_import_excel.Size = new System.Drawing.Size(118, 35);
+            this.m_cmd_import_excel.TabIndex = 24;
+            this.m_cmd_import_excel.Text = "&Import Excel";
             // 
             // m_cmd_insert
             // 
             this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
-            this.m_cmd_insert.Location = new System.Drawing.Point(115, 0);
+            this.m_cmd_insert.Location = new System.Drawing.Point(126, 0);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_insert.TabIndex = 17;
@@ -366,7 +366,7 @@
             // 
             this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
-            this.m_cmd_update.Location = new System.Drawing.Point(231, 0);
+            this.m_cmd_update.Location = new System.Drawing.Point(242, 0);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_update.TabIndex = 16;
@@ -376,7 +376,7 @@
             // 
             this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
-            this.m_cmd_delete.Location = new System.Drawing.Point(347, 0);
+            this.m_cmd_delete.Location = new System.Drawing.Point(358, 0);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_delete.TabIndex = 15;
@@ -550,6 +550,8 @@
             // bandedGridColumn8
             // 
             this.bandedGridColumn8.Caption = "Quyển";
+            this.bandedGridColumn8.DisplayFormat.FormatString = "MM/yyyy";
+            this.bandedGridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.bandedGridColumn8.FieldName = "TTGKS_QUYEN";
             this.bandedGridColumn8.Name = "bandedGridColumn8";
             this.bandedGridColumn8.Visible = true;
@@ -600,7 +602,9 @@
             // 
             // bandedGridColumn13
             // 
-            this.bandedGridColumn13.Caption = "Từ ngày(*)";
+            this.bandedGridColumn13.Caption = "Từ tháng(*)";
+            this.bandedGridColumn13.DisplayFormat.FormatString = "MM/yyyy";
+            this.bandedGridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.bandedGridColumn13.FieldName = "TU_NGAY";
             this.bandedGridColumn13.Name = "bandedGridColumn13";
             this.bandedGridColumn13.Visible = true;
@@ -608,7 +612,9 @@
             // 
             // bandedGridColumn14
             // 
-            this.bandedGridColumn14.Caption = "Đến ngày";
+            this.bandedGridColumn14.Caption = "Đến tháng";
+            this.bandedGridColumn14.DisplayFormat.FormatString = "MM/yyyy";
+            this.bandedGridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.bandedGridColumn14.FieldName = "DEN_NGAY";
             this.bandedGridColumn14.Name = "bandedGridColumn14";
             this.bandedGridColumn14.Visible = true;
@@ -752,16 +758,6 @@
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 13;
             // 
-            // m_cmd_import_excel
-            // 
-            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_import_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_excel.Image")));
-            this.m_cmd_import_excel.Location = new System.Drawing.Point(-3, 0);
-            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
-            this.m_cmd_import_excel.Size = new System.Drawing.Size(118, 35);
-            this.m_cmd_import_excel.TabIndex = 24;
-            this.m_cmd_import_excel.Text = "&Import Excel";
-            // 
             // f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -810,7 +806,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
         private DevExpress.XtraEditors.SimpleButton m_cmd_update;
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
-        private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraGrid.GridControl m_grc;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView m_grv1;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;

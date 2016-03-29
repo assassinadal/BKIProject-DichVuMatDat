@@ -230,7 +230,7 @@
             this.gridBand4.Columns.Add(this.bandedGridColumn6);
             this.gridBand4.Name = "gridBand4";
             this.gridBand4.VisibleIndex = 1;
-            this.gridBand4.Width = 394;
+            this.gridBand4.Width = 339;
             // 
             // bandedGridColumn1
             // 
@@ -238,7 +238,7 @@
             this.bandedGridColumn1.FieldName = "HO_TEN_NGUOI_PHU_THUOC";
             this.bandedGridColumn1.Name = "bandedGridColumn1";
             this.bandedGridColumn1.Visible = true;
-            this.bandedGridColumn1.Width = 78;
+            this.bandedGridColumn1.Width = 66;
             // 
             // bandedGridColumn2
             // 
@@ -246,7 +246,7 @@
             this.bandedGridColumn2.FieldName = "NGAY_SINH";
             this.bandedGridColumn2.Name = "bandedGridColumn2";
             this.bandedGridColumn2.Visible = true;
-            this.bandedGridColumn2.Width = 50;
+            this.bandedGridColumn2.Width = 42;
             // 
             // bandedGridColumn3
             // 
@@ -254,7 +254,7 @@
             this.bandedGridColumn3.FieldName = "MA_SO_THUE";
             this.bandedGridColumn3.Name = "bandedGridColumn3";
             this.bandedGridColumn3.Visible = true;
-            this.bandedGridColumn3.Width = 65;
+            this.bandedGridColumn3.Width = 55;
             // 
             // bandedGridColumn4
             // 
@@ -262,7 +262,7 @@
             this.bandedGridColumn4.FieldName = "QUOC_TICH";
             this.bandedGridColumn4.Name = "bandedGridColumn4";
             this.bandedGridColumn4.Visible = true;
-            this.bandedGridColumn4.Width = 50;
+            this.bandedGridColumn4.Width = 42;
             // 
             // bandedGridColumn5
             // 
@@ -270,7 +270,7 @@
             this.bandedGridColumn5.FieldName = "SO_CMT_HO_CHIEU";
             this.bandedGridColumn5.Name = "bandedGridColumn5";
             this.bandedGridColumn5.Visible = true;
-            this.bandedGridColumn5.Width = 85;
+            this.bandedGridColumn5.Width = 72;
             // 
             // bandedGridColumn6
             // 
@@ -278,7 +278,7 @@
             this.bandedGridColumn6.FieldName = "QUAN_HE_VOI_NGUOI_NOP_THUE";
             this.bandedGridColumn6.Name = "bandedGridColumn6";
             this.bandedGridColumn6.Visible = true;
-            this.bandedGridColumn6.Width = 66;
+            this.bandedGridColumn6.Width = 62;
             // 
             // gridBand2
             // 
@@ -293,7 +293,7 @@
             this.gridBand2.Columns.Add(this.bandedGridColumn12);
             this.gridBand2.Name = "gridBand2";
             this.gridBand2.VisibleIndex = 2;
-            this.gridBand2.Width = 254;
+            this.gridBand2.Width = 246;
             // 
             // bandedGridColumn7
             // 
@@ -301,15 +301,17 @@
             this.bandedGridColumn7.FieldName = "TTGKS_SO";
             this.bandedGridColumn7.Name = "bandedGridColumn7";
             this.bandedGridColumn7.Visible = true;
-            this.bandedGridColumn7.Width = 37;
+            this.bandedGridColumn7.Width = 31;
             // 
             // bandedGridColumn8
             // 
             this.bandedGridColumn8.Caption = "Quyển";
+            this.bandedGridColumn8.DisplayFormat.FormatString = "MM/yyyy";
+            this.bandedGridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.bandedGridColumn8.FieldName = "TTGKS_QUYEN";
             this.bandedGridColumn8.Name = "bandedGridColumn8";
             this.bandedGridColumn8.Visible = true;
-            this.bandedGridColumn8.Width = 37;
+            this.bandedGridColumn8.Width = 59;
             // 
             // bandedGridColumn9
             // 
@@ -317,7 +319,7 @@
             this.bandedGridColumn9.FieldName = "TTGKS_QUOC_GIA";
             this.bandedGridColumn9.Name = "bandedGridColumn9";
             this.bandedGridColumn9.Visible = true;
-            this.bandedGridColumn9.Width = 37;
+            this.bandedGridColumn9.Width = 31;
             // 
             // bandedGridColumn10
             // 
@@ -325,7 +327,7 @@
             this.bandedGridColumn10.FieldName = "TTGKS_TINH_THANH";
             this.bandedGridColumn10.Name = "bandedGridColumn10";
             this.bandedGridColumn10.Visible = true;
-            this.bandedGridColumn10.Width = 37;
+            this.bandedGridColumn10.Width = 31;
             // 
             // bandedGridColumn11
             // 
@@ -333,7 +335,7 @@
             this.bandedGridColumn11.FieldName = "TTGKS_QUAN_HUYEN";
             this.bandedGridColumn11.Name = "bandedGridColumn11";
             this.bandedGridColumn11.Visible = true;
-            this.bandedGridColumn11.Width = 37;
+            this.bandedGridColumn11.Width = 31;
             // 
             // bandedGridColumn12
             // 
@@ -341,7 +343,7 @@
             this.bandedGridColumn12.FieldName = "TTGKS_PHUONG_XA";
             this.bandedGridColumn12.Name = "bandedGridColumn12";
             this.bandedGridColumn12.Visible = true;
-            this.bandedGridColumn12.Width = 69;
+            this.bandedGridColumn12.Width = 63;
             // 
             // gridBand3
             // 
@@ -352,23 +354,27 @@
             this.gridBand3.Columns.Add(this.bandedGridColumn14);
             this.gridBand3.Name = "gridBand3";
             this.gridBand3.VisibleIndex = 3;
-            this.gridBand3.Width = 93;
+            this.gridBand3.Width = 64;
             // 
             // bandedGridColumn13
             // 
-            this.bandedGridColumn13.Caption = "Từ ngày(*)";
+            this.bandedGridColumn13.Caption = "Từ tháng(*)";
+            this.bandedGridColumn13.DisplayFormat.FormatString = "MM/yyyy";
+            this.bandedGridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.bandedGridColumn13.FieldName = "TU_NGAY";
             this.bandedGridColumn13.Name = "bandedGridColumn13";
             this.bandedGridColumn13.Visible = true;
-            this.bandedGridColumn13.Width = 44;
+            this.bandedGridColumn13.Width = 32;
             // 
             // bandedGridColumn14
             // 
-            this.bandedGridColumn14.Caption = "Đến ngày";
+            this.bandedGridColumn14.Caption = "Đến tháng";
+            this.bandedGridColumn14.DisplayFormat.FormatString = "MM/yyyy";
+            this.bandedGridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.bandedGridColumn14.FieldName = "DEN_NGAY";
             this.bandedGridColumn14.Name = "bandedGridColumn14";
             this.bandedGridColumn14.Visible = true;
-            this.bandedGridColumn14.Width = 49;
+            this.bandedGridColumn14.Width = 32;
             // 
             // ID
             // 

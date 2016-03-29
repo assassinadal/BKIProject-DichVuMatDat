@@ -258,7 +258,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                WinFormControls.openTemplate("ChamCongLamThem.xls");
+                WinFormControls.openTemplate_v2("ChamCongLamThem.xls");
             }
             catch (Exception v_e)
             {

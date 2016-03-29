@@ -1669,10 +1669,10 @@
     <Content Include="Template\Template_Import_cac_khoan_tien_khac.xls">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Template\ChamCongLamThem.xls">
+    <Content Include="Template\DangKyPhuThuoc.xls">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Template\DangKyPhuThuoc.xls">
+    <Content Include="Template\ChamCongLamThem.xls">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

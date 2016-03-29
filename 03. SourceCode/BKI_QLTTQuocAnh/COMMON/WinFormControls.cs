@@ -20,6 +20,7 @@ using DevExpress.Utils.Menu;
 using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
+using DevExpress.XtraEditors;
 
 
 namespace BKI_DichVuMatDat
@@ -379,7 +380,6 @@ namespace BKI_DichVuMatDat
         #region openFileDialog
         public static string openFileDialog() {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
-
             // Set filter options and filter index.
             openFileDialog1.Filter = "xls Files|*.xls|xlsx Files|*.xlsx|All Files (*.*)|*.*";
             openFileDialog1.FilterIndex = 1;
@@ -391,6 +391,21 @@ namespace BKI_DichVuMatDat
             }
             return "";
         } 
+        #endregion
+
+        #region saveFileDialog
+        public static string saveFileDialog(string ip_file_name)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+            saveFileDialog1.RestoreDirectory = true;
+            saveFileDialog1.FileName = ip_file_name;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                return saveFileDialog1.FileName;
+            }
+            return "";
+        }
         #endregion
 
         #region copy & open Template
@@ -411,6 +426,22 @@ namespace BKI_DichVuMatDat
             excel.Visible = true;
             Excel.Workbooks books = excel.Workbooks;
             Excel.Workbook openexcel = books.Open(newpath);
+        }
+
+        public static void openTemplate_v2(string ip_file_name)
+        {
+            string sourcePath = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"Template";//Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Template\");
+            string targetPath = saveFileDialog(ip_file_name);
+            if (targetPath !="")
+            {
+                string sourceFile = System.IO.Path.Combine(sourcePath, ip_file_name);
+                System.IO.File.Copy(sourceFile, targetPath, true);
+                XtraMessageBox.Show("Đã lưu file mẫu tại " + targetPath +".\nFile sẽ tự động mở ngay sau đây!","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var excel = new Excel.Application();
+                excel.Visible = true;
+                Excel.Workbooks books = excel.Workbooks;
+                Excel.Workbook openexcel = books.Open(targetPath);
+            }           
         }
         #endregion
 

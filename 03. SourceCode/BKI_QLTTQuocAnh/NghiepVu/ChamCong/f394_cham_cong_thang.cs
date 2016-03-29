@@ -149,7 +149,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
-            }     
+            }
         }
         
 

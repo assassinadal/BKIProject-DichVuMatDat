@@ -55,7 +55,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.strSO_CMT_HO_CHIEU = v_dr[7].ToString();
             v_us.strQUAN_HE_VOI_NGUOI_NOP_THUE = v_dr[8].ToString();
             v_us.strTTGKS_SO = v_dr[9].ToString();
-            v_us.strTTGKS_QUYEN = v_dr[10].ToString();
+            v_us.strTTGKS_QUYEN = string.Format("{0:MM/yyyy}", v_dr[10]);
             v_us.strTTGKS_QUOC_GIA = v_dr[11].ToString();
             v_us.strTTGKS_TINH_THANH = v_dr[12].ToString();
             v_us.strTTGKS_QUAN_HUYEN = v_dr[13].ToString();

@@ -15,6 +15,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraPivotGrid;
+using Excel = Microsoft.Office.Interop.Excel;
 
 
 namespace BKI_DichVuMatDat.BaoCao
@@ -38,7 +39,7 @@ namespace BKI_DichVuMatDat.BaoCao
             InitializeComponent();
             set_initial_form_load(ip_thang, ip_nam);
             m_sle_chon_nhan_vien.EditValue = ip_id_nv;
-            panelControl1.Visible = false;
+            m_sle_chon_nhan_vien.Visible = false;
         }
 
         #endregion
@@ -88,6 +89,30 @@ namespace BKI_DichVuMatDat.BaoCao
             this.Load += f402_tong_hop_cham_cong_Load;
             m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
             //m_cmd_xuat_bao_cao.Click +=m_cmd_xuat_bao_cao_Click;
+            m_cmd_export_excel.Click += m_cmd_export_excel_Click;
+        }
+
+        void m_cmd_export_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string op_file_name = "Tổng hợp chấm công tháng "+ m_str_thang + "-" + m_str_nam;
+                string dest_file = WinFormControls.saveFileDialog(op_file_name);
+                if (dest_file !="")
+                {
+                    m_pv.ExportToXls(dest_file);
+                    XtraMessageBox.Show("Đã lưu báo cáo tại " + dest_file+"\nFile sẽ tự động mở ngay sau đây!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var excel = new Excel.Application();
+                    excel.Visible = true;
+                    Excel.Workbooks books = excel.Workbooks;
+                    Excel.Workbook openexcel = books.Open(dest_file);
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_sle_chon_nhan_vien_EditValueChanged(object sender, EventArgs e)
@@ -108,24 +133,6 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 load_data_to_sle_chon_nhan_vien();
                 load_data_to_m_pv();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_xuat_bao_cao_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-                saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
-                saveFileDialog1.RestoreDirectory = true;
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    m_pv.ExportToXlsx(saveFileDialog1.FileName);
-                }
             }
             catch (Exception v_e)
             {

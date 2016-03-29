@@ -95,6 +95,7 @@
             this.m_cmd_tong_hop_cham_cong.Size = new System.Drawing.Size(172, 42);
             this.m_cmd_tong_hop_cham_cong.TabIndex = 0;
             this.m_cmd_tong_hop_cham_cong.Text = "Tổng hợp chấm công";
+            this.m_cmd_tong_hop_cham_cong.Visible = false;
             // 
             // panel3
             // 

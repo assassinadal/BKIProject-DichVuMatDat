@@ -41,7 +41,7 @@ namespace BKI_DichVuMatDat.BaoCao.ThuNhapKhac
         }
         private DateTime get_to_date()
         {
-            return m_dat_tu_thang.DateTime.AddDays(-m_dat_tu_thang.DateTime.Day + 1).AddMonths(1).AddDays(-1);
+            return m_dat_den_thang.DateTime.AddMonths(1).AddDays(-m_dat_den_thang.DateTime.Day);
         }
 
         private void set_initial_form_load()

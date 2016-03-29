@@ -878,7 +878,7 @@ namespace BKI_DichVuMatDat.BaoCao
                     }
                     else
                     {
-                        throw new Exception("Có mã nhân viên bị rỗng, bạn xem lại nhé!");
+                        throw new Exception("Có mã nhân viên hoặc dữ liệu nào đó bị rỗng, bạn xem lại nhé!");
                     }
                 }
             }

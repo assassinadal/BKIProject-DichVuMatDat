@@ -890,6 +890,18 @@ namespace BKI_DichVuMatDat.US
 
         #region Additional
 
+        public bool kiem_tra_nhan_vien_co_duoc_tinh_luong_thang(decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
+        {
+            CStoredProc v_pr = new CStoredProc("pr_TL_nhan_vien_duoc_tinh_luong_Check");
+            v_pr.addDecimalInputParam("@ip_dc_thang", ip_dc_thang);
+            v_pr.addDecimalInputParam("@ip_dc_nam", ip_dc_nam);
+            v_pr.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            SqlParameter v_para = v_pr.addNVarcharOutputParam("@op_str_yn","");
+
+            v_pr.ExecuteCommand(this);
+
+            return v_para.Value.ToString() == "Y" ? true : false;
+        }
         //Bang luong
         public void LayTrangThaiBangLuong(decimal ip_dc_thang
                                                    , decimal ip_dc_nam

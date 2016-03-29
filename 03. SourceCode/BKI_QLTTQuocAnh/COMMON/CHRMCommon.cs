@@ -54,6 +54,18 @@ namespace BKI_DichVuMatDat
                 DevExpress.XtraEditors.XtraMessageBox.Show("Trích xuất dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        public static void ExportExcelWithFileName(GridView ip_grv, string ip_str_file_name)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+            saveFileDialog1.RestoreDirectory = true;
+            saveFileDialog1.FileName = ip_str_file_name;
+            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                ip_grv.ExportToXls(saveFileDialog1.FileName);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Trích xuất dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
         public static void ExportExcel(BandedGridView ip_grv)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
@@ -64,6 +76,22 @@ namespace BKI_DichVuMatDat
                 ip_grv.ExportToXls(saveFileDialog1.FileName);
                 DevExpress.XtraEditors.XtraMessageBox.Show("Trích xuất dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+        public static void ExportExcelWithFileName(BandedGridView ip_grv, string ip_str_file_name)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+            saveFileDialog1.RestoreDirectory = true;
+            saveFileDialog1.FileName = ip_str_file_name;
+            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                ip_grv.ExportToXls(saveFileDialog1.FileName);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Trích xuất dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        public static string gen_version()
+        {
+            return "_version" + DateTime.Now.Day + "." + DateTime.Now.Month + "." + DateTime.Now.Year + "." + DateTime.Now.Hour + "h." + DateTime.Now.Minute + "p";
         }
         /// <summary>
         /// Trả về danh sách các nhân viên được quyền chọn theo user người sử dụng

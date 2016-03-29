@@ -114,14 +114,14 @@ namespace BKI_DichVuMatDat.NghiepVu.Luong
             v_us_rpt_luong_v2.CommitTransaction();
         }
 
-        public void XoaBanGhiLuongNhanVien(DTO_BANG_LUONG_V2 ip_dto_bang_luong)
+        public void XoaBanGhiLuongNhanVien(decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
         {
             US_RPT_LUONG_V2 v_us_rpt_luong_v2 = new US_RPT_LUONG_V2();
             US_RPT_THONG_TIN_TONG_HOP_V2 v_us_rpt_tong_hop_v2 = new US_RPT_THONG_TIN_TONG_HOP_V2();
             v_us_rpt_luong_v2.BeginTransaction();
-            v_us_rpt_luong_v2.XoaBangLuongNhanVien(ip_dto_bang_luong.ID_NHAN_VIEN, ip_dto_bang_luong.THANG, ip_dto_bang_luong.NAM);
+            v_us_rpt_luong_v2.XoaBangLuongNhanVien(ip_dc_id_nhan_vien, ip_dc_thang, ip_dc_nam);
             v_us_rpt_tong_hop_v2.UseTransOfUSObject(v_us_rpt_luong_v2);
-            v_us_rpt_tong_hop_v2.XoaDuLieuTongHopNhanVien(ip_dto_bang_luong.ID_NHAN_VIEN, ip_dto_bang_luong.THANG, ip_dto_bang_luong.NAM);
+            v_us_rpt_tong_hop_v2.XoaDuLieuTongHopNhanVien(ip_dc_id_nhan_vien, ip_dc_thang, ip_dc_nam);
             v_us_rpt_luong_v2.CommitTransaction();
         }
 
@@ -221,6 +221,11 @@ namespace BKI_DichVuMatDat.NghiepVu.Luong
         }
 
         #region Private Method
+        private bool kiem_tra_nhan_vien_co_trong_danh_sach_tinh_luong_thang(decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
+        {
+            US_RPT_LUONG_V2 v_us = new US_RPT_LUONG_V2();
+            return v_us.kiem_tra_nhan_vien_co_duoc_tinh_luong_thang(ip_dc_id_nhan_vien, ip_dc_thang, ip_dc_nam);
+        }
         private DataRow get_luong_1_nhan_vien_v2(decimal ip_dc_id_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
         {
             US_RPT_LUONG_V2 v_us = new US_RPT_LUONG_V2();

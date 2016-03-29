@@ -144,6 +144,12 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             TinhLuongQL.Instance.ChotBangLuongThang(lay_thang(), lay_nam());
         }
+        private string gen_ten_bang_luong()
+        {
+            var v_str_op = "BL" + lay_thang() + lay_nam() + "_Bang luong thang " + lay_thang() + "-" + lay_nam() 
+                            + "_version" + DateTime.Now.Day + "." + DateTime.Now.Month + "." + DateTime.Now.Year + "." + DateTime.Now.Hour + "h." + DateTime.Now.Minute + "p";
+            return v_str_op;
+        }
         #endregion
 
         #region Event Handle
@@ -173,6 +179,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                 saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
                 saveFileDialog1.RestoreDirectory = true;
+                saveFileDialog1.FileName = gen_ten_bang_luong();
                 if(saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     m_grc_tong_hop.ExportToXls(saveFileDialog1.FileName);
@@ -323,6 +330,32 @@ namespace BKI_DichVuMatDat.BaoCao
             }
         }
         #endregion
+
+        private void m_cmd_delete_luong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(TinhLuongQL.Instance.LayThongTinBangLuong(lay_thang(), lay_nam()).CHOT_BANG_LUONG)
+                {
+                    XtraMessageBox.Show("Bảng lương đã được chốt, bạn không được xóa lương nhân viên. (Nếu muốn xóa lương, cần bỏ chốt bảng lương)!", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+                var v_dlg = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa lương của nhân viên này!", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(v_dlg == System.Windows.Forms.DialogResult.Yes)
+                {
+                    decimal v_id_nhan_vien = Convert.ToDecimal(m_adv_tong_hop.GetRowCellValue(m_adv_tong_hop.FocusedRowHandle, "ID_NHAN_VIEN"));
+                    TinhLuongQL.Instance.XoaBanGhiLuongNhanVien(v_id_nhan_vien, lay_thang(), lay_nam());
+                    load_data_2_grid();
+
+                    hien_thi_thong_tin_bang_luong();
+                    XtraMessageBox.Show("Xóa lương nhân viên thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         
     }

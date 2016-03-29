@@ -37,9 +37,10 @@
             this.m_lbl_trang_thai_bang_luong = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_so_luong_nv_tinh_luong = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
-            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.m_cmd_chot_bang_luong = new DevExpress.XtraEditors.SimpleButton();
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.m_cmd_delete_luong = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_tinh_lai_nhan_vien = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_soan_thao_bang_luong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_view = new DevExpress.XtraEditors.SimpleButton();
@@ -343,8 +344,9 @@
             // panelControl1
             // 
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl1.Controls.Add(this.m_cmd_luu_bang_luong);
             this.panelControl1.Controls.Add(this.m_cmd_chot_bang_luong);
+            this.panelControl1.Controls.Add(this.m_cmd_delete_luong);
+            this.panelControl1.Controls.Add(this.m_cmd_luu_bang_luong);
             this.panelControl1.Controls.Add(this.m_cmd_tinh_lai_nhan_vien);
             this.panelControl1.Controls.Add(this.m_cmd_soan_thao_bang_luong);
             this.panelControl1.Controls.Add(this.m_cmd_view);
@@ -354,17 +356,19 @@
             this.panelControl1.Size = new System.Drawing.Size(901, 32);
             this.panelControl1.TabIndex = 25;
             // 
-            // m_cmd_luu_bang_luong
+            // m_cmd_chot_bang_luong
             // 
-            this.m_cmd_luu_bang_luong.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_luu_bang_luong.ImageIndex = 1;
-            this.m_cmd_luu_bang_luong.ImageList = this.imageCollection;
-            this.m_cmd_luu_bang_luong.Location = new System.Drawing.Point(707, 0);
-            this.m_cmd_luu_bang_luong.Name = "m_cmd_luu_bang_luong";
-            this.m_cmd_luu_bang_luong.Size = new System.Drawing.Size(172, 32);
-            this.m_cmd_luu_bang_luong.TabIndex = 22;
-            this.m_cmd_luu_bang_luong.Text = "4. Xuất bảng lương";
-            this.m_cmd_luu_bang_luong.Click += new System.EventHandler(this.m_cmd_luu_bang_luong_Click);
+            this.m_cmd_chot_bang_luong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chot_bang_luong.ImageIndex = 2;
+            this.m_cmd_chot_bang_luong.ImageList = this.imageCollection;
+            this.m_cmd_chot_bang_luong.Location = new System.Drawing.Point(451, 0);
+            this.m_cmd_chot_bang_luong.Name = "m_cmd_chot_bang_luong";
+            this.m_cmd_chot_bang_luong.Size = new System.Drawing.Size(139, 32);
+            this.m_cmd_chot_bang_luong.TabIndex = 24;
+            this.m_cmd_chot_bang_luong.Text = "3. CHỐT BẢNG LƯƠNG";
+            this.m_cmd_chot_bang_luong.ToolTip = "Chốt bảng lương chỉ thực hiện khi đã chắc chắn về dữ liệu lương tháng" +
+    ". ";
+            this.m_cmd_chot_bang_luong.Click += new System.EventHandler(this.m_cmd_chot_bang_luong_Click);
             // 
             // imageCollection
             // 
@@ -383,30 +387,40 @@
             this.imageCollection.Images.SetKeyName(11, "eye.png");
             this.imageCollection.Images.SetKeyName(12, "note.png");
             // 
-            // m_cmd_chot_bang_luong
+            // m_cmd_delete_luong
             // 
-            this.m_cmd_chot_bang_luong.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chot_bang_luong.ImageIndex = 2;
-            this.m_cmd_chot_bang_luong.ImageList = this.imageCollection;
-            this.m_cmd_chot_bang_luong.Location = new System.Drawing.Point(533, 0);
-            this.m_cmd_chot_bang_luong.Name = "m_cmd_chot_bang_luong";
-            this.m_cmd_chot_bang_luong.Size = new System.Drawing.Size(174, 32);
-            this.m_cmd_chot_bang_luong.TabIndex = 21;
-            this.m_cmd_chot_bang_luong.Text = "3. Chốt bảng lương";
-            this.m_cmd_chot_bang_luong.ToolTip = "Chốt bảng lương chỉ thực hiện khi đã chắc chắn về dữ liệu lương tháng" +
-    ". ";
-            this.m_cmd_chot_bang_luong.Click += new System.EventHandler(this.m_cmd_chot_bang_luong_Click);
+            this.m_cmd_delete_luong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_delete_luong.ImageIndex = 3;
+            this.m_cmd_delete_luong.ImageList = this.imageCollection;
+            this.m_cmd_delete_luong.Location = new System.Drawing.Point(323, 0);
+            this.m_cmd_delete_luong.Name = "m_cmd_delete_luong";
+            this.m_cmd_delete_luong.Size = new System.Drawing.Size(128, 32);
+            this.m_cmd_delete_luong.TabIndex = 23;
+            this.m_cmd_delete_luong.Text = "2.1. XÓA LƯƠNG";
+            this.m_cmd_delete_luong.Click += new System.EventHandler(this.m_cmd_delete_luong_Click);
+            // 
+            // m_cmd_luu_bang_luong
+            // 
+            this.m_cmd_luu_bang_luong.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_luu_bang_luong.ImageIndex = 1;
+            this.m_cmd_luu_bang_luong.ImageList = this.imageCollection;
+            this.m_cmd_luu_bang_luong.Location = new System.Drawing.Point(800, 0);
+            this.m_cmd_luu_bang_luong.Name = "m_cmd_luu_bang_luong";
+            this.m_cmd_luu_bang_luong.Size = new System.Drawing.Size(101, 32);
+            this.m_cmd_luu_bang_luong.TabIndex = 22;
+            this.m_cmd_luu_bang_luong.Text = "Trích xuất";
+            this.m_cmd_luu_bang_luong.Click += new System.EventHandler(this.m_cmd_luu_bang_luong_Click);
             // 
             // m_cmd_tinh_lai_nhan_vien
             // 
             this.m_cmd_tinh_lai_nhan_vien.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_tinh_lai_nhan_vien.ImageIndex = 3;
             this.m_cmd_tinh_lai_nhan_vien.ImageList = this.imageCollection;
-            this.m_cmd_tinh_lai_nhan_vien.Location = new System.Drawing.Point(340, 0);
+            this.m_cmd_tinh_lai_nhan_vien.Location = new System.Drawing.Point(195, 0);
             this.m_cmd_tinh_lai_nhan_vien.Name = "m_cmd_tinh_lai_nhan_vien";
-            this.m_cmd_tinh_lai_nhan_vien.Size = new System.Drawing.Size(193, 32);
+            this.m_cmd_tinh_lai_nhan_vien.Size = new System.Drawing.Size(128, 32);
             this.m_cmd_tinh_lai_nhan_vien.TabIndex = 19;
-            this.m_cmd_tinh_lai_nhan_vien.Text = "2. Tính lại lương nhân viên đã chọn";
+            this.m_cmd_tinh_lai_nhan_vien.Text = "2. TÍNH LẠI LƯƠNG";
             this.m_cmd_tinh_lai_nhan_vien.Click += new System.EventHandler(this.m_cmd_tinh_lai_nhan_vien_Click);
             // 
             // m_cmd_soan_thao_bang_luong
@@ -414,11 +428,11 @@
             this.m_cmd_soan_thao_bang_luong.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_soan_thao_bang_luong.ImageIndex = 12;
             this.m_cmd_soan_thao_bang_luong.ImageList = this.imageCollection;
-            this.m_cmd_soan_thao_bang_luong.Location = new System.Drawing.Point(175, 0);
+            this.m_cmd_soan_thao_bang_luong.Location = new System.Drawing.Point(88, 0);
             this.m_cmd_soan_thao_bang_luong.Name = "m_cmd_soan_thao_bang_luong";
-            this.m_cmd_soan_thao_bang_luong.Size = new System.Drawing.Size(165, 32);
+            this.m_cmd_soan_thao_bang_luong.Size = new System.Drawing.Size(107, 32);
             this.m_cmd_soan_thao_bang_luong.TabIndex = 13;
-            this.m_cmd_soan_thao_bang_luong.Text = "1. Soạn thảo bảng lương";
+            this.m_cmd_soan_thao_bang_luong.Text = "1. SOẠN THẢO";
             this.m_cmd_soan_thao_bang_luong.Click += new System.EventHandler(this.m_cmd_soan_thao_bang_luong_Click);
             // 
             // m_cmd_view
@@ -428,9 +442,9 @@
             this.m_cmd_view.ImageList = this.imageCollection;
             this.m_cmd_view.Location = new System.Drawing.Point(0, 0);
             this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(175, 32);
+            this.m_cmd_view.Size = new System.Drawing.Size(88, 32);
             this.m_cmd_view.TabIndex = 10;
-            this.m_cmd_view.Text = "Xem dữ liệu lương";
+            this.m_cmd_view.Text = "XEM";
             this.m_cmd_view.Click += new System.EventHandler(this.m_cmd_view_Click);
             // 
             // m_bgwk
@@ -3563,7 +3577,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.LabelControl m_lbl_thang;
         private DevExpress.XtraEditors.SimpleButton m_cmd_luu_bang_luong;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_chot_bang_luong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tinh_lai_nhan_vien;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTHU_NHAP_CHIU_THUE;
         private DevExpress.XtraEditors.DateEdit m_dat_thang;
@@ -3706,5 +3719,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand130;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand127;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand128;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_delete_luong;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_chot_bang_luong;
     }
 }

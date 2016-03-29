@@ -558,7 +558,7 @@ namespace BKI_DichVuMatDat.BaoCao
         }
 
 
-         private void tinh_bang_luong_tu_dong(DataSet ip_ds_danh_sach_nv)
+        private void tinh_bang_luong_tu_dong(DataSet ip_ds_danh_sach_nv)
         {
 
             int v_i_so_luong_nv = ip_ds_danh_sach_nv.Tables[0].Rows.Count;
@@ -613,7 +613,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
             try
             {
-               
+
                 //progressBarControl1.Visible = true;
                 //progressBarControl1.Show();
                 save_data(v_dlg_confirm_save);
@@ -626,7 +626,7 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 //progressBarControl1.Visible = false;
                 //progressBarControl1.Hide();
-                
+
             }
 
         }
@@ -676,12 +676,12 @@ namespace BKI_DichVuMatDat.BaoCao
             }
             return flag;
         }
-        
+
 
         private void save_data(ENUM_CONFIRM_LUU_BANG_LUONG ip_confirm_save)
         {
             SplashScreenManager.ShowForm(this, typeof(SplashScreen1), true, true, false);
-            string v_str_msg="";
+            string v_str_msg = "";
             try
             {
                 if(ip_confirm_save == ENUM_CONFIRM_LUU_BANG_LUONG.NONE)
@@ -768,7 +768,7 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 SplashScreenManager.CloseForm(false);
             }
-            
+
             XtraMessageBox.Show(v_str_msg, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             hien_thi_thong_tin_bang_luong();
         }
@@ -885,14 +885,8 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         private void xuat_excel_bang_luong()
         {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
-            saveFileDialog1.RestoreDirectory = true;
-            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                m_grv_main.ExportToXls(saveFileDialog1.FileName);
-                DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
-            }
+            string v_str_file_name = "SOAN_THAO_BL" + lay_thang() + lay_nam() + "_Bang luong dang soan thao thang " + lay_thang() + "-" + lay_nam() + CHRMCommon.gen_version();
+            CHRMCommon.ExportExcelWithFileName(m_grv_main, v_str_file_name);
         }
         #endregion
 

@@ -21,6 +21,7 @@ using BKI_DichVuMatDat.NghiepVu.ThuNhapKhac;
 //using BKI_DichVuMatDat.BaoCao.Luong;
 using BKI_DichVuMatDat.BaoCao.ThuNhapKhac;
 using BKI_DichVuMatDat.NghiepVu.Luong;
+using BKI_DichVuMatDat.BaoCao.Luong;
 
 namespace BKI_DichVuMatDat
 {
@@ -324,10 +325,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                //f495_thong_tin_chot_bang_luong_thang v_f = new f495_thong_tin_chot_bang_luong_thang();
-                //if(IsExistFormName(v_f)) return;
-                //v_f.MdiParent = this;
-                //v_f.Show();
+                f495_thong_tin_chot_bang_luong_thang v_f = new f495_thong_tin_chot_bang_luong_thang();
+                if(IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
             }
             catch(Exception v_e)
             {

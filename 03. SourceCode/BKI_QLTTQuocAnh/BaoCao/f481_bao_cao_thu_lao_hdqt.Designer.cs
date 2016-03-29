@@ -60,6 +60,7 @@
             this.CHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHE_SO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_nhom_ld.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -80,13 +81,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(953, 95);
+            this.panel1.Size = new System.Drawing.Size(953, 61);
             this.panel1.TabIndex = 12;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(410, 38);
+            this.label3.Location = new System.Drawing.Point(383, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 9;
@@ -95,7 +96,7 @@
             // m_sle_nhom_ld
             // 
             this.m_sle_nhom_ld.EditValue = "";
-            this.m_sle_nhom_ld.Location = new System.Drawing.Point(464, 35);
+            this.m_sle_nhom_ld.Location = new System.Drawing.Point(437, 20);
             this.m_sle_nhom_ld.Name = "m_sle_nhom_ld";
             this.m_sle_nhom_ld.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -133,7 +134,7 @@
             // m_cmd_search
             // 
             this.m_cmd_search.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_search.Image")));
-            this.m_cmd_search.Location = new System.Drawing.Point(637, 27);
+            this.m_cmd_search.Location = new System.Drawing.Point(610, 12);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(116, 35);
             this.m_cmd_search.TabIndex = 7;
@@ -142,7 +143,7 @@
             // 
             // m_txt_chon_nam
             // 
-            this.m_txt_chon_nam.Location = new System.Drawing.Point(273, 35);
+            this.m_txt_chon_nam.Location = new System.Drawing.Point(246, 20);
             this.m_txt_chon_nam.Name = "m_txt_chon_nam";
             this.m_txt_chon_nam.Size = new System.Drawing.Size(111, 20);
             this.m_txt_chon_nam.TabIndex = 3;
@@ -150,7 +151,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(212, 38);
+            this.label2.Location = new System.Drawing.Point(185, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 2;
@@ -158,7 +159,7 @@
             // 
             // m_txt_chon_thang
             // 
-            this.m_txt_chon_thang.Location = new System.Drawing.Point(95, 35);
+            this.m_txt_chon_thang.Location = new System.Drawing.Point(68, 20);
             this.m_txt_chon_thang.Name = "m_txt_chon_thang";
             this.m_txt_chon_thang.Size = new System.Drawing.Size(111, 20);
             this.m_txt_chon_thang.TabIndex = 1;
@@ -166,7 +167,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 38);
+            this.label1.Location = new System.Drawing.Point(11, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 0;
@@ -232,10 +233,10 @@
             // 
             this.m_grc_bc_thu_lao.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc_bc_thu_lao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc_bc_thu_lao.Location = new System.Drawing.Point(0, 95);
+            this.m_grc_bc_thu_lao.Location = new System.Drawing.Point(0, 61);
             this.m_grc_bc_thu_lao.MainView = this.m_grv_hs_bs_hs_athk;
             this.m_grc_bc_thu_lao.Name = "m_grc_bc_thu_lao";
-            this.m_grc_bc_thu_lao.Size = new System.Drawing.Size(953, 340);
+            this.m_grc_bc_thu_lao.Size = new System.Drawing.Size(953, 374);
             this.m_grc_bc_thu_lao.TabIndex = 18;
             this.m_grc_bc_thu_lao.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_hs_bs_hs_athk});
@@ -255,7 +256,8 @@
             this.colSO_TIEN_THUC_LINH,
             this.CHUC_VU,
             this.STT,
-            this.gridColumn3});
+            this.gridColumn3,
+            this.colHE_SO});
             this.m_grv_hs_bs_hs_athk.GridControl = this.m_grc_bc_thu_lao;
             this.m_grv_hs_bs_hs_athk.Name = "m_grv_hs_bs_hs_athk";
             this.m_grv_hs_bs_hs_athk.OptionsFind.AllowFindPanel = false;
@@ -281,7 +283,7 @@
             this.MA_NV.OptionsColumn.AllowEdit = false;
             this.MA_NV.Visible = true;
             this.MA_NV.VisibleIndex = 1;
-            this.MA_NV.Width = 85;
+            this.MA_NV.Width = 102;
             // 
             // HO_TEN
             // 
@@ -296,7 +298,7 @@
             this.HO_TEN.OptionsColumn.AllowEdit = false;
             this.HO_TEN.Visible = true;
             this.HO_TEN.VisibleIndex = 2;
-            this.HO_TEN.Width = 128;
+            this.HO_TEN.Width = 154;
             // 
             // THANG
             // 
@@ -346,7 +348,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN", "{0:n0}")});
             this.SO_TIEN.Visible = true;
             this.SO_TIEN.VisibleIndex = 5;
-            this.SO_TIEN.Width = 106;
+            this.SO_TIEN.Width = 134;
             // 
             // colSO_TIEN_NOP_THUE
             // 
@@ -362,7 +364,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_NOP_THUE", "{0:n0}")});
             this.colSO_TIEN_NOP_THUE.Visible = true;
             this.colSO_TIEN_NOP_THUE.VisibleIndex = 6;
-            this.colSO_TIEN_NOP_THUE.Width = 106;
+            this.colSO_TIEN_NOP_THUE.Width = 134;
             // 
             // SO_TAI_KHOAN
             // 
@@ -374,8 +376,8 @@
             this.SO_TAI_KHOAN.FieldName = "SO_TAI_KHOAN";
             this.SO_TAI_KHOAN.Name = "SO_TAI_KHOAN";
             this.SO_TAI_KHOAN.Visible = true;
-            this.SO_TAI_KHOAN.VisibleIndex = 4;
-            this.SO_TAI_KHOAN.Width = 120;
+            this.SO_TAI_KHOAN.VisibleIndex = 3;
+            this.SO_TAI_KHOAN.Width = 145;
             // 
             // colSO_TIEN_THUC_LINH
             // 
@@ -391,7 +393,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SO_TIEN_THUC_LINH", "{0:n0}")});
             this.colSO_TIEN_THUC_LINH.Visible = true;
             this.colSO_TIEN_THUC_LINH.VisibleIndex = 7;
-            this.colSO_TIEN_THUC_LINH.Width = 125;
+            this.colSO_TIEN_THUC_LINH.Width = 158;
             // 
             // CHUC_VU
             // 
@@ -401,12 +403,12 @@
             this.CHUC_VU.AppearanceHeader.Options.UseTextOptions = true;
             this.CHUC_VU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.CHUC_VU.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.CHUC_VU.Caption = "Chức vụ";
+            this.CHUC_VU.Caption = "Ghi chú";
             this.CHUC_VU.FieldName = "CHUC_VU";
             this.CHUC_VU.Name = "CHUC_VU";
             this.CHUC_VU.Visible = true;
-            this.CHUC_VU.VisibleIndex = 3;
-            this.CHUC_VU.Width = 98;
+            this.CHUC_VU.VisibleIndex = 8;
+            this.CHUC_VU.Width = 128;
             // 
             // STT
             // 
@@ -419,7 +421,7 @@
             this.STT.Name = "STT";
             this.STT.Visible = true;
             this.STT.VisibleIndex = 0;
-            this.STT.Width = 49;
+            this.STT.Width = 59;
             // 
             // gridColumn3
             // 
@@ -429,6 +431,19 @@
             this.gridColumn3.FieldName = "LOAI_THU_NHAP";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Width = 118;
+            // 
+            // colHE_SO
+            // 
+            this.colHE_SO.AppearanceHeader.Options.UseTextOptions = true;
+            this.colHE_SO.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colHE_SO.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colHE_SO.Caption = "Hệ số";
+            this.colHE_SO.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colHE_SO.FieldName = "HE_SO";
+            this.colHE_SO.Name = "colHE_SO";
+            this.colHE_SO.Visible = true;
+            this.colHE_SO.VisibleIndex = 4;
+            this.colHE_SO.Width = 64;
             // 
             // f481_bao_cao_thu_lao_hdqt
             // 
@@ -485,5 +500,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn colHE_SO;
     }
 }

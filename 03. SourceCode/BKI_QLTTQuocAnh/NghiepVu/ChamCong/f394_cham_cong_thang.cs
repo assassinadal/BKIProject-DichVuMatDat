@@ -25,7 +25,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             InitializeComponent();
             set_initial_form_load();
         }
-        
+
+        decimal m_txt_thang;
+        decimal m_txt_nam;
 
         private void load_data_to_m_pv()
         {
@@ -37,7 +39,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetChamCong(v_ds, m_txt_thang.Text, m_txt_nam.Text, v_id_nhan_vien);
+            v_us.FillDatasetChamCong(v_ds, m_txt_thang.ToString(), m_txt_nam.ToString(), v_id_nhan_vien);
             m_pv.DataSource = v_ds.Tables[0];
         }
 
@@ -58,8 +60,11 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void set_initial_form_load()
         {
-            m_txt_thang.Text = DateTime.Now.Month.ToString();
-            m_txt_nam.Text = DateTime.Now.Year.ToString();
+            //m_txt_thang.Text = DateTime.Now.Month.ToString();
+            //m_txt_nam.Text = DateTime.Now.Year.ToString();
+            m_dat_thang.EditValue = DateTime.Now;
+            m_txt_nam = m_dat_thang.DateTime.Year;
+            m_txt_thang = m_dat_thang.DateTime.Month;
             set_define_events();
         }
 
@@ -77,6 +82,20 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.Load +=f394_cham_cong_thang_Load;
             m_pv.CellDoubleClick +=m_pv_CellDoubleClick;
             m_cmd_tong_hop_cham_cong.Click += m_cmd_tong_hop_cham_cong_Click;
+            m_dat_thang.DateTimeChanged += M_dat_thang_DateTimeChanged;
+        }
+
+        private void M_dat_thang_DateTimeChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                m_txt_nam = m_dat_thang.DateTime.Year;
+                m_txt_thang = m_dat_thang.DateTime.Month;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_tong_hop_cham_cong_Click(object sender, EventArgs e)
@@ -87,7 +106,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 if (m_sle_chon_nhan_vien.EditValue == null)
                     v_id_nv = -1;
                 else v_id_nv = decimal.Parse(m_sle_chon_nhan_vien.EditValue.ToString());
-                BaoCao.f402_tong_hop_cham_cong v_f = new BaoCao.f402_tong_hop_cham_cong(m_txt_thang.Text, m_txt_nam.Text, v_id_nv);
+                BaoCao.f402_tong_hop_cham_cong v_f = new BaoCao.f402_tong_hop_cham_cong(m_txt_thang.ToString(), m_txt_nam.ToString(), v_id_nv);
                 v_f.Show();
             }
             catch (Exception v_e)
@@ -112,7 +131,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (check_bang_luong_da_chot(m_txt_thang.Text, m_txt_nam.Text))
+                if (check_bang_luong_da_chot(m_txt_thang.ToString(), m_txt_nam.ToString()))
                 {
                     XtraMessageBox.Show("Tháng đã chốt bảng lương. Vui lòng không cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     return;

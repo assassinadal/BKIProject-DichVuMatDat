@@ -57,6 +57,9 @@ namespace BKI_DichVuMatDat.BaoCao
         }
         MyEnum m_e_mode = MyEnum.XEM_LICH_SU;
         decimal m_xem_het_lich_su_giao_dich = 0; //0 chua check, 1 check roi
+        decimal thang;
+        decimal nam;
+
         #endregion
 
         #region Private Method
@@ -71,8 +74,9 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void set_init_form_load()
         {
-            m_txt_chon_thang.Text = DateTime.Now.Date.Month.ToString();
-            m_txt_chon_nam.Text = DateTime.Now.Date.Year.ToString();
+            //m_txt_chon_thang.Text = DateTime.Now.Date.Month.ToString();
+            //m_txt_chon_nam.Text = DateTime.Now.Date.Year.ToString();
+            m_dat_thang.EditValue = DateTime.Now;
             switch (m_e_mode)
             {
                 case MyEnum.XEM_HET_HAN_HS_LNS:
@@ -135,8 +139,8 @@ namespace BKI_DichVuMatDat.BaoCao
             DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG v_ds_bc_hs_lns_nv_theo_thang = new DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG();
 
             v_us_bc_hs_lns_nv_theo_thang.FillDataset_by_thang_nam(v_ds_bc_hs_lns_nv_theo_thang
-                                                                            , CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim())
-                                                                            , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())
+                                                                            , thang
+                                                                            , nam
                                                                             , ip_co_xem_lich_su_giao_dich);
 
             m_grc_bao_cao_hs_lns_nhan_vien.DataSource = v_ds_bc_hs_lns_nv_theo_thang.Tables[0];
@@ -149,8 +153,8 @@ namespace BKI_DichVuMatDat.BaoCao
             DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG v_ds_bc_lcd_nv_theo_thang = new DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG();
 
             v_us_bc_lcd_nv_theo_thang.FillDataset_by_thang_nam(v_ds_bc_lcd_nv_theo_thang
-                                                                            , CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim())
-                                                                            , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())
+                                                                            , thang
+                                                                            , nam
                                                                             , ip_co_xem_lich_su_giao_dich);
 
             m_grc_bao_cao_lcd_nhan_vien.DataSource = v_ds_bc_lcd_nv_theo_thang.Tables[0];
@@ -181,8 +185,8 @@ namespace BKI_DichVuMatDat.BaoCao
             DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG v_ds_bc_hs_lns_nv_theo_thang = new DS_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG();
 
             v_us_bc_hs_lns_nv_theo_thang.FillDataset_by_thang_nam_id_nhan_vien(v_ds_bc_hs_lns_nv_theo_thang
-                                                                            , CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim())
-                                                                            , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())
+                                                                            , thang
+                                                                            , nam
                                                                             , ip_dc_id_nhan_vien
                                                                             , ip_co_xem_lich_su_giao_dich);
 
@@ -196,8 +200,8 @@ namespace BKI_DichVuMatDat.BaoCao
             DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG v_ds_bc_lcd_nv_theo_thang = new DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG();
 
             v_us_bc_lcd_nv_theo_thang.FillDataset_by_thang_nam_id_nhan_vien(v_ds_bc_lcd_nv_theo_thang
-                                                                            , CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim())
-                                                                            , CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())
+                                                                            , thang
+                                                                            , nam
                                                                             , ip_dc_id_nhan_vien
                                                                             , ip_co_xem_lich_su_giao_dich);
 
@@ -206,28 +210,28 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private bool check_data_is_ok()
         {
-            if (m_txt_chon_thang.Text == "")
-            {
-                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_THANG);
-                return false;
-            }
-            else if (m_txt_chon_nam.Text == "")
-            {
-                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NAM);
-                return false;
-            }
-            else
-            {
-                if (check_validate_data_is_ok(m_txt_chon_thang.Text) && check_validate_data_is_ok(m_txt_chon_nam.Text))
-                {
+            //if (m_txt_chon_thang.Text == "")
+            //{
+            //    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_THANG);
+            //    return false;
+            //}
+            //else if (m_txt_chon_nam.Text == "")
+            //{
+            //    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NAM);
+            //    return false;
+            //}
+            //else
+            //{
+            //    if (check_validate_data_is_ok(m_txt_chon_thang.Text) && check_validate_data_is_ok(m_txt_chon_nam.Text))
+            //    {
                     return true;
-                }
-                else
-                {
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_DU_LIEU_NHAP_CHUA_HOP_LE);
-                    return false;
-                }
-            }
+            //    }
+            //    else
+            //    {
+            //        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.ERROR_DU_LIEU_NHAP_CHUA_HOP_LE);
+            //        return false;
+            //    }
+            //}
         }
 
         private bool check_validate_data_is_ok(string ip_str_thang_cham_cong)
@@ -250,6 +254,20 @@ namespace BKI_DichVuMatDat.BaoCao
             //m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
             m_cmd_xuat_bc_hs_lns.Click += m_cmd_xuat_bc_hs_lns_Click;
             m_cmd_xuat_bc_lcd.Click += m_cmd_xuat_bc_lcd_Click;
+            m_dat_thang.DateTimeChanged += M_dat_thang_DateTimeChanged;
+        }
+
+        private void M_dat_thang_DateTimeChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                thang = m_dat_thang.DateTime.Month;
+                nam = m_dat_thang.DateTime.Year;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void f419_bao_cao_hs_lns_lcd_cua_nhan_vien_Load(object sender, EventArgs e)

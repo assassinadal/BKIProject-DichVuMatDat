@@ -23,12 +23,15 @@ namespace BKI_DichVuMatDat.BaoCao
             InitializeComponent();
         }
 
+        decimal m_txt_chon_thang;
+        decimal m_txt_chon_nam;
+
         private void m_cmd_search_Click(object sender, EventArgs e)
         {
             try
             {
-                string s =m_sle_nhom_ld.EditValue.ToString();
-                if (m_txt_chon_thang.Text.Trim() !="" && m_txt_chon_nam.Text.Trim() !="" && m_sle_nhom_ld.EditValue.ToString() !="")
+                string s = m_sle_nhom_ld.EditValue.ToString();
+                if (/*m_txt_chon_thang.Text.Trim() != "" && m_txt_chon_nam.Text.Trim() != "" && */m_sle_nhom_ld.EditValue.ToString() != "")
                 {
                     load_data_to_grid();
                 }
@@ -49,8 +52,40 @@ namespace BKI_DichVuMatDat.BaoCao
             DataSet v_ds = new DataSet();
             US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
             v_ds.Tables.Add(new DataTable());
-            v_us.filldatasetBaoCaoThuNhapLDNgoaiBangLuong(v_ds, m_txt_chon_thang.Text, m_txt_chon_nam.Text, m_sle_nhom_ld.EditValue.ToString());
+            v_us.filldatasetBaoCaoThuNhapLDNgoaiBangLuong(v_ds, m_txt_chon_thang.ToString(), m_txt_chon_nam.ToString(), m_sle_nhom_ld.EditValue.ToString());
             m_grc_bc_thu_lao.DataSource = v_ds.Tables[0];
+            this.Load += F481_bao_cao_thu_lao_hdqt_Load;
+            m_dat_thang.DateTimeChanged += M_dat_thang_DateTimeChanged;
+        }
+
+        private void M_dat_thang_DateTimeChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                m_txt_chon_nam = m_dat_thang.DateTime.Year;
+                m_txt_chon_thang = m_dat_thang.DateTime.Month;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void F481_bao_cao_thu_lao_hdqt_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                set_init_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void set_init_form_load()
+        {
+            m_dat_thang.EditValue = DateTime.Now;
         }
 
         private void f481_bao_cao_thu_lao_hdqt_Load(object sender, EventArgs e)
@@ -73,13 +108,13 @@ namespace BKI_DichVuMatDat.BaoCao
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                 saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
                 saveFileDialog1.RestoreDirectory = true;
-                if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     m_grv_hs_bs_hs_athk.ExportToXls(saveFileDialog1.FileName);
                     CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
                 }
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }

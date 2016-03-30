@@ -33,7 +33,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         #endregion
 
         #region Members
-
+        decimal m_txt_thang;
+        decimal m_txt_nam;
         #endregion
 
         #region Private methods
@@ -49,8 +50,9 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_initial_form_load()
         {
             load_data_2_sle_chon_nv();
-            m_txt_chon_thang.Text = DateTime.Now.Month.ToString();
-            m_txt_chon_nam.Text = DateTime.Now.Year.ToString();
+            //m_txt_chon_thang.Text = DateTime.Now.Month.ToString();
+            //m_txt_chon_nam.Text = DateTime.Now.Year.ToString
+            m_dat_thang.EditValue = DateTime.Now;
         }
 
         private DS_V_DM_NHAN_VIEN load_data_2_ds_v_dm_nv()
@@ -182,18 +184,18 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return false;
             }
 
-            if (m_txt_chon_thang.Text == "")
-            {
-                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_THANG);
-                return false;
-            }
+            //if (m_txt_chon_thang.Text == "")
+            //{
+            //    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_THANG);
+            //    return false;
+            //}
 
-            if (m_txt_chon_nam.Text == "")
-            {
-                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NAM);
-                return false;
-            } 
-            if (CHRMCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())))
+            //if (m_txt_chon_nam.Text == "")
+            //{
+            //    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NAM);
+            //    return false;
+            //} 
+            if (CHRMCommon.thang_da_chot_bang_luong(m_txt_thang, m_txt_nam))
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_THANG_DA_CHOT_BANG_LUONG);
                 return false;
@@ -204,10 +206,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void form_2_us_gd_hs_cl(US_GD_HE_SO_CHAT_LUONG ip_us)
         {
             decimal v_id_gd_hs_cl = 0;
-            v_id_gd_hs_cl = find_id_gd_hs_chat_luong(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
+            v_id_gd_hs_cl = find_id_gd_hs_chat_luong(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), m_txt_thang, m_txt_nam);
             ip_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
-            ip_us.dcTHANG = CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim());
-            ip_us.dcNAM = CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim());
+            ip_us.dcTHANG = m_txt_thang;
+            ip_us.dcNAM = m_txt_nam;
             ip_us.dcHE_SO_K = CIPConvert.ToDecimal(m_txt_hs.Text.Trim());
             if (v_id_gd_hs_cl > 0)
             {
@@ -263,6 +265,20 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_luu_hs.Click += m_cmd_luu_hs_Click;
             m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
             m_grv_hs_chat_luong.DoubleClick += m_grv_hs_chat_luong_DoubleClick;
+            m_dat_thang.DateTimeChanged += M_dat_thang_DateTimeChanged;
+        }
+
+        private void M_dat_thang_DateTimeChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                m_txt_nam = m_dat_thang.DateTime.Year;
+                m_txt_thang = m_dat_thang.DateTime.Month;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien_Load(object sender, EventArgs e)
@@ -281,16 +297,16 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (check_validate_data_is_ok(m_txt_chon_thang.Text) && check_validate_data_is_ok(m_txt_chon_nam.Text))
+                if (check_validate_data_is_ok(m_txt_thang.ToString()) && check_validate_data_is_ok(m_txt_nam.ToString()))
                 {
                     if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
                     {
-                        load_data_2_grid(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
+                        load_data_2_grid(CIPConvert.ToDecimal(m_txt_thang.ToString()), CIPConvert.ToDecimal(m_txt_nam.ToString()));
                     }
                     else
                     {
-                        load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
-                        m_txt_hs.Text = find_hs_chat_luong_by_nv_thang_nam(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())).ToString();
+                        load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), m_txt_thang, m_txt_nam);
+                        m_txt_hs.Text = find_hs_chat_luong_by_nv_thang_nam(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), m_txt_thang, m_txt_nam).ToString();
                     }
                 }
                 else
@@ -323,8 +339,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                     if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
                     {
                         save_data();
-                        load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
-                        m_txt_hs.Text = find_hs_chat_luong_by_nv_thang_nam(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())).ToString();
+                        load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue), m_txt_thang,m_txt_nam);
+                        m_txt_hs.Text = find_hs_chat_luong_by_nv_thang_nam(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue),m_txt_thang, m_txt_nam).ToString();
                     }
                 }
             }
@@ -341,7 +357,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
                 {
                     m_txt_hs.Text = "";
-                    load_data_2_grid(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()));
+                    load_data_2_grid(m_txt_thang,m_txt_nam);
                 }
             }
             catch (Exception v_e)
@@ -355,8 +371,11 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 m_sle_chon_nhan_vien.EditValue = CIPConvert.ToDecimal(m_grv_hs_chat_luong.GetRowCellValue(m_grv_hs_chat_luong.FocusedRowHandle,"ID_NHAN_VIEN"));
-                m_txt_chon_thang.Text = m_grv_hs_chat_luong.GetRowCellValue(m_grv_hs_chat_luong.FocusedRowHandle, "THANG").ToString();
-                m_txt_chon_nam.Text = m_grv_hs_chat_luong.GetRowCellValue(m_grv_hs_chat_luong.FocusedRowHandle, "NAM").ToString();
+                //m_txt_chon_thang.Text = m_grv_hs_chat_luong.GetRowCellValue(m_grv_hs_chat_luong.FocusedRowHandle, "THANG").ToString();
+                //m_txt_chon_nam.Text = m_grv_hs_chat_luong.GetRowCellValue(m_grv_hs_chat_luong.FocusedRowHandle, "NAM").ToString();
+                m_dat_thang.EditValue = new DateTime(int.Parse(m_grv_hs_chat_luong.GetRowCellValue(m_grv_hs_chat_luong.FocusedRowHandle, "NAM").ToString())
+                                                    , int.Parse(m_grv_hs_chat_luong.GetRowCellValue(m_grv_hs_chat_luong.FocusedRowHandle, "THANG").ToString())
+                                                    , 1);
                 m_txt_hs.Text = m_grv_hs_chat_luong.GetRowCellValue(m_grv_hs_chat_luong.FocusedRowHandle, "HE_SO_K").ToString();
             }
             catch (Exception v_e)

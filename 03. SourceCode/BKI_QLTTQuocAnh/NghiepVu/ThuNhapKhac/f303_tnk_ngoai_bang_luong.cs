@@ -24,10 +24,12 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             InitializeComponent();
             format_controls();
         }
-    
+
         #endregion
 
         #region Members
+        decimal m_txt_nam;
+        decimal m_txt_thang;
         #endregion
 
         #region Data Structure
@@ -43,6 +45,20 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             m_cmd_delete.Click += m_cmd_delete_Click;
             m_cmd_import_excel.Click += m_cmd_import_excel_Click;
             this.Load += f303_tnk_ngoai_bang_luong_Load;
+            m_dat_thang.DateTimeChanged += M_dat_thang_DateTimeChanged;
+        }
+
+        private void M_dat_thang_DateTimeChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                m_txt_nam = m_dat_thang.DateTime.Year;
+                m_txt_thang = m_dat_thang.DateTime.Month;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_import_excel_Click(object sender, EventArgs e)
@@ -96,14 +112,14 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         {
             try
             {
-                if (m_txt_thang.Text.Trim() != "" && m_txt_nam.Text.Trim() != "" )
-                {
-                    load_data_to_grid();
-                }
-                else
-                {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-                }
+                //if (m_txt_thang.Text.Trim() != "" && m_txt_nam.Text.Trim() != "" )
+                //{
+                //    load_data_to_grid();
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                //}
             }
             catch (Exception v_e)
             {
@@ -140,8 +156,11 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 
         private void set_initial_form_load()
         {
-            m_txt_thang.Text = DateTime.Now.Month.ToString();
-            m_txt_nam.Text = DateTime.Now.Year.ToString();
+            //m_txt_thang.Text = DateTime.Now.Month.ToString();
+            //m_txt_nam.Text = DateTime.Now.Year.ToString
+            m_dat_thang.EditValue = DateTime.Now;
+            m_txt_nam = m_dat_thang.DateTime.Year;
+            m_txt_thang = m_dat_thang.DateTime.Month;
         }
 
         private void load_data_to_grid()
@@ -150,7 +169,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
             DataSet v_ds = new DataSet();
             US_GD_THU_NHAP_KHAC v_us = new US_GD_THU_NHAP_KHAC();
             v_ds.Tables.Add(new DataTable());
-            v_us.filldatasetTNKNgoaiBangLuong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
+            v_us.filldatasetTNKNgoaiBangLuong(v_ds, m_txt_thang.ToString(), m_txt_nam.ToString());
             m_grc.DataSource = v_ds.Tables[0];
         }
 

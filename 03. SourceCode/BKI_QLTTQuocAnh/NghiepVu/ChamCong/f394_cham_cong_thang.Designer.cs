@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f394_cham_cong_thang));
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition6 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition7 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition8 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition9 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition10 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f394_cham_cong_thang));
             this.pivotGridField3 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_cmd_tong_hop_cham_cong = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_search = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
-            this.m_txt_thang = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_trang_thai_cham_cong = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_pv = new DevExpress.XtraPivotGrid.PivotGridControl();
@@ -50,22 +51,20 @@
             this.pivotGridField2 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_search = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_tong_hop_cham_cong = new DevExpress.XtraEditors.SimpleButton();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.m_dat_thang = new DevExpress.XtraEditors.DateEdit();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_pv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pivotGridField3
@@ -94,14 +93,31 @@
             this.panelControl1.Size = new System.Drawing.Size(794, 107);
             this.panelControl1.TabIndex = 0;
             // 
+            // m_cmd_tong_hop_cham_cong
+            // 
+            this.m_cmd_tong_hop_cham_cong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tong_hop_cham_cong.Image")));
+            this.m_cmd_tong_hop_cham_cong.Location = new System.Drawing.Point(472, 32);
+            this.m_cmd_tong_hop_cham_cong.Name = "m_cmd_tong_hop_cham_cong";
+            this.m_cmd_tong_hop_cham_cong.Size = new System.Drawing.Size(147, 40);
+            this.m_cmd_tong_hop_cham_cong.TabIndex = 12;
+            this.m_cmd_tong_hop_cham_cong.Text = "Tổng hợp chấm công";
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_search.Image")));
+            this.m_cmd_search.Location = new System.Drawing.Point(311, 32);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(143, 40);
+            this.m_cmd_search.TabIndex = 11;
+            this.m_cmd_search.Text = "Lọc dữ liệu";
+            // 
             // panelControl3
             // 
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl3.Controls.Add(this.m_dat_thang);
+            this.panelControl3.Controls.Add(this.label3);
             this.panelControl3.Controls.Add(this.m_sle_chon_nhan_vien);
             this.panelControl3.Controls.Add(this.labelControl1);
-            this.panelControl3.Controls.Add(this.m_txt_nam);
-            this.panelControl3.Controls.Add(this.m_txt_thang);
-            this.panelControl3.Controls.Add(this.labelControl3);
             this.panelControl3.Controls.Add(this.m_lbl_trang_thai_cham_cong);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl3.Location = new System.Drawing.Point(2, 2);
@@ -136,57 +152,28 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Họ tên";
+            this.gridColumn1.FieldName = "HO_TEN";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Mã nhân viên";
+            this.gridColumn2.FieldName = "MA_NV";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(28, 85);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(0, 13);
             this.labelControl1.TabIndex = 19;
-            // 
-            // m_txt_nam
-            // 
-            this.m_txt_nam.Location = new System.Drawing.Point(127, 24);
-            this.m_txt_nam.Name = "m_txt_nam";
-            this.m_txt_nam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.m_txt_nam.Properties.Appearance.Options.UseFont = true;
-            this.m_txt_nam.Properties.Appearance.Options.UseTextOptions = true;
-            this.m_txt_nam.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.m_txt_nam.Properties.AutoHeight = false;
-            this.m_txt_nam.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.m_txt_nam.Properties.Mask.EditMask = "d";
-            this.m_txt_nam.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.m_txt_nam.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_txt_nam.Properties.NullText = "Nhập năm";
-            this.m_txt_nam.Properties.NullValuePrompt = "Nhập năm";
-            this.m_txt_nam.Size = new System.Drawing.Size(100, 29);
-            this.m_txt_nam.TabIndex = 1;
-            // 
-            // m_txt_thang
-            // 
-            this.m_txt_thang.Location = new System.Drawing.Point(26, 24);
-            this.m_txt_thang.Name = "m_txt_thang";
-            this.m_txt_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.m_txt_thang.Properties.Appearance.Options.UseFont = true;
-            this.m_txt_thang.Properties.Appearance.Options.UseTextOptions = true;
-            this.m_txt_thang.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.m_txt_thang.Properties.AutoHeight = false;
-            this.m_txt_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.m_txt_thang.Properties.Mask.EditMask = "d";
-            this.m_txt_thang.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.m_txt_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_txt_thang.Properties.NullText = "Nhập tháng";
-            this.m_txt_thang.Properties.NullValuePrompt = "Nhập tháng";
-            this.m_txt_thang.Size = new System.Drawing.Size(84, 29);
-            this.m_txt_thang.TabIndex = 0;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.labelControl3.Location = new System.Drawing.Point(114, 25);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(8, 25);
-            this.labelControl3.TabIndex = 18;
-            this.labelControl3.Text = "/";
             // 
             // m_lbl_trang_thai_cham_cong
             // 
@@ -314,39 +301,36 @@
             this.panelControl4.Size = new System.Drawing.Size(790, 51);
             this.panelControl4.TabIndex = 2;
             // 
-            // m_cmd_search
+            // m_dat_thang
             // 
-            this.m_cmd_search.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_search.Image")));
-            this.m_cmd_search.Location = new System.Drawing.Point(311, 32);
-            this.m_cmd_search.Name = "m_cmd_search";
-            this.m_cmd_search.Size = new System.Drawing.Size(143, 40);
-            this.m_cmd_search.TabIndex = 11;
-            this.m_cmd_search.Text = "Lọc dữ liệu";
+            this.m_dat_thang.EditValue = null;
+            this.m_dat_thang.Location = new System.Drawing.Point(116, 20);
+            this.m_dat_thang.Name = "m_dat_thang";
+            this.m_dat_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.m_dat_thang.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_thang.Properties.Appearance.Options.UseFont = true;
+            this.m_dat_thang.Properties.Appearance.Options.UseForeColor = true;
+            this.m_dat_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
+            this.m_dat_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_thang.Properties.EditFormat.FormatString = "MM/yyyy";
+            this.m_dat_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_dat_thang.Size = new System.Drawing.Size(141, 26);
+            this.m_dat_thang.TabIndex = 28;
             // 
-            // m_cmd_tong_hop_cham_cong
+            // label3
             // 
-            this.m_cmd_tong_hop_cham_cong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tong_hop_cham_cong.Image")));
-            this.m_cmd_tong_hop_cham_cong.Location = new System.Drawing.Point(472, 32);
-            this.m_cmd_tong_hop_cham_cong.Name = "m_cmd_tong_hop_cham_cong";
-            this.m_cmd_tong_hop_cham_cong.Size = new System.Drawing.Size(147, 40);
-            this.m_cmd_tong_hop_cham_cong.TabIndex = 12;
-            this.m_cmd_tong_hop_cham_cong.Text = "Tổng hợp chấm công";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Họ tên";
-            this.gridColumn1.FieldName = "HO_TEN";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Mã nhân viên";
-            this.gridColumn2.FieldName = "MA_NV";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(23, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Chọn tháng (*)";
             // 
             // f394_cham_cong_thang
             // 
@@ -364,12 +348,12 @@
             this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_pv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -380,9 +364,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit m_txt_nam;
-        private DevExpress.XtraEditors.TextEdit m_txt_thang;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl m_lbl_trang_thai_cham_cong;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chon_nhan_vien;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
@@ -396,5 +377,7 @@
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tong_hop_cham_cong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_search;
+        private DevExpress.XtraEditors.DateEdit m_dat_thang;
+        private System.Windows.Forms.Label label3;
     }
 }

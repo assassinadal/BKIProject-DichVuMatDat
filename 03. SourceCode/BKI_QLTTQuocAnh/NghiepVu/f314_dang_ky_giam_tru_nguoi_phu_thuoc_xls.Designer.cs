@@ -93,7 +93,7 @@
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 414);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(913, 43);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1028, 43);
             this.m_pnl_out_place_dm.TabIndex = 3;
             // 
             // panel2
@@ -102,7 +102,7 @@
             this.panel2.Controls.Add(this.m_cmd_import_excel);
             this.panel2.Controls.Add(this.m_cmd_save);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(559, 4);
+            this.panel2.Location = new System.Drawing.Point(674, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(350, 35);
             this.panel2.TabIndex = 20;
@@ -145,7 +145,7 @@
             this.m_grc.Location = new System.Drawing.Point(0, 0);
             this.m_grc.MainView = this.m_grv1;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(913, 414);
+            this.m_grc.Size = new System.Drawing.Size(1028, 414);
             this.m_grc.TabIndex = 11;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv1,
@@ -243,8 +243,8 @@
             // bandedGridColumn2
             // 
             this.bandedGridColumn2.Caption = "Ngày sinh(*)";
-            this.bandedGridColumn2.DisplayFormat.FormatString = "dd/mm/yyyy";
-            this.bandedGridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.bandedGridColumn2.DisplayFormat.FormatString = "MM/yyyy";
+            this.bandedGridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.bandedGridColumn2.FieldName = "NGAY_SINH";
             this.bandedGridColumn2.Name = "bandedGridColumn2";
             this.bandedGridColumn2.Visible = true;
@@ -557,7 +557,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 457);
+            this.ClientSize = new System.Drawing.Size(1028, 457);
             this.Controls.Add(this.m_pn);
             this.Controls.Add(this.m_grc);
             this.Controls.Add(this.m_pnl_out_place_dm);

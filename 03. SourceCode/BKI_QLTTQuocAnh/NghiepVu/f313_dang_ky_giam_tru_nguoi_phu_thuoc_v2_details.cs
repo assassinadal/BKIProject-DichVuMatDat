@@ -51,9 +51,32 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void us_obj_2_form()
         {
-            m_dat_ngay_bat_dau.Value = m_us_phu_thuoc_details.datTU_NGAY;
-            m_dat_ngay_ket_thuc.Value = m_us_phu_thuoc_details.datDEN_NGAY;
-            m_dat_ngay_sinh_npt.Value = m_us_phu_thuoc_details.datNGAY_SINH;
+            
+            if(m_us_phu_thuoc_details.IsTU_NGAYNull())
+            {
+                m_dat_ngay_bat_dau.EditValue = null;
+            }
+            else
+            {
+                m_dat_ngay_bat_dau.EditValue = m_us_phu_thuoc_details.datTU_NGAY;
+            }
+            if(m_us_phu_thuoc_details.IsDEN_NGAYNull())
+            {
+                m_dat_ngay_ket_thuc.EditValue = null;
+            }
+            else
+            {
+                m_dat_ngay_ket_thuc.EditValue = m_us_phu_thuoc_details.datDEN_NGAY;
+            }
+            if(m_us_phu_thuoc_details.IsNGAY_SINHNull())
+            {
+                m_dat_ngay_sinh_npt.EditValue = null;
+            }
+            else
+            {
+                m_dat_ngay_sinh_npt.EditValue = m_us_phu_thuoc_details.datNGAY_SINH;
+            }
+            
             m_txt_ho_ten_nguoi_phu_thuoc.Text = m_us_phu_thuoc_details.strHO_TEN_NGUOI_PHU_THUOC;
             m_txt_mst_phu_thuoc.Text = m_us_phu_thuoc_details.strMA_SO_THUE;
             m_txt_quan_he.Text = m_us_phu_thuoc_details.strQUAN_HE_VOI_NGUOI_NOP_THUE;
@@ -153,9 +176,31 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void form_2_us_obj()
         {
-            m_us_phu_thuoc_details.datTU_NGAY = m_dat_ngay_bat_dau.Value;
-            m_us_phu_thuoc_details.datDEN_NGAY = m_dat_ngay_ket_thuc.Value;
-            m_us_phu_thuoc_details.datNGAY_SINH = m_dat_ngay_sinh_npt.Value;
+            if(m_dat_ngay_bat_dau.EditValue == null)
+            {
+                m_us_phu_thuoc_details.SetTU_NGAYNull();
+            }
+            else
+            {
+                m_us_phu_thuoc_details.datTU_NGAY = m_dat_ngay_bat_dau.DateTime.Date;
+            }
+            if(m_dat_ngay_ket_thuc.EditValue == null)
+            {
+                m_us_phu_thuoc_details.SetDEN_NGAYNull();
+            }
+            else
+            {
+                m_us_phu_thuoc_details.datDEN_NGAY = m_dat_ngay_ket_thuc.DateTime.Date;
+            }
+            if(m_dat_ngay_sinh_npt.EditValue == null)
+            {
+                m_us_phu_thuoc_details.SetNGAY_SINHNull();
+            }
+            else
+            {
+                m_us_phu_thuoc_details.datNGAY_SINH = m_dat_ngay_sinh_npt.DateTime.Date;
+            }
+            
             m_us_phu_thuoc_details.strHO_TEN_NGUOI_PHU_THUOC = m_txt_ho_ten_nguoi_phu_thuoc.Text;
             m_us_phu_thuoc_details.strMA_SO_THUE = m_txt_mst_phu_thuoc.Text;
             m_us_phu_thuoc_details.strQUAN_HE_VOI_NGUOI_NOP_THUE = m_txt_quan_he.Text;
@@ -172,12 +217,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             if(m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
                 m_us_phu_thuoc_details.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
-                m_us_phu_thuoc_details.datNGAY_LAP = DateTime.Now;
+                m_us_phu_thuoc_details.datNGAY_LAP = DateTime.Now.Date;
             }
             else if(m_e_form_mode == DataEntryFormMode.UpdateDataState)
             {
                 m_us_phu_thuoc_details.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
-                m_us_phu_thuoc_details.datNGAY_SUA = DateTime.Now;
+                m_us_phu_thuoc_details.datNGAY_SUA = DateTime.Now.Date;
             }
         }
 

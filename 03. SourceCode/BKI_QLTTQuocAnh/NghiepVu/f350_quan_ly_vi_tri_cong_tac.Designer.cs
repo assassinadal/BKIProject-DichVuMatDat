@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f350_quan_ly_vi_tri_cong_tac));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -79,7 +78,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList = new System.Windows.Forms.ImageList();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc_v_gd_cong_tac = new DevExpress.XtraGrid.GridControl();
             this.m_grv_v_gd_cong_tac = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -150,6 +149,7 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(839, 168);
             this.panelControl1.TabIndex = 1;
+            this.panelControl1.Visible = false;
             // 
             // groupControl2
             // 
@@ -165,6 +165,7 @@
             this.groupControl2.Size = new System.Drawing.Size(405, 164);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "THÔNG TIN VỊ TRÍ CÔNG TÁC";
+            this.groupControl2.Visible = false;
             // 
             // m_dat_ngay_ket_thuc
             // 
@@ -284,6 +285,7 @@
             this.groupControl1.Size = new System.Drawing.Size(420, 164);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "THÔNG TIN CƠ BẢN";
+            this.groupControl1.Visible = false;
             // 
             // m_sle_chon_don_vi
             // 
@@ -589,6 +591,7 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(839, 40);
             this.panelControl2.TabIndex = 2;
+            this.panelControl2.Visible = false;
             // 
             // m_cmd_insert
             // 
@@ -893,7 +896,6 @@
             this.m_cmd_update.Size = new System.Drawing.Size(116, 36);
             this.m_cmd_update.TabIndex = 16;
             this.m_cmd_update.Text = "&Sửa";
-            this.m_cmd_update.Visible = false;
             // 
             // m_cmd_delete
             // 

@@ -819,7 +819,6 @@
             this.m_cmd_tk_ns_tong_hop.Id = 65;
             this.m_cmd_tk_ns_tong_hop.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_thong_ke_tong_hop_;
             this.m_cmd_tk_ns_tong_hop.Name = "m_cmd_tk_ns_tong_hop";
-            this.m_cmd_tk_ns_tong_hop.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInCustomizing;
             this.m_cmd_tk_ns_tong_hop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tk_ns_tong_hop_ItemClick);
             // 
             // m_cmd_bc_hs_bs_hs_athk

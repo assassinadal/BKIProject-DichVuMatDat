@@ -66,7 +66,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 DataSet v_ds = new DataSet();
                 v_ds.Tables.Add();
 
-                v_us.load_du_lieu_hs_athk_bsl_le_tet(v_ds, 1, 2016);
+                v_us.load_du_lieu_hs_athk_bsl_le_tet(v_ds, lay_thang(), lay_nam());
                 m_grc.DataSource = null;
                 m_grc.DataSource = v_ds.Tables[0];
             }

@@ -433,6 +433,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.cs">
+      <DependentUpon>DS_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_GD_CONG_TAC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1352,6 +1360,17 @@
     </None>
     <None Include="DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.xss">
       <DependentUpon>DS_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.xsc">
+      <DependentUpon>DS_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.xss">
+      <DependentUpon>DS_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_CONG_TAC.xsc">
       <DependentUpon>DS_V_GD_CONG_TAC.xsd</DependentUpon>

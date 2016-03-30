@@ -39,7 +39,7 @@ namespace BKI_DichVuMatDat.BaoCao
             InitializeComponent();
             set_initial_form_load(ip_thang, ip_nam);
             m_sle_chon_nhan_vien.EditValue = ip_id_nv;
-            m_sle_chon_nhan_vien.Visible = false;
+           // m_sle_chon_nhan_vien.Visible = false;
         }
 
         #endregion

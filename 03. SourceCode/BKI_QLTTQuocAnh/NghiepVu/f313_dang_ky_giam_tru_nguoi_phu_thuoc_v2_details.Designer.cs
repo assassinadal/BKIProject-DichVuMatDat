@@ -43,8 +43,15 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.m_dat_ngay_ket_thuc = new DevExpress.XtraEditors.DateEdit();
+            this.m_dat_ngay_bat_dau = new DevExpress.XtraEditors.DateEdit();
+            this.m_dat_ngay_sinh_npt = new DevExpress.XtraEditors.DateEdit();
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_txt_quoc_gia = new System.Windows.Forms.TextBox();
             this.m_txt_thanh_pho = new System.Windows.Forms.TextBox();
             this.m_txt_quan = new System.Windows.Forms.TextBox();
@@ -67,6 +74,7 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -75,21 +83,19 @@
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_dat_ngay_sinh_npt = new DevExpress.XtraEditors.DateEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_dat_ngay_bat_dau = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_dat_ngay_ket_thuc = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ket_thuc.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ket_thuc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_bat_dau.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_bat_dau.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_sinh_npt.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_sinh_npt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -102,6 +108,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
@@ -110,14 +117,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_sinh_npt.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_sinh_npt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_bat_dau.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_bat_dau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ket_thuc.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ket_thuc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
@@ -260,9 +260,54 @@
             this.layoutControl1.TabIndex = 15;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // m_dat_ngay_ket_thuc
+            // 
+            this.m_dat_ngay_ket_thuc.EditValue = null;
+            this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(516, 340);
+            this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
+            this.m_dat_ngay_ket_thuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_ngay_ket_thuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_ngay_ket_thuc.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_ngay_ket_thuc.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_dat_ngay_ket_thuc.Properties.NullText = "--Chưa cập nhật--";
+            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(218, 20);
+            this.m_dat_ngay_ket_thuc.StyleController = this.layoutControl1;
+            this.m_dat_ngay_ket_thuc.TabIndex = 26;
+            // 
+            // m_dat_ngay_bat_dau
+            // 
+            this.m_dat_ngay_bat_dau.EditValue = null;
+            this.m_dat_ngay_bat_dau.Location = new System.Drawing.Point(161, 340);
+            this.m_dat_ngay_bat_dau.Name = "m_dat_ngay_bat_dau";
+            this.m_dat_ngay_bat_dau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_ngay_bat_dau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_ngay_bat_dau.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_ngay_bat_dau.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_dat_ngay_bat_dau.Properties.NullText = "--Chưa cập nhật--";
+            this.m_dat_ngay_bat_dau.Size = new System.Drawing.Size(214, 20);
+            this.m_dat_ngay_bat_dau.StyleController = this.layoutControl1;
+            this.m_dat_ngay_bat_dau.TabIndex = 25;
+            // 
+            // m_dat_ngay_sinh_npt
+            // 
+            this.m_dat_ngay_sinh_npt.EditValue = null;
+            this.m_dat_ngay_sinh_npt.Location = new System.Drawing.Point(516, 110);
+            this.m_dat_ngay_sinh_npt.Name = "m_dat_ngay_sinh_npt";
+            this.m_dat_ngay_sinh_npt.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_ngay_sinh_npt.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_ngay_sinh_npt.Properties.NullText = "--Chưa cập nhật--";
+            this.m_dat_ngay_sinh_npt.Size = new System.Drawing.Size(218, 20);
+            this.m_dat_ngay_sinh_npt.StyleController = this.layoutControl1;
+            this.m_dat_ngay_sinh_npt.TabIndex = 24;
+            // 
             // m_sle_chon_nhan_vien
             // 
-            this.m_sle_chon_nhan_vien.EditValue = "";
             this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(161, 43);
             this.m_sle_chon_nhan_vien.Name = "m_sle_chon_nhan_vien";
             this.m_sle_chon_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -286,6 +331,36 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "ID";
+            this.gridColumn1.FieldName = "ID";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Mã NV";
+            this.gridColumn2.FieldName = "MA_NV";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Họ đệm";
+            this.gridColumn3.FieldName = "HO_DEM";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Tên";
+            this.gridColumn4.FieldName = "TEN";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 2;
             // 
             // m_txt_quoc_gia
             // 
@@ -406,7 +481,7 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(355, 24);
-            this.layoutControlItem2.Text = "Tên nhân viên";
+            this.layoutControlItem2.Text = "Tên nhân viên *";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(134, 13);
             // 
             // layoutControlItem3
@@ -416,7 +491,7 @@
             this.layoutControlItem3.Location = new System.Drawing.Point(355, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(359, 24);
-            this.layoutControlItem3.Text = "Mã số thuế";
+            this.layoutControlItem3.Text = "Mã số thuế *";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(134, 13);
             // 
             // layoutControlGroup3
@@ -483,6 +558,16 @@
             this.layoutControlItem11.Size = new System.Drawing.Size(359, 24);
             this.layoutControlItem11.Text = "Quan hệ với người nộp thuế";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(134, 13);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.m_dat_ngay_sinh_npt;
+            this.layoutControlItem1.CustomizationFormText = "Ngày sinh";
+            this.layoutControlItem1.Location = new System.Drawing.Point(355, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(359, 24);
+            this.layoutControlItem1.Text = "Ngày sinh";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(134, 13);
             // 
             // layoutControlGroup4
             // 
@@ -572,76 +657,6 @@
             this.layoutControlGroup5.Size = new System.Drawing.Size(738, 67);
             this.layoutControlGroup5.Text = "Thời gian tính giảm trừ";
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "ID";
-            this.gridColumn1.FieldName = "ID";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Mã NV";
-            this.gridColumn2.FieldName = "MA_NV";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Họ đệm";
-            this.gridColumn3.FieldName = "HO_DEM";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Tên";
-            this.gridColumn4.FieldName = "TEN";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
-            // 
-            // m_dat_ngay_sinh_npt
-            // 
-            this.m_dat_ngay_sinh_npt.EditValue = null;
-            this.m_dat_ngay_sinh_npt.Location = new System.Drawing.Point(516, 110);
-            this.m_dat_ngay_sinh_npt.Name = "m_dat_ngay_sinh_npt";
-            this.m_dat_ngay_sinh_npt.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_ngay_sinh_npt.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_ngay_sinh_npt.Properties.NullText = "--Chưa cập nhật--";
-            this.m_dat_ngay_sinh_npt.Size = new System.Drawing.Size(218, 20);
-            this.m_dat_ngay_sinh_npt.StyleController = this.layoutControl1;
-            this.m_dat_ngay_sinh_npt.TabIndex = 24;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.m_dat_ngay_sinh_npt;
-            this.layoutControlItem1.CustomizationFormText = "Ngày sinh";
-            this.layoutControlItem1.Location = new System.Drawing.Point(355, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(359, 24);
-            this.layoutControlItem1.Text = "Ngày sinh";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(134, 13);
-            // 
-            // m_dat_ngay_bat_dau
-            // 
-            this.m_dat_ngay_bat_dau.EditValue = null;
-            this.m_dat_ngay_bat_dau.Location = new System.Drawing.Point(161, 340);
-            this.m_dat_ngay_bat_dau.Name = "m_dat_ngay_bat_dau";
-            this.m_dat_ngay_bat_dau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_ngay_bat_dau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_ngay_bat_dau.Properties.Mask.EditMask = "MM/yyyy";
-            this.m_dat_ngay_bat_dau.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_dat_ngay_bat_dau.Properties.NullText = "--Chưa cập nhật--";
-            this.m_dat_ngay_bat_dau.Size = new System.Drawing.Size(214, 20);
-            this.m_dat_ngay_bat_dau.StyleController = this.layoutControl1;
-            this.m_dat_ngay_bat_dau.TabIndex = 25;
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.m_dat_ngay_bat_dau;
@@ -651,22 +666,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(355, 24);
             this.layoutControlItem4.Text = "Tháng bắt đầu";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(134, 13);
-            // 
-            // m_dat_ngay_ket_thuc
-            // 
-            this.m_dat_ngay_ket_thuc.EditValue = null;
-            this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(516, 340);
-            this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
-            this.m_dat_ngay_ket_thuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_ngay_ket_thuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_ngay_ket_thuc.Properties.Mask.EditMask = "MM/yyyy";
-            this.m_dat_ngay_ket_thuc.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_dat_ngay_ket_thuc.Properties.NullText = "--Chưa cập nhật--";
-            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(218, 20);
-            this.m_dat_ngay_ket_thuc.StyleController = this.layoutControl1;
-            this.m_dat_ngay_ket_thuc.TabIndex = 26;
             // 
             // layoutControlItem7
             // 
@@ -695,6 +694,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ket_thuc.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ket_thuc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_bat_dau.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_bat_dau.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_sinh_npt.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_sinh_npt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -707,6 +712,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
@@ -715,14 +721,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_sinh_npt.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_sinh_npt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_bat_dau.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_bat_dau.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ket_thuc.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ket_thuc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 

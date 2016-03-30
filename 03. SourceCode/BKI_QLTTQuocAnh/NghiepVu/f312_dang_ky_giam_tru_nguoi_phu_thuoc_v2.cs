@@ -235,6 +235,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 f314_dang_ky_giam_tru_nguoi_phu_thuoc_xls v_f = new f314_dang_ky_giam_tru_nguoi_phu_thuoc_xls();
                 v_f.Show();
+                load_data_to_grid();
             }
             catch (Exception v_e)
             {

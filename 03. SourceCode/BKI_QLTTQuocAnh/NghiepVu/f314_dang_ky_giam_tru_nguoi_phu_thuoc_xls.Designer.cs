@@ -243,6 +243,8 @@
             // bandedGridColumn2
             // 
             this.bandedGridColumn2.Caption = "Ngày sinh(*)";
+            this.bandedGridColumn2.DisplayFormat.FormatString = "dd/mm/yyyy";
+            this.bandedGridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.bandedGridColumn2.FieldName = "NGAY_SINH";
             this.bandedGridColumn2.Name = "bandedGridColumn2";
             this.bandedGridColumn2.Visible = true;
@@ -560,7 +562,9 @@
             this.Controls.Add(this.m_grc);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f314_dang_ky_giam_tru_nguoi_phu_thuoc_xls";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F314 - Import excel danh sách giảm trừ phụ thuộc";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();

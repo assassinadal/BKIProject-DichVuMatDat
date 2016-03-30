@@ -55,46 +55,44 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void tao_file_mau(string ip_file_name)
         {
             m_grv.Columns.Clear();
-            US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            //v_us.get_bang_cham_cong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
-            v_us.get_bang_cham_cong(v_ds, m_dat_chon_thang.DateTime.Month.ToString(), m_dat_chon_thang.DateTime.Year.ToString());
-            //DateTime v_dat_bat_dau = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1);
-            //DateTime v_dat_ket_thuc = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1).AddMonths(1);
-            int thang = Convert.ToInt16(m_dat_chon_thang.DateTime.Month.ToString());
-            int nam = Convert.ToInt16(m_dat_chon_thang.DateTime.Year.ToString());
-            DateTime v_dat_bat_dau = new DateTime(nam,thang,1);
-            DateTime v_dat_ket_thuc = new DateTime(nam, thang, 1).AddMonths(1);
-            for (DateTime i = v_dat_bat_dau; i < v_dat_ket_thuc; i = i.AddDays(1))
-            {
-                var v_c = new DataColumn();
-                v_c.ColumnName = i.ToString("dd/MM");
-                v_ds.Tables[0].Columns.Add(v_c);
-            }
-            var v_c_hsk = new DataColumn();
-            v_c_hsk.ColumnName = "HSK";
-            v_ds.Tables[0].Columns.Add(v_c_hsk);
-            m_grc.DataSource = v_ds.Tables[0];
-            format_gridview();
-            SaveXLSX(ip_file_name);
-        }
-
-        private void SaveXLSX(string ip_file_name)
-        {
-            //string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string targetPath = WinFormControls.saveFileDialog(ip_file_name);
             if (targetPath != "")
             {
-                //string newpath = targetPath + "\\" + "Chấm công tháng " + m_txt_thang.Text + "-" + m_txt_nam.Text + ".xls";
-                m_grv.ExportToXls(targetPath);
-                XtraMessageBox.Show("Đã lưu file mẫu tại " + targetPath + ".\nFile sẽ tự động mở ngay sau đây!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                var process = new System.Diagnostics.Process();
-                process.StartInfo.FileName = targetPath;
-                process.StartInfo.Verb = "Open";
-                process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
-                process.Start();
-            }
+                US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
+                DataSet v_ds = new DataSet();
+                v_ds.Tables.Add(new DataTable());
+                //v_us.get_bang_cham_cong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
+                v_us.get_bang_cham_cong(v_ds, m_dat_chon_thang.DateTime.Month.ToString(), m_dat_chon_thang.DateTime.Year.ToString());
+                //DateTime v_dat_bat_dau = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1);
+                //DateTime v_dat_ket_thuc = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1).AddMonths(1);
+                int thang = Convert.ToInt16(m_dat_chon_thang.DateTime.Month.ToString());
+                int nam = Convert.ToInt16(m_dat_chon_thang.DateTime.Year.ToString());
+                DateTime v_dat_bat_dau = new DateTime(nam, thang, 1);
+                DateTime v_dat_ket_thuc = new DateTime(nam, thang, 1).AddMonths(1);
+                for (DateTime i = v_dat_bat_dau; i < v_dat_ket_thuc; i = i.AddDays(1))
+                {
+                    var v_c = new DataColumn();
+                    v_c.ColumnName = i.ToString("dd/MM");
+                    v_ds.Tables[0].Columns.Add(v_c);
+                }
+                var v_c_hsk = new DataColumn();
+                v_c_hsk.ColumnName = "HSK";
+                v_ds.Tables[0].Columns.Add(v_c_hsk);
+                m_grc.DataSource = v_ds.Tables[0];
+                format_gridview();
+                SaveXLSX(ip_file_name, targetPath);
+            }           
+        }
+
+        private void SaveXLSX(string ip_file_name, string targetPath)
+        {
+            m_grv.ExportToXls(targetPath);
+            XtraMessageBox.Show("Đã lưu file mẫu tại " + targetPath + ".\nFile sẽ tự động mở ngay sau đây!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var process = new System.Diagnostics.Process();
+            process.StartInfo.FileName = targetPath;
+            process.StartInfo.Verb = "Open";
+            process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
+            process.Start();
         }
         #endregion
 

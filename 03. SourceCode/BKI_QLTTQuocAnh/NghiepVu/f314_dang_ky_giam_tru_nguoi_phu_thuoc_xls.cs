@@ -49,32 +49,37 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_GD_PHU_THUOC_DETAILS v_us = new US_GD_PHU_THUOC_DETAILS();
             v_us.dcID_GD_PHU_THUOC = get_id_by_ma_nhan_vien(v_dr[0].ToString());
             v_us.strHO_TEN_NGUOI_PHU_THUOC = v_dr[3].ToString();
-            v_us.datNGAY_SINH = return_datetime_data(v_dr[4].ToString());
+            DateTime v_dat;
+            if (DateTime.TryParse(v_dr[4].ToString().Trim(),out v_dat))
+                v_us.datNGAY_SINH = WinFormControls.FormatPostingDate(v_dr[4].ToString());
             v_us.strMA_SO_THUE = v_dr[5].ToString();
             v_us.strQUOC_TICH = v_dr[6].ToString();
             v_us.strSO_CMT_HO_CHIEU = v_dr[7].ToString();
             v_us.strQUAN_HE_VOI_NGUOI_NOP_THUE = v_dr[8].ToString();
             v_us.strTTGKS_SO = v_dr[9].ToString();
-            v_us.strTTGKS_QUYEN = string.Format("{0:MM/yyyy}", v_dr[10]);
+            v_us.strTTGKS_QUYEN = v_dr[10].ToString();
             v_us.strTTGKS_QUOC_GIA = v_dr[11].ToString();
             v_us.strTTGKS_TINH_THANH = v_dr[12].ToString();
             v_us.strTTGKS_QUAN_HUYEN = v_dr[13].ToString();
             v_us.strTTGKS_PHUONG_XA = v_dr[14].ToString();
-            v_us.datTU_NGAY = return_datetime_data(v_dr[15].ToString());
+            if (DateTime.TryParse(v_dr[15].ToString().Trim(), out v_dat))
+                v_us.datTU_NGAY = WinFormControls.FormatPostingDate(v_dr[15].ToString());
+            if (DateTime.TryParse(v_dr[16].ToString().Trim(), out v_dat))
+                v_us.datDEN_NGAY = WinFormControls.FormatPostingDate(v_dr[16].ToString()); 
             v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             v_us.datNGAY_LAP = DateTime.Now;
             v_us.strDA_XOA = "N";
             v_us.Insert();                 
         }
 
-        private DateTime return_datetime_data(string ip_str)
-        {
-            if (ip_str.Trim() == "")
-            {
-                return DateTime.Now;
-            }
-            return DateTime.Parse(ip_str);
-        }
+        //private DateTime return_datetime_data(string ip_str)
+        //{
+        //    if (ip_str.Trim() == "")
+        //    {
+        //        return DateTime.Now;
+        //    }
+        //    return DateTime.Parse(ip_str);
+        //}
 
         private decimal get_id_by_ma_nhan_vien(string ip_str_ma_nv)
         {
@@ -158,7 +163,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 m_pn.Visible = false;
                 m_prb.Visible = false;
                 XtraMessageBox.Show("Lưu thành công");
-                load_data_to_grid();
+                this.Close();
             }
             catch (Exception v_e)
             {
@@ -207,7 +212,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                     m_prb.Visible = true;
                     m_cmd_save.Enabled = false;
                     m_bgw.RunWorkerAsync();
-
                 }              
             }
             catch (Exception v_e)

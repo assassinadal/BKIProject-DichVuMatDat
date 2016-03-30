@@ -17,7 +17,7 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraPivotGrid;
 using IP.Core.IPSystemAdmin;
 using DevExpress.XtraSplashScreen;
-
+using BKI_DichVuMatDat.XtraReport;
 namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2 : Form
@@ -247,6 +247,19 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_import_excel.Click += m_cmd_import_excel_Click;
             m_grv1.DoubleClick += new EventHandler(m_grv1_DoubleClick);
             m_cmd_insert.Click += m_cmd_them_click;
+            m_cmd_export.Click += m_cmd_export_Click;
+        }
+
+        void m_cmd_export_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ReportHelper.ExportXLS(m_grc, "BẢNG KÊ THÔNG TIN NGƯỜI PHỤ THUỘC GIẢM TRỪ GIA CẢNH", "GTGC_Bang ke thong tin phu phuoc");
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_import_excel_Click(object sender, EventArgs e)

@@ -16,6 +16,7 @@ using BKI_DichVuMatDat.DS.CDBNames;
 using DevExpress.Utils;
 using BKI_DichVuMatDat.NghiepVu.Luong;
 using DevExpress.XtraGrid;
+using BKI_DichVuMatDat.XtraReport;
 namespace BKI_DichVuMatDat.BaoCao
 {
     public partial class f412_rpt_tong_hop_tt_v2 : Form
@@ -176,15 +177,16 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
-                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-                saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
-                saveFileDialog1.RestoreDirectory = true;
-                saveFileDialog1.FileName = gen_ten_bang_luong();
-                if(saveFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    m_grc_tong_hop.ExportToXls(saveFileDialog1.FileName);
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
-                }
+                //SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                //saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+                //saveFileDialog1.RestoreDirectory = true;
+                //saveFileDialog1.FileName = gen_ten_bang_luong();
+                //if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+                //{
+                //    m_grc_tong_hop.ExportToXls(saveFileDialog1.FileName);
+                //    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
+                //}
+                ReportHelper.XemVaIn(m_grc_tong_hop, "BÁO CÁO TỔNG HỢP LƯƠNG", gen_ten_bang_luong());
             }
             catch(Exception v_e)
             {

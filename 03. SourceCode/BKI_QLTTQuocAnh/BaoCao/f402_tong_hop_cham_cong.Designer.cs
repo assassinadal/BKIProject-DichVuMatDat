@@ -75,7 +75,7 @@
             // 
             // m_sle_chon_nhan_vien
             // 
-            this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(28, 20);
+            this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(164, 13);
             this.m_sle_chon_nhan_vien.Name = "m_sle_chon_nhan_vien";
             this.m_sle_chon_nhan_vien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_sle_chon_nhan_vien.Properties.Appearance.Options.UseFont = true;

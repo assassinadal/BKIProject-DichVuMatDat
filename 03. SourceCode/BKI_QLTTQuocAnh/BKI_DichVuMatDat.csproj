@@ -15,7 +15,7 @@
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>C:\Users\huynhdaihai\Desktop\Generate\</PublishUrl>
+    <PublishUrl>\\localhost\Users\tuyen\Desktop\DVMD_PUBLISH_RELEASE\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -32,7 +32,7 @@
     <SuiteName>HRM_RELEASE</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>27</ApplicationRevision>
+    <ApplicationRevision>28</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -1107,6 +1107,16 @@
     </Compile>
     <Compile Include="COMMON\WinFormControls.cs" />
     <Compile Include="COMMON\CHRM_BaseMessages210.cs" />
+    <Compile Include="XtraReport\ReportHelper.cs" />
+    <Compile Include="XtraReport\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="XtraReport\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DVMDDataSet1.xsc">
       <DependentUpon>DVMDDataSet1.xsd</DependentUpon>
     </None>

@@ -21,7 +21,7 @@ using BKI_DichVuMatDat.NghiepVu.ThuNhapKhac;
 //using BKI_DichVuMatDat.BaoCao.Luong;
 using BKI_DichVuMatDat.BaoCao.ThuNhapKhac;
 using BKI_DichVuMatDat.NghiepVu.Luong;
-using BKI_DichVuMatDat.BaoCao.Luong;
+//using BKI_DichVuMatDat.BaoCao.Luong;
 
 namespace BKI_DichVuMatDat
 {
@@ -33,6 +33,7 @@ namespace BKI_DichVuMatDat
             format_control();
             MdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             ribbon.SelectedPage = ribbonPage3;
+            dockPanel1.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
         }
 
         public void display(ref IP.Core.IPCommon.IPConstants.HowUserWantTo_Exit_MainForm v_exitmode)
@@ -40,14 +41,14 @@ namespace BKI_DichVuMatDat
             try
             {
                 int v_so_hop_dong_het_han = get_hop_dong_het_han().Tables[0].Rows.Count;
-                //int v_so_nv_het_han_hs_lns = get_nv_het_han_hs_lns().Tables[0].Rows.Count;
-                //int v_so_nv_han_han_lcd = get_nv_het_han_lcd().Tables[0].Rows.Count;
-                m_lbl_canh_bao_het_han_hop_dong.Text = "Hiện có " + v_so_hop_dong_het_han + " nhân viên sắp hết hạn hợp đồng trong tháng";
-                //m_lbl_canh_bao_het_han_luong_che_do.Text = "Hiện có " + v_so_nv_han_han_lcd + " nhân viên sắp hết hạn lương chế độ trong tháng";
-                //m_lbl_canh_bao_het_han_hs_lns.Text = "Hiện có " + v_so_nv_het_han_hs_lns + " nhân viên sắp hết hạn hệ số lương năng suất trong tháng";
+                int v_so_nv_het_han_hs_lns = get_nv_het_han_hs_lns().Tables[0].Rows.Count;
+                int v_so_nv_han_han_lcd = get_nv_het_han_lcd().Tables[0].Rows.Count;
+                m_lbl_nv_het_han_hop_dong.Text = v_so_hop_dong_het_han.ToString();
+                m_lbl_nv_het_han_lcd.Text = v_so_nv_han_han_lcd.ToString();
+                m_lbl_nv_het_han_lns.Text = v_so_nv_het_han_hs_lns.ToString();
                 this.ShowDialog();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -60,7 +61,7 @@ namespace BKI_DichVuMatDat
             {
                 this.ShowDialog();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -105,9 +106,9 @@ namespace BKI_DichVuMatDat
 
         private bool IsExistFormName(Form ip_frm)
         {
-            foreach(var child in MdiChildren)
+            foreach (var child in MdiChildren)
             {
-                if(child.Name == ip_frm.Name)
+                if (child.Name == ip_frm.Name)
                 {
                     child.Activate();
                     return true;
@@ -118,9 +119,9 @@ namespace BKI_DichVuMatDat
 
         private bool IsExistFormText(Form ip_frm)
         {
-            foreach(var child in MdiChildren)
+            foreach (var child in MdiChildren)
             {
-                if(child.Text == ip_frm.Text)
+                if (child.Text == ip_frm.Text)
                 {
                     child.Activate();
                     return true;
@@ -137,18 +138,18 @@ namespace BKI_DichVuMatDat
 
             Version myVersion;
             string myVersionText = "";
-            if(ApplicationDeployment.IsNetworkDeployed)
+            if (ApplicationDeployment.IsNetworkDeployed)
             {
                 myVersion = ApplicationDeployment.CurrentDeployment.CurrentVersion;
                 myVersionText = string.Concat("v", myVersion);
             }
-            if(CAppContext_201.getCurrentUserID() == 1)
+            if (CAppContext_201.getCurrentUserID() == 1)
             {
                 barStaticItemServer.Caption = "Server: " + server + " | Username: " + username + " | DB: " + dbname + " | Version: " + myVersionText;
             }
             else
             {
-                barStaticItemServer.Caption = "Username: " + username  + " | Version: " + myVersionText;
+                barStaticItemServer.Caption = "Username: " + username + " | Version: " + myVersionText;
             }
         }
 
@@ -175,7 +176,7 @@ namespace BKI_DichVuMatDat
                         v_ngay_dau_tien_cua_thang_hien_tai.Date
                         , v_ngay_cuoi_cung_cua_thang_hien_tai.Date);
         }
-      
+
         private DataSet get_nv_het_han_hs_lns()
         {
             try
@@ -192,7 +193,7 @@ namespace BKI_DichVuMatDat
                 CSystemLog_301.ExceptionHandle(v_e);
                 return null;
             }
-           
+
         }
 
         private DataSet get_nv_het_han_lcd()
@@ -211,7 +212,7 @@ namespace BKI_DichVuMatDat
                 CSystemLog_301.ExceptionHandle(v_e);
                 return null;
             }
-           
+
         }
 
         private void m_lbl_canh_bao_het_han_luong_che_do_Click(object sender, EventArgs e)
@@ -249,8 +250,19 @@ namespace BKI_DichVuMatDat
         private void set_define_events()
         {
             this.Load += f388_main_Load;
-            m_lbl_canh_bao_het_han_hs_lns.DoubleClick += m_lbl_canh_bao_het_han_hs_lns_Click;
-            m_lbl_canh_bao_het_han_luong_che_do.DoubleClick += m_lbl_canh_bao_het_han_luong_che_do_Click;
+            m_lbl_nv_het_han_lns.DoubleClick += m_lbl_canh_bao_het_han_hs_lns_Click;
+            label12.DoubleClick += m_lbl_canh_bao_het_han_hs_lns_Click;
+            label10.DoubleClick += m_lbl_canh_bao_het_han_hs_lns_Click;
+            label9.DoubleClick += m_lbl_canh_bao_het_han_hs_lns_Click;
+            m_lbl_nv_het_han_lcd.DoubleClick += m_lbl_canh_bao_het_han_luong_che_do_Click;
+            label16.DoubleClick += m_lbl_canh_bao_het_han_luong_che_do_Click;
+            label14.DoubleClick += m_lbl_canh_bao_het_han_luong_che_do_Click;
+            label13.DoubleClick += m_lbl_canh_bao_het_han_luong_che_do_Click;
+            m_lbl_nv_het_han_hop_dong.Click += m_lbl_canh_bao_het_han_hop_dong_DoubleClick;
+            label1.DoubleClick += m_lbl_canh_bao_het_han_hop_dong_DoubleClick;
+            label3.DoubleClick += m_lbl_canh_bao_het_han_hop_dong_DoubleClick;
+            label4.DoubleClick += m_lbl_canh_bao_het_han_hop_dong_DoubleClick;
+
             //Nghiệp vụ
             m_cmd_cham_cong_nv.ItemClick += m_cmd_cham_cong_nv_ItemClick;
             m_cmd_lap_hop_dong.ItemClick += m_cmd_lap_hop_dong_ItemClick;
@@ -264,7 +276,7 @@ namespace BKI_DichVuMatDat
             m_cmd_quan_ly_luong_cung.ItemClick += m_cmd_quan_ly_luong_cung_ItemClick;
             m_cmd_quan_ly_khong_dong_bh.ItemClick += m_cmd_quan_ly_khong_dong_bh_ItemClick;
             m_cmd_thuong_thu_nhap_khac.ItemClick += m_cmd_luong_hs_athk_ItemClick;
-            m_cmd_ql_thuong_le_tet.ItemClick += m_cmd_ql_thuong_hsbs_ItemClick;          
+            m_cmd_ql_thuong_le_tet.ItemClick += m_cmd_ql_thuong_hsbs_ItemClick;
             m_cmd_thuong_2014.ItemClick += m_cmd_thuong_2014_ItemClick;
             //Hệ thống
             m_cmd_thoat.ItemClick += m_cmd_thoat_ItemClick;
@@ -311,11 +323,11 @@ namespace BKI_DichVuMatDat
             try
             {
                 f492_bao_cao_cac_he_so v_f = new f492_bao_cao_cac_he_so();
-                if(IsExistFormName(v_f)) return;
+                if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -325,12 +337,12 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f495_thong_tin_chot_bang_luong_thang v_f = new f495_thong_tin_chot_bang_luong_thang();
-                if(IsExistFormName(v_f)) return;
-                v_f.MdiParent = this;
-                v_f.Show();
+                ////f495_thong_tin_chot_bang_luong_thang v_f = new f495_thong_tin_chot_bang_luong_thang();
+                //if(IsExistFormName(v_f)) return;
+                //v_f.MdiParent = this;
+                //v_f.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -357,11 +369,11 @@ namespace BKI_DichVuMatDat
             try
             {
                 f403_bao_cao_hs_athk_bsl_le_tet v_frm = new f403_bao_cao_hs_athk_bsl_le_tet();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -387,11 +399,11 @@ namespace BKI_DichVuMatDat
             try
             {
                 F401_he_so_bao_cao_luong v_frm = new F401_he_so_bao_cao_luong();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -417,11 +429,11 @@ namespace BKI_DichVuMatDat
             try
             {
                 f412_rpt_tong_hop_tt_v2 v_frm = new f412_rpt_tong_hop_tt_v2();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -432,7 +444,7 @@ namespace BKI_DichVuMatDat
             try
             {
                 f405_bao_cao_thong_tin_tinh_luong v_frm = new f405_bao_cao_thong_tin_tinh_luong();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
                 v_frm.MdiParent = this;
                 v_frm.Show();
                 //f301_quy_trinh_tinh_luong_v2 v_frm = new f301_quy_trinh_tinh_luong_v2();
@@ -473,7 +485,7 @@ namespace BKI_DichVuMatDat
                 //v_frm.MdiParent = this;
                 //v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -489,7 +501,7 @@ namespace BKI_DichVuMatDat
                 //v_frm.MdiParent = this;
                 //v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -500,12 +512,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 f315_card_nhan_vien v_frm = new f315_card_nhan_vien();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -518,12 +530,12 @@ namespace BKI_DichVuMatDat
                 DateTime v_ngay_dau_tien_cua_thang_hien_tai = CHRMCommon.get_first_day_of_month(DateTime.Now.Date);
                 DateTime v_ngay_cuoi_cung_cua_thang_hien_tai = CHRMCommon.get_last_day_of_month(DateTime.Now.Date);
                 F110_dm_hop_dong_het_han v_frm = new F110_dm_hop_dong_het_han();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.display(v_ngay_dau_tien_cua_thang_hien_tai, v_ngay_cuoi_cung_cua_thang_hien_tai);
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -534,12 +546,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 f471_bao_cao_qua_trinh_cong_tac v_frm = new f471_bao_cao_qua_trinh_cong_tac();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -550,12 +562,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 f470_bao_cao_thong_ke_lao_dong v_frm = new f470_bao_cao_thong_ke_lao_dong();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -566,12 +578,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 f469_danh_sach_nhan_vien_bo_nhiem v_frm = new f469_danh_sach_nhan_vien_bo_nhiem();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -583,12 +595,12 @@ namespace BKI_DichVuMatDat
             {
                 //f419_bao_cao_hs_lns_lcd_cua_nhan_vien v_frm = new f419_bao_cao_hs_lns_lcd_cua_nhan_vien();
                 f419_bao_cao_hs_lns_lcd_v2 v_frm = new f419_bao_cao_hs_lns_lcd_v2();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -599,12 +611,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 frm417_bao_cao_tang_giam_lao_dong v_frm = new frm417_bao_cao_tang_giam_lao_dong();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -615,12 +627,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 f413_rpt_tong_hop_thong_tin v_frm = new f413_rpt_tong_hop_thong_tin();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -631,12 +643,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 f301_tinh_thu_nhap_khac_le_tet v_frm = new f301_tinh_thu_nhap_khac_le_tet();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -647,12 +659,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien v_frm = new f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -663,12 +675,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 f301_tinh_thu_nhap_khac v_frm = new f301_tinh_thu_nhap_khac();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -684,7 +696,7 @@ namespace BKI_DichVuMatDat
                 //v_frm.MdiParent = this;
                 //v_frm.Show();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -695,12 +707,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 F430_bao_cao_cac_thang_da_chot_bang_luong v_frm = new F430_bao_cao_cac_thang_da_chot_bang_luong();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -716,7 +728,7 @@ namespace BKI_DichVuMatDat
                 //v_frm.MdiParent = this;
                 //v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -732,7 +744,7 @@ namespace BKI_DichVuMatDat
                 //v_frm.MdiParent = this;
                 //v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -743,12 +755,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 f999_ht_nguoi_su_dung v_frm = new f999_ht_nguoi_su_dung();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -761,7 +773,7 @@ namespace BKI_DichVuMatDat
                 f308_DOI_MAT_KHAU_NGUOI_SD v_frm = new f308_DOI_MAT_KHAU_NGUOI_SD();
                 v_frm.ShowDialog();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -772,12 +784,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 f306_HT_USER_GROUP v_frm = new f306_HT_USER_GROUP();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -790,7 +802,7 @@ namespace BKI_DichVuMatDat
                 f995_ht_phan_quyen_cho_nhom v_frm = new f995_ht_phan_quyen_cho_nhom();
                 v_frm.ShowDialog();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -802,7 +814,7 @@ namespace BKI_DichVuMatDat
             {
                 Dispose();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -814,7 +826,7 @@ namespace BKI_DichVuMatDat
             {
                 set_initial_form_load();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -826,12 +838,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 f410_rpt_bang_luong_nv v_frm = new f410_rpt_bang_luong_nv();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -847,7 +859,7 @@ namespace BKI_DichVuMatDat
                 //v_frm.MdiParent = this;
                 //v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -858,12 +870,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 f320_lap_hop_dong v_frm = new f320_lap_hop_dong();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -874,12 +886,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 f330_len_luong_cho_nv v_frm = new f330_len_luong_cho_nv();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -891,12 +903,12 @@ namespace BKI_DichVuMatDat
             {
                 f340_dat_hs_lns_lcd v_frm = new f340_dat_hs_lns_lcd();
                 //f341_dat_he_so_lns_lcd_v2 v_frm = new f341_dat_he_so_lns_lcd_v2();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -907,12 +919,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 f360_quan_ly_quyet_dinh v_frm = new f360_quan_ly_quyet_dinh();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -928,7 +940,7 @@ namespace BKI_DichVuMatDat
                 //v_frm.MdiParent = this;
                 //v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -939,12 +951,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien v_frm = new f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -960,7 +972,7 @@ namespace BKI_DichVuMatDat
                 //v_frm.MdiParent = this;
                 //v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -976,7 +988,7 @@ namespace BKI_DichVuMatDat
                 //v_frm.MdiParent = this;
                 //v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -988,12 +1000,12 @@ namespace BKI_DichVuMatDat
             {
                 //f363_quan_ly_cac_nhan_vien_co_luong_cung v_frm = new f363_quan_ly_cac_nhan_vien_co_luong_cung();
                 f365_quan_ly_nhan_vien_co_luong_cung_v2 v_frm = new f365_quan_ly_nhan_vien_co_luong_cung_v2();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1005,12 +1017,12 @@ namespace BKI_DichVuMatDat
             {
                 //f366_quan_ly_nhan_vien_khong_dong_bao_hiem v_frm = new f366_quan_ly_nhan_vien_khong_dong_bao_hiem();
                 f367_quan_li_nv_ko_dong_bao_hiem_v2 v_frm = new f367_quan_li_nv_ko_dong_bao_hiem_v2();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1022,12 +1034,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 DanhMuc.F108_dm_tham_so v_frm = new DanhMuc.F108_dm_tham_so();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1038,12 +1050,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 DanhMuc.F103_dm_he_so_luong_ns v_frm = new DanhMuc.F103_dm_he_so_luong_ns();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1054,12 +1066,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 DanhMuc.F106_dm_luong_che_do v_frm = new DanhMuc.F106_dm_luong_che_do();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1070,12 +1082,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 DanhMuc.F107_dm_phu_cap v_frm = new DanhMuc.F107_dm_phu_cap();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1086,11 +1098,11 @@ namespace BKI_DichVuMatDat
             try
             {
                 DanhMuc.F104_dm_loai_hop_dong v_frm = new DanhMuc.F104_dm_loai_hop_dong();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1101,12 +1113,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 F105_dm_loai_ngay_cong v_frm = new F105_dm_loai_ngay_cong();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1117,12 +1129,12 @@ namespace BKI_DichVuMatDat
             try
             {
                 DanhMuc.F109_dm_thue v_frm = new DanhMuc.F109_dm_thue();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1133,11 +1145,11 @@ namespace BKI_DichVuMatDat
             try
             {
                 f350_quan_ly_vi_tri_cong_tac v_frm = new f350_quan_ly_vi_tri_cong_tac();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1148,11 +1160,11 @@ namespace BKI_DichVuMatDat
             try
             {
                 f370_nhan_vien_loai_lao_dong v_frm = new f370_nhan_vien_loai_lao_dong();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1163,11 +1175,11 @@ namespace BKI_DichVuMatDat
             try
             {
                 F101_dm_don_vi v_frm = new F101_dm_don_vi();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1178,11 +1190,11 @@ namespace BKI_DichVuMatDat
             try
             {
                 F102_dm_bao_hiem v_frm = new F102_dm_bao_hiem();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1193,11 +1205,11 @@ namespace BKI_DichVuMatDat
             try
             {
                 F696_Cham_cong_xls v_frm = new F696_Cham_cong_xls();
-                if(IsExistFormName(v_frm)) return;
+                if (IsExistFormName(v_frm)) return;
                 v_frm.MdiParent = this;
                 v_frm.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1216,7 +1228,7 @@ namespace BKI_DichVuMatDat
                 v_f.MdiParent = this;
                 v_f.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1248,7 +1260,7 @@ namespace BKI_DichVuMatDat
                 //v_f.MdiParent = this;
                 //v_f.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1263,7 +1275,7 @@ namespace BKI_DichVuMatDat
                 //v_f.MdiParent = this;
                 //v_f.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1274,28 +1286,28 @@ namespace BKI_DichVuMatDat
             try
             {
                 f393_tinh_phep_tieu_chuan v_f = new f393_tinh_phep_tieu_chuan();
-                if(IsExistFormName(v_f)) return;
+                if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
-        
+
 
         private void m_cmd_tk_lao_dong_nuoc_ngoai_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
             {
                 f435_bao_cao_lao_dong_nuoc_ngoai v_f = new f435_bao_cao_lao_dong_nuoc_ngoai();
-                if(IsExistFormName(v_f)) return;
+                if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1306,11 +1318,11 @@ namespace BKI_DichVuMatDat
             try
             {
                 f450_thong_tin_nhan_vien v_f = new f450_thong_tin_nhan_vien();
-                if(IsExistFormName(v_f)) return;
+                if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1321,11 +1333,11 @@ namespace BKI_DichVuMatDat
             try
             {
                 f394_cham_cong_thang v_f = new f394_cham_cong_thang();
-                if(IsExistFormName(v_f)) return;
+                if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1336,11 +1348,11 @@ namespace BKI_DichVuMatDat
             try
             {
                 F393_gd_nhan_vien_phu_cap v_f = new F393_gd_nhan_vien_phu_cap();
-                if(IsExistFormName(v_f)) return;
+                if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1381,7 +1393,7 @@ namespace BKI_DichVuMatDat
             try
             {
                 f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru v_f = new f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru();
-              
+
                 if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();
@@ -1556,6 +1568,10 @@ namespace BKI_DichVuMatDat
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+
+
+
 
 
 

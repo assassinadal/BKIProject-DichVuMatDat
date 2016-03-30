@@ -228,6 +228,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.FillDataset(v_ds);
 
             m_grc_tang_giam_luong_cho_nv.DataSource = v_ds.Tables[0];
+            m_grv_tang_giam_luong_cho_nv.BestFitColumns();
         }
 
         private void load_data_2_grid(decimal ip_dc_id_nv)
@@ -239,6 +240,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.FillDataset(v_ds, "WHERE ID = " + ip_dc_id_nv);
 
             m_grc_tang_giam_luong_cho_nv.DataSource = v_ds.Tables[0];
+            m_grv_tang_giam_luong_cho_nv.BestFitColumns();
         }
 
         private decimal find_hs_lns(decimal ip_dc_id_ma_lns, decimal ip_dc_id_muc_lns)
@@ -552,9 +554,15 @@ namespace BKI_DichVuMatDat.NghiepVu
             ip_us.dcHE_SO = CIPConvert.ToDecimal(find_hs_lns(CIPConvert.ToDecimal(m_sle_chuc_danh_lns.EditValue), CIPConvert.ToDecimal(m_sle_muc_lns.EditValue)));
             //ip_us.dcID_LY_DO_CHINH_SUA =
             //so sanh gia tri ngay bat dau, ngay ket thuc vs ngay co hieu luc, ngay het hieu luc cua quyet dinh
+            if (!m_dat_ngay_ket_thuc_lns.Checked)
+            {
+                ip_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau_lns.Value.AddYears(45);
+            }
+            else
+            {
+                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lns.Value;             
+            }
             ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau_lns.Value;
-            ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lns.Value;
-
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
                 ip_us.datNGAY_LAP = DateTime.Now.Date;
@@ -578,8 +586,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             //ip_us.dcID_LY_DO_CHINH_SUA =
             //so sanh gia tri ngay bat dau, ngay ket thuc vs ngay co hieu luc, ngay het hieu luc cua quyet dinh
             ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau_lcd.Value;
-            ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lcd.Value;
-
+            if (!m_dat_ngay_ket_thuc_lcd.Checked)
+            {
+                ip_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau_lns.Value.AddYears(45);
+            }
+            else
+            {
+                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lcd.Value;
+            }
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
                 ip_us.datNGAY_LAP = DateTime.Now.Date;
@@ -620,6 +634,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS(m_id_gd_hs_lns);
 
             v_us.strDA_XOA = "Y";
+            v_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau_lns.Value.AddDays(-1);
             try
             {
                 v_us.BeginTransaction();
@@ -637,6 +652,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_GD_LUONG_CHE_DO v_us = new US_GD_LUONG_CHE_DO(m_id_gd_lcd);
 
             v_us.strDA_XOA = "Y";
+            v_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau_lcd.Value.AddDays(-1);
             try
             {
                 v_us.BeginTransaction();
@@ -691,7 +707,10 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-                throw v_e;
+                v_us_gd_hs_lns.Rollback();
+                v_us_gd_lcd.Rollback();
+                v_us_gd_hs_lns_lcd.Rollback();
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -930,5 +949,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+       
     }
 }

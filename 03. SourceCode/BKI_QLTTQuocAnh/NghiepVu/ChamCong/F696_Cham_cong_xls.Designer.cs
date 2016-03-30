@@ -45,10 +45,9 @@
             this.m_cmd_chon_du_lieu = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_mo_file_mau = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.m_txt_nam = new DevExpress.XtraEditors.TextEdit();
-            this.m_txt_thang = new DevExpress.XtraEditors.TextEdit();
+            this.m_dat_chon_thang = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_trang_thai_cham_cong = new DevExpress.XtraEditors.LabelControl();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
             this.panel1.SuspendLayout();
@@ -62,8 +61,8 @@
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_chon_thang.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_chon_thang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -222,10 +221,9 @@
             // panelControl1
             // 
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.m_txt_nam);
-            this.panelControl1.Controls.Add(this.m_txt_thang);
+            this.panelControl1.Controls.Add(this.m_dat_chon_thang);
             this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.m_lbl_trang_thai_cham_cong);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
@@ -233,57 +231,40 @@
             this.panelControl1.Size = new System.Drawing.Size(280, 93);
             this.panelControl1.TabIndex = 1;
             // 
+            // m_dat_chon_thang
+            // 
+            this.m_dat_chon_thang.EditValue = null;
+            this.m_dat_chon_thang.Location = new System.Drawing.Point(123, 5);
+            this.m_dat_chon_thang.Name = "m_dat_chon_thang";
+            this.m_dat_chon_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dat_chon_thang.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_chon_thang.Properties.Appearance.Options.UseFont = true;
+            this.m_dat_chon_thang.Properties.Appearance.Options.UseForeColor = true;
+            this.m_dat_chon_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_chon_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_chon_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
+            this.m_dat_chon_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_chon_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_chon_thang.Size = new System.Drawing.Size(127, 42);
+            this.m_dat_chon_thang.TabIndex = 21;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Location = new System.Drawing.Point(12, 21);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(82, 19);
+            this.labelControl1.TabIndex = 20;
+            this.labelControl1.Text = "Chọn tháng";
+            // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(28, 85);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(0, 13);
             this.labelControl2.TabIndex = 19;
-            // 
-            // m_txt_nam
-            // 
-            this.m_txt_nam.Location = new System.Drawing.Point(127, 24);
-            this.m_txt_nam.Name = "m_txt_nam";
-            this.m_txt_nam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.m_txt_nam.Properties.Appearance.Options.UseFont = true;
-            this.m_txt_nam.Properties.Appearance.Options.UseTextOptions = true;
-            this.m_txt_nam.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.m_txt_nam.Properties.AutoHeight = false;
-            this.m_txt_nam.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.m_txt_nam.Properties.Mask.EditMask = "d";
-            this.m_txt_nam.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.m_txt_nam.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_txt_nam.Properties.NullText = "Nhập năm";
-            this.m_txt_nam.Properties.NullValuePrompt = "Nhập năm";
-            this.m_txt_nam.Size = new System.Drawing.Size(100, 29);
-            this.m_txt_nam.TabIndex = 1;
-            // 
-            // m_txt_thang
-            // 
-            this.m_txt_thang.Location = new System.Drawing.Point(26, 24);
-            this.m_txt_thang.Name = "m_txt_thang";
-            this.m_txt_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.m_txt_thang.Properties.Appearance.Options.UseFont = true;
-            this.m_txt_thang.Properties.Appearance.Options.UseTextOptions = true;
-            this.m_txt_thang.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.m_txt_thang.Properties.AutoHeight = false;
-            this.m_txt_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.m_txt_thang.Properties.Mask.EditMask = "d";
-            this.m_txt_thang.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.m_txt_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_txt_thang.Properties.NullText = "Nhập tháng";
-            this.m_txt_thang.Properties.NullValuePrompt = "Nhập tháng";
-            this.m_txt_thang.Size = new System.Drawing.Size(84, 29);
-            this.m_txt_thang.TabIndex = 0;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.labelControl1.Location = new System.Drawing.Point(114, 25);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(8, 25);
-            this.labelControl1.TabIndex = 18;
-            this.labelControl1.Text = "/";
             // 
             // m_lbl_trang_thai_cham_cong
             // 
@@ -317,8 +298,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_nam.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_txt_thang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_chon_thang.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_chon_thang.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -338,14 +319,13 @@
         private System.Windows.Forms.Panel panel7;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit m_txt_nam;
-        private DevExpress.XtraEditors.TextEdit m_txt_thang;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl m_lbl_trang_thai_cham_cong;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_du_lieu;
         private DevExpress.XtraEditors.SimpleButton m_cmd_mo_file_mau;
         private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tong_hop_cham_cong;
+        private DevExpress.XtraEditors.DateEdit m_dat_chon_thang;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

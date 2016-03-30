@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f330_len_luong_cho_nv));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -71,8 +70,8 @@
             this.m_sle_chon_quyet_dinh = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.ImageList = new System.Windows.Forms.ImageList();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
@@ -172,10 +171,11 @@
             // 
             this.m_dat_ngay_ket_thuc_lcd.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_ket_thuc_lcd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_ket_thuc_lcd.Location = new System.Drawing.Point(117, 138);
+            this.m_dat_ngay_ket_thuc_lcd.Location = new System.Drawing.Point(117, 134);
             this.m_dat_ngay_ket_thuc_lcd.Name = "m_dat_ngay_ket_thuc_lcd";
-            this.m_dat_ngay_ket_thuc_lcd.Size = new System.Drawing.Size(122, 20);
-            this.m_dat_ngay_ket_thuc_lcd.TabIndex = 18;
+            this.m_dat_ngay_ket_thuc_lcd.ShowCheckBox = true;
+            this.m_dat_ngay_ket_thuc_lcd.Size = new System.Drawing.Size(126, 20);
+            this.m_dat_ngay_ket_thuc_lcd.TabIndex = 19;
             // 
             // label12
             // 
@@ -303,10 +303,11 @@
             // 
             this.m_dat_ngay_ket_thuc_lns.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_ket_thuc_lns.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_ket_thuc_lns.Location = new System.Drawing.Point(115, 138);
+            this.m_dat_ngay_ket_thuc_lns.Location = new System.Drawing.Point(115, 134);
             this.m_dat_ngay_ket_thuc_lns.Name = "m_dat_ngay_ket_thuc_lns";
-            this.m_dat_ngay_ket_thuc_lns.Size = new System.Drawing.Size(122, 20);
-            this.m_dat_ngay_ket_thuc_lns.TabIndex = 17;
+            this.m_dat_ngay_ket_thuc_lns.ShowCheckBox = true;
+            this.m_dat_ngay_ket_thuc_lns.Size = new System.Drawing.Size(126, 20);
+            this.m_dat_ngay_ket_thuc_lns.TabIndex = 18;
             // 
             // label3
             // 
@@ -1007,11 +1008,9 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
         private DevExpress.XtraEditors.SimpleButton m_cmd_len_luong_cho_nv;
-        private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc_lns;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_bat_dau_lns;
         private System.Windows.Forms.Label m_lbl_ngay_cham_cong;
-        private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc_lcd;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_bat_dau_lcd;
         private System.Windows.Forms.Label label14;
@@ -1021,6 +1020,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_GIOI_TINH;
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_SDT;
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_DIA_CHI_THUONG_TRU;
-
+        private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc_lcd;
+        private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc_lns;
     }
 }

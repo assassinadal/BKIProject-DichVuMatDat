@@ -33,15 +33,14 @@ namespace BKI_DichVuMatDat.NghiepVu
         public void display_4_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            m_thang_goi_y = DateTime.Now.Month.ToString();
-            m_nam_goi_y = DateTime.Now.Year.ToString();
+            m_date_goi_y = DateTime.Now;
             this.ShowDialog();
         }
         public void display_4_insert(string thang, string nam)
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            m_thang_goi_y = m_txt_chon_thang.Text = thang;
-            m_nam_goi_y = m_txt_chon_nam.Text = nam;
+            //m_thang_goi_y = m_txt_chon_thang.Text = thang;
+            //m_nam_goi_y = m_txt_chon_nam.Text = nam;
             this.ShowDialog();
         }
         public void display_4_update(US_GD_KHONG_DONG_BAO_HIEM ip_us_ko_bh)
@@ -51,12 +50,17 @@ namespace BKI_DichVuMatDat.NghiepVu
             us_obj_2_form(ip_us_ko_bh);
             this.ShowDialog();
         }
+        public void display_4_insert(object editValue)
+        {
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_date_goi_y = Convert.ToDateTime(editValue);
+            this.ShowDialog();
+        }
         #endregion
         #region Members
         US_GD_KHONG_DONG_BAO_HIEM v_us_dang_sua = new US_GD_KHONG_DONG_BAO_HIEM();
         DataEntryFormMode m_e_form_mode;
-        string m_thang_goi_y;
-        string m_nam_goi_y;
+        DateTime m_date_goi_y;
         #endregion
         #region Data Structures
         #endregion
@@ -75,7 +79,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_exit.Click += m_cmd_exit_Click;
             Load += f368_quan_ly_nv_ko_dong_bao_hiem_de_Load;
             m_sle_chon_nhan_vien.EditValueChanged += M_sle_chon_nhan_vien_EditValueChanged;
-            m_txt_chon_thang.Leave += M_txt_chon_thang_Leave;
         }
 
 
@@ -104,6 +107,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     m_sle_chon_nhan_vien.Enabled = false;
                     break;
                 case DataEntryFormMode.InsertDataState:
+                    m_dat_thang.EditValue = m_date_goi_y;
                     break;
                 default:
                     break;
@@ -126,8 +130,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                 //nguoi lap
                 ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             }
-            ip_us.dcTHANG = CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim());
-            ip_us.dcNAM = CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim());
+            ip_us.dcTHANG = CIPConvert.ToDecimal(m_dat_thang.DateTime.Month.ToString());
+            ip_us.dcNAM = CIPConvert.ToDecimal(m_dat_thang.DateTime.Year.ToString());
             ip_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
             ip_us.strLY_DO = m_txt_ly_do.Text.Trim();
         }
@@ -135,8 +139,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void us_obj_2_form(US_GD_KHONG_DONG_BAO_HIEM ip_us)
         {
             m_sle_chon_nhan_vien.EditValue = ip_us.dcID_NHAN_VIEN;
-            m_txt_chon_thang.Text = ip_us.dcTHANG.ToString();
-            m_txt_chon_nam.Text = ip_us.dcNAM.ToString();
+            DateTime working = new DateTime(Convert.ToInt16(ip_us.dcNAM), Convert.ToInt16(ip_us.dcTHANG), 15);
+            //m_txt_chon_thang.Text = ip_us.dcTHANG.ToString();
+            //m_txt_chon_nam.Text = ip_us.dcNAM.ToString();
+            m_dat_thang.EditValue = working;
             m_txt_ly_do.Text = ip_us.strLY_DO;
         }
 
@@ -148,18 +154,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return false;
             }
 
-            if (m_txt_chon_thang.Text == "")
+            if (m_dat_thang.EditValue == null)
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_THANG);
                 return false;
             }
 
-            if (m_txt_chon_nam.Text == "")
-            {
-                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NAM);
-                return false;
-            }
-            if (CHRMCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()), CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim())))
+            if (CHRMCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_dat_thang.DateTime.Month.ToString()), CIPConvert.ToDecimal(m_dat_thang.DateTime.Year.ToString())))
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_THANG_DA_CHOT_BANG_LUONG);
                 return false;
@@ -169,8 +170,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void clear_data_in_form()
         {
-            m_txt_chon_nam.Text = m_nam_goi_y;
-            m_txt_chon_thang.Text = m_thang_goi_y;
+            m_dat_thang.EditValue = m_date_goi_y;
             m_txt_ly_do.Text = "";
             m_sle_chon_nhan_vien.EditValue = null;
         }
@@ -292,19 +292,19 @@ namespace BKI_DichVuMatDat.NghiepVu
                 else
                 {
                     decimal id_nv = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
-                    decimal id_gd_ko_dong_bh = find_id_gd_khong_dong_bao_hiem(id_nv, m_txt_chon_thang.Text, m_txt_chon_nam.Text);
+                    decimal id_gd_ko_dong_bh = find_id_gd_khong_dong_bao_hiem(id_nv, m_dat_thang.DateTime.Month.ToString(), m_dat_thang.DateTime.Year.ToString());
                     if (id_gd_ko_dong_bh == -1)
                     {
                         return;
                     }
                     else
                     {
-                        if (CHRM_BaseMessages.MsgBox_Confirm("Nhân viên đã có thông tin không đóng bảo hiểm tháng " + m_thang_goi_y + " năm " + m_nam_goi_y + ". Bạn có muốn sửa?") == true)
+                        if (CHRM_BaseMessages.MsgBox_Confirm("Nhân viên đã có thông tin không đóng bảo hiểm tháng " + CIPConvert.ToDecimal(m_dat_thang.DateTime.Month.ToString()) + " năm " + CIPConvert.ToDecimal(m_dat_thang.DateTime.Year.ToString()) + ". Bạn có muốn sửa?") == true)
                         {
                             m_e_form_mode = DataEntryFormMode.UpdateDataState;
                             US_GD_KHONG_DONG_BAO_HIEM v_us = new US_GD_KHONG_DONG_BAO_HIEM(id_gd_ko_dong_bh);
-                            m_txt_chon_thang.Text = v_us.dcTHANG.ToString();
-                            m_txt_chon_nam.Text = v_us.dcNAM.ToString();
+                            DateTime working = new DateTime(Convert.ToInt16(v_us.dcNAM), Convert.ToInt16(v_us.dcTHANG), 15);
+                            m_dat_thang.EditValue = working;
                             m_txt_ly_do.Text = v_us.strLY_DO;
                         }
                         else
@@ -319,21 +319,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        private void M_txt_chon_thang_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                if (m_txt_chon_thang.Text == "" | Convert.ToInt16(m_txt_chon_thang.Text) < 1 | Convert.ToInt16(m_txt_chon_thang.Text) > 12)
-                {
-                    CHRM_BaseMessages.MsgBox_Warning("Tháng không hợp lệ!");
-                    m_txt_chon_thang.Text = m_thang_goi_y;
-                }
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+
 
     }
 }

@@ -34,8 +34,9 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private void set_initial_form_load()
         {
-            m_txt_thang.Text = DateTime.Now.Month.ToString();
-            m_txt_nam.Text = DateTime.Now.Year.ToString();
+            //m_txt_thang.Text = DateTime.Now.Month.ToString();
+            //m_txt_nam.Text = DateTime.Now.Year.ToString();
+            m_dat_chon_thang.EditValue = DateTime.Now;
             set_trang_thai_cham_cong();
             set_define_events();
         }
@@ -49,7 +50,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #endregion
 
         #region Private Methods
-        
+
         #region Tao file excel mau
         private void tao_file_mau(string ip_file_name)
         {
@@ -57,10 +58,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            v_us.get_bang_cham_cong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
-            DateTime v_dat_bat_dau = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1);
-            DateTime v_dat_ket_thuc = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1).AddMonths(1);
-
+            //v_us.get_bang_cham_cong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
+            v_us.get_bang_cham_cong(v_ds, m_dat_chon_thang.DateTime.Month.ToString(), m_dat_chon_thang.DateTime.Year.ToString());
+            //DateTime v_dat_bat_dau = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1);
+            //DateTime v_dat_ket_thuc = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1).AddMonths(1);
+            int thang = Convert.ToInt16(m_dat_chon_thang.DateTime.Month.ToString());
+            int nam = Convert.ToInt16(m_dat_chon_thang.DateTime.Year.ToString());
+            DateTime v_dat_bat_dau = new DateTime(nam,thang,1);
+            DateTime v_dat_ket_thuc = new DateTime(nam, thang, 1).AddMonths(1);
             for (DateTime i = v_dat_bat_dau; i < v_dat_ket_thuc; i = i.AddDays(1))
             {
                 var v_c = new DataColumn();
@@ -79,18 +84,18 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             //string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string targetPath = WinFormControls.saveFileDialog(ip_file_name);
-            if (targetPath !="")
+            if (targetPath != "")
             {
                 //string newpath = targetPath + "\\" + "Chấm công tháng " + m_txt_thang.Text + "-" + m_txt_nam.Text + ".xls";
                 m_grv.ExportToXls(targetPath);
-                XtraMessageBox.Show("Đã lưu file mẫu tại " + targetPath+".\nFile sẽ tự động mở ngay sau đây!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Đã lưu file mẫu tại " + targetPath + ".\nFile sẽ tự động mở ngay sau đây!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 var process = new System.Diagnostics.Process();
                 process.StartInfo.FileName = targetPath;
                 process.StartInfo.Verb = "Open";
                 process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
                 process.Start();
-            }           
-        }        
+            }
+        }
         #endregion
 
         #region Load excel to grid
@@ -170,12 +175,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             if (!checkBangChamCong())
                 return false;
             int v_so_nv_da_cham_cong = check_db_da_cham_cong();
-            if (v_so_nv_da_cham_cong !=0)
+            if (v_so_nv_da_cham_cong != 0)
             {
-                string v_str_confirm = "Hiện có " + v_so_nv_da_cham_cong + "/"+ m_grv.RowCount+ " nhân viên trong bảng chấm công đã có dữ liệu. \nBạn có muốn xóa dữ liệu cũ của những nhân viên này và nhập lại?";
+                string v_str_confirm = "Hiện có " + v_so_nv_da_cham_cong + "/" + m_grv.RowCount + " nhân viên trong bảng chấm công đã có dữ liệu. \nBạn có muốn xóa dữ liệu cũ của những nhân viên này và nhập lại?";
                 DialogResult v_dialog = XtraMessageBox.Show(v_str_confirm, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (v_dialog == DialogResult.No)
-                    return false;                
+                    return false;
             }
             return true;
         }
@@ -184,7 +189,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             DS_GD_CHAM_CONG v_ds = new DS_GD_CHAM_CONG();
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
-            v_us.FillDatasetChamCong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
+            //v_us.FillDatasetChamCong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
             DataTable v_dt = v_ds.Tables[0].DefaultView.ToTable(true, "ID_NHAN_VIEN");
             return v_dt.Rows.Count;
         }
@@ -194,7 +199,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             int v_so_nv_da_cham_cong = 0;
             DS_GD_CHAM_CONG v_ds = new DS_GD_CHAM_CONG();
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
-            v_us.FillDatasetChamCong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
+            //v_us.FillDatasetChamCong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
+            v_us.FillDatasetChamCong(v_ds, m_dat_chon_thang.DateTime.Month.ToString(), m_dat_chon_thang.DateTime.Year.ToString());
             for (int i = 0; i < m_grv.RowCount; i++)
             {
                 var v_dr = m_grv.GetDataRow(i);
@@ -219,9 +225,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             else if (check_ma_nv_ko_ton_tai())
                 return false;
             else if (check_ngay_cong_ko_ton_tai())
-                return false;          
+                return false;
             return true;
-            
+
         }
 
         private bool check_ma_nv_duplicate()
@@ -265,7 +271,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 var v_dr = m_grv.GetDataRow(i);
                 for (int j = 2; j < m_grv.Columns.Count - 1; j++)
-                {  
+                {
                     if (v_dr[j].ToString().Trim() != "")
                     {
                         if (v_dr[j].ToString().Trim().Length >= 3)
@@ -283,11 +289,11 @@ namespace BKI_DichVuMatDat.NghiepVu
                             string v_str_error_1 = "Không tồn tại mã ngày công '" + v_dr[j].ToString() + "'\nVui lòng kiểm tra lại!";
                             XtraMessageBox.Show(v_str_error_1, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return true;
-                        }                        
-                    } 
+                        }
+                    }
                 }
             }
-            return false;                        
+            return false;
         }
 
         //private void get_lst_ngay_cong_ko_ton_tai(string ip_str_ngay_cong)
@@ -318,11 +324,11 @@ namespace BKI_DichVuMatDat.NghiepVu
                 }
             }
             return false;
-            
+
         }
 
         #endregion
-        
+
         #region Luu du lieu vao db
 
         private void m_bgwk_DoWork(object sender, DoWorkEventArgs e)
@@ -350,7 +356,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             //this.m_cmd_nhap_cham_cong.Enabled = false;
             XtraMessageBox.Show("Lưu thành công!");
             //m_grc.DataSource = null; 
-            set_trang_thai_cham_cong();          
+            set_trang_thai_cham_cong();
         }
 
         private void luuChamCong(DataRow ip_dataRow)
@@ -364,7 +370,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             v_us.UseTransOfUSObject(m_us_gd_cham_cong);
-            v_us.xoa_du_lieu_cham_cong(ip_dc_id_nv, m_txt_thang.Text, m_txt_nam.Text);
+            //v_us.xoa_du_lieu_cham_cong(ip_dc_id_nv, m_txt_thang.Text, m_txt_nam.Text);
+            v_us.xoa_du_lieu_cham_cong(ip_dc_id_nv, m_dat_chon_thang.DateTime.Month.ToString(), m_dat_chon_thang.DateTime.Year.ToString());
         }
 
         private void insert_gd_cham_cong(DataRow ip_dataRow)
@@ -377,14 +384,15 @@ namespace BKI_DichVuMatDat.NghiepVu
                     v_us.dcID_NHAN_VIEN = get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString());
                     int v_thang_cham_cong = int.Parse(ip_dataRow.Table.Columns[i].ColumnName.ToString().Substring(3, 2));
                     int v_ngay_cham_cong = int.Parse(ip_dataRow.Table.Columns[i].ColumnName.ToString().Substring(0, 2));
-                    v_us.datNGAY_CHAM_CONG = new DateTime(int.Parse(m_txt_nam.Text), v_thang_cham_cong, v_ngay_cham_cong);
+                    //v_us.datNGAY_CHAM_CONG = new DateTime(int.Parse(m_txt_nam.Text), v_thang_cham_cong, v_ngay_cham_cong);
+                    int nam = Convert.ToInt16(m_dat_chon_thang.DateTime.Year);
                     v_us.strDA_XOA = "N";
                     v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                     v_us.datNGAY_LAP = DateTime.Now;
                     if (ip_dataRow[i].ToString().Trim() == "")
                         v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString());
                     else
-                        v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString().Substring(2));                   
+                        v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString().Substring(2));
                     v_us.UseTransOfUSObject(m_us_gd_cham_cong);
                     v_us.Insert();
                 }
@@ -405,8 +413,10 @@ namespace BKI_DichVuMatDat.NghiepVu
                 else
                     v_us_hsk.dcHE_SO_K = 0;
                 v_us_hsk.dcID_NHAN_VIEN = get_nhan_vien_by_ma_nv(ip_dataRow[0].ToString());
-                v_us_hsk.dcTHANG = CIPConvert.ToDecimal(m_txt_thang.Text);
-                v_us_hsk.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text);
+                //v_us_hsk.dcTHANG = CIPConvert.ToDecimal(m_txt_thang.Text);
+                //v_us_hsk.dcNAM = CIPConvert.ToDecimal(m_txt_nam.Text);
+                v_us_hsk.dcTHANG = CIPConvert.ToDecimal(m_dat_chon_thang.DateTime.Month.ToString());
+                v_us_hsk.dcNAM = CIPConvert.ToDecimal(m_dat_chon_thang.DateTime.Year.ToString());
                 v_us_hsk.datNGAY_LAP = DateTime.Now.Date;
                 v_us_hsk.strDA_XOA = "N";
                 v_us_hsk.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
@@ -430,12 +440,12 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Events Handle
         private void set_define_events()
         {
-            m_cmd_mo_file_mau.Click +=m_cmd_mo_file_mau_Click;
-            m_cmd_chon_du_lieu.Click +=m_cmd_chon_du_lieu_Click;
-            m_cmd_nhap_cham_cong.Click +=m_cmd_nhap_cham_cong_Click;
-            this.Load +=F696_Cham_cong_xls_Load;
-            m_txt_thang.EditValueChanged += m_txt_thang_EditValueChanged;
-            m_txt_nam.EditValueChanged += m_txt_nam_EditValueChanged;
+            m_cmd_mo_file_mau.Click += m_cmd_mo_file_mau_Click;
+            m_cmd_chon_du_lieu.Click += m_cmd_chon_du_lieu_Click;
+            m_cmd_nhap_cham_cong.Click += m_cmd_nhap_cham_cong_Click;
+            this.Load += F696_Cham_cong_xls_Load;
+            //m_txt_thang.EditValueChanged += m_txt_thang_EditValueChanged;
+            //m_txt_nam.EditValueChanged += m_txt_nam_EditValueChanged;
             m_cmd_tong_hop_cham_cong.Click += m_cmd_tong_hop_cham_cong_Click;
         }
 
@@ -443,12 +453,18 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (int.Parse(m_txt_thang.Text) <= 0 || int.Parse(m_txt_thang.Text) > 12 || int.Parse(m_txt_nam.Text) < 0)
+                //if (int.Parse(m_txt_thang.Text) <= 0 || int.Parse(m_txt_thang.Text) > 12 || int.Parse(m_txt_nam.Text) < 0)
+                //{
+                //    XtraMessageBox.Show("Vui lòng nhập tháng và năm chấm công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    return;
+                //}
+                if (m_dat_chon_thang.EditValue == null)
                 {
-                    XtraMessageBox.Show("Vui lòng nhập tháng và năm chấm công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CHRM_BaseMessages.MsgBox_Error("Chưa chọn tháng chấm công");
                     return;
                 }
-                BaoCao.f402_tong_hop_cham_cong v_f = new BaoCao.f402_tong_hop_cham_cong(m_txt_thang.Text, m_txt_nam.Text);
+                //BaoCao.f402_tong_hop_cham_cong v_f = new BaoCao.f402_tong_hop_cham_cong(m_txt_thang.Text, m_txt_nam.Text);
+                BaoCao.f402_tong_hop_cham_cong v_f = new BaoCao.f402_tong_hop_cham_cong(m_dat_chon_thang.DateTime.Month.ToString(), m_dat_chon_thang.DateTime.Year.ToString());
                 v_f.Show();
             }
             catch (Exception v_e)
@@ -491,17 +507,25 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-            
+
         }
 
         private void m_cmd_nhap_cham_cong_Click(object sender, EventArgs e)
         {
             try
             {
-                if (int.Parse(m_txt_thang.Text) <= 0 || int.Parse(m_txt_thang.Text) > 12 || int.Parse(m_txt_nam.Text) < 0)
-                    XtraMessageBox.Show("Vui lòng nhập tháng và năm chấm công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (check_bang_luong_da_chot(m_txt_thang.Text, m_txt_nam.Text))
-                    XtraMessageBox.Show("Tháng đã chốt bảng lương. \nVui lòng ko cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                //if (int.Parse(m_txt_thang.Text) <= 0 || int.Parse(m_txt_thang.Text) > 12 || int.Parse(m_txt_nam.Text) < 0)
+                //    XtraMessageBox.Show("Vui lòng nhập tháng và năm chấm công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //else if (check_bang_luong_da_chot(m_txt_thang.Text, m_txt_nam.Text))
+                //    XtraMessageBox.Show("Tháng đã chốt bảng lương. \nVui lòng ko cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                if (m_dat_chon_thang.EditValue == null)
+                {
+                    CHRM_BaseMessages.MsgBox_Error("Chưa chọn tháng và năm chấm công");
+                }
+                else if(check_bang_luong_da_chot(m_dat_chon_thang.DateTime.Month.ToString(), m_dat_chon_thang.DateTime.Year.ToString()))
+                {
+                    CHRM_BaseMessages.MsgBox_Error("Tháng đã chốt bảng lương. Vui lòng không cập nhật");
+                }
                 else if (m_bgwk.IsBusy)
                     m_bgwk.CancelAsync();
                 else if (check_cham_cong_hop_le())
@@ -511,7 +535,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     this.m_cmd_nhap_cham_cong.Text = "Đang lưu chấm công ...";
                     this.m_cmd_nhap_cham_cong.Enabled = false;
                     m_bgwk.RunWorkerAsync();
-                }       
+                }
             }
             catch (Exception v_e)
             {
@@ -520,7 +544,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         private void m_cmd_chon_du_lieu_Click(object sender, EventArgs e)
-        {           
+        {
             try
             {
                 string ip_path = WinFormControls.openFileDialog();
@@ -540,9 +564,17 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (int.Parse(m_txt_thang.Text)<=0 || int.Parse(m_txt_thang.Text)>12 || int.Parse(m_txt_nam.Text) <0)
-                    XtraMessageBox.Show("Vui lòng nhập tháng và năm chấm công!","Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else tao_file_mau("Chấm công tháng " + m_txt_thang.Text + "-" + m_txt_nam.Text + ".xls");
+                //if (int.Parse(m_txt_thang.Text) <= 0 || int.Parse(m_txt_thang.Text) > 12 || int.Parse(m_txt_nam.Text) < 0)
+                //    XtraMessageBox.Show("Vui lòng nhập tháng và năm chấm công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //else tao_file_mau("Chấm công tháng " + m_txt_thang.Text + "-" + m_txt_nam.Text + ".xls");
+                if (m_dat_chon_thang.EditValue == null)
+                {
+                    CHRM_BaseMessages.MsgBox_Error("Chưa chọn tháng và năm");
+                }
+                else
+                {
+                    tao_file_mau("Chấm công tháng " + m_dat_chon_thang.DateTime.Month.ToString() + "-" + m_dat_chon_thang.DateTime.Year.ToString() + ".xls");
+                }
             }
             catch (Exception v_e)
             {

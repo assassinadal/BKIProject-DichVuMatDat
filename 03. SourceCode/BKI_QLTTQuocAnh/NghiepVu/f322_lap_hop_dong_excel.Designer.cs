@@ -266,7 +266,7 @@
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl1);
             this.Name = "f322_lap_hop_dong_excel";
-            this.Text = "f322_lap_hop_dong_excel";
+            this.Text = "F322 - Lập hợp đồng excel";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

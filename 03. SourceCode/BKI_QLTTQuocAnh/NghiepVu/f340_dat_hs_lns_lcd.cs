@@ -1050,6 +1050,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         m_insert_click = -1;
                         clear_data_hs_lns_in_form();
                         clear_data_lcd_in_form();
+                        m_sle_chon_nhan_vien.EditValue = null;
                         m_insert_click = 0;
                     }
                 }

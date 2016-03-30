@@ -42,9 +42,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xoa = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             this.panel2.SuspendLayout();
@@ -76,6 +76,7 @@
             this.gridColumn7});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
+            this.m_grv.OptionsFind.AlwaysVisible = true;
             // 
             // gridColumn2
             // 
@@ -174,6 +175,16 @@
             this.panel1.Size = new System.Drawing.Size(708, 52);
             this.panel1.TabIndex = 1;
             // 
+            // m_cmd_them
+            // 
+            this.m_cmd_them.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_them.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_them.Image")));
+            this.m_cmd_them.Location = new System.Drawing.Point(337, 0);
+            this.m_cmd_them.Name = "m_cmd_them";
+            this.m_cmd_them.Size = new System.Drawing.Size(126, 52);
+            this.m_cmd_them.TabIndex = 10;
+            this.m_cmd_them.Text = "Thêm";
+            // 
             // m_cmd_xoa
             // 
             this.m_cmd_xoa.Dock = System.Windows.Forms.DockStyle.Right;
@@ -195,16 +206,6 @@
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
             this.m_cmd_xuat_excel.Visible = false;
             this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
-            // 
-            // m_cmd_them
-            // 
-            this.m_cmd_them.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_them.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_them.Image")));
-            this.m_cmd_them.Location = new System.Drawing.Point(337, 0);
-            this.m_cmd_them.Name = "m_cmd_them";
-            this.m_cmd_them.Size = new System.Drawing.Size(126, 52);
-            this.m_cmd_them.TabIndex = 10;
-            this.m_cmd_them.Text = "Thêm";
             // 
             // F393_gd_nhan_vien_phu_cap
             // 

@@ -65,7 +65,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private bool check_ma_nhan_vien_is_ok(DataRow dataRow)
         {
             decimal v_id_nhan_vien = find_id_nhan_vien_by_ma_nv(dataRow["MA_NV"].ToString().Trim());
-
+            if (v_id_nhan_vien == -1) return false;
             US_GD_LOAI_LAO_DONG v_us_gd_loai_lao_dong = new US_GD_LOAI_LAO_DONG();
             DS_GD_LOAI_LAO_DONG v_ds_gd_loai_lao_dong = new DS_GD_LOAI_LAO_DONG();
             v_us_gd_loai_lao_dong.FillDataset(v_ds_gd_loai_lao_dong, "where id_nhan_vien = " + v_id_nhan_vien);
@@ -146,6 +146,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     for (int i = 0; i < m_grv.DataRowCount; i++)
                     {
+                        if (m_grv.GetDataRow(i)[0].ToString() == "" | m_grv.GetDataRow(i)[1].ToString() == "") continue;
                         if (check_ma_nhan_vien_is_ok(m_grv.GetDataRow(i)))
                         {
                             gan_du_lieu_cho_us_dm_nhan_vien(m_grv.GetDataRow(i));
@@ -154,9 +155,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                         {
                             CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + m_grv.GetDataRow(i)["MA_NV"].ToString() + "  đã có loại lao động rồi. Vui lòng kiểm tra lại thông tin!");
                         }
-
                     }
-
+  
                     CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                     this.Close();
                 }
@@ -169,7 +169,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-            
+
         }
 
         void f372_nhan_vien_loai_lao_dong_excel_Load(object sender, EventArgs e)

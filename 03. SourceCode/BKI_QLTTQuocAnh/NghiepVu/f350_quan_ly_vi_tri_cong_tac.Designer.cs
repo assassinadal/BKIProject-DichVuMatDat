@@ -33,9 +33,9 @@
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.m_dat_ngay_ket_thuc = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.m_dat_ngay_ket_thuc = new System.Windows.Forms.DateTimePicker();
             this.m_dat_ngay_bat_dau = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.m_sle_chon_loai_cong_tac = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -153,9 +153,9 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.m_dat_ngay_ket_thuc);
             this.groupControl2.Controls.Add(this.label7);
             this.groupControl2.Controls.Add(this.label6);
-            this.groupControl2.Controls.Add(this.m_dat_ngay_ket_thuc);
             this.groupControl2.Controls.Add(this.m_dat_ngay_bat_dau);
             this.groupControl2.Controls.Add(this.label5);
             this.groupControl2.Controls.Add(this.m_sle_chon_loai_cong_tac);
@@ -165,6 +165,16 @@
             this.groupControl2.Size = new System.Drawing.Size(405, 164);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "THÔNG TIN VỊ TRÍ CÔNG TÁC";
+            // 
+            // m_dat_ngay_ket_thuc
+            // 
+            this.m_dat_ngay_ket_thuc.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(124, 90);
+            this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
+            this.m_dat_ngay_ket_thuc.ShowCheckBox = true;
+            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(208, 20);
+            this.m_dat_ngay_ket_thuc.TabIndex = 19;
             // 
             // label7
             // 
@@ -183,15 +193,6 @@
             this.label6.Size = new System.Drawing.Size(85, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Ngày bắt đầu (*)";
-            // 
-            // m_dat_ngay_ket_thuc
-            // 
-            this.m_dat_ngay_ket_thuc.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(124, 90);
-            this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
-            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(208, 20);
-            this.m_dat_ngay_ket_thuc.TabIndex = 7;
             // 
             // m_dat_ngay_bat_dau
             // 
@@ -1028,7 +1029,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_bat_dau;
         private System.Windows.Forms.Panel panel1;
         internal SIS.Controls.Button.SiSButton m_cmd_huy_kiem_nhiem;
@@ -1039,5 +1039,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_update;
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
+        private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc;
     }
 }

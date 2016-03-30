@@ -184,7 +184,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             if (m_dat_ngay_ket_thuc.Value.Date != null && m_dat_ngay_ket_thuc.Value.Date.ToString() != "")
             {
                 //Ngay ket thuc
-                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
+                if (!m_dat_ngay_ket_thuc.Checked)
+                {
+                    ip_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau.Value.AddYears(45);
+                }
+                else
+                {
+                    ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
+                }
             }
 
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
@@ -235,6 +242,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
+                v_us_gd_ct.Rollback();
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
@@ -242,6 +250,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void cho_gd_ct_da_xoa_Y()
         {
             US_GD_CONG_TAC v_us = new US_GD_CONG_TAC(m_id_gd_ct);
+            v_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau.Value.AddDays(-1);
             v_us.strDA_XOA = "Y";
             v_us.BeginTransaction();
             v_us.Update();

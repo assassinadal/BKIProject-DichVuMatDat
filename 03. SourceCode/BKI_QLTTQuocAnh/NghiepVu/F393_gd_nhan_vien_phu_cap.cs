@@ -24,7 +24,22 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void F393_gd_nhan_vien_phu_cap_Load(object sender, EventArgs e)
         {
-            load_data_2_grid();
+            try
+            {
+                load_data_2_grid();
+                set_define_events();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+           
+        }
+
+        private void set_define_events()
+        {
+            m_cmd_them.Click += m_cmd_them_Click;
+            m_cmd_xoa.Click += m_cmd_xoa_Click;
         }
 
         private void load_data_2_grid()

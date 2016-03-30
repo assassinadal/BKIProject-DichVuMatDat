@@ -88,7 +88,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
 
             v_us.FillDataset(v_ds);
- 
+
             return v_ds;
         }
 
@@ -374,7 +374,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             if (m_dat_ngay_ket_thuc.Value.Date != null && m_dat_ngay_ket_thuc.Value.Date.ToString() != "")
             {
                 //Ngay ket thuc
-                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
+                if (!m_dat_ngay_ket_thuc.Checked)
+                {
+                    ip_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau.Value.AddYears(45);
+                }
+                else
+                {
+                    ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
+                }
             }
 
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
@@ -570,16 +577,19 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                 if (check_data_is_ok() == true)
                 {
-                    load_data_2_m_variable();
-                    save_data();
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-                    m_trang_thai_buoc_4_thanh_cong = 1;
-                    F500_QUY_TRINH_THEM_MOI_NHAN_SU.done();
-                    if (m_trang_thai_them == -1)
+                    if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU))
                     {
-                        this.Close();
+                        load_data_2_m_variable();
+                        save_data();
+                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                        m_trang_thai_buoc_4_thanh_cong = 1;
+                        F500_QUY_TRINH_THEM_MOI_NHAN_SU.done();
+                        if (m_trang_thai_them == -1)
+                        {
+                            this.Close();
+                        }
+                        load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                     }
-                    load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                 }
             }
             catch (Exception v_e)

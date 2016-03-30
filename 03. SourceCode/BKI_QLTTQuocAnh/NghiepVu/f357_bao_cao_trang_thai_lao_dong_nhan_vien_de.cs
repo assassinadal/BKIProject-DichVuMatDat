@@ -221,7 +221,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us_gd_trang_thai_lao_dong.strDA_XOA = "N";
         }
 
-        private void cho_trang_thai_lao_dong_cu_cua_nhan_vie_da_xoa_Y(decimal ip_dc_id_nv)
+        private void cho_trang_thai_lao_dong_cu_cua_nhan_vien_da_xoa_Y(decimal ip_dc_id_nv)
         {
             try
             {
@@ -235,7 +235,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 else
                 {
                     US_GD_TRANG_THAI_LAO_DONG v_us = new US_GD_TRANG_THAI_LAO_DONG(v_id_gd_trang_thai_lao_dong_hien_tai);
-
+                    
                     v_us.strDA_XOA = "Y";
                     v_us.BeginTransaction();
                     v_us.Update();
@@ -260,7 +260,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 switch (m_e_form_mode)
                 {
                     case DataEntryFormMode.InsertDataState:
-                        cho_trang_thai_lao_dong_cu_cua_nhan_vie_da_xoa_Y((decimal)m_sle_chon_nhan_vien.EditValue);
+                        cho_trang_thai_lao_dong_cu_cua_nhan_vien_da_xoa_Y((decimal)m_sle_chon_nhan_vien.EditValue);
                         form_2_us_obj(v_us_gd_trang_thai_lao_dong);
                         v_us_gd_trang_thai_lao_dong.BeginTransaction();
                         v_us_gd_trang_thai_lao_dong.Insert();
@@ -310,7 +310,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             catch (Exception v_e)
             {
                 v_us_gd_trang_thai_lao_dong.Rollback();
-                throw v_e;
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 

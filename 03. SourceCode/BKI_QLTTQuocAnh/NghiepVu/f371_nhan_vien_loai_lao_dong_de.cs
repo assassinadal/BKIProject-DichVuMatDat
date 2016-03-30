@@ -124,6 +124,10 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 m_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
             }
+            else
+            {
+                m_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau.Value.AddYears(45);
+            }
             m_us.strDA_XOA = "N";
         }
 
@@ -225,24 +229,29 @@ namespace BKI_DichVuMatDat.NghiepVu
                 if (check_data_is_ok() == true)
                 {
                     //Dua du lieu vao US
-                    form_2_us_gd_loai_lao_dong(m_us);
-                    if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+                    if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU))
                     {
-                        load_data_2_m_variable();
-                        if (m_id_gd_loai_ld != 0)
+                        form_2_us_gd_loai_lao_dong(m_us);
+                        if (m_e_form_mode == DataEntryFormMode.InsertDataState)
                         {
-                            CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_NHAN_VIEN_DA_CO_LOAI_LAO_DONG);
+                            load_data_2_m_variable();
+                            if (m_id_gd_loai_ld != 0)
+                            {
+                                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_NHAN_VIEN_DA_CO_LOAI_LAO_DONG);
+                            }
+                            else
+                            {
+                                m_us.Insert();
+                                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                            }
                         }
                         else
                         {
-                            m_us.Insert();
+                            m_us.Update();
+                            CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
                         }
-                    }
-                    else
-                    {
-                        m_us.Update();
-                    }
-                    this.Close();
+                        this.Close();
+                    }                 
                 }
             }
             catch (Exception v_e)

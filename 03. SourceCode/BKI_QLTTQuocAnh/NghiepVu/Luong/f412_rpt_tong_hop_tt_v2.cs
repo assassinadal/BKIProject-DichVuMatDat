@@ -186,7 +186,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 //    m_grc_tong_hop.ExportToXls(saveFileDialog1.FileName);
                 //    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
                 //}
-                ReportHelper.XemVaIn(m_grc_tong_hop, "BÁO CÁO TỔNG HỢP LƯƠNG", gen_ten_bang_luong());
+                ReportHelper.ExportXLS(m_grc_tong_hop, "BÁO CÁO TỔNG HỢP LƯƠNG", gen_ten_bang_luong());
             }
             catch(Exception v_e)
             {

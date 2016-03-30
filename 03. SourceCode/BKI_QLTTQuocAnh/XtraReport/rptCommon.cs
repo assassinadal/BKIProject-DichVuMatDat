@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace BKI_DichVuMatDat.XtraReport
 {
-    public partial class XtraReport1 : DevExpress.XtraReports.UI.XtraReport
+    public partial class rptCommon : DevExpress.XtraReports.UI.XtraReport
     {
-        public XtraReport1()
+        public rptCommon()
         {
             InitializeComponent();
         }

@@ -23,7 +23,7 @@ namespace BKI_DichVuMatDat.XtraReport
             winContainer.WinControl = grid;
             return winContainer;
         }
-        public static void XemVaIn(GridControl grid, string tenBaoCao, string FileName)
+        public static void ExportXLS(GridControl grid, string tenBaoCao, string FileName)
         {
             #region Thiết kế trước khi in
             if(grid != null)
@@ -76,7 +76,7 @@ namespace BKI_DichVuMatDat.XtraReport
             }
             #endregion
 
-            var r = new XtraReport1();
+            var r = new rptCommon();
             r.m_lbl_ten_bao_cao.Text = tenBaoCao.ToUpper();
 
             //r.PaperKind = System.Drawing.Printing.PaperKind.A4;

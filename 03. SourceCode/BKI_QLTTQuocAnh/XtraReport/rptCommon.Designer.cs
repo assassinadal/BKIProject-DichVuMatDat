@@ -1,6 +1,6 @@
 ﻿namespace BKI_DichVuMatDat.XtraReport
 {
-    partial class XtraReport1
+    partial class rptCommon
     {
         /// <summary>
         /// Required designer variable.

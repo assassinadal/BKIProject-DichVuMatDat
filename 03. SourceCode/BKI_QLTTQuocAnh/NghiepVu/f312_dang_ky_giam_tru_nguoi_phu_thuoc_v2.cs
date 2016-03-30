@@ -42,13 +42,27 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void format_controls()
         {
-            FormatControl.SetVisibleSimpleButton(this);
+            //FormatControl.SetVisibleSimpleButton(this);
             set_define_events();
             this.KeyPreview = true;
         }
 
-
-
+        private DateTime from_date()
+        {
+            return m_dat_tu_thang.DateTime.Date;
+        }
+        private DateTime to_date()
+        {
+            return m_dat_den_thang.DateTime.Date;
+        }
+        private bool check_input_date()
+        {
+            if(m_dat_tu_thang.EditValue == null && m_dat_den_thang.EditValue == null)
+            {
+                return false;
+            }
+            return true;
+        }
         //private void load_data_to_m_sle_chon_nhan_vien()
         //{
         //    m_sle_chon_nhan_vien.Properties.DataSource = load_data_to_ds_v_dm_nv().Tables[0];
@@ -173,10 +187,14 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_to_grid()
         {
-            DS_V_GD_PHU_THUOC_DETAILS_V2 v_ds = new DS_V_GD_PHU_THUOC_DETAILS_V2();
-            US_V_GD_PHU_THUOC_DETAILS_V2 v_us = new US_V_GD_PHU_THUOC_DETAILS_V2();
-            v_us.FillDataset(v_ds);
-            m_grc.DataSource = v_ds.Tables[0];
+            if(!check_input_date())
+            {
+                return;
+            }
+            US_GD_PHU_THUOC_DETAILS v_us_detail = new US_GD_PHU_THUOC_DETAILS();
+            var v_dt_source = v_us_detail.LayDanhSachGiamTruPhuThuoc(from_date(), to_date());
+            m_grc.DataSource = v_dt_source;
+            m_grc.RefreshDataSource();
         }
 
         private void focus_new_row_created(decimal ip_dc_id_gd_phu_thuoc_details)
@@ -207,6 +225,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_initial_form_load()
         {
             m_lbl_nam_tinh_thue.Text = DateTime.Now.Year.ToString();
+            m_dat_tu_thang.EditValue = DateTime.Now.AddMonths(-DateTime.Now.Month).AddDays(1).Date;
+            m_dat_den_thang.EditValue = DateTime.Now.Date;
             load_data_to_grid();
         }
 

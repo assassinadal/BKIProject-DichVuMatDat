@@ -1102,14 +1102,14 @@
     <Compile Include="COMMON\WinFormControls.cs" />
     <Compile Include="COMMON\CHRM_BaseMessages210.cs" />
     <Compile Include="XtraReport\ReportHelper.cs" />
-    <Compile Include="XtraReport\XtraReport1.cs">
+    <Compile Include="XtraReport\rptCommon.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="XtraReport\XtraReport1.Designer.cs">
-      <DependentUpon>XtraReport1.cs</DependentUpon>
+    <Compile Include="XtraReport\rptCommon.Designer.cs">
+      <DependentUpon>rptCommon.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="XtraReport\XtraReport1.resx">
-      <DependentUpon>XtraReport1.cs</DependentUpon>
+    <EmbeddedResource Include="XtraReport\rptCommon.resx">
+      <DependentUpon>rptCommon.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DVMDDataSet1.xsc">
       <DependentUpon>DVMDDataSet1.xsd</DependentUpon>

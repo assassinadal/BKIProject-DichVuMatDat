@@ -30,8 +30,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         #region Members
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
-        string m_thang_goi_y = DateTime.Now.Month.ToString();
-        string m_nam_goi_y = DateTime.Now.Year.ToString();
+        DateTime m_date_time_goi_y = DateTime.Now.Date;
         #endregion
 
         #region Private methods
@@ -47,8 +46,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_initial_form_load()
         {
             //load_data_2_sle_chon_nv();
-            m_txt_chon_thang.Text = m_nam_goi_y;
-            m_txt_chon_nam.Text = m_thang_goi_y;
+            m_dat_thang.EditValue = m_date_time_goi_y;
             load_data_2_grid();
         }
 
@@ -77,7 +75,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             CHRMCommon.make_stt(m_grv_luong_cung_cua_nhan_vien);
             US_V_GD_KHONG_DONG_BAO_HIEM v_us = new US_V_GD_KHONG_DONG_BAO_HIEM();
             DS_V_GD_KHONG_DONG_BAO_HIEM v_ds = new DS_V_GD_KHONG_DONG_BAO_HIEM();
-            v_us.FillDataset(v_ds, "WHERE THANG = " + CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()) + " AND NAM = " + CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()) + "");
+            v_us.FillDataset(v_ds, "WHERE THANG = " + CIPConvert.ToDecimal(m_dat_thang.DateTime.Month.ToString()) + " AND NAM = " + CIPConvert.ToDecimal(m_dat_thang.DateTime.Year.ToString()));
             m_grc_luong_cung_cua_nhan_vien.DataSource = v_ds.Tables[0];
         }
 
@@ -103,14 +101,14 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void form_2_us_luong_cung(US_GD_KHONG_DONG_BAO_HIEM ip_us)
         {
-            decimal ip_thang = CIPConvert.ToDecimal(m_txt_chon_thang.Text);
-            decimal ip_nam = CIPConvert.ToDecimal(m_txt_chon_nam.Text);
+            decimal ip_thang = CIPConvert.ToDatetime(m_dat_thang.EditValue).Month;
+            decimal ip_nam = CIPConvert.ToDatetime(m_dat_thang.EditValue).Month;
             decimal id_nv = CIPConvert.ToDecimal(m_grv_luong_cung_cua_nhan_vien.GetRowCellValue(m_grv_luong_cung_cua_nhan_vien.FocusedRowHandle, "ID_NHAN_VIEN"));
             ip_us.dcID = find_id_gd_khong_dong_bao_hiem(id_nv, ip_thang, ip_nam);
             ip_us.datNGAY_LAP = Convert.ToDateTime(m_grv_luong_cung_cua_nhan_vien.GetRowCellValue(m_grv_luong_cung_cua_nhan_vien.FocusedRowHandle, "NGAY_LAP")).Date;
             ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUser();
-            ip_us.dcTHANG = CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim());
-            ip_us.dcNAM = CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim());
+            ip_us.dcTHANG = CIPConvert.ToDatetime(m_dat_thang.EditValue).Month;
+            ip_us.dcNAM = CIPConvert.ToDatetime(m_dat_thang.EditValue).Year;
             ip_us.dcID_NHAN_VIEN = id_nv;
             ip_us.strLY_DO = m_grv_luong_cung_cua_nhan_vien.GetRowCellValue(m_grv_luong_cung_cua_nhan_vien.FocusedRowHandle, "LY_DO").ToString();
         }
@@ -148,7 +146,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             DS_GD_KHONG_DONG_BAO_HIEM v_ds = new DS_GD_KHONG_DONG_BAO_HIEM();
             v_us.FillDataset(v_ds);
 
-            string v_str_filter = "ID_NHAN_VIEN = " + ip_dc_id_nhan_vien + " AND THANG = " + CIPConvert.ToDecimal(m_txt_chon_thang.Text.Trim()) + " AND NAM = " + CIPConvert.ToDecimal(m_txt_chon_nam.Text.Trim()) + "";
+            string v_str_filter = "ID_NHAN_VIEN = " + ip_dc_id_nhan_vien + " AND THANG = " + CIPConvert.ToDatetime(m_dat_thang.EditValue).Month + " AND NAM = " + CIPConvert.ToDatetime(m_dat_thang.EditValue).Year + "";
             DataRow[] v_dr = v_ds.Tables[0].Select(v_str_filter);
 
             if (v_dr.Count() == 0)
@@ -170,8 +168,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grv_luong_cung_cua_nhan_vien.DoubleClick += m_grv_luong_cung_cua_nhan_vien_DoubleClick;
             m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
             m_cmd_delete.Click += m_cmd_delete_Click;
-            m_txt_chon_thang.Leave += M_txt_chon_thang_Leave;
-            m_txt_chon_nam.Leave += M_txt_chon_nam_Leave;
         }
 
 
@@ -283,7 +279,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 f368_quan_ly_nv_ko_dong_bao_hiem_de v_f = new f368_quan_ly_nv_ko_dong_bao_hiem_de();
-                v_f.display_4_insert(m_txt_chon_thang.Text, m_txt_chon_nam.Text);
+                //v_f.display_4_insert(m_txt_chon_thang.Text, m_txt_chon_nam.Text);
+                v_f.display_4_insert(m_dat_thang.EditValue);
                 load_data_2_grid();
             }
             catch (Exception v_e)
@@ -296,7 +293,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (m_txt_chon_nam.Text == "" | m_txt_chon_nam.Text == "")
+                if (m_dat_thang.EditValue == null)
                 {
                     CHRM_BaseMessages.MsgBox_Error("Chưa chọn tháng và năm");
                 }
@@ -345,40 +342,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        private void M_txt_chon_nam_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                if (m_txt_chon_nam.Text == "" |Convert.ToInt16(m_txt_chon_nam.Text) < 0)
-                {
-                    CHRM_BaseMessages.MsgBox_Warning("Năm không hợp lệ!");
-                    m_txt_chon_nam.Text = m_nam_goi_y;
-                }
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void M_txt_chon_thang_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                if (m_txt_chon_thang.Text == "" | Convert.ToInt16(m_txt_chon_thang.Text) < 1 | Convert.ToInt16(m_txt_chon_thang.Text) > 12)
-                {
-                    CHRM_BaseMessages.MsgBox_Warning("Tháng không hợp lệ!");
-                    m_txt_chon_thang.Text = m_thang_goi_y;
-                }
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
     }
 }
 

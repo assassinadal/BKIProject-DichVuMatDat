@@ -31,9 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f367_quan_li_nv_ko_dong_bao_hiem_v2));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_gr_thong_tin_co_ban = new DevExpress.XtraEditors.GroupControl();
-            this.m_txt_chon_nam = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.m_txt_chon_thang = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_cmd_xem_thong_tin = new DevExpress.XtraEditors.SimpleButton();
@@ -53,12 +50,15 @@
             this.NGAY_LAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGUOI_LAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LY_DO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.m_dat_thang = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_co_ban)).BeginInit();
             this.m_gr_thong_tin_co_ban.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_luong_cung_cua_nhan_vien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_luong_cung_cua_nhan_vien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // m_lbl_header
@@ -77,9 +77,7 @@
             // 
             this.m_gr_thong_tin_co_ban.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_gr_thong_tin_co_ban.Appearance.Options.UseFont = true;
-            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_txt_chon_nam);
-            this.m_gr_thong_tin_co_ban.Controls.Add(this.label2);
-            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_txt_chon_thang);
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_dat_thang);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.label3);
             this.m_gr_thong_tin_co_ban.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_gr_thong_tin_co_ban.Location = new System.Drawing.Point(0, 52);
@@ -87,29 +85,6 @@
             this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(1028, 81);
             this.m_gr_thong_tin_co_ban.TabIndex = 3;
             this.m_gr_thong_tin_co_ban.Text = "THÔNG TIN CƠ BẢN";
-            // 
-            // m_txt_chon_nam
-            // 
-            this.m_txt_chon_nam.Location = new System.Drawing.Point(303, 37);
-            this.m_txt_chon_nam.Name = "m_txt_chon_nam";
-            this.m_txt_chon_nam.Size = new System.Drawing.Size(111, 20);
-            this.m_txt_chon_nam.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(229, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Chọn năm (*)";
-            // 
-            // m_txt_chon_thang
-            // 
-            this.m_txt_chon_thang.Location = new System.Drawing.Point(93, 37);
-            this.m_txt_chon_thang.Name = "m_txt_chon_thang";
-            this.m_txt_chon_thang.Size = new System.Drawing.Size(111, 20);
-            this.m_txt_chon_thang.TabIndex = 6;
             // 
             // label3
             // 
@@ -330,6 +305,28 @@
             this.LY_DO.Visible = true;
             this.LY_DO.VisibleIndex = 6;
             // 
+            // m_dat_thang
+            // 
+            this.m_dat_thang.EditValue = null;
+            this.m_dat_thang.Location = new System.Drawing.Point(105, 33);
+            this.m_dat_thang.Name = "m_dat_thang";
+            this.m_dat_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.m_dat_thang.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_thang.Properties.Appearance.Options.UseFont = true;
+            this.m_dat_thang.Properties.Appearance.Options.UseForeColor = true;
+            this.m_dat_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
+            this.m_dat_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_thang.Properties.EditFormat.FormatString = "MM/yyyy";
+            this.m_dat_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_dat_thang.Size = new System.Drawing.Size(141, 26);
+            this.m_dat_thang.TabIndex = 26;
+            // 
             // f367_quan_li_nv_ko_dong_bao_hiem_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,6 +346,8 @@
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_luong_cung_cua_nhan_vien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_luong_cung_cua_nhan_vien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -357,9 +356,6 @@
 
         private System.Windows.Forms.Label m_lbl_header;
         private DevExpress.XtraEditors.GroupControl m_gr_thong_tin_co_ban;
-        private System.Windows.Forms.TextBox m_txt_chon_nam;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox m_txt_chon_thang;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xem_thong_tin;
@@ -379,5 +375,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_LAP;
         private DevExpress.XtraGrid.Columns.GridColumn NGUOI_LAP;
         private DevExpress.XtraGrid.Columns.GridColumn LY_DO;
+        private DevExpress.XtraEditors.DateEdit m_dat_thang;
     }
 }

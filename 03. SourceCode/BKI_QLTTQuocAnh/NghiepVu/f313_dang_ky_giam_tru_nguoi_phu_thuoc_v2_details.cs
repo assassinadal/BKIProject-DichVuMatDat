@@ -34,7 +34,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_us_phu_thuoc_details = ip_us;
             us_obj_2_form();
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
-            this.ShowDialog();          
+            this.ShowDialog();
         }
 
         #endregion
@@ -55,7 +55,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_dat_ngay_ket_thuc.Value = m_us_phu_thuoc_details.datDEN_NGAY;
             m_dat_ngay_sinh_npt.Value = m_us_phu_thuoc_details.datNGAY_SINH;
             m_txt_ho_ten_nguoi_phu_thuoc.Text = m_us_phu_thuoc_details.strHO_TEN_NGUOI_PHU_THUOC;
-            m_txt_mst_nhan_vien.Text = m_us_phu_thuoc_details.strMA_SO_THUE;
+            m_txt_mst_phu_thuoc.Text = m_us_phu_thuoc_details.strMA_SO_THUE;
             m_txt_quan_he.Text = m_us_phu_thuoc_details.strQUAN_HE_VOI_NGUOI_NOP_THUE;
             m_txt_quoc_tich_npt.Text = m_us_phu_thuoc_details.strQUOC_TICH;
             m_txt_so.Text = m_us_phu_thuoc_details.strTTGKS_SO;
@@ -79,7 +79,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_init_form_load()
         {
             load_data_2_sle_chon_nv();
-            switch (m_e_form_mode)
+
+            switch(m_e_form_mode)
             {
                 case DataEntryFormMode.UpdateDataState:
                     m_sle_chon_nhan_vien.Enabled = false;
@@ -91,7 +92,10 @@ namespace BKI_DichVuMatDat.NghiepVu
                 default:
                     break;
             }
+            
         }
+
+
 
         private void load_data_2_sle_chon_nv()
         {
@@ -117,7 +121,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private bool check_validate_data()
         {
-            if (m_sle_chon_nhan_vien.EditValue == null)
+            if(m_sle_chon_nhan_vien.EditValue == null)
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NHAN_VIEN);
                 return false;
@@ -128,7 +132,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void save_data()
         {
             form_2_us_obj();
-            switch (m_e_form_mode)
+            switch(m_e_form_mode)
             {
                 case DataEntryFormMode.UpdateDataState:
                     m_us_phu_thuoc_details.Update();
@@ -137,7 +141,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     this.Close();
                     break;
                 case DataEntryFormMode.InsertDataState:
-                    if (check_validate_data() == false) return;
+                    if(check_validate_data() == false) return;
                     m_us_phu_thuoc_details.Insert();
                     CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                     this.Close();
@@ -153,7 +157,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_us_phu_thuoc_details.datDEN_NGAY = m_dat_ngay_ket_thuc.Value;
             m_us_phu_thuoc_details.datNGAY_SINH = m_dat_ngay_sinh_npt.Value;
             m_us_phu_thuoc_details.strHO_TEN_NGUOI_PHU_THUOC = m_txt_ho_ten_nguoi_phu_thuoc.Text;
-            m_us_phu_thuoc_details.strMA_SO_THUE = m_txt_mst_nhan_vien.Text;
+            m_us_phu_thuoc_details.strMA_SO_THUE = m_txt_mst_phu_thuoc.Text;
             m_us_phu_thuoc_details.strQUAN_HE_VOI_NGUOI_NOP_THUE = m_txt_quan_he.Text;
             m_us_phu_thuoc_details.strQUOC_TICH = m_txt_quoc_tich_npt.Text;
             m_us_phu_thuoc_details.strTTGKS_SO = m_txt_so.Text;
@@ -165,12 +169,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_us_phu_thuoc_details.strSO_CMT_HO_CHIEU = m_txt_CMND_npt.Text;
             m_us_phu_thuoc_details.dcID_GD_PHU_THUOC = (decimal)m_sle_chon_nhan_vien.EditValue;
             m_us_phu_thuoc_details.strDA_XOA = "N";
-            if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+            if(m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
                 m_us_phu_thuoc_details.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                 m_us_phu_thuoc_details.datNGAY_LAP = DateTime.Now;
             }
-            else if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
+            else if(m_e_form_mode == DataEntryFormMode.UpdateDataState)
             {
                 m_us_phu_thuoc_details.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
                 m_us_phu_thuoc_details.datNGAY_SUA = DateTime.Now;
@@ -190,6 +194,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.Load += f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details_Load;
             this.KeyDown += f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details_KeyDown;
             this.FormClosed += f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details_FormClosed;
+            m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
         }
 
         private void f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details_Load(object sender, EventArgs e)
@@ -198,7 +203,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 set_init_form_load();
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -208,15 +213,15 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (check_validate_data())
+                if(check_validate_data())
                 {
-                    if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
+                    if(CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
                     {
                         save_data();
                     }
                 }
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -228,7 +233,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 this.Close();
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -240,7 +245,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 this.Close();
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -250,21 +255,36 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (e.KeyCode == Keys.Escape)
+                if(e.KeyCode == Keys.Escape)
                 {
                     this.Close();
                 }
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
+        void m_sle_chon_nhan_vien_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(m_sle_chon_nhan_vien.EditValue == null)
+                {
+                    return;
+                }
+                US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN(Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                m_txt_mst_nhan_vien.Text = v_us.strMA_SO_THUE_CA_NHAN;
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         internal void display_4_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            this.ShowDialog();                     
+            this.ShowDialog();
         }
     }
 }

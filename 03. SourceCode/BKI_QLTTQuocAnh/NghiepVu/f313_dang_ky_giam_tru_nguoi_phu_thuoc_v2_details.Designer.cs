@@ -61,7 +61,7 @@
             this.m_txt_quan_he = new System.Windows.Forms.TextBox();
             this.m_txt_quoc_tich_npt = new System.Windows.Forms.TextBox();
             this.m_txt_CMND_npt = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.m_txt_mst_phu_thuoc = new System.Windows.Forms.TextBox();
             this.m_txt_ho_ten_nguoi_phu_thuoc = new System.Windows.Forms.TextBox();
             this.m_txt_mst_nhan_vien = new System.Windows.Forms.TextBox();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -242,7 +242,7 @@
             this.layoutControl1.Controls.Add(this.m_txt_quan_he);
             this.layoutControl1.Controls.Add(this.m_txt_quoc_tich_npt);
             this.layoutControl1.Controls.Add(this.m_txt_CMND_npt);
-            this.layoutControl1.Controls.Add(this.textBox5);
+            this.layoutControl1.Controls.Add(this.m_txt_mst_phu_thuoc);
             this.layoutControl1.Controls.Add(this.m_txt_ho_ten_nguoi_phu_thuoc);
             this.layoutControl1.Controls.Add(this.m_txt_mst_nhan_vien);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -401,12 +401,12 @@
             this.m_txt_CMND_npt.Size = new System.Drawing.Size(217, 20);
             this.m_txt_CMND_npt.TabIndex = 11;
             // 
-            // textBox5
+            // m_txt_mst_phu_thuoc
             // 
-            this.textBox5.Location = new System.Drawing.Point(161, 134);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(215, 20);
-            this.textBox5.TabIndex = 10;
+            this.m_txt_mst_phu_thuoc.Location = new System.Drawing.Point(161, 134);
+            this.m_txt_mst_phu_thuoc.Name = "m_txt_mst_phu_thuoc";
+            this.m_txt_mst_phu_thuoc.Size = new System.Drawing.Size(215, 20);
+            this.m_txt_mst_phu_thuoc.TabIndex = 10;
             // 
             // m_txt_ho_ten_nguoi_phu_thuoc
             // 
@@ -419,6 +419,7 @@
             // 
             this.m_txt_mst_nhan_vien.Location = new System.Drawing.Point(517, 43);
             this.m_txt_mst_nhan_vien.Name = "m_txt_mst_nhan_vien";
+            this.m_txt_mst_nhan_vien.ReadOnly = true;
             this.m_txt_mst_nhan_vien.Size = new System.Drawing.Size(217, 20);
             this.m_txt_mst_nhan_vien.TabIndex = 6;
             // 
@@ -506,7 +507,7 @@
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.textBox5;
+            this.layoutControlItem8.Control = this.m_txt_mst_phu_thuoc;
             this.layoutControlItem8.CustomizationFormText = "layoutControlItem8";
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem8.Name = "layoutControlItem8";
@@ -721,7 +722,7 @@
         private System.Windows.Forms.TextBox m_txt_quan_he;
         private System.Windows.Forms.TextBox m_txt_quoc_tich_npt;
         private System.Windows.Forms.TextBox m_txt_CMND_npt;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox m_txt_mst_phu_thuoc;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;

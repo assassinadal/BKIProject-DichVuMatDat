@@ -814,10 +814,10 @@
             // 
             // m_cmd_tk_ns_tong_hop
             // 
-            this.m_cmd_tk_ns_tong_hop.Caption = "Thống kê tổng hợp";
-            this.m_cmd_tk_ns_tong_hop.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_tk_ns_tong_hop.Glyph")));
+            this.m_cmd_tk_ns_tong_hop.Caption = "Danh sách nhân viên đang hoạt động";
+            this.m_cmd_tk_ns_tong_hop.Glyph = global::BKI_DichVuMatDat.Properties.Resources.Hopstarter_Soft_Scraps_User_Group1;
             this.m_cmd_tk_ns_tong_hop.Id = 65;
-            this.m_cmd_tk_ns_tong_hop.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_thong_ke_tong_hop_;
+            this.m_cmd_tk_ns_tong_hop.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_thong_ke_nhan_su_theo_don_vi_;
             this.m_cmd_tk_ns_tong_hop.Name = "m_cmd_tk_ns_tong_hop";
             this.m_cmd_tk_ns_tong_hop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tk_ns_tong_hop_ItemClick);
             // 

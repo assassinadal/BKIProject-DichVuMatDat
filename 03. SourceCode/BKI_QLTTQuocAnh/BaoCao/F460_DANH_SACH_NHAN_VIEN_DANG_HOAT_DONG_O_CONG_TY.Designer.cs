@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -49,7 +48,7 @@
             this.colID_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN_VI_TRI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.vF460DANHSACHNHANVIENDANGHOATDONGOCONGTYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vF460DANHSACHNHANVIENDANGHOATDONGOCONGTYBindingSource = new System.Windows.Forms.BindingSource();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_dat_thang = new DevExpress.XtraEditors.DateEdit();
             this.label3 = new System.Windows.Forms.Label();
@@ -172,6 +171,8 @@
             this.colMA_NV.Caption = "Mã nhân viên";
             this.colMA_NV.FieldName = "MA_NV";
             this.colMA_NV.Name = "colMA_NV";
+            this.colMA_NV.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MA_NV", "SL : {0}")});
             this.colMA_NV.Visible = true;
             this.colMA_NV.VisibleIndex = 1;
             this.colMA_NV.Width = 210;
@@ -265,11 +266,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_dat_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
+            this.m_dat_thang.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.m_dat_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.m_dat_thang.Properties.EditFormat.FormatString = "MM/yyyy";
+            this.m_dat_thang.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.m_dat_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.m_dat_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_thang.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.m_dat_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.m_dat_thang.Size = new System.Drawing.Size(141, 26);
             this.m_dat_thang.TabIndex = 30;
@@ -279,9 +280,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(15, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 29;
-            this.label3.Text = "Chọn tháng (*)";
+            this.label3.Text = "Chọn ngày (*)";
             // 
             // m_cmd_view
             // 

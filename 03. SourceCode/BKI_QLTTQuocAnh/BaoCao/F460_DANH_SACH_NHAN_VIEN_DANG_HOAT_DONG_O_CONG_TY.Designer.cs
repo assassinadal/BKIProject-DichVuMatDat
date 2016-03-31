@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_grc_v_nhan_vien_dang_hoat_dong = new DevExpress.XtraGrid.GridControl();
             this.dS_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY1 = new BKI_DichVuMatDat.DS.DS_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY();
             this.m_grv_v_nhan_vien_dang_hoat_dong = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colID_NHAN_VIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,15 +46,20 @@
             this.colLOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMA_LOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colID_VI_TRI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTEN_VI_TRI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colID_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTEN_VI_TRI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.vF460DANHSACHNHANVIENDANGHOATDONGOCONGTYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_dat_thang = new DevExpress.XtraEditors.DateEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.m_cmd_view = new DevExpress.XtraEditors.SimpleButton();
             this.v_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TYTableAdapter1 = new BKI_DichVuMatDat.DS.DS_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TYTableAdapters.V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TYTableAdapter();
+            this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_v_nhan_vien_dang_hoat_dong)).BeginInit();
@@ -63,6 +70,7 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).BeginInit();
+            this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -71,7 +79,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 96);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(907, 360);
+            this.layoutControl1.Size = new System.Drawing.Size(907, 317);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -82,7 +90,7 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(907, 360);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(907, 317);
             this.layoutControlGroup1.Text = "layoutControlGroup1";
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -107,7 +115,7 @@
             this.m_grc_v_nhan_vien_dang_hoat_dong.Location = new System.Drawing.Point(0, 96);
             this.m_grc_v_nhan_vien_dang_hoat_dong.MainView = this.m_grv_v_nhan_vien_dang_hoat_dong;
             this.m_grc_v_nhan_vien_dang_hoat_dong.Name = "m_grc_v_nhan_vien_dang_hoat_dong";
-            this.m_grc_v_nhan_vien_dang_hoat_dong.Size = new System.Drawing.Size(907, 360);
+            this.m_grc_v_nhan_vien_dang_hoat_dong.Size = new System.Drawing.Size(907, 317);
             this.m_grc_v_nhan_vien_dang_hoat_dong.TabIndex = 2;
             this.m_grc_v_nhan_vien_dang_hoat_dong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_v_nhan_vien_dang_hoat_dong});
@@ -120,6 +128,7 @@
             // m_grv_v_nhan_vien_dang_hoat_dong
             // 
             this.m_grv_v_nhan_vien_dang_hoat_dong.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.STT,
             this.colID,
             this.colID_NHAN_VIEN,
             this.colMA_NV,
@@ -139,6 +148,15 @@
             this.m_grv_v_nhan_vien_dang_hoat_dong.OptionsFind.AlwaysVisible = true;
             this.m_grv_v_nhan_vien_dang_hoat_dong.OptionsView.ShowFooter = true;
             // 
+            // STT
+            // 
+            this.STT.Caption = "STT";
+            this.STT.FieldName = "STT";
+            this.STT.Name = "STT";
+            this.STT.Visible = true;
+            this.STT.VisibleIndex = 0;
+            this.STT.Width = 43;
+            // 
             // colID
             // 
             this.colID.FieldName = "ID";
@@ -155,7 +173,8 @@
             this.colMA_NV.FieldName = "MA_NV";
             this.colMA_NV.Name = "colMA_NV";
             this.colMA_NV.Visible = true;
-            this.colMA_NV.VisibleIndex = 0;
+            this.colMA_NV.VisibleIndex = 1;
+            this.colMA_NV.Width = 210;
             // 
             // colHO_TEN
             // 
@@ -164,7 +183,8 @@
             this.colHO_TEN.Name = "colHO_TEN";
             this.colHO_TEN.OptionsColumn.ReadOnly = true;
             this.colHO_TEN.Visible = true;
-            this.colHO_TEN.VisibleIndex = 1;
+            this.colHO_TEN.VisibleIndex = 2;
+            this.colHO_TEN.Width = 210;
             // 
             // colTRINH_DO_VAN_HOA
             // 
@@ -194,14 +214,6 @@
             this.colID_VI_TRI.FieldName = "ID_VI_TRI";
             this.colID_VI_TRI.Name = "colID_VI_TRI";
             // 
-            // colTEN_VI_TRI
-            // 
-            this.colTEN_VI_TRI.Caption = "Tên vị trí";
-            this.colTEN_VI_TRI.FieldName = "TEN_VI_TRI";
-            this.colTEN_VI_TRI.Name = "colTEN_VI_TRI";
-            this.colTEN_VI_TRI.Visible = true;
-            this.colTEN_VI_TRI.VisibleIndex = 3;
-            // 
             // colID_DON_VI
             // 
             this.colID_DON_VI.FieldName = "ID_DON_VI";
@@ -213,7 +225,17 @@
             this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
             this.colTEN_DON_VI.Name = "colTEN_DON_VI";
             this.colTEN_DON_VI.Visible = true;
-            this.colTEN_DON_VI.VisibleIndex = 2;
+            this.colTEN_DON_VI.VisibleIndex = 3;
+            this.colTEN_DON_VI.Width = 210;
+            // 
+            // colTEN_VI_TRI
+            // 
+            this.colTEN_VI_TRI.Caption = "Tên vị trí";
+            this.colTEN_VI_TRI.FieldName = "TEN_VI_TRI";
+            this.colTEN_VI_TRI.Name = "colTEN_VI_TRI";
+            this.colTEN_VI_TRI.Visible = true;
+            this.colTEN_VI_TRI.VisibleIndex = 4;
+            this.colTEN_VI_TRI.Width = 216;
             // 
             // vF460DANHSACHNHANVIENDANGHOATDONGOCONGTYBindingSource
             // 
@@ -275,6 +297,62 @@
             // 
             this.v_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TYTableAdapter1.ClearBeforeFill = true;
             // 
+            // m_pnl_out_place_dm
+            // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
+            this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 413);
+            this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
+            this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(907, 43);
+            this.m_pnl_out_place_dm.TabIndex = 18;
+            // 
+            // m_cmd_insert
+            // 
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
+            this.m_cmd_insert.Location = new System.Drawing.Point(439, 4);
+            this.m_cmd_insert.Name = "m_cmd_insert";
+            this.m_cmd_insert.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_insert.TabIndex = 6;
+            this.m_cmd_insert.Text = "&Thêm";
+            this.m_cmd_insert.Visible = false;
+            // 
+            // m_cmd_update
+            // 
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
+            this.m_cmd_update.Location = new System.Drawing.Point(555, 4);
+            this.m_cmd_update.Name = "m_cmd_update";
+            this.m_cmd_update.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_update.TabIndex = 5;
+            this.m_cmd_update.Text = "&Sửa";
+            this.m_cmd_update.Visible = false;
+            // 
+            // m_cmd_delete
+            // 
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
+            this.m_cmd_delete.Location = new System.Drawing.Point(671, 4);
+            this.m_cmd_delete.Name = "m_cmd_delete";
+            this.m_cmd_delete.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_delete.TabIndex = 4;
+            this.m_cmd_delete.Text = "&Xóa";
+            this.m_cmd_delete.Visible = false;
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_xuat_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_excel.Image")));
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(787, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_xuat_excel.TabIndex = 3;
+            this.m_cmd_xuat_excel.Text = "&Xuất Excel";
+            // 
             // F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,6 +362,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.m_lbl_header);
+            this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY";
             this.Text = "F460-Danh sách nhân viên hoạt động ở công ty";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -297,6 +376,7 @@
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).EndInit();
+            this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -327,5 +407,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colID_DON_VI;
         private DevExpress.XtraGrid.Columns.GridColumn colTEN_DON_VI;
         private DS.DS_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TYTableAdapters.V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TYTableAdapter v_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TYTableAdapter1;
+        private DevExpress.XtraGrid.Columns.GridColumn STT;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_update;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
     }
 }

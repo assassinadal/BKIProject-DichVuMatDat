@@ -15,6 +15,7 @@ using IP.Core.IPCommon;
 using System.Globalization;
 using DevExpress.XtraEditors;
 using IP.Core.IPSystemAdmin;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace BKI_DichVuMatDat.BaoCao
 {
@@ -29,22 +30,29 @@ namespace BKI_DichVuMatDat.BaoCao
         }
 
 
+        
         #region interface
         #endregion
+        
         #region members
         #endregion
-        #region private 
+
+        #region private methods
+
         private void format_controll()
         {
             CenterToScreen();
             set_define_events();
         }
+
         private void set_init_form_load()
         {
             m_dat_thang.EditValue = DateTime.Now;
         }
+
         private void load_data_2_grid()
         {
+            make_stt(m_grv_v_nhan_vien_dang_hoat_dong);
             US_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY v_us = new US_V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add();
@@ -54,17 +62,55 @@ namespace BKI_DichVuMatDat.BaoCao
             m_grc_v_nhan_vien_dang_hoat_dong.DataSource = v_ds.Tables[0];
 
         }
+
+        private void make_stt(GridView ip_grv)
+        {
+            var col = ip_grv.Columns.Add();
+            col.FieldName = "STT";
+            col.Caption = "STT";
+            col.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            ip_grv.CustomUnboundColumnData += ip_grv_CustomUnboundColumnData;
+        }
+
+        private void ip_grv_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            if (e.IsGetData)
+                e.Value = e.ListSourceRowIndex + 1;
+        }
+
         #endregion
+
         //
         //
         //EVENTS
         //
         //
+
         private void set_define_events()
         {
             m_cmd_view.Click += M_cmd_view_Click;
             m_dat_thang.EditValueChanged += M_dat_thang_EditValueChanged;
             this.Load += F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY_Load;
+            m_cmd_xuat_excel.Click += M_cmd_xuat_excel_Click;
+        }
+
+        private void M_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    m_grc_v_nhan_vien_dang_hoat_dong.ExportToXls(saveFileDialog1.FileName);
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_BAO_CAO_THANH_CONG);
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void M_cmd_view_Click(object sender, EventArgs e)

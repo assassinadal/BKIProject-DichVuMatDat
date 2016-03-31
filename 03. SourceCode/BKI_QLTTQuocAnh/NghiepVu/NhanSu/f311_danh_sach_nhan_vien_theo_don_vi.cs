@@ -40,6 +40,17 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_tree_don_vi.ParentFieldName = DM_DON_VI.ID_DON_VI_CAP_TREN;
             m_tree_don_vi.DataSource = v_ds_dv.Tables[0];
             m_tree_don_vi.RefreshDataSource();
+
+            m_tree_don_vi.ExpandAll();
+        }
+        private void load_data_danh_sach_nhan_vien_theo_don_vi(decimal ip_dc_id_don_vi)
+        {
+            US_V_GD_CONG_TAC v_us = new US_V_GD_CONG_TAC();
+            DS_V_GD_CONG_TAC v_ds = new DS_V_GD_CONG_TAC();
+            v_ds.EnforceConstraints = false;
+            v_us.FillDataset(v_ds, " where DA_XOA  = 'N' AND ID_LOAI_CONG_TAC IN (157,793) AND ID_DON_VI = " + ip_dc_id_don_vi);
+
+            m_grc_nv.DataSource = v_ds.Tables[0];
         }
         #endregion
 
@@ -47,7 +58,19 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         private void set_define_events()
         {
             Load += f311_danh_sach_nhan_vien_theo_don_vi_Load;
+            m_tree_don_vi.CustomDrawNodeButton += m_tree_don_vi_CustomDrawNodeButton;
+        }
 
+        void m_tree_don_vi_CustomDrawNodeButton(object sender, DevExpress.XtraTreeList.CustomDrawNodeButtonEventArgs e)
+        {
+            try
+            {
+              
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void f311_danh_sach_nhan_vien_theo_don_vi_Load(object sender, EventArgs e)
@@ -61,7 +84,20 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        
+
         #endregion
+
+        private void m_tree_don_vi_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
+        {
+            try
+            {
+                var v_dc_id_don_vi = Convert.ToDecimal(e.Node.GetValue("ID"));
+                load_data_danh_sach_nhan_vien_theo_don_vi(v_dc_id_don_vi);
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

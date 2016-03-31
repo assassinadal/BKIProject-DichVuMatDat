@@ -136,9 +136,6 @@
   <data name="Hopstarter-Soft-Scraps-User-Group" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hopstarter-Soft-Scraps-User-Group.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="1425904361_23923" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425904361_23923.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,6 +150,9 @@
   </data>
   <data name="1444999351_banker" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1444999351_banker.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1425905897_253501" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1425905897_253501.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon bao hiem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon bao hiem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,6 +199,9 @@
   <data name="icon luong che do " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon luong che do .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="trash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trash1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon loai ngay cong " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon loai ngay cong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -238,6 +241,9 @@
   <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Designbolts-Monsters-University-Monsters-Character-Young-Mikes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Designbolts-Monsters-University-Monsters-Character-Young-Mikes.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon quan ly luong cung " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon quan ly luong cung .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -259,6 +265,9 @@
   <data name="1441820884_coin-delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1441820884_coin-delete.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="forward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forward.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Icons8-Ios7-Household-Room" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icons8-Ios7-Household-Room.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -279,9 +288,6 @@
   </data>
   <data name="icon exit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon exit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add161" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1425904783_54524" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425904783_54524.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -322,9 +328,6 @@
   <data name="icon thong ke tong hop " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon thong ke tong hop .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Hopstarter-Sleek-Xp-Basic-Close-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hopstarter-Sleek-Xp-Basic-Close-2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -343,8 +346,8 @@
   <data name="1450117506_edit-clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1450117506_edit-clear.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Designbolts-Monsters-University-Monsters-Character-Young-Mikes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Designbolts-Monsters-University-Monsters-Character-Young-Mikes.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="table" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\table.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -412,9 +415,6 @@
   <data name="dvmd_upload" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dvmd_upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sum1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sum1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icon exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -424,14 +424,17 @@
   <data name="icon loai hop dong " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon loai hop dong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon he so luong " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon he so luong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="brush_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brush_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="forward" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\forward.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="find" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\find.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -457,8 +460,8 @@
   <data name="1425904625_416404" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425904625_416404.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1425906136_315167" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1425906136_315167.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -478,10 +481,10 @@
   <data name="icon backup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon backup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1425905897_253501" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1425905897_253501.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sum1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sum1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="trash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trash1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1459414125_Department" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1459414125_Department.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

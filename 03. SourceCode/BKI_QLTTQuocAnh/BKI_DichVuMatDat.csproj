@@ -1208,6 +1208,7 @@
     <None Include="Resources\dvmd_info.png" />
     <None Include="Resources\trash.png" />
     <None Include="Resources\trash1.png" />
+    <None Include="Resources\1459414125_Department.ico" />
     <Content Include="XML_MESSAGE\bao_cao.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -144,17 +144,24 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private bool check_validate_data()
         {
-            DateTime v_dat_ngay_bat_dau = DateTime.Parse(m_dat_ngay_bat_dau.EditValue.ToString());
-            DateTime v_dat_ngay_ket_thuc = DateTime.Parse(m_dat_ngay_ket_thuc.EditValue.ToString());
             if(m_sle_chon_nhan_vien.EditValue == null)
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NHAN_VIEN);
                 return false;
             }
-            else if (v_dat_ngay_bat_dau> v_dat_ngay_ket_thuc)
+            else if(m_dat_ngay_bat_dau.EditValue == null)
+	        {
+                string v_str_error = "Vui lòng nhập tháng bắt đầu tính giảm trừ!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+	        }
+            else if (m_dat_ngay_bat_dau.EditValue !=null && m_dat_ngay_ket_thuc.EditValue!= null)
             {
+                DateTime v_dat_ngay_bat_dau = DateTime.Parse(m_dat_ngay_bat_dau.EditValue.ToString());
+                DateTime v_dat_ngay_ket_thuc = DateTime.Parse(m_dat_ngay_ket_thuc.EditValue.ToString());
                 string v_str_error = "Tháng bắt đầu giảm trừ đang lớn hơn tháng kết thúc giảm trừ. \nVui lòng kiểm tra lại!";
                 XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             return true;
         }

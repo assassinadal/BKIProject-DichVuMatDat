@@ -189,8 +189,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 m_pn.Visible = false;
                 m_prb.Visible = false;
-                XtraMessageBox.Show("Lưu thành công");
                 this.Close();
+                XtraMessageBox.Show("Lưu thành công");
             }
             catch (Exception v_e)
             {
@@ -278,5 +278,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         #endregion
+
+
     }
 }

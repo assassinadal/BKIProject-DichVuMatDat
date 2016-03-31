@@ -280,7 +280,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 f314_dang_ky_giam_tru_nguoi_phu_thuoc_xls v_f = new f314_dang_ky_giam_tru_nguoi_phu_thuoc_xls();
-                v_f.Show();
+                v_f.ShowDialog();
                 load_data_to_grid();
             }
             catch (Exception v_e)
@@ -319,11 +319,12 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                DialogResult v_dialog = MessageBox.Show("Việc xóa sẽ làm thay đổi số lượng người phụ thuộc của nhân viên. Bạn có chắc chắn muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo);
+                string v_str_confirm = "Việc xóa sẽ làm thay đổi số lượng người phụ thuộc của nhân viên.\n Bạn có chắc chắn muốn xóa?";
+                DialogResult v_dialog = XtraMessageBox.Show( v_str_confirm,"Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (v_dialog == DialogResult.Yes)
                 {
                     var v_dr = m_grv1.GetDataRow(m_grv1.FocusedRowHandle);
-                    US_GD_PHU_THUOC_DETAILS v_us = new US_GD_PHU_THUOC_DETAILS(CIPConvert.ToDecimal(v_dr[3].ToString()));
+                    US_GD_PHU_THUOC_DETAILS v_us = new US_GD_PHU_THUOC_DETAILS(CIPConvert.ToDecimal(v_dr[0].ToString()));
                     v_us.strDA_XOA = "Y";
                     v_us.Update();
                     //update_gd_phu_thuoc(CIPConvert.ToDecimal(v_dr[4].ToString()));

@@ -32,7 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2));
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.m_dat_den_thang = new DevExpress.XtraEditors.DateEdit();
+            this.m_dat_tu_thang = new DevExpress.XtraEditors.DateEdit();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
@@ -78,18 +84,15 @@
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.m_dat_den_thang = new DevExpress.XtraEditors.DateEdit();
-            this.m_dat_tu_thang = new DevExpress.XtraEditors.DateEdit();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_export = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_export = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
@@ -97,12 +100,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -118,6 +115,18 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1005, 73);
             this.panelControl1.TabIndex = 9;
+            // 
+            // m_cmd_filter
+            // 
+            this.m_cmd_filter.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_filter.Appearance.Options.UseFont = true;
+            this.m_cmd_filter.ImageIndex = 11;
+            this.m_cmd_filter.ImageList = this.imageCollection;
+            this.m_cmd_filter.Location = new System.Drawing.Point(371, 22);
+            this.m_cmd_filter.Name = "m_cmd_filter";
+            this.m_cmd_filter.Size = new System.Drawing.Size(105, 31);
+            this.m_cmd_filter.TabIndex = 43;
+            this.m_cmd_filter.Text = "Lọc";
             // 
             // imageCollection
             // 
@@ -136,9 +145,69 @@
             this.imageCollection.Images.SetKeyName(11, "eye.png");
             this.imageCollection.Images.SetKeyName(12, "note.png");
             // 
+            // labelControl19
+            // 
+            this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl19.Location = new System.Drawing.Point(200, 30);
+            this.labelControl19.Name = "labelControl19";
+            this.labelControl19.Size = new System.Drawing.Size(65, 14);
+            this.labelControl19.TabIndex = 41;
+            this.labelControl19.Text = "Đến tháng";
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl18.Location = new System.Drawing.Point(39, 30);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(57, 14);
+            this.labelControl18.TabIndex = 42;
+            this.labelControl18.Text = "Từ tháng";
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl17.Location = new System.Drawing.Point(493, 30);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(349, 14);
+            this.labelControl17.TabIndex = 40;
+            this.labelControl17.Text = "(Lọc những nhân viên có phụ thuộc trong khoảng ngày)";
+            // 
+            // m_dat_den_thang
+            // 
+            this.m_dat_den_thang.EditValue = null;
+            this.m_dat_den_thang.Location = new System.Drawing.Point(271, 27);
+            this.m_dat_den_thang.Name = "m_dat_den_thang";
+            this.m_dat_den_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dat_den_thang.Properties.Appearance.Options.UseFont = true;
+            this.m_dat_den_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_den_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_den_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_den_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_dat_den_thang.Size = new System.Drawing.Size(80, 20);
+            this.m_dat_den_thang.TabIndex = 39;
+            // 
+            // m_dat_tu_thang
+            // 
+            this.m_dat_tu_thang.EditValue = null;
+            this.m_dat_tu_thang.Location = new System.Drawing.Point(102, 27);
+            this.m_dat_tu_thang.Name = "m_dat_tu_thang";
+            this.m_dat_tu_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dat_tu_thang.Properties.Appearance.Options.UseFont = true;
+            this.m_dat_tu_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_tu_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_tu_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_tu_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_dat_tu_thang.Size = new System.Drawing.Size(82, 20);
+            this.m_dat_tu_thang.TabIndex = 38;
+            // 
             // m_pnl_out_place_dm
             // 
-            this.m_pnl_out_place_dm.Controls.Add(this.panelControl2);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_export);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_import_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.panel1);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 477);
@@ -286,7 +355,7 @@
             this.gridBand4.Columns.Add(this.colQUAN_HE_VOI_NGUOI_NOP_THUE);
             this.gridBand4.Name = "gridBand4";
             this.gridBand4.VisibleIndex = 1;
-            this.gridBand4.Width = 510;
+            this.gridBand4.Width = 492;
             // 
             // colHO_TEN_NGUOI_PHU_THUOC
             // 
@@ -310,7 +379,7 @@
             this.colMA_SO_THUE.FieldName = "MA_SO_THUE";
             this.colMA_SO_THUE.Name = "colMA_SO_THUE";
             this.colMA_SO_THUE.Visible = true;
-            this.colMA_SO_THUE.Width = 91;
+            this.colMA_SO_THUE.Width = 83;
             // 
             // colQUOC_TICH
             // 
@@ -326,7 +395,6 @@
             this.colSO_CMT_HO_CHIEU.FieldName = "SO_CMT_HO_CHIEU";
             this.colSO_CMT_HO_CHIEU.Name = "colSO_CMT_HO_CHIEU";
             this.colSO_CMT_HO_CHIEU.Visible = true;
-            this.colSO_CMT_HO_CHIEU.Width = 85;
             // 
             // colQUAN_HE_VOI_NGUOI_NOP_THUE
             // 
@@ -410,7 +478,7 @@
             this.gridBand3.Columns.Add(this.colDEN_NGAY);
             this.gridBand3.Name = "gridBand3";
             this.gridBand3.VisibleIndex = 3;
-            this.gridBand3.Width = 178;
+            this.gridBand3.Width = 168;
             // 
             // colTU_NGAY
             // 
@@ -421,7 +489,7 @@
             this.colTU_NGAY.FieldName = "TU_NGAY";
             this.colTU_NGAY.Name = "colTU_NGAY";
             this.colTU_NGAY.Visible = true;
-            this.colTU_NGAY.Width = 90;
+            this.colTU_NGAY.Width = 80;
             // 
             // repositoryItemDateEdit1
             // 
@@ -587,106 +655,25 @@
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 13;
             // 
-            // m_cmd_filter
+            // m_cmd_import_excel
             // 
-            this.m_cmd_filter.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cmd_filter.Appearance.Options.UseFont = true;
-            this.m_cmd_filter.ImageIndex = 11;
-            this.m_cmd_filter.ImageList = this.imageCollection;
-            this.m_cmd_filter.Location = new System.Drawing.Point(371, 22);
-            this.m_cmd_filter.Name = "m_cmd_filter";
-            this.m_cmd_filter.Size = new System.Drawing.Size(105, 31);
-            this.m_cmd_filter.TabIndex = 43;
-            this.m_cmd_filter.Text = "Lọc";
-            // 
-            // labelControl19
-            // 
-            this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl19.Location = new System.Drawing.Point(200, 30);
-            this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(65, 14);
-            this.labelControl19.TabIndex = 41;
-            this.labelControl19.Text = "Đến tháng";
-            // 
-            // labelControl18
-            // 
-            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl18.Location = new System.Drawing.Point(39, 30);
-            this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(57, 14);
-            this.labelControl18.TabIndex = 42;
-            this.labelControl18.Text = "Từ tháng";
-            // 
-            // labelControl17
-            // 
-            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl17.Location = new System.Drawing.Point(493, 30);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(349, 14);
-            this.labelControl17.TabIndex = 40;
-            this.labelControl17.Text = "(Lọc những nhân viên có phụ thuộc trong khoảng ngày)";
-            // 
-            // m_dat_den_thang
-            // 
-            this.m_dat_den_thang.EditValue = null;
-            this.m_dat_den_thang.Location = new System.Drawing.Point(271, 27);
-            this.m_dat_den_thang.Name = "m_dat_den_thang";
-            this.m_dat_den_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dat_den_thang.Properties.Appearance.Options.UseFont = true;
-            this.m_dat_den_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_den_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_den_thang.Properties.Mask.EditMask = "MM/yyyy";
-            this.m_dat_den_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_dat_den_thang.Size = new System.Drawing.Size(80, 20);
-            this.m_dat_den_thang.TabIndex = 39;
-            // 
-            // m_dat_tu_thang
-            // 
-            this.m_dat_tu_thang.EditValue = null;
-            this.m_dat_tu_thang.Location = new System.Drawing.Point(102, 27);
-            this.m_dat_tu_thang.Name = "m_dat_tu_thang";
-            this.m_dat_tu_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dat_tu_thang.Properties.Appearance.Options.UseFont = true;
-            this.m_dat_tu_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_tu_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_tu_thang.Properties.Mask.EditMask = "MM/yyyy";
-            this.m_dat_tu_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_dat_tu_thang.Size = new System.Drawing.Size(82, 20);
-            this.m_dat_tu_thang.TabIndex = 38;
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.m_cmd_import_excel);
-            this.panelControl2.Controls.Add(this.m_cmd_export);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl2.Location = new System.Drawing.Point(4, 4);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(240, 35);
-            this.panelControl2.TabIndex = 19;
+            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_import_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_excel.Image")));
+            this.m_cmd_import_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
+            this.m_cmd_import_excel.Size = new System.Drawing.Size(118, 35);
+            this.m_cmd_import_excel.TabIndex = 29;
+            this.m_cmd_import_excel.Text = "&Import Excel";
             // 
             // m_cmd_export
             // 
-            this.m_cmd_export.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_export.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_export.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_export.Image")));
-            this.m_cmd_export.Location = new System.Drawing.Point(120, 2);
+            this.m_cmd_export.Location = new System.Drawing.Point(122, 4);
             this.m_cmd_export.Name = "m_cmd_export";
-            this.m_cmd_export.Size = new System.Drawing.Size(118, 31);
-            this.m_cmd_export.TabIndex = 27;
+            this.m_cmd_export.Size = new System.Drawing.Size(118, 35);
+            this.m_cmd_export.TabIndex = 30;
             this.m_cmd_export.Text = "&Export Excel";
-            // 
-            // m_cmd_import_excel
-            // 
-            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_import_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_excel.Image")));
-            this.m_cmd_import_excel.Location = new System.Drawing.Point(2, 2);
-            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
-            this.m_cmd_import_excel.Size = new System.Drawing.Size(118, 31);
-            this.m_cmd_import_excel.TabIndex = 28;
-            this.m_cmd_import_excel.Text = "&Import Excel";
             // 
             // f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2
             // 
@@ -703,6 +690,10 @@
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties)).EndInit();
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
@@ -710,12 +701,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -775,9 +760,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.DateEdit m_dat_den_thang;
         private DevExpress.XtraEditors.DateEdit m_dat_tu_thang;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_import_excel;
         private DevExpress.XtraEditors.SimpleButton m_cmd_export;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_import_excel;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

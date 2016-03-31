@@ -587,6 +587,7 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -851,6 +852,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NghiepVu\Luong\TinhLuongQL.cs" />
+    <Compile Include="NghiepVu\NhanSu\f311_danh_sach_nhan_vien_theo_don_vi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f311_danh_sach_nhan_vien_theo_don_vi.Designer.cs">
+      <DependentUpon>f311_danh_sach_nhan_vien_theo_don_vi.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\ThuNhapKhac\f301_option_detail_calculate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1119,6 +1126,9 @@
     <Compile Include="XtraReport\rptPhuThuoc.Designer.cs">
       <DependentUpon>rptPhuThuoc.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="NghiepVu\NhanSu\f311_danh_sach_nhan_vien_theo_don_vi.resx">
+      <DependentUpon>f311_danh_sach_nhan_vien_theo_don_vi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.resx">
       <DependentUpon>F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.cs</DependentUpon>
     </EmbeddedResource>

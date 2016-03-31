@@ -248,6 +248,19 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grv1.DoubleClick += new EventHandler(m_grv1_DoubleClick);
             m_cmd_insert.Click += m_cmd_them_click;
             m_cmd_export.Click += m_cmd_export_Click;
+            m_cmd_filter.Click += m_cmd_filter_Click;
+        }
+
+        void m_cmd_filter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_to_grid();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_export_Click(object sender, EventArgs e)

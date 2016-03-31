@@ -1246,10 +1246,10 @@ namespace BKI_DichVuMatDat
         private void m_cmd_tk_ns_tong_hop_ItemClick(object sender, ItemClickEventArgs e)
         {
             //F425_Bao_cao_nhan_su_tong_hop v_frm = new F425_Bao_cao_nhan_su_tong_hop();
-            //F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY v_frm = new F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY();
-            //if (IsExistFormName(v_frm)) return;
-            //v_frm.MdiParent = this;
-            //v_frm.Show();
+            F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY v_frm = new F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY();
+            if (IsExistFormName(v_frm)) return;
+            v_frm.MdiParent = this;
+            v_frm.Show();
         }
 
         private void m_cmd_dang_ky_giam_tru_phu_thuoc_ItemClick(object sender, ItemClickEventArgs e)

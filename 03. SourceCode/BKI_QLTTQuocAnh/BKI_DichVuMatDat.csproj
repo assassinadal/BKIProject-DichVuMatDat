@@ -344,6 +344,12 @@
     <Compile Include="BaoCao\f419_bao_cao_hs_lns_lcd_v2.Designer.cs">
       <DependentUpon>f419_bao_cao_hs_lns_lcd_v2.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.Designer.cs">
+      <DependentUpon>F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\SplashScreen1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -581,7 +587,6 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1114,6 +1119,9 @@
     <Compile Include="XtraReport\rptPhuThuoc.Designer.cs">
       <DependentUpon>rptPhuThuoc.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BaoCao\F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.resx">
+      <DependentUpon>F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReport\rptCommon.resx">
       <DependentUpon>rptCommon.cs</DependentUpon>
     </EmbeddedResource>

@@ -243,8 +243,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grc.DataSource = null;
             try
             {
-                WinFormControls.load_xls_to_gridview(WinFormControls.openFileDialog(), m_grc);
-                m_cmd_save.Enabled = true;
+                string v_file_name = WinFormControls.openFileDialog();
+                if (v_file_name != "")
+                {
+                    WinFormControls.load_xls_to_gridview(v_file_name, m_grc);
+                    m_cmd_save.Enabled = true;
+                }
             }
             catch (Exception v_e)
             {
@@ -256,7 +260,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                WinFormControls.openTemplate("DangKyPhuThuoc.xls");
+                WinFormControls.openTemplate_v2("DangKyPhuThuoc.xls");
             }
             catch (Exception v_e)
             {

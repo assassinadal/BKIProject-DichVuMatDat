@@ -224,7 +224,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void set_initial_form_load()
         {
-            m_lbl_nam_tinh_thue.Text = DateTime.Now.Year.ToString();
+            //m_lbl_nam_tinh_thue.Text = DateTime.Now.Year.ToString();
             m_dat_tu_thang.EditValue = DateTime.Now.AddMonths(-DateTime.Now.Month+ 1).AddDays(-DateTime.Now.Day + 1).Date;
             m_dat_den_thang.EditValue = DateTime.Now.Date;
             load_data_to_grid();

@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraPrinting;
 using DevExpress.XtraReports.UI;
 using System;
 using System.Collections.Generic;
@@ -93,7 +94,9 @@ namespace BKI_DichVuMatDat.XtraReport
             saveFileDialog1.FileName = FileName;
             if(saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                r.ExportToXls(saveFileDialog1.FileName);
+                XlsExportOptions opt = new XlsExportOptions();
+                opt.TextExportMode = TextExportMode.Text;
+                r.ExportToXls(saveFileDialog1.FileName, opt);
                 XtraMessageBox.Show("Xuất báo cáo thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

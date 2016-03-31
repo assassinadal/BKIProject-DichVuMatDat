@@ -56,6 +56,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_export = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
@@ -100,7 +101,7 @@
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_cmd_export = new DevExpress.XtraEditors.SimpleButton();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
@@ -113,6 +114,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -429,6 +432,16 @@
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1005, 43);
             this.m_pnl_out_place_dm.TabIndex = 2;
             // 
+            // m_cmd_export
+            // 
+            this.m_cmd_export.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_export.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_export.Image")));
+            this.m_cmd_export.Location = new System.Drawing.Point(409, 4);
+            this.m_cmd_export.Name = "m_cmd_export";
+            this.m_cmd_export.Size = new System.Drawing.Size(118, 35);
+            this.m_cmd_export.TabIndex = 25;
+            this.m_cmd_export.Text = "&Export Excel";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.m_cmd_import_excel);
@@ -488,6 +501,8 @@
             this.m_grc.Location = new System.Drawing.Point(0, 198);
             this.m_grc.MainView = this.m_grv1;
             this.m_grc.Name = "m_grc";
+            this.m_grc.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemDateEdit1});
             this.m_grc.Size = new System.Drawing.Size(1005, 279);
             this.m_grc.TabIndex = 10;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -705,8 +720,9 @@
             // colTU_NGAY
             // 
             this.colTU_NGAY.Caption = "Từ tháng(*)";
+            this.colTU_NGAY.ColumnEdit = this.repositoryItemDateEdit1;
             this.colTU_NGAY.DisplayFormat.FormatString = "MM/yyyy";
-            this.colTU_NGAY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.colTU_NGAY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colTU_NGAY.FieldName = "TU_NGAY";
             this.colTU_NGAY.Name = "colTU_NGAY";
             this.colTU_NGAY.Visible = true;
@@ -715,8 +731,9 @@
             // colDEN_NGAY
             // 
             this.colDEN_NGAY.Caption = "Đến tháng";
+            this.colDEN_NGAY.ColumnEdit = this.repositoryItemDateEdit1;
             this.colDEN_NGAY.DisplayFormat.FormatString = "MM/yyyy";
-            this.colDEN_NGAY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.colDEN_NGAY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colDEN_NGAY.FieldName = "DEN_NGAY";
             this.colDEN_NGAY.Name = "colDEN_NGAY";
             this.colDEN_NGAY.Visible = true;
@@ -860,15 +877,20 @@
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 13;
             // 
-            // m_cmd_export
+            // repositoryItemDateEdit1
             // 
-            this.m_cmd_export.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_export.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_export.Image")));
-            this.m_cmd_export.Location = new System.Drawing.Point(409, 4);
-            this.m_cmd_export.Name = "m_cmd_export";
-            this.m_cmd_export.Size = new System.Drawing.Size(118, 35);
-            this.m_cmd_export.TabIndex = 25;
-            this.m_cmd_export.Text = "&Export Excel";
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.DisplayFormat.FormatString = "MM/yyyy";
+            this.repositoryItemDateEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit1.EditFormat.FormatString = "MM/yyyy";
+            this.repositoryItemDateEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit1.Mask.EditMask = "MM/yyyy";
+            this.repositoryItemDateEdit1.Mask.UseMaskAsDisplayFormat = true;
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
             // 
             // f312_dang_ky_giam_tru_nguoi_phu_thuoc_v2
             // 
@@ -894,6 +916,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -971,6 +995,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
         private DevExpress.XtraEditors.SimpleButton m_cmd_export;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

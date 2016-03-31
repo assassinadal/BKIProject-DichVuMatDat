@@ -1108,8 +1108,17 @@
     <Compile Include="XtraReport\rptCommon.Designer.cs">
       <DependentUpon>rptCommon.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraReport\rptPhuThuoc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport\rptPhuThuoc.Designer.cs">
+      <DependentUpon>rptPhuThuoc.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="XtraReport\rptCommon.resx">
       <DependentUpon>rptCommon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport\rptPhuThuoc.resx">
+      <DependentUpon>rptPhuThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DVMDDataSet1.xsc">
       <DependentUpon>DVMDDataSet1.xsd</DependentUpon>

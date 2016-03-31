@@ -43,14 +43,33 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
 
             m_tree_don_vi.ExpandAll();
         }
-        private void load_data_danh_sach_nhan_vien_theo_don_vi(decimal ip_dc_id_don_vi)
+        private void load_data_danh_sach_nhan_vien_theo_don_vi(string ip_dc_id_don_vi)
         {
-            US_V_GD_CONG_TAC v_us = new US_V_GD_CONG_TAC();
-            DS_V_GD_CONG_TAC v_ds = new DS_V_GD_CONG_TAC();
+            US_V_GD_MA_TRA_CUU_NHAN_VIEN v_us = new US_V_GD_MA_TRA_CUU_NHAN_VIEN();
+            DS_V_GD_MA_TRA_CUU_NHAN_VIEN v_ds = new DS_V_GD_MA_TRA_CUU_NHAN_VIEN();
             v_ds.EnforceConstraints = false;
-            v_us.FillDataset(v_ds, " where DA_XOA  = 'N' AND ID_LOAI_CONG_TAC IN (157,793) AND ID_DON_VI = " + ip_dc_id_don_vi);
+            v_us.FillDataset(v_ds, " where TEN_DON_VI like N'" + ip_dc_id_don_vi +"'");
 
-            m_grc_nv.DataSource = v_ds.Tables[0];
+            m_grc.DataSource = v_ds.Tables[0];
+        }
+        private string find_don_vi_by_id_don_vi(decimal ip_dc_id_don_vi)
+        {
+            US_DM_DON_VI v_us = new US_DM_DON_VI();
+            DS_DM_DON_VI v_ds = new DS_DM_DON_VI();
+
+            v_us.FillDataset(v_ds);
+
+            string v_str_filter = "ID = " + ip_dc_id_don_vi;
+            DataRow[] v_dr = v_ds.DM_DON_VI.Select(v_str_filter);
+
+            if (v_dr.Count() == 0)
+            {
+                return "";
+            }
+            else
+            {
+                return v_dr.First()["TEN_DON_VI"].ToString();
+            }
         }
         #endregion
 
@@ -65,9 +84,9 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             try
             {
-              
+
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -79,7 +98,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             {
                 set_initial_form_load();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -92,9 +111,9 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             try
             {
                 var v_dc_id_don_vi = Convert.ToDecimal(e.Node.GetValue("ID"));
-                load_data_danh_sach_nhan_vien_theo_don_vi(v_dc_id_don_vi);
+                load_data_danh_sach_nhan_vien_theo_don_vi(find_don_vi_by_id_don_vi(v_dc_id_don_vi));
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }

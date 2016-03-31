@@ -50,7 +50,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.dcID_GD_PHU_THUOC = get_id_by_ma_nhan_vien(v_dr[0].ToString());
             v_us.strHO_TEN_NGUOI_PHU_THUOC = v_dr[3].ToString();
             if (v_dr[4].ToString().Trim() !="")
-                v_us.datNGAY_SINH = WinFormControls.FormatPostingDate(v_dr[4].ToString());
+                v_us.datNGAY_SINH = convert_datetime(v_dr[4].ToString());
             v_us.strMA_SO_THUE = v_dr[5].ToString();
             v_us.strQUOC_TICH = v_dr[6].ToString();
             v_us.strSO_CMT_HO_CHIEU = v_dr[7].ToString();
@@ -62,23 +62,24 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.strTTGKS_QUAN_HUYEN = v_dr[13].ToString();
             v_us.strTTGKS_PHUONG_XA = v_dr[14].ToString();
             if (v_dr[15].ToString().Trim() != "")
-                v_us.datTU_NGAY = WinFormControls.FormatPostingDate(v_dr[15].ToString());
+                v_us.datTU_NGAY = convert_datetime(v_dr[15].ToString());
             if (v_dr[16].ToString().Trim() != "")
-                v_us.datDEN_NGAY = WinFormControls.FormatPostingDate(v_dr[16].ToString()); 
+                v_us.datDEN_NGAY = convert_datetime(v_dr[16].ToString());
             v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             v_us.datNGAY_LAP = DateTime.Now;
             v_us.strDA_XOA = "N";
             v_us.Insert();                 
         }
 
-        //private DateTime return_datetime_data(string ip_str)
-        //{
-        //    if (ip_str.Trim() == "")
-        //    {
-        //        return DateTime.Now;
-        //    }
-        //    return DateTime.Parse(ip_str);
-        //}
+        private DateTime convert_datetime(string ip_date)
+        {
+            int v_int_date;
+            if (int.TryParse(ip_date, out v_int_date))
+            {
+                return DateTime.FromOADate(v_int_date);
+            }
+            return DateTime.Parse(ip_date);
+        }
 
         private decimal get_id_by_ma_nhan_vien(string ip_str_ma_nv)
         {
@@ -132,32 +133,40 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 var v_dr = m_grv1.GetDataRow(i);
                 US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
-                DateTime v_dt;
                 if (!v_us.IsExistNhanVienInDB(v_dr[0].ToString()))
                 {
                     string v_str = "Mã nhân viên '" + v_dr[0].ToString() + "' không tồn tại. Vui lòng kiểm tra lại!";
                     XtraMessageBox.Show(v_str, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                //else if (!DateTime.TryParse(v_dr[4].ToString(),out v_dt) && v_dr[4].ToString().Trim()!="")
-                //{
-                //    string v_str = "Vui lòng kiểm tra lại ngày sinh của nhân viên " + v_dr[0].ToString();
-                //    XtraMessageBox.Show(v_str, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    return false;
-                //}
-                //else if (!DateTime.TryParse(v_dr[15].ToString(), out v_dt) && v_dr[15].ToString().Trim() != "")
-                //{
-                //    string v_str = "Vui lòng kiểm tra lại tháng bắt đầu giảm trừ của nhân viên " + v_dr[0].ToString();
-                //    XtraMessageBox.Show(v_str, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    return false;
-                //}
-                //else if (!DateTime.TryParse(v_dr[4].ToString(), out v_dt) && v_dr[16].ToString().Trim()!="")
-                //{
-                //    string v_str = "Vui lòng kiểm tra lại tháng kết thúc giảm trừ của nhân viên " + v_dr[0].ToString();
-                //    XtraMessageBox.Show(v_str, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    return false;
-                //}
+                else if (!check_datetime_data(v_dr[4].ToString()))
+                {
+                    string v_str = "Vui lòng kiểm tra lại ngày sinh người phụ thuộc của nhân viên " + v_dr[0].ToString();
+                    XtraMessageBox.Show(v_str, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                else if (!check_datetime_data(v_dr[15].ToString()))
+                {
+                    string v_str = "Vui lòng kiểm tra lại tháng bắt đầu giảm trừ của nhân viên " + v_dr[0].ToString();
+                    XtraMessageBox.Show(v_str, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                else if (!check_datetime_data(v_dr[16].ToString()))
+                {
+                    string v_str = "Vui lòng kiểm tra lại tháng kết thúc giảm trừ của nhân viên " + v_dr[0].ToString();
+                    XtraMessageBox.Show(v_str, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
             }
+            return true;
+        }
+
+        private bool check_datetime_data(string ip_datetime)
+        {
+            DateTime v_dt_ngay;
+            int v_int_ngay;
+            if (ip_datetime.Trim() != "" && !int.TryParse(ip_datetime, out v_int_ngay) && !DateTime.TryParse(ip_datetime, out v_dt_ngay))
+                return false;
             return true;
         }
 

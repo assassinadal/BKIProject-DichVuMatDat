@@ -406,6 +406,9 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     load_data_2_m_variable();
                     save_data();
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                    F500_QUY_TRINH_THEM_MOI_NHAN_SU.done();
+                    this.Close();
                 }
             }
             catch (Exception v_e)

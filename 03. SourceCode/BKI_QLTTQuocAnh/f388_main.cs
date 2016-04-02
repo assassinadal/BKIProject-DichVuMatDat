@@ -21,6 +21,7 @@ using BKI_DichVuMatDat.NghiepVu.ThuNhapKhac;
 //using BKI_DichVuMatDat.BaoCao.Luong;
 using BKI_DichVuMatDat.BaoCao.ThuNhapKhac;
 using BKI_DichVuMatDat.NghiepVu.Luong;
+using BKI_DichVuMatDat.NghiepVu.NhanSu;
 //using BKI_DichVuMatDat.BaoCao.Luong;
 
 namespace BKI_DichVuMatDat
@@ -1439,10 +1440,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                //F115_dm_thu_tu_don_vi_chuc_vu v_f = new F115_dm_thu_tu_don_vi_chuc_vu();
-                //if (IsExistFormName(v_f)) return;
-                //v_f.MdiParent = this;
-                //v_f.Show();
+                //F115_dm_thu_tu_don_vi_chuc_vu v_f = new F115_dm_thu_tu_don_vi_chuc_vu
+                f311_danh_sach_nhan_vien_theo_don_vi v_f = new f311_danh_sach_nhan_vien_theo_don_vi();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
             }
             catch (Exception v_e)
             {

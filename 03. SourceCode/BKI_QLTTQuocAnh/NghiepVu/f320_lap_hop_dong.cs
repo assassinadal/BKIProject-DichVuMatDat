@@ -1128,6 +1128,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_insert.Click += m_cmd_insert_Click;
             m_cmd_update.Click += m_cmd_update_Click;
             m_cmd_chon_file.Click += m_cmd_chon_file_Click;
+            m_cmd_tao_lai.Click += m_cmd_tao_lai_Click;
             //control
             m_sle_loai_hop_dong.EditValueChanged += m_sle_loai_hop_dong_EditValueChanged;
             m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
@@ -1184,6 +1185,8 @@ namespace BKI_DichVuMatDat.NghiepVu
 
                 us_obj_2_form(v_id_gd_hd, v_id_gd_lns_lcd);
                 m_cmd_lap_hop_dong.Enabled = true;
+                m_sle_chon_nhan_vien.Enabled = false;
+                m_cmd_lap_hop_dong.Text = "Lưu";
             }
             catch (Exception v_e)
             {
@@ -1490,6 +1493,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 m_e_form_mode = DataEntryFormMode.InsertDataState;
                 m_cmd_tao_lai_is_click = (decimal)MyEnum.NUT_TAO_LAI_DUOC_CLICK;
+                m_sle_chon_nhan_vien.Enabled = true;
+                m_cmd_lap_hop_dong.Text = "&Lập hợp đồng";
                 clear_data_in_form();
             }
             catch (Exception v_e)

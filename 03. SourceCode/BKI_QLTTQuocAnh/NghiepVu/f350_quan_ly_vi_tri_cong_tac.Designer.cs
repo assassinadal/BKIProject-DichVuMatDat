@@ -77,7 +77,7 @@
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_insert_1 = new DevExpress.XtraEditors.SimpleButton();
             this.ImageList = new System.Windows.Forms.ImageList();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc_v_gd_cong_tac = new DevExpress.XtraGrid.GridControl();
@@ -99,7 +99,7 @@
             this.c_da_xoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_huy_kiem_nhiem = new SIS.Controls.Button.SiSButton();
@@ -585,7 +585,7 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.m_cmd_insert);
+            this.panelControl2.Controls.Add(this.m_cmd_insert_1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 212);
             this.panelControl2.Name = "panelControl2";
@@ -593,15 +593,15 @@
             this.panelControl2.TabIndex = 2;
             this.panelControl2.Visible = false;
             // 
-            // m_cmd_insert
+            // m_cmd_insert_1
             // 
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
-            this.m_cmd_insert.Location = new System.Drawing.Point(2, 2);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(116, 36);
-            this.m_cmd_insert.TabIndex = 15;
-            this.m_cmd_insert.Text = "&Thêm";
+            this.m_cmd_insert_1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_insert_1.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert_1.Image")));
+            this.m_cmd_insert_1.Location = new System.Drawing.Point(2, 2);
+            this.m_cmd_insert_1.Name = "m_cmd_insert_1";
+            this.m_cmd_insert_1.Size = new System.Drawing.Size(116, 36);
+            this.m_cmd_insert_1.TabIndex = 15;
+            this.m_cmd_insert_1.Text = "&Thêm";
             // 
             // ImageList
             // 
@@ -857,7 +857,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.m_cmd_chon_file);
-            this.panel1.Controls.Add(this.simpleButton1);
+            this.panel1.Controls.Add(this.m_cmd_insert);
             this.panel1.Controls.Add(this.m_cmd_update);
             this.panel1.Controls.Add(this.m_cmd_delete);
             this.panel1.Controls.Add(this.m_cmd_huy_kiem_nhiem);
@@ -877,15 +877,15 @@
             this.m_cmd_chon_file.TabIndex = 31;
             this.m_cmd_chon_file.Text = "Chọn file";
             // 
-            // simpleButton1
+            // m_cmd_insert
             // 
-            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(491, 0);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(116, 36);
-            this.simpleButton1.TabIndex = 17;
-            this.simpleButton1.Text = "&Thêm";
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
+            this.m_cmd_insert.Location = new System.Drawing.Point(491, 0);
+            this.m_cmd_insert.Name = "m_cmd_insert";
+            this.m_cmd_insert.Size = new System.Drawing.Size(116, 36);
+            this.m_cmd_insert.TabIndex = 17;
+            this.m_cmd_insert.Text = "&Thêm";
             // 
             // m_cmd_update
             // 
@@ -1036,8 +1036,8 @@
         internal SIS.Controls.Button.SiSButton m_cmd_huy_kiem_nhiem;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_insert_1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_update;
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;

@@ -570,27 +570,27 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                //decimal v_id_gd_cong_tac_moi_tao = 0;
-                //f351_quan_ly_cong_tac_de v_frm = new f351_quan_ly_cong_tac_de();
-                //v_frm.display_4_insert(ref v_id_gd_cong_tac_moi_tao);
-                //load_data_2_grid(v_id_gd_cong_tac_moi_tao);
+                decimal v_id_gd_cong_tac_moi_tao = 0;
+                f351_quan_ly_cong_tac_de v_frm = new f351_quan_ly_cong_tac_de();
+                v_frm.display_4_insert(ref v_id_gd_cong_tac_moi_tao);
+                load_data_2_grid();
 
-                if (check_data_is_ok() == true)
-                {
-                    if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU))
-                    {
-                        load_data_2_m_variable();
-                        save_data();
-                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-                        m_trang_thai_buoc_4_thanh_cong = 1;
-                        F500_QUY_TRINH_THEM_MOI_NHAN_SU.done();
-                        if (m_trang_thai_them == -1)
-                        {
-                            this.Close();
-                        }
-                        load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
-                    }
-                }
+                //if (check_data_is_ok() == true)
+                //{
+                //    if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU))
+                //    {
+                //        load_data_2_m_variable();
+                //        save_data();
+                //        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                //        m_trang_thai_buoc_4_thanh_cong = 1;
+                //        F500_QUY_TRINH_THEM_MOI_NHAN_SU.done();
+                //        if (m_trang_thai_them == -1)
+                //        {
+                //            this.Close();
+                //        }
+                //        load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                //    }
+                //}
             }
             catch (Exception v_e)
             {

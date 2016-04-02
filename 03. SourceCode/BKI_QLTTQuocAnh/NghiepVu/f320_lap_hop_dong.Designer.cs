@@ -74,7 +74,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.m_cmd_tao_lai = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_lap_hop_dong = new DevExpress.XtraEditors.SimpleButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
@@ -102,6 +101,7 @@
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.m_cmd_tao_lai = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -558,7 +558,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.m_cmd_tao_lai);
             this.panel3.Controls.Add(this.m_cmd_lap_hop_dong);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 173);
@@ -566,22 +565,11 @@
             this.panel3.Size = new System.Drawing.Size(1284, 40);
             this.panel3.TabIndex = 2;
             // 
-            // m_cmd_tao_lai
-            // 
-            this.m_cmd_tao_lai.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_tao_lai.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tao_lai.Image")));
-            this.m_cmd_tao_lai.Location = new System.Drawing.Point(116, 0);
-            this.m_cmd_tao_lai.Name = "m_cmd_tao_lai";
-            this.m_cmd_tao_lai.Size = new System.Drawing.Size(116, 40);
-            this.m_cmd_tao_lai.TabIndex = 8;
-            this.m_cmd_tao_lai.Text = "&Tạo lại";
-            this.m_cmd_tao_lai.Click += new System.EventHandler(this.m_cmd_tao_lai_Click);
-            // 
             // m_cmd_lap_hop_dong
             // 
-            this.m_cmd_lap_hop_dong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_lap_hop_dong.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_lap_hop_dong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_lap_hop_dong.Image")));
-            this.m_cmd_lap_hop_dong.Location = new System.Drawing.Point(0, 0);
+            this.m_cmd_lap_hop_dong.Location = new System.Drawing.Point(1168, 0);
             this.m_cmd_lap_hop_dong.Name = "m_cmd_lap_hop_dong";
             this.m_cmd_lap_hop_dong.Size = new System.Drawing.Size(116, 40);
             this.m_cmd_lap_hop_dong.TabIndex = 7;
@@ -830,6 +818,7 @@
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_tao_lai);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_file);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
@@ -844,9 +833,9 @@
             // 
             // m_cmd_chon_file
             // 
-            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_chon_file.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_file.Image")));
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(674, 4);
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(142, 35);
             this.m_cmd_chon_file.TabIndex = 31;
@@ -921,6 +910,16 @@
             this.ImageList.Images.SetKeyName(19, "");
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
+            // 
+            // m_cmd_tao_lai
+            // 
+            this.m_cmd_tao_lai.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_tao_lai.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tao_lai.Image")));
+            this.m_cmd_tao_lai.Location = new System.Drawing.Point(700, 4);
+            this.m_cmd_tao_lai.Name = "m_cmd_tao_lai";
+            this.m_cmd_tao_lai.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_tao_lai.TabIndex = 32;
+            this.m_cmd_tao_lai.Text = "&Tạo mới\r\nhợp đồng";
             // 
             // f320_lap_hop_dong
             // 
@@ -1029,7 +1028,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
         private DevExpress.XtraEditors.SimpleButton m_cmd_lap_hop_dong;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_tao_lai;
         private DevExpress.XtraEditors.SimpleButton m_cmd_loc_du_lieu;
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_ID;
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_MA_NV;
@@ -1039,5 +1037,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_DIA_CHI_LIEN_LAC;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
         private DevExpress.XtraGrid.Columns.GridColumn DA_XOA;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_tao_lai;
     }
 }

@@ -1142,7 +1142,7 @@
             // 
             // m_cmd_cm_dm_thu_tu_don_vi
             // 
-            this.m_cmd_cm_dm_thu_tu_don_vi.Caption = "Thứ tự đơn vị";
+            this.m_cmd_cm_dm_thu_tu_don_vi.Caption = "Nhân viên theo đơn vị";
             this.m_cmd_cm_dm_thu_tu_don_vi.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_cm_dm_thu_tu_don_vi.Glyph")));
             this.m_cmd_cm_dm_thu_tu_don_vi.Id = 107;
             this.m_cmd_cm_dm_thu_tu_don_vi.Name = "m_cmd_cm_dm_thu_tu_don_vi";

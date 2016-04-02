@@ -67,8 +67,17 @@ namespace BKI_DichVuMatDat.DanhMuc
         private void set_init_form_load()
         {
             this.cM_DM_TU_DIENTableAdapter.Fill(this.dVMDDataSet3.CM_DM_TU_DIEN);
+            m_txt_tuoi_nv.Enabled = false;
+            tinh_tuoi_nhan_vien(m_dat_ngay_sinh.DateTime.Date);
             fill_combobox_gioi_tinh();
+            fill_combobox_hon_nhan();
             load_data_2_sle_trinh_do();
+        }
+
+        private void fill_combobox_hon_nhan()
+        {
+            m_cbc_hon_nhan.Properties.Items.Add("Đã kết hôn");
+            m_cbc_hon_nhan.Properties.Items.Add("Chưa kết hôn");
         }
 
         private DS_CM_DM_TU_DIEN load_data_2_cm_dm_tu_dien(int ip_id_loai_td)
@@ -134,7 +143,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_txt_chuyen_mon.Text = m_us.strCHUYEN_MON;
             // m_txt_trinh_do_van_hoa.Text=             //  m_us.strTRINH_DO_VAN_HOA ;
             m_txt_nam_tot_nghiep.Text = m_us.strNAM_TOT_NGHIEP;
-            m_txt_hon_nhan.Text = m_us.strHON_NHAN;
+            m_cbc_hon_nhan.Text = m_us.strHON_NHAN;
             m_txt_noi_tot_nghiep.Text = m_us.strTOT_NGHIEP_TAI;
             if (m_us.datNGAY_VAO_HANG_KHONG.Date != new DateTime(1900, 01, 01))
                 m_dat_ngay_vao_hang_khong.EditValue = m_us.datNGAY_VAO_HANG_KHONG;
@@ -163,7 +172,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                 m_us.datNGAY_HET_HAN_THE = m_dat_ngay_het_han_the.DateTime;
             if (m_dat_ngay_sinh.EditValue != null)
                 m_us.datNGAY_SINH = m_dat_ngay_sinh.DateTime;
-            m_us.strHON_NHAN = m_txt_hon_nhan.Text;
+            m_us.strHON_NHAN = m_cbc_hon_nhan.Text;
             m_us.strSO_CMT = m_txt_so_cmt.Text;
             if (m_sle_trinh_do.EditValue != null)
                 m_us.strTRINH_DO_VAN_HOA = m_sle_trinh_do.EditValue.ToString();
@@ -199,6 +208,10 @@ namespace BKI_DichVuMatDat.DanhMuc
                 decimal v_so_tuoi = 0;
                 m_us.tinh_tuoi_nhan_vien(ip_dat_ngay_sinh, ref v_so_tuoi);
                 m_txt_tuoi_nv.Text = v_so_tuoi.ToString();
+            }
+            else
+            {
+                m_txt_tuoi_nv.Text = "";
             }
         }
 

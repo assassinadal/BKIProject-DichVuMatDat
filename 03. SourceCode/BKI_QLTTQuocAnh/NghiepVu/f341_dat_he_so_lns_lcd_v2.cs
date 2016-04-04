@@ -73,7 +73,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             CHRMCommon.make_stt(m_grv_lcd);
             DS_V_F340_DAT_LCD v_ds = new DS_V_F340_DAT_LCD();
             US_V_F340_DAT_LCD v_us = new US_V_F340_DAT_LCD();
-            v_us.FillDataset(v_ds);
+            v_us.FillDataset(v_ds,"ORDER BY NGAY_BAT_DAU_LCD DESC, HO_TEN ASC");
             m_grc_f340_lcd.DataSource = v_ds.Tables[0];
             m_grv_lcd.BestFitColumns();
         }
@@ -83,7 +83,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             CHRMCommon.make_stt(m_grv_hs_lns);
             DS_V_F340_DAT_HS_LNS v_ds = new DS_V_F340_DAT_HS_LNS();
             US_V_F340_DAT_HS_LNS v_us = new US_V_F340_DAT_HS_LNS();
-            v_us.FillDataset(v_ds);
+            v_us.FillDataset(v_ds, "ORDER BY NGAY_BAT_DAU_LNS DESC, HO_TEN ASC");
             m_grc_f340_hs_lns.DataSource = v_ds.Tables[0];
             m_grv_hs_lns.BestFitColumns();
         }
@@ -578,26 +578,41 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
                 {
+                    m_insert_click = -1;
                     load_all_data_2_grid_hs_lns();
                     load_all_data_2_grid_lcd();
-                    return;
+                    m_insert_click = 0;
                 }
                 else
                 {
-                    decimal id_hd = find_id_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
-                    m_id_loai_hop_dong = find_id_loai_hop_dong_cua_nhan_vien(id_hd);
-                    if (m_id_loai_hop_dong != CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
+                    m_id_gd_hd = find_id_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                    if (m_id_gd_hd != -1)
                     {
-                        load_data_2_m_variable();
-                        load_data_2_grc_hs_lns(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
-                        load_data_2_grc_lcd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                        m_id_loai_hop_dong = find_id_loai_hop_dong_cua_nhan_vien(m_id_gd_hd);
+                        if (m_id_loai_hop_dong != CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
+                        {
+                            load_data_2_m_variable();
+                            load_data_2_grc_hs_lns(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                            load_data_2_grc_lcd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                        }
+                        else
+                        {
+                            CHRM_BaseMessages.MsgBox_Infor("Nhân viên có hợp đồng học việc. Ko có lương chế độ, lương năng suất");
+                            m_insert_click = -1;
+                            load_all_data_2_grid_hs_lns();
+                            load_all_data_2_grid_lcd();
+                            m_insert_click = 0;
+                        }
                     }
                     else
                     {
-                        CHRM_BaseMessages.MsgBox_Infor("Nhân viên có hợp đồng học việc. Ko có lương chế độ, lương năng suất");
+                        CHRM_BaseMessages.MsgBox_Infor("Nhân viên chưa có hợp đồng hoặc đã xóa hợp đồng!");
+                        load_data_2_grc_hs_lns(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                        load_data_2_grc_lcd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                        m_insert_click = -1;
                         load_all_data_2_grid_hs_lns();
                         load_all_data_2_grid_lcd();
-                        m_sle_chon_nhan_vien.EditValue = null;
+                        m_insert_click = 0;
                     }
                 }
             }

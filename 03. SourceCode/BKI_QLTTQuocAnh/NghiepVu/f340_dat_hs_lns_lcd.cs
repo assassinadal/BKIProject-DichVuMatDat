@@ -29,6 +29,38 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             this.ShowDialog();
         }
+        public void display_4_dieu_chinh_lns(decimal id_nv)
+        {
+            m_sle_chon_nhan_vien.EditValue = id_nv;
+            m_sle_chon_nhan_vien.Enabled = false;
+            //
+            m_cmd_dat_gia_tri_lcd.Enabled = false;
+            m_sle_chon_ly_do_chinh_sua_so_tien_lcd.Enabled = false;
+            m_sle_chuc_danh_lcd.Enabled = false;
+            m_txt_so_tien_lcd.Enabled = false;
+            m_txt_ghi_chu_lcd.Enabled = false;
+            m_dat_ngay_bat_dau_lcd.Enabled = false;
+            m_dat_ngay_ket_thuc_lcd.Enabled = false;
+            //
+            m_bool_dang_dieu_chinh_canh_bao = true;
+            this.ShowDialog();
+        }
+        public void display_4_dieu_chinh_lcd(decimal id_nv)
+        {
+            m_sle_chon_nhan_vien.EditValue = id_nv;
+            m_sle_chon_nhan_vien.Enabled = false;
+            //
+            m_cmd_dat_gia_tri_hs_lns.Enabled = false;
+            m_sle_chon_ly_do_chinh_sua_hs_lns.Enabled = false;
+            m_sle_chuc_danh_lns.Enabled = false;
+            m_txt_hs_lns.Enabled = false;
+            m_txt_ghi_chu_hs_lns.Enabled = false;
+            m_dat_ngay_bat_dau_lns.Enabled = false;
+            m_dat_ngay_ket_thuc_lns.Enabled = false;
+            //
+            m_bool_dang_dieu_chinh_canh_bao = true;
+            this.ShowDialog();
+        }
         #endregion
 
         #region Members
@@ -45,6 +77,8 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         decimal m_id_gd_hs_lns_hien_tai = 0;
         decimal m_id_gd_lcd_hien_tai = 0;
+        //
+        bool m_bool_dang_dieu_chinh_canh_bao = false;
         #endregion
 
         #region Private methods
@@ -990,6 +1024,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                     }
                     load_data_2_grc_lcd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                     focus_new_row_created(m_grv_lcd);
+                    if (m_bool_dang_dieu_chinh_canh_bao)
+                    {
+                        this.Close(); if (m_bool_dang_dieu_chinh_canh_bao)
+                        {
+                            this.Close();
+                        }
+                    }
                 }
             }
             catch (Exception v_e)

@@ -624,7 +624,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             ip_us.dcHE_SO = CIPConvert.ToDecimal(m_txt_hs_lns.Text.Trim()); ;
             ip_us.dcID_LY_DO_CHINH_SUA = CIPConvert.ToDecimal(m_sle_chon_ly_do_chinh_sua_hs_lns.EditValue);
             ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau_lns.Value.Date;
-            ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lns.Value.Date;
+            if (m_dat_ngay_ket_thuc_lns.Checked == false)
+            {
+                ip_us.datNGAY_KET_THUC = DateTime.Now.AddYears(45);
+            }
+            else
+            {
+                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lns.Value.Date;
+            }
             ip_us.strGHI_CHU = m_txt_ghi_chu_hs_lns.Text;
             ip_us.strDA_XOA = "N";
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
@@ -648,7 +655,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             ip_us.dcSO_TIEN = CIPConvert.ToDecimal(m_txt_so_tien_lcd.Text.Trim()); ;
             ip_us.dcID_LY_DO_CHINH_SUA = CIPConvert.ToDecimal(m_sle_chon_ly_do_chinh_sua_so_tien_lcd.EditValue);
             ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau_lcd.Value.Date;
-            ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lcd.Value.Date;
+            if (!m_dat_ngay_ket_thuc_lcd.Checked)
+            {
+                ip_us.datNGAY_KET_THUC = DateTime.Now.AddYears(45);
+            }
+            else
+            {
+                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lcd.Value.Date;
+            }           
             ip_us.strGHI_CHU = m_txt_ghi_chu_lcd.Text;
             ip_us.strDA_XOA = "N";
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
@@ -701,7 +715,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
 
         }
-     
+
         private void cho_us_gd_hs_lns_da_xoa_Y()
         {
             US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS(m_id_gd_hs_lns_hien_tai);
@@ -722,55 +736,70 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.dcID = m_id_gd_lcd_hien_tai;
             v_us.datNGAY_KET_THUC = v_dat_ngay_ket_thuc_lcd_hien_tai.Date;
             v_us.datNGAY_SUA = DateTime.Now.Date;
-            v_us.strDA_XOA = "Y";                   
+            v_us.strDA_XOA = "Y";
             v_us.Update();
-           
+
         }
 
         private void save_data_hs_lns()
         {
-
-            form_2_us_gd_hs_lns(v_us_hs_lns);
-
-            switch (m_e_form_mode)
+            try
             {
-                case DataEntryFormMode.InsertDataState:
-                    //delete us_gd_hs_lns
-                    v_us_hs_lns.BeginTransaction();
-                    cho_us_gd_hs_lns_da_xoa_Y();
-                    //insert us_gd_hs_lns
-                    v_us_hs_lns.Insert();
-                    v_us_hs_lns.CommitTransaction();
-                    id_nv_hien_tai = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
-                    break;
-                case DataEntryFormMode.UpdateDataState:
-                    break;
-                default:
-                    break;
+                form_2_us_gd_hs_lns(v_us_hs_lns);
+                switch (m_e_form_mode)
+                {
+                    case DataEntryFormMode.InsertDataState:
+                        //delete us_gd_hs_lns
+                        v_us_hs_lns.BeginTransaction();
+                        cho_us_gd_hs_lns_da_xoa_Y();
+                        //insert us_gd_hs_lns
+                        v_us_hs_lns.Insert();
+                        v_us_hs_lns.CommitTransaction();
+                        id_nv_hien_tai = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
+                        break;
+                    case DataEntryFormMode.UpdateDataState:
+                        break;
+                    default:
+                        break;
+                }
             }
+            catch (Exception v_e)
+            {
+                v_us_hs_lns.Rollback();
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
         }
 
         private void save_data_lcd()
         {
-
-            form_2_us_gd_lcd(v_us_lcd);
-
-            switch (m_e_form_mode)
+            try
             {
-                case DataEntryFormMode.InsertDataState:
-                    //delete us_gd_lcd
-                    v_us_lcd.BeginTransaction();
-                    cho_us_gd_lcd_da_xoa_Y();
-                    //insert us_gd_lcd                   
-                    v_us_lcd.Insert();
-                    v_us_lcd.CommitTransaction();
-                    id_nv_hien_tai = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
-                    break;
-                case DataEntryFormMode.UpdateDataState:
-                    break;
-                default:
-                    break;
+                form_2_us_gd_lcd(v_us_lcd);
+
+                switch (m_e_form_mode)
+                {
+                    case DataEntryFormMode.InsertDataState:
+                        //delete us_gd_lcd
+                        v_us_lcd.BeginTransaction();
+                        cho_us_gd_lcd_da_xoa_Y();
+                        //insert us_gd_lcd                   
+                        v_us_lcd.Insert();
+                        v_us_lcd.CommitTransaction();
+                        id_nv_hien_tai = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
+                        break;
+                    case DataEntryFormMode.UpdateDataState:
+                        break;
+                    default:
+                        break;
+                }
             }
+            catch (Exception v_e)
+            {
+                v_us_lcd.Rollback();
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
         }
 
 
@@ -892,7 +921,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-                v_us_hs_lns.Rollback();
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
@@ -931,7 +959,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-                v_us_lcd.Rollback();
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
@@ -955,18 +982,36 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
                 {
-                    return;
-                }
-                if (find_id_loai_hop_dong_cua_nhan_vien(find_id_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue))) != CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
-                {
-                    load_data_2_m_variable();
-                    load_data_hs_lns_lcd_now_2_form();
+                    m_insert_click = -1;
+                    clear_data_in_form();
+                    m_insert_click = 0;
                 }
                 else
                 {
-                    CHRM_BaseMessages.MsgBox_Infor("Nhân viên có hợp đồng học việc. Ko có lương chế độ, lương năng suất");
-                    m_sle_chon_nhan_vien.EditValue = null;
-                    clear_data_in_form();
+                    m_id_gd_hd = find_id_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                    if (m_id_gd_hd != -1)
+                    {
+                        m_id_loai_hop_dong = find_id_loai_hop_dong_cua_nhan_vien(m_id_gd_hd);
+                        if (m_id_loai_hop_dong != CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
+                        {
+                            load_data_2_m_variable();
+                            load_data_hs_lns_lcd_now_2_form();
+                        }
+                        else
+                        {
+                            CHRM_BaseMessages.MsgBox_Infor("Nhân viên có hợp đồng học việc. Ko có lương chế độ, lương năng suất");
+                            m_insert_click = -1;
+                            clear_data_in_form();
+                            m_insert_click = 0;
+                        }
+                    }
+                    else
+                    {
+                        CHRM_BaseMessages.MsgBox_Infor("Nhân viên chưa có hợp đồng hoặc đã xóa hợp đồng!");
+                        m_insert_click = -1;
+                        clear_data_in_form();
+                        m_insert_click = 0;
+                    }
                 }
             }
             catch (Exception v_e)

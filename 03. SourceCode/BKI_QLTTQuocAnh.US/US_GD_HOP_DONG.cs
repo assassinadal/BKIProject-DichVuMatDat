@@ -79,10 +79,14 @@ namespace BKI_DichVuMatDat.US
             }
         }
 
+      
+
         public bool IsID_LOAI_HOP_DONGNull()
         {
             return pm_objDR.IsNull("ID_LOAI_HOP_DONG");
         }
+
+       
 
         public void SetID_LOAI_HOP_DONGNull()
         {
@@ -374,5 +378,24 @@ namespace BKI_DichVuMatDat.US
             op_str_mess = v_op_str.Value.ToString();
         }
 
+        public DataSet LayDanhSachHopDongHetHanTruocNgay(DateTime ip_dat_den_ngay)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_lay_danh_sach_hop_dong_het_han_truoc_ngay");
+            v_sp.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+            DataSet v_op_ds = new DataSet();
+            v_op_ds.Tables.Add();
+            v_sp.fillDataSetByCommand(this, v_op_ds);
+            return v_op_ds;
+        }
+
+        public DataSet LayDanhSachHopDongHetHanSauNgay(DateTime ip_dat_tu_ngay)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_lay_danh_sach_hop_dong_het_han_sau_ngay");
+            v_sp.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+            DataSet v_op_ds = new DataSet();
+            v_op_ds.Tables.Add();
+            v_sp.fillDataSetByCommand(this, v_op_ds);
+            return v_op_ds;
+        }
     }
 }

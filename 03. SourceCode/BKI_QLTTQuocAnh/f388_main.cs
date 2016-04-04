@@ -34,7 +34,6 @@ namespace BKI_DichVuMatDat
             format_control();
             MdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             ribbon.SelectedPage = ribbonPage3;
-            dockPanel1.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
         }
 
         public void display(ref IP.Core.IPCommon.IPConstants.HowUserWantTo_Exit_MainForm v_exitmode)
@@ -156,9 +155,12 @@ namespace BKI_DichVuMatDat
 
         private DataSet get_hop_dong_het_han()
         {
-            //DateTime v_2_thang_truoc = DateTime.Now.AddMonths(-2);
-            DateTime v_ngay_dau_tien_cua_thang_hien_tai = CHRMCommon.get_first_day_of_month(DateTime.Now.Date);
-            DateTime v_ngay_cuoi_cung_cua_thang_hien_tai = CHRMCommon.get_last_day_of_month(DateTime.Now.Date);
+            //DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
+            //DateTime v_ngay_dau_tien_cua_thang_hien_tai = CHRMCommon.get_first_day_of_month(DateTime.Now.Date);
+            //DateTime v_ngay_cuoi_cung_cua_thang_hien_tai = CHRMCommon.get_last_day_of_month(DateTime.Now.Date);
+            DateTime v_ngay_hien_tai = DateTime.Now.Date;
+            DateTime v_ngay_dau_tien_cua_thang_hien_tai = CHRMCommon.get_first_day_of_month(v_ngay_hien_tai);
+            DateTime v_ngay_cuoi_cung_cua_thang_hien_tai = CHRMCommon.get_last_day_of_month(v_ngay_hien_tai);
             US_GD_HOP_DONG v_us_gd_hop_dong = new US_GD_HOP_DONG();
             DataSet v_ds = v_us_gd_hop_dong.LayDanhSachHopDongHetHan(
                                             v_ngay_dau_tien_cua_thang_hien_tai.Date
@@ -169,11 +171,15 @@ namespace BKI_DichVuMatDat
 
         private void m_lbl_canh_bao_het_han_hop_dong_DoubleClick(object sender, EventArgs e)
         {
+            //DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
+            //DateTime v_ngay_dau_tien_cua_thang_hien_tai = CHRMCommon.get_first_day_of_month(v_ngay_hien_tai);
+            //DateTime v_ngay_cuoi_cung_cua_thang_hien_tai = CHRMCommon.get_last_day_of_month(v_ngay_hien_tai);
+            DateTime v_ngay_hien_tai = DateTime.Now.Date;
             DateTime v_ngay_dau_tien_cua_thang_hien_tai = CHRMCommon.get_first_day_of_month(DateTime.Now.Date);
             DateTime v_ngay_cuoi_cung_cua_thang_hien_tai = CHRMCommon.get_last_day_of_month(DateTime.Now.Date);
             //DateTime v_2_thang_truoc = DateTime.Now.AddMonths(-2);
             F110_dm_hop_dong_het_han v_f = new F110_dm_hop_dong_het_han();
-            v_f.display(
+            v_f.display_canh_bao_het_han_hop_dong(
                         v_ngay_dau_tien_cua_thang_hien_tai.Date
                         , v_ngay_cuoi_cung_cua_thang_hien_tai.Date);
         }
@@ -221,7 +227,9 @@ namespace BKI_DichVuMatDat
             try
             {
                 f419_bao_cao_hs_lns_lcd_v2 v_f = new f419_bao_cao_hs_lns_lcd_v2();
-                v_f.display_nv_het_han_lcd(get_nv_het_han_lcd());
+                DateTime v_ngay_hien_tai = DateTime.Now.Date;
+                //DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
+                v_f.display_nv_het_han_lcd(v_ngay_hien_tai);
             }
             catch (Exception v_e)
             {
@@ -235,7 +243,9 @@ namespace BKI_DichVuMatDat
             try
             {
                 f419_bao_cao_hs_lns_lcd_v2 v_f = new f419_bao_cao_hs_lns_lcd_v2();
-                v_f.display_nv_het_han_hs_lns(get_nv_het_han_hs_lns());
+                DateTime v_ngay_hien_tai = DateTime.Now.Date;
+                //DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
+                v_f.display_nv_het_han_hs_lns(v_ngay_hien_tai);
             }
             catch (Exception v_e)
             {
@@ -1247,10 +1257,10 @@ namespace BKI_DichVuMatDat
         private void m_cmd_tk_ns_tong_hop_ItemClick(object sender, ItemClickEventArgs e)
         {
             //F425_Bao_cao_nhan_su_tong_hop v_frm = new F425_Bao_cao_nhan_su_tong_hop();
-            F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY v_frm = new F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY();
-            if (IsExistFormName(v_frm)) return;
-            v_frm.MdiParent = this;
-            v_frm.Show();
+            //F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY v_frm = new F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY();
+            //if (IsExistFormName(v_frm)) return;
+            //v_frm.MdiParent = this;
+            //v_frm.Show();
         }
 
         private void m_cmd_dang_ky_giam_tru_phu_thuoc_ItemClick(object sender, ItemClickEventArgs e)

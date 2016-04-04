@@ -96,6 +96,8 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.m_btn_dieu_chinh_lns = new DevExpress.XtraEditors.SimpleButton();
+            this.m_btn_dieu_chinh_lcd = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -615,6 +617,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.m_btn_dieu_chinh_lns);
             this.panel2.Controls.Add(this.m_cmd_xuat_bc_hs_lns);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 348);
@@ -843,6 +846,7 @@
             // 
             // panelControl4
             // 
+            this.panelControl4.Controls.Add(this.m_btn_dieu_chinh_lcd);
             this.panelControl4.Controls.Add(this.m_cmd_xuat_bc_lcd);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl4.Location = new System.Drawing.Point(0, 348);
@@ -889,6 +893,28 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(779, 24);
             this.emptySpaceItem2.Text = "emptySpaceItem2";
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // m_btn_dieu_chinh_lns
+            // 
+            this.m_btn_dieu_chinh_lns.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_btn_dieu_chinh_lns.Image = ((System.Drawing.Image)(resources.GetObject("m_btn_dieu_chinh_lns.Image")));
+            this.m_btn_dieu_chinh_lns.Location = new System.Drawing.Point(0, 0);
+            this.m_btn_dieu_chinh_lns.Name = "m_btn_dieu_chinh_lns";
+            this.m_btn_dieu_chinh_lns.Size = new System.Drawing.Size(230, 48);
+            this.m_btn_dieu_chinh_lns.TabIndex = 9;
+            this.m_btn_dieu_chinh_lns.Text = "Điều chỉnh hệ số lương năng suất";
+            this.m_btn_dieu_chinh_lns.Visible = false;
+            // 
+            // m_btn_dieu_chinh_lcd
+            // 
+            this.m_btn_dieu_chinh_lcd.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_btn_dieu_chinh_lcd.Image = ((System.Drawing.Image)(resources.GetObject("m_btn_dieu_chinh_lcd.Image")));
+            this.m_btn_dieu_chinh_lcd.Location = new System.Drawing.Point(2, 2);
+            this.m_btn_dieu_chinh_lcd.Name = "m_btn_dieu_chinh_lcd";
+            this.m_btn_dieu_chinh_lcd.Size = new System.Drawing.Size(229, 44);
+            this.m_btn_dieu_chinh_lcd.TabIndex = 12;
+            this.m_btn_dieu_chinh_lcd.Text = "Điều chỉnh lương chế độ";
+            this.m_btn_dieu_chinh_lcd.Visible = false;
             // 
             // f419_bao_cao_hs_lns_lcd_v2
             // 
@@ -1010,5 +1036,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
         private DevExpress.XtraEditors.DateEdit m_dat_thang;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraEditors.SimpleButton m_btn_dieu_chinh_lns;
+        private DevExpress.XtraEditors.SimpleButton m_btn_dieu_chinh_lcd;
     }
 }

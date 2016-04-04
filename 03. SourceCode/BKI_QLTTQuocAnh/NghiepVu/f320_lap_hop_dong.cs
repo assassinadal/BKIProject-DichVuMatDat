@@ -31,6 +31,16 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.ShowDialog();
         }
 
+        public void display_4_dieu_chinh_canh_bao(decimal m_dc_id_nv_dang_dieu_chinh)
+        {
+            m_sle_chon_nhan_vien.EditValue = m_dc_id_nv_dang_dieu_chinh;
+            m_sle_chon_nhan_vien.Enabled = false;
+            m_cmd_loc_du_lieu.Enabled = false;
+            m_bool_dieu_chinh_canh_bao = true;
+            load_data_2_grid(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+            this.ShowDialog();
+        }
+
         public void DisplayForQuyTrinhNhapMoiNhanVien(int id_nhan_vien)
         {
             m_sle_chon_nhan_vien.EditValue = id_nhan_vien;
@@ -72,6 +82,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         int m_trang_thai_buoc_3_thanh_cong = 0;
         int m_trang_thai_them = 0;
         string op_str_mess = "";
+        bool m_bool_dieu_chinh_canh_bao = false;
         #endregion
 
         #region Data structure
@@ -167,6 +178,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_loai_hop_dong.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_loai_hop_dong.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
+
+
 
         private DS_CM_DM_TU_DIEN load_data_2_cm_dm_tu_dien(int m_id_lns_lcd_trong_loai_td)
         {
@@ -1304,7 +1317,10 @@ namespace BKI_DichVuMatDat.NghiepVu
                                 {
                                     this.Close();
                                 }
-
+                                if (m_bool_dieu_chinh_canh_bao)
+                                {
+                                    this.Close();
+                                }
                             }
                             break;
                         case DataEntryFormMode.UpdateDataState:

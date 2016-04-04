@@ -49,7 +49,6 @@
             this.m_cmd_dat_gia_tri_hs_lns = new DevExpress.XtraEditors.SimpleButton();
             this.m_txt_ghi_chu_hs_lns = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.m_dat_ngay_ket_thuc_lns = new System.Windows.Forms.DateTimePicker();
             this.m_sle_chon_ly_do_chinh_sua_hs_lns = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label3 = new System.Windows.Forms.Label();
@@ -67,7 +66,6 @@
             this.m_gr_LCD = new DevExpress.XtraEditors.GroupControl();
             this.m_cmd_dat_gia_tri_lcd = new DevExpress.XtraEditors.SimpleButton();
             this.label15 = new System.Windows.Forms.Label();
-            this.m_dat_ngay_ket_thuc_lcd = new System.Windows.Forms.DateTimePicker();
             this.m_txt_ghi_chu_lcd = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -84,6 +82,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.m_sle_muc_lcd = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.m_dat_ngay_ket_thuc_lns = new System.Windows.Forms.DateTimePicker();
+            this.m_dat_ngay_ket_thuc_lcd = new System.Windows.Forms.DateTimePicker();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -272,10 +272,10 @@
             // 
             this.m_gr_LNS.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_gr_LNS.Appearance.Options.UseFont = true;
+            this.m_gr_LNS.Controls.Add(this.m_dat_ngay_ket_thuc_lns);
             this.m_gr_LNS.Controls.Add(this.m_cmd_dat_gia_tri_hs_lns);
             this.m_gr_LNS.Controls.Add(this.m_txt_ghi_chu_hs_lns);
             this.m_gr_LNS.Controls.Add(this.label7);
-            this.m_gr_LNS.Controls.Add(this.m_dat_ngay_ket_thuc_lns);
             this.m_gr_LNS.Controls.Add(this.m_sle_chon_ly_do_chinh_sua_hs_lns);
             this.m_gr_LNS.Controls.Add(this.label3);
             this.m_gr_LNS.Controls.Add(this.label2);
@@ -319,15 +319,6 @@
             this.label7.Size = new System.Drawing.Size(44, 13);
             this.label7.TabIndex = 8;
             this.label7.Text = "Ghi chú";
-            // 
-            // m_dat_ngay_ket_thuc_lns
-            // 
-            this.m_dat_ngay_ket_thuc_lns.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_ket_thuc_lns.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_ket_thuc_lns.Location = new System.Drawing.Point(332, 148);
-            this.m_dat_ngay_ket_thuc_lns.Name = "m_dat_ngay_ket_thuc_lns";
-            this.m_dat_ngay_ket_thuc_lns.Size = new System.Drawing.Size(126, 20);
-            this.m_dat_ngay_ket_thuc_lns.TabIndex = 13;
             // 
             // m_sle_chon_ly_do_chinh_sua_hs_lns
             // 
@@ -460,9 +451,9 @@
             // 
             this.m_gr_LCD.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_gr_LCD.Appearance.Options.UseFont = true;
+            this.m_gr_LCD.Controls.Add(this.m_dat_ngay_ket_thuc_lcd);
             this.m_gr_LCD.Controls.Add(this.m_cmd_dat_gia_tri_lcd);
             this.m_gr_LCD.Controls.Add(this.label15);
-            this.m_gr_LCD.Controls.Add(this.m_dat_ngay_ket_thuc_lcd);
             this.m_gr_LCD.Controls.Add(this.m_txt_ghi_chu_lcd);
             this.m_gr_LCD.Controls.Add(this.label12);
             this.m_gr_LCD.Controls.Add(this.label9);
@@ -500,15 +491,6 @@
             this.label15.Size = new System.Drawing.Size(30, 13);
             this.label15.TabIndex = 6;
             this.label15.Text = "VNĐ";
-            // 
-            // m_dat_ngay_ket_thuc_lcd
-            // 
-            this.m_dat_ngay_ket_thuc_lcd.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_ket_thuc_lcd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_ket_thuc_lcd.Location = new System.Drawing.Point(336, 148);
-            this.m_dat_ngay_ket_thuc_lcd.Name = "m_dat_ngay_ket_thuc_lcd";
-            this.m_dat_ngay_ket_thuc_lcd.Size = new System.Drawing.Size(122, 20);
-            this.m_dat_ngay_ket_thuc_lcd.TabIndex = 14;
             // 
             // m_txt_ghi_chu_lcd
             // 
@@ -654,6 +636,26 @@
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
+            // m_dat_ngay_ket_thuc_lns
+            // 
+            this.m_dat_ngay_ket_thuc_lns.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_ket_thuc_lns.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_ket_thuc_lns.Location = new System.Drawing.Point(332, 146);
+            this.m_dat_ngay_ket_thuc_lns.Name = "m_dat_ngay_ket_thuc_lns";
+            this.m_dat_ngay_ket_thuc_lns.ShowCheckBox = true;
+            this.m_dat_ngay_ket_thuc_lns.Size = new System.Drawing.Size(126, 20);
+            this.m_dat_ngay_ket_thuc_lns.TabIndex = 15;
+            // 
+            // m_dat_ngay_ket_thuc_lcd
+            // 
+            this.m_dat_ngay_ket_thuc_lcd.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_ket_thuc_lcd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_ket_thuc_lcd.Location = new System.Drawing.Point(336, 148);
+            this.m_dat_ngay_ket_thuc_lcd.Name = "m_dat_ngay_ket_thuc_lcd";
+            this.m_dat_ngay_ket_thuc_lcd.ShowCheckBox = true;
+            this.m_dat_ngay_ket_thuc_lcd.Size = new System.Drawing.Size(126, 20);
+            this.m_dat_ngay_ket_thuc_lcd.TabIndex = 16;
+            // 
             // f342_dat_he_so_lns_lcd_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -718,7 +720,6 @@
         private DevExpress.XtraEditors.GroupControl m_gr_LNS;
         private System.Windows.Forms.TextBox m_txt_ghi_chu_hs_lns;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc_lns;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chon_ly_do_chinh_sua_hs_lns;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.Label label3;
@@ -735,7 +736,6 @@
         private System.Windows.Forms.Label label13;
         private DevExpress.XtraEditors.GroupControl m_gr_LCD;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc_lcd;
         private System.Windows.Forms.TextBox m_txt_ghi_chu_lcd;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
@@ -754,5 +754,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraEditors.SimpleButton m_cmd_dat_gia_tri_hs_lns;
         private DevExpress.XtraEditors.SimpleButton m_cmd_dat_gia_tri_lcd;
+        private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc_lns;
+        private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc_lcd;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace BKI_DichVuMatDat.NghiepVu
 {
-    partial class f320_lap_hop_dong_V2
+    partial class f325_lap_hop_dong_V2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f320_lap_hop_dong_V2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f325_lap_hop_dong_V2));
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xem_thong_tin_tat_ca = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
@@ -77,7 +78,6 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -122,6 +122,16 @@
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(960, 43);
             this.m_pnl_out_place_dm.TabIndex = 1;
+            // 
+            // m_cmd_chon_file
+            // 
+            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_chon_file.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_file.Image")));
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(350, 4);
+            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
+            this.m_cmd_chon_file.Size = new System.Drawing.Size(142, 35);
+            this.m_cmd_chon_file.TabIndex = 31;
+            this.m_cmd_chon_file.Text = "Chọn file";
             // 
             // m_cmd_xem_thong_tin_tat_ca
             // 
@@ -268,9 +278,14 @@
             this.m_grv_thong_tin_hop_dong.Name = "m_grv_thong_tin_hop_dong";
             this.m_grv_thong_tin_hop_dong.OptionsFind.AlwaysVisible = true;
             this.m_grv_thong_tin_hop_dong.OptionsView.ShowFooter = true;
+            this.m_grv_thong_tin_hop_dong.OptionsView.ShowGroupPanel = false;
             // 
             // ID
             // 
+            this.ID.AppearanceHeader.Options.UseTextOptions = true;
+            this.ID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ID.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.ID.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.ID.Caption = "ID";
             this.ID.FieldName = "ID";
             this.ID.Name = "ID";
@@ -282,6 +297,7 @@
             this.STT.AppearanceHeader.Options.UseTextOptions = true;
             this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.STT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.STT.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.STT.Caption = "STT";
             this.STT.FieldName = "STT";
             this.STT.Name = "STT";
@@ -295,6 +311,7 @@
             this.MA_NV.AppearanceHeader.Options.UseTextOptions = true;
             this.MA_NV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MA_NV.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.MA_NV.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.MA_NV.Caption = "Mã NV";
             this.MA_NV.FieldName = "MA_NV";
             this.MA_NV.Name = "MA_NV";
@@ -307,6 +324,7 @@
             this.HO_TEN.AppearanceHeader.Options.UseTextOptions = true;
             this.HO_TEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.HO_TEN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.HO_TEN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.HO_TEN.Caption = "Họ tên";
             this.HO_TEN.FieldName = "HO_TEN";
             this.HO_TEN.Name = "HO_TEN";
@@ -319,6 +337,7 @@
             this.LOAI_HOP_DONG.AppearanceHeader.Options.UseTextOptions = true;
             this.LOAI_HOP_DONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.LOAI_HOP_DONG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.LOAI_HOP_DONG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.LOAI_HOP_DONG.Caption = "Loại hợp đồng";
             this.LOAI_HOP_DONG.FieldName = "LOAI_HOP_DONG";
             this.LOAI_HOP_DONG.Name = "LOAI_HOP_DONG";
@@ -331,6 +350,7 @@
             this.MA_HOP_DONG.AppearanceHeader.Options.UseTextOptions = true;
             this.MA_HOP_DONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MA_HOP_DONG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.MA_HOP_DONG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.MA_HOP_DONG.Caption = "Mã HĐ";
             this.MA_HOP_DONG.FieldName = "MA_HOP_DONG";
             this.MA_HOP_DONG.Name = "MA_HOP_DONG";
@@ -343,6 +363,7 @@
             this.NGAY_BAT_DAU.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAY_BAT_DAU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NGAY_BAT_DAU.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.NGAY_BAT_DAU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.NGAY_BAT_DAU.Caption = "Ngày bắt đầu";
             this.NGAY_BAT_DAU.FieldName = "NGAY_BAT_DAU";
             this.NGAY_BAT_DAU.Name = "NGAY_BAT_DAU";
@@ -355,6 +376,7 @@
             this.NGAY_KET_THUC.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAY_KET_THUC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NGAY_KET_THUC.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.NGAY_KET_THUC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.NGAY_KET_THUC.Caption = "Ngày kết thúc";
             this.NGAY_KET_THUC.FieldName = "NGAY_KET_THUC";
             this.NGAY_KET_THUC.Name = "NGAY_KET_THUC";
@@ -367,6 +389,7 @@
             this.NGAY_KY_HOP_DONG.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAY_KY_HOP_DONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NGAY_KY_HOP_DONG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.NGAY_KY_HOP_DONG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.NGAY_KY_HOP_DONG.Caption = "Ngày ký hợp đồng";
             this.NGAY_KY_HOP_DONG.FieldName = "NGAY_KY_HOP_DONG";
             this.NGAY_KY_HOP_DONG.Name = "NGAY_KY_HOP_DONG";
@@ -522,7 +545,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(940, 28);
             this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextToControlDistance = 0;
             this.layoutControlItem1.TextVisible = false;
             // 
             // emptySpaceItem2
@@ -554,7 +576,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(108, 42);
             this.layoutControlItem4.Text = "layoutControlItem4";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextToControlDistance = 0;
             this.layoutControlItem4.TextVisible = false;
             // 
             // emptySpaceItem4
@@ -576,7 +597,6 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(940, 302);
             this.layoutControlItem5.Text = "layoutControlItem5";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextToControlDistance = 0;
             this.layoutControlItem5.TextVisible = false;
             // 
             // emptySpaceItem1
@@ -658,28 +678,17 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(940, 17);
             this.layoutControlItem8.Text = "layoutControlItem8";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextToControlDistance = 0;
             this.layoutControlItem8.TextVisible = false;
             // 
-            // m_cmd_chon_file
-            // 
-            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_chon_file.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_file.Image")));
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(350, 4);
-            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
-            this.m_cmd_chon_file.Size = new System.Drawing.Size(142, 35);
-            this.m_cmd_chon_file.TabIndex = 31;
-            this.m_cmd_chon_file.Text = "Chọn file";
-            // 
-            // f320_lap_hop_dong_V2
+            // f325_lap_hop_dong_V2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 510);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Name = "f320_lap_hop_dong_V2";
-            this.Text = "F320 - Thông tin hợp đồng của nhân viên";
+            this.Name = "f325_lap_hop_dong_V2";
+            this.Text = "F325 - Thông tin hợp đồng của nhân viên";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

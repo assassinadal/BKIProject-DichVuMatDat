@@ -18,9 +18,9 @@ using IP.Core.IPSystemAdmin;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
-    public partial class f320_lap_hop_dong_V2 : Form
+    public partial class f325_lap_hop_dong_V2 : Form
     {
-        public f320_lap_hop_dong_V2()
+        public f325_lap_hop_dong_V2()
         {
             InitializeComponent();
             format_controls();

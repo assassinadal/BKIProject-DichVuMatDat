@@ -51,7 +51,7 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void set_init_form_load()
         {
-
+            m_dat_thang.DateTime = DateTime.Now.Date;
         }
 
         private DataSet lay_danh_sach_cac_dau_moi_truc_thuoc()
@@ -62,6 +62,13 @@ namespace BKI_DichVuMatDat.BaoCao
             v_us.FillDataset(v_ds);
 
             return v_ds;
+        }
+
+        private void xoa_du_lieu_bao_cao_da_co()
+        {
+            US_RPT_SO_LUONG_CHAT_LUONG_NHAN_VIEN v_us = new US_RPT_SO_LUONG_CHAT_LUONG_NHAN_VIEN();
+
+            v_us.Delete_all_by_proc();
         }
 
         private void lay_du_lieu_bao_cao(decimal ip_dc_thang, decimal ip_dc_nam)
@@ -141,7 +148,8 @@ namespace BKI_DichVuMatDat.BaoCao
 
             m_grc_bao_cao_so_luong_chat_luong_lao_dong.DataSource = v_ds.Tables[0];
 
-            
+            m_bgv_bao_cao_so_luong_chat_luong_lao_dong.RowStyle += m_bgv_bao_cao_so_luong_chat_luong_lao_dong_RowStyle;
+
         }
 
         #endregion
@@ -153,6 +161,19 @@ namespace BKI_DichVuMatDat.BaoCao
             this.FormClosed += f410_bao_cao_so_luong_chat_luong_lao_dong_FormClosed;
             m_cmd_xem_bao_cao.Click += m_cmd_xem_bao_cao_Click;
             m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
+            m_bgv_bao_cao_so_luong_chat_luong_lao_dong.DoubleClick += m_bgv_bao_cao_so_luong_chat_luong_lao_dong_DoubleClick;
+        }
+
+        void m_bgv_bao_cao_so_luong_chat_luong_lao_dong_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_xuat_excel_Click(object sender, EventArgs e)
@@ -161,6 +182,7 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                 saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+                saveFileDialog1.FileName = "BAO CAO SO LUONG CHAT LUONG NHAN VIEN THANG " + m_dat_thang.DateTime.Month.ToString() + " NAM " + m_dat_thang.DateTime.Year.ToString(); ;
                 saveFileDialog1.RestoreDirectory = true;
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
@@ -188,13 +210,6 @@ namespace BKI_DichVuMatDat.BaoCao
             }
         }
 
-        private void xoa_du_lieu_bao_cao_da_co()
-        {
-            US_RPT_SO_LUONG_CHAT_LUONG_NHAN_VIEN v_us = new US_RPT_SO_LUONG_CHAT_LUONG_NHAN_VIEN();
-
-            v_us.Delete_all_by_proc();
-        }
-
         void f410_bao_cao_so_luong_chat_luong_lao_dong_FormClosed(object sender, FormClosedEventArgs e)
         {
             try
@@ -219,6 +234,60 @@ namespace BKI_DichVuMatDat.BaoCao
             }
         }
 
+
+        void m_bgv_bao_cao_so_luong_chat_luong_lao_dong_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            try
+            {
+
+                DataGridViewBand View = sender as DataGridViewBand;
+                string v_cellValue;
+                v_cellValue = m_bgv_bao_cao_so_luong_chat_luong_lao_dong.GetRowCellDisplayText(e.RowHandle, "ID").ToString();
+                if (CIPConvert.ToDecimal(v_cellValue) == 1 || CIPConvert.ToDecimal(v_cellValue) == 2
+                    || CIPConvert.ToDecimal(v_cellValue) == 5 || CIPConvert.ToDecimal(v_cellValue) == 8
+                    || CIPConvert.ToDecimal(v_cellValue) == 11 || CIPConvert.ToDecimal(v_cellValue) == 15
+                    || CIPConvert.ToDecimal(v_cellValue) == 20 || CIPConvert.ToDecimal(v_cellValue) == 32
+                    || CIPConvert.ToDecimal(v_cellValue) == 54 || CIPConvert.ToDecimal(v_cellValue) == 55
+                    || CIPConvert.ToDecimal(v_cellValue) == 56)
+                {
+                    if (e.RowHandle >= 0)
+                    {
+                        e.Appearance.BackColor = Color.Aqua;
+                        e.Appearance.BackColor2 = Color.Transparent;
+                        e.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+                    }
+                }
+                else if (CIPConvert.ToDecimal(v_cellValue) == 14 || CIPConvert.ToDecimal(v_cellValue) == 18
+                   || CIPConvert.ToDecimal(v_cellValue) == 19 || CIPConvert.ToDecimal(v_cellValue) == 23
+                   || CIPConvert.ToDecimal(v_cellValue) == 26 || CIPConvert.ToDecimal(v_cellValue) == 29
+                   || CIPConvert.ToDecimal(v_cellValue) == 35 || CIPConvert.ToDecimal(v_cellValue) == 38
+                   || CIPConvert.ToDecimal(v_cellValue) == 41 || CIPConvert.ToDecimal(v_cellValue) == 50)
+                {
+                    if (e.RowHandle >= 0)
+                    {
+                        e.Appearance.BackColor = Color.Violet;
+                        e.Appearance.BackColor2 = Color.Transparent;
+                        e.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic);
+                        
+                    }
+                }
+                else if (CIPConvert.ToDecimal(v_cellValue) == 44 || CIPConvert.ToDecimal(v_cellValue) == 47)
+                {
+                    if (e.RowHandle >= 0)
+                    {
+                        e.Appearance.BackColor2 = Color.Transparent;
+                        e.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
+
+                    }
+                }
+
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
 
 
         #endregion

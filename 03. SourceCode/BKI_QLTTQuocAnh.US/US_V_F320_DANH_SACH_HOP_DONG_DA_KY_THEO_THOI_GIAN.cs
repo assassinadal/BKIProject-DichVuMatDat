@@ -850,7 +850,7 @@ namespace BKI_DichVuMatDat.US
                                         , DateTime ip_dat_tu_ngay
                                         , DateTime ip_dat_den_ngay)
         {
-            CStoredProc v_sp = new CStoredProc("Pr_f320_danh_sach_hop_dong_da_ky_cua_nhan_vien_theo_thoi_gian");
+            CStoredProc v_sp = new CStoredProc("c");
             v_sp.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
             v_sp.addDecimalInputParam("@ip_dc_id_loai_hop_dong", ip_dc_id_loai_hop_dong);
             v_sp.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);

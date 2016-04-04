@@ -141,6 +141,7 @@
             // 
             // m_bgv_bao_cao_so_luong_chat_luong_lao_dong
             // 
+            this.m_bgv_bao_cao_so_luong_chat_luong_lao_dong.Appearance.Row.Options.UseBackColor = true;
             this.m_bgv_bao_cao_so_luong_chat_luong_lao_dong.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.gridBand1,
             this.gridBand2,
@@ -176,6 +177,7 @@
             this.TREN_55});
             this.m_bgv_bao_cao_so_luong_chat_luong_lao_dong.GridControl = this.m_grc_bao_cao_so_luong_chat_luong_lao_dong;
             this.m_bgv_bao_cao_so_luong_chat_luong_lao_dong.Name = "m_bgv_bao_cao_so_luong_chat_luong_lao_dong";
+            this.m_bgv_bao_cao_so_luong_chat_luong_lao_dong.OptionsPrint.UsePrintStyles = false;
             this.m_bgv_bao_cao_so_luong_chat_luong_lao_dong.OptionsView.ColumnAutoWidth = false;
             this.m_bgv_bao_cao_so_luong_chat_luong_lao_dong.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.m_bgv_bao_cao_so_luong_chat_luong_lao_dong.OptionsView.ShowFooter = true;
@@ -823,6 +825,8 @@
             // 
             // ID
             // 
+            this.ID.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(1)), true);
+            this.ID.AppearanceCell.Options.UseFont = true;
             this.ID.AppearanceHeader.Options.UseTextOptions = true;
             this.ID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ID.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;

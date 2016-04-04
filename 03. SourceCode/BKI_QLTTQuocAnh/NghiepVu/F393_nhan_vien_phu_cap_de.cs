@@ -10,17 +10,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IP.Core.IPCommon;
+using IP.Core.IPSystemAdmin;
+using DevExpress.XtraEditors;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class F393_nhan_vien_phu_cap_de : Form
     {
+        #region Members
+        US_GD_NHAN_VIEN_PHU_CAP m_us = new US_GD_NHAN_VIEN_PHU_CAP();
+        DataEntryFormMode m_e_form_mode;
+        #endregion
+
+        #region Public Interface
         public F393_nhan_vien_phu_cap_de()
         {
             InitializeComponent();
             this.CenterToScreen();
         }
+        #endregion
 
+        #region Event Handle
         private void F393_nhan_vien_phu_cap_de_Load(object sender, EventArgs e)
         {
             try
@@ -35,6 +46,50 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
+        private void m_cmd_them_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (check_data())
+                {
+                    form_to_us();
+                    switch (m_e_form_mode)
+                    {
+                        case DataEntryFormMode.InsertDataState:
+                            m_us.Insert();
+                            break;
+                        case DataEntryFormMode.UpdateDataState:
+                            m_us.Update();
+                            break;
+                        default:
+                            break;
+                    }
+                    XtraMessageBox.Show("Lưu thành công!");
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+
+        private void m_cmd_xoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult = System.Windows.Forms.DialogResult.Cancel;
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                IP.Core.IPCommon.CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        #endregion
+
+        #region Private Method
         private void load_data_2_sle_phu_cap()
         {
             m_sle_phu_cap.Properties.DataSource = load_data_2_ds_dm_phu_cap().DM_PHU_CAP;
@@ -87,21 +142,19 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private bool check_data()
         {
-            if (m_sle_nhan_vien.EditValue == "" | (m_sle_nhan_vien.EditValue == null))
+            if (m_sle_nhan_vien.EditValue == null)
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NHAN_VIEN);
                 return false;
             }
-
-            if (m_sle_phu_cap.EditValue == "" | (m_sle_phu_cap.EditValue == null))
-            {
-                CHRM_BaseMessages.MsgBox_Error("Chưa chọn chức vụ hưởng phụ cấp");
-                return false;
-            }
-
-            if (m_sle_quyet_dinh.EditValue == "" | (m_sle_quyet_dinh.EditValue == null))
+            if (m_sle_quyet_dinh.EditValue == null)
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_QUYET_DINH);
+                return false;
+            }
+            if (m_sle_phu_cap.EditValue == null)
+            {
+                CHRM_BaseMessages.MsgBox_Error("Chưa chọn chức vụ hưởng phụ cấp");
                 return false;
             }
             return true;
@@ -134,49 +187,47 @@ namespace BKI_DichVuMatDat.NghiepVu
             return v_ds;
         }
 
-        private void m_cmd_them_Click(object sender, EventArgs e)
+        internal void display_for_update(US_GD_NHAN_VIEN_PHU_CAP v_us)
         {
-            try
-            {
-                if (!check_data())
-                {
-                    return;
-                }
-                else if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_LUU_DU_LIEU) == true)
-                {
-                    US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP();
-                    v_us.dcID_NHAN_VIEN = IP.Core.IPCommon.CIPConvert.ToDecimal(m_sle_nhan_vien.EditValue.ToString());
-                    v_us.dcID_PHU_CAP = IP.Core.IPCommon.CIPConvert.ToDecimal(m_sle_phu_cap.EditValue);
-                    if (m_sle_quyet_dinh.EditValue != null)
-                    {
-                        v_us.dcID_QUYET_DINH = IP.Core.IPCommon.CIPConvert.ToDecimal(m_sle_quyet_dinh.EditValue);
-                    }
-                    v_us.strDA_XOA = "N";
-
-                    v_us.Insert();
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-                    //DialogResult = System.Windows.Forms.DialogResult.OK;
-                    this.Close();
-                }
-            }
-            catch (Exception v_e)
-            {
-                IP.Core.IPCommon.CSystemLog_301.ExceptionHandle(v_e);
-            }
-
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            us_to_form(v_us);
+            m_sle_nhan_vien.Enabled = false;
+            this.ShowDialog();
         }
 
-        private void m_cmd_xoa_Click(object sender, EventArgs e)
+        internal void display_for_insert()
         {
-            try
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.ShowDialog();
+        }
+
+        private void us_to_form(US_GD_NHAN_VIEN_PHU_CAP v_us)
+        {
+            m_us = v_us;
+            m_sle_nhan_vien.EditValue = v_us.dcID_NHAN_VIEN;
+            m_sle_quyet_dinh.EditValue = v_us.dcID_QUYET_DINH;
+            m_sle_phu_cap.EditValue = v_us.dcID_PHU_CAP;
+        }
+
+        private void form_to_us()
+        {
+            m_us.dcID_NHAN_VIEN = decimal.Parse(m_sle_nhan_vien.EditValue.ToString());
+            m_us.dcID_QUYET_DINH = decimal.Parse(m_sle_quyet_dinh.EditValue.ToString());
+            m_us.dcID_PHU_CAP = decimal.Parse(m_sle_phu_cap.EditValue.ToString());
+            m_us.strDA_XOA = "N";
+            if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
-                DialogResult = System.Windows.Forms.DialogResult.Cancel;
-                this.Close();
+                m_us.datNGAY_LAP = DateTime.Now;
+                m_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             }
-            catch (Exception v_e)
+            else if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
             {
-                IP.Core.IPCommon.CSystemLog_301.ExceptionHandle(v_e);
+                m_us.datNGAY_SUA = DateTime.Now;
+                m_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
             }
         }
+        #endregion
+
+        
     }
 }

@@ -49,10 +49,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.m_cmd_xoa = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_cmd_luu = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_nhan_vien.Properties)).BeginInit();
@@ -67,8 +65,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -80,20 +78,19 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 39);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(451, 125);
+            this.layoutControl1.Size = new System.Drawing.Size(420, 108);
             this.layoutControl1.TabIndex = 3;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // m_sle_nhan_vien
             // 
-            this.m_sle_nhan_vien.EditValue = "";
             this.m_sle_nhan_vien.Location = new System.Drawing.Point(173, 12);
             this.m_sle_nhan_vien.Name = "m_sle_nhan_vien";
             this.m_sle_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_nhan_vien.Properties.NullText = "--Chọn nhân viên--";
             this.m_sle_nhan_vien.Properties.View = this.searchLookUpEdit1View;
-            this.m_sle_nhan_vien.Size = new System.Drawing.Size(266, 20);
+            this.m_sle_nhan_vien.Size = new System.Drawing.Size(235, 20);
             this.m_sle_nhan_vien.StyleController = this.layoutControl1;
             this.m_sle_nhan_vien.TabIndex = 4;
             // 
@@ -161,7 +158,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_quyet_dinh.Properties.NullText = "--Chọn quyết định--";
             this.m_sle_quyet_dinh.Properties.View = this.gridView1;
-            this.m_sle_quyet_dinh.Size = new System.Drawing.Size(266, 20);
+            this.m_sle_quyet_dinh.Size = new System.Drawing.Size(235, 20);
             this.m_sle_quyet_dinh.StyleController = this.layoutControl1;
             this.m_sle_quyet_dinh.TabIndex = 5;
             // 
@@ -178,9 +175,11 @@
             this.m_sle_phu_cap.Name = "m_sle_phu_cap";
             this.m_sle_phu_cap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_sle_phu_cap.Properties.DisplayMember = "DOI_TUONG_HUONG_PHU_CAP";
             this.m_sle_phu_cap.Properties.NullText = "--Chọn phụ cấp trách nhiệm--";
+            this.m_sle_phu_cap.Properties.ValueMember = "ID";
             this.m_sle_phu_cap.Properties.View = this.gridView2;
-            this.m_sle_phu_cap.Size = new System.Drawing.Size(266, 20);
+            this.m_sle_phu_cap.Size = new System.Drawing.Size(235, 20);
             this.m_sle_phu_cap.StyleController = this.layoutControl1;
             this.m_sle_phu_cap.TabIndex = 6;
             // 
@@ -202,7 +201,7 @@
             this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(451, 125);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(420, 108);
             this.layoutControlGroup1.Text = "layoutControlGroup1";
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -212,7 +211,7 @@
             this.layoutControlItem1.CustomizationFormText = "Chọn nhân viên (*)";
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(431, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(400, 24);
             this.layoutControlItem1.Text = "Chọn nhân viên (*)";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(158, 13);
             // 
@@ -222,7 +221,7 @@
             this.layoutControlItem2.CustomizationFormText = "Chọn quyết định";
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(431, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(400, 24);
             this.layoutControlItem2.Text = "Chọn quyết định";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(158, 13);
             // 
@@ -232,7 +231,7 @@
             this.layoutControlItem3.CustomizationFormText = "Chọn chức vụ hưởng phụ cấp (*)";
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(431, 57);
+            this.layoutControlItem3.Size = new System.Drawing.Size(400, 40);
             this.layoutControlItem3.Text = "Chọn chức vụ hưởng phụ cấp (*)";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(158, 13);
             // 
@@ -242,7 +241,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(451, 39);
+            this.panel1.Size = new System.Drawing.Size(420, 39);
             this.panel1.TabIndex = 4;
             // 
             // m_lbl_header
@@ -252,68 +251,45 @@
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(451, 39);
+            this.m_lbl_header.Size = new System.Drawing.Size(420, 39);
             this.m_lbl_header.TabIndex = 2;
             this.m_lbl_header.Text = "THÊM MỚI PHỤ CẤP TRÁCH NHIỆM";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panelControl1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 164);
+            this.panel2.Location = new System.Drawing.Point(0, 147);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(451, 50);
+            this.panel2.Size = new System.Drawing.Size(420, 41);
             this.panel2.TabIndex = 5;
             // 
-            // panel6
+            // panelControl1
             // 
-            this.panel6.Controls.Add(this.m_cmd_them);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(174, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(5);
-            this.panel6.Size = new System.Drawing.Size(142, 50);
-            this.panel6.TabIndex = 5;
+            this.panelControl1.Controls.Add(this.m_cmd_luu);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(420, 41);
+            this.panelControl1.TabIndex = 0;
             // 
-            // m_cmd_them
+            // m_cmd_luu
             // 
-            this.m_cmd_them.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_cmd_them.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_them.Image")));
-            this.m_cmd_them.Location = new System.Drawing.Point(5, 5);
-            this.m_cmd_them.Name = "m_cmd_them";
-            this.m_cmd_them.Size = new System.Drawing.Size(132, 40);
-            this.m_cmd_them.TabIndex = 0;
-            this.m_cmd_them.Text = "Lưu";
-            this.m_cmd_them.Click += new System.EventHandler(this.m_cmd_them_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.m_cmd_xoa);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(316, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(5);
-            this.panel4.Size = new System.Drawing.Size(135, 50);
-            this.panel4.TabIndex = 4;
-            // 
-            // m_cmd_xoa
-            // 
-            this.m_cmd_xoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_cmd_xoa.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xoa.Image")));
-            this.m_cmd_xoa.Location = new System.Drawing.Point(5, 5);
-            this.m_cmd_xoa.Name = "m_cmd_xoa";
-            this.m_cmd_xoa.Size = new System.Drawing.Size(125, 40);
-            this.m_cmd_xoa.TabIndex = 0;
-            this.m_cmd_xoa.Text = "Thoát";
-            this.m_cmd_xoa.Click += new System.EventHandler(this.m_cmd_xoa_Click);
+            this.m_cmd_luu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_luu.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_luu.Image")));
+            this.m_cmd_luu.Location = new System.Drawing.Point(286, 2);
+            this.m_cmd_luu.Name = "m_cmd_luu";
+            this.m_cmd_luu.Size = new System.Drawing.Size(132, 37);
+            this.m_cmd_luu.TabIndex = 8;
+            this.m_cmd_luu.Text = "Lưu";
+            this.m_cmd_luu.Click += new System.EventHandler(this.m_cmd_them_Click);
             // 
             // F393_nhan_vien_phu_cap_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 214);
+            this.ClientSize = new System.Drawing.Size(420, 188);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -334,8 +310,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -348,11 +324,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel6;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_them;
-        private System.Windows.Forms.Panel panel4;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_xoa;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_nhan_vien;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_quyet_dinh;
@@ -366,6 +337,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_GIOI_TINH;
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_SDT;
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_DIA_CHI_THUONG_TRU;
+        private System.Windows.Forms.Panel panel2;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_luu;
 
     }
 }

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f367_quan_li_nv_ko_dong_bao_hiem_v2));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_gr_thong_tin_co_ban = new DevExpress.XtraEditors.GroupControl();
+            this.m_dat_thang = new DevExpress.XtraEditors.DateEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_cmd_xem_thong_tin = new DevExpress.XtraEditors.SimpleButton();
@@ -50,15 +51,14 @@
             this.NGAY_LAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGUOI_LAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LY_DO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_dat_thang = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_co_ban)).BeginInit();
             this.m_gr_thong_tin_co_ban.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_luong_cung_cua_nhan_vien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_luong_cung_cua_nhan_vien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // m_lbl_header
@@ -85,6 +85,28 @@
             this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(1028, 81);
             this.m_gr_thong_tin_co_ban.TabIndex = 3;
             this.m_gr_thong_tin_co_ban.Text = "THÔNG TIN CƠ BẢN";
+            // 
+            // m_dat_thang
+            // 
+            this.m_dat_thang.EditValue = null;
+            this.m_dat_thang.Location = new System.Drawing.Point(105, 33);
+            this.m_dat_thang.Name = "m_dat_thang";
+            this.m_dat_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.m_dat_thang.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_thang.Properties.Appearance.Options.UseFont = true;
+            this.m_dat_thang.Properties.Appearance.Options.UseForeColor = true;
+            this.m_dat_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
+            this.m_dat_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_thang.Properties.EditFormat.FormatString = "MM/yyyy";
+            this.m_dat_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_dat_thang.Size = new System.Drawing.Size(141, 26);
+            this.m_dat_thang.TabIndex = 26;
             // 
             // label3
             // 
@@ -145,7 +167,6 @@
             this.m_cmd_update.Size = new System.Drawing.Size(116, 39);
             this.m_cmd_update.TabIndex = 5;
             this.m_cmd_update.Text = "&Sửa";
-            this.m_cmd_update.Visible = false;
             // 
             // m_cmd_delete
             // 
@@ -305,28 +326,6 @@
             this.LY_DO.Visible = true;
             this.LY_DO.VisibleIndex = 6;
             // 
-            // m_dat_thang
-            // 
-            this.m_dat_thang.EditValue = null;
-            this.m_dat_thang.Location = new System.Drawing.Point(105, 33);
-            this.m_dat_thang.Name = "m_dat_thang";
-            this.m_dat_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.m_dat_thang.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.m_dat_thang.Properties.Appearance.Options.UseFont = true;
-            this.m_dat_thang.Properties.Appearance.Options.UseForeColor = true;
-            this.m_dat_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
-            this.m_dat_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.m_dat_thang.Properties.EditFormat.FormatString = "MM/yyyy";
-            this.m_dat_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.m_dat_thang.Properties.Mask.EditMask = "MM/yyyy";
-            this.m_dat_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_dat_thang.Size = new System.Drawing.Size(141, 26);
-            this.m_dat_thang.TabIndex = 26;
-            // 
             // f367_quan_li_nv_ko_dong_bao_hiem_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,12 +341,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_co_ban)).EndInit();
             this.m_gr_thong_tin_co_ban.ResumeLayout(false);
             this.m_gr_thong_tin_co_ban.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_luong_cung_cua_nhan_vien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_luong_cung_cua_nhan_vien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

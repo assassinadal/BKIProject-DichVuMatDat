@@ -162,7 +162,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_define_events()
         {
             this.Load += f367_Quan_ly_nhan_vien_khong_dong_bao_hiem_Load;
-            m_cmd_update.Click += m_cmd_update_Click;
+            m_cmd_update.Click += m_grv_luong_cung_cua_nhan_vien_DoubleClick;
             m_cmd_xem_thong_tin.Click += m_cmd_xem_thong_tin_Click;
             m_cmd_insert.Click += m_cmd_insert_Click;
             m_grv_luong_cung_cua_nhan_vien.DoubleClick += m_grv_luong_cung_cua_nhan_vien_DoubleClick;
@@ -280,7 +280,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 f368_quan_ly_nv_ko_dong_bao_hiem_de v_f = new f368_quan_ly_nv_ko_dong_bao_hiem_de();
                 //v_f.display_4_insert(m_txt_chon_thang.Text, m_txt_chon_nam.Text);
-                //v_f.display_4_insert(m_dat_thang.EditValue);
+                v_f.display_4_insert(m_dat_thang.DateTime.Month.ToString(), m_dat_thang.DateTime.Year.ToString());
                 load_data_2_grid();
             }
             catch (Exception v_e)

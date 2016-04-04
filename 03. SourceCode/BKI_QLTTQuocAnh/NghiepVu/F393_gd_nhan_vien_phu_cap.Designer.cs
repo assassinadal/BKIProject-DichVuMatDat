@@ -43,6 +43,7 @@
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_sua = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xoa = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
@@ -59,13 +60,15 @@
             this.m_grc.Location = new System.Drawing.Point(0, 0);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(708, 308);
+            this.m_grc.Size = new System.Drawing.Size(708, 320);
             this.m_grc.TabIndex = 0;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
             // 
             // m_grv
             // 
+            this.m_grv.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.m_grv.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.m_grv.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn2,
             this.gridColumn1,
@@ -80,11 +83,13 @@
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn2.Caption = "Mã nhân viên";
             this.gridColumn2.FieldName = "MA_NV";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 0;
             // 
             // gridColumn1
             // 
@@ -92,7 +97,7 @@
             this.gridColumn1.FieldName = "HO_TEN";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.VisibleIndex = 1;
             // 
             // gridColumn4
             // 
@@ -104,6 +109,8 @@
             // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn3.Caption = "Hệ số phụ cấp trách nhiệm";
             this.gridColumn3.FieldName = "HS_PHU_CAP";
             this.gridColumn3.Name = "gridColumn3";
@@ -120,6 +127,8 @@
             // 
             // gridColumn6
             // 
+            this.gridColumn6.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn6.Caption = "Ngày ký";
             this.gridColumn6.FieldName = "NGAY_KY";
             this.gridColumn6.Name = "gridColumn6";
@@ -140,7 +149,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 58);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(708, 308);
+            this.panel2.Size = new System.Drawing.Size(708, 320);
             this.panel2.TabIndex = 2;
             // 
             // panel3
@@ -167,23 +176,36 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.m_cmd_them);
+            this.panel1.Controls.Add(this.m_cmd_sua);
             this.panel1.Controls.Add(this.m_cmd_xoa);
             this.panel1.Controls.Add(this.m_cmd_xuat_excel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 366);
+            this.panel1.Location = new System.Drawing.Point(0, 378);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(708, 52);
+            this.panel1.Size = new System.Drawing.Size(708, 40);
             this.panel1.TabIndex = 1;
             // 
             // m_cmd_them
             // 
             this.m_cmd_them.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_them.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_them.Image")));
-            this.m_cmd_them.Location = new System.Drawing.Point(337, 0);
+            this.m_cmd_them.Location = new System.Drawing.Point(211, 0);
             this.m_cmd_them.Name = "m_cmd_them";
-            this.m_cmd_them.Size = new System.Drawing.Size(126, 52);
-            this.m_cmd_them.TabIndex = 10;
+            this.m_cmd_them.Size = new System.Drawing.Size(126, 40);
+            this.m_cmd_them.TabIndex = 11;
             this.m_cmd_them.Text = "Thêm";
+            this.m_cmd_them.Click += new System.EventHandler(this.m_cmd_them_Click);
+            // 
+            // m_cmd_sua
+            // 
+            this.m_cmd_sua.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_sua.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_sua.Image")));
+            this.m_cmd_sua.Location = new System.Drawing.Point(337, 0);
+            this.m_cmd_sua.Name = "m_cmd_sua";
+            this.m_cmd_sua.Size = new System.Drawing.Size(126, 40);
+            this.m_cmd_sua.TabIndex = 10;
+            this.m_cmd_sua.Text = "Sửa";
+            this.m_cmd_sua.Click += new System.EventHandler(this.m_cmd_sua_Click);
             // 
             // m_cmd_xoa
             // 
@@ -191,9 +213,10 @@
             this.m_cmd_xoa.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xoa.Image")));
             this.m_cmd_xoa.Location = new System.Drawing.Point(463, 0);
             this.m_cmd_xoa.Name = "m_cmd_xoa";
-            this.m_cmd_xoa.Size = new System.Drawing.Size(122, 52);
+            this.m_cmd_xoa.Size = new System.Drawing.Size(122, 40);
             this.m_cmd_xoa.TabIndex = 9;
             this.m_cmd_xoa.Text = "Xóa";
+            this.m_cmd_xoa.Click += new System.EventHandler(this.m_cmd_xoa_Click);
             // 
             // m_cmd_xuat_excel
             // 
@@ -201,10 +224,9 @@
             this.m_cmd_xuat_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_excel.Image")));
             this.m_cmd_xuat_excel.Location = new System.Drawing.Point(585, 0);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(123, 52);
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(123, 40);
             this.m_cmd_xuat_excel.TabIndex = 8;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
-            this.m_cmd_xuat_excel.Visible = false;
             this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             // 
             // F393_gd_nhan_vien_phu_cap
@@ -242,9 +264,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private System.Windows.Forms.Label m_lbl_header;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_them;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_sua;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xoa;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_them;
 
     }
 }

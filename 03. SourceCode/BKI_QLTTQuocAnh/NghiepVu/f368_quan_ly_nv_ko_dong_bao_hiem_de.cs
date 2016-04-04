@@ -39,8 +39,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         public void display_4_insert(string thang, string nam)
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            //m_thang_goi_y = m_txt_chon_thang.Text = thang;
-            //m_nam_goi_y = m_txt_chon_nam.Text = nam;
+            m_dat_thang.DateTime = new DateTime(int.Parse(nam), int.Parse(thang), 1);
+            m_dat_thang.Enabled = false;
             this.ShowDialog();
         }
         public void display_4_update(US_GD_KHONG_DONG_BAO_HIEM ip_us_ko_bh)
@@ -106,9 +106,9 @@ namespace BKI_DichVuMatDat.NghiepVu
                 case DataEntryFormMode.UpdateDataState:
                     m_sle_chon_nhan_vien.Enabled = false;
                     break;
-                case DataEntryFormMode.InsertDataState:
-                    m_dat_thang.EditValue = m_date_goi_y;
-                    break;
+                //case DataEntryFormMode.InsertDataState:
+                //    m_dat_thang.EditValue = m_date_goi_y;
+                //    break;
                 default:
                     break;
             }
@@ -122,7 +122,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 ip_us.dcID = v_us_dang_sua.dcID;
                 //nguoi sua
                 ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
-                ip_us.datNGAY_LAP = v_us_dang_sua.datNGAY_LAP;
+                ip_us.datNGAY_LAP = DateTime.Now;
             }
             else
             {
@@ -153,20 +153,24 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NHAN_VIEN);
                 return false;
             }
-
-            if (m_dat_thang.EditValue == null)
+            else if (m_dat_thang.EditValue == null)
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_THANG);
                 return false;
             }
-
-            if (CHRMCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_dat_thang.DateTime.Month.ToString()), CIPConvert.ToDecimal(m_dat_thang.DateTime.Year.ToString())))
+            //else if (check_du_lieu_da_ton_tai())
+            //{
+            //    string v_str_error= "Nhân viên đã có tên trong danh sách không đóng bảo hiểm.\nVui lòng kiểm tra lại!"
+            //    XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            else if (CHRMCommon.thang_da_chot_bang_luong(CIPConvert.ToDecimal(m_dat_thang.DateTime.Month.ToString()), CIPConvert.ToDecimal(m_dat_thang.DateTime.Year.ToString())))
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_THANG_DA_CHOT_BANG_LUONG);
                 return false;
             }
             return true;
         }
+
 
         private void clear_data_in_form()
         {
@@ -303,6 +307,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         {
                             m_e_form_mode = DataEntryFormMode.UpdateDataState;
                             US_GD_KHONG_DONG_BAO_HIEM v_us = new US_GD_KHONG_DONG_BAO_HIEM(id_gd_ko_dong_bh);
+                            v_us_dang_sua.dcID = v_us.dcID;
                             DateTime working = new DateTime(Convert.ToInt16(v_us.dcNAM), Convert.ToInt16(v_us.dcTHANG), 15);
                             m_dat_thang.EditValue = working;
                             m_txt_ly_do.Text = v_us.strLY_DO;

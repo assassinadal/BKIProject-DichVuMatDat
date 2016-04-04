@@ -27,19 +27,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 load_data_2_grid();
-                set_define_events();
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
            
-        }
-
-        private void set_define_events()
-        {
-            m_cmd_them.Click += m_cmd_them_Click;
-            m_cmd_xoa.Click += m_cmd_xoa_Click;
         }
 
         private void load_data_2_grid()
@@ -52,13 +45,13 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grc.DataSource = v_ds.Tables[0];
         }
 
-     
+
         private void m_cmd_them_Click(object sender, EventArgs e)
         {
             try
             {
                 F393_nhan_vien_phu_cap_de v_f = new F393_nhan_vien_phu_cap_de();
-                v_f.ShowDialog();               
+                v_f.display_for_insert();
                 load_data_2_grid();
             }
             catch (Exception v_e)
@@ -71,13 +64,17 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (BaseMessages.MsgBox_Confirm("Bạn có chắc chắn muốn xóa phụ cấp trách nhiệm này?") == false) return;
-                US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP(CIPConvert.ToDecimal(m_grv.GetDataRow(m_grv.FocusedRowHandle)["ID"].ToString()));
-                v_us.datNGAY_SUA = CHRMCommon.get_first_day_of_month(DateTime.Now.Date);
-                v_us.strDA_XOA = "Y";
-                v_us.Update();
-                XtraMessageBox.Show("Đã xóa thành công phụ cấp!");
-                load_data_2_grid();
+                string v_str_confirm = "Bạn có chắc chắn muốn xóa phụ cấp trách nhiệm này?";
+                DialogResult v_dialog = XtraMessageBox.Show(v_str_confirm, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (v_dialog == DialogResult.Yes)
+                {
+                    US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP(CIPConvert.ToDecimal(m_grv.GetDataRow(m_grv.FocusedRowHandle)["ID"].ToString()));
+                    v_us.datNGAY_SUA = CHRMCommon.get_first_day_of_month(DateTime.Now.Date);
+                    v_us.strDA_XOA = "Y";
+                    v_us.Update();
+                    XtraMessageBox.Show("Đã xóa thành công phụ cấp!");
+                    load_data_2_grid();
+                }
             }
             catch (Exception v_e)
             {
@@ -92,6 +89,22 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CHRMCommon.ExportExcel(m_grv);
             }
             catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_sua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+                US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP(decimal.Parse(v_dr["ID"].ToString()));
+                F393_nhan_vien_phu_cap_de v_f = new F393_nhan_vien_phu_cap_de();
+                v_f.display_for_update(v_us);
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }

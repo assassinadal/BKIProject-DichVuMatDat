@@ -278,7 +278,5 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         #endregion
-
-
     }
 }

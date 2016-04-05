@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -157,10 +156,10 @@
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
@@ -1236,6 +1235,7 @@
             this.m_cmd_bc_athk_bsl_lt.Name = "m_cmd_bc_athk_bsl_lt";
             this.m_cmd_bc_athk_bsl_lt.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.m_cmd_bc_athk_bsl_lt.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_ds_chot_bang_luong
             // 

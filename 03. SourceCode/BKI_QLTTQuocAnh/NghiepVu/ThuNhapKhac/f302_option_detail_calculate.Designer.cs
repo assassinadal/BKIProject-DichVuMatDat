@@ -1,6 +1,6 @@
 ﻿namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 {
-    partial class f301_option_detail_calculate
+    partial class f302_option_detail_calculate
     {
         /// <summary>
         /// Required designer variable.

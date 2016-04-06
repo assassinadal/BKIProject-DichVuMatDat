@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 {
-    public partial class f355_tnk_chi_tiet_quy_thu_nhap_khac_detail : Form
+    public partial class f356_tnk_chi_tiet_quy_thu_nhap_khac_detail : Form
     {
         #region Field & Property
         DataEntryFormMode m_e_form_mode;
@@ -23,7 +23,7 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         #endregion
 
         #region Public Interface
-        public f355_tnk_chi_tiet_quy_thu_nhap_khac_detail()
+        public f356_tnk_chi_tiet_quy_thu_nhap_khac_detail()
         {
             InitializeComponent();
             format_controls(); load_data_nhan_vien();

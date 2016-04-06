@@ -12,13 +12,13 @@ using IP.Core.IPCommon;
 using BKI_DichVuMatDat.US;
 namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 {
-    public partial class f301_option_detail_calculate : Form
+    public partial class f302_option_detail_calculate : Form
     {
         private option_tinh_tnk _option = option_tinh_tnk.CHUA_CHON;
         private decimal _so_tien = 0;
         private decimal _phan_tram_thue = 0;
         private bool is_nguoi_dung_an_tiep_tuc = false;
-        public f301_option_detail_calculate()
+        public f302_option_detail_calculate()
         {
             InitializeComponent();
 

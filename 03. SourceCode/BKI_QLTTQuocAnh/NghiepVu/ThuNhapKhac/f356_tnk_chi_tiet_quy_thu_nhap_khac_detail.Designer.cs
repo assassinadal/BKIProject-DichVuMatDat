@@ -1,6 +1,6 @@
 ﻿namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 {
-    partial class f355_tnk_chi_tiet_quy_thu_nhap_khac_detail
+    partial class f356_tnk_chi_tiet_quy_thu_nhap_khac_detail
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f355_tnk_chi_tiet_quy_thu_nhap_khac_detail));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f356_tnk_chi_tiet_quy_thu_nhap_khac_detail));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);

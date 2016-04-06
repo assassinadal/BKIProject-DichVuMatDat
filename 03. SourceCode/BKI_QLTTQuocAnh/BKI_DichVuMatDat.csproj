@@ -210,6 +210,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <HintPath>..\DLL\Interop.Microsoft.Office.Core.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -1699,6 +1703,9 @@
     <Content Include="Template\ChamCongLamThem.xls">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Template\HD THU VIEC.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Template\HĐLĐ HOC NGHE.docx" />
   </ItemGroup>
   <ItemGroup>
@@ -1733,6 +1740,10 @@
     <ProjectReference Include="..\IPUserService\IPUserService.vbproj">
       <Project>{B490EA92-2990-4CBB-B58B-12901AFCCCB5}</Project>
       <Name>IPUserService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPWordReport\IPWordReport.vbproj">
+      <Project>{0adf180c-9644-4b81-abb6-93fee0c11a01}</Project>
+      <Name>IPWordReport</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -14,6 +14,7 @@ using BKI_DichVuMatDat.DS.CDBNames;
 using DevExpress.XtraEditors;
 using System.Globalization;
 using IP.Core.IPSystemAdmin;
+using IP.Core.IPWordReport;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -1159,8 +1160,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                f326_in_hop_dong v_f = new f326_in_hop_dong();
-                v_f.ShowDialog();
+                CWordReport v_cwr = new CWordReport("HD THU VIEC.docx");
+               
             }
             catch (Exception v_e)
             {

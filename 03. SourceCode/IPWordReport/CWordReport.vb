@@ -4,8 +4,8 @@ Imports System.IO
 
 Public Class CWordReport
 
-    Private Const c_ReportTemplatesDir As String = "Reports\Templates\"
-    Private Const c_ReportOutputDir As String = "Reports\Output\"
+    Private Const c_ReportTemplatesDir As String = "Template\"
+    Private Const c_ReportOutputDir As String = "Template\"
 
     Protected m_strOutputPath As String = ""
     Protected m_strTemplatesPath As String = ""

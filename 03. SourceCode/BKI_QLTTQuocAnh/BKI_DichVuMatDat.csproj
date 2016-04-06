@@ -616,7 +616,6 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1042,10 +1041,6 @@
     </Compile>
     <Compile Include="NghiepVu\F394_gd_nhan_vien_phu_cap.Designer.cs">
       <DependentUpon>F394_gd_nhan_vien_phu_cap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\f393_tinh_phep_tieu_chuan.cs" />
-    <Compile Include="NghiepVu\f393_tinh_phep_tieu_chuan.Designer.cs">
-      <DependentUpon>f393_tinh_phep_tieu_chuan.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\ChamCong\f394_cham_cong_thang.cs">
       <SubType>Form</SubType>

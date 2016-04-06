@@ -1666,6 +1666,22 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string TU_51_DEN_55 = "TU_51_DEN_55";
         public const string TREN_55 = "TREN_55";
     }
+    public class V_F468_BAO_CAO_TRANG_THAI_LAO_DONG_THEO_THANG
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string MA_NV = "MA_NV";
+        public const string HO_TEN = "HO_TEN";
+        public const string ID_VI_TRI = "ID_VI_TRI";
+        public const string TEN_VI_TRI = "TEN_VI_TRI";
+        public const string ID_DON_VI = "ID_DON_VI";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string ID_TRANG_THAI_LAO_DONG = "ID_TRANG_THAI_LAO_DONG";
+        public const string TEN_TRANG_THAI_LD = "TEN_TRANG_THAI_LD";
+        public const string NGAY_AP_DUNG = "NGAY_AP_DUNG";
+        public const string GHI_CHU = "GHI_CHU";
+    }
+
 
 
 }

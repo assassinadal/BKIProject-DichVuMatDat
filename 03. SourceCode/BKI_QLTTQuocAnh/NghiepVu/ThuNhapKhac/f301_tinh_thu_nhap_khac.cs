@@ -297,7 +297,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             option_tinh_tnk op_option;
             decimal op_so_tien;
             decimal op_phan_tram_thue;
-            f301_option_detail_calculate v_frm = new f301_option_detail_calculate();
+            f302_option_detail_calculate v_frm = new f302_option_detail_calculate();
             v_frm.Display(out op_option, out op_so_tien, out op_phan_tram_thue);
             switch(op_option)
             {

@@ -453,6 +453,12 @@
     <Compile Include="NghiepVu\Luong\f303_cac_khoan_tien_khac.Designer.cs">
       <DependentUpon>f303_cac_khoan_tien_khac.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\Luong\f304_cac_khoan_khac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\Luong\f304_cac_khoan_khac.Designer.cs">
+      <DependentUpon>f304_cac_khoan_khac.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\Luong\f409_rpt_bang_luong_nv_v2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1020,12 +1026,6 @@
     <Compile Include="NghiepVu\F393_nhan_vien_phu_cap_de.Designer.cs">
       <DependentUpon>F393_nhan_vien_phu_cap_de.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\f394_tinh_phep_tieu_chuan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\f394_tinh_phep_tieu_chuan.Designer.cs">
-      <DependentUpon>f394_tinh_phep_tieu_chuan.cs</DependentUpon>
-    </Compile>
     <Compile Include="NghiepVu\ChamCong\f394_cham_cong_thang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1068,6 +1068,12 @@
     <Compile Include="NghiepVu\ThuNhapKhac\f355_tnk_chi_tiet_quy_thu_nhap_khac.Designer.cs">
       <DependentUpon>f355_tnk_chi_tiet_quy_thu_nhap_khac.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\ThuNhapKhac\f355_tnk_chi_tiet_quy_thu_nhap_khac_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\ThuNhapKhac\f355_tnk_chi_tiet_quy_thu_nhap_khac_detail.designer.cs">
+      <DependentUpon>f355_tnk_chi_tiet_quy_thu_nhap_khac_detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\ThuNhapKhac\f356_tnk_chi_tiet_quy_thu_nhap_khac_detail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1102,11 +1108,17 @@
     <Compile Include="XtraReport\rptPhuThuoc.Designer.cs">
       <DependentUpon>rptPhuThuoc.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="NghiepVu\Luong\f304_cac_khoan_khac.resx">
+      <DependentUpon>f304_cac_khoan_khac.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\NhanSu\f311_danh_sach_nhan_vien_theo_don_vi.resx">
       <DependentUpon>f311_danh_sach_nhan_vien_theo_don_vi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.resx">
       <DependentUpon>F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\ThuNhapKhac\f355_tnk_chi_tiet_quy_thu_nhap_khac_detail.resx">
+      <DependentUpon>f355_tnk_chi_tiet_quy_thu_nhap_khac_detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport\rptCommon.resx">
       <DependentUpon>rptCommon.cs</DependentUpon>
@@ -1567,9 +1579,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F393_nhan_vien_phu_cap_de.resx">
       <DependentUpon>F393_nhan_vien_phu_cap_de.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f394_tinh_phep_tieu_chuan.resx">
-      <DependentUpon>f394_tinh_phep_tieu_chuan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\ChamCong\f394_cham_cong_thang.resx">
       <DependentUpon>f394_cham_cong_thang.cs</DependentUpon>

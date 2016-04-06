@@ -653,11 +653,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f301_tinh_thu_nhap_khac_le_tet v_frm = new f301_tinh_thu_nhap_khac_le_tet();
-                if (IsExistFormName(v_frm)) return;
+                //f301_tinh_thu_nhap_khac_le_tet v_frm = new f301_tinh_thu_nhap_khac_le_tet();
+                //if (IsExistFormName(v_frm)) return;
 
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
             }
             catch (Exception)
             {
@@ -1297,10 +1297,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f394_tinh_phep_tieu_chuan v_f = new f394_tinh_phep_tieu_chuan();
-                if (IsExistFormName(v_f)) return;
-                v_f.MdiParent = this;
-                v_f.Show();
+                //f394_tinh_phep_tieu_chuan v_f = new f394_tinh_phep_tieu_chuan();
+                //if (IsExistFormName(v_f)) return;
+                //v_f.MdiParent = this;
+                //v_f.Show();
             }
             catch (Exception v_e)
             {
@@ -1571,10 +1571,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f303_tnk_ngoai_bang_luong v_f = new f303_tnk_ngoai_bang_luong();
-                if (IsExistFormName(v_f)) return;
-                v_f.MdiParent = this;
-                v_f.Show();
+                //f303_tnk_ngoai_bang_luong v_f = new f303_tnk_ngoai_bang_luong();
+                //if (IsExistFormName(v_f)) return;
+                //v_f.MdiParent = this;
+                //v_f.Show();
             }
             catch (Exception v_e)
             {

@@ -288,8 +288,8 @@ namespace BKI_DichVuMatDat.HeThong
         {
             try
             {
-                f301_tinh_thu_nhap_khac_le_tet v_frm = new f301_tinh_thu_nhap_khac_le_tet();
-                v_frm.ShowDialog();
+                //f301_tinh_thu_nhap_khac_le_tet v_frm = new f301_tinh_thu_nhap_khac_le_tet();
+                //v_frm.ShowDialog();
             }
             catch (Exception v_e)
             {

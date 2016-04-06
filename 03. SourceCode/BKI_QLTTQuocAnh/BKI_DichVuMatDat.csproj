@@ -1020,11 +1020,11 @@
     <Compile Include="NghiepVu\F393_nhan_vien_phu_cap_de.Designer.cs">
       <DependentUpon>F393_nhan_vien_phu_cap_de.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\f393_tinh_phep_tieu_chuan.cs">
+    <Compile Include="NghiepVu\f394_tinh_phep_tieu_chuan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NghiepVu\f393_tinh_phep_tieu_chuan.Designer.cs">
-      <DependentUpon>f393_tinh_phep_tieu_chuan.cs</DependentUpon>
+    <Compile Include="NghiepVu\f394_tinh_phep_tieu_chuan.Designer.cs">
+      <DependentUpon>f394_tinh_phep_tieu_chuan.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\ChamCong\f394_cham_cong_thang.cs">
       <SubType>Form</SubType>
@@ -1568,8 +1568,8 @@
     <EmbeddedResource Include="NghiepVu\F393_nhan_vien_phu_cap_de.resx">
       <DependentUpon>F393_nhan_vien_phu_cap_de.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f393_tinh_phep_tieu_chuan.resx">
-      <DependentUpon>f393_tinh_phep_tieu_chuan.cs</DependentUpon>
+    <EmbeddedResource Include="NghiepVu\f394_tinh_phep_tieu_chuan.resx">
+      <DependentUpon>f394_tinh_phep_tieu_chuan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\ChamCong\f394_cham_cong_thang.resx">
       <DependentUpon>f394_cham_cong_thang.cs</DependentUpon>

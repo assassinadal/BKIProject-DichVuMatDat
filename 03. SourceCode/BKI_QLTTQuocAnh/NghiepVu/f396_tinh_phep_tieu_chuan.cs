@@ -15,10 +15,10 @@ using BKI_DichVuMatDat.DS.CDBNames;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
-    public partial class f394_tinh_phep_tieu_chuan : Form
+    public partial class f396_tinh_phep_tieu_chuan : Form
     {
         #region Public Interface
-        public f394_tinh_phep_tieu_chuan()
+        public f396_tinh_phep_tieu_chuan()
         {
             InitializeComponent();
             set_initial_form_load();

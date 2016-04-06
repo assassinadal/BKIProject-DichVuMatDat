@@ -452,6 +452,12 @@
     <Compile Include="NghiepVu\f368_quan_ly_nv_ko_dong_bao_hiem_de.Designer.cs">
       <DependentUpon>f368_quan_ly_nv_ko_dong_bao_hiem_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f396_tinh_phep_tieu_chuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f396_tinh_phep_tieu_chuan.Designer.cs">
+      <DependentUpon>f396_tinh_phep_tieu_chuan.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\F395_nhan_vien_phu_cap_de.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -616,6 +622,7 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1126,6 +1133,9 @@
     </Compile>
     <EmbeddedResource Include="BaoCao\f468_bao_cao_trang_thai_lao_dong.resx">
       <DependentUpon>f468_bao_cao_trang_thai_lao_dong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f396_tinh_phep_tieu_chuan.resx">
+      <DependentUpon>f396_tinh_phep_tieu_chuan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\NhanSu\f311_danh_sach_nhan_vien_theo_don_vi.resx">
       <DependentUpon>f311_danh_sach_nhan_vien_theo_don_vi.cs</DependentUpon>

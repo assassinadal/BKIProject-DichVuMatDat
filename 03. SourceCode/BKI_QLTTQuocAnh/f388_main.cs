@@ -1313,10 +1313,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                //f394_tinh_phep_tieu_chuan v_f = new f394_tinh_phep_tieu_chuan();
-                //if (IsExistFormName(v_f)) return;
-                //v_f.MdiParent = this;
-                //v_f.Show();
+                f396_tinh_phep_tieu_chuan v_f = new f396_tinh_phep_tieu_chuan();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
             }
             catch (Exception v_e)
             {

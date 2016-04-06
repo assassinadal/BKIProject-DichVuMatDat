@@ -1,6 +1,6 @@
 ﻿namespace BKI_DichVuMatDat.NghiepVu
 {
-    partial class f394_tinh_phep_tieu_chuan
+    partial class f396_tinh_phep_tieu_chuan
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f394_tinh_phep_tieu_chuan));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f396_tinh_phep_tieu_chuan));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.m_pbl_nam_tinh_phep = new DevExpress.XtraEditors.PanelControl();
             this.m_dat_nam = new DevExpress.XtraEditors.DateEdit();

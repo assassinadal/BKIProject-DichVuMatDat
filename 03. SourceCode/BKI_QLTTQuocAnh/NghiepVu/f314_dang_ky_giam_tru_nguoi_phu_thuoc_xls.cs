@@ -129,6 +129,13 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private bool check_du_lieu_hop_le()
         {
+            if (m_grv.DataRowCount > 0)
+            { }
+            else
+            {
+                XtraMessageBox.Show("Chưa có dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             for (int i = 0; i < m_grv1.RowCount; i++)
             {
                 var v_dr = m_grv1.GetDataRow(i);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f350_quan_ly_vi_tri_cong_tac));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -78,7 +79,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_insert_1 = new DevExpress.XtraEditors.SimpleButton();
-            this.ImageList = new System.Windows.Forms.ImageList();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc_v_gd_cong_tac = new DevExpress.XtraGrid.GridControl();
             this.m_grv_v_gd_cong_tac = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -871,9 +872,9 @@
             // 
             this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_chon_file.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_file.Image")));
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(349, 0);
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(375, 0);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
-            this.m_cmd_chon_file.Size = new System.Drawing.Size(142, 36);
+            this.m_cmd_chon_file.Size = new System.Drawing.Size(116, 36);
             this.m_cmd_chon_file.TabIndex = 31;
             this.m_cmd_chon_file.Text = "Chọn file";
             // 

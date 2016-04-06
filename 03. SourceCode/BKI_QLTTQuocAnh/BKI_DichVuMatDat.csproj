@@ -428,6 +428,12 @@
     <Compile Include="NghiepVu\f352_quan_ly_cong_tac_excel.Designer.cs">
       <DependentUpon>f352_quan_ly_cong_tac_excel.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f361_quan_ly_quyet_dinh_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f361_quan_ly_quyet_dinh_de.Designer.cs">
+      <DependentUpon>f361_quan_ly_quyet_dinh_de.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f364_quan_ly_cac_nhan_vien_co_luong_cung_de.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -622,7 +628,6 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1133,6 +1138,9 @@
     </Compile>
     <EmbeddedResource Include="BaoCao\f468_bao_cao_trang_thai_lao_dong.resx">
       <DependentUpon>f468_bao_cao_trang_thai_lao_dong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f361_quan_ly_quyet_dinh_de.resx">
+      <DependentUpon>f361_quan_ly_quyet_dinh_de.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f396_tinh_phep_tieu_chuan.resx">
       <DependentUpon>f396_tinh_phep_tieu_chuan.cs</DependentUpon>

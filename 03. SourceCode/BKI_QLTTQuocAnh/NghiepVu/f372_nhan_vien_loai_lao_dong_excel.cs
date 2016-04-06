@@ -146,7 +146,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     for (int i = 0; i < m_grv.DataRowCount; i++)
                     {
-                        if (m_grv.GetDataRow(i)[0].ToString() == "" | m_grv.GetDataRow(i)[1].ToString() == "") continue;
+                        if (m_grv.GetDataRow(i)[0].ToString() == "" | m_grv.GetDataRow(i)[1].ToString() == "") return;
                         if (check_ma_nhan_vien_is_ok(m_grv.GetDataRow(i)))
                         {
                             gan_du_lieu_cho_us_dm_nhan_vien(m_grv.GetDataRow(i));
@@ -154,6 +154,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         else
                         {
                             CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + m_grv.GetDataRow(i)["MA_NV"].ToString() + "  đã có loại lao động rồi. Vui lòng kiểm tra lại thông tin!");
+                            return;
                         }
                     }
   

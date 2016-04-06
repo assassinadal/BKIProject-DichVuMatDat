@@ -141,7 +141,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     return false;
                 }
             }
-             return true;
+            return true;
         }
 
         //Insert, update, delete
@@ -337,8 +337,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                clear_data_inform();
-                m_e_form_mode = DataEntryFormMode.InsertDataState;
+                //clear_data_inform();
+                //m_e_form_mode = DataEntryFormMode.InsertDataState;
+                f361_quan_ly_quyet_dinh_de v_frm = new f361_quan_ly_quyet_dinh_de();
+                v_frm.display_4_insert();
             }
             catch (Exception v_e)
             {
@@ -354,7 +356,9 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_id_gd_qd = CIPConvert.ToDecimal(m_grv_quyet_dinh.GetRowCellValue(m_grv_quyet_dinh.FocusedRowHandle, "ID"));
 
                 us_obj_2_form(v_id_gd_qd);
-                m_e_form_mode = DataEntryFormMode.UpdateDataState;
+                f361_quan_ly_quyet_dinh_de v_frm = new f361_quan_ly_quyet_dinh_de();
+                v_frm.display_4_update(v_id_gd_qd);
+                //m_e_form_mode = DataEntryFormMode.UpdateDataState;
             }
             catch (Exception v_e)
             {

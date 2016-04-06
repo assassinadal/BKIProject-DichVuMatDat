@@ -262,7 +262,7 @@ namespace BKI_DichVuMatDat.HeThong
         {            
             try
             {
-                F393_gd_nhan_vien_phu_cap v_frm = new F393_gd_nhan_vien_phu_cap();
+                F394_gd_nhan_vien_phu_cap v_frm = new F394_gd_nhan_vien_phu_cap();
                 v_frm.ShowDialog();
             }
             catch (Exception v_e)

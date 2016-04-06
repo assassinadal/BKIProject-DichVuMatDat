@@ -323,10 +323,26 @@ namespace BKI_DichVuMatDat
             m_cmd_danh_sach_hop_dong.ItemClick += m_cmd_danh_sach_hop_dong_ItemClick;
             m_cmd_bao_cao_dieu_kien_tinh_luong.ItemClick += m_cmd_bao_cao_dieu_kien_tinh_luong_ItemClick;
             m_cmd_bc_athk_bsl_lt.ItemClick += m_cmd_bc_athk_bsl_lt_ItemClick;
+            m_cmd_bao_cao_trang_thai_lao_dong.ItemClick += M_cmd_bao_cao_trang_thai_lao_dong_ItemClick;
             //Thu nhap khac
             m_cmd_quan_ly_quy_tnk.ItemClick += m_cmd_quan_ly_quy_tnk_ItemClick;
             m_cmd_ds_chot_bang_luong.ItemClick += m_cmd_ds_chot_bang_luong_ItemClick;
             m_cmd_bc_hs.ItemClick += m_cmd_bc_hs_ItemClick;
+        }
+
+        private void M_cmd_bao_cao_trang_thai_lao_dong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+               f468_bao_cao_trang_thai_lao_dong v_f = new f468_bao_cao_trang_thai_lao_dong();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_bc_hs_ItemClick(object sender, ItemClickEventArgs e)
@@ -1359,7 +1375,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                F393_gd_nhan_vien_phu_cap v_f = new F393_gd_nhan_vien_phu_cap();
+                F394_gd_nhan_vien_phu_cap v_f = new F394_gd_nhan_vien_phu_cap();
                 if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();
@@ -1582,11 +1598,12 @@ namespace BKI_DichVuMatDat
             }
         }
 
+    
 
 
 
 
-
+   
 
         //void m_cmd_backup_restore_ItemClick(object sender, ItemClickEventArgs e)
         //{

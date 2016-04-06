@@ -123,6 +123,17 @@ namespace BKI_DichVuMatDat.NghiepVu
         //    m_grc_v_gd_loai_lao_dong.DataSource = v_ds.Tables[0];
         //}
 
+        public void import_excel()
+        {
+            m_txt_path = WinFormControls.openFileDialog();
+            if (m_txt_path != "")
+            {
+                f372_nhan_vien_loai_lao_dong_excel v_f = new f372_nhan_vien_loai_lao_dong_excel();
+                v_f.displayToInsertExcel(m_txt_path);
+            }
+            load_data_2_grid();
+        }
+
         #endregion
 
         private void f370_nhan_vien_loai_lao_dong_Load(object sender, EventArgs e)
@@ -146,28 +157,31 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         void m_cmd_chon_file_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            //OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
-            // Set filter options and filter index.
-            openFileDialog1.Filter = "xlsx Files|*.xlsx|xls Files|*.xls|All Files (*.*)|*.*";
-            openFileDialog1.Multiselect = false;
-            var userClickedOK = openFileDialog1.ShowDialog();
+            //// Set filter options and filter index.
+            //openFileDialog1.Filter = "xlsx Files|*.xlsx|xls Files|*.xls|All Files (*.*)|*.*";
+            //openFileDialog1.Multiselect = false;
+            //var userClickedOK = openFileDialog1.ShowDialog();
             try
             {
-                if (userClickedOK == System.Windows.Forms.DialogResult.OK)
-                {
-                    m_txt_path = openFileDialog1.FileName;
-                    f372_nhan_vien_loai_lao_dong_excel v_f = new f372_nhan_vien_loai_lao_dong_excel();
-                    v_f.displayToInsertExcel(m_txt_path);
-                    // WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
-                }
-                load_data_2_grid();
+                //if (userClickedOK == System.Windows.Forms.DialogResult.OK)
+                //{
+                //    m_txt_path = openFileDialog1.FileName;
+                //    f372_nhan_vien_loai_lao_dong_excel v_f = new f372_nhan_vien_loai_lao_dong_excel();
+                //    v_f.displayToInsertExcel(m_txt_path);
+                //    // WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
+                //}
+                import_excel();
+                //load_data_2_grid();
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+
 
         void m_cmd_tai_file_excel_mau_Click(object sender, EventArgs e)
         {

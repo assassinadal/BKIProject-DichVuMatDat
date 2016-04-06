@@ -42,6 +42,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             buoc_2_nhap_tthd = 2,
             buoc_3_nhap_ttct = 3,
             buoc_4_nhap_ttbs = 4,
+            done = 5,
         }
 
         #endregion
@@ -56,6 +57,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                     m_cmd_nhap_thong_tin_cong_tac.Enabled = false;
                     m_cmd_nhap_thong_tin_hop_dong.Enabled = false;
                     m_cmd_nhap_thong_tin_nhan_vien.Enabled = true;
+                    m_cmd_nhap_thong_tin_tong_hop.Enabled = false;
+                    m_cmd_file_excel_nttth.Enabled = false;
                     m_cmd_file_excel_nttnv.Enabled = true;
                     m_cmd_file_excel_nttct.Enabled = false;
                     m_cmd_file_excel_ntthd.Enabled = false;
@@ -64,6 +67,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                     m_cmd_nhap_thong_tin_cong_tac.Enabled = false;
                     m_cmd_nhap_thong_tin_hop_dong.Enabled = true;
                     m_cmd_nhap_thong_tin_nhan_vien.Enabled = false;
+                    m_cmd_nhap_thong_tin_tong_hop.Enabled = false;
+                    m_cmd_file_excel_nttth.Enabled = false;
                     m_cmd_file_excel_ntthd.Enabled = true;
                     m_cmd_file_excel_nttct.Enabled = false;
                     m_cmd_file_excel_nttnv.Enabled = false;
@@ -72,11 +77,23 @@ namespace BKI_DichVuMatDat.NghiepVu
                     m_cmd_nhap_thong_tin_cong_tac.Enabled = true;
                     m_cmd_nhap_thong_tin_hop_dong.Enabled = false;
                     m_cmd_nhap_thong_tin_nhan_vien.Enabled = false;
+                    m_cmd_nhap_thong_tin_tong_hop.Enabled = false;
+                    m_cmd_file_excel_nttth.Enabled = false;
                     m_cmd_file_excel_nttct.Enabled = true;
                     m_cmd_file_excel_nttnv.Enabled = false;
                     m_cmd_file_excel_ntthd.Enabled = false;
                     break;
                 case buoc_hien_tai.buoc_4_nhap_ttbs:
+                    m_cmd_nhap_thong_tin_cong_tac.Enabled = false;
+                    m_cmd_nhap_thong_tin_hop_dong.Enabled = false;
+                    m_cmd_nhap_thong_tin_nhan_vien.Enabled = false;
+                    m_cmd_nhap_thong_tin_tong_hop.Enabled = true;
+                    m_cmd_file_excel_nttth.Enabled = true;
+                    m_cmd_file_excel_nttct.Enabled = false;
+                    m_cmd_file_excel_nttnv.Enabled = false;
+                    m_cmd_file_excel_ntthd.Enabled = false;
+                    break;
+                case buoc_hien_tai.done:
                     if (CHRM_BaseMessages.MsgBox_Confirm("Bạn có muốn thêm nhân viên mới nữa không ?") == true)
                     {
                         m_e_buoc_hien_tai = buoc_hien_tai.buoc_1_nhap_ttnv;
@@ -133,8 +150,14 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                F501_THONG_TIN_BO_SUNG_NHAN_VIEN v_frm = new F501_THONG_TIN_BO_SUNG_NHAN_VIEN();
-                v_frm.Show();
+                f370_nhan_vien_loai_lao_dong v_frm = new f370_nhan_vien_loai_lao_dong();
+                v_frm.import_excel();
+                if (chuyen_buoc_tiep_theo())
+                {
+                    v_frm.ShowDialog();
+                }
+                //v_frm.Show();
+                //m_e_buoc_hien_tai++;
                 set_init_form_load();
             }
             catch (Exception v_e)

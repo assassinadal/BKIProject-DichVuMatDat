@@ -95,13 +95,14 @@
             this.NGUOI_SUA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DA_XOA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_tao_lai = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_cmd_tao_lai = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_print = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -818,6 +819,7 @@
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_print);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_tao_lai);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_file);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
@@ -830,6 +832,16 @@
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1284, 43);
             this.m_pnl_out_place_dm.TabIndex = 0;
+            // 
+            // m_cmd_tao_lai
+            // 
+            this.m_cmd_tao_lai.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_tao_lai.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tao_lai.Image")));
+            this.m_cmd_tao_lai.Location = new System.Drawing.Point(700, 4);
+            this.m_cmd_tao_lai.Name = "m_cmd_tao_lai";
+            this.m_cmd_tao_lai.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_tao_lai.TabIndex = 32;
+            this.m_cmd_tao_lai.Text = "&Tạo mới\r\nhợp đồng";
             // 
             // m_cmd_chon_file
             // 
@@ -911,15 +923,15 @@
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
             // 
-            // m_cmd_tao_lai
+            // m_cmd_print
             // 
-            this.m_cmd_tao_lai.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_tao_lai.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tao_lai.Image")));
-            this.m_cmd_tao_lai.Location = new System.Drawing.Point(700, 4);
-            this.m_cmd_tao_lai.Name = "m_cmd_tao_lai";
-            this.m_cmd_tao_lai.Size = new System.Drawing.Size(116, 35);
-            this.m_cmd_tao_lai.TabIndex = 32;
-            this.m_cmd_tao_lai.Text = "&Tạo mới\r\nhợp đồng";
+            this.m_cmd_print.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_print.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_print.Image")));
+            this.m_cmd_print.Location = new System.Drawing.Point(584, 4);
+            this.m_cmd_print.Name = "m_cmd_print";
+            this.m_cmd_print.Size = new System.Drawing.Size(116, 35);
+            this.m_cmd_print.TabIndex = 33;
+            this.m_cmd_print.Text = "&In hợp đồng";
             // 
             // f320_lap_hop_dong
             // 
@@ -1038,5 +1050,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
         private DevExpress.XtraGrid.Columns.GridColumn DA_XOA;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tao_lai;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_print;
     }
 }

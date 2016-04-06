@@ -193,6 +193,7 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v14.1.Extensions, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraSpreadsheet.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
@@ -386,6 +387,12 @@
     </Compile>
     <Compile Include="NghiepVu\f322_lap_hop_dong_excel.Designer.cs">
       <DependentUpon>f322_lap_hop_dong_excel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\f326_in_hop_dong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f326_in_hop_dong.Designer.cs">
+      <DependentUpon>f326_in_hop_dong.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\f341_dat_he_so_lns_lcd_v2.cs">
       <SubType>Form</SubType>
@@ -1108,6 +1115,9 @@
     <Compile Include="XtraReport\rptPhuThuoc.Designer.cs">
       <DependentUpon>rptPhuThuoc.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="NghiepVu\f326_in_hop_dong.resx">
+      <DependentUpon>f326_in_hop_dong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\Luong\f304_cac_khoan_khac.resx">
       <DependentUpon>f304_cac_khoan_khac.cs</DependentUpon>
     </EmbeddedResource>
@@ -1686,6 +1696,7 @@
     <Content Include="Template\ChamCongLamThem.xls">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Template\HĐLĐ HOC NGHE.docx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BKI_QLTTQuocAnh.DS\BKI_DichVuMatDat.DS.csproj">

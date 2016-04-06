@@ -1152,6 +1152,20 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_dat_ngay_bat_dau.ValueChanged += m_dat_ngay_bat_dau_ValueChanged;
             //gridcontrol, gridview
             //m_grv_lap_hd.DoubleClick += m_grv_lap_hd_DoubleClick;
+            m_cmd_print.Click += m_cmd_print_Click;
+        }
+
+        void m_cmd_print_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f326_in_hop_dong v_f = new f326_in_hop_dong();
+                v_f.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_cmd_chon_file_Click(object sender, EventArgs e)

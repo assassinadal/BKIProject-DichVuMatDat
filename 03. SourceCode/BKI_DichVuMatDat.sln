@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPBusinessService", "IPBusinessService\IPBusinessService.vbproj", "{73CA732C-2CFB-4A14-B0B9-F43763B1C2F3}"
 	ProjectSection(ProjectDependencies) = postProject
 		{4AEBA63F-E5B5-4D0C-B1B5-E6BCB13E1B5A} = {4AEBA63F-E5B5-4D0C-B1B5-E6BCB13E1B5A}
@@ -26,7 +24,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BKI_DichVuMatDat.US", "BKI_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BKI_DichVuMatDat", "BKI_QLTTQuocAnh\BKI_DichVuMatDat.csproj", "{B91F4BE2-5024-4012-A4A8-4E52E8609778}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPWordReport", "C:\Users\tuyen\Downloads\AnhThay-master\AnhThay-master\03. SourceCode\IPWordReport\IPWordReport.vbproj", "{0ADF180C-9644-4B81-ABB6-93FEE0C11A01}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPWordReport", "..\..\Downloads\Compressed\IPWordReport\IPWordReport\IPWordReport.vbproj", "{0ADF180C-9644-4B81-ABB6-93FEE0C11A01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -210,10 +210,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Interop.Microsoft.Office.Core">
-      <HintPath>..\DLL\Interop.Microsoft.Office.Core.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -628,6 +624,7 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1138,6 +1135,9 @@
     </Compile>
     <EmbeddedResource Include="BaoCao\f468_bao_cao_trang_thai_lao_dong.resx">
       <DependentUpon>f468_bao_cao_trang_thai_lao_dong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f326_in_hop_dong.resx">
+      <DependentUpon>f326_in_hop_dong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f361_quan_ly_quyet_dinh_de.resx">
       <DependentUpon>f361_quan_ly_quyet_dinh_de.cs</DependentUpon>
@@ -1718,6 +1718,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Template\HD THU VIEC.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\HD_HOC_VIEC.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\HD_THU_VIEC.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\HD_XAC_DINH_THOI_HAN.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Template\HĐLĐ HOC NGHE.docx" />

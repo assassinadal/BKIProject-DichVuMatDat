@@ -397,5 +397,13 @@ namespace BKI_DichVuMatDat.US
             v_sp.fillDataSetByCommand(this, v_op_ds);
             return v_op_ds;
         }
+
+        public void FillDatasetHDTheoNgayKy(DataSet v_ds, DateTime ip_tu_ngay, DateTime ip_den_ngay)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_HD_theo_ngay_ky_GetAll");
+            v_cstore.addDatetimeInputParam("@tu_ngay", ip_tu_ngay);
+            v_cstore.addDatetimeInputParam("@den_ngay", ip_den_ngay);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+        }
     }
 }

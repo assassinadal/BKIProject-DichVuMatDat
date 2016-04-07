@@ -8,6 +8,7 @@ Public Class CWordReport
     Private Const c_ReportOutputDir As String = "Template\"
 
     Protected m_strOutputPath As String = ""
+    'Protected m_strOutputFileName As String = ""
     Protected m_strTemplatesPath As String = ""
 
     Private m_strTemplateFileNameWithPath As String
@@ -19,8 +20,8 @@ Public Class CWordReport
     Private m_o_missing As Object = System.Reflection.Missing.Value
     Private m_hst_FindAndReplaceCollection As Hashtable
 #Region "Public Interface"
-    Public Sub New(ByVal i_strTemplateFileWithoutPath As String)
-        InitPaths()
+    Public Sub New(ByVal i_strTemplateFileWithoutPath As String, ByVal m_str_outputpath As String)
+        InitPaths(m_str_outputpath)
         m_strTemplateFileNameWithPath = m_strTemplatesPath & i_strTemplateFileWithoutPath
         m_objWordlApp = New Word.Application
         m_hst_FindAndReplaceCollection = New Hashtable
@@ -35,7 +36,7 @@ Public Class CWordReport
         Next
         m_objWordDocument.Save()
         If i_b_show Then
-            m_objWordlApp.Visible = True
+            'm_objWordlApp.Visible = True
             Unmount()
         End If
     End Sub
@@ -45,7 +46,7 @@ Public Class CWordReport
     Public Function GetOutputFileNameWithPath() As String
         Dim v_strRandomName As String
         Randomize()
-        v_strRandomName = m_strOutputPath & "~" & CType(Rnd() * 1000000000000, Int64) & ".doc"
+        v_strRandomName = m_strOutputPath & "\" & CType(Rnd() * 1000000000000, Int64) & ".doc"
         Return v_strRandomName
     End Function
 #End Region
@@ -53,7 +54,7 @@ Public Class CWordReport
 #Region "Private Methods"
     Private Sub InitWord()
         Dim v_strFileName As Object
-        v_strFileName = GetOutputFileNameWithPath()
+        v_strFileName = m_strOutputPath & " " & CType(Rnd() * 10000, Int64) & ".docx"
         If Not CopyFileSuccess(CType(v_strFileName, String)) Then Exit Sub
 
         m_objWordDocument = _
@@ -71,10 +72,18 @@ Public Class CWordReport
         , m_o_missing)
         m_init_successful = True
     End Sub
-    Private Sub InitPaths()
-        m_strOutputPath = AppDomain.CurrentDomain.SetupInformation.ApplicationBase & c_ReportOutputDir
+    Private Sub InitPaths(ByVal ip_filename As String)
+        'Dim saveFileDialog1 As New SaveFileDialog()
+        'saveFileDialog1.Filter = "txt files (*.docx)|*.docx|All files (*.*)|*.*"
+        'saveFileDialog1.FilterIndex = 2
+        'saveFileDialog1.RestoreDirectory = True
+        'If saveFileDialog1.ShowDialog() = DialogResult.OK Then
+        m_strOutputPath = ip_filename
         m_strTemplatesPath = AppDomain.CurrentDomain.SetupInformation.ApplicationBase & c_ReportTemplatesDir
+        'End If
+
     End Sub
+
     Private Sub FindAndReplace(ByVal i_str_find As Object, ByVal i_str_replace_with As Object)
         m_objWordlApp.Selection.Find.ClearFormatting()
         m_objWordlApp.Selection.Find.Replacement.ClearFormatting()

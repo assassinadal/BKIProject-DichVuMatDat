@@ -1160,8 +1160,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                CWordReport v_cwr = new CWordReport("HD THU VIEC.docx");
-               
+                f326_in_hop_dong v_f = new f326_in_hop_dong();
+                v_f.ShowDialog();
+                //CWordReport v_cwr = new CWordReport("HD THU VIEC.docx");
+                //v_cwr.AddFindAndReplace("<name>", "Huong");
+                //v_cwr.Export2Word();
             }
             catch (Exception v_e)
             {

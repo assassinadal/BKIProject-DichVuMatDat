@@ -878,5 +878,14 @@ namespace BKI_DichVuMatDat.US
 
             op_dc_so_tuoi = Convert.ToDecimal(v_op_result.Value);
         }
+
+        public DataRow GetThongTinTGD()
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_Get_thong_tin_TGD");
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_cstore.fillDataSetByCommand(this, v_ds);
+            return v_ds.Tables[0].Rows[0];
+        }
     }
 }

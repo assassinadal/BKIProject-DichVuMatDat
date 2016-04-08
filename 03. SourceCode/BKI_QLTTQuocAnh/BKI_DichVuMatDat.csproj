@@ -32,7 +32,7 @@
     <SuiteName>HRM_RELEASE</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>29</ApplicationRevision>
+    <ApplicationRevision>31</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -193,7 +193,9 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v14.1.Extensions, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v14.1.Extensions, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.XtraSpreadsheet.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
@@ -1126,6 +1128,12 @@
     </Compile>
     <Compile Include="COMMON\WinFormControls.cs" />
     <Compile Include="COMMON\CHRM_BaseMessages210.cs" />
+    <Compile Include="Template.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Template.Designer.cs">
+      <DependentUpon>Template.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReport\ReportHelper.cs" />
     <Compile Include="XtraReport\rptCommon.cs">
       <SubType>Component</SubType>
@@ -1162,6 +1170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\ThuNhapKhac\f355_tnk_chi_tiet_quy_thu_nhap_khac_detail.resx">
       <DependentUpon>f355_tnk_chi_tiet_quy_thu_nhap_khac_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template.resx">
+      <DependentUpon>Template.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport\rptCommon.resx">
       <DependentUpon>rptCommon.cs</DependentUpon>

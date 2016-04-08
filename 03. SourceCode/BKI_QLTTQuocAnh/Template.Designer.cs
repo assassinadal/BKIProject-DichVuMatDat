@@ -34,6 +34,7 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // m_cmd_insert
@@ -84,6 +85,14 @@
             this.simpleButton5.TabIndex = 0;
             this.simpleButton5.Text = "&Lọc";
             // 
+            // simpleButton6
+            // 
+            this.simpleButton6.Location = new System.Drawing.Point(99, 130);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(75, 27);
+            this.simpleButton6.TabIndex = 0;
+            this.simpleButton6.Text = "&Tải Template";
+            // 
             // Template
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -93,6 +102,7 @@
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.simpleButton5);
             this.Controls.Add(this.simpleButton4);
+            this.Controls.Add(this.simpleButton6);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.m_cmd_insert);
             this.Name = "Template";
@@ -109,5 +119,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton6;
     }
 }

@@ -28,34 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f492_quyet_toan_thue_TNCN));
             this.m_panel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.m_prb = new DevExpress.XtraEditors.ProgressBarControl();
             this.m_bgwk = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.m_dat_den_thang = new DevExpress.XtraEditors.DateEdit();
             this.m_dat_tu_thang = new DevExpress.XtraEditors.DateEdit();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_luu_bang_luong = new DevExpress.XtraEditors.SimpleButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.m_txt_tong_thu_nhap = new System.Windows.Forms.TextBox();
-            this.m_txt_tong_thu_nhap_trong_bang_luong = new System.Windows.Forms.TextBox();
-            this.m_txt_tong_thu_nhap_ngoai_bang_luong = new System.Windows.Forms.TextBox();
-            this.m_txt_tong_giam_tru = new System.Windows.Forms.TextBox();
-            this.m_txt_tong_thu_nhap_chiu_thue = new System.Windows.Forms.TextBox();
-            this.m_txt_tong_so_TTN_phai_nop = new System.Windows.Forms.TextBox();
-            this.m_txt_TTN_da_nop = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.m_txt_TTN_con_phai_nop = new System.Windows.Forms.TextBox();
             this.m_lbl_nam_2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_tinh = new DevExpress.XtraEditors.SimpleButton();
@@ -166,14 +149,11 @@
             this.m_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_tong_hop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_adv_tong_hop)).BeginInit();
@@ -219,10 +199,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cmd_luu_bang_luong);
             this.panel1.Controls.Add(this.m_dat_den_thang);
             this.panel1.Controls.Add(this.m_dat_tu_thang);
-            this.panel1.Controls.Add(this.panelControl1);
-            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.m_lbl_nam_2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_cmd_tinh);
@@ -230,8 +209,36 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(1318, 158);
+            this.panel1.Size = new System.Drawing.Size(1318, 72);
             this.panel1.TabIndex = 10;
+            // 
+            // m_cmd_luu_bang_luong
+            // 
+            this.m_cmd_luu_bang_luong.ImageIndex = 1;
+            this.m_cmd_luu_bang_luong.ImageList = this.imageCollection;
+            this.m_cmd_luu_bang_luong.Location = new System.Drawing.Point(395, 39);
+            this.m_cmd_luu_bang_luong.Name = "m_cmd_luu_bang_luong";
+            this.m_cmd_luu_bang_luong.Size = new System.Drawing.Size(109, 22);
+            this.m_cmd_luu_bang_luong.TabIndex = 14;
+            this.m_cmd_luu_bang_luong.Text = "Trích xuất";
+            this.m_cmd_luu_bang_luong.Click += new System.EventHandler(this.m_cmd_luu_bang_luong_Click);
+            // 
+            // imageCollection
+            // 
+            this.imageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection.ImageStream")));
+            this.imageCollection.Images.SetKeyName(0, "dvmd_download.png");
+            this.imageCollection.Images.SetKeyName(1, "dvmd_upload.png");
+            this.imageCollection.Images.SetKeyName(2, "lock.png");
+            this.imageCollection.Images.SetKeyName(3, "refresh.png");
+            this.imageCollection.Images.SetKeyName(4, "dvmd_info.png");
+            this.imageCollection.Images.SetKeyName(5, "play.png");
+            this.imageCollection.Images.SetKeyName(6, "pause.png");
+            this.imageCollection.Images.SetKeyName(7, "pencil.png");
+            this.imageCollection.Images.SetKeyName(8, "trash.png");
+            this.imageCollection.Images.SetKeyName(9, "grid.png");
+            this.imageCollection.Images.SetKeyName(10, "list.png");
+            this.imageCollection.Images.SetKeyName(11, "eye.png");
+            this.imageCollection.Images.SetKeyName(12, "note.png");
             // 
             // m_dat_den_thang
             // 
@@ -246,6 +253,8 @@
             this.m_dat_den_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.m_dat_den_thang.Properties.EditFormat.FormatString = "MM/yyyy";
             this.m_dat_den_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.m_dat_den_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_den_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.m_dat_den_thang.Size = new System.Drawing.Size(100, 20);
             this.m_dat_den_thang.TabIndex = 17;
             // 
@@ -262,209 +271,10 @@
             this.m_dat_tu_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.m_dat_tu_thang.Properties.EditFormat.FormatString = "MM/yyyy";
             this.m_dat_tu_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.m_dat_tu_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_tu_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.m_dat_tu_thang.Size = new System.Drawing.Size(100, 20);
             this.m_dat_tu_thang.TabIndex = 17;
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.m_cmd_luu_bang_luong);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl1.Location = new System.Drawing.Point(1157, 5);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(156, 63);
-            this.panelControl1.TabIndex = 16;
-            // 
-            // m_cmd_luu_bang_luong
-            // 
-            this.m_cmd_luu_bang_luong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_luu_bang_luong.Image")));
-            this.m_cmd_luu_bang_luong.Location = new System.Drawing.Point(16, 7);
-            this.m_cmd_luu_bang_luong.Name = "m_cmd_luu_bang_luong";
-            this.m_cmd_luu_bang_luong.Size = new System.Drawing.Size(132, 37);
-            this.m_cmd_luu_bang_luong.TabIndex = 14;
-            this.m_cmd_luu_bang_luong.Text = "Xuất báo cáo";
-            this.m_cmd_luu_bang_luong.Click += new System.EventHandler(this.m_cmd_luu_bang_luong_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(5, 68);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1308, 85);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 8;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.69841F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.69841F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.69841F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.53846F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.07692F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.69841F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.69841F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.m_txt_tong_thu_nhap, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.m_txt_tong_thu_nhap_trong_bang_luong, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.m_txt_tong_thu_nhap_ngoai_bang_luong, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.m_txt_tong_giam_tru, 7, 0);
-            this.tableLayoutPanel1.Controls.Add(this.m_txt_tong_thu_nhap_chiu_thue, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.m_txt_tong_so_TTN_phai_nop, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.m_txt_TTN_da_nop, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 6, 1);
-            this.tableLayoutPanel1.Controls.Add(this.m_txt_TTN_con_phai_nop, 7, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1302, 66);
-            this.tableLayoutPanel1.TabIndex = 12;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Tổng thu nhập";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 33);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Thu nhập chịu thuế";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(335, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(160, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Tổng thu nhập trong bảng lương";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(652, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(162, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Tổng thu nhập ngoài bảng lương";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(989, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Tổng giảm trừ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(335, 33);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(115, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Tổng số TTN phải nộp";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(652, 33);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "TTN đã nộp";
-            // 
-            // m_txt_tong_thu_nhap
-            // 
-            this.m_txt_tong_thu_nhap.Location = new System.Drawing.Point(169, 3);
-            this.m_txt_tong_thu_nhap.Name = "m_txt_tong_thu_nhap";
-            this.m_txt_tong_thu_nhap.ReadOnly = true;
-            this.m_txt_tong_thu_nhap.Size = new System.Drawing.Size(137, 20);
-            this.m_txt_tong_thu_nhap.TabIndex = 1;
-            // 
-            // m_txt_tong_thu_nhap_trong_bang_luong
-            // 
-            this.m_txt_tong_thu_nhap_trong_bang_luong.Location = new System.Drawing.Point(501, 3);
-            this.m_txt_tong_thu_nhap_trong_bang_luong.Name = "m_txt_tong_thu_nhap_trong_bang_luong";
-            this.m_txt_tong_thu_nhap_trong_bang_luong.ReadOnly = true;
-            this.m_txt_tong_thu_nhap_trong_bang_luong.Size = new System.Drawing.Size(124, 20);
-            this.m_txt_tong_thu_nhap_trong_bang_luong.TabIndex = 1;
-            // 
-            // m_txt_tong_thu_nhap_ngoai_bang_luong
-            // 
-            this.m_txt_tong_thu_nhap_ngoai_bang_luong.Location = new System.Drawing.Point(823, 3);
-            this.m_txt_tong_thu_nhap_ngoai_bang_luong.Name = "m_txt_tong_thu_nhap_ngoai_bang_luong";
-            this.m_txt_tong_thu_nhap_ngoai_bang_luong.ReadOnly = true;
-            this.m_txt_tong_thu_nhap_ngoai_bang_luong.Size = new System.Drawing.Size(136, 20);
-            this.m_txt_tong_thu_nhap_ngoai_bang_luong.TabIndex = 1;
-            // 
-            // m_txt_tong_giam_tru
-            // 
-            this.m_txt_tong_giam_tru.Location = new System.Drawing.Point(1155, 3);
-            this.m_txt_tong_giam_tru.Name = "m_txt_tong_giam_tru";
-            this.m_txt_tong_giam_tru.ReadOnly = true;
-            this.m_txt_tong_giam_tru.Size = new System.Drawing.Size(124, 20);
-            this.m_txt_tong_giam_tru.TabIndex = 1;
-            // 
-            // m_txt_tong_thu_nhap_chiu_thue
-            // 
-            this.m_txt_tong_thu_nhap_chiu_thue.Location = new System.Drawing.Point(169, 36);
-            this.m_txt_tong_thu_nhap_chiu_thue.Name = "m_txt_tong_thu_nhap_chiu_thue";
-            this.m_txt_tong_thu_nhap_chiu_thue.ReadOnly = true;
-            this.m_txt_tong_thu_nhap_chiu_thue.Size = new System.Drawing.Size(137, 20);
-            this.m_txt_tong_thu_nhap_chiu_thue.TabIndex = 1;
-            // 
-            // m_txt_tong_so_TTN_phai_nop
-            // 
-            this.m_txt_tong_so_TTN_phai_nop.Location = new System.Drawing.Point(501, 36);
-            this.m_txt_tong_so_TTN_phai_nop.Name = "m_txt_tong_so_TTN_phai_nop";
-            this.m_txt_tong_so_TTN_phai_nop.ReadOnly = true;
-            this.m_txt_tong_so_TTN_phai_nop.Size = new System.Drawing.Size(124, 20);
-            this.m_txt_tong_so_TTN_phai_nop.TabIndex = 1;
-            // 
-            // m_txt_TTN_da_nop
-            // 
-            this.m_txt_TTN_da_nop.Location = new System.Drawing.Point(823, 36);
-            this.m_txt_TTN_da_nop.Name = "m_txt_TTN_da_nop";
-            this.m_txt_TTN_da_nop.ReadOnly = true;
-            this.m_txt_TTN_da_nop.Size = new System.Drawing.Size(136, 20);
-            this.m_txt_TTN_da_nop.TabIndex = 1;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(989, 33);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "TTN còn phải nộp";
-            // 
-            // m_txt_TTN_con_phai_nop
-            // 
-            this.m_txt_TTN_con_phai_nop.Location = new System.Drawing.Point(1155, 36);
-            this.m_txt_TTN_con_phai_nop.Name = "m_txt_TTN_con_phai_nop";
-            this.m_txt_TTN_con_phai_nop.ReadOnly = true;
-            this.m_txt_TTN_con_phai_nop.Size = new System.Drawing.Size(136, 20);
-            this.m_txt_TTN_con_phai_nop.TabIndex = 1;
             // 
             // m_lbl_nam_2
             // 
@@ -489,10 +299,11 @@
             // 
             // m_cmd_tinh
             // 
-            this.m_cmd_tinh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.m_cmd_tinh.ImageIndex = 11;
+            this.m_cmd_tinh.ImageList = this.imageCollection;
             this.m_cmd_tinh.Location = new System.Drawing.Point(286, 39);
             this.m_cmd_tinh.Name = "m_cmd_tinh";
-            this.m_cmd_tinh.Size = new System.Drawing.Size(75, 23);
+            this.m_cmd_tinh.Size = new System.Drawing.Size(103, 22);
             this.m_cmd_tinh.TabIndex = 9;
             this.m_cmd_tinh.Text = "Xem báo cáo";
             this.m_cmd_tinh.Click += new System.EventHandler(this.m_cmd_tinh_Click);
@@ -502,9 +313,9 @@
             this.panel2.Controls.Add(this.m_grc_tong_hop);
             this.panel2.Controls.Add(this.m_panel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 158);
+            this.panel2.Location = new System.Drawing.Point(0, 72);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1318, 308);
+            this.panel2.Size = new System.Drawing.Size(1318, 394);
             this.panel2.TabIndex = 13;
             // 
             // m_grc_tong_hop
@@ -514,7 +325,7 @@
             this.m_grc_tong_hop.Location = new System.Drawing.Point(0, 0);
             this.m_grc_tong_hop.MainView = this.m_adv_tong_hop;
             this.m_grc_tong_hop.Name = "m_grc_tong_hop";
-            this.m_grc_tong_hop.Size = new System.Drawing.Size(1318, 308);
+            this.m_grc_tong_hop.Size = new System.Drawing.Size(1318, 394);
             this.m_grc_tong_hop.TabIndex = 14;
             this.m_grc_tong_hop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_adv_tong_hop});
@@ -2008,30 +1819,26 @@
             this.TEN_HOP_DONG.Name = "TEN_HOP_DONG";
             this.TEN_HOP_DONG.Visible = true;
             // 
-            // f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru
+            // f492_quyet_toan_thue_TNCN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1318, 466);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru";
-            this.Text = "Bảng kê khai thu nhập và thuế thu nhập đã khấu trừ năm";
+            this.Name = "f492_quyet_toan_thue_TNCN";
+            this.Text = "F492 - Bảng kê khai thu nhập và thuế thu nhập đã khấu trừ năm";
             this.Load += new System.EventHandler(this.f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru_Load);
             this.m_panel.ResumeLayout(false);
             this.m_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_prb.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_thang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_tu_thang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_tong_hop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_adv_tong_hop)).EndInit();
@@ -2089,25 +1896,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn TONG_SO_PHAI_NOP;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn DA_NOP;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn CON_PHAI_NOP;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox m_txt_tong_thu_nhap;
-        private System.Windows.Forms.TextBox m_txt_tong_thu_nhap_trong_bang_luong;
-        private System.Windows.Forms.TextBox m_txt_tong_thu_nhap_ngoai_bang_luong;
-        private System.Windows.Forms.TextBox m_txt_tong_giam_tru;
-        private System.Windows.Forms.TextBox m_txt_tong_thu_nhap_chiu_thue;
-        private System.Windows.Forms.TextBox m_txt_tong_so_TTN_phai_nop;
-        private System.Windows.Forms.TextBox m_txt_TTN_da_nop;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox m_txt_TTN_con_phai_nop;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_luu_bang_luong;
         private DevExpress.XtraEditors.DateEdit m_dat_tu_thang;
         private DevExpress.XtraEditors.DateEdit m_dat_den_thang;
@@ -2175,5 +1963,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand43;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand41;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+        private DevExpress.Utils.ImageCollection imageCollection;
     }
 }

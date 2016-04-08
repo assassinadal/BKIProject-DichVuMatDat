@@ -937,7 +937,6 @@
             this.Controls.Add(this.m_lbl_header);
             this.Name = "f350_quan_ly_vi_tri_cong_tac";
             this.Text = "F350 - QUẢN LÝ VỊ TRÍ CÔNG TÁC";
-            this.Load += new System.EventHandler(this.f350_quan_ly_vi_tri_cong_tac_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();

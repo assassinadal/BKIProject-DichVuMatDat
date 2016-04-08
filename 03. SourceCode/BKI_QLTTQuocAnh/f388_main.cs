@@ -328,6 +328,22 @@ namespace BKI_DichVuMatDat
             m_cmd_quan_ly_quy_tnk.ItemClick += m_cmd_quan_ly_quy_tnk_ItemClick;
             m_cmd_ds_chot_bang_luong.ItemClick += m_cmd_ds_chot_bang_luong_ItemClick;
             m_cmd_bc_hs.ItemClick += m_cmd_bc_hs_ItemClick;
+            m_cmd_qtt_2016.ItemClick += m_cmd_qtt_2016_ItemClick;
+        }
+
+        void m_cmd_qtt_2016_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f492_quyet_toan_thue_TNCN v_f = new f492_quyet_toan_thue_TNCN();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void M_cmd_bao_cao_trang_thai_lao_dong_ItemClick(object sender, ItemClickEventArgs e)

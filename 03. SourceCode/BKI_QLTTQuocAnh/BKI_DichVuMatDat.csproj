@@ -351,6 +351,12 @@
     <Compile Include="BaoCao\F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.Designer.cs">
       <DependentUpon>F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\f492_quyet_toan_thue_TNCN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f492_quyet_toan_thue_TNCN.Designer.cs">
+      <DependentUpon>f492_quyet_toan_thue_TNCN.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\SplashScreen1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1135,6 +1141,9 @@
     </Compile>
     <EmbeddedResource Include="BaoCao\f468_bao_cao_trang_thai_lao_dong.resx">
       <DependentUpon>f468_bao_cao_trang_thai_lao_dong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f492_quyet_toan_thue_TNCN.resx">
+      <DependentUpon>f492_quyet_toan_thue_TNCN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f326_in_hop_dong.resx">
       <DependentUpon>f326_in_hop_dong.cs</DependentUpon>

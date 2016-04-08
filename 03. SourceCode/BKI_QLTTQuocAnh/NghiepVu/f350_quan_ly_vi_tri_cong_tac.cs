@@ -72,11 +72,11 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void set_initial_form_load()
         {
-            load_data_2_sle_chon_nv();
-            load_data_2_sle_chon_quyet_dinh();
-            load_data_2_sle_chon_don_vi();
-            load_data_2_sle_chon_vi_tri();
-            load_data_2_sle_chon_loai_cong_tac();
+            //load_data_2_sle_chon_nv();
+            //load_data_2_sle_chon_quyet_dinh();
+            //load_data_2_sle_chon_don_vi();
+            //load_data_2_sle_chon_vi_tri();
+            //load_data_2_sle_chon_loai_cong_tac();
             load_data_2_grid();
         }
 
@@ -163,12 +163,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             CHRMCommon.make_stt(m_grv_v_gd_cong_tac);
 
-            //US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
-            //DataSet v_ds = new DataSet();
-
-            //v_ds.Tables.Add(new DataTable());
-
-            //v_us.FillDatasetWithQuery(v_ds, "select * from V_GD_CONG_TAC WHere ID_NHAN_VIEN = " + ip_dc_id_nv);
             US_GD_CONG_TAC v_us = new US_GD_CONG_TAC();
             DataSet v_ds = new DataSet();
 

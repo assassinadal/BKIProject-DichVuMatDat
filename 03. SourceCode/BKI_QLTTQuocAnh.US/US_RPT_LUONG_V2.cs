@@ -994,6 +994,13 @@ namespace BKI_DichVuMatDat.US
             v_cstore.addDatetimeInputParam("@ngay_ket_thuc", ip_dat_den_thang);
             v_cstore.fillDataSetByCommand(this, v_ds);
         }
+        public void FillDatasetProcBangKeKhaiThuNhap2016(DataSet v_ds, DateTime ip_dat_tu_thang, DateTime ip_dat_den_thang)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_QTT_bang_ke_khai_thu_nhap_GetAll_2016");
+            v_cstore.addDatetimeInputParam("@ngay_bat_dau", ip_dat_tu_thang);
+            v_cstore.addDatetimeInputParam("@ngay_ket_thuc", ip_dat_den_thang);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+        }
         public void FillDatasetKeKhaiThueDoubleClick(DataSet v_ds, decimal v_id_nhan_vien, DateTime ip_dat_tu_thang, DateTime ip_dat_den_thang)
         {
             CStoredProc v_cstore = new CStoredProc("pr_QTT_bang_ke_khai_thu_nhap_detail_Get");

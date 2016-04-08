@@ -353,6 +353,16 @@ namespace BKI_DichVuMatDat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add1 {
+            get {
+                object obj = ResourceManager.GetObject("add1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add16 {
             get {
                 object obj = ResourceManager.GetObject("add16", resourceCulture);
@@ -376,6 +386,16 @@ namespace BKI_DichVuMatDat.Properties {
         internal static System.Drawing.Bitmap add162 {
             get {
                 object obj = ResourceManager.GetObject("add162", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ADDD {
+            get {
+                object obj = ResourceManager.GetObject("ADDD", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -523,6 +543,86 @@ namespace BKI_DichVuMatDat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap file_add {
+            get {
+                object obj = ResourceManager.GetObject("file_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_add1 {
+            get {
+                object obj = ResourceManager.GetObject("file_add1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_delete {
+            get {
+                object obj = ResourceManager.GetObject("file_delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_delete1 {
+            get {
+                object obj = ResourceManager.GetObject("file_delete1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_edit {
+            get {
+                object obj = ResourceManager.GetObject("file_edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_edit1 {
+            get {
+                object obj = ResourceManager.GetObject("file_edit1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_search {
+            get {
+                object obj = ResourceManager.GetObject("file_search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_search1 {
+            get {
+                object obj = ResourceManager.GetObject("file_search1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap find {
             get {
                 object obj = ResourceManager.GetObject("find", resourceCulture);
@@ -576,6 +676,46 @@ namespace BKI_DichVuMatDat.Properties {
         internal static System.Drawing.Bitmap Hopstarter_Soft_Scraps_User_Group1 {
             get {
                 object obj = ResourceManager.GetObject("Hopstarter-Soft-Scraps-User-Group1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icoADD {
+            get {
+                object obj = ResourceManager.GetObject("icoADD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icoADD1 {
+            get {
+                object obj = ResourceManager.GetObject("icoADD1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icoDLEXCEL {
+            get {
+                object obj = ResourceManager.GetObject("icoDLEXCEL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icoEXCEL {
+            get {
+                object obj = ResourceManager.GetObject("icoEXCEL", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

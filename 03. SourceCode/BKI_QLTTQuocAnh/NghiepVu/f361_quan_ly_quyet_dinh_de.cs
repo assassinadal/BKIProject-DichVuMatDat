@@ -39,12 +39,18 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             us_2_form(ip_us);
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
+
+            Text = "F361 - Sửa quyết định";
+            m_lbl_header.Text = "SỬA QUYẾT ĐỊNH";
             this.ShowDialog();
         }
 
         public void display_4_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            Text = "F361 - Thêm mới quyết định";
+            m_lbl_header.Text = "THÊM MỚI QUYẾT ĐỊNH";
+
             this.ShowDialog();
         }
 

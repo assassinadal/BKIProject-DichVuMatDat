@@ -1217,7 +1217,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 us_obj_2_form(v_id_gd_hd, v_id_gd_lns_lcd);
                 m_cmd_lap_hop_dong.Enabled = true;
                 m_sle_chon_nhan_vien.Enabled = false;
-                m_cmd_lap_hop_dong.Text = "Lưu";
+                m_cmd_lap_hop_dong.Text = "Cập nhật hợp đồng";
             }
             catch (Exception v_e)
             {

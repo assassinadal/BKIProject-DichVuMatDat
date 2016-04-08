@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f350_quan_ly_vi_tri_cong_tac));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -79,7 +78,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_insert_1 = new DevExpress.XtraEditors.SimpleButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList = new System.Windows.Forms.ImageList();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc_v_gd_cong_tac = new DevExpress.XtraGrid.GridControl();
             this.m_grv_v_gd_cong_tac = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -104,6 +103,7 @@
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_huy_kiem_nhiem = new SIS.Controls.Button.SiSButton();
+            this.SU_DUNG = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -669,7 +669,8 @@
             this.gridColumn10,
             this.gridColumn11,
             this.c_ngay_bat_dau,
-            this.c_da_xoa});
+            this.c_da_xoa,
+            this.SU_DUNG});
             this.m_grv_v_gd_cong_tac.CustomizationFormBounds = new System.Drawing.Rectangle(494, 344, 210, 172);
             this.m_grv_v_gd_cong_tac.GridControl = this.m_grc_v_gd_cong_tac;
             this.m_grv_v_gd_cong_tac.Name = "m_grv_v_gd_cong_tac";
@@ -852,8 +853,6 @@
             this.c_da_xoa.FieldName = "DA_XOA";
             this.c_da_xoa.Name = "c_da_xoa";
             this.c_da_xoa.OptionsColumn.AllowEdit = false;
-            this.c_da_xoa.Visible = true;
-            this.c_da_xoa.VisibleIndex = 12;
             // 
             // panel1
             // 
@@ -924,6 +923,14 @@
             this.m_cmd_huy_kiem_nhiem.TabIndex = 1;
             this.m_cmd_huy_kiem_nhiem.Text = "&Hủy kiêm nhiệm";
             this.m_cmd_huy_kiem_nhiem.Visible = false;
+            // 
+            // SU_DUNG
+            // 
+            this.SU_DUNG.Caption = "Đang sử dụng";
+            this.SU_DUNG.FieldName = "SU_DUNG";
+            this.SU_DUNG.Name = "SU_DUNG";
+            this.SU_DUNG.Visible = true;
+            this.SU_DUNG.VisibleIndex = 13;
             // 
             // f350_quan_ly_vi_tri_cong_tac
             // 
@@ -1042,5 +1049,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc;
+        private DevExpress.XtraGrid.Columns.GridColumn SU_DUNG;
     }
 }

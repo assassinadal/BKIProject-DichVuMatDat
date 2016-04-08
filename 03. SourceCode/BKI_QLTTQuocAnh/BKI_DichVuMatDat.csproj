@@ -632,7 +632,6 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1159,6 +1158,9 @@
     <EmbeddedResource Include="NghiepVu\f361_quan_ly_quyet_dinh_de.resx">
       <DependentUpon>f361_quan_ly_quyet_dinh_de.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\F395_nhan_vien_phu_cap_de.resx">
+      <DependentUpon>F395_nhan_vien_phu_cap_de.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f396_tinh_phep_tieu_chuan.resx">
       <DependentUpon>f396_tinh_phep_tieu_chuan.cs</DependentUpon>
     </EmbeddedResource>
@@ -1251,6 +1253,20 @@
     <None Include="Resources\trash.png" />
     <None Include="Resources\trash1.png" />
     <None Include="Resources\1459414125_Department.ico" />
+    <None Include="Resources\icoADD.ico" />
+    <None Include="Resources\icoADD1.ico" />
+    <None Include="Resources\add1.ico" />
+    <None Include="Resources\ADDD.png" />
+    <None Include="Resources\file_add.png" />
+    <None Include="Resources\file_edit.png" />
+    <None Include="Resources\file_delete.png" />
+    <None Include="Resources\file_search.png" />
+    <None Include="Resources\icoDLEXCEL.ico" />
+    <None Include="Resources\icoEXCEL.ico" />
+    <None Include="Resources\file_add1.png" />
+    <None Include="Resources\file_edit1.png" />
+    <None Include="Resources\file_delete1.png" />
+    <None Include="Resources\file_search1.png" />
     <Content Include="XML_MESSAGE\bao_cao.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

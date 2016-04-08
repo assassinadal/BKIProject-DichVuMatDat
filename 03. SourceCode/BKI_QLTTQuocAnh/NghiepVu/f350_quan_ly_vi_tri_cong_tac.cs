@@ -483,6 +483,22 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_insert.Click += m_cmd_insert_Click;
             m_cmd_huy_kiem_nhiem.Click += m_cmd_huy_kiem_nhiem_Click;
             m_cmd_chon_file.Click += m_cmd_chon_file_Click;
+            m_cmd_update.Click += m_cmd_update_Click;
+        }
+
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal v_id_nv = 0;
+                f351_quan_ly_cong_tac_de v_frm = new f351_quan_ly_cong_tac_de();
+                v_frm.display_4_update(v_id_nv);
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_cmd_chon_file_Click(object sender, EventArgs e)

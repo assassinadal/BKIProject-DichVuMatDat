@@ -28,12 +28,23 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         #region Public Methods
+        public void display_4_update(decimal v_id_nhan_vien)
+        {
+            Text = "F351 - Sửa thông tin công tác cho nhân viên";
+            m_lbl_header.Text = "SỬA THÔNG TIN CÔNG TÁC CHO NHÂN VIÊN";
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            m_id_gd_ct = find_id_gd_ct(v_id_nhan_vien);
+            US_GD_CONG_TAC v_us = new US_GD_CONG_TAC(m_id_gd_ct);
+            us_2_form(v_us);
+            m_sle_chon_nhan_vien.Enabled = false;
+            this.ShowDialog();
+        }
+
         public void display_4_insert(ref decimal v_id_gd_cong_tac_moi_tao)
         {
             this.Text = "F351 - Thêm thông tin công tác cho nhân viên";
             m_lbl_header.Text = "THÊM THÔNG TIN CÔNG TÁC CHO NHÂN VIÊN";
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            this.CenterToScreen();
             this.ShowDialog();
             v_id_gd_cong_tac_moi_tao = m_id_gd_cong_tac_moi_tao;
         }
@@ -56,6 +67,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             //FormatControl.SetVisibleSimpleButton(this);
             set_define_events();
             this.KeyPreview = true;
+            CenterToScreen();
         }
 
         private void set_init_form_load()
@@ -207,6 +219,17 @@ namespace BKI_DichVuMatDat.NghiepVu
                 ip_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
             }
             ip_us.strDA_XOA = "N";
+        }
+
+        private void us_2_form(US_GD_CONG_TAC ip_us)
+        {
+            m_sle_chon_nhan_vien.EditValue = ip_us.dcID_NHAN_VIEN;
+            m_sle_chon_quyet_dinh.EditValue = ip_us.dcID_QUYET_DINH;
+            m_sle_chon_loai_cong_tac.EditValue = ip_us.dcID_LOAI_CONG_TAC;
+            m_sle_chon_don_vi.EditValue = ip_us.dcID_DON_VI;
+            m_sle_chon_vi_tri.EditValue = ip_us.dcID_VI_TRI;
+            m_dat_ngay_bat_dau.Value = ip_us.datNGAY_BAT_DAU;
+            m_dat_ngay_ket_thuc.Value = ip_us.datNGAY_KET_THUC;
         }
 
         private void save_data()

@@ -161,6 +161,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                m_prg.EditValue = 0;
                 m_pn.Visible = false;
                 string v_str = "Đã lưu hợp đồng tại thư mục " + Path.GetDirectoryName(m_output_path);
                 XtraMessageBox.Show(v_str, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);               

@@ -35,10 +35,10 @@ Public Class CWordReport
             Me.FindAndReplace(v_str_find, v_str_replace)
         Next
         m_objWordDocument.Save()
-        If i_b_show Then
-            'm_objWordlApp.Visible = True
-            Unmount()
-        End If
+        'If i_b_show Then
+        '    'm_objWordlApp.Visible = True
+        '    Unmount()
+        'End If
     End Sub
     Public Sub AddFindAndReplace(ByVal i_str_find As String, ByVal i_str_replace As String)
         m_hst_FindAndReplaceCollection.Add(i_str_find, i_str_replace)
@@ -54,7 +54,11 @@ Public Class CWordReport
 #Region "Private Methods"
     Private Sub InitWord()
         Dim v_strFileName As Object
-        v_strFileName = m_strOutputPath & " " & CType(Rnd() * 10000, Int64) & ".docx"
+        v_strFileName = m_strOutputPath & CType(Rnd() * 1000, Int64) & ".docx"
+        If File.Exists(CStr(v_strFileName)) Then
+            v_strFileName = Path.Combine(Path.GetDirectoryName(CStr(v_strFileName)), Path.GetFileNameWithoutExtension(CStr(v_strFileName))) & "1.docx"
+        End If
+
         If Not CopyFileSuccess(CType(v_strFileName, String)) Then Exit Sub
 
         m_objWordDocument = _

@@ -214,6 +214,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 }
                 else
                 {
+                    m_output_path = "";
                     SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                     saveFileDialog1.Filter = "docx files (*.docx)|*.docx|All files (*.*)|*.*";
                     saveFileDialog1.RestoreDirectory = true;

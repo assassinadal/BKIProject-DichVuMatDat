@@ -47,8 +47,8 @@
             this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField5 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField6 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.pivotGridField7 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
@@ -189,8 +189,8 @@
             // pivotGridField1
             // 
             this.pivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.pivotGridField1.AreaIndex = 3;
-            this.pivotGridField1.Caption = "Nhân viên";
+            this.pivotGridField1.AreaIndex = 2;
+            this.pivotGridField1.Caption = "Họ tên";
             this.pivotGridField1.FieldName = "HO_TEN";
             this.pivotGridField1.Name = "pivotGridField1";
             this.pivotGridField1.Options.AllowSort = DevExpress.Utils.DefaultBoolean.False;
@@ -228,7 +228,7 @@
             this.pivotGridField4.Appearance.Value.Options.UseTextOptions = true;
             this.pivotGridField4.Appearance.Value.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.pivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.pivotGridField4.AreaIndex = 4;
+            this.pivotGridField4.AreaIndex = 3;
             this.pivotGridField4.Caption = "Số NC tiêu chuẩn";
             this.pivotGridField4.FieldName = "SO_NGAY_CONG_TIEU_CHUAN";
             this.pivotGridField4.Name = "pivotGridField4";
@@ -238,7 +238,7 @@
             // pivotGridField5
             // 
             this.pivotGridField5.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.pivotGridField5.AreaIndex = 2;
+            this.pivotGridField5.AreaIndex = 1;
             this.pivotGridField5.Caption = "Mã NV";
             this.pivotGridField5.FieldName = "MA_NV";
             this.pivotGridField5.Name = "pivotGridField5";
@@ -246,10 +246,20 @@
             // pivotGridField6
             // 
             this.pivotGridField6.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.pivotGridField6.AreaIndex = 1;
+            this.pivotGridField6.AreaIndex = 0;
             this.pivotGridField6.Caption = "Đơn vị";
             this.pivotGridField6.FieldName = "TEN_DON_VI";
             this.pivotGridField6.Name = "pivotGridField6";
+            this.pivotGridField6.Width = 150;
+            // 
+            // pivotGridField7
+            // 
+            this.pivotGridField7.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.pivotGridField7.AreaIndex = 0;
+            this.pivotGridField7.Caption = "Thứ tự hiển thị";
+            this.pivotGridField7.FieldName = "THU_TU_DON_VI";
+            this.pivotGridField7.Name = "pivotGridField7";
+            this.pivotGridField7.Visible = false;
             // 
             // panelControl2
             // 
@@ -260,14 +270,6 @@
             this.panelControl2.Size = new System.Drawing.Size(857, 39);
             this.panelControl2.TabIndex = 3;
             this.panelControl2.Visible = false;
-            // 
-            // pivotGridField7
-            // 
-            this.pivotGridField7.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.pivotGridField7.AreaIndex = 0;
-            this.pivotGridField7.Caption = "Thứ tự hiển thị";
-            this.pivotGridField7.FieldName = "THU_TU_DON_VI";
-            this.pivotGridField7.Name = "pivotGridField7";
             // 
             // f402_tong_hop_cham_cong
             // 

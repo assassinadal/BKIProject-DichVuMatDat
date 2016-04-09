@@ -203,7 +203,7 @@
             // m_cmd_chon_du_lieu
             // 
             this.m_cmd_chon_du_lieu.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_du_lieu.Image")));
-            this.m_cmd_chon_du_lieu.Location = new System.Drawing.Point(510, 21);
+            this.m_cmd_chon_du_lieu.Location = new System.Drawing.Point(499, 22);
             this.m_cmd_chon_du_lieu.Name = "m_cmd_chon_du_lieu";
             this.m_cmd_chon_du_lieu.Size = new System.Drawing.Size(190, 36);
             this.m_cmd_chon_du_lieu.TabIndex = 3;
@@ -212,7 +212,7 @@
             // m_cmd_mo_file_mau
             // 
             this.m_cmd_mo_file_mau.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_mo_file_mau.Image")));
-            this.m_cmd_mo_file_mau.Location = new System.Drawing.Point(297, 21);
+            this.m_cmd_mo_file_mau.Location = new System.Drawing.Point(286, 22);
             this.m_cmd_mo_file_mau.Name = "m_cmd_mo_file_mau";
             this.m_cmd_mo_file_mau.Size = new System.Drawing.Size(190, 36);
             this.m_cmd_mo_file_mau.TabIndex = 2;
@@ -234,10 +234,10 @@
             // m_dat_chon_thang
             // 
             this.m_dat_chon_thang.EditValue = null;
-            this.m_dat_chon_thang.Location = new System.Drawing.Point(123, 5);
+            this.m_dat_chon_thang.Location = new System.Drawing.Point(80, 27);
             this.m_dat_chon_thang.Name = "m_dat_chon_thang";
-            this.m_dat_chon_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dat_chon_thang.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_chon_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dat_chon_thang.Properties.Appearance.ForeColor = System.Drawing.Color.Green;
             this.m_dat_chon_thang.Properties.Appearance.Options.UseFont = true;
             this.m_dat_chon_thang.Properties.Appearance.Options.UseForeColor = true;
             this.m_dat_chon_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -247,17 +247,17 @@
             this.m_dat_chon_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
             this.m_dat_chon_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.m_dat_chon_thang.Properties.Mask.EditMask = "MM/yyyy";
-            this.m_dat_chon_thang.Size = new System.Drawing.Size(127, 42);
+            this.m_dat_chon_thang.Size = new System.Drawing.Size(127, 24);
             this.m_dat_chon_thang.TabIndex = 21;
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Location = new System.Drawing.Point(12, 21);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Location = new System.Drawing.Point(28, 31);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(82, 19);
+            this.labelControl1.Size = new System.Drawing.Size(36, 16);
             this.labelControl1.TabIndex = 20;
-            this.labelControl1.Text = "Chọn tháng";
+            this.labelControl1.Text = "Tháng";
             // 
             // labelControl2
             // 

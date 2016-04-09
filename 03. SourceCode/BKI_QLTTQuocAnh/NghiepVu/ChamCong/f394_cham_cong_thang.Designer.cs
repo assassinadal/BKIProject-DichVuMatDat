@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f394_cham_cong_thang));
-            DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition6 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
-            DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition7 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
-            DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition8 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
-            DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition9 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
-            DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition10 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
+            DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition1 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
+            DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition2 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
+            DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition3 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
+            DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition4 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
+            DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition5 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             this.pivotGridField3 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_tong_hop_cham_cong = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_search = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.m_dat_thang = new DevExpress.XtraEditors.DateEdit();
+            this.label3 = new System.Windows.Forms.Label();
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_trang_thai_cham_cong = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -51,20 +51,20 @@
             this.pivotGridField2 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.m_dat_thang = new DevExpress.XtraEditors.DateEdit();
-            this.label3 = new System.Windows.Forms.Label();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_pv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pivotGridField3
@@ -96,7 +96,7 @@
             // m_cmd_tong_hop_cham_cong
             // 
             this.m_cmd_tong_hop_cham_cong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tong_hop_cham_cong.Image")));
-            this.m_cmd_tong_hop_cham_cong.Location = new System.Drawing.Point(472, 32);
+            this.m_cmd_tong_hop_cham_cong.Location = new System.Drawing.Point(449, 35);
             this.m_cmd_tong_hop_cham_cong.Name = "m_cmd_tong_hop_cham_cong";
             this.m_cmd_tong_hop_cham_cong.Size = new System.Drawing.Size(147, 40);
             this.m_cmd_tong_hop_cham_cong.TabIndex = 12;
@@ -105,7 +105,7 @@
             // m_cmd_search
             // 
             this.m_cmd_search.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_search.Image")));
-            this.m_cmd_search.Location = new System.Drawing.Point(311, 32);
+            this.m_cmd_search.Location = new System.Drawing.Point(288, 35);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(143, 40);
             this.m_cmd_search.TabIndex = 11;
@@ -125,6 +125,38 @@
             this.panelControl3.Size = new System.Drawing.Size(280, 103);
             this.panelControl3.TabIndex = 7;
             // 
+            // m_dat_thang
+            // 
+            this.m_dat_thang.EditValue = null;
+            this.m_dat_thang.Location = new System.Drawing.Point(100, 22);
+            this.m_dat_thang.Name = "m_dat_thang";
+            this.m_dat_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dat_thang.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_thang.Properties.Appearance.Options.UseFont = true;
+            this.m_dat_thang.Properties.Appearance.Options.UseForeColor = true;
+            this.m_dat_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
+            this.m_dat_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_thang.Properties.EditFormat.FormatString = "MM/yyyy";
+            this.m_dat_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_dat_thang.Size = new System.Drawing.Size(128, 24);
+            this.m_dat_thang.TabIndex = 28;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(23, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 14);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Chọn tháng";
+            // 
             // m_sle_chon_nhan_vien
             // 
             this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(26, 68);
@@ -139,7 +171,7 @@
             this.m_sle_chon_nhan_vien.Properties.NullText = "-----Tất cả nhân viên-----";
             this.m_sle_chon_nhan_vien.Properties.ValueMember = "ID";
             this.m_sle_chon_nhan_vien.Properties.View = this.searchLookUpEdit1View;
-            this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(201, 20);
+            this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(202, 20);
             this.m_sle_chon_nhan_vien.TabIndex = 20;
             // 
             // searchLookUpEdit1View
@@ -151,22 +183,6 @@
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Họ tên";
-            this.gridColumn1.FieldName = "HO_TEN";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Mã nhân viên";
-            this.gridColumn2.FieldName = "MA_NV";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
             // 
             // labelControl1
             // 
@@ -202,62 +218,62 @@
             this.pivotGridField2,
             this.pivotGridField3,
             this.pivotGridField4});
-            pivotGridStyleFormatCondition6.Appearance.BackColor = System.Drawing.Color.Silver;
-            pivotGridStyleFormatCondition6.Appearance.Options.UseBackColor = true;
-            pivotGridStyleFormatCondition6.ApplyToCustomTotalCell = false;
-            pivotGridStyleFormatCondition6.ApplyToGrandTotalCell = false;
-            pivotGridStyleFormatCondition6.ApplyToTotalCell = false;
-            pivotGridStyleFormatCondition6.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
-            pivotGridStyleFormatCondition6.Enabled = false;
-            pivotGridStyleFormatCondition6.Field = this.pivotGridField3;
-            pivotGridStyleFormatCondition6.FieldName = "pivotGridField3";
-            pivotGridStyleFormatCondition6.Name = "NGAY_NGHI";
-            pivotGridStyleFormatCondition6.Value1 = "";
-            pivotGridStyleFormatCondition7.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            pivotGridStyleFormatCondition7.Appearance.Options.UseBackColor = true;
-            pivotGridStyleFormatCondition7.ApplyToCustomTotalCell = false;
-            pivotGridStyleFormatCondition7.ApplyToGrandTotalCell = false;
-            pivotGridStyleFormatCondition7.ApplyToTotalCell = false;
-            pivotGridStyleFormatCondition7.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
-            pivotGridStyleFormatCondition7.Enabled = false;
-            pivotGridStyleFormatCondition7.FieldName = "";
-            pivotGridStyleFormatCondition7.Name = "TS";
-            pivotGridStyleFormatCondition7.Value1 = "TS";
-            pivotGridStyleFormatCondition8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            pivotGridStyleFormatCondition8.Appearance.Options.UseBackColor = true;
-            pivotGridStyleFormatCondition8.ApplyToCustomTotalCell = false;
-            pivotGridStyleFormatCondition8.ApplyToGrandTotalCell = false;
-            pivotGridStyleFormatCondition8.ApplyToTotalCell = false;
-            pivotGridStyleFormatCondition8.Enabled = false;
-            pivotGridStyleFormatCondition8.FieldName = "";
-            pivotGridStyleFormatCondition8.Name = "OM";
-            pivotGridStyleFormatCondition8.Value1 = "OM";
-            pivotGridStyleFormatCondition9.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            pivotGridStyleFormatCondition9.Appearance.Options.UseBackColor = true;
-            pivotGridStyleFormatCondition9.ApplyToCustomTotalCell = false;
-            pivotGridStyleFormatCondition9.ApplyToGrandTotalCell = false;
-            pivotGridStyleFormatCondition9.ApplyToTotalCell = false;
-            pivotGridStyleFormatCondition9.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            pivotGridStyleFormatCondition9.Expression = "[MA_NGAY_CONG] != \'X\' And [MA_NGAY_CONG]  != \'\'";
-            pivotGridStyleFormatCondition9.Field = this.pivotGridField3;
-            pivotGridStyleFormatCondition9.FieldName = "pivotGridField3";
-            pivotGridStyleFormatCondition9.Name = "Khac_X";
-            pivotGridStyleFormatCondition10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            pivotGridStyleFormatCondition10.Appearance.Options.UseBackColor = true;
-            pivotGridStyleFormatCondition10.ApplyToCustomTotalCell = false;
-            pivotGridStyleFormatCondition10.ApplyToGrandTotalCell = false;
-            pivotGridStyleFormatCondition10.ApplyToTotalCell = false;
-            pivotGridStyleFormatCondition10.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            pivotGridStyleFormatCondition10.Enabled = false;
-            pivotGridStyleFormatCondition10.Expression = "GetDayOfWeek( [NGAY_CHAM_CONG]) = 6 and GetDayOfWeek( [NGAY_CHAM_CONG]) = 0.";
-            pivotGridStyleFormatCondition10.FieldName = "";
-            pivotGridStyleFormatCondition10.Name = "zz";
+            pivotGridStyleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Silver;
+            pivotGridStyleFormatCondition1.Appearance.Options.UseBackColor = true;
+            pivotGridStyleFormatCondition1.ApplyToCustomTotalCell = false;
+            pivotGridStyleFormatCondition1.ApplyToGrandTotalCell = false;
+            pivotGridStyleFormatCondition1.ApplyToTotalCell = false;
+            pivotGridStyleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
+            pivotGridStyleFormatCondition1.Enabled = false;
+            pivotGridStyleFormatCondition1.Field = this.pivotGridField3;
+            pivotGridStyleFormatCondition1.FieldName = "pivotGridField3";
+            pivotGridStyleFormatCondition1.Name = "NGAY_NGHI";
+            pivotGridStyleFormatCondition1.Value1 = "";
+            pivotGridStyleFormatCondition2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            pivotGridStyleFormatCondition2.Appearance.Options.UseBackColor = true;
+            pivotGridStyleFormatCondition2.ApplyToCustomTotalCell = false;
+            pivotGridStyleFormatCondition2.ApplyToGrandTotalCell = false;
+            pivotGridStyleFormatCondition2.ApplyToTotalCell = false;
+            pivotGridStyleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
+            pivotGridStyleFormatCondition2.Enabled = false;
+            pivotGridStyleFormatCondition2.FieldName = "";
+            pivotGridStyleFormatCondition2.Name = "TS";
+            pivotGridStyleFormatCondition2.Value1 = "TS";
+            pivotGridStyleFormatCondition3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            pivotGridStyleFormatCondition3.Appearance.Options.UseBackColor = true;
+            pivotGridStyleFormatCondition3.ApplyToCustomTotalCell = false;
+            pivotGridStyleFormatCondition3.ApplyToGrandTotalCell = false;
+            pivotGridStyleFormatCondition3.ApplyToTotalCell = false;
+            pivotGridStyleFormatCondition3.Enabled = false;
+            pivotGridStyleFormatCondition3.FieldName = "";
+            pivotGridStyleFormatCondition3.Name = "OM";
+            pivotGridStyleFormatCondition3.Value1 = "OM";
+            pivotGridStyleFormatCondition4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            pivotGridStyleFormatCondition4.Appearance.Options.UseBackColor = true;
+            pivotGridStyleFormatCondition4.ApplyToCustomTotalCell = false;
+            pivotGridStyleFormatCondition4.ApplyToGrandTotalCell = false;
+            pivotGridStyleFormatCondition4.ApplyToTotalCell = false;
+            pivotGridStyleFormatCondition4.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            pivotGridStyleFormatCondition4.Expression = "[MA_NGAY_CONG] != \'X\' And [MA_NGAY_CONG]  != \'\'";
+            pivotGridStyleFormatCondition4.Field = this.pivotGridField3;
+            pivotGridStyleFormatCondition4.FieldName = "pivotGridField3";
+            pivotGridStyleFormatCondition4.Name = "Khac_X";
+            pivotGridStyleFormatCondition5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            pivotGridStyleFormatCondition5.Appearance.Options.UseBackColor = true;
+            pivotGridStyleFormatCondition5.ApplyToCustomTotalCell = false;
+            pivotGridStyleFormatCondition5.ApplyToGrandTotalCell = false;
+            pivotGridStyleFormatCondition5.ApplyToTotalCell = false;
+            pivotGridStyleFormatCondition5.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            pivotGridStyleFormatCondition5.Enabled = false;
+            pivotGridStyleFormatCondition5.Expression = "GetDayOfWeek( [NGAY_CHAM_CONG]) = 6 and GetDayOfWeek( [NGAY_CHAM_CONG]) = 0.";
+            pivotGridStyleFormatCondition5.FieldName = "";
+            pivotGridStyleFormatCondition5.Name = "zz";
             this.m_pv.FormatConditions.AddRange(new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition[] {
-            pivotGridStyleFormatCondition6,
-            pivotGridStyleFormatCondition7,
-            pivotGridStyleFormatCondition8,
-            pivotGridStyleFormatCondition9,
-            pivotGridStyleFormatCondition10});
+            pivotGridStyleFormatCondition1,
+            pivotGridStyleFormatCondition2,
+            pivotGridStyleFormatCondition3,
+            pivotGridStyleFormatCondition4,
+            pivotGridStyleFormatCondition5});
             this.m_pv.Location = new System.Drawing.Point(2, 2);
             this.m_pv.Name = "m_pv";
             this.m_pv.Size = new System.Drawing.Size(790, 328);
@@ -301,36 +317,21 @@
             this.panelControl4.Size = new System.Drawing.Size(790, 51);
             this.panelControl4.TabIndex = 2;
             // 
-            // m_dat_thang
+            // gridColumn1
             // 
-            this.m_dat_thang.EditValue = null;
-            this.m_dat_thang.Location = new System.Drawing.Point(116, 20);
-            this.m_dat_thang.Name = "m_dat_thang";
-            this.m_dat_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.m_dat_thang.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.m_dat_thang.Properties.Appearance.Options.UseFont = true;
-            this.m_dat_thang.Properties.Appearance.Options.UseForeColor = true;
-            this.m_dat_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
-            this.m_dat_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.m_dat_thang.Properties.EditFormat.FormatString = "MM/yyyy";
-            this.m_dat_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.m_dat_thang.Properties.Mask.EditMask = "MM/yyyy";
-            this.m_dat_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_dat_thang.Size = new System.Drawing.Size(141, 26);
-            this.m_dat_thang.TabIndex = 28;
+            this.gridColumn1.Caption = "Họ tên";
+            this.gridColumn1.FieldName = "HO_TEN";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
             // 
-            // label3
+            // gridColumn2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Chọn tháng (*)";
+            this.gridColumn2.Caption = "Mã nhân viên";
+            this.gridColumn2.FieldName = "MA_NV";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
             // 
             // f394_cham_cong_thang
             // 
@@ -346,14 +347,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_pv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

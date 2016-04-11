@@ -1672,15 +1672,21 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
         public const string MA_NV = "MA_NV";
         public const string HO_TEN = "HO_TEN";
-        public const string ID_VI_TRI = "ID_VI_TRI";
-        public const string TEN_VI_TRI = "TEN_VI_TRI";
-        public const string ID_DON_VI = "ID_DON_VI";
-        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string ID_LOAI_TRANG_THAI_LD = "ID_LOAI_TRANG_THAI_LD";
+        public const string TEN_LOAI_TRANG_THAI_LD = "TEN_LOAI_TRANG_THAI_LD";
         public const string ID_TRANG_THAI_LAO_DONG = "ID_TRANG_THAI_LAO_DONG";
         public const string TEN_TRANG_THAI_LD = "TEN_TRANG_THAI_LD";
         public const string NGAY_AP_DUNG = "NGAY_AP_DUNG";
-        public const string GHI_CHU = "GHI_CHU";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string GHI_CHU_TRANG_THAI_LAO_DONG = "GHI_CHU_TRANG_THAI_LAO_DONG";
+        public const string ID_GD_CT = "ID_GD_CT";
+        public const string ID_DON_VI = "ID_DON_VI";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string ID_VI_TRI = "ID_VI_TRI";
+        public const string TEN_VI_TRI = "TEN_VI_TRI";
+        public const string TEN_LOAI_CONG_TAC = "TEN_LOAI_CONG_TAC";
     }
+
 
 
 

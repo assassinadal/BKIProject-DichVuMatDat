@@ -498,7 +498,6 @@ public class US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN : US_Object
         v_sp.fillDataSetByCommand(this, op_ds); 
     }
 
-
     public void FillDataset_by_id_nv_and_id_trang_thai_ld(
                             DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN op_ds
                             , decimal ip_dc_id_nhan_vien

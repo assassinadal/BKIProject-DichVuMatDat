@@ -48,10 +48,10 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         }
         private void load_data_danh_sach_nhan_vien_theo_don_vi(decimal ip_dc_id_don_vi)
         {
-            US_V_GD_MA_TRA_CUU_NHAN_VIEN v_us = new US_V_GD_MA_TRA_CUU_NHAN_VIEN();
-            DS_V_GD_MA_TRA_CUU_NHAN_VIEN v_ds = new DS_V_GD_MA_TRA_CUU_NHAN_VIEN();
+            US_V_GD_CONG_TAC_2 v_us = new US_V_GD_CONG_TAC_2();
+            DS_V_GD_CONG_TAC_2 v_ds = new DS_V_GD_CONG_TAC_2();
             v_ds.EnforceConstraints = false;
-            v_us.FillDataset(v_ds, " where ID_DON_VI = " + ip_dc_id_don_vi);
+            v_us.FillDataset(v_ds);
 
             m_grc.DataSource = v_ds.Tables[0];
         }
@@ -82,6 +82,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             {
                 f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
                 v_frm.display_for_them_cong_tac_moi(get_id_phong_ban());
+                load_data_danh_sach_nhan_vien_theo_don_vi(get_id_phong_ban());
             }
             catch(Exception v_e)
             {

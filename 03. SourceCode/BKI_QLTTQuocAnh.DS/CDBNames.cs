@@ -1236,6 +1236,41 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     }
 
     #endregion
+    public class V_GD_CONG_TAC_2
+    {
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string ID_QUYET_DINH = "ID_QUYET_DINH";
+        public const string ID_DON_VI = "ID_DON_VI";
+        public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string NGAY_SUA = "NGAY_SUA";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string NGUOI_SUA = "NGUOI_SUA";
+        public const string DA_XOA = "DA_XOA";
+        public const string ID_LOAI_CONG_TAC = "ID_LOAI_CONG_TAC";
+        public const string ID_VI_TRI = "ID_VI_TRI";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string MA_DON_VI = "MA_DON_VI";
+        public const string LOAI_CONG_TAC = "LOAI_CONG_TAC";
+        public const string CHUC_DANH = "CHUC_DANH";
+        public const string MA_NV = "MA_NV";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string HO_TEN = "HO_TEN";
+        public const string GIOI_TINH = "GIOI_TINH";
+        public const string EMAIL = "EMAIL";
+        public const string SDT = "SDT";
+        public const string SO_TAI_KHOAN = "SO_TAI_KHOAN";
+        public const string NGAN_HANG = "NGAN_HANG";
+        public const string NGAY_CAP_THE = "NGAY_CAP_THE";
+        public const string NGAY_HET_HAN_THE = "NGAY_HET_HAN_THE";
+        public const string NGAY_SINH = "NGAY_SINH";
+        public const string HON_NHAN = "HON_NHAN";
+        public const string SO_CMT = "SO_CMT";
+    }
+
     public class V_DM_DON_VI_2
     {
         public const string ID = "ID";

@@ -75,23 +75,23 @@
             this.colHO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.m_lbl_thong_tin_phong_ban = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_lam_thoi_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_cham_dut_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_chuyen_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_them_moi_cong_tac = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.m_lbl_thong_tin_phong_ban = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_tree_don_vi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -116,7 +116,9 @@
             this.m_tree_don_vi.Name = "m_tree_don_vi";
             this.m_tree_don_vi.OptionsBehavior.AutoNodeHeight = false;
             this.m_tree_don_vi.OptionsBehavior.Editable = false;
+            this.m_tree_don_vi.OptionsView.ShowColumns = false;
             this.m_tree_don_vi.OptionsView.ShowIndicator = false;
+            this.m_tree_don_vi.OptionsView.ShowSummaryFooter = true;
             this.m_tree_don_vi.Size = new System.Drawing.Size(229, 588);
             this.m_tree_don_vi.StateImageList = this.imageCollection;
             this.m_tree_don_vi.TabIndex = 0;
@@ -128,7 +130,7 @@
             this.colTEN_DON_VI.Name = "colTEN_DON_VI";
             this.colTEN_DON_VI.Visible = true;
             this.colTEN_DON_VI.VisibleIndex = 0;
-            this.colTEN_DON_VI.Width = 196;
+            this.colTEN_DON_VI.Width = 180;
             // 
             // colID
             // 
@@ -138,12 +140,16 @@
             // 
             // colSO_LUONG_NS_DANG_CONG_TAC
             // 
+            this.colSO_LUONG_NS_DANG_CONG_TAC.AllNodesSummary = true;
             this.colSO_LUONG_NS_DANG_CONG_TAC.Caption = "Số lượng NV";
             this.colSO_LUONG_NS_DANG_CONG_TAC.FieldName = "SO_LUONG_NS_DANG_CONG_TAC";
             this.colSO_LUONG_NS_DANG_CONG_TAC.Name = "colSO_LUONG_NS_DANG_CONG_TAC";
+            this.colSO_LUONG_NS_DANG_CONG_TAC.OptionsColumn.ReadOnly = true;
+            this.colSO_LUONG_NS_DANG_CONG_TAC.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colSO_LUONG_NS_DANG_CONG_TAC.SummaryFooterStrFormat = "{0:n0}";
             this.colSO_LUONG_NS_DANG_CONG_TAC.Visible = true;
             this.colSO_LUONG_NS_DANG_CONG_TAC.VisibleIndex = 1;
-            this.colSO_LUONG_NS_DANG_CONG_TAC.Width = 31;
+            this.colSO_LUONG_NS_DANG_CONG_TAC.Width = 47;
             // 
             // imageCollection
             // 
@@ -154,10 +160,10 @@
             // 
             this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc.Location = new System.Drawing.Point(233, 68);
+            this.m_grc.Location = new System.Drawing.Point(233, 58);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(987, 524);
+            this.m_grc.Size = new System.Drawing.Size(987, 534);
             this.m_grc.TabIndex = 1;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
@@ -798,66 +804,20 @@
             this.colCHUC_VU.VisibleIndex = 34;
             this.colCHUC_VU.Width = 100;
             // 
-            // panelControl3
-            // 
-            this.panelControl3.Controls.Add(this.m_cmd_lam_thoi_cong_tac);
-            this.panelControl3.Controls.Add(this.m_cmd_cham_dut_cong_tac);
-            this.panelControl3.Controls.Add(this.m_cmd_chuyen_cong_tac);
-            this.panelControl3.Controls.Add(this.m_cmd_them_moi_cong_tac);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(233, 0);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(987, 43);
-            this.panelControl3.TabIndex = 3;
-            // 
-            // m_cmd_lam_thoi_cong_tac
-            // 
-            this.m_cmd_lam_thoi_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_lam_thoi_cong_tac.Location = new System.Drawing.Point(227, 2);
-            this.m_cmd_lam_thoi_cong_tac.Name = "m_cmd_lam_thoi_cong_tac";
-            this.m_cmd_lam_thoi_cong_tac.Size = new System.Drawing.Size(75, 39);
-            this.m_cmd_lam_thoi_cong_tac.TabIndex = 0;
-            this.m_cmd_lam_thoi_cong_tac.Text = "Lâm thời CT";
-            // 
-            // m_cmd_cham_dut_cong_tac
-            // 
-            this.m_cmd_cham_dut_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_cham_dut_cong_tac.Location = new System.Drawing.Point(152, 2);
-            this.m_cmd_cham_dut_cong_tac.Name = "m_cmd_cham_dut_cong_tac";
-            this.m_cmd_cham_dut_cong_tac.Size = new System.Drawing.Size(75, 39);
-            this.m_cmd_cham_dut_cong_tac.TabIndex = 0;
-            this.m_cmd_cham_dut_cong_tac.Text = "Chấm dứt CT";
-            // 
-            // m_cmd_chuyen_cong_tac
-            // 
-            this.m_cmd_chuyen_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chuyen_cong_tac.Location = new System.Drawing.Point(77, 2);
-            this.m_cmd_chuyen_cong_tac.Name = "m_cmd_chuyen_cong_tac";
-            this.m_cmd_chuyen_cong_tac.Size = new System.Drawing.Size(75, 39);
-            this.m_cmd_chuyen_cong_tac.TabIndex = 0;
-            this.m_cmd_chuyen_cong_tac.Text = "Chuyển CT";
-            // 
-            // m_cmd_them_moi_cong_tac
-            // 
-            this.m_cmd_them_moi_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_them_moi_cong_tac.Location = new System.Drawing.Point(2, 2);
-            this.m_cmd_them_moi_cong_tac.Name = "m_cmd_them_moi_cong_tac";
-            this.m_cmd_them_moi_cong_tac.Size = new System.Drawing.Size(75, 39);
-            this.m_cmd_them_moi_cong_tac.TabIndex = 0;
-            this.m_cmd_them_moi_cong_tac.Text = "Thêm mới CT";
-            // 
             // panelControl4
             // 
             this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl4.Controls.Add(this.m_lbl_thong_tin_phong_ban);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl4.Location = new System.Drawing.Point(233, 43);
+            this.panelControl4.Location = new System.Drawing.Point(233, 0);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(987, 25);
-            this.panelControl4.TabIndex = 4;
+            this.panelControl4.TabIndex = 5;
             // 
             // m_lbl_thong_tin_phong_ban
             // 
+            this.m_lbl_thong_tin_phong_ban.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.m_lbl_thong_tin_phong_ban.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.m_lbl_thong_tin_phong_ban.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.m_lbl_thong_tin_phong_ban.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_lbl_thong_tin_phong_ban.Location = new System.Drawing.Point(0, 0);
@@ -867,17 +827,65 @@
             this.m_lbl_thong_tin_phong_ban.TabIndex = 0;
             this.m_lbl_thong_tin_phong_ban.Text = "<Thong Tin Phong Ban>";
             // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(this.m_cmd_lam_thoi_cong_tac);
+            this.panelControl3.Controls.Add(this.m_cmd_cham_dut_cong_tac);
+            this.panelControl3.Controls.Add(this.m_cmd_chuyen_cong_tac);
+            this.panelControl3.Controls.Add(this.m_cmd_them_moi_cong_tac);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl3.Location = new System.Drawing.Point(233, 25);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(987, 33);
+            this.panelControl3.TabIndex = 6;
+            // 
+            // m_cmd_lam_thoi_cong_tac
+            // 
+            this.m_cmd_lam_thoi_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_lam_thoi_cong_tac.Location = new System.Drawing.Point(227, 2);
+            this.m_cmd_lam_thoi_cong_tac.Name = "m_cmd_lam_thoi_cong_tac";
+            this.m_cmd_lam_thoi_cong_tac.Size = new System.Drawing.Size(75, 29);
+            this.m_cmd_lam_thoi_cong_tac.TabIndex = 0;
+            this.m_cmd_lam_thoi_cong_tac.Text = "Lâm thời CT";
+            // 
+            // m_cmd_cham_dut_cong_tac
+            // 
+            this.m_cmd_cham_dut_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_cham_dut_cong_tac.Location = new System.Drawing.Point(152, 2);
+            this.m_cmd_cham_dut_cong_tac.Name = "m_cmd_cham_dut_cong_tac";
+            this.m_cmd_cham_dut_cong_tac.Size = new System.Drawing.Size(75, 29);
+            this.m_cmd_cham_dut_cong_tac.TabIndex = 0;
+            this.m_cmd_cham_dut_cong_tac.Text = "Chấm dứt CT";
+            // 
+            // m_cmd_chuyen_cong_tac
+            // 
+            this.m_cmd_chuyen_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chuyen_cong_tac.Location = new System.Drawing.Point(77, 2);
+            this.m_cmd_chuyen_cong_tac.Name = "m_cmd_chuyen_cong_tac";
+            this.m_cmd_chuyen_cong_tac.Size = new System.Drawing.Size(75, 29);
+            this.m_cmd_chuyen_cong_tac.TabIndex = 0;
+            this.m_cmd_chuyen_cong_tac.Text = "Chuyển CT";
+            // 
+            // m_cmd_them_moi_cong_tac
+            // 
+            this.m_cmd_them_moi_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_them_moi_cong_tac.Location = new System.Drawing.Point(2, 2);
+            this.m_cmd_them_moi_cong_tac.Name = "m_cmd_them_moi_cong_tac";
+            this.m_cmd_them_moi_cong_tac.Size = new System.Drawing.Size(75, 29);
+            this.m_cmd_them_moi_cong_tac.TabIndex = 0;
+            this.m_cmd_them_moi_cong_tac.Text = "Thêm mới CT";
+            // 
             // f309_quan_ly_cong_tac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1220, 592);
             this.Controls.Add(this.m_grc);
-            this.Controls.Add(this.panelControl4);
             this.Controls.Add(this.panelControl3);
+            this.Controls.Add(this.panelControl4);
             this.Controls.Add(this.panelControl1);
             this.Name = "f309_quan_ly_cong_tac";
-            this.Text = "F311 - Danh sách nhân viên theo đơn vị";
+            this.Text = "F309 - Quản lý công tác nhân viên";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -885,10 +893,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -939,13 +947,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colHO_TEN;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn colCHUC_VU;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colSO_LUONG_NS_DANG_CONG_TAC;
+        private DevExpress.XtraEditors.PanelControl panelControl4;
+        private DevExpress.XtraEditors.LabelControl m_lbl_thong_tin_phong_ban;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.SimpleButton m_cmd_lam_thoi_cong_tac;
         private DevExpress.XtraEditors.SimpleButton m_cmd_cham_dut_cong_tac;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chuyen_cong_tac;
         private DevExpress.XtraEditors.SimpleButton m_cmd_them_moi_cong_tac;
-        private DevExpress.XtraEditors.PanelControl panelControl4;
-        private DevExpress.XtraEditors.LabelControl m_lbl_thong_tin_phong_ban;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colSO_LUONG_NS_DANG_CONG_TAC;
     }
 }

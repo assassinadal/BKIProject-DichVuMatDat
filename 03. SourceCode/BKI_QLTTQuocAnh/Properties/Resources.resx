@@ -136,9 +136,6 @@
   <data name="Hopstarter-Soft-Scraps-User-Group" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hopstarter-Soft-Scraps-User-Group.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Workers Male Filled-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Workers Male Filled-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="file_search1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\file_search1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -189,9 +186,6 @@
   </data>
   <data name="Hopstarter-Soft-Scraps-User-Group1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hopstarter-Soft-Scraps-User-Group1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Workers Male Filled-50 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Workers Male Filled-50 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon cac thang da chot bang luong " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon cac thang da chot bang luong .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -454,9 +448,6 @@
   <data name="1441439378_06" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1441439378_06.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Work in Bed Filled-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Work in Bed Filled-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icon exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -537,8 +528,5 @@
   </data>
   <data name="sum1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sum1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Workers Male Filled-501" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Workers Male Filled-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

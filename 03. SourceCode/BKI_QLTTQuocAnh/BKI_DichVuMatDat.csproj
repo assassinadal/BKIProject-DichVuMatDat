@@ -632,7 +632,6 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1286,6 +1285,9 @@
     <None Include="Resources\file_edit1.png" />
     <None Include="Resources\file_delete1.png" />
     <None Include="Resources\file_search1.png" />
+    <Content Include="Resources\Work in Bed Filled-50.png" />
+    <Content Include="Resources\Workers Male Filled-50 %281%29.png" />
+    <Content Include="Resources\Workers Male Filled-50.png" />
     <Content Include="XML_MESSAGE\bao_cao.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

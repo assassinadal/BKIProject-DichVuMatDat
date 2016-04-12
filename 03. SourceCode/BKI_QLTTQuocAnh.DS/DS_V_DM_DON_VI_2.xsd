@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="V_DM_DON_VI_2" targetNamespace="http://tempuri.org/V_DM_DON_VI_2.xsd" xmlns:mstns="http://tempuri.org/V_DM_DON_VI_2.xsd" xmlns="http://tempuri.org/V_DM_DON_VI_2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DS_V_DM_DON_VI_2" targetNamespace="http://tempuri.org/DS_V_DM_DON_VI_2.xsd" xmlns:mstns="http://tempuri.org/DS_V_DM_DON_VI_2.xsd" xmlns="http://tempuri.org/DS_V_DM_DON_VI_2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -38,10 +38,10 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="V_DM_DON_VI_2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="V_DM_DON_VI_2" msprop:Generator_UserDSName="V_DM_DON_VI_2">
+  <xs:element name="DS_V_DM_DON_VI_2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_DM_DON_VI_2" msprop:Generator_UserDSName="DS_V_DM_DON_VI_2">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_DM_DON_VI_2" msprop:Generator_TableClassName="V_DM_DON_VI_2DataTable" msprop:Generator_TableVarName="tableV_DM_DON_VI_2" msprop:Generator_TablePropName="_V_DM_DON_VI_2" msprop:Generator_RowDeletingName="V_DM_DON_VI_2RowDeleting" msprop:Generator_RowChangingName="V_DM_DON_VI_2RowChanging" msprop:Generator_RowEvHandlerName="V_DM_DON_VI_2RowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_DON_VI_2RowDeleted" msprop:Generator_UserTableName="V_DM_DON_VI_2" msprop:Generator_RowChangedName="V_DM_DON_VI_2RowChanged" msprop:Generator_RowEvArgName="V_DM_DON_VI_2RowChangeEvent" msprop:Generator_RowClassName="V_DM_DON_VI_2Row">
+        <xs:element name="V_DM_DON_VI_2" msprop:Generator_TableClassName="V_DM_DON_VI_2DataTable" msprop:Generator_TableVarName="tableV_DM_DON_VI_2" msprop:Generator_TablePropName="V_DM_DON_VI_2" msprop:Generator_RowDeletingName="V_DM_DON_VI_2RowDeleting" msprop:Generator_RowChangingName="V_DM_DON_VI_2RowChanging" msprop:Generator_RowEvHandlerName="V_DM_DON_VI_2RowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_DON_VI_2RowDeleted" msprop:Generator_UserTableName="V_DM_DON_VI_2" msprop:Generator_RowChangedName="V_DM_DON_VI_2RowChanged" msprop:Generator_RowEvArgName="V_DM_DON_VI_2RowChangeEvent" msprop:Generator_RowClassName="V_DM_DON_VI_2Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />

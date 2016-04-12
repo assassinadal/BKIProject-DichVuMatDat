@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f309_quan_ly_cong_tac));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_tree_don_vi = new DevExpress.XtraTreeList.TreeList();
             this.colTEN_DON_VI = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.imageCollection = new DevExpress.Utils.ImageCollection();
+            this.colSO_LUONG_NS_DANG_CONG_TAC = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -83,7 +84,6 @@
             this.m_lbl_thong_tin_phong_ban = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_tree_don_vi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
@@ -96,21 +96,12 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Controls.Add(this.m_tree_don_vi);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(252, 592);
+            this.panelControl1.Size = new System.Drawing.Size(233, 592);
             this.panelControl1.TabIndex = 0;
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(2, 533);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(248, 13);
-            this.panelControl2.TabIndex = 2;
             // 
             // m_tree_don_vi
             // 
@@ -118,14 +109,15 @@
             this.m_tree_don_vi.Appearance.GroupButton.Options.UseImage = true;
             this.m_tree_don_vi.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.colTEN_DON_VI,
-            this.colID});
-            this.m_tree_don_vi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.colID,
+            this.colSO_LUONG_NS_DANG_CONG_TAC});
+            this.m_tree_don_vi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_tree_don_vi.Location = new System.Drawing.Point(2, 2);
             this.m_tree_don_vi.Name = "m_tree_don_vi";
+            this.m_tree_don_vi.OptionsBehavior.AutoNodeHeight = false;
             this.m_tree_don_vi.OptionsBehavior.Editable = false;
-            this.m_tree_don_vi.OptionsView.ShowColumns = false;
             this.m_tree_don_vi.OptionsView.ShowIndicator = false;
-            this.m_tree_don_vi.Size = new System.Drawing.Size(248, 531);
+            this.m_tree_don_vi.Size = new System.Drawing.Size(229, 588);
             this.m_tree_don_vi.StateImageList = this.imageCollection;
             this.m_tree_don_vi.TabIndex = 0;
             // 
@@ -136,12 +128,22 @@
             this.colTEN_DON_VI.Name = "colTEN_DON_VI";
             this.colTEN_DON_VI.Visible = true;
             this.colTEN_DON_VI.VisibleIndex = 0;
+            this.colTEN_DON_VI.Width = 196;
             // 
             // colID
             // 
             this.colID.Caption = "ID";
             this.colID.FieldName = "ID";
             this.colID.Name = "colID";
+            // 
+            // colSO_LUONG_NS_DANG_CONG_TAC
+            // 
+            this.colSO_LUONG_NS_DANG_CONG_TAC.Caption = "Số lượng NV";
+            this.colSO_LUONG_NS_DANG_CONG_TAC.FieldName = "SO_LUONG_NS_DANG_CONG_TAC";
+            this.colSO_LUONG_NS_DANG_CONG_TAC.Name = "colSO_LUONG_NS_DANG_CONG_TAC";
+            this.colSO_LUONG_NS_DANG_CONG_TAC.Visible = true;
+            this.colSO_LUONG_NS_DANG_CONG_TAC.VisibleIndex = 1;
+            this.colSO_LUONG_NS_DANG_CONG_TAC.Width = 31;
             // 
             // imageCollection
             // 
@@ -152,10 +154,10 @@
             // 
             this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc.Location = new System.Drawing.Point(252, 68);
+            this.m_grc.Location = new System.Drawing.Point(233, 68);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(968, 524);
+            this.m_grc.Size = new System.Drawing.Size(987, 524);
             this.m_grc.TabIndex = 1;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
@@ -803,9 +805,9 @@
             this.panelControl3.Controls.Add(this.m_cmd_chuyen_cong_tac);
             this.panelControl3.Controls.Add(this.m_cmd_them_moi_cong_tac);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(252, 0);
+            this.panelControl3.Location = new System.Drawing.Point(233, 0);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(968, 43);
+            this.panelControl3.Size = new System.Drawing.Size(987, 43);
             this.panelControl3.TabIndex = 3;
             // 
             // m_cmd_lam_thoi_cong_tac
@@ -849,9 +851,9 @@
             this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl4.Controls.Add(this.m_lbl_thong_tin_phong_ban);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl4.Location = new System.Drawing.Point(252, 43);
+            this.panelControl4.Location = new System.Drawing.Point(233, 43);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(968, 25);
+            this.panelControl4.Size = new System.Drawing.Size(987, 25);
             this.panelControl4.TabIndex = 4;
             // 
             // m_lbl_thong_tin_phong_ban
@@ -879,7 +881,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_tree_don_vi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
@@ -896,7 +897,6 @@
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraTreeList.TreeList m_tree_don_vi;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colTEN_DON_VI;
         private DevExpress.Utils.ImageCollection imageCollection;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colID;
@@ -946,5 +946,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_them_moi_cong_tac;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.LabelControl m_lbl_thong_tin_phong_ban;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colSO_LUONG_NS_DANG_CONG_TAC;
     }
 }

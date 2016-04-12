@@ -318,6 +318,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DM_DON_VI.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_DM_DON_VI_2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_DM_DON_VI_2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_DM_HE_SO_LUONG_NS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -543,11 +548,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DM_NHAN_VIEN_4.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="V_DM_DON_VI_2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>V_DM_DON_VI_2.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1127,6 +1127,17 @@
     <None Include="DS_V_DM_DON_VI.xss">
       <DependentUpon>DS_V_DM_DON_VI.xsd</DependentUpon>
     </None>
+    <None Include="DS_V_DM_DON_VI_2.xsc">
+      <DependentUpon>DS_V_DM_DON_VI_2.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_DON_VI_2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_DM_DON_VI_2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_DM_DON_VI_2.xss">
+      <DependentUpon>DS_V_DM_DON_VI_2.xsd</DependentUpon>
+    </None>
     <None Include="DS_V_DM_HE_SO_LUONG_NS.xsc">
       <DependentUpon>DS_V_DM_HE_SO_LUONG_NS.xsd</DependentUpon>
     </None>
@@ -1581,17 +1592,6 @@
     </None>
     <None Include="DS_V_DM_NHAN_VIEN_4.xss">
       <DependentUpon>DS_V_DM_NHAN_VIEN_4.xsd</DependentUpon>
-    </None>
-    <None Include="V_DM_DON_VI_2.xsc">
-      <DependentUpon>V_DM_DON_VI_2.xsd</DependentUpon>
-    </None>
-    <None Include="V_DM_DON_VI_2.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>V_DM_DON_VI_2.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="V_DM_DON_VI_2.xss">
-      <DependentUpon>V_DM_DON_VI_2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

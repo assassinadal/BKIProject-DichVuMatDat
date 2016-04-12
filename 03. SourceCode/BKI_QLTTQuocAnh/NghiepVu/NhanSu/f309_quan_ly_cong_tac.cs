@@ -36,8 +36,8 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         }
         private void load_data_2_tree()
         {
-            US_DM_DON_VI v_us_dv = new US_DM_DON_VI();
-            DS_DM_DON_VI v_ds_dv = new DS_DM_DON_VI();
+            US_V_DM_DON_VI_2 v_us_dv = new US_V_DM_DON_VI_2();
+            DS_V_DM_DON_VI_2 v_ds_dv = new DS_V_DM_DON_VI_2();
             v_us_dv.FillDataset(v_ds_dv);
 
             m_tree_don_vi.ParentFieldName = DM_DON_VI.ID_DON_VI_CAP_TREN;
@@ -103,8 +103,10 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             try
             {
-                var v_dc_id_don_vi = Convert.ToDecimal(e.Node.GetValue("ID"));
+                var v_dc_id_don_vi = Convert.ToDecimal(e.Node.GetValue(V_DM_DON_VI_2.ID));
                 load_data_danh_sach_nhan_vien_theo_don_vi(v_dc_id_don_vi);
+                var v_str_ten_don_vi = e.Node.GetValue(V_DM_DON_VI_2.TEN_DON_VI).ToString();
+                m_lbl_thong_tin_phong_ban.Text = v_str_ten_don_vi;
             }
             catch(Exception v_e)
             {

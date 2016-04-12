@@ -836,6 +836,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGAY_CHINH_THUC_TIEP_NHAN = "NGAY_CHINH_THUC_TIEP_NHAN";
         public const string NGUOI_BAO_LANH = "NGUOI_BAO_LANH";
         public const string HO_TEN = "HO_TEN";
+        public const string ID_DON_VI = "ID_DON_VI";
         public const string TEN_DON_VI = "TEN_DON_VI";
         public const string CHUC_VU = "CHUC_VU";
         public const string GT = "GT";
@@ -921,10 +922,12 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGAY_CHINH_THUC_TIEP_NHAN = "NGAY_CHINH_THUC_TIEP_NHAN";
         public const string NGUOI_BAO_LANH = "NGUOI_BAO_LANH";
         public const string HO_TEN = "HO_TEN";
+        public const string ID_DON_VI = "ID_DON_VI";
         public const string TEN_DON_VI = "TEN_DON_VI";
         public const string CHUC_VU = "CHUC_VU";
         public const string GT = "GT";
     }
+
 
 
 

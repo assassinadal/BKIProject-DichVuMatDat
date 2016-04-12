@@ -1,6 +1,6 @@
 ﻿namespace BKI_DichVuMatDat.NghiepVu.NhanSu
 {
-    partial class f311_danh_sach_nhan_vien_theo_don_vi
+    partial class f309_quan_ly_cong_tac
     {
         /// <summary>
         /// Required designer variable.

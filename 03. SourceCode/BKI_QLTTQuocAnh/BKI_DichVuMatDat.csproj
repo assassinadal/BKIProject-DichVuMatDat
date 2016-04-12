@@ -632,6 +632,7 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -890,11 +891,23 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NghiepVu\Luong\TinhLuongQL.cs" />
+    <Compile Include="NghiepVu\NhanSu\f309_quan_ly_cong_tac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f309_quan_ly_cong_tac.Designer.cs">
+      <DependentUpon>f309_quan_ly_cong_tac.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\NhanSu\f311_danh_sach_nhan_vien_theo_don_vi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NghiepVu\NhanSu\f311_danh_sach_nhan_vien_theo_don_vi.Designer.cs">
       <DependentUpon>f311_danh_sach_nhan_vien_theo_don_vi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f310_cap_nhat_cong_tac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f310_cap_nhat_cong_tac.Designer.cs">
+      <DependentUpon>f310_cap_nhat_cong_tac.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\ThuNhapKhac\f302_option_detail_calculate.cs">
       <SubType>Form</SubType>
@@ -1122,6 +1135,11 @@
     </Compile>
     <Compile Include="COMMON\WinFormControls.cs" />
     <Compile Include="COMMON\CHRM_BaseMessages210.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Template.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1159,11 +1177,17 @@
     <EmbeddedResource Include="NghiepVu\f396_tinh_phep_tieu_chuan.resx">
       <DependentUpon>f396_tinh_phep_tieu_chuan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\NhanSu\f309_quan_ly_cong_tac.resx">
+      <DependentUpon>f309_quan_ly_cong_tac.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\NhanSu\f311_danh_sach_nhan_vien_theo_don_vi.resx">
       <DependentUpon>f311_danh_sach_nhan_vien_theo_don_vi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.resx">
       <DependentUpon>F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\NhanSu\f310_cap_nhat_cong_tac.resx">
+      <DependentUpon>f310_cap_nhat_cong_tac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\ThuNhapKhac\f355_tnk_chi_tiet_quy_thu_nhap_khac_detail.resx">
       <DependentUpon>f355_tnk_chi_tiet_quy_thu_nhap_khac_detail.cs</DependentUpon>
@@ -1670,6 +1694,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="f388_main.resx">
       <DependentUpon>f388_main.cs</DependentUpon>

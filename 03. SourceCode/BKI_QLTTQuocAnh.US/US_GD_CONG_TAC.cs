@@ -337,8 +337,24 @@ namespace BKI_DichVuMatDat.US
         }
         #endregion
 
+        public DataTable LayDanhSachNhanVienChuaCoCongTac()
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_NS_danh_sach_chua_co_cong_tac");
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+            v_cstore.fillDataSetByCommand(this, v_ds);
 
+            return v_ds.Tables[0];
+        }
+        public bool KiemTraNhanVienCoCongTacChinhThucChua(decimal ip_dc_id_nhan_vien)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_NS_cong_tac_chinh_thuc_nhan_vien_Check");
+            v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            SqlParameter v_para = v_cstore.addNVarcharOutputParam("@op_str_yn", "");
 
+            v_cstore.ExecuteCommand(this);
+            return v_para.Value.ToString() == "Y" ? true : false;
+        }
         public void FillDatasetBaoCaoTangGiamLaoDong(DataSet op_ds, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
         {
             CStoredProc v_cstore = new CStoredProc("pr_rpt_tang_giam_lao_dong");

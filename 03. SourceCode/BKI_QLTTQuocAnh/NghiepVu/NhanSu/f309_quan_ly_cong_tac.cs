@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 namespace BKI_DichVuMatDat.NghiepVu.NhanSu
 {
-    public partial class f311_danh_sach_nhan_vien_theo_don_vi : Form
+    public partial class f309_quan_ly_cong_tac : Form
     {
         #region Public Interfaces
-        public f311_danh_sach_nhan_vien_theo_don_vi()
+        public f309_quan_ly_cong_tac()
         {
             InitializeComponent();
             format_controls();
@@ -112,7 +112,5 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
         }
         #endregion
-
-        
     }
 }

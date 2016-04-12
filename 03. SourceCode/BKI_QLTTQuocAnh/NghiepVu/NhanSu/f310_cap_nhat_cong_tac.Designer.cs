@@ -1,6 +1,6 @@
 ﻿namespace BKI_DichVuMatDat.NghiepVu
 {
-    partial class f351_quan_ly_cong_tac_de
+    partial class f310_cap_nhat_cong_tac
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f351_quan_ly_cong_tac_de));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f310_cap_nhat_cong_tac));
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_exit = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.m_dat_ngay_ket_thuc = new System.Windows.Forms.DateTimePicker();
-            this.m_dat_ngay_bat_dau = new System.Windows.Forms.DateTimePicker();
             this.m_sle_chon_vi_tri = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -73,13 +71,14 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.m_dat_ngay_bat_dau = new DevExpress.XtraEditors.DateEdit();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.m_dat_ngay_ket_thuc = new DevExpress.XtraEditors.DateEdit();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -96,13 +95,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_bat_dau.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_bat_dau.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ket_thuc.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ket_thuc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -110,16 +112,16 @@
             this.panel1.Controls.Add(this.m_cmd_save);
             this.panel1.Controls.Add(this.m_cmd_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 264);
+            this.panel1.Location = new System.Drawing.Point(0, 282);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 36);
+            this.panel1.Size = new System.Drawing.Size(461, 36);
             this.panel1.TabIndex = 3;
             // 
             // m_cmd_save
             // 
             this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
-            this.m_cmd_save.Location = new System.Drawing.Point(240, 0);
+            this.m_cmd_save.Location = new System.Drawing.Point(229, 0);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(116, 36);
             this.m_cmd_save.TabIndex = 24;
@@ -129,7 +131,7 @@
             // 
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_exit.Image")));
-            this.m_cmd_exit.Location = new System.Drawing.Point(356, 0);
+            this.m_cmd_exit.Location = new System.Drawing.Point(345, 0);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(116, 36);
             this.m_cmd_exit.TabIndex = 23;
@@ -141,40 +143,20 @@
             this.layoutControl1.Controls.Add(this.m_dat_ngay_bat_dau);
             this.layoutControl1.Controls.Add(this.m_sle_chon_vi_tri);
             this.layoutControl1.Controls.Add(this.m_sle_chon_don_vi);
-            this.layoutControl1.Controls.Add(this.m_sle_chon_loai_cong_tac);
             this.layoutControl1.Controls.Add(this.m_sle_chon_quyet_dinh);
             this.layoutControl1.Controls.Add(this.m_sle_chon_nhan_vien);
             this.layoutControl1.Controls.Add(this.m_lbl_header);
+            this.layoutControl1.Controls.Add(this.m_sle_chon_loai_cong_tac);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(472, 264);
+            this.layoutControl1.Size = new System.Drawing.Size(461, 282);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // m_dat_ngay_ket_thuc
-            // 
-            this.m_dat_ngay_ket_thuc.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(123, 217);
-            this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
-            this.m_dat_ngay_ket_thuc.ShowCheckBox = true;
-            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(334, 20);
-            this.m_dat_ngay_ket_thuc.TabIndex = 8;
-            // 
-            // m_dat_ngay_bat_dau
-            // 
-            this.m_dat_ngay_bat_dau.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_bat_dau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_bat_dau.Location = new System.Drawing.Point(123, 187);
-            this.m_dat_ngay_bat_dau.Name = "m_dat_ngay_bat_dau";
-            this.m_dat_ngay_bat_dau.Size = new System.Drawing.Size(334, 20);
-            this.m_dat_ngay_bat_dau.TabIndex = 7;
-            // 
             // m_sle_chon_vi_tri
             // 
-            this.m_sle_chon_vi_tri.EditValue = "";
             this.m_sle_chon_vi_tri.Location = new System.Drawing.Point(123, 157);
             this.m_sle_chon_vi_tri.Name = "m_sle_chon_vi_tri";
             this.m_sle_chon_vi_tri.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -183,7 +165,7 @@
             this.m_sle_chon_vi_tri.Properties.NullText = "--Chọn vị trí--";
             this.m_sle_chon_vi_tri.Properties.ValueMember = "ID";
             this.m_sle_chon_vi_tri.Properties.View = this.gridView3;
-            this.m_sle_chon_vi_tri.Size = new System.Drawing.Size(334, 20);
+            this.m_sle_chon_vi_tri.Size = new System.Drawing.Size(323, 20);
             this.m_sle_chon_vi_tri.StyleController = this.layoutControl1;
             this.m_sle_chon_vi_tri.TabIndex = 5;
             // 
@@ -231,7 +213,6 @@
             // 
             // m_sle_chon_don_vi
             // 
-            this.m_sle_chon_don_vi.EditValue = "";
             this.m_sle_chon_don_vi.Location = new System.Drawing.Point(123, 67);
             this.m_sle_chon_don_vi.Name = "m_sle_chon_don_vi";
             this.m_sle_chon_don_vi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -240,7 +221,7 @@
             this.m_sle_chon_don_vi.Properties.NullText = "--Chọn đơn vị--";
             this.m_sle_chon_don_vi.Properties.ValueMember = "ID";
             this.m_sle_chon_don_vi.Properties.View = this.gridView2;
-            this.m_sle_chon_don_vi.Size = new System.Drawing.Size(266, 20);
+            this.m_sle_chon_don_vi.Size = new System.Drawing.Size(323, 20);
             this.m_sle_chon_don_vi.StyleController = this.layoutControl1;
             this.m_sle_chon_don_vi.TabIndex = 5;
             // 
@@ -279,7 +260,6 @@
             // 
             // m_sle_chon_loai_cong_tac
             // 
-            this.m_sle_chon_loai_cong_tac.EditValue = "";
             this.m_sle_chon_loai_cong_tac.Location = new System.Drawing.Point(123, 37);
             this.m_sle_chon_loai_cong_tac.Name = "m_sle_chon_loai_cong_tac";
             this.m_sle_chon_loai_cong_tac.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -288,7 +268,7 @@
             this.m_sle_chon_loai_cong_tac.Properties.NullText = "--Chọn loại công tác--";
             this.m_sle_chon_loai_cong_tac.Properties.ValueMember = "ID";
             this.m_sle_chon_loai_cong_tac.Properties.View = this.gridView4;
-            this.m_sle_chon_loai_cong_tac.Size = new System.Drawing.Size(266, 20);
+            this.m_sle_chon_loai_cong_tac.Size = new System.Drawing.Size(323, 20);
             this.m_sle_chon_loai_cong_tac.StyleController = this.layoutControl1;
             this.m_sle_chon_loai_cong_tac.TabIndex = 6;
             // 
@@ -336,7 +316,6 @@
             // 
             // m_sle_chon_quyet_dinh
             // 
-            this.m_sle_chon_quyet_dinh.EditValue = "";
             this.m_sle_chon_quyet_dinh.Location = new System.Drawing.Point(123, 127);
             this.m_sle_chon_quyet_dinh.Name = "m_sle_chon_quyet_dinh";
             this.m_sle_chon_quyet_dinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -345,7 +324,7 @@
             this.m_sle_chon_quyet_dinh.Properties.NullText = "--Chọn quyết định--";
             this.m_sle_chon_quyet_dinh.Properties.ValueMember = "ID";
             this.m_sle_chon_quyet_dinh.Properties.View = this.gridView1;
-            this.m_sle_chon_quyet_dinh.Size = new System.Drawing.Size(334, 20);
+            this.m_sle_chon_quyet_dinh.Size = new System.Drawing.Size(323, 20);
             this.m_sle_chon_quyet_dinh.StyleController = this.layoutControl1;
             this.m_sle_chon_quyet_dinh.TabIndex = 5;
             // 
@@ -429,7 +408,6 @@
             // 
             // m_sle_chon_nhan_vien
             // 
-            this.m_sle_chon_nhan_vien.EditValue = "";
             this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(123, 97);
             this.m_sle_chon_nhan_vien.Name = "m_sle_chon_nhan_vien";
             this.m_sle_chon_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -438,7 +416,7 @@
             this.m_sle_chon_nhan_vien.Properties.NullText = "--Chọn nhân viên--";
             this.m_sle_chon_nhan_vien.Properties.ValueMember = "ID";
             this.m_sle_chon_nhan_vien.Properties.View = this.searchLookUpEdit1View;
-            this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(266, 20);
+            this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(323, 20);
             this.m_sle_chon_nhan_vien.StyleController = this.layoutControl1;
             this.m_sle_chon_nhan_vien.TabIndex = 5;
             // 
@@ -512,16 +490,15 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.emptySpaceItem2,
             this.layoutControlItem3,
-            this.layoutControlItem7,
             this.layoutControlItem6,
-            this.layoutControlItem8,
             this.layoutControlItem5,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem9,
+            this.layoutControlItem10});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(472, 264);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(461, 282);
             this.layoutControlGroup1.Text = "layoutControlGroup1";
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -531,7 +508,7 @@
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(452, 22);
+            this.layoutControlItem1.Size = new System.Drawing.Size(441, 22);
             this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextToControlDistance = 0;
@@ -544,19 +521,9 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 82);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem2.Size = new System.Drawing.Size(384, 30);
+            this.layoutControlItem2.Size = new System.Drawing.Size(441, 30);
             this.layoutControlItem2.Text = "Chọn nhân viên (*)";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(105, 13);
-            // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(384, 22);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(68, 90);
-            this.emptySpaceItem2.Text = "emptySpaceItem2";
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
             // 
@@ -565,43 +532,10 @@
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 112);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem3.Size = new System.Drawing.Size(452, 30);
+            this.layoutControlItem3.Size = new System.Drawing.Size(441, 30);
             this.layoutControlItem3.Text = "Chọn quyết định";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(105, 13);
             this.layoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.m_sle_chon_don_vi;
-            this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 52);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem5.Size = new System.Drawing.Size(384, 30);
-            this.layoutControlItem5.Text = "Chọn đơn vị (*)";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(105, 13);
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.m_dat_ngay_bat_dau;
-            this.layoutControlItem7.CustomizationFormText = "Ngày bắt đầu (*)";
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 172);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem7.Size = new System.Drawing.Size(452, 30);
-            this.layoutControlItem7.Text = "Ngày bắt đầu (*)";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(105, 13);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.m_sle_chon_loai_cong_tac;
-            this.layoutControlItem4.CustomizationFormText = "Chọn loại công tác";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 22);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem4.Size = new System.Drawing.Size(384, 30);
-            this.layoutControlItem4.Text = "Chọn loại công tác (*)";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(105, 13);
             // 
             // layoutControlItem6
             // 
@@ -610,29 +544,88 @@
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 142);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem6.Size = new System.Drawing.Size(452, 30);
+            this.layoutControlItem6.Size = new System.Drawing.Size(441, 30);
             this.layoutControlItem6.Text = "Chọn vị trí (*)";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(105, 13);
             // 
-            // layoutControlItem8
+            // layoutControlItem5
             // 
-            this.layoutControlItem8.Control = this.m_dat_ngay_ket_thuc;
-            this.layoutControlItem8.CustomizationFormText = "Ngày kết thúc";
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 202);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem8.Size = new System.Drawing.Size(452, 42);
-            this.layoutControlItem8.Text = "Ngày kết thúc";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(105, 13);
+            this.layoutControlItem5.Control = this.m_sle_chon_don_vi;
+            this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 52);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.layoutControlItem5.Size = new System.Drawing.Size(441, 30);
+            this.layoutControlItem5.Text = "Chọn đơn vị (*)";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(105, 13);
             // 
-            // f351_quan_ly_cong_tac_de
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.m_sle_chon_loai_cong_tac;
+            this.layoutControlItem4.CustomizationFormText = "Chọn loại công tác";
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 22);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.layoutControlItem4.Size = new System.Drawing.Size(441, 30);
+            this.layoutControlItem4.Text = "Chọn loại công tác (*)";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(105, 13);
+            // 
+            // m_dat_ngay_bat_dau
+            // 
+            this.m_dat_ngay_bat_dau.EditValue = null;
+            this.m_dat_ngay_bat_dau.Location = new System.Drawing.Point(123, 187);
+            this.m_dat_ngay_bat_dau.Name = "m_dat_ngay_bat_dau";
+            this.m_dat_ngay_bat_dau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_ngay_bat_dau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_ngay_bat_dau.Size = new System.Drawing.Size(323, 20);
+            this.m_dat_ngay_bat_dau.StyleController = this.layoutControl1;
+            this.m_dat_ngay_bat_dau.TabIndex = 9;
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.m_dat_ngay_bat_dau;
+            this.layoutControlItem9.CustomizationFormText = "layoutControlItem9";
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 172);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.layoutControlItem9.Size = new System.Drawing.Size(441, 30);
+            this.layoutControlItem9.Text = "Ngày bắt đầu (*)";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(105, 13);
+            // 
+            // m_dat_ngay_ket_thuc
+            // 
+            this.m_dat_ngay_ket_thuc.EditValue = null;
+            this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(123, 217);
+            this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
+            this.m_dat_ngay_ket_thuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_ngay_ket_thuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(323, 20);
+            this.m_dat_ngay_ket_thuc.StyleController = this.layoutControl1;
+            this.m_dat_ngay_ket_thuc.TabIndex = 10;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.m_dat_ngay_ket_thuc;
+            this.layoutControlItem10.CustomizationFormText = "Ngày kết thúc";
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 202);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.layoutControlItem10.Size = new System.Drawing.Size(441, 60);
+            this.layoutControlItem10.Text = "Ngày kết thúc";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(105, 13);
+            // 
+            // f310_cap_nhat_cong_tac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 300);
+            this.ClientSize = new System.Drawing.Size(461, 318);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.panel1);
-            this.Name = "f351_quan_ly_cong_tac_de";
+            this.Name = "f310_cap_nhat_cong_tac";
             this.Text = "F351 - Quản lý công tác";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -650,13 +643,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_bat_dau.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_bat_dau.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ket_thuc.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_ket_thuc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -678,7 +674,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn TEN;
         private DevExpress.XtraGrid.Columns.GridColumn colGT;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chon_quyet_dinh;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
@@ -710,9 +705,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn33;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private System.Windows.Forms.DateTimePicker m_dat_ngay_bat_dau;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraEditors.DateEdit m_dat_ngay_bat_dau;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraEditors.DateEdit m_dat_ngay_ket_thuc;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
     }
 }

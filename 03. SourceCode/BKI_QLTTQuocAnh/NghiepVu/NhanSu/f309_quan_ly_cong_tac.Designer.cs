@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f311_danh_sach_nhan_vien_theo_don_vi));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f309_quan_ly_cong_tac));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_tree_don_vi = new DevExpress.XtraTreeList.TreeList();
             this.colTEN_DON_VI = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollection = new DevExpress.Utils.ImageCollection();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -153,10 +152,10 @@
             // 
             this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc.Location = new System.Drawing.Point(252, 85);
+            this.m_grc.Location = new System.Drawing.Point(252, 68);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(968, 507);
+            this.m_grc.Size = new System.Drawing.Size(968, 524);
             this.m_grc.TabIndex = 1;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
@@ -806,7 +805,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(252, 0);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(968, 60);
+            this.panelControl3.Size = new System.Drawing.Size(968, 43);
             this.panelControl3.TabIndex = 3;
             // 
             // m_cmd_lam_thoi_cong_tac
@@ -814,7 +813,7 @@
             this.m_cmd_lam_thoi_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_lam_thoi_cong_tac.Location = new System.Drawing.Point(227, 2);
             this.m_cmd_lam_thoi_cong_tac.Name = "m_cmd_lam_thoi_cong_tac";
-            this.m_cmd_lam_thoi_cong_tac.Size = new System.Drawing.Size(75, 56);
+            this.m_cmd_lam_thoi_cong_tac.Size = new System.Drawing.Size(75, 39);
             this.m_cmd_lam_thoi_cong_tac.TabIndex = 0;
             this.m_cmd_lam_thoi_cong_tac.Text = "Lâm thời CT";
             // 
@@ -823,7 +822,7 @@
             this.m_cmd_cham_dut_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_cham_dut_cong_tac.Location = new System.Drawing.Point(152, 2);
             this.m_cmd_cham_dut_cong_tac.Name = "m_cmd_cham_dut_cong_tac";
-            this.m_cmd_cham_dut_cong_tac.Size = new System.Drawing.Size(75, 56);
+            this.m_cmd_cham_dut_cong_tac.Size = new System.Drawing.Size(75, 39);
             this.m_cmd_cham_dut_cong_tac.TabIndex = 0;
             this.m_cmd_cham_dut_cong_tac.Text = "Chấm dứt CT";
             // 
@@ -832,7 +831,7 @@
             this.m_cmd_chuyen_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_chuyen_cong_tac.Location = new System.Drawing.Point(77, 2);
             this.m_cmd_chuyen_cong_tac.Name = "m_cmd_chuyen_cong_tac";
-            this.m_cmd_chuyen_cong_tac.Size = new System.Drawing.Size(75, 56);
+            this.m_cmd_chuyen_cong_tac.Size = new System.Drawing.Size(75, 39);
             this.m_cmd_chuyen_cong_tac.TabIndex = 0;
             this.m_cmd_chuyen_cong_tac.Text = "Chuyển CT";
             // 
@@ -841,7 +840,7 @@
             this.m_cmd_them_moi_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_them_moi_cong_tac.Location = new System.Drawing.Point(2, 2);
             this.m_cmd_them_moi_cong_tac.Name = "m_cmd_them_moi_cong_tac";
-            this.m_cmd_them_moi_cong_tac.Size = new System.Drawing.Size(75, 56);
+            this.m_cmd_them_moi_cong_tac.Size = new System.Drawing.Size(75, 39);
             this.m_cmd_them_moi_cong_tac.TabIndex = 0;
             this.m_cmd_them_moi_cong_tac.Text = "Thêm mới CT";
             // 
@@ -850,7 +849,7 @@
             this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl4.Controls.Add(this.m_lbl_thong_tin_phong_ban);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl4.Location = new System.Drawing.Point(252, 60);
+            this.panelControl4.Location = new System.Drawing.Point(252, 43);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(968, 25);
             this.panelControl4.TabIndex = 4;
@@ -866,7 +865,7 @@
             this.m_lbl_thong_tin_phong_ban.TabIndex = 0;
             this.m_lbl_thong_tin_phong_ban.Text = "<Thong Tin Phong Ban>";
             // 
-            // f311_danh_sach_nhan_vien_theo_don_vi
+            // f309_quan_ly_cong_tac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -875,7 +874,7 @@
             this.Controls.Add(this.panelControl4);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl1);
-            this.Name = "f311_danh_sach_nhan_vien_theo_don_vi";
+            this.Name = "f309_quan_ly_cong_tac";
             this.Text = "F311 - Danh sách nhân viên theo đơn vị";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

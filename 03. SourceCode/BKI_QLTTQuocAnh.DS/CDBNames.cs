@@ -1236,7 +1236,20 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     }
 
     #endregion
-
+    public class V_DM_DON_VI_2
+    {
+        public const string ID = "ID";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string MA_DON_VI = "MA_DON_VI";
+        public const string ID_LOAI_DON_VI = "ID_LOAI_DON_VI";
+        public const string ID_DON_VI_CAP_TREN = "ID_DON_VI_CAP_TREN";
+        public const string ID_DV_0 = "ID_DV_0";
+        public const string ID_DV_1 = "ID_DV_1";
+        public const string ID_DV_2 = "ID_DV_2";
+        public const string ID_DV_3 = "ID_DV_3";
+        public const string ID_DV_4 = "ID_DV_4";
+        public const string SO_LUONG_NS_DANG_CONG_TAC = "SO_LUONG_NS_DANG_CONG_TAC";
+    }
     public class BT_DM_DON_VI_DE_LAM_BAO_CAO_DAC_TRUNG
     {
         public const string ID = "ID";

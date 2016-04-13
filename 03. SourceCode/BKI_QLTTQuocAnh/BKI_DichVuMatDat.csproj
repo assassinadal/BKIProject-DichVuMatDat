@@ -1192,6 +1192,9 @@
     <EmbeddedResource Include="NghiepVu\NhanSu\f309_quan_ly_cong_tac.resx">
       <DependentUpon>f309_quan_ly_cong_tac.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\NhanSu\f310_cap_nhat_cong_tac.resx">
+      <DependentUpon>f310_cap_nhat_cong_tac.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\NhanSu\f311_danh_sach_nhan_vien_theo_don_vi.resx">
       <DependentUpon>f311_danh_sach_nhan_vien_theo_don_vi.cs</DependentUpon>
     </EmbeddedResource>

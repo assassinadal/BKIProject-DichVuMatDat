@@ -414,11 +414,13 @@ namespace BKI_DichVuMatDat.NghiepVu
         private bool kiem_tra_nhan_vien_co_cong_tac_chinh_thuc_chua()
         {
             US_GD_CONG_TAC v_us = new US_GD_CONG_TAC();
+            var v_dc_id_nhan_vien = Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
+
             return v_us.KiemTraNhanVienCoCongTacChinhThucChua(Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
         }
         private bool check_logic_data()
         {
-            if((m_e_loai_cap_nhat == e_loai_cap_nhat.THEM_MOI_CONG_TAC) && kiem_tra_nhan_vien_co_cong_tac_chinh_thuc_chua())
+            if((m_e_loai_cap_nhat == e_loai_cap_nhat.THEM_MOI_CONG_TAC) && kiem_tra_nhan_vien_co_cong_tac_chinh_thuc_chua() == true)
             {
                 XtraMessageBox.Show("Nhân viên đã có công tác chính thức rồi!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -434,11 +436,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private void setup_read_only(params SearchLookUpEdit[] ref_controls)
         {
-            m_sle_chon_don_vi.Reset();
-            m_sle_chon_loai_cong_tac.Reset();
-            m_sle_chon_nhan_vien.Reset();
-            m_sle_chon_quyet_dinh.Reset();
-            m_sle_chon_vi_tri.Reset();
+            m_sle_chon_don_vi.ReadOnly = false;
+            m_sle_chon_loai_cong_tac.ReadOnly = false;
+            m_sle_chon_nhan_vien.ReadOnly = false;
+            m_sle_chon_quyet_dinh.ReadOnly = false;
+            m_sle_chon_vi_tri.ReadOnly = false;
 
             foreach(var item in ref_controls)
             {

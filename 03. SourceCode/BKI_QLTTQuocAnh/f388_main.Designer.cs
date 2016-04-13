@@ -134,6 +134,7 @@
             this.m_cmd_bc_hs = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_bao_cao_trang_thai_lao_dong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_qtt_2016 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_lap_hd_v2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -189,7 +190,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.m_cmd_lap_hd_v2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -1282,6 +1282,13 @@
             this.m_cmd_qtt_2016.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // m_cmd_lap_hd_v2
+            // 
+            this.m_cmd_lap_hd_v2.Caption = "Lập hợp đồng_v2";
+            this.m_cmd_lap_hd_v2.Id = 126;
+            this.m_cmd_lap_hd_v2.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_lap_hop_dong_;
+            this.m_cmd_lap_hd_v2.Name = "m_cmd_lap_hd_v2";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1846,13 +1853,6 @@
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // m_cmd_lap_hd_v2
-            // 
-            this.m_cmd_lap_hd_v2.Caption = "Lập hợp đồng_v2";
-            this.m_cmd_lap_hd_v2.Id = 126;
-            this.m_cmd_lap_hd_v2.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_lap_hop_dong_;
-            this.m_cmd_lap_hd_v2.Name = "m_cmd_lap_hd_v2";
             // 
             // f388_main
             // 

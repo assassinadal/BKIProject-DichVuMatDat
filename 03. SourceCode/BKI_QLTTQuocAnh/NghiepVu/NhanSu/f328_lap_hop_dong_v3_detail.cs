@@ -65,6 +65,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_sle_chuc_danh_lns.Properties.DataSource = v_ds.Tables[0];
             m_sle_chuc_danh_lns.Properties.DisplayMember = CM_DM_TU_DIEN.TEN;
             m_sle_chuc_danh_lns.Properties.ValueMember = CM_DM_TU_DIEN.ID;
+            m_sle_chuc_danh_lns.EditValue = null;
             m_sle_chuc_danh_lns.Properties.NullText = "---Chọn mã lương năng suất---";
         }
 
@@ -76,6 +77,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_sle_muc_lns.Properties.DataSource = v_ds.Tables[0];
             m_sle_muc_lns.Properties.DisplayMember = CM_DM_TU_DIEN.TEN;
             m_sle_muc_lns.Properties.ValueMember = CM_DM_TU_DIEN.ID;
+            m_sle_chuc_danh_lns.EditValue = null;
             m_sle_muc_lns.Properties.NullText = "---Chọn mức lương năng suất---";
         }
 
@@ -87,6 +89,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_sle_chuc_danh_lcd.Properties.DataSource = v_ds.Tables[0];
             m_sle_chuc_danh_lcd.Properties.DisplayMember = CM_DM_TU_DIEN.TEN;
             m_sle_chuc_danh_lcd.Properties.ValueMember = CM_DM_TU_DIEN.ID;
+            m_sle_chuc_danh_lns.EditValue = null;
             m_sle_chuc_danh_lcd.Properties.NullText = "---Chọn mã lương chế độ---";
         }
 
@@ -98,7 +101,83 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_sle_muc_lcd.Properties.DataSource = v_ds.Tables[0];
             m_sle_muc_lcd.Properties.DisplayMember = CM_DM_TU_DIEN.TEN;
             m_sle_muc_lcd.Properties.ValueMember = CM_DM_TU_DIEN.ID;
+            m_sle_chuc_danh_lns.EditValue = null;
             m_sle_muc_lcd.Properties.NullText = "---Chọn mức lương chế độ---";
+        }
+
+        private void load_data_to_lbl_he_so_lns()
+        {
+            US_DM_HE_SO_LUONG_NS v_us = new US_DM_HE_SO_LUONG_NS();
+            DS_DM_HE_SO_LUONG_NS v_ds = new DS_DM_HE_SO_LUONG_NS();
+            v_us.FillDatasetTheoIDMaMuc(v_ds, m_sle_chuc_danh_lns.EditValue.ToString(), m_sle_muc_lns.EditValue.ToString());
+
+        }
+
+        private bool check_du_lieu_hop_le()
+        {
+            if (check_thong_tin_co_ban())
+                return true;
+            else if (check_thong_tin_luong())
+                return true;
+            return false;
+        }
+
+        private bool check_thong_tin_co_ban()
+        {
+            if (m_sle_chon_nhan_vien.EditValue == null)
+            {
+                string v_str_error = "Bạn chưa chọn nhân viên!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (m_sle_loai_hop_dong.EditValue == null)
+            {
+                string v_str_error = "Bạn chưa chọn loại hợp đồng!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (m_txt_ma_hd.Text.Trim() == "")
+            {
+                string v_str_error = "Bạn chưa nhập mã hợp đồng!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if(m_dat_ngay_bat_dau.Value >= m_dat_ngay_ket_thuc.Value) 
+            {
+                string v_str_error = "Ngày bắt đầu đang lớn hơn ngày kết thúc";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+        private bool check_thong_tin_luong()
+        {
+            if (m_sle_chuc_danh_lns.EditValue == null)
+            {
+                string v_str_error = "Bạn chưa chọn mã lương năng suất!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;               
+            }
+            else if(m_sle_muc_lns.EditValue == null)
+            {
+                string v_str_error = "Bạn chưa chọn mức lương năng suất!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (m_sle_chuc_danh_lcd.EditValue == null)
+            {
+                string v_str_error = "Bạn chưa chọn mã lương chế độ!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (m_sle_muc_lcd.EditValue == null)
+            {
+                string v_str_error = "Bạn chưa chọn mức lương chế độ!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
         #endregion
 
@@ -108,11 +187,53 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             this.Load += f328_lap_hop_dong_v3_detail_Load;
             m_cmd_save.Click += m_cmd_save_Click;
+            m_sle_chuc_danh_lns.EditValueChanged += m_sle_chuc_danh_lns_EditValueChanged;
+            m_sle_muc_lns.EditValueChanged += m_sle_muc_lns_EditValueChanged;
+            m_sle_chuc_danh_lcd.EditValueChanged += m_sle_chuc_danh_lcd_EditValueChanged;
+            m_sle_muc_lcd.EditValueChanged += m_sle_muc_lcd_EditValueChanged;
+        }
+
+        void m_sle_muc_lcd_EditValueChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        void m_sle_chuc_danh_lcd_EditValueChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        void m_sle_muc_lns_EditValueChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        void m_sle_chuc_danh_lns_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_sle_muc_lns.EditValue != null)
+                    load_data_to_lbl_he_so_lns();               
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_save_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (check_du_lieu_hop_le())
+                {
+                    
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void f328_lap_hop_dong_v3_detail_Load(object sender, EventArgs e)

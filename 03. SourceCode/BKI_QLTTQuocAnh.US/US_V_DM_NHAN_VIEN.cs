@@ -771,28 +771,6 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["HO_TEN"] = System.Convert.DBNull;
         }
 
-        public decimal dcID_DON_VI
-        {
-            get
-            {
-                return CNull.RowNVLDecimal(pm_objDR, "ID_DON_VI", IPConstants.c_DefaultDecimal);
-            }
-            set
-            {
-                pm_objDR["ID_DON_VI"] = value;
-            }
-        }
-
-        public bool IsID_DON_VINull()
-        {
-            return pm_objDR.IsNull("ID_DON_VI");
-        }
-
-        public void SetID_DON_VINull()
-        {
-            pm_objDR["ID_DON_VI"] = System.Convert.DBNull;
-        }
-
         public string strTEN_DON_VI
         {
             get

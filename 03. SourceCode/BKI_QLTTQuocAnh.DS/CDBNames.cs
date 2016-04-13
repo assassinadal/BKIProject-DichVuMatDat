@@ -1269,7 +1269,29 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGAY_SINH = "NGAY_SINH";
         public const string HON_NHAN = "HON_NHAN";
         public const string SO_CMT = "SO_CMT";
+        public const string NGAY_CAP = "NGAY_CAP";
+        public const string NOI_CAP = "NOI_CAP";
+        public const string QUOC_TICH = "QUOC_TICH";
+        public const string DAN_TOC = "DAN_TOC";
+        public const string TON_GIAO = "TON_GIAO";
+        public const string NOI_SINH = "NOI_SINH";
+        public const string QUE_QUAN = "QUE_QUAN";
+        public const string DIA_CHI_THUONG_TRU = "DIA_CHI_THUONG_TRU";
+        public const string DIA_CHI_TAM_TRU = "DIA_CHI_TAM_TRU";
+        public const string DIA_CHI_LIEN_LAC = "DIA_CHI_LIEN_LAC";
+        public const string MA_SO_THUE_CA_NHAN = "MA_SO_THUE_CA_NHAN";
+        public const string CHUYEN_MON = "CHUYEN_MON";
+        public const string TRINH_DO_VAN_HOA = "TRINH_DO_VAN_HOA";
+        public const string NAM_TOT_NGHIEP = "NAM_TOT_NGHIEP";
+        public const string TOT_NGHIEP_TAI = "TOT_NGHIEP_TAI";
+        public const string NGAY_VAO_HANG_KHONG = "NGAY_VAO_HANG_KHONG";
+        public const string NGAY_TIEP_NHAN_VAO_TCT = "NGAY_TIEP_NHAN_VAO_TCT";
+        public const string NGAY_CHINH_THUC_TIEP_NHAN = "NGAY_CHINH_THUC_TIEP_NHAN";
+        public const string NGUOI_BAO_LANH = "NGUOI_BAO_LANH";
+        public const string MA_TRA_CUU = "MA_TRA_CUU";
     }
+
+
 
     public class V_DM_DON_VI_2
     {

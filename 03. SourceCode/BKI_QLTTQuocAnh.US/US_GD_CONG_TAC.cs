@@ -337,6 +337,14 @@ namespace BKI_DichVuMatDat.US
         }
         #endregion
 
+        public void CapNhatHetHieuLucCongTacChinhThucHoacLamThoi(decimal ip_dc_id_nhan_vien, DateTime ip_dat_ngay_ket_thuc)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_NS_hieu_luc_cong_tac_chinh_thuc_lam_thoi_cap_nhat");
+            v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            v_cstore.addDatetimeInputParam("@ip_dat_ngay_ket_thuc", ip_dat_ngay_ket_thuc);
+            v_cstore.ExecuteCommand(this);
+        }
+
         public DataTable LayDanhSachNhanVienChuaCoCongTac()
         {
             CStoredProc v_cstore = new CStoredProc("pr_NS_danh_sach_chua_co_cong_tac");

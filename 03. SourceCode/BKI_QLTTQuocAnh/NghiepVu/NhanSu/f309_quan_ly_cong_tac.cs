@@ -1,6 +1,8 @@
 ﻿using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.DS.CDBNames;
 using BKI_DichVuMatDat.US;
+using DevExpress.XtraEditors;
+using DevExpress.XtraTreeList.Nodes;
 using IP.Core.IPCommon;
 using System;
 using System.Collections.Generic;
@@ -51,7 +53,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             US_V_GD_CONG_TAC_2 v_us = new US_V_GD_CONG_TAC_2();
             DS_V_GD_CONG_TAC_2 v_ds = new DS_V_GD_CONG_TAC_2();
             v_ds.EnforceConstraints = false;
-            v_us.FillDataset(v_ds);
+            v_us.FillDataset(v_ds, " where id_don_vi = " + ip_dc_id_don_vi);
 
             m_grc.DataSource = v_ds.Tables[0];
         }
@@ -63,9 +65,46 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         }
         private decimal get_id_nhan_vien()
         {
-            return Convert.ToDecimal(m_grv.GetRowCellValue(m_grv.FocusedRowHandle, "ID"));
+            return Convert.ToDecimal(m_grv.GetRowCellValue(m_grv.FocusedRowHandle, V_GD_CONG_TAC_2.ID_NHAN_VIEN));
+        }
+        private void refresh_data()
+        {
+            TreeListNode v_node_focused = m_tree_don_vi.FocusedNode;
+            m_tree_don_vi.ClearFocusedColumn();
+            load_data_2_tree();
+            m_tree_don_vi.FocusedNode = v_node_focused;
         }
 
+        //Check
+        private bool is_nhan_vien_seleted()
+        {
+            if(m_grv.FocusedRowHandle < 0)
+            {
+                XtraMessageBox.Show("Bạn chưa chọn nhân viên!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+
+        //Action
+        private void them_moi_cong_tac()
+        {
+            f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
+            v_frm.display_for_them_cong_tac_moi(get_id_phong_ban());
+            refresh_data();
+        }
+        private void cap_nhat_lam_thoi_cong_tac()
+        {
+            if(!is_nhan_vien_seleted())
+            {
+                return;
+            }
+            f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
+            v_frm.display_for_cap_nhat_lam_thoi_cong_tac(get_id_nhan_vien(), get_id_phong_ban());
+
+            refresh_data();
+        }
         #endregion
 
         #region Event Handle
@@ -74,15 +113,65 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             Load += f311_danh_sach_nhan_vien_theo_don_vi_Load;
             m_tree_don_vi.AfterFocusNode += m_tree_don_vi_AfterFocusNode;
             m_cmd_them_moi_cong_tac.Click += m_cmd_them_moi_cong_tac_Click;
+            m_cmd_refresh.Click += m_cmd_refresh_Click;
+            m_cmd_kiem_nhiem_cong_tac.Click += m_cmd_kiem_nhiem_cong_tac_Click;
+            m_cmd_lam_thoi_cong_tac.Click += m_cmd_lam_thoi_cong_tac_Click;
+            m_cmd_cham_dut_cong_tac.Click += m_cmd_cham_dut_cong_tac_Click;
+        }
+
+        void m_cmd_cham_dut_cong_tac_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_lam_thoi_cong_tac_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cap_nhat_lam_thoi_cong_tac();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_kiem_nhiem_cong_tac_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_refresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                refresh_data();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_them_moi_cong_tac_Click(object sender, EventArgs e)
         {
             try
             {
-                f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
-                v_frm.display_for_them_cong_tac_moi(get_id_phong_ban());
-                load_data_danh_sach_nhan_vien_theo_don_vi(get_id_phong_ban());
+                them_moi_cong_tac();
             }
             catch(Exception v_e)
             {

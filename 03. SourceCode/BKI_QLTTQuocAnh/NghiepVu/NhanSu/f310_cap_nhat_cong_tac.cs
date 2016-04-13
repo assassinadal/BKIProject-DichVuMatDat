@@ -34,18 +34,29 @@ namespace BKI_DichVuMatDat.NghiepVu
             setup_form_for_them_moi_qua_trinh_cong_tac(ip_dc_phong_ban);
             ShowDialog();
         }
-
+        public void display_for_cap_nhat_lam_thoi_cong_tac(decimal ip_dc_id_nhan_vien, decimal ip_dc_id_phong_ban_chinh_thuc)
+        {
+            setup_form_for_cap_nhat_lam_thoi_cong_tac(ip_dc_id_nhan_vien, ip_dc_id_phong_ban_chinh_thuc);
+            ShowDialog();
+        }
         #endregion
 
         #region Members
-        DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
-        decimal m_id_gd_cong_tac_moi_tao = 0;
-        decimal m_id_gd_ct = 0;
-        bool m_loai_ctac_cthuc = false;
+        e_loai_cap_nhat m_e_loai_cap_nhat = e_loai_cap_nhat.NULL;
         #endregion
 
         #region Data structure
-
+        enum e_loai_cap_nhat
+        {
+            THEM_MOI_CONG_TAC,//Nghiep vu them mot cong tac moi
+            LAM_THOI_CONG_TAC,//Nghiep vu lam thoi cong tac
+            CHUYEN_CONG_TAC, // Nghiep vu chuyen cong tac
+            CHAM_DUT_CONG_TAC,//Nghiep vu cham dut cong tac
+            KIEM_NHIEM_CONG_TAC,//Nghiep vu kiem nhiem cong tac
+            UPDATE, //Update khi co sai sot
+            DELETE, // Delete khi co sai sot
+            NULL //Chua assign loai cho cong tac
+        }
         #endregion
 
         #region Private Methods
@@ -60,7 +71,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private void set_init_form()
         {
-            //load_data_2_sle_chon_nv();
             load_data_2_sle_chon_quyet_dinh(load_danh_sach_quyet_dinh());
             load_data_2_sle_chon_don_vi(load_danh_sach_don_vi());
             load_data_2_sle_chon_vi_tri();
@@ -71,6 +81,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         //load data to all controls
         private void load_data_2_sle_nhan_vien(DataTable ip_source)
         {
+            m_sle_chon_nhan_vien.Properties.DataSource = null;
             m_sle_chon_nhan_vien.Properties.DataSource = ip_source;
 
             m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
@@ -81,13 +92,13 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_GD_CONG_TAC v_us_ct = new US_GD_CONG_TAC();
             return v_us_ct.LayDanhSachNhanVienChuaCoCongTac();
         }
-        private DataSet load_danh_sach_tat_ca_nhan_vien()
+        private DataTable load_danh_sach_nhan_vien_theo_phong_ban(decimal ip_dc_id_phong_ban)
         {
-            US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
-            DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
-            v_us.FillDataset(v_ds);
+            US_V_GD_CONG_TAC_2 v_us_ct = new US_V_GD_CONG_TAC_2();
+            DS_V_GD_CONG_TAC_2 v_ds_ct = new DS_V_GD_CONG_TAC_2();
+            v_us_ct.FillDataset(v_ds_ct, " where id_don_vi = " + ip_dc_id_phong_ban);
 
-            return v_ds;
+            return v_ds_ct.Tables[0];
         }
 
         private DataTable load_danh_sach_quyet_dinh()
@@ -190,13 +201,13 @@ namespace BKI_DichVuMatDat.NghiepVu
                 ip_us.SetNGAY_KET_THUCNull();
             }
 
-            if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+            if (m_e_loai_cap_nhat == e_loai_cap_nhat.THEM_MOI_CONG_TAC)
             {
                 //Ngay lap
                 ip_us.datNGAY_LAP = DateTime.Now.Date;
                 ip_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             }
-            else if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
+            else if (m_e_loai_cap_nhat == e_loai_cap_nhat.UPDATE)
             {
                 //Ngay sua
                 ip_us.datNGAY_SUA = DateTime.Now.Date;
@@ -214,18 +225,39 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_dat_ngay_bat_dau.EditValue = ip_us.datNGAY_BAT_DAU;
             m_dat_ngay_ket_thuc.EditValue = ip_us.datNGAY_KET_THUC;
         }
+        private void save_for_lam_thoi_cong_tac(US_GD_CONG_TAC ip_us_ct_lam_thoi)
+        {
+            try
+            {
+                ip_us_ct_lam_thoi.BeginTransaction();
+                ip_us_ct_lam_thoi.CapNhatHetHieuLucCongTacChinhThucHoacLamThoi(ip_us_ct_lam_thoi.dcID_NHAN_VIEN, ip_us_ct_lam_thoi.datNGAY_BAT_DAU.AddDays(-1));
+                ip_us_ct_lam_thoi.Insert();
+                ip_us_ct_lam_thoi.CommitTransaction();
+            }
+            catch(Exception)
+            {
+                if(ip_us_ct_lam_thoi.is_having_transaction())
+                {
+                    ip_us_ct_lam_thoi.Rollback();
+                }
+                throw;
+            }
+        }
         private void save_data()
         {
             US_GD_CONG_TAC v_us_gd_ct = new US_GD_CONG_TAC();
             form_2_us_gd_cong_tac(ref v_us_gd_ct);
             try
             {
-                switch (m_e_form_mode)
+                switch (m_e_loai_cap_nhat)
                 {
-                    case DataEntryFormMode.InsertDataState:
+                    case e_loai_cap_nhat.THEM_MOI_CONG_TAC:
                         v_us_gd_ct.Insert();
                         break;
-                    case DataEntryFormMode.UpdateDataState:
+                    case e_loai_cap_nhat.LAM_THOI_CONG_TAC:
+                        save_for_lam_thoi_cong_tac(v_us_gd_ct);
+                        break;
+                    case e_loai_cap_nhat.UPDATE:
                         v_us_gd_ct.Update();
                         break;
                     default:
@@ -289,6 +321,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             if(isNull(m_dat_ngay_bat_dau.EditValue))
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NGAY_BAT_DAU);
+                return false;
             }
             return true;
         }
@@ -299,7 +332,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private bool check_logic_data()
         {
-            if(kiem_tra_nhan_vien_co_cong_tac_chinh_thuc_chua())
+            if(m_e_loai_cap_nhat == e_loai_cap_nhat.THEM_MOI_CONG_TAC && kiem_tra_nhan_vien_co_cong_tac_chinh_thuc_chua())
             {
                 XtraMessageBox.Show("Nhân viên đã có công tác chính thức rồi!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -313,19 +346,40 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_lbl_header.Text = ip_str_caption;
         }
+        private void setup_read_only(params SearchLookUpEdit[] ref_controls)
+        {
+            //m_sle_chon_don_vi.Reset();
+            //m_sle_chon_loai_cong_tac.Reset();
+            //m_sle_chon_nhan_vien.Reset();
+            //m_sle_chon_quyet_dinh.Reset();
+            //m_sle_chon_vi_tri.Reset();
+
+            //foreach(var item in ref_controls)
+            //{
+            //    item.ReadOnly = true;
+            //}
+        }
         private void setup_form_for_them_moi_qua_trinh_cong_tac(decimal ip_dc_id_phong_ban)
         {
             setup_header_text("THÊM MỚI CÔNG TÁC CHO NHÂN VIÊN");
+            setup_read_only(m_sle_chon_don_vi, m_sle_chon_loai_cong_tac);
             m_sle_chon_don_vi.EditValue = ip_dc_id_phong_ban;
-            m_sle_chon_don_vi.ReadOnly = true;
             m_sle_chon_loai_cong_tac.EditValue = CONST_ID_LOAI_CONG_TAC.CHINH_THUC;
-            m_sle_chon_loai_cong_tac.ReadOnly = true;
             load_data_2_sle_nhan_vien(load_danh_sach_nhan_vien_chua_co_cong_tac());
-            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_e_loai_cap_nhat = e_loai_cap_nhat.THEM_MOI_CONG_TAC;
         }
         private void setup_form_for_chuyen_cong_tac(decimal ip_dc_id_nhan_vien, decimal ip_dc_id_phong_ban_cu)
         {
 
+        }
+        private void setup_form_for_cap_nhat_lam_thoi_cong_tac(decimal ip_dc_id_nhan_vien, decimal ip_dc_id_phong_ban_chinh_thuc)
+        {
+            m_e_loai_cap_nhat = e_loai_cap_nhat.LAM_THOI_CONG_TAC;
+            load_data_2_sle_nhan_vien(load_danh_sach_nhan_vien_theo_phong_ban(ip_dc_id_phong_ban_chinh_thuc));
+            setup_header_text("CẬP NHẬT LÂM THỜI CÔNG TÁC");
+            setup_read_only(m_sle_chon_loai_cong_tac, m_sle_chon_nhan_vien);
+            m_sle_chon_nhan_vien.EditValue = ip_dc_id_nhan_vien;
+            m_sle_chon_loai_cong_tac.EditValue = CONST_ID_LOAI_CONG_TAC.LAM_THOI;
         }
         #endregion
 

@@ -43,6 +43,8 @@
             this.colMA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO_DEM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCHUC_DANH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEMAIL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,15 +74,15 @@
             this.colNGAY_TIEP_NHAN_VAO_TCT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY_CHINH_THUC_TIEP_NHAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGUOI_BAO_LANH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.m_lbl_thong_tin_phong_ban = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_lam_thoi_cong_tac = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_cham_dut_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_chuyen_cong_tac = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_lam_thoi_cong_tac = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_kiem_nhiem_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_them_moi_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -105,8 +107,12 @@
             // 
             // m_tree_don_vi
             // 
-            this.m_tree_don_vi.Appearance.GroupButton.Image = ((System.Drawing.Image)(resources.GetObject("m_tree_don_vi.Appearance.GroupButton.Image")));
-            this.m_tree_don_vi.Appearance.GroupButton.Options.UseImage = true;
+            this.m_tree_don_vi.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_tree_don_vi.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.m_tree_don_vi.Appearance.FocusedRow.Options.UseFont = true;
+            this.m_tree_don_vi.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.m_tree_don_vi.Appearance.FocusedRow.Options.UseTextOptions = true;
+            this.m_tree_don_vi.Appearance.FocusedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.m_tree_don_vi.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.colTEN_DON_VI,
             this.colID,
@@ -120,13 +126,12 @@
             this.m_tree_don_vi.OptionsView.ShowIndicator = false;
             this.m_tree_don_vi.OptionsView.ShowSummaryFooter = true;
             this.m_tree_don_vi.Size = new System.Drawing.Size(229, 588);
-            this.m_tree_don_vi.StateImageList = this.imageCollection;
             this.m_tree_don_vi.TabIndex = 0;
             // 
             // colTEN_DON_VI
             // 
             this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
-            this.colTEN_DON_VI.MinWidth = 33;
+            this.colTEN_DON_VI.MinWidth = 51;
             this.colTEN_DON_VI.Name = "colTEN_DON_VI";
             this.colTEN_DON_VI.Visible = true;
             this.colTEN_DON_VI.VisibleIndex = 0;
@@ -176,6 +181,8 @@
             this.colMA_NV,
             this.colHO_DEM,
             this.colTEN,
+            this.colHO_TEN,
+            this.colCHUC_DANH,
             this.colGT,
             this.colEMAIL,
             this.colSDT,
@@ -205,12 +212,13 @@
             this.colNGAY_TIEP_NHAN_VAO_TCT,
             this.colNGAY_CHINH_THUC_TIEP_NHAN,
             this.colNGUOI_BAO_LANH,
-            this.colHO_TEN,
-            this.gridColumn2,
-            this.colCHUC_VU});
+            this.gridColumn2});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
             this.m_grv.OptionsBehavior.ReadOnly = true;
+            this.m_grv.OptionsFind.AlwaysVisible = true;
+            this.m_grv.OptionsFind.FindDelay = 100;
+            this.m_grv.OptionsFind.FindNullPrompt = "Tìm kiếm...";
             this.m_grv.OptionsView.ColumnAutoWidth = false;
             this.m_grv.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.m_grv.OptionsView.ShowFooter = true;
@@ -237,12 +245,11 @@
             this.colMA_TRA_CUU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colMA_TRA_CUU.Caption = "Mã tra cứu";
             this.colMA_TRA_CUU.FieldName = "MA_TRA_CUU";
-            this.colMA_TRA_CUU.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.colMA_TRA_CUU.MaxWidth = 100;
             this.colMA_TRA_CUU.MinWidth = 100;
             this.colMA_TRA_CUU.Name = "colMA_TRA_CUU";
             this.colMA_TRA_CUU.Visible = true;
-            this.colMA_TRA_CUU.VisibleIndex = 0;
+            this.colMA_TRA_CUU.VisibleIndex = 3;
             this.colMA_TRA_CUU.Width = 100;
             // 
             // colMA_NV
@@ -253,14 +260,13 @@
             this.colMA_NV.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colMA_NV.Caption = "Mã nhân viên";
             this.colMA_NV.FieldName = "MA_NV";
-            this.colMA_NV.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.colMA_NV.MaxWidth = 100;
             this.colMA_NV.MinWidth = 100;
             this.colMA_NV.Name = "colMA_NV";
             this.colMA_NV.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MA_NV", "SL : {0}")});
             this.colMA_NV.Visible = true;
-            this.colMA_NV.VisibleIndex = 1;
+            this.colMA_NV.VisibleIndex = 2;
             this.colMA_NV.Width = 100;
             // 
             // colHO_DEM
@@ -271,13 +277,9 @@
             this.colHO_DEM.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colHO_DEM.Caption = "Họ đệm";
             this.colHO_DEM.FieldName = "HO_DEM";
-            this.colHO_DEM.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.colHO_DEM.MaxWidth = 100;
             this.colHO_DEM.MinWidth = 100;
             this.colHO_DEM.Name = "colHO_DEM";
-            this.colHO_DEM.OptionsColumn.AllowEdit = false;
-            this.colHO_DEM.Visible = true;
-            this.colHO_DEM.VisibleIndex = 2;
             this.colHO_DEM.Width = 100;
             // 
             // colTEN
@@ -292,10 +294,38 @@
             this.colTEN.MaxWidth = 100;
             this.colTEN.MinWidth = 100;
             this.colTEN.Name = "colTEN";
-            this.colTEN.OptionsColumn.AllowEdit = false;
-            this.colTEN.Visible = true;
-            this.colTEN.VisibleIndex = 3;
             this.colTEN.Width = 100;
+            // 
+            // colHO_TEN
+            // 
+            this.colHO_TEN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colHO_TEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colHO_TEN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colHO_TEN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colHO_TEN.Caption = "Họ tên";
+            this.colHO_TEN.FieldName = "HO_TEN";
+            this.colHO_TEN.MaxWidth = 100;
+            this.colHO_TEN.MinWidth = 100;
+            this.colHO_TEN.Name = "colHO_TEN";
+            this.colHO_TEN.Visible = true;
+            this.colHO_TEN.VisibleIndex = 1;
+            this.colHO_TEN.Width = 100;
+            // 
+            // colCHUC_DANH
+            // 
+            this.colCHUC_DANH.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCHUC_DANH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCHUC_DANH.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCHUC_DANH.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colCHUC_DANH.Caption = "Chức vụ";
+            this.colCHUC_DANH.FieldName = "CHUC_DANH";
+            this.colCHUC_DANH.FieldNameSortGroup = "THU_TU_CHUC_VU";
+            this.colCHUC_DANH.MaxWidth = 100;
+            this.colCHUC_DANH.MinWidth = 100;
+            this.colCHUC_DANH.Name = "colCHUC_DANH";
+            this.colCHUC_DANH.Visible = true;
+            this.colCHUC_DANH.VisibleIndex = 0;
+            this.colCHUC_DANH.Width = 100;
             // 
             // colGT
             // 
@@ -304,12 +334,10 @@
             this.colGT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colGT.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colGT.Caption = "Giới tính";
-            this.colGT.FieldName = "GT";
+            this.colGT.FieldName = "GIOI_TINH";
             this.colGT.MaxWidth = 100;
             this.colGT.MinWidth = 100;
             this.colGT.Name = "colGT";
-            this.colGT.OptionsColumn.AllowEdit = false;
-            this.colGT.OptionsColumn.ReadOnly = true;
             this.colGT.Visible = true;
             this.colGT.VisibleIndex = 4;
             this.colGT.Width = 100;
@@ -325,7 +353,6 @@
             this.colEMAIL.MaxWidth = 100;
             this.colEMAIL.MinWidth = 100;
             this.colEMAIL.Name = "colEMAIL";
-            this.colEMAIL.OptionsColumn.AllowEdit = false;
             this.colEMAIL.Visible = true;
             this.colEMAIL.VisibleIndex = 5;
             this.colEMAIL.Width = 100;
@@ -341,7 +368,6 @@
             this.colSDT.MaxWidth = 100;
             this.colSDT.MinWidth = 100;
             this.colSDT.Name = "colSDT";
-            this.colSDT.OptionsColumn.AllowEdit = false;
             this.colSDT.Visible = true;
             this.colSDT.VisibleIndex = 6;
             this.colSDT.Width = 100;
@@ -357,7 +383,6 @@
             this.colSO_TAI_KHOAN.MaxWidth = 100;
             this.colSO_TAI_KHOAN.MinWidth = 100;
             this.colSO_TAI_KHOAN.Name = "colSO_TAI_KHOAN";
-            this.colSO_TAI_KHOAN.OptionsColumn.AllowEdit = false;
             this.colSO_TAI_KHOAN.Visible = true;
             this.colSO_TAI_KHOAN.VisibleIndex = 7;
             this.colSO_TAI_KHOAN.Width = 100;
@@ -373,7 +398,6 @@
             this.colNGAN_HANG.MaxWidth = 100;
             this.colNGAN_HANG.MinWidth = 100;
             this.colNGAN_HANG.Name = "colNGAN_HANG";
-            this.colNGAN_HANG.OptionsColumn.AllowEdit = false;
             this.colNGAN_HANG.Visible = true;
             this.colNGAN_HANG.VisibleIndex = 8;
             this.colNGAN_HANG.Width = 100;
@@ -389,7 +413,6 @@
             this.colNGAY_CAP_THE.MaxWidth = 100;
             this.colNGAY_CAP_THE.MinWidth = 100;
             this.colNGAY_CAP_THE.Name = "colNGAY_CAP_THE";
-            this.colNGAY_CAP_THE.OptionsColumn.AllowEdit = false;
             this.colNGAY_CAP_THE.Visible = true;
             this.colNGAY_CAP_THE.VisibleIndex = 9;
             this.colNGAY_CAP_THE.Width = 100;
@@ -405,7 +428,6 @@
             this.colNGAY_HET_HAN_THE.MaxWidth = 100;
             this.colNGAY_HET_HAN_THE.MinWidth = 100;
             this.colNGAY_HET_HAN_THE.Name = "colNGAY_HET_HAN_THE";
-            this.colNGAY_HET_HAN_THE.OptionsColumn.AllowEdit = false;
             this.colNGAY_HET_HAN_THE.Visible = true;
             this.colNGAY_HET_HAN_THE.VisibleIndex = 10;
             this.colNGAY_HET_HAN_THE.Width = 100;
@@ -421,7 +443,6 @@
             this.colNGAY_SINH.MaxWidth = 100;
             this.colNGAY_SINH.MinWidth = 100;
             this.colNGAY_SINH.Name = "colNGAY_SINH";
-            this.colNGAY_SINH.OptionsColumn.AllowEdit = false;
             this.colNGAY_SINH.Visible = true;
             this.colNGAY_SINH.VisibleIndex = 11;
             this.colNGAY_SINH.Width = 100;
@@ -437,7 +458,6 @@
             this.colHON_NHAN.MaxWidth = 100;
             this.colHON_NHAN.MinWidth = 100;
             this.colHON_NHAN.Name = "colHON_NHAN";
-            this.colHON_NHAN.OptionsColumn.AllowEdit = false;
             this.colHON_NHAN.Visible = true;
             this.colHON_NHAN.VisibleIndex = 12;
             this.colHON_NHAN.Width = 100;
@@ -453,7 +473,6 @@
             this.colSO_CMT.MaxWidth = 100;
             this.colSO_CMT.MinWidth = 100;
             this.colSO_CMT.Name = "colSO_CMT";
-            this.colSO_CMT.OptionsColumn.AllowEdit = false;
             this.colSO_CMT.Visible = true;
             this.colSO_CMT.VisibleIndex = 13;
             this.colSO_CMT.Width = 100;
@@ -469,7 +488,6 @@
             this.colNGAY_CAP.MaxWidth = 100;
             this.colNGAY_CAP.MinWidth = 100;
             this.colNGAY_CAP.Name = "colNGAY_CAP";
-            this.colNGAY_CAP.OptionsColumn.AllowEdit = false;
             this.colNGAY_CAP.Visible = true;
             this.colNGAY_CAP.VisibleIndex = 14;
             this.colNGAY_CAP.Width = 100;
@@ -485,7 +503,6 @@
             this.colNOI_CAP.MaxWidth = 100;
             this.colNOI_CAP.MinWidth = 100;
             this.colNOI_CAP.Name = "colNOI_CAP";
-            this.colNOI_CAP.OptionsColumn.AllowEdit = false;
             this.colNOI_CAP.Visible = true;
             this.colNOI_CAP.VisibleIndex = 15;
             this.colNOI_CAP.Width = 100;
@@ -501,7 +518,6 @@
             this.colQUOC_TICH.MaxWidth = 100;
             this.colQUOC_TICH.MinWidth = 100;
             this.colQUOC_TICH.Name = "colQUOC_TICH";
-            this.colQUOC_TICH.OptionsColumn.AllowEdit = false;
             this.colQUOC_TICH.Visible = true;
             this.colQUOC_TICH.VisibleIndex = 16;
             this.colQUOC_TICH.Width = 100;
@@ -517,7 +533,6 @@
             this.colDAN_TOC.MaxWidth = 100;
             this.colDAN_TOC.MinWidth = 100;
             this.colDAN_TOC.Name = "colDAN_TOC";
-            this.colDAN_TOC.OptionsColumn.AllowEdit = false;
             this.colDAN_TOC.Visible = true;
             this.colDAN_TOC.VisibleIndex = 17;
             this.colDAN_TOC.Width = 100;
@@ -533,7 +548,6 @@
             this.colTON_GIAO.MaxWidth = 100;
             this.colTON_GIAO.MinWidth = 100;
             this.colTON_GIAO.Name = "colTON_GIAO";
-            this.colTON_GIAO.OptionsColumn.AllowEdit = false;
             this.colTON_GIAO.Visible = true;
             this.colTON_GIAO.VisibleIndex = 18;
             this.colTON_GIAO.Width = 100;
@@ -549,7 +563,6 @@
             this.colNOI_SINH.MaxWidth = 100;
             this.colNOI_SINH.MinWidth = 100;
             this.colNOI_SINH.Name = "colNOI_SINH";
-            this.colNOI_SINH.OptionsColumn.AllowEdit = false;
             this.colNOI_SINH.Visible = true;
             this.colNOI_SINH.VisibleIndex = 19;
             this.colNOI_SINH.Width = 100;
@@ -565,7 +578,6 @@
             this.colQUE_QUAN.MaxWidth = 100;
             this.colQUE_QUAN.MinWidth = 100;
             this.colQUE_QUAN.Name = "colQUE_QUAN";
-            this.colQUE_QUAN.OptionsColumn.AllowEdit = false;
             this.colQUE_QUAN.Visible = true;
             this.colQUE_QUAN.VisibleIndex = 20;
             this.colQUE_QUAN.Width = 100;
@@ -581,7 +593,6 @@
             this.colDIA_CHI_THUONG_TRU.MaxWidth = 100;
             this.colDIA_CHI_THUONG_TRU.MinWidth = 100;
             this.colDIA_CHI_THUONG_TRU.Name = "colDIA_CHI_THUONG_TRU";
-            this.colDIA_CHI_THUONG_TRU.OptionsColumn.AllowEdit = false;
             this.colDIA_CHI_THUONG_TRU.Visible = true;
             this.colDIA_CHI_THUONG_TRU.VisibleIndex = 21;
             this.colDIA_CHI_THUONG_TRU.Width = 100;
@@ -597,7 +608,6 @@
             this.colDIA_CHI_TAM_TRU.MaxWidth = 100;
             this.colDIA_CHI_TAM_TRU.MinWidth = 100;
             this.colDIA_CHI_TAM_TRU.Name = "colDIA_CHI_TAM_TRU";
-            this.colDIA_CHI_TAM_TRU.OptionsColumn.AllowEdit = false;
             this.colDIA_CHI_TAM_TRU.Visible = true;
             this.colDIA_CHI_TAM_TRU.VisibleIndex = 22;
             this.colDIA_CHI_TAM_TRU.Width = 100;
@@ -613,7 +623,6 @@
             this.colDIA_CHI_LIEN_LAC.MaxWidth = 100;
             this.colDIA_CHI_LIEN_LAC.MinWidth = 100;
             this.colDIA_CHI_LIEN_LAC.Name = "colDIA_CHI_LIEN_LAC";
-            this.colDIA_CHI_LIEN_LAC.OptionsColumn.AllowEdit = false;
             this.colDIA_CHI_LIEN_LAC.Visible = true;
             this.colDIA_CHI_LIEN_LAC.VisibleIndex = 23;
             this.colDIA_CHI_LIEN_LAC.Width = 100;
@@ -629,7 +638,6 @@
             this.colMA_SO_THUE_CA_NHAN.MaxWidth = 100;
             this.colMA_SO_THUE_CA_NHAN.MinWidth = 100;
             this.colMA_SO_THUE_CA_NHAN.Name = "colMA_SO_THUE_CA_NHAN";
-            this.colMA_SO_THUE_CA_NHAN.OptionsColumn.AllowEdit = false;
             this.colMA_SO_THUE_CA_NHAN.Visible = true;
             this.colMA_SO_THUE_CA_NHAN.VisibleIndex = 24;
             this.colMA_SO_THUE_CA_NHAN.Width = 100;
@@ -645,7 +653,6 @@
             this.colCHUYEN_MON.MaxWidth = 100;
             this.colCHUYEN_MON.MinWidth = 100;
             this.colCHUYEN_MON.Name = "colCHUYEN_MON";
-            this.colCHUYEN_MON.OptionsColumn.AllowEdit = false;
             this.colCHUYEN_MON.Visible = true;
             this.colCHUYEN_MON.VisibleIndex = 25;
             this.colCHUYEN_MON.Width = 100;
@@ -661,7 +668,6 @@
             this.colTRINH_DO_VAN_HOA.MaxWidth = 100;
             this.colTRINH_DO_VAN_HOA.MinWidth = 100;
             this.colTRINH_DO_VAN_HOA.Name = "colTRINH_DO_VAN_HOA";
-            this.colTRINH_DO_VAN_HOA.OptionsColumn.AllowEdit = false;
             this.colTRINH_DO_VAN_HOA.Visible = true;
             this.colTRINH_DO_VAN_HOA.VisibleIndex = 26;
             this.colTRINH_DO_VAN_HOA.Width = 100;
@@ -677,7 +683,6 @@
             this.colNAM_TOT_NGHIEP.MaxWidth = 100;
             this.colNAM_TOT_NGHIEP.MinWidth = 100;
             this.colNAM_TOT_NGHIEP.Name = "colNAM_TOT_NGHIEP";
-            this.colNAM_TOT_NGHIEP.OptionsColumn.AllowEdit = false;
             this.colNAM_TOT_NGHIEP.Visible = true;
             this.colNAM_TOT_NGHIEP.VisibleIndex = 27;
             this.colNAM_TOT_NGHIEP.Width = 100;
@@ -693,7 +698,6 @@
             this.colTOT_NGHIEP_TAI.MaxWidth = 100;
             this.colTOT_NGHIEP_TAI.MinWidth = 100;
             this.colTOT_NGHIEP_TAI.Name = "colTOT_NGHIEP_TAI";
-            this.colTOT_NGHIEP_TAI.OptionsColumn.AllowEdit = false;
             this.colTOT_NGHIEP_TAI.Visible = true;
             this.colTOT_NGHIEP_TAI.VisibleIndex = 28;
             this.colTOT_NGHIEP_TAI.Width = 100;
@@ -709,7 +713,6 @@
             this.colNGAY_VAO_HANG_KHONG.MaxWidth = 100;
             this.colNGAY_VAO_HANG_KHONG.MinWidth = 100;
             this.colNGAY_VAO_HANG_KHONG.Name = "colNGAY_VAO_HANG_KHONG";
-            this.colNGAY_VAO_HANG_KHONG.OptionsColumn.AllowEdit = false;
             this.colNGAY_VAO_HANG_KHONG.Visible = true;
             this.colNGAY_VAO_HANG_KHONG.VisibleIndex = 29;
             this.colNGAY_VAO_HANG_KHONG.Width = 100;
@@ -725,7 +728,6 @@
             this.colNGAY_TIEP_NHAN_VAO_TCT.MaxWidth = 100;
             this.colNGAY_TIEP_NHAN_VAO_TCT.MinWidth = 100;
             this.colNGAY_TIEP_NHAN_VAO_TCT.Name = "colNGAY_TIEP_NHAN_VAO_TCT";
-            this.colNGAY_TIEP_NHAN_VAO_TCT.OptionsColumn.AllowEdit = false;
             this.colNGAY_TIEP_NHAN_VAO_TCT.Visible = true;
             this.colNGAY_TIEP_NHAN_VAO_TCT.VisibleIndex = 30;
             this.colNGAY_TIEP_NHAN_VAO_TCT.Width = 100;
@@ -741,7 +743,6 @@
             this.colNGAY_CHINH_THUC_TIEP_NHAN.MaxWidth = 100;
             this.colNGAY_CHINH_THUC_TIEP_NHAN.MinWidth = 100;
             this.colNGAY_CHINH_THUC_TIEP_NHAN.Name = "colNGAY_CHINH_THUC_TIEP_NHAN";
-            this.colNGAY_CHINH_THUC_TIEP_NHAN.OptionsColumn.AllowEdit = false;
             this.colNGAY_CHINH_THUC_TIEP_NHAN.Visible = true;
             this.colNGAY_CHINH_THUC_TIEP_NHAN.VisibleIndex = 31;
             this.colNGAY_CHINH_THUC_TIEP_NHAN.Width = 100;
@@ -758,20 +759,6 @@
             this.colNGUOI_BAO_LANH.Visible = true;
             this.colNGUOI_BAO_LANH.VisibleIndex = 32;
             // 
-            // colHO_TEN
-            // 
-            this.colHO_TEN.AppearanceHeader.Options.UseTextOptions = true;
-            this.colHO_TEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colHO_TEN.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colHO_TEN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colHO_TEN.FieldName = "HO_TEN";
-            this.colHO_TEN.MaxWidth = 100;
-            this.colHO_TEN.MinWidth = 100;
-            this.colHO_TEN.Name = "colHO_TEN";
-            this.colHO_TEN.OptionsColumn.AllowEdit = false;
-            this.colHO_TEN.OptionsColumn.ReadOnly = true;
-            this.colHO_TEN.Width = 27;
-            // 
             // gridColumn2
             // 
             this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
@@ -783,26 +770,7 @@
             this.gridColumn2.MaxWidth = 100;
             this.gridColumn2.MinWidth = 100;
             this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 33;
             this.gridColumn2.Width = 100;
-            // 
-            // colCHUC_VU
-            // 
-            this.colCHUC_VU.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCHUC_VU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colCHUC_VU.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colCHUC_VU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colCHUC_VU.Caption = "Chức vụ";
-            this.colCHUC_VU.FieldName = "CHUC_VU";
-            this.colCHUC_VU.MaxWidth = 100;
-            this.colCHUC_VU.MinWidth = 100;
-            this.colCHUC_VU.Name = "colCHUC_VU";
-            this.colCHUC_VU.OptionsColumn.AllowEdit = false;
-            this.colCHUC_VU.Visible = true;
-            this.colCHUC_VU.VisibleIndex = 34;
-            this.colCHUC_VU.Width = 100;
             // 
             // panelControl4
             // 
@@ -819,6 +787,7 @@
             this.m_lbl_thong_tin_phong_ban.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.m_lbl_thong_tin_phong_ban.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.m_lbl_thong_tin_phong_ban.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.m_lbl_thong_tin_phong_ban.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.m_lbl_thong_tin_phong_ban.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_lbl_thong_tin_phong_ban.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_thong_tin_phong_ban.Name = "m_lbl_thong_tin_phong_ban";
@@ -829,9 +798,12 @@
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.m_cmd_lam_thoi_cong_tac);
+            this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl3.Controls.Add(this.m_cmd_refresh);
             this.panelControl3.Controls.Add(this.m_cmd_cham_dut_cong_tac);
             this.panelControl3.Controls.Add(this.m_cmd_chuyen_cong_tac);
+            this.panelControl3.Controls.Add(this.m_cmd_lam_thoi_cong_tac);
+            this.panelControl3.Controls.Add(this.m_cmd_kiem_nhiem_cong_tac);
             this.panelControl3.Controls.Add(this.m_cmd_them_moi_cong_tac);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(233, 25);
@@ -839,39 +811,99 @@
             this.panelControl3.Size = new System.Drawing.Size(987, 33);
             this.panelControl3.TabIndex = 6;
             // 
-            // m_cmd_lam_thoi_cong_tac
+            // m_cmd_refresh
             // 
-            this.m_cmd_lam_thoi_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_lam_thoi_cong_tac.Location = new System.Drawing.Point(227, 2);
-            this.m_cmd_lam_thoi_cong_tac.Name = "m_cmd_lam_thoi_cong_tac";
-            this.m_cmd_lam_thoi_cong_tac.Size = new System.Drawing.Size(75, 29);
-            this.m_cmd_lam_thoi_cong_tac.TabIndex = 0;
-            this.m_cmd_lam_thoi_cong_tac.Text = "Lâm thời CT";
+            this.m_cmd_refresh.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_refresh.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.m_cmd_refresh.Appearance.Options.UseFont = true;
+            this.m_cmd_refresh.Appearance.Options.UseForeColor = true;
+            this.m_cmd_refresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_refresh.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_refresh.Image")));
+            this.m_cmd_refresh.Location = new System.Drawing.Point(877, 0);
+            this.m_cmd_refresh.Name = "m_cmd_refresh";
+            this.m_cmd_refresh.Size = new System.Drawing.Size(110, 33);
+            this.m_cmd_refresh.TabIndex = 9;
+            this.m_cmd_refresh.Text = "Làm mới";
             // 
             // m_cmd_cham_dut_cong_tac
             // 
+            this.m_cmd_cham_dut_cong_tac.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.m_cmd_cham_dut_cong_tac.Appearance.Options.UseBackColor = true;
+            this.m_cmd_cham_dut_cong_tac.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.m_cmd_cham_dut_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_cham_dut_cong_tac.Location = new System.Drawing.Point(152, 2);
+            this.m_cmd_cham_dut_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_cham_dut_cong_tac.Image")));
+            this.m_cmd_cham_dut_cong_tac.Location = new System.Drawing.Point(440, 0);
             this.m_cmd_cham_dut_cong_tac.Name = "m_cmd_cham_dut_cong_tac";
-            this.m_cmd_cham_dut_cong_tac.Size = new System.Drawing.Size(75, 29);
-            this.m_cmd_cham_dut_cong_tac.TabIndex = 0;
+            this.m_cmd_cham_dut_cong_tac.Size = new System.Drawing.Size(110, 33);
+            this.m_cmd_cham_dut_cong_tac.TabIndex = 8;
             this.m_cmd_cham_dut_cong_tac.Text = "Chấm dứt CT";
             // 
             // m_cmd_chuyen_cong_tac
             // 
+            this.m_cmd_chuyen_cong_tac.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.m_cmd_chuyen_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_chuyen_cong_tac.Appearance.ForeColor = System.Drawing.Color.White;
+            this.m_cmd_chuyen_cong_tac.Appearance.Options.UseBackColor = true;
+            this.m_cmd_chuyen_cong_tac.Appearance.Options.UseFont = true;
+            this.m_cmd_chuyen_cong_tac.Appearance.Options.UseForeColor = true;
+            this.m_cmd_chuyen_cong_tac.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.m_cmd_chuyen_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chuyen_cong_tac.Location = new System.Drawing.Point(77, 2);
+            this.m_cmd_chuyen_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chuyen_cong_tac.Image")));
+            this.m_cmd_chuyen_cong_tac.Location = new System.Drawing.Point(330, 0);
             this.m_cmd_chuyen_cong_tac.Name = "m_cmd_chuyen_cong_tac";
-            this.m_cmd_chuyen_cong_tac.Size = new System.Drawing.Size(75, 29);
-            this.m_cmd_chuyen_cong_tac.TabIndex = 0;
+            this.m_cmd_chuyen_cong_tac.Size = new System.Drawing.Size(110, 33);
+            this.m_cmd_chuyen_cong_tac.TabIndex = 7;
             this.m_cmd_chuyen_cong_tac.Text = "Chuyển CT";
+            // 
+            // m_cmd_lam_thoi_cong_tac
+            // 
+            this.m_cmd_lam_thoi_cong_tac.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.m_cmd_lam_thoi_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_lam_thoi_cong_tac.Appearance.ForeColor = System.Drawing.Color.White;
+            this.m_cmd_lam_thoi_cong_tac.Appearance.Options.UseBackColor = true;
+            this.m_cmd_lam_thoi_cong_tac.Appearance.Options.UseFont = true;
+            this.m_cmd_lam_thoi_cong_tac.Appearance.Options.UseForeColor = true;
+            this.m_cmd_lam_thoi_cong_tac.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.m_cmd_lam_thoi_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_lam_thoi_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_lam_thoi_cong_tac.Image")));
+            this.m_cmd_lam_thoi_cong_tac.Location = new System.Drawing.Point(220, 0);
+            this.m_cmd_lam_thoi_cong_tac.Name = "m_cmd_lam_thoi_cong_tac";
+            this.m_cmd_lam_thoi_cong_tac.Size = new System.Drawing.Size(110, 33);
+            this.m_cmd_lam_thoi_cong_tac.TabIndex = 5;
+            this.m_cmd_lam_thoi_cong_tac.Text = "Lâm thời CT";
+            // 
+            // m_cmd_kiem_nhiem_cong_tac
+            // 
+            this.m_cmd_kiem_nhiem_cong_tac.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(68)))), ((int)(((byte)(173)))));
+            this.m_cmd_kiem_nhiem_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_kiem_nhiem_cong_tac.Appearance.ForeColor = System.Drawing.Color.White;
+            this.m_cmd_kiem_nhiem_cong_tac.Appearance.Options.UseBackColor = true;
+            this.m_cmd_kiem_nhiem_cong_tac.Appearance.Options.UseFont = true;
+            this.m_cmd_kiem_nhiem_cong_tac.Appearance.Options.UseForeColor = true;
+            this.m_cmd_kiem_nhiem_cong_tac.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.m_cmd_kiem_nhiem_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_kiem_nhiem_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_kiem_nhiem_cong_tac.Image")));
+            this.m_cmd_kiem_nhiem_cong_tac.Location = new System.Drawing.Point(110, 0);
+            this.m_cmd_kiem_nhiem_cong_tac.Name = "m_cmd_kiem_nhiem_cong_tac";
+            this.m_cmd_kiem_nhiem_cong_tac.Size = new System.Drawing.Size(110, 33);
+            this.m_cmd_kiem_nhiem_cong_tac.TabIndex = 2;
+            this.m_cmd_kiem_nhiem_cong_tac.Text = "Kiêm nhiệm CT";
             // 
             // m_cmd_them_moi_cong_tac
             // 
+            this.m_cmd_them_moi_cong_tac.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.m_cmd_them_moi_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_them_moi_cong_tac.Appearance.ForeColor = System.Drawing.Color.White;
+            this.m_cmd_them_moi_cong_tac.Appearance.Options.UseBackColor = true;
+            this.m_cmd_them_moi_cong_tac.Appearance.Options.UseFont = true;
+            this.m_cmd_them_moi_cong_tac.Appearance.Options.UseForeColor = true;
+            this.m_cmd_them_moi_cong_tac.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.m_cmd_them_moi_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_them_moi_cong_tac.Location = new System.Drawing.Point(2, 2);
+            this.m_cmd_them_moi_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_them_moi_cong_tac.Image")));
+            this.m_cmd_them_moi_cong_tac.Location = new System.Drawing.Point(0, 0);
             this.m_cmd_them_moi_cong_tac.Name = "m_cmd_them_moi_cong_tac";
-            this.m_cmd_them_moi_cong_tac.Size = new System.Drawing.Size(75, 29);
+            this.m_cmd_them_moi_cong_tac.Size = new System.Drawing.Size(110, 33);
             this.m_cmd_them_moi_cong_tac.TabIndex = 0;
             this.m_cmd_them_moi_cong_tac.Text = "Thêm mới CT";
             // 
@@ -946,14 +978,16 @@
         private DevExpress.XtraGrid.Columns.GridColumn colNGUOI_BAO_LANH;
         private DevExpress.XtraGrid.Columns.GridColumn colHO_TEN;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn colCHUC_VU;
+        private DevExpress.XtraGrid.Columns.GridColumn colCHUC_DANH;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colSO_LUONG_NS_DANG_CONG_TAC;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.LabelControl m_lbl_thong_tin_phong_ban;
         private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_them_moi_cong_tac;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_kiem_nhiem_cong_tac;
         private DevExpress.XtraEditors.SimpleButton m_cmd_lam_thoi_cong_tac;
         private DevExpress.XtraEditors.SimpleButton m_cmd_cham_dut_cong_tac;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chuyen_cong_tac;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_them_moi_cong_tac;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_refresh;
     }
 }

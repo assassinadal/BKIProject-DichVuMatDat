@@ -54,7 +54,7 @@ Public Class CWordReport
 #Region "Private Methods"
     Private Sub InitWord()
         Dim v_strFileName As Object
-        v_strFileName = m_strOutputPath & CType(Rnd() * 1000, Int64) & ".docx"
+        v_strFileName = m_strOutputPath & ".docx"
         If File.Exists(CStr(v_strFileName)) Then
             v_strFileName = Path.Combine(Path.GetDirectoryName(CStr(v_strFileName)), Path.GetFileNameWithoutExtension(CStr(v_strFileName))) & "1.docx"
         End If

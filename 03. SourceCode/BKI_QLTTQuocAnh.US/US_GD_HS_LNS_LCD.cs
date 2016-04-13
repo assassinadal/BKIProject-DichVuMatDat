@@ -122,6 +122,50 @@ public class US_GD_HS_LNS_LCD : US_Object
 		pm_objDR["ID_LCD"] = System.Convert.DBNull;
 	}
 
+    public DateTime datNGAY_BAT_DAU
+    {
+        get
+        {
+            return CNull.RowNVLDate(pm_objDR, "NGAY_BAT_DAU", IPConstants.c_DefaultDate);
+        }
+        set
+        {
+            pm_objDR["NGAY_BAT_DAU"] = value;
+        }
+    }
+
+    public bool IsNGAY_BAT_DAUNull()
+    {
+        return pm_objDR.IsNull("NGAY_BAT_DAU");
+    }
+
+    public void SetNGAY_BAT_DAUNull()
+    {
+        pm_objDR["NGAY_BAT_DAU"] = System.Convert.DBNull;
+    }
+
+    public DateTime datNGAY_KET_THUC
+    {
+        get
+        {
+            return CNull.RowNVLDate(pm_objDR, "NGAY_KET_THUC", IPConstants.c_DefaultDate);
+        }
+        set
+        {
+            pm_objDR["NGAY_KET_THUC"] = value;
+        }
+    }
+
+    public bool IsNGAY_KET_THUCNull()
+    {
+        return pm_objDR.IsNull("NGAY_KET_THUC");
+    }
+
+    public void SetNGAY_KET_THUCNull()
+    {
+        pm_objDR["NGAY_KET_THUC"] = System.Convert.DBNull;
+    }
+
 	public DateTime datNGAY_LAP
 	{
 		get   

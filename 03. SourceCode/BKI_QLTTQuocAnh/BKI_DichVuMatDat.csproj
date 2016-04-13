@@ -909,6 +909,18 @@
     <Compile Include="NghiepVu\NhanSu\f310_cap_nhat_cong_tac.Designer.cs">
       <DependentUpon>f310_cap_nhat_cong_tac.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\NhanSu\f327_lap_hop_dong_v3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f327_lap_hop_dong_v3.Designer.cs">
+      <DependentUpon>f327_lap_hop_dong_v3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f328_lap_hop_dong_v3_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f328_lap_hop_dong_v3_detail.Designer.cs">
+      <DependentUpon>f328_lap_hop_dong_v3_detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\ThuNhapKhac\f302_option_detail_calculate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1186,8 +1198,11 @@
     <EmbeddedResource Include="BaoCao\F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.resx">
       <DependentUpon>F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\NhanSu\f310_cap_nhat_cong_tac.resx">
-      <DependentUpon>f310_cap_nhat_cong_tac.cs</DependentUpon>
+    <EmbeddedResource Include="NghiepVu\NhanSu\f327_lap_hop_dong_v3.resx">
+      <DependentUpon>f327_lap_hop_dong_v3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\NhanSu\f328_lap_hop_dong_v3_detail.resx">
+      <DependentUpon>f328_lap_hop_dong_v3_detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\ThuNhapKhac\f355_tnk_chi_tiet_quy_thu_nhap_khac_detail.resx">
       <DependentUpon>f355_tnk_chi_tiet_quy_thu_nhap_khac_detail.cs</DependentUpon>
@@ -1775,13 +1790,13 @@
     <Content Include="Template\HD THU VIEC.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Template\HD_HOC_VIEC.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Template\HD_THU_VIEC.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Template\HD_XAC_DINH_THOI_HAN.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\HD_HOC_VIEC.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Template\HĐLĐ HOC NGHE.docx" />

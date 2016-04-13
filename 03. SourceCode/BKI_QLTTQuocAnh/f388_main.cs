@@ -289,6 +289,7 @@ namespace BKI_DichVuMatDat
             m_cmd_thuong_thu_nhap_khac.ItemClick += m_cmd_luong_hs_athk_ItemClick;
             m_cmd_ql_thuong_le_tet.ItemClick += m_cmd_ql_thuong_hsbs_ItemClick;
             m_cmd_thuong_2014.ItemClick += m_cmd_thuong_2014_ItemClick;
+            m_cmd_lap_hd_v2.ItemClick += m_cmd_lap_hd_v2_ItemClick;
             //Hệ thống
             m_cmd_thoat.ItemClick += m_cmd_thoat_ItemClick;
             m_cmd_phan_quyen_nhom.ItemClick += m_cmd_phan_quyen_nhom_ItemClick;
@@ -329,6 +330,21 @@ namespace BKI_DichVuMatDat
             m_cmd_ds_chot_bang_luong.ItemClick += m_cmd_ds_chot_bang_luong_ItemClick;
             m_cmd_bc_hs.ItemClick += m_cmd_bc_hs_ItemClick;
             m_cmd_qtt_2016.ItemClick += m_cmd_qtt_2016_ItemClick;
+        }
+
+        void m_cmd_lap_hd_v2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f327_lap_hop_dong_v3 v_f = new f327_lap_hop_dong_v3();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();               
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_qtt_2016_ItemClick(object sender, ItemClickEventArgs e)

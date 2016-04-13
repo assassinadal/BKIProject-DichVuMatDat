@@ -468,7 +468,7 @@ namespace BKI_DichVuMatDat.US
             DataSet v_op_ds = new DataSet();
             v_op_ds.Tables.Add();
 
-            v_sp.fillDataSetByCommand(this, v_op_ds);
+            //v_sp.fillDataSetByCommand(this, v_op_ds);
             return v_op_ds;
         }
     }

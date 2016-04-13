@@ -1203,7 +1203,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f350_quan_ly_vi_tri_cong_tac v_frm = new f350_quan_ly_vi_tri_cong_tac();
+                f309_quan_ly_cong_tac v_frm = new f309_quan_ly_cong_tac();
                 if (IsExistFormName(v_frm)) return;
                 v_frm.MdiParent = this;
                 v_frm.Show();
@@ -1499,7 +1499,7 @@ namespace BKI_DichVuMatDat
             try
             {
                 //F115_dm_thu_tu_don_vi_chuc_vu v_f = new F115_dm_thu_tu_don_vi_chuc_vu
-                f309_quan_ly_cong_tac v_f = new f309_quan_ly_cong_tac();
+                f311_danh_sach_nhan_vien_theo_don_vi v_f = new f311_danh_sach_nhan_vien_theo_don_vi();
                 if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();

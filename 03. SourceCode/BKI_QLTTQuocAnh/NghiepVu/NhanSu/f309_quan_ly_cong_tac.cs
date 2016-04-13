@@ -105,6 +105,62 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
 
             refresh_data();
         }
+        private void cap_nhat_kiem_nhiem_cong_tac()
+        {
+            if(!is_nhan_vien_seleted())
+            {
+                return;
+            }
+            f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
+            v_frm.display_for_kiem_nhiem_cong_tac(get_id_nhan_vien(), get_id_phong_ban());
+
+            refresh_data();
+        }
+        private void cap_nhat_chuyen_cong_tac()
+        {
+            if(!is_nhan_vien_seleted())
+            {
+                return;
+            }
+            f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
+            v_frm.display_for_chuyen_cong_tac(get_id_nhan_vien(), get_id_phong_ban());
+
+            refresh_data();
+        }
+        private void cap_nhat_cham_dut_cong_tac()
+        {
+            if(!is_nhan_vien_seleted())
+            {
+                return;
+            }
+            var v_dc_id_gd_cong_tac = Convert.ToDecimal(m_grv.GetRowCellValue(m_grv.FocusedRowHandle, V_GD_CONG_TAC_2.ID));
+            f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
+            v_frm.display_for_cham_dut_cong_tac(v_dc_id_gd_cong_tac);
+            refresh_data();
+        }
+        private void sua_cong_tac()
+        {
+            if(!is_nhan_vien_seleted())
+            {
+                return;
+            }
+            var v_dc_id_gd_cong_tac = Convert.ToDecimal(m_grv.GetRowCellValue(m_grv.FocusedRowHandle, V_GD_CONG_TAC_2.ID));
+            f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
+            v_frm.display_for_update(v_dc_id_gd_cong_tac);
+            refresh_data();
+        }
+        private void xoa_cong_tac()
+        {
+            var v_dlg_confirm = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa công tác (việc này chỉ nên thực hiện khi bạn cập nhật nhầm công tác cho nhân viên)!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            if(v_dlg_confirm == System.Windows.Forms.DialogResult.Yes)
+            {
+                var v_dc_id_gd_cong_tac = Convert.ToDecimal(m_grv.GetRowCellValue(m_grv.FocusedRowHandle, V_GD_CONG_TAC_2.ID));
+                US_GD_CONG_TAC v_us = new US_GD_CONG_TAC();
+                v_us.DeleteByID(v_dc_id_gd_cong_tac);
+                XtraMessageBox.Show("Đã xóa công tác nhân viên thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                refresh_data();
+            }
+        }
         #endregion
 
         #region Event Handle
@@ -117,13 +173,53 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_cmd_kiem_nhiem_cong_tac.Click += m_cmd_kiem_nhiem_cong_tac_Click;
             m_cmd_lam_thoi_cong_tac.Click += m_cmd_lam_thoi_cong_tac_Click;
             m_cmd_cham_dut_cong_tac.Click += m_cmd_cham_dut_cong_tac_Click;
+            m_cmd_chuyen_cong_tac.Click += m_cmd_chuyen_cong_tac_Click;
+
+            m_cmd_sua_cong_tac.Click += m_cmd_sua_cong_tac_Click;
+            m_cmd_xoa_cong_tac.Click += m_cmd_xoa_cong_tac_Click;
+        }
+
+        void m_cmd_xoa_cong_tac_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                xoa_cong_tac();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_sua_cong_tac_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                sua_cong_tac();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_chuyen_cong_tac_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cap_nhat_chuyen_cong_tac();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_cham_dut_cong_tac_Click(object sender, EventArgs e)
         {
             try
             {
-
+                cap_nhat_cham_dut_cong_tac();
             }
             catch(Exception v_e)
             {
@@ -147,7 +243,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             try
             {
-
+                cap_nhat_kiem_nhiem_cong_tac();
             }
             catch(Exception v_e)
             {

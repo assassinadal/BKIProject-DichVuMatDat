@@ -337,6 +337,16 @@ namespace BKI_DichVuMatDat.US
         }
         #endregion
 
+        public bool KiemTraNhanVienCoCongTacChua(decimal ip_dc_id_nhan_vien, decimal ip_dc_id_don_vi)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_NS_nhan_vien_thuoc_phong_ban_Check");
+            v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            v_cstore.addDecimalInputParam("@ip_dc_id_don_vi", ip_dc_id_don_vi);
+            SqlParameter v_para = v_cstore.addNVarcharOutputParam("@op_str_yn", "");
+            v_cstore.ExecuteCommand(this);
+
+            return v_para.Value.ToString() == "Y" ? true : false;
+        }
         public void CapNhatHetHieuLucCongTacChinhThucHoacLamThoi(decimal ip_dc_id_nhan_vien, DateTime ip_dat_ngay_ket_thuc)
         {
             CStoredProc v_cstore = new CStoredProc("pr_NS_hieu_luc_cong_tac_chinh_thuc_lam_thoi_cap_nhat");
@@ -344,7 +354,13 @@ namespace BKI_DichVuMatDat.US
             v_cstore.addDatetimeInputParam("@ip_dat_ngay_ket_thuc", ip_dat_ngay_ket_thuc);
             v_cstore.ExecuteCommand(this);
         }
-
+        public void CapNhatHetHieuLucCongTac(decimal ip_dc_id_nhan_vien, DateTime ip_dat_ngay_ket_thuc)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_NS_hieu_luc_cong_tac_END");
+            v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            v_cstore.addDatetimeInputParam("@ip_dat_ngay_ket_thuc", ip_dat_ngay_ket_thuc);
+            v_cstore.ExecuteCommand(this);
+        }
         public DataTable LayDanhSachNhanVienChuaCoCongTac()
         {
             CStoredProc v_cstore = new CStoredProc("pr_NS_danh_sach_chua_co_cong_tac");

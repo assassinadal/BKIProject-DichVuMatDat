@@ -52,7 +52,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void gan_du_lieu_cho_us_gd_lns(DataRow dataRow)
         {
             US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS();
-            v_us.dcID_HOP_DONG = m_dc_id_hop_dong_moi_tao;
+            //v_us.dcID_HOP_DONG = m_dc_id_hop_dong_moi_tao;
             if (dataRow["NGAY_BAT_DAU"].ToString() != "")
                 if ((dataRow["NGAY_BAT_DAU"].ToString() != ""))
                     v_us.datNGAY_BAT_DAU = DateTime.FromOADate(Convert.ToDouble(dataRow["NGAY_BAT_DAU"]));
@@ -86,19 +86,19 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void gan_du_lieu_cho_us_gd_lcd(DataRow dataRow)
         {
-            US_GD_LUONG_CHE_DO v_us = new US_GD_LUONG_CHE_DO();
-            v_us.dcID_HOP_DONG = m_dc_id_hop_dong_moi_tao;
-            if (dataRow["NGAY_BAT_DAU"].ToString() != "")
-                if ((dataRow["NGAY_BAT_DAU"].ToString() != ""))
-                    v_us.datNGAY_BAT_DAU = DateTime.FromOADate(Convert.ToDouble(dataRow["NGAY_BAT_DAU"]));
-            if (dataRow["NGAY_KET_THUC"].ToString() != "")
-                if ((dataRow["NGAY_KET_THUC"].ToString() != ""))
-                    v_us.datNGAY_KET_THUC = DateTime.FromOADate(Convert.ToDouble(dataRow["NGAY_KET_THUC"]));
-            v_us.dcSO_TIEN = find_lcd(CIPConvert.ToDecimal(dataRow["CHUC_DANH_LCD"].ToString()), CIPConvert.ToDecimal(dataRow["MUC_LCD"].ToString()));
-            v_us.datNGAY_LAP = DateTime.Now.Date;
-            v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
-            v_us.strDA_XOA = "N";
-            v_us.Insert();
+            //US_GD_LUONG_CHE_DO v_us = new US_GD_LUONG_CHE_DO();
+            //v_us.dcID_HOP_DONG = m_dc_id_hop_dong_moi_tao;
+            //if (dataRow["NGAY_BAT_DAU"].ToString() != "")
+            //    if ((dataRow["NGAY_BAT_DAU"].ToString() != ""))
+            //        v_us.datNGAY_BAT_DAU = DateTime.FromOADate(Convert.ToDouble(dataRow["NGAY_BAT_DAU"]));
+            //if (dataRow["NGAY_KET_THUC"].ToString() != "")
+            //    if ((dataRow["NGAY_KET_THUC"].ToString() != ""))
+            //        v_us.datNGAY_KET_THUC = DateTime.FromOADate(Convert.ToDouble(dataRow["NGAY_KET_THUC"]));
+            //v_us.dcSO_TIEN = find_lcd(CIPConvert.ToDecimal(dataRow["CHUC_DANH_LCD"].ToString()), CIPConvert.ToDecimal(dataRow["MUC_LCD"].ToString()));
+            //v_us.datNGAY_LAP = DateTime.Now.Date;
+            //v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
+            //v_us.strDA_XOA = "N";
+            //v_us.Insert();
         }
 
         private void gan_du_lieu_cho_us_gd_hop_dong(DataRow dataRow)

@@ -132,6 +132,7 @@
     <Compile Include="US_V_F468_BAO_CAO_TRANG_THAI_LAO_DONG_THEO_THANG.cs" />
     <Compile Include="US_V_GD_CONG_TAC.cs" />
     <Compile Include="US_V_GD_CONG_TAC_2.cs" />
+    <Compile Include="US_V_GD_HOP_DONG_V3.cs" />
     <Compile Include="US_V_GD_KHONG_DONG_BAO_HIEM.cs" />
     <Compile Include="US_V_GD_LOAI_LAO_DONG.cs" />
     <Compile Include="US_V_GD_LUONG_CUNG.cs" />

@@ -291,6 +291,27 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["DA_XOA"] = System.Convert.DBNull;
         }
 
+        public string strGHI_CHU
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "GHI_CHU", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["GHI_CHU"] = value;
+            }
+        }
+
+        public bool IsGHI_CHUNull()
+        {
+            return pm_objDR.IsNull("GHI_CHU");
+        }
+
+        public void SetGHI_CHUNull()
+        {
+            pm_objDR["GHI_CHU"] = System.Convert.DBNull;
+        }
         #endregion
         #region "Init Functions"
         public US_GD_HOP_DONG()
@@ -429,6 +450,17 @@ namespace BKI_DichVuMatDat.US
             v_cstore.addDatetimeInputParam("@tu_ngay", ip_tu_ngay);
             v_cstore.addDatetimeInputParam("@den_ngay", ip_den_ngay);
             v_cstore.fillDataSetByCommand(this, v_ds);
+        }
+
+        public decimal GetHopDongHienTaiCuaNV(string ip_id_nv)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_HD_theo_nv_GetThoiDiemHienTai");
+            DS_GD_HOP_DONG v_ds = new DS_GD_HOP_DONG();
+            v_cstore.addDecimalInputParam("@id_nv", ip_id_nv);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+            if (v_ds.Tables[0].Rows.Count == 0)
+                return 0;
+            return decimal.Parse(v_ds.Tables[0].Rows[0][0].ToString());
         }
     }
 }

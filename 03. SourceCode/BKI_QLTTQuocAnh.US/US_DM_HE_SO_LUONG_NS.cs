@@ -150,13 +150,12 @@ public class US_DM_HE_SO_LUONG_NS : US_Object
 #endregion
 
 
-    public decimal FillDatasetTheoIDMaMuc(DS_DM_HE_SO_LUONG_NS v_ds, string id_ma_lns, string id_muc_lns)
+    public void FillDatasetTheoIDMaMuc(DS_DM_HE_SO_LUONG_NS v_ds, string id_ma_lns, string id_muc_lns)
     {
         CStoredProc v_cstore = new CStoredProc("pr_LNS_get_he_so_theo_ID_ma_muc");
         v_cstore.addDecimalInputParam("@id_ma_lns", id_ma_lns);
         v_cstore.addDecimalInputParam("@id_muc_lns", id_muc_lns);
         v_cstore.fillDataSetByCommand(this, v_ds);
-        return decimal.Parse(v_ds.Tables[0].Rows[0].ToString());
     }
 }
 }

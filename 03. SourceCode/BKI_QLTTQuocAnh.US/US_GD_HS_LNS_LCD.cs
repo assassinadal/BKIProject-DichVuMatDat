@@ -299,5 +299,12 @@ public class US_GD_HS_LNS_LCD : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void FillDataSetTheoIDHD(DS_GD_HS_LNS_LCD v_ds, decimal ip_id_hop_dong)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_LNS_LCD_getTheoIDHD");
+        v_cstore.addDecimalInputParam("@id_hop_dong", ip_id_hop_dong);
+        v_cstore.fillDataSetByCommand(this, v_ds);
+    }
+}
 }

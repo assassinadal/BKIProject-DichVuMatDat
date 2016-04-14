@@ -42,24 +42,24 @@ public class US_GD_LUONG_CHE_DO : US_Object
 		pm_objDR["ID"] = System.Convert.DBNull;
 	}
 
-	public decimal dcID_HOP_DONG 
+	public decimal dcID_HS_LNS_LCD 
 	{
 		get
 		{
-			return CNull.RowNVLDecimal(pm_objDR, "ID_HOP_DONG", IPConstants.c_DefaultDecimal);
+            return CNull.RowNVLDecimal(pm_objDR, "ID_HS_LNS_LCD ", IPConstants.c_DefaultDecimal);
 		}
 		set	
 		{
-			pm_objDR["ID_HOP_DONG"] = value;
+            pm_objDR["ID_HS_LNS_LCD "] = value;
 		}
 	}
 
-	public bool IsID_HOP_DONGNull()	{
-		return pm_objDR.IsNull("ID_HOP_DONG");
+	public bool IsID_HS_LNS_LCDNull()	{
+        return pm_objDR.IsNull("ID_HS_LNS_LCD ");
 	}
 
-	public void SetID_HOP_DONGNull() {
-		pm_objDR["ID_HOP_DONG"] = System.Convert.DBNull;
+	public void SetID_HS_LNS_LCDNull() {
+		pm_objDR["ID_HS_LNS_LCD "] = System.Convert.DBNull;
 	}
 
 	public decimal dcSO_TIEN 
@@ -310,6 +310,13 @@ public class US_GD_LUONG_CHE_DO : US_Object
         v_cs.fillDataSetByCommand(this, v_ds);
 
         return v_ds.Tables[0];
+    }
+
+    public void FillDatasetTheoIDLnsLcd(DS_GD_LUONG_CHE_DO v_ds, decimal ip_id_gd_lns_lcd)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_LCD_getTheo_ID_LNS_LCD");
+        v_cstore.addDecimalInputParam("@id_lns_lcd", ip_id_gd_lns_lcd);
+        v_cstore.fillDataSetByCommand(this, v_ds);
     }
 	}
 }

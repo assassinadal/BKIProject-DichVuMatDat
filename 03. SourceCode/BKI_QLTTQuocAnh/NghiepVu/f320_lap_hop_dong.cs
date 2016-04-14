@@ -710,7 +710,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                ip_us.dcID_HOP_DONG = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                //ip_us.dcID_HOP_DONG = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                 ip_us.dcHE_SO = CIPConvert.ToDecimal(find_hs_lns(CIPConvert.ToDecimal(m_sle_chuc_danh_lns.EditValue), CIPConvert.ToDecimal(m_sle_muc_lns.EditValue)));
                 //ip_us.dcID_LY_DO_CHINH_SUA =
                 ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
@@ -742,7 +742,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                ip_us.dcID_HOP_DONG = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                //ip_us.dcID_HOP_DONG = find_id_gd_hd(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                 ip_us.dcSO_TIEN = CIPConvert.ToDecimal(find_so_tien_lcd(CIPConvert.ToDecimal(m_sle_chuc_danh_lcd.EditValue), CIPConvert.ToDecimal(m_sle_muc_lcd.EditValue)));
                 //ip_us.dcID_LY_DO_CHINH_SUA =
                 ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;

@@ -128,5 +128,13 @@ public class US_DM_LUONG_CHE_DO : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void FillDatasetTheoIDMaMuc(DS_DM_LUONG_CHE_DO v_ds, string id_ma_lcd, string id_muc_lcd)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_LCD_get_he_so_theo_ID_ma_muc");
+        v_cstore.addDecimalInputParam("@id_ma_lcd", id_ma_lcd);
+        v_cstore.addDecimalInputParam("@id_muc_lcd", id_muc_lcd);
+        v_cstore.fillDataSetByCommand(this, v_ds);
+    }
+}
 }

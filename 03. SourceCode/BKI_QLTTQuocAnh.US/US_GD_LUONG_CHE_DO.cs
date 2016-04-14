@@ -300,5 +300,16 @@ public class US_GD_LUONG_CHE_DO : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+    public DataTable LayDanhSachHopDongThayDoiLCD(DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+    {
+        CStoredProc v_cs = new CStoredProc("pr_HD_hop_dong_thay_doi_he_so_LCD_GetAll");
+        v_cs.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+        v_cs.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+        DataSet v_ds = new DataSet();
+        v_ds.Tables.Add();
+        v_cs.fillDataSetByCommand(this, v_ds);
+
+        return v_ds.Tables[0];
+    }
 	}
 }

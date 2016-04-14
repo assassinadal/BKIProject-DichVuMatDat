@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IP.Core.IPCommon;
+using BKI_DichVuMatDat.US;
 namespace BKI_DichVuMatDat.NghiepVu.HopDong
 {
     public partial class F390_quan_ly_thay_doi_lns_hop_dong : Form
@@ -45,13 +46,34 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
         //Load form
         private void set_initial_form_load()
         {
-
+            load_data_to_grid();
         }
 
         //Load data
+        private DateTime get_tu_ngay()
+        {
+            return m_dat_tu_ngay.DateTime.Date;
+        }
+        private DateTime get_den_ngay()
+        {
+            return m_dat_den_ngay.DateTime.Date;
+        }
+        private void load_data_to_grid_lns()
+        {
+            US_GD_HE_SO_LNS v_us_lns = new US_GD_HE_SO_LNS();
+            var v_dt_lns_source = v_us_lns.LayDanhSachHopDongThayDoiHeSoLNS(get_tu_ngay(), get_den_ngay());
+            m_grc_lns.DataSource = v_dt_lns_source;
+        }
+        private void load_data_to_grid_lcd()
+        {
+            US_GD_LUONG_CHE_DO v_us_lcd = new US_GD_LUONG_CHE_DO();
+            var v_dt_lcd_source = v_us_lcd.LayDanhSachHopDongThayDoiLCD(get_tu_ngay(), get_den_ngay());
+            m_grc_lcd.DataSource = v_dt_lcd_source;
+        }
         private void load_data_to_grid()
         {
-
+            load_data_to_grid_lns();
+            load_data_to_grid_lcd();
         }
         #endregion
 

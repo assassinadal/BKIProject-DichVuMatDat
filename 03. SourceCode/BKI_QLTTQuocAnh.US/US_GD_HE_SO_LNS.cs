@@ -315,6 +315,16 @@ namespace BKI_DichVuMatDat.US
         }
         #endregion
 
+        public DataTable LayDanhSachHopDongThayDoiHeSoLNS(DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+        {
+            CStoredProc v_cs = new CStoredProc("pr_HD_hop_dong_thay_doi_he_so_lns_GetAll");
+            v_cs.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+            v_cs.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+            v_cs.fillDataSetByCommand(this, v_ds);
 
+            return v_ds.Tables[0];
+        }
     }
 }

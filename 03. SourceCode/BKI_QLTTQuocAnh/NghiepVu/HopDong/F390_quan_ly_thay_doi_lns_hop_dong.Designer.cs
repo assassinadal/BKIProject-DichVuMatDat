@@ -43,6 +43,8 @@
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_grc_lns = new DevExpress.XtraGrid.GridControl();
             this.m_grv_lns = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.m_grc_lcd = new DevExpress.XtraGrid.GridControl();
+            this.m_grv_lcd = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_ngay.Properties.CalendarTimeProperties)).BeginInit();
@@ -53,6 +55,8 @@
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_lns)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_lns)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc_lcd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_lcd)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -67,7 +71,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(889, 84);
+            this.panelControl1.Size = new System.Drawing.Size(889, 78);
             this.panelControl1.TabIndex = 0;
             // 
             // m_cmd_filter
@@ -135,7 +139,7 @@
             this.panelControl3.Controls.Add(this.m_cmd_update);
             this.panelControl3.Controls.Add(this.m_cmd_insert);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl3.Location = new System.Drawing.Point(0, 51);
+            this.panelControl3.Location = new System.Drawing.Point(0, 45);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(889, 33);
             this.panelControl3.TabIndex = 2;
@@ -153,8 +157,7 @@
             this.m_cmd_export_excel.Name = "m_cmd_export_excel";
             this.m_cmd_export_excel.Size = new System.Drawing.Size(110, 33);
             this.m_cmd_export_excel.TabIndex = 8;
-            this.m_cmd_export_excel.Text = "Làm mới";
-            this.m_cmd_export_excel.ToolTip = "Làm mới dữ liệu đơn vị và nhân viên thuộc đơn vị đó";
+            this.m_cmd_export_excel.Text = "Trích xuất";
             // 
             // m_cmd_delete
             // 
@@ -170,8 +173,6 @@
             this.m_cmd_delete.Size = new System.Drawing.Size(110, 33);
             this.m_cmd_delete.TabIndex = 5;
             this.m_cmd_delete.Text = "&Xóa";
-            this.m_cmd_delete.ToolTip = "Xóa khỏi phần mềm công tác của nhân viên (Chỉ khuyên dùng khi nhập sai công tác, " +
-    "cần xóa để nhập lại)";
             // 
             // m_cmd_refresh
             // 
@@ -205,7 +206,6 @@
             this.m_cmd_update.Size = new System.Drawing.Size(110, 33);
             this.m_cmd_update.TabIndex = 3;
             this.m_cmd_update.Text = "&Sửa";
-            this.m_cmd_update.ToolTip = "Chuyển công tác của nhân viên sang đơn vị khác";
             // 
             // m_cmd_insert
             // 
@@ -223,16 +223,15 @@
             this.m_cmd_insert.Size = new System.Drawing.Size(110, 33);
             this.m_cmd_insert.TabIndex = 0;
             this.m_cmd_insert.Text = "&Thêm";
-            this.m_cmd_insert.ToolTip = "Thêm mới công tác chính thức cho nhân viên (nhân viên chưa có công tác)";
             // 
             // m_grc_lns
             // 
             this.m_grc_lns.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc_lns.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc_lns.Location = new System.Drawing.Point(0, 84);
+            this.m_grc_lns.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_grc_lns.Location = new System.Drawing.Point(0, 78);
             this.m_grc_lns.MainView = this.m_grv_lns;
             this.m_grc_lns.Name = "m_grc_lns";
-            this.m_grc_lns.Size = new System.Drawing.Size(889, 413);
+            this.m_grc_lns.Size = new System.Drawing.Size(417, 419);
             this.m_grc_lns.TabIndex = 1;
             this.m_grc_lns.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_lns});
@@ -242,14 +241,32 @@
             this.m_grv_lns.GridControl = this.m_grc_lns;
             this.m_grv_lns.Name = "m_grv_lns";
             // 
-            // F390_quan_ly_thay_doi_lns_lcd_hop_dong
+            // m_grc_lcd
+            // 
+            this.m_grc_lcd.Cursor = System.Windows.Forms.Cursors.Default;
+            this.m_grc_lcd.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_grc_lcd.Location = new System.Drawing.Point(439, 78);
+            this.m_grc_lcd.MainView = this.m_grv_lcd;
+            this.m_grc_lcd.Name = "m_grc_lcd";
+            this.m_grc_lcd.Size = new System.Drawing.Size(450, 419);
+            this.m_grc_lcd.TabIndex = 2;
+            this.m_grc_lcd.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.m_grv_lcd});
+            // 
+            // m_grv_lcd
+            // 
+            this.m_grv_lcd.GridControl = this.m_grc_lcd;
+            this.m_grv_lcd.Name = "m_grv_lcd";
+            // 
+            // F390_quan_ly_thay_doi_lns_hop_dong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 497);
+            this.Controls.Add(this.m_grc_lcd);
             this.Controls.Add(this.m_grc_lns);
             this.Controls.Add(this.panelControl1);
-            this.Name = "F390_quan_ly_thay_doi_lns_lcd_hop_dong";
+            this.Name = "F390_quan_ly_thay_doi_lns_hop_dong";
             this.Text = "F390 - Quản lý danh sách hợp đồng có thay đổi hệ số LNS";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -262,6 +279,8 @@
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_lns)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_lns)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc_lcd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_lcd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -282,5 +301,7 @@
         private DevExpress.XtraEditors.DateEdit m_dat_tu_ngay;
         private DevExpress.XtraEditors.SimpleButton m_cmd_export_excel;
         private DevExpress.XtraEditors.SimpleButton m_cmd_filter;
+        private DevExpress.XtraGrid.GridControl m_grc_lcd;
+        private DevExpress.XtraGrid.Views.Grid.GridView m_grv_lcd;
     }
 }

@@ -492,6 +492,12 @@
     <Compile Include="NghiepVu\HopDong\F390_quan_ly_thay_doi_lns_hop_dong.Designer.cs">
       <DependentUpon>F390_quan_ly_thay_doi_lns_hop_dong.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\HopDong\f391_cap_nhat_thay_doi_lns_lcd_DE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\HopDong\f391_cap_nhat_thay_doi_lns_lcd_DE.Designer.cs">
+      <DependentUpon>f391_cap_nhat_thay_doi_lns_lcd_DE.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\Luong\f303_cac_khoan_tien_khac.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1197,6 +1203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\HopDong\F390_quan_ly_thay_doi_lns_hop_dong.resx">
       <DependentUpon>F390_quan_ly_thay_doi_lns_hop_dong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\HopDong\f391_cap_nhat_thay_doi_lns_lcd_DE.resx">
+      <DependentUpon>f391_cap_nhat_thay_doi_lns_lcd_DE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\NhanSu\f309_quan_ly_cong_tac.resx">
       <DependentUpon>f309_quan_ly_cong_tac.cs</DependentUpon>

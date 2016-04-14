@@ -83,6 +83,20 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             FormClosed += F390_quan_ly_thay_doi_lns_lcd_hop_dong_FormClosed;
             Load += F390_quan_ly_thay_doi_lns_lcd_hop_dong_Load;
             m_cmd_filter.Click += m_cmd_filter_Click;
+            m_cmd_insert.Click += m_cmd_insert_Click;
+        }
+
+        void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f391_cap_nhat_thay_doi_lns_lcd_DE v_frm = new f391_cap_nhat_thay_doi_lns_lcd_DE();
+                v_frm.display_for_insert_lns();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_filter_Click(object sender, EventArgs e)

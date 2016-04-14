@@ -318,6 +318,29 @@ namespace BKI_DichVuMatDat.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+        public void LayMaMucLNSCuaHopDong(decimal ip_dc_id_hop_dong_con_hieu_luc,out decimal op_dc_he_so, out string op_str_ma, out string op_str_muc)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_HD_ma_muc_lns_Get");
+            v_sp.addDecimalInputParam("@ip_dc_id_hop_dong_con_hieu_luc", @ip_dc_id_hop_dong_con_hieu_luc);
+
+            SqlParameter v_p_he_so = v_sp.addDecimalOutputParam("@op_dc_he_so", 0);
+            SqlParameter v_p_muc = v_sp.addNVarcharOutputParam("@op_str_muc_lns", "");
+            SqlParameter v_p_ma = v_sp.addNVarcharOutputParam("@op_str_ma_lns", "");
+
+            v_sp.ExecuteCommand(this);
+            op_dc_he_so = Convert.ToDecimal(v_p_he_so.Value);
+            op_str_ma = v_p_ma.Value.ToString();
+            op_str_muc = v_p_muc.Value.ToString();
+        }
+        public DataTable LayDanhSachHopDongConHieuLuc()
+        {
+            CStoredProc v_sp = new CStoredProc("pr_HD_danh_sach_hop_dong_con_hieu_luc_GetAll");
+            DataSet v_op_ds = new DataSet();
+            v_op_ds.Tables.Add();
+
+            v_sp.fillDataSetByCommand(this, v_op_ds);
+            return v_op_ds.Tables[0];
+        }
         public DataSet LayDanhSachHopDongHetHan(
                                     DateTime ip_dat_tu_ngay
                                     , DateTime ip_dat_den_ngay)

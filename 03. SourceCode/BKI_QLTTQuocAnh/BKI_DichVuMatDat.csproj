@@ -486,6 +486,12 @@
     <Compile Include="NghiepVu\F503_IMPORT_EXCEL.Designer.cs">
       <DependentUpon>F503_IMPORT_EXCEL.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\HopDong\F390_quan_ly_thay_doi_lns_lcd_hop_dong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\HopDong\F390_quan_ly_thay_doi_lns_lcd_hop_dong.Designer.cs">
+      <DependentUpon>F390_quan_ly_thay_doi_lns_lcd_hop_dong.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\Luong\f303_cac_khoan_tien_khac.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1188,6 +1194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f396_tinh_phep_tieu_chuan.resx">
       <DependentUpon>f396_tinh_phep_tieu_chuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\HopDong\F390_quan_ly_thay_doi_lns_lcd_hop_dong.resx">
+      <DependentUpon>F390_quan_ly_thay_doi_lns_lcd_hop_dong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\NhanSu\f309_quan_ly_cong_tac.resx">
       <DependentUpon>f309_quan_ly_cong_tac.cs</DependentUpon>

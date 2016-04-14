@@ -83,10 +83,10 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             FormClosed += F390_quan_ly_thay_doi_lns_lcd_hop_dong_FormClosed;
             Load += F390_quan_ly_thay_doi_lns_lcd_hop_dong_Load;
             m_cmd_filter.Click += m_cmd_filter_Click;
-            m_cmd_insert.Click += m_cmd_insert_Click;
+            m_cmd_insert_lns.Click += m_cmd_insert_lns_Click;
         }
 
-        void m_cmd_insert_Click(object sender, EventArgs e)
+        void m_cmd_insert_lns_Click(object sender, EventArgs e)
         {
             try
             {

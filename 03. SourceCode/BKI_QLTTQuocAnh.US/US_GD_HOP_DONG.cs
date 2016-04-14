@@ -323,7 +323,9 @@ namespace BKI_DichVuMatDat.US
             CStoredProc v_sp = new CStoredProc("pr_HD_ma_muc_lns_Get");
             v_sp.addDecimalInputParam("@ip_dc_id_hop_dong_con_hieu_luc", @ip_dc_id_hop_dong_con_hieu_luc);
 
-            SqlParameter v_p_he_so = v_sp.addDecimalOutputParam("@op_dc_he_so", 0);
+            SqlParameter v_p_he_so = v_sp.addDecimalOutputParam("@op_dc_he_so", (decimal)1.123);
+            v_p_he_so.Precision = 6;
+            v_p_he_so.Scale = 2;
             SqlParameter v_p_muc = v_sp.addNVarcharOutputParam("@op_str_muc_lns", "");
             SqlParameter v_p_ma = v_sp.addNVarcharOutputParam("@op_str_ma_lns", "");
 

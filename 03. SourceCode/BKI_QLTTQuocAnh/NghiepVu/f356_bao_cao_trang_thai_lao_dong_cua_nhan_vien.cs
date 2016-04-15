@@ -377,7 +377,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     {
                         focus_new_row_created(v_id_gd_trang_thai_lao_dong_moi_tao);
                     }
-                    return;
+                    m_form.update_canh_bao();
                 }
                 //f357_bao_cao_trang_thai_lao_dong_nhan_vien_de v_frm = new f357_bao_cao_trang_thai_lao_dong_nhan_vien_de();
                 //v_frm.display_4_insert(ref v_id_gd_trang_thai_lao_dong_moi_tao);     
@@ -387,7 +387,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 //{
                 //    focus_new_row_created(v_id_gd_trang_thai_lao_dong_moi_tao);
                 //}
-                m_form.update_canh_bao();
+                
             }
             catch (Exception v_e)
             {

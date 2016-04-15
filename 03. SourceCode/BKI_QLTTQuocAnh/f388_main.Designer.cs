@@ -1626,7 +1626,7 @@
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Green;
-            this.label15.Location = new System.Drawing.Point(195, 2);
+            this.label15.Location = new System.Drawing.Point(193, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(229, 23);
             this.label15.TabIndex = 11;
@@ -1637,7 +1637,7 @@
             this.label18.AutoSize = true;
             this.label18.Dock = System.Windows.Forms.DockStyle.Left;
             this.label18.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(132, 2);
+            this.label18.Location = new System.Drawing.Point(130, 0);
             this.label18.Name = "label18";
             this.label18.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label18.Size = new System.Drawing.Size(63, 21);
@@ -1650,7 +1650,7 @@
             this.m_lbl_ket_thuc_nghi_tam_thoi.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_lbl_ket_thuc_nghi_tam_thoi.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_ket_thuc_nghi_tam_thoi.ForeColor = System.Drawing.Color.Green;
-            this.m_lbl_ket_thuc_nghi_tam_thoi.Location = new System.Drawing.Point(52, 2);
+            this.m_lbl_ket_thuc_nghi_tam_thoi.Location = new System.Drawing.Point(50, 0);
             this.m_lbl_ket_thuc_nghi_tam_thoi.Name = "m_lbl_ket_thuc_nghi_tam_thoi";
             this.m_lbl_ket_thuc_nghi_tam_thoi.Size = new System.Drawing.Size(80, 23);
             this.m_lbl_ket_thuc_nghi_tam_thoi.TabIndex = 9;
@@ -1661,7 +1661,7 @@
             this.label20.AutoSize = true;
             this.label20.Dock = System.Windows.Forms.DockStyle.Left;
             this.label20.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(2, 2);
+            this.label20.Location = new System.Drawing.Point(0, 0);
             this.label20.Name = "label20";
             this.label20.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label20.Size = new System.Drawing.Size(50, 21);

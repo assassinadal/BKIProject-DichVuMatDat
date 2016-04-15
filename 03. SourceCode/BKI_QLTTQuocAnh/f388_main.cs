@@ -241,8 +241,8 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                //DateTime v_ngay_hien_tai = DateTime.Now.Date;
-                DateTime v_ngay_hien_tai = Convert.ToDateTime("2016 - 05 - 01 00:00:00.000");
+                DateTime v_ngay_hien_tai = DateTime.Now.Date;
+                //DateTime v_ngay_hien_tai = Convert.ToDateTime("2016 - 05 - 01 00:00:00.000");
                 US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN v_us = new US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN();
                 DataSet v_ds = v_us.LayDanhSachNhanVienDiLamTroLai(v_ngay_hien_tai);
                 return v_ds;

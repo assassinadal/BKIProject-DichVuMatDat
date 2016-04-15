@@ -1227,6 +1227,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string MA_LOAI_TRANG_THAI_LD = "MA_LOAI_TRANG_THAI_LD";
         public const string TEN_LOAI_TRANG_THAI_LD = "TEN_LOAI_TRANG_THAI_LD";
         public const string NGAY_AP_DUNG = "NGAY_AP_DUNG";
+        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
         public const string NGAY_LAP = "NGAY_LAP";
         public const string NGUOI_LAP = "NGUOI_LAP";
         public const string NGAY_SUA = "NGAY_SUA";
@@ -1234,6 +1235,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string GHI_CHU = "GHI_CHU";
         public const string DA_XOA = "DA_XOA";
     }
+
 
     #endregion
     public class V_GD_CONG_TAC_2

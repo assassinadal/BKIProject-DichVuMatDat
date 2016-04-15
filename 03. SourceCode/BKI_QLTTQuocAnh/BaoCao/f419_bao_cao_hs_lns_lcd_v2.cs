@@ -31,7 +31,7 @@ namespace BKI_DichVuMatDat.BaoCao
             InitializeComponent();
             format_controls();
         }
-        public void display_nv_het_han_hs_lns(DateTime v_ngay_hien_tai)
+        public void display_nv_het_han_hs_lns(DateTime v_ngay_hien_tai, f388_main f)
         {
             US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG v_us = new US_V_F419_BAO_CAO_HS_LNS_NHAN_VIEN_THEO_THANG();
             DataSet v_ds = v_us.LayDanhSachNhanVienHetHanHeSoLuongNangSuat(v_ngay_hien_tai);
@@ -50,9 +50,10 @@ namespace BKI_DichVuMatDat.BaoCao
             //
             this.CenterToScreen();
             this.ShowDialog();
+            f.update_canh_bao();
         }
 
-        public void display_nv_het_han_lcd(DateTime v_ngay_hien_tai)
+        public void display_nv_het_han_lcd(DateTime v_ngay_hien_tai, f388_main f)
         {
             US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG v_us = new US_V_F419_BAO_CAO_LCD_NHAN_VIEN_THEO_THANG();
             DataSet v_ds = v_us.LayDanhSachNhanVienHetHanLuongCheDo(v_ngay_hien_tai);
@@ -71,6 +72,7 @@ namespace BKI_DichVuMatDat.BaoCao
             //
             this.CenterToScreen();
             this.ShowDialog();
+            f.update_canh_bao();
         }
         #endregion
 
@@ -366,7 +368,6 @@ namespace BKI_DichVuMatDat.BaoCao
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
 
 
         private void M_dat_thang_DateTimeChanged(object sender, EventArgs e)

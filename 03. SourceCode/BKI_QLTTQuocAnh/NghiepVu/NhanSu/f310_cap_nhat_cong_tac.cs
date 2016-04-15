@@ -50,8 +50,13 @@ namespace BKI_DichVuMatDat.NghiepVu
             ShowDialog();
         }
         public void display_for_cham_dut_cong_tac(decimal ip_dc_id_gd_cong_tac)
-        {
+        {     
             setup_form_for_cham_dut_cong_tac(ip_dc_id_gd_cong_tac);
+            ShowDialog();
+        }
+        public void display_for_cham_dut_cong_tac(decimal ip_dc_id_gd_cong_tac,decimal ip_dc_id_phong_ban)
+        {
+            setup_form_for_cham_dut_cong_tac(ip_dc_id_gd_cong_tac,ip_dc_id_phong_ban);
             ShowDialog();
         }
         public void display_for_update(decimal ip_dc_id_gd_cong_tac)
@@ -519,6 +524,25 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chon_vi_tri.EditValue = v_us_ct.dcID_VI_TRI;
             m_dat_ngay_bat_dau.EditValue = v_us_ct.datNGAY_BAT_DAU;
             if(!v_us_ct.IsNGAY_KET_THUCNull())
+            {
+                m_dat_ngay_ket_thuc.EditValue = v_us_ct.datNGAY_KET_THUC;
+            }
+        }
+        private void setup_form_for_cham_dut_cong_tac(decimal ip_dc_id_gd_cong_tac, decimal ip_dc_id_phong_ban)
+        {
+            load_data_2_sle_nhan_vien(load_danh_sach_nhan_vien_theo_phong_ban(ip_dc_id_phong_ban));
+            US_GD_CONG_TAC v_us_ct = new US_GD_CONG_TAC(ip_dc_id_gd_cong_tac);
+            m_e_loai_cap_nhat = e_loai_cap_nhat.CHAM_DUT_CONG_TAC;
+            setup_header_text("CHẤM DỨT CÔNG TÁC NHÂN VIÊN");
+            setup_read_only(m_sle_chon_don_vi, m_sle_chon_vi_tri, m_sle_chon_nhan_vien, m_sle_chon_loai_cong_tac, m_sle_chon_quyet_dinh);
+            m_dat_ngay_bat_dau.ReadOnly = true;
+            m_sle_chon_nhan_vien.EditValue = v_us_ct.dcID_NHAN_VIEN;
+            m_sle_chon_don_vi.EditValue = v_us_ct.dcID_DON_VI;
+            m_sle_chon_loai_cong_tac.EditValue = v_us_ct.dcID_LOAI_CONG_TAC;
+            m_sle_chon_quyet_dinh.EditValue = v_us_ct.dcID_QUYET_DINH;
+            m_sle_chon_vi_tri.EditValue = v_us_ct.dcID_VI_TRI;
+            m_dat_ngay_bat_dau.EditValue = v_us_ct.datNGAY_BAT_DAU;
+            if (!v_us_ct.IsNGAY_KET_THUCNull())
             {
                 m_dat_ngay_ket_thuc.EditValue = v_us_ct.datNGAY_KET_THUC;
             }

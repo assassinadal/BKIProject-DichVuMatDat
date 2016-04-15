@@ -31,6 +31,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         private void format_controls()
         {
             set_define_events();
+            
         }
         private void set_initial_form_load()
         {
@@ -56,6 +57,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             v_us.FillDataset(v_ds, " where id_don_vi = " + ip_dc_id_don_vi);
 
             m_grc.DataSource = v_ds.Tables[0];
+           
         }
 
         //Get data
@@ -135,7 +137,8 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
             var v_dc_id_gd_cong_tac = Convert.ToDecimal(m_grv.GetRowCellValue(m_grv.FocusedRowHandle, V_GD_CONG_TAC_2.ID));
             f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
-            v_frm.display_for_cham_dut_cong_tac(v_dc_id_gd_cong_tac);
+            //v_frm.display_for_cham_dut_cong_tac(v_dc_id_gd_cong_tac);
+            v_frm.display_for_cham_dut_cong_tac(v_dc_id_gd_cong_tac, get_id_phong_ban());
             refresh_data();
         }
         private void sua_cong_tac()

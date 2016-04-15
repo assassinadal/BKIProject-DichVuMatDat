@@ -23,18 +23,19 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.Text = "F357 - THAY ĐỔI TRẠNG THÁI LAO ĐỘNG CỦA NHÂN VIÊN";
             m_lbl_header.Text = "Thay đổi trạng thái lao động của nhân viên";
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_dat_ngay_ap_dung.EditValue = m_ngay_goi_y;
             this.CenterToScreen();
             this.ShowDialog();
 
             v_id_gd_trang_thai_lao_dong_moi_tao = m_id_gd_trang_thai_lao_dong_moi_tao;
         }
-
         public void display_4_update(US_GD_TRANG_THAI_LAO_DONG ip_us)
         {
             this.Text = "F357 - CẬP NHẬT TRẠNG THÁI LAO ĐỘNG CỦA NHÂN VIÊN";
             m_lbl_header.Text = "Cập nhật trạng thái lao động của nhân viên";
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_sle_chon_nhan_vien.EditValue = ip_us.dcID_NHAN_VIEN;
+            m_sle_chon_nhan_vien.Enabled = false;
             m_id_gd_trang_thai_lao_dong_4_update = ip_us.dcID;
             m_sle_chon_trang_thai_lao_dong.EditValue = ip_us.dcID_TRANG_THAI_LAO_DONG;
             if (ip_us.datNGAY_AP_DUNG == null)
@@ -49,12 +50,26 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.CenterToScreen();
             this.ShowDialog();
         }
+        public void display_4_thay_doi_trang_thai(ref decimal v_id_gd_trang_thai_lao_dong_moi_tao, decimal id_nv)
+        {
+            this.Text = "F357 - THAY ĐỔI TRẠNG THÁI LAO ĐỘNG CỦA NHÂN VIÊN";
+            m_lbl_header.Text = "Thay đổi trạng thái lao động của nhân viên";
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_sle_chon_nhan_vien.EditValue = id_nv;
+            m_sle_chon_nhan_vien.Enabled = false;
+            m_dat_ngay_ap_dung.EditValue = m_ngay_goi_y;
+            this.CenterToScreen();
+            this.ShowDialog();
+            v_id_gd_trang_thai_lao_dong_moi_tao = m_id_gd_trang_thai_lao_dong_moi_tao;
+        }
+
         #endregion
 
         #region Member
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         decimal m_id_gd_trang_thai_lao_dong_moi_tao = 0;
         decimal m_id_gd_trang_thai_lao_dong_4_update = 0;
+        DateTime m_ngay_goi_y = DateTime.Now.Date;
         #endregion
 
         #region Private methods
@@ -105,8 +120,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             DS_V_DM_TRANG_THAI_LAO_DONG v_ds = new DS_V_DM_TRANG_THAI_LAO_DONG();
             US_V_DM_TRANG_THAI_LAO_DONG v_us = new US_V_DM_TRANG_THAI_LAO_DONG();
-
-            v_us.FillDataset(v_ds);
+            v_us.FillDataset(v_ds,"WHERE ID_LOAI_TRANG_THAI_LD in (743, 742)" );
             return v_ds;
         }
 
@@ -244,8 +258,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             catch (Exception v_e)
             {
-
-                throw v_e;
+                CSystemLog_301.ExceptionHandle(v_e);
             }
 
         }
@@ -253,8 +266,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void save_data()
         {
             US_GD_TRANG_THAI_LAO_DONG v_us_gd_trang_thai_lao_dong = new US_GD_TRANG_THAI_LAO_DONG();
-
-
             try
             {
                 switch (m_e_form_mode)
@@ -352,8 +363,31 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.Load += f357_bao_cao_trang_thai_lao_dong_nhan_vien_de_Load;
             m_cmd_save.Click += m_cmd_save_Click;
             m_cmd_exit.Click += m_cmd_exit_Click;
+            m_sle_chon_trang_thai_lao_dong.EditValueChanged += M_sle_chon_trang_thai_lao_dong_EditValueChanged;
             this.KeyDown += f357_bao_cao_trang_thai_lao_dong_nhan_vien_de_KeyDown;
             this.FormClosed += f357_bao_cao_trang_thai_lao_dong_nhan_vien_de_FormClosed;
+        }
+
+        private void M_sle_chon_trang_thai_lao_dong_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_sle_chon_trang_thai_lao_dong.EditValue == null | m_sle_chon_trang_thai_lao_dong.Text == "")
+                {
+                    return;
+                }
+                decimal id_trang_thai = (decimal)m_sle_chon_trang_thai_lao_dong.EditValue;
+                if (id_trang_thai == 1)
+                {
+                    m_dat_ngay_ket_thuc.Enabled = false;
+                    return;
+                }
+                m_dat_ngay_ket_thuc.Enabled = true;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void f357_bao_cao_trang_thai_lao_dong_nhan_vien_de_KeyDown(object sender, KeyEventArgs e)

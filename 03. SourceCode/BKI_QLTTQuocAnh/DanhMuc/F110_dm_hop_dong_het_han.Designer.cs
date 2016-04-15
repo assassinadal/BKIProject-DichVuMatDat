@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F110_dm_hop_dong_het_han));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_btn_dieu_chinh_hop_dong = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.m_dat_den_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
@@ -58,33 +63,31 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_dat_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.m_btn_dieu_chinh_hop_dong = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_hop_dong_het_han)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_hop_dong_het_han)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
@@ -92,15 +95,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -120,6 +120,60 @@
             this.layoutControl1.Size = new System.Drawing.Size(1239, 552);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.m_btn_dieu_chinh_hop_dong);
+            this.panelControl1.Controls.Add(this.m_cmd_xuat_excel);
+            this.panelControl1.Location = new System.Drawing.Point(12, 497);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1215, 43);
+            this.panelControl1.TabIndex = 12;
+            // 
+            // m_btn_dieu_chinh_hop_dong
+            // 
+            this.m_btn_dieu_chinh_hop_dong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_btn_dieu_chinh_hop_dong.Image = ((System.Drawing.Image)(resources.GetObject("m_btn_dieu_chinh_hop_dong.Image")));
+            this.m_btn_dieu_chinh_hop_dong.Location = new System.Drawing.Point(2, 2);
+            this.m_btn_dieu_chinh_hop_dong.Name = "m_btn_dieu_chinh_hop_dong";
+            this.m_btn_dieu_chinh_hop_dong.Size = new System.Drawing.Size(201, 39);
+            this.m_btn_dieu_chinh_hop_dong.StyleController = this.layoutControl1;
+            this.m_btn_dieu_chinh_hop_dong.TabIndex = 9;
+            this.m_btn_dieu_chinh_hop_dong.Text = "Điều chỉnh thông tin hợp đồng";
+            this.m_btn_dieu_chinh_hop_dong.Visible = false;
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_xuat_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_excel.Image")));
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(1050, 2);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(163, 39);
+            this.m_cmd_xuat_excel.StyleController = this.layoutControl1;
+            this.m_cmd_xuat_excel.TabIndex = 8;
+            this.m_cmd_xuat_excel.Text = "&Xuất excel";
+            // 
+            // m_dat_den_ngay
+            // 
+            this.m_dat_den_ngay.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dat_den_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_den_ngay.Location = new System.Drawing.Point(399, 79);
+            this.m_dat_den_ngay.Name = "m_dat_den_ngay";
+            this.m_dat_den_ngay.ShowCheckBox = true;
+            this.m_dat_den_ngay.Size = new System.Drawing.Size(243, 20);
+            this.m_dat_den_ngay.TabIndex = 11;
+            // 
+            // m_dat_tu_ngay
+            // 
+            this.m_dat_tu_ngay.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dat_tu_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_tu_ngay.Location = new System.Drawing.Point(70, 79);
+            this.m_dat_tu_ngay.Name = "m_dat_tu_ngay";
+            this.m_dat_tu_ngay.ShowCheckBox = true;
+            this.m_dat_tu_ngay.Size = new System.Drawing.Size(254, 20);
+            this.m_dat_tu_ngay.TabIndex = 10;
             // 
             // labelControl1
             // 
@@ -194,6 +248,7 @@
             this.m_grv_hop_dong_het_han.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.m_grv_hop_dong_het_han.OptionsSelection.EnableAppearanceFocusedRow = false;
             this.m_grv_hop_dong_het_han.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.m_grv_hop_dong_het_han.OptionsView.ShowFooter = true;
             // 
             // gridBand1
             // 
@@ -235,6 +290,8 @@
             this.gridColumn3.FieldName = "MA_NV";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MA_NV", "SL : {0}")});
             this.gridColumn3.Visible = true;
             this.gridColumn3.Width = 154;
             // 
@@ -511,6 +568,16 @@
             this.emptySpaceItem1.Text = "emptySpaceItem1";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.CustomizationFormText = "emptySpaceItem4";
+            this.emptySpaceItem4.Location = new System.Drawing.Point(634, 67);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(585, 24);
+            this.emptySpaceItem4.Text = "emptySpaceItem4";
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
@@ -575,17 +642,6 @@
             this.emptySpaceItem7.Text = "emptySpaceItem7";
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // m_dat_tu_ngay
-            // 
-            this.m_dat_tu_ngay.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dat_tu_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_tu_ngay.Location = new System.Drawing.Point(70, 79);
-            this.m_dat_tu_ngay.Name = "m_dat_tu_ngay";
-            this.m_dat_tu_ngay.ShowCheckBox = true;
-            this.m_dat_tu_ngay.Size = new System.Drawing.Size(254, 20);
-            this.m_dat_tu_ngay.TabIndex = 10;
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.m_dat_tu_ngay;
@@ -595,6 +651,48 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(316, 24);
             this.layoutControlItem2.Text = "Sau ngày";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(55, 13);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.m_dat_den_ngay;
+            this.layoutControlItem9.CustomizationFormText = "layoutControlItem9";
+            this.layoutControlItem9.Location = new System.Drawing.Point(329, 67);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(305, 24);
+            this.layoutControlItem9.Text = "Trước ngày";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(55, 13);
+            // 
+            // emptySpaceItem8
+            // 
+            this.emptySpaceItem8.AllowHotTrack = false;
+            this.emptySpaceItem8.CustomizationFormText = "emptySpaceItem8";
+            this.emptySpaceItem8.Location = new System.Drawing.Point(316, 67);
+            this.emptySpaceItem8.Name = "emptySpaceItem8";
+            this.emptySpaceItem8.Size = new System.Drawing.Size(13, 24);
+            this.emptySpaceItem8.Text = "emptySpaceItem8";
+            this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.panelControl1;
+            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 485);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(1219, 47);
+            this.layoutControlItem3.Text = "layoutControlItem3";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextToControlDistance = 0;
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.CustomizationFormText = "emptySpaceItem3";
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 475);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(1219, 10);
+            this.emptySpaceItem3.Text = "emptySpaceItem3";
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
             // 
@@ -618,101 +716,6 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(93, 13);
             this.layoutControlItem8.TextToControlDistance = 5;
             // 
-            // m_dat_den_ngay
-            // 
-            this.m_dat_den_ngay.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dat_den_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_den_ngay.Location = new System.Drawing.Point(399, 79);
-            this.m_dat_den_ngay.Name = "m_dat_den_ngay";
-            this.m_dat_den_ngay.ShowCheckBox = true;
-            this.m_dat_den_ngay.Size = new System.Drawing.Size(243, 20);
-            this.m_dat_den_ngay.TabIndex = 11;
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.m_dat_den_ngay;
-            this.layoutControlItem9.CustomizationFormText = "layoutControlItem9";
-            this.layoutControlItem9.Location = new System.Drawing.Point(329, 67);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(305, 24);
-            this.layoutControlItem9.Text = "Trước ngày";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(55, 13);
-            // 
-            // emptySpaceItem8
-            // 
-            this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.CustomizationFormText = "emptySpaceItem8";
-            this.emptySpaceItem8.Location = new System.Drawing.Point(316, 67);
-            this.emptySpaceItem8.Name = "emptySpaceItem8";
-            this.emptySpaceItem8.Size = new System.Drawing.Size(13, 24);
-            this.emptySpaceItem8.Text = "emptySpaceItem8";
-            this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem4
-            // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.CustomizationFormText = "emptySpaceItem4";
-            this.emptySpaceItem4.Location = new System.Drawing.Point(634, 67);
-            this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(585, 24);
-            this.emptySpaceItem4.Text = "emptySpaceItem4";
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.m_btn_dieu_chinh_hop_dong);
-            this.panelControl1.Controls.Add(this.m_cmd_xuat_excel);
-            this.panelControl1.Location = new System.Drawing.Point(12, 497);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1215, 43);
-            this.panelControl1.TabIndex = 12;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.panelControl1;
-            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 485);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1219, 47);
-            this.layoutControlItem3.Text = "layoutControlItem3";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextToControlDistance = 0;
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_xuat_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_excel.Image")));
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(1050, 2);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(163, 39);
-            this.m_cmd_xuat_excel.StyleController = this.layoutControl1;
-            this.m_cmd_xuat_excel.TabIndex = 8;
-            this.m_cmd_xuat_excel.Text = "&Xuất excel";
-            // 
-            // emptySpaceItem3
-            // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.CustomizationFormText = "emptySpaceItem3";
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 475);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(1219, 10);
-            this.emptySpaceItem3.Text = "emptySpaceItem3";
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // m_btn_dieu_chinh_hop_dong
-            // 
-            this.m_btn_dieu_chinh_hop_dong.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_btn_dieu_chinh_hop_dong.Image = ((System.Drawing.Image)(resources.GetObject("m_btn_dieu_chinh_hop_dong.Image")));
-            this.m_btn_dieu_chinh_hop_dong.Location = new System.Drawing.Point(2, 2);
-            this.m_btn_dieu_chinh_hop_dong.Name = "m_btn_dieu_chinh_hop_dong";
-            this.m_btn_dieu_chinh_hop_dong.Size = new System.Drawing.Size(201, 39);
-            this.m_btn_dieu_chinh_hop_dong.StyleController = this.layoutControl1;
-            this.m_btn_dieu_chinh_hop_dong.TabIndex = 9;
-            this.m_btn_dieu_chinh_hop_dong.Text = "Điều chỉnh thông tin hợp đồng";
-            this.m_btn_dieu_chinh_hop_dong.Visible = false;
-            // 
             // F110_dm_hop_dong_het_han
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -724,12 +727,15 @@
             this.Text = "F110 - Danh mục hợp đồng hết hạn";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_hop_dong_het_han)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_hop_dong_het_han)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
@@ -737,15 +743,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
 
         }

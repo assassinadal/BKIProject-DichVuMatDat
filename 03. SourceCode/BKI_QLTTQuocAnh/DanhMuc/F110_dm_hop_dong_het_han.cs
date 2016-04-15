@@ -16,9 +16,10 @@ namespace BKI_DichVuMatDat.DanhMuc
 {
     public partial class F110_dm_hop_dong_het_han : Form
     {
+        private f388_main m_form;
         private decimal m_dc_id_nv_dang_dieu_chinh = 0;
 
-        public void display_canh_bao_het_han_hop_dong(DateTime date1, DateTime date2)
+        public void display_canh_bao_het_han_hop_dong(DateTime date1, DateTime date2, f388_main f)
         {
             //Disable các nút 
             m_cmd_filter.Enabled = false;
@@ -45,6 +46,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             // 
             this.CenterToScreen();
             this.ShowDialog();
+            f.update_canh_bao();
         }
         public F110_dm_hop_dong_het_han()
         {
@@ -53,7 +55,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_dat_tu_ngay.Value = DateTime.Now;
             m_cmd_filter.Click += m_cmd_filter_Click;
         }
-        public void display_canh_bao_het_han_hop_dong(DataSet ip_ds_het_han_hop_dong_thang_nay)
+        public void display_canh_bao_het_han_hop_dong(DataSet ip_ds_het_han_hop_dong_thang_nay, f388_main f)
         {
             //
             //
@@ -74,6 +76,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             // 
             this.CenterToScreen();
             this.ShowDialog();
+            f.update_canh_bao();
         }
 
         void F110_dm_hop_dong_het_han_Load(object sender, EventArgs e)

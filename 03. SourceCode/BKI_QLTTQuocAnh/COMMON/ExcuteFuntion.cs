@@ -34,6 +34,11 @@ namespace BKI_DichVuMatDat.COMMON
 
             return v_ds.Tables[0].Rows[0][0].ToString();
         }
+        public static decimal GetID_GD_HS_LNS_LCDByID_HOP_DONG(decimal ip_dc_id_hop_dong_hien_tai)
+        {
+            var v_str_result = ExecuteFuntionSql("fn_HD_id_gd_hs_lns_lcd_Get", ip_dc_id_hop_dong_hien_tai);
+            return Convert.ToDecimal(v_str_result);
+        }
         public static bool KiemTraNhanVienCoTrongBangLuongChua(string ip_str_ma_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
         {
             var v_str_result = ExecuteFuntionSql("fn_kiem_tra_nhan_vien_co_trong_bang_luong_chua", ip_str_ma_nhan_vien, ip_dc_thang, ip_dc_nam);

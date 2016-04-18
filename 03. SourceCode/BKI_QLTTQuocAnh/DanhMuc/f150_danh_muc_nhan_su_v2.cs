@@ -27,6 +27,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         public void DisplayForInsert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            Text = "F150 - Thêm mới nhân viên";
             this.CenterToScreen();
             this.ShowDialog();
         }
@@ -43,6 +44,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         public void DisplayForUpdate(US_DM_NHAN_VIEN v_us)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            Text = "F150 - Sửa thông tin nhân viên";
             layoutControlItem16.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             m_us = v_us;
             us_to_form(v_us);
@@ -159,7 +161,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_us.strMA_NV = m_txt_ma_nv.Text;
             m_us.strHO_DEM = m_txt_ho_dem_nv.Text;
             m_us.strTEN = m_txt_ten_nv.Text;
-            if (m_cbo_gioi_tinh.Text == "Nam")
+            if (m_cbo_gioi_tinh.Text.Trim().ToUpper() == "NAM")
                 m_us.strGIOI_TINH = "Y";
             else m_us.strGIOI_TINH = "N";
             m_us.strEMAIL = m_txt_email.Text;

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F152_DANH_SACH_NHAN_VIEN_EXCEL));
             this.m_cmd_luu = new DevExpress.XtraEditors.SimpleButton();
             this.colDIA_CHI_LIEN_LAC = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,13 +44,13 @@
             this.colCHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dVMDDataSet1 = new BKI_DichVuMatDat.DVMDDataSet1();
-            this.dVMDDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vDMNHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dVMDDataSet1BindingSource = new System.Windows.Forms.BindingSource();
+            this.vDMNHANVIENBindingSource = new System.Windows.Forms.BindingSource();
             this.v_DM_NHAN_VIENTableAdapter = new BKI_DichVuMatDat.DVMDDataSet1TableAdapters.V_DM_NHAN_VIENTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
-            this.dMNHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dMNHANVIENBindingSource = new System.Windows.Forms.BindingSource();
             this.dVMDDataSet2 = new BKI_DichVuMatDat.DVMDDataSet2();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -75,11 +74,11 @@
             this.colNOI_SINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQUE_QUAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIA_CHI_THUONG_TRU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGUOI_BAO_LANH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dM_NHAN_VIENTableAdapter = new BKI_DichVuMatDat.DVMDDataSet2TableAdapters.DM_NHAN_VIENTableAdapter();
-            this.colNGUOI_BAO_LANH = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dVMDDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVMDDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDMNHANVIENBindingSource)).BeginInit();
@@ -513,6 +512,14 @@
             this.colDIA_CHI_THUONG_TRU.VisibleIndex = 8;
             this.colDIA_CHI_THUONG_TRU.Width = 34;
             // 
+            // colNGUOI_BAO_LANH
+            // 
+            this.colNGUOI_BAO_LANH.Caption = "Người bảo lãnh";
+            this.colNGUOI_BAO_LANH.FieldName = "NGUOI_BAO_LANH";
+            this.colNGUOI_BAO_LANH.Name = "colNGUOI_BAO_LANH";
+            this.colNGUOI_BAO_LANH.Visible = true;
+            this.colNGUOI_BAO_LANH.VisibleIndex = 17;
+            // 
             // colTEN_DON_VI
             // 
             this.colTEN_DON_VI.Caption = "Đơn vị";
@@ -541,14 +548,6 @@
             // dM_NHAN_VIENTableAdapter
             // 
             this.dM_NHAN_VIENTableAdapter.ClearBeforeFill = true;
-            // 
-            // colNGUOI_BAO_LANH
-            // 
-            this.colNGUOI_BAO_LANH.Caption = "Người bảo lãnh";
-            this.colNGUOI_BAO_LANH.FieldName = "NGUOI_BAO_LANH";
-            this.colNGUOI_BAO_LANH.Name = "colNGUOI_BAO_LANH";
-            this.colNGUOI_BAO_LANH.Visible = true;
-            this.colNGUOI_BAO_LANH.VisibleIndex = 17;
             // 
             // F152_DANH_SACH_NHAN_VIEN_EXCEL
             // 

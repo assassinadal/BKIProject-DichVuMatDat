@@ -31,11 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Template));
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
-            this.m_cmd_exit = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
@@ -50,8 +48,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.m_cmd_fillter = new DevExpress.XtraEditors.SimpleButton();
-            this.m_pnl_out_place_dm.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_exit = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
+            this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -59,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_cmd_delete
@@ -74,11 +76,24 @@
             this.m_cmd_delete.TabIndex = 0;
             this.m_cmd_delete.Text = "&Xóa";
             // 
+            // img_DVMD
+            // 
+            this.img_DVMD.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("img_DVMD.ImageStream")));
+            this.img_DVMD.Images.SetKeyName(0, "Excel-icon.png");
+            this.img_DVMD.Images.SetKeyName(1, "excel-xls-icon.png");
+            this.img_DVMD.Images.SetKeyName(2, "exit-16.ico");
+            this.img_DVMD.Images.SetKeyName(3, "image.png");
+            this.img_DVMD.Images.SetKeyName(4, "Microsoft Excel.png");
+            this.img_DVMD.Images.SetKeyName(5, "calculator.png");
+            this.img_DVMD.Images.SetKeyName(6, "diskette.png");
+            this.img_DVMD.Images.SetKeyName(7, "file_add.png");
+            this.img_DVMD.Images.SetKeyName(8, "file_delete.png");
+            this.img_DVMD.Images.SetKeyName(9, "file_edit.png");
+            this.img_DVMD.Images.SetKeyName(10, "file_search.png");
+            // 
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.simpleButton9);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.simpleButton6);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_file);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
@@ -99,52 +114,11 @@
             this.simpleButton9.Dock = System.Windows.Forms.DockStyle.Left;
             this.simpleButton9.ImageIndex = 5;
             this.simpleButton9.ImageList = this.img_DVMD;
-            this.simpleButton9.Location = new System.Drawing.Point(461, 4);
+            this.simpleButton9.Location = new System.Drawing.Point(311, 4);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(75, 32);
             this.simpleButton9.TabIndex = 8;
             this.simpleButton9.Text = "&Lưu";
-            // 
-            // img_DVMD
-            // 
-            this.img_DVMD.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("img_DVMD.ImageStream")));
-            this.img_DVMD.Images.SetKeyName(0, "Excel-icon.png");
-            this.img_DVMD.Images.SetKeyName(1, "excel-xls-icon.png");
-            this.img_DVMD.Images.SetKeyName(2, "exit-16.ico");
-            this.img_DVMD.Images.SetKeyName(3, "image.png");
-            this.img_DVMD.Images.SetKeyName(4, "Microsoft Excel.png");
-            this.img_DVMD.Images.SetKeyName(5, "calculator.png");
-            this.img_DVMD.Images.SetKeyName(6, "diskette.png");
-            this.img_DVMD.Images.SetKeyName(7, "file_add.png");
-            this.img_DVMD.Images.SetKeyName(8, "file_delete.png");
-            this.img_DVMD.Images.SetKeyName(9, "file_edit.png");
-            this.img_DVMD.Images.SetKeyName(10, "file_search.png");
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.m_cmd_exit.Appearance.Options.UseFont = true;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_exit.ImageIndex = 2;
-            this.m_cmd_exit.ImageList = this.img_DVMD;
-            this.m_cmd_exit.Location = new System.Drawing.Point(386, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(75, 32);
-            this.m_cmd_exit.TabIndex = 7;
-            this.m_cmd_exit.Text = "&Thoát";
-            // 
-            // m_cmd_save
-            // 
-            this.m_cmd_save.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cmd_save.Appearance.Options.UseFont = true;
-            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_save.ImageIndex = 6;
-            this.m_cmd_save.ImageList = this.img_DVMD;
-            this.m_cmd_save.Location = new System.Drawing.Point(311, 4);
-            this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(75, 32);
-            this.m_cmd_save.TabIndex = 6;
-            this.m_cmd_save.Text = "&Lưu";
             // 
             // simpleButton6
             // 
@@ -305,11 +279,49 @@
             this.m_cmd_fillter.TabIndex = 0;
             this.m_cmd_fillter.Text = "&Lọc";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.m_cmd_save);
+            this.panel1.Controls.Add(this.m_cmd_exit);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 406);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(4);
+            this.panel1.Size = new System.Drawing.Size(898, 40);
+            this.panel1.TabIndex = 6;
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.m_cmd_exit.Appearance.Options.UseFont = true;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageIndex = 2;
+            this.m_cmd_exit.ImageList = this.img_DVMD;
+            this.m_cmd_exit.Location = new System.Drawing.Point(819, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(75, 32);
+            this.m_cmd_exit.TabIndex = 8;
+            this.m_cmd_exit.Text = "&Thoát";
+            // 
+            // m_cmd_save
+            // 
+            this.m_cmd_save.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_save.Appearance.Options.UseFont = true;
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_save.ImageIndex = 6;
+            this.m_cmd_save.ImageList = this.img_DVMD;
+            this.m_cmd_save.Location = new System.Drawing.Point(744, 4);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(75, 32);
+            this.m_cmd_save.TabIndex = 7;
+            this.m_cmd_save.Text = "&Lưu";
+            // 
             // Template
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(898, 486);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.layoutControl1);
@@ -318,8 +330,8 @@
             this.Controls.Add(this.label1);
             this.Name = "Template";
             this.Text = "Template";
-            this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
+            this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -327,6 +339,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -349,8 +362,9 @@
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_fillter;
         private DevExpress.Utils.ImageCollection img_DVMD;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_save;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_exit;
         private DevExpress.XtraEditors.SimpleButton simpleButton9;
+        internal System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_exit;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_save;
     }
 }

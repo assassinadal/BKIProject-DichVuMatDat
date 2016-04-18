@@ -60,15 +60,22 @@ namespace BKI_DichVuMatDat
                         }
                         else
                         {
+                            if (m_grv.GetDataRow(i)["MA_NV"].ToString() == "" || m_grv.GetDataRow(i)["MA_NV"] == null)
+                            {
+                                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                                F503_IMPORT_EXCEL.da_hoan_thanh = true;
+                                this.Close();
+                                return;
+                            }
                             CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + m_grv.GetDataRow(i)["MA_NV"].ToString() + "  đã tồn tại. Vui lòng kiểm tra lại thông tin!");
                             return;
                         }
 
                     }
 
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-                    F503_IMPORT_EXCEL.da_hoan_thanh = true;
-                    this.Close();
+                    //CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                    //F503_IMPORT_EXCEL.da_hoan_thanh = true;
+                    //this.Close();
                 }
                 else
                 {
@@ -114,7 +121,7 @@ namespace BKI_DichVuMatDat
             v_us.strDIA_CHI_THUONG_TRU = dataRow["DIA_CHI_THUONG_TRU"].ToString();
             v_us.strEMAIL = dataRow["EMAIL"].ToString();
             //v_us.strGIOI_TINH = dataRow["GIOI_TINH"].ToString();
-            if (dataRow["GIOI_TINH"].ToString() == "Nam")
+            if (dataRow["GIOI_TINH"].ToString().Trim().ToUpper() == "NAM")
                 v_us.strGIOI_TINH = "Y";
             else v_us.strGIOI_TINH = "N";
             v_us.strHO_DEM = dataRow["HO_DEM"].ToString();
@@ -133,7 +140,7 @@ namespace BKI_DichVuMatDat
             v_us.strTEN = dataRow["TEN"].ToString();
             v_us.strTON_GIAO = dataRow["TON_GIAO"].ToString();
             v_us.strTOT_NGHIEP_TAI = dataRow["TOT_NGHIEP_TAI"].ToString();
-            v_us.strTRINH_DO_VAN_HOA = find_id_cm_dm_tu_dien_by_trinh_do_van_hoa(dataRow["TRINH_DO_VAN_HOA"].ToString());
+            v_us.strTRINH_DO_VAN_HOA = find_id_cm_dm_tu_dien_by_trinh_do_van_hoa(dataRow["TRINH_DO_VAN_HOA"].ToString().Trim());
             v_us.Insert();
         }
 
@@ -142,7 +149,10 @@ namespace BKI_DichVuMatDat
             //US_DUNG_CHUNG v_usdc = new US_DUNG_CHUNG();
             //DataSet v_ds_nhan_vien = new DataSet();
             //v_ds_nhan_vien.Tables.Add(new DataTable());
-
+            if (dataRow["MA_NV"] == null || dataRow["MA_NV"].ToString()=="")
+            {
+                return false;
+            }
             US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
             DS_DM_NHAN_VIEN v_ds_nhan_vien = new DS_DM_NHAN_VIEN();
             v_us.FillDataset(v_ds_nhan_vien, " where MA_NV= '" + dataRow["MA_NV"].ToString() + "'");
@@ -169,8 +179,8 @@ namespace BKI_DichVuMatDat
             DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
 
             v_us.FillDataset(v_ds);
-
-            string v_str_filter = "TEN = '" + ip_str_trinh_do_van_hoa + "'";
+            ip_str_trinh_do_van_hoa = ip_str_trinh_do_van_hoa.Trim().ToUpper();
+            string v_str_filter = "MA_TU_DIEN = '" + ip_str_trinh_do_van_hoa + "'";
             DataRow[] v_dr = v_ds.CM_DM_TU_DIEN.Select(v_str_filter);
 
             if (v_dr.Count() == 0)

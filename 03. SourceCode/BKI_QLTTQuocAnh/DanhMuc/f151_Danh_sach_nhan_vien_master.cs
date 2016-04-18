@@ -113,8 +113,8 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void load_data_to_grid()
         {
-            US_V_DM_NHAN_VIEN_3 v_us = new US_V_DM_NHAN_VIEN_3();
-            DS_V_DM_NHAN_VIEN_3 v_ds = new DS_V_DM_NHAN_VIEN_3();
+            US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
+            DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
             v_ds.Clear();
             v_us.FillDataset(v_ds);
             m_grc.DataSource = v_ds.Tables[0];
@@ -122,13 +122,24 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void load_data_to_grid(decimal ip_dc_id_nhan_vien)
         {
-            US_V_DM_NHAN_VIEN_3 v_us = new US_V_DM_NHAN_VIEN_3();
-            DS_V_DM_NHAN_VIEN_3 v_ds = new DS_V_DM_NHAN_VIEN_3();
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            DS_DM_NHAN_VIEN v_ds = new DS_DM_NHAN_VIEN();
             v_ds.Clear();
             v_us.FillDataset(v_ds, "WHERE ID = " + ip_dc_id_nhan_vien);
             m_grc.DataSource = v_ds.Tables[0];
         }
 
+        private void delete_click()
+        {
+            if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_DU_LIEU))
+            {
+                DataRow v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+                US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN(CIPConvert.ToDecimal(v_dr["ID"].ToString()));
+                v_us.Delete();
+                load_data_to_grid();
+                CHRM_BaseMessages.MsgBox_Infor("Xóa dữ liệu thành công");
+            }
+        }
 
         #endregion
 
@@ -140,7 +151,19 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_cmd_chon_file.Click += m_cmd_chon_file_Click;
             m_cmd_them.Click += m_cmd_them_Click;
             m_cmd_sua.Click += m_cmd_sua_Click;
+            m_cmd_delete.Click += M_cmd_delete_Click;
+        }
 
+        private void M_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_click();
+            }
+            catch (Exception v_e)
+            {
+                CHRM_BaseMessages.MsgBox_Warning("NHÂN VIÊN ĐÃ CÓ HỢP ĐỒNG ! KHÔNG THỂ XÓA !");
+            }
         }
 
         private void f150_Danh_sach_nhan_vien_master_Load(object sender, EventArgs e)

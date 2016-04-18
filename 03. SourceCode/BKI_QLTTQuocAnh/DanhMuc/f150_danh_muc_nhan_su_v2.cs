@@ -35,6 +35,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         public void DisplayForInsert(ref int m_trang_thai_buoc_1_sau_hien_thi)
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            Text = "F150 - Thêm mới nhân viên";
             m_txt_ma_nv.Text = CHRMCommon.gen_ma_nhan_vien();
             this.CenterToScreen();
             this.ShowDialog();

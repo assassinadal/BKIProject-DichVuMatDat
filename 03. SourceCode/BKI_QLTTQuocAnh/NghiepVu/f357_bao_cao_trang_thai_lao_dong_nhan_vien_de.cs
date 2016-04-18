@@ -46,6 +46,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 m_dat_ngay_ap_dung.EditValue = ip_us.datNGAY_AP_DUNG;
             }
+            if (ip_us.datNGAY_KET_THUC == null)
+            {
+                m_dat_ngay_ket_thuc.EditValue = m_dat_ngay_ap_dung.DateTime.AddDays(1);
+            }
+            else
+            {
+                m_dat_ngay_ket_thuc.EditValue = ip_us.datNGAY_KET_THUC;
+            }
             m_txt_ghi_chu.Text = ip_us.strGHI_CHU;
             this.CenterToScreen();
             this.ShowDialog();
@@ -62,16 +70,25 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.ShowDialog();
             v_id_gd_trang_thai_lao_dong_moi_tao = m_id_gd_trang_thai_lao_dong_moi_tao;
         }
+        public void display_4_thay_doi_trang_thai(decimal ip_id_nv)
+        {
+            this.Text = "F357 - THAY ĐỔI TRẠNG THÁI LAO ĐỘNG CỦA NHÂN VIÊN";
+            m_lbl_header.Text = "Thay đổi trạng thái lao động của nhân viên";
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_sle_chon_nhan_vien.EditValue = ip_id_nv;
+            m_sle_chon_nhan_vien.Enabled = false;
+            m_dat_ngay_ap_dung.EditValue = m_ngay_goi_y;
+            this.CenterToScreen();
+            this.ShowDialog();
+        }
 
         #endregion
-
         #region Member
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         decimal m_id_gd_trang_thai_lao_dong_moi_tao = 0;
         decimal m_id_gd_trang_thai_lao_dong_4_update = 0;
         DateTime m_ngay_goi_y = DateTime.Now.Date;
         #endregion
-
         #region Private methods
         public f357_bao_cao_trang_thai_lao_dong_nhan_vien_de()
         {
@@ -120,7 +137,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             DS_V_DM_TRANG_THAI_LAO_DONG v_ds = new DS_V_DM_TRANG_THAI_LAO_DONG();
             US_V_DM_TRANG_THAI_LAO_DONG v_us = new US_V_DM_TRANG_THAI_LAO_DONG();
-            v_us.FillDataset(v_ds,"WHERE ID_LOAI_TRANG_THAI_LD in (743, 742)" );
+            v_us.FillDataset(v_ds);
             return v_ds;
         }
 
@@ -221,6 +238,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us_gd_trang_thai_lao_dong.dcID_NHAN_VIEN = (decimal)m_sle_chon_nhan_vien.EditValue;
             v_us_gd_trang_thai_lao_dong.dcID_TRANG_THAI_LAO_DONG = (decimal)m_sle_chon_trang_thai_lao_dong.EditValue;
             v_us_gd_trang_thai_lao_dong.datNGAY_AP_DUNG = m_dat_ngay_ap_dung.DateTime.Date;
+            v_us_gd_trang_thai_lao_dong.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.DateTime.Date;
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
                 v_us_gd_trang_thai_lao_dong.datNGAY_LAP = DateTime.Now.Date;
@@ -249,7 +267,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 else
                 {
                     US_GD_TRANG_THAI_LAO_DONG v_us = new US_GD_TRANG_THAI_LAO_DONG(v_id_gd_trang_thai_lao_dong_hien_tai);
-                    
+                    v_us.datNGAY_KET_THUC = m_dat_ngay_ap_dung.DateTime.AddDays(-1);                
                     v_us.strDA_XOA = "Y";
                     v_us.BeginTransaction();
                     v_us.Update();
@@ -368,6 +386,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.FormClosed += f357_bao_cao_trang_thai_lao_dong_nhan_vien_de_FormClosed;
         }
 
+      
         private void M_sle_chon_trang_thai_lao_dong_EditValueChanged(object sender, EventArgs e)
         {
             try
@@ -379,7 +398,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                 decimal id_trang_thai = (decimal)m_sle_chon_trang_thai_lao_dong.EditValue;
                 if (id_trang_thai == 1)
                 {
-                    m_dat_ngay_ket_thuc.Enabled = false;
                     return;
                 }
                 m_dat_ngay_ket_thuc.Enabled = true;

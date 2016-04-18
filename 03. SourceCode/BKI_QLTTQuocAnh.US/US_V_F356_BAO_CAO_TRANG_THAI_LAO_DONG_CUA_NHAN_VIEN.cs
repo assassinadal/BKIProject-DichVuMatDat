@@ -276,6 +276,8 @@ public class US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN : US_Object
             }
         }
 
+     
+
         public bool IsMA_LOAI_TRANG_THAI_LDNull()
         {
             return pm_objDR.IsNull("MA_LOAI_TRANG_THAI_LD");
@@ -531,10 +533,10 @@ public class US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN : US_Object
         v_sp.fillDataSetByCommand(this, op_ds); 
     }
 
-        public DataSet LayDanhSachNhanVienNghiTamThoi()
+        public DataSet LayDanhSachNhanVienNghiTamThoi(decimal id_trang_thai)
         {
             CStoredProc v_sp = new CStoredProc("pr_lay_danh_sach_nv_theo_loai_trang_thai_ld_hien_tai");
-            v_sp.addDecimalInputParam("@ip_dc_id_loai_trang_thai", 743);
+            v_sp.addDecimalInputParam("@ip_dc_id_loai_trang_thai", id_trang_thai);
             DataSet op_ds = new DataSet();
             op_ds.Tables.Add();
             v_sp.fillDataSetByCommand(this, op_ds);
@@ -551,5 +553,14 @@ public class US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN : US_Object
             return op_ds;
         }
 
+        public DataSet LayDanhSachNhanVienTheoLoaiTrangThai(decimal m_dc_id_loai_trang_thai)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_lay_danh_sach_nv_theo_loai_trang_thai_ld_hien_tai");
+            v_sp.addDecimalInputParam("@ip_dc_id_loai_trang_thai", m_dc_id_loai_trang_thai);
+            DataSet op_ds = new DataSet();
+            op_ds.Tables.Add();
+            v_sp.fillDataSetByCommand(this, op_ds);
+            return op_ds;
+        }
     }
 }

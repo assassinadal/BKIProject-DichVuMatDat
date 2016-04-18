@@ -269,26 +269,48 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["NGUOI_SUA"] = System.Convert.DBNull;
         }
 
-        public string strDA_XOA
+        public decimal dcID_HE_SO_LNS
         {
             get
             {
-                return CNull.RowNVLString(pm_objDR, "DA_XOA", IPConstants.c_DefaultString);
+                return CNull.RowNVLDecimal(pm_objDR, "ID_HE_SO_LNS", IPConstants.c_DefaultDecimal);
             }
             set
             {
-                pm_objDR["DA_XOA"] = value;
+                pm_objDR["ID_HE_SO_LNS"] = value;
             }
         }
 
-        public bool IsDA_XOANull()
+        public bool IsID_HE_SO_LNSNull()
         {
-            return pm_objDR.IsNull("DA_XOA");
+            return pm_objDR.IsNull("ID_HE_SO_LNS");
         }
 
-        public void SetDA_XOANull()
+        public void SetID_HE_SO_LNSNull()
         {
-            pm_objDR["DA_XOA"] = System.Convert.DBNull;
+            pm_objDR["ID_HE_SO_LNS"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_LCD
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_LCD", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_LCD"] = value;
+            }
+        }
+
+        public bool IsID_LCDNull()
+        {
+            return pm_objDR.IsNull("ID_LCD");
+        }
+
+        public void SetID_LCDNull()
+        {
+            pm_objDR["ID_LCD"] = System.Convert.DBNull;
         }
 
         public string strGHI_CHU

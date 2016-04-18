@@ -575,7 +575,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                 //nguoi sua
                 ip_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
             }
-            ip_us.strDA_XOA = "N";
         }
 
         private void form_2_us_gd_lcd(US_GD_LUONG_CHE_DO ip_us)
@@ -606,7 +605,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                 //nguoi sua
                 ip_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
             }
-            ip_us.strDA_XOA = "N";
         }
 
         private void cho_gd_hs_lns_lcd_da_co_da_xoa_Y()
@@ -633,7 +631,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS(m_id_gd_hs_lns);
 
-            v_us.strDA_XOA = "Y";
             v_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau_lns.Value.AddDays(-1);
             try
             {
@@ -650,8 +647,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void cho_gd_lcd_da_co_da_xoa_Y()
         {
             US_GD_LUONG_CHE_DO v_us = new US_GD_LUONG_CHE_DO(m_id_gd_lcd);
-
-            v_us.strDA_XOA = "Y";
             v_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau_lcd.Value.AddDays(-1);
             try
             {

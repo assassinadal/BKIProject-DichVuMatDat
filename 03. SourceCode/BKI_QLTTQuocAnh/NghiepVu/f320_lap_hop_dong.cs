@@ -473,7 +473,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                     //nguoi sua
                     ip_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
                 }
-                ip_us.strDA_XOA = "N";
 
             }
             catch (Exception v_e)
@@ -730,7 +729,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                     //nguoi sua
                     ip_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
                 }
-                ip_us.strDA_XOA = "N";
             }
             catch (Exception v_e)
             {
@@ -762,7 +760,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                     //nguoi sua
                     ip_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
                 }
-                ip_us.strDA_XOA = "N";
             }
             catch (Exception v_e)
             {
@@ -835,8 +832,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void cho_hop_dong_da_co_ve_trang_thai_delete_Y()
         {
             US_GD_HOP_DONG v_us = new US_GD_HOP_DONG(m_id_gd_hd);
-
-            v_us.strDA_XOA = "Y";
             v_us.datNGAY_SUA = DateTime.Now.Date;
             //nguoi sua
             v_us.BeginTransaction();
@@ -869,7 +864,6 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS(v_id_gd_hs_lns);
 
-            v_us.strDA_XOA = "Y";
             v_us.datNGAY_SUA = DateTime.Now.Date;
             //nguoi sua
             v_us.BeginTransaction();
@@ -884,7 +878,6 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             US_GD_LUONG_CHE_DO v_us = new US_GD_LUONG_CHE_DO(v_id_gd_lcd);
 
-            v_us.strDA_XOA = "Y";
             v_us.datNGAY_SUA = DateTime.Now.Date;
             //nguoi sua
             v_us.BeginTransaction();

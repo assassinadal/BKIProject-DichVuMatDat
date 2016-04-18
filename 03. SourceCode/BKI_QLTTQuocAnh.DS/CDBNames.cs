@@ -1768,6 +1768,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string HO_TEN = "HO_TEN";
         public const string TEN_DON_VI = "TEN_DON_VI";
         public const string CHUC_VU = "CHUC_VU";
+        public const string ID_DON_VI = "ID_DON_VI";
         public const string ID = "ID";
         public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
         public const string ID_LOAI_HOP_DONG = "ID_LOAI_HOP_DONG";
@@ -1780,20 +1781,21 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGUOI_LAP = "NGUOI_LAP";
         public const string NGUOI_SUA = "NGUOI_SUA";
         public const string GHI_CHU = "GHI_CHU";
-        public const string DA_XOA = "DA_XOA";
-        public const string ID_MA_LNS = "ID_MA_LNS";
-        public const string ID_MUC_LNS = "ID_MUC_LNS";
-        public const string ID_MA_LCD = "ID_MA_LCD";
-        public const string ID_MUC_LCD = "ID_MUC_LCD";
-        public const string HE_SO = "HE_SO";
-        public const string SO_TIEN = "SO_TIEN";
-        public const string ID_DON_VI = "ID_DON_VI";
+        public const string ID_HE_SO_LNS = "ID_HE_SO_LNS";
+        public const string ID_LCD = "ID_LCD";
+        public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
         public const string MA_LNS = "MA_LNS";
         public const string MUC_LNS = "MUC_LNS";
         public const string MA_LCD = "MA_LCD";
         public const string MUC_LCD = "MUC_LCD";
-        public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
-        public const string MA_LOAI_HOP_DONG = "MA_LOAI_HOP_DONG";
+        public const string TEN_MA_LNS = "TEN_MA_LNS";
+        public const string TEN_MUC_LNS = "TEN_MUC_LNS";
+        public const string TEN_MA_LCD = "TEN_MA_LCD";
+        public const string TEN_MUC_LCD = "TEN_MUC_LCD";
+        public const string ID_MA_LNS = "ID_MA_LNS";
+        public const string ID_MUC_LNS = "ID_MUC_LNS";
+        public const string ID_MA_LCD = "ID_MA_LCD";
+        public const string ID_MUC_LCD = "ID_MUC_LCD";
     }
 
 

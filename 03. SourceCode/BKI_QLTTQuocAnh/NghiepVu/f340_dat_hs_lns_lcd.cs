@@ -668,7 +668,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                 ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lns.Value.Date;
             }
             ip_us.strGHI_CHU = m_txt_ghi_chu_hs_lns.Text;
-            ip_us.strDA_XOA = "N";
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
                 ip_us.datNGAY_LAP = DateTime.Now.Date;
@@ -699,7 +698,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                 ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc_lcd.Value.Date;
             }            
             ip_us.strGHI_CHU = m_txt_ghi_chu_lcd.Text;
-            ip_us.strDA_XOA = "N";
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
                 ip_us.datNGAY_LAP = DateTime.Now.Date;
@@ -746,7 +744,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.dcID = m_id_gd_hs_lns_hien_tai;
             v_us.datNGAY_KET_THUC = v_dat_ngay_ket_thuc_hs_lns_hien_tai.Date;
             v_us.datNGAY_SUA = DateTime.Now.Date;
-            v_us.strDA_XOA = "Y";
             v_us.BeginTransaction();
             v_us.Update();
             v_us.CommitTransaction();
@@ -760,7 +757,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.dcID = m_id_gd_lcd_hien_tai;
             v_us.datNGAY_KET_THUC = v_dat_ngay_ket_thuc_lcd_hien_tai.Date;
             v_us.datNGAY_SUA = DateTime.Now.Date;
-            v_us.strDA_XOA = "Y";
             v_us.BeginTransaction();
             v_us.Update();
             v_us.CommitTransaction();

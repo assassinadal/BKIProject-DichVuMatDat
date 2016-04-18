@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="BKI_DVMDConnectionString2 (Settings)" DbObjectName="BKI_DVMD.dbo.V_GD_HOP_DONG_V3" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MA_NV, HO_TEN, TEN_DON_VI, CHUC_VU, ID, ID_NHAN_VIEN, ID_LOAI_HOP_DONG, MA_HOP_DONG, NGAY_BAT_DAU, NGAY_KET_THUC, NGAY_KY_HOP_DONG, NGAY_LAP, NGAY_SUA, NGUOI_LAP, NGUOI_SUA, GHI_CHU, DA_XOA, ID_MA_LNS, ID_MUC_LNS, ID_MA_LCD, ID_MUC_LCD, HE_SO, SO_TIEN, ID_DON_VI, MA_LNS, MUC_LNS, MA_LCD, MUC_LCD, LOAI_HOP_DONG, MA_LOAI_HOP_DONG FROM dbo.V_GD_HOP_DONG_V3</CommandText>
+                    <CommandText>SELECT MA_NV, HO_TEN, TEN_DON_VI, CHUC_VU, ID_DON_VI, ID, ID_NHAN_VIEN, ID_LOAI_HOP_DONG, MA_HOP_DONG, NGAY_BAT_DAU, NGAY_KET_THUC, NGAY_KY_HOP_DONG, NGAY_LAP, NGAY_SUA, NGUOI_LAP, NGUOI_SUA, GHI_CHU, ID_HE_SO_LNS, ID_LCD, LOAI_HOP_DONG, MA_LNS, MUC_LNS, MA_LCD, MUC_LCD, TEN_MA_LNS, TEN_MUC_LNS, TEN_MA_LCD, TEN_MUC_LCD, ID_MA_LNS, ID_MUC_LNS, ID_MA_LCD, ID_MUC_LCD, HE_SO, SO_TIEN FROM dbo.V_GD_HOP_DONG_V3</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -23,6 +23,7 @@
               <Mapping SourceColumn="HO_TEN" DataSetColumn="HO_TEN" />
               <Mapping SourceColumn="TEN_DON_VI" DataSetColumn="TEN_DON_VI" />
               <Mapping SourceColumn="CHUC_VU" DataSetColumn="CHUC_VU" />
+              <Mapping SourceColumn="ID_DON_VI" DataSetColumn="ID_DON_VI" />
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="ID_NHAN_VIEN" DataSetColumn="ID_NHAN_VIEN" />
               <Mapping SourceColumn="ID_LOAI_HOP_DONG" DataSetColumn="ID_LOAI_HOP_DONG" />
@@ -35,20 +36,23 @@
               <Mapping SourceColumn="NGUOI_LAP" DataSetColumn="NGUOI_LAP" />
               <Mapping SourceColumn="NGUOI_SUA" DataSetColumn="NGUOI_SUA" />
               <Mapping SourceColumn="GHI_CHU" DataSetColumn="GHI_CHU" />
-              <Mapping SourceColumn="DA_XOA" DataSetColumn="DA_XOA" />
+              <Mapping SourceColumn="ID_HE_SO_LNS" DataSetColumn="ID_HE_SO_LNS" />
+              <Mapping SourceColumn="ID_LCD" DataSetColumn="ID_LCD" />
+              <Mapping SourceColumn="LOAI_HOP_DONG" DataSetColumn="LOAI_HOP_DONG" />
+              <Mapping SourceColumn="MA_LNS" DataSetColumn="MA_LNS" />
+              <Mapping SourceColumn="MUC_LNS" DataSetColumn="MUC_LNS" />
+              <Mapping SourceColumn="MA_LCD" DataSetColumn="MA_LCD" />
+              <Mapping SourceColumn="MUC_LCD" DataSetColumn="MUC_LCD" />
+              <Mapping SourceColumn="TEN_MA_LNS" DataSetColumn="TEN_MA_LNS" />
+              <Mapping SourceColumn="TEN_MUC_LNS" DataSetColumn="TEN_MUC_LNS" />
+              <Mapping SourceColumn="TEN_MA_LCD" DataSetColumn="TEN_MA_LCD" />
+              <Mapping SourceColumn="TEN_MUC_LCD" DataSetColumn="TEN_MUC_LCD" />
               <Mapping SourceColumn="ID_MA_LNS" DataSetColumn="ID_MA_LNS" />
               <Mapping SourceColumn="ID_MUC_LNS" DataSetColumn="ID_MUC_LNS" />
               <Mapping SourceColumn="ID_MA_LCD" DataSetColumn="ID_MA_LCD" />
               <Mapping SourceColumn="ID_MUC_LCD" DataSetColumn="ID_MUC_LCD" />
               <Mapping SourceColumn="HE_SO" DataSetColumn="HE_SO" />
               <Mapping SourceColumn="SO_TIEN" DataSetColumn="SO_TIEN" />
-              <Mapping SourceColumn="ID_DON_VI" DataSetColumn="ID_DON_VI" />
-              <Mapping SourceColumn="MA_LNS" DataSetColumn="MA_LNS" />
-              <Mapping SourceColumn="MUC_LNS" DataSetColumn="MUC_LNS" />
-              <Mapping SourceColumn="MA_LCD" DataSetColumn="MA_LCD" />
-              <Mapping SourceColumn="MUC_LCD" DataSetColumn="MUC_LCD" />
-              <Mapping SourceColumn="LOAI_HOP_DONG" DataSetColumn="LOAI_HOP_DONG" />
-              <Mapping SourceColumn="MA_LOAI_HOP_DONG" DataSetColumn="MA_LOAI_HOP_DONG" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -91,6 +95,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="ID_DON_VI" msprop:Generator_ColumnVarNameInTable="columnID_DON_VI" msprop:Generator_ColumnPropNameInRow="ID_DON_VI" msprop:Generator_ColumnPropNameInTable="ID_DON_VIColumn" msprop:Generator_UserColumnName="ID_DON_VI" type="xs:decimal" minOccurs="0" />
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
               <xs:element name="ID_NHAN_VIEN" msprop:Generator_ColumnVarNameInTable="columnID_NHAN_VIEN" msprop:Generator_ColumnPropNameInRow="ID_NHAN_VIEN" msprop:Generator_ColumnPropNameInTable="ID_NHAN_VIENColumn" msprop:Generator_UserColumnName="ID_NHAN_VIEN" type="xs:decimal" />
               <xs:element name="ID_LOAI_HOP_DONG" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInRow="ID_LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInTable="ID_LOAI_HOP_DONGColumn" msprop:Generator_UserColumnName="ID_LOAI_HOP_DONG" type="xs:decimal" />
@@ -127,48 +132,8 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DA_XOA" msprop:Generator_ColumnVarNameInTable="columnDA_XOA" msprop:Generator_ColumnPropNameInRow="DA_XOA" msprop:Generator_ColumnPropNameInTable="DA_XOAColumn" msprop:Generator_UserColumnName="DA_XOA">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ID_MA_LNS" msprop:Generator_ColumnVarNameInTable="columnID_MA_LNS" msprop:Generator_ColumnPropNameInRow="ID_MA_LNS" msprop:Generator_ColumnPropNameInTable="ID_MA_LNSColumn" msprop:Generator_UserColumnName="ID_MA_LNS" type="xs:decimal" />
-              <xs:element name="ID_MUC_LNS" msprop:Generator_ColumnVarNameInTable="columnID_MUC_LNS" msprop:Generator_ColumnPropNameInRow="ID_MUC_LNS" msprop:Generator_ColumnPropNameInTable="ID_MUC_LNSColumn" msprop:Generator_UserColumnName="ID_MUC_LNS" type="xs:decimal" />
-              <xs:element name="ID_MA_LCD" msprop:Generator_ColumnVarNameInTable="columnID_MA_LCD" msprop:Generator_ColumnPropNameInRow="ID_MA_LCD" msprop:Generator_ColumnPropNameInTable="ID_MA_LCDColumn" msprop:Generator_UserColumnName="ID_MA_LCD" type="xs:decimal" />
-              <xs:element name="ID_MUC_LCD" msprop:Generator_ColumnVarNameInTable="columnID_MUC_LCD" msprop:Generator_ColumnPropNameInRow="ID_MUC_LCD" msprop:Generator_ColumnPropNameInTable="ID_MUC_LCDColumn" msprop:Generator_UserColumnName="ID_MUC_LCD" type="xs:decimal" />
-              <xs:element name="HE_SO" msprop:Generator_ColumnVarNameInTable="columnHE_SO" msprop:Generator_ColumnPropNameInRow="HE_SO" msprop:Generator_ColumnPropNameInTable="HE_SOColumn" msprop:Generator_UserColumnName="HE_SO" type="xs:decimal" />
-              <xs:element name="SO_TIEN" msprop:Generator_ColumnVarNameInTable="columnSO_TIEN" msprop:Generator_ColumnPropNameInRow="SO_TIEN" msprop:Generator_ColumnPropNameInTable="SO_TIENColumn" msprop:Generator_UserColumnName="SO_TIEN" type="xs:decimal" />
-              <xs:element name="ID_DON_VI" msprop:Generator_ColumnVarNameInTable="columnID_DON_VI" msprop:Generator_ColumnPropNameInRow="ID_DON_VI" msprop:Generator_ColumnPropNameInTable="ID_DON_VIColumn" msprop:Generator_UserColumnName="ID_DON_VI" type="xs:decimal" minOccurs="0" />
-              <xs:element name="MA_LNS" msprop:Generator_ColumnVarNameInTable="columnMA_LNS" msprop:Generator_ColumnPropNameInRow="MA_LNS" msprop:Generator_ColumnPropNameInTable="MA_LNSColumn" msprop:Generator_UserColumnName="MA_LNS">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="250" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="MUC_LNS" msprop:Generator_ColumnVarNameInTable="columnMUC_LNS" msprop:Generator_ColumnPropNameInRow="MUC_LNS" msprop:Generator_ColumnPropNameInTable="MUC_LNSColumn" msprop:Generator_UserColumnName="MUC_LNS">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="250" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="MA_LCD" msprop:Generator_ColumnVarNameInTable="columnMA_LCD" msprop:Generator_ColumnPropNameInRow="MA_LCD" msprop:Generator_ColumnPropNameInTable="MA_LCDColumn" msprop:Generator_UserColumnName="MA_LCD">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="250" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="MUC_LCD" msprop:Generator_ColumnVarNameInTable="columnMUC_LCD" msprop:Generator_ColumnPropNameInRow="MUC_LCD" msprop:Generator_ColumnPropNameInTable="MUC_LCDColumn" msprop:Generator_UserColumnName="MUC_LCD">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="250" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="ID_HE_SO_LNS" msprop:Generator_ColumnVarNameInTable="columnID_HE_SO_LNS" msprop:Generator_ColumnPropNameInRow="ID_HE_SO_LNS" msprop:Generator_ColumnPropNameInTable="ID_HE_SO_LNSColumn" msprop:Generator_UserColumnName="ID_HE_SO_LNS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_LCD" msprop:Generator_ColumnVarNameInTable="columnID_LCD" msprop:Generator_ColumnPropNameInRow="ID_LCD" msprop:Generator_ColumnPropNameInTable="ID_LCDColumn" msprop:Generator_UserColumnName="ID_LCD" type="xs:decimal" minOccurs="0" />
               <xs:element name="LOAI_HOP_DONG" msprop:Generator_ColumnVarNameInTable="columnLOAI_HOP_DONG" msprop:Generator_ColumnPropNameInRow="LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInTable="LOAI_HOP_DONGColumn" msprop:Generator_UserColumnName="LOAI_HOP_DONG">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -176,13 +141,68 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MA_LOAI_HOP_DONG" msprop:Generator_ColumnVarNameInTable="columnMA_LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInRow="MA_LOAI_HOP_DONG" msprop:Generator_ColumnPropNameInTable="MA_LOAI_HOP_DONGColumn" msprop:Generator_UserColumnName="MA_LOAI_HOP_DONG">
+              <xs:element name="MA_LNS" msprop:Generator_ColumnVarNameInTable="columnMA_LNS" msprop:Generator_ColumnPropNameInRow="MA_LNS" msprop:Generator_ColumnPropNameInTable="MA_LNSColumn" msprop:Generator_UserColumnName="MA_LNS" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="MUC_LNS" msprop:Generator_ColumnVarNameInTable="columnMUC_LNS" msprop:Generator_ColumnPropNameInRow="MUC_LNS" msprop:Generator_ColumnPropNameInTable="MUC_LNSColumn" msprop:Generator_UserColumnName="MUC_LNS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MA_LCD" msprop:Generator_ColumnVarNameInTable="columnMA_LCD" msprop:Generator_ColumnPropNameInRow="MA_LCD" msprop:Generator_ColumnPropNameInTable="MA_LCDColumn" msprop:Generator_UserColumnName="MA_LCD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MUC_LCD" msprop:Generator_ColumnVarNameInTable="columnMUC_LCD" msprop:Generator_ColumnPropNameInRow="MUC_LCD" msprop:Generator_ColumnPropNameInTable="MUC_LCDColumn" msprop:Generator_UserColumnName="MUC_LCD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_MA_LNS" msprop:Generator_ColumnVarNameInTable="columnTEN_MA_LNS" msprop:Generator_ColumnPropNameInRow="TEN_MA_LNS" msprop:Generator_ColumnPropNameInTable="TEN_MA_LNSColumn" msprop:Generator_UserColumnName="TEN_MA_LNS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_MUC_LNS" msprop:Generator_ColumnVarNameInTable="columnTEN_MUC_LNS" msprop:Generator_ColumnPropNameInRow="TEN_MUC_LNS" msprop:Generator_ColumnPropNameInTable="TEN_MUC_LNSColumn" msprop:Generator_UserColumnName="TEN_MUC_LNS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_MA_LCD" msprop:Generator_ColumnVarNameInTable="columnTEN_MA_LCD" msprop:Generator_ColumnPropNameInRow="TEN_MA_LCD" msprop:Generator_ColumnPropNameInTable="TEN_MA_LCDColumn" msprop:Generator_UserColumnName="TEN_MA_LCD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_MUC_LCD" msprop:Generator_ColumnVarNameInTable="columnTEN_MUC_LCD" msprop:Generator_ColumnPropNameInRow="TEN_MUC_LCD" msprop:Generator_ColumnPropNameInTable="TEN_MUC_LCDColumn" msprop:Generator_UserColumnName="TEN_MUC_LCD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_MA_LNS" msprop:Generator_ColumnVarNameInTable="columnID_MA_LNS" msprop:Generator_ColumnPropNameInRow="ID_MA_LNS" msprop:Generator_ColumnPropNameInTable="ID_MA_LNSColumn" msprop:Generator_UserColumnName="ID_MA_LNS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_MUC_LNS" msprop:Generator_ColumnVarNameInTable="columnID_MUC_LNS" msprop:Generator_ColumnPropNameInRow="ID_MUC_LNS" msprop:Generator_ColumnPropNameInTable="ID_MUC_LNSColumn" msprop:Generator_UserColumnName="ID_MUC_LNS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_MA_LCD" msprop:Generator_ColumnVarNameInTable="columnID_MA_LCD" msprop:Generator_ColumnPropNameInRow="ID_MA_LCD" msprop:Generator_ColumnPropNameInTable="ID_MA_LCDColumn" msprop:Generator_UserColumnName="ID_MA_LCD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_MUC_LCD" msprop:Generator_ColumnVarNameInTable="columnID_MUC_LCD" msprop:Generator_ColumnPropNameInRow="ID_MUC_LCD" msprop:Generator_ColumnPropNameInTable="ID_MUC_LCDColumn" msprop:Generator_UserColumnName="ID_MUC_LCD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HE_SO" msprop:Generator_ColumnVarNameInTable="columnHE_SO" msprop:Generator_ColumnPropNameInRow="HE_SO" msprop:Generator_ColumnPropNameInTable="HE_SOColumn" msprop:Generator_UserColumnName="HE_SO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SO_TIEN" msprop:Generator_ColumnVarNameInTable="columnSO_TIEN" msprop:Generator_ColumnPropNameInRow="SO_TIEN" msprop:Generator_ColumnPropNameInTable="SO_TIENColumn" msprop:Generator_UserColumnName="SO_TIEN" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -45,26 +45,26 @@ public class US_GD_HE_SO_LNS : US_Object
 		pm_objDR["ID"] = System.Convert.DBNull;
 	}
 
-    public decimal dcID_HS_LNS_LCD  
+    public decimal dcID_HOP_DONG  
 	{
 		get
 		{
-            return CNull.RowNVLDecimal(pm_objDR, "ID_HS_LNS_LCD", IPConstants.c_DefaultDecimal);
+            return CNull.RowNVLDecimal(pm_objDR, "ID_HOP_DONG", IPConstants.c_DefaultDecimal);
 		}
 		set	
 		{
-            pm_objDR["ID_HS_LNS_LCD"] = value;
+            pm_objDR["ID_HOP_DONG"] = value;
 		}
 	}
 
-    public bool IsID_HS_LNS_LCDNull()
+    public bool IsID_HOP_DONGNull()
     {
-        return pm_objDR.IsNull("ID_HS_LNS_LCD");
+        return pm_objDR.IsNull("ID_HOP_DONG");
 	}
 
-    public void SetID_HS_LNS_LCDNull()
+    public void SetID_HOP_DONGNull()
     {
-        pm_objDR["ID_HS_LNS_LCD"] = System.Convert.DBNull;
+        pm_objDR["ID_HOP_DONG"] = System.Convert.DBNull;
 	}
 
 	public decimal dcHE_SO 
@@ -265,28 +265,6 @@ public class US_GD_HE_SO_LNS : US_Object
 		pm_objDR["NGUOI_SUA"] = System.Convert.DBNull;
 	}
 
-	public string strDA_XOA 
-	{
-		get 
-		{
-			return CNull.RowNVLString(pm_objDR, "DA_XOA", IPConstants.c_DefaultString);
-		}
-		set 
-		{
-			pm_objDR["DA_XOA"] = value;
-		}
-	}
-
-	public bool IsDA_XOANull() 
-	{
-		return pm_objDR.IsNull("DA_XOA");
-	}
-
-        public void SetDA_XOANull()
-        {
-		pm_objDR["DA_XOA"] = System.Convert.DBNull;
-	}
-
 #endregion
 #region "Init Functions"
 	public US_GD_HE_SO_LNS() 
@@ -315,13 +293,6 @@ public class US_GD_HE_SO_LNS : US_Object
 	}
 #endregion
 
-    public void FillDatasetTheoIDLnsLcd(DS_GD_HE_SO_LNS v_ds, decimal ip_id_gd_lns_lcd)
-    {
-        CStoredProc v_cstore = new CStoredProc("pr_LNS_getTheo_ID_LNS_LCD");
-        v_cstore.addDecimalInputParam("@id_lns_lcd", ip_id_gd_lns_lcd);
-        v_cstore.fillDataSetByCommand(this, v_ds);
-    }
-
         public DataTable LayDanhSachHopDongThayDoiHeSoLNS(DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
         {
             CStoredProc v_cs = new CStoredProc("pr_HD_hop_dong_thay_doi_he_so_lns_GetAll");
@@ -333,5 +304,14 @@ public class US_GD_HE_SO_LNS : US_Object
 
             return v_ds.Tables[0];
         }
-	}
+
+        public DataTable GetLNSTheoHopDong(decimal ip_id_hop_dong)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_LNS_get_theo_hop_dong");
+            v_cstore.addDecimalInputParam("@ip_id_hop_dong", ip_id_hop_dong);
+            DS_GD_HE_SO_LNS v_ds = new DS_GD_HE_SO_LNS();
+            v_cstore.fillDataSetByCommand(this, v_ds);
+            return v_ds.Tables[0];
+        }
+}
 }

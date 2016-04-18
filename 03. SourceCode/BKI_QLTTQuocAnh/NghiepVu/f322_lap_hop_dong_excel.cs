@@ -62,7 +62,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.dcHE_SO = find_lns(CIPConvert.ToDecimal(dataRow["CHUC_DANH_LNS"].ToString()), CIPConvert.ToDecimal(dataRow["MUC_LUONG_NS"].ToString()));
             v_us.datNGAY_LAP = DateTime.Now.Date;
             v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
-            v_us.strDA_XOA = "N";
             v_us.Insert();
         }
 
@@ -117,7 +116,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.dcID_NHAN_VIEN = find_id_nhan_vien_by_ma_nv(dataRow["MA_NHAN_VIEN"].ToString().Trim());
             v_us.datNGAY_LAP = DateTime.Now.Date;
             v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
-            v_us.strDA_XOA = "N";
             v_us.Insert();
             m_dc_id_hop_dong_moi_tao = v_us.dcID;
         }

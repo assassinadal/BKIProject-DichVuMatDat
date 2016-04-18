@@ -49,27 +49,11 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_grc.DataSource = v_ds.Tables[0];
         }
 
-
-        private void delete_gd_lns_lcd(decimal v_id_hop_dong)
-        {            
-            US_GD_HS_LNS_LCD v_us = new US_GD_HS_LNS_LCD();
-            DS_GD_HS_LNS_LCD v_ds = new DS_GD_HS_LNS_LCD();
-            v_us.FillDataset(v_ds, "where id_hop_dong = " + v_id_hop_dong);
-            for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
-            {
-                decimal v_id_gd_lns_lcd = Convert.ToDecimal(v_ds.Tables[0].Rows[i]["ID"]);
-                delete_gd_he_so_lns(v_id_gd_lns_lcd);
-                delete_gd_lcd(v_id_gd_lns_lcd);
-                v_us = new US_GD_HS_LNS_LCD(v_id_gd_lns_lcd);
-                v_us.Delete();               
-            }            
-        }
-
-        private void delete_gd_lcd(decimal v_id_gd_lns_lcd)
+        private void delete_gd_lcd(decimal v_id_hop_dong)
         {
             US_GD_LUONG_CHE_DO v_us = new US_GD_LUONG_CHE_DO();
             DS_GD_LUONG_CHE_DO v_ds = new DS_GD_LUONG_CHE_DO();
-            v_us.FillDataset(v_ds, "where id_hs_lns_lcd = " + v_id_gd_lns_lcd);
+            v_us.FillDataset(v_ds, "where id_hop_dong = " + v_id_hop_dong);
             for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
             {
                 decimal v_id_gd_lcd = Convert.ToDecimal(v_ds.Tables[0].Rows[i]["ID"]);
@@ -78,11 +62,11 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
         }
 
-        private void delete_gd_he_so_lns(decimal v_id_gd_lns_lcd)
+        private void delete_gd_he_so_lns(decimal v_id_hop_dong)
         {
             US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS();
             DS_GD_HE_SO_LNS v_ds = new DS_GD_HE_SO_LNS();
-            v_us.FillDataset(v_ds, "where id_hs_lns_lcd = " + v_id_gd_lns_lcd);
+            v_us.FillDataset(v_ds, "where id_hop_dong = " + v_id_hop_dong);
             for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
             {
                 decimal v_id_gd_lns = Convert.ToDecimal(v_ds.Tables[0].Rows[i]["ID"]);
@@ -128,7 +112,8 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                     if (v_dialog == DialogResult.Yes)
                     {
                         decimal v_id_hop_dong = Convert.ToDecimal(m_grv.GetRowCellValue(v_focused_row,"ID"));                        
-                        delete_gd_lns_lcd(v_id_hop_dong);
+                        delete_gd_he_so_lns(v_id_hop_dong);
+                        delete_gd_lcd(v_id_hop_dong);
                         US_GD_HOP_DONG v_us = new US_GD_HOP_DONG(v_id_hop_dong);
                         v_us.Delete();
                         XtraMessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

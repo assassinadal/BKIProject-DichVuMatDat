@@ -408,5 +408,12 @@ namespace BKI_DichVuMatDat.US
 
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
+
+        public void BAO_CAO(DataSet op_ds)
+        {
+            CStoredProc v_cstore = new CStoredProc("PR_F421_BAO_CAO");
+
+            v_cstore.fillDataSetByCommand(this, op_ds);
+        }
     }
 }

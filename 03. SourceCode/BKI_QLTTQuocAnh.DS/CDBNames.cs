@@ -205,11 +205,12 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     public class DM_CHUC_VU
     {
         public const string ID = "ID";
+        public const string MA_CHUC_VU = "MA_CHUC_VU";
         public const string TEN_CHUC_VU = "TEN_CHUC_VU";
-        public const string GHI_CHU = "GHI_CHU";
         public const string SO_THU_TU = "SO_THU_TU";
         public const string ID_DON_VI = "ID_DON_VI";
         public const string ID_LOAI_CHUC_VU = "ID_LOAI_CHUC_VU";
+        public const string GHI_CHU = "GHI_CHU";
     }
 
 

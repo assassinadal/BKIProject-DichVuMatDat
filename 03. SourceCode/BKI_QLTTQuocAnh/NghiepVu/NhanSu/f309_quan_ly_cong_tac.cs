@@ -51,13 +51,16 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         }
         private void load_data_danh_sach_nhan_vien_theo_don_vi(decimal ip_dc_id_don_vi)
         {
+            //US_GD_CONG_TAC v_us_ct = new US_GD_CONG_TAC();
+            //var v_ds_nhan_vien = v_us_ct.LayDanhSachNhanVienTheoPhongBan(ip_dc_id_don_vi);
+
+            //m_grc.DataSource = v_ds_nhan_vien;
             US_V_GD_CONG_TAC_2 v_us = new US_V_GD_CONG_TAC_2();
             DS_V_GD_CONG_TAC_2 v_ds = new DS_V_GD_CONG_TAC_2();
             v_ds.EnforceConstraints = false;
             v_us.FillDataset(v_ds, " where id_don_vi = " + ip_dc_id_don_vi);
 
             m_grc.DataSource = v_ds.Tables[0];
-           
         }
 
         //Get data

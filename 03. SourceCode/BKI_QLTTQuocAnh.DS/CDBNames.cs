@@ -202,6 +202,15 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     #endregion
 
     #region DANH_MUC
+    public class DM_CHUC_VU
+    {
+        public const string ID = "ID";
+        public const string TEN_CHUC_VU = "TEN_CHUC_VU";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string SO_THU_TU = "SO_THU_TU";
+        public const string ID_DON_VI = "ID_DON_VI";
+        public const string ID_LOAI_CHUC_VU = "ID_LOAI_CHUC_VU";
+    }
 
     public class CM_THU_TU_DON_VI
     {
@@ -281,6 +290,13 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string MA_DON_VI = "MA_DON_VI";
         public const string ID_LOAI_DON_VI = "ID_LOAI_DON_VI";
         public const string ID_DON_VI_CAP_TREN = "ID_DON_VI_CAP_TREN";
+        public const string ID_DV_0 = "ID_DV_0";
+        public const string ID_DV_1 = "ID_DV_1";
+        public const string ID_DV_2 = "ID_DV_2";
+        public const string ID_DV_3 = "ID_DV_3";
+        public const string ID_DV_4 = "ID_DV_4";
+        public const string SO_THU_TU = "SO_THU_TU";
+        public const string TANG = "TANG";
     }
     public class DM_NHAN_VIEN
     {
@@ -519,12 +535,18 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
         public const string ID_QUYET_DINH = "ID_QUYET_DINH";
         public const string ID_DON_VI = "ID_DON_VI";
+        public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
         public const string NGAY_LAP = "NGAY_LAP";
         public const string NGAY_SUA = "NGAY_SUA";
         public const string NGUOI_LAP = "NGUOI_LAP";
         public const string NGUOI_SUA = "NGUOI_SUA";
         public const string DA_XOA = "DA_XOA";
+        public const string ID_LOAI_CONG_TAC = "ID_LOAI_CONG_TAC";
+        public const string ID_VI_TRI = "ID_VI_TRI";
+        public const string SO_HO_SO = "SO_HO_SO";
     }
+
     public class GD_HE_SO_CHAT_LUONG
     {
         public const string ID = "ID";
@@ -1292,7 +1314,9 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGAY_CHINH_THUC_TIEP_NHAN = "NGAY_CHINH_THUC_TIEP_NHAN";
         public const string NGUOI_BAO_LANH = "NGUOI_BAO_LANH";
         public const string MA_TRA_CUU = "MA_TRA_CUU";
+        public const string THU_TU_CHUC_VU = "THU_TU_CHUC_VU";
     }
+
 
 
 

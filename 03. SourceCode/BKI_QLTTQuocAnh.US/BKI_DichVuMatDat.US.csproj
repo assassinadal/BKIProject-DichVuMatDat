@@ -56,6 +56,7 @@
     </Compile>
     <Compile Include="US_CM_THU_TU_DON_VI.cs" />
     <Compile Include="US_DM_BAO_HIEM.cs" />
+    <Compile Include="US_DM_CHUC_VU.cs" />
     <Compile Include="US_DM_DON_VI.cs" />
     <Compile Include="US_DM_HE_SO_LUONG_NS.cs" />
     <Compile Include="US_DM_LOAI_HOP_DONG.cs" />

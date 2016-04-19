@@ -133,6 +133,160 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["ID_DON_VI_CAP_TREN"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_DV_0
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_DV_0", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_DV_0"] = value;
+            }
+        }
+
+        public bool IsID_DV_0Null()
+        {
+            return pm_objDR.IsNull("ID_DV_0");
+        }
+
+        public void SetID_DV_0Null()
+        {
+            pm_objDR["ID_DV_0"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_DV_1
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_DV_1", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_DV_1"] = value;
+            }
+        }
+
+        public bool IsID_DV_1Null()
+        {
+            return pm_objDR.IsNull("ID_DV_1");
+        }
+
+        public void SetID_DV_1Null()
+        {
+            pm_objDR["ID_DV_1"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_DV_2
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_DV_2", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_DV_2"] = value;
+            }
+        }
+
+        public bool IsID_DV_2Null()
+        {
+            return pm_objDR.IsNull("ID_DV_2");
+        }
+
+        public void SetID_DV_2Null()
+        {
+            pm_objDR["ID_DV_2"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_DV_3
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_DV_3", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_DV_3"] = value;
+            }
+        }
+
+        public bool IsID_DV_3Null()
+        {
+            return pm_objDR.IsNull("ID_DV_3");
+        }
+
+        public void SetID_DV_3Null()
+        {
+            pm_objDR["ID_DV_3"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_DV_4
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_DV_4", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_DV_4"] = value;
+            }
+        }
+
+        public bool IsID_DV_4Null()
+        {
+            return pm_objDR.IsNull("ID_DV_4");
+        }
+
+        public void SetID_DV_4Null()
+        {
+            pm_objDR["ID_DV_4"] = System.Convert.DBNull;
+        }
+
+        public decimal dcSO_THU_TU
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "SO_THU_TU", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["SO_THU_TU"] = value;
+            }
+        }
+
+        public bool IsSO_THU_TUNull()
+        {
+            return pm_objDR.IsNull("SO_THU_TU");
+        }
+
+        public void SetSO_THU_TUNull()
+        {
+            pm_objDR["SO_THU_TU"] = System.Convert.DBNull;
+        }
+
+        public decimal dcTANG
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "TANG", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["TANG"] = value;
+            }
+        }
+
+        public bool IsTANGNull()
+        {
+            return pm_objDR.IsNull("TANG");
+        }
+
+        public void SetTANGNull()
+        {
+            pm_objDR["TANG"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_DM_DON_VI()

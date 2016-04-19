@@ -468,13 +468,13 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_us_gd_hd.datNGAY_KY_HOP_DONG = m_dat_ngay_ky.DateTime;
             m_us_gd_hd.strGHI_CHU = m_txt_ghi_chu.Text;
             var v_dr = get_luong_ns_theo_ma_muc();
-            if (v_dr == null)
-                m_us_gd_hd.SetID_HE_SO_LNSNull();
-            else m_us_gd_hd.dcID_HE_SO_LNS = Convert.ToDecimal(v_dr["ID"]);
+            //if (v_dr == null)
+            //    m_us_gd_hd.SetID_HE_SO_LNSNull();
+            //else m_us_gd_hd.dcID_HE_SO_LNS = Convert.ToDecimal(v_dr["ID"]);
             v_dr = get_luong_cd_theo_ma_muc();
-            if (v_dr == null)
-                m_us_gd_hd.SetID_LCDNull();
-            else m_us_gd_hd.dcID_LCD = Convert.ToDecimal(v_dr["ID"]);
+            //if (v_dr == null)
+            //    m_us_gd_hd.SetID_LCDNull();
+            //else m_us_gd_hd.dcID_LCD = Convert.ToDecimal(v_dr["ID"]);
             if (m_e_form_mode== DataEntryFormMode.InsertDataState)
             {
                 m_us_gd_hd.datNGAY_LAP = DateTime.Now;

@@ -622,7 +622,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             //ip_us.dcID_HOP_DONG = m_id_gd_hd;
             ip_us.dcHE_SO = CIPConvert.ToDecimal(m_txt_hs_lns.Text.Trim()); ;
-            ip_us.dcID_LY_DO_CHINH_SUA = CIPConvert.ToDecimal(m_sle_chon_ly_do_chinh_sua_hs_lns.EditValue);
+            //ip_us.dcID_LY_DO_CHINH_SUA = CIPConvert.ToDecimal(m_sle_chon_ly_do_chinh_sua_hs_lns.EditValue);
             ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau_lns.Value.Date;
             if (m_dat_ngay_ket_thuc_lns.Checked == false)
             {
@@ -686,7 +686,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 US_GD_HE_SO_LNS v_us_gd_hs_lns = new US_GD_HE_SO_LNS(m_id_gd_hs_lns_hien_tai);
                 m_txt_hs_lns.Text = v_us_gd_hs_lns.dcHE_SO.ToString();
-                m_sle_chon_ly_do_chinh_sua_hs_lns.EditValue = v_us_gd_hs_lns.dcID_LY_DO_CHINH_SUA;
+                //m_sle_chon_ly_do_chinh_sua_hs_lns.EditValue = v_us_gd_hs_lns.dcID_LY_DO_CHINH_SUA;
                 m_txt_ghi_chu_hs_lns.Text = v_us_gd_hs_lns.strGHI_CHU.ToString();
                 m_dat_ngay_bat_dau_lns.Value = v_us_gd_hs_lns.datNGAY_BAT_DAU;
                 m_dat_ngay_ket_thuc_lns.Value = v_us_gd_hs_lns.datNGAY_KET_THUC;

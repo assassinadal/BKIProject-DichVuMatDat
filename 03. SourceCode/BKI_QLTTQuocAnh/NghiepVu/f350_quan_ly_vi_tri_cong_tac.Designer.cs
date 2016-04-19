@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f350_quan_ly_vi_tri_cong_tac));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -78,7 +79,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_insert_1 = new DevExpress.XtraEditors.SimpleButton();
-            this.ImageList = new System.Windows.Forms.ImageList();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc_v_gd_cong_tac = new DevExpress.XtraGrid.GridControl();
             this.m_grv_v_gd_cong_tac = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -97,13 +98,13 @@
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_ngay_bat_dau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_da_xoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SU_DUNG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_huy_kiem_nhiem = new SIS.Controls.Button.SiSButton();
-            this.SU_DUNG = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -136,7 +137,7 @@
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(839, 44);
+            this.m_lbl_header.Size = new System.Drawing.Size(938, 44);
             this.m_lbl_header.TabIndex = 0;
             this.m_lbl_header.Text = "QUẢN LÝ VỊ TRÍ CÔNG TÁC";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -148,7 +149,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 44);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(839, 168);
+            this.panelControl1.Size = new System.Drawing.Size(938, 168);
             this.panelControl1.TabIndex = 1;
             this.panelControl1.Visible = false;
             // 
@@ -590,7 +591,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 212);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(839, 40);
+            this.panelControl2.Size = new System.Drawing.Size(938, 40);
             this.panelControl2.TabIndex = 2;
             this.panelControl2.Visible = false;
             // 
@@ -637,7 +638,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl3.Location = new System.Drawing.Point(0, 252);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(839, 186);
+            this.panelControl3.Size = new System.Drawing.Size(938, 258);
             this.panelControl3.TabIndex = 5;
             // 
             // m_grc_v_gd_cong_tac
@@ -647,7 +648,7 @@
             this.m_grc_v_gd_cong_tac.Location = new System.Drawing.Point(2, 2);
             this.m_grc_v_gd_cong_tac.MainView = this.m_grv_v_gd_cong_tac;
             this.m_grc_v_gd_cong_tac.Name = "m_grc_v_gd_cong_tac";
-            this.m_grc_v_gd_cong_tac.Size = new System.Drawing.Size(835, 182);
+            this.m_grc_v_gd_cong_tac.Size = new System.Drawing.Size(934, 254);
             this.m_grc_v_gd_cong_tac.TabIndex = 0;
             this.m_grc_v_gd_cong_tac.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_v_gd_cong_tac});
@@ -854,6 +855,14 @@
             this.c_da_xoa.Name = "c_da_xoa";
             this.c_da_xoa.OptionsColumn.AllowEdit = false;
             // 
+            // SU_DUNG
+            // 
+            this.SU_DUNG.Caption = "Đang sử dụng";
+            this.SU_DUNG.FieldName = "SU_DUNG";
+            this.SU_DUNG.Name = "SU_DUNG";
+            this.SU_DUNG.Visible = true;
+            this.SU_DUNG.VisibleIndex = 12;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.m_cmd_chon_file);
@@ -862,16 +871,16 @@
             this.panel1.Controls.Add(this.m_cmd_delete);
             this.panel1.Controls.Add(this.m_cmd_huy_kiem_nhiem);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 402);
+            this.panel1.Location = new System.Drawing.Point(0, 474);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(839, 36);
+            this.panel1.Size = new System.Drawing.Size(938, 36);
             this.panel1.TabIndex = 6;
             // 
             // m_cmd_chon_file
             // 
             this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_chon_file.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_file.Image")));
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(375, 0);
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(474, 0);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(116, 36);
             this.m_cmd_chon_file.TabIndex = 31;
@@ -881,7 +890,7 @@
             // 
             this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
-            this.m_cmd_insert.Location = new System.Drawing.Point(491, 0);
+            this.m_cmd_insert.Location = new System.Drawing.Point(590, 0);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(116, 36);
             this.m_cmd_insert.TabIndex = 17;
@@ -891,7 +900,7 @@
             // 
             this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
-            this.m_cmd_update.Location = new System.Drawing.Point(607, 0);
+            this.m_cmd_update.Location = new System.Drawing.Point(706, 0);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(116, 36);
             this.m_cmd_update.TabIndex = 16;
@@ -901,7 +910,7 @@
             // 
             this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
-            this.m_cmd_delete.Location = new System.Drawing.Point(723, 0);
+            this.m_cmd_delete.Location = new System.Drawing.Point(822, 0);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(116, 36);
             this.m_cmd_delete.TabIndex = 15;
@@ -924,19 +933,11 @@
             this.m_cmd_huy_kiem_nhiem.Text = "&Hủy kiêm nhiệm";
             this.m_cmd_huy_kiem_nhiem.Visible = false;
             // 
-            // SU_DUNG
-            // 
-            this.SU_DUNG.Caption = "Đang sử dụng";
-            this.SU_DUNG.FieldName = "SU_DUNG";
-            this.SU_DUNG.Name = "SU_DUNG";
-            this.SU_DUNG.Visible = true;
-            this.SU_DUNG.VisibleIndex = 13;
-            // 
             // f350_quan_ly_vi_tri_cong_tac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 438);
+            this.ClientSize = new System.Drawing.Size(938, 510);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);

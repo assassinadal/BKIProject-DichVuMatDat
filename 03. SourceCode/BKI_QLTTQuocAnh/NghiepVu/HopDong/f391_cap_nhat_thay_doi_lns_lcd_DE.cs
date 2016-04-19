@@ -113,7 +113,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             try
             {
                 m_us_save = new US_GD_HE_SO_LNS();
-                m_us_save.dcID_LY_DO_CHINH_SUA = Convert.ToDecimal(m_le_ly_do_chinh_sua.EditValue);
+               // m_us_save.dcID_LY_DO_CHINH_SUA = Convert.ToDecimal(m_le_ly_do_chinh_sua.EditValue);
                 m_us_save.datNGAY_BAT_DAU = m_dat_tu_ngay.DateTime.Date;
                 m_us_save.datNGAY_KET_THUC = m_dat_den_ngay.DateTime.Date;
                 m_us_save.datNGAY_LAP = DateTime.Now.Date;
@@ -147,7 +147,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
         }
         private void save_update_lns()
         {
-            m_us_save.dcID_LY_DO_CHINH_SUA = Convert.ToDecimal(m_le_ly_do_chinh_sua.EditValue);
+            //m_us_save.dcID_LY_DO_CHINH_SUA = Convert.ToDecimal(m_le_ly_do_chinh_sua.EditValue);
             m_us_save.datNGAY_BAT_DAU = m_dat_tu_ngay.DateTime.Date;
             m_us_save.datNGAY_KET_THUC = m_dat_den_ngay.DateTime.Date;
             m_us_save.datNGAY_SUA = DateTime.Now.Date;
@@ -220,7 +220,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             m_txt_gia_tri_thay_doi.EditValue = v_us_hs_lns.dcHE_SO;
             m_dat_tu_ngay.DateTime = v_us_hs_lns.datNGAY_BAT_DAU;
             m_dat_den_ngay.DateTime = v_us_hs_lns.datNGAY_KET_THUC;
-            m_le_ly_do_chinh_sua.EditValue = v_us_hs_lns.dcID_LY_DO_CHINH_SUA;
+            //m_le_ly_do_chinh_sua.EditValue = v_us_hs_lns.dcID_LY_DO_CHINH_SUA;
             m_txt_ghi_chu.Text = v_us_hs_lns.strGHI_CHU;
             Text = "F391 - Cập nhật chỉnh sửa hệ số LNS";
 

@@ -212,6 +212,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string ID_LOAI_CHUC_VU = "ID_LOAI_CHUC_VU";
     }
 
+
     public class CM_THU_TU_DON_VI
     {
         public const string ID = "ID";
@@ -298,6 +299,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string SO_THU_TU = "SO_THU_TU";
         public const string TANG = "TANG";
     }
+
     public class DM_NHAN_VIEN
     {
         public const string ID = "ID";
@@ -513,8 +515,14 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGAY_SUA = "NGAY_SUA";
         public const string NGUOI_LAP = "NGUOI_LAP";
         public const string NGUOI_SUA = "NGUOI_SUA";
-        public const string DA_XOA = "DA_XOA";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string ID_LUONG_CHE_DO = "ID_LUONG_CHE_DO";
+        public const string ID_LOAI_LAO_DONG = "ID_LOAI_LAO_DONG";
+        public const string ID_DON_VI = "ID_DON_VI";
+        public const string ID_CHUC_VU = "ID_CHUC_VU";
+        public const string SO_TIEN_LCD = "SO_TIEN_LCD";
     }
+
 
     public class GD_HS_LNS_LCD
     {
@@ -547,6 +555,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string SO_HO_SO = "SO_HO_SO";
     }
 
+
     public class GD_HE_SO_CHAT_LUONG
     {
         public const string ID = "ID";
@@ -563,9 +572,10 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     public class GD_HE_SO_LNS
     {
         public const string ID = "ID";
-        public const string ID_HOP_DONG = "ID_HOP_DONG";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string ID_HE_SO_LNS = "ID_HE_SO_LNS";
         public const string HE_SO = "HE_SO";
-        public const string ID_LY_DO_CHINH_SUA = "ID_LY_DO_CHINH_SUA";
+        public const string LY_DO_CHINH_SUA = "LY_DO_CHINH_SUA";
         public const string GHI_CHU = "GHI_CHU";
         public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
         public const string NGAY_KET_THUC = "NGAY_KET_THUC";
@@ -573,8 +583,8 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string NGAY_SUA = "NGAY_SUA";
         public const string NGUOI_LAP = "NGUOI_LAP";
         public const string NGUOI_SUA = "NGUOI_SUA";
-        public const string DA_XOA = "DA_XOA";
     }
+
     public class GD_LUONG_CHE_DO
     {
         public const string ID = "ID";

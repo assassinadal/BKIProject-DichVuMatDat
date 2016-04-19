@@ -119,11 +119,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private DataTable load_danh_sach_nhan_vien_theo_phong_ban(decimal ip_dc_id_phong_ban)
         {
-            US_V_GD_CONG_TAC_2 v_us_ct = new US_V_GD_CONG_TAC_2();
-            DS_V_GD_CONG_TAC_2 v_ds_ct = new DS_V_GD_CONG_TAC_2();
-            v_us_ct.FillDataset(v_ds_ct, " where id_don_vi = " + ip_dc_id_phong_ban);
-
-            return v_ds_ct.Tables[0];
+            US_GD_CONG_TAC v_us_ct = new US_GD_CONG_TAC();
+            return v_us_ct.LayDanhSachNhanVienTheoPhongBan(Convert.ToDecimal(m_sle_chon_don_vi.EditValue));
         }
 
         private DataTable load_danh_sach_quyet_dinh()

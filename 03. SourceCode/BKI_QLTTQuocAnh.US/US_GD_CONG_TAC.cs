@@ -309,6 +309,28 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["ID_VI_TRI"] = System.Convert.DBNull;
         }
 
+        public decimal dcSO_HO_SO
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "SO_HO_SO", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["SO_HO_SO"] = value;
+            }
+        }
+
+        public bool IsSO_HO_SONull()
+        {
+            return pm_objDR.IsNull("SO_HO_SO");
+        }
+
+        public void SetSO_HO_SONull()
+        {
+            pm_objDR["SO_HO_SO"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_GD_CONG_TAC()
@@ -360,6 +382,17 @@ namespace BKI_DichVuMatDat.US
             v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
             v_cstore.addDatetimeInputParam("@ip_dat_ngay_ket_thuc", ip_dat_ngay_ket_thuc);
             v_cstore.ExecuteCommand(this);
+        }
+        public DataTable LayDanhSachNhanVienTheoPhongBan(decimal ip_dc_id_phong_ban)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_CT_danh_sach_nhan_vien_theo_phong_ban_GET");
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+
+            v_cstore.addDecimalInputParam("@ip_dc_id_phong_ban", ip_dc_id_phong_ban);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+
+            return v_ds.Tables[0];
         }
         public DataTable LayDanhSachNhanVienChuaCoCongTac()
         {

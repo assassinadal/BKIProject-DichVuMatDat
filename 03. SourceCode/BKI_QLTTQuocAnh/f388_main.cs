@@ -196,7 +196,7 @@ namespace BKI_DichVuMatDat
         private DataSet get_nv_nghi_tam_thoi()
         {
             US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN v_us = new US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN();
-            DataSet v_ds = v_us.LayDanhSachNhanVienNghiTamThoi();
+            DataSet v_ds = v_us.LayDanhSachNhanVienNghiTamThoi(1);
             return v_ds;
         }
 

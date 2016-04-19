@@ -117,9 +117,9 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                 m_us_save.datNGAY_BAT_DAU = m_dat_tu_ngay.DateTime.Date;
                 m_us_save.datNGAY_KET_THUC = m_dat_den_ngay.DateTime.Date;
                 m_us_save.datNGAY_LAP = DateTime.Now.Date;
-                m_us_save.dcID_HS_LNS_LCD = ExecuteFuntion.GetID_GD_HS_LNS_LCDByID_HOP_DONG(Convert.ToDecimal(m_sle_hop_dong.EditValue));
+                //m_us_save.dcID_HS_LNS_LCD = ExecuteFuntion.GetID_GD_HS_LNS_LCDByID_HOP_DONG(Convert.ToDecimal(m_sle_hop_dong.EditValue));
                 m_us_save.dcHE_SO = Convert.ToDecimal(m_txt_gia_tri_thay_doi.EditValue);
-                m_us_save.strDA_XOA = "N";
+                //m_us_save.strDA_XOA = "N";
                 m_us_save.strGHI_CHU = m_txt_ghi_chu.Text;
                 m_us_save.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
 
@@ -151,9 +151,9 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             m_us_save.datNGAY_BAT_DAU = m_dat_tu_ngay.DateTime.Date;
             m_us_save.datNGAY_KET_THUC = m_dat_den_ngay.DateTime.Date;
             m_us_save.datNGAY_SUA = DateTime.Now.Date;
-            m_us_save.dcID_HS_LNS_LCD = ExecuteFuntion.GetID_GD_HS_LNS_LCDByID_HOP_DONG(Convert.ToDecimal(m_sle_hop_dong.EditValue));
+            //m_us_save.dcID_HS_LNS_LCD = ExecuteFuntion.GetID_GD_HS_LNS_LCDByID_HOP_DONG(Convert.ToDecimal(m_sle_hop_dong.EditValue));
             m_us_save.dcHE_SO = Convert.ToDecimal(m_txt_gia_tri_thay_doi.EditValue);
-            m_us_save.strDA_XOA = "N";
+            //m_us_save.strDA_XOA = "N";
             m_us_save.strGHI_CHU = m_txt_ghi_chu.Text;
             m_us_save.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
 
@@ -212,7 +212,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
         {
             m_e_loai_form = e_loai_form.UPDATE_LNS;
             US_GD_HE_SO_LNS v_us_hs_lns = new US_GD_HE_SO_LNS(ip_dc_id_gd_he_so_lns);
-            US_GD_HS_LNS_LCD v_us_hs_lns_lcd = new US_GD_HS_LNS_LCD(v_us_hs_lns.dcID_HS_LNS_LCD);
+            US_GD_HS_LNS_LCD v_us_hs_lns_lcd = new US_GD_HS_LNS_LCD();//new US_GD_HS_LNS_LCD(v_us_hs_lns.dcID_HS_LNS_LCD);
 
             m_us_save.dcID = ip_dc_id_gd_he_so_lns;
 

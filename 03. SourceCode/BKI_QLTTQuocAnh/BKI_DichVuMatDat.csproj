@@ -349,12 +349,6 @@
     <Compile Include="BaoCao\f410_bao_cao_so_luong_chat_luong_lao_dong.Designer.cs">
       <DependentUpon>f410_bao_cao_so_luong_chat_luong_lao_dong.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaoCao\f418_bao_cao_thay_doi_cong_tac.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCao\f418_bao_cao_thay_doi_cong_tac.Designer.cs">
-      <DependentUpon>f418_bao_cao_thay_doi_cong_tac.cs</DependentUpon>
-    </Compile>
     <Compile Include="BaoCao\f419_bao_cao_hs_lns_lcd_v2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,18 +390,6 @@
     </Compile>
     <Compile Include="CONFIRM\msg003_hien_thi_danh_sach.Designer.cs">
       <DependentUpon>msg003_hien_thi_danh_sach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DanhMuc\f118_trang_thai_lao_dong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DanhMuc\f118_trang_thai_lao_dong.Designer.cs">
-      <DependentUpon>f118_trang_thai_lao_dong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DanhMuc\f119_trang_thai_lao_dong_de.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DanhMuc\f119_trang_thai_lao_dong_de.Designer.cs">
-      <DependentUpon>f119_trang_thai_lao_dong_de.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\F153_dm_nguoi_bao_lanh.cs">
       <SubType>Form</SubType>
@@ -1215,9 +1197,6 @@
     <Compile Include="XtraReport\rptPhuThuoc.Designer.cs">
       <DependentUpon>rptPhuThuoc.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BaoCao\f418_bao_cao_thay_doi_cong_tac.resx">
-      <DependentUpon>f418_bao_cao_thay_doi_cong_tac.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F421_BAO_CAO_THONG_KE_TONG_HOP.resx">
       <DependentUpon>F421_BAO_CAO_THONG_KE_TONG_HOP.cs</DependentUpon>
     </EmbeddedResource>
@@ -1226,12 +1205,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f492_quyet_toan_thue_TNCN.resx">
       <DependentUpon>f492_quyet_toan_thue_TNCN.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\f118_trang_thai_lao_dong.resx">
-      <DependentUpon>f118_trang_thai_lao_dong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\f119_trang_thai_lao_dong_de.resx">
-      <DependentUpon>f119_trang_thai_lao_dong_de.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f326_in_hop_dong.resx">
       <DependentUpon>f326_in_hop_dong.cs</DependentUpon>

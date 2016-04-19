@@ -281,15 +281,17 @@ namespace BKI_DichVuMatDat.DS {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnTEN_CHUC_VU;
+            private global::System.Data.DataColumn columnMA_CHUC_VU;
             
-            private global::System.Data.DataColumn columnGHI_CHU;
+            private global::System.Data.DataColumn columnTEN_CHUC_VU;
             
             private global::System.Data.DataColumn columnSO_THU_TU;
             
             private global::System.Data.DataColumn columnID_DON_VI;
             
             private global::System.Data.DataColumn columnID_LOAI_CHUC_VU;
+            
+            private global::System.Data.DataColumn columnGHI_CHU;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -334,17 +336,17 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TEN_CHUC_VUColumn {
+            public global::System.Data.DataColumn MA_CHUC_VUColumn {
                 get {
-                    return this.columnTEN_CHUC_VU;
+                    return this.columnMA_CHUC_VU;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn GHI_CHUColumn {
+            public global::System.Data.DataColumn TEN_CHUC_VUColumn {
                 get {
-                    return this.columnGHI_CHU;
+                    return this.columnTEN_CHUC_VU;
                 }
             }
             
@@ -369,6 +371,14 @@ namespace BKI_DichVuMatDat.DS {
             public global::System.Data.DataColumn ID_LOAI_CHUC_VUColumn {
                 get {
                     return this.columnID_LOAI_CHUC_VU;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GHI_CHUColumn {
+                get {
+                    return this.columnGHI_CHU;
                 }
             }
             
@@ -409,15 +419,16 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DM_CHUC_VURow AddDM_CHUC_VURow(string TEN_CHUC_VU, string GHI_CHU, decimal SO_THU_TU, decimal ID_DON_VI, decimal ID_LOAI_CHUC_VU) {
+            public DM_CHUC_VURow AddDM_CHUC_VURow(string MA_CHUC_VU, string TEN_CHUC_VU, decimal SO_THU_TU, decimal ID_DON_VI, decimal ID_LOAI_CHUC_VU, string GHI_CHU) {
                 DM_CHUC_VURow rowDM_CHUC_VURow = ((DM_CHUC_VURow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
+                        MA_CHUC_VU,
                         TEN_CHUC_VU,
-                        GHI_CHU,
                         SO_THU_TU,
                         ID_DON_VI,
-                        ID_LOAI_CHUC_VU};
+                        ID_LOAI_CHUC_VU,
+                        GHI_CHU};
                 rowDM_CHUC_VURow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDM_CHUC_VURow);
                 return rowDM_CHUC_VURow;
@@ -448,11 +459,12 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
+                this.columnMA_CHUC_VU = base.Columns["MA_CHUC_VU"];
                 this.columnTEN_CHUC_VU = base.Columns["TEN_CHUC_VU"];
-                this.columnGHI_CHU = base.Columns["GHI_CHU"];
                 this.columnSO_THU_TU = base.Columns["SO_THU_TU"];
                 this.columnID_DON_VI = base.Columns["ID_DON_VI"];
                 this.columnID_LOAI_CHUC_VU = base.Columns["ID_LOAI_CHUC_VU"];
+                this.columnGHI_CHU = base.Columns["GHI_CHU"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -460,16 +472,18 @@ namespace BKI_DichVuMatDat.DS {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
+                this.columnMA_CHUC_VU = new global::System.Data.DataColumn("MA_CHUC_VU", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMA_CHUC_VU);
                 this.columnTEN_CHUC_VU = new global::System.Data.DataColumn("TEN_CHUC_VU", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTEN_CHUC_VU);
-                this.columnGHI_CHU = new global::System.Data.DataColumn("GHI_CHU", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGHI_CHU);
                 this.columnSO_THU_TU = new global::System.Data.DataColumn("SO_THU_TU", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSO_THU_TU);
                 this.columnID_DON_VI = new global::System.Data.DataColumn("ID_DON_VI", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_DON_VI);
                 this.columnID_LOAI_CHUC_VU = new global::System.Data.DataColumn("ID_LOAI_CHUC_VU", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_LOAI_CHUC_VU);
+                this.columnGHI_CHU = new global::System.Data.DataColumn("GHI_CHU", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGHI_CHU);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -478,10 +492,11 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnID.AllowDBNull = false;
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
+                this.columnMA_CHUC_VU.MaxLength = 15;
                 this.columnTEN_CHUC_VU.AllowDBNull = false;
                 this.columnTEN_CHUC_VU.MaxLength = 250;
-                this.columnGHI_CHU.MaxLength = 250;
                 this.columnSO_THU_TU.AllowDBNull = false;
+                this.columnGHI_CHU.MaxLength = 250;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -635,28 +650,28 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MA_CHUC_VU {
+                get {
+                    try {
+                        return ((string)(this[this.tableDM_CHUC_VU.MA_CHUC_VUColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MA_CHUC_VU\' in table \'DM_CHUC_VU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDM_CHUC_VU.MA_CHUC_VUColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TEN_CHUC_VU {
                 get {
                     return ((string)(this[this.tableDM_CHUC_VU.TEN_CHUC_VUColumn]));
                 }
                 set {
                     this[this.tableDM_CHUC_VU.TEN_CHUC_VUColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string GHI_CHU {
-                get {
-                    try {
-                        return ((string)(this[this.tableDM_CHUC_VU.GHI_CHUColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'GHI_CHU\' in table \'DM_CHUC_VU\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDM_CHUC_VU.GHI_CHUColumn] = value;
                 }
             }
             
@@ -705,14 +720,30 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsGHI_CHUNull() {
-                return this.IsNull(this.tableDM_CHUC_VU.GHI_CHUColumn);
+            public string GHI_CHU {
+                get {
+                    try {
+                        return ((string)(this[this.tableDM_CHUC_VU.GHI_CHUColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GHI_CHU\' in table \'DM_CHUC_VU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDM_CHUC_VU.GHI_CHUColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetGHI_CHUNull() {
-                this[this.tableDM_CHUC_VU.GHI_CHUColumn] = global::System.Convert.DBNull;
+            public bool IsMA_CHUC_VUNull() {
+                return this.IsNull(this.tableDM_CHUC_VU.MA_CHUC_VUColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMA_CHUC_VUNull() {
+                this[this.tableDM_CHUC_VU.MA_CHUC_VUColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -737,6 +768,18 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetID_LOAI_CHUC_VUNull() {
                 this[this.tableDM_CHUC_VU.ID_LOAI_CHUC_VUColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGHI_CHUNull() {
+                return this.IsNull(this.tableDM_CHUC_VU.GHI_CHUColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGHI_CHUNull() {
+                this[this.tableDM_CHUC_VU.GHI_CHUColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -900,54 +943,61 @@ namespace BKI_DichVuMatDat.DS.DS_DM_CHUC_VUTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "DM_CHUC_VU";
             tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("MA_CHUC_VU", "MA_CHUC_VU");
             tableMapping.ColumnMappings.Add("TEN_CHUC_VU", "TEN_CHUC_VU");
-            tableMapping.ColumnMappings.Add("GHI_CHU", "GHI_CHU");
             tableMapping.ColumnMappings.Add("SO_THU_TU", "SO_THU_TU");
             tableMapping.ColumnMappings.Add("ID_DON_VI", "ID_DON_VI");
             tableMapping.ColumnMappings.Add("ID_LOAI_CHUC_VU", "ID_LOAI_CHUC_VU");
+            tableMapping.ColumnMappings.Add("GHI_CHU", "GHI_CHU");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[DM_CHUC_VU] WHERE (([ID] = @Original_ID) AND ([TEN_CHUC_VU] = @Original_TEN_CHUC_VU) AND ((@IsNull_GHI_CHU = 1 AND [GHI_CHU] IS NULL) OR ([GHI_CHU] = @Original_GHI_CHU)) AND ([SO_THU_TU] = @Original_SO_THU_TU) AND ((@IsNull_ID_DON_VI = 1 AND [ID_DON_VI] IS NULL) OR ([ID_DON_VI] = @Original_ID_DON_VI)) AND ((@IsNull_ID_LOAI_CHUC_VU = 1 AND [ID_LOAI_CHUC_VU] IS NULL) OR ([ID_LOAI_CHUC_VU] = @Original_ID_LOAI_CHUC_VU)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[DM_CHUC_VU] WHERE (([ID] = @Original_ID) AND ((@IsNull_MA_CHUC_VU = 1 AND [MA_CHUC_VU] IS NULL) OR ([MA_CHUC_VU] = @Original_MA_CHUC_VU)) AND ([TEN_CHUC_VU] = @Original_TEN_CHUC_VU) AND ([SO_THU_TU] = @Original_SO_THU_TU) AND ((@IsNull_ID_DON_VI = 1 AND [ID_DON_VI] IS NULL) OR ([ID_DON_VI] = @Original_ID_DON_VI)) AND ((@IsNull_ID_LOAI_CHUC_VU = 1 AND [ID_LOAI_CHUC_VU] IS NULL) OR ([ID_LOAI_CHUC_VU] = @Original_ID_LOAI_CHUC_VU)) AND ((@IsNull_GHI_CHU = 1 AND [GHI_CHU] IS NULL) OR ([GHI_CHU] = @Original_GHI_CHU)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MA_CHUC_VU", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_CHUC_VU", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MA_CHUC_VU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_CHUC_VU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TEN_CHUC_VU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN_CHUC_VU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_GHI_CHU", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GHI_CHU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SO_THU_TU", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "SO_THU_TU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_DON_VI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_DON_VI", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_DON_VI", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_DON_VI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_LOAI_CHUC_VU", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_LOAI_CHUC_VU", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_LOAI_CHUC_VU", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_LOAI_CHUC_VU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_GHI_CHU", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GHI_CHU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[DM_CHUC_VU] ([TEN_CHUC_VU], [GHI_CHU], [SO_THU_TU], [ID_DON_VI], [ID_LOAI_CHUC_VU]) VALUES (@TEN_CHUC_VU, @GHI_CHU, @SO_THU_TU, @ID_DON_VI, @ID_LOAI_CHUC_VU);
-SELECT ID, TEN_CHUC_VU, GHI_CHU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU FROM DM_CHUC_VU WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[DM_CHUC_VU] ([MA_CHUC_VU], [TEN_CHUC_VU], [SO_THU_TU], [ID_DON_VI], [ID_LOAI_CHUC_VU], [GHI_CHU]) VALUES (@MA_CHUC_VU, @TEN_CHUC_VU, @SO_THU_TU, @ID_DON_VI, @ID_LOAI_CHUC_VU, @GHI_CHU);
+SELECT ID, MA_CHUC_VU, TEN_CHUC_VU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU, GHI_CHU FROM DM_CHUC_VU WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MA_CHUC_VU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_CHUC_VU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEN_CHUC_VU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN_CHUC_VU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GHI_CHU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SO_THU_TU", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "SO_THU_TU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_DON_VI", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_DON_VI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_LOAI_CHUC_VU", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_LOAI_CHUC_VU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GHI_CHU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[DM_CHUC_VU] SET [TEN_CHUC_VU] = @TEN_CHUC_VU, [GHI_CHU] = @GHI_CHU, [SO_THU_TU] = @SO_THU_TU, [ID_DON_VI] = @ID_DON_VI, [ID_LOAI_CHUC_VU] = @ID_LOAI_CHUC_VU WHERE (([ID] = @Original_ID) AND ([TEN_CHUC_VU] = @Original_TEN_CHUC_VU) AND ((@IsNull_GHI_CHU = 1 AND [GHI_CHU] IS NULL) OR ([GHI_CHU] = @Original_GHI_CHU)) AND ([SO_THU_TU] = @Original_SO_THU_TU) AND ((@IsNull_ID_DON_VI = 1 AND [ID_DON_VI] IS NULL) OR ([ID_DON_VI] = @Original_ID_DON_VI)) AND ((@IsNull_ID_LOAI_CHUC_VU = 1 AND [ID_LOAI_CHUC_VU] IS NULL) OR ([ID_LOAI_CHUC_VU] = @Original_ID_LOAI_CHUC_VU)));
-SELECT ID, TEN_CHUC_VU, GHI_CHU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU FROM DM_CHUC_VU WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[DM_CHUC_VU] SET [MA_CHUC_VU] = @MA_CHUC_VU, [TEN_CHUC_VU] = @TEN_CHUC_VU, [SO_THU_TU] = @SO_THU_TU, [ID_DON_VI] = @ID_DON_VI, [ID_LOAI_CHUC_VU] = @ID_LOAI_CHUC_VU, [GHI_CHU] = @GHI_CHU WHERE (([ID] = @Original_ID) AND ((@IsNull_MA_CHUC_VU = 1 AND [MA_CHUC_VU] IS NULL) OR ([MA_CHUC_VU] = @Original_MA_CHUC_VU)) AND ([TEN_CHUC_VU] = @Original_TEN_CHUC_VU) AND ([SO_THU_TU] = @Original_SO_THU_TU) AND ((@IsNull_ID_DON_VI = 1 AND [ID_DON_VI] IS NULL) OR ([ID_DON_VI] = @Original_ID_DON_VI)) AND ((@IsNull_ID_LOAI_CHUC_VU = 1 AND [ID_LOAI_CHUC_VU] IS NULL) OR ([ID_LOAI_CHUC_VU] = @Original_ID_LOAI_CHUC_VU)) AND ((@IsNull_GHI_CHU = 1 AND [GHI_CHU] IS NULL) OR ([GHI_CHU] = @Original_GHI_CHU)));
+SELECT ID, MA_CHUC_VU, TEN_CHUC_VU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU, GHI_CHU FROM DM_CHUC_VU WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MA_CHUC_VU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_CHUC_VU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEN_CHUC_VU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN_CHUC_VU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GHI_CHU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SO_THU_TU", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "SO_THU_TU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_DON_VI", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_DON_VI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_LOAI_CHUC_VU", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_LOAI_CHUC_VU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GHI_CHU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MA_CHUC_VU", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_CHUC_VU", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MA_CHUC_VU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_CHUC_VU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TEN_CHUC_VU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN_CHUC_VU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_GHI_CHU", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GHI_CHU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SO_THU_TU", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "SO_THU_TU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_DON_VI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_DON_VI", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_DON_VI", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_DON_VI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_LOAI_CHUC_VU", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_LOAI_CHUC_VU", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_LOAI_CHUC_VU", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_LOAI_CHUC_VU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_GHI_CHU", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GHI_CHU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -955,7 +1005,7 @@ SELECT ID, TEN_CHUC_VU, GHI_CHU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU FROM DM_C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BKI_DichVuMatDat.DS.Properties.Settings.Default.DVMD_LOGICConnectionString;
+            this._connection.ConnectionString = global::BKI_DichVuMatDat.DS.Properties.Settings.Default.DVMDConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -964,8 +1014,8 @@ SELECT ID, TEN_CHUC_VU, GHI_CHU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU FROM DM_C
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, TEN_CHUC_VU, GHI_CHU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU FROM dbo.D" +
-                "M_CHUC_VU";
+            this._commandCollection[0].CommandText = "SELECT ID, MA_CHUC_VU, TEN_CHUC_VU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU, GHI_CH" +
+                "U FROM dbo.DM_CHUC_VU";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1026,21 +1076,21 @@ SELECT ID, TEN_CHUC_VU, GHI_CHU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU FROM DM_C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_ID, string Original_TEN_CHUC_VU, string Original_GHI_CHU, decimal Original_SO_THU_TU, global::System.Nullable<decimal> Original_ID_DON_VI, global::System.Nullable<decimal> Original_ID_LOAI_CHUC_VU) {
+        public virtual int Delete(decimal Original_ID, string Original_MA_CHUC_VU, string Original_TEN_CHUC_VU, decimal Original_SO_THU_TU, global::System.Nullable<decimal> Original_ID_DON_VI, global::System.Nullable<decimal> Original_ID_LOAI_CHUC_VU, string Original_GHI_CHU) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID));
+            if ((Original_MA_CHUC_VU == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_MA_CHUC_VU));
+            }
             if ((Original_TEN_CHUC_VU == null)) {
                 throw new global::System.ArgumentNullException("Original_TEN_CHUC_VU");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_TEN_CHUC_VU));
-            }
-            if ((Original_GHI_CHU == null)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_GHI_CHU));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_TEN_CHUC_VU));
             }
             this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_SO_THU_TU));
             if ((Original_ID_DON_VI.HasValue == true)) {
@@ -1058,6 +1108,14 @@ SELECT ID, TEN_CHUC_VU, GHI_CHU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU FROM DM_C
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_GHI_CHU == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_GHI_CHU));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1079,18 +1137,18 @@ SELECT ID, TEN_CHUC_VU, GHI_CHU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU FROM DM_C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string TEN_CHUC_VU, string GHI_CHU, decimal SO_THU_TU, global::System.Nullable<decimal> ID_DON_VI, global::System.Nullable<decimal> ID_LOAI_CHUC_VU) {
+        public virtual int Insert(string MA_CHUC_VU, string TEN_CHUC_VU, decimal SO_THU_TU, global::System.Nullable<decimal> ID_DON_VI, global::System.Nullable<decimal> ID_LOAI_CHUC_VU, string GHI_CHU) {
+            if ((MA_CHUC_VU == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(MA_CHUC_VU));
+            }
             if ((TEN_CHUC_VU == null)) {
                 throw new global::System.ArgumentNullException("TEN_CHUC_VU");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(TEN_CHUC_VU));
-            }
-            if ((GHI_CHU == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(GHI_CHU));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(TEN_CHUC_VU));
             }
             this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(SO_THU_TU));
             if ((ID_DON_VI.HasValue == true)) {
@@ -1104,6 +1162,12 @@ SELECT ID, TEN_CHUC_VU, GHI_CHU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU FROM DM_C
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((GHI_CHU == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(GHI_CHU));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1125,18 +1189,18 @@ SELECT ID, TEN_CHUC_VU, GHI_CHU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU FROM DM_C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TEN_CHUC_VU, string GHI_CHU, decimal SO_THU_TU, global::System.Nullable<decimal> ID_DON_VI, global::System.Nullable<decimal> ID_LOAI_CHUC_VU, decimal Original_ID, string Original_TEN_CHUC_VU, string Original_GHI_CHU, decimal Original_SO_THU_TU, global::System.Nullable<decimal> Original_ID_DON_VI, global::System.Nullable<decimal> Original_ID_LOAI_CHUC_VU, decimal ID) {
+        public virtual int Update(string MA_CHUC_VU, string TEN_CHUC_VU, decimal SO_THU_TU, global::System.Nullable<decimal> ID_DON_VI, global::System.Nullable<decimal> ID_LOAI_CHUC_VU, string GHI_CHU, decimal Original_ID, string Original_MA_CHUC_VU, string Original_TEN_CHUC_VU, decimal Original_SO_THU_TU, global::System.Nullable<decimal> Original_ID_DON_VI, global::System.Nullable<decimal> Original_ID_LOAI_CHUC_VU, string Original_GHI_CHU, decimal ID) {
+            if ((MA_CHUC_VU == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(MA_CHUC_VU));
+            }
             if ((TEN_CHUC_VU == null)) {
                 throw new global::System.ArgumentNullException("TEN_CHUC_VU");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(TEN_CHUC_VU));
-            }
-            if ((GHI_CHU == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(GHI_CHU));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(TEN_CHUC_VU));
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(SO_THU_TU));
             if ((ID_DON_VI.HasValue == true)) {
@@ -1151,39 +1215,53 @@ SELECT ID, TEN_CHUC_VU, GHI_CHU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU FROM DM_C
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Original_ID));
-            if ((Original_TEN_CHUC_VU == null)) {
-                throw new global::System.ArgumentNullException("Original_TEN_CHUC_VU");
+            if ((GHI_CHU == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_TEN_CHUC_VU));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(GHI_CHU));
             }
-            if ((Original_GHI_CHU == null)) {
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_ID));
+            if ((Original_MA_CHUC_VU == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_GHI_CHU));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_MA_CHUC_VU));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_SO_THU_TU));
-            if ((Original_ID_DON_VI.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_ID_DON_VI.Value));
+            if ((Original_TEN_CHUC_VU == null)) {
+                throw new global::System.ArgumentNullException("Original_TEN_CHUC_VU");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_TEN_CHUC_VU));
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_SO_THU_TU));
+            if ((Original_ID_DON_VI.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_ID_DON_VI.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((Original_ID_LOAI_CHUC_VU.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_ID_LOAI_CHUC_VU.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_ID_LOAI_CHUC_VU.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(ID));
+            if ((Original_GHI_CHU == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_GHI_CHU));
+            }
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1204,8 +1282,8 @@ SELECT ID, TEN_CHUC_VU, GHI_CHU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU FROM DM_C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TEN_CHUC_VU, string GHI_CHU, decimal SO_THU_TU, global::System.Nullable<decimal> ID_DON_VI, global::System.Nullable<decimal> ID_LOAI_CHUC_VU, decimal Original_ID, string Original_TEN_CHUC_VU, string Original_GHI_CHU, decimal Original_SO_THU_TU, global::System.Nullable<decimal> Original_ID_DON_VI, global::System.Nullable<decimal> Original_ID_LOAI_CHUC_VU) {
-            return this.Update(TEN_CHUC_VU, GHI_CHU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU, Original_ID, Original_TEN_CHUC_VU, Original_GHI_CHU, Original_SO_THU_TU, Original_ID_DON_VI, Original_ID_LOAI_CHUC_VU, Original_ID);
+        public virtual int Update(string MA_CHUC_VU, string TEN_CHUC_VU, decimal SO_THU_TU, global::System.Nullable<decimal> ID_DON_VI, global::System.Nullable<decimal> ID_LOAI_CHUC_VU, string GHI_CHU, decimal Original_ID, string Original_MA_CHUC_VU, string Original_TEN_CHUC_VU, decimal Original_SO_THU_TU, global::System.Nullable<decimal> Original_ID_DON_VI, global::System.Nullable<decimal> Original_ID_LOAI_CHUC_VU, string Original_GHI_CHU) {
+            return this.Update(MA_CHUC_VU, TEN_CHUC_VU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU, GHI_CHU, Original_ID, Original_MA_CHUC_VU, Original_TEN_CHUC_VU, Original_SO_THU_TU, Original_ID_DON_VI, Original_ID_LOAI_CHUC_VU, Original_GHI_CHU, Original_ID);
         }
     }
     

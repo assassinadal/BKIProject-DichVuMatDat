@@ -18,11 +18,27 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
 {
     public partial class f309_quan_ly_cong_tac : Form
     {
+        private decimal v_id_don_vi;
+        private decimal v_id_nhan_vien;
+
         #region Public Interfaces
         public f309_quan_ly_cong_tac()
         {
             InitializeComponent();
             format_controls();
+            load_data_2_tree();
+        }
+
+        public f309_quan_ly_cong_tac(decimal v_id_don_vi, decimal v_id_nhan_vien)
+        {
+            // TODO: Complete member initialization
+            InitializeComponent();
+            this.v_id_don_vi = v_id_don_vi;
+            this.v_id_nhan_vien = v_id_nhan_vien;
+            format_controls();
+            load_data_2_tree();
+            m_tree_don_vi.FocusedNode = m_tree_don_vi.FindNodeByFieldValue("ID", v_id_don_vi);
+            m_grv.ActiveFilterString=  "[MA_NV] = " + get_ma_nv_by_ID_nv(v_id_nhan_vien);
         }
         #endregion
         
@@ -35,7 +51,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         }
         private void set_initial_form_load()
         {
-            load_data_2_tree();
+            //load_data_2_tree();
         }
         private void load_data_2_tree()
         {
@@ -72,6 +88,15 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             return Convert.ToDecimal(m_grv.GetRowCellValue(m_grv.FocusedRowHandle, V_GD_CONG_TAC_2.ID_NHAN_VIEN));
         }
+
+        private string get_ma_nv_by_ID_nv(decimal ip_id_nv)
+        {
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            DS_DM_NHAN_VIEN v_ds = new DS_DM_NHAN_VIEN();
+            v_us.FillDataset(v_ds, "where ID=" + ip_id_nv);
+            return v_ds.Tables[0].Rows[0][DM_NHAN_VIEN.MA_NV].ToString();
+        }
+
         private void refresh_data()
         {
             TreeListNode v_node_focused = m_tree_don_vi.FocusedNode;

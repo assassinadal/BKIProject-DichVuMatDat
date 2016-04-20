@@ -448,5 +448,12 @@ namespace BKI_DichVuMatDat.US
 
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
+
+        public void FillDatasetDonViHienTai(DS_GD_CONG_TAC v_ds, decimal ip_id_nv)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_CT_get_cong_tac_hien_tai");
+            v_cstore.addDecimalInputParam("@ip_id_nv", ip_id_nv);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+        }
     }
 }

@@ -43,9 +43,6 @@
             this.NGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_KY_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_LAP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NGAY_SUA = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NGUOI_LAP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NGUOI_SUA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_print = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
@@ -53,6 +50,8 @@
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.m_tree_don_vi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -129,11 +128,10 @@
             this.NGAY_BAT_DAU,
             this.NGAY_KET_THUC,
             this.NGAY_KY_HOP_DONG,
+            this.gridColumn2,
+            this.gridColumn1,
             this.NGAY_LAP,
-            this.NGAY_SUA,
-            this.NGUOI_LAP,
-            this.NGUOI_SUA,
-            this.gridColumn1});
+            this.gridColumn3});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
             this.m_grv.OptionsFind.AllowFindPanel = false;
@@ -247,54 +245,13 @@
             this.NGAY_LAP.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAY_LAP.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NGAY_LAP.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.NGAY_LAP.Caption = "Ngày lập";
-            this.NGAY_LAP.FieldName = "NGAY_LAP";
+            this.NGAY_LAP.Caption = "Chức vụ";
+            this.NGAY_LAP.FieldName = "CHUC_VU";
             this.NGAY_LAP.Name = "NGAY_LAP";
             this.NGAY_LAP.OptionsColumn.AllowEdit = false;
             this.NGAY_LAP.Visible = true;
             this.NGAY_LAP.VisibleIndex = 7;
             this.NGAY_LAP.Width = 39;
-            // 
-            // NGAY_SUA
-            // 
-            this.NGAY_SUA.AppearanceCell.Options.UseTextOptions = true;
-            this.NGAY_SUA.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NGAY_SUA.AppearanceHeader.Options.UseTextOptions = true;
-            this.NGAY_SUA.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NGAY_SUA.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.NGAY_SUA.Caption = "Ngày sửa";
-            this.NGAY_SUA.FieldName = "NGAY_SUA";
-            this.NGAY_SUA.Name = "NGAY_SUA";
-            this.NGAY_SUA.OptionsColumn.AllowEdit = false;
-            this.NGAY_SUA.Visible = true;
-            this.NGAY_SUA.VisibleIndex = 8;
-            this.NGAY_SUA.Width = 39;
-            // 
-            // NGUOI_LAP
-            // 
-            this.NGUOI_LAP.AppearanceHeader.Options.UseTextOptions = true;
-            this.NGUOI_LAP.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NGUOI_LAP.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.NGUOI_LAP.Caption = "Người lập";
-            this.NGUOI_LAP.FieldName = "NGUOI_LAP";
-            this.NGUOI_LAP.Name = "NGUOI_LAP";
-            this.NGUOI_LAP.OptionsColumn.AllowEdit = false;
-            this.NGUOI_LAP.Visible = true;
-            this.NGUOI_LAP.VisibleIndex = 9;
-            this.NGUOI_LAP.Width = 30;
-            // 
-            // NGUOI_SUA
-            // 
-            this.NGUOI_SUA.AppearanceHeader.Options.UseTextOptions = true;
-            this.NGUOI_SUA.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NGUOI_SUA.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.NGUOI_SUA.Caption = "Người sửa";
-            this.NGUOI_SUA.FieldName = "NGUOI_SUA";
-            this.NGUOI_SUA.Name = "NGUOI_SUA";
-            this.NGUOI_SUA.OptionsColumn.AllowEdit = false;
-            this.NGUOI_SUA.Visible = true;
-            this.NGUOI_SUA.VisibleIndex = 10;
-            this.NGUOI_SUA.Width = 31;
             // 
             // panelControl1
             // 
@@ -362,11 +319,27 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.Caption = "Đã xóa";
-            this.gridColumn1.FieldName = "DA_XOA";
+            this.gridColumn1.Caption = "Mức LCD";
+            this.gridColumn1.FieldName = "MUC_LCD";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 11;
+            this.gridColumn1.VisibleIndex = 8;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Mã LCD";
+            this.gridColumn2.FieldName = "MA_LCD";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 7;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Số tiền";
+            this.gridColumn3.FieldName = "SO_TIEN_LCD";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 10;
             // 
             // f327_lap_hop_dong_v3
             // 
@@ -402,9 +375,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KET_THUC;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KY_HOP_DONG;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_LAP;
-        private DevExpress.XtraGrid.Columns.GridColumn NGAY_SUA;
-        private DevExpress.XtraGrid.Columns.GridColumn NGUOI_LAP;
-        private DevExpress.XtraGrid.Columns.GridColumn NGUOI_SUA;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_print;
         private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
@@ -413,7 +383,9 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
 
     }
 }

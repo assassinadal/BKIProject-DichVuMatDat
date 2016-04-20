@@ -43,9 +43,10 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         private void load_data_to_grid()
         {
             decimal v_id_don_vi = Convert.ToDecimal((m_tree_don_vi.FocusedNode.GetValue("ID")));
-            US_V_GD_HOP_DONG_V3 v_us = new US_V_GD_HOP_DONG_V3();
-            DS_V_GD_HOP_DONG_V3 v_ds = new DS_V_GD_HOP_DONG_V3();
-            v_us.FillDataset(v_ds,"where ID_DON_VI =" + v_id_don_vi);
+            US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_us.FillDatasetHopDong(v_ds,v_id_don_vi);
             m_grc.DataSource = v_ds.Tables[0];
         }
 
@@ -149,7 +150,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             try
             {
                 int v_focused_row = m_grv.FocusedRowHandle;
-                if (v_focused_row != 0)
+                if (v_focused_row >= 0)
                 {
                     var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
                     f328_lap_hop_dong_v3_detail v_f = new f328_lap_hop_dong_v3_detail();
@@ -174,7 +175,8 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             try
             {
                 f328_lap_hop_dong_v3_detail v_f = new f328_lap_hop_dong_v3_detail();
-                v_f.display_for_insert();
+                decimal v_id_don_vi = Convert.ToDecimal((m_tree_don_vi.FocusedNode.GetValue("ID")));
+                v_f.display_for_insert(v_id_don_vi);
                 load_data_to_grid();
             }
             catch (Exception v_e)

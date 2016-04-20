@@ -164,6 +164,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_HE_SO_LNS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_HOP_DONG.cs">
+      <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DS_GD_HOP_DONG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

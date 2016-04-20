@@ -93,6 +93,11 @@ namespace BKI_DichVuMatDat.BaoCao
                 m_lbl_trang_thai_bang_luong.Text = "|Đã chốt, không chỉnh sửa";
                 m_lbl_so_luong_nv_tinh_luong.ForeColor = Color.Gray;
                 m_lbl_so_luong_nv_tinh_luong.Text = v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_DA_TINH.ToString() + " NV ";
+
+                m_cmd_soan_thao_bang_luong.Enabled = false;
+                m_cmd_tinh_lai_nhan_vien.Enabled = false;
+                m_cmd_delete_luong.Enabled = false;
+                m_cmd_chot_bang_luong.Enabled = false;
             }
             else
             {
@@ -108,6 +113,11 @@ namespace BKI_DichVuMatDat.BaoCao
                 }
                 m_lbl_so_luong_nv_tinh_luong.Text = v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_DA_TINH.ToString() + "/"
                                                     + v_dto_thong_tin_bang_luong.SO_LUONG_NHAN_VIEN_CAN_TINH.ToString() + " NV ";
+
+                m_cmd_soan_thao_bang_luong.Enabled = true;
+                m_cmd_tinh_lai_nhan_vien.Enabled = true;
+                m_cmd_delete_luong.Enabled = true;
+                m_cmd_chot_bang_luong.Enabled = true;
             }
         }
         private bool kiem_tra_da_tinh_het_luong_nhan_vien_chua()

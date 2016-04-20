@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f301_tinh_thu_nhap_khac));
             this.m_lbl_download_template = new DevExpress.XtraEditors.LabelControl();
             this.m_grc_main = new DevExpress.XtraGrid.GridControl();
@@ -46,7 +45,7 @@
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_lbl_ten_quy = new DevExpress.XtraEditors.LabelControl();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollection = new DevExpress.Utils.ImageCollection();
             this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::BKI_DichVuMatDat.BaoCao.F_wait_form), true, true);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();

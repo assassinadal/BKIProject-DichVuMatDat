@@ -11,6 +11,7 @@ using IP.Core.IPCommon;
 using DevExpress.XtraEditors;
 using BKI_DichVuMatDat.DS.CDBNames;
 using BKI_DichVuMatDat.US;
+using BKI_DichVuMatDat.NghiepVu.Luong;
 namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
 {
     public partial class f355_tnk_chi_tiet_quy_thu_nhap_khac : Form
@@ -23,8 +24,9 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         public f355_tnk_chi_tiet_quy_thu_nhap_khac(decimal ip_dc_id_quy_thu_nhap_khac)
         {
             InitializeComponent();
-            format_control();
+            
             m_dc_id_quy = ip_dc_id_quy_thu_nhap_khac;
+            format_control();
         }
         #endregion
 
@@ -158,6 +160,15 @@ namespace BKI_DichVuMatDat.NghiepVu.ThuNhapKhac
         //Set up Form
         private void format_control()
         {
+            var v_dto_quy = TnkQL.Instance.LayThongTinQuy(m_dc_id_quy);
+            var v_dto_luong = TinhLuongQL.Instance.LayThongTinBangLuong(v_dto_quy.THANG, v_dto_quy.NAM);
+            if(v_dto_luong.CHOT_BANG_LUONG == true)
+            {
+                m_cmd_delete.Enabled = false;
+                m_cmd_update.Enabled = false;
+                m_cmd_insert.Enabled = false;
+                m_cmd_import_excel.Enabled = false;
+            }
             set_define_events();
         }
         //Get data in Form

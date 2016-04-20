@@ -42,7 +42,7 @@ namespace BKI_DichVuMatDat.COMMON
 
         public static decimal GetSoHoSoNext(decimal ip_dc_id_don_vi, decimal ip_dc_id_chuc_vu)
         {
-            var v_str_result = ExecuteFuntionSql("fn_NV_so_ho_so_Next", ip_dc_id_chuc_vu);
+            var v_str_result = ExecuteFuntionSql("fn_NV_so_ho_so_Next", ip_dc_id_chuc_vu, ip_dc_id_don_vi);
             return Convert.ToDecimal(v_str_result);
         }
 

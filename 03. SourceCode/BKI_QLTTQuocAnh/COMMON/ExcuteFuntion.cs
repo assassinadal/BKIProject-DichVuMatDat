@@ -39,11 +39,13 @@ namespace BKI_DichVuMatDat.COMMON
             var v_str_result = ExecuteFuntionSql("fn_HD_id_gd_hs_lns_lcd_Get", ip_dc_id_hop_dong_hien_tai);
             return Convert.ToDecimal(v_str_result);
         }
+
         public static decimal GetSoHoSoNext(decimal ip_dc_id_don_vi, decimal ip_dc_id_chuc_vu)
         {
             var v_str_result = ExecuteFuntionSql("fn_NV_so_ho_so_Next", ip_dc_id_chuc_vu);
             return Convert.ToDecimal(v_str_result);
         }
+
         public static bool KiemTraNhanVienCoTrongBangLuongChua(string ip_str_ma_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)
         {
             var v_str_result = ExecuteFuntionSql("fn_kiem_tra_nhan_vien_co_trong_bang_luong_chua", ip_str_ma_nhan_vien, ip_dc_thang, ip_dc_nam);

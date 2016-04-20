@@ -1041,7 +1041,8 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f330_len_luong_cho_nv v_frm = new f330_len_luong_cho_nv();
+                //f330_len_luong_cho_nv v_frm = new f330_len_luong_cho_nv();
+                f300_chinh_lns_nhan_vien v_frm = new f300_chinh_lns_nhan_vien();
                 if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;

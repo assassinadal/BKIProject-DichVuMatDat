@@ -159,9 +159,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 DateTime v_dat_ngay_bat_dau = DateTime.Parse(m_dat_ngay_bat_dau.EditValue.ToString());
                 DateTime v_dat_ngay_ket_thuc = DateTime.Parse(m_dat_ngay_ket_thuc.EditValue.ToString());
-                string v_str_error = "Tháng bắt đầu giảm trừ đang lớn hơn tháng kết thúc giảm trừ. \nVui lòng kiểm tra lại!";
-                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                if (v_dat_ngay_bat_dau >= v_dat_ngay_ket_thuc)
+                {
+                    string v_str_error = "Tháng bắt đầu giảm trừ đang lớn hơn tháng kết thúc giảm trừ. \nVui lòng kiểm tra lại!";
+                    XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
             }
             return true;
         }

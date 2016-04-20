@@ -220,7 +220,7 @@ namespace BKI_DichVuMatDat
                 ExcelAdapter.Fill(dt);
             }
             con.Close();
-            format_data_header(dt);
+            //format_data_header(dt);
             ip_grc.DataSource = dt;
         }
 

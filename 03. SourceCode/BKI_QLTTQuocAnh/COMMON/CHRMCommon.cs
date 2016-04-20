@@ -30,7 +30,7 @@ namespace BKI_DichVuMatDat
             }
 
         }
-        public static int GetRowHandleByColumnValue(GridView view, string ColumnFieldName, object value)
+        private static int GetRowHandleByColumnValue(GridView view, string ColumnFieldName, object value)
         {
             int result = GridControl.InvalidRowHandle;
 

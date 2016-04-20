@@ -210,7 +210,7 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string SO_THU_TU = "SO_THU_TU";
         public const string ID_DON_VI = "ID_DON_VI";
         public const string ID_LOAI_CHUC_VU = "ID_LOAI_CHUC_VU";
-        public const string GHI_CHU = "GHI_CHU";
+        public const string GHI_CHU = "GHI_CHU";    
     }
 
 

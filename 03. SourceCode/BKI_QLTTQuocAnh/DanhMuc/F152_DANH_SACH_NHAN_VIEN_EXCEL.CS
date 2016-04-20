@@ -11,6 +11,8 @@ using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.US;
 using IP.Core.IPCommon;
 using BKI_DichVuMatDat.NghiepVu;
+using DevExpress.XtraSplashScreen;
+using BKI_DichVuMatDat.BaoCao;
 
 namespace BKI_DichVuMatDat
 {
@@ -30,7 +32,6 @@ namespace BKI_DichVuMatDat
             {
                 col.MaxWidth = 100;
                 col.MinWidth = 100;
-
             }
             this.ShowDialog();
         }
@@ -38,56 +39,15 @@ namespace BKI_DichVuMatDat
 
         #region Members
 
+        string m_txt_path = "";
+
         #endregion
 
         #region Private Methods
         private void format_controll()
         {
             CenterToScreen();
-        }
-
-        private void m_cmd_luu_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (checked_du_lieu_is_ok())
-                {
-                    for (int i = 0; i < m_grv.DataRowCount; i++)
-                    {
-                        if (check_ma_nhan_vien_is_ok(m_grv.GetDataRow(i)))
-                        {
-                            gan_du_lieu_cho_us_dm_nhan_vien(m_grv.GetDataRow(i));
-                        }
-                        else
-                        {
-                            if (m_grv.GetDataRow(i)["MA_NV"].ToString() == "" || m_grv.GetDataRow(i)["MA_NV"] == null)
-                            {
-                                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-                                F503_IMPORT_EXCEL.da_hoan_thanh = true;
-                                this.Close();
-                                return;
-                            }
-                            CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + m_grv.GetDataRow(i)["MA_NV"].ToString() + "  đã tồn tại. Vui lòng kiểm tra lại thông tin!");
-                            return;
-                        }
-
-                    }
-
-                    //CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-                    //F503_IMPORT_EXCEL.da_hoan_thanh = true;
-                    //this.Close();
-                }
-                else
-                {
-                    CHRM_BaseMessages.MsgBox_Error("Kiểm tra lại dữ liệu!");
-                }
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-
-
+            set_define_event();
         }
 
         private void gan_du_lieu_cho_us_dm_nhan_vien(DataRow dataRow)
@@ -149,7 +109,7 @@ namespace BKI_DichVuMatDat
             //US_DUNG_CHUNG v_usdc = new US_DUNG_CHUNG();
             //DataSet v_ds_nhan_vien = new DataSet();
             //v_ds_nhan_vien.Tables.Add(new DataTable());
-            if (dataRow["MA_NV"] == null || dataRow["MA_NV"].ToString()=="")
+            if (dataRow["MA_NV"] == null || dataRow["MA_NV"].ToString() == "")
             {
                 return false;
             }
@@ -167,10 +127,45 @@ namespace BKI_DichVuMatDat
 
         private bool checked_du_lieu_is_ok()
         {// chưa check, mới check số dòng >0
-            if (m_grv.DataRowCount > 0)
-                return true;
-            else
-                return false;
+            //int i;
+            //for (i = 0; i < m_grv.GetDataRow(i).ItemArray.Length; i++)
+            //{
+            //    if (m_grv.GetDataRow(i).ItemArray[i].ToString() != null || m_grv.GetDataRow(i).ItemArray[i].ToString() != "") break;
+            //}
+            //if (i == m_grv.GetDataRow(i).ItemArray.Length)
+            //{
+
+            //}
+            //if (m_grv.DataRowCount > 0)
+            //{
+            //    for (i = 0; i < m_grv.DataRowCount; i++)
+            //    {
+            //        if (!check_ma_nhan_vien_is_ok(m_grv.GetDataRow(i)))
+            //            return false;
+            //    }
+            //    return true;
+            //}
+            //else
+            //    return false;
+            int i; int j = 0;
+            for (i = 0; i < m_grv.DataRowCount; i++)
+            {
+                if (checked_data_row_is_not_null(m_grv.GetDataRow(i)))
+                {
+                    if (!check_ma_nhan_vien_is_ok(m_grv.GetDataRow(i)))
+                    {
+                        CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + m_grv.GetDataRow(i)["MA_NV"].ToString() + "  đã tồn tại. Vui lòng kiểm tra lại thông tin!");
+                        return false;
+                    }
+                }
+                else { j++; }
+            }
+            if (i == 0) { CHRM_BaseMessages.MsgBox_Error("Kiểm tra lại dữ liệu!"); return false; }
+            if (j == m_grv.DataRowCount)
+            {
+                CHRM_BaseMessages.MsgBox_Error("Kiểm tra lại dữ liệu!"); return false;
+            }
+            return true;
         }
 
         private string find_id_cm_dm_tu_dien_by_trinh_do_van_hoa(string ip_str_trinh_do_van_hoa)
@@ -193,6 +188,172 @@ namespace BKI_DichVuMatDat
             }
         }
 
+        private void set_init_form_load()
+        {
+            this.WindowState = FormWindowState.Maximized;
+            m_lbl_check.Text = "Chưa lưu dữ liệu";
+            foreach (DevExpress.XtraGrid.Columns.GridColumn col in ((DevExpress.XtraGrid.Views.Base.ColumnView)m_grc.Views[0]).Columns)
+            {
+                col.MaxWidth = 100;
+                col.MinWidth = 100;
+            }
+        }
+
+        private void load_data_2_grid(string m_txt_path)
+        {
+            if (m_txt_path != "")
+            {
+                m_grc.DataSource = null;
+                m_lbl_check.Text = "Chưa lưu dữ liệu";
+                WinFormControls.load_xls_to_gridview_v3(m_txt_path, m_grc, "NHAP_LIEU");
+            }
+        }
+
+        private string chon_file()
+        {
+            return WinFormControls.openFileDialog();
+        }
+
+        private void save_data()
+        {
+            for (int i = 0; i < m_grv.DataRowCount; i++)
+            {
+                if (checked_data_row_is_not_null(m_grv.GetDataRow(i)))
+                {
+                    gan_du_lieu_cho_us_dm_nhan_vien(m_grv.GetDataRow(i));
+                }
+                else
+                {
+                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                    F503_IMPORT_EXCEL.da_hoan_thanh = true;
+                    m_lbl_check.Text = "Đã lưu dữ liệu";
+                    return;
+                }
+            }
+        }
+
+        private bool checked_data_row_is_not_null(DataRow dataRow)
+        {
+            for (int i = 0; i < dataRow.ItemArray.Length; i++)
+            {
+                if (dataRow.ItemArray[i].ToString() == null || dataRow.ItemArray[i].ToString() == "")
+                {
+                }
+                else { return true; }
+            }
+            return false;
+        }
+
         #endregion
+
+        //EVENTS
+        private void set_define_event()
+        {
+            Load += F152_DANH_SACH_NHAN_VIEN_EXCEL_Load;
+            m_cmd_luu.Click += m_cmd_luu_Click;
+            m_cmd_chon_file.Click += M_cmd_chon_file_Click;
+            m_cmd_xuat_excel.Click += M_cmd_xuat_excel_Click;
+            m_cmd_tai_file_excel_mau.Click += M_cmd_tai_file_excel_mau_Click;
+        }
+
+        private void M_cmd_tai_file_excel_mau_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(typeof(F_wait_form));
+                WinFormControls.openTemplate(CONST_EXCEL_TEMPLATE.DANH_SACH_NHAN_VIEN_TEMPLATE);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm();
+            }
+        }
+
+        private void M_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void M_cmd_chon_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(typeof(F_wait_form));
+                load_data_2_grid(chon_file());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm();
+            }
+        }
+
+        private void F152_DANH_SACH_NHAN_VIEN_EXCEL_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                set_init_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_luu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (checked_du_lieu_is_ok())
+                {
+                    save_data();
+                    //for (int i = 0; i < m_grv.DataRowCount; i++)
+                    //{
+                    //    if (check_ma_nhan_vien_is_ok(m_grv.GetDataRow(i)))
+                    //    {
+                    //        gan_du_lieu_cho_us_dm_nhan_vien(m_grv.GetDataRow(i));
+                    //    }
+                    //    else
+                    //    {
+                    //        if (m_grv.GetDataRow(i)["MA_NV"].ToString() == "" || m_grv.GetDataRow(i)["MA_NV"] == null)
+                    //        {
+                    //            CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                    //            F503_IMPORT_EXCEL.da_hoan_thanh = true;
+                    //            this.Close();
+                    //            return;
+                    //        }
+                    //        CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + m_grv.GetDataRow(i)["MA_NV"].ToString() + "  đã tồn tại. Vui lòng kiểm tra lại thông tin!");
+                    //        return;
+                    //    }
+                    //}
+                }
+                //else
+                //{
+                //    CHRM_BaseMessages.MsgBox_Error("Kiểm tra lại dữ liệu!");
+                //}
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+
+        }
+
+
     }
 }

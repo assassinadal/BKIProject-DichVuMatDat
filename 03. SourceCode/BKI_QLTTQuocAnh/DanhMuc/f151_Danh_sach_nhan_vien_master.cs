@@ -54,6 +54,10 @@ namespace BKI_DichVuMatDat.DanhMuc
             f150_danh_muc_nhan_su_v2 v_f = new f150_danh_muc_nhan_su_v2();
             v_f.DisplayForInsert();
             load_data_to_grid();
+            if (v_f.id_nv_new != -1)
+            {
+                focus_row(v_f.id_nv_new);
+            }
         }
 
         public void import_excel()
@@ -72,13 +76,13 @@ namespace BKI_DichVuMatDat.DanhMuc
             //    v_f.displayToInsertExcel(m_txt_path);
             //    // WinFormControls.load_xls_to_gridview(m_txt_path, m_grc);
             //}
-            m_txt_path = WinFormControls.openFileDialog();
-            if (m_txt_path != "")
-            {
+            //m_txt_path = WinFormControls.openFileDialog();
+            //if (m_txt_path != "")
+            //{
                 F152_DANH_SACH_NHAN_VIEN_EXCEL v_f = new F152_DANH_SACH_NHAN_VIEN_EXCEL();
-                v_f.displayToInsertExcel(m_txt_path);
-            }
-            load_data_to_grid();
+                v_f.ShowDialog();
+            //}
+            //load_data_to_grid();
         }
 
         #endregion
@@ -91,6 +95,11 @@ namespace BKI_DichVuMatDat.DanhMuc
         #endregion
 
         #region Private methods
+        private void focus_row(decimal ip_id_nhan_vien)
+        {
+            CHRMCommon.SelectRowInGrid(m_grv, "ID", ip_id_nhan_vien);
+        }
+
         private void format_controls()
         {
             FormatControl.SetVisibleSimpleButton(this);
@@ -131,7 +140,10 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void delete_click()
         {
-            if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_DU_LIEU))
+            //XtraMessageBox.Show(i_strMsg, "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+            DialogResult v_confirm = default(DialogResult);
+            v_confirm = XtraMessageBox.Show("BẠN CÓ THỰC SỰ MUỐN XÓA DỮ LIỆU NÀY ?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            if (v_confirm == DialogResult.Yes)
             {
                 DataRow v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
                 US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN(CIPConvert.ToDecimal(v_dr["ID"].ToString()));
@@ -240,6 +252,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                 f150_danh_muc_nhan_su_v2 v_f = new f150_danh_muc_nhan_su_v2();
                 v_f.DisplayForUpdate(v_us);
                 load_data_to_grid();
+                focus_row(CIPConvert.ToDecimal(v_dr["ID"].ToString()));
             }
             catch (Exception v_e)
             {

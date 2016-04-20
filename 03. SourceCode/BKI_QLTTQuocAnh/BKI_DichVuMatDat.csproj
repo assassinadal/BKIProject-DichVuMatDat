@@ -658,7 +658,6 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1807,9 +1806,9 @@
     <Content Include="Template\CONG_TAC.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Template\DANH_SACH_NHAN_VIEN.xlsx">
+    <None Include="Template\DANH_SACH_NHAN_VIEN.xls">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
     <Content Include="Template\HOP_DONG.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

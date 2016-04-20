@@ -23,7 +23,7 @@ using BKI_DichVuMatDat.BaoCao.ThuNhapKhac;
 using BKI_DichVuMatDat.NghiepVu.Luong;
 using BKI_DichVuMatDat.NghiepVu.NhanSu;
 using BKI_DichVuMatDat.NghiepVu.HopDong;
-using BKI_DichVuMatDat.BaoCao.Luong;
+//using BKI_DichVuMatDat.BaoCao.Luong;
 
 namespace BKI_DichVuMatDat
 {
@@ -45,19 +45,19 @@ namespace BKI_DichVuMatDat
                 int v_so_nv_het_han_hs_lns = get_nv_het_han_hs_lns().Tables[0].Rows.Count;
                 int v_so_nv_han_han_lcd = get_nv_het_han_lcd().Tables[0].Rows.Count;
                 int v_so_nv_nghi_tam_thoi = get_nv_nghi_tam_thoi().Tables[0].Rows.Count;
-                int v_so_nv_het_nghi_tam_thoi = get_nv_het_nghi_tam_thoi().Tables[0].Rows.Count;
+                //int v_so_nv_het_nghi_tam_thoi = get_nv_het_nghi_tam_thoi().Tables[0].Rows.Count;
                 m_lbl_nv_het_han_hop_dong.Text = v_so_hop_dong_het_han.ToString();
                 m_lbl_nv_het_han_lcd.Text = v_so_nv_han_han_lcd.ToString();
                 m_lbl_nv_het_han_lns.Text = v_so_nv_het_han_hs_lns.ToString();
                 m_lbl_nv_nghi_tam_thoi.Text = v_so_nv_nghi_tam_thoi.ToString();
-                if (v_so_nv_het_nghi_tam_thoi != 0)
-                {
-                    m_lbl_ket_thuc_nghi_tam_thoi.Text = v_so_nv_het_nghi_tam_thoi.ToString();
-                }
-                else
-                {
-                    m_pnl_ket_thuc_nghi_tam_thoi.Visible = false;
-                }
+                //if (v_so_nv_het_nghi_tam_thoi != 0)
+                //{
+                //    m_lbl_ket_thuc_nghi_tam_thoi.Text = v_so_nv_het_nghi_tam_thoi.ToString();
+                //}
+                //else
+                //{
+                //    m_pnl_ket_thuc_nghi_tam_thoi.Visible = false;
+                //}
             }
             catch (Exception v_e)
             {
@@ -69,7 +69,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                update_canh_bao();
+                //update_canh_bao();
                 this.ShowDialog();
             }
             catch (Exception v_e)
@@ -197,7 +197,7 @@ namespace BKI_DichVuMatDat
         private DataSet get_nv_nghi_tam_thoi()
         {
             US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN v_us = new US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN();
-            DataSet v_ds = v_us.LayDanhSachNhanVienNghiTamThoi(1);
+            DataSet v_ds = v_us.LayDanhSachNhanVienTheoLoaiTrangThai(743);
             return v_ds;
         }
 
@@ -462,7 +462,9 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-               f468_bao_cao_trang_thai_lao_dong v_f = new f468_bao_cao_trang_thai_lao_dong();
+                //f468_bao_cao_trang_thai_lao_dong v_f = new f468_bao_cao_trang_thai_lao_dong();
+                //f418_bao_cao_thay_doi_cong_tac v_f = new f418_bao_cao_thay_doi_cong_tac();
+                f001_import_hop_dong v_f = new f001_import_hop_dong();
                 if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();
@@ -490,19 +492,18 @@ namespace BKI_DichVuMatDat
 
         void m_cmd_ds_chot_bang_luong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            try
-            {
-                f495_thong_tin_chot_bang_luong_thang v_f = new f495_thong_tin_chot_bang_luong_thang();
-                if(IsExistFormName(v_f)) return;
-                v_f.MdiParent = this;
-                v_f.Show();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
+            //try
+            //{
+            //    f495_thong_tin_chot_bang_luong_thang v_f = new f495_thong_tin_chot_bang_luong_thang();
+            //    if(IsExistFormName(v_f)) return;
+            //    v_f.MdiParent = this;
+            //    v_f.Show();
+            //}
+            //catch (Exception v_e)
+            //{
+            //    CSystemLog_301.ExceptionHandle(v_e);
+            //}
         }
-
 
         void m_cmd_cham_cong_lam_them_ItemClick(object sender, ItemClickEventArgs e)
         {

@@ -75,11 +75,11 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -98,11 +98,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -179,7 +179,7 @@
             this.m_sle_chon_vi_tri.Name = "m_sle_chon_vi_tri";
             this.m_sle_chon_vi_tri.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_sle_chon_vi_tri.Properties.DisplayMember = "TEN";
+            this.m_sle_chon_vi_tri.Properties.DisplayMember = "TEN_CHUC_VU";
             this.m_sle_chon_vi_tri.Properties.NullText = "--Chọn vị trí--";
             this.m_sle_chon_vi_tri.Properties.ValueMember = "ID";
             this.m_sle_chon_vi_tri.Properties.View = this.gridView3;
@@ -570,17 +570,6 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(105, 13);
             this.layoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.m_sle_chon_don_vi;
-            this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 52);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem5.Size = new System.Drawing.Size(384, 30);
-            this.layoutControlItem5.Text = "Chọn đơn vị (*)";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(105, 13);
-            // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.m_dat_ngay_bat_dau;
@@ -591,17 +580,6 @@
             this.layoutControlItem7.Size = new System.Drawing.Size(452, 30);
             this.layoutControlItem7.Text = "Ngày bắt đầu (*)";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(105, 13);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.m_sle_chon_loai_cong_tac;
-            this.layoutControlItem4.CustomizationFormText = "Chọn loại công tác";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 22);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem4.Size = new System.Drawing.Size(384, 30);
-            this.layoutControlItem4.Text = "Chọn loại công tác (*)";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(105, 13);
             // 
             // layoutControlItem6
             // 
@@ -624,6 +602,28 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(452, 42);
             this.layoutControlItem8.Text = "Ngày kết thúc";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(105, 13);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.m_sle_chon_don_vi;
+            this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 52);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.layoutControlItem5.Size = new System.Drawing.Size(384, 30);
+            this.layoutControlItem5.Text = "Chọn đơn vị (*)";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(105, 13);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.m_sle_chon_loai_cong_tac;
+            this.layoutControlItem4.CustomizationFormText = "Chọn loại công tác";
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 22);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.layoutControlItem4.Size = new System.Drawing.Size(384, 30);
+            this.layoutControlItem4.Text = "Chọn loại công tác (*)";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(105, 13);
             // 
             // f351_quan_ly_cong_tac_de
             // 
@@ -652,11 +652,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }

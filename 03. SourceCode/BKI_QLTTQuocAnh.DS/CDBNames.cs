@@ -1343,8 +1343,10 @@ namespace BKI_DichVuMatDat.DS.CDBNames
         public const string ID_DV_2 = "ID_DV_2";
         public const string ID_DV_3 = "ID_DV_3";
         public const string ID_DV_4 = "ID_DV_4";
+        public const string TANG = "TANG";
         public const string SO_LUONG_NS_DANG_CONG_TAC = "SO_LUONG_NS_DANG_CONG_TAC";
     }
+
     public class BT_DM_DON_VI_DE_LAM_BAO_CAO_DAC_TRUNG
     {
         public const string ID = "ID";

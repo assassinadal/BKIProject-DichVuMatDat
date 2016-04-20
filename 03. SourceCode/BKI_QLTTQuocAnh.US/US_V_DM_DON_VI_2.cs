@@ -243,6 +243,28 @@ namespace BKI_DichVuMatDat.US
             pm_objDR["ID_DV_4"] = System.Convert.DBNull;
         }
 
+        public decimal dcTANG
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "TANG", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["TANG"] = value;
+            }
+        }
+
+        public bool IsTANGNull()
+        {
+            return pm_objDR.IsNull("TANG");
+        }
+
+        public void SetTANGNull()
+        {
+            pm_objDR["TANG"] = System.Convert.DBNull;
+        }
+
         public decimal dcSO_LUONG_NS_DANG_CONG_TAC
         {
             get

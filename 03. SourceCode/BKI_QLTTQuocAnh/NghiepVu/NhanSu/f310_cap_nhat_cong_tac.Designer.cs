@@ -186,7 +186,7 @@
             this.m_sle_chon_vi_tri.Name = "m_sle_chon_vi_tri";
             this.m_sle_chon_vi_tri.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_sle_chon_vi_tri.Properties.DisplayMember = "TEN";
+            this.m_sle_chon_vi_tri.Properties.DisplayMember = "TEN_CHUC_VU";
             this.m_sle_chon_vi_tri.Properties.NullText = "--Chọn vị trí--";
             this.m_sle_chon_vi_tri.Properties.ValueMember = "ID";
             this.m_sle_chon_vi_tri.Properties.View = this.gridView3;
@@ -383,7 +383,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_chon_nhan_vien.Properties.DisplayMember = "HO_TEN";
             this.m_sle_chon_nhan_vien.Properties.NullText = "--Chọn nhân viên--";
-            this.m_sle_chon_nhan_vien.Properties.ValueMember = "ID_NHAN_VIEN";
+            this.m_sle_chon_nhan_vien.Properties.ValueMember = "ID";
             this.m_sle_chon_nhan_vien.Properties.View = this.searchLookUpEdit1View;
             this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(323, 20);
             this.m_sle_chon_nhan_vien.StyleController = this.layoutControl1;

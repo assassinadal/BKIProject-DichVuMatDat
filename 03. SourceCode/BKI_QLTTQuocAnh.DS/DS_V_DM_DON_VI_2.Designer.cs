@@ -299,6 +299,8 @@ namespace BKI_DichVuMatDat.DS {
             
             private global::System.Data.DataColumn columnID_DV_4;
             
+            private global::System.Data.DataColumn columnTANG;
+            
             private global::System.Data.DataColumn columnSO_LUONG_NS_DANG_CONG_TAC;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -416,6 +418,14 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TANGColumn {
+                get {
+                    return this.columnTANG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn SO_LUONG_NS_DANG_CONG_TACColumn {
                 get {
                     return this.columnSO_LUONG_NS_DANG_CONG_TAC;
@@ -459,7 +469,7 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_DM_DON_VI_2Row AddV_DM_DON_VI_2Row(string TEN_DON_VI, string MA_DON_VI, decimal ID_LOAI_DON_VI, decimal ID_DON_VI_CAP_TREN, decimal ID_DV_0, decimal ID_DV_1, decimal ID_DV_2, decimal ID_DV_3, decimal ID_DV_4, int SO_LUONG_NS_DANG_CONG_TAC) {
+            public V_DM_DON_VI_2Row AddV_DM_DON_VI_2Row(string TEN_DON_VI, string MA_DON_VI, decimal ID_LOAI_DON_VI, decimal ID_DON_VI_CAP_TREN, decimal ID_DV_0, decimal ID_DV_1, decimal ID_DV_2, decimal ID_DV_3, decimal ID_DV_4, int TANG, int SO_LUONG_NS_DANG_CONG_TAC) {
                 V_DM_DON_VI_2Row rowV_DM_DON_VI_2Row = ((V_DM_DON_VI_2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -472,6 +482,7 @@ namespace BKI_DichVuMatDat.DS {
                         ID_DV_2,
                         ID_DV_3,
                         ID_DV_4,
+                        TANG,
                         SO_LUONG_NS_DANG_CONG_TAC};
                 rowV_DM_DON_VI_2Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_DM_DON_VI_2Row);
@@ -512,6 +523,7 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnID_DV_2 = base.Columns["ID_DV_2"];
                 this.columnID_DV_3 = base.Columns["ID_DV_3"];
                 this.columnID_DV_4 = base.Columns["ID_DV_4"];
+                this.columnTANG = base.Columns["TANG"];
                 this.columnSO_LUONG_NS_DANG_CONG_TAC = base.Columns["SO_LUONG_NS_DANG_CONG_TAC"];
             }
             
@@ -538,6 +550,8 @@ namespace BKI_DichVuMatDat.DS {
                 base.Columns.Add(this.columnID_DV_3);
                 this.columnID_DV_4 = new global::System.Data.DataColumn("ID_DV_4", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_DV_4);
+                this.columnTANG = new global::System.Data.DataColumn("TANG", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTANG);
                 this.columnSO_LUONG_NS_DANG_CONG_TAC = new global::System.Data.DataColumn("SO_LUONG_NS_DANG_CONG_TAC", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSO_LUONG_NS_DANG_CONG_TAC);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -840,6 +854,22 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int TANG {
+                get {
+                    try {
+                        return ((int)(this[this.tableV_DM_DON_VI_2.TANGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TANG\' in table \'V_DM_DON_VI_2\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_DM_DON_VI_2.TANGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int SO_LUONG_NS_DANG_CONG_TAC {
                 get {
                     try {
@@ -937,6 +967,18 @@ namespace BKI_DichVuMatDat.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetID_DV_4Null() {
                 this[this.tableV_DM_DON_VI_2.ID_DV_4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTANGNull() {
+                return this.IsNull(this.tableV_DM_DON_VI_2.TANGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTANGNull() {
+                this[this.tableV_DM_DON_VI_2.TANGColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1121,6 +1163,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_DM_DON_VI_2TableAdapters {
             tableMapping.ColumnMappings.Add("ID_DV_2", "ID_DV_2");
             tableMapping.ColumnMappings.Add("ID_DV_3", "ID_DV_3");
             tableMapping.ColumnMappings.Add("ID_DV_4", "ID_DV_4");
+            tableMapping.ColumnMappings.Add("TANG", "TANG");
             tableMapping.ColumnMappings.Add("SO_LUONG_NS_DANG_CONG_TAC", "SO_LUONG_NS_DANG_CONG_TAC");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -1139,8 +1182,8 @@ namespace BKI_DichVuMatDat.DS.DS_V_DM_DON_VI_2TableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, TEN_DON_VI, MA_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CAP_TREN, ID_DV_0, ID" +
-                "_DV_1, ID_DV_2, ID_DV_3, ID_DV_4, SO_LUONG_NS_DANG_CONG_TAC FROM dbo.V_DM_DON_VI" +
-                "_2";
+                "_DV_1, ID_DV_2, ID_DV_3, ID_DV_4, TANG, SO_LUONG_NS_DANG_CONG_TAC FROM dbo.V_DM_" +
+                "DON_VI_2";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

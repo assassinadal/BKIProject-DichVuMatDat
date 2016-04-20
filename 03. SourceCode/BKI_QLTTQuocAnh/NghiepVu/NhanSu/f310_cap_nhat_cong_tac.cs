@@ -98,7 +98,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             load_data_2_sle_chon_quyet_dinh(load_danh_sach_quyet_dinh());
             load_data_2_sle_chon_don_vi(load_danh_sach_don_vi());
-            load_data_2_sle_chon_vi_tri();
+            //load_data_2_sle_chon_vi_tri();
+            m_sle_chon_don_vi.EditValueChanged += m_sle_chon_don_vi_EditValueChanged;
             load_data_2_sle_chon_loai_cong_tac();
         }
 
@@ -147,7 +148,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private void load_data_2_sle_chon_vi_tri()
         {
-            m_sle_chon_vi_tri.Properties.DataSource = load_data_2_cm_dm_tu_dien(CONST_ID_LOAI_TU_DIEN.LOAI_VI_TRI).Tables[0];
+            US_DM_CHUC_VU v_us = new US_DM_CHUC_VU();
+            DS_DM_CHUC_VU v_ds = new DS_DM_CHUC_VU();
+            v_us.FillDataset(v_ds, " where id_don_vi = " + Convert.ToDecimal(m_sle_chon_don_vi.EditValue));
+            m_sle_chon_vi_tri.Properties.DataSource = v_ds.Tables[0];
 
             m_sle_chon_vi_tri.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_vi_tri.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
@@ -555,7 +559,17 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_save.Click += m_cmd_save_Click;
             m_cmd_exit.Click += m_cmd_exit_Click;
         }
-
+        void m_sle_chon_don_vi_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_sle_chon_vi_tri();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         void f351_quan_ly_cong_tac_de_KeyDown(object sender, KeyEventArgs e)
         {
             try

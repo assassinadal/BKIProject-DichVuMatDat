@@ -41,7 +41,7 @@ namespace BKI_DichVuMatDat.COMMON
         }
         public static decimal GetSoHoSoNext(decimal ip_dc_id_don_vi, decimal ip_dc_id_chuc_vu)
         {
-            var v_str_result = ExecuteFuntionSql("fn_NV_so_ho_so_Next", ip_dc_id_don_vi, ip_dc_id_chuc_vu);
+            var v_str_result = ExecuteFuntionSql("fn_NV_so_ho_so_Next", ip_dc_id_chuc_vu);
             return Convert.ToDecimal(v_str_result);
         }
         public static bool KiemTraNhanVienCoTrongBangLuongChua(string ip_str_ma_nhan_vien, decimal ip_dc_thang, decimal ip_dc_nam)

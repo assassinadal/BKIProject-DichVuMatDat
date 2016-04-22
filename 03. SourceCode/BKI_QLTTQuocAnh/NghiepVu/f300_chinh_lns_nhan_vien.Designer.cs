@@ -28,65 +28,126 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f300_chinh_lns_nhan_vien));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
+            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_tree_don_vi = new DevExpress.XtraTreeList.TreeList();
             this.colTEN_DON_VI = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colSO_LUONG_NS_DANG_CONG_TAC = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeList1 = new DevExpress.XtraTreeList.TreeList();
-            this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HE_SO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MA_CHUC_DANH_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MUC_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NGAY_BAT_DAU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.m_lbl_ten_dv = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_tree_don_vi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
+            this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_tree_don_vi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            this.m_pnl_out_place_dm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_lbl_ten_dv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.m_pnl_out_place_dm);
+            this.layoutControl1.Controls.Add(this.m_tree_don_vi);
             this.layoutControl1.Controls.Add(this.m_grc);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(223, 40);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(658, 260, 250, 350);
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(435, 233, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(708, 418);
+            this.layoutControl1.Size = new System.Drawing.Size(931, 458);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // layoutControlGroup1
+            // m_pnl_out_place_dm
             // 
-            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(708, 418);
-            this.layoutControlGroup1.Text = "Root";
-            this.layoutControlGroup1.TextVisible = false;
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(183, 40);
+            this.m_pnl_out_place_dm.MaximumSize = new System.Drawing.Size(0, 36);
+            this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
+            this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(736, 36);
+            this.m_pnl_out_place_dm.TabIndex = 3;
+            // 
+            // m_cmd_delete
+            // 
+            this.m_cmd_delete.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_delete.Appearance.Options.UseFont = true;
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_delete.ImageIndex = 8;
+            this.m_cmd_delete.ImageList = this.img_DVMD;
+            this.m_cmd_delete.Location = new System.Drawing.Point(154, 4);
+            this.m_cmd_delete.Name = "m_cmd_delete";
+            this.m_cmd_delete.Size = new System.Drawing.Size(75, 28);
+            this.m_cmd_delete.TabIndex = 0;
+            this.m_cmd_delete.Text = "&Xóa";
+            // 
+            // img_DVMD
+            // 
+            this.img_DVMD.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("img_DVMD.ImageStream")));
+            this.img_DVMD.Images.SetKeyName(0, "Excel-icon.png");
+            this.img_DVMD.Images.SetKeyName(1, "excel-xls-icon.png");
+            this.img_DVMD.Images.SetKeyName(2, "exit-16.ico");
+            this.img_DVMD.Images.SetKeyName(3, "image.png");
+            this.img_DVMD.Images.SetKeyName(4, "Microsoft Excel.png");
+            this.img_DVMD.Images.SetKeyName(5, "calculator.png");
+            this.img_DVMD.Images.SetKeyName(6, "diskette.png");
+            this.img_DVMD.Images.SetKeyName(7, "file_add.png");
+            this.img_DVMD.Images.SetKeyName(8, "file_delete.png");
+            this.img_DVMD.Images.SetKeyName(9, "file_edit.png");
+            this.img_DVMD.Images.SetKeyName(10, "file_search.png");
+            // 
+            // m_cmd_update
+            // 
+            this.m_cmd_update.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_update.Appearance.Options.UseFont = true;
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_update.ImageIndex = 9;
+            this.m_cmd_update.ImageList = this.img_DVMD;
+            this.m_cmd_update.Location = new System.Drawing.Point(79, 4);
+            this.m_cmd_update.Name = "m_cmd_update";
+            this.m_cmd_update.Size = new System.Drawing.Size(75, 28);
+            this.m_cmd_update.TabIndex = 1;
+            this.m_cmd_update.Text = "&Sửa";
+            // 
+            // m_cmd_insert
+            // 
+            this.m_cmd_insert.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_insert.Appearance.Options.UseFont = true;
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_insert.ImageIndex = 7;
+            this.m_cmd_insert.ImageList = this.img_DVMD;
+            this.m_cmd_insert.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_insert.Name = "m_cmd_insert";
+            this.m_cmd_insert.Size = new System.Drawing.Size(75, 28);
+            this.m_cmd_insert.TabIndex = 2;
+            this.m_cmd_insert.Text = "&Thêm";
             // 
             // m_tree_don_vi
             // 
@@ -100,15 +161,14 @@
             this.colTEN_DON_VI,
             this.colID,
             this.colSO_LUONG_NS_DANG_CONG_TAC});
-            this.m_tree_don_vi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_tree_don_vi.Location = new System.Drawing.Point(223, 40);
+            this.m_tree_don_vi.Location = new System.Drawing.Point(12, 12);
             this.m_tree_don_vi.Name = "m_tree_don_vi";
             this.m_tree_don_vi.OptionsBehavior.AutoNodeHeight = false;
             this.m_tree_don_vi.OptionsBehavior.Editable = false;
             this.m_tree_don_vi.OptionsView.ShowColumns = false;
             this.m_tree_don_vi.OptionsView.ShowIndicator = false;
             this.m_tree_don_vi.OptionsView.ShowSummaryFooter = true;
-            this.m_tree_don_vi.Size = new System.Drawing.Size(708, 418);
+            this.m_tree_don_vi.Size = new System.Drawing.Size(167, 434);
             this.m_tree_don_vi.TabIndex = 1;
             // 
             // colTEN_DON_VI
@@ -139,206 +199,164 @@
             this.colSO_LUONG_NS_DANG_CONG_TAC.VisibleIndex = 1;
             this.colSO_LUONG_NS_DANG_CONG_TAC.Width = 47;
             // 
-            // treeList1
-            // 
-            this.treeList1.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.treeList1.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.treeList1.Appearance.FocusedRow.Options.UseFont = true;
-            this.treeList1.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.treeList1.Appearance.FocusedRow.Options.UseTextOptions = true;
-            this.treeList1.Appearance.FocusedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.treeList1.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
-            this.treeListColumn1,
-            this.treeListColumn2,
-            this.treeListColumn3});
-            this.treeList1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.treeList1.Location = new System.Drawing.Point(0, 40);
-            this.treeList1.Name = "treeList1";
-            this.treeList1.OptionsBehavior.AutoNodeHeight = false;
-            this.treeList1.OptionsBehavior.Editable = false;
-            this.treeList1.OptionsView.ShowColumns = false;
-            this.treeList1.OptionsView.ShowIndicator = false;
-            this.treeList1.OptionsView.ShowSummaryFooter = true;
-            this.treeList1.Size = new System.Drawing.Size(223, 418);
-            this.treeList1.TabIndex = 2;
-            // 
-            // treeListColumn1
-            // 
-            this.treeListColumn1.FieldName = "TEN_DON_VI";
-            this.treeListColumn1.MinWidth = 51;
-            this.treeListColumn1.Name = "treeListColumn1";
-            this.treeListColumn1.Visible = true;
-            this.treeListColumn1.VisibleIndex = 0;
-            this.treeListColumn1.Width = 180;
-            // 
-            // treeListColumn2
-            // 
-            this.treeListColumn2.Caption = "ID";
-            this.treeListColumn2.FieldName = "ID";
-            this.treeListColumn2.Name = "treeListColumn2";
-            // 
-            // treeListColumn3
-            // 
-            this.treeListColumn3.AllNodesSummary = true;
-            this.treeListColumn3.Caption = "Số lượng NV";
-            this.treeListColumn3.FieldName = "SO_LUONG_NS_DANG_CONG_TAC";
-            this.treeListColumn3.Name = "treeListColumn3";
-            this.treeListColumn3.OptionsColumn.ReadOnly = true;
-            this.treeListColumn3.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
-            this.treeListColumn3.SummaryFooterStrFormat = "{0:n0}";
-            this.treeListColumn3.Visible = true;
-            this.treeListColumn3.VisibleIndex = 1;
-            this.treeListColumn3.Width = 47;
-            // 
-            // img_DVMD
-            // 
-            this.img_DVMD.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("img_DVMD.ImageStream")));
-            this.img_DVMD.Images.SetKeyName(0, "Excel-icon.png");
-            this.img_DVMD.Images.SetKeyName(1, "excel-xls-icon.png");
-            this.img_DVMD.Images.SetKeyName(2, "exit-16.ico");
-            this.img_DVMD.Images.SetKeyName(3, "image.png");
-            this.img_DVMD.Images.SetKeyName(4, "Microsoft Excel.png");
-            this.img_DVMD.Images.SetKeyName(5, "calculator.png");
-            this.img_DVMD.Images.SetKeyName(6, "diskette.png");
-            this.img_DVMD.Images.SetKeyName(7, "file_add.png");
-            this.img_DVMD.Images.SetKeyName(8, "file_delete.png");
-            this.img_DVMD.Images.SetKeyName(9, "file_edit.png");
-            this.img_DVMD.Images.SetKeyName(10, "file_search.png");
-            // 
             // m_grc
             // 
             this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc.Location = new System.Drawing.Point(12, 12);
+            this.m_grc.Location = new System.Drawing.Point(183, 80);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(684, 394);
+            this.m_grc.Size = new System.Drawing.Size(736, 366);
             this.m_grc.TabIndex = 5;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
             // 
             // m_grv
             // 
+            this.m_grv.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
+            this.MA_NV,
+            this.HO_TEN,
+            this.HE_SO,
+            this.MA_CHUC_DANH_LNS,
+            this.MUC_LNS,
+            this.NGAY_BAT_DAU,
+            this.NGAY_KET_THUC});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
+            // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
+            // 
+            // MA_NV
+            // 
+            this.MA_NV.Caption = "Mã nhân viên";
+            this.MA_NV.FieldName = "MA_NV";
+            this.MA_NV.Name = "MA_NV";
+            this.MA_NV.Visible = true;
+            this.MA_NV.VisibleIndex = 0;
+            this.MA_NV.Width = 81;
+            // 
+            // HO_TEN
+            // 
+            this.HO_TEN.Caption = "Họ tên";
+            this.HO_TEN.FieldName = "HO_TEN";
+            this.HO_TEN.Name = "HO_TEN";
+            this.HO_TEN.Visible = true;
+            this.HO_TEN.VisibleIndex = 1;
+            this.HO_TEN.Width = 262;
+            // 
+            // HE_SO
+            // 
+            this.HE_SO.Caption = "Hệ số";
+            this.HE_SO.FieldName = "HE_SO";
+            this.HE_SO.Name = "HE_SO";
+            this.HE_SO.Visible = true;
+            this.HE_SO.VisibleIndex = 2;
+            this.HE_SO.Width = 70;
+            // 
+            // MA_CHUC_DANH_LNS
+            // 
+            this.MA_CHUC_DANH_LNS.Caption = "Mã chức danh";
+            this.MA_CHUC_DANH_LNS.FieldName = "MA_CHUC_DANH_LNS";
+            this.MA_CHUC_DANH_LNS.Name = "MA_CHUC_DANH_LNS";
+            this.MA_CHUC_DANH_LNS.Visible = true;
+            this.MA_CHUC_DANH_LNS.VisibleIndex = 3;
+            this.MA_CHUC_DANH_LNS.Width = 158;
+            // 
+            // MUC_LNS
+            // 
+            this.MUC_LNS.Caption = "Mức";
+            this.MUC_LNS.FieldName = "MUC_LNS";
+            this.MUC_LNS.Name = "MUC_LNS";
+            this.MUC_LNS.Visible = true;
+            this.MUC_LNS.VisibleIndex = 4;
+            this.MUC_LNS.Width = 66;
+            // 
+            // NGAY_BAT_DAU
+            // 
+            this.NGAY_BAT_DAU.Caption = "Ngày bắt đầu";
+            this.NGAY_BAT_DAU.FieldName = "NGAY_BAT_DAU";
+            this.NGAY_BAT_DAU.Name = "NGAY_BAT_DAU";
+            this.NGAY_BAT_DAU.Visible = true;
+            this.NGAY_BAT_DAU.VisibleIndex = 5;
+            this.NGAY_BAT_DAU.Width = 208;
+            // 
+            // NGAY_KET_THUC
+            // 
+            this.NGAY_KET_THUC.Caption = "Ngày kết thúc";
+            this.NGAY_KET_THUC.FieldName = "NGAY_KET_THUC";
+            this.NGAY_KET_THUC.Name = "NGAY_KET_THUC";
+            this.NGAY_KET_THUC.Visible = true;
+            this.NGAY_KET_THUC.VisibleIndex = 6;
+            this.NGAY_KET_THUC.Width = 217;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.m_lbl_ten_dv});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(931, 458);
+            this.layoutControlGroup1.Text = "Root";
+            this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.m_grc;
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(171, 68);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(688, 398);
+            this.layoutControlItem1.Size = new System.Drawing.Size(740, 370);
             this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextToControlDistance = 0;
             this.layoutControlItem1.TextVisible = false;
             // 
-            // m_pnl_out_place_dm
+            // layoutControlItem2
             // 
-            this.m_pnl_out_place_dm.Controls.Add(this.simpleButton9);
-            this.m_pnl_out_place_dm.Controls.Add(this.simpleButton6);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_file);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
-            this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 0);
-            this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
-            this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(931, 40);
-            this.m_pnl_out_place_dm.TabIndex = 5;
+            this.layoutControlItem2.Control = this.m_tree_don_vi;
+            this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(171, 438);
+            this.layoutControlItem2.Text = "layoutControlItem2";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextToControlDistance = 0;
+            this.layoutControlItem2.TextVisible = false;
             // 
-            // simpleButton9
+            // m_lbl_ten_dv
             // 
-            this.simpleButton9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.simpleButton9.Appearance.Options.UseFont = true;
-            this.simpleButton9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton9.ImageIndex = 5;
-            this.simpleButton9.ImageList = this.img_DVMD;
-            this.simpleButton9.Location = new System.Drawing.Point(311, 4);
-            this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(75, 32);
-            this.simpleButton9.TabIndex = 8;
-            this.simpleButton9.Text = "&Lưu";
+            this.m_lbl_ten_dv.AllowHotTrack = false;
+            this.m_lbl_ten_dv.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ten_dv.AppearanceItemCaption.Options.UseFont = true;
+            this.m_lbl_ten_dv.CustomizationFormText = "TEN_DON_VI";
+            this.m_lbl_ten_dv.Location = new System.Drawing.Point(171, 0);
+            this.m_lbl_ten_dv.Name = "m_lbl_ten_dv";
+            this.m_lbl_ten_dv.Size = new System.Drawing.Size(740, 28);
+            this.m_lbl_ten_dv.Text = "TEN_DON_VI";
+            this.m_lbl_ten_dv.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.m_lbl_ten_dv.TextSize = new System.Drawing.Size(134, 24);
             // 
-            // simpleButton6
+            // layoutControlItem3
             // 
-            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.simpleButton6.Appearance.Options.UseFont = true;
-            this.simpleButton6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton6.ImageIndex = 1;
-            this.simpleButton6.ImageList = this.img_DVMD;
-            this.simpleButton6.Location = new System.Drawing.Point(211, 4);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(100, 32);
-            this.simpleButton6.TabIndex = 5;
-            this.simpleButton6.Text = "&Tải file mẫu";
-            // 
-            // m_cmd_chon_file
-            // 
-            this.m_cmd_chon_file.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.m_cmd_chon_file.Appearance.Options.UseFont = true;
-            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chon_file.ImageIndex = 4;
-            this.m_cmd_chon_file.ImageList = this.img_DVMD;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(111, 4);
-            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
-            this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 32);
-            this.m_cmd_chon_file.TabIndex = 4;
-            this.m_cmd_chon_file.Text = "&Chọn file";
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.m_cmd_xuat_excel.Appearance.Options.UseFont = true;
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_excel.ImageIndex = 0;
-            this.m_cmd_xuat_excel.ImageList = this.img_DVMD;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(107, 32);
-            this.m_cmd_xuat_excel.TabIndex = 3;
-            this.m_cmd_xuat_excel.Text = "&Xuất báo cáo";
-            // 
-            // m_cmd_insert
-            // 
-            this.m_cmd_insert.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cmd_insert.Appearance.Options.UseFont = true;
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_insert.ImageIndex = 7;
-            this.m_cmd_insert.ImageList = this.img_DVMD;
-            this.m_cmd_insert.Location = new System.Drawing.Point(702, 4);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(75, 32);
-            this.m_cmd_insert.TabIndex = 2;
-            this.m_cmd_insert.Text = "&Thêm";
-            // 
-            // m_cmd_update
-            // 
-            this.m_cmd_update.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cmd_update.Appearance.Options.UseFont = true;
-            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_update.ImageIndex = 9;
-            this.m_cmd_update.ImageList = this.img_DVMD;
-            this.m_cmd_update.Location = new System.Drawing.Point(777, 4);
-            this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(75, 32);
-            this.m_cmd_update.TabIndex = 1;
-            this.m_cmd_update.Text = "&Sửa";
-            // 
-            // m_cmd_delete
-            // 
-            this.m_cmd_delete.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cmd_delete.Appearance.Options.UseFont = true;
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_delete.ImageIndex = 8;
-            this.m_cmd_delete.ImageList = this.img_DVMD;
-            this.m_cmd_delete.Location = new System.Drawing.Point(852, 4);
-            this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(75, 32);
-            this.m_cmd_delete.TabIndex = 0;
-            this.m_cmd_delete.Text = "&Xóa";
+            this.layoutControlItem3.Control = this.m_pnl_out_place_dm;
+            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
+            this.layoutControlItem3.Location = new System.Drawing.Point(171, 28);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(740, 40);
+            this.layoutControlItem3.Text = "layoutControlItem3";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextToControlDistance = 0;
+            this.layoutControlItem3.TextVisible = false;
             // 
             // f300_chinh_lns_nhan_vien
             // 
@@ -346,21 +364,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(931, 458);
             this.Controls.Add(this.layoutControl1);
-            this.Controls.Add(this.m_tree_don_vi);
-            this.Controls.Add(this.treeList1);
-            this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f300_chinh_lns_nhan_vien";
             this.Text = "F300 - Điều chỉnh lương năng suất nhân viên";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_tree_don_vi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
+            this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_tree_don_vi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            this.m_pnl_out_place_dm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_lbl_ten_dv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,21 +390,24 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn colTEN_DON_VI;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colID;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colSO_LUONG_NS_DANG_CONG_TAC;
-        private DevExpress.XtraTreeList.TreeList treeList1;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn3;
         private DevExpress.Utils.ImageCollection img_DVMD;
         private DevExpress.XtraGrid.GridControl m_grc;
         private DevExpress.XtraGrid.Views.Grid.GridView m_grv;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.SimpleLabelItem m_lbl_ten_dv;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn MA_NV;
+        private DevExpress.XtraGrid.Columns.GridColumn HO_TEN;
+        private DevExpress.XtraGrid.Columns.GridColumn HE_SO;
+        private DevExpress.XtraGrid.Columns.GridColumn MA_CHUC_DANH_LNS;
+        private DevExpress.XtraGrid.Columns.GridColumn MUC_LNS;
+        private DevExpress.XtraGrid.Columns.GridColumn NGAY_BAT_DAU;
+        private DevExpress.XtraGrid.Columns.GridColumn NGAY_KET_THUC;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-        private DevExpress.XtraEditors.SimpleButton simpleButton9;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_update;
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_update;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
     }
 }

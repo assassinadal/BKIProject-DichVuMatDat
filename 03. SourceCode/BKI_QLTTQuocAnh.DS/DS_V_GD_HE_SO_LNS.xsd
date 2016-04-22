@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_V_GD_HE_SO_LNS" targetNamespace="http://tempuri.org/DS_V_GD_HE_SO_LNS.xsd" xmlns:mstns="http://tempuri.org/DS_V_GD_HE_SO_LNS.xsd" xmlns="http://tempuri.org/DS_V_GD_HE_SO_LNS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DVMDConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DVMDConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_DichVuMatDat.DS.Properties.Settings.GlobalReference.Default.DVMDConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DVMDConnectionString4" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DVMDConnectionString4 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_DichVuMatDat.DS.Properties.Settings.GlobalReference.Default.DVMDConnectionString4" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_GD_HE_SO_LNSTableAdapter" GeneratorDataComponentClassName="V_GD_HE_SO_LNSTableAdapter" Name="V_GD_HE_SO_LNS" UserDataComponentName="V_GD_HE_SO_LNSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DVMDConnectionString4 (Settings)" DbObjectName="DVMD.dbo.V_GD_HE_SO_LNS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_DON_VI, ID_NHAN_VIEN, MA_NV, HO_TEN, CHUC_DANH, ID, HE_SO, NGAY_BAT_DAU, NGAY_KET_THUC, LY_DO_CHINH_SUA, MA_CHUC_DANH_LNS, CHUC_DANH_LNS, MUC_LNS FROM dbo.V_GD_HE_SO_LNS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_DON_VI" DataSetColumn="ID_DON_VI" />
+              <Mapping SourceColumn="ID_NHAN_VIEN" DataSetColumn="ID_NHAN_VIEN" />
+              <Mapping SourceColumn="MA_NV" DataSetColumn="MA_NV" />
+              <Mapping SourceColumn="HO_TEN" DataSetColumn="HO_TEN" />
+              <Mapping SourceColumn="CHUC_DANH" DataSetColumn="CHUC_DANH" />
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="HE_SO" DataSetColumn="HE_SO" />
+              <Mapping SourceColumn="NGAY_BAT_DAU" DataSetColumn="NGAY_BAT_DAU" />
+              <Mapping SourceColumn="NGAY_KET_THUC" DataSetColumn="NGAY_KET_THUC" />
+              <Mapping SourceColumn="LY_DO_CHINH_SUA" DataSetColumn="LY_DO_CHINH_SUA" />
+              <Mapping SourceColumn="MA_CHUC_DANH_LNS" DataSetColumn="MA_CHUC_DANH_LNS" />
+              <Mapping SourceColumn="CHUC_DANH_LNS" DataSetColumn="CHUC_DANH_LNS" />
+              <Mapping SourceColumn="MUC_LNS" DataSetColumn="MUC_LNS" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_V_GD_HE_SO_LNS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_GD_HE_SO_LNS" msprop:Generator_UserDSName="DS_V_GD_HE_SO_LNS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_GD_HE_SO_LNS" msprop:Generator_TableClassName="V_GD_HE_SO_LNSDataTable" msprop:Generator_TableVarName="tableV_GD_HE_SO_LNS" msprop:Generator_TablePropName="V_GD_HE_SO_LNS" msprop:Generator_RowDeletingName="V_GD_HE_SO_LNSRowDeleting" msprop:Generator_RowChangingName="V_GD_HE_SO_LNSRowChanging" msprop:Generator_RowEvHandlerName="V_GD_HE_SO_LNSRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_HE_SO_LNSRowDeleted" msprop:Generator_UserTableName="V_GD_HE_SO_LNS" msprop:Generator_RowChangedName="V_GD_HE_SO_LNSRowChanged" msprop:Generator_RowEvArgName="V_GD_HE_SO_LNSRowChangeEvent" msprop:Generator_RowClassName="V_GD_HE_SO_LNSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_DON_VI" msprop:Generator_ColumnVarNameInTable="columnID_DON_VI" msprop:Generator_ColumnPropNameInRow="ID_DON_VI" msprop:Generator_ColumnPropNameInTable="ID_DON_VIColumn" msprop:Generator_UserColumnName="ID_DON_VI" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_NHAN_VIEN" msprop:Generator_ColumnVarNameInTable="columnID_NHAN_VIEN" msprop:Generator_ColumnPropNameInRow="ID_NHAN_VIEN" msprop:Generator_ColumnPropNameInTable="ID_NHAN_VIENColumn" msprop:Generator_UserColumnName="ID_NHAN_VIEN" type="xs:decimal" />
+              <xs:element name="MA_NV" msprop:Generator_ColumnVarNameInTable="columnMA_NV" msprop:Generator_ColumnPropNameInRow="MA_NV" msprop:Generator_ColumnPropNameInTable="MA_NVColumn" msprop:Generator_UserColumnName="MA_NV" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HO_TEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHO_TEN" msprop:Generator_ColumnPropNameInRow="HO_TEN" msprop:Generator_ColumnPropNameInTable="HO_TENColumn" msprop:Generator_UserColumnName="HO_TEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CHUC_DANH" msprop:Generator_ColumnVarNameInTable="columnCHUC_DANH" msprop:Generator_ColumnPropNameInRow="CHUC_DANH" msprop:Generator_ColumnPropNameInTable="CHUC_DANHColumn" msprop:Generator_UserColumnName="CHUC_DANH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="HE_SO" msprop:Generator_ColumnVarNameInTable="columnHE_SO" msprop:Generator_ColumnPropNameInRow="HE_SO" msprop:Generator_ColumnPropNameInTable="HE_SOColumn" msprop:Generator_UserColumnName="HE_SO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NGAY_BAT_DAU" msprop:Generator_ColumnVarNameInTable="columnNGAY_BAT_DAU" msprop:Generator_ColumnPropNameInRow="NGAY_BAT_DAU" msprop:Generator_ColumnPropNameInTable="NGAY_BAT_DAUColumn" msprop:Generator_UserColumnName="NGAY_BAT_DAU" type="xs:dateTime" />
+              <xs:element name="NGAY_KET_THUC" msprop:Generator_ColumnVarNameInTable="columnNGAY_KET_THUC" msprop:Generator_ColumnPropNameInRow="NGAY_KET_THUC" msprop:Generator_ColumnPropNameInTable="NGAY_KET_THUCColumn" msprop:Generator_UserColumnName="NGAY_KET_THUC" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LY_DO_CHINH_SUA" msprop:Generator_ColumnVarNameInTable="columnLY_DO_CHINH_SUA" msprop:Generator_ColumnPropNameInRow="LY_DO_CHINH_SUA" msprop:Generator_ColumnPropNameInTable="LY_DO_CHINH_SUAColumn" msprop:Generator_UserColumnName="LY_DO_CHINH_SUA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MA_CHUC_DANH_LNS" msprop:Generator_ColumnVarNameInTable="columnMA_CHUC_DANH_LNS" msprop:Generator_ColumnPropNameInRow="MA_CHUC_DANH_LNS" msprop:Generator_ColumnPropNameInTable="MA_CHUC_DANH_LNSColumn" msprop:Generator_UserColumnName="MA_CHUC_DANH_LNS">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CHUC_DANH_LNS" msprop:Generator_ColumnVarNameInTable="columnCHUC_DANH_LNS" msprop:Generator_ColumnPropNameInRow="CHUC_DANH_LNS" msprop:Generator_ColumnPropNameInTable="CHUC_DANH_LNSColumn" msprop:Generator_UserColumnName="CHUC_DANH_LNS">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MUC_LNS" msprop:Generator_ColumnVarNameInTable="columnMUC_LNS" msprop:Generator_ColumnPropNameInRow="MUC_LNS" msprop:Generator_ColumnPropNameInTable="MUC_LNSColumn" msprop:Generator_UserColumnName="MUC_LNS">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_GD_HE_SO_LNS" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

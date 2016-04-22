@@ -25,6 +25,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             format_controll();
         }
 
+        private decimal m_dc_id_don_vi;
+
         #region private methods
 
         private void format_controll()
@@ -36,6 +38,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void set_init_form_load()
         {
             load_data_2_tree();
+            m_lbl_ten_dv.AppearanceItemCaption.ForeColor = Color.Green;
         }
 
         private void load_data_2_tree()
@@ -53,7 +56,37 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_danh_sach_nhan_vien_theo_don_vi(decimal ip_dc_id_don_vi)
         {
+            US_V_GD_HE_SO_LNS v_us = new US_V_GD_HE_SO_LNS();
+            DS_V_GD_HE_SO_LNS v_ds = new DS_V_GD_HE_SO_LNS();
+            v_ds.EnforceConstraints = false;
+            v_us.FillDataset(v_ds, " where ID_DON_VI = " + ip_dc_id_don_vi);
 
+            m_grc.DataSource = v_ds.Tables[0];
+        }
+
+        private void insert_click()
+        {
+            DataRow v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+            US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS(Convert.ToDecimal(v_dr["ID"].ToString()));
+            f299_chinh_lns_nhan_vien_de v_frm = new f299_chinh_lns_nhan_vien_de();
+            v_frm.display_4_insert(v_us);
+            load_data_danh_sach_nhan_vien_theo_don_vi(m_dc_id_don_vi);
+            focus_row(v_us.dcID_NHAN_VIEN);
+        }
+
+        private void update_click()
+        {
+            DataRow v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+            US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS(Convert.ToDecimal(v_dr["ID"].ToString()));
+            f299_chinh_lns_nhan_vien_de v_frm = new f299_chinh_lns_nhan_vien_de();
+            v_frm.display_4_update(v_us);
+            load_data_danh_sach_nhan_vien_theo_don_vi(m_dc_id_don_vi);
+            focus_row(v_us.dcID_NHAN_VIEN);
+        }
+
+        private void focus_row(decimal ip_id_nhan_vien)
+        {
+            CHRMCommon.SelectRowInGrid(m_grv, "ID", ip_id_nhan_vien);
         }
 
         #endregion
@@ -64,15 +97,60 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             Load += F300_chinh_lns_nhan_vien_Load;
             m_tree_don_vi.AfterFocusNode += M_tree_don_vi_AfterFocusNode;
-            m_grv.DoubleClick += M_grv_DoubleClick;
+            //m_grv.DoubleClick += M_grv_DoubleClick;
+            m_cmd_insert.Click += M_cmd_insert_Click;
+            m_cmd_update.Click += M_cmd_update_Click;
+            m_cmd_delete.Click += M_cmd_delete_Click;
+        }
+
+        private void M_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+                US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS(Convert.ToDecimal(v_dr["ID"].ToString()));
+                v_us.Delete();
+                load_data_danh_sach_nhan_vien_theo_don_vi(m_dc_id_don_vi);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void M_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_click();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void M_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insert_click();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void M_grv_DoubleClick(object sender, EventArgs e)
         {
             try
             {
-                f299_chinh_lns_nhan_vien_de v_frm = new f299_chinh_lns_nhan_vien_de();
-
+                DataRow v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+                decimal ip_id_nhan_vien = Convert.ToDecimal(v_dr["ID_NHAN_VIEN"].ToString());
+                f299_chinh_lns_nhan_vien_de v_f = new f299_chinh_lns_nhan_vien_de();
+                //v_f.Display(ip_id_nhan_vien);
+                //focus_row(CIPConvert.ToDecimal(v_dr["ID"].ToString()));
             }
             catch (Exception v_e)
             {
@@ -84,10 +162,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                var v_dc_id_don_vi = Convert.ToDecimal(e.Node.GetValue(V_DM_DON_VI_2.ID));
-                load_data_danh_sach_nhan_vien_theo_don_vi(v_dc_id_don_vi);
+                m_dc_id_don_vi = Convert.ToDecimal(e.Node.GetValue(V_DM_DON_VI_2.ID));
+                load_data_danh_sach_nhan_vien_theo_don_vi(m_dc_id_don_vi);
                 var v_str_ten_don_vi = e.Node.GetValue(V_DM_DON_VI_2.TEN_DON_VI).ToString();
-                //m_lbl_thong_tin_phong_ban.Text = v_str_ten_don_vi;
+                m_lbl_ten_dv.Text = v_str_ten_don_vi;
             }
             catch (Exception v_e)
             {

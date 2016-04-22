@@ -650,6 +650,24 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     #endregion
 
     #region VIEW
+    public class V_GD_HE_SO_LNS
+    {
+        public const string ID_DON_VI = "ID_DON_VI";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string MA_NV = "MA_NV";
+        public const string HO_TEN = "HO_TEN";
+        public const string CHUC_DANH = "CHUC_DANH";
+        public const string ID = "ID";
+        public const string HE_SO = "HE_SO";
+        public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+        public const string LY_DO_CHINH_SUA = "LY_DO_CHINH_SUA";
+        public const string MA_CHUC_DANH_LNS = "MA_CHUC_DANH_LNS";
+        public const string CHUC_DANH_LNS = "CHUC_DANH_LNS";
+        public const string MUC_LNS = "MUC_LNS";
+    }
+
+
     public class V_F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY
     {
         public const string ID = "ID";

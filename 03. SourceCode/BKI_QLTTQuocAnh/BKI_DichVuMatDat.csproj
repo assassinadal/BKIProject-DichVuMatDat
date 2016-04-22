@@ -1243,6 +1243,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\HopDong\f001_import_hop_dong.resx">
       <DependentUpon>f001_import_hop_dong.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\HopDong\F390_quan_ly_thay_doi_lns_hop_dong.resx">
       <DependentUpon>F390_quan_ly_thay_doi_lns_hop_dong.cs</DependentUpon>

@@ -72,6 +72,19 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_cmd_update.Click += m_cmd_update_Click;
             m_cmd_delete.Click += m_cmd_delete_Click;
             m_cmd_print.Click += m_cmd_print_Click;
+            m_cmd_refresh.Click += m_cmd_refresh_Click;
+        }
+
+        void m_cmd_refresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_to_grid();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_print_Click(object sender, EventArgs e)

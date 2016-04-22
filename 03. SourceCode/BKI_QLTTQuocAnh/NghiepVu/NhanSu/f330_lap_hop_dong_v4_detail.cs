@@ -440,6 +440,23 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_cmd_save.Click += m_cmd_save_Click;
             m_sle_ma_lcd.EditValueChanged += m_sle_ma_lcd_EditValueChanged;
             m_sle_muc_lcd.EditValueChanged += m_sle_muc_lcd_EditValueChanged;
+            m_sle_chuc_vu.EditValueChanged += m_sle_chuc_vu_EditValueChanged;
+        }
+
+        void m_sle_chuc_vu_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(m_sle_chuc_vu.EditValue == null)
+                {
+                    return;
+                }
+                m_txt_so_ho_so.EditValue = ExecuteFuntion.GetSoHoSoNext(Convert.ToDecimal(m_sle_don_vi.EditValue), Convert.ToDecimal(m_sle_chuc_vu.EditValue));
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         void m_sle_don_vi_EditValueChanged(object sender, EventArgs e)
         {

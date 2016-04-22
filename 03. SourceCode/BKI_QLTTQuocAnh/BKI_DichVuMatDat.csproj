@@ -676,6 +676,7 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -951,6 +952,18 @@
     </Compile>
     <Compile Include="NghiepVu\NhanSu\f310_cap_nhat_cong_tac.Designer.cs">
       <DependentUpon>f310_cap_nhat_cong_tac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f330_lap_hop_dong_v4_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f330_lap_hop_dong_v4_detail.Designer.cs">
+      <DependentUpon>f330_lap_hop_dong_v4_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f329_lap_hop_dong_v4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f329_lap_hop_dong_v4.Designer.cs">
+      <DependentUpon>f329_lap_hop_dong_v4.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\NhanSu\f327_lap_hop_dong_v3.cs">
       <SubType>Form</SubType>
@@ -1262,6 +1275,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.resx">
       <DependentUpon>F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\NhanSu\f330_lap_hop_dong_v4_detail.resx">
+      <DependentUpon>f330_lap_hop_dong_v4_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\NhanSu\f329_lap_hop_dong_v4.resx">
+      <DependentUpon>f329_lap_hop_dong_v4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\NhanSu\f327_lap_hop_dong_v3.resx">
       <DependentUpon>f327_lap_hop_dong_v3.cs</DependentUpon>

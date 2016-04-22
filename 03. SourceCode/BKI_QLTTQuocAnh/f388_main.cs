@@ -432,7 +432,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f327_lap_hop_dong_v3 v_f = new f327_lap_hop_dong_v3();
+                f329_lap_hop_dong_v4 v_f = new f329_lap_hop_dong_v4();
                 if (IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();               

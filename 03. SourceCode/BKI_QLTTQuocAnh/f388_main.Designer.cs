@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -135,6 +136,7 @@
             this.m_cmd_qtt_2016 = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_lap_hd_v2 = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_hd_thay_doi_lns = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -160,12 +162,17 @@
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.m_pnl_ket_thuc_nghi_tam_thoi = new DevExpress.XtraEditors.PanelControl();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.m_lbl_ket_thuc_nghi_tam_thoi = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -195,17 +202,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
-            this.label20 = new System.Windows.Forms.Label();
-            this.m_lbl_ket_thuc_nghi_tam_thoi = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.m_pnl_ket_thuc_nghi_tam_thoi = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pnl_ket_thuc_nghi_tam_thoi)).BeginInit();
+            this.m_pnl_ket_thuc_nghi_tam_thoi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -216,8 +219,6 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_pnl_ket_thuc_nghi_tam_thoi)).BeginInit();
-            this.m_pnl_ket_thuc_nghi_tam_thoi.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbon
@@ -608,6 +609,7 @@
             this.m_cmd_lap_hop_dong.Name = "m_cmd_lap_hop_dong";
             this.m_cmd_lap_hop_dong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.m_cmd_lap_hop_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_len_luong_cho_nv
             // 
@@ -1301,7 +1303,7 @@
             // 
             // m_cmd_lap_hd_v2
             // 
-            this.m_cmd_lap_hd_v2.Caption = "Lập hợp đồng_v2";
+            this.m_cmd_lap_hd_v2.Caption = "Quản lý danh sách HĐLD";
             this.m_cmd_lap_hd_v2.Id = 126;
             this.m_cmd_lap_hd_v2.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_lap_hop_dong_;
             this.m_cmd_lap_hd_v2.Name = "m_cmd_lap_hd_v2";
@@ -1312,6 +1314,15 @@
             this.m_cmd_hd_thay_doi_lns.Id = 127;
             this.m_cmd_hd_thay_doi_lns.Name = "m_cmd_hd_thay_doi_lns";
             this.m_cmd_hd_thay_doi_lns.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.m_cmd_hd_thay_doi_lns.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "Trạng thái lao động";
+            this.barButtonItem9.Id = 128;
+            this.barButtonItem9.Name = "barButtonItem9";
+            this.barButtonItem9.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // ribbonPage1
@@ -1608,6 +1619,68 @@
             this.dockPanel1_Container.Name = "dockPanel1_Container";
             this.dockPanel1_Container.Size = new System.Drawing.Size(432, 229);
             this.dockPanel1_Container.TabIndex = 0;
+            // 
+            // m_pnl_ket_thuc_nghi_tam_thoi
+            // 
+            this.m_pnl_ket_thuc_nghi_tam_thoi.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.m_pnl_ket_thuc_nghi_tam_thoi.Controls.Add(this.label15);
+            this.m_pnl_ket_thuc_nghi_tam_thoi.Controls.Add(this.label18);
+            this.m_pnl_ket_thuc_nghi_tam_thoi.Controls.Add(this.m_lbl_ket_thuc_nghi_tam_thoi);
+            this.m_pnl_ket_thuc_nghi_tam_thoi.Controls.Add(this.label20);
+            this.m_pnl_ket_thuc_nghi_tam_thoi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_pnl_ket_thuc_nghi_tam_thoi.Location = new System.Drawing.Point(0, 156);
+            this.m_pnl_ket_thuc_nghi_tam_thoi.Name = "m_pnl_ket_thuc_nghi_tam_thoi";
+            this.m_pnl_ket_thuc_nghi_tam_thoi.Size = new System.Drawing.Size(432, 36);
+            this.m_pnl_ket_thuc_nghi_tam_thoi.TabIndex = 16;
+            this.m_pnl_ket_thuc_nghi_tam_thoi.Visible = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label15.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Green;
+            this.label15.Location = new System.Drawing.Point(193, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(229, 23);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "hết nghỉ phép tạm thời";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label18.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(130, 0);
+            this.label18.Name = "label18";
+            this.label18.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label18.Size = new System.Drawing.Size(63, 21);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "nhân viên";
+            // 
+            // m_lbl_ket_thuc_nghi_tam_thoi
+            // 
+            this.m_lbl_ket_thuc_nghi_tam_thoi.AutoSize = true;
+            this.m_lbl_ket_thuc_nghi_tam_thoi.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_ket_thuc_nghi_tam_thoi.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ket_thuc_nghi_tam_thoi.ForeColor = System.Drawing.Color.Green;
+            this.m_lbl_ket_thuc_nghi_tam_thoi.Location = new System.Drawing.Point(50, 0);
+            this.m_lbl_ket_thuc_nghi_tam_thoi.Name = "m_lbl_ket_thuc_nghi_tam_thoi";
+            this.m_lbl_ket_thuc_nghi_tam_thoi.Size = new System.Drawing.Size(80, 23);
+            this.m_lbl_ket_thuc_nghi_tam_thoi.TabIndex = 9;
+            this.m_lbl_ket_thuc_nghi_tam_thoi.Text = "label15";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label20.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(0, 0);
+            this.label20.Name = "label20";
+            this.label20.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label20.Size = new System.Drawing.Size(50, 21);
+            this.label20.TabIndex = 8;
+            this.label20.Text = "Hiện có";
             // 
             // panelControl5
             // 
@@ -1944,76 +2017,6 @@
             this.barButtonItem8.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // barButtonItem9
-            // 
-            this.barButtonItem9.Caption = "Trạng thái lao động";
-            this.barButtonItem9.Id = 128;
-            this.barButtonItem9.Name = "barButtonItem9";
-            this.barButtonItem9.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label20.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(0, 0);
-            this.label20.Name = "label20";
-            this.label20.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label20.Size = new System.Drawing.Size(50, 21);
-            this.label20.TabIndex = 8;
-            this.label20.Text = "Hiện có";
-            // 
-            // m_lbl_ket_thuc_nghi_tam_thoi
-            // 
-            this.m_lbl_ket_thuc_nghi_tam_thoi.AutoSize = true;
-            this.m_lbl_ket_thuc_nghi_tam_thoi.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_lbl_ket_thuc_nghi_tam_thoi.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_ket_thuc_nghi_tam_thoi.ForeColor = System.Drawing.Color.Green;
-            this.m_lbl_ket_thuc_nghi_tam_thoi.Location = new System.Drawing.Point(50, 0);
-            this.m_lbl_ket_thuc_nghi_tam_thoi.Name = "m_lbl_ket_thuc_nghi_tam_thoi";
-            this.m_lbl_ket_thuc_nghi_tam_thoi.Size = new System.Drawing.Size(80, 23);
-            this.m_lbl_ket_thuc_nghi_tam_thoi.TabIndex = 9;
-            this.m_lbl_ket_thuc_nghi_tam_thoi.Text = "label15";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(130, 0);
-            this.label18.Name = "label18";
-            this.label18.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label18.Size = new System.Drawing.Size(63, 21);
-            this.label18.TabIndex = 10;
-            this.label18.Text = "nhân viên";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Green;
-            this.label15.Location = new System.Drawing.Point(193, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(229, 23);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "hết nghỉ phép tạm thời";
-            // 
-            // m_pnl_ket_thuc_nghi_tam_thoi
-            // 
-            this.m_pnl_ket_thuc_nghi_tam_thoi.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Controls.Add(this.label15);
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Controls.Add(this.label18);
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Controls.Add(this.m_lbl_ket_thuc_nghi_tam_thoi);
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Controls.Add(this.label20);
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Location = new System.Drawing.Point(0, 156);
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Name = "m_pnl_ket_thuc_nghi_tam_thoi";
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Size = new System.Drawing.Size(432, 36);
-            this.m_pnl_ket_thuc_nghi_tam_thoi.TabIndex = 16;
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Visible = false;
-            // 
             // f388_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2034,6 +2037,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_pnl_ket_thuc_nghi_tam_thoi)).EndInit();
+            this.m_pnl_ket_thuc_nghi_tam_thoi.ResumeLayout(false);
+            this.m_pnl_ket_thuc_nghi_tam_thoi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
@@ -2049,9 +2055,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_pnl_ket_thuc_nghi_tam_thoi)).EndInit();
-            this.m_pnl_ket_thuc_nghi_tam_thoi.ResumeLayout(false);
-            this.m_pnl_ket_thuc_nghi_tam_thoi.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

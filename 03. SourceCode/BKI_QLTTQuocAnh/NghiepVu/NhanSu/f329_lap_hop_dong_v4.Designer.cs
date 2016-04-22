@@ -45,10 +45,6 @@
             this.colSO_TIEN_LCD_THUC_TE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSO_TIEN_MAC_DINH_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.m_dat_ngay_hieu_luc = new DevExpress.XtraEditors.DateEdit();
-            this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_print = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
@@ -61,10 +57,6 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_hieu_luc.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_hieu_luc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +64,6 @@
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.m_grc);
-            this.panelControl2.Controls.Add(this.panelControl4);
             this.panelControl2.Controls.Add(this.panelControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
@@ -84,10 +75,10 @@
             // 
             this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc.Location = new System.Drawing.Point(2, 52);
+            this.m_grc.Location = new System.Drawing.Point(2, 2);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(1095, 457);
+            this.m_grc.Size = new System.Drawing.Size(1095, 507);
             this.m_grc.TabIndex = 7;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
@@ -329,51 +320,6 @@
             this.colSO_TIEN_MAC_DINH_LCD.Visible = true;
             this.colSO_TIEN_MAC_DINH_LCD.VisibleIndex = 9;
             // 
-            // panelControl4
-            // 
-            this.panelControl4.Controls.Add(this.m_dat_ngay_hieu_luc);
-            this.panelControl4.Controls.Add(this.m_cmd_filter);
-            this.panelControl4.Controls.Add(this.labelControl1);
-            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl4.Location = new System.Drawing.Point(2, 2);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1095, 50);
-            this.panelControl4.TabIndex = 10;
-            // 
-            // m_dat_ngay_hieu_luc
-            // 
-            this.m_dat_ngay_hieu_luc.EditValue = null;
-            this.m_dat_ngay_hieu_luc.Location = new System.Drawing.Point(174, 16);
-            this.m_dat_ngay_hieu_luc.Name = "m_dat_ngay_hieu_luc";
-            this.m_dat_ngay_hieu_luc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_ngay_hieu_luc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_ngay_hieu_luc.Size = new System.Drawing.Size(144, 20);
-            this.m_dat_ngay_hieu_luc.TabIndex = 8;
-            // 
-            // m_cmd_filter
-            // 
-            this.m_cmd_filter.Appearance.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_filter.Appearance.ForeColor = System.Drawing.Color.DimGray;
-            this.m_cmd_filter.Appearance.Options.UseFont = true;
-            this.m_cmd_filter.Appearance.Options.UseForeColor = true;
-            this.m_cmd_filter.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.m_cmd_filter.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_filter.Image")));
-            this.m_cmd_filter.Location = new System.Drawing.Point(324, 15);
-            this.m_cmd_filter.Name = "m_cmd_filter";
-            this.m_cmd_filter.Size = new System.Drawing.Size(74, 24);
-            this.m_cmd_filter.TabIndex = 7;
-            this.m_cmd_filter.Text = "Lọc";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(20, 19);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(148, 13);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Hợp đồng còn hiệu lực tại ngày";
-            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.m_cmd_print);
@@ -476,11 +422,6 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
-            this.panelControl4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_hieu_luc.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dat_ngay_hieu_luc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -510,10 +451,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMUC_LCD;
         private DevExpress.XtraGrid.Columns.GridColumn colSO_TIEN_LCD_THUC_TE;
         private DevExpress.XtraGrid.Columns.GridColumn colTEN_DON_VI;
-        private DevExpress.XtraEditors.PanelControl panelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_filter;
-        private DevExpress.XtraEditors.DateEdit m_dat_ngay_hieu_luc;
         private DevExpress.XtraGrid.Columns.GridColumn colSO_TIEN_MAC_DINH_LCD;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAY_LAP;
         private DevExpress.XtraGrid.Columns.GridColumn colLOAI_LAO_DONG;

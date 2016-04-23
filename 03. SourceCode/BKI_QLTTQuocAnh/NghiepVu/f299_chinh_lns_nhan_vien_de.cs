@@ -107,8 +107,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_to_txt_nv()
         {
             US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN(m_us.dcID_NHAN_VIEN);
-            m_lbl_header.Text = "Mã nhân viên : " + v_us.strMA_NV.ToString() + "    "
-                + "Tên nhân viên : " + v_us.strHO_TEN.ToString();
+            m_lbl_header.Text = v_us.strMA_NV.ToString() + "    :   " + v_us.strHO_TEN.ToString();
         }
 
         private void load_data_to_grid()

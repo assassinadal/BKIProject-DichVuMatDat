@@ -40,6 +40,19 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_cmd_them.Click += m_cmd_them_Click;
             m_cmd_xoa.Click += m_cmd_xoa_Click;
+            m_cmd_update.Click += M_cmd_update_Click;
+        }
+
+        private void M_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void load_data_2_grid()

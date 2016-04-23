@@ -146,7 +146,7 @@
             this.colHO_TEN.OptionsColumn.AllowEdit = false;
             this.colHO_TEN.Visible = true;
             this.colHO_TEN.VisibleIndex = 3;
-            this.colHO_TEN.Width = 157;
+            this.colHO_TEN.Width = 145;
             // 
             // colMA_HOP_DONG
             // 
@@ -178,7 +178,7 @@
             this.colMA_LOAI_HOP_DONG.OptionsColumn.AllowEdit = false;
             this.colMA_LOAI_HOP_DONG.Visible = true;
             this.colMA_LOAI_HOP_DONG.VisibleIndex = 0;
-            this.colMA_LOAI_HOP_DONG.Width = 47;
+            this.colMA_LOAI_HOP_DONG.Width = 72;
             // 
             // colNGAY_BAT_DAU
             // 
@@ -196,6 +196,7 @@
             this.colNGAY_BAT_DAU.OptionsColumn.AllowEdit = false;
             this.colNGAY_BAT_DAU.Visible = true;
             this.colNGAY_BAT_DAU.VisibleIndex = 4;
+            this.colNGAY_BAT_DAU.Width = 99;
             // 
             // colNGAY_KET_THUC
             // 
@@ -213,7 +214,7 @@
             this.colNGAY_KET_THUC.OptionsColumn.AllowEdit = false;
             this.colNGAY_KET_THUC.Visible = true;
             this.colNGAY_KET_THUC.VisibleIndex = 5;
-            this.colNGAY_KET_THUC.Width = 76;
+            this.colNGAY_KET_THUC.Width = 104;
             // 
             // colNGAY_KY_HOP_DONG
             // 
@@ -244,7 +245,7 @@
             this.colMA_LCD.Name = "colMA_LCD";
             this.colMA_LCD.Visible = true;
             this.colMA_LCD.VisibleIndex = 7;
-            this.colMA_LCD.Width = 46;
+            this.colMA_LCD.Width = 60;
             // 
             // colMUC_LCD
             // 
@@ -258,7 +259,7 @@
             this.colMUC_LCD.Name = "colMUC_LCD";
             this.colMUC_LCD.Visible = true;
             this.colMUC_LCD.VisibleIndex = 8;
-            this.colMUC_LCD.Width = 52;
+            this.colMUC_LCD.Width = 67;
             // 
             // colTEN_CHUC_VU
             // 
@@ -276,7 +277,7 @@
             this.colTEN_CHUC_VU.OptionsColumn.AllowEdit = false;
             this.colTEN_CHUC_VU.Visible = true;
             this.colTEN_CHUC_VU.VisibleIndex = 11;
-            this.colTEN_CHUC_VU.Width = 119;
+            this.colTEN_CHUC_VU.Width = 114;
             // 
             // colSO_TIEN_LCD_THUC_TE
             // 
@@ -323,6 +324,7 @@
             this.colSO_TIEN_MAC_DINH_LCD.Name = "colSO_TIEN_MAC_DINH_LCD";
             this.colSO_TIEN_MAC_DINH_LCD.Visible = true;
             this.colSO_TIEN_MAC_DINH_LCD.VisibleIndex = 9;
+            this.colSO_TIEN_MAC_DINH_LCD.Width = 125;
             // 
             // colNGAY_LAP
             // 

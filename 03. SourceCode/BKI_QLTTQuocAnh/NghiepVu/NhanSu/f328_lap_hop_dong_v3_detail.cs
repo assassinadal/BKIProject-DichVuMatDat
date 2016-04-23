@@ -35,8 +35,8 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         #region Private Method
         private void set_initial_form_load()
         {
-            m_dat_ngay_bat_dau.DateTime = DateTime.Now;
-            m_dat_ngay_ky.DateTime = DateTime.Now;
+            m_dat_ngay_bat_dau.EditValue = DateTime.Now.Date;
+            m_dat_ngay_ky.EditValue = DateTime.Now;
             load_data_to_sle_nhan_vien();
             load_data_to_sle_loai_hop_dong();
             load_data_to_sle_loai_lao_dong();

@@ -64,7 +64,8 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         }
         #endregion
 
-        #region Event Handler
+        //EVENTS
+
         private void set_define_events()
         {
             this.Load += f327_lap_hop_dong_v3_Load;
@@ -140,7 +141,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 if (v_focused_row >= 0)
                 {
                     var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
-                    f328_lap_hop_dong_v3_detail v_f = new f328_lap_hop_dong_v3_detail();
+                    f330_lap_hop_dong_v4_detail v_f = new f330_lap_hop_dong_v4_detail();
                     v_f.display_for_update(v_dr);
                     load_data_to_grid();
                 }
@@ -182,6 +183,5 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
     }
 }

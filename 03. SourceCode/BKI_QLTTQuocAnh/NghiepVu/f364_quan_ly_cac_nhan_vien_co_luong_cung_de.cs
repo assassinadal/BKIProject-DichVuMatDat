@@ -71,8 +71,8 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void us_obj_2_form()
         {
-            m_dat_ngay_bat_dau.Value = m_us_gd_luong_cung.datNGAY_BAT_DAU;
-            m_dat_ngay_ket_thuc.Value = m_us_gd_luong_cung.datNGAY_KET_THUC;
+            m_dat_ngay_bat_dau.EditValue = m_us_gd_luong_cung.datNGAY_BAT_DAU;
+            m_dat_ngay_ket_thuc.EditValue = m_us_gd_luong_cung.datNGAY_KET_THUC;
             m_sle_chon_nhan_vien.EditValue = m_us_gd_luong_cung.dcID_NHAN_VIEN;
             m_txt_so_tien.Text = m_us_gd_luong_cung.dcSO_TIEN.ToString();
             CHRMCommon.format_text_2_money(m_txt_so_tien);
@@ -150,14 +150,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             ip_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
             ip_us.dcSO_TIEN = CIPConvert.ToDecimal(m_txt_so_tien.Text.Trim());
-            ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
-            if (m_dat_ngay_ket_thuc.Checked == false)
+            ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.DateTime.Date;
+            if (m_dat_ngay_ket_thuc.EditValue == null)
             {
-                ip_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau.Value.AddYears(45);
+                ip_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau.DateTime.Date.AddYears(45);
             }
             else
             {
-                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
+                ip_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.DateTime.Date;
             }
             ip_us.strGHI_CHU = m_txt_ghi_chu.Text.Trim();
         }
@@ -175,7 +175,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG(v_id_gd_luong_cung);
                 try
                 {
-                    v_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau.Value.AddDays(-1);
+                    v_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau.DateTime.Date.AddDays(-1);
                     v_us.strDA_XOA = "Y";
                     v_us.BeginTransaction();
                     v_us.Update();
@@ -351,7 +351,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         {
                             m_txt_so_tien.Text = "";
                             m_txt_ghi_chu.Text = "";
-                            m_dat_ngay_bat_dau.Value = m_dat_ngay_ket_thuc.Value = DateTime.Now.Date;
+                            m_dat_ngay_bat_dau.EditValue = m_dat_ngay_ket_thuc.EditValue = DateTime.Now.Date;
                         }
                         m_e_form_mode = DataEntryFormMode.InsertDataState;
                     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F395_nhan_vien_phu_cap_de));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.m_sle_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -49,8 +50,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.m_cmd_luu = new DevExpress.XtraEditors.SimpleButton();
+            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_nhan_vien.Properties)).BeginInit();
@@ -65,8 +67,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -77,8 +79,9 @@
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 39);
             this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(681, 212, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(420, 108);
+            this.layoutControl1.Size = new System.Drawing.Size(420, 127);
             this.layoutControl1.TabIndex = 3;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -198,11 +201,12 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.emptySpaceItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(420, 108);
-            this.layoutControlGroup1.Text = "layoutControlGroup1";
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(420, 127);
+            this.layoutControlGroup1.Text = "Root";
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -231,7 +235,7 @@
             this.layoutControlItem3.CustomizationFormText = "Chọn chức vụ hưởng phụ cấp (*)";
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(400, 40);
+            this.layoutControlItem3.Size = new System.Drawing.Size(400, 24);
             this.layoutControlItem3.Text = "Chọn chức vụ hưởng phụ cấp (*)";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(158, 13);
             // 
@@ -258,38 +262,55 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panelControl1);
+            this.panel2.Controls.Add(this.m_cmd_luu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 147);
+            this.panel2.Location = new System.Drawing.Point(0, 166);
+            this.panel2.MaximumSize = new System.Drawing.Size(0, 36);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(420, 41);
+            this.panel2.Size = new System.Drawing.Size(420, 36);
             this.panel2.TabIndex = 5;
             // 
-            // panelControl1
+            // emptySpaceItem1
             // 
-            this.panelControl1.Controls.Add(this.m_cmd_luu);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(420, 41);
-            this.panelControl1.TabIndex = 0;
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 72);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(400, 35);
+            this.emptySpaceItem1.Text = "emptySpaceItem1";
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // m_cmd_luu
             // 
             this.m_cmd_luu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_luu.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_luu.Image")));
-            this.m_cmd_luu.Location = new System.Drawing.Point(286, 2);
+            this.m_cmd_luu.ImageIndex = 6;
+            this.m_cmd_luu.ImageList = this.img_DVMD;
+            this.m_cmd_luu.Location = new System.Drawing.Point(345, 0);
             this.m_cmd_luu.Name = "m_cmd_luu";
-            this.m_cmd_luu.Size = new System.Drawing.Size(132, 37);
-            this.m_cmd_luu.TabIndex = 8;
-            this.m_cmd_luu.Text = "Lưu";
-            this.m_cmd_luu.Click += new System.EventHandler(this.m_cmd_them_Click);
+            this.m_cmd_luu.Size = new System.Drawing.Size(75, 36);
+            this.m_cmd_luu.TabIndex = 9;
+            this.m_cmd_luu.Text = "&Lưu";
+            // 
+            // img_DVMD
+            // 
+            this.img_DVMD.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("img_DVMD.ImageStream")));
+            this.img_DVMD.Images.SetKeyName(0, "Excel-icon.png");
+            this.img_DVMD.Images.SetKeyName(1, "excel-xls-icon.png");
+            this.img_DVMD.Images.SetKeyName(2, "exit-16.ico");
+            this.img_DVMD.Images.SetKeyName(3, "image.png");
+            this.img_DVMD.Images.SetKeyName(4, "Microsoft Excel.png");
+            this.img_DVMD.Images.SetKeyName(5, "calculator.png");
+            this.img_DVMD.Images.SetKeyName(6, "diskette.png");
+            this.img_DVMD.Images.SetKeyName(7, "file_add.png");
+            this.img_DVMD.Images.SetKeyName(8, "file_delete.png");
+            this.img_DVMD.Images.SetKeyName(9, "file_edit.png");
+            this.img_DVMD.Images.SetKeyName(10, "file_search.png");
             // 
             // F395_nhan_vien_phu_cap_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 188);
+            this.ClientSize = new System.Drawing.Size(420, 202);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -310,8 +331,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -338,8 +359,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_SDT;
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_DIA_CHI_THUONG_TRU;
         private System.Windows.Forms.Panel panel2;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_luu;
-
+        private DevExpress.Utils.ImageCollection img_DVMD;
     }
 }

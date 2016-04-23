@@ -672,17 +672,38 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     {
         public const string ID = "ID";
         public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string MA_TRA_CUU = "MA_TRA_CUU";
         public const string MA_NV = "MA_NV";
         public const string HO_TEN = "HO_TEN";
+        public const string ID_VI_TRI = "ID_VI_TRI";
+        public const string THU_TU_CHUC_VU = "THU_TU_CHUC_VU";
+        public const string ID_DON_VI = "ID_DON_VI";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string THU_TU_DON_VI = "THU_TU_DON_VI";
         public const string TRINH_DO_VAN_HOA = "TRINH_DO_VAN_HOA";
+        public const string CHUYEN_MON = "CHUYEN_MON";
+        public const string DIA_CHI_THUONG_TRU = "DIA_CHI_THUONG_TRU";
+        public const string SO_CMT = "SO_CMT";
+        public const string NGAY_CAP = "NGAY_CAP";
+        public const string NOI_CAP = "NOI_CAP";
         public const string TUOI = "TUOI";
         public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
         public const string MA_LOAI_HOP_DONG = "MA_LOAI_HOP_DONG";
-        public const string ID_VI_TRI = "ID_VI_TRI";
-        public const string TEN_VI_TRI = "TEN_VI_TRI";
-        public const string ID_DON_VI = "ID_DON_VI";
-        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string NGAY_BAT_DAU_HOP_DONG = "NGAY_BAT_DAU_HOP_DONG";
+        public const string ID_LCD = "ID_LCD";
+        public const string MA_LCD = "MA_LCD";
+        public const string MUC_LCD = "MUC_LCD";
+        public const string SO_TIEN = "SO_TIEN";
+        public const string NGAY_BAT_DAU_LCD = "NGAY_BAT_DAU_LCD";
+        public const string ID_HS_LNS = "ID_HS_LNS";
+        public const string TEN_LNS = "TEN_LNS";
+        public const string MUC_LNS = "MUC_LNS";
+        public const string HE_SO = "HE_SO";
+        public const string NGAY_BAT_DAU_LNS = "NGAY_BAT_DAU_LNS";
     }
+
+
+
 
     public class V_DM_NHAN_VIEN_4
     {

@@ -41,15 +41,36 @@ namespace BKI_DichVuMatDat
         {
             try
             {
+                //
                 int v_so_hop_dong_het_han = get_hop_dong_het_han().Tables[0].Rows.Count;
+                if (v_so_hop_dong_het_han > 0)
+                {
+                    m_lbl_nv_het_han_hop_dong.Text = v_so_hop_dong_het_han.ToString();
+                    m_lbl_nv_het_han_hop_dong.Visible = true;
+                }
+                else
+                {
+                    m_lbl_nv_het_han_hop_dong.Visible = false;
+                }
+
+                //
                 int v_so_nv_het_han_hs_lns = get_nv_het_han_hs_lns().Tables[0].Rows.Count;
-                int v_so_nv_han_han_lcd = get_nv_het_han_lcd().Tables[0].Rows.Count;
-                int v_so_nv_nghi_tam_thoi = get_nv_nghi_tam_thoi().Tables[0].Rows.Count;
+                if (v_so_hop_dong_het_han > 0)
+                {
+                    m_lbl_nv_het_han_lns.Text = v_so_nv_het_han_hs_lns.ToString();
+                    m_lbl_nv_het_han_lns.Visible = true;
+                }
+                else
+                {
+                    m_lbl_nv_het_han_lns.Visible = false;
+                }
+                //int v_so_nv_han_han_lcd = get_nv_het_han_lcd().Tables[0].Rows.Count;
+                //int v_so_nv_nghi_tam_thoi = get_nv_nghi_tam_thoi().Tables[0].Rows.Count;
                 //int v_so_nv_het_nghi_tam_thoi = get_nv_het_nghi_tam_thoi().Tables[0].Rows.Count;
-                m_lbl_nv_het_han_hop_dong.Text = v_so_hop_dong_het_han.ToString();
-                m_lbl_nv_het_han_lcd.Text = v_so_nv_han_han_lcd.ToString();
-                m_lbl_nv_het_han_lns.Text = v_so_nv_het_han_hs_lns.ToString();
-                m_lbl_nv_nghi_tam_thoi.Text = v_so_nv_nghi_tam_thoi.ToString();
+
+                //m_lbl_nv_het_han_lcd.Text = v_so_nv_han_han_lcd.ToString();
+                //m_lbl_nv_het_han_lns.Text = v_so_nv_het_han_hs_lns.ToString();
+                //m_lbl_nv_nghi_tam_thoi.Text = v_so_nv_nghi_tam_thoi.ToString();
                 //if (v_so_nv_het_nghi_tam_thoi != 0)
                 //{
                 //    m_lbl_ket_thuc_nghi_tam_thoi.Text = v_so_nv_het_nghi_tam_thoi.ToString();
@@ -69,7 +90,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                //update_canh_bao();
+                update_canh_bao();
                 this.ShowDialog();
             }
             catch (Exception v_e)

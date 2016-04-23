@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f329_lap_hop_dong_v4));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
@@ -51,11 +50,12 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_print = new DevExpress.XtraEditors.SimpleButton();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
+            this.img_DVMD = new DevExpress.Utils.ImageCollection();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
@@ -354,6 +354,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.m_cmd_chon_file);
             this.panelControl1.Controls.Add(this.m_cmd_refresh);
             this.panelControl1.Controls.Add(this.m_cmd_print);
             this.panelControl1.Controls.Add(this.m_cmd_xuat_excel);
@@ -451,6 +452,17 @@
             this.m_cmd_insert.TabIndex = 7;
             this.m_cmd_insert.Text = "&Thêm";
             // 
+            // m_cmd_chon_file
+            // 
+            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chon_file.ImageIndex = 4;
+            this.m_cmd_chon_file.ImageList = this.img_DVMD;
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(459, 4);
+            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
+            this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 32);
+            this.m_cmd_chon_file.TabIndex = 40;
+            this.m_cmd_chon_file.Text = "&Import excel";
+            // 
             // f329_lap_hop_dong_v4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -499,6 +511,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_update;
         private DevExpress.XtraEditors.SimpleButton m_cmd_refresh;
-
+        private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
     }
 }

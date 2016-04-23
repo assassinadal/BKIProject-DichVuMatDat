@@ -16,12 +16,18 @@ using System.Configuration;
 using System.Data.OleDb;
 using IP.Core.IPSystemAdmin;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.Utils;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using DevExpress.XtraPrinting;
+using Microsoft.Office.Interop;
 
 namespace BKI_DichVuMatDat.NghiepVu.HopDong
 {
     public partial class f001_import_hop_dong : Form
     {
-        #region Public Interface
+
+        #region Public Interfaces
+
         public f001_import_hop_dong()
         {
             InitializeComponent();
@@ -30,25 +36,83 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
 
         #endregion
 
-        #region Data Structure
+        #region Data Structures
+        class ExcelHopDong
+        {
+            public const string STT = "STT";
+            public const string MA_NHAN_VIEN = "MA_NHAN_VIEN";
+            public const string MA_HOP_DONG = "MA_HOP_DONG";
+            public const string MA_LOAI_HOP_DONG = "MA_LOAI_HOP_DONG";
+            public const string MA_CHUC_DANH_LCD = "MA_CHUC_DANH_LCD";
+            public const string MA_MUC_LCD = "MA_MUC_LCD";
+            public const string MA_CHUC_DANH_LNS = "MA_CHUC_DANH_LNS";
+            public const string MA_MUC_LUONG_NS = "MA_MUC_LUONG_NS";
+            public const string MA_DON_VI = "MA_DON_VI";
+            public const string MA_CHUC_VU = "MA_CHUC_VU";
+            public const string MA_LOAI_LAO_DONG = "MA_LOAI_LAO_DONG";
+            public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+            public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+            public const string NGAY_KI_HOP_DONG = "NGAY_KI_HOP_DONG";
+        }
         class ViTriTrenLuoi
         {
             public string loi_sai { get; set; }
             public int chi_so_hang { get; set; }
             public int chi_so_cot { get; set; }
+            public LoaiLoi loai_loi { get; set; }
             public ViTriTrenLuoi(int x, int y, string ten)
             {
                 chi_so_cot = y;
                 chi_so_hang = x;
                 loi_sai = ten;
             }
+            public ViTriTrenLuoi(int x, int y, string ten, LoaiLoi l)
+            {
+                chi_so_cot = y;
+                chi_so_hang = x;
+                loi_sai = ten;
+                loai_loi = l;
+            }
+
+        }
+
+        enum LoaiLoi
+        {
+            MaKhongHopLe,
+            MaBiTrung,
+            ChuaDienThongTin,
+            DaTonTai,
+            NgayThang
+        }
+
+        enum thu_tu_cot
+        {
+            STT = 0,
+            MA_NHAN_VIEN = 1,
+            MA_HOP_DONG = 2,
+            MA_LOAI_HOP_DONG = 3,
+            MA_CHUC_DANH_LCD = 4,
+            MA_MUC_LCD = 5,
+            MA_CHUC_DANH_LNS = 6,
+            MA_MUC_LUONG_NS = 7,
+            MA_DON_VI = 8,
+            MA_CHUC_VU = 9,
+            MA_LOAI_LAO_DONG = 10,
+            NGAY_BAT_DAU = 11,
+            NGAY_KET_THUC = 12,
+            NGAY_KI_HOP_DONG = 13
         }
         #endregion
 
         #region Members
+        private bool co_ma_nhan_vien_trung = false;
+        private bool co_ma_hop_dong_trung = false;
+        private string m_file_path;
         private List<ViTriTrenLuoi> m_list_vi_tri_sai = new List<ViTriTrenLuoi>();
         private DataTable m_data_table_grv = new DataTable();
-        // Bang ma
+
+        #region DataTable
+
         private DataTable m_dt_ma_nv = new DataTable();
         private DataTable m_dt_ma_hop_dong = new DataTable();
         private DataTable m_dt_ma_lcd = new DataTable();
@@ -61,27 +125,67 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
         private DataTable m_dt_chuc_vu = new DataTable();
         private List<DataTable> m_list_dt_table = new List<DataTable>();
 
+        #endregion 
+
         #endregion
 
         #region Private methods
-        //Setup Form
+
         private void format_control()
         {
             set_define_event();
             m_grv_hop_dong.BestFitColumns();
+            m_grc_hop_dong.ToolTipController = m_tooltip_controller;
+            this.WindowState = FormWindowState.Maximized;
         }
 
-        //Validate
+        private void format_data_table(DataTable ip_dt_src)
+        {
+            ip_dt_src.Columns[(int)thu_tu_cot.STT].ColumnName = ExcelHopDong.STT;
+            ip_dt_src.Columns[(int)thu_tu_cot.MA_NHAN_VIEN].ColumnName = ExcelHopDong.MA_NHAN_VIEN;
+            ip_dt_src.Columns[(int)thu_tu_cot.MA_HOP_DONG].ColumnName = ExcelHopDong.MA_HOP_DONG;
+            ip_dt_src.Columns[(int)thu_tu_cot.MA_LOAI_HOP_DONG].ColumnName = ExcelHopDong.MA_LOAI_HOP_DONG;
+            ip_dt_src.Columns[(int)thu_tu_cot.MA_CHUC_DANH_LCD].ColumnName = ExcelHopDong.MA_CHUC_DANH_LCD;
+            ip_dt_src.Columns[(int)thu_tu_cot.MA_MUC_LCD].ColumnName = ExcelHopDong.MA_MUC_LCD;
+            ip_dt_src.Columns[(int)thu_tu_cot.MA_CHUC_DANH_LNS].ColumnName = ExcelHopDong.MA_CHUC_DANH_LNS;
+            ip_dt_src.Columns[(int)thu_tu_cot.MA_MUC_LUONG_NS].ColumnName = ExcelHopDong.MA_MUC_LUONG_NS;
+            ip_dt_src.Columns[(int)thu_tu_cot.MA_DON_VI].ColumnName = ExcelHopDong.MA_DON_VI;
+            ip_dt_src.Columns[(int)thu_tu_cot.MA_CHUC_VU].ColumnName = ExcelHopDong.MA_CHUC_VU;
+            ip_dt_src.Columns[(int)thu_tu_cot.MA_LOAI_LAO_DONG].ColumnName = ExcelHopDong.MA_LOAI_LAO_DONG;
+            ip_dt_src.Columns[(int)thu_tu_cot.NGAY_BAT_DAU].ColumnName = ExcelHopDong.NGAY_BAT_DAU;
+            ip_dt_src.Columns[(int)thu_tu_cot.NGAY_KET_THUC].ColumnName = ExcelHopDong.NGAY_KET_THUC;
+            ip_dt_src.Columns[(int)thu_tu_cot.NGAY_KI_HOP_DONG].ColumnName = ExcelHopDong.NGAY_KI_HOP_DONG;
+        }
+
+        #region Validate
         private bool check_client(int chi_so_hang, int chi_so_cot)
         {
             if (chi_so_cot == 12) return true;
             if (String.IsNullOrEmpty(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
             {
-                var ten_cot = m_data_table_grv.Columns[chi_so_cot].ColumnName.ToString();
-                m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, ten_cot + " chưa có thông tin"));
+                m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Chưa điền thông tin ", LoaiLoi.ChuaDienThongTin));
                 return false;
             }
             return true;
+        }
+
+        private bool check_ma_ko_trung_lap(int column_id)
+        {
+            var list_ma = new List<string>();
+            foreach (DataRow dt in m_data_table_grv.Rows)
+            {
+                if (dt[column_id] == null)
+                {
+                    continue;
+                }
+                list_ma.Add(dt[column_id].ToString());
+            }
+            var list_ma_hd = list_ma.Distinct().ToList();
+            if (list_ma_hd.Count == m_data_table_grv.Rows.Count)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void check_logic(int chi_so_hang, int chi_so_cot)
@@ -90,32 +194,34 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             if (chi_so_cot > 0 & chi_so_cot < 11)
             {
                 var ten_cot = m_data_table_grv.Columns[chi_so_cot].ColumnName.ToString();
+                //check ma_nv
                 if (chi_so_cot == 1)
                 {
                     if (!check_ma_ok(m_list_dt_table[chi_so_cot - 1], m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
                     {
-                        m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, ten_cot + " chưa có nhân viên"));
+                        m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, "Mã nhân viên không tồn tại "));
                     }
                     else
                     {
                         if (check_nv_da_co_hop_dong(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
                         {
-                            m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, ten_cot + " nhân viên đã có hợp đồng"));
+                            m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Nhân viên đã có hợp đồng"));
                         }
                     }
                     return;
                 }
+                //check ma hop dong
                 if (chi_so_cot == 2)
                 {
                     if (!check_ma_hop_dong(m_list_dt_table[chi_so_cot - 1], m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
                     {
-                        m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, ten_cot + " mã hợp đồng đã tồn tại"));
+                        m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Mã hợp đồng đã tồn tại"));
                     }
                     return;
                 }
                 if (!check_ma_ok(m_list_dt_table[chi_so_cot - 1], m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
                 {
-                    m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, ten_cot + " mã không hợp lệ"));
+                    m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Mã không hợp lệ"));
                 }
             }
 
@@ -126,7 +232,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                 {
                     if (WinFormControls.FormatPostingDate(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()) <= WinFormControls.FormatPostingDate(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot - 1].ToString()))
                     {
-                        m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, 12, "NGAY_BAT_DAU < NGAY_KET_THUC"));
+                        m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, 12, "Ngày kết thúc nhỏ hơn ngày bắt đầu"));
                     }
                 }
             }
@@ -184,9 +290,19 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
 
         private bool check_grid_data_ok()
         {
+            if (!check_ma_ko_trung_lap(1))
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Một số mã nhân viên bị trùng nhau. Vui lòng kiểm tra lại");
+                co_ma_nhan_vien_trung = true;
+            }
+            if (!check_ma_ko_trung_lap(2))
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Một số mã hợp đồng bị trùng nhau. Vui lòng kiểm tra lại");
+                co_ma_hop_dong_trung = true;
+            }
             for (int chi_so_hang = 0; chi_so_hang < m_grv_hop_dong.RowCount; chi_so_hang++)
             {
-                for (int chi_so_cot = 0; chi_so_cot < 14; chi_so_cot++)
+                for (int chi_so_cot = 1; chi_so_cot < 14; chi_so_cot++)
                 {
                     if (check_client(chi_so_hang, chi_so_cot))
                     {
@@ -194,7 +310,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                     }
                 }
             }
-            if (m_list_vi_tri_sai.Count == 0)
+            if (m_list_vi_tri_sai.Count == 0 & !co_ma_nhan_vien_trung & !co_ma_hop_dong_trung)
             {
                 return true;
             }
@@ -204,19 +320,29 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
 
         private void hien_thi_vi_tri_sai()
         {
-            //string thong_bao = @"Vui lòng kiểm tra lại dữ liệu: ";
+            //if (co_ma_nhan_vien_trung)
+            //{
+            //    m_grv_hop_dong.RefreshRowCell(0, m_grv_hop_dong.Columns[1]);
+            //}
+            //if (co_ma_hop_dong_trung)
+            //{
+            //    m_grv_hop_dong.RefreshRowCell(0, m_grv_hop_dong.Columns[2]);
+            //}
+            //if (m_list_vi_tri_sai.Count == 0)
+            //{
+            //    return;
+            //}
             //foreach (var item in m_list_vi_tri_sai)
             //{
-            //    thong_bao += "Dòng " + (item.chi_so_hang + 1).ToString() + " Cột " + (item.chi_so_cot + 1).ToString() + " : Lỗi  " + item.loi_sai + " ; ";
+            //    m_grv_hop_dong.RefreshRowCell(item.chi_so_hang, m_grv_hop_dong.Columns[item.chi_so_cot]);
             //}
-            //DevExpress.XtraEditors.XtraMessageBox.Show(thong_bao);
-            foreach (var item in m_list_vi_tri_sai)
-            {
-                m_grv_hop_dong.RefreshRowCell(item.chi_so_hang, m_grv_hop_dong.Columns[item.chi_so_cot]);
-            }
+            m_grc_hop_dong.Refresh();
         }
 
-        //Transfer du lieu
+        #endregion
+
+        #region Transfer Data
+
         private void load_data_to_member_table()
         {
             m_dt_ma_hop_dong = load_data_to_ma_hd();
@@ -224,11 +350,11 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             m_dt_chuc_vu = load_data_to_chuc_vu();
             m_dt_don_vi = load_data_to_don_vi();
             m_dt_loai_hd = load_data_to_loai_hd();
-            m_dt_ma_lns = load_data_to_from_tu_dien(1);
-            m_dt_muc_lns = load_data_to_from_tu_dien(2);
-            m_dt_ma_lcd = load_data_to_from_tu_dien(3);
-            m_dt_muc_lcd = load_data_to_from_tu_dien(4);
-            m_dt_loai_lao_dong = load_data_to_from_tu_dien(6);
+            m_dt_ma_lns = load_data_from_tu_dien(1);
+            m_dt_muc_lns = load_data_from_tu_dien(2);
+            m_dt_ma_lcd = load_data_from_tu_dien(3);
+            m_dt_muc_lcd = load_data_from_tu_dien(4);
+            m_dt_loai_lao_dong = load_data_from_tu_dien(6);
             //
             m_dt_loai_hd.Columns["MA_LOAI_HOP_DONG"].SetOrdinal(1);
             m_dt_ma_hop_dong.Columns["MA_HOP_DONG"].SetOrdinal(1);
@@ -287,7 +413,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             return v_ds_hd.Tables[0];
         }
 
-        private DataTable load_data_to_from_tu_dien(decimal id_loai_tu_dien)
+        private DataTable load_data_from_tu_dien(decimal id_loai_tu_dien)
         {
             US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
             DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
@@ -295,8 +421,10 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             return v_ds.Tables[0];
         }
 
+        #endregion
 
-        // find id
+        #region  ID Query
+
         private decimal find_id_nv_by_ma_nv(string v)
         {
             try
@@ -405,27 +533,6 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
 
         private decimal find_id_don_vi(string ma_dv)
         {
-            //try
-            //{
-            //    US_DM_DON_VI v_us = new US_DM_DON_VI();
-            //    DS_DM_DON_VI v_ds = new DS_DM_DON_VI();
-            //    v_us.FillDataset(v_ds);
-            //    string v_str_filter = "WHERE MA_DV = " + ma_dv;
-            //    DataRow[] v_dr = v_ds.DM_DON_VI.Select(v_str_filter);
-
-            //    if (v_dr.Count() == 0)
-            //    {
-            //        return -1;
-            //    }
-            //    else
-            //    {
-            //        return CIPConvert.ToDecimal(v_dr.First()["ID"].ToString());
-            //    }
-            //}
-            //catch (Exception v_E)
-            //{
-            //    throw v_E;
-            //}
             decimal id = (from DataRow dr in m_dt_don_vi.Rows
                           where (string)dr["MA_DON_VI"] == ma_dv
                           select (decimal)dr["ID"]).FirstOrDefault();
@@ -434,28 +541,6 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
 
         private decimal find_id_chuc_vu(string ma_chuc_vu)
         {
-            //try
-            //{
-            //    US_DM_CHUC_VU v_us = new US_DM_CHUC_VU();
-            //    DS_DM_CHUC_VU v_ds = new DS_DM_CHUC_VU();
-            //    v_us.FillDataset(v_ds);
-            //    string v_str_filter = "WHERE MA_CHUC_VU like " + ma_chuc_vu;
-            //    DataRow[] v_dr = v_ds.DM_CHUC_VU.Select(v_str_filter);
-
-            //    if (v_dr.Count() == 0)
-            //    {
-            //        return -1;
-            //    }
-            //    else
-            //    {
-            //        return CIPConvert.ToDecimal(v_dr.First()["ID"].ToString());
-            //    }
-            //}
-            //catch (Exception v_E)
-            //{
-
-            //    throw v_E;
-            //}
             decimal id = (from DataRow dr in m_dt_chuc_vu.Rows
                           where (string)dr["MA_CHUC_VU"] == ma_chuc_vu
                           select (decimal)dr["ID"]).FirstOrDefault();
@@ -470,7 +555,10 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             return id;
         }
 
-        //Action
+        #endregion
+
+        #region Action
+
         private DataTable load_data_from_file_to_data_table(string ip_str_path, string ip_name_sheet_import)
         {
             string conStr = "";
@@ -487,7 +575,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             if (ExcelDataSet != null && ExcelDataSet.Rows.Count > 0)
             {
                 //string SheetName = ExcelDataSet.Rows[0]["TABLE_NAME"].ToString(); // get sheetname
-                ExcelCommand.CommandText = "SELECT * From [" + SheetName + "]  WHERE [STT] IS NOT NULL";
+                ExcelCommand.CommandText = "SELECT * From [" + SheetName + "] WHERE [STT] IS NOT NULL";
                 OleDbDataAdapter ExcelAdapter = new OleDbDataAdapter(ExcelCommand);
                 ExcelAdapter.SelectCommand = ExcelCommand;
                 ExcelAdapter.Fill(dt);
@@ -498,14 +586,15 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
 
         private void set_init_form_load()
         {
-            m_lbl_thong_bao.Text = "Chưa có dữ liệu";
-            m_lbl_thong_bao.ForeColor = Color.Red;
+            m_cmd_save.Enabled = false;
+            m_cmd_xuat_excel.Enabled = false;
             load_data_to_member_table();
         }
 
         private void load_data_from_file_to_grid(string path)
         {
             m_data_table_grv = load_data_from_file_to_data_table(path, "NHAP_HOP_DONG");
+            format_data_table(m_data_table_grv);
             m_grc_hop_dong.DataSource = m_data_table_grv;
             m_grv_hop_dong.BestFitColumns();
         }
@@ -619,10 +708,24 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             }
         }
 
-        //Display
+        #endregion
+
+        #region Display
+
         private void xuat_excel()
         {
-            CHRMCommon.ExportExcelWithFileName(m_grv_hop_dong, "Danh sach Hop DOng");
+            XlsxExportOptions opt = new XlsxExportOptions();
+            opt.SheetName = "NHAP_HOP_DONG";
+            opt.TextExportMode = TextExportMode.Value;
+            string path = WinFormControls.saveFileDialog("HOP_DONG");
+            if (!String.IsNullOrEmpty(path))
+            {
+                m_grv_hop_dong.ExportToXlsx(path, opt);
+                var excel = new Microsoft.Office.Interop.Excel.Application();
+                excel.Visible = true;
+                Microsoft.Office.Interop.Excel.Workbooks books = excel.Workbooks;
+                Microsoft.Office.Interop.Excel.Workbook openexcel = books.Open(path);
+            }
         }
 
         private void show_ket_qua()
@@ -633,7 +736,10 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
 
         #endregion
 
+        #endregion
+
         #region Event Handlers
+
         private void set_define_event()
         {
             this.Load += F001_import_hop_dong_Load;
@@ -643,25 +749,87 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             m_cmd_xuat_excel.Click += M_cmd_xuat_excel_Click;
             m_grv_hop_dong.RowCellStyle += M_grv_hop_dong_RowCellStyle;
             m_grc_hop_dong.DataSourceChanged += M_grc_hop_dong_DataSourceChanged;
+            m_tooltip_controller.GetActiveObjectInfo += M_tooltip_controller_GetActiveObjectInfo;
+        }
+
+        private void M_tooltip_controller_GetActiveObjectInfo(object sender, ToolTipControllerGetActiveObjectInfoEventArgs e)
+        {
+            try
+            {
+                if (m_list_vi_tri_sai.Count == 0)
+                {
+                    return;
+                }
+                ToolTipControlInfo info = null;
+                //Get the view at the current mouse position
+                GridView view = m_grc_hop_dong.GetViewAt(e.ControlMousePosition) as GridView;
+                if (view == null) return;
+                //Get the view's element information that resides at the current position
+                GridHitInfo hi = view.CalcHitInfo(e.ControlMousePosition);
+                //Display a hint for row indicator cells
+                if (hi.HitTest == GridHitTest.RowCell)
+                {
+                    //An object that uniquely identifies a row indicator cell
+                    foreach (var item in m_list_vi_tri_sai)
+                    {
+                        if (hi.RowHandle == item.chi_so_hang & hi.Column.VisibleIndex == item.chi_so_cot)
+                        {
+                            object o = hi.HitTest.ToString() + hi.RowHandle.ToString() + hi.Column.VisibleIndex.ToString();
+                            info = new ToolTipControlInfo(o, item.loi_sai);
+                        }
+                    }
+                }
+                if (hi.HitTest == GridHitTest.Column)
+                {
+                    if (co_ma_nhan_vien_trung & hi.Column.VisibleIndex == 1)
+                    {
+                        object o = hi.HitTest.ToString() + hi.RowHandle.ToString() + hi.Column.VisibleIndex.ToString();
+                        info = new ToolTipControlInfo(o, "Mã nhân viên bị trùng");
+                    }
+                    if (co_ma_hop_dong_trung & hi.Column.VisibleIndex == 2)
+                    {
+                        object o = hi.HitTest.ToString() + hi.RowHandle.ToString() + hi.Column.VisibleIndex.ToString();
+                        info = new ToolTipControlInfo(o, "Mã hợp đồng bị trùng");
+                    }
+                }
+                //Supply tooltip information if applicable, otherwise preserve default tooltip (if any)
+                if (info != null)
+                    e.Info = info;
+            }
+            catch (Exception ve)
+            {
+                set_init_form_load();
+                CSystemLog_301.ExceptionHandle(ve);
+            }
         }
 
         private void M_grc_hop_dong_DataSourceChanged(object sender, EventArgs e)
         {
             try
             {
+                if (m_grc_hop_dong.DataSource == null)
+                {
+                    m_lbl_thong_bao.Text = "Chưa có dữ liệu";
+                    m_lbl_thong_bao.ForeColor = Color.Red;
+                    m_cmd_save.Enabled = false;
+                    return;
+                }
+                m_cmd_xuat_excel.Enabled = true;
                 m_lbl_thong_bao.Text = "Đang kiểm tra dữ liệu...";
                 m_lbl_thong_bao.ForeColor = Color.Green;
                 if (!check_grid_data_ok())
                 {
-                    m_lbl_thong_bao.Text = "Vui lòng chỉnh sửa và chọn lại file excel";
+                    m_lbl_thong_bao.Text = "Chọn trích xuất để sửa thông tin sau đó chọn lại file";
                     m_lbl_thong_bao.ForeColor = Color.Red;
                     return;
                 }
                 m_lbl_thong_bao.Text = "Dữ liệu đã sẵn sàng nhập";
                 m_lbl_thong_bao.ForeColor = Color.Green;
+                m_cmd_save.Enabled = true;
             }
             catch (Exception v_e)
             {
+                set_init_form_load();
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
@@ -672,32 +840,27 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             {
                 if (m_list_vi_tri_sai.Count == 0)
                 {
-                    return;
+                    e.Appearance.BackColor = Color.White;
                 }
-                //if (e.Column.FieldName == "" || e.Column.FieldName == "")
-                //{
-                //    string category = View.GetRowCellDisplayText(e.RowHandle, View.Columns["Category"]);
-                //    if (category == "Seafood")
-                //    {
-                //        e.Appearance.BackColor = Color.DeepSkyBlue;
-                //        e.Appearance.BackColor2 = Color.LightCyan;
-                ////}
-                //}
                 foreach (var item in m_list_vi_tri_sai)
                 {
-                    if (e.RowHandle != item.chi_so_hang)
+                    if (item.chi_so_hang == e.RowHandle & item.chi_so_cot == e.Column.VisibleIndex)
                     {
-                        continue;
+                        e.Appearance.BackColor = Color.Red;
                     }
-                    if (e.Column.VisibleIndex != item.chi_so_cot)
-                    {
-                        continue;
-                    }
-                    e.Appearance.BackColor = Color.Tomato;
-                }             
+                }
+                if (co_ma_hop_dong_trung & e.Column.VisibleIndex == 2)
+                {
+                    e.Column.AppearanceHeader.BackColor = Color.Red;
+                }
+                if (co_ma_nhan_vien_trung & e.Column.VisibleIndex == 1)
+                {
+                    e.Column.AppearanceHeader.BackColor = Color.Red;
+                }
             }
             catch (Exception ex)
             {
+                set_init_form_load();
                 CSystemLog_301.ExceptionHandle(ex);
             }
         }
@@ -710,6 +873,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             }
             catch (Exception v_e)
             {
+                set_init_form_load();
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
@@ -723,13 +887,15 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                     m_lbl_thong_bao.Text = "Đang lưu dữ liệu...";
                     m_lbl_thong_bao.ForeColor = Color.Green;
                     save_data();
-                    show_ket_qua();
+                    //show_ket_qua();
                     m_lbl_thong_bao.Text = "Đã lưu dữ liệu thành công!";
                     m_lbl_thong_bao.ForeColor = Color.Green;
+                    set_init_form_load();
                 }
             }
             catch (Exception v_e)
             {
+                set_init_form_load();
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
@@ -742,6 +908,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             }
             catch (Exception v_e)
             {
+                set_init_form_load();
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
@@ -751,20 +918,36 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             try
             {
                 m_list_vi_tri_sai = new List<ViTriTrenLuoi>();
+                co_ma_nhan_vien_trung = co_ma_hop_dong_trung = false;
                 m_lbl_thong_bao.Text = "Đang đọc dữ liệu từ file...";
                 m_lbl_thong_bao.ForeColor = Color.Green;
-                string path = WinFormControls.openFileDialog();
-                if (String.IsNullOrEmpty(path))
+
+                OpenFileDialog opf = new OpenFileDialog();
+                opf.Filter = "Office Files|*.xlsx;*.xls;";
+                opf.Multiselect = false;
+                if (opf.ShowDialog() == DialogResult.OK)
+                {
+                    m_file_path = opf.FileName;
+                    if (String.IsNullOrEmpty(m_file_path))
+                    {
+                        m_lbl_thong_bao.Text = "Chưa có dữ liệu";
+                        m_lbl_thong_bao.ForeColor = Color.Red;
+                        return;
+                    }
+                    load_data_from_file_to_grid(m_file_path);
+                }
+                else
                 {
                     m_lbl_thong_bao.Text = "Chưa có dữ liệu";
                     m_lbl_thong_bao.ForeColor = Color.Red;
                     return;
                 }
-                load_data_from_file_to_grid(path);
             }
             catch (Exception v_e)
             {
+                set_init_form_load();
                 CSystemLog_301.ExceptionHandle(v_e);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Vui lòng chọn đúng file exel mẫu để lập hợp đồng");
             }
         }
 
@@ -776,12 +959,10 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             }
             catch (Exception v_e)
             {
+                set_init_form_load();
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-
         #endregion
-
     }
 }

@@ -12,6 +12,7 @@ using BKI_DichVuMatDat.US;
 using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.DS.CDBNames;
 using DevExpress.XtraEditors;
+using BKI_DichVuMatDat.NghiepVu.HopDong;
 
 namespace BKI_DichVuMatDat.NghiepVu.NhanSu
 {
@@ -62,6 +63,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             //    v_us.Delete();
             //}
         }
+      
         #endregion
 
         //EVENTS
@@ -74,6 +76,21 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_cmd_delete.Click += m_cmd_delete_Click;
             m_cmd_print.Click += m_cmd_print_Click;
             m_cmd_refresh.Click += m_cmd_refresh_Click;
+            m_cmd_chon_file.Click += M_cmd_chon_file_Click;
+        }
+
+        private void M_cmd_chon_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f001_import_hop_dong v_f = new f001_import_hop_dong();
+                v_f.ShowDialog();
+                load_data_to_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_refresh_Click(object sender, EventArgs e)
@@ -82,7 +99,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             {
                 load_data_to_grid();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -112,7 +129,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                     DialogResult v_dialog = XtraMessageBox.Show(v_str_confirm, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
                     if (v_dialog == DialogResult.Yes)
                     {
-                        decimal v_id_hop_dong = Convert.ToDecimal(m_grv.GetRowCellValue(v_focused_row,"ID"));                        
+                        decimal v_id_hop_dong = Convert.ToDecimal(m_grv.GetRowCellValue(v_focused_row, "ID"));
                         //delete_gd_he_so_lns(v_id_hop_dong);
                         //delete_gd_lcd(v_id_hop_dong);
                         US_GD_HOP_DONG v_us = new US_GD_HOP_DONG(v_id_hop_dong);
@@ -169,7 +186,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
-            }           
+            }
         }
 
         void f327_lap_hop_dong_v3_Load(object sender, EventArgs e)

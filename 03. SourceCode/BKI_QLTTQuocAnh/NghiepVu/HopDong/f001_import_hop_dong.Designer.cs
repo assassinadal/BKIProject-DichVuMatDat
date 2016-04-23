@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f001_import_hop_dong));
             this.label1 = new System.Windows.Forms.Label();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
+            this.img_DVMD = new DevExpress.Utils.ImageCollection();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
@@ -55,6 +54,7 @@
             this.NGAY_BAT_DAU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_KI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.m_tooltip_controller = new DevExpress.Utils.ToolTipController();
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_pnl_danh_sach_hop_dong)).BeginInit();
@@ -185,11 +185,13 @@
             this.m_grc_hop_dong.Name = "m_grc_hop_dong";
             this.m_grc_hop_dong.Size = new System.Drawing.Size(1011, 364);
             this.m_grc_hop_dong.TabIndex = 0;
+            this.m_grc_hop_dong.ToolTipController = this.m_tooltip_controller;
             this.m_grc_hop_dong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_hop_dong});
             // 
             // m_grv_hop_dong
             // 
+            this.m_grv_hop_dong.Appearance.HeaderPanel.Options.UseBackColor = true;
             this.m_grv_hop_dong.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.STT,
             this.MA_NV,
@@ -208,6 +210,7 @@
             this.m_grv_hop_dong.GridControl = this.m_grc_hop_dong;
             this.m_grv_hop_dong.Name = "m_grv_hop_dong";
             this.m_grv_hop_dong.OptionsBehavior.ReadOnly = true;
+            this.m_grv_hop_dong.OptionsPrint.AutoWidth = false;
             this.m_grv_hop_dong.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             // 
             // STT
@@ -344,7 +347,7 @@
             this.MA_DON_VI.FieldName = "MA_DON_VI";
             this.MA_DON_VI.Name = "MA_DON_VI";
             this.MA_DON_VI.Visible = true;
-            this.MA_DON_VI.VisibleIndex = 9;
+            this.MA_DON_VI.VisibleIndex = 8;
             // 
             // MA_CHUC_VU
             // 
@@ -359,7 +362,7 @@
             this.MA_CHUC_VU.FieldName = "MA_CHUC_VU";
             this.MA_CHUC_VU.Name = "MA_CHUC_VU";
             this.MA_CHUC_VU.Visible = true;
-            this.MA_CHUC_VU.VisibleIndex = 10;
+            this.MA_CHUC_VU.VisibleIndex = 9;
             // 
             // MA_LOAI_LD
             // 
@@ -374,7 +377,7 @@
             this.MA_LOAI_LD.FieldName = "MA_LOAI_LAO_DONG";
             this.MA_LOAI_LD.Name = "MA_LOAI_LD";
             this.MA_LOAI_LD.Visible = true;
-            this.MA_LOAI_LD.VisibleIndex = 8;
+            this.MA_LOAI_LD.VisibleIndex = 10;
             // 
             // NGAY_BAT_DAU
             // 
@@ -476,5 +479,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_BAT_DAU;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KET_THUC;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KI_HOP_DONG;
+        private DevExpress.Utils.ToolTipController m_tooltip_controller;
     }
 }

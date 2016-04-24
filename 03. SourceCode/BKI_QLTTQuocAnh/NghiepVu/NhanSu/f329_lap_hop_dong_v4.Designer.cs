@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f329_lap_hop_dong_v4));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
@@ -48,14 +49,23 @@
             this.colNGAY_LAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLOAI_LAO_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
+            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_print = new DevExpress.XtraEditors.SimpleButton();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
+            this.colID_LOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQUOC_TICH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGAY_SINH_NV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQUE_QUAN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCHUYEN_MON = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDIA_CHI_THUONG_TRU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSO_CMT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGAY_CAP_CMT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNOI_CAP = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
@@ -104,12 +114,23 @@
             this.colTEN_DON_VI,
             this.colSO_TIEN_MAC_DINH_LCD,
             this.colNGAY_LAP,
-            this.colLOAI_LAO_DONG});
+            this.colLOAI_LAO_DONG,
+            this.colID_LOAI_HOP_DONG,
+            this.colQUOC_TICH,
+            this.colNGAY_SINH_NV,
+            this.colQUE_QUAN,
+            this.colCHUYEN_MON,
+            this.colDIA_CHI_THUONG_TRU,
+            this.colSO_CMT,
+            this.colNGAY_CAP_CMT,
+            this.colNOI_CAP});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
             this.m_grv.OptionsBehavior.ReadOnly = true;
             this.m_grv.OptionsFind.AllowFindPanel = false;
             this.m_grv.OptionsFind.AlwaysVisible = true;
+            this.m_grv.OptionsSelection.MultiSelect = true;
+            this.m_grv.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.m_grv.OptionsView.ColumnAutoWidth = false;
             this.m_grv.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             // 
@@ -130,7 +151,7 @@
             this.colMA_NV.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MA_NV", "{0:n0}")});
             this.colMA_NV.Visible = true;
-            this.colMA_NV.VisibleIndex = 2;
+            this.colMA_NV.VisibleIndex = 3;
             // 
             // colHO_TEN
             // 
@@ -145,7 +166,7 @@
             this.colHO_TEN.Name = "colHO_TEN";
             this.colHO_TEN.OptionsColumn.AllowEdit = false;
             this.colHO_TEN.Visible = true;
-            this.colHO_TEN.VisibleIndex = 3;
+            this.colHO_TEN.VisibleIndex = 4;
             this.colHO_TEN.Width = 145;
             // 
             // colMA_HOP_DONG
@@ -161,7 +182,7 @@
             this.colMA_HOP_DONG.Name = "colMA_HOP_DONG";
             this.colMA_HOP_DONG.OptionsColumn.AllowEdit = false;
             this.colMA_HOP_DONG.Visible = true;
-            this.colMA_HOP_DONG.VisibleIndex = 1;
+            this.colMA_HOP_DONG.VisibleIndex = 2;
             this.colMA_HOP_DONG.Width = 58;
             // 
             // colMA_LOAI_HOP_DONG
@@ -177,7 +198,7 @@
             this.colMA_LOAI_HOP_DONG.Name = "colMA_LOAI_HOP_DONG";
             this.colMA_LOAI_HOP_DONG.OptionsColumn.AllowEdit = false;
             this.colMA_LOAI_HOP_DONG.Visible = true;
-            this.colMA_LOAI_HOP_DONG.VisibleIndex = 0;
+            this.colMA_LOAI_HOP_DONG.VisibleIndex = 1;
             this.colMA_LOAI_HOP_DONG.Width = 72;
             // 
             // colNGAY_BAT_DAU
@@ -195,7 +216,7 @@
             this.colNGAY_BAT_DAU.Name = "colNGAY_BAT_DAU";
             this.colNGAY_BAT_DAU.OptionsColumn.AllowEdit = false;
             this.colNGAY_BAT_DAU.Visible = true;
-            this.colNGAY_BAT_DAU.VisibleIndex = 4;
+            this.colNGAY_BAT_DAU.VisibleIndex = 5;
             this.colNGAY_BAT_DAU.Width = 99;
             // 
             // colNGAY_KET_THUC
@@ -213,7 +234,7 @@
             this.colNGAY_KET_THUC.Name = "colNGAY_KET_THUC";
             this.colNGAY_KET_THUC.OptionsColumn.AllowEdit = false;
             this.colNGAY_KET_THUC.Visible = true;
-            this.colNGAY_KET_THUC.VisibleIndex = 5;
+            this.colNGAY_KET_THUC.VisibleIndex = 6;
             this.colNGAY_KET_THUC.Width = 104;
             // 
             // colNGAY_KY_HOP_DONG
@@ -231,7 +252,7 @@
             this.colNGAY_KY_HOP_DONG.Name = "colNGAY_KY_HOP_DONG";
             this.colNGAY_KY_HOP_DONG.OptionsColumn.AllowEdit = false;
             this.colNGAY_KY_HOP_DONG.Visible = true;
-            this.colNGAY_KY_HOP_DONG.VisibleIndex = 6;
+            this.colNGAY_KY_HOP_DONG.VisibleIndex = 7;
             // 
             // colMA_LCD
             // 
@@ -244,7 +265,7 @@
             this.colMA_LCD.FieldName = "MA_LCD";
             this.colMA_LCD.Name = "colMA_LCD";
             this.colMA_LCD.Visible = true;
-            this.colMA_LCD.VisibleIndex = 7;
+            this.colMA_LCD.VisibleIndex = 8;
             this.colMA_LCD.Width = 60;
             // 
             // colMUC_LCD
@@ -258,7 +279,7 @@
             this.colMUC_LCD.FieldName = "MUC_LCD";
             this.colMUC_LCD.Name = "colMUC_LCD";
             this.colMUC_LCD.Visible = true;
-            this.colMUC_LCD.VisibleIndex = 8;
+            this.colMUC_LCD.VisibleIndex = 9;
             this.colMUC_LCD.Width = 67;
             // 
             // colTEN_CHUC_VU
@@ -276,7 +297,7 @@
             this.colTEN_CHUC_VU.Name = "colTEN_CHUC_VU";
             this.colTEN_CHUC_VU.OptionsColumn.AllowEdit = false;
             this.colTEN_CHUC_VU.Visible = true;
-            this.colTEN_CHUC_VU.VisibleIndex = 11;
+            this.colTEN_CHUC_VU.VisibleIndex = 12;
             this.colTEN_CHUC_VU.Width = 114;
             // 
             // colSO_TIEN_LCD_THUC_TE
@@ -294,7 +315,7 @@
             this.colSO_TIEN_LCD_THUC_TE.FieldName = "SO_TIEN_LCD_THUC_TE";
             this.colSO_TIEN_LCD_THUC_TE.Name = "colSO_TIEN_LCD_THUC_TE";
             this.colSO_TIEN_LCD_THUC_TE.Visible = true;
-            this.colSO_TIEN_LCD_THUC_TE.VisibleIndex = 10;
+            this.colSO_TIEN_LCD_THUC_TE.VisibleIndex = 11;
             this.colSO_TIEN_LCD_THUC_TE.Width = 85;
             // 
             // colTEN_DON_VI
@@ -308,7 +329,7 @@
             this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
             this.colTEN_DON_VI.Name = "colTEN_DON_VI";
             this.colTEN_DON_VI.Visible = true;
-            this.colTEN_DON_VI.VisibleIndex = 12;
+            this.colTEN_DON_VI.VisibleIndex = 13;
             // 
             // colSO_TIEN_MAC_DINH_LCD
             // 
@@ -323,7 +344,7 @@
             this.colSO_TIEN_MAC_DINH_LCD.FieldName = "SO_TIEN_MAC_DINH_LCD";
             this.colSO_TIEN_MAC_DINH_LCD.Name = "colSO_TIEN_MAC_DINH_LCD";
             this.colSO_TIEN_MAC_DINH_LCD.Visible = true;
-            this.colSO_TIEN_MAC_DINH_LCD.VisibleIndex = 9;
+            this.colSO_TIEN_MAC_DINH_LCD.VisibleIndex = 10;
             this.colSO_TIEN_MAC_DINH_LCD.Width = 125;
             // 
             // colNGAY_LAP
@@ -337,7 +358,7 @@
             this.colNGAY_LAP.FieldName = "NGAY_LAP";
             this.colNGAY_LAP.Name = "colNGAY_LAP";
             this.colNGAY_LAP.Visible = true;
-            this.colNGAY_LAP.VisibleIndex = 14;
+            this.colNGAY_LAP.VisibleIndex = 15;
             // 
             // colLOAI_LAO_DONG
             // 
@@ -350,7 +371,7 @@
             this.colLOAI_LAO_DONG.FieldName = "LOAI_LAO_DONG";
             this.colLOAI_LAO_DONG.Name = "colLOAI_LAO_DONG";
             this.colLOAI_LAO_DONG.Visible = true;
-            this.colLOAI_LAO_DONG.VisibleIndex = 13;
+            this.colLOAI_LAO_DONG.VisibleIndex = 14;
             // 
             // panelControl1
             // 
@@ -367,6 +388,32 @@
             this.panelControl1.Padding = new System.Windows.Forms.Padding(2);
             this.panelControl1.Size = new System.Drawing.Size(1095, 40);
             this.panelControl1.TabIndex = 6;
+            // 
+            // m_cmd_chon_file
+            // 
+            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chon_file.ImageIndex = 4;
+            this.m_cmd_chon_file.ImageList = this.img_DVMD;
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(459, 4);
+            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
+            this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 32);
+            this.m_cmd_chon_file.TabIndex = 40;
+            this.m_cmd_chon_file.Text = "&Import excel";
+            // 
+            // img_DVMD
+            // 
+            this.img_DVMD.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("img_DVMD.ImageStream")));
+            this.img_DVMD.Images.SetKeyName(0, "Excel-icon.png");
+            this.img_DVMD.Images.SetKeyName(1, "excel-xls-icon.png");
+            this.img_DVMD.Images.SetKeyName(2, "exit-16.ico");
+            this.img_DVMD.Images.SetKeyName(3, "image.png");
+            this.img_DVMD.Images.SetKeyName(4, "Microsoft Excel.png");
+            this.img_DVMD.Images.SetKeyName(5, "calculator.png");
+            this.img_DVMD.Images.SetKeyName(6, "diskette.png");
+            this.img_DVMD.Images.SetKeyName(7, "file_add.png");
+            this.img_DVMD.Images.SetKeyName(8, "file_delete.png");
+            this.img_DVMD.Images.SetKeyName(9, "file_edit.png");
+            this.img_DVMD.Images.SetKeyName(10, "file_search.png");
             // 
             // m_cmd_refresh
             // 
@@ -391,21 +438,6 @@
             this.m_cmd_print.Size = new System.Drawing.Size(91, 32);
             this.m_cmd_print.TabIndex = 38;
             this.m_cmd_print.Text = "&In hợp đồng";
-            // 
-            // img_DVMD
-            // 
-            this.img_DVMD.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("img_DVMD.ImageStream")));
-            this.img_DVMD.Images.SetKeyName(0, "Excel-icon.png");
-            this.img_DVMD.Images.SetKeyName(1, "excel-xls-icon.png");
-            this.img_DVMD.Images.SetKeyName(2, "exit-16.ico");
-            this.img_DVMD.Images.SetKeyName(3, "image.png");
-            this.img_DVMD.Images.SetKeyName(4, "Microsoft Excel.png");
-            this.img_DVMD.Images.SetKeyName(5, "calculator.png");
-            this.img_DVMD.Images.SetKeyName(6, "diskette.png");
-            this.img_DVMD.Images.SetKeyName(7, "file_add.png");
-            this.img_DVMD.Images.SetKeyName(8, "file_delete.png");
-            this.img_DVMD.Images.SetKeyName(9, "file_edit.png");
-            this.img_DVMD.Images.SetKeyName(10, "file_search.png");
             // 
             // m_cmd_xuat_excel
             // 
@@ -452,16 +484,63 @@
             this.m_cmd_insert.TabIndex = 7;
             this.m_cmd_insert.Text = "&Thêm";
             // 
-            // m_cmd_chon_file
+            // colID_LOAI_HOP_DONG
             // 
-            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chon_file.ImageIndex = 4;
-            this.m_cmd_chon_file.ImageList = this.img_DVMD;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(459, 4);
-            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
-            this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 32);
-            this.m_cmd_chon_file.TabIndex = 40;
-            this.m_cmd_chon_file.Text = "&Import excel";
+            this.colID_LOAI_HOP_DONG.Caption = "colID_LOAI_HOP_DONG";
+            this.colID_LOAI_HOP_DONG.FieldName = "ID_LOAI_HOP_DONG";
+            this.colID_LOAI_HOP_DONG.Name = "colID_LOAI_HOP_DONG";
+            // 
+            // colQUOC_TICH
+            // 
+            this.colQUOC_TICH.Caption = "QUOC_TICH";
+            this.colQUOC_TICH.FieldName = "QUOC_TICH";
+            this.colQUOC_TICH.Name = "colQUOC_TICH";
+            // 
+            // colNGAY_SINH_NV
+            // 
+            this.colNGAY_SINH_NV.Caption = "NGAY_SINH_NV";
+            this.colNGAY_SINH_NV.FieldName = "NGAY_SINH_NV";
+            this.colNGAY_SINH_NV.Name = "colNGAY_SINH_NV";
+            this.colNGAY_SINH_NV.Visible = true;
+            this.colNGAY_SINH_NV.VisibleIndex = 16;
+            // 
+            // colQUE_QUAN
+            // 
+            this.colQUE_QUAN.Caption = "QUE_QUAN";
+            this.colQUE_QUAN.FieldName = "QUE_QUAN";
+            this.colQUE_QUAN.Name = "colQUE_QUAN";
+            // 
+            // colCHUYEN_MON
+            // 
+            this.colCHUYEN_MON.Caption = "CHUYEN_MON";
+            this.colCHUYEN_MON.FieldName = "CHUYEN_MON";
+            this.colCHUYEN_MON.Name = "colCHUYEN_MON";
+            // 
+            // colDIA_CHI_THUONG_TRU
+            // 
+            this.colDIA_CHI_THUONG_TRU.Caption = "DIA_CHI_THUONG_TRU";
+            this.colDIA_CHI_THUONG_TRU.FieldName = "DIA_CHI_THUONG_TRU";
+            this.colDIA_CHI_THUONG_TRU.Name = "colDIA_CHI_THUONG_TRU";
+            this.colDIA_CHI_THUONG_TRU.Visible = true;
+            this.colDIA_CHI_THUONG_TRU.VisibleIndex = 17;
+            // 
+            // colSO_CMT
+            // 
+            this.colSO_CMT.Caption = "SO_CMT";
+            this.colSO_CMT.FieldName = "SO_CMT";
+            this.colSO_CMT.Name = "colSO_CMT";
+            // 
+            // colNGAY_CAP_CMT
+            // 
+            this.colNGAY_CAP_CMT.Caption = "NGAY_CAP_CMT";
+            this.colNGAY_CAP_CMT.FieldName = "NGAY_CAP_CMT";
+            this.colNGAY_CAP_CMT.Name = "colNGAY_CAP_CMT";
+            // 
+            // colNOI_CAP
+            // 
+            this.colNOI_CAP.Caption = "NOI_CAP";
+            this.colNOI_CAP.FieldName = "NOI_CAP";
+            this.colNOI_CAP.Name = "colNOI_CAP";
             // 
             // f329_lap_hop_dong_v4
             // 
@@ -512,5 +591,14 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_update;
         private DevExpress.XtraEditors.SimpleButton m_cmd_refresh;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_LOAI_HOP_DONG;
+        private DevExpress.XtraGrid.Columns.GridColumn colQUOC_TICH;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGAY_SINH_NV;
+        private DevExpress.XtraGrid.Columns.GridColumn colQUE_QUAN;
+        private DevExpress.XtraGrid.Columns.GridColumn colCHUYEN_MON;
+        private DevExpress.XtraGrid.Columns.GridColumn colDIA_CHI_THUONG_TRU;
+        private DevExpress.XtraGrid.Columns.GridColumn colSO_CMT;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGAY_CAP_CMT;
+        private DevExpress.XtraGrid.Columns.GridColumn colNOI_CAP;
     }
 }

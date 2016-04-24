@@ -313,6 +313,13 @@ public class US_GD_HE_SO_LNS : US_Object
 	}
 #endregion
 
+    public void KetThucLuongNangSuatNhanVien(decimal ip_dc_id_nhan_vien, DateTime ip_dat_ngay_ket_thuc)
+    {
+        CStoredProc v_cs = new CStoredProc("pr_HD_cap_nhat_ngay_ket_thuc_luong_nang_suat");
+        v_cs.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+        v_cs.addDatetimeInputParam("@ip_dat_ngay_ket_thuc", ip_dat_ngay_ket_thuc);
+        v_cs.ExecuteCommand(this);
+    }
     public DataTable LayDanhSachHopDongThayDoiHeSoLNS(DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
     {
         CStoredProc v_cs = new CStoredProc("pr_HD_hop_dong_thay_doi_he_so_lns_GetAll");

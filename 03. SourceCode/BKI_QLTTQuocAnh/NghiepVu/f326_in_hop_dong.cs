@@ -74,7 +74,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             CWordReport v_cwr = new CWordReport("HD_HOC_VIEC.docx",ip_str_path);
             v_cwr.AddFindAndReplace("<ten_tgd>", m_dt_row["HO_TEN_TGD"].ToString());
             v_cwr.AddFindAndReplace("<quoc_tich_tgd>", m_dt_row["QUOC_TICH"].ToString());
-            v_cwr.AddFindAndReplace("<ten_nv>", ip_datarow["HO_TEN_NV"].ToString());
+            v_cwr.AddFindAndReplace("<ten_nv>", ip_datarow["HO_TEN"].ToString());
             v_cwr.AddFindAndReplace("<quoc_tich_nv>", ip_datarow["QUOC_TICH"].ToString());
             v_cwr.AddFindAndReplace("<ngay_sinh>", ip_datarow["NGAY_SINH_NV"].ToString());
             v_cwr.AddFindAndReplace("<que_quan>", ip_datarow["QUE_QUAN"].ToString());
@@ -83,7 +83,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_cwr.AddFindAndReplace("<so_cmt>", ip_datarow["SO_CMT"].ToString());
             v_cwr.AddFindAndReplace("<ngay_cap>", ip_datarow["NGAY_CAP_CMT"].ToString());
             v_cwr.AddFindAndReplace("<noi_cap>", ip_datarow["NOI_CAP"].ToString());
-            v_cwr.AddFindAndReplace("<ngay_bat_dau_hd>", ip_datarow["NGAY_BAT_DAU_HD"].ToString());
+            v_cwr.AddFindAndReplace("<ngay_bat_dau_hd>", ip_datarow["NGAY_BAT_DAU"].ToString());
             v_cwr.AddFindAndReplace("<mo_ta_cv>", "");
             v_cwr.AddFindAndReplace("<ngay_hien_tai>", DateTime.Now.Day.ToString());
             v_cwr.AddFindAndReplace("<thang_hien_tai>", DateTime.Now.Month.ToString());
@@ -96,7 +96,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             CWordReport v_cwr = new CWordReport("HD_THU_VIEC.docx", ip_str_path);
             v_cwr.AddFindAndReplace("<ten_tgd>", m_dt_row["HO_TEN_TGD"].ToString());
             v_cwr.AddFindAndReplace("<quoc_tich_tgd>", m_dt_row["QUOC_TICH"].ToString());
-            v_cwr.AddFindAndReplace("<ten_nv>", ip_datarow["HO_TEN_NV"].ToString());
+            v_cwr.AddFindAndReplace("<ten_nv>", ip_datarow["HO_TEN"].ToString());
             v_cwr.AddFindAndReplace("<quoc_tich_nv>", ip_datarow["QUOC_TICH"].ToString());
             v_cwr.AddFindAndReplace("<ngay_sinh>", ip_datarow["NGAY_SINH_NV"].ToString());
             v_cwr.AddFindAndReplace("<que_quan>", ip_datarow["QUE_QUAN"].ToString());
@@ -105,14 +105,14 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_cwr.AddFindAndReplace("<so_cmt>", ip_datarow["SO_CMT"].ToString());
             v_cwr.AddFindAndReplace("<ngay_cap>", ip_datarow["NGAY_CAP_CMT"].ToString());
             v_cwr.AddFindAndReplace("<noi_cap>", ip_datarow["NOI_CAP"].ToString());
-            v_cwr.AddFindAndReplace("<ngay_bat_dau_hd>", ip_datarow["NGAY_BAT_DAU_HD"].ToString());
-            v_cwr.AddFindAndReplace("<ngay_ket_thuc_hd>", ip_datarow["NGAY_KET_THUC_HD"].ToString());
+            v_cwr.AddFindAndReplace("<ngay_bat_dau_hd>", ip_datarow["NGAY_BAT_DAU"].ToString());
+            v_cwr.AddFindAndReplace("<ngay_ket_thuc_hd>", ip_datarow["NGAY_KET_THUC"].ToString());
             v_cwr.AddFindAndReplace("<chuc_vu>", ip_datarow["CHUC_VU"].ToString());
             v_cwr.AddFindAndReplace("<don_vi>", ip_datarow["TEN_DON_VI"].ToString());
             v_cwr.AddFindAndReplace("<mo_ta_cv>", "");
             v_cwr.AddFindAndReplace("<ma_lcd>", ip_datarow["MA_LCD"].ToString());
             v_cwr.AddFindAndReplace("<muc_lcd>", ip_datarow["MUC_LCD"].ToString());
-            v_cwr.AddFindAndReplace("<so_tien_lcd>", ip_datarow["SO_TIEN_LCD"].ToString());
+            v_cwr.AddFindAndReplace("<so_tien_lcd>", ip_datarow["SO_TIEN_LCD_THUC_TE"].ToString());
             v_cwr.AddFindAndReplace("<ngay_hien_tai>", DateTime.Now.Day.ToString());
             v_cwr.AddFindAndReplace("<thang_hien_tai>", DateTime.Now.Month.ToString());
             v_cwr.AddFindAndReplace("<nam_hien_tai>", DateTime.Now.Year.ToString());
@@ -124,7 +124,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             CWordReport v_cwr = new CWordReport("HD_XAC_DINH_THOI_HAN.docx", ip_str_path);
             v_cwr.AddFindAndReplace("<ten_tgd>", m_dt_row["HO_TEN_TGD"].ToString());
             v_cwr.AddFindAndReplace("<quoc_tich_tgd>", m_dt_row["QUOC_TICH"].ToString());
-            v_cwr.AddFindAndReplace("<ten_nv>", ip_datarow["HO_TEN_NV"].ToString());
+            v_cwr.AddFindAndReplace("<ten_nv>", ip_datarow["HO_TEN"].ToString());
             v_cwr.AddFindAndReplace("<quoc_tich_nv>", ip_datarow["QUOC_TICH"].ToString());
             v_cwr.AddFindAndReplace("<ngay_sinh>", ip_datarow["NGAY_SINH_NV"].ToString());
             v_cwr.AddFindAndReplace("<que_quan>", ip_datarow["QUE_QUAN"].ToString());
@@ -133,7 +133,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_cwr.AddFindAndReplace("<so_cmt>", ip_datarow["SO_CMT"].ToString());
             v_cwr.AddFindAndReplace("<ngay_cap>", ip_datarow["NGAY_CAP_CMT"].ToString());
             v_cwr.AddFindAndReplace("<noi_cap>", ip_datarow["NOI_CAP"].ToString());
-            v_cwr.AddFindAndReplace("<ngay_bat_dau_hd>", ip_datarow["NGAY_BAT_DAU_HD"].ToString());
+            v_cwr.AddFindAndReplace("<ngay_bat_dau_hd>", ip_datarow["NGAY_BAT_DAU"].ToString());
             v_cwr.AddFindAndReplace("<chuc_vu>", ip_datarow["CHUC_VU"].ToString());
             v_cwr.AddFindAndReplace("<don_vi>", ip_datarow["TEN_DON_VI"].ToString());
             v_cwr.AddFindAndReplace("<mo_ta_cv>", "");

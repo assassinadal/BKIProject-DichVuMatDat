@@ -240,18 +240,19 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
 
         private bool check_nv_da_co_hop_dong(string ma_nv)
         {
-            decimal id_nv = find_id_nv_by_ma_nv(ma_nv);
-            decimal id = (from DataRow dr in m_dt_ma_hop_dong.Rows
-                          where (decimal)dr["ID_NHAN_VIEN"] == id_nv
-                          select (decimal)dr["ID"]).FirstOrDefault();
-            if (id > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            //decimal id_nv = find_id_nv_by_ma_nv(ma_nv);
+            //decimal id = (from DataRow dr in m_dt_ma_hop_dong.Rows
+            //              where (decimal)dr["ID_NHAN_VIEN"] == id_nv
+            //              select (decimal)dr["ID"]).FirstOrDefault();
+            //if (id > 0)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+            return false;
         }
 
         private bool check_ma_hop_dong(DataTable ip_dt, string ma)
@@ -673,7 +674,17 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             }
             v_us_gd_hd.datNGAY_LAP = DateTime.Now.Date;
         }
-
+        private decimal get_id_hop_dong_hien_tai(string ip_id_nv)
+        {
+            US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
+            return v_us.GetHopDongHienTaiCuaNV(ip_id_nv);
+        }
+        private void ket_thuc_hop_dong_cu(decimal ip_id_hop_dong, DateTime ip_dat_ngay_ket_thuc)
+        {
+            US_GD_HOP_DONG v_us = new US_GD_HOP_DONG(ip_id_hop_dong);
+            v_us.datNGAY_KET_THUC = ip_dat_ngay_ket_thuc;
+            v_us.Update();
+        }
         private void save_data()
         {
             US_GD_HOP_DONG v_us_gd_hd = new US_GD_HOP_DONG();
@@ -688,9 +699,19 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                     grid_to_us_gd_hop_dong(v_us_gd_hd, data);
                     grid_to_us_gd_cong_tac(v_us_gd_cong_tac, data);
                     grid_to_us_gd_lns(v_us_gd_hs_lns, data);
+
+                    decimal v_id_hop_dong = get_id_hop_dong_hien_tai(v_us_gd_hd.dcID_NHAN_VIEN.ToString());
+                    
+
                     v_us_gd_hd.BeginTransaction();
+                    if(v_id_hop_dong != 0)
+                    {
+                        ket_thuc_hop_dong_cu(v_id_hop_dong, v_us_gd_hd.datNGAY_BAT_DAU);
+                    }
                     v_us_gd_cong_tac.UseTransOfUSObject(v_us_gd_hd);
+                    v_us_gd_cong_tac.CapNhatHetHieuLucCongTac(v_us_gd_hd.dcID_NHAN_VIEN, v_us_gd_hd.datNGAY_BAT_DAU);
                     v_us_gd_hs_lns.UseTransOfUSObject(v_us_gd_hd);
+                    v_us_gd_hs_lns.KetThucLuongNangSuatNhanVien(v_us_gd_hd.dcID_NHAN_VIEN, v_us_gd_hd.datNGAY_BAT_DAU);
                     v_us_gd_hd.Insert();
                     v_us_gd_cong_tac.Insert();
                     v_us_gd_hs_lns.Insert();

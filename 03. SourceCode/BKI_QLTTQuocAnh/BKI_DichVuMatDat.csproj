@@ -15,7 +15,7 @@
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>\\localhost\Users\tuyen\Desktop\DVMD_PUBLISH_RELEASE\</PublishUrl>
+    <PublishUrl>\\localhost\Users\tuyen\Desktop\DVMD_RELEASE_V2\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -25,14 +25,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://27.118.16.60:3333/</InstallUrl>
+    <InstallUrl>http://103.47.194.110:1234/</InstallUrl>
     <TargetCulture>vi-VN</TargetCulture>
     <ProductName>HRM_RELEASE</ProductName>
     <PublisherName>TuyenNT</PublisherName>
     <SuiteName>HRM_RELEASE</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -386,6 +386,12 @@
     <Compile Include="BaoCao\f492_quyet_toan_thue_TNCN.Designer.cs">
       <DependentUpon>f492_quyet_toan_thue_TNCN.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\Luong\f495_thong_tin_chot_bang_luong_thang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\Luong\f495_thong_tin_chot_bang_luong_thang.Designer.cs">
+      <DependentUpon>f495_thong_tin_chot_bang_luong_thang.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\SplashScreen1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -689,6 +695,7 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1247,6 +1254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f492_quyet_toan_thue_TNCN.resx">
       <DependentUpon>f492_quyet_toan_thue_TNCN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\Luong\f495_thong_tin_chot_bang_luong_thang.resx">
+      <DependentUpon>f495_thong_tin_chot_bang_luong_thang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f299_chinh_lns_nhan_vien_de.resx">
       <DependentUpon>f299_chinh_lns_nhan_vien_de.cs</DependentUpon>
@@ -2424,9 +2434,7 @@
       <DefaultIcon>paper1331.ico</DefaultIcon>
     </FileAssociation>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BaoCao\Luong\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -161,10 +162,10 @@
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_pnl_ket_thuc_nghi_tam_thoi = new DevExpress.XtraEditors.PanelControl();
@@ -612,7 +613,7 @@
             // 
             // m_cmd_len_luong_cho_nv
             // 
-            this.m_cmd_len_luong_cho_nv.Caption = "Lên lương cho nhân viên";
+            this.m_cmd_len_luong_cho_nv.Caption = "Quản lý hệ số LNS";
             this.m_cmd_len_luong_cho_nv.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_len_luong_cho_nv.Glyph")));
             this.m_cmd_len_luong_cho_nv.Id = 39;
             this.m_cmd_len_luong_cho_nv.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_len_luong_cho_nhan_vien;
@@ -892,14 +893,13 @@
             // 
             // m_cmd_chuyen_trang_thai_LD
             // 
-            this.m_cmd_chuyen_trang_thai_LD.Caption = "Chuyển trạng thái lao động";
+            this.m_cmd_chuyen_trang_thai_LD.Caption = "Quản lý trạng thái LĐ";
             this.m_cmd_chuyen_trang_thai_LD.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_chuyen_trang_thai_LD.Glyph")));
             this.m_cmd_chuyen_trang_thai_LD.Id = 70;
             this.m_cmd_chuyen_trang_thai_LD.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_chuyen_trang_thai_lao_dong_;
             this.m_cmd_chuyen_trang_thai_LD.Name = "m_cmd_chuyen_trang_thai_LD";
             this.m_cmd_chuyen_trang_thai_LD.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.m_cmd_chuyen_trang_thai_LD.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_ql_thuong_le_tet
             // 
@@ -1420,7 +1420,6 @@
             // 
             // ribbonPageGroup10
             // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_chuyen_trang_thai_LD);
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_nhan_vien_loai_lao_dong);
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_dat_hs_lns_lcd);
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_dang_ky_bao_hiem_y_te);

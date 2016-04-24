@@ -497,8 +497,11 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             v_us.dcID_LOAI_CONG_TAC = 157;
             v_us.dcID_VI_TRI = CIPConvert.ToDecimal(m_sle_chuc_vu.EditValue);
             v_us.dcSO_HO_SO = ExecuteFuntion.GetSoHoSoNext(v_us.dcID_DON_VI, v_us.dcID_VI_TRI);
+
             v_us.UseTransOfUSObject(m_us_gd_hd);
+            v_us.CapNhatHetHieuLucCongTac(v_us.dcID_NHAN_VIEN, m_dat_ngay_bat_dau.DateTime.AddDays(-1).Date);
             v_us.Insert();
+            
             //v_us.CommitTransaction();
         }
 

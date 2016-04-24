@@ -23,6 +23,7 @@ using BKI_DichVuMatDat.BaoCao.ThuNhapKhac;
 using BKI_DichVuMatDat.NghiepVu.Luong;
 using BKI_DichVuMatDat.NghiepVu.NhanSu;
 using BKI_DichVuMatDat.NghiepVu.HopDong;
+using BKI_DichVuMatDat.BaoCao.Luong;
 //using BKI_DichVuMatDat.BaoCao.Luong;
 
 namespace BKI_DichVuMatDat
@@ -513,17 +514,17 @@ namespace BKI_DichVuMatDat
 
         void m_cmd_ds_chot_bang_luong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //try
-            //{
-            //    f495_thong_tin_chot_bang_luong_thang v_f = new f495_thong_tin_chot_bang_luong_thang();
-            //    if(IsExistFormName(v_f)) return;
-            //    v_f.MdiParent = this;
-            //    v_f.Show();
-            //}
-            //catch (Exception v_e)
-            //{
-            //    CSystemLog_301.ExceptionHandle(v_e);
-            //}
+            try
+            {
+                f495_thong_tin_chot_bang_luong_thang v_f = new f495_thong_tin_chot_bang_luong_thang();
+                if(IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_cham_cong_lam_them_ItemClick(object sender, ItemClickEventArgs e)

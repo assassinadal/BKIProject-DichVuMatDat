@@ -15,6 +15,7 @@ using IP.Core.IPCommon;
 using System.Globalization;
 using DevExpress.XtraEditors;
 using IP.Core.IPSystemAdmin;
+using BKI_DichVuMatDat.COMMON;
 
 
 namespace BKI_DichVuMatDat.NghiepVu
@@ -240,6 +241,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 ip_us.strNGUOI_SUA = CAppContext_201.getCurrentUserName();
             }
             ip_us.strDA_XOA = "N";
+            //ip_us.dcSO_HO_SO = ExecuteFuntion.GetSoHoSoNext(ip_us.dcID_DON_VI, ip_us.dcID_VI_TRI);
         }
         private void us_2_form(US_GD_CONG_TAC ip_us)
         {
@@ -331,6 +333,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     case e_loai_cap_nhat.THEM_MOI_CONG_TAC:
                         v_us_gd_ct.Insert();
+                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                         break;
                     case e_loai_cap_nhat.LAM_THOI_CONG_TAC:
                         save_for_lam_thoi_cong_tac(v_us_gd_ct);

@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f309_quan_ly_cong_tac));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_tree_don_vi = new DevExpress.XtraTreeList.TreeList();
             this.colTEN_DON_VI = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colSO_LUONG_NS_DANG_CONG_TAC = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.imageCollection = new DevExpress.Utils.ImageCollection();
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -233,8 +234,6 @@
             this.gridColumn1.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn1.FieldName = "ID";
             this.gridColumn1.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.gridColumn1.MaxWidth = 100;
-            this.gridColumn1.MinWidth = 100;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Width = 72;
             // 
@@ -246,8 +245,6 @@
             this.colMA_TRA_CUU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colMA_TRA_CUU.Caption = "Mã tra cứu";
             this.colMA_TRA_CUU.FieldName = "MA_TRA_CUU";
-            this.colMA_TRA_CUU.MaxWidth = 100;
-            this.colMA_TRA_CUU.MinWidth = 100;
             this.colMA_TRA_CUU.Name = "colMA_TRA_CUU";
             this.colMA_TRA_CUU.Visible = true;
             this.colMA_TRA_CUU.VisibleIndex = 1;
@@ -261,8 +258,6 @@
             this.colMA_NV.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colMA_NV.Caption = "Mã nhân viên";
             this.colMA_NV.FieldName = "MA_NV";
-            this.colMA_NV.MaxWidth = 100;
-            this.colMA_NV.MinWidth = 100;
             this.colMA_NV.Name = "colMA_NV";
             this.colMA_NV.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MA_NV", "SL : {0}")});
@@ -278,8 +273,6 @@
             this.colHO_DEM.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colHO_DEM.Caption = "Họ đệm";
             this.colHO_DEM.FieldName = "HO_DEM";
-            this.colHO_DEM.MaxWidth = 100;
-            this.colHO_DEM.MinWidth = 100;
             this.colHO_DEM.Name = "colHO_DEM";
             this.colHO_DEM.Width = 100;
             // 
@@ -292,8 +285,6 @@
             this.colTEN.Caption = "Tên";
             this.colTEN.FieldName = "TEN";
             this.colTEN.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.colTEN.MaxWidth = 100;
-            this.colTEN.MinWidth = 100;
             this.colTEN.Name = "colTEN";
             this.colTEN.Width = 100;
             // 
@@ -305,12 +296,10 @@
             this.colHO_TEN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colHO_TEN.Caption = "Họ tên";
             this.colHO_TEN.FieldName = "HO_TEN";
-            this.colHO_TEN.MaxWidth = 100;
-            this.colHO_TEN.MinWidth = 100;
             this.colHO_TEN.Name = "colHO_TEN";
             this.colHO_TEN.Visible = true;
             this.colHO_TEN.VisibleIndex = 2;
-            this.colHO_TEN.Width = 100;
+            this.colHO_TEN.Width = 133;
             // 
             // colCHUC_DANH
             // 
@@ -318,11 +307,9 @@
             this.colCHUC_DANH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colCHUC_DANH.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colCHUC_DANH.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colCHUC_DANH.Caption = "Chức vụ";
+            this.colCHUC_DANH.Caption = "Chức vụ hiện tại";
             this.colCHUC_DANH.FieldName = "CHUC_DANH";
             this.colCHUC_DANH.FieldNameSortGroup = "THU_TU_CHUC_VU";
-            this.colCHUC_DANH.MaxWidth = 100;
-            this.colCHUC_DANH.MinWidth = 100;
             this.colCHUC_DANH.Name = "colCHUC_DANH";
             this.colCHUC_DANH.Visible = true;
             this.colCHUC_DANH.VisibleIndex = 3;
@@ -336,8 +323,6 @@
             this.colGT.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colGT.Caption = "Giới tính";
             this.colGT.FieldName = "GIOI_TINH";
-            this.colGT.MaxWidth = 100;
-            this.colGT.MinWidth = 100;
             this.colGT.Name = "colGT";
             this.colGT.Visible = true;
             this.colGT.VisibleIndex = 4;
@@ -351,8 +336,6 @@
             this.colEMAIL.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colEMAIL.Caption = "Email";
             this.colEMAIL.FieldName = "EMAIL";
-            this.colEMAIL.MaxWidth = 100;
-            this.colEMAIL.MinWidth = 100;
             this.colEMAIL.Name = "colEMAIL";
             this.colEMAIL.Visible = true;
             this.colEMAIL.VisibleIndex = 5;
@@ -366,8 +349,6 @@
             this.colSDT.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colSDT.Caption = "Số điện thoại";
             this.colSDT.FieldName = "SDT";
-            this.colSDT.MaxWidth = 100;
-            this.colSDT.MinWidth = 100;
             this.colSDT.Name = "colSDT";
             this.colSDT.Visible = true;
             this.colSDT.VisibleIndex = 6;
@@ -381,8 +362,6 @@
             this.colSO_TAI_KHOAN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colSO_TAI_KHOAN.Caption = "Số tài khoản";
             this.colSO_TAI_KHOAN.FieldName = "SO_TAI_KHOAN";
-            this.colSO_TAI_KHOAN.MaxWidth = 100;
-            this.colSO_TAI_KHOAN.MinWidth = 100;
             this.colSO_TAI_KHOAN.Name = "colSO_TAI_KHOAN";
             this.colSO_TAI_KHOAN.Visible = true;
             this.colSO_TAI_KHOAN.VisibleIndex = 7;
@@ -396,8 +375,6 @@
             this.colNGAN_HANG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAN_HANG.Caption = "Ngân hàng";
             this.colNGAN_HANG.FieldName = "NGAN_HANG";
-            this.colNGAN_HANG.MaxWidth = 100;
-            this.colNGAN_HANG.MinWidth = 100;
             this.colNGAN_HANG.Name = "colNGAN_HANG";
             this.colNGAN_HANG.Visible = true;
             this.colNGAN_HANG.VisibleIndex = 8;
@@ -411,8 +388,6 @@
             this.colNGAY_CAP_THE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAY_CAP_THE.Caption = "Ngày cấp thẻ";
             this.colNGAY_CAP_THE.FieldName = "NGAY_CAP_THE";
-            this.colNGAY_CAP_THE.MaxWidth = 100;
-            this.colNGAY_CAP_THE.MinWidth = 100;
             this.colNGAY_CAP_THE.Name = "colNGAY_CAP_THE";
             this.colNGAY_CAP_THE.Visible = true;
             this.colNGAY_CAP_THE.VisibleIndex = 9;
@@ -426,8 +401,6 @@
             this.colNGAY_HET_HAN_THE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAY_HET_HAN_THE.Caption = "Hết hạn thẻ";
             this.colNGAY_HET_HAN_THE.FieldName = "NGAY_HET_HAN_THE";
-            this.colNGAY_HET_HAN_THE.MaxWidth = 100;
-            this.colNGAY_HET_HAN_THE.MinWidth = 100;
             this.colNGAY_HET_HAN_THE.Name = "colNGAY_HET_HAN_THE";
             this.colNGAY_HET_HAN_THE.Visible = true;
             this.colNGAY_HET_HAN_THE.VisibleIndex = 10;
@@ -441,8 +414,6 @@
             this.colNGAY_SINH.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAY_SINH.Caption = "Ngày sinh";
             this.colNGAY_SINH.FieldName = "NGAY_SINH";
-            this.colNGAY_SINH.MaxWidth = 100;
-            this.colNGAY_SINH.MinWidth = 100;
             this.colNGAY_SINH.Name = "colNGAY_SINH";
             this.colNGAY_SINH.Visible = true;
             this.colNGAY_SINH.VisibleIndex = 11;
@@ -456,8 +427,6 @@
             this.colHON_NHAN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colHON_NHAN.Caption = "Hôn nhân";
             this.colHON_NHAN.FieldName = "HON_NHAN";
-            this.colHON_NHAN.MaxWidth = 100;
-            this.colHON_NHAN.MinWidth = 100;
             this.colHON_NHAN.Name = "colHON_NHAN";
             this.colHON_NHAN.Visible = true;
             this.colHON_NHAN.VisibleIndex = 12;
@@ -471,8 +440,6 @@
             this.colSO_CMT.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colSO_CMT.Caption = "Số CMT";
             this.colSO_CMT.FieldName = "SO_CMT";
-            this.colSO_CMT.MaxWidth = 100;
-            this.colSO_CMT.MinWidth = 100;
             this.colSO_CMT.Name = "colSO_CMT";
             this.colSO_CMT.Visible = true;
             this.colSO_CMT.VisibleIndex = 13;
@@ -486,8 +453,6 @@
             this.colNGAY_CAP.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAY_CAP.Caption = "Ngày cấp";
             this.colNGAY_CAP.FieldName = "NGAY_CAP";
-            this.colNGAY_CAP.MaxWidth = 100;
-            this.colNGAY_CAP.MinWidth = 100;
             this.colNGAY_CAP.Name = "colNGAY_CAP";
             this.colNGAY_CAP.Visible = true;
             this.colNGAY_CAP.VisibleIndex = 14;
@@ -501,8 +466,6 @@
             this.colNOI_CAP.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNOI_CAP.Caption = "Nơi cấp";
             this.colNOI_CAP.FieldName = "NOI_CAP";
-            this.colNOI_CAP.MaxWidth = 100;
-            this.colNOI_CAP.MinWidth = 100;
             this.colNOI_CAP.Name = "colNOI_CAP";
             this.colNOI_CAP.Visible = true;
             this.colNOI_CAP.VisibleIndex = 15;
@@ -516,8 +479,6 @@
             this.colQUOC_TICH.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colQUOC_TICH.Caption = "Quốc tịch";
             this.colQUOC_TICH.FieldName = "QUOC_TICH";
-            this.colQUOC_TICH.MaxWidth = 100;
-            this.colQUOC_TICH.MinWidth = 100;
             this.colQUOC_TICH.Name = "colQUOC_TICH";
             this.colQUOC_TICH.Visible = true;
             this.colQUOC_TICH.VisibleIndex = 16;
@@ -531,8 +492,6 @@
             this.colDAN_TOC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colDAN_TOC.Caption = "Dân tộc";
             this.colDAN_TOC.FieldName = "DAN_TOC";
-            this.colDAN_TOC.MaxWidth = 100;
-            this.colDAN_TOC.MinWidth = 100;
             this.colDAN_TOC.Name = "colDAN_TOC";
             this.colDAN_TOC.Visible = true;
             this.colDAN_TOC.VisibleIndex = 17;
@@ -546,8 +505,6 @@
             this.colTON_GIAO.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colTON_GIAO.Caption = "Tôn giáo";
             this.colTON_GIAO.FieldName = "TON_GIAO";
-            this.colTON_GIAO.MaxWidth = 100;
-            this.colTON_GIAO.MinWidth = 100;
             this.colTON_GIAO.Name = "colTON_GIAO";
             this.colTON_GIAO.Visible = true;
             this.colTON_GIAO.VisibleIndex = 18;
@@ -561,8 +518,6 @@
             this.colNOI_SINH.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNOI_SINH.Caption = "Nơi sinh";
             this.colNOI_SINH.FieldName = "NOI_SINH";
-            this.colNOI_SINH.MaxWidth = 100;
-            this.colNOI_SINH.MinWidth = 100;
             this.colNOI_SINH.Name = "colNOI_SINH";
             this.colNOI_SINH.Visible = true;
             this.colNOI_SINH.VisibleIndex = 19;
@@ -576,8 +531,6 @@
             this.colQUE_QUAN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colQUE_QUAN.Caption = "Quê quán";
             this.colQUE_QUAN.FieldName = "QUE_QUAN";
-            this.colQUE_QUAN.MaxWidth = 100;
-            this.colQUE_QUAN.MinWidth = 100;
             this.colQUE_QUAN.Name = "colQUE_QUAN";
             this.colQUE_QUAN.Visible = true;
             this.colQUE_QUAN.VisibleIndex = 20;
@@ -591,8 +544,6 @@
             this.colDIA_CHI_THUONG_TRU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colDIA_CHI_THUONG_TRU.Caption = "Địa chỉ thường trú";
             this.colDIA_CHI_THUONG_TRU.FieldName = "DIA_CHI_THUONG_TRU";
-            this.colDIA_CHI_THUONG_TRU.MaxWidth = 100;
-            this.colDIA_CHI_THUONG_TRU.MinWidth = 100;
             this.colDIA_CHI_THUONG_TRU.Name = "colDIA_CHI_THUONG_TRU";
             this.colDIA_CHI_THUONG_TRU.Visible = true;
             this.colDIA_CHI_THUONG_TRU.VisibleIndex = 21;
@@ -606,8 +557,6 @@
             this.colDIA_CHI_TAM_TRU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colDIA_CHI_TAM_TRU.Caption = "Địa chỉ tạm trú";
             this.colDIA_CHI_TAM_TRU.FieldName = "DIA_CHI_TAM_TRU";
-            this.colDIA_CHI_TAM_TRU.MaxWidth = 100;
-            this.colDIA_CHI_TAM_TRU.MinWidth = 100;
             this.colDIA_CHI_TAM_TRU.Name = "colDIA_CHI_TAM_TRU";
             this.colDIA_CHI_TAM_TRU.Visible = true;
             this.colDIA_CHI_TAM_TRU.VisibleIndex = 22;
@@ -621,8 +570,6 @@
             this.colDIA_CHI_LIEN_LAC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colDIA_CHI_LIEN_LAC.Caption = "Địa chỉ liên lạc";
             this.colDIA_CHI_LIEN_LAC.FieldName = "DIA_CHI_LIEN_LAC";
-            this.colDIA_CHI_LIEN_LAC.MaxWidth = 100;
-            this.colDIA_CHI_LIEN_LAC.MinWidth = 100;
             this.colDIA_CHI_LIEN_LAC.Name = "colDIA_CHI_LIEN_LAC";
             this.colDIA_CHI_LIEN_LAC.Visible = true;
             this.colDIA_CHI_LIEN_LAC.VisibleIndex = 23;
@@ -636,8 +583,6 @@
             this.colMA_SO_THUE_CA_NHAN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colMA_SO_THUE_CA_NHAN.Caption = "Số thuế cá nhân";
             this.colMA_SO_THUE_CA_NHAN.FieldName = "MA_SO_THUE_CA_NHAN";
-            this.colMA_SO_THUE_CA_NHAN.MaxWidth = 100;
-            this.colMA_SO_THUE_CA_NHAN.MinWidth = 100;
             this.colMA_SO_THUE_CA_NHAN.Name = "colMA_SO_THUE_CA_NHAN";
             this.colMA_SO_THUE_CA_NHAN.Visible = true;
             this.colMA_SO_THUE_CA_NHAN.VisibleIndex = 24;
@@ -651,8 +596,6 @@
             this.colCHUYEN_MON.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colCHUYEN_MON.Caption = "Chuyên môn";
             this.colCHUYEN_MON.FieldName = "CHUYEN_MON";
-            this.colCHUYEN_MON.MaxWidth = 100;
-            this.colCHUYEN_MON.MinWidth = 100;
             this.colCHUYEN_MON.Name = "colCHUYEN_MON";
             this.colCHUYEN_MON.Visible = true;
             this.colCHUYEN_MON.VisibleIndex = 25;
@@ -666,8 +609,6 @@
             this.colTRINH_DO_VAN_HOA.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colTRINH_DO_VAN_HOA.Caption = "Trình độ văn hóa";
             this.colTRINH_DO_VAN_HOA.FieldName = "TRINH_DO_VAN_HOA";
-            this.colTRINH_DO_VAN_HOA.MaxWidth = 100;
-            this.colTRINH_DO_VAN_HOA.MinWidth = 100;
             this.colTRINH_DO_VAN_HOA.Name = "colTRINH_DO_VAN_HOA";
             this.colTRINH_DO_VAN_HOA.Visible = true;
             this.colTRINH_DO_VAN_HOA.VisibleIndex = 26;
@@ -681,8 +622,6 @@
             this.colNAM_TOT_NGHIEP.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNAM_TOT_NGHIEP.Caption = "Năm tốt nghiệp";
             this.colNAM_TOT_NGHIEP.FieldName = "NAM_TOT_NGHIEP";
-            this.colNAM_TOT_NGHIEP.MaxWidth = 100;
-            this.colNAM_TOT_NGHIEP.MinWidth = 100;
             this.colNAM_TOT_NGHIEP.Name = "colNAM_TOT_NGHIEP";
             this.colNAM_TOT_NGHIEP.Visible = true;
             this.colNAM_TOT_NGHIEP.VisibleIndex = 27;
@@ -696,8 +635,6 @@
             this.colTOT_NGHIEP_TAI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colTOT_NGHIEP_TAI.Caption = "Tốt nghiệp tại";
             this.colTOT_NGHIEP_TAI.FieldName = "TOT_NGHIEP_TAI";
-            this.colTOT_NGHIEP_TAI.MaxWidth = 100;
-            this.colTOT_NGHIEP_TAI.MinWidth = 100;
             this.colTOT_NGHIEP_TAI.Name = "colTOT_NGHIEP_TAI";
             this.colTOT_NGHIEP_TAI.Visible = true;
             this.colTOT_NGHIEP_TAI.VisibleIndex = 28;
@@ -711,8 +648,6 @@
             this.colNGAY_VAO_HANG_KHONG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAY_VAO_HANG_KHONG.Caption = "Ngày vào hàng không";
             this.colNGAY_VAO_HANG_KHONG.FieldName = "NGAY_VAO_HANG_KHONG";
-            this.colNGAY_VAO_HANG_KHONG.MaxWidth = 100;
-            this.colNGAY_VAO_HANG_KHONG.MinWidth = 100;
             this.colNGAY_VAO_HANG_KHONG.Name = "colNGAY_VAO_HANG_KHONG";
             this.colNGAY_VAO_HANG_KHONG.Visible = true;
             this.colNGAY_VAO_HANG_KHONG.VisibleIndex = 29;
@@ -726,8 +661,6 @@
             this.colNGAY_TIEP_NHAN_VAO_TCT.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAY_TIEP_NHAN_VAO_TCT.Caption = "Ngày tiếp nhận vào tổng công ty";
             this.colNGAY_TIEP_NHAN_VAO_TCT.FieldName = "NGAY_TIEP_NHAN_VAO_TCT";
-            this.colNGAY_TIEP_NHAN_VAO_TCT.MaxWidth = 100;
-            this.colNGAY_TIEP_NHAN_VAO_TCT.MinWidth = 100;
             this.colNGAY_TIEP_NHAN_VAO_TCT.Name = "colNGAY_TIEP_NHAN_VAO_TCT";
             this.colNGAY_TIEP_NHAN_VAO_TCT.Visible = true;
             this.colNGAY_TIEP_NHAN_VAO_TCT.VisibleIndex = 30;
@@ -741,8 +674,6 @@
             this.colNGAY_CHINH_THUC_TIEP_NHAN.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colNGAY_CHINH_THUC_TIEP_NHAN.Caption = "Ngày chính thức tiếp nhận";
             this.colNGAY_CHINH_THUC_TIEP_NHAN.FieldName = "NGAY_CHINH_THUC_TIEP_NHAN";
-            this.colNGAY_CHINH_THUC_TIEP_NHAN.MaxWidth = 100;
-            this.colNGAY_CHINH_THUC_TIEP_NHAN.MinWidth = 100;
             this.colNGAY_CHINH_THUC_TIEP_NHAN.Name = "colNGAY_CHINH_THUC_TIEP_NHAN";
             this.colNGAY_CHINH_THUC_TIEP_NHAN.Visible = true;
             this.colNGAY_CHINH_THUC_TIEP_NHAN.VisibleIndex = 31;
@@ -768,8 +699,6 @@
             this.gridColumn2.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn2.Caption = "Đơn vị";
             this.gridColumn2.FieldName = "TEN_DON_VI";
-            this.gridColumn2.MaxWidth = 100;
-            this.gridColumn2.MinWidth = 100;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Width = 100;
             // 
@@ -817,10 +746,7 @@
             // m_cmd_xoa_cong_tac
             // 
             this.m_cmd_xoa_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_xoa_cong_tac.Appearance.ForeColor = System.Drawing.Color.DimGray;
             this.m_cmd_xoa_cong_tac.Appearance.Options.UseFont = true;
-            this.m_cmd_xoa_cong_tac.Appearance.Options.UseForeColor = true;
-            this.m_cmd_xoa_cong_tac.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.m_cmd_xoa_cong_tac.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_xoa_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xoa_cong_tac.Image")));
             this.m_cmd_xoa_cong_tac.Location = new System.Drawing.Point(657, 0);
@@ -834,10 +760,7 @@
             // m_cmd_sua_cong_tac
             // 
             this.m_cmd_sua_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_sua_cong_tac.Appearance.ForeColor = System.Drawing.Color.DimGray;
             this.m_cmd_sua_cong_tac.Appearance.Options.UseFont = true;
-            this.m_cmd_sua_cong_tac.Appearance.Options.UseForeColor = true;
-            this.m_cmd_sua_cong_tac.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.m_cmd_sua_cong_tac.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_sua_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_sua_cong_tac.Image")));
             this.m_cmd_sua_cong_tac.Location = new System.Drawing.Point(767, 0);
@@ -853,7 +776,6 @@
             this.m_cmd_refresh.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
             this.m_cmd_refresh.Appearance.Options.UseFont = true;
             this.m_cmd_refresh.Appearance.Options.UseForeColor = true;
-            this.m_cmd_refresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_refresh.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_refresh.Image")));
             this.m_cmd_refresh.Location = new System.Drawing.Point(877, 0);
@@ -865,11 +787,8 @@
             // 
             // m_cmd_cham_dut_cong_tac
             // 
-            this.m_cmd_cham_dut_cong_tac.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.m_cmd_cham_dut_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_cham_dut_cong_tac.Appearance.Options.UseBackColor = true;
             this.m_cmd_cham_dut_cong_tac.Appearance.Options.UseFont = true;
-            this.m_cmd_cham_dut_cong_tac.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.m_cmd_cham_dut_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_cham_dut_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_cham_dut_cong_tac.Image")));
             this.m_cmd_cham_dut_cong_tac.Location = new System.Drawing.Point(440, 0);
@@ -881,13 +800,8 @@
             // 
             // m_cmd_chuyen_cong_tac
             // 
-            this.m_cmd_chuyen_cong_tac.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.m_cmd_chuyen_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_chuyen_cong_tac.Appearance.ForeColor = System.Drawing.Color.White;
-            this.m_cmd_chuyen_cong_tac.Appearance.Options.UseBackColor = true;
             this.m_cmd_chuyen_cong_tac.Appearance.Options.UseFont = true;
-            this.m_cmd_chuyen_cong_tac.Appearance.Options.UseForeColor = true;
-            this.m_cmd_chuyen_cong_tac.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.m_cmd_chuyen_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_chuyen_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chuyen_cong_tac.Image")));
             this.m_cmd_chuyen_cong_tac.Location = new System.Drawing.Point(330, 0);
@@ -899,13 +813,8 @@
             // 
             // m_cmd_lam_thoi_cong_tac
             // 
-            this.m_cmd_lam_thoi_cong_tac.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.m_cmd_lam_thoi_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_lam_thoi_cong_tac.Appearance.ForeColor = System.Drawing.Color.White;
-            this.m_cmd_lam_thoi_cong_tac.Appearance.Options.UseBackColor = true;
             this.m_cmd_lam_thoi_cong_tac.Appearance.Options.UseFont = true;
-            this.m_cmd_lam_thoi_cong_tac.Appearance.Options.UseForeColor = true;
-            this.m_cmd_lam_thoi_cong_tac.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.m_cmd_lam_thoi_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_lam_thoi_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_lam_thoi_cong_tac.Image")));
             this.m_cmd_lam_thoi_cong_tac.Location = new System.Drawing.Point(220, 0);
@@ -917,13 +826,8 @@
             // 
             // m_cmd_kiem_nhiem_cong_tac
             // 
-            this.m_cmd_kiem_nhiem_cong_tac.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(68)))), ((int)(((byte)(173)))));
             this.m_cmd_kiem_nhiem_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_kiem_nhiem_cong_tac.Appearance.ForeColor = System.Drawing.Color.White;
-            this.m_cmd_kiem_nhiem_cong_tac.Appearance.Options.UseBackColor = true;
             this.m_cmd_kiem_nhiem_cong_tac.Appearance.Options.UseFont = true;
-            this.m_cmd_kiem_nhiem_cong_tac.Appearance.Options.UseForeColor = true;
-            this.m_cmd_kiem_nhiem_cong_tac.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.m_cmd_kiem_nhiem_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_kiem_nhiem_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_kiem_nhiem_cong_tac.Image")));
             this.m_cmd_kiem_nhiem_cong_tac.Location = new System.Drawing.Point(110, 0);
@@ -935,13 +839,8 @@
             // 
             // m_cmd_them_moi_cong_tac
             // 
-            this.m_cmd_them_moi_cong_tac.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.m_cmd_them_moi_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_them_moi_cong_tac.Appearance.ForeColor = System.Drawing.Color.White;
-            this.m_cmd_them_moi_cong_tac.Appearance.Options.UseBackColor = true;
             this.m_cmd_them_moi_cong_tac.Appearance.Options.UseFont = true;
-            this.m_cmd_them_moi_cong_tac.Appearance.Options.UseForeColor = true;
-            this.m_cmd_them_moi_cong_tac.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.m_cmd_them_moi_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_them_moi_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_them_moi_cong_tac.Image")));
             this.m_cmd_them_moi_cong_tac.Location = new System.Drawing.Point(0, 0);

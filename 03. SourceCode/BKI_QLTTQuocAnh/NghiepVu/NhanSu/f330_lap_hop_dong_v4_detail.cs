@@ -436,6 +436,10 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
 
         private void cap_nhat_gd_he_so_lns()
         {
+            if(m_txt_he_so_lns.EditValue == null)
+            {
+                return;
+            }
             US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS();
             v_us.dcID_NHAN_VIEN = CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue);
             v_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.DateTime.Date;

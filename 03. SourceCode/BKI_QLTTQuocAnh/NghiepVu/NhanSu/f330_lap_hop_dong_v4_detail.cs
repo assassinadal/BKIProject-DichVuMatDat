@@ -486,7 +486,6 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                     m_us_gd_hd.Insert();
                     break;
                 case DataEntryFormMode.UpdateDataState:
-                    m_us_gd_hd.BeginTransaction();
                     m_us_gd_hd.Update();
                     break;
                 default:

@@ -268,7 +268,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             for (int i = 0; i < m_grv.RowCount; i++)
             {
                 var v_dr = m_grv.GetDataRow(i);
-                for (int j = 2; j < m_grv.Columns.Count - 1; j++)
+                for (int j = 3; j < m_grv.Columns.Count - 1; j++)
                 {
                     if (v_dr[j].ToString().Trim() != "")
                     {
@@ -374,7 +374,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void insert_gd_cham_cong(DataRow ip_dataRow)
         {
-            for (int i = 2; i < ip_dataRow.Table.Columns.Count - 1; i++)
+            for (int i = 3; i < ip_dataRow.Table.Columns.Count - 1; i++)
             {
                 try
                 {

@@ -420,6 +420,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 cap_nhat_gd_hop_dong();
                 cap_nhat_gd_cong_tac();
                 cap_nhat_gd_he_so_lns();
+                m_us_gd_hd.CommitTransaction();
             }
             catch (Exception)
             {
@@ -452,7 +453,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             v_us.UseTransOfUSObject(m_us_gd_hd);
             v_us.KetThucLuongNangSuatNhanVien(v_us.dcID_NHAN_VIEN, m_dat_ngay_bat_dau.DateTime.Date);
             v_us.Insert();
-            v_us.CommitTransaction();
+            //v_us.CommitTransaction();
         }
 
         private decimal find_id_hs_lns()
@@ -485,6 +486,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                     m_us_gd_hd.Insert();
                     break;
                 case DataEntryFormMode.UpdateDataState:
+                    m_us_gd_hd.BeginTransaction();
                     m_us_gd_hd.Update();
                     break;
                 default:

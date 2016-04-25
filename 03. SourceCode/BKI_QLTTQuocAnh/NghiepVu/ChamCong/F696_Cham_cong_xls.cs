@@ -187,7 +187,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             DS_GD_CHAM_CONG v_ds = new DS_GD_CHAM_CONG();
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
-            //v_us.FillDatasetChamCong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
+            v_us.FillDatasetChamCong(v_ds, m_dat_chon_thang.DateTime.Month.ToString(), m_dat_chon_thang.DateTime.Year.ToString());
             DataTable v_dt = v_ds.Tables[0].DefaultView.ToTable(true, "ID_NHAN_VIEN");
             return v_dt.Rows.Count;
         }
@@ -387,6 +387,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     v_us.strDA_XOA = "N";
                     v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                     v_us.datNGAY_LAP = DateTime.Now;
+                    v_us.datNGAY_CHAM_CONG = new DateTime(nam, v_thang_cham_cong, v_ngay_cham_cong);
                     if (ip_dataRow[i].ToString().Trim() == "")
                         v_us.dcID_LOAI_NGAY_CONG = get_loai_ngay_cong(ip_dataRow[i].ToString());
                     else

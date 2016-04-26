@@ -81,7 +81,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             try
             {
                 f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
-                v_frm.display_for_them_cong_tac_moi(get_id_phong_ban());
+                v_frm.display_for_them_cong_tac_moi();
             }
             catch(Exception v_e)
             {

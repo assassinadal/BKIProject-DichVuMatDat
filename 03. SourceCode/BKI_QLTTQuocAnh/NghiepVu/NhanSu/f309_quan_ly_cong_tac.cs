@@ -82,53 +82,8 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         private void them_moi_cong_tac()
         {
             f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
-            //v_frm.display_for_them_cong_tac_moi(get_id_phong_ban());
-            //refresh_data();
-        }
-        private void cap_nhat_lam_thoi_cong_tac()
-        {
-            //if(!is_nhan_vien_seleted())
-            //{
-            //    return;
-            //}
-            //f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
-            //v_frm.display_for_cap_nhat_lam_thoi_cong_tac(get_id_nhan_vien(), get_id_phong_ban());
-
-            //refresh_data();
-        }
-        private void cap_nhat_kiem_nhiem_cong_tac()
-        {
-            //if(!is_nhan_vien_seleted())
-            //{
-            //    return;
-            //}
-            //f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
-            //v_frm.display_for_kiem_nhiem_cong_tac(get_id_nhan_vien(), get_id_phong_ban());
-
-            //refresh_data();
-        }
-        private void cap_nhat_chuyen_cong_tac()
-        {
-            //if(!is_nhan_vien_seleted())
-            //{
-            //    return;
-            //}
-            //f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
-            //v_frm.display_for_chuyen_cong_tac(get_id_nhan_vien(), get_id_phong_ban());
-
-            //refresh_data();
-        }
-        private void cap_nhat_cham_dut_cong_tac()
-        {
-            //if(!is_nhan_vien_seleted())
-            //{
-            //    return;
-            //}
-            //var v_dc_id_gd_cong_tac = Convert.ToDecimal(m_grv.GetRowCellValue(m_grv.FocusedRowHandle, V_GD_CONG_TAC_2.ID));
-            //f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
-            ////v_frm.display_for_cham_dut_cong_tac(v_dc_id_gd_cong_tac);
-            //v_frm.display_for_cham_dut_cong_tac(v_dc_id_gd_cong_tac, get_id_phong_ban());
-            //refresh_data();
+            v_frm.display_for_them_cong_tac_moi();
+            refresh_data();
         }
         private void sua_cong_tac()
         {
@@ -161,11 +116,6 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             Load += f311_danh_sach_nhan_vien_theo_don_vi_Load;
             m_cmd_them_moi_cong_tac.Click += m_cmd_them_moi_cong_tac_Click;
             m_cmd_refresh.Click += m_cmd_refresh_Click;
-            m_cmd_kiem_nhiem_cong_tac.Click += m_cmd_kiem_nhiem_cong_tac_Click;
-            m_cmd_lam_thoi_cong_tac.Click += m_cmd_lam_thoi_cong_tac_Click;
-            m_cmd_cham_dut_cong_tac.Click += m_cmd_cham_dut_cong_tac_Click;
-            m_cmd_chuyen_cong_tac.Click += m_cmd_chuyen_cong_tac_Click;
-
             m_cmd_sua_cong_tac.Click += m_cmd_sua_cong_tac_Click;
             m_cmd_xoa_cong_tac.Click += m_cmd_xoa_cong_tac_Click;
         }
@@ -187,54 +137,6 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             try
             {
                 sua_cong_tac();
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_chuyen_cong_tac_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                cap_nhat_chuyen_cong_tac();
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_cham_dut_cong_tac_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                cap_nhat_cham_dut_cong_tac();
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_lam_thoi_cong_tac_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                cap_nhat_lam_thoi_cong_tac();
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_kiem_nhiem_cong_tac_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                cap_nhat_kiem_nhiem_cong_tac();
             }
             catch(Exception v_e)
             {

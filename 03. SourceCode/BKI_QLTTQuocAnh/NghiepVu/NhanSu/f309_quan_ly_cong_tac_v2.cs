@@ -120,7 +120,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         //Action
         private void them_moi_cong_tac()
         {
-            f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
+            f310_cap_nhat_cong_tac_v2 v_frm = new f310_cap_nhat_cong_tac_v2();
             v_frm.display_for_them_cong_tac_moi(get_id_phong_ban());
             refresh_data();
         }
@@ -130,7 +130,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             {
                 return;
             }
-            f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
+            f310_cap_nhat_cong_tac_v2 v_frm = new f310_cap_nhat_cong_tac_v2();
             v_frm.display_for_cap_nhat_lam_thoi_cong_tac(get_id_nhan_vien(), get_id_phong_ban());
 
             refresh_data();
@@ -141,7 +141,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             {
                 return;
             }
-            f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
+            f310_cap_nhat_cong_tac_v2 v_frm = new f310_cap_nhat_cong_tac_v2();
             v_frm.display_for_kiem_nhiem_cong_tac(get_id_nhan_vien(), get_id_phong_ban());
 
             refresh_data();
@@ -152,7 +152,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             {
                 return;
             }
-            f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
+            f310_cap_nhat_cong_tac_v2 v_frm = new f310_cap_nhat_cong_tac_v2();
             v_frm.display_for_chuyen_cong_tac(get_id_nhan_vien(), get_id_phong_ban());
 
             refresh_data();
@@ -164,7 +164,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 return;
             }
             var v_dc_id_gd_cong_tac = Convert.ToDecimal(m_grv.GetRowCellValue(m_grv.FocusedRowHandle, V_GD_CONG_TAC_2.ID));
-            f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
+            f310_cap_nhat_cong_tac_v2 v_frm = new f310_cap_nhat_cong_tac_v2();
             //v_frm.display_for_cham_dut_cong_tac(v_dc_id_gd_cong_tac);
             v_frm.display_for_cham_dut_cong_tac(v_dc_id_gd_cong_tac, get_id_phong_ban());
             refresh_data();

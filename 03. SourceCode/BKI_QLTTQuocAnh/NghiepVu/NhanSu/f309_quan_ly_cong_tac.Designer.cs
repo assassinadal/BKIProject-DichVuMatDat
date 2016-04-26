@@ -69,24 +69,16 @@
             this.colNGAY_CHINH_THUC_TIEP_NHAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGUOI_BAO_LANH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.m_lbl_thong_tin_phong_ban = new DevExpress.XtraEditors.LabelControl();
+            this.colNGAY_BAT_DAU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_xoa_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_sua_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_cham_dut_cong_tac = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_chuyen_cong_tac = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_lam_thoi_cong_tac = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_kiem_nhiem_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_them_moi_cong_tac = new DevExpress.XtraEditors.SimpleButton();
-            this.colNGAY_BAT_DAU = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             this.SuspendLayout();
@@ -100,10 +92,10 @@
             // 
             this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc.Location = new System.Drawing.Point(0, 58);
+            this.m_grc.Location = new System.Drawing.Point(0, 33);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(1220, 534);
+            this.m_grc.Size = new System.Drawing.Size(1220, 559);
             this.m_grc.TabIndex = 2;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
@@ -713,156 +705,6 @@
             this.colTEN_DON_VI.VisibleIndex = 3;
             this.colTEN_DON_VI.Width = 100;
             // 
-            // panelControl4
-            // 
-            this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl4.Controls.Add(this.m_lbl_thong_tin_phong_ban);
-            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl4.Location = new System.Drawing.Point(0, 0);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1220, 25);
-            this.panelControl4.TabIndex = 0;
-            this.panelControl4.Visible = false;
-            // 
-            // m_lbl_thong_tin_phong_ban
-            // 
-            this.m_lbl_thong_tin_phong_ban.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.m_lbl_thong_tin_phong_ban.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.m_lbl_thong_tin_phong_ban.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.m_lbl_thong_tin_phong_ban.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.m_lbl_thong_tin_phong_ban.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_lbl_thong_tin_phong_ban.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_thong_tin_phong_ban.Name = "m_lbl_thong_tin_phong_ban";
-            this.m_lbl_thong_tin_phong_ban.Padding = new System.Windows.Forms.Padding(5);
-            this.m_lbl_thong_tin_phong_ban.Size = new System.Drawing.Size(789, 25);
-            this.m_lbl_thong_tin_phong_ban.TabIndex = 0;
-            this.m_lbl_thong_tin_phong_ban.Text = "<Thong Tin Phong Ban>";
-            // 
-            // panelControl3
-            // 
-            this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl3.Controls.Add(this.m_cmd_xoa_cong_tac);
-            this.panelControl3.Controls.Add(this.m_cmd_sua_cong_tac);
-            this.panelControl3.Controls.Add(this.m_cmd_refresh);
-            this.panelControl3.Controls.Add(this.m_cmd_cham_dut_cong_tac);
-            this.panelControl3.Controls.Add(this.m_cmd_chuyen_cong_tac);
-            this.panelControl3.Controls.Add(this.m_cmd_lam_thoi_cong_tac);
-            this.panelControl3.Controls.Add(this.m_cmd_kiem_nhiem_cong_tac);
-            this.panelControl3.Controls.Add(this.m_cmd_them_moi_cong_tac);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(0, 25);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1220, 33);
-            this.panelControl3.TabIndex = 1;
-            this.panelControl3.Visible = false;
-            // 
-            // m_cmd_xoa_cong_tac
-            // 
-            this.m_cmd_xoa_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_xoa_cong_tac.Appearance.Options.UseFont = true;
-            this.m_cmd_xoa_cong_tac.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_xoa_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xoa_cong_tac.Image")));
-            this.m_cmd_xoa_cong_tac.Location = new System.Drawing.Point(890, 0);
-            this.m_cmd_xoa_cong_tac.Name = "m_cmd_xoa_cong_tac";
-            this.m_cmd_xoa_cong_tac.Size = new System.Drawing.Size(110, 33);
-            this.m_cmd_xoa_cong_tac.TabIndex = 5;
-            this.m_cmd_xoa_cong_tac.Text = "Xóa CT";
-            this.m_cmd_xoa_cong_tac.ToolTip = "Xóa khỏi phần mềm công tác của nhân viên (Chỉ khuyên dùng khi nhập sai công tác, " +
-    "cần xóa để nhập lại)";
-            // 
-            // m_cmd_sua_cong_tac
-            // 
-            this.m_cmd_sua_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_sua_cong_tac.Appearance.Options.UseFont = true;
-            this.m_cmd_sua_cong_tac.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_sua_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_sua_cong_tac.Image")));
-            this.m_cmd_sua_cong_tac.Location = new System.Drawing.Point(1000, 0);
-            this.m_cmd_sua_cong_tac.Name = "m_cmd_sua_cong_tac";
-            this.m_cmd_sua_cong_tac.Size = new System.Drawing.Size(110, 33);
-            this.m_cmd_sua_cong_tac.TabIndex = 6;
-            this.m_cmd_sua_cong_tac.Text = "Sửa CT";
-            this.m_cmd_sua_cong_tac.ToolTip = "Sửa dữ liệu công tác nhân viên (Chỉ khuyên dùng khi nhập sai cần sửa lại)";
-            // 
-            // m_cmd_refresh
-            // 
-            this.m_cmd_refresh.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_refresh.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            this.m_cmd_refresh.Appearance.Options.UseFont = true;
-            this.m_cmd_refresh.Appearance.Options.UseForeColor = true;
-            this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_refresh.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_refresh.Image")));
-            this.m_cmd_refresh.Location = new System.Drawing.Point(1110, 0);
-            this.m_cmd_refresh.Name = "m_cmd_refresh";
-            this.m_cmd_refresh.Size = new System.Drawing.Size(110, 33);
-            this.m_cmd_refresh.TabIndex = 7;
-            this.m_cmd_refresh.Text = "Làm mới";
-            this.m_cmd_refresh.ToolTip = "Làm mới dữ liệu đơn vị và nhân viên thuộc đơn vị đó";
-            // 
-            // m_cmd_cham_dut_cong_tac
-            // 
-            this.m_cmd_cham_dut_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_cham_dut_cong_tac.Appearance.Options.UseFont = true;
-            this.m_cmd_cham_dut_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_cham_dut_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_cham_dut_cong_tac.Image")));
-            this.m_cmd_cham_dut_cong_tac.Location = new System.Drawing.Point(440, 0);
-            this.m_cmd_cham_dut_cong_tac.Name = "m_cmd_cham_dut_cong_tac";
-            this.m_cmd_cham_dut_cong_tac.Size = new System.Drawing.Size(110, 33);
-            this.m_cmd_cham_dut_cong_tac.TabIndex = 4;
-            this.m_cmd_cham_dut_cong_tac.Text = "&Chấm dứt CT";
-            this.m_cmd_cham_dut_cong_tac.ToolTip = "Chấm dứt công tác của nhân viên tại đơn vị";
-            // 
-            // m_cmd_chuyen_cong_tac
-            // 
-            this.m_cmd_chuyen_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_chuyen_cong_tac.Appearance.Options.UseFont = true;
-            this.m_cmd_chuyen_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chuyen_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chuyen_cong_tac.Image")));
-            this.m_cmd_chuyen_cong_tac.Location = new System.Drawing.Point(330, 0);
-            this.m_cmd_chuyen_cong_tac.Name = "m_cmd_chuyen_cong_tac";
-            this.m_cmd_chuyen_cong_tac.Size = new System.Drawing.Size(110, 33);
-            this.m_cmd_chuyen_cong_tac.TabIndex = 3;
-            this.m_cmd_chuyen_cong_tac.Text = "&Chuyển CT";
-            this.m_cmd_chuyen_cong_tac.ToolTip = "Chuyển công tác của nhân viên sang đơn vị khác";
-            // 
-            // m_cmd_lam_thoi_cong_tac
-            // 
-            this.m_cmd_lam_thoi_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_lam_thoi_cong_tac.Appearance.Options.UseFont = true;
-            this.m_cmd_lam_thoi_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_lam_thoi_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_lam_thoi_cong_tac.Image")));
-            this.m_cmd_lam_thoi_cong_tac.Location = new System.Drawing.Point(220, 0);
-            this.m_cmd_lam_thoi_cong_tac.Name = "m_cmd_lam_thoi_cong_tac";
-            this.m_cmd_lam_thoi_cong_tac.Size = new System.Drawing.Size(110, 33);
-            this.m_cmd_lam_thoi_cong_tac.TabIndex = 2;
-            this.m_cmd_lam_thoi_cong_tac.Text = "&Lâm thời CT";
-            this.m_cmd_lam_thoi_cong_tac.ToolTip = "Điều động lâm thời nhân viên tới đơn vị khác";
-            // 
-            // m_cmd_kiem_nhiem_cong_tac
-            // 
-            this.m_cmd_kiem_nhiem_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_kiem_nhiem_cong_tac.Appearance.Options.UseFont = true;
-            this.m_cmd_kiem_nhiem_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_kiem_nhiem_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_kiem_nhiem_cong_tac.Image")));
-            this.m_cmd_kiem_nhiem_cong_tac.Location = new System.Drawing.Point(110, 0);
-            this.m_cmd_kiem_nhiem_cong_tac.Name = "m_cmd_kiem_nhiem_cong_tac";
-            this.m_cmd_kiem_nhiem_cong_tac.Size = new System.Drawing.Size(110, 33);
-            this.m_cmd_kiem_nhiem_cong_tac.TabIndex = 1;
-            this.m_cmd_kiem_nhiem_cong_tac.Text = "&Kiêm nhiệm CT";
-            this.m_cmd_kiem_nhiem_cong_tac.ToolTip = "Cho nhân viên kiêm nhiệm thêm một công tác khác";
-            // 
-            // m_cmd_them_moi_cong_tac
-            // 
-            this.m_cmd_them_moi_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_them_moi_cong_tac.Appearance.Options.UseFont = true;
-            this.m_cmd_them_moi_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_them_moi_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_them_moi_cong_tac.Image")));
-            this.m_cmd_them_moi_cong_tac.Location = new System.Drawing.Point(0, 0);
-            this.m_cmd_them_moi_cong_tac.Name = "m_cmd_them_moi_cong_tac";
-            this.m_cmd_them_moi_cong_tac.Size = new System.Drawing.Size(110, 33);
-            this.m_cmd_them_moi_cong_tac.TabIndex = 0;
-            this.m_cmd_them_moi_cong_tac.Text = "&Thêm mới CT";
-            this.m_cmd_them_moi_cong_tac.ToolTip = "Thêm mới công tác chính thức cho nhân viên (nhân viên chưa có công tác)";
-            // 
             // colNGAY_BAT_DAU
             // 
             this.colNGAY_BAT_DAU.AppearanceCell.Options.UseTextOptions = true;
@@ -895,6 +737,74 @@
             this.colNGAY_KET_THUC.Visible = true;
             this.colNGAY_KET_THUC.VisibleIndex = 35;
             // 
+            // panelControl3
+            // 
+            this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl3.Controls.Add(this.m_cmd_xoa_cong_tac);
+            this.panelControl3.Controls.Add(this.m_cmd_sua_cong_tac);
+            this.panelControl3.Controls.Add(this.m_cmd_refresh);
+            this.panelControl3.Controls.Add(this.m_cmd_them_moi_cong_tac);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl3.Location = new System.Drawing.Point(0, 0);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(1220, 33);
+            this.panelControl3.TabIndex = 1;
+            // 
+            // m_cmd_xoa_cong_tac
+            // 
+            this.m_cmd_xoa_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_xoa_cong_tac.Appearance.Options.UseFont = true;
+            this.m_cmd_xoa_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xoa_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xoa_cong_tac.Image")));
+            this.m_cmd_xoa_cong_tac.Location = new System.Drawing.Point(220, 0);
+            this.m_cmd_xoa_cong_tac.Name = "m_cmd_xoa_cong_tac";
+            this.m_cmd_xoa_cong_tac.Size = new System.Drawing.Size(110, 33);
+            this.m_cmd_xoa_cong_tac.TabIndex = 5;
+            this.m_cmd_xoa_cong_tac.Text = "Xóa CT";
+            this.m_cmd_xoa_cong_tac.ToolTip = "Xóa khỏi phần mềm công tác của nhân viên (Chỉ khuyên dùng khi nhập sai công tác, " +
+    "cần xóa để nhập lại)";
+            // 
+            // m_cmd_sua_cong_tac
+            // 
+            this.m_cmd_sua_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_sua_cong_tac.Appearance.Options.UseFont = true;
+            this.m_cmd_sua_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_sua_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_sua_cong_tac.Image")));
+            this.m_cmd_sua_cong_tac.Location = new System.Drawing.Point(110, 0);
+            this.m_cmd_sua_cong_tac.Name = "m_cmd_sua_cong_tac";
+            this.m_cmd_sua_cong_tac.Size = new System.Drawing.Size(110, 33);
+            this.m_cmd_sua_cong_tac.TabIndex = 6;
+            this.m_cmd_sua_cong_tac.Text = "Sửa CT";
+            this.m_cmd_sua_cong_tac.ToolTip = "Sửa dữ liệu công tác nhân viên (Chỉ khuyên dùng khi nhập sai cần sửa lại)";
+            // 
+            // m_cmd_refresh
+            // 
+            this.m_cmd_refresh.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_refresh.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.m_cmd_refresh.Appearance.Options.UseFont = true;
+            this.m_cmd_refresh.Appearance.Options.UseForeColor = true;
+            this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_refresh.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_refresh.Image")));
+            this.m_cmd_refresh.Location = new System.Drawing.Point(1110, 0);
+            this.m_cmd_refresh.Name = "m_cmd_refresh";
+            this.m_cmd_refresh.Size = new System.Drawing.Size(110, 33);
+            this.m_cmd_refresh.TabIndex = 7;
+            this.m_cmd_refresh.Text = "Làm mới";
+            this.m_cmd_refresh.ToolTip = "Làm mới dữ liệu đơn vị và nhân viên thuộc đơn vị đó";
+            // 
+            // m_cmd_them_moi_cong_tac
+            // 
+            this.m_cmd_them_moi_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_them_moi_cong_tac.Appearance.Options.UseFont = true;
+            this.m_cmd_them_moi_cong_tac.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_them_moi_cong_tac.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_them_moi_cong_tac.Image")));
+            this.m_cmd_them_moi_cong_tac.Location = new System.Drawing.Point(0, 0);
+            this.m_cmd_them_moi_cong_tac.Name = "m_cmd_them_moi_cong_tac";
+            this.m_cmd_them_moi_cong_tac.Size = new System.Drawing.Size(110, 33);
+            this.m_cmd_them_moi_cong_tac.TabIndex = 0;
+            this.m_cmd_them_moi_cong_tac.Text = "&Thêm mới CT";
+            this.m_cmd_them_moi_cong_tac.ToolTip = "Thêm mới công tác chính thức cho nhân viên (nhân viên chưa có công tác)";
+            // 
             // f309_quan_ly_cong_tac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -902,15 +812,12 @@
             this.ClientSize = new System.Drawing.Size(1220, 592);
             this.Controls.Add(this.m_grc);
             this.Controls.Add(this.panelControl3);
-            this.Controls.Add(this.panelControl4);
             this.Name = "f309_quan_ly_cong_tac";
             this.Text = "F309 - Quản lý công tác nhân viên";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -959,14 +866,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colHO_TEN;
         private DevExpress.XtraGrid.Columns.GridColumn colTEN_DON_VI;
         private DevExpress.XtraGrid.Columns.GridColumn colCHUC_DANH;
-        private DevExpress.XtraEditors.PanelControl panelControl4;
-        private DevExpress.XtraEditors.LabelControl m_lbl_thong_tin_phong_ban;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.SimpleButton m_cmd_them_moi_cong_tac;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_kiem_nhiem_cong_tac;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_lam_thoi_cong_tac;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_cham_dut_cong_tac;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_chuyen_cong_tac;
         private DevExpress.XtraEditors.SimpleButton m_cmd_refresh;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xoa_cong_tac;
         private DevExpress.XtraEditors.SimpleButton m_cmd_sua_cong_tac;

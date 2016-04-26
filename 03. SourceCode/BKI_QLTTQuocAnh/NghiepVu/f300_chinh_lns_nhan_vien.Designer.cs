@@ -36,10 +36,13 @@
             this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
-            this.m_tree_don_vi = new DevExpress.XtraTreeList.TreeList();
-            this.colTEN_DON_VI = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colSO_LUONG_NS_DANG_CONG_TAC = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.m_lbl_ten_dv = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,30 +53,25 @@
             this.MUC_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_BAT_DAU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_lbl_ten_dv = new DevExpress.XtraLayout.SimpleLabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_tree_don_vi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_lbl_ten_dv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.xtraTabControl1);
             this.layoutControl1.Controls.Add(this.m_pnl_out_place_dm);
-            this.layoutControl1.Controls.Add(this.m_tree_don_vi);
-            this.layoutControl1.Controls.Add(this.m_grc);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -88,11 +86,11 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(194, 40);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(12, 40);
             this.m_pnl_out_place_dm.MaximumSize = new System.Drawing.Size(0, 36);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(725, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(907, 36);
             this.m_pnl_out_place_dm.TabIndex = 3;
             // 
             // m_cmd_delete
@@ -149,64 +147,91 @@
             this.m_cmd_insert.TabIndex = 2;
             this.m_cmd_insert.Text = "&Thêm";
             // 
-            // m_tree_don_vi
+            // layoutControlGroup1
             // 
-            this.m_tree_don_vi.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_tree_don_vi.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.m_tree_don_vi.Appearance.FocusedRow.Options.UseFont = true;
-            this.m_tree_don_vi.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.m_tree_don_vi.Appearance.FocusedRow.Options.UseTextOptions = true;
-            this.m_tree_don_vi.Appearance.FocusedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.m_tree_don_vi.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
-            this.colTEN_DON_VI,
-            this.colID,
-            this.colSO_LUONG_NS_DANG_CONG_TAC});
-            this.m_tree_don_vi.Location = new System.Drawing.Point(12, 12);
-            this.m_tree_don_vi.Name = "m_tree_don_vi";
-            this.m_tree_don_vi.OptionsBehavior.AutoNodeHeight = false;
-            this.m_tree_don_vi.OptionsBehavior.Editable = false;
-            this.m_tree_don_vi.OptionsView.ShowIndicator = false;
-            this.m_tree_don_vi.OptionsView.ShowSummaryFooter = true;
-            this.m_tree_don_vi.Size = new System.Drawing.Size(178, 434);
-            this.m_tree_don_vi.TabIndex = 1;
+            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem3,
+            this.m_lbl_ten_dv,
+            this.layoutControlItem2});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(931, 458);
+            this.layoutControlGroup1.Text = "Root";
+            this.layoutControlGroup1.TextVisible = false;
             // 
-            // colTEN_DON_VI
+            // layoutControlItem3
             // 
-            this.colTEN_DON_VI.Caption = "Tên đơn vị";
-            this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
-            this.colTEN_DON_VI.MinWidth = 51;
-            this.colTEN_DON_VI.Name = "colTEN_DON_VI";
-            this.colTEN_DON_VI.Visible = true;
-            this.colTEN_DON_VI.VisibleIndex = 0;
-            this.colTEN_DON_VI.Width = 139;
+            this.layoutControlItem3.Control = this.m_pnl_out_place_dm;
+            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 28);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(911, 40);
+            this.layoutControlItem3.Text = "layoutControlItem3";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextToControlDistance = 0;
+            this.layoutControlItem3.TextVisible = false;
             // 
-            // colID
+            // m_lbl_ten_dv
             // 
-            this.colID.Caption = "ID";
-            this.colID.FieldName = "ID";
-            this.colID.Name = "colID";
+            this.m_lbl_ten_dv.AllowHotTrack = false;
+            this.m_lbl_ten_dv.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ten_dv.AppearanceItemCaption.Options.UseFont = true;
+            this.m_lbl_ten_dv.CustomizationFormText = "TEN_DON_VI";
+            this.m_lbl_ten_dv.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_ten_dv.Name = "m_lbl_ten_dv";
+            this.m_lbl_ten_dv.Size = new System.Drawing.Size(911, 28);
+            this.m_lbl_ten_dv.Text = "TEN_DON_VI";
+            this.m_lbl_ten_dv.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.m_lbl_ten_dv.TextSize = new System.Drawing.Size(134, 24);
             // 
-            // colSO_LUONG_NS_DANG_CONG_TAC
+            // xtraTabControl1
             // 
-            this.colSO_LUONG_NS_DANG_CONG_TAC.AllNodesSummary = true;
-            this.colSO_LUONG_NS_DANG_CONG_TAC.Caption = "SL CT";
-            this.colSO_LUONG_NS_DANG_CONG_TAC.FieldName = "SO_LUONG_NS_DANG_CONG_TAC";
-            this.colSO_LUONG_NS_DANG_CONG_TAC.Name = "colSO_LUONG_NS_DANG_CONG_TAC";
-            this.colSO_LUONG_NS_DANG_CONG_TAC.OptionsColumn.ReadOnly = true;
-            this.colSO_LUONG_NS_DANG_CONG_TAC.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
-            this.colSO_LUONG_NS_DANG_CONG_TAC.SummaryFooterStrFormat = "{0:n0}";
-            this.colSO_LUONG_NS_DANG_CONG_TAC.Visible = true;
-            this.colSO_LUONG_NS_DANG_CONG_TAC.VisibleIndex = 1;
-            this.colSO_LUONG_NS_DANG_CONG_TAC.Width = 37;
+            this.xtraTabControl1.Location = new System.Drawing.Point(12, 80);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.Size = new System.Drawing.Size(907, 366);
+            this.xtraTabControl1.TabIndex = 6;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage1,
+            this.xtraTabPage2});
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.xtraTabControl1;
+            this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 68);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(911, 370);
+            this.layoutControlItem2.Text = "layoutControlItem2";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextToControlDistance = 0;
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Controls.Add(this.m_grc);
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(901, 338);
+            this.xtraTabPage1.Text = "xtraTabPage1";
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(122, 338);
+            this.xtraTabPage2.Text = "xtraTabPage2";
             // 
             // m_grc
             // 
             this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc.Location = new System.Drawing.Point(194, 80);
+            this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_grc.Location = new System.Drawing.Point(0, 0);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(725, 366);
-            this.m_grc.TabIndex = 5;
+            this.m_grc.Size = new System.Drawing.Size(901, 338);
+            this.m_grc.TabIndex = 6;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
             // 
@@ -296,71 +321,6 @@
             this.NGAY_KET_THUC.VisibleIndex = 6;
             this.NGAY_KET_THUC.Width = 143;
             // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.m_lbl_ten_dv});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(931, 458);
-            this.layoutControlGroup1.Text = "Root";
-            this.layoutControlGroup1.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.m_grc;
-            this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(182, 68);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(729, 370);
-            this.layoutControlItem1.Text = "layoutControlItem1";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextToControlDistance = 0;
-            this.layoutControlItem1.TextVisible = false;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.m_tree_don_vi;
-            this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(182, 438);
-            this.layoutControlItem2.Text = "layoutControlItem2";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextToControlDistance = 0;
-            this.layoutControlItem2.TextVisible = false;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.m_pnl_out_place_dm;
-            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(182, 28);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(729, 40);
-            this.layoutControlItem3.Text = "layoutControlItem3";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextToControlDistance = 0;
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // m_lbl_ten_dv
-            // 
-            this.m_lbl_ten_dv.AllowHotTrack = false;
-            this.m_lbl_ten_dv.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_ten_dv.AppearanceItemCaption.Options.UseFont = true;
-            this.m_lbl_ten_dv.CustomizationFormText = "TEN_DON_VI";
-            this.m_lbl_ten_dv.Location = new System.Drawing.Point(182, 0);
-            this.m_lbl_ten_dv.Name = "m_lbl_ten_dv";
-            this.m_lbl_ten_dv.Size = new System.Drawing.Size(729, 28);
-            this.m_lbl_ten_dv.Text = "TEN_DON_VI";
-            this.m_lbl_ten_dv.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.m_lbl_ten_dv.TextSize = new System.Drawing.Size(134, 24);
-            // 
             // f300_chinh_lns_nhan_vien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,14 +333,15 @@
             this.layoutControl1.ResumeLayout(false);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_tree_don_vi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_lbl_ten_dv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            this.xtraTabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -389,16 +350,17 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraTreeList.TreeList m_tree_don_vi;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colTEN_DON_VI;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colID;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colSO_LUONG_NS_DANG_CONG_TAC;
         private DevExpress.Utils.ImageCollection img_DVMD;
+        private DevExpress.XtraLayout.SimpleLabelItem m_lbl_ten_dv;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_update;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraGrid.GridControl m_grc;
         private DevExpress.XtraGrid.Views.Grid.GridView m_grv;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.SimpleLabelItem m_lbl_ten_dv;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraGrid.Columns.GridColumn MA_NV;
         private DevExpress.XtraGrid.Columns.GridColumn HO_TEN;
@@ -407,10 +369,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn MUC_LNS;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_BAT_DAU;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KET_THUC;
-        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_update;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }

@@ -329,27 +329,38 @@ namespace BKI_DichVuMatDat.NghiepVu
                     return false;
                 }
             }
-            if (m_dat_ngay_bat_dau_cu.EditValue == null
-                && m_dat_ngay_ket_thuc_cu.EditValue == null)
+            switch (m_e_form_mode)
             {
-                if (m_dat_ngay_ket_thuc.EditValue == null)
-                {
+                case DataEntryFormMode.UpdateDataState:
                     return true;
-                }
-            }
-            if (!(m_dat_ngay_bat_dau_cu.DateTime.Date < m_dat_ngay_ket_thuc_cu.DateTime.Date))
-            {
-                string v_str_error = "Ngày kết thúc LNS cũ phải lớn hơn ngày bắt đầu LNS cũ. \nVui lòng kiểm tra lại!!";
-                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            if (m_dat_ngay_ket_thuc_cu.DateTime.Date > m_dat_ngay_bat_dau.DateTime.Date)
-            {
-                string v_str_error = "Ngày kết thúc lương năng suất cũ đang lớn hơn ngày bắt đầu lương năng suất mới. \nVui lòng kiểm tra lại!!";
-                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                    //break;
+                case DataEntryFormMode.InsertDataState:
+                    if (!(m_dat_ngay_bat_dau_cu.DateTime.Date < m_dat_ngay_ket_thuc_cu.DateTime.Date))
+                    {
+                        string v_str_error = "Ngày kết thúc LNS cũ phải lớn hơn ngày bắt đầu LNS cũ. \nVui lòng kiểm tra lại!!";
+                        XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                    if (m_dat_ngay_ket_thuc_cu.DateTime.Date > m_dat_ngay_bat_dau.DateTime.Date)
+                    {
+                        string v_str_error = "Ngày kết thúc lương năng suất cũ đang lớn hơn ngày bắt đầu lương năng suất mới. \nVui lòng kiểm tra lại!!";
+                        XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                    return true;
+                    //break;
+                default:
+                    break;
             }
             return true;
+            //if (m_dat_ngay_bat_dau_cu.EditValue == null
+            //    && m_dat_ngay_ket_thuc_cu.EditValue == null)
+            //{
+            //    if (m_dat_ngay_ket_thuc.EditValue == null)
+            //    {
+            //        return true;
+            //    }
+            //}
         }
 
         //EVENTS

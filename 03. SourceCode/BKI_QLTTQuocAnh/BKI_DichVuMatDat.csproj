@@ -982,6 +982,12 @@
     <Compile Include="NghiepVu\NhanSu\f309_quan_ly_cong_tac.Designer.cs">
       <DependentUpon>f309_quan_ly_cong_tac.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\NhanSu\f310_cap_nhat_cong_tac_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f310_cap_nhat_cong_tac_v2.Designer.cs">
+      <DependentUpon>f310_cap_nhat_cong_tac_v2.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\NhanSu\f311_danh_sach_nhan_vien_theo_don_vi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1313,6 +1319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\NhanSu\f309_quan_ly_cong_tac.resx">
       <DependentUpon>f309_quan_ly_cong_tac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\NhanSu\f310_cap_nhat_cong_tac_v2.resx">
+      <DependentUpon>f310_cap_nhat_cong_tac_v2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\NhanSu\f310_cap_nhat_cong_tac.resx">
       <DependentUpon>f310_cap_nhat_cong_tac.cs</DependentUpon>

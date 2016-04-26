@@ -313,7 +313,8 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 DialogResult v_dialog = XtraMessageBox.Show(v_str_confirm, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (v_dialog == DialogResult.Yes)
                 {               
-                    f309_quan_ly_cong_tac v_f = new f309_quan_ly_cong_tac(CIPConvert.ToDecimal(v_dr[GD_CONG_TAC.ID_DON_VI]), v_id_nhan_vien);
+                    //f309_quan_ly_cong_tac v_f = new f309_quan_ly_cong_tac(CIPConvert.ToDecimal(v_dr[GD_CONG_TAC.ID_DON_VI]), v_id_nhan_vien);
+                    f309_quan_ly_cong_tac v_f = new f309_quan_ly_cong_tac();
                     v_f.ShowDialog();
                 }
             }

@@ -18,27 +18,11 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
 {
     public partial class f309_quan_ly_cong_tac : Form
     {
-        private decimal v_id_don_vi;
-        private decimal v_id_nhan_vien;
-
         #region Public Interfaces
         public f309_quan_ly_cong_tac()
         {
             InitializeComponent();
             format_controls();
-            //load_data_2_tree();
-        }
-
-        public f309_quan_ly_cong_tac(decimal v_id_don_vi, decimal v_id_nhan_vien)
-        {
-            // TODO: Complete member initialization
-            InitializeComponent();
-            this.v_id_don_vi = v_id_don_vi;
-            this.v_id_nhan_vien = v_id_nhan_vien;
-            format_controls();
-            //load_data_2_tree();
-            //m_tree_don_vi.FocusedNode = m_tree_don_vi.FindNodeByFieldValue("ID", v_id_don_vi);
-            m_grv.ActiveFilterString=  "[MA_NV] = " + get_ma_nv_by_ID_nv(v_id_nhan_vien);
         }
         #endregion
         
@@ -97,7 +81,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         //Action
         private void them_moi_cong_tac()
         {
-            //f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
+            f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
             //v_frm.display_for_them_cong_tac_moi(get_id_phong_ban());
             //refresh_data();
         }

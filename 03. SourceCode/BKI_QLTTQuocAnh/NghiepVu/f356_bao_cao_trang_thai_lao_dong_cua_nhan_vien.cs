@@ -273,6 +273,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 if (m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.FocusedRowHandle < 0)
                 {
                     v_f.ShowDialog();
+                    load_data_2_grid();
                     return;
                 }
                 v_f.display_4_thay_doi_trang_thai(m_dc_id_nv_dang_dieu_chinh);

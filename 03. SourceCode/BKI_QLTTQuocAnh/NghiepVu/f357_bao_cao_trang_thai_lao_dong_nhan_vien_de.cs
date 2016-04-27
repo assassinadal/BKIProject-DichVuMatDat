@@ -377,6 +377,11 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NGAY_KET_THUC);
                 return false;
             }
+            if (m_dat_ngay_ket_thuc.DateTime < m_dat_ngay_ap_dung.DateTime)
+            {
+                CHRM_BaseMessages.MsgBox_Error("Ngày kết thúc phải lớn hơn ngày áp dụng ");
+                return false;
+            }
             return true;
         }
 

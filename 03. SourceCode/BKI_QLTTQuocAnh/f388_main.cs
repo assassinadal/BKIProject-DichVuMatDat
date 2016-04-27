@@ -858,7 +858,7 @@ namespace BKI_DichVuMatDat
                 if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
-                v_frm.display(v_ngay_dau_tien_cua_thang_hien_tai, v_ngay_cuoi_cung_cua_thang_hien_tai);
+                v_frm.display(v_ngay_dau_tien_cua_thang_hien_tai.AddDays(-1), v_ngay_cuoi_cung_cua_thang_hien_tai.AddDays(1));
             }
             catch (Exception v_e)
             {

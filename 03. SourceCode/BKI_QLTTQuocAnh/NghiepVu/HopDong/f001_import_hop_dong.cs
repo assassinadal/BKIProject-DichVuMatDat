@@ -54,6 +54,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             public const string NGAY_KET_THUC = "NGAY_KET_THUC";
             public const string NGAY_KI_HOP_DONG = "NGAY_KI_HOP_DONG";
         }
+
         class ViTriTrenLuoi
         {
             public string loi_sai { get; set; }
@@ -331,17 +332,21 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
 
         private bool check_ma_ok(DataTable ip_dt, string ma)
         {
-            var list_ma = (from DataRow dr in ip_dt.Rows
+             var list_ma = (from DataRow dr in ip_dt.Rows
                            where dr[1] != null
-                           select (string)dr[1]).ToList();
-            if (list_ma.Contains(ma))
+                           select dr[1]).ToList();
+            foreach (var item in list_ma)
             {
-                return true;
+                if (String.IsNullOrEmpty(item.ToString()))
+                {
+                    continue;
+                }
+                if (item.ToString() == ma)
+                {
+                    return true;
+                }
             }
-            else
-            {
-                return false;
-            }
+            return false;           
         }
 
         private bool check_grid_data_ok()

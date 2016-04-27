@@ -225,7 +225,7 @@ namespace BKI_DichVuMatDat
                 else
                 {
                     CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-                    F503_IMPORT_EXCEL.da_hoan_thanh = true;
+                    //F503_IMPORT_EXCEL.da_hoan_thanh = true;
                     m_lbl_check.Text = "Đã lưu dữ liệu";
                     return;
                 }

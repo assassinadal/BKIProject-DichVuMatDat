@@ -157,7 +157,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                             return;
                         }
                     }
-                    F503_IMPORT_EXCEL.da_hoan_thanh = true;
+                    //F503_IMPORT_EXCEL.da_hoan_thanh = true;
                     CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
                     this.Close();
                 }

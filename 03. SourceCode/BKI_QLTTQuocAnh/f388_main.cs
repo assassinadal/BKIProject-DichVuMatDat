@@ -1889,10 +1889,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                F503_IMPORT_EXCEL v_f = new F503_IMPORT_EXCEL();
-                if (IsExistFormName(v_f)) return;
-                v_f.MdiParent = this;
-                v_f.Show();
+                //F503_IMPORT_EXCEL v_f = new F503_IMPORT_EXCEL();
+                //if (IsExistFormName(v_f)) return;
+                //v_f.MdiParent = this;
+                //v_f.Show();
             }
             catch (Exception v_e)
             {

@@ -322,7 +322,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                             if (m_grv_lap_hd.GetDataRow(i)["MA_NHAN_VIEN"].ToString() == "")
                             {
                                 CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-                                F503_IMPORT_EXCEL.da_hoan_thanh = true;
+                                //F503_IMPORT_EXCEL.da_hoan_thanh = true;
                                 this.Close();
                                 return;
                             }

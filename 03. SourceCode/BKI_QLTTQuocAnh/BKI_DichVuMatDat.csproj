@@ -541,12 +541,6 @@
     <Compile Include="NghiepVu\F502_HOP_DONG_EXCEL.Designer.cs">
       <DependentUpon>F502_HOP_DONG_EXCEL.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\F503_IMPORT_EXCEL.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\F503_IMPORT_EXCEL.Designer.cs">
-      <DependentUpon>F503_IMPORT_EXCEL.cs</DependentUpon>
-    </Compile>
     <Compile Include="NghiepVu\HopDong\f001_import_hop_dong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1837,9 +1831,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F502_HOP_DONG_EXCEL.resx">
       <DependentUpon>F502_HOP_DONG_EXCEL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\F503_IMPORT_EXCEL.resx">
-      <DependentUpon>F503_IMPORT_EXCEL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\Luong\f303_cac_khoan_tien_khac.resx">
       <DependentUpon>f303_cac_khoan_tien_khac.cs</DependentUpon>

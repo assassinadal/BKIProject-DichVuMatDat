@@ -40,29 +40,41 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_cmd_them.Click += m_cmd_them_Click;
             m_cmd_xoa.Click += m_cmd_xoa_Click;
-            m_cmd_update.Click += M_cmd_update_Click;
+            m_cmd_update.Click += m_cmd_update_Click;
         }
 
-        private void M_cmd_update_Click(object sender, EventArgs e)
+        private void m_cmd_update_Click(object sender, EventArgs e)
         {
             try
             {
-
+                F395_nhan_vien_phu_cap_de v_f = new F395_nhan_vien_phu_cap_de();
+                int v_index_dr = m_grv.FocusedRowHandle;
+                if (v_index_dr >= 0 )
+                {
+                    var v_dr = m_grv.GetDataRow(v_index_dr);
+                    US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP(CIPConvert.ToDecimal(v_dr["ID_NV_PC"]));
+                    v_f.display_for_update(v_us);
+                    load_data_2_grid();
+                }
+                else
+                {
+                    string v_str_error = "Bạn chưa chọn dòng dữ liệu để sửa!";
+                    XtraMessageBox.Show(v_str_error, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        
 
         private void load_data_2_grid()
         {
             CHRMCommon.make_stt(m_grv);
-            US_V_GD_NHAN_VIEN_PHU_CAP v_us = new US_V_GD_NHAN_VIEN_PHU_CAP();
-            DS_V_GD_NHAN_VIEN_PHU_CAP v_ds = new DS_V_GD_NHAN_VIEN_PHU_CAP();
-
-            v_us.FillDataset(v_ds, " WHERE DA_XOA = 'N'");
-            //v_us.FillDatasetWithTableName(v_ds, "V_GD_NHAN_VIEN_PHU_CAP where DA_XOA = 'N'");
+            DS_V_GD_NHAN_VIEN_PHU_CAP_V2 v_ds = new DS_V_GD_NHAN_VIEN_PHU_CAP_V2();
+            US_V_GD_NHAN_VIEN_PHU_CAP_V2 v_us = new US_V_GD_NHAN_VIEN_PHU_CAP_V2();
+            v_us.FillDataset(v_ds);
             m_grc.DataSource = v_ds.Tables[0];
         }
 
@@ -72,7 +84,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             try
             {
                 F395_nhan_vien_phu_cap_de v_f = new F395_nhan_vien_phu_cap_de();
-                v_f.ShowDialog();               
+                v_f.display_for_insert();              
                 load_data_2_grid();
             }
             catch (Exception v_e)
@@ -85,13 +97,28 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if (BaseMessages.MsgBox_Confirm("Bạn có chắc chắn muốn xóa phụ cấp trách nhiệm này?") == false) return;
-                US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP(CIPConvert.ToDecimal(m_grv.GetDataRow(m_grv.FocusedRowHandle)["ID"].ToString()));
-                v_us.datNGAY_SUA = CHRMCommon.get_first_day_of_month(DateTime.Now.Date);
-                v_us.strDA_XOA = "Y";
-                v_us.Update();
-                XtraMessageBox.Show("Đã xóa thành công phụ cấp!");
-                load_data_2_grid();
+                F395_nhan_vien_phu_cap_de v_f = new F395_nhan_vien_phu_cap_de();
+                int v_index_dr = m_grv.FocusedRowHandle;
+                if (v_index_dr >= 0)
+                {
+                    string v_str_confirm = "Bạn có chắc chắn muốn xóa phụ cấp này";
+                    DialogResult v_dialog = XtraMessageBox.Show(v_str_confirm, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (v_dialog == DialogResult.Yes)
+                    {
+                        US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP(CIPConvert.ToDecimal(m_grv.GetDataRow(v_index_dr)["ID_NV_PC"]));
+                        v_us.datNGAY_SUA = DateTime.Now;
+                        v_us.strNGUOI_SUA = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserName();
+                        v_us.strDA_XOA = "Y";
+                        v_us.Update();
+                        XtraMessageBox.Show("Đã xóa thành công phụ cấp!");
+                        load_data_2_grid();
+                    }                   
+                }
+                else
+                {
+                    string v_str_error = "Bạn chưa chọn dòng dữ liệu để xóa!";
+                    XtraMessageBox.Show(v_str_error, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception v_e)
             {

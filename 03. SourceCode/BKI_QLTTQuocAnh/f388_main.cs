@@ -353,8 +353,8 @@ namespace BKI_DichVuMatDat
             m_lbl_nv_sap_ket_thuc_ct.DoubleClick += m_lbl_nv_sap_ket_thuc_ct_DoubleClick;
             m_lbl_nv_da_het_han_lns.DoubleClick += m_lbl_nv_da_het_han_lns_DoubleClick;
             m_lbl_nv_sap_het_han_lns.DoubleClick += m_lbl_nv_sap_het_han_lns_DoubleClick;
-            //m_lbl_so_nv_da_nghi_viec.DoubleClick += m_lbl_so_nv_da_nghi_viec_DoubleClick;
-            //m_lbl_nv_can_chuyen_trang_thai.DoubleClick += m_lbl_nv_can_chuyen_trang_thai_DoubleClick;
+            m_lbl_nv_da_nghi_viec.DoubleClick += m_lbl_nv_da_nghi_viec_DoubleClick;
+            m_lbl_nv_can_chuyen_trang_thai.DoubleClick += m_lbl_nv_can_chuyen_trang_thai_DoubleClick;
 
             //Nghiệp vụ
             m_cmd_cham_cong_nv.ItemClick += m_cmd_cham_cong_nv_ItemClick;
@@ -415,14 +415,13 @@ namespace BKI_DichVuMatDat
             m_cmd_qtt_2016.ItemClick += m_cmd_qtt_2016_ItemClick;
         }
 
-        void m_lbl_nv_can_chuyen_trang_thai_DoubleClick(object sender, EventArgs e)
+        void m_lbl_nv_da_nghi_viec_DoubleClick(object sender, EventArgs e)
         {
             try
             {
-                m_trang_thai_filter = false;
+                m_trang_thai_filter = true;
                 DateTime v_dt_ngay_dau_thang = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-                DateTime v_dt_ngay_cuoi_thang = v_dt_ngay_dau_thang.AddMonths(1).AddDays(-1);
-                frm356_chuyen_trang_thai_lao_dong v_f = new frm356_chuyen_trang_thai_lao_dong(v_dt_ngay_cuoi_thang, m_trang_thai_filter);
+                f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien v_f = new f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien(v_dt_ngay_dau_thang, m_trang_thai_filter);
             }
             catch (Exception v_e)
             {
@@ -430,13 +429,14 @@ namespace BKI_DichVuMatDat
             }
         }
 
-        void m_lbl_so_nv_da_nghi_viec_DoubleClick(object sender, EventArgs e)
+        void m_lbl_nv_can_chuyen_trang_thai_DoubleClick(object sender, EventArgs e)
         {
             try
             {
-                m_trang_thai_filter = true;
+                m_trang_thai_filter = false;
                 DateTime v_dt_ngay_dau_thang = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-                frm356_chuyen_trang_thai_lao_dong v_f = new frm356_chuyen_trang_thai_lao_dong(v_dt_ngay_dau_thang, m_trang_thai_filter);
+                DateTime v_dt_ngay_cuoi_thang = v_dt_ngay_dau_thang.AddMonths(1).AddDays(-1);
+                f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien v_f = new f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien(v_dt_ngay_cuoi_thang, m_trang_thai_filter);
             }
             catch (Exception v_e)
             {

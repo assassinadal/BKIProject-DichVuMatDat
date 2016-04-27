@@ -1323,7 +1323,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                                 }
 
                                 m_trang_thai_buoc_3_thanh_cong = 1;
-                                F500_QUY_TRINH_THEM_MOI_NHAN_SU.done();
+                                //F500_QUY_TRINH_THEM_MOI_NHAN_SU.done();
                                 if (m_trang_thai_them == -1)
                                 {
                                     this.Close();

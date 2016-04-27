@@ -284,7 +284,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                             m_us.Insert();
                             id_nv_new = m_us.dcID;
                             m_trang_thai_buoc_1_sau_hien_thi_f150_v2 = (int) m_us.dcID;
-                            F500_QUY_TRINH_THEM_MOI_NHAN_SU.done();
+                            //F500_QUY_TRINH_THEM_MOI_NHAN_SU.done();
                             //get_id_nhan_vien_vua_insert(ref m_trang_thai_buoc_1_sau_hien_thi_f150_v2);
 
                             this.Close();

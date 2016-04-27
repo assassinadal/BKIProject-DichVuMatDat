@@ -70,7 +70,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void set_init_form_load()
         {
-            this.cM_DM_TU_DIENTableAdapter.Fill(this.dVMDDataSet3.CM_DM_TU_DIEN);
+            //this.cM_DM_TU_DIENTableAdapter.Fill(this.dVMDDataSet3.CM_DM_TU_DIEN);
             m_txt_tuoi_nv.Enabled = false;
             tinh_tuoi_nhan_vien(m_dat_ngay_sinh.DateTime.Date);
             fill_combobox_gioi_tinh();

@@ -79,10 +79,10 @@ namespace BKI_DichVuMatDat.DanhMuc
             //m_txt_path = WinFormControls.openFileDialog();
             //if (m_txt_path != "")
             //{
-                F152_DANH_SACH_NHAN_VIEN_EXCEL v_f = new F152_DANH_SACH_NHAN_VIEN_EXCEL();
-                v_f.ShowDialog();
+            F152_DANH_SACH_NHAN_VIEN_EXCEL v_f = new F152_DANH_SACH_NHAN_VIEN_EXCEL();
+            v_f.ShowDialog();
             //}
-            //load_data_to_grid();
+            load_data_to_grid();
         }
 
         #endregion
@@ -207,7 +207,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             try
             {
                 SplashScreenManager.ShowForm(typeof(F_wait_form));
-                WinFormControls.openTemplate(CONST_EXCEL_TEMPLATE.DANH_SACH_NHAN_VIEN_TEMPLATE);
+                WinFormControls.openTemplate_v2(CONST_EXCEL_TEMPLATE.DANH_SACH_NHAN_VIEN_TEMPLATE);
             }
             catch (Exception v_e)
             {

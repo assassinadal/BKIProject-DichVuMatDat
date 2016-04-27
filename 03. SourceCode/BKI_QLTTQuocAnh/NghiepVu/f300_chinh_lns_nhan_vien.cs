@@ -165,7 +165,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     m_cmd_update.Visible = true;
                     load_data_danh_sach_nhan_vien_theo_don_vi(0);
                     break;
-                case "NHÂN VIÊN KHÔNG LƯƠNG NĂNG SUẤT":
+                case "NHÂN VIÊN KHÔNG CÓ LƯƠNG NĂNG SUẤT":
                     m_e_tab_mode = tab_mode.khong_lns;
                     m_cmd_delete.Visible = false;
                     m_cmd_update.Visible = false;
@@ -181,10 +181,15 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                DataRow v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
-                US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS(Convert.ToDecimal(v_dr["ID"].ToString()));
-                v_us.Delete();
-                load_data_danh_sach_nhan_vien_theo_don_vi(m_dc_id_don_vi);
+                DialogResult v_confirm = default(DialogResult);
+                v_confirm = XtraMessageBox.Show("BẠN CÓ THỰC SỰ MUỐN XÓA LƯƠNG NĂNG SUẤT CỦA NHÂN VIÊN NÀY ?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                if (v_confirm == DialogResult.Yes)
+                {
+                    DataRow v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+                    US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS(Convert.ToDecimal(v_dr["ID"].ToString()));
+                    v_us.Delete();
+                    load_data_danh_sach_nhan_vien_theo_don_vi(m_dc_id_don_vi);
+                }
             }
             catch (Exception v_e)
             {

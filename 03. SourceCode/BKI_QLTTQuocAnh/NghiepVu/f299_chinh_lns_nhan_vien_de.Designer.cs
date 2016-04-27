@@ -381,6 +381,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(107, 32);
             this.m_cmd_xuat_excel.TabIndex = 3;
             this.m_cmd_xuat_excel.Text = "&Xuất báo cáo";
+            this.m_cmd_xuat_excel.Visible = false;
             // 
             // layoutControlGroup1
             // 

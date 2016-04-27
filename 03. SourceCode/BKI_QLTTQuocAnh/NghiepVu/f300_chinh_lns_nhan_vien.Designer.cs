@@ -140,12 +140,16 @@
             // 
             // ID
             // 
+            this.ID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID.AppearanceHeader.Options.UseFont = true;
             this.ID.Caption = "ID";
             this.ID.FieldName = "ID";
             this.ID.Name = "ID";
             // 
             // MA_NV
             // 
+            this.MA_NV.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MA_NV.AppearanceHeader.Options.UseFont = true;
             this.MA_NV.Caption = "Mã nhân viên";
             this.MA_NV.FieldName = "MA_NV";
             this.MA_NV.Name = "MA_NV";
@@ -157,6 +161,8 @@
             // 
             // HO_TEN
             // 
+            this.HO_TEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HO_TEN.AppearanceHeader.Options.UseFont = true;
             this.HO_TEN.Caption = "Họ tên";
             this.HO_TEN.FieldName = "HO_TEN";
             this.HO_TEN.Name = "HO_TEN";
@@ -166,6 +172,8 @@
             // 
             // HE_SO
             // 
+            this.HE_SO.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HE_SO.AppearanceHeader.Options.UseFont = true;
             this.HE_SO.Caption = "Hệ số";
             this.HE_SO.FieldName = "HE_SO";
             this.HE_SO.Name = "HE_SO";
@@ -175,6 +183,8 @@
             // 
             // MA_CHUC_DANH_LNS
             // 
+            this.MA_CHUC_DANH_LNS.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MA_CHUC_DANH_LNS.AppearanceHeader.Options.UseFont = true;
             this.MA_CHUC_DANH_LNS.Caption = "Mã chức danh";
             this.MA_CHUC_DANH_LNS.FieldName = "MA_CHUC_DANH_LNS";
             this.MA_CHUC_DANH_LNS.Name = "MA_CHUC_DANH_LNS";
@@ -184,6 +194,8 @@
             // 
             // MUC_LNS
             // 
+            this.MUC_LNS.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MUC_LNS.AppearanceHeader.Options.UseFont = true;
             this.MUC_LNS.Caption = "Mức";
             this.MUC_LNS.FieldName = "MUC_LNS";
             this.MUC_LNS.Name = "MUC_LNS";
@@ -193,6 +205,8 @@
             // 
             // NGAY_BAT_DAU
             // 
+            this.NGAY_BAT_DAU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NGAY_BAT_DAU.AppearanceHeader.Options.UseFont = true;
             this.NGAY_BAT_DAU.Caption = "Ngày bắt đầu";
             this.NGAY_BAT_DAU.FieldName = "NGAY_BAT_DAU";
             this.NGAY_BAT_DAU.Name = "NGAY_BAT_DAU";
@@ -202,6 +216,8 @@
             // 
             // NGAY_KET_THUC
             // 
+            this.NGAY_KET_THUC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NGAY_KET_THUC.AppearanceHeader.Options.UseFont = true;
             this.NGAY_KET_THUC.Caption = "Ngày kết thúc";
             this.NGAY_KET_THUC.FieldName = "NGAY_KET_THUC";
             this.NGAY_KET_THUC.Name = "NGAY_KET_THUC";
@@ -248,12 +264,16 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "gridColumn1";
             this.gridColumn1.FieldName = "ID_NHAN_VIEN";
             this.gridColumn1.Name = "gridColumn1";
             // 
             // colMA_NV
             // 
+            this.colMA_NV.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colMA_NV.AppearanceHeader.Options.UseFont = true;
             this.colMA_NV.Caption = "Mã nhân viên";
             this.colMA_NV.FieldName = "MA_NV";
             this.colMA_NV.Name = "colMA_NV";
@@ -263,6 +283,8 @@
             // 
             // colHO_TEN
             // 
+            this.colHO_TEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colHO_TEN.AppearanceHeader.Options.UseFont = true;
             this.colHO_TEN.Caption = "Họ tên";
             this.colHO_TEN.FieldName = "HO_TEN";
             this.colHO_TEN.Name = "colHO_TEN";
@@ -272,6 +294,8 @@
             // 
             // colTEN_DON_VI
             // 
+            this.colTEN_DON_VI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTEN_DON_VI.AppearanceHeader.Options.UseFont = true;
             this.colTEN_DON_VI.Caption = "Tên đơn vị";
             this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
             this.colTEN_DON_VI.Name = "colTEN_DON_VI";
@@ -281,6 +305,8 @@
             // 
             // colTEN_CHUC_VU
             // 
+            this.colTEN_CHUC_VU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTEN_CHUC_VU.AppearanceHeader.Options.UseFont = true;
             this.colTEN_CHUC_VU.Caption = "Tên chức vụ";
             this.colTEN_CHUC_VU.FieldName = "TEN_CHUC_VU";
             this.colTEN_CHUC_VU.Name = "colTEN_CHUC_VU";
@@ -290,6 +316,8 @@
             // 
             // colLOAI_LAO_DONG
             // 
+            this.colLOAI_LAO_DONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colLOAI_LAO_DONG.AppearanceHeader.Options.UseFont = true;
             this.colLOAI_LAO_DONG.Caption = "Loại lao động";
             this.colLOAI_LAO_DONG.FieldName = "LOAI_LAO_DONG";
             this.colLOAI_LAO_DONG.Name = "colLOAI_LAO_DONG";

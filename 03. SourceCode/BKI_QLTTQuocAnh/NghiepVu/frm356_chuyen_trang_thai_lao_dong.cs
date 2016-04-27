@@ -32,6 +32,26 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             Dispose(false);
         }
+
+        public frm356_chuyen_trang_thai_lao_dong(DateTime ip_datetime, bool ip_trang_thai_filter)
+        {
+            InitializeComponent();
+            format_control();
+            fill_data_2_sle_nhan_vien();
+            fill_data_2_le_trang_thai_lao_dong();
+            string v_str = ip_datetime.ToString("MM/dd/yyyy");
+            string v_str_ngay_hien_tai = DateTime.Now.ToString("MM/dd/yyyy");
+            if (ip_trang_thai_filter == true)
+            {
+                m_grv_lich_su_lao_dong.ActiveFilterString = "[NGAY_KET_THUC] >= #" + v_str + "# and [NGAY_KET_THUC] <= #" + v_str_ngay_hien_tai + "#";
+            }
+            else if (ip_trang_thai_filter == false)
+            {
+                m_grv_lich_su_lao_dong.ActiveFilterString = "[NGAY_KET_THUC] > #" + v_str_ngay_hien_tai + "# and [NGAY_KET_THUC] < #" + v_str + "#";
+            }
+            this.CenterToParent();
+            this.ShowDialog();
+        }
         #endregion
 
         #region Private Method

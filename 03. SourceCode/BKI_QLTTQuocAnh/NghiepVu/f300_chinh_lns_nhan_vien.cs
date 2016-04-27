@@ -25,6 +25,24 @@ namespace BKI_DichVuMatDat.NghiepVu
             format_controll();
         }
 
+        public f300_chinh_lns_nhan_vien(DateTime ip_datetime, bool ip_trang_thai_filter)
+        {
+            InitializeComponent();
+            set_define_events();
+            string v_str = ip_datetime.ToString("MM/dd/yyyy");
+            string v_str_ngay_hien_tai = DateTime.Now.ToString("MM/dd/yyyy");
+            if (ip_trang_thai_filter == true)
+            {
+                m_grv.ActiveFilterString = "[NGAY_KET_THUC] >= #" + v_str + "# and [NGAY_KET_THUC] <= #" + v_str_ngay_hien_tai + "#";
+            }
+            else if (ip_trang_thai_filter == false)
+            {
+                m_grv.ActiveFilterString = "[NGAY_KET_THUC] > #" + v_str_ngay_hien_tai + "# and [NGAY_KET_THUC] < #" + v_str + "#";
+            }
+            this.CenterToParent();
+            this.ShowDialog();
+        }
+
         private decimal m_dc_id_don_vi;
 
         private tab_mode m_e_tab_mode = tab_mode.co_lns;

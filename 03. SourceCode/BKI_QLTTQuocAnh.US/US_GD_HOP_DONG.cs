@@ -541,5 +541,14 @@ public class US_GD_HOP_DONG : US_Object
         v_cstore.addDecimalInputParam("@ip_id_don_vi", v_id_don_vi);
         v_cstore.fillDataSetByCommand(this, v_ds);
     }
+
+    public DataSet LayDanhSachHDHetHanTrongThang()
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_HD_het_han_trong_thang");
+        DataSet v_ds = new DataSet();
+        v_ds.Tables.Add(new DataTable());
+        v_cstore.fillDataSetByCommand(this, v_ds);
+        return v_ds;
+    }
 }
 }

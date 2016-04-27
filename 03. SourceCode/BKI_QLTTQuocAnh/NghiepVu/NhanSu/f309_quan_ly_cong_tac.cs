@@ -24,6 +24,24 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             InitializeComponent();
             format_controls();
         }
+
+        public f309_quan_ly_cong_tac(DateTime ip_datetime, bool ip_trang_thai_filter)
+        {
+            InitializeComponent();
+            set_define_events();
+            string v_str = ip_datetime.ToString("MM/dd/yyyy");
+            string v_str_ngay_hien_tai = DateTime.Now.ToString("MM/dd/yyyy");
+            if (ip_trang_thai_filter == true)
+            {
+                m_grv.ActiveFilterString = "[NGAY_KET_THUC] >= #" + v_str + "# and [NGAY_KET_THUC] <= #" + v_str_ngay_hien_tai + "#";
+            }
+            else if (ip_trang_thai_filter == false)
+            {
+                m_grv.ActiveFilterString = "[NGAY_KET_THUC] > #" + v_str_ngay_hien_tai + "# and [NGAY_KET_THUC] < #" + v_str + "#";
+            }
+            this.CenterToParent();
+            this.ShowDialog();
+        }
         #endregion
         
 

@@ -455,5 +455,14 @@ namespace BKI_DichVuMatDat.US
             v_cstore.addDecimalInputParam("@ip_id_nv", ip_id_nv);
             v_cstore.fillDataSetByCommand(this, v_ds);
         }
+
+        public DataSet LayDanhSachCTHetHanTrongThang()
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_CT_het_han_trong_thang");
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_cstore.fillDataSetByCommand(this, v_ds);
+            return v_ds;
+        }
     }
 }

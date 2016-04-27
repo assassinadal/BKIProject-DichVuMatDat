@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -162,36 +161,43 @@
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.m_pnl_ket_thuc_nghi_tam_thoi = new DevExpress.XtraEditors.PanelControl();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.m_lbl_ket_thuc_nghi_tam_thoi = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.m_lbl_nv_nghi_tam_thoi = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.m_lbl_nv_het_han_lcd = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.m_lbl_nv_het_han_lns = new System.Windows.Forms.Label();
+            this.m_pn_sap_ket_thuc_ttld = new DevExpress.XtraEditors.PanelControl();
+            this.m_lbl_so_nv_sap_ket_thuc_ttld = new System.Windows.Forms.Label();
+            this.m_lbl_nv_can_chuyen_trang_thai = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.m_pn_da_nghi_viec = new DevExpress.XtraEditors.PanelControl();
+            this.m_lbl_so_nv_da_nghi_viec = new System.Windows.Forms.Label();
+            this.m_lbl_nv_da_nghi_viec = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.m_lbl_nv_het_han_hop_dong = new System.Windows.Forms.Label();
+            this.m_pn_sap_het_han_lns = new DevExpress.XtraEditors.PanelControl();
+            this.m_lbl_so_nv_sap_het_han_lns = new System.Windows.Forms.Label();
+            this.m_lbl_nv_sap_het_han_lns = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.m_pn_da_het_han_lns = new DevExpress.XtraEditors.PanelControl();
+            this.m_lbl_so_nv_da_het_han_lns = new System.Windows.Forms.Label();
+            this.m_lbl_nv_da_het_han_lns = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.m_pn_sap_ket_thuc_ct = new DevExpress.XtraEditors.PanelControl();
+            this.m_lbl_so_nv_sap_ket_thuc_ct = new System.Windows.Forms.Label();
+            this.m_lbl_nv_sap_ket_thuc_ct = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.m_pn_da_ket_thuc_ct = new DevExpress.XtraEditors.PanelControl();
+            this.m_lbl_so_nv_da_ket_thuc_ct = new System.Windows.Forms.Label();
+            this.m_lbl_nv_da_ket_thuc_ct = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.m_pn_sap_het_han_hd = new DevExpress.XtraEditors.PanelControl();
+            this.m_lbl_so_nv_sap_het_han_hd = new System.Windows.Forms.Label();
+            this.m_lbl_nv_sap_het_han_hd = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.m_pn_da_het_han_hd = new DevExpress.XtraEditors.PanelControl();
+            this.m_lbl_so_nv_da_het_han_hd = new System.Windows.Forms.Label();
+            this.m_lbl_nv_da_het_han_hd = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -207,16 +213,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_pnl_ket_thuc_nghi_tam_thoi)).BeginInit();
-            this.m_pnl_ket_thuc_nghi_tam_thoi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_sap_ket_thuc_ttld)).BeginInit();
+            this.m_pn_sap_ket_thuc_ttld.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_da_nghi_viec)).BeginInit();
+            this.m_pn_da_nghi_viec.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_sap_het_han_lns)).BeginInit();
+            this.m_pn_sap_het_han_lns.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_da_het_han_lns)).BeginInit();
+            this.m_pn_da_het_han_lns.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_sap_ket_thuc_ct)).BeginInit();
+            this.m_pn_sap_ket_thuc_ct.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_da_ket_thuc_ct)).BeginInit();
+            this.m_pn_da_ket_thuc_ct.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_sap_het_han_hd)).BeginInit();
+            this.m_pn_sap_het_han_hd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_da_het_han_hd)).BeginInit();
+            this.m_pn_da_het_han_hd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             this.SuspendLayout();
@@ -1561,7 +1573,7 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItemServer);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 400);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 489);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1305, 31);
@@ -1610,260 +1622,118 @@
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel1.ID = new System.Guid("1e0cc779-2952-469d-b59f-b102440e1fde");
-            this.dockPanel1.Location = new System.Drawing.Point(865, 144);
+            this.dockPanel1.Location = new System.Drawing.Point(935, 144);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.Options.ShowCloseButton = false;
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(440, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(440, 256);
-            this.dockPanel1.Text = "Cảnh báo";
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(370, 200);
+            this.dockPanel1.Size = new System.Drawing.Size(370, 345);
+            this.dockPanel1.Text = "Cảnh báo trong tháng";
             // 
             // dockPanel1_Container
             // 
-            this.dockPanel1_Container.Controls.Add(this.m_pnl_ket_thuc_nghi_tam_thoi);
-            this.dockPanel1_Container.Controls.Add(this.panelControl5);
-            this.dockPanel1_Container.Controls.Add(this.panelControl4);
-            this.dockPanel1_Container.Controls.Add(this.panelControl3);
-            this.dockPanel1_Container.Controls.Add(this.panelControl1);
+            this.dockPanel1_Container.Controls.Add(this.m_pn_sap_ket_thuc_ttld);
+            this.dockPanel1_Container.Controls.Add(this.m_pn_da_nghi_viec);
+            this.dockPanel1_Container.Controls.Add(this.m_pn_sap_het_han_lns);
+            this.dockPanel1_Container.Controls.Add(this.m_pn_da_het_han_lns);
+            this.dockPanel1_Container.Controls.Add(this.m_pn_sap_ket_thuc_ct);
+            this.dockPanel1_Container.Controls.Add(this.m_pn_da_ket_thuc_ct);
+            this.dockPanel1_Container.Controls.Add(this.m_pn_sap_het_han_hd);
+            this.dockPanel1_Container.Controls.Add(this.m_pn_da_het_han_hd);
             this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(432, 229);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(362, 318);
             this.dockPanel1_Container.TabIndex = 0;
             // 
-            // m_pnl_ket_thuc_nghi_tam_thoi
+            // m_pn_sap_ket_thuc_ttld
             // 
-            this.m_pnl_ket_thuc_nghi_tam_thoi.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Controls.Add(this.label15);
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Controls.Add(this.label18);
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Controls.Add(this.m_lbl_ket_thuc_nghi_tam_thoi);
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Controls.Add(this.label20);
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Location = new System.Drawing.Point(0, 156);
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Name = "m_pnl_ket_thuc_nghi_tam_thoi";
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Size = new System.Drawing.Size(432, 36);
-            this.m_pnl_ket_thuc_nghi_tam_thoi.TabIndex = 16;
-            this.m_pnl_ket_thuc_nghi_tam_thoi.Visible = false;
+            this.m_pn_sap_ket_thuc_ttld.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.m_pn_sap_ket_thuc_ttld.Controls.Add(this.m_lbl_so_nv_sap_ket_thuc_ttld);
+            this.m_pn_sap_ket_thuc_ttld.Controls.Add(this.m_lbl_nv_can_chuyen_trang_thai);
+            this.m_pn_sap_ket_thuc_ttld.Controls.Add(this.label22);
+            this.m_pn_sap_ket_thuc_ttld.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_pn_sap_ket_thuc_ttld.Location = new System.Drawing.Point(0, 249);
+            this.m_pn_sap_ket_thuc_ttld.Name = "m_pn_sap_ket_thuc_ttld";
+            this.m_pn_sap_ket_thuc_ttld.Size = new System.Drawing.Size(362, 36);
+            this.m_pn_sap_ket_thuc_ttld.TabIndex = 26;
+            this.m_pn_sap_ket_thuc_ttld.Visible = false;
             // 
-            // label15
+            // m_lbl_so_nv_sap_ket_thuc_ttld
             // 
-            this.label15.AutoSize = true;
-            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Green;
-            this.label15.Location = new System.Drawing.Point(193, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(229, 23);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "hết nghỉ phép tạm thời";
+            this.m_lbl_so_nv_sap_ket_thuc_ttld.AutoSize = true;
+            this.m_lbl_so_nv_sap_ket_thuc_ttld.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_so_nv_sap_ket_thuc_ttld.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_so_nv_sap_ket_thuc_ttld.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_so_nv_sap_ket_thuc_ttld.Location = new System.Drawing.Point(333, 0);
+            this.m_lbl_so_nv_sap_ket_thuc_ttld.Name = "m_lbl_so_nv_sap_ket_thuc_ttld";
+            this.m_lbl_so_nv_sap_ket_thuc_ttld.Padding = new System.Windows.Forms.Padding(0, 10, 0, 3);
+            this.m_lbl_so_nv_sap_ket_thuc_ttld.Size = new System.Drawing.Size(55, 31);
+            this.m_lbl_so_nv_sap_ket_thuc_ttld.TabIndex = 8;
+            this.m_lbl_so_nv_sap_ket_thuc_ttld.Text = "label2";
             // 
-            // label18
+            // m_lbl_nv_can_chuyen_trang_thai
             // 
-            this.label18.AutoSize = true;
-            this.label18.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(130, 0);
-            this.label18.Name = "label18";
-            this.label18.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label18.Size = new System.Drawing.Size(63, 21);
-            this.label18.TabIndex = 10;
-            this.label18.Text = "nhân viên";
+            this.m_lbl_nv_can_chuyen_trang_thai.AutoSize = true;
+            this.m_lbl_nv_can_chuyen_trang_thai.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_nv_can_chuyen_trang_thai.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_nv_can_chuyen_trang_thai.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_nv_can_chuyen_trang_thai.Location = new System.Drawing.Point(89, 0);
+            this.m_lbl_nv_can_chuyen_trang_thai.Name = "m_lbl_nv_can_chuyen_trang_thai";
+            this.m_lbl_nv_can_chuyen_trang_thai.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.m_lbl_nv_can_chuyen_trang_thai.Size = new System.Drawing.Size(244, 28);
+            this.m_lbl_nv_can_chuyen_trang_thai.TabIndex = 7;
+            this.m_lbl_nv_can_chuyen_trang_thai.Text = "cần chuyển trạng thái lao động :";
             // 
-            // m_lbl_ket_thuc_nghi_tam_thoi
+            // label22
             // 
-            this.m_lbl_ket_thuc_nghi_tam_thoi.AutoSize = true;
-            this.m_lbl_ket_thuc_nghi_tam_thoi.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_lbl_ket_thuc_nghi_tam_thoi.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_ket_thuc_nghi_tam_thoi.ForeColor = System.Drawing.Color.Green;
-            this.m_lbl_ket_thuc_nghi_tam_thoi.Location = new System.Drawing.Point(50, 0);
-            this.m_lbl_ket_thuc_nghi_tam_thoi.Name = "m_lbl_ket_thuc_nghi_tam_thoi";
-            this.m_lbl_ket_thuc_nghi_tam_thoi.Size = new System.Drawing.Size(80, 23);
-            this.m_lbl_ket_thuc_nghi_tam_thoi.TabIndex = 9;
-            this.m_lbl_ket_thuc_nghi_tam_thoi.Text = "label15";
+            this.label22.AutoSize = true;
+            this.label22.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label22.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(0, 0);
+            this.label22.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label22.Name = "label22";
+            this.label22.Padding = new System.Windows.Forms.Padding(7, 12, 0, 2);
+            this.label22.Size = new System.Drawing.Size(89, 30);
+            this.label22.TabIndex = 4;
+            this.label22.Text = "Số nhân viên";
             // 
-            // label20
+            // m_pn_da_nghi_viec
             // 
-            this.label20.AutoSize = true;
-            this.label20.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label20.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(0, 0);
-            this.label20.Name = "label20";
-            this.label20.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label20.Size = new System.Drawing.Size(50, 21);
-            this.label20.TabIndex = 8;
-            this.label20.Text = "Hiện có";
+            this.m_pn_da_nghi_viec.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.m_pn_da_nghi_viec.Controls.Add(this.m_lbl_so_nv_da_nghi_viec);
+            this.m_pn_da_nghi_viec.Controls.Add(this.m_lbl_nv_da_nghi_viec);
+            this.m_pn_da_nghi_viec.Controls.Add(this.label12);
+            this.m_pn_da_nghi_viec.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_pn_da_nghi_viec.Location = new System.Drawing.Point(0, 213);
+            this.m_pn_da_nghi_viec.Name = "m_pn_da_nghi_viec";
+            this.m_pn_da_nghi_viec.Size = new System.Drawing.Size(362, 36);
+            this.m_pn_da_nghi_viec.TabIndex = 26;
+            this.m_pn_da_nghi_viec.Visible = false;
             // 
-            // panelControl5
+            // m_lbl_so_nv_da_nghi_viec
             // 
-            this.panelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl5.Controls.Add(this.label2);
-            this.panelControl5.Controls.Add(this.label11);
-            this.panelControl5.Controls.Add(this.m_lbl_nv_nghi_tam_thoi);
-            this.panelControl5.Controls.Add(this.label17);
-            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl5.Location = new System.Drawing.Point(0, 120);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(432, 36);
-            this.panelControl5.TabIndex = 15;
-            this.panelControl5.Visible = false;
+            this.m_lbl_so_nv_da_nghi_viec.AutoSize = true;
+            this.m_lbl_so_nv_da_nghi_viec.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_so_nv_da_nghi_viec.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_so_nv_da_nghi_viec.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_so_nv_da_nghi_viec.Location = new System.Drawing.Point(195, 0);
+            this.m_lbl_so_nv_da_nghi_viec.Name = "m_lbl_so_nv_da_nghi_viec";
+            this.m_lbl_so_nv_da_nghi_viec.Padding = new System.Windows.Forms.Padding(0, 10, 0, 3);
+            this.m_lbl_so_nv_da_nghi_viec.Size = new System.Drawing.Size(55, 31);
+            this.m_lbl_so_nv_da_nghi_viec.TabIndex = 8;
+            this.m_lbl_so_nv_da_nghi_viec.Text = "label2";
             // 
-            // label2
+            // m_lbl_nv_da_nghi_viec
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(193, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 23);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "đang nghỉ tạm thời";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(130, 0);
-            this.label11.Name = "label11";
-            this.label11.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label11.Size = new System.Drawing.Size(63, 21);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "nhân viên";
-            // 
-            // m_lbl_nv_nghi_tam_thoi
-            // 
-            this.m_lbl_nv_nghi_tam_thoi.AutoSize = true;
-            this.m_lbl_nv_nghi_tam_thoi.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_lbl_nv_nghi_tam_thoi.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_nv_nghi_tam_thoi.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_nv_nghi_tam_thoi.Location = new System.Drawing.Point(50, 0);
-            this.m_lbl_nv_nghi_tam_thoi.Name = "m_lbl_nv_nghi_tam_thoi";
-            this.m_lbl_nv_nghi_tam_thoi.Size = new System.Drawing.Size(80, 23);
-            this.m_lbl_nv_nghi_tam_thoi.TabIndex = 5;
-            this.m_lbl_nv_nghi_tam_thoi.Text = "label15";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(0, 0);
-            this.label17.Name = "label17";
-            this.label17.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label17.Size = new System.Drawing.Size(50, 21);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "Hiện có";
-            // 
-            // panelControl4
-            // 
-            this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl4.Controls.Add(this.label13);
-            this.panelControl4.Controls.Add(this.label14);
-            this.panelControl4.Controls.Add(this.m_lbl_nv_het_han_lcd);
-            this.panelControl4.Controls.Add(this.label16);
-            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl4.Location = new System.Drawing.Point(0, 80);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(432, 40);
-            this.panelControl4.TabIndex = 14;
-            this.panelControl4.Visible = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(193, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(251, 23);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "sắp hết hạn lương chế độ";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label14.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(130, 0);
-            this.label14.Name = "label14";
-            this.label14.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label14.Size = new System.Drawing.Size(63, 21);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "nhân viên";
-            // 
-            // m_lbl_nv_het_han_lcd
-            // 
-            this.m_lbl_nv_het_han_lcd.AutoSize = true;
-            this.m_lbl_nv_het_han_lcd.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_lbl_nv_het_han_lcd.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_nv_het_han_lcd.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_nv_het_han_lcd.Location = new System.Drawing.Point(50, 0);
-            this.m_lbl_nv_het_han_lcd.Name = "m_lbl_nv_het_han_lcd";
-            this.m_lbl_nv_het_han_lcd.Size = new System.Drawing.Size(80, 23);
-            this.m_lbl_nv_het_han_lcd.TabIndex = 1;
-            this.m_lbl_nv_het_han_lcd.Text = "label15";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(0, 0);
-            this.label16.Name = "label16";
-            this.label16.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label16.Size = new System.Drawing.Size(50, 21);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Hiện có";
-            // 
-            // panelControl3
-            // 
-            this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl3.Controls.Add(this.label9);
-            this.panelControl3.Controls.Add(this.label10);
-            this.panelControl3.Controls.Add(this.m_lbl_nv_het_han_lns);
-            this.panelControl3.Controls.Add(this.label12);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(0, 40);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(432, 40);
-            this.panelControl3.TabIndex = 14;
-            this.panelControl3.Visible = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(193, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(282, 23);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "sắp hết hạn lương năng suất";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(130, 0);
-            this.label10.Name = "label10";
-            this.label10.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label10.Size = new System.Drawing.Size(63, 21);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "nhân viên";
-            // 
-            // m_lbl_nv_het_han_lns
-            // 
-            this.m_lbl_nv_het_han_lns.AutoSize = true;
-            this.m_lbl_nv_het_han_lns.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_lbl_nv_het_han_lns.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_nv_het_han_lns.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_nv_het_han_lns.Location = new System.Drawing.Point(50, 0);
-            this.m_lbl_nv_het_han_lns.Name = "m_lbl_nv_het_han_lns";
-            this.m_lbl_nv_het_han_lns.Size = new System.Drawing.Size(80, 23);
-            this.m_lbl_nv_het_han_lns.TabIndex = 1;
-            this.m_lbl_nv_het_han_lns.Text = "label11";
+            this.m_lbl_nv_da_nghi_viec.AutoSize = true;
+            this.m_lbl_nv_da_nghi_viec.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_nv_da_nghi_viec.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_nv_da_nghi_viec.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_nv_da_nghi_viec.Location = new System.Drawing.Point(89, 0);
+            this.m_lbl_nv_da_nghi_viec.Name = "m_lbl_nv_da_nghi_viec";
+            this.m_lbl_nv_da_nghi_viec.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.m_lbl_nv_da_nghi_viec.Size = new System.Drawing.Size(106, 28);
+            this.m_lbl_nv_da_nghi_viec.TabIndex = 7;
+            this.m_lbl_nv_da_nghi_viec.Text = "đã nghỉ việc :";
             // 
             // label12
             // 
@@ -1871,61 +1741,312 @@
             this.label12.Dock = System.Windows.Forms.DockStyle.Left;
             this.label12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(0, 0);
+            this.label12.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label12.Name = "label12";
-            this.label12.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label12.Size = new System.Drawing.Size(50, 21);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Hiện có";
+            this.label12.Padding = new System.Windows.Forms.Padding(7, 12, 0, 2);
+            this.label12.Size = new System.Drawing.Size(89, 30);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Số nhân viên";
             // 
-            // panelControl1
+            // m_pn_sap_het_han_lns
             // 
-            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl1.Controls.Add(this.label4);
-            this.panelControl1.Controls.Add(this.label3);
-            this.panelControl1.Controls.Add(this.m_lbl_nv_het_han_hop_dong);
-            this.panelControl1.Controls.Add(this.label1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(432, 40);
-            this.panelControl1.TabIndex = 13;
-            this.panelControl1.Visible = false;
+            this.m_pn_sap_het_han_lns.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.m_pn_sap_het_han_lns.Controls.Add(this.m_lbl_so_nv_sap_het_han_lns);
+            this.m_pn_sap_het_han_lns.Controls.Add(this.m_lbl_nv_sap_het_han_lns);
+            this.m_pn_sap_het_han_lns.Controls.Add(this.label25);
+            this.m_pn_sap_het_han_lns.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_pn_sap_het_han_lns.Location = new System.Drawing.Point(0, 177);
+            this.m_pn_sap_het_han_lns.Name = "m_pn_sap_het_han_lns";
+            this.m_pn_sap_het_han_lns.Size = new System.Drawing.Size(362, 36);
+            this.m_pn_sap_het_han_lns.TabIndex = 22;
+            this.m_pn_sap_het_han_lns.Visible = false;
             // 
-            // label4
+            // m_lbl_so_nv_sap_het_han_lns
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(181, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(217, 23);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "sắp hết hạn hợp đồng";
+            this.m_lbl_so_nv_sap_het_han_lns.AutoSize = true;
+            this.m_lbl_so_nv_sap_het_han_lns.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_so_nv_sap_het_han_lns.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_so_nv_sap_het_han_lns.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_so_nv_sap_het_han_lns.Location = new System.Drawing.Point(313, 0);
+            this.m_lbl_so_nv_sap_het_han_lns.Name = "m_lbl_so_nv_sap_het_han_lns";
+            this.m_lbl_so_nv_sap_het_han_lns.Padding = new System.Windows.Forms.Padding(0, 10, 0, 3);
+            this.m_lbl_so_nv_sap_het_han_lns.Size = new System.Drawing.Size(55, 31);
+            this.m_lbl_so_nv_sap_het_han_lns.TabIndex = 8;
+            this.m_lbl_so_nv_sap_het_han_lns.Text = "label2";
             // 
-            // label3
+            // m_lbl_nv_sap_het_han_lns
             // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(118, 0);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label3.Size = new System.Drawing.Size(63, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "nhân viên";
+            this.m_lbl_nv_sap_het_han_lns.AutoSize = true;
+            this.m_lbl_nv_sap_het_han_lns.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_nv_sap_het_han_lns.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_nv_sap_het_han_lns.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_nv_sap_het_han_lns.Location = new System.Drawing.Point(89, 0);
+            this.m_lbl_nv_sap_het_han_lns.Name = "m_lbl_nv_sap_het_han_lns";
+            this.m_lbl_nv_sap_het_han_lns.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.m_lbl_nv_sap_het_han_lns.Size = new System.Drawing.Size(224, 28);
+            this.m_lbl_nv_sap_het_han_lns.TabIndex = 7;
+            this.m_lbl_nv_sap_het_han_lns.Text = "sắp hết hạn lương năng suất :";
             // 
-            // m_lbl_nv_het_han_hop_dong
+            // label25
             // 
-            this.m_lbl_nv_het_han_hop_dong.AutoSize = true;
-            this.m_lbl_nv_het_han_hop_dong.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_lbl_nv_het_han_hop_dong.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_nv_het_han_hop_dong.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_nv_het_han_hop_dong.Location = new System.Drawing.Point(50, 0);
-            this.m_lbl_nv_het_han_hop_dong.Name = "m_lbl_nv_het_han_hop_dong";
-            this.m_lbl_nv_het_han_hop_dong.Size = new System.Drawing.Size(68, 23);
-            this.m_lbl_nv_het_han_hop_dong.TabIndex = 1;
-            this.m_lbl_nv_het_han_hop_dong.Text = "label2";
+            this.label25.AutoSize = true;
+            this.label25.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label25.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(0, 0);
+            this.label25.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label25.Name = "label25";
+            this.label25.Padding = new System.Windows.Forms.Padding(7, 12, 0, 2);
+            this.label25.Size = new System.Drawing.Size(89, 30);
+            this.label25.TabIndex = 4;
+            this.label25.Text = "Số nhân viên";
+            // 
+            // m_pn_da_het_han_lns
+            // 
+            this.m_pn_da_het_han_lns.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.m_pn_da_het_han_lns.Controls.Add(this.m_lbl_so_nv_da_het_han_lns);
+            this.m_pn_da_het_han_lns.Controls.Add(this.m_lbl_nv_da_het_han_lns);
+            this.m_pn_da_het_han_lns.Controls.Add(this.label21);
+            this.m_pn_da_het_han_lns.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_pn_da_het_han_lns.Location = new System.Drawing.Point(0, 141);
+            this.m_pn_da_het_han_lns.Name = "m_pn_da_het_han_lns";
+            this.m_pn_da_het_han_lns.Size = new System.Drawing.Size(362, 36);
+            this.m_pn_da_het_han_lns.TabIndex = 23;
+            this.m_pn_da_het_han_lns.Visible = false;
+            // 
+            // m_lbl_so_nv_da_het_han_lns
+            // 
+            this.m_lbl_so_nv_da_het_han_lns.AutoSize = true;
+            this.m_lbl_so_nv_da_het_han_lns.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_so_nv_da_het_han_lns.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_so_nv_da_het_han_lns.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_so_nv_da_het_han_lns.Location = new System.Drawing.Point(305, 0);
+            this.m_lbl_so_nv_da_het_han_lns.Name = "m_lbl_so_nv_da_het_han_lns";
+            this.m_lbl_so_nv_da_het_han_lns.Padding = new System.Windows.Forms.Padding(0, 10, 0, 3);
+            this.m_lbl_so_nv_da_het_han_lns.Size = new System.Drawing.Size(55, 31);
+            this.m_lbl_so_nv_da_het_han_lns.TabIndex = 8;
+            this.m_lbl_so_nv_da_het_han_lns.Text = "label2";
+            // 
+            // m_lbl_nv_da_het_han_lns
+            // 
+            this.m_lbl_nv_da_het_han_lns.AutoSize = true;
+            this.m_lbl_nv_da_het_han_lns.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_nv_da_het_han_lns.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_nv_da_het_han_lns.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_nv_da_het_han_lns.Location = new System.Drawing.Point(89, 0);
+            this.m_lbl_nv_da_het_han_lns.Name = "m_lbl_nv_da_het_han_lns";
+            this.m_lbl_nv_da_het_han_lns.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.m_lbl_nv_da_het_han_lns.Size = new System.Drawing.Size(216, 28);
+            this.m_lbl_nv_da_het_han_lns.TabIndex = 7;
+            this.m_lbl_nv_da_het_han_lns.Text = "đã hết hạn lương năng suất :";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label21.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(0, 0);
+            this.label21.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label21.Name = "label21";
+            this.label21.Padding = new System.Windows.Forms.Padding(7, 12, 0, 2);
+            this.label21.Size = new System.Drawing.Size(89, 30);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Số nhân viên";
+            // 
+            // m_pn_sap_ket_thuc_ct
+            // 
+            this.m_pn_sap_ket_thuc_ct.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.m_pn_sap_ket_thuc_ct.Controls.Add(this.m_lbl_so_nv_sap_ket_thuc_ct);
+            this.m_pn_sap_ket_thuc_ct.Controls.Add(this.m_lbl_nv_sap_ket_thuc_ct);
+            this.m_pn_sap_ket_thuc_ct.Controls.Add(this.label17);
+            this.m_pn_sap_ket_thuc_ct.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_pn_sap_ket_thuc_ct.Location = new System.Drawing.Point(0, 105);
+            this.m_pn_sap_ket_thuc_ct.Name = "m_pn_sap_ket_thuc_ct";
+            this.m_pn_sap_ket_thuc_ct.Size = new System.Drawing.Size(362, 36);
+            this.m_pn_sap_ket_thuc_ct.TabIndex = 21;
+            this.m_pn_sap_ket_thuc_ct.Visible = false;
+            // 
+            // m_lbl_so_nv_sap_ket_thuc_ct
+            // 
+            this.m_lbl_so_nv_sap_ket_thuc_ct.AutoSize = true;
+            this.m_lbl_so_nv_sap_ket_thuc_ct.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_so_nv_sap_ket_thuc_ct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_so_nv_sap_ket_thuc_ct.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_so_nv_sap_ket_thuc_ct.Location = new System.Drawing.Point(262, 0);
+            this.m_lbl_so_nv_sap_ket_thuc_ct.Name = "m_lbl_so_nv_sap_ket_thuc_ct";
+            this.m_lbl_so_nv_sap_ket_thuc_ct.Padding = new System.Windows.Forms.Padding(0, 10, 0, 3);
+            this.m_lbl_so_nv_sap_ket_thuc_ct.Size = new System.Drawing.Size(55, 31);
+            this.m_lbl_so_nv_sap_ket_thuc_ct.TabIndex = 8;
+            this.m_lbl_so_nv_sap_ket_thuc_ct.Text = "label2";
+            // 
+            // m_lbl_nv_sap_ket_thuc_ct
+            // 
+            this.m_lbl_nv_sap_ket_thuc_ct.AutoSize = true;
+            this.m_lbl_nv_sap_ket_thuc_ct.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_nv_sap_ket_thuc_ct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_nv_sap_ket_thuc_ct.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_nv_sap_ket_thuc_ct.Location = new System.Drawing.Point(89, 0);
+            this.m_lbl_nv_sap_ket_thuc_ct.Name = "m_lbl_nv_sap_ket_thuc_ct";
+            this.m_lbl_nv_sap_ket_thuc_ct.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.m_lbl_nv_sap_ket_thuc_ct.Size = new System.Drawing.Size(173, 28);
+            this.m_lbl_nv_sap_ket_thuc_ct.TabIndex = 7;
+            this.m_lbl_nv_sap_ket_thuc_ct.Text = "sắp kết thúc công tác :";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(0, 0);
+            this.label17.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label17.Name = "label17";
+            this.label17.Padding = new System.Windows.Forms.Padding(7, 12, 0, 2);
+            this.label17.Size = new System.Drawing.Size(89, 30);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "Số nhân viên";
+            // 
+            // m_pn_da_ket_thuc_ct
+            // 
+            this.m_pn_da_ket_thuc_ct.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.m_pn_da_ket_thuc_ct.Controls.Add(this.m_lbl_so_nv_da_ket_thuc_ct);
+            this.m_pn_da_ket_thuc_ct.Controls.Add(this.m_lbl_nv_da_ket_thuc_ct);
+            this.m_pn_da_ket_thuc_ct.Controls.Add(this.label11);
+            this.m_pn_da_ket_thuc_ct.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_pn_da_ket_thuc_ct.Location = new System.Drawing.Point(0, 69);
+            this.m_pn_da_ket_thuc_ct.Name = "m_pn_da_ket_thuc_ct";
+            this.m_pn_da_ket_thuc_ct.Size = new System.Drawing.Size(362, 36);
+            this.m_pn_da_ket_thuc_ct.TabIndex = 19;
+            this.m_pn_da_ket_thuc_ct.Visible = false;
+            // 
+            // m_lbl_so_nv_da_ket_thuc_ct
+            // 
+            this.m_lbl_so_nv_da_ket_thuc_ct.AutoSize = true;
+            this.m_lbl_so_nv_da_ket_thuc_ct.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_so_nv_da_ket_thuc_ct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_so_nv_da_ket_thuc_ct.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_so_nv_da_ket_thuc_ct.Location = new System.Drawing.Point(254, 0);
+            this.m_lbl_so_nv_da_ket_thuc_ct.Name = "m_lbl_so_nv_da_ket_thuc_ct";
+            this.m_lbl_so_nv_da_ket_thuc_ct.Padding = new System.Windows.Forms.Padding(0, 10, 0, 3);
+            this.m_lbl_so_nv_da_ket_thuc_ct.Size = new System.Drawing.Size(55, 31);
+            this.m_lbl_so_nv_da_ket_thuc_ct.TabIndex = 8;
+            this.m_lbl_so_nv_da_ket_thuc_ct.Text = "label2";
+            // 
+            // m_lbl_nv_da_ket_thuc_ct
+            // 
+            this.m_lbl_nv_da_ket_thuc_ct.AutoSize = true;
+            this.m_lbl_nv_da_ket_thuc_ct.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_nv_da_ket_thuc_ct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_nv_da_ket_thuc_ct.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_nv_da_ket_thuc_ct.Location = new System.Drawing.Point(89, 0);
+            this.m_lbl_nv_da_ket_thuc_ct.Name = "m_lbl_nv_da_ket_thuc_ct";
+            this.m_lbl_nv_da_ket_thuc_ct.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.m_lbl_nv_da_ket_thuc_ct.Size = new System.Drawing.Size(165, 28);
+            this.m_lbl_nv_da_ket_thuc_ct.TabIndex = 7;
+            this.m_lbl_nv_da_ket_thuc_ct.Text = "đã kết thúc công tác :";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(0, 0);
+            this.label11.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label11.Name = "label11";
+            this.label11.Padding = new System.Windows.Forms.Padding(7, 12, 0, 2);
+            this.label11.Size = new System.Drawing.Size(89, 30);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Số nhân viên";
+            // 
+            // m_pn_sap_het_han_hd
+            // 
+            this.m_pn_sap_het_han_hd.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.m_pn_sap_het_han_hd.Controls.Add(this.m_lbl_so_nv_sap_het_han_hd);
+            this.m_pn_sap_het_han_hd.Controls.Add(this.m_lbl_nv_sap_het_han_hd);
+            this.m_pn_sap_het_han_hd.Controls.Add(this.label15);
+            this.m_pn_sap_het_han_hd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_pn_sap_het_han_hd.Location = new System.Drawing.Point(0, 33);
+            this.m_pn_sap_het_han_hd.Name = "m_pn_sap_het_han_hd";
+            this.m_pn_sap_het_han_hd.Size = new System.Drawing.Size(362, 36);
+            this.m_pn_sap_het_han_hd.TabIndex = 16;
+            this.m_pn_sap_het_han_hd.Visible = false;
+            // 
+            // m_lbl_so_nv_sap_het_han_hd
+            // 
+            this.m_lbl_so_nv_sap_het_han_hd.AutoSize = true;
+            this.m_lbl_so_nv_sap_het_han_hd.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_so_nv_sap_het_han_hd.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_so_nv_sap_het_han_hd.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_so_nv_sap_het_han_hd.Location = new System.Drawing.Point(262, 0);
+            this.m_lbl_so_nv_sap_het_han_hd.Name = "m_lbl_so_nv_sap_het_han_hd";
+            this.m_lbl_so_nv_sap_het_han_hd.Padding = new System.Windows.Forms.Padding(0, 10, 0, 3);
+            this.m_lbl_so_nv_sap_het_han_hd.Size = new System.Drawing.Size(55, 31);
+            this.m_lbl_so_nv_sap_het_han_hd.TabIndex = 8;
+            this.m_lbl_so_nv_sap_het_han_hd.Text = "label2";
+            // 
+            // m_lbl_nv_sap_het_han_hd
+            // 
+            this.m_lbl_nv_sap_het_han_hd.AutoSize = true;
+            this.m_lbl_nv_sap_het_han_hd.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_nv_sap_het_han_hd.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_nv_sap_het_han_hd.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_nv_sap_het_han_hd.Location = new System.Drawing.Point(89, 0);
+            this.m_lbl_nv_sap_het_han_hd.Name = "m_lbl_nv_sap_het_han_hd";
+            this.m_lbl_nv_sap_het_han_hd.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.m_lbl_nv_sap_het_han_hd.Size = new System.Drawing.Size(173, 28);
+            this.m_lbl_nv_sap_het_han_hd.TabIndex = 7;
+            this.m_lbl_nv_sap_het_han_hd.Text = "sắp hết hạn hợp đồng :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label15.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(0, 0);
+            this.label15.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label15.Name = "label15";
+            this.label15.Padding = new System.Windows.Forms.Padding(7, 12, 0, 2);
+            this.label15.Size = new System.Drawing.Size(89, 30);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Số nhân viên";
+            // 
+            // m_pn_da_het_han_hd
+            // 
+            this.m_pn_da_het_han_hd.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.m_pn_da_het_han_hd.Controls.Add(this.m_lbl_so_nv_da_het_han_hd);
+            this.m_pn_da_het_han_hd.Controls.Add(this.m_lbl_nv_da_het_han_hd);
+            this.m_pn_da_het_han_hd.Controls.Add(this.label1);
+            this.m_pn_da_het_han_hd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_pn_da_het_han_hd.Location = new System.Drawing.Point(0, 0);
+            this.m_pn_da_het_han_hd.Name = "m_pn_da_het_han_hd";
+            this.m_pn_da_het_han_hd.Size = new System.Drawing.Size(362, 33);
+            this.m_pn_da_het_han_hd.TabIndex = 13;
+            this.m_pn_da_het_han_hd.Visible = false;
+            // 
+            // m_lbl_so_nv_da_het_han_hd
+            // 
+            this.m_lbl_so_nv_da_het_han_hd.AutoSize = true;
+            this.m_lbl_so_nv_da_het_han_hd.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_so_nv_da_het_han_hd.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_so_nv_da_het_han_hd.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_so_nv_da_het_han_hd.Location = new System.Drawing.Point(254, 0);
+            this.m_lbl_so_nv_da_het_han_hd.Margin = new System.Windows.Forms.Padding(0);
+            this.m_lbl_so_nv_da_het_han_hd.Name = "m_lbl_so_nv_da_het_han_hd";
+            this.m_lbl_so_nv_da_het_han_hd.Padding = new System.Windows.Forms.Padding(0, 10, 0, 3);
+            this.m_lbl_so_nv_da_het_han_hd.Size = new System.Drawing.Size(55, 31);
+            this.m_lbl_so_nv_da_het_han_hd.TabIndex = 4;
+            this.m_lbl_so_nv_da_het_han_hd.Text = "label2";
+            // 
+            // m_lbl_nv_da_het_han_hd
+            // 
+            this.m_lbl_nv_da_het_han_hd.AutoSize = true;
+            this.m_lbl_nv_da_het_han_hd.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_nv_da_het_han_hd.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_nv_da_het_han_hd.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_nv_da_het_han_hd.Location = new System.Drawing.Point(89, 0);
+            this.m_lbl_nv_da_het_han_hd.Name = "m_lbl_nv_da_het_han_hd";
+            this.m_lbl_nv_da_het_han_hd.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.m_lbl_nv_da_het_han_hd.Size = new System.Drawing.Size(165, 28);
+            this.m_lbl_nv_da_het_han_hd.TabIndex = 3;
+            this.m_lbl_nv_da_het_han_hd.Text = "đã hết hạn hợp đồng :";
             // 
             // label1
             // 
@@ -1933,11 +2054,12 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label1.Size = new System.Drawing.Size(50, 21);
+            this.label1.Padding = new System.Windows.Forms.Padding(7, 12, 0, 2);
+            this.label1.Size = new System.Drawing.Size(89, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Hiện có";
+            this.label1.Text = "Số nhân viên";
             // 
             // barButtonItem6
             // 
@@ -2034,7 +2156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1305, 431);
+            this.ClientSize = new System.Drawing.Size(1305, 520);
             this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
@@ -2050,21 +2172,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_pnl_ket_thuc_nghi_tam_thoi)).EndInit();
-            this.m_pnl_ket_thuc_nghi_tam_thoi.ResumeLayout(false);
-            this.m_pnl_ket_thuc_nghi_tam_thoi.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
-            this.panelControl4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_sap_ket_thuc_ttld)).EndInit();
+            this.m_pn_sap_ket_thuc_ttld.ResumeLayout(false);
+            this.m_pn_sap_ket_thuc_ttld.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_da_nghi_viec)).EndInit();
+            this.m_pn_da_nghi_viec.ResumeLayout(false);
+            this.m_pn_da_nghi_viec.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_sap_het_han_lns)).EndInit();
+            this.m_pn_sap_het_han_lns.ResumeLayout(false);
+            this.m_pn_sap_het_han_lns.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_da_het_han_lns)).EndInit();
+            this.m_pn_da_het_han_lns.ResumeLayout(false);
+            this.m_pn_da_het_han_lns.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_sap_ket_thuc_ct)).EndInit();
+            this.m_pn_sap_ket_thuc_ct.ResumeLayout(false);
+            this.m_pn_sap_ket_thuc_ct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_da_ket_thuc_ct)).EndInit();
+            this.m_pn_da_ket_thuc_ct.ResumeLayout(false);
+            this.m_pn_da_ket_thuc_ct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_sap_het_han_hd)).EndInit();
+            this.m_pn_sap_het_han_hd.ResumeLayout(false);
+            this.m_pn_sap_het_han_hd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_pn_da_het_han_hd)).EndInit();
+            this.m_pn_da_het_han_hd.ResumeLayout(false);
+            this.m_pn_da_het_han_hd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
@@ -2210,42 +2341,49 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
         private DevExpress.XtraBars.BarButtonItem m_cmd_ds_chot_bang_luong;
         private DevExpress.XtraBars.BarButtonItem m_cmd_bc_hs;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label m_lbl_nv_het_han_hop_dong;
+        private DevExpress.XtraEditors.PanelControl m_pn_da_het_han_hd;
+        private System.Windows.Forms.Label m_lbl_nv_da_het_han_hd;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private DevExpress.XtraEditors.PanelControl panelControl4;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label m_lbl_nv_het_han_lcd;
-        private System.Windows.Forms.Label label16;
-        private DevExpress.XtraEditors.PanelControl panelControl3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label m_lbl_nv_het_han_lns;
-        private System.Windows.Forms.Label label12;
         private DevExpress.XtraBars.BarButtonItem m_cmd_bao_cao_trang_thai_lao_dong;
         private DevExpress.XtraBars.BarButtonItem m_cmd_qtt_2016;
         private DevExpress.XtraBars.BarButtonItem m_cmd_lap_hd_v2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem m_cmd_hd_thay_doi_lns;
-        private DevExpress.XtraEditors.PanelControl panelControl5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label m_lbl_nv_nghi_tam_thoi;
-        private System.Windows.Forms.Label label17;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
-        private DevExpress.XtraEditors.PanelControl m_pnl_ket_thuc_nghi_tam_thoi;
+        private DevExpress.XtraEditors.PanelControl m_pn_sap_het_han_hd;
+        private System.Windows.Forms.Label m_lbl_nv_sap_het_han_hd;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label m_lbl_ket_thuc_nghi_tam_thoi;
-        private System.Windows.Forms.Label label20;
+        private DevExpress.XtraEditors.PanelControl m_pn_sap_het_han_lns;
+        private System.Windows.Forms.Label m_lbl_nv_sap_het_han_lns;
+        private System.Windows.Forms.Label label25;
+        private DevExpress.XtraEditors.PanelControl m_pn_da_het_han_lns;
+        private System.Windows.Forms.Label m_lbl_nv_da_het_han_lns;
+        private System.Windows.Forms.Label label21;
+        private DevExpress.XtraEditors.PanelControl m_pn_sap_ket_thuc_ct;
+        private System.Windows.Forms.Label m_lbl_nv_sap_ket_thuc_ct;
+        private System.Windows.Forms.Label label17;
+        private DevExpress.XtraEditors.PanelControl m_pn_da_ket_thuc_ct;
+        private System.Windows.Forms.Label m_lbl_nv_da_ket_thuc_ct;
+        private System.Windows.Forms.Label label11;
+        private DevExpress.XtraEditors.PanelControl m_pn_sap_ket_thuc_ttld;
+        private System.Windows.Forms.Label m_lbl_so_nv_sap_ket_thuc_ttld;
+        private System.Windows.Forms.Label m_lbl_nv_can_chuyen_trang_thai;
+        private System.Windows.Forms.Label label22;
+        private DevExpress.XtraEditors.PanelControl m_pn_da_nghi_viec;
+        private System.Windows.Forms.Label m_lbl_so_nv_da_nghi_viec;
+        private System.Windows.Forms.Label m_lbl_nv_da_nghi_viec;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label m_lbl_so_nv_sap_het_han_lns;
+        private System.Windows.Forms.Label m_lbl_so_nv_da_het_han_lns;
+        private System.Windows.Forms.Label m_lbl_so_nv_da_het_han_hd;
+        private System.Windows.Forms.Label m_lbl_so_nv_sap_ket_thuc_ct;
+        private System.Windows.Forms.Label m_lbl_so_nv_da_ket_thuc_ct;
+        private System.Windows.Forms.Label m_lbl_so_nv_sap_het_han_hd;
     }
 }

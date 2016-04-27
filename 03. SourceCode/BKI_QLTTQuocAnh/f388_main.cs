@@ -30,6 +30,10 @@ namespace BKI_DichVuMatDat
 {
     public partial class f388_main : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        #region Members
+        bool m_trang_thai_filter=false;
+        #endregion
+
         public f388_main()
         {
             InitializeComponent();
@@ -42,48 +46,90 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                //
-                int v_so_hop_dong_het_han = get_hop_dong_het_han().Tables[0].Rows.Count;
-                if (v_so_hop_dong_het_han > 0)
-                {
-                    m_lbl_nv_het_han_hop_dong.Text = v_so_hop_dong_het_han.ToString();
-                    m_lbl_nv_het_han_hop_dong.Visible = true;
-                }
-                else
-                {
-                    m_lbl_nv_het_han_hop_dong.Visible = false;
-                }
-
-                //
-                int v_so_nv_het_han_hs_lns = get_nv_het_han_hs_lns().Tables[0].Rows.Count;
-                if (v_so_hop_dong_het_han > 0)
-                {
-                    m_lbl_nv_het_han_lns.Text = v_so_nv_het_han_hs_lns.ToString();
-                    m_lbl_nv_het_han_lns.Visible = true;
-                }
-                else
-                {
-                    m_lbl_nv_het_han_lns.Visible = false;
-                }
-                //int v_so_nv_han_han_lcd = get_nv_het_han_lcd().Tables[0].Rows.Count;
-                //int v_so_nv_nghi_tam_thoi = get_nv_nghi_tam_thoi().Tables[0].Rows.Count;
-                //int v_so_nv_het_nghi_tam_thoi = get_nv_het_nghi_tam_thoi().Tables[0].Rows.Count;
-
-                //m_lbl_nv_het_han_lcd.Text = v_so_nv_han_han_lcd.ToString();
-                //m_lbl_nv_het_han_lns.Text = v_so_nv_het_han_hs_lns.ToString();
-                //m_lbl_nv_nghi_tam_thoi.Text = v_so_nv_nghi_tam_thoi.ToString();
-                //if (v_so_nv_het_nghi_tam_thoi != 0)
-                //{
-                //    m_lbl_ket_thuc_nghi_tam_thoi.Text = v_so_nv_het_nghi_tam_thoi.ToString();
-                //}
-                //else
-                //{
-                //    m_pnl_ket_thuc_nghi_tam_thoi.Visible = false;
-                //}
+                canh_bao_het_han_hop_dong();
+                canh_bao_het_han_cong_tac();
+                canh_bao_het_han_luong_nang_suat();
+                canh_bao_ket_thuc_trang_thai_lao_dong();
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void canh_bao_het_han_hop_dong()
+        {
+            DataTable v_dt = get_hop_dong_het_han();
+            DataRow[] v_dr_hd_sap_het_han = v_dt.Select(string.Format(v_dt.Locale, "ngay_ket_thuc > '{0:o}'", DateTime.Now));
+            int v_so_hd_sap_het_han = v_dr_hd_sap_het_han.Length;
+            DataRow[] v_dr_hd_da_het_han = v_dt.Select(string.Format(v_dt.Locale, "ngay_ket_thuc <= '{0:o}'", DateTime.Now));
+            int v_so_hd_da_het_han = v_dr_hd_da_het_han.Length;
+            if (v_so_hd_sap_het_han > 0)
+            {
+                m_lbl_so_nv_sap_het_han_hd.Text = v_so_hd_sap_het_han.ToString();
+                m_pn_sap_het_han_hd.Visible = true;
+            }
+            if (v_so_hd_da_het_han > 0)
+            {
+                m_lbl_so_nv_da_het_han_hd.Text = v_so_hd_da_het_han.ToString();
+                m_pn_da_het_han_hd.Visible = true;
+            }
+        }
+
+        private void canh_bao_het_han_cong_tac()
+        {
+            DataTable v_dt = get_cong_tac_het_han();
+            DataRow[] v_dr_ct_sap_het_han = v_dt.Select(string.Format(v_dt.Locale, "ngay_ket_thuc > '{0:o}'", DateTime.Now));
+            int v_so_ct_sap_ket_thuc = v_dr_ct_sap_het_han.Length;
+            DataRow[] v_dr_ct_da_het_han = v_dt.Select(string.Format(v_dt.Locale, "ngay_ket_thuc <= '{0:o}'", DateTime.Now));
+            int v_so_ct_da_ket_thuc = v_dr_ct_da_het_han.Length;
+            if (v_so_ct_sap_ket_thuc > 0)
+            {
+                m_lbl_so_nv_sap_ket_thuc_ct.Text = v_so_ct_sap_ket_thuc.ToString();
+                m_pn_sap_ket_thuc_ct.Visible = true;
+            }
+            if (v_so_ct_da_ket_thuc > 0)
+            {
+                m_lbl_so_nv_da_ket_thuc_ct.Text = v_so_ct_da_ket_thuc.ToString();
+                m_pn_da_ket_thuc_ct.Visible = true;
+            }
+        }
+
+        private void canh_bao_het_han_luong_nang_suat()
+        {
+            DataTable v_dt = get_lns_het_han();
+            DataRow[] v_dr_lns_sap_het_han = v_dt.Select(string.Format(v_dt.Locale, "ngay_ket_thuc > '{0:o}'", DateTime.Now));
+            int v_so_lns_sap_het_han = v_dr_lns_sap_het_han.Length;
+            DataRow[] v_dr_lns_da_het_han = v_dt.Select(string.Format(v_dt.Locale, "ngay_ket_thuc <= '{0:o}'", DateTime.Now));
+            int v_so_lns_da_het_han = v_dr_lns_da_het_han.Length;
+            if (v_so_lns_sap_het_han > 0)
+            {
+                m_lbl_so_nv_sap_het_han_lns.Text = v_so_lns_sap_het_han.ToString();
+                m_pn_sap_het_han_lns.Visible = true;
+            }
+            if (v_so_lns_da_het_han > 0)
+            {
+                m_lbl_so_nv_da_het_han_lns.Text = v_so_lns_da_het_han.ToString();
+                m_pn_da_het_han_lns.Visible = true;
+            }
+        }
+
+        private void canh_bao_ket_thuc_trang_thai_lao_dong()
+        {
+            DataTable v_dt = get_trang_thai_lao_dong_ket_thuc();
+            DataRow[] v_dr_ttld_sap_ket_thuc = v_dt.Select(string.Format(v_dt.Locale, "ngay_ket_thuc > '{0:o}'", DateTime.Now));
+            int v_so_nv_sap_ket_thuc_ttld = v_dr_ttld_sap_ket_thuc.Length;
+            DataRow[] v_dr_ttld_da_ket_thuc = v_dt.Select(string.Format(v_dt.Locale, "ngay_ket_thuc <= '{0:o}'", DateTime.Now));
+            int v_so_nv_da_nghi_viec = v_dr_ttld_da_ket_thuc.Length;
+            if (v_so_nv_sap_ket_thuc_ttld > 0)
+            {
+                m_lbl_so_nv_sap_ket_thuc_ttld.Text = v_so_nv_sap_ket_thuc_ttld.ToString();
+                m_pn_sap_ket_thuc_ttld.Visible = true;
+            }
+            if (v_so_nv_da_nghi_viec > 0)
+            {
+                m_lbl_so_nv_da_nghi_viec.Text = v_so_nv_da_nghi_viec.ToString();
+                m_pn_da_nghi_viec.Visible = true;
             }
         }
 
@@ -201,19 +247,32 @@ namespace BKI_DichVuMatDat
 
         //lay thong tin canh bao
 
-        private DataSet get_hop_dong_het_han()
+        private DataTable get_hop_dong_het_han()
         {
-            //DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
-            //DateTime v_ngay_dau_tien_cua_thang_hien_tai = CHRMCommon.get_first_day_of_month(DateTime.Now.Date);
-            //DateTime v_ngay_cuoi_cung_cua_thang_hien_tai = CHRMCommon.get_last_day_of_month(DateTime.Now.Date);
-            DateTime v_ngay_hien_tai = DateTime.Now.Date;
-            DateTime v_ngay_dau_tien_cua_thang_hien_tai = CHRMCommon.get_first_day_of_month(v_ngay_hien_tai);
-            DateTime v_ngay_cuoi_cung_cua_thang_hien_tai = CHRMCommon.get_last_day_of_month(v_ngay_hien_tai);
             US_GD_HOP_DONG v_us_gd_hop_dong = new US_GD_HOP_DONG();
-            DataSet v_ds = v_us_gd_hop_dong.LayDanhSachHopDongHetHan(
-                                            v_ngay_dau_tien_cua_thang_hien_tai.Date
-                                            , v_ngay_cuoi_cung_cua_thang_hien_tai.Date);
-            return v_ds;
+            DataSet v_ds = v_us_gd_hop_dong.LayDanhSachHDHetHanTrongThang();
+            return v_ds.Tables[0];
+        }
+
+        private DataTable get_cong_tac_het_han()
+        {
+            US_GD_CONG_TAC v_us_gd_cong_tac = new US_GD_CONG_TAC();
+            DataSet v_ds = v_us_gd_cong_tac.LayDanhSachCTHetHanTrongThang();
+            return v_ds.Tables[0];
+        }
+
+        private DataTable get_lns_het_han()
+        {
+            US_GD_HE_SO_LNS v_us_gd_he_so_lns = new US_GD_HE_SO_LNS();
+            DataSet v_ds = v_us_gd_he_so_lns.LayDanhSachHetHanLNSTrongThang();
+            return v_ds.Tables[0];
+        }
+
+        private DataTable get_trang_thai_lao_dong_ket_thuc()
+        {
+            US_GD_TRANG_THAI_LAO_DONG v_us = new US_GD_TRANG_THAI_LAO_DONG();
+            DataSet v_ds = v_us.LayDanhSachKetThucTTLDTrongThang();
+            return v_ds.Tables[0];
         }
 
         private DataSet get_nv_nghi_tam_thoi()
@@ -288,26 +347,14 @@ namespace BKI_DichVuMatDat
         private void set_define_events()
         {
             this.Load += f388_main_Load;
-            m_lbl_nv_het_han_lns.DoubleClick += m_lbl_canh_bao_het_han_hs_lns_Click;
-            label12.DoubleClick += m_lbl_canh_bao_het_han_hs_lns_Click;
-            label10.DoubleClick += m_lbl_canh_bao_het_han_hs_lns_Click;
-            label9.DoubleClick += m_lbl_canh_bao_het_han_hs_lns_Click;
-            m_lbl_nv_het_han_lcd.DoubleClick += m_lbl_canh_bao_het_han_luong_che_do_Click;
-            label16.DoubleClick += m_lbl_canh_bao_het_han_luong_che_do_Click;
-            label14.DoubleClick += m_lbl_canh_bao_het_han_luong_che_do_Click;
-            label13.DoubleClick += m_lbl_canh_bao_het_han_luong_che_do_Click;
-            m_lbl_nv_het_han_hop_dong.Click += m_lbl_canh_bao_het_han_hop_dong_DoubleClick;
-            label1.DoubleClick += m_lbl_canh_bao_het_han_hop_dong_DoubleClick;
-            label3.DoubleClick += m_lbl_canh_bao_het_han_hop_dong_DoubleClick;
-            label4.DoubleClick += m_lbl_canh_bao_het_han_hop_dong_DoubleClick;
-            m_lbl_nv_nghi_tam_thoi.DoubleClick += M_lbl_nv_nghi_tam_thoi_DoubleClick;
-            label2.DoubleClick += M_lbl_nv_nghi_tam_thoi_DoubleClick;
-            label11.DoubleClick += M_lbl_nv_nghi_tam_thoi_DoubleClick;
-            label17.DoubleClick += M_lbl_nv_nghi_tam_thoi_DoubleClick;
-            m_lbl_ket_thuc_nghi_tam_thoi.DoubleClick += M_lbl_ket_thuc_nghi_tam_thoi_DoubleClick;
-            label20.DoubleClick += M_lbl_ket_thuc_nghi_tam_thoi_DoubleClick;
-            label18.DoubleClick += M_lbl_ket_thuc_nghi_tam_thoi_DoubleClick;
-            label15.DoubleClick += M_lbl_ket_thuc_nghi_tam_thoi_DoubleClick;
+            m_lbl_nv_da_het_han_hd.DoubleClick += m_lbl_nv_da_het_han_hd_DoubleClick;
+            m_lbl_nv_sap_het_han_hd.DoubleClick += m_lbl_nv_sap_het_han_hd_DoubleClick;
+            m_lbl_nv_da_ket_thuc_ct.DoubleClick += m_lbl_nv_da_ket_thuc_ct_DoubleClick;
+            m_lbl_nv_sap_ket_thuc_ct.DoubleClick += m_lbl_nv_sap_ket_thuc_ct_DoubleClick;
+            m_lbl_nv_da_het_han_lns.DoubleClick += m_lbl_nv_da_het_han_lns_DoubleClick;
+            m_lbl_nv_sap_het_han_lns.DoubleClick += m_lbl_nv_sap_het_han_lns_DoubleClick;
+            //m_lbl_so_nv_da_nghi_viec.DoubleClick += m_lbl_so_nv_da_nghi_viec_DoubleClick;
+            //m_lbl_nv_can_chuyen_trang_thai.DoubleClick += m_lbl_nv_can_chuyen_trang_thai_DoubleClick;
 
             //Nghiệp vụ
             m_cmd_cham_cong_nv.ItemClick += m_cmd_cham_cong_nv_ItemClick;
@@ -367,6 +414,123 @@ namespace BKI_DichVuMatDat
             m_cmd_bc_hs.ItemClick += m_cmd_bc_hs_ItemClick;
             m_cmd_qtt_2016.ItemClick += m_cmd_qtt_2016_ItemClick;
         }
+
+        void m_lbl_nv_can_chuyen_trang_thai_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                m_trang_thai_filter = false;
+                DateTime v_dt_ngay_dau_thang = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                DateTime v_dt_ngay_cuoi_thang = v_dt_ngay_dau_thang.AddMonths(1).AddDays(-1);
+                frm356_chuyen_trang_thai_lao_dong v_f = new frm356_chuyen_trang_thai_lao_dong(v_dt_ngay_cuoi_thang, m_trang_thai_filter);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_lbl_so_nv_da_nghi_viec_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                m_trang_thai_filter = true;
+                DateTime v_dt_ngay_dau_thang = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                frm356_chuyen_trang_thai_lao_dong v_f = new frm356_chuyen_trang_thai_lao_dong(v_dt_ngay_dau_thang, m_trang_thai_filter);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_lbl_nv_sap_het_han_lns_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                m_trang_thai_filter = false;
+                DateTime v_dt_ngay_dau_thang = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                DateTime v_dt_ngay_cuoi_thang = v_dt_ngay_dau_thang.AddMonths(1).AddDays(-1);
+                f300_chinh_lns_nhan_vien v_f = new f300_chinh_lns_nhan_vien(v_dt_ngay_cuoi_thang, m_trang_thai_filter);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_lbl_nv_da_het_han_lns_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                m_trang_thai_filter = true;
+                DateTime v_dt_ngay_dau_thang = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                f300_chinh_lns_nhan_vien v_f = new f300_chinh_lns_nhan_vien(v_dt_ngay_dau_thang, m_trang_thai_filter);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_lbl_nv_sap_ket_thuc_ct_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                m_trang_thai_filter = false;
+                DateTime v_dt_ngay_dau_thang = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                DateTime v_dt_ngay_cuoi_thang = v_dt_ngay_dau_thang.AddMonths(1).AddDays(-1);
+                f309_quan_ly_cong_tac v_f = new f309_quan_ly_cong_tac(v_dt_ngay_cuoi_thang, m_trang_thai_filter);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_lbl_nv_da_ket_thuc_ct_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                m_trang_thai_filter = true;
+                DateTime v_dt_ngay_dau_thang = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                f309_quan_ly_cong_tac v_f = new f309_quan_ly_cong_tac(v_dt_ngay_dau_thang, m_trang_thai_filter);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_lbl_nv_sap_het_han_hd_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                m_trang_thai_filter = false;
+                DateTime v_dt_ngay_dau_thang = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                DateTime v_dt_ngay_cuoi_thang = v_dt_ngay_dau_thang.AddMonths(1).AddDays(-1);
+                f329_lap_hop_dong_v4 v_f = new f329_lap_hop_dong_v4(v_dt_ngay_cuoi_thang, m_trang_thai_filter);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_lbl_nv_da_het_han_hd_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                m_trang_thai_filter = true;
+                DateTime v_dt_ngay_dau_thang = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                f329_lap_hop_dong_v4 v_f = new f329_lap_hop_dong_v4(v_dt_ngay_dau_thang, m_trang_thai_filter);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
         private void M_lbl_ket_thuc_nghi_tam_thoi_DoubleClick(object sender, EventArgs e)
         {

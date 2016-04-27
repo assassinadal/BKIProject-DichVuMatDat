@@ -23,6 +23,8 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             InitializeComponent();
             set_define_events();
         }
+
+        
         #endregion
 
         #region Members

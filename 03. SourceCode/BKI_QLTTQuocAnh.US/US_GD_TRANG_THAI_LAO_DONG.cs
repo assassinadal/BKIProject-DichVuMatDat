@@ -325,5 +325,14 @@ namespace BKI_DichVuMatDat.US
 
             v_sp.ExecuteCommand(this);
         }
+
+        public DataSet LayDanhSachKetThucTTLDTrongThang()
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_TTLD_het_han_trong_thang");
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_cstore.fillDataSetByCommand(this, v_ds);
+            return v_ds;
+        }
     }
 }

@@ -340,5 +340,14 @@ public class US_GD_HE_SO_LNS : US_Object
         v_cstore.fillDataSetByCommand(this, v_ds);
         return v_ds.Tables[0];
     }
-	}
+
+    public DataSet LayDanhSachHetHanLNSTrongThang()
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_LNS_het_han_trong_thang");
+        DataSet v_ds = new DataSet();
+        v_ds.Tables.Add(new DataTable());
+        v_cstore.fillDataSetByCommand(this, v_ds);
+        return v_ds;
+    }
+}
 }

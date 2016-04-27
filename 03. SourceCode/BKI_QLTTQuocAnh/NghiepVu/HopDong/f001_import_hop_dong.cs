@@ -59,30 +59,12 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             public string loi_sai { get; set; }
             public int chi_so_hang { get; set; }
             public int chi_so_cot { get; set; }
-            public LoaiLoi loai_loi { get; set; }
             public ViTriTrenLuoi(int x, int y, string ten)
             {
                 chi_so_cot = y;
                 chi_so_hang = x;
                 loi_sai = ten;
             }
-            public ViTriTrenLuoi(int x, int y, string ten, LoaiLoi l)
-            {
-                chi_so_cot = y;
-                chi_so_hang = x;
-                loi_sai = ten;
-                loai_loi = l;
-            }
-
-        }
-
-        enum LoaiLoi
-        {
-            MaKhongHopLe,
-            MaBiTrung,
-            ChuaDienThongTin,
-            DaTonTai,
-            NgayThang
         }
 
         enum thu_tu_cot
@@ -160,10 +142,42 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
         #region Validate
         private bool check_client(int chi_so_hang, int chi_so_cot)
         {
-            if (chi_so_cot == 12) return true;
+            //neu loai hop dong la thu viec hoac vo thoi han thi dc null
+            if (chi_so_cot == 12)
+            {
+                var loai_hop_dong = m_grv_hop_dong.GetDataRow(chi_so_hang)[3];
+                if (loai_hop_dong != null)
+                {
+                    if (!String.IsNullOrEmpty(loai_hop_dong.ToString()))
+                    {
+                        string ma = loai_hop_dong.ToString();
+                        if (check_ma_ok(m_list_dt_table[2], ma))
+                        {
+                            if (ma != "HDTV" | ma != "HDKX")
+                            {
+                                if (String.IsNullOrEmpty(m_grv_hop_dong.GetDataRow(chi_so_hang)[12].ToString()))
+                                {
+                                    m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Chưa điền thông tin "));
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+            if (chi_so_cot == 6 | chi_so_cot == 7)
+            {
+                var ma_lns = m_grv_hop_dong.GetDataRow(chi_so_hang)[6].ToString();
+                var muc_lns = m_grv_hop_dong.GetDataRow(chi_so_hang)[7].ToString();
+                if (String.IsNullOrEmpty(ma_lns) & String.IsNullOrEmpty(muc_lns))
+                {
+                    return true;
+                }
+            }
             if (String.IsNullOrEmpty(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
             {
-                m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Chưa điền thông tin ", LoaiLoi.ChuaDienThongTin));
+                m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Chưa điền thông tin "));
                 return false;
             }
             return true;
@@ -219,6 +233,21 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                     }
                     return;
                 }
+
+                //check cac ma
+                if (chi_so_cot == 6 | chi_so_cot == 7)
+                {
+                    if (String.IsNullOrEmpty(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
+                    {
+                        return;
+                    }
+                    if (!check_ma_ok(m_list_dt_table[chi_so_cot - 1], m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
+                    {
+                        m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Mã không hợp lệ"));
+                        return;
+                    }
+                }
+
                 if (!check_ma_ok(m_list_dt_table[chi_so_cot - 1], m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
                 {
                     m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Mã không hợp lệ"));
@@ -228,14 +257,40 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             //check ngay thang
             if (chi_so_cot == 12)
             {
-                if (!String.IsNullOrEmpty(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()) & !String.IsNullOrEmpty(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot - 1].ToString()))
+                var loai_hop_dong = m_grv_hop_dong.GetDataRow(chi_so_hang)[3];
+                if (loai_hop_dong != null)
                 {
-                    if (WinFormControls.FormatPostingDate(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()) <= WinFormControls.FormatPostingDate(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot - 1].ToString()))
+                    if (!String.IsNullOrEmpty(loai_hop_dong.ToString()))
                     {
-                        m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, 12, "Ngày kết thúc nhỏ hơn ngày bắt đầu"));
+                        string ma = loai_hop_dong.ToString();
+                        if (check_ma_ok(m_list_dt_table[2], ma))
+                        {
+                            if (!String.IsNullOrEmpty(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot - 1].ToString()))
+                            {
+                                var nbd = WinFormControls.FormatPostingDate(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot - 1].ToString());
+                                var nkt = WinFormControls.FormatPostingDate(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString());
+                                if (ma == "HD3N" & ngay_ket_thuc_ko_hop_le(nbd, nkt, 3))
+                                {
+                                    m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Ngày bắt đầu và ngày kết thúc không phù hợp với loại hợp đồng"));
+                                }
+                                if (ma == "HD1N" & ngay_ket_thuc_ko_hop_le(nbd, nkt, 1))
+                                {
+                                    m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Ngày bắt đầu và ngày kết thúc không phù hợp với loại hợp đồng"));
+                                }
+                            }
+                        }
                     }
                 }
             }
+        }
+
+        private bool ngay_ket_thuc_ko_hop_le(DateTime nbd, DateTime nkt, int v)
+        {
+            if (nbd.Day == nkt.Day & nbd.Month == nkt.Month & nkt.Year - nbd.Year == v)
+            {
+                return false;
+            }
+            return true;
         }
 
         private bool check_nv_da_co_hop_dong(string ma_nv)
@@ -608,8 +663,11 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
         private void grid_to_us_gd_lns(US_GD_HE_SO_LNS v_us_gd_hs_lns, DataRow data)
         {
             v_us_gd_hs_lns.dcID_NHAN_VIEN = find_id_nv_by_ma_nv(data["MA_NHAN_VIEN"].ToString());
-            v_us_gd_hs_lns.dcID_HE_SO_LNS = find_id_hs_lns_by_ma_muc(data["MA_CHUC_DANH_LNS"].ToString(), data["MA_MUC_LUONG_NS"].ToString());
-            v_us_gd_hs_lns.dcHE_SO = find_he_so_lns_by_id(v_us_gd_hs_lns.dcID_HE_SO_LNS);
+            if (!String.IsNullOrEmpty(data["MA_CHUC_DANH_LNS"].ToString()) & !String.IsNullOrEmpty(data["MA_MUC_LUONG_NS"].ToString()))
+            {
+                v_us_gd_hs_lns.dcID_HE_SO_LNS = find_id_hs_lns_by_ma_muc(data["MA_CHUC_DANH_LNS"].ToString(), data["MA_MUC_LUONG_NS"].ToString());
+                v_us_gd_hs_lns.dcHE_SO = find_he_so_lns_by_id(v_us_gd_hs_lns.dcID_HE_SO_LNS);
+            }
             v_us_gd_hs_lns.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             v_us_gd_hs_lns.datNGAY_BAT_DAU = WinFormControls.FormatPostingDate(data["NGAY_BAT_DAU"].ToString());
             if (String.IsNullOrEmpty(data["NGAY_KET_THUC"].ToString()))
@@ -630,10 +688,8 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             v_us_gd_cong_tac.dcID_VI_TRI = find_id_chuc_vu(data["MA_CHUC_VU"].ToString());
             v_us_gd_cong_tac.dcID_LOAI_CONG_TAC = 157;
             v_us_gd_cong_tac.dcSO_HO_SO = ExecuteFuntion.GetSoHoSoNext(v_us_gd_cong_tac.dcID_DON_VI, v_us_gd_cong_tac.dcID_VI_TRI);
-
             v_us_gd_cong_tac.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             v_us_gd_cong_tac.strDA_XOA = "N";
-
             v_us_gd_cong_tac.datNGAY_BAT_DAU = WinFormControls.FormatPostingDate(data["NGAY_BAT_DAU"].ToString());
             if (String.IsNullOrEmpty(data["NGAY_KET_THUC"].ToString()))
             {
@@ -655,10 +711,8 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             v_us_gd_hd.dcID_LUONG_CHE_DO = find_id_lcd_by_ma_lcd(data["MA_CHUC_DANH_LCD"].ToString(), data["MA_MUC_LCD"].ToString());
             v_us_gd_hd.dcID_LOAI_LAO_DONG = find_id_tu_dien_by_ma_tu_dien(data["MA_LOAI_LAO_DONG"].ToString());
             v_us_gd_hd.dcSO_TIEN_LCD = find_so_tien_lcd(find_id_lcd_by_ma_lcd(data["MA_CHUC_DANH_LCD"].ToString(), data["MA_MUC_LCD"].ToString()));
-
             v_us_gd_hd.strMA_HOP_DONG = data["MA_HOP_DONG"].ToString();
             v_us_gd_hd.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
-
             v_us_gd_hd.datNGAY_BAT_DAU = WinFormControls.FormatPostingDate(data["NGAY_BAT_DAU"].ToString());
             if (String.IsNullOrEmpty(data["NGAY_KET_THUC"].ToString()))
             {
@@ -668,23 +722,23 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             {
                 v_us_gd_hd.datNGAY_KET_THUC = WinFormControls.FormatPostingDate(data["NGAY_KET_THUC"].ToString());
             }
-            if (!String.IsNullOrEmpty(data["NGAY_KET_THUC"].ToString()))
-            {
-                v_us_gd_hd.datNGAY_KY_HOP_DONG = v_us_gd_hd.datNGAY_BAT_DAU.AddYears(45);
-            }
+            v_us_gd_hd.datNGAY_KY_HOP_DONG = WinFormControls.FormatPostingDate(data["NGAY_KI_HOP_DONG"].ToString());
             v_us_gd_hd.datNGAY_LAP = DateTime.Now.Date;
         }
+
         private decimal get_id_hop_dong_hien_tai(string ip_id_nv)
         {
             US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
             return v_us.GetHopDongHienTaiCuaNV(ip_id_nv);
         }
+
         private void ket_thuc_hop_dong_cu(decimal ip_id_hop_dong, DateTime ip_dat_ngay_ket_thuc)
         {
             US_GD_HOP_DONG v_us = new US_GD_HOP_DONG(ip_id_hop_dong);
             v_us.datNGAY_KET_THUC = ip_dat_ngay_ket_thuc;
             v_us.Update();
         }
+
         private void save_data()
         {
             US_GD_HOP_DONG v_us_gd_hd = new US_GD_HOP_DONG();
@@ -699,12 +753,11 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                     grid_to_us_gd_hop_dong(v_us_gd_hd, data);
                     grid_to_us_gd_cong_tac(v_us_gd_cong_tac, data);
                     grid_to_us_gd_lns(v_us_gd_hs_lns, data);
-
                     decimal v_id_hop_dong = get_id_hop_dong_hien_tai(v_us_gd_hd.dcID_NHAN_VIEN.ToString());
-                    
 
+                    //
                     v_us_gd_hd.BeginTransaction();
-                    if(v_id_hop_dong != 0)
+                    if (v_id_hop_dong != 0)
                     {
                         ket_thuc_hop_dong_cu(v_id_hop_dong, v_us_gd_hd.datNGAY_BAT_DAU);
                     }
@@ -712,9 +765,9 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                     v_us_gd_cong_tac.CapNhatHetHieuLucCongTac(v_us_gd_hd.dcID_NHAN_VIEN, v_us_gd_hd.datNGAY_BAT_DAU);
                     v_us_gd_hs_lns.UseTransOfUSObject(v_us_gd_hd);
                     v_us_gd_hs_lns.KetThucLuongNangSuatNhanVien(v_us_gd_hd.dcID_NHAN_VIEN, v_us_gd_hd.datNGAY_BAT_DAU);
+                    v_us_gd_hs_lns.Insert();
                     v_us_gd_hd.Insert();
                     v_us_gd_cong_tac.Insert();
-                    v_us_gd_hs_lns.Insert();
                     v_us_gd_hd.CommitTransaction();
                 }
                 CHRM_BaseMessages.MsgBox_Infor("Đã lưu dữu liệu thành công");
@@ -890,6 +943,8 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
         {
             try
             {
+                m_lbl_thong_bao.Text = "File sẽ mở lên ngay sau đây";
+                m_lbl_thong_bao.ForeColor = Color.Green;
                 xuat_excel();
             }
             catch (Exception v_e)
@@ -925,7 +980,9 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
         {
             try
             {
-                WinFormControls.openTemplate(CONST_EXCEL_TEMPLATE.HOP_DONG_TEMPLATE);
+                m_lbl_thong_bao.Text = "File sẽ mở lên ngay sau đây";
+                m_lbl_thong_bao.ForeColor = Color.Green;
+                WinFormControls.openTemplate(CONST_EXCEL_TEMPLATE.HOP_DONG_TEMPLATE);              
             }
             catch (Exception v_e)
             {
@@ -951,23 +1008,21 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                     m_file_path = opf.FileName;
                     if (String.IsNullOrEmpty(m_file_path))
                     {
-                        m_lbl_thong_bao.Text = "Chưa có dữ liệu";
-                        m_lbl_thong_bao.ForeColor = Color.Red;
                         return;
                     }
                     load_data_from_file_to_grid(m_file_path);
                 }
                 else
                 {
-                    m_lbl_thong_bao.Text = "Chưa có dữ liệu";
-                    m_lbl_thong_bao.ForeColor = Color.Red;
+                    m_lbl_thong_bao.Text = "";
+                    m_grc_hop_dong.Refresh();
                     return;
                 }
             }
             catch (Exception v_e)
             {
                 set_init_form_load();
-                CSystemLog_301.ExceptionHandle(v_e);
+                //CSystemLog_301.ExceptionHandle(v_e);
                 DevExpress.XtraEditors.XtraMessageBox.Show("Vui lòng chọn đúng file exel mẫu để lập hợp đồng");
             }
         }

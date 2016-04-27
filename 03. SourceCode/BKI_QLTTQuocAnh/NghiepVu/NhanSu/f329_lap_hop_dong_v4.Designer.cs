@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f329_lap_hop_dong_v4));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
@@ -48,15 +47,6 @@
             this.colSO_TIEN_MAC_DINH_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY_LAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLOAI_LAO_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
-            this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_print = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.colID_LOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQUOC_TICH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY_SINH_NV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,6 +56,15 @@
             this.colSO_CMT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY_CAP_CMT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNOI_CAP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
+            this.img_DVMD = new DevExpress.Utils.ImageCollection();
+            this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_print = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
@@ -93,7 +92,7 @@
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
             this.m_grc.Size = new System.Drawing.Size(1095, 515);
-            this.m_grc.TabIndex = 7;
+            this.m_grc.TabIndex = 1;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
             // 
@@ -373,6 +372,64 @@
             this.colLOAI_LAO_DONG.Visible = true;
             this.colLOAI_LAO_DONG.VisibleIndex = 14;
             // 
+            // colID_LOAI_HOP_DONG
+            // 
+            this.colID_LOAI_HOP_DONG.Caption = "colID_LOAI_HOP_DONG";
+            this.colID_LOAI_HOP_DONG.FieldName = "ID_LOAI_HOP_DONG";
+            this.colID_LOAI_HOP_DONG.Name = "colID_LOAI_HOP_DONG";
+            // 
+            // colQUOC_TICH
+            // 
+            this.colQUOC_TICH.Caption = "QUOC_TICH";
+            this.colQUOC_TICH.FieldName = "QUOC_TICH";
+            this.colQUOC_TICH.Name = "colQUOC_TICH";
+            // 
+            // colNGAY_SINH_NV
+            // 
+            this.colNGAY_SINH_NV.Caption = "Ngày sinh nhân viên";
+            this.colNGAY_SINH_NV.FieldName = "NGAY_SINH_NV";
+            this.colNGAY_SINH_NV.Name = "colNGAY_SINH_NV";
+            this.colNGAY_SINH_NV.Visible = true;
+            this.colNGAY_SINH_NV.VisibleIndex = 16;
+            // 
+            // colQUE_QUAN
+            // 
+            this.colQUE_QUAN.Caption = "QUE_QUAN";
+            this.colQUE_QUAN.FieldName = "QUE_QUAN";
+            this.colQUE_QUAN.Name = "colQUE_QUAN";
+            // 
+            // colCHUYEN_MON
+            // 
+            this.colCHUYEN_MON.Caption = "CHUYEN_MON";
+            this.colCHUYEN_MON.FieldName = "CHUYEN_MON";
+            this.colCHUYEN_MON.Name = "colCHUYEN_MON";
+            // 
+            // colDIA_CHI_THUONG_TRU
+            // 
+            this.colDIA_CHI_THUONG_TRU.Caption = "Địa chỉ thường trú";
+            this.colDIA_CHI_THUONG_TRU.FieldName = "DIA_CHI_THUONG_TRU";
+            this.colDIA_CHI_THUONG_TRU.Name = "colDIA_CHI_THUONG_TRU";
+            this.colDIA_CHI_THUONG_TRU.Visible = true;
+            this.colDIA_CHI_THUONG_TRU.VisibleIndex = 17;
+            // 
+            // colSO_CMT
+            // 
+            this.colSO_CMT.Caption = "SO_CMT";
+            this.colSO_CMT.FieldName = "SO_CMT";
+            this.colSO_CMT.Name = "colSO_CMT";
+            // 
+            // colNGAY_CAP_CMT
+            // 
+            this.colNGAY_CAP_CMT.Caption = "NGAY_CAP_CMT";
+            this.colNGAY_CAP_CMT.FieldName = "NGAY_CAP_CMT";
+            this.colNGAY_CAP_CMT.Name = "colNGAY_CAP_CMT";
+            // 
+            // colNOI_CAP
+            // 
+            this.colNOI_CAP.Caption = "NOI_CAP";
+            this.colNOI_CAP.FieldName = "NOI_CAP";
+            this.colNOI_CAP.Name = "colNOI_CAP";
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.m_cmd_chon_file);
@@ -387,7 +444,7 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(2);
             this.panelControl1.Size = new System.Drawing.Size(1095, 40);
-            this.panelControl1.TabIndex = 6;
+            this.panelControl1.TabIndex = 0;
             // 
             // m_cmd_chon_file
             // 
@@ -397,7 +454,7 @@
             this.m_cmd_chon_file.Location = new System.Drawing.Point(459, 4);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 32);
-            this.m_cmd_chon_file.TabIndex = 40;
+            this.m_cmd_chon_file.TabIndex = 5;
             this.m_cmd_chon_file.Text = "&Import excel";
             // 
             // img_DVMD
@@ -424,7 +481,7 @@
             this.m_cmd_refresh.Location = new System.Drawing.Point(981, 4);
             this.m_cmd_refresh.Name = "m_cmd_refresh";
             this.m_cmd_refresh.Size = new System.Drawing.Size(110, 32);
-            this.m_cmd_refresh.TabIndex = 39;
+            this.m_cmd_refresh.TabIndex = 6;
             this.m_cmd_refresh.Text = "Làm mới";
             this.m_cmd_refresh.ToolTip = "Làm mới dữ liệu đơn vị và nhân viên thuộc đơn vị đó";
             // 
@@ -436,7 +493,7 @@
             this.m_cmd_print.Location = new System.Drawing.Point(368, 4);
             this.m_cmd_print.Name = "m_cmd_print";
             this.m_cmd_print.Size = new System.Drawing.Size(91, 32);
-            this.m_cmd_print.TabIndex = 38;
+            this.m_cmd_print.TabIndex = 4;
             this.m_cmd_print.Text = "&In hợp đồng";
             // 
             // m_cmd_xuat_excel
@@ -447,7 +504,7 @@
             this.m_cmd_xuat_excel.Location = new System.Drawing.Point(277, 4);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(91, 32);
-            this.m_cmd_xuat_excel.TabIndex = 37;
+            this.m_cmd_xuat_excel.TabIndex = 3;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
             this.m_cmd_xuat_excel.Visible = false;
             // 
@@ -459,7 +516,7 @@
             this.m_cmd_delete.Location = new System.Drawing.Point(186, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(91, 32);
-            this.m_cmd_delete.TabIndex = 36;
+            this.m_cmd_delete.TabIndex = 2;
             this.m_cmd_delete.Text = "&Xóa";
             // 
             // m_cmd_update
@@ -470,7 +527,7 @@
             this.m_cmd_update.Location = new System.Drawing.Point(95, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(91, 32);
-            this.m_cmd_update.TabIndex = 35;
+            this.m_cmd_update.TabIndex = 1;
             this.m_cmd_update.Text = "&Sửa";
             // 
             // m_cmd_insert
@@ -481,66 +538,8 @@
             this.m_cmd_insert.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(91, 32);
-            this.m_cmd_insert.TabIndex = 7;
+            this.m_cmd_insert.TabIndex = 0;
             this.m_cmd_insert.Text = "&Thêm";
-            // 
-            // colID_LOAI_HOP_DONG
-            // 
-            this.colID_LOAI_HOP_DONG.Caption = "colID_LOAI_HOP_DONG";
-            this.colID_LOAI_HOP_DONG.FieldName = "ID_LOAI_HOP_DONG";
-            this.colID_LOAI_HOP_DONG.Name = "colID_LOAI_HOP_DONG";
-            // 
-            // colQUOC_TICH
-            // 
-            this.colQUOC_TICH.Caption = "QUOC_TICH";
-            this.colQUOC_TICH.FieldName = "QUOC_TICH";
-            this.colQUOC_TICH.Name = "colQUOC_TICH";
-            // 
-            // colNGAY_SINH_NV
-            // 
-            this.colNGAY_SINH_NV.Caption = "NGAY_SINH_NV";
-            this.colNGAY_SINH_NV.FieldName = "NGAY_SINH_NV";
-            this.colNGAY_SINH_NV.Name = "colNGAY_SINH_NV";
-            this.colNGAY_SINH_NV.Visible = true;
-            this.colNGAY_SINH_NV.VisibleIndex = 16;
-            // 
-            // colQUE_QUAN
-            // 
-            this.colQUE_QUAN.Caption = "QUE_QUAN";
-            this.colQUE_QUAN.FieldName = "QUE_QUAN";
-            this.colQUE_QUAN.Name = "colQUE_QUAN";
-            // 
-            // colCHUYEN_MON
-            // 
-            this.colCHUYEN_MON.Caption = "CHUYEN_MON";
-            this.colCHUYEN_MON.FieldName = "CHUYEN_MON";
-            this.colCHUYEN_MON.Name = "colCHUYEN_MON";
-            // 
-            // colDIA_CHI_THUONG_TRU
-            // 
-            this.colDIA_CHI_THUONG_TRU.Caption = "DIA_CHI_THUONG_TRU";
-            this.colDIA_CHI_THUONG_TRU.FieldName = "DIA_CHI_THUONG_TRU";
-            this.colDIA_CHI_THUONG_TRU.Name = "colDIA_CHI_THUONG_TRU";
-            this.colDIA_CHI_THUONG_TRU.Visible = true;
-            this.colDIA_CHI_THUONG_TRU.VisibleIndex = 17;
-            // 
-            // colSO_CMT
-            // 
-            this.colSO_CMT.Caption = "SO_CMT";
-            this.colSO_CMT.FieldName = "SO_CMT";
-            this.colSO_CMT.Name = "colSO_CMT";
-            // 
-            // colNGAY_CAP_CMT
-            // 
-            this.colNGAY_CAP_CMT.Caption = "NGAY_CAP_CMT";
-            this.colNGAY_CAP_CMT.FieldName = "NGAY_CAP_CMT";
-            this.colNGAY_CAP_CMT.Name = "colNGAY_CAP_CMT";
-            // 
-            // colNOI_CAP
-            // 
-            this.colNOI_CAP.Caption = "NOI_CAP";
-            this.colNOI_CAP.FieldName = "NOI_CAP";
-            this.colNOI_CAP.Name = "colNOI_CAP";
             // 
             // f329_lap_hop_dong_v4
             // 

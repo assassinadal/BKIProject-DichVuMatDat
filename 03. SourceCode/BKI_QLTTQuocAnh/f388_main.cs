@@ -407,7 +407,7 @@ namespace BKI_DichVuMatDat
             m_cmd_danh_sach_hop_dong.ItemClick += m_cmd_danh_sach_hop_dong_ItemClick;
             m_cmd_bao_cao_dieu_kien_tinh_luong.ItemClick += m_cmd_bao_cao_dieu_kien_tinh_luong_ItemClick;
             m_cmd_bc_athk_bsl_lt.ItemClick += m_cmd_bc_athk_bsl_lt_ItemClick;
-            m_cmd_bao_cao_trang_thai_lao_dong.ItemClick += M_cmd_bao_cao_trang_thai_lao_dong_ItemClick;
+            m_cmd_bc_hop_dong_het_han.ItemClick += m_cmd_bc_hop_dong_het_han_ItemClick;
             //Thu nhap khac
             m_cmd_quan_ly_quy_tnk.ItemClick += m_cmd_quan_ly_quy_tnk_ItemClick;
             m_cmd_ds_chot_bang_luong.ItemClick += m_cmd_ds_chot_bang_luong_ItemClick;
@@ -538,7 +538,7 @@ namespace BKI_DichVuMatDat
             {
                 f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien v_f = new f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien();
                 //DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
-                v_f.display_nv_het_nghi_tam_thoi(get_nv_het_nghi_tam_thoi(),this);
+               
             }
             catch (Exception v_e)
             {
@@ -596,7 +596,7 @@ namespace BKI_DichVuMatDat
         {
             f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien v_f = new f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien();
             //DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
-            v_f.display_nv_dang_nghi_tam_thoi(get_nv_nghi_tam_thoi(),this);
+            
         }
 
         void m_cmd_hd_thay_doi_lns_ItemClick(object sender, ItemClickEventArgs e)
@@ -639,23 +639,6 @@ namespace BKI_DichVuMatDat
                 v_f.Show();
             }
             catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void M_cmd_bao_cao_trang_thai_lao_dong_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            try
-            {
-                //f468_bao_cao_trang_thai_lao_dong v_f = new f468_bao_cao_trang_thai_lao_dong();
-                //f418_bao_cao_thay_doi_cong_tac v_f = new f418_bao_cao_thay_doi_cong_tac();
-                f001_import_hop_dong v_f = new f001_import_hop_dong();
-                if (IsExistFormName(v_f)) return;
-                v_f.MdiParent = this;
-                v_f.Show();
-            }
-            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -1004,8 +987,7 @@ namespace BKI_DichVuMatDat
                 if (IsExistFormName(v_frm)) return;
 
                 v_frm.MdiParent = this;
-                //v_frm.Show();
-                v_frm.display(this);
+                v_frm.Show();
             }
             catch (Exception)
             {

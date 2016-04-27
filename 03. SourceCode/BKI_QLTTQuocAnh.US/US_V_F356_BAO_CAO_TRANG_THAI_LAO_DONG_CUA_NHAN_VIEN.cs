@@ -44,26 +44,26 @@ public class US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN : US_Object
             pm_objDR["ID"] = System.Convert.DBNull;
         }
 
-        public decimal dcID_NHAN_VIEN
+        public decimal dcID_NV
         {
             get
             {
-                return CNull.RowNVLDecimal(pm_objDR, "ID_NHAN_VIEN", IPConstants.c_DefaultDecimal);
+                return CNull.RowNVLDecimal(pm_objDR, "ID_NV", IPConstants.c_DefaultDecimal);
             }
             set
             {
-                pm_objDR["ID_NHAN_VIEN"] = value;
+                pm_objDR["ID_NV"] = value;
             }
         }
 
-        public bool IsID_NHAN_VIENNull()
+        public bool IsID_NVNull()
         {
-            return pm_objDR.IsNull("ID_NHAN_VIEN");
+            return pm_objDR.IsNull("ID_NV");
         }
 
-        public void SetID_NHAN_VIENNull()
+        public void SetID_NVNull()
         {
-            pm_objDR["ID_NHAN_VIEN"] = System.Convert.DBNull;
+            pm_objDR["ID_NV"] = System.Convert.DBNull;
         }
 
         public string strMA_NV
@@ -86,50 +86,6 @@ public class US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN : US_Object
         public void SetMA_NVNull()
         {
             pm_objDR["MA_NV"] = System.Convert.DBNull;
-        }
-
-        public string strHO_DEM
-        {
-            get
-            {
-                return CNull.RowNVLString(pm_objDR, "HO_DEM", IPConstants.c_DefaultString);
-            }
-            set
-            {
-                pm_objDR["HO_DEM"] = value;
-            }
-        }
-
-        public bool IsHO_DEMNull()
-        {
-            return pm_objDR.IsNull("HO_DEM");
-        }
-
-        public void SetHO_DEMNull()
-        {
-            pm_objDR["HO_DEM"] = System.Convert.DBNull;
-        }
-
-        public string strTEN
-        {
-            get
-            {
-                return CNull.RowNVLString(pm_objDR, "TEN", IPConstants.c_DefaultString);
-            }
-            set
-            {
-                pm_objDR["TEN"] = value;
-            }
-        }
-
-        public bool IsTENNull()
-        {
-            return pm_objDR.IsNull("TEN");
-        }
-
-        public void SetTENNull()
-        {
-            pm_objDR["TEN"] = System.Convert.DBNull;
         }
 
         public string strHO_TEN
@@ -176,28 +132,6 @@ public class US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN : US_Object
             pm_objDR["ID_TRANG_THAI_LAO_DONG"] = System.Convert.DBNull;
         }
 
-        public string strMA_TRANG_THAI_LD
-        {
-            get
-            {
-                return CNull.RowNVLString(pm_objDR, "MA_TRANG_THAI_LD", IPConstants.c_DefaultString);
-            }
-            set
-            {
-                pm_objDR["MA_TRANG_THAI_LD"] = value;
-            }
-        }
-
-        public bool IsMA_TRANG_THAI_LDNull()
-        {
-            return pm_objDR.IsNull("MA_TRANG_THAI_LD");
-        }
-
-        public void SetMA_TRANG_THAI_LDNull()
-        {
-            pm_objDR["MA_TRANG_THAI_LD"] = System.Convert.DBNull;
-        }
-
         public string strTEN_TRANG_THAI_LD
         {
             get
@@ -220,96 +154,6 @@ public class US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN : US_Object
             pm_objDR["TEN_TRANG_THAI_LD"] = System.Convert.DBNull;
         }
 
-        public string strGHI_CHU_TRANG_THAI_LAO_DONG
-        {
-            get
-            {
-                return CNull.RowNVLString(pm_objDR, "GHI_CHU_TRANG_THAI_LAO_DONG", IPConstants.c_DefaultString);
-            }
-            set
-            {
-                pm_objDR["GHI_CHU_TRANG_THAI_LAO_DONG"] = value;
-            }
-        }
-
-        public bool IsGHI_CHU_TRANG_THAI_LAO_DONGNull()
-        {
-            return pm_objDR.IsNull("GHI_CHU_TRANG_THAI_LAO_DONG");
-        }
-
-        public void SetGHI_CHU_TRANG_THAI_LAO_DONGNull()
-        {
-            pm_objDR["GHI_CHU_TRANG_THAI_LAO_DONG"] = System.Convert.DBNull;
-        }
-
-        public decimal dcID_LOAI_TRANG_THAI_LD
-        {
-            get
-            {
-                return CNull.RowNVLDecimal(pm_objDR, "ID_LOAI_TRANG_THAI_LD", IPConstants.c_DefaultDecimal);
-            }
-            set
-            {
-                pm_objDR["ID_LOAI_TRANG_THAI_LD"] = value;
-            }
-        }
-
-        public bool IsID_LOAI_TRANG_THAI_LDNull()
-        {
-            return pm_objDR.IsNull("ID_LOAI_TRANG_THAI_LD");
-        }
-
-        public void SetID_LOAI_TRANG_THAI_LDNull()
-        {
-            pm_objDR["ID_LOAI_TRANG_THAI_LD"] = System.Convert.DBNull;
-        }
-
-        public string strMA_LOAI_TRANG_THAI_LD
-        {
-            get
-            {
-                return CNull.RowNVLString(pm_objDR, "MA_LOAI_TRANG_THAI_LD", IPConstants.c_DefaultString);
-            }
-            set
-            {
-                pm_objDR["MA_LOAI_TRANG_THAI_LD"] = value;
-            }
-        }
-
-     
-
-        public bool IsMA_LOAI_TRANG_THAI_LDNull()
-        {
-            return pm_objDR.IsNull("MA_LOAI_TRANG_THAI_LD");
-        }
-
-        public void SetMA_LOAI_TRANG_THAI_LDNull()
-        {
-            pm_objDR["MA_LOAI_TRANG_THAI_LD"] = System.Convert.DBNull;
-        }
-
-        public string strTEN_LOAI_TRANG_THAI_LD
-        {
-            get
-            {
-                return CNull.RowNVLString(pm_objDR, "TEN_LOAI_TRANG_THAI_LD", IPConstants.c_DefaultString);
-            }
-            set
-            {
-                pm_objDR["TEN_LOAI_TRANG_THAI_LD"] = value;
-            }
-        }
-
-        public bool IsTEN_LOAI_TRANG_THAI_LDNull()
-        {
-            return pm_objDR.IsNull("TEN_LOAI_TRANG_THAI_LD");
-        }
-
-        public void SetTEN_LOAI_TRANG_THAI_LDNull()
-        {
-            pm_objDR["TEN_LOAI_TRANG_THAI_LD"] = System.Convert.DBNull;
-        }
-
         public DateTime datNGAY_AP_DUNG
         {
             get
@@ -330,6 +174,50 @@ public class US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN : US_Object
         public void SetNGAY_AP_DUNGNull()
         {
             pm_objDR["NGAY_AP_DUNG"] = System.Convert.DBNull;
+        }
+
+        public DateTime datNGAY_KET_THUC
+        {
+            get
+            {
+                return CNull.RowNVLDate(pm_objDR, "NGAY_KET_THUC", IPConstants.c_DefaultDate);
+            }
+            set
+            {
+                pm_objDR["NGAY_KET_THUC"] = value;
+            }
+        }
+
+        public bool IsNGAY_KET_THUCNull()
+        {
+            return pm_objDR.IsNull("NGAY_KET_THUC");
+        }
+
+        public void SetNGAY_KET_THUCNull()
+        {
+            pm_objDR["NGAY_KET_THUC"] = System.Convert.DBNull;
+        }
+
+        public string strGHI_CHU
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "GHI_CHU", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["GHI_CHU"] = value;
+            }
+        }
+
+        public bool IsGHI_CHUNull()
+        {
+            return pm_objDR.IsNull("GHI_CHU");
+        }
+
+        public void SetGHI_CHUNull()
+        {
+            pm_objDR["GHI_CHU"] = System.Convert.DBNull;
         }
 
         public DateTime datNGAY_LAP
@@ -398,7 +286,6 @@ public class US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN : US_Object
             pm_objDR["NGAY_SUA"] = System.Convert.DBNull;
         }
 
-    
         public string strNGUOI_SUA
         {
             get
@@ -419,28 +306,6 @@ public class US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN : US_Object
         public void SetNGUOI_SUANull()
         {
             pm_objDR["NGUOI_SUA"] = System.Convert.DBNull;
-        }
-
-        public string strGHI_CHU
-        {
-            get
-            {
-                return CNull.RowNVLString(pm_objDR, "GHI_CHU", IPConstants.c_DefaultString);
-            }
-            set
-            {
-                pm_objDR["GHI_CHU"] = value;
-            }
-        }
-
-        public bool IsGHI_CHUNull()
-        {
-            return pm_objDR.IsNull("GHI_CHU");
-        }
-
-        public void SetGHI_CHUNull()
-        {
-            pm_objDR["GHI_CHU"] = System.Convert.DBNull;
         }
 
         public string strDA_XOA
@@ -513,7 +378,7 @@ public class US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN : US_Object
     //    v_sp.fillDataSetByCommand(this, op_ds); 
     //}
 
-    public void FillDataset_by_id_nv(
+        public void FillDataset_by_id_nv(
                             DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN op_ds
                             , decimal ip_dc_id_nhan_vien)
     {
@@ -522,7 +387,7 @@ public class US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN : US_Object
         v_sp.fillDataSetByCommand(this, op_ds); 
     }
 
-    public void FillDataset_by_id_nv_and_id_trang_thai_ld(
+        public void FillDataset_by_id_nv_and_id_trang_thai_ld(
                             DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN op_ds
                             , decimal ip_dc_id_nhan_vien
                             , decimal ip_dc_id_trang_thai_lao_dong)

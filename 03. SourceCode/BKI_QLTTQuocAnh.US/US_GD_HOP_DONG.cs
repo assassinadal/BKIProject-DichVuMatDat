@@ -441,7 +441,19 @@ public class US_GD_HOP_DONG : US_Object
         return v_op_ds;
     }
 
+    public DataSet LayDanhSachHopDongHetHanV2(
+                                   DateTime ip_dat_tu_ngay
+                                   , DateTime ip_dat_den_ngay)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_lay_danh_sach_hop_dong_het_han_v2");
+            v_sp.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+            v_sp.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+            DataSet v_op_ds = new DataSet();
+            v_op_ds.Tables.Add();
 
+            v_sp.fillDataSetByCommand(this, v_op_ds);
+            return v_op_ds;
+        }
     public DataSet FillDataSetThongTinHopDong(decimal ip_dc_id_nhan_vien)
     {
         CStoredProc v_sp = new CStoredProc("PR_SELECT_ALL_THONG_TIN_HOP_DONG");
@@ -535,6 +547,7 @@ public class US_GD_HOP_DONG : US_Object
 
         return v_ds.Tables[0];
     }
+
     public void FillDatasetHopDong(DataSet v_ds, decimal v_id_don_vi)
     {
         CStoredProc v_cstore = new CStoredProc("pr_HD_get_theo_don_vi");

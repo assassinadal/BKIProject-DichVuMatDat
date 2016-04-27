@@ -26,49 +26,20 @@ namespace BKI_DichVuMatDat.NghiepVu
             InitializeComponent();
             format_controls();
         }
-
-        internal void display_nv_het_nghi_tam_thoi(DataSet ip_ds, f388_main f)
-        {
-            m_e_view_mode = ViewMode.XemCanhBaoHetNghi;
-            m_ds_canh_bao_nv_nghi_tam_thoi = ip_ds;
-            this.CenterToScreen();
-            this.ShowDialog();
-            f.update_canh_bao();
-        }
-
-        internal void display_nv_dang_nghi_tam_thoi(DataSet ip_ds, f388_main f)
-        {
-            m_e_view_mode = ViewMode.XemCanhBaoDangNghi;
-            m_ds_canh_bao_nv_nghi_tam_thoi = ip_ds;
-            m_dc_id_loai_trang_thai = 743;
-            this.CenterToScreen();
-            this.ShowDialog();
-            f.update_canh_bao();
-        }
-        internal void display(f388_main f)
-        {
-            m_form = f;
-            this.Show();
-        }
+            
         #endregion
 
         #region Members
+
         int so_lao_dong = 0;
         int summaryColumnID = -1;
-        decimal m_load_data_toan_bo_nv = -1;
+
         DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN m_ds = new DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN();
         US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN m_us = new US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN();
-        enum ViewMode
-        {
-            Thuong,
-            XemCanhBaoDangNghi,
-            XemCanhBaoHetNghi
-        }
-        ViewMode m_e_view_mode = ViewMode.Thuong;
-        DataSet m_ds_canh_bao_nv_nghi_tam_thoi = new DataSet();
+
         private decimal m_dc_id_nv_dang_dieu_chinh;
         private decimal m_dc_id_loai_trang_thai;
-        private f388_main m_form;
+
         #endregion
 
         #region Private Methods
@@ -90,76 +61,28 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void set_init_form_load()
         {
-            switch (m_e_view_mode)
-            {
-                case ViewMode.Thuong:
-                    load_data_2_sle_chon_trang_thai_lao_dong();
-                    load_data_2_grid();
-                    break;
-                case ViewMode.XemCanhBaoDangNghi:
-                    load_data_2_grid(m_ds_canh_bao_nv_nghi_tam_thoi);
-                    m_pnl_filter.Visible = false;
-                    m_lbl_header.Text = "Danh sách nhân viên đang nghỉ tạm thời";
-                    m_cmd_xuat_excel.Visible = false;
-                    m_cmd_insert.Enabled = false;
-                    m_cmd_update.Enabled = false;
-                    break;
-                case ViewMode.XemCanhBaoHetNghi:
-                    load_data_2_grid(m_ds_canh_bao_nv_nghi_tam_thoi);
-                    m_pnl_filter.Visible = false;
-                    m_lbl_header.Text = "Danh sách nhân viên đã hết phép nghỉ tạm thời";
-                    m_cmd_xuat_excel.Visible = false;
-                    m_cmd_insert.Enabled = false;
-                    m_cmd_update.Enabled = false;
-                    break;
-                default:
-                    break;
-            }
+           load_data_2_grid();
         }
 
-        private DS_V_DM_NHAN_VIEN load_data_2_ds_v_dm_nv()
+        private void load_data_2_sle_trang_thai_ld()
         {
-            DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
-            US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
-
+            US_DM_TRANG_THAI_LD v_us = new US_DM_TRANG_THAI_LD();
+            DS_DM_TRANG_THAI_LD v_ds = new DS_DM_TRANG_THAI_LD();
             v_us.FillDataset(v_ds);
-            return v_ds;
-        }
 
-        private DS_V_DM_TRANG_THAI_LAO_DONG load_data_2_ds_v_dm_trang_thai_ld()
-        {
-            DS_V_DM_TRANG_THAI_LAO_DONG v_ds = new DS_V_DM_TRANG_THAI_LAO_DONG();
-            US_V_DM_TRANG_THAI_LAO_DONG v_us = new US_V_DM_TRANG_THAI_LAO_DONG();
-
-            v_us.FillDataset(v_ds);
-            return v_ds;
-        }
-
-        private void load_data_2_sle_chon_trang_thai_lao_dong()
-        {
-            m_sle_chon_trang_thai_lao_dong.Properties.DataSource = load_data_2_ds_v_dm_trang_thai_ld().V_DM_TRANG_THAI_LAO_DONG;
-            m_sle_chon_trang_thai_lao_dong.Properties.ValueMember = V_DM_TRANG_THAI_LAO_DONG.ID;
-            m_sle_chon_trang_thai_lao_dong.Properties.DisplayMember = V_DM_TRANG_THAI_LAO_DONG.TEN_TRANG_THAI_LD;
-
-            m_sle_chon_trang_thai_lao_dong.Properties.PopulateViewColumns();
-            m_sle_chon_trang_thai_lao_dong.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            m_sle_chon_trang_thai_lao_dong.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+            m_sle_chon_trang_thai_lao_dong.Properties.DataSource = v_ds.Tables[0];
+            m_sle_chon_trang_thai_lao_dong.Properties.DisplayMember = "TEN_TRANG_THAI_LD";
+            m_sle_chon_trang_thai_lao_dong.Properties.ValueMember = "ID";
         }
 
         private void load_data_2_grid()
         {
             CHRMCommon.make_stt(m_grv_bao_cao_trang_thai_lao_dong_nhan_vien);
-            DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN v_ds_v_f356 = new DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN();
-            US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN v_us_v_f356 = new US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN();
-            if (m_sle_chon_trang_thai_lao_dong.EditValue == null)
-            {
-                v_us_v_f356.FillDataset_by_id_nv(v_ds_v_f356, m_load_data_toan_bo_nv);
-            }
-            else
-            {
-                v_us_v_f356.FillDataset_by_id_nv_and_id_trang_thai_ld(v_ds_v_f356, m_load_data_toan_bo_nv, (decimal)m_sle_chon_trang_thai_lao_dong.EditValue);
-            }
-            m_grc_bao_cao_trang_thai_lao_dong_nhan_vien.DataSource = v_ds_v_f356.V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN;
+            DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN v_ds = new DS_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN();
+            US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN v_us= new US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN();
+            v_us.FillDataset(v_ds);
+                      
+            m_grc_bao_cao_trang_thai_lao_dong_nhan_vien.DataSource = v_ds.V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN;
             m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.BestFitColumns();
             m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.ExpandAllGroups();
         }
@@ -196,7 +119,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                     break;
                 }
             }
-
             m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.FocusedRowHandle = v_row_index;
         }
 
@@ -222,6 +144,8 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         #endregion
 
+        #region Event Handler
+
         private void set_define_events()
         {
             this.Load += f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien_Load;
@@ -229,7 +153,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_delete.Click += m_cmd_delete_Click;
             m_cmd_insert.Click += m_cmd_insert_Click;
             m_cmd_update.Click += m_cmd_update_Click;
-            m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
             m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.SelectionChanged += M_grv_bao_cao_trang_thai_lao_dong_nhan_vien_Click;
             m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.FocusedRowChanged += M_grv_bao_cao_trang_thai_lao_dong_nhan_vien_Click;
             m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.CustomSummaryCalculate += gridView1_CustomSummaryCalculate;
@@ -254,10 +177,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.GetSelectedRows().ToList().Count == 0)
                 {
-                    if (m_e_view_mode == ViewMode.Thuong)
-                    {
-                        return;
-                    }
                     m_cmd_insert.Enabled = false;
                     m_cmd_update.Enabled = false;
                     return;
@@ -265,10 +184,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                 string ma_nv = m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.GetDataRow(m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.GetSelectedRows()[0])["MA_NV"].ToString();
                 if (ma_nv == "")
                 {
-                    if (m_e_view_mode == ViewMode.Thuong)
-                    {
-                        return;
-                    }
                     m_cmd_insert.Enabled = false;
                     m_cmd_update.Enabled = false;
                     return;
@@ -310,30 +225,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                 {
                     return;
                 }
-                decimal v_id_gd_trang_thai_lao_dong = (decimal)m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.GetRowCellValue(m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.FocusedRowHandle, "ID");
-                // them cho truong hop canh bao
-                if (m_e_view_mode == ViewMode.XemCanhBaoDangNghi)
-                {
-                    //US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN v_us = new US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN();
-                    //DataSet p = v_us.LayDanhSachNhanVienNghiTamThoi();
-                    //load_data_2_grid(p);
-                    v_id_gd_trang_thai_lao_dong = (decimal)m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.GetRowCellValue(m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.FocusedRowHandle, "ID");
-                    US_GD_TRANG_THAI_LAO_DONG v_us = new US_GD_TRANG_THAI_LAO_DONG(v_id_gd_trang_thai_lao_dong);
-                    f357_bao_cao_trang_thai_lao_dong_nhan_vien_de v_frm = new f357_bao_cao_trang_thai_lao_dong_nhan_vien_de();
-                    v_frm.display_4_update(v_us);
-                    load_data_2_grid(m_dc_id_loai_trang_thai);
-                    return;
-                }
-                if (m_e_view_mode == ViewMode.XemCanhBaoHetNghi)
-                {
-                    v_id_gd_trang_thai_lao_dong = (decimal)m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.GetRowCellValue(m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.FocusedRowHandle, "ID");
-                    US_GD_TRANG_THAI_LAO_DONG v_us = new US_GD_TRANG_THAI_LAO_DONG(v_id_gd_trang_thai_lao_dong);
-                    f357_bao_cao_trang_thai_lao_dong_nhan_vien_de v_frm = new f357_bao_cao_trang_thai_lao_dong_nhan_vien_de();
-                    v_frm.display_4_update(v_us);
-                    load_data_2_grid(m_dc_id_loai_trang_thai);
-                    return;
-                }
-                
+                decimal v_id_gd_trang_thai_lao_dong = (decimal)m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.
+                                                      GetRowCellValue(m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.FocusedRowHandle, "ID");
                 if (v_id_gd_trang_thai_lao_dong > 0)
                 {
                     US_GD_TRANG_THAI_LAO_DONG v_us = new US_GD_TRANG_THAI_LAO_DONG(v_id_gd_trang_thai_lao_dong);
@@ -341,8 +234,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     v_frm.display_4_update(v_us);
                     m_sle_chon_trang_thai_lao_dong.EditValue = null;
                     load_data_2_grid();
-                    //focus_new_row_created(v_id_gd_trang_thai_lao_dong);
-                    m_form.update_canh_bao();
+                    focus_new_row_created(v_id_gd_trang_thai_lao_dong);
                 }
                 else
                 {
@@ -359,41 +251,14 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                f357_bao_cao_trang_thai_lao_dong_nhan_vien_de v_f = new f357_bao_cao_trang_thai_lao_dong_nhan_vien_de();
                 if (m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.FocusedRowHandle < 0)
                 {
+                    v_f.ShowDialog();
                     return;
                 }
-                // them cho truong hop canh bao
-                if (m_e_view_mode == ViewMode.XemCanhBaoDangNghi)
-                {
-                    //US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN v_us = new US_V_F356_BAO_CAO_TRANG_THAI_LAO_DONG_CUA_NHAN_VIEN();
-                    //DataSet p = v_us.LayDanhSachNhanVienNghiTamThoi();
-                    //load_data_2_grid(p);
-                    f357_bao_cao_trang_thai_lao_dong_nhan_vien_de f = new f357_bao_cao_trang_thai_lao_dong_nhan_vien_de();
-                    f.display_4_thay_doi_trang_thai(m_dc_id_nv_dang_dieu_chinh);
-                    load_data_2_grid(m_dc_id_loai_trang_thai);
-                    return;
-                }
-                if (m_e_view_mode == ViewMode.XemCanhBaoHetNghi)
-                {
-                    f357_bao_cao_trang_thai_lao_dong_nhan_vien_de f = new f357_bao_cao_trang_thai_lao_dong_nhan_vien_de();
-                    f.display_4_thay_doi_trang_thai(m_dc_id_nv_dang_dieu_chinh);
-                    load_data_2_grid(m_dc_id_loai_trang_thai);
-                    return;
-                }
-                //
-                //decimal v_id_gd_trang_thai_lao_dong_moi_tao = 0;
-                //f357_bao_cao_trang_thai_lao_dong_nhan_vien_de v_f = new f357_bao_cao_trang_thai_lao_dong_nhan_vien_de();
-                //v_f.display_4_thay_doi_trang_thai(ref v_id_gd_trang_thai_lao_dong_moi_tao, m_dc_id_nv_dang_dieu_chinh);
-                //if (v_id_gd_trang_thai_lao_dong_moi_tao != 0)
-                //{
-                //    focus_new_row_created(v_id_gd_trang_thai_lao_dong_moi_tao);
-                //}
-                //m_form.update_canh_bao();
-                f357_bao_cao_trang_thai_lao_dong_nhan_vien_de v_f = new f357_bao_cao_trang_thai_lao_dong_nhan_vien_de();
                 v_f.display_4_thay_doi_trang_thai(m_dc_id_nv_dang_dieu_chinh);
                 load_data_2_grid();
-                m_form.update_canh_bao();
             }
             catch (Exception v_e)
             {
@@ -429,7 +294,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-            m_form.update_canh_bao();
         }
 
         void m_cmd_search_Click(object sender, EventArgs e)
@@ -502,7 +366,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-
         }
+
+        #endregion
+
     }
 }

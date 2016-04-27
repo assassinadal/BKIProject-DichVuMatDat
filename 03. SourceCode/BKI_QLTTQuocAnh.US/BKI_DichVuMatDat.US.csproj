@@ -66,6 +66,7 @@
     <Compile Include="US_DM_PHU_CAP.cs" />
     <Compile Include="US_DM_THAM_SO.cs" />
     <Compile Include="US_DM_THUE.cs" />
+    <Compile Include="US_DM_TRANG_THAI_LD.cs" />
     <Compile Include="US_GD_CAC_KHOAN_TIEN_KHAC.cs" />
     <Compile Include="US_GD_CHAM_CONG.cs" />
     <Compile Include="US_GD_CHAM_CONG_LAM_THEM.cs" />

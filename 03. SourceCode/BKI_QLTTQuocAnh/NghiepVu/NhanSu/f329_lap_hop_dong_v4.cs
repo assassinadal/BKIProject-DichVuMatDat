@@ -57,7 +57,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            m_grc.DataSource = v_us.LayDanhSachHopDong();
+            m_grc.DataSource = v_us.LayDanhSachHopDong();              
         }
 
         private void delete_gd_lcd(decimal v_id_hop_dong)
@@ -85,6 +85,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             //    v_us.Delete();
             //}
         }
+
         private void print_hop_dong(DataRow ip_datarow, string ip_path)
         {
 
@@ -176,6 +177,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             v_cwr.AddFindAndReplace("<nam_hien_tai>", DateTime.Now.Year.ToString());
             v_cwr.Export2Word();
         }
+
         private void in_hop_dong_process()
         {
             int[] v_selected_row = m_grv.GetSelectedRows();
@@ -227,6 +229,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 f001_import_hop_dong v_f = new f001_import_hop_dong();
                 v_f.ShowDialog();
                 load_data_to_grid();
+                m_grv.ActiveFilterString = "NGAY_LAP = " + DateTime.Now.Date;
             }
             catch (Exception v_e)
             {

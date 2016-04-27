@@ -43,6 +43,13 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_sle_chon_nhan_vien.Enabled = false;
             this.ShowDialog();
         }
+        internal void display_for_insert(decimal id_nv)
+        {
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_sle_chon_nhan_vien.EditValue = id_nv;
+            m_sle_chon_nhan_vien.Enabled = false;
+            this.ShowDialog();
+        }
         #endregion
 
         #region Members

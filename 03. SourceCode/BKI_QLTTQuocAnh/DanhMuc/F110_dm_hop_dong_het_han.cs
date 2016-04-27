@@ -11,13 +11,46 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.NghiepVu;
+using DevExpress.XtraEditors;
+using BKI_DichVuMatDat.NghiepVu.NhanSu;
 
 namespace BKI_DichVuMatDat.DanhMuc
 {
     public partial class F110_dm_hop_dong_het_han : Form
     {
-        private f388_main m_form;
-        private decimal m_dc_id_nv_dang_dieu_chinh = 0;
+        #region Public Interface
+
+        public F110_dm_hop_dong_het_han()
+        {
+            InitializeComponent();
+            Load += F110_dm_hop_dong_het_han_Load;
+            m_dat_tu_ngay.EditValue = DateTime.Now;
+            m_cmd_filter.Click += m_cmd_filter_Click;
+        }
+
+        public void display_canh_bao_het_han_hop_dong(DataSet ip_ds_het_han_hop_dong_thang_nay, f388_main f)
+        {
+            //
+            //
+            m_cmd_filter.Enabled = false;
+            m_dat_tu_ngay.Enabled = false;
+            m_dat_den_ngay.Enabled = false;
+            //
+            m_dat_den_ngay.EditValue = CHRMCommon.get_last_day_of_month(DateTime.Now);
+            m_dat_tu_ngay.EditValue = CHRMCommon.get_first_day_of_month(DateTime.Now);
+            CHRMCommon.make_stt(m_grv_hop_dong_het_han);
+            m_grc_hop_dong_het_han.DataSource = ip_ds_het_han_hop_dong_thang_nay.Tables[0];
+            //
+            m_btn_dieu_chinh_hop_dong.Visible = true;
+            m_btn_dieu_chinh_hop_dong.Enabled = false;
+            m_btn_dieu_chinh_hop_dong.Click += M_btn_dieu_chinh_hop_dong_Click;
+            m_grv_hop_dong_het_han.Click += M_grv_hop_dong_het_han_Click;
+            m_grv_hop_dong_het_han.SelectionChanged += M_grv_hop_dong_het_han_Click;
+            // 
+            this.CenterToScreen();
+            this.ShowDialog();
+            f.update_canh_bao();
+        }
 
         public void display_canh_bao_het_han_hop_dong(DateTime date1, DateTime date2, f388_main f)
         {
@@ -26,8 +59,8 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_dat_tu_ngay.Enabled = false;
             m_dat_den_ngay.Enabled = false;
             //
-            m_dat_den_ngay.Value = CHRMCommon.get_last_day_of_month(date1);
-            m_dat_tu_ngay.Value = CHRMCommon.get_first_day_of_month(date2);
+            m_dat_den_ngay.DateTime = CHRMCommon.get_last_day_of_month(date1);
+            m_dat_tu_ngay.DateTime = CHRMCommon.get_first_day_of_month(date2);
             CHRMCommon.make_stt(m_grv_hop_dong_het_han);
             //
             US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
@@ -48,83 +81,70 @@ namespace BKI_DichVuMatDat.DanhMuc
             this.ShowDialog();
             f.update_canh_bao();
         }
-        public F110_dm_hop_dong_het_han()
+
+        internal void display_for_show(DataSet dataSet)
         {
-            InitializeComponent();
-            Load += F110_dm_hop_dong_het_han_Load;
-            m_dat_tu_ngay.Value = DateTime.Now;
-            m_cmd_filter.Click += m_cmd_filter_Click;
-        }
-        public void display_canh_bao_het_han_hop_dong(DataSet ip_ds_het_han_hop_dong_thang_nay, f388_main f)
-        {
-            //
-            //
-            m_cmd_filter.Enabled = false;
-            m_dat_tu_ngay.Enabled = false;
-            m_dat_den_ngay.Enabled = false;
-            //
-            m_dat_den_ngay.Value = CHRMCommon.get_last_day_of_month(DateTime.Now);
-            m_dat_tu_ngay.Value = CHRMCommon.get_first_day_of_month(DateTime.Now);
-            CHRMCommon.make_stt(m_grv_hop_dong_het_han);
-            m_grc_hop_dong_het_han.DataSource = ip_ds_het_han_hop_dong_thang_nay.Tables[0];
-            //
-            m_btn_dieu_chinh_hop_dong.Visible = true;
-            m_btn_dieu_chinh_hop_dong.Enabled = false;
-            m_btn_dieu_chinh_hop_dong.Click += M_btn_dieu_chinh_hop_dong_Click;
-            m_grv_hop_dong_het_han.Click += M_grv_hop_dong_het_han_Click;
-            m_grv_hop_dong_het_han.SelectionChanged += M_grv_hop_dong_het_han_Click;
-            // 
-            this.CenterToScreen();
+            m_grc_hop_dong_het_han.DataSource = dataSet.Tables[0];
             this.ShowDialog();
-            f.update_canh_bao();
         }
 
-        void F110_dm_hop_dong_het_han_Load(object sender, EventArgs e)
+        public void display(DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
         {
-            try
-            {
-                
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
+            m_dat_tu_ngay.EditValue = ip_dat_tu_ngay;
+            m_dat_den_ngay.EditValue = ip_dat_den_ngay;
+            load_data_2_grid();
+            Show();
         }
+
+        #endregion
+
+        #region Members
+
+        private decimal m_dc_id_nv_dang_dieu_chinh = 0;
+
+        #endregion
+
+        #region Private Methods
 
         private void load_data_2_grid()
         {
-            if (m_dat_tu_ngay.Checked & m_dat_den_ngay.Checked)
+            if (m_dat_tu_ngay.DateTime == null | m_dat_den_ngay.DateTime == null)
             {
-                CHRMCommon.make_stt(m_grv_hop_dong_het_han);
-                US_GD_HOP_DONG v_us_gd_hop_dong = new US_GD_HOP_DONG();
-                DataSet v_ds = v_us_gd_hop_dong.LayDanhSachHopDongHetHan(
-                                            m_dat_tu_ngay.Value.Date
-                                            , m_dat_den_ngay.Value.Date);
+                CHRM_BaseMessages.MsgBox_Error("Vui lòng chọn lọc dữ liệu theo ngày");
+                return;
+            }
+            DateTime nbd = m_dat_tu_ngay.DateTime.Date;
+            DateTime nkt = m_dat_den_ngay.DateTime.Date;
 
-                m_grc_hop_dong_het_han.DataSource = v_ds.Tables[0];
-                return;
-            }
-            if (m_dat_den_ngay.Checked & !m_dat_tu_ngay.Checked)
-            {
-                CHRMCommon.make_stt(m_grv_hop_dong_het_han);
-                US_GD_HOP_DONG v_us_gd_hop_dong = new US_GD_HOP_DONG();
-                DataSet v_ds = v_us_gd_hop_dong.LayDanhSachHopDongHetHanTruocNgay(
-                                            m_dat_den_ngay.Value.Date);
-
-                m_grc_hop_dong_het_han.DataSource = v_ds.Tables[0];
-                return;
-            }
-            if (!m_dat_den_ngay.Checked & m_dat_tu_ngay.Checked)
-            {
-                CHRMCommon.make_stt(m_grv_hop_dong_het_han);
-                US_GD_HOP_DONG v_us_gd_hop_dong = new US_GD_HOP_DONG();
-                DataSet v_ds = v_us_gd_hop_dong.LayDanhSachHopDongHetHanSauNgay(
-                                            m_dat_tu_ngay.Value.Date);
-                m_grc_hop_dong_het_han.DataSource = v_ds.Tables[0];
-                return;
-            }
-            CHRM_BaseMessages.MsgBox_Error("Vui lòng chọn lọc dữ liệu theo ngày");     
+            US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
+            CHRMCommon.make_stt(m_grv_hop_dong_het_han);
+            m_grc_hop_dong_het_han.DataSource = v_us.LayDanhSachHopDongHetHanV2(nbd, nkt).Tables[0];
+            m_grv_hop_dong_het_han.BestFitColumns();
         }
+
+        private decimal find_id_nv(string ip_str_ma_nv)
+        {
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            DS_DM_NHAN_VIEN v_ds = new DS_DM_NHAN_VIEN();
+
+            v_us.FillDataset(v_ds);
+
+            string v_str_filter = "MA_NV = " + ip_str_ma_nv;
+            DataRow[] v_dr = v_ds.DM_NHAN_VIEN.Select(v_str_filter);
+
+            if (v_dr.Count() == 0)
+            {
+                return -1;
+            }
+            else
+            {
+                return CIPConvert.ToDecimal(v_dr.First()["ID"].ToString());
+            }
+        }
+
+        #endregion
+
+        #region Event Handlers
 
         void m_cmd_filter_Click(object sender, EventArgs e)
         {
@@ -132,26 +152,10 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 load_data_2_grid();
             }
-            catch(Exception v_e)
+            catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-        }
-
-        public void display(DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
-        {
-            m_dat_tu_ngay.Value = ip_dat_tu_ngay;
-            m_dat_den_ngay.Value = ip_dat_den_ngay;
-            m_dat_den_ngay.Checked = true;
-            m_dat_tu_ngay.Checked = true;
-            load_data_2_grid();
-            Show();
-        }
-
-        internal void display_for_show(DataSet dataSet)
-        {
-            m_grc_hop_dong_het_han.DataSource = dataSet.Tables[0];
-            this.ShowDialog();
         }
 
         private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
@@ -165,7 +169,6 @@ namespace BKI_DichVuMatDat.DanhMuc
                 DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
             }
         }
-
 
         private void M_grv_hop_dong_het_han_Click(object sender, EventArgs e)
         {
@@ -192,23 +195,15 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
-        private decimal find_id_nv(string ip_str_ma_nv)
+        void F110_dm_hop_dong_het_han_Load(object sender, EventArgs e)
         {
-            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
-            DS_DM_NHAN_VIEN v_ds = new DS_DM_NHAN_VIEN();
-
-            v_us.FillDataset(v_ds);
-
-            string v_str_filter = "MA_NV = " + ip_str_ma_nv;
-            DataRow[] v_dr = v_ds.DM_NHAN_VIEN.Select(v_str_filter);
-
-            if (v_dr.Count() == 0)
+            try
             {
-                return -1;
+
             }
-            else
+            catch (Exception v_e)
             {
-                return CIPConvert.ToDecimal(v_dr.First()["ID"].ToString());
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -216,18 +211,22 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                f320_lap_hop_dong v_f = new f320_lap_hop_dong();
-                v_f.display_4_dieu_chinh_canh_bao(m_dc_id_nv_dang_dieu_chinh);
+                string ten_nv = m_grv_hop_dong_het_han.GetDataRow(m_grv_hop_dong_het_han.GetSelectedRows()[0])["HO_TEN"].ToString();
+                if (CHRM_BaseMessages.MsgBox_Confirm("Bạn có chắc muốn lập hợp đồng mới cho nhân viên " + ten_nv))
+                {
+                    f330_lap_hop_dong_v4_detail v_f = new f330_lap_hop_dong_v4_detail();
+                    v_f.display_for_insert(m_dc_id_nv_dang_dieu_chinh);
+                }             
                 US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
-                m_grc_hop_dong_het_han.DataSource = v_us.LayDanhSachHopDongHetHan(m_dat_tu_ngay.Value.Date, m_dat_den_ngay.Value.Date).Tables[0];
+                m_grc_hop_dong_het_han.DataSource = v_us.LayDanhSachHopDongHetHan(m_dat_tu_ngay.DateTime.Date, m_dat_den_ngay.DateTime.Date).Tables[0];
             }
             catch (Exception v_e)
             {
-
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        #endregion
 
-        
+       
     }
 }

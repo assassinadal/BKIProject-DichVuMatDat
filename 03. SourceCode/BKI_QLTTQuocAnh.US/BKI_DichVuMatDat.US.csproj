@@ -138,6 +138,7 @@
     <Compile Include="US_V_GD_HOP_DONG_4.cs" />
     <Compile Include="US_V_GD_HOP_DONG_V3.cs" />
     <Compile Include="US_V_GD_KHONG_DONG_BAO_HIEM.cs" />
+    <Compile Include="US_V_GD_KHONG_HE_SO_LNS.cs" />
     <Compile Include="US_V_GD_LOAI_LAO_DONG.cs" />
     <Compile Include="US_V_GD_LUONG_CUNG.cs" />
     <Compile Include="US_V_GD_MA_TRA_CUU_NHAN_VIEN.cs" />

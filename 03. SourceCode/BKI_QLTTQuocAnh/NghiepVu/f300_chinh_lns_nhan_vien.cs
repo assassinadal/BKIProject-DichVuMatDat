@@ -92,24 +92,37 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_grc.DataSource = v_ds.Tables[0];
         }
 
+        private void load_data_2_grv_k_hs_lns()
+        {
+            US_V_GD_KHONG_HE_SO_LNS v_us = new US_V_GD_KHONG_HE_SO_LNS();
+            DS_V_GD_KHONG_HE_SO_LNS v_ds = new DS_V_GD_KHONG_HE_SO_LNS();
+            v_ds.EnforceConstraints = false;
+            v_us.FillDataset(v_ds);
+
+            m_grc_khs.DataSource = v_ds.Tables[0];
+        }
+
         private void insert_click()
         {
-            DataRow v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
-            US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS(Convert.ToDecimal(v_dr["ID"].ToString()));
+            DataRow v_dr; 
             f299_chinh_lns_nhan_vien_de v_frm = new f299_chinh_lns_nhan_vien_de();
             switch (m_e_tab_mode)
             {
                 case tab_mode.co_lns:
+                    v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+                    US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS(Convert.ToDecimal(v_dr["ID"].ToString()));
                     v_frm.display_4_insert(v_us);
+                    load_data_danh_sach_nhan_vien_theo_don_vi(m_dc_id_don_vi);
+                    focus_row(v_us.dcID_NHAN_VIEN);
                     break;
                 case tab_mode.khong_lns:
-                    //v_frm.display_4_insert_new(id_nhan_vien);
+                    v_dr = m_grv_khs.GetDataRow(m_grv_khs.FocusedRowHandle);
+                    v_frm.display_4_insert_new(Convert.ToDecimal(v_dr["ID_NHAN_VIEN"].ToString()));
+                    load_data_2_grv_k_hs_lns();
                     break;
                 default:
                     break;
             }
-            load_data_danh_sach_nhan_vien_theo_don_vi(m_dc_id_don_vi);
-            focus_row(v_us.dcID_NHAN_VIEN);
         }
 
         private void update_click()
@@ -139,35 +152,28 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_insert.Click += M_cmd_insert_Click;
             m_cmd_update.Click += M_cmd_update_Click;
             m_cmd_delete.Click += M_cmd_delete_Click;
-            //m_tab_co_lns.Click += M_tab_co_lns_Click;
-            //m_tab_k_lns.Click += M_tab_k_lns_Click;
+            xtraTabControl1.SelectedPageChanged += XtraTabControl1_SelectedPageChanged;
         }
 
-        private void M_tab_k_lns_Click(object sender, EventArgs e)
+        private void XtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
-            try
+            switch (e.Page.Text)
             {
-                m_e_tab_mode = tab_mode.khong_lns;
-                m_cmd_delete.Enabled = false;
-                m_cmd_update.Enabled = false;
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+                case "NHÂN VIÊN CÓ LƯƠNG NĂNG SUẤT":
+                    m_e_tab_mode = tab_mode.co_lns;
+                    m_cmd_delete.Visible = true;
+                    m_cmd_update.Visible = true;
+                    load_data_danh_sach_nhan_vien_theo_don_vi(0);
+                    break;
+                case "NHÂN VIÊN KHÔNG LƯƠNG NĂNG SUẤT":
+                    m_e_tab_mode = tab_mode.khong_lns;
+                    m_cmd_delete.Visible = false;
+                    m_cmd_update.Visible = false;
+                    load_data_2_grv_k_hs_lns();
 
-        private void M_tab_co_lns_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                m_e_tab_mode = tab_mode.co_lns;
-                m_cmd_delete.Enabled = true;
-                m_cmd_update.Enabled = true;
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
+                    break;
+                default:
+                    break;
             }
         }
 

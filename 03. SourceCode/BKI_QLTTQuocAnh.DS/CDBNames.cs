@@ -650,6 +650,42 @@ namespace BKI_DichVuMatDat.DS.CDBNames
     #endregion
 
     #region VIEW
+    public class V_GD_KHONG_HE_SO_LNS
+    {
+        public const string MA_NV = "MA_NV";
+        public const string HO_TEN = "HO_TEN";
+        public const string ID = "ID";
+        public const string ID_NHAN_VIEN = "ID_NHAN_VIEN";
+        public const string ID_LOAI_HOP_DONG = "ID_LOAI_HOP_DONG";
+        public const string MA_HOP_DONG = "MA_HOP_DONG";
+        public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+        public const string NGAY_KY_HOP_DONG = "NGAY_KY_HOP_DONG";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string NGAY_SUA = "NGAY_SUA";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string NGUOI_SUA = "NGUOI_SUA";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string ID_LUONG_CHE_DO = "ID_LUONG_CHE_DO";
+        public const string ID_LOAI_LAO_DONG = "ID_LOAI_LAO_DONG";
+        public const string ID_DON_VI = "ID_DON_VI";
+        public const string ID_CHUC_VU = "ID_CHUC_VU";
+        public const string SO_TIEN_LCD = "SO_TIEN_LCD";
+        public const string MA_LOAI_HOP_DONG = "MA_LOAI_HOP_DONG";
+        public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
+        public const string LOAI_LAO_DONG = "LOAI_LAO_DONG";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+        public const string TEN_CHUC_VU = "TEN_CHUC_VU";
+        public const string ID_LCD = "ID_LCD";
+        public const string ID_MA_LCD = "ID_MA_LCD";
+        public const string ID_MUC_LCD = "ID_MUC_LCD";
+        public const string MA_LCD = "MA_LCD";
+        public const string TEN_MA_LCD = "TEN_MA_LCD";
+        public const string MUC_LCD = "MUC_LCD";
+        public const string TEN_MUC_LCD = "TEN_MUC_LCD";
+        public const string SO_TIEN = "SO_TIEN";
+    }
+
     public class V_GD_HE_SO_LNS
     {
         public const string ID_DON_VI = "ID_DON_VI";

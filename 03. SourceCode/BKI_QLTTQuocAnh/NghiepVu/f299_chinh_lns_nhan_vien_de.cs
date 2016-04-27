@@ -22,6 +22,7 @@ namespace BKI_DichVuMatDat.NghiepVu
     public partial class f299_chinh_lns_nhan_vien_de : Form
     {
         private DataEntryFormMode m_e_form_mode;
+
         US_GD_HE_SO_LNS m_us = new US_GD_HE_SO_LNS();
 
         public f299_chinh_lns_nhan_vien_de()
@@ -47,6 +48,15 @@ namespace BKI_DichVuMatDat.NghiepVu
             us_2_form();
             m_group_old.Visibility = LayoutVisibility.Never;
             m_group.Text = "Sửa mức lương năng suất hiện tại";
+            ShowDialog();
+        }
+
+        public void display_4_insert_new(decimal ip_id_nhan_vien)
+        {
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
+            m_group_old.Visibility = LayoutVisibility.Never;
+            m_group.Text = "Thêm mức lương năng suất mới";
+            m_us.dcID_NHAN_VIEN = ip_id_nhan_vien;
             ShowDialog();
         }
 
@@ -203,21 +213,26 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 case DataEntryFormMode.UpdateDataState:
                     update_data();
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
-                    Close();
                     break;
                 case DataEntryFormMode.InsertDataState:
                     insert_data();
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
-                    Close();
                     break;
                 case DataEntryFormMode.ViewDataState:
                     break;
                 case DataEntryFormMode.SelectDataState:
+                    insert_data_new();
                     break;
                 default:
                     break;
             }
+            CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
+            Close();
+        }
+
+        private void insert_data_new()
+        {
+            form_2_us();
+            m_us.Insert();
         }
 
         private void update_data()
@@ -284,6 +299,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                 case DataEntryFormMode.ViewDataState:
                     break;
                 case DataEntryFormMode.SelectDataState:
+                    m_us.datNGAY_LAP = DateTime.Now.Date;
+                    m_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                     break;
                 default:
                     break;
@@ -332,8 +349,16 @@ namespace BKI_DichVuMatDat.NghiepVu
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.UpdateDataState:
-                    return true;
-                    //break;
+                    if(m_dat_ngay_ket_thuc.EditValue != null)
+                    {
+                        if (!m_us.KiemTraNgayThang(m_us.dcID, m_dat_ngay_bat_dau.DateTime.Date, m_dat_ngay_ket_thuc.DateTime.Date))
+                        {
+                            string v_str_error = "Vui lòng kiểm tra lại dữ liệu ngày tháng!!";
+                            XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
+                    }
+                    break;
                 case DataEntryFormMode.InsertDataState:
                     if (!(m_dat_ngay_bat_dau_cu.DateTime.Date < m_dat_ngay_ket_thuc_cu.DateTime.Date))
                     {

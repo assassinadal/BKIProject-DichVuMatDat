@@ -358,7 +358,41 @@ namespace BKI_DichVuMatDat.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+        public bool KiemTraDuLieuCongTacHopLeForInsert(decimal ip_dc_id_nhan_vien, decimal  ip_dc_id_loai_cong_tac, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_CT_du_lieu_cong_tac_hop_le_CheckInsert");
+            v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            v_cstore.addDecimalInputParam("@ip_dc_id_loai_cong_tac", ip_dc_id_loai_cong_tac);
+            v_cstore.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+            v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
 
+            SqlParameter v_yn = v_cstore.addNVarcharOutputParam("@op_str_hop_le_yn", "");
+            v_cstore.ExecuteCommand(this);
+
+            return v_yn.Value.ToString() == "Y" ? true : false;
+        }
+        public bool KiemTraDuLieuCongTacHopLeForUpdate(decimal ip_dc_id_gd_cong_tac, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_CT_du_lieu_cong_tac_hop_le_CheckUpdate");
+            v_cstore.addDecimalInputParam("@ip_dc_id_gd_cong_tac", ip_dc_id_gd_cong_tac);
+            v_cstore.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+            v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+
+            SqlParameter v_yn = v_cstore.addNVarcharOutputParam("@op_str_hop_le_yn", "");
+            v_cstore.ExecuteCommand(this);
+
+            return v_yn.Value.ToString() == "Y" ? true : false;
+        }
+        public DataTable LayDuLieuCongTac(string ip_str_option_filter)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_CT_danh_sach_cong_tac_GetAll");
+            v_cstore.addNVarcharInputParam("@ip_str_option_hien_thi", ip_str_option_filter);
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+            v_cstore.fillDataSetByCommand(this, v_ds);
+
+            return v_ds.Tables[0];
+        }
         public bool KiemTraNhanVienCoCongTacChua(decimal ip_dc_id_nhan_vien, decimal ip_dc_id_don_vi)
         {
             CStoredProc v_cstore = new CStoredProc("pr_NS_nhan_vien_thuoc_phong_ban_Check");

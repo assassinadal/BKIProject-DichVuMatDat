@@ -55,14 +55,20 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             load_data_to_grid();
         }
+        private string get_option_filter()
+        {
+            if(radioButton1.Checked == true)
+            {
+                return "TAT_CA";
+            }
+            return "MOI_NHAT";
+        }
         private void load_data_to_grid()
         {
-            US_V_GD_CONG_TAC_2 v_us = new US_V_GD_CONG_TAC_2();
-            DS_V_GD_CONG_TAC_2 v_ds = new DS_V_GD_CONG_TAC_2();
+            US_GD_CONG_TAC v_us = new US_GD_CONG_TAC();
+            DS_GD_CONG_TAC v_ds = new DS_GD_CONG_TAC();
             v_ds.EnforceConstraints = false;
-            v_us.FillDataset(v_ds, " order by MA_NV, TEN_DON_VI");
-
-            m_grc.DataSource = v_ds.Tables[0];
+            m_grc.DataSource = v_us.LayDuLieuCongTac(get_option_filter());
         }
 
         //Get data
@@ -105,26 +111,26 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         }
         private void sua_cong_tac()
         {
-            //if(!is_nhan_vien_seleted())
-            //{
-            //    return;
-            //}
-            //var v_dc_id_gd_cong_tac = Convert.ToDecimal(m_grv.GetRowCellValue(m_grv.FocusedRowHandle, V_GD_CONG_TAC_2.ID));
-            //f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
-            //v_frm.display_for_update(v_dc_id_gd_cong_tac);
-            //refresh_data();
+            if(!is_nhan_vien_seleted())
+            {
+                return;
+            }
+            var v_dc_id_gd_cong_tac = Convert.ToDecimal(m_grv.GetRowCellValue(m_grv.FocusedRowHandle, V_GD_CONG_TAC_2.ID));
+            f310_cap_nhat_cong_tac v_frm = new f310_cap_nhat_cong_tac();
+            v_frm.display_for_update(v_dc_id_gd_cong_tac);
+            refresh_data();
         }
         private void xoa_cong_tac()
         {
-            //var v_dlg_confirm = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa công tác (việc này chỉ nên thực hiện khi bạn cập nhật nhầm công tác cho nhân viên)!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
-            //if(v_dlg_confirm == System.Windows.Forms.DialogResult.Yes)
-            //{
-            //    var v_dc_id_gd_cong_tac = Convert.ToDecimal(m_grv.GetRowCellValue(m_grv.FocusedRowHandle, V_GD_CONG_TAC_2.ID));
-            //    US_GD_CONG_TAC v_us = new US_GD_CONG_TAC();
-            //    v_us.DeleteByID(v_dc_id_gd_cong_tac);
-            //    XtraMessageBox.Show("Đã xóa công tác nhân viên thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    refresh_data();
-            //}
+            var v_dlg_confirm = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa công tác (việc này chỉ nên thực hiện khi bạn cập nhật nhầm công tác cho nhân viên)!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            if(v_dlg_confirm == System.Windows.Forms.DialogResult.Yes)
+            {
+                var v_dc_id_gd_cong_tac = Convert.ToDecimal(m_grv.GetRowCellValue(m_grv.FocusedRowHandle, GD_CONG_TAC.ID));
+                US_GD_CONG_TAC v_us = new US_GD_CONG_TAC();
+                v_us.DeleteByID(v_dc_id_gd_cong_tac);
+                XtraMessageBox.Show("Đã xóa công tác nhân viên thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                refresh_data();
+            }
         }
         #endregion
 
@@ -136,6 +142,19 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_cmd_refresh.Click += m_cmd_refresh_Click;
             m_cmd_sua_cong_tac.Click += m_cmd_sua_cong_tac_Click;
             m_cmd_xoa_cong_tac.Click += m_cmd_xoa_cong_tac_Click;
+            m_cmd_filter.Click += m_cmd_filter_Click;
+        }
+
+        void m_cmd_filter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_to_grid();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_xoa_cong_tac_Click(object sender, EventArgs e)
@@ -198,5 +217,6 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         }
        
         #endregion
+
     }
 }

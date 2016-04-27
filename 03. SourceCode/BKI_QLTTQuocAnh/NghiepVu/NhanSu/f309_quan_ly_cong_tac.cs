@@ -37,7 +37,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
             else if (ip_trang_thai_filter == false)
             {
-                m_grv.ActiveFilterString = "[NGAY_KET_THUC] > #" + v_str_ngay_hien_tai + "# and [NGAY_KET_THUC] < #" + v_str + "#";
+                m_grv.ActiveFilterString = "[NGAY_KET_THUC] > #" + v_str_ngay_hien_tai + "# and [NGAY_KET_THUC] <= #" + v_str + "#";
             }
             this.CenterToParent();
             this.ShowDialog();

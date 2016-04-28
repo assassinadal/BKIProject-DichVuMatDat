@@ -393,7 +393,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             v_us.strDA_XOA = "N";
             v_us.dcID_LOAI_CONG_TAC = 157;
             v_us.dcID_VI_TRI = CIPConvert.ToDecimal(m_sle_chuc_vu.EditValue);
-            v_us.dcSO_HO_SO = BKI_DichVuMatDat.COMMON.ExecuteFuntion.GetSoHoSoNext(v_us.dcID_DON_VI, v_us.dcID_VI_TRI);
+            v_us.dcSO_HO_SO = BKI_DichVuMatDat.COMMON.ExecuteFuntion.GetSoHoSoNext(v_us.dcID_DON_VI, v_us.dcID_VI_TRI, v_us.dcID_NHAN_VIEN);
             v_us.UseTransOfUSObject(m_us_gd_hd);
             v_us.Insert();
             v_us.CommitTransaction();

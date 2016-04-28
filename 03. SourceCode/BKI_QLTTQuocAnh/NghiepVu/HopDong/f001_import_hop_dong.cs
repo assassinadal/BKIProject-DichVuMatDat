@@ -692,7 +692,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             v_us_gd_cong_tac.dcID_DON_VI = find_id_don_vi(data["MA_DON_VI"].ToString());
             v_us_gd_cong_tac.dcID_VI_TRI = find_id_chuc_vu(data["MA_CHUC_VU"].ToString());
             v_us_gd_cong_tac.dcID_LOAI_CONG_TAC = 157;
-            v_us_gd_cong_tac.dcSO_HO_SO = ExecuteFuntion.GetSoHoSoNext(v_us_gd_cong_tac.dcID_DON_VI, v_us_gd_cong_tac.dcID_VI_TRI);
+            v_us_gd_cong_tac.dcSO_HO_SO = ExecuteFuntion.GetSoHoSoNext(v_us_gd_cong_tac.dcID_DON_VI, v_us_gd_cong_tac.dcID_VI_TRI, v_us_gd_cong_tac.dcID_NHAN_VIEN);
             v_us_gd_cong_tac.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             v_us_gd_cong_tac.strDA_XOA = "N";
             v_us_gd_cong_tac.datNGAY_BAT_DAU = WinFormControls.FormatPostingDate(data["NGAY_BAT_DAU"].ToString());

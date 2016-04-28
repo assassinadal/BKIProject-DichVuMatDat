@@ -201,7 +201,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             ip_us.strDA_XOA = "N";
             if(m_e_loai_cap_nhat == e_loai_cap_nhat.THEM_MOI)
             {
-                ip_us.dcSO_HO_SO = ExecuteFuntion.GetSoHoSoNext(ip_us.dcID_DON_VI, ip_us.dcID_VI_TRI);
+                ip_us.dcSO_HO_SO = ExecuteFuntion.GetSoHoSoNext(ip_us.dcID_DON_VI, ip_us.dcID_VI_TRI, ip_us.dcID_NHAN_VIEN);
             }
         }
         private void us_2_form(US_GD_CONG_TAC ip_us)
@@ -393,7 +393,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if(m_e_loai_cap_nhat == e_loai_cap_nhat.THEM_MOI)
                 {
-                    m_txt_so_ho_so.EditValue = ExecuteFuntion.GetSoHoSoNext(Convert.ToDecimal(m_sle_chon_don_vi.EditValue), Convert.ToDecimal(m_sle_chon_vi_tri.EditValue));
+                    m_txt_so_ho_so.EditValue = ExecuteFuntion.GetSoHoSoNext(Convert.ToDecimal(m_sle_chon_don_vi.EditValue), Convert.ToDecimal(m_sle_chon_vi_tri.EditValue), Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                 }
             }
             catch(Exception v_e)

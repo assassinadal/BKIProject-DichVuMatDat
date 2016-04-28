@@ -40,9 +40,9 @@ namespace BKI_DichVuMatDat.COMMON
             return Convert.ToDecimal(v_str_result);
         }
 
-        public static decimal GetSoHoSoNext(decimal ip_dc_id_don_vi, decimal ip_dc_id_chuc_vu)
+        public static decimal GetSoHoSoNext(decimal ip_dc_id_don_vi, decimal ip_dc_id_chuc_vu, decimal ip_dc_id_nhan_vien)
         {
-            var v_str_result = ExecuteFuntionSql("fn_NV_so_ho_so_Next", ip_dc_id_chuc_vu, ip_dc_id_don_vi);
+            var v_str_result = ExecuteFuntionSql("fn_NV_so_ho_so_Next", ip_dc_id_chuc_vu, ip_dc_id_don_vi, ip_dc_id_nhan_vien);
             return Convert.ToDecimal(v_str_result);
         }
 

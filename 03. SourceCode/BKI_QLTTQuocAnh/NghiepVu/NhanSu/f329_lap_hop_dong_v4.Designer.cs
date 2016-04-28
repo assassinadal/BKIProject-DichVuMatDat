@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f329_lap_hop_dong_v4));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
@@ -88,7 +89,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 50);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1099, 509);
+            this.panelControl2.Size = new System.Drawing.Size(871, 509);
             this.panelControl2.TabIndex = 8;
             // 
             // m_grc
@@ -98,7 +99,7 @@
             this.m_grc.Location = new System.Drawing.Point(2, 42);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(1095, 465);
+            this.m_grc.Size = new System.Drawing.Size(867, 465);
             this.m_grc.TabIndex = 1;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
@@ -130,6 +131,19 @@
             this.colSO_CMT,
             this.colNGAY_CAP_CMT,
             this.colNOI_CAP});
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Pink;
+            styleFormatCondition1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
+            styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Firebrick;
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
+            styleFormatCondition1.Appearance.Options.UseFont = true;
+            styleFormatCondition1.Appearance.Options.UseForeColor = true;
+            styleFormatCondition1.ApplyToRow = true;
+            styleFormatCondition1.Column = this.colNGAY_KET_THUC;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition1.Expression = "[NGAY_KET_THUC]  < Today() And IsNullOrEmpty([NGAY_KET_THUC]) == False";
+            styleFormatCondition1.Name = "HET_HAN";
+            this.m_grv.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            styleFormatCondition1});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
             this.m_grv.OptionsBehavior.ReadOnly = true;
@@ -139,6 +153,7 @@
             this.m_grv.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.m_grv.OptionsView.ColumnAutoWidth = false;
             this.m_grv.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.m_grv.OptionsView.ShowFooter = true;
             // 
             // colMA_NV
             // 
@@ -154,10 +169,9 @@
             this.colMA_NV.FieldName = "MA_NV";
             this.colMA_NV.Name = "colMA_NV";
             this.colMA_NV.OptionsColumn.AllowEdit = false;
-            this.colMA_NV.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MA_NV", "{0:n0}")});
             this.colMA_NV.Visible = true;
             this.colMA_NV.VisibleIndex = 3;
+            this.colMA_NV.Width = 63;
             // 
             // colHO_TEN
             // 
@@ -187,6 +201,8 @@
             this.colMA_HOP_DONG.FieldName = "MA_HOP_DONG";
             this.colMA_HOP_DONG.Name = "colMA_HOP_DONG";
             this.colMA_HOP_DONG.OptionsColumn.AllowEdit = false;
+            this.colMA_HOP_DONG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MA_HOP_DONG", "SL: {0:n0}")});
             this.colMA_HOP_DONG.Visible = true;
             this.colMA_HOP_DONG.VisibleIndex = 2;
             this.colMA_HOP_DONG.Width = 58;
@@ -223,7 +239,7 @@
             this.colNGAY_BAT_DAU.OptionsColumn.AllowEdit = false;
             this.colNGAY_BAT_DAU.Visible = true;
             this.colNGAY_BAT_DAU.VisibleIndex = 5;
-            this.colNGAY_BAT_DAU.Width = 99;
+            this.colNGAY_BAT_DAU.Width = 91;
             // 
             // colNGAY_KET_THUC
             // 
@@ -241,7 +257,7 @@
             this.colNGAY_KET_THUC.OptionsColumn.AllowEdit = false;
             this.colNGAY_KET_THUC.Visible = true;
             this.colNGAY_KET_THUC.VisibleIndex = 6;
-            this.colNGAY_KET_THUC.Width = 104;
+            this.colNGAY_KET_THUC.Width = 91;
             // 
             // colNGAY_KY_HOP_DONG
             // 
@@ -446,7 +462,7 @@
             this.panelControl1.Location = new System.Drawing.Point(2, 2);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(2);
-            this.panelControl1.Size = new System.Drawing.Size(1095, 40);
+            this.panelControl1.Size = new System.Drawing.Size(867, 40);
             this.panelControl1.TabIndex = 0;
             // 
             // m_cmd_chon_file
@@ -481,7 +497,7 @@
             this.m_cmd_refresh.Appearance.Options.UseFont = true;
             this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_refresh.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_refresh.Image")));
-            this.m_cmd_refresh.Location = new System.Drawing.Point(981, 4);
+            this.m_cmd_refresh.Location = new System.Drawing.Point(753, 4);
             this.m_cmd_refresh.Name = "m_cmd_refresh";
             this.m_cmd_refresh.Size = new System.Drawing.Size(110, 32);
             this.m_cmd_refresh.TabIndex = 6;
@@ -552,7 +568,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(0, 0);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1099, 50);
+            this.panelControl3.Size = new System.Drawing.Size(871, 50);
             this.panelControl3.TabIndex = 9;
             // 
             // m_cmd_filter
@@ -595,7 +611,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1099, 559);
+            this.ClientSize = new System.Drawing.Size(871, 559);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl3);
             this.Name = "f329_lap_hop_dong_v4";

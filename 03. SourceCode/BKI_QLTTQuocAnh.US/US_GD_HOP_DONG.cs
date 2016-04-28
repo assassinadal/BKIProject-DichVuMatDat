@@ -543,6 +543,7 @@ public class US_GD_HOP_DONG : US_Object
         DataSet v_ds = new DataSet();
         v_ds.Tables.Add();
         CStoredProc v_cstore = new CStoredProc("pr_HD_danh_sach_hop_dong_GetAll");
+        v_cstore.addNVarcharInputParam("@ip_str_option", ip_str_filter);
         v_cstore.fillDataSetByCommand(this, v_ds);
 
         return v_ds.Tables[0];

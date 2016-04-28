@@ -73,7 +73,6 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             load_data_to_sle_loai_lao_dong();
             load_data_to_sle_don_vi();
             m_sle_don_vi.EditValueChanged += m_sle_don_vi_EditValueChanged;
-            //load_data_to_sle_chuc_vu();
             load_data_to_sle_ma_lcd();
             load_data_to_sle_muc_lcd();
             load_data_to_sle_ma_lns();
@@ -317,23 +316,12 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+
             return true;
         }
 
         private bool check_thong_tin_luong()
         {
-            //if (m_sle_ma_lcd.EditValue == null)
-            //{
-            //    string v_str_error = "Bạn chưa chọn mã lương chế độ!";
-            //    XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return false;
-            //}
-            //else if (m_sle_muc_lcd.EditValue == null)
-            //{
-            //    string v_str_error = "Bạn chưa chọn mức lương chế độ!";
-            //    XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return false;
-            //}
             if (m_sle_ma_lcd.EditValue != null && m_sle_muc_lcd.EditValue != null && get_luong_cd_theo_ma_muc() == null)
             {
                 string v_str_error = "Mã chức danh chưa được định nghĩa hệ số.\nVui lòng kiểm tra lại!";

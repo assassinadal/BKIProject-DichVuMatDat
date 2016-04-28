@@ -287,7 +287,7 @@
             // 
             // m_sle_chon_nhan_vien
             // 
-            this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(123, 67);
+            this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(123, 37);
             this.m_sle_chon_nhan_vien.Name = "m_sle_chon_nhan_vien";
             this.m_sle_chon_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -370,7 +370,7 @@
             // 
             // m_sle_chon_loai_cong_tac
             // 
-            this.m_sle_chon_loai_cong_tac.Location = new System.Drawing.Point(123, 37);
+            this.m_sle_chon_loai_cong_tac.Location = new System.Drawing.Point(123, 67);
             this.m_sle_chon_loai_cong_tac.Name = "m_sle_chon_loai_cong_tac";
             this.m_sle_chon_loai_cong_tac.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -482,7 +482,7 @@
             // 
             this.layoutControlItem4.Control = this.m_sle_chon_loai_cong_tac;
             this.layoutControlItem4.CustomizationFormText = "Chọn loại công tác";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 22);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 52);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlItem4.Size = new System.Drawing.Size(445, 30);
@@ -526,7 +526,7 @@
             // 
             this.layoutControlItem2.Control = this.m_sle_chon_nhan_vien;
             this.layoutControlItem2.CustomizationFormText = "Chọn nhân viên";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 52);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 22);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlItem2.Size = new System.Drawing.Size(445, 30);

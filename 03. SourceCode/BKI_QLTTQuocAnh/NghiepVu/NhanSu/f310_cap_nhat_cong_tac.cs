@@ -362,7 +362,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_e_loai_cap_nhat = e_loai_cap_nhat.UPDATE;
 
             setup_header_text("SỬA CÔNG TÁC");
-            setup_read_only(m_sle_chon_don_vi, m_sle_chon_loai_cong_tac, m_sle_chon_vi_tri, m_sle_chon_nhan_vien);
+            setup_read_only(m_sle_chon_nhan_vien);
             load_data_2_sle_nhan_vien();
 
             m_sle_chon_nhan_vien.EditValue = v_us_ct.dcID_NHAN_VIEN;

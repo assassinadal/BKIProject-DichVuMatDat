@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f309_quan_ly_cong_tac));
+            this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -38,7 +42,6 @@
             this.colHO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY_BAT_DAU = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCHUC_DANH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO_DEM = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,16 +74,16 @@
             this.colNGAY_TIEP_NHAN_VAO_TCT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY_CHINH_THUC_TIEP_NHAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGUOI_BAO_LANH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection();
+            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_xoa_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_sua_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_them_moi_cong_tac = new DevExpress.XtraEditors.SimpleButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
@@ -89,6 +92,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // colNGAY_KET_THUC
+            // 
+            this.colNGAY_KET_THUC.AppearanceCell.Options.UseTextOptions = true;
+            this.colNGAY_KET_THUC.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNGAY_KET_THUC.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colNGAY_KET_THUC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colNGAY_KET_THUC.AppearanceHeader.Options.UseFont = true;
+            this.colNGAY_KET_THUC.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNGAY_KET_THUC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNGAY_KET_THUC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colNGAY_KET_THUC.Caption = "Ngày kết thúc CT";
+            this.colNGAY_KET_THUC.FieldName = "NGAY_KET_THUC";
+            this.colNGAY_KET_THUC.Name = "colNGAY_KET_THUC";
+            this.colNGAY_KET_THUC.Visible = true;
+            this.colNGAY_KET_THUC.VisibleIndex = 7;
             // 
             // m_grc
             // 
@@ -145,12 +164,39 @@
             this.colNGAY_TIEP_NHAN_VAO_TCT,
             this.colNGAY_CHINH_THUC_TIEP_NHAN,
             this.colNGUOI_BAO_LANH});
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Pink;
+            styleFormatCondition1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
+            styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Firebrick;
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
+            styleFormatCondition1.Appearance.Options.UseFont = true;
+            styleFormatCondition1.Appearance.Options.UseForeColor = true;
+            styleFormatCondition1.ApplyToRow = true;
+            styleFormatCondition1.Column = this.colNGAY_KET_THUC;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition1.Expression = "[NGAY_KET_THUC] <= Today()  And IsNullOrEmpty([NGAY_KET_THUC]) == False";
+            styleFormatCondition1.Name = "HET_HAN";
+            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.Honeydew;
+            styleFormatCondition2.Appearance.ForeColor = System.Drawing.Color.Green;
+            styleFormatCondition2.Appearance.Options.UseBackColor = true;
+            styleFormatCondition2.Appearance.Options.UseForeColor = true;
+            styleFormatCondition2.Column = this.colNGAY_KET_THUC;
+            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.GreaterOrEqual;
+            styleFormatCondition2.Enabled = false;
+            styleFormatCondition2.Expression = "[NGAY_KET_THUC] >= Today()   Or IsNullOrEmpty([NGAY_KET_THUC]) == True";
+            styleFormatCondition2.Name = "CON_HAN";
+            this.m_grv.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            styleFormatCondition1,
+            styleFormatCondition2});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
+            this.m_grv.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
             this.m_grv.OptionsBehavior.ReadOnly = true;
             this.m_grv.OptionsFind.AlwaysVisible = true;
             this.m_grv.OptionsFind.FindDelay = 100;
             this.m_grv.OptionsFind.FindNullPrompt = "Tìm kiếm...";
+            this.m_grv.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.m_grv.OptionsSelection.EnableAppearanceFocusedRow = false;
+            this.m_grv.OptionsSelection.EnableAppearanceHideSelection = false;
             this.m_grv.OptionsView.ColumnAutoWidth = false;
             this.m_grv.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.m_grv.OptionsView.ShowAutoFilterRow = true;
@@ -259,22 +305,6 @@
             this.colNGAY_BAT_DAU.Name = "colNGAY_BAT_DAU";
             this.colNGAY_BAT_DAU.Visible = true;
             this.colNGAY_BAT_DAU.VisibleIndex = 6;
-            // 
-            // colNGAY_KET_THUC
-            // 
-            this.colNGAY_KET_THUC.AppearanceCell.Options.UseTextOptions = true;
-            this.colNGAY_KET_THUC.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colNGAY_KET_THUC.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colNGAY_KET_THUC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colNGAY_KET_THUC.AppearanceHeader.Options.UseFont = true;
-            this.colNGAY_KET_THUC.AppearanceHeader.Options.UseTextOptions = true;
-            this.colNGAY_KET_THUC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colNGAY_KET_THUC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colNGAY_KET_THUC.Caption = "Ngày kết thúc CT";
-            this.colNGAY_KET_THUC.FieldName = "NGAY_KET_THUC";
-            this.colNGAY_KET_THUC.Name = "colNGAY_KET_THUC";
-            this.colNGAY_KET_THUC.Visible = true;
-            this.colNGAY_KET_THUC.VisibleIndex = 7;
             // 
             // colCHUC_DANH
             // 
@@ -721,6 +751,41 @@
             this.panelControl1.Size = new System.Drawing.Size(809, 50);
             this.panelControl1.TabIndex = 4;
             // 
+            // m_cmd_filter
+            // 
+            this.m_cmd_filter.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_filter.Appearance.Options.UseFont = true;
+            this.m_cmd_filter.ImageIndex = 10;
+            this.m_cmd_filter.ImageList = this.img_DVMD;
+            this.m_cmd_filter.Location = new System.Drawing.Point(160, 7);
+            this.m_cmd_filter.Name = "m_cmd_filter";
+            this.m_cmd_filter.Size = new System.Drawing.Size(80, 33);
+            this.m_cmd_filter.TabIndex = 1;
+            this.m_cmd_filter.Text = "&Lọc";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(80, 15);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(61, 17);
+            this.radioButton2.TabIndex = 0;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Hiện tại";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(12, 15);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(59, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Lịch sử";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // panelControl3
             // 
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -791,41 +856,6 @@
             this.m_cmd_them_moi_cong_tac.TabIndex = 0;
             this.m_cmd_them_moi_cong_tac.Text = "&Thêm";
             this.m_cmd_them_moi_cong_tac.ToolTip = "Thêm mới công tác cho nhân viên";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 15);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(56, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Tất cả";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(80, 15);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(66, 17);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Mới nhất";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // m_cmd_filter
-            // 
-            this.m_cmd_filter.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_filter.Appearance.Options.UseFont = true;
-            this.m_cmd_filter.ImageIndex = 10;
-            this.m_cmd_filter.ImageList = this.img_DVMD;
-            this.m_cmd_filter.Location = new System.Drawing.Point(160, 7);
-            this.m_cmd_filter.Name = "m_cmd_filter";
-            this.m_cmd_filter.Size = new System.Drawing.Size(80, 33);
-            this.m_cmd_filter.TabIndex = 1;
-            this.m_cmd_filter.Text = "&Lọc";
             // 
             // f309_quan_ly_cong_tac
             // 

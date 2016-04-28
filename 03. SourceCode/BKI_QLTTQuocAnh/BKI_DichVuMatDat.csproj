@@ -988,6 +988,18 @@
     <Compile Include="NghiepVu\NhanSu\f310_cap_nhat_cong_tac.Designer.cs">
       <DependentUpon>f310_cap_nhat_cong_tac.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\NhanSu\f329_lap_hop_dong_v5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f329_lap_hop_dong_v5.Designer.cs">
+      <DependentUpon>f329_lap_hop_dong_v5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f330_lap_hop_dong_v5_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f330_lap_hop_dong_v5_detail.Designer.cs">
+      <DependentUpon>f330_lap_hop_dong_v5_detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\NhanSu\f330_lap_hop_dong_v4_detail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1289,6 +1301,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.resx">
       <DependentUpon>F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\NhanSu\f329_lap_hop_dong_v5.resx">
+      <DependentUpon>f329_lap_hop_dong_v5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\NhanSu\f330_lap_hop_dong_v5_detail.resx">
+      <DependentUpon>f330_lap_hop_dong_v5_detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\NhanSu\f330_lap_hop_dong_v4_detail.resx">
       <DependentUpon>f330_lap_hop_dong_v4_detail.cs</DependentUpon>

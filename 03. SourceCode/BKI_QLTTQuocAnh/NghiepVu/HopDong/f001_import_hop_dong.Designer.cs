@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f001_import_hop_dong));
             this.label1 = new System.Windows.Forms.Label();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection();
+            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
@@ -54,7 +55,7 @@
             this.NGAY_BAT_DAU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_KI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_tooltip_controller = new DevExpress.Utils.ToolTipController();
+            this.m_tooltip_controller = new DevExpress.Utils.ToolTipController(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_pnl_danh_sach_hop_dong)).BeginInit();

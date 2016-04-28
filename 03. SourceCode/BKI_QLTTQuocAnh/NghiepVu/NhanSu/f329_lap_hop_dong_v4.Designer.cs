@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f329_lap_hop_dong_v4));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
@@ -58,13 +59,17 @@
             this.colNOI_CAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection();
+            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_print = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
@@ -72,6 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl2
@@ -79,9 +86,9 @@
             this.panelControl2.Controls.Add(this.m_grc);
             this.panelControl2.Controls.Add(this.panelControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 0);
+            this.panelControl2.Location = new System.Drawing.Point(0, 50);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1099, 559);
+            this.panelControl2.Size = new System.Drawing.Size(1099, 509);
             this.panelControl2.TabIndex = 8;
             // 
             // m_grc
@@ -91,7 +98,7 @@
             this.m_grc.Location = new System.Drawing.Point(2, 42);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(1095, 515);
+            this.m_grc.Size = new System.Drawing.Size(1095, 465);
             this.m_grc.TabIndex = 1;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
@@ -389,8 +396,6 @@
             this.colNGAY_SINH_NV.Caption = "Ngày sinh nhân viên";
             this.colNGAY_SINH_NV.FieldName = "NGAY_SINH_NV";
             this.colNGAY_SINH_NV.Name = "colNGAY_SINH_NV";
-            this.colNGAY_SINH_NV.Visible = true;
-            this.colNGAY_SINH_NV.VisibleIndex = 16;
             // 
             // colQUE_QUAN
             // 
@@ -409,8 +414,6 @@
             this.colDIA_CHI_THUONG_TRU.Caption = "Địa chỉ thường trú";
             this.colDIA_CHI_THUONG_TRU.FieldName = "DIA_CHI_THUONG_TRU";
             this.colDIA_CHI_THUONG_TRU.Name = "colDIA_CHI_THUONG_TRU";
-            this.colDIA_CHI_THUONG_TRU.Visible = true;
-            this.colDIA_CHI_THUONG_TRU.VisibleIndex = 17;
             // 
             // colSO_CMT
             // 
@@ -541,6 +544,52 @@
             this.m_cmd_insert.TabIndex = 0;
             this.m_cmd_insert.Text = "&Thêm";
             // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(this.m_cmd_filter);
+            this.panelControl3.Controls.Add(this.radioButton2);
+            this.panelControl3.Controls.Add(this.radioButton1);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl3.Location = new System.Drawing.Point(0, 0);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(1099, 50);
+            this.panelControl3.TabIndex = 9;
+            // 
+            // m_cmd_filter
+            // 
+            this.m_cmd_filter.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_filter.Appearance.Options.UseFont = true;
+            this.m_cmd_filter.ImageIndex = 10;
+            this.m_cmd_filter.ImageList = this.img_DVMD;
+            this.m_cmd_filter.Location = new System.Drawing.Point(160, 7);
+            this.m_cmd_filter.Name = "m_cmd_filter";
+            this.m_cmd_filter.Size = new System.Drawing.Size(80, 33);
+            this.m_cmd_filter.TabIndex = 1;
+            this.m_cmd_filter.Text = "&Lọc";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(80, 15);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(61, 17);
+            this.radioButton2.TabIndex = 0;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Hiện tại";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(12, 15);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(59, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Lịch sử";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // f329_lap_hop_dong_v4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -548,6 +597,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1099, 559);
             this.Controls.Add(this.panelControl2);
+            this.Controls.Add(this.panelControl3);
             this.Name = "f329_lap_hop_dong_v4";
             this.Text = "F329 - Quản lý danh sách hợp đồng";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -557,6 +607,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            this.panelControl3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -599,5 +652,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSO_CMT;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAY_CAP_CMT;
         private DevExpress.XtraGrid.Columns.GridColumn colNOI_CAP;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_filter;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

@@ -538,7 +538,7 @@ public class US_GD_HOP_DONG : US_Object
         return decimal.Parse(v_ds.Tables[0].Rows[0][0].ToString());
     }
 
-    public DataTable LayDanhSachHopDong()
+    public DataTable LayDanhSachHopDong(string ip_str_filter)
     {
         DataSet v_ds = new DataSet();
         v_ds.Tables.Add();

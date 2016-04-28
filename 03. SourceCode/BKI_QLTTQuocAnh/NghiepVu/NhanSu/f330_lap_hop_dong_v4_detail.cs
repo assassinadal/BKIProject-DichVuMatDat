@@ -38,6 +38,12 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_sle_ma_lns.Enabled = false;
             m_sle_muc_lns.Enabled = false;
             m_txt_he_so_lns.Enabled = false;
+            m_sle_chon_nhan_vien.Enabled = false;
+            m_sle_loai_hop_dong.Enabled = false;
+            m_txt_ma_hd.Enabled = false;
+            m_sle_loai_lao_dong.Enabled = false;
+            m_sle_don_vi.Enabled = false;
+            m_sle_chuc_vu.Enabled = false;
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_to_form(v_dr);
             m_sle_chon_nhan_vien.Enabled = false;

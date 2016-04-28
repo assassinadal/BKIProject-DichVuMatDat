@@ -52,12 +52,20 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         #endregion
 
         #region Private Method
+        private string get_option_filter()
+        {
+            if(radioButton1.Checked == true)
+            {
+                return "TAT_CA";
+            }
+            return "MOI_NHAT";
+        }
         private void load_data_to_grid()
         {
             US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            m_grc.DataSource = v_us.LayDanhSachHopDong();              
+            m_grc.DataSource = v_us.LayDanhSachHopDong(get_option_filter());              
         }
 
         private void delete_gd_lcd(decimal v_id_hop_dong)

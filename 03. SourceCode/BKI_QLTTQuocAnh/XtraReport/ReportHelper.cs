@@ -95,7 +95,7 @@ namespace BKI_DichVuMatDat.XtraReport
             if(saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 XlsExportOptions opt = new XlsExportOptions();
-                opt.TextExportMode = TextExportMode.Text;
+                opt.TextExportMode = TextExportMode.Value;
                 r.ExportToXls(saveFileDialog1.FileName, opt);
                 XtraMessageBox.Show("Xuất báo cáo thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

@@ -108,6 +108,7 @@
             this.colNGAY_KET_THUC.Name = "colNGAY_KET_THUC";
             this.colNGAY_KET_THUC.Visible = true;
             this.colNGAY_KET_THUC.VisibleIndex = 7;
+            this.colNGAY_KET_THUC.Width = 92;
             // 
             // m_grc
             // 
@@ -197,7 +198,6 @@
             this.m_grv.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.m_grv.OptionsSelection.EnableAppearanceFocusedRow = false;
             this.m_grv.OptionsSelection.EnableAppearanceHideSelection = false;
-            this.m_grv.OptionsView.ColumnAutoWidth = false;
             this.m_grv.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.m_grv.OptionsView.ShowAutoFilterRow = true;
             this.m_grv.OptionsView.ShowFooter = true;
@@ -228,10 +228,13 @@
             this.colMA_TRA_CUU.Name = "colMA_TRA_CUU";
             this.colMA_TRA_CUU.Visible = true;
             this.colMA_TRA_CUU.VisibleIndex = 1;
-            this.colMA_TRA_CUU.Width = 119;
+            this.colMA_TRA_CUU.Width = 80;
             // 
             // colMA_NV
             // 
+            this.colMA_NV.AppearanceCell.Options.UseTextOptions = true;
+            this.colMA_NV.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMA_NV.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colMA_NV.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.colMA_NV.AppearanceHeader.Options.UseFont = true;
             this.colMA_NV.AppearanceHeader.Options.UseTextOptions = true;
@@ -245,10 +248,13 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MA_NV", "SL : {0}")});
             this.colMA_NV.Visible = true;
             this.colMA_NV.VisibleIndex = 0;
-            this.colMA_NV.Width = 78;
+            this.colMA_NV.Width = 57;
             // 
             // colLOAI_CONG_TAC
             // 
+            this.colLOAI_CONG_TAC.AppearanceCell.Options.UseTextOptions = true;
+            this.colLOAI_CONG_TAC.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLOAI_CONG_TAC.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colLOAI_CONG_TAC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.colLOAI_CONG_TAC.AppearanceHeader.Options.UseFont = true;
             this.colLOAI_CONG_TAC.AppearanceHeader.Options.UseTextOptions = true;
@@ -259,6 +265,7 @@
             this.colLOAI_CONG_TAC.Name = "colLOAI_CONG_TAC";
             this.colLOAI_CONG_TAC.Visible = true;
             this.colLOAI_CONG_TAC.VisibleIndex = 3;
+            this.colLOAI_CONG_TAC.Width = 64;
             // 
             // colHO_TEN
             // 
@@ -288,7 +295,7 @@
             this.colTEN_DON_VI.Name = "colTEN_DON_VI";
             this.colTEN_DON_VI.Visible = true;
             this.colTEN_DON_VI.VisibleIndex = 4;
-            this.colTEN_DON_VI.Width = 132;
+            this.colTEN_DON_VI.Width = 162;
             // 
             // colNGAY_BAT_DAU
             // 
@@ -305,6 +312,7 @@
             this.colNGAY_BAT_DAU.Name = "colNGAY_BAT_DAU";
             this.colNGAY_BAT_DAU.Visible = true;
             this.colNGAY_BAT_DAU.VisibleIndex = 6;
+            this.colNGAY_BAT_DAU.Width = 90;
             // 
             // colCHUC_DANH
             // 
@@ -320,7 +328,7 @@
             this.colCHUC_DANH.Name = "colCHUC_DANH";
             this.colCHUC_DANH.Visible = true;
             this.colCHUC_DANH.VisibleIndex = 5;
-            this.colCHUC_DANH.Width = 100;
+            this.colCHUC_DANH.Width = 113;
             // 
             // colTEN
             // 

@@ -316,14 +316,14 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_bool_check = v_us_ct.KiemTraDuLieuCongTacHopLeForInsert(Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue)
                                                     , Convert.ToDecimal(m_sle_chon_loai_cong_tac.EditValue)
                                                     , m_dat_ngay_bat_dau.DateTime.Date
-                                                    , m_dat_ngay_ket_thuc.DateTime.Date);
+                                                    , m_dat_ngay_ket_thuc.EditValue == null ? DateTime.Now.AddYears(100).Date : m_dat_ngay_ket_thuc.DateTime.Date);
             }
             if(m_e_loai_cap_nhat == e_loai_cap_nhat.UPDATE)
             {
                 v_bool_check = v_us_ct.KiemTraDuLieuCongTacHopLeForUpdate(
                                                     m_us_cong_tac.dcID
                                                     , m_dat_ngay_bat_dau.DateTime.Date
-                                                    , m_dat_ngay_ket_thuc.DateTime.Date);
+                                                    , m_dat_ngay_ket_thuc.EditValue == null ? DateTime.Now.AddYears(100).Date : m_dat_ngay_ket_thuc.DateTime.Date);
             }
             if(v_bool_check == false)
             {
@@ -362,7 +362,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_e_loai_cap_nhat = e_loai_cap_nhat.UPDATE;
 
             setup_header_text("SỬA CÔNG TÁC");
-            setup_read_only(m_sle_chon_don_vi);
+            setup_read_only(m_sle_chon_don_vi, m_sle_chon_loai_cong_tac, m_sle_chon_vi_tri, m_sle_chon_nhan_vien);
             load_data_2_sle_nhan_vien();
 
             m_sle_chon_nhan_vien.EditValue = v_us_ct.dcID_NHAN_VIEN;

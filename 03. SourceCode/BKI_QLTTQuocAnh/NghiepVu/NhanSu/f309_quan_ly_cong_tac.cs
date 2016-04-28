@@ -143,6 +143,19 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_cmd_sua_cong_tac.Click += m_cmd_sua_cong_tac_Click;
             m_cmd_xoa_cong_tac.Click += m_cmd_xoa_cong_tac_Click;
             m_cmd_filter.Click += m_cmd_filter_Click;
+            m_grv.DoubleClick += m_grv_DoubleClick;
+        }
+
+        void m_grv_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                sua_cong_tac();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_filter_Click(object sender, EventArgs e)

@@ -777,6 +777,17 @@ namespace BKI_DichVuMatDat.US
         }
         #endregion
 
+        public DataTable LayDanhSachMaTraCuu()
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_NV_card_nhan_vien_GetAll");
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+
+            v_cstore.fillDataSetByCommand(this, v_ds);
+
+            return v_ds.Tables[0];
+        }
+
         public void LayDanhSachNhanVienKemChucVuDonVi(DataSet op_ds)
         {
             CStoredProc v_cstore = new CStoredProc("pr_NS_danh_sach_nhan_vien_GetAll");

@@ -49,6 +49,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         #region Members
         string m_output_path;
         DataRow m_dt_row;
+        DS_CM_DM_TU_DIEN m_ds_cau_hinh_in = new DS_CM_DM_TU_DIEN();
         #endregion
 
         #region Private Method
@@ -68,7 +69,15 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             return m_dat_tai_thang.DateTime.Year;
         }
-
+        private void load_data_cau_hinh_in()
+        {
+            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+            v_us.FillDatasetByIdLoaiTuDien(m_ds_cau_hinh_in, CONST_ID_LOAI_TU_DIEN.CAU_HINH_IN_HD);
+        }
+        private string get_ten_cau_hinh(decimal ip_dc_const_id_cau_hinh)
+        {
+            return m_ds_cau_hinh_in.CM_DM_TU_DIEN.Where(x => x.ID == ip_dc_const_id_cau_hinh).First().TEN;
+        }
         private void load_data_to_grid()
         {
             US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
@@ -76,13 +85,30 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         }
         private void set_initial_form_load()
         {
+            load_data_cau_hinh_in();
             m_dat_tai_thang.DateTime = DateTime.Now.Date;
             US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
-            m_dt_row = v_us.GetThongTinTGD();
             
             load_data_to_grid();
         }
-
+        private string cat_ngay_thang(Object ip_obj_dat)
+        {
+            if(ip_obj_dat == DBNull.Value)
+            {
+                return "";
+            }
+            DateTime v_dat = (DateTime)ip_obj_dat;
+            return v_dat.Date.ToShortDateString();
+        }
+        private string format_so_tien(Object ip_obj_so_tien)
+        {
+            if(ip_obj_so_tien == DBNull.Value)
+            {
+                return "";
+            }
+            decimal v_dc_so_tien = (decimal)ip_obj_so_tien;
+            return string.Format("{0:#,##0}", (double) v_dc_so_tien);
+        }
         private void print_hop_dong(DataRow ip_datarow, string ip_path)
         {
 
@@ -100,75 +126,116 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         private void print_hop_dong_hoc_viec(DataRow ip_datarow, string ip_str_path)
         {
             CWordReport v_cwr = new CWordReport("HD_HOC_VIEC.docx", ip_str_path);
-            v_cwr.AddFindAndReplace("<ten_tgd>", m_dt_row["HO_TEN_TGD"].ToString());
-            v_cwr.AddFindAndReplace("<quoc_tich_tgd>", m_dt_row["QUOC_TICH"].ToString());
-            v_cwr.AddFindAndReplace("<ten_nv>", ip_datarow["HO_TEN_NV"].ToString());
+            v_cwr.AddFindAndReplace("<ten_phap_nhan>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.TEN_PHAP_NHAN));
+            v_cwr.AddFindAndReplace("<chuc_vu_dai_dien_A>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.CHUC_VU_BEN_A));
+            v_cwr.AddFindAndReplace("<dia_chi_A>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.DIA_CHI_A));
+            
+            v_cwr.AddFindAndReplace("<dien_thoai_A>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.DIEN_THOAI_A));
+            v_cwr.AddFindAndReplace("<ten_tgd>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.DAI_DIEN_BEN_A));
+            v_cwr.AddFindAndReplace("<quoc_tich_tgd>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.QUOC_TICH_DAI_DIEN_BEN_A));
+
+            v_cwr.AddFindAndReplace("<ten_nv>", ip_datarow["HO_TEN"].ToString());
             v_cwr.AddFindAndReplace("<quoc_tich_nv>", ip_datarow["QUOC_TICH"].ToString());
-            v_cwr.AddFindAndReplace("<ngay_sinh>", ip_datarow["NGAY_SINH_NV"].ToString());
+            v_cwr.AddFindAndReplace("<ngay_sinh>", cat_ngay_thang(ip_datarow["NGAY_SINH_NV"]));
             v_cwr.AddFindAndReplace("<que_quan>", ip_datarow["QUE_QUAN"].ToString());
             v_cwr.AddFindAndReplace("<chuyen_mon>", ip_datarow["CHUYEN_MON"].ToString());
             v_cwr.AddFindAndReplace("<dia_chi>", ip_datarow["DIA_CHI_THUONG_TRU"].ToString());
             v_cwr.AddFindAndReplace("<so_cmt>", ip_datarow["SO_CMT"].ToString());
-            v_cwr.AddFindAndReplace("<ngay_cap>", ip_datarow["NGAY_CAP_CMT"].ToString());
+            v_cwr.AddFindAndReplace("<ngay_cap>", cat_ngay_thang(ip_datarow["NGAY_CAP_CMT"]));
             v_cwr.AddFindAndReplace("<noi_cap>", ip_datarow["NOI_CAP"].ToString());
-            v_cwr.AddFindAndReplace("<ngay_bat_dau_hd>", ip_datarow["NGAY_BAT_DAU"].ToString());
+            v_cwr.AddFindAndReplace("<ngay_bat_dau_hd>", cat_ngay_thang(ip_datarow["NGAY_BAT_DAU"]));
             v_cwr.AddFindAndReplace("<mo_ta_cv>", "");
             v_cwr.AddFindAndReplace("<ngay_hien_tai>", DateTime.Now.Day.ToString());
             v_cwr.AddFindAndReplace("<thang_hien_tai>", DateTime.Now.Month.ToString());
             v_cwr.AddFindAndReplace("<nam_hien_tai>", DateTime.Now.Year.ToString());
+
+            
+
             v_cwr.Export2Word();
         }
         private void print_hop_dong_thu_viec(DataRow ip_datarow, string ip_str_path)
         {
             CWordReport v_cwr = new CWordReport("HD_THU_VIEC.docx", ip_str_path);
-            v_cwr.AddFindAndReplace("<ten_tgd>", m_dt_row["HO_TEN_TGD"].ToString());
-            v_cwr.AddFindAndReplace("<quoc_tich_tgd>", m_dt_row["QUOC_TICH"].ToString());
-            v_cwr.AddFindAndReplace("<ten_nv>", ip_datarow["HO_TEN_NV"].ToString());
-            v_cwr.AddFindAndReplace("<quoc_tich_nv>", ip_datarow["QUOC_TICH"].ToString());
-            v_cwr.AddFindAndReplace("<ngay_sinh>", ip_datarow["NGAY_SINH_NV"].ToString());
-            v_cwr.AddFindAndReplace("<que_quan>", ip_datarow["QUE_QUAN"].ToString());
-            v_cwr.AddFindAndReplace("<chuyen_mon>", ip_datarow["CHUYEN_MON"].ToString());
-            v_cwr.AddFindAndReplace("<dia_chi>", ip_datarow["DIA_CHI_THUONG_TRU"].ToString());
-            v_cwr.AddFindAndReplace("<so_cmt>", ip_datarow["SO_CMT"].ToString());
-            v_cwr.AddFindAndReplace("<ngay_cap>", ip_datarow["NGAY_CAP_CMT"].ToString());
-            v_cwr.AddFindAndReplace("<noi_cap>", ip_datarow["NOI_CAP"].ToString());
-            v_cwr.AddFindAndReplace("<ngay_bat_dau_hd>", ip_datarow["NGAY_BAT_DAU"].ToString());
-            v_cwr.AddFindAndReplace("<ngay_ket_thuc_hd>", ip_datarow["NGAY_KET_THUC"].ToString());
-            v_cwr.AddFindAndReplace("<chuc_vu>", ip_datarow["CHUC_VU"].ToString());
-            v_cwr.AddFindAndReplace("<don_vi>", ip_datarow["TEN_DON_VI"].ToString());
-            v_cwr.AddFindAndReplace("<mo_ta_cv>", "");
-            v_cwr.AddFindAndReplace("<ma_lcd>", ip_datarow["MA_LCD"].ToString());
-            v_cwr.AddFindAndReplace("<muc_lcd>", ip_datarow["MUC_LCD"].ToString());
-            v_cwr.AddFindAndReplace("<so_tien_lcd>", ip_datarow["SO_TIEN_LCD_THUC_TE"].ToString());
-            v_cwr.AddFindAndReplace("<ngay_hien_tai>", DateTime.Now.Day.ToString());
-            v_cwr.AddFindAndReplace("<thang_hien_tai>", DateTime.Now.Month.ToString());
-            v_cwr.AddFindAndReplace("<nam_hien_tai>", DateTime.Now.Year.ToString());
-            v_cwr.Export2Word();
-        }
-        private void print_hop_dong_co_thoi_han(DataRow ip_datarow, string ip_str_path)
-        {
-            CWordReport v_cwr = new CWordReport("HD_XAC_DINH_THOI_HAN.docx", ip_str_path);
-            v_cwr.AddFindAndReplace("<ten_tgd>", m_dt_row["HO_TEN_TGD"].ToString());
-            v_cwr.AddFindAndReplace("<quoc_tich_tgd>", m_dt_row["QUOC_TICH"].ToString());
+            v_cwr.AddFindAndReplace("<ten_phap_nhan>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.TEN_PHAP_NHAN));
+            v_cwr.AddFindAndReplace("<chuc_vu_dai_dien_A>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.CHUC_VU_BEN_A));
+            v_cwr.AddFindAndReplace("<dia_chi_A>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.DIA_CHI_A));
+            v_cwr.AddFindAndReplace("<dien_thoai_A>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.DIEN_THOAI_A));
+            v_cwr.AddFindAndReplace("<ten_tgd>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.DAI_DIEN_BEN_A));
+            v_cwr.AddFindAndReplace("<quoc_tich_tgd>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.QUOC_TICH_DAI_DIEN_BEN_A));
+
             v_cwr.AddFindAndReplace("<ten_nv>", ip_datarow["HO_TEN"].ToString());
             v_cwr.AddFindAndReplace("<quoc_tich_nv>", ip_datarow["QUOC_TICH"].ToString());
-            v_cwr.AddFindAndReplace("<ngay_sinh>", ip_datarow["NGAY_SINH_NV"].ToString());
+            v_cwr.AddFindAndReplace("<ngay_sinh>", cat_ngay_thang(ip_datarow["NGAY_SINH_NV"]));
             v_cwr.AddFindAndReplace("<que_quan>", ip_datarow["QUE_QUAN"].ToString());
             v_cwr.AddFindAndReplace("<chuyen_mon>", ip_datarow["CHUYEN_MON"].ToString());
             v_cwr.AddFindAndReplace("<dia_chi>", ip_datarow["DIA_CHI_THUONG_TRU"].ToString());
             v_cwr.AddFindAndReplace("<so_cmt>", ip_datarow["SO_CMT"].ToString());
-            v_cwr.AddFindAndReplace("<ngay_cap>", ip_datarow["NGAY_CAP_CMT"].ToString());
+            v_cwr.AddFindAndReplace("<ngay_cap>", cat_ngay_thang(ip_datarow["NGAY_CAP_CMT"]));
             v_cwr.AddFindAndReplace("<noi_cap>", ip_datarow["NOI_CAP"].ToString());
-            v_cwr.AddFindAndReplace("<ngay_bat_dau_hd>", ip_datarow["NGAY_BAT_DAU"].ToString());
+            v_cwr.AddFindAndReplace("<ngay_bat_dau_hd>", cat_ngay_thang(ip_datarow["NGAY_BAT_DAU"]));
+            v_cwr.AddFindAndReplace("<ngay_ket_thuc_hd>", cat_ngay_thang(ip_datarow["NGAY_KET_THUC"]));
             v_cwr.AddFindAndReplace("<chuc_vu>", ip_datarow["TEN_CHUC_VU"].ToString());
             v_cwr.AddFindAndReplace("<don_vi>", ip_datarow["TEN_DON_VI"].ToString());
             v_cwr.AddFindAndReplace("<mo_ta_cv>", "");
             v_cwr.AddFindAndReplace("<ma_lcd>", ip_datarow["MA_LCD"].ToString());
             v_cwr.AddFindAndReplace("<muc_lcd>", ip_datarow["MUC_LCD"].ToString());
-            v_cwr.AddFindAndReplace("<so_tien_lcd>", ip_datarow["SO_TIEN_LCD_THUC_TE"].ToString());
+            v_cwr.AddFindAndReplace("<so_tien_lcd>", format_so_tien(ip_datarow["SO_TIEN_LCD_THUC_TE"]));
             v_cwr.AddFindAndReplace("<ngay_hien_tai>", DateTime.Now.Day.ToString());
             v_cwr.AddFindAndReplace("<thang_hien_tai>", DateTime.Now.Month.ToString());
             v_cwr.AddFindAndReplace("<nam_hien_tai>", DateTime.Now.Year.ToString());
+
+            decimal v_dc_id_loai_lao_dong = Convert.ToDecimal(ip_datarow["ID_LOAI_LAO_DONG"]);
+            if(v_dc_id_loai_lao_dong == CONST_ID_LOAI_LAO_DONG.TRUC_TIEP)
+            {
+                v_cwr.AddFindAndReplace("<thoi_gian_lam_viec>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.THOI_GIO_TRUC_TIEP));
+            }
+            else
+            {
+                v_cwr.AddFindAndReplace("<thoi_gian_lam_viec>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.THOI_GIO_GIAN_TIEP));
+            }
+            v_cwr.Export2Word();
+        }
+        private void print_hop_dong_co_thoi_han(DataRow ip_datarow, string ip_str_path)
+        {
+            CWordReport v_cwr = new CWordReport("HD_XAC_DINH_THOI_HAN.docx", ip_str_path);
+            v_cwr.AddFindAndReplace("<ten_phap_nhan>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.TEN_PHAP_NHAN));
+            //v_cwr.AddFindAndReplace("<ten_thong_tu_ban_hanh>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.THONG_TU_BAN_HANH));
+            v_cwr.AddFindAndReplace("<chuc_vu_dai_dien_A>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.CHUC_VU_BEN_A));
+            v_cwr.AddFindAndReplace("<dia_chi_A>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.DIA_CHI_A));
+            v_cwr.AddFindAndReplace("<dien_thoai_A>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.DIEN_THOAI_A));
+            v_cwr.AddFindAndReplace("<ten_tgd>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.DAI_DIEN_BEN_A));
+            v_cwr.AddFindAndReplace("<quoc_tich_tgd>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.QUOC_TICH_DAI_DIEN_BEN_A));
+
+            v_cwr.AddFindAndReplace("<ten_nv>", ip_datarow["HO_TEN"].ToString());
+            v_cwr.AddFindAndReplace("<quoc_tich_nv>", ip_datarow["QUOC_TICH"].ToString());
+            v_cwr.AddFindAndReplace("<ngay_sinh>", cat_ngay_thang(ip_datarow["NGAY_SINH_NV"]));
+            v_cwr.AddFindAndReplace("<que_quan>", ip_datarow["QUE_QUAN"].ToString());
+            v_cwr.AddFindAndReplace("<chuyen_mon>", ip_datarow["CHUYEN_MON"].ToString());
+            v_cwr.AddFindAndReplace("<dia_chi>", ip_datarow["DIA_CHI_THUONG_TRU"].ToString());
+            v_cwr.AddFindAndReplace("<so_cmt>", ip_datarow["SO_CMT"].ToString());
+            v_cwr.AddFindAndReplace("<ngay_cap>", cat_ngay_thang(ip_datarow["NGAY_CAP_CMT"]));
+            v_cwr.AddFindAndReplace("<noi_cap>", ip_datarow["NOI_CAP"].ToString());
+            v_cwr.AddFindAndReplace("<ngay_bat_dau_hd>", cat_ngay_thang(ip_datarow["NGAY_BAT_DAU"]));
+            v_cwr.AddFindAndReplace("<chuc_vu>", ip_datarow["TEN_CHUC_VU"].ToString());
+            v_cwr.AddFindAndReplace("<don_vi>", ip_datarow["TEN_DON_VI"].ToString());
+            v_cwr.AddFindAndReplace("<mo_ta_cv>", "");
+            v_cwr.AddFindAndReplace("<ma_lcd>", ip_datarow["MA_LCD"].ToString());
+            v_cwr.AddFindAndReplace("<muc_lcd>", ip_datarow["MUC_LCD"].ToString());
+            v_cwr.AddFindAndReplace("<so_tien_lcd>", format_so_tien(ip_datarow["SO_TIEN_LCD_THUC_TE"]));
+            v_cwr.AddFindAndReplace("<ngay_hien_tai>", DateTime.Now.Day.ToString());
+            v_cwr.AddFindAndReplace("<thang_hien_tai>", DateTime.Now.Month.ToString());
+            v_cwr.AddFindAndReplace("<nam_hien_tai>", DateTime.Now.Year.ToString());
+
+            decimal v_dc_id_loai_lao_dong = Convert.ToDecimal(ip_datarow["ID_LOAI_LAO_DONG"]);
+            if(v_dc_id_loai_lao_dong == CONST_ID_LOAI_LAO_DONG.TRUC_TIEP)
+            {
+                v_cwr.AddFindAndReplace("<thoi_gian_lam_viec>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.THOI_GIO_TRUC_TIEP));
+            }
+            else
+            {
+                v_cwr.AddFindAndReplace("<thoi_gian_lam_viec>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.THOI_GIO_GIAN_TIEP));
+            }
+
             v_cwr.Export2Word();
         }
         private void in_hop_dong_process()
@@ -187,6 +254,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 saveFileDialog1.Filter = "docx files (*.docx)|*.docx|All files (*.*)|*.*";
                 saveFileDialog1.RestoreDirectory = true;
                 saveFileDialog1.FileName = "HD";
+
                 if(saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     m_output_path = Path.Combine(Path.GetDirectoryName(saveFileDialog1.FileName), Path.GetFileNameWithoutExtension(saveFileDialog1.FileName));
@@ -196,7 +264,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                         string v_output_path = m_output_path + " " + v_dr["MA_NV"];
                         print_hop_dong(v_dr, v_output_path);
                     }
-                    XtraMessageBox.Show("In thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("In thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -285,8 +353,6 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                     if (v_dialog == DialogResult.Yes)
                     {
                         decimal v_id_hop_dong = Convert.ToDecimal(m_grv.GetRowCellValue(v_focused_row, "ID"));
-                        //delete_gd_he_so_lns(v_id_hop_dong);
-                        //delete_gd_lcd(v_id_hop_dong);
                         US_GD_HOP_DONG v_us = new US_GD_HOP_DONG(v_id_hop_dong);
                         v_us.Delete();
                         XtraMessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -105,7 +105,18 @@ namespace BKI_DichVuMatDat.US
         public const string LOAI_CONG_TAC = "LOAI_CONG_TAC";
         public const string LOAI_VI_TRI = "LOAI_VI_TRI";
     }
-
+    public class CONST_ID_CAU_HINH_IN
+    {
+        public const decimal TEN_PHAP_NHAN = 828;
+        public const decimal THONG_TU_BAN_HANH = 829;
+        public const decimal DAI_DIEN_BEN_A = 830;
+        public const decimal QUOC_TICH_DAI_DIEN_BEN_A = 831;
+        public const decimal CHUC_VU_BEN_A = 832;
+        public const decimal DIEN_THOAI_A = 833;
+        public const decimal DIA_CHI_A = 834;
+        public const decimal THOI_GIO_GIAN_TIEP = 835;
+        public const decimal THOI_GIO_TRUC_TIEP = 836;
+    }
     public static class CONST_ID_LOAI_TU_DIEN
     {
         public const int MA_HS_LNS = 1;
@@ -128,6 +139,7 @@ namespace BKI_DichVuMatDat.US
         public const decimal NHAN_SU_KHAC = 18;
         public const decimal KHOAN_TIEN_KHAC = 19;
         public const int TRINH_DO_CHUYEN_MON = 20;
+        public const int CAU_HINH_IN_HD = 22;
     }
 
     public static class CONST_ID_LOAI_CONG_TAC

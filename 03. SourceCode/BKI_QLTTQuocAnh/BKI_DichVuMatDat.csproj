@@ -2155,9 +2155,9 @@
     <Content Include="Template\CONG_TAC.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Template\DANH_SACH_NHAN_VIEN.xls">
+    <Content Include="Template\DANH_SACH_NHAN_VIEN.xls">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <Content Include="Template\HOP_DONG.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -2185,7 +2185,9 @@
     <Content Include="Template\HD_HOC_VIEC.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Template\HĐLĐ HOC NGHE.docx" />
+    <Content Include="Template\HĐLĐ HOC NGHE.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BKI_QLTTQuocAnh.DS\BKI_DichVuMatDat.DS.csproj">

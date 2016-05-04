@@ -53,6 +53,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         }
         private void set_initial_form_load()
         {
+            m_dat_tai_thang.EditValue = DateTime.Now.Date;
             load_data_to_grid();
         }
         private string get_option_filter()
@@ -63,12 +64,20 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
             return "MOI_NHAT";
         }
+        private decimal get_thang()
+        {
+            return m_dat_tai_thang.DateTime.Month;
+        }
+        private decimal get_nam()
+        {
+            return m_dat_tai_thang.DateTime.Year;
+        }
         private void load_data_to_grid()
         {
             US_GD_CONG_TAC v_us = new US_GD_CONG_TAC();
             DS_GD_CONG_TAC v_ds = new DS_GD_CONG_TAC();
             v_ds.EnforceConstraints = false;
-            m_grc.DataSource = v_us.LayDuLieuCongTac(get_option_filter());
+            m_grc.DataSource = v_us.LayDuLieuCongTac(get_option_filter(), get_thang(), get_nam());
         }
 
         //Get data

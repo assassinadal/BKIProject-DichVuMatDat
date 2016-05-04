@@ -383,10 +383,12 @@ namespace BKI_DichVuMatDat.US
 
             return v_yn.Value.ToString() == "Y" ? true : false;
         }
-        public DataTable LayDuLieuCongTac(string ip_str_option_filter)
+        public DataTable LayDuLieuCongTac(string ip_str_option_filter, decimal ip_dc_thang, decimal ip_dc_nam)
         {
             CStoredProc v_cstore = new CStoredProc("pr_CT_danh_sach_cong_tac_GetAll");
             v_cstore.addNVarcharInputParam("@ip_str_option_hien_thi", ip_str_option_filter);
+            v_cstore.addDecimalInputParam("@thang", ip_dc_thang);
+            v_cstore.addDecimalInputParam("@nam", ip_dc_nam);
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add();
             v_cstore.fillDataSetByCommand(this, v_ds);

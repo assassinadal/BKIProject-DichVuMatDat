@@ -76,6 +76,7 @@
             this.colNGUOI_BAO_LANH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_dat_tai_thang = new DevExpress.XtraEditors.DateEdit();
             this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -89,6 +90,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_thang.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_thang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             this.SuspendLayout();
@@ -114,10 +117,10 @@
             // 
             this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc.Location = new System.Drawing.Point(0, 83);
+            this.m_grc.Location = new System.Drawing.Point(0, 119);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(809, 421);
+            this.m_grc.Size = new System.Drawing.Size(809, 385);
             this.m_grc.TabIndex = 2;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
@@ -292,6 +295,7 @@
             this.colTEN_DON_VI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colTEN_DON_VI.Caption = "Đơn vị";
             this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
+            this.colTEN_DON_VI.FieldNameSortGroup = "THU_TU_DON_VI";
             this.colTEN_DON_VI.Name = "colTEN_DON_VI";
             this.colTEN_DON_VI.Visible = true;
             this.colTEN_DON_VI.VisibleIndex = 4;
@@ -750,14 +754,34 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.m_dat_tai_thang);
             this.panelControl1.Controls.Add(this.m_cmd_filter);
             this.panelControl1.Controls.Add(this.radioButton2);
             this.panelControl1.Controls.Add(this.radioButton1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(809, 50);
+            this.panelControl1.Size = new System.Drawing.Size(809, 86);
             this.panelControl1.TabIndex = 4;
+            // 
+            // m_dat_tai_thang
+            // 
+            this.m_dat_tai_thang.EditValue = null;
+            this.m_dat_tai_thang.Location = new System.Drawing.Point(12, 5);
+            this.m_dat_tai_thang.Name = "m_dat_tai_thang";
+            this.m_dat_tai_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_tai_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_tai_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
+            this.m_dat_tai_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_tai_thang.Properties.EditFormat.FormatString = "MM/yyyy";
+            this.m_dat_tai_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_tai_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_tai_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_dat_tai_thang.Properties.NullText = "--Chọn tháng--";
+            this.m_dat_tai_thang.Size = new System.Drawing.Size(129, 20);
+            this.m_dat_tai_thang.TabIndex = 2;
             // 
             // m_cmd_filter
             // 
@@ -765,7 +789,7 @@
             this.m_cmd_filter.Appearance.Options.UseFont = true;
             this.m_cmd_filter.ImageIndex = 10;
             this.m_cmd_filter.ImageList = this.img_DVMD;
-            this.m_cmd_filter.Location = new System.Drawing.Point(160, 7);
+            this.m_cmd_filter.Location = new System.Drawing.Point(12, 49);
             this.m_cmd_filter.Name = "m_cmd_filter";
             this.m_cmd_filter.Size = new System.Drawing.Size(80, 33);
             this.m_cmd_filter.TabIndex = 1;
@@ -775,23 +799,23 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(80, 15);
+            this.radioButton2.Location = new System.Drawing.Point(80, 31);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(61, 17);
+            this.radioButton2.Size = new System.Drawing.Size(84, 17);
             this.radioButton2.TabIndex = 0;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Hiện tại";
+            this.radioButton2.Text = "Còn hiệu lực";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 15);
+            this.radioButton1.Location = new System.Drawing.Point(12, 31);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(59, 17);
+            this.radioButton1.Size = new System.Drawing.Size(56, 17);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Lịch sử";
+            this.radioButton1.Text = "Tất cả";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // panelControl3
@@ -802,7 +826,7 @@
             this.panelControl3.Controls.Add(this.m_cmd_refresh);
             this.panelControl3.Controls.Add(this.m_cmd_them_moi_cong_tac);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(0, 50);
+            this.panelControl3.Location = new System.Drawing.Point(0, 86);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(809, 33);
             this.panelControl3.TabIndex = 5;
@@ -818,7 +842,7 @@
             this.m_cmd_xoa_cong_tac.Name = "m_cmd_xoa_cong_tac";
             this.m_cmd_xoa_cong_tac.Size = new System.Drawing.Size(80, 33);
             this.m_cmd_xoa_cong_tac.TabIndex = 5;
-            this.m_cmd_xoa_cong_tac.Text = "Xóa CT";
+            this.m_cmd_xoa_cong_tac.Text = "&Xóa";
             this.m_cmd_xoa_cong_tac.ToolTip = "Xóa khỏi phần mềm công tác của nhân viên (Chỉ khuyên dùng khi nhập sai công tác, " +
     "cần xóa để nhập lại)";
             // 
@@ -833,7 +857,7 @@
             this.m_cmd_sua_cong_tac.Name = "m_cmd_sua_cong_tac";
             this.m_cmd_sua_cong_tac.Size = new System.Drawing.Size(80, 33);
             this.m_cmd_sua_cong_tac.TabIndex = 6;
-            this.m_cmd_sua_cong_tac.Text = "Sửa CT";
+            this.m_cmd_sua_cong_tac.Text = "&Sửa";
             this.m_cmd_sua_cong_tac.ToolTip = "Sửa dữ liệu công tác nhân viên (Chỉ khuyên dùng khi nhập sai cần sửa lại)";
             // 
             // m_cmd_refresh
@@ -882,6 +906,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_thang.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_thang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -942,5 +968,6 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_filter;
+        private DevExpress.XtraEditors.DateEdit m_dat_tai_thang;
     }
 }

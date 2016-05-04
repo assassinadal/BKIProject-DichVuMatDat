@@ -361,9 +361,21 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 {
                     case DataEntryFormMode.InsertDataState:
                         m_us_gd_hd.Insert();
+                        var v_dlg = XtraMessageBox.Show("Thêm hợp đồng mới thành công.\nBạn có muốn cập nhật công tác cho nhân viên này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if(v_dlg == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            f309_quan_ly_cong_tac v_frm = new f309_quan_ly_cong_tac();
+                            v_frm.display_after_insert_hop_dong(ExecuteFuntion.LayMaNhanVien(m_us_gd_hd.dcID_NHAN_VIEN));
+                        }
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         m_us_gd_hd.Update();
+                        var v_dlg_update = XtraMessageBox.Show("Sửa hợp đồng thành công.\nBạn có muốn cập nhật công tác cho nhân viên này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if(v_dlg_update == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            f309_quan_ly_cong_tac v_frm = new f309_quan_ly_cong_tac();
+                            v_frm.display_after_insert_hop_dong(ExecuteFuntion.LayMaNhanVien(m_us_gd_hd.dcID_NHAN_VIEN));
+                        }
                         break;
                     default:
                         break;

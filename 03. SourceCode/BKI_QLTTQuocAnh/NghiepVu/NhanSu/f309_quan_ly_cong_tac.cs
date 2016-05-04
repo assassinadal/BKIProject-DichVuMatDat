@@ -42,6 +42,11 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             this.CenterToParent();
             this.ShowDialog();
         }
+        public void display_after_insert_hop_dong(string ip_ma_nv)
+        {
+            m_grv.ActiveFilterString = string.Concat("MA_NV == '", ip_ma_nv, "'") ;
+            ShowDialog();
+        }
         #endregion
         
 

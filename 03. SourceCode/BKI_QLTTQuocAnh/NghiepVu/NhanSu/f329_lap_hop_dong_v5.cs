@@ -60,38 +60,27 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
             return "MOI_NHAT";
         }
+        private decimal get_thang()
+        {
+            return m_dat_tai_thang.DateTime.Month;
+        }
+        private decimal get_nam()
+        {
+            return m_dat_tai_thang.DateTime.Year;
+        }
+
         private void load_data_to_grid()
         {
             US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
-            DataSet v_ds = new DataSet();
-            v_ds.Tables.Add(new DataTable());
-            m_grc.DataSource = v_us.LayDanhSachHopDong(get_option_filter());              
+            m_grc.DataSource = v_us.LayDanhSachHopDong(get_option_filter(), get_thang(), get_nam());              
         }
-
-        private void delete_gd_lcd(decimal v_id_hop_dong)
+        private void set_initial_form_load()
         {
-            //US_GD_LUONG_CHE_DO v_us = new US_GD_LUONG_CHE_DO();
-            //DS_GD_LUONG_CHE_DO v_ds = new DS_GD_LUONG_CHE_DO();
-            //v_us.FillDataset(v_ds, "where id_hop_dong = " + v_id_hop_dong);
-            //for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
-            //{
-            //    decimal v_id_gd_lcd = Convert.ToDecimal(v_ds.Tables[0].Rows[i]["ID"]);
-            //    v_us = new US_GD_LUONG_CHE_DO(v_id_gd_lcd);
-            //    v_us.Delete();
-            //}
-        }
-
-        private void delete_gd_he_so_lns(decimal v_id_hop_dong)
-        {
-            //US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS();
-            //DS_GD_HE_SO_LNS v_ds = new DS_GD_HE_SO_LNS();
-            //v_us.FillDataset(v_ds, "where id_hop_dong = " + v_id_hop_dong);
-            //for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
-            //{
-            //    decimal v_id_gd_lns = Convert.ToDecimal(v_ds.Tables[0].Rows[i]["ID"]);
-            //    v_us = new US_GD_HE_SO_LNS(v_id_gd_lns);
-            //    v_us.Delete();
-            //}
+            m_dat_tai_thang.DateTime = DateTime.Now.Date;
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            m_dt_row = v_us.GetThongTinTGD();
+            
+            load_data_to_grid();
         }
 
         private void print_hop_dong(DataRow ip_datarow, string ip_path)
@@ -108,7 +97,6 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
 
         }
-
         private void print_hop_dong_hoc_viec(DataRow ip_datarow, string ip_str_path)
         {
             CWordReport v_cwr = new CWordReport("HD_HOC_VIEC.docx", ip_str_path);
@@ -130,7 +118,6 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             v_cwr.AddFindAndReplace("<nam_hien_tai>", DateTime.Now.Year.ToString());
             v_cwr.Export2Word();
         }
-
         private void print_hop_dong_thu_viec(DataRow ip_datarow, string ip_str_path)
         {
             CWordReport v_cwr = new CWordReport("HD_THU_VIEC.docx", ip_str_path);
@@ -158,7 +145,6 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             v_cwr.AddFindAndReplace("<nam_hien_tai>", DateTime.Now.Year.ToString());
             v_cwr.Export2Word();
         }
-
         private void print_hop_dong_co_thoi_han(DataRow ip_datarow, string ip_str_path)
         {
             CWordReport v_cwr = new CWordReport("HD_XAC_DINH_THOI_HAN.docx", ip_str_path);
@@ -185,7 +171,6 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             v_cwr.AddFindAndReplace("<nam_hien_tai>", DateTime.Now.Year.ToString());
             v_cwr.Export2Word();
         }
-
         private void in_hop_dong_process()
         {
             int[] v_selected_row = m_grv.GetSelectedRows();
@@ -221,7 +206,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
 
         private void set_define_events()
         {
-            this.Load += f327_lap_hop_dong_v3_Load;
+            this.Load += f327_lap_hop_dong_v5_Load;
             m_cmd_insert.Click += m_cmd_insert_Click;
             m_cmd_update.Click += m_cmd_update_Click;
             m_cmd_delete.Click += m_cmd_delete_Click;
@@ -327,14 +312,14 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 int[] v_selected_row = m_grv.GetSelectedRows();
                 if(v_selected_row.Length > 1)
                 {
-                    XtraMessageBox.Show("Bạn chỉ được chọn 1 dòng để xóa!", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    XtraMessageBox.Show("Bạn chỉ được chọn 1 dòng để sửa!", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     return;
                 }
                 int v_focused_row = m_grv.FocusedRowHandle;
                 if (v_focused_row >= 0)
                 {
                     var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
-                    f330_lap_hop_dong_v4_detail v_f = new f330_lap_hop_dong_v4_detail();
+                    f330_lap_hop_dong_v5_detail v_f = new f330_lap_hop_dong_v5_detail();
                     v_f.display_for_update(v_dr);
                     load_data_to_grid();
                 }
@@ -354,7 +339,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             try
             {
-                f330_lap_hop_dong_v4_detail v_f = new f330_lap_hop_dong_v4_detail();
+                f330_lap_hop_dong_v5_detail v_f = new f330_lap_hop_dong_v5_detail();
                 v_f.display_for_insert();
                 load_data_to_grid();
 
@@ -365,13 +350,11 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
         }
 
-        void f327_lap_hop_dong_v3_Load(object sender, EventArgs e)
+        void f327_lap_hop_dong_v5_Load(object sender, EventArgs e)
         {
             try
             {
-                US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
-                m_dt_row = v_us.GetThongTinTGD();
-                load_data_to_grid();
+                set_initial_form_load();
             }
             catch (Exception v_e)
             {

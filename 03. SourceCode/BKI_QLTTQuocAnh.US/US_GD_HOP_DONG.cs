@@ -402,6 +402,30 @@ public class US_GD_HOP_DONG : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+    public bool KiemTraThoiGianHopDongHopLeForUpdate(decimal ip_dc_id_gd_hop_dong, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_HD_du_lieu_hop_dong_hop_le_CheckUpdate");
+        v_cstore.addDecimalInputParam("@ip_dc_id_gd_hop_hong", ip_dc_id_gd_hop_dong);
+        v_cstore.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+        v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+
+        SqlParameter v_yn = v_cstore.addNVarcharOutputParam("@op_str_hop_le_yn", "");
+        v_cstore.ExecuteCommand(this);
+
+        return v_yn.Value.ToString() == "Y" ? true : false;
+    }
+    public bool KiemTraThoiGianHopDongHopLeForInsert(decimal ip_dc_id_nhan_vien, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_HD_du_lieu_hop_dong_hop_le_CheckInsert");
+        v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+        v_cstore.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+        v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+
+        SqlParameter v_yn = v_cstore.addNVarcharOutputParam("@op_str_hop_le_yn", "");
+        v_cstore.ExecuteCommand(this);
+
+        return v_yn.Value.ToString() == "Y" ? true : false;
+    }
     public void LayMaMucLNSCuaHopDong(decimal ip_dc_id_hop_dong_con_hieu_luc, out decimal op_dc_he_so, out string op_str_ma, out string op_str_muc)
     {
         CStoredProc v_sp = new CStoredProc("pr_HD_ma_muc_lns_Get");
@@ -538,12 +562,14 @@ public class US_GD_HOP_DONG : US_Object
         return decimal.Parse(v_ds.Tables[0].Rows[0][0].ToString());
     }
 
-    public DataTable LayDanhSachHopDong(string ip_str_filter)
+    public DataTable LayDanhSachHopDong(string ip_str_filter, decimal ip_dc_thang, decimal ip_dc_nam)
     {
         DataSet v_ds = new DataSet();
         v_ds.Tables.Add();
         CStoredProc v_cstore = new CStoredProc("pr_HD_danh_sach_hop_dong_GetAll");
         v_cstore.addNVarcharInputParam("@ip_str_option", ip_str_filter);
+        v_cstore.addDecimalInputParam("@thang", ip_dc_thang);
+        v_cstore.addDecimalInputParam("@nam", ip_dc_nam);
         v_cstore.fillDataSetByCommand(this, v_ds);
 
         return v_ds.Tables[0];

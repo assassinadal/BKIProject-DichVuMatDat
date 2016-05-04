@@ -65,7 +65,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            m_grc.DataSource = v_us.LayDanhSachHopDong(get_option_filter());              
+            //m_grc.DataSource = v_us.LayDanhSachHopDong(get_option_filter(), );              
         }
 
         private void delete_gd_lcd(decimal v_id_hop_dong)

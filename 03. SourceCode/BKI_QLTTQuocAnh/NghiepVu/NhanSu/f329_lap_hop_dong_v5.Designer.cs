@@ -30,7 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f329_lap_hop_dong_v4));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f329_lap_hop_dong_v5));
+            this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -39,7 +40,6 @@
             this.colMA_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMA_LOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY_BAT_DAU = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY_KY_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMA_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMUC_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,6 +71,7 @@
             this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.m_dat_tai_thang = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
@@ -80,16 +81,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_thang.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_thang.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // colNGAY_KET_THUC
+            // 
+            this.colNGAY_KET_THUC.AppearanceCell.Options.UseTextOptions = true;
+            this.colNGAY_KET_THUC.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNGAY_KET_THUC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colNGAY_KET_THUC.AppearanceHeader.Options.UseFont = true;
+            this.colNGAY_KET_THUC.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNGAY_KET_THUC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNGAY_KET_THUC.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colNGAY_KET_THUC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colNGAY_KET_THUC.Caption = "Ngày kết thúc";
+            this.colNGAY_KET_THUC.FieldName = "NGAY_KET_THUC";
+            this.colNGAY_KET_THUC.Name = "colNGAY_KET_THUC";
+            this.colNGAY_KET_THUC.OptionsColumn.AllowEdit = false;
+            this.colNGAY_KET_THUC.Visible = true;
+            this.colNGAY_KET_THUC.VisibleIndex = 6;
+            this.colNGAY_KET_THUC.Width = 91;
             // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.m_grc);
             this.panelControl2.Controls.Add(this.panelControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 50);
+            this.panelControl2.Location = new System.Drawing.Point(0, 88);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(871, 509);
+            this.panelControl2.Size = new System.Drawing.Size(871, 471);
             this.panelControl2.TabIndex = 8;
             // 
             // m_grc
@@ -99,7 +120,7 @@
             this.m_grc.Location = new System.Drawing.Point(2, 42);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(867, 465);
+            this.m_grc.Size = new System.Drawing.Size(867, 427);
             this.m_grc.TabIndex = 1;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
@@ -240,24 +261,6 @@
             this.colNGAY_BAT_DAU.Visible = true;
             this.colNGAY_BAT_DAU.VisibleIndex = 5;
             this.colNGAY_BAT_DAU.Width = 91;
-            // 
-            // colNGAY_KET_THUC
-            // 
-            this.colNGAY_KET_THUC.AppearanceCell.Options.UseTextOptions = true;
-            this.colNGAY_KET_THUC.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colNGAY_KET_THUC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colNGAY_KET_THUC.AppearanceHeader.Options.UseFont = true;
-            this.colNGAY_KET_THUC.AppearanceHeader.Options.UseTextOptions = true;
-            this.colNGAY_KET_THUC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colNGAY_KET_THUC.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colNGAY_KET_THUC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colNGAY_KET_THUC.Caption = "Ngày kết thúc";
-            this.colNGAY_KET_THUC.FieldName = "NGAY_KET_THUC";
-            this.colNGAY_KET_THUC.Name = "colNGAY_KET_THUC";
-            this.colNGAY_KET_THUC.OptionsColumn.AllowEdit = false;
-            this.colNGAY_KET_THUC.Visible = true;
-            this.colNGAY_KET_THUC.VisibleIndex = 6;
-            this.colNGAY_KET_THUC.Width = 91;
             // 
             // colNGAY_KY_HOP_DONG
             // 
@@ -562,13 +565,14 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.m_dat_tai_thang);
             this.panelControl3.Controls.Add(this.m_cmd_filter);
             this.panelControl3.Controls.Add(this.radioButton2);
             this.panelControl3.Controls.Add(this.radioButton1);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(0, 0);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(871, 50);
+            this.panelControl3.Size = new System.Drawing.Size(871, 88);
             this.panelControl3.TabIndex = 9;
             // 
             // m_cmd_filter
@@ -577,7 +581,7 @@
             this.m_cmd_filter.Appearance.Options.UseFont = true;
             this.m_cmd_filter.ImageIndex = 10;
             this.m_cmd_filter.ImageList = this.img_DVMD;
-            this.m_cmd_filter.Location = new System.Drawing.Point(160, 7);
+            this.m_cmd_filter.Location = new System.Drawing.Point(12, 51);
             this.m_cmd_filter.Name = "m_cmd_filter";
             this.m_cmd_filter.Size = new System.Drawing.Size(80, 33);
             this.m_cmd_filter.TabIndex = 1;
@@ -587,7 +591,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(80, 15);
+            this.radioButton2.Location = new System.Drawing.Point(80, 30);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(61, 17);
             this.radioButton2.TabIndex = 0;
@@ -598,7 +602,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 15);
+            this.radioButton1.Location = new System.Drawing.Point(12, 30);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(59, 17);
             this.radioButton1.TabIndex = 0;
@@ -606,7 +610,26 @@
             this.radioButton1.Text = "Lịch sử";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // f329_lap_hop_dong_v4
+            // m_dat_tai_thang
+            // 
+            this.m_dat_tai_thang.EditValue = null;
+            this.m_dat_tai_thang.Location = new System.Drawing.Point(12, 5);
+            this.m_dat_tai_thang.Name = "m_dat_tai_thang";
+            this.m_dat_tai_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_tai_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_tai_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
+            this.m_dat_tai_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_tai_thang.Properties.EditFormat.FormatString = "MM/yyyy";
+            this.m_dat_tai_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_tai_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_tai_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_dat_tai_thang.Properties.NullText = "--Chọn tháng--";
+            this.m_dat_tai_thang.Size = new System.Drawing.Size(129, 20);
+            this.m_dat_tai_thang.TabIndex = 3;
+            // 
+            // f329_lap_hop_dong_v5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -614,7 +637,7 @@
             this.ClientSize = new System.Drawing.Size(871, 559);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl3);
-            this.Name = "f329_lap_hop_dong_v4";
+            this.Name = "f329_lap_hop_dong_v5";
             this.Text = "F329 - Quản lý danh sách hợp đồng";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
@@ -626,6 +649,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_thang.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_thang.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -672,5 +697,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_filter;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private DevExpress.XtraEditors.DateEdit m_dat_tai_thang;
     }
 }

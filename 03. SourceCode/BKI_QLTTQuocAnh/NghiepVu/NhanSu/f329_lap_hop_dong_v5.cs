@@ -144,7 +144,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             v_cwr.AddFindAndReplace("<ngay_cap>", cat_ngay_thang(ip_datarow["NGAY_CAP_CMT"]));
             v_cwr.AddFindAndReplace("<noi_cap>", ip_datarow["NOI_CAP"].ToString());
             v_cwr.AddFindAndReplace("<ngay_bat_dau_hd>", cat_ngay_thang(ip_datarow["NGAY_BAT_DAU"]));
-            v_cwr.AddFindAndReplace("<mo_ta_cv>", "");
+            v_cwr.AddFindAndReplace("<mo_ta_cv>", ip_datarow["GHI_CHU"].ToString());
             v_cwr.AddFindAndReplace("<ngay_hien_tai>", DateTime.Now.Day.ToString());
             v_cwr.AddFindAndReplace("<thang_hien_tai>", DateTime.Now.Month.ToString());
             v_cwr.AddFindAndReplace("<nam_hien_tai>", DateTime.Now.Year.ToString());
@@ -176,7 +176,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             v_cwr.AddFindAndReplace("<ngay_ket_thuc_hd>", cat_ngay_thang(ip_datarow["NGAY_KET_THUC"]));
             v_cwr.AddFindAndReplace("<chuc_vu>", ip_datarow["TEN_CHUC_VU"].ToString());
             v_cwr.AddFindAndReplace("<don_vi>", ip_datarow["TEN_DON_VI"].ToString());
-            v_cwr.AddFindAndReplace("<mo_ta_cv>", "");
+            v_cwr.AddFindAndReplace("<mo_ta_cv>", ip_datarow["GHI_CHU"].ToString());
             v_cwr.AddFindAndReplace("<ma_lcd>", ip_datarow["MA_LCD"].ToString());
             v_cwr.AddFindAndReplace("<muc_lcd>", ip_datarow["MUC_LCD"].ToString());
             v_cwr.AddFindAndReplace("<so_tien_lcd>", format_so_tien(ip_datarow["SO_TIEN_LCD_THUC_TE"]));
@@ -218,7 +218,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             v_cwr.AddFindAndReplace("<ngay_bat_dau_hd>", cat_ngay_thang(ip_datarow["NGAY_BAT_DAU"]));
             v_cwr.AddFindAndReplace("<chuc_vu>", ip_datarow["TEN_CHUC_VU"].ToString());
             v_cwr.AddFindAndReplace("<don_vi>", ip_datarow["TEN_DON_VI"].ToString());
-            v_cwr.AddFindAndReplace("<mo_ta_cv>", "");
+            v_cwr.AddFindAndReplace("<mo_ta_cv>", ip_datarow["GHI_CHU"].ToString());
             v_cwr.AddFindAndReplace("<ma_lcd>", ip_datarow["MA_LCD"].ToString());
             v_cwr.AddFindAndReplace("<muc_lcd>", ip_datarow["MUC_LCD"].ToString());
             v_cwr.AddFindAndReplace("<so_tien_lcd>", format_so_tien(ip_datarow["SO_TIEN_LCD_THUC_TE"]));

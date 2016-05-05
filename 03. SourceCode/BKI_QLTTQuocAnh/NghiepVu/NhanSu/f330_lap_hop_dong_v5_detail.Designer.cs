@@ -243,6 +243,8 @@
             this.m_txt_so_tien_lcd.Name = "m_txt_so_tien_lcd";
             this.m_txt_so_tien_lcd.Properties.DisplayFormat.FormatString = "n0";
             this.m_txt_so_tien_lcd.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.m_txt_so_tien_lcd.Properties.EditFormat.FormatString = "n0";
+            this.m_txt_so_tien_lcd.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.m_txt_so_tien_lcd.Properties.Mask.EditMask = "n0";
             this.m_txt_so_tien_lcd.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_so_tien_lcd.Properties.Mask.UseMaskAsDisplayFormat = true;
@@ -512,7 +514,6 @@
             // 
             // m_sle_loai_hop_dong
             // 
-            this.m_sle_loai_hop_dong.EditValue = "--Chọn loại hợp đồng--";
             this.m_sle_loai_hop_dong.Location = new System.Drawing.Point(111, 43);
             this.m_sle_loai_hop_dong.Name = "m_sle_loai_hop_dong";
             this.m_sle_loai_hop_dong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {

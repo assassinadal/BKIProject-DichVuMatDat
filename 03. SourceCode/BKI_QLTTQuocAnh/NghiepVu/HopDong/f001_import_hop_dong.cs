@@ -737,7 +737,6 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             v_us.datNGAY_KET_THUC = ip_dat_ngay_ket_thuc;
             v_us.Update();
         }
-
         private void save_data()
         {
             US_GD_HOP_DONG v_us_gd_hd = new US_GD_HOP_DONG();
@@ -752,6 +751,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                     grid_to_us_gd_hop_dong(v_us_gd_hd, data);
                     grid_to_us_gd_cong_tac(v_us_gd_cong_tac, data);
                     grid_to_us_gd_lns(v_us_gd_hs_lns, data);
+
                     decimal v_id_hop_dong = get_id_hop_dong_hien_tai(v_us_gd_hd.dcID_NHAN_VIEN.ToString());
 
                     //

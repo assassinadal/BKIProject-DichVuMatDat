@@ -56,8 +56,6 @@
             this.NGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_KI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_tooltip_controller = new DevExpress.Utils.ToolTipController(this.components);
-            this.m_rdb_nhan_vien_moi = new System.Windows.Forms.RadioButton();
-            this.m_rdb_chuyen_hop_dong = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_pnl_danh_sach_hop_dong)).BeginInit();
@@ -73,7 +71,7 @@
             this.label1.ForeColor = System.Drawing.Color.Maroon;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1015, 39);
+            this.label1.Size = new System.Drawing.Size(927, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "IMPORT HỢP ĐỒNG TỪ EXCEL";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -95,8 +93,6 @@
             // 
             // m_pnl_out_place_dm
             // 
-            this.m_pnl_out_place_dm.Controls.Add(this.m_rdb_chuyen_hop_dong);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_rdb_nhan_vien_moi);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_file);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_tai_file_mau);
@@ -105,7 +101,7 @@
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 39);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1015, 43);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(927, 43);
             this.m_pnl_out_place_dm.TabIndex = 1;
             // 
             // m_cmd_save
@@ -114,7 +110,7 @@
             this.m_cmd_save.Appearance.Options.UseFont = true;
             this.m_cmd_save.ImageIndex = 6;
             this.m_cmd_save.ImageList = this.img_DVMD;
-            this.m_cmd_save.Location = new System.Drawing.Point(397, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(207, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(92, 35);
             this.m_cmd_save.TabIndex = 2;
@@ -126,7 +122,7 @@
             this.m_cmd_chon_file.Appearance.Options.UseFont = true;
             this.m_cmd_chon_file.ImageIndex = 4;
             this.m_cmd_chon_file.ImageList = this.img_DVMD;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(297, 4);
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(107, 4);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 35);
             this.m_cmd_chon_file.TabIndex = 1;
@@ -138,7 +134,7 @@
             this.m_cmd_tai_file_mau.Appearance.Options.UseFont = true;
             this.m_cmd_tai_file_mau.ImageIndex = 1;
             this.m_cmd_tai_file_mau.ImageList = this.img_DVMD;
-            this.m_cmd_tai_file_mau.Location = new System.Drawing.Point(197, 4);
+            this.m_cmd_tai_file_mau.Location = new System.Drawing.Point(7, 4);
             this.m_cmd_tai_file_mau.Name = "m_cmd_tai_file_mau";
             this.m_cmd_tai_file_mau.Size = new System.Drawing.Size(100, 35);
             this.m_cmd_tai_file_mau.TabIndex = 0;
@@ -151,7 +147,7 @@
             this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_xuat_excel.ImageIndex = 0;
             this.m_cmd_xuat_excel.ImageList = this.img_DVMD;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(904, 4);
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(816, 4);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(107, 35);
             this.m_cmd_xuat_excel.TabIndex = 3;
@@ -175,7 +171,7 @@
             this.m_pnl_danh_sach_hop_dong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_pnl_danh_sach_hop_dong.Location = new System.Drawing.Point(0, 108);
             this.m_pnl_danh_sach_hop_dong.Name = "m_pnl_danh_sach_hop_dong";
-            this.m_pnl_danh_sach_hop_dong.Size = new System.Drawing.Size(1015, 368);
+            this.m_pnl_danh_sach_hop_dong.Size = new System.Drawing.Size(927, 368);
             this.m_pnl_danh_sach_hop_dong.TabIndex = 4;
             // 
             // m_grc_hop_dong
@@ -185,7 +181,7 @@
             this.m_grc_hop_dong.Location = new System.Drawing.Point(2, 2);
             this.m_grc_hop_dong.MainView = this.m_grv_hop_dong;
             this.m_grc_hop_dong.Name = "m_grc_hop_dong";
-            this.m_grc_hop_dong.Size = new System.Drawing.Size(1011, 364);
+            this.m_grc_hop_dong.Size = new System.Drawing.Size(923, 364);
             this.m_grc_hop_dong.TabIndex = 0;
             this.m_grc_hop_dong.ToolTipController = this.m_tooltip_controller;
             this.m_grc_hop_dong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -432,34 +428,11 @@
             this.NGAY_KI_HOP_DONG.Visible = true;
             this.NGAY_KI_HOP_DONG.VisibleIndex = 13;
             // 
-            // m_rdb_nhan_vien_moi
-            // 
-            this.m_rdb_nhan_vien_moi.AutoSize = true;
-            this.m_rdb_nhan_vien_moi.Checked = true;
-            this.m_rdb_nhan_vien_moi.Location = new System.Drawing.Point(21, 3);
-            this.m_rdb_nhan_vien_moi.Name = "m_rdb_nhan_vien_moi";
-            this.m_rdb_nhan_vien_moi.Size = new System.Drawing.Size(163, 17);
-            this.m_rdb_nhan_vien_moi.TabIndex = 4;
-            this.m_rdb_nhan_vien_moi.TabStop = true;
-            this.m_rdb_nhan_vien_moi.Text = "Hợp đồng cho nhân viên mới";
-            this.m_rdb_nhan_vien_moi.UseVisualStyleBackColor = true;
-            // 
-            // m_rdb_chuyen_hop_dong
-            // 
-            this.m_rdb_chuyen_hop_dong.AutoSize = true;
-            this.m_rdb_chuyen_hop_dong.Location = new System.Drawing.Point(21, 22);
-            this.m_rdb_chuyen_hop_dong.Name = "m_rdb_chuyen_hop_dong";
-            this.m_rdb_chuyen_hop_dong.Size = new System.Drawing.Size(147, 17);
-            this.m_rdb_chuyen_hop_dong.TabIndex = 4;
-            this.m_rdb_chuyen_hop_dong.TabStop = true;
-            this.m_rdb_chuyen_hop_dong.Text = "Chuyển đổi loại hợp đồng";
-            this.m_rdb_chuyen_hop_dong.UseVisualStyleBackColor = true;
-            // 
             // f001_import_hop_dong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 476);
+            this.ClientSize = new System.Drawing.Size(927, 476);
             this.Controls.Add(this.m_pnl_danh_sach_hop_dong);
             this.Controls.Add(this.m_lbl_thong_bao);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -468,7 +441,6 @@
             this.Text = "F001 - IMPORT HỢP ĐỒNG EXCEL";
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
             this.m_pnl_out_place_dm.ResumeLayout(false);
-            this.m_pnl_out_place_dm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_pnl_danh_sach_hop_dong)).EndInit();
             this.m_pnl_danh_sach_hop_dong.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_hop_dong)).EndInit();
@@ -506,7 +478,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KET_THUC;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KI_HOP_DONG;
         private DevExpress.Utils.ToolTipController m_tooltip_controller;
-        private System.Windows.Forms.RadioButton m_rdb_chuyen_hop_dong;
-        private System.Windows.Forms.RadioButton m_rdb_nhan_vien_moi;
     }
 }

@@ -547,6 +547,12 @@
     <Compile Include="NghiepVu\F395_nhan_vien_phu_cap_de.designer.cs">
       <DependentUpon>F395_nhan_vien_phu_cap_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\HopDong\f001_import_hop_dong_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\HopDong\f001_import_hop_dong_v2.Designer.cs">
+      <DependentUpon>f001_import_hop_dong_v2.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\HopDong\f001_import_hop_dong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1279,6 +1285,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f396_tinh_phep_tieu_chuan.resx">
       <DependentUpon>f396_tinh_phep_tieu_chuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\HopDong\f001_import_hop_dong_v2.resx">
+      <DependentUpon>f001_import_hop_dong_v2.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\HopDong\f001_import_hop_dong.resx">
       <DependentUpon>f001_import_hop_dong.cs</DependentUpon>

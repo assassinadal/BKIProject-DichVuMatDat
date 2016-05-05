@@ -58,6 +58,8 @@
             this.colSO_CMT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY_CAP_CMT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNOI_CAP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGHI_CHU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
@@ -72,8 +74,6 @@
             this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.colGHI_CHU = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
@@ -456,6 +456,25 @@
             this.colNOI_CAP.FieldName = "NOI_CAP";
             this.colNOI_CAP.Name = "colNOI_CAP";
             // 
+            // colGHI_CHU
+            // 
+            this.colGHI_CHU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colGHI_CHU.AppearanceHeader.Options.UseFont = true;
+            this.colGHI_CHU.AppearanceHeader.Options.UseTextOptions = true;
+            this.colGHI_CHU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colGHI_CHU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colGHI_CHU.Caption = "Mô tả CV";
+            this.colGHI_CHU.FieldName = "GHI_CHU";
+            this.colGHI_CHU.Name = "colGHI_CHU";
+            this.colGHI_CHU.Visible = true;
+            this.colGHI_CHU.VisibleIndex = 16;
+            // 
+            // colLOAI_HOP_DONG
+            // 
+            this.colLOAI_HOP_DONG.Caption = "LOAI_HOP_DONG";
+            this.colLOAI_HOP_DONG.FieldName = "LOAI_HOP_DONG";
+            this.colLOAI_HOP_DONG.Name = "colLOAI_HOP_DONG";
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.m_cmd_chon_file);
@@ -632,25 +651,6 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Tất cả";
             this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // colGHI_CHU
-            // 
-            this.colGHI_CHU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colGHI_CHU.AppearanceHeader.Options.UseFont = true;
-            this.colGHI_CHU.AppearanceHeader.Options.UseTextOptions = true;
-            this.colGHI_CHU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colGHI_CHU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colGHI_CHU.Caption = "Mô tả CV";
-            this.colGHI_CHU.FieldName = "GHI_CHU";
-            this.colGHI_CHU.Name = "colGHI_CHU";
-            this.colGHI_CHU.Visible = true;
-            this.colGHI_CHU.VisibleIndex = 16;
-            // 
-            // colLOAI_HOP_DONG
-            // 
-            this.colLOAI_HOP_DONG.Caption = "LOAI_HOP_DONG";
-            this.colLOAI_HOP_DONG.FieldName = "LOAI_HOP_DONG";
-            this.colLOAI_HOP_DONG.Name = "colLOAI_HOP_DONG";
             // 
             // f329_lap_hop_dong_v5
             // 

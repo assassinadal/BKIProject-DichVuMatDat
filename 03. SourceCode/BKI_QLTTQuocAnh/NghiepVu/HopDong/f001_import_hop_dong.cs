@@ -144,38 +144,38 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
         private bool check_client(int chi_so_hang, int chi_so_cot)
         {
             //neu loai hop dong la thu viec hoac vo thoi han thi dc null
-            if (chi_so_cot == 12)
-            {
-                var loai_hop_dong = m_grv_hop_dong.GetDataRow(chi_so_hang)[3];
-                if (loai_hop_dong != null)
-                {
-                    if (!String.IsNullOrEmpty(loai_hop_dong.ToString()))
-                    {
-                        string ma = loai_hop_dong.ToString();
-                        if (check_ma_ok(m_list_dt_table[2], ma))
-                        {
-                            if (ma != "HDTV" | ma != "HDKX")
-                            {
-                                if (String.IsNullOrEmpty(m_grv_hop_dong.GetDataRow(chi_so_hang)[12].ToString()))
-                                {
-                                    m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Chưa điền thông tin "));
-                                    return false;
-                                }
-                            }
-                        }
-                    }
-                }
-                return true;
-            }
-            if (chi_so_cot == 6 | chi_so_cot == 7)
-            {
-                var ma_lns = m_grv_hop_dong.GetDataRow(chi_so_hang)[6].ToString();
-                var muc_lns = m_grv_hop_dong.GetDataRow(chi_so_hang)[7].ToString();
-                if (String.IsNullOrEmpty(ma_lns) & String.IsNullOrEmpty(muc_lns))
-                {
-                    return true;
-                }
-            }
+            //if (chi_so_cot == 12)
+            //{
+            //    var loai_hop_dong = m_grv_hop_dong.GetDataRow(chi_so_hang)[3];
+            //    if (loai_hop_dong != null)
+            //    {
+            //        if (!String.IsNullOrEmpty(loai_hop_dong.ToString()))
+            //        {
+            //            string ma = loai_hop_dong.ToString();
+            //            if (check_ma_ok(m_list_dt_table[2], ma))
+            //            {
+            //                if (ma != "HDTV" | ma != "HDKX")
+            //                {
+            //                    if (String.IsNullOrEmpty(m_grv_hop_dong.GetDataRow(chi_so_hang)[12].ToString()))
+            //                    {
+            //                        m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Chưa điền thông tin "));
+            //                        return false;
+            //                    }
+            //                }
+            //            }
+            //        }
+            //    }
+            //    return true;
+            //}
+            //if(chi_so_cot == 6 | chi_so_cot == 7)
+            //{
+            //    var ma_lns = m_grv_hop_dong.GetDataRow(chi_so_hang)[6].ToString();
+            //    var muc_lns = m_grv_hop_dong.GetDataRow(chi_so_hang)[7].ToString();
+            //    if(String.IsNullOrEmpty(ma_lns) & String.IsNullOrEmpty(muc_lns))
+            //    {
+            //        return true;
+            //    }
+            //}
             if (String.IsNullOrEmpty(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
             {
                 m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Chưa điền thông tin "));
@@ -183,7 +183,87 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             }
             return true;
         }
+        private void check_logic(int chi_so_hang, int chi_so_cot)
+        {
+            // check ma cac ma 
+            if(chi_so_cot > 0 & chi_so_cot < 11)
+            {
+                var ten_cot = m_data_table_grv.Columns[chi_so_cot].ColumnName.ToString();
+                //check ma_nv
+                if(chi_so_cot == 1)
+                {
+                    if(!check_ma_ok(m_list_dt_table[chi_so_cot - 1], m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
+                    {
+                        m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, "Mã nhân viên không tồn tại "));
+                    }
+                    else
+                    {
+                        if(check_nv_da_co_hop_dong(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
+                        {
+                            m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Nhân viên đã có hợp đồng"));
+                        }
+                    }
+                    return;
+                }
+                //check ma hop dong
+                if(chi_so_cot == 2)
+                {
+                    if(!check_ma_hop_dong(m_list_dt_table[chi_so_cot - 1], m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
+                    {
+                        m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Mã hợp đồng đã tồn tại"));
+                    }
+                    return;
+                }
 
+                //check cac ma
+                if(chi_so_cot == 6 | chi_so_cot == 7)
+                {
+                    if(String.IsNullOrEmpty(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
+                    {
+                        return;
+                    }
+                    if(!check_ma_ok(m_list_dt_table[chi_so_cot - 1], m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
+                    {
+                        m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Mã không hợp lệ"));
+                        return;
+                    }
+                }
+
+                if(!check_ma_ok(m_list_dt_table[chi_so_cot - 1], m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
+                {
+                    m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Mã không hợp lệ"));
+                }
+            }
+
+            //check ngay thang
+            if(chi_so_cot == 12)
+            {
+                var loai_hop_dong = m_grv_hop_dong.GetDataRow(chi_so_hang)[3];
+                if(loai_hop_dong != null)
+                {
+                    if(!String.IsNullOrEmpty(loai_hop_dong.ToString()))
+                    {
+                        string ma = loai_hop_dong.ToString();
+                        if(check_ma_ok(m_list_dt_table[2], ma))
+                        {
+                            if(!String.IsNullOrEmpty(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot - 1].ToString()))
+                            {
+                                var nbd = WinFormControls.FormatPostingDate(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot - 1].ToString());
+                                var nkt = WinFormControls.FormatPostingDate(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString());
+                                if(ma == "HD3N" & ngay_ket_thuc_ko_hop_le(nbd, nkt, 3))
+                                {
+                                    m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Ngày bắt đầu và ngày kết thúc không phù hợp với loại hợp đồng"));
+                                }
+                                if(ma == "HD1N" & ngay_ket_thuc_ko_hop_le(nbd, nkt, 1))
+                                {
+                                    m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Ngày bắt đầu và ngày kết thúc không phù hợp với loại hợp đồng"));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         private bool check_ma_ko_trung_lap(int column_id)
         {
             var list_ma = new List<string>();
@@ -202,89 +282,6 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             }
             return false;
         }
-
-        private void check_logic(int chi_so_hang, int chi_so_cot)
-        {
-            // check ma cac ma 
-            if (chi_so_cot > 0 & chi_so_cot < 11)
-            {
-                var ten_cot = m_data_table_grv.Columns[chi_so_cot].ColumnName.ToString();
-                //check ma_nv
-                if (chi_so_cot == 1)
-                {
-                    if (!check_ma_ok(m_list_dt_table[chi_so_cot - 1], m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
-                    {
-                        m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, "Mã nhân viên không tồn tại "));
-                    }
-                    else
-                    {
-                        if (check_nv_da_co_hop_dong(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
-                        {
-                            m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Nhân viên đã có hợp đồng"));
-                        }
-                    }
-                    return;
-                }
-                //check ma hop dong
-                if (chi_so_cot == 2)
-                {
-                    if (!check_ma_hop_dong(m_list_dt_table[chi_so_cot - 1], m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
-                    {
-                        m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Mã hợp đồng đã tồn tại"));
-                    }
-                    return;
-                }
-
-                //check cac ma
-                if (chi_so_cot == 6 | chi_so_cot == 7)
-                {
-                    if (String.IsNullOrEmpty(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
-                    {
-                        return;
-                    }
-                    if (!check_ma_ok(m_list_dt_table[chi_so_cot - 1], m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
-                    {
-                        m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Mã không hợp lệ"));
-                        return;
-                    }
-                }
-
-                if (!check_ma_ok(m_list_dt_table[chi_so_cot - 1], m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString()))
-                {
-                    m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Mã không hợp lệ"));
-                }
-            }
-
-            //check ngay thang
-            if (chi_so_cot == 12)
-            {
-                var loai_hop_dong = m_grv_hop_dong.GetDataRow(chi_so_hang)[3];
-                if (loai_hop_dong != null)
-                {
-                    if (!String.IsNullOrEmpty(loai_hop_dong.ToString()))
-                    {
-                        string ma = loai_hop_dong.ToString();
-                        if (check_ma_ok(m_list_dt_table[2], ma))
-                        {
-                            if (!String.IsNullOrEmpty(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot - 1].ToString()))
-                            {
-                                var nbd = WinFormControls.FormatPostingDate(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot - 1].ToString());
-                                var nkt = WinFormControls.FormatPostingDate(m_grv_hop_dong.GetDataRow(chi_so_hang)[chi_so_cot].ToString());
-                                if (ma == "HD3N" & ngay_ket_thuc_ko_hop_le(nbd, nkt, 3))
-                                {
-                                    m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Ngày bắt đầu và ngày kết thúc không phù hợp với loại hợp đồng"));
-                                }
-                                if (ma == "HD1N" & ngay_ket_thuc_ko_hop_le(nbd, nkt, 1))
-                                {
-                                    m_list_vi_tri_sai.Add(new ViTriTrenLuoi(chi_so_hang, chi_so_cot, " Ngày bắt đầu và ngày kết thúc không phù hợp với loại hợp đồng"));
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
         private bool ngay_ket_thuc_ko_hop_le(DateTime nbd, DateTime nkt, int v)
         {
             if (nbd.Day == nkt.Day & nbd.Month == nkt.Month & nkt.Year - nbd.Year == v)
@@ -293,7 +290,6 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             }
             return true;
         }
-
         private bool check_nv_da_co_hop_dong(string ma_nv)
         {
             //decimal id_nv = find_id_nv_by_ma_nv(ma_nv);
@@ -310,7 +306,6 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             //}
             return false;
         }
-
         private bool check_ma_hop_dong(DataTable ip_dt, string ma)
         {
             var list_ma = (from DataRow dr in ip_dt.Rows
@@ -329,7 +324,6 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             }
             return true;
         }
-
         private bool check_ma_ok(DataTable ip_dt, string ma)
         {
              var list_ma = (from DataRow dr in ip_dt.Rows
@@ -348,7 +342,6 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             }
             return false;           
         }
-
         private bool check_grid_data_ok()
         {
             if (!check_ma_ko_trung_lap(1))
@@ -365,10 +358,18 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             {
                 for (int chi_so_cot = 1; chi_so_cot < 14; chi_so_cot++)
                 {
-                    if (check_client(chi_so_hang, chi_so_cot))
+                    if(chi_so_cot == 4 || chi_so_cot == 5 || chi_so_cot == 6 || chi_so_cot == 7 || chi_so_cot == 12 || chi_so_cot == 13)
                     {
-                        check_logic(chi_so_hang, chi_so_cot);
+                        continue;
                     }
+                    else
+                    {
+                        check_client(chi_so_hang, chi_so_cot);
+                    }
+                    //if (check_client(chi_so_hang, chi_so_cot))
+                    //{
+                    //    check_logic(chi_so_hang, chi_so_cot);
+                    //}
                 }
             }
             if (m_list_vi_tri_sai.Count == 0 & !co_ma_nhan_vien_trung & !co_ma_hop_dong_trung)
@@ -752,18 +753,18 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                     grid_to_us_gd_cong_tac(v_us_gd_cong_tac, data);
                     grid_to_us_gd_lns(v_us_gd_hs_lns, data);
 
-                    decimal v_id_hop_dong = get_id_hop_dong_hien_tai(v_us_gd_hd.dcID_NHAN_VIEN.ToString());
+                    //decimal v_id_hop_dong = get_id_hop_dong_hien_tai(v_us_gd_hd.dcID_NHAN_VIEN.ToString());
 
                     //
                     v_us_gd_hd.BeginTransaction();
-                    if (v_id_hop_dong != 0)
-                    {
-                        ket_thuc_hop_dong_cu(v_id_hop_dong, v_us_gd_hd.datNGAY_BAT_DAU);
-                    }
+                    //if (v_id_hop_dong != 0)
+                    //{
+                    //    ket_thuc_hop_dong_cu(v_id_hop_dong, v_us_gd_hd.datNGAY_BAT_DAU);
+                    //}
                     v_us_gd_cong_tac.UseTransOfUSObject(v_us_gd_hd);
-                    v_us_gd_cong_tac.CapNhatHetHieuLucCongTac(v_us_gd_hd.dcID_NHAN_VIEN, v_us_gd_hd.datNGAY_BAT_DAU);
+                    //v_us_gd_cong_tac.CapNhatHetHieuLucCongTac(v_us_gd_hd.dcID_NHAN_VIEN, v_us_gd_hd.datNGAY_BAT_DAU);
                     v_us_gd_hs_lns.UseTransOfUSObject(v_us_gd_hd);
-                    v_us_gd_hs_lns.KetThucLuongNangSuatNhanVien(v_us_gd_hd.dcID_NHAN_VIEN, v_us_gd_hd.datNGAY_BAT_DAU);
+                    //v_us_gd_hs_lns.KetThucLuongNangSuatNhanVien(v_us_gd_hd.dcID_NHAN_VIEN, v_us_gd_hd.datNGAY_BAT_DAU);
                     v_us_gd_hs_lns.Insert();
                     v_us_gd_hd.Insert();
                     v_us_gd_cong_tac.Insert();

@@ -68,14 +68,28 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_sle_loai_hop_dong.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_LOAI_HOP_DONG]);
             m_sle_loai_lao_dong.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_LOAI_LAO_DONG]);
             m_txt_ma_hd.Text = v_dr[V_GD_HOP_DONG_V3.MA_HOP_DONG].ToString();
-            m_dat_ngay_ky.DateTime = Convert.ToDateTime(v_dr[V_GD_HOP_DONG_V3.NGAY_KY_HOP_DONG]);
+            if(v_dr[V_GD_HOP_DONG_V3.NGAY_KY_HOP_DONG] != DBNull.Value)
+            {
+                m_dat_ngay_ky.EditValue = Convert.ToDateTime(v_dr[V_GD_HOP_DONG_V3.NGAY_KY_HOP_DONG]);
+            }
+            else
+            {
+                m_dat_ngay_ky.EditValue = null;
+            }
+
             m_dat_ngay_bat_dau.DateTime = Convert.ToDateTime(v_dr[V_GD_HOP_DONG_V3.NGAY_BAT_DAU]);
-            if(v_dr[V_GD_HOP_DONG_V3.NGAY_KET_THUC].ToString() != "")
+            if(v_dr[V_GD_HOP_DONG_V3.NGAY_KET_THUC] != DBNull.Value)
+            {
                 m_dat_ngay_ket_thuc.DateTime = Convert.ToDateTime(v_dr[V_GD_HOP_DONG_V3.NGAY_KET_THUC]);
+            }
+            else
+            {
+                m_dat_ngay_ket_thuc.EditValue = null;
+            }
             m_sle_don_vi.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_DON_VI]);
             m_sle_chuc_vu.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_CHUC_VU]);
             m_txt_mo_ta_cv.Text = v_dr[V_GD_HOP_DONG_V3.GHI_CHU].ToString();
-            if(v_dr[V_GD_HOP_DONG_V3.ID_LUONG_CHE_DO].ToString() != "")
+            if(v_dr[V_GD_HOP_DONG_V3.ID_LUONG_CHE_DO] != DBNull.Value)
             {
                 m_sle_ma_lcd.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_MA_LCD]);
                 m_sle_muc_lcd.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_MUC_LCD]);

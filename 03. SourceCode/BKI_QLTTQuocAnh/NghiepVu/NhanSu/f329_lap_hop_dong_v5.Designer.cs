@@ -73,6 +73,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.colGHI_CHU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
@@ -153,7 +154,8 @@
             this.colSO_CMT,
             this.colNGAY_CAP_CMT,
             this.colNOI_CAP,
-            this.colGHI_CHU});
+            this.colGHI_CHU,
+            this.colLOAI_HOP_DONG});
             styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Pink;
             styleFormatCondition1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
             styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Firebrick;
@@ -644,6 +646,12 @@
             this.colGHI_CHU.Visible = true;
             this.colGHI_CHU.VisibleIndex = 16;
             // 
+            // colLOAI_HOP_DONG
+            // 
+            this.colLOAI_HOP_DONG.Caption = "LOAI_HOP_DONG";
+            this.colLOAI_HOP_DONG.FieldName = "LOAI_HOP_DONG";
+            this.colLOAI_HOP_DONG.Name = "colLOAI_HOP_DONG";
+            // 
             // f329_lap_hop_dong_v5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -714,5 +722,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private DevExpress.XtraEditors.DateEdit m_dat_tai_thang;
         private DevExpress.XtraGrid.Columns.GridColumn colGHI_CHU;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOAI_HOP_DONG;
     }
 }

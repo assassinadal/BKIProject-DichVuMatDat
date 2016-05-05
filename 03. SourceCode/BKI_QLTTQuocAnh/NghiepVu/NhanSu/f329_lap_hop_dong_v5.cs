@@ -206,6 +206,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             v_cwr.AddFindAndReplace("<ten_tgd>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.DAI_DIEN_BEN_A));
             v_cwr.AddFindAndReplace("<quoc_tich_tgd>", get_ten_cau_hinh(CONST_ID_CAU_HINH_IN.QUOC_TICH_DAI_DIEN_BEN_A));
 
+            v_cwr.AddFindAndReplace("<loai_hop_dong>", ip_datarow["LOAI_HOP_DONG"].ToString());
             v_cwr.AddFindAndReplace("<ten_nv>", ip_datarow["HO_TEN"].ToString());
             v_cwr.AddFindAndReplace("<quoc_tich_nv>", ip_datarow["QUOC_TICH"].ToString());
             v_cwr.AddFindAndReplace("<ngay_sinh>", cat_ngay_thang(ip_datarow["NGAY_SINH_NV"]));

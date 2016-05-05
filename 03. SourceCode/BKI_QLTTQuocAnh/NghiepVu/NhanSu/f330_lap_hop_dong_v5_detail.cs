@@ -318,10 +318,21 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_us_gd_hd.dcID_LOAI_HOP_DONG = Convert.ToDecimal(m_sle_loai_hop_dong.EditValue);
             m_us_gd_hd.dcID_LOAI_LAO_DONG = Convert.ToDecimal(m_sle_loai_lao_dong.EditValue);
             m_us_gd_hd.strMA_HOP_DONG = m_txt_ma_hd.Text;
-            m_us_gd_hd.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.DateTime;
-            m_us_gd_hd.datNGAY_KY_HOP_DONG = m_dat_ngay_ky.DateTime;
+            m_us_gd_hd.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.DateTime.Date;
+            if(m_dat_ngay_ky.EditValue == null)
+            {
+                m_us_gd_hd.SetNGAY_KY_HOP_DONGNull();
+            }
+            else
+            {
+                m_us_gd_hd.datNGAY_KY_HOP_DONG = m_dat_ngay_ky.DateTime.Date;
+            }
             if(m_dat_ngay_ket_thuc.DateTime != DateTime.MinValue)
-                m_us_gd_hd.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.DateTime;
+                m_us_gd_hd.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.DateTime.Date;
+            else
+            {
+                m_us_gd_hd.SetNGAY_KET_THUCNull();
+            }
             if(get_luong_cd_theo_ma_muc() != null)
             {
                 m_us_gd_hd.dcID_LUONG_CHE_DO = Convert.ToDecimal(get_luong_cd_theo_ma_muc()["ID"]);

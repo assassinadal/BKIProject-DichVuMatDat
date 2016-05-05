@@ -74,16 +74,18 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             MA_NHAN_VIEN = 1,
             MA_HOP_DONG = 2,
             MA_LOAI_HOP_DONG = 3,
-            MA_CHUC_DANH_LCD = 4,
-            MA_MUC_LCD = 5,
-            MA_CHUC_DANH_LNS = 6,
-            MA_MUC_LUONG_NS = 7,
-            MA_DON_VI = 8,
-            MA_CHUC_VU = 9,
-            MA_LOAI_LAO_DONG = 10,
-            NGAY_BAT_DAU = 11,
-            NGAY_KET_THUC = 12,
-            NGAY_KI_HOP_DONG = 13
+            MA_LOAI_LAO_DONG = 4,
+            MA_CHUC_DANH_LCD = 5,
+            MA_MUC_LCD = 6,
+            NGAY_BAT_DAU = 7,
+            NGAY_KET_THUC = 8,
+            NGAY_KI_HOP_DONG = 9,
+            MA_CHUC_DANH_LNS = 10,
+            MA_MUC_LUONG_NS = 11,
+            MA_DON_VI = 12,
+            MA_CHUC_VU = 13,
+           
+            
         }
         #endregion
 
@@ -372,14 +374,13 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                     //}
                 }
             }
-            if (m_list_vi_tri_sai.Count == 0 & !co_ma_nhan_vien_trung & !co_ma_hop_dong_trung)
+            if (m_list_vi_tri_sai.Count == 0 && !co_ma_nhan_vien_trung && !co_ma_hop_dong_trung)
             {
                 return true;
             }
             hien_thi_vi_tri_sai();
             return false;
         }
-
         private void hien_thi_vi_tri_sai()
         {
             //if (co_ma_nhan_vien_trung)
@@ -663,7 +664,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
         private void grid_to_us_gd_lns(US_GD_HE_SO_LNS v_us_gd_hs_lns, DataRow data)
         {
             v_us_gd_hs_lns.dcID_NHAN_VIEN = find_id_nv_by_ma_nv(data["MA_NHAN_VIEN"].ToString());
-            if (!String.IsNullOrEmpty(data["MA_CHUC_DANH_LNS"].ToString()) & !String.IsNullOrEmpty(data["MA_MUC_LUONG_NS"].ToString()))
+            if (!String.IsNullOrEmpty(data["MA_CHUC_DANH_LNS"].ToString()) && !String.IsNullOrEmpty(data["MA_MUC_LUONG_NS"].ToString()))
             {
                 v_us_gd_hs_lns.dcID_HE_SO_LNS = find_id_hs_lns_by_ma_muc(data["MA_CHUC_DANH_LNS"].ToString(), data["MA_MUC_LUONG_NS"].ToString());
                 v_us_gd_hs_lns.dcHE_SO = find_he_so_lns_by_id(v_us_gd_hs_lns.dcID_HE_SO_LNS);
@@ -800,12 +801,6 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                 Microsoft.Office.Interop.Excel.Workbooks books = excel.Workbooks;
                 Microsoft.Office.Interop.Excel.Workbook openexcel = books.Open(path);
             }
-        }
-
-        private void show_ket_qua()
-        {
-            f325_lap_hop_dong_V2 v_f = new f325_lap_hop_dong_V2();
-            //v_f.display_ket_qua_import_excel();
         }
 
         #endregion

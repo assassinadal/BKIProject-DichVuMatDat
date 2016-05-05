@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f001_import_hop_dong));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f001_import_hop_dong_v2));
             this.label1 = new System.Windows.Forms.Label();
             this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
@@ -428,7 +428,7 @@
             this.NGAY_KI_HOP_DONG.Visible = true;
             this.NGAY_KI_HOP_DONG.VisibleIndex = 13;
             // 
-            // f001_import_hop_dong
+            // f001_import_hop_dong_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -437,7 +437,7 @@
             this.Controls.Add(this.m_lbl_thong_bao);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.label1);
-            this.Name = "f001_import_hop_dong";
+            this.Name = "f001_import_hop_dong_v2";
             this.Text = "F001 - IMPORT HỢP ĐỒNG EXCEL";
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
             this.m_pnl_out_place_dm.ResumeLayout(false);

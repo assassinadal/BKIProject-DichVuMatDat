@@ -419,9 +419,10 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             try
             {
-                if(m_sle_muc_lcd.EditValue != null)
+                m_txt_so_tien_lcd.EditValue = 0;
+                if(m_sle_muc_lcd.EditValue != null && m_sle_ma_lcd.EditValue != null)
                 {
-                    m_txt_so_tien_lcd.ResetText();
+                    //m_txt_so_tien_lcd.ResetText();
                     load_data_to_lbl_so_tien_lcd();
                 }
             }
@@ -435,9 +436,10 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             try
             {
-                if(m_sle_ma_lcd.EditValue != null)
+                m_txt_so_tien_lcd.EditValue = 0;
+                if(m_sle_ma_lcd.EditValue != null && m_sle_muc_lcd.EditValue != null)
                 {
-                    m_txt_so_tien_lcd.ResetText();
+                    //m_txt_so_tien_lcd.ResetText();
                     load_data_to_lbl_so_tien_lcd();
                 }
 

@@ -56,6 +56,8 @@
             this.NGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_KI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_tooltip_controller = new DevExpress.Utils.ToolTipController(this.components);
+            this.m_rdb_nhan_vien_moi = new System.Windows.Forms.RadioButton();
+            this.m_rdb_chuyen_hop_dong = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_pnl_danh_sach_hop_dong)).BeginInit();
@@ -93,6 +95,8 @@
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_rdb_chuyen_hop_dong);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_rdb_nhan_vien_moi);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_file);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_tai_file_mau);
@@ -108,10 +112,9 @@
             // 
             this.m_cmd_save.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.m_cmd_save.Appearance.Options.UseFont = true;
-            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_save.ImageIndex = 6;
             this.m_cmd_save.ImageList = this.img_DVMD;
-            this.m_cmd_save.Location = new System.Drawing.Point(204, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(397, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(92, 35);
             this.m_cmd_save.TabIndex = 2;
@@ -121,10 +124,9 @@
             // 
             this.m_cmd_chon_file.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.m_cmd_chon_file.Appearance.Options.UseFont = true;
-            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_chon_file.ImageIndex = 4;
             this.m_cmd_chon_file.ImageList = this.img_DVMD;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(104, 4);
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(297, 4);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 35);
             this.m_cmd_chon_file.TabIndex = 1;
@@ -134,10 +136,9 @@
             // 
             this.m_cmd_tai_file_mau.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.m_cmd_tai_file_mau.Appearance.Options.UseFont = true;
-            this.m_cmd_tai_file_mau.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_tai_file_mau.ImageIndex = 1;
             this.m_cmd_tai_file_mau.ImageList = this.img_DVMD;
-            this.m_cmd_tai_file_mau.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_tai_file_mau.Location = new System.Drawing.Point(197, 4);
             this.m_cmd_tai_file_mau.Name = "m_cmd_tai_file_mau";
             this.m_cmd_tai_file_mau.Size = new System.Drawing.Size(100, 35);
             this.m_cmd_tai_file_mau.TabIndex = 0;
@@ -431,6 +432,29 @@
             this.NGAY_KI_HOP_DONG.Visible = true;
             this.NGAY_KI_HOP_DONG.VisibleIndex = 13;
             // 
+            // m_rdb_nhan_vien_moi
+            // 
+            this.m_rdb_nhan_vien_moi.AutoSize = true;
+            this.m_rdb_nhan_vien_moi.Checked = true;
+            this.m_rdb_nhan_vien_moi.Location = new System.Drawing.Point(21, 3);
+            this.m_rdb_nhan_vien_moi.Name = "m_rdb_nhan_vien_moi";
+            this.m_rdb_nhan_vien_moi.Size = new System.Drawing.Size(163, 17);
+            this.m_rdb_nhan_vien_moi.TabIndex = 4;
+            this.m_rdb_nhan_vien_moi.TabStop = true;
+            this.m_rdb_nhan_vien_moi.Text = "Hợp đồng cho nhân viên mới";
+            this.m_rdb_nhan_vien_moi.UseVisualStyleBackColor = true;
+            // 
+            // m_rdb_chuyen_hop_dong
+            // 
+            this.m_rdb_chuyen_hop_dong.AutoSize = true;
+            this.m_rdb_chuyen_hop_dong.Location = new System.Drawing.Point(21, 22);
+            this.m_rdb_chuyen_hop_dong.Name = "m_rdb_chuyen_hop_dong";
+            this.m_rdb_chuyen_hop_dong.Size = new System.Drawing.Size(147, 17);
+            this.m_rdb_chuyen_hop_dong.TabIndex = 4;
+            this.m_rdb_chuyen_hop_dong.TabStop = true;
+            this.m_rdb_chuyen_hop_dong.Text = "Chuyển đổi loại hợp đồng";
+            this.m_rdb_chuyen_hop_dong.UseVisualStyleBackColor = true;
+            // 
             // f001_import_hop_dong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -444,6 +468,7 @@
             this.Text = "F001 - IMPORT HỢP ĐỒNG EXCEL";
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.m_pnl_out_place_dm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_pnl_danh_sach_hop_dong)).EndInit();
             this.m_pnl_danh_sach_hop_dong.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_hop_dong)).EndInit();
@@ -481,5 +506,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KET_THUC;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KI_HOP_DONG;
         private DevExpress.Utils.ToolTipController m_tooltip_controller;
+        private System.Windows.Forms.RadioButton m_rdb_chuyen_hop_dong;
+        private System.Windows.Forms.RadioButton m_rdb_nhan_vien_moi;
     }
 }

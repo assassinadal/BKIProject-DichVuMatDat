@@ -40,8 +40,6 @@
             this.sle_cnv_MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sle_cnv_HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sle_cnv_GIOI_TINH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_txt_so_tien_lcd = new DevExpress.XtraEditors.TextEdit();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.m_sle_muc_lcd = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -203,9 +201,7 @@
             this.sle_cnv_ID,
             this.sle_cnv_MA_NV,
             this.sle_cnv_HO_TEN,
-            this.sle_cnv_GIOI_TINH,
-            this.gridColumn1,
-            this.gridColumn2});
+            this.sle_cnv_GIOI_TINH});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -236,26 +232,10 @@
             // sle_cnv_GIOI_TINH
             // 
             this.sle_cnv_GIOI_TINH.Caption = "Giới tính";
-            this.sle_cnv_GIOI_TINH.FieldName = "GT";
+            this.sle_cnv_GIOI_TINH.FieldName = "GIOI_TINH_TEXT";
             this.sle_cnv_GIOI_TINH.Name = "sle_cnv_GIOI_TINH";
             this.sle_cnv_GIOI_TINH.Visible = true;
             this.sle_cnv_GIOI_TINH.VisibleIndex = 2;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Đơn vị";
-            this.gridColumn1.FieldName = "TEN_DON_VI";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 3;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Chức vụ";
-            this.gridColumn2.FieldName = "CHUC_VU";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 4;
             // 
             // m_txt_so_tien_lcd
             // 
@@ -861,8 +841,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_MA_NV;
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_HO_TEN;
         private DevExpress.XtraGrid.Columns.GridColumn sle_cnv_GIOI_TINH;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_loai_hop_dong;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;

@@ -659,12 +659,6 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             m_grc_hop_dong.DataSource = m_data_table_grv;
             m_grv_hop_dong.BestFitColumns();
         }
-
-        private void dat_ngay_ket_thuc_hop_dong_cu()
-        {
-
-        }
-
         private void grid_to_us_gd_lns(US_GD_HE_SO_LNS v_us_gd_hs_lns, DataRow data)
         {
             v_us_gd_hs_lns.dcID_NHAN_VIEN = find_id_nv_by_ma_nv(data["MA_NHAN_VIEN"].ToString());
@@ -987,7 +981,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             {
                 m_lbl_thong_bao.Text = "File sẽ mở lên ngay sau đây";
                 m_lbl_thong_bao.ForeColor = Color.Green;
-                WinFormControls.openTemplate(CONST_EXCEL_TEMPLATE.HOP_DONG_TEMPLATE);              
+                WinFormControls.openTemplate_v2(CONST_EXCEL_TEMPLATE.HOP_DONG_TEMPLATE);              
             }
             catch (Exception v_e)
             {
@@ -1028,7 +1022,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             {
                 set_init_form_load();
                 //CSystemLog_301.ExceptionHandle(v_e);
-                DevExpress.XtraEditors.XtraMessageBox.Show("Vui lòng chọn đúng file exel mẫu để lập hợp đồng");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Vui lòng chọn đúng file exel mẫu để lập hợp đồng!");
             }
         }
 

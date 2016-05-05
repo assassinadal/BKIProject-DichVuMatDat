@@ -68,10 +68,10 @@
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.m_dat_tai_thang = new DevExpress.XtraEditors.DateEdit();
             this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.m_dat_tai_thang = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
@@ -575,41 +575,6 @@
             this.panelControl3.Size = new System.Drawing.Size(871, 88);
             this.panelControl3.TabIndex = 9;
             // 
-            // m_cmd_filter
-            // 
-            this.m_cmd_filter.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_filter.Appearance.Options.UseFont = true;
-            this.m_cmd_filter.ImageIndex = 10;
-            this.m_cmd_filter.ImageList = this.img_DVMD;
-            this.m_cmd_filter.Location = new System.Drawing.Point(12, 51);
-            this.m_cmd_filter.Name = "m_cmd_filter";
-            this.m_cmd_filter.Size = new System.Drawing.Size(80, 33);
-            this.m_cmd_filter.TabIndex = 1;
-            this.m_cmd_filter.Text = "&Lọc";
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(80, 30);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(61, 17);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Hiện tại";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 30);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(59, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Lịch sử";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
             // m_dat_tai_thang
             // 
             this.m_dat_tai_thang.EditValue = null;
@@ -628,6 +593,41 @@
             this.m_dat_tai_thang.Properties.NullText = "--Chọn tháng--";
             this.m_dat_tai_thang.Size = new System.Drawing.Size(129, 20);
             this.m_dat_tai_thang.TabIndex = 3;
+            // 
+            // m_cmd_filter
+            // 
+            this.m_cmd_filter.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_filter.Appearance.Options.UseFont = true;
+            this.m_cmd_filter.ImageIndex = 10;
+            this.m_cmd_filter.ImageList = this.img_DVMD;
+            this.m_cmd_filter.Location = new System.Drawing.Point(12, 51);
+            this.m_cmd_filter.Name = "m_cmd_filter";
+            this.m_cmd_filter.Size = new System.Drawing.Size(80, 33);
+            this.m_cmd_filter.TabIndex = 1;
+            this.m_cmd_filter.Text = "&Lọc";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(80, 30);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(135, 17);
+            this.radioButton2.TabIndex = 0;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Có hiệu lực trong tháng";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(12, 30);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(56, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Tất cả";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // f329_lap_hop_dong_v5
             // 

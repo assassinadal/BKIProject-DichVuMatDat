@@ -371,13 +371,13 @@ namespace BKI_DichVuMatDat.US
 
             return v_yn.Value.ToString() == "Y" ? true : false;
         }
-        public bool KiemTraDuLieuCongTacHopLeForUpdate(decimal ip_dc_id_gd_cong_tac, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+        public bool KiemTraDuLieuCongTacHopLeForUpdate(decimal ip_dc_id_gd_cong_tac, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay, decimal ip_dc_id_loai_cong_tac)
         {
             CStoredProc v_cstore = new CStoredProc("pr_CT_du_lieu_cong_tac_hop_le_CheckUpdate");
             v_cstore.addDecimalInputParam("@ip_dc_id_gd_cong_tac", ip_dc_id_gd_cong_tac);
             v_cstore.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
             v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
-
+            v_cstore.addDecimalInputParam("@ip_dc_id_loai_cong_tac", ip_dc_id_loai_cong_tac);
             SqlParameter v_yn = v_cstore.addNVarcharOutputParam("@op_str_hop_le_yn", "");
             v_cstore.ExecuteCommand(this);
 

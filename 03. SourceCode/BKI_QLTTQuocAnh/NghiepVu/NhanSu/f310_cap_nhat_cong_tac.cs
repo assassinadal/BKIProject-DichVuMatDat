@@ -84,14 +84,13 @@ namespace BKI_DichVuMatDat.NghiepVu
         //load data to all controls
         private void load_data_2_sle_nhan_vien()
         {
-            US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
-            DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
-            v_us.FillDataset(v_ds);
-            m_sle_chon_nhan_vien.Properties.DataSource = v_ds.Tables[0];
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            DS_DM_NHAN_VIEN v_ds = new DS_DM_NHAN_VIEN();
+            m_sle_chon_nhan_vien.Properties.DataSource = v_us.LayDanhSachNhanVien();
             m_sle_chon_nhan_vien.Properties.DisplayMember = V_DM_NHAN_VIEN.HO_TEN;
             m_sle_chon_nhan_vien.Properties.ValueMember = V_DM_NHAN_VIEN.ID;
 
-            m_sle_chon_nhan_vien.Properties.DataSource = v_ds.Tables[0];
+           // m_sle_chon_nhan_vien.Properties.DataSource = v_ds.Tables[0];
             m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
@@ -323,7 +322,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                 v_bool_check = v_us_ct.KiemTraDuLieuCongTacHopLeForUpdate(
                                                     m_us_cong_tac.dcID
                                                     , m_dat_ngay_bat_dau.DateTime.Date
-                                                    , m_dat_ngay_ket_thuc.EditValue == null ? DateTime.Now.AddYears(100).Date : m_dat_ngay_ket_thuc.DateTime.Date);
+                                                    , m_dat_ngay_ket_thuc.EditValue == null ? DateTime.Now.AddYears(100).Date : m_dat_ngay_ket_thuc.DateTime.Date
+                                                    , Convert.ToDecimal(m_sle_chon_loai_cong_tac.EditValue));
             }
             if(v_bool_check == false)
             {

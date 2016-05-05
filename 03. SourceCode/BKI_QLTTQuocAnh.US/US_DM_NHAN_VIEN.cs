@@ -776,7 +776,16 @@ namespace BKI_DichVuMatDat.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+        public DataTable LayDanhSachNhanVien()
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_NS_danh_sach_nhan_vien_GetAll_V2");
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
 
+            v_cstore.fillDataSetByCommand(this, v_ds);
+
+            return v_ds.Tables[0];
+        }
         public DataTable LayDanhSachMaTraCuu()
         {
             CStoredProc v_cstore = new CStoredProc("pr_NV_card_nhan_vien_GetAll");

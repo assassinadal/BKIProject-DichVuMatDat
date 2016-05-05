@@ -38,30 +38,13 @@
             this.m_dat_ngay_bat_dau = new DevExpress.XtraEditors.DateEdit();
             this.m_sle_chon_vi_tri = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_sle_chon_don_vi = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MA_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_lbl_header = new DevExpress.XtraEditors.LabelControl();
             this.m_sle_chon_loai_cong_tac = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn37 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -71,6 +54,21 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MA_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn37 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -210,34 +208,6 @@
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn31
-            // 
-            this.gridColumn31.Caption = "ID";
-            this.gridColumn31.FieldName = "ID";
-            this.gridColumn31.Name = "gridColumn31";
-            // 
-            // gridColumn32
-            // 
-            this.gridColumn32.Caption = "Mã vị trí";
-            this.gridColumn32.FieldName = "MA_CHUC_VU";
-            this.gridColumn32.Name = "gridColumn32";
-            this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 0;
-            // 
-            // gridColumn33
-            // 
-            this.gridColumn33.Caption = "Tên vị trí";
-            this.gridColumn33.FieldName = "TEN_CHUC_VU";
-            this.gridColumn33.Name = "gridColumn33";
-            this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 1;
-            // 
-            // gridColumn34
-            // 
-            this.gridColumn34.Caption = "Ghi chú";
-            this.gridColumn34.FieldName = "GHI_CHU";
-            this.gridColumn34.Name = "gridColumn34";
-            // 
             // m_sle_chon_don_vi
             // 
             this.m_sle_chon_don_vi.Location = new System.Drawing.Point(123, 97);
@@ -263,28 +233,6 @@
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // ID
-            // 
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
-            // 
-            // MA_DON_VI
-            // 
-            this.MA_DON_VI.Caption = "Mã đơn vị";
-            this.MA_DON_VI.FieldName = "MA_DON_VI";
-            this.MA_DON_VI.Name = "MA_DON_VI";
-            this.MA_DON_VI.Visible = true;
-            this.MA_DON_VI.VisibleIndex = 0;
-            // 
-            // TEN_DON_VI
-            // 
-            this.TEN_DON_VI.Caption = "Tên đơn vị";
-            this.TEN_DON_VI.FieldName = "TEN_DON_VI";
-            this.TEN_DON_VI.Name = "TEN_DON_VI";
-            this.TEN_DON_VI.Visible = true;
-            this.TEN_DON_VI.VisibleIndex = 1;
-            // 
             // m_sle_chon_nhan_vien
             // 
             this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(123, 37);
@@ -302,60 +250,14 @@
             // searchLookUpEdit1View
             // 
             this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn12,
+            this.colID,
             this.MA_NV,
             this.HO_TEN,
-            this.colGT,
-            this.colTEN_DON_VI,
-            this.colCHUC_VU});
+            this.colGT});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Caption = "ID";
-            this.gridColumn12.FieldName = "ID";
-            this.gridColumn12.Name = "gridColumn12";
-            // 
-            // MA_NV
-            // 
-            this.MA_NV.Caption = "Mã NV";
-            this.MA_NV.FieldName = "MA_NV";
-            this.MA_NV.Name = "MA_NV";
-            this.MA_NV.Visible = true;
-            this.MA_NV.VisibleIndex = 0;
-            // 
-            // HO_TEN
-            // 
-            this.HO_TEN.Caption = "Họ tên";
-            this.HO_TEN.FieldName = "HO_TEN";
-            this.HO_TEN.Name = "HO_TEN";
-            this.HO_TEN.Visible = true;
-            this.HO_TEN.VisibleIndex = 1;
-            // 
-            // colGT
-            // 
-            this.colGT.Caption = "Giới tính";
-            this.colGT.FieldName = "GIOI_TINH";
-            this.colGT.Name = "colGT";
-            // 
-            // colTEN_DON_VI
-            // 
-            this.colTEN_DON_VI.Caption = "Đơn vị";
-            this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
-            this.colTEN_DON_VI.Name = "colTEN_DON_VI";
-            this.colTEN_DON_VI.Visible = true;
-            this.colTEN_DON_VI.VisibleIndex = 2;
-            // 
-            // colCHUC_VU
-            // 
-            this.colCHUC_VU.Caption = "Chức vụ";
-            this.colCHUC_VU.FieldName = "CHUC_VU";
-            this.colCHUC_VU.Name = "colCHUC_VU";
-            this.colCHUC_VU.Visible = true;
-            this.colCHUC_VU.VisibleIndex = 3;
             // 
             // m_lbl_header
             // 
@@ -393,36 +295,6 @@
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView4.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn35
-            // 
-            this.gridColumn35.Caption = "ID";
-            this.gridColumn35.FieldName = "ID";
-            this.gridColumn35.Name = "gridColumn35";
-            // 
-            // gridColumn36
-            // 
-            this.gridColumn36.Caption = "Mã loại công tác";
-            this.gridColumn36.FieldName = "MA_TU_DIEN";
-            this.gridColumn36.Name = "gridColumn36";
-            this.gridColumn36.Visible = true;
-            this.gridColumn36.VisibleIndex = 0;
-            // 
-            // gridColumn37
-            // 
-            this.gridColumn37.Caption = "Tên loại công tác";
-            this.gridColumn37.FieldName = "TEN";
-            this.gridColumn37.Name = "gridColumn37";
-            this.gridColumn37.Visible = true;
-            this.gridColumn37.VisibleIndex = 1;
-            // 
-            // gridColumn38
-            // 
-            this.gridColumn38.Caption = "Ghi chú";
-            this.gridColumn38.FieldName = "GHI_CHU";
-            this.gridColumn38.Name = "gridColumn38";
-            this.gridColumn38.Visible = true;
-            this.gridColumn38.VisibleIndex = 2;
             // 
             // layoutControlGroup1
             // 
@@ -533,6 +405,116 @@
             this.layoutControlItem2.Text = "Chọn nhân viên (*)";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(105, 13);
             // 
+            // gridColumn31
+            // 
+            this.gridColumn31.Caption = "ID";
+            this.gridColumn31.FieldName = "ID";
+            this.gridColumn31.Name = "gridColumn31";
+            // 
+            // gridColumn32
+            // 
+            this.gridColumn32.Caption = "Mã vị trí";
+            this.gridColumn32.FieldName = "MA_CHUC_VU";
+            this.gridColumn32.Name = "gridColumn32";
+            this.gridColumn32.Visible = true;
+            this.gridColumn32.VisibleIndex = 0;
+            // 
+            // gridColumn33
+            // 
+            this.gridColumn33.Caption = "Tên vị trí";
+            this.gridColumn33.FieldName = "TEN_CHUC_VU";
+            this.gridColumn33.Name = "gridColumn33";
+            this.gridColumn33.Visible = true;
+            this.gridColumn33.VisibleIndex = 1;
+            // 
+            // gridColumn34
+            // 
+            this.gridColumn34.Caption = "Ghi chú";
+            this.gridColumn34.FieldName = "GHI_CHU";
+            this.gridColumn34.Name = "gridColumn34";
+            // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
+            // 
+            // MA_DON_VI
+            // 
+            this.MA_DON_VI.Caption = "Mã đơn vị";
+            this.MA_DON_VI.FieldName = "MA_DON_VI";
+            this.MA_DON_VI.Name = "MA_DON_VI";
+            this.MA_DON_VI.Visible = true;
+            this.MA_DON_VI.VisibleIndex = 0;
+            // 
+            // TEN_DON_VI
+            // 
+            this.TEN_DON_VI.Caption = "Tên đơn vị";
+            this.TEN_DON_VI.FieldName = "TEN_DON_VI";
+            this.TEN_DON_VI.Name = "TEN_DON_VI";
+            this.TEN_DON_VI.Visible = true;
+            this.TEN_DON_VI.VisibleIndex = 1;
+            // 
+            // colID
+            // 
+            this.colID.Caption = "ID";
+            this.colID.FieldName = "ID";
+            this.colID.Name = "colID";
+            // 
+            // MA_NV
+            // 
+            this.MA_NV.Caption = "Mã NV";
+            this.MA_NV.FieldName = "MA_NV";
+            this.MA_NV.Name = "MA_NV";
+            this.MA_NV.Visible = true;
+            this.MA_NV.VisibleIndex = 0;
+            // 
+            // HO_TEN
+            // 
+            this.HO_TEN.Caption = "Họ tên";
+            this.HO_TEN.FieldName = "HO_TEN";
+            this.HO_TEN.Name = "HO_TEN";
+            this.HO_TEN.Visible = true;
+            this.HO_TEN.VisibleIndex = 1;
+            // 
+            // colGT
+            // 
+            this.colGT.Caption = "Giới tính";
+            this.colGT.FieldName = "GIOI_TINH_TEXT";
+            this.colGT.Name = "colGT";
+            this.colGT.Visible = true;
+            this.colGT.VisibleIndex = 2;
+            // 
+            // gridColumn35
+            // 
+            this.gridColumn35.Caption = "ID";
+            this.gridColumn35.FieldName = "ID";
+            this.gridColumn35.Name = "gridColumn35";
+            // 
+            // gridColumn36
+            // 
+            this.gridColumn36.Caption = "Mã loại công tác";
+            this.gridColumn36.FieldName = "MA_TU_DIEN";
+            this.gridColumn36.Name = "gridColumn36";
+            this.gridColumn36.Visible = true;
+            this.gridColumn36.VisibleIndex = 0;
+            // 
+            // gridColumn37
+            // 
+            this.gridColumn37.Caption = "Tên loại công tác";
+            this.gridColumn37.FieldName = "TEN";
+            this.gridColumn37.Name = "gridColumn37";
+            this.gridColumn37.Visible = true;
+            this.gridColumn37.VisibleIndex = 1;
+            // 
+            // gridColumn38
+            // 
+            this.gridColumn38.Caption = "Ghi chú";
+            this.gridColumn38.FieldName = "GHI_CHU";
+            this.gridColumn38.Name = "gridColumn38";
+            this.gridColumn38.Visible = true;
+            this.gridColumn38.VisibleIndex = 2;
+            // 
             // f310_cap_nhat_cong_tac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -582,7 +564,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chon_nhan_vien;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn MA_NV;
         private DevExpress.XtraGrid.Columns.GridColumn HO_TEN;
         private DevExpress.XtraGrid.Columns.GridColumn colGT;
@@ -611,8 +593,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraEditors.DateEdit m_dat_ngay_ket_thuc;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraGrid.Columns.GridColumn colTEN_DON_VI;
-        private DevExpress.XtraGrid.Columns.GridColumn colCHUC_VU;
         private DevExpress.XtraEditors.TextEdit m_txt_so_ho_so;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }

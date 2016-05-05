@@ -362,6 +362,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                         //    f309_quan_ly_cong_tac v_frm = new f309_quan_ly_cong_tac();
                         //    v_frm.display_after_insert_hop_dong(ExecuteFuntion.LayMaNhanVien(m_us_gd_hd.dcID_NHAN_VIEN));
                         //}
+                        XtraMessageBox.Show("Thêm hợp đồng mới thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         m_us_gd_hd.Update();
@@ -371,6 +372,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                         //    f309_quan_ly_cong_tac v_frm = new f309_quan_ly_cong_tac();
                         //    v_frm.display_after_insert_hop_dong(ExecuteFuntion.LayMaNhanVien(m_us_gd_hd.dcID_NHAN_VIEN));
                         //}
+                        XtraMessageBox.Show("Sửa hợp đồng thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     default:
                         break;

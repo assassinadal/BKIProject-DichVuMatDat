@@ -175,6 +175,10 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             US_DM_LUONG_CHE_DO v_us = new US_DM_LUONG_CHE_DO();
             DS_DM_LUONG_CHE_DO v_ds = new DS_DM_LUONG_CHE_DO();
+            if(m_sle_ma_lcd.EditValue == null || m_sle_muc_lcd.EditValue == null)
+            {
+                return null;
+            }
             v_us.FillDatasetTheoIDMaMuc(v_ds, m_sle_ma_lcd.EditValue.ToString(), m_sle_muc_lcd.EditValue.ToString());
             if(v_ds.Tables[0].Rows.Count == 0)
                 return null;
@@ -234,12 +238,12 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if(m_txt_so_tien_lcd.EditValue == null)
-            {
-                string v_str_error = "Bạn chưa nhập số tiền LCĐ!";
-                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
+            //if(m_txt_so_tien_lcd.EditValue == null)
+            //{
+            //    string v_str_error = "Bạn chưa nhập số tiền LCĐ!";
+            //    XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return false;
+            //}
             if(m_dat_ngay_ket_thuc.DateTime.Date != DateTime.MinValue.Date && m_dat_ngay_bat_dau.DateTime.Date >= m_dat_ngay_ket_thuc.DateTime.Date)
             {
                 string v_str_error = "Ngày bắt đầu phải nhỏ hơn ngày kết thúc";
@@ -307,18 +311,6 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 return null;
             else return v_ds.Tables[0].Rows[0];
         }
-        private bool check_gd_lcd()
-        {
-            US_GD_LUONG_CHE_DO v_us = new US_GD_LUONG_CHE_DO();
-            DataTable v_dt = v_us.GetLCDTheoHopDong(m_us_gd_hd.dcID);
-            if(v_dt.Rows.Count != 0)
-            {
-                DateTime v_ngay_ket_thuc_lns = Convert.ToDateTime(v_dt.Rows[0]["NGAY_KET_THUC"]);
-                if(m_dat_ngay_ket_thuc.DateTime < v_ngay_ket_thuc_lns)
-                    return true;
-            }
-            return false;
-        }
 
         private void form_to_us_hd()
         {
@@ -333,12 +325,12 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             if(get_luong_cd_theo_ma_muc() != null)
             {
                 m_us_gd_hd.dcID_LUONG_CHE_DO = Convert.ToDecimal(get_luong_cd_theo_ma_muc()["ID"]);
-                m_us_gd_hd.dcSO_TIEN_LCD = Convert.ToDecimal(m_txt_so_tien_lcd.Text);
+                m_us_gd_hd.dcSO_TIEN_LCD = Convert.ToDecimal(m_txt_so_tien_lcd.EditValue);
             }
             else
             {
                 m_us_gd_hd.SetID_LUONG_CHE_DONull();
-                m_us_gd_hd.dcSO_TIEN_LCD = Convert.ToDecimal(m_txt_so_tien_lcd.Text);
+                m_us_gd_hd.dcSO_TIEN_LCD = Convert.ToDecimal(m_txt_so_tien_lcd.EditValue);
             }
             m_us_gd_hd.dcID_DON_VI = Convert.ToDecimal(m_sle_don_vi.EditValue);
             m_us_gd_hd.dcID_CHUC_VU = Convert.ToDecimal(m_sle_chuc_vu.EditValue);

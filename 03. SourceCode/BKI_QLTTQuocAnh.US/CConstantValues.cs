@@ -13,6 +13,7 @@ namespace BKI_DichVuMatDat.US
         public const string LOAI_LAO_DONG_CUA_NHAN_VIEN_TEMPLATE = "LOAI_LAO_DONG_CUA_NHAN_VIEN.xlsx";
         public const string THU_NHAP_KHAC_TEMPLATE = "ThuNhapKhac.xlxs";
         public const string HeSoChatLuong_TEMPLATE = "HeSoChatLuong.xlsx";
+        public const string HE_SO_LNS_TEMPLATE = "IMPORT_HE_SO_LNS.xlsx";
     }
 
     public class CONST_COLUMN_NAME_IMPORT_TNK

@@ -445,10 +445,16 @@
     <Compile Include="NghiepVu\f299_chinh_lns_nhan_vien_de.Designer.cs">
       <DependentUpon>f299_chinh_lns_nhan_vien_de.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\f300_chinh_lns_nhan_vien.cs">
+    <Compile Include="NghiepVu\NhanSu\f002_import_he_so_lns.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NghiepVu\f300_chinh_lns_nhan_vien.Designer.cs">
+    <Compile Include="NghiepVu\NhanSu\f002_import_he_so_lns.Designer.cs">
+      <DependentUpon>f002_import_he_so_lns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f300_chinh_lns_nhan_vien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f300_chinh_lns_nhan_vien.Designer.cs">
       <DependentUpon>f300_chinh_lns_nhan_vien.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\f314_dang_ky_giam_tru_nguoi_phu_thuoc_xls.cs">
@@ -547,35 +553,11 @@
     <Compile Include="NghiepVu\F395_nhan_vien_phu_cap_de.designer.cs">
       <DependentUpon>F395_nhan_vien_phu_cap_de.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\HopDong\f001_import_hop_dong_v2_backup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\HopDong\f001_import_hop_dong_v2_backup.Designer.cs">
-      <DependentUpon>f001_import_hop_dong_v2_backup.cs</DependentUpon>
-    </Compile>
     <Compile Include="NghiepVu\HopDong\f001_import_hop_dong_v2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NghiepVu\HopDong\f001_import_hop_dong_v2.Designer.cs">
       <DependentUpon>f001_import_hop_dong_v2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\HopDong\f001_import_hop_dong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\HopDong\f001_import_hop_dong.Designer.cs">
-      <DependentUpon>f001_import_hop_dong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\HopDong\F390_quan_ly_thay_doi_lns_hop_dong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\HopDong\F390_quan_ly_thay_doi_lns_hop_dong.Designer.cs">
-      <DependentUpon>F390_quan_ly_thay_doi_lns_hop_dong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\HopDong\f391_cap_nhat_thay_doi_lns_lcd_DE.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\HopDong\f391_cap_nhat_thay_doi_lns_lcd_DE.Designer.cs">
-      <DependentUpon>f391_cap_nhat_thay_doi_lns_lcd_DE.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\Luong\f303_cac_khoan_tien_khac.cs">
       <SubType>Form</SubType>
@@ -852,12 +834,6 @@
     <Compile Include="DanhMuc\F109_dm_thue_de.Designer.cs">
       <DependentUpon>F109_dm_thue_de.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhMuc\F110_dm_hop_dong_het_han.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DanhMuc\F110_dm_hop_dong_het_han.Designer.cs">
-      <DependentUpon>F110_dm_hop_dong_het_han.cs</DependentUpon>
-    </Compile>
     <Compile Include="DanhMuc\F115_dm_thu_tu_don_vi_chuc_vu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1017,30 +993,6 @@
     </Compile>
     <Compile Include="NghiepVu\NhanSu\f330_lap_hop_dong_v5_detail.Designer.cs">
       <DependentUpon>f330_lap_hop_dong_v5_detail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\NhanSu\f330_lap_hop_dong_v4_detail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\NhanSu\f330_lap_hop_dong_v4_detail.Designer.cs">
-      <DependentUpon>f330_lap_hop_dong_v4_detail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\NhanSu\f329_lap_hop_dong_v4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\NhanSu\f329_lap_hop_dong_v4.Designer.cs">
-      <DependentUpon>f329_lap_hop_dong_v4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\NhanSu\f327_lap_hop_dong_v3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\NhanSu\f327_lap_hop_dong_v3.Designer.cs">
-      <DependentUpon>f327_lap_hop_dong_v3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NghiepVu\NhanSu\f328_lap_hop_dong_v3_detail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\NhanSu\f328_lap_hop_dong_v3_detail.Designer.cs">
-      <DependentUpon>f328_lap_hop_dong_v3_detail.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\ThuNhapKhac\f302_option_detail_calculate.cs">
       <SubType>Form</SubType>
@@ -1277,7 +1229,11 @@
     <EmbeddedResource Include="NghiepVu\f299_chinh_lns_nhan_vien_de.resx">
       <DependentUpon>f299_chinh_lns_nhan_vien_de.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f300_chinh_lns_nhan_vien.resx">
+    <EmbeddedResource Include="NghiepVu\NhanSu\f002_import_he_so_lns.resx">
+      <DependentUpon>f002_import_he_so_lns.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\NhanSu\f300_chinh_lns_nhan_vien.resx">
       <DependentUpon>f300_chinh_lns_nhan_vien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f320_lap_hop_dong.resx">
@@ -1298,23 +1254,9 @@
     <EmbeddedResource Include="NghiepVu\f396_tinh_phep_tieu_chuan.resx">
       <DependentUpon>f396_tinh_phep_tieu_chuan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\HopDong\f001_import_hop_dong_v2_backup.resx">
-      <DependentUpon>f001_import_hop_dong_v2_backup.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\HopDong\f001_import_hop_dong_v2.resx">
       <DependentUpon>f001_import_hop_dong_v2.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\HopDong\f001_import_hop_dong.resx">
-      <DependentUpon>f001_import_hop_dong.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\HopDong\F390_quan_ly_thay_doi_lns_hop_dong.resx">
-      <DependentUpon>F390_quan_ly_thay_doi_lns_hop_dong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\HopDong\f391_cap_nhat_thay_doi_lns_lcd_DE.resx">
-      <DependentUpon>f391_cap_nhat_thay_doi_lns_lcd_DE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\NhanSu\f001_import_cong_tac.resx">
       <DependentUpon>f001_import_cong_tac.cs</DependentUpon>
@@ -1337,18 +1279,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\NhanSu\f330_lap_hop_dong_v5_detail.resx">
       <DependentUpon>f330_lap_hop_dong_v5_detail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\NhanSu\f330_lap_hop_dong_v4_detail.resx">
-      <DependentUpon>f330_lap_hop_dong_v4_detail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\NhanSu\f329_lap_hop_dong_v4.resx">
-      <DependentUpon>f329_lap_hop_dong_v4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\NhanSu\f327_lap_hop_dong_v3.resx">
-      <DependentUpon>f327_lap_hop_dong_v3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\NhanSu\f328_lap_hop_dong_v3_detail.resx">
-      <DependentUpon>f328_lap_hop_dong_v3_detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\ThuNhapKhac\f355_tnk_chi_tiet_quy_thu_nhap_khac_detail.resx">
       <DependentUpon>f355_tnk_chi_tiet_quy_thu_nhap_khac_detail.cs</DependentUpon>
@@ -1970,9 +1900,6 @@
     <EmbeddedResource Include="DanhMuc\F109_dm_thue_de.resx">
       <DependentUpon>F109_dm_thue_de.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\F110_dm_hop_dong_het_han.resx">
-      <DependentUpon>F110_dm_hop_dong_het_han.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F115_dm_thu_tu_don_vi_chuc_vu.resx">
       <DependentUpon>F115_dm_thu_tu_don_vi_chuc_vu.cs</DependentUpon>
     </EmbeddedResource>
@@ -2222,6 +2149,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Template\IMPORT_CONG_TAC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\IMPORT_HE_SO_LNS.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -509,7 +509,7 @@ namespace BKI_DichVuMatDat
                 m_trang_thai_filter = false;
                 DateTime v_dt_ngay_dau_thang = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
                 DateTime v_dt_ngay_cuoi_thang = v_dt_ngay_dau_thang.AddMonths(1).AddDays(-1);
-                f329_lap_hop_dong_v4 v_f = new f329_lap_hop_dong_v4(v_dt_ngay_cuoi_thang, m_trang_thai_filter);
+                f329_lap_hop_dong_v5 v_f = new f329_lap_hop_dong_v5(v_dt_ngay_cuoi_thang, m_trang_thai_filter);
             }
             catch (Exception v_e)
             {
@@ -523,7 +523,7 @@ namespace BKI_DichVuMatDat
             {
                 m_trang_thai_filter = true;
                 DateTime v_dt_ngay_dau_thang = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-                f329_lap_hop_dong_v4 v_f = new f329_lap_hop_dong_v4(v_dt_ngay_dau_thang, m_trang_thai_filter);
+                f329_lap_hop_dong_v5 v_f = new f329_lap_hop_dong_v5(v_dt_ngay_dau_thang, m_trang_thai_filter);
             }
             catch (Exception v_e)
             {
@@ -555,10 +555,10 @@ namespace BKI_DichVuMatDat
             DateTime v_ngay_dau_tien_cua_thang_hien_tai = CHRMCommon.get_first_day_of_month(DateTime.Now.Date);
             DateTime v_ngay_cuoi_cung_cua_thang_hien_tai = CHRMCommon.get_last_day_of_month(DateTime.Now.Date);
             //DateTime v_2_thang_truoc = DateTime.Now.AddMonths(-2);
-            F110_dm_hop_dong_het_han v_f = new F110_dm_hop_dong_het_han();
-            v_f.display_canh_bao_het_han_hop_dong(
-                        v_ngay_dau_tien_cua_thang_hien_tai.Date
-                        , v_ngay_cuoi_cung_cua_thang_hien_tai.Date, this);
+            //F110_dm_hop_dong_het_han v_f = new F110_dm_hop_dong_het_han();
+            //v_f.display_canh_bao_het_han_hop_dong(
+            //            v_ngay_dau_tien_cua_thang_hien_tai.Date
+            //            , v_ngay_cuoi_cung_cua_thang_hien_tai.Date, this);
         }
 
         private void m_lbl_canh_bao_het_han_luong_che_do_Click(object sender, EventArgs e)
@@ -603,10 +603,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                F390_quan_ly_thay_doi_lns_hop_dong v_f = new F390_quan_ly_thay_doi_lns_hop_dong();
-                if (IsExistFormName(v_f)) return;
-                v_f.MdiParent = this;
-                v_f.Show();     
+                //F390_quan_ly_thay_doi_lns_hop_dong v_f = new F390_quan_ly_thay_doi_lns_hop_dong();
+                //if (IsExistFormName(v_f)) return;
+                //v_f.MdiParent = this;
+                //v_f.Show();     
             }
             catch(Exception v_e)
             {
@@ -854,11 +854,11 @@ namespace BKI_DichVuMatDat
             {
                 DateTime v_ngay_dau_tien_cua_thang_hien_tai = CHRMCommon.get_first_day_of_month(DateTime.Now.Date);
                 DateTime v_ngay_cuoi_cung_cua_thang_hien_tai = CHRMCommon.get_last_day_of_month(DateTime.Now.Date);
-                F110_dm_hop_dong_het_han v_frm = new F110_dm_hop_dong_het_han();
-                if (IsExistFormName(v_frm)) return;
+                //F110_dm_hop_dong_het_han v_frm = new F110_dm_hop_dong_het_han();
+                //if (IsExistFormName(v_frm)) return;
 
-                v_frm.MdiParent = this;
-                v_frm.display(v_ngay_dau_tien_cua_thang_hien_tai.AddDays(-1), v_ngay_cuoi_cung_cua_thang_hien_tai.AddDays(1));
+                //v_frm.MdiParent = this;
+                //v_frm.display(v_ngay_dau_tien_cua_thang_hien_tai.AddDays(-1), v_ngay_cuoi_cung_cua_thang_hien_tai.AddDays(1));
             }
             catch (Exception v_e)
             {
@@ -1210,7 +1210,6 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                //f330_len_luong_cho_nv v_frm = new f330_len_luong_cho_nv();
                 f300_chinh_lns_nhan_vien v_frm = new f300_chinh_lns_nhan_vien();
                 if (IsExistFormName(v_frm)) return;
 

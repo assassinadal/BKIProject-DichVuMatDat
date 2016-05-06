@@ -13,7 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BKI_DichVuMatDat.NghiepVu;
+using BKI_DichVuMatDat.NghiepVu.NhanSu;
 
 namespace BKI_DichVuMatDat.NghiepVu
 {
@@ -153,6 +153,21 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_cmd_update.Click += M_cmd_update_Click;
             m_cmd_delete.Click += M_cmd_delete_Click;
             xtraTabControl1.SelectedPageChanged += XtraTabControl1_SelectedPageChanged;
+            m_cmd_chon_file.Click += m_cmd_chon_file_Click;
+        }
+
+        void m_cmd_chon_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f002_import_he_so_lns v_frm = new f002_import_he_so_lns();
+                v_frm.ShowDialog();
+                load_data_2_grv_k_hs_lns();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void XtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)

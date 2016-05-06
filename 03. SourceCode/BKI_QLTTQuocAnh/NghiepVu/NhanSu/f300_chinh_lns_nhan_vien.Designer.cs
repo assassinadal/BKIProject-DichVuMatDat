@@ -61,6 +61,7 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.m_lbl_ten_dv = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -327,6 +328,7 @@
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_file);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
@@ -444,6 +446,17 @@
             this.layoutControlItem2.TextToControlDistance = 0;
             this.layoutControlItem2.TextVisible = false;
             // 
+            // m_cmd_chon_file
+            // 
+            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chon_file.ImageIndex = 4;
+            this.m_cmd_chon_file.ImageList = this.img_DVMD;
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(229, 4);
+            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
+            this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 28);
+            this.m_cmd_chon_file.TabIndex = 9;
+            this.m_cmd_chon_file.Text = "&Import excel";
+            // 
             // f300_chinh_lns_nhan_vien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,5 +518,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTEN_DON_VI;
         private DevExpress.XtraGrid.Columns.GridColumn colTEN_CHUC_VU;
         private DevExpress.XtraGrid.Columns.GridColumn colLOAI_LAO_DONG;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
     }
 }

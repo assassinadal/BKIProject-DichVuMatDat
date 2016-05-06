@@ -982,6 +982,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NghiepVu\Luong\TinhLuongQL.cs" />
+    <Compile Include="NghiepVu\NhanSu\f001_import_cong_tac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\NhanSu\f001_import_cong_tac.Designer.cs">
+      <DependentUpon>f001_import_cong_tac.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\NhanSu\f309_quan_ly_cong_tac.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1309,6 +1315,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\HopDong\f391_cap_nhat_thay_doi_lns_lcd_DE.resx">
       <DependentUpon>f391_cap_nhat_thay_doi_lns_lcd_DE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\NhanSu\f001_import_cong_tac.resx">
+      <DependentUpon>f001_import_cong_tac.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\NhanSu\f309_quan_ly_cong_tac.resx">
       <DependentUpon>f309_quan_ly_cong_tac.cs</DependentUpon>
@@ -2209,6 +2219,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Template\IMPORT_HOP_DONG.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\IMPORT_CONG_TAC.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

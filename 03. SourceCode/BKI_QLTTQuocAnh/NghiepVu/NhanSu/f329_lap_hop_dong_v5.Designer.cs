@@ -497,7 +497,7 @@
             this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_chon_file.ImageIndex = 4;
             this.m_cmd_chon_file.ImageList = this.img_DVMD;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(459, 4);
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(411, 4);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 32);
             this.m_cmd_chon_file.TabIndex = 5;
@@ -536,7 +536,7 @@
             this.m_cmd_print.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_print.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_print.Image")));
             this.m_cmd_print.ImageList = this.img_DVMD;
-            this.m_cmd_print.Location = new System.Drawing.Point(368, 4);
+            this.m_cmd_print.Location = new System.Drawing.Point(320, 4);
             this.m_cmd_print.Name = "m_cmd_print";
             this.m_cmd_print.Size = new System.Drawing.Size(91, 32);
             this.m_cmd_print.TabIndex = 4;
@@ -547,7 +547,7 @@
             this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_xuat_excel.ImageIndex = 0;
             this.m_cmd_xuat_excel.ImageList = this.img_DVMD;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(277, 4);
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(229, 4);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(91, 32);
             this.m_cmd_xuat_excel.TabIndex = 3;
@@ -559,9 +559,9 @@
             this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_delete.ImageIndex = 8;
             this.m_cmd_delete.ImageList = this.img_DVMD;
-            this.m_cmd_delete.Location = new System.Drawing.Point(186, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(154, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(91, 32);
+            this.m_cmd_delete.Size = new System.Drawing.Size(75, 32);
             this.m_cmd_delete.TabIndex = 2;
             this.m_cmd_delete.Text = "&Xóa";
             // 
@@ -570,9 +570,9 @@
             this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_update.ImageIndex = 9;
             this.m_cmd_update.ImageList = this.img_DVMD;
-            this.m_cmd_update.Location = new System.Drawing.Point(95, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(79, 4);
             this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(91, 32);
+            this.m_cmd_update.Size = new System.Drawing.Size(75, 32);
             this.m_cmd_update.TabIndex = 1;
             this.m_cmd_update.Text = "&Sửa";
             // 
@@ -583,7 +583,7 @@
             this.m_cmd_insert.ImageList = this.img_DVMD;
             this.m_cmd_insert.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(91, 32);
+            this.m_cmd_insert.Size = new System.Drawing.Size(75, 32);
             this.m_cmd_insert.TabIndex = 0;
             this.m_cmd_insert.Text = "&Thêm";
             // 

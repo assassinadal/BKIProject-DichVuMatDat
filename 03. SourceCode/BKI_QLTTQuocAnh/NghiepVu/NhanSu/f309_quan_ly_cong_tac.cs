@@ -158,6 +158,21 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_cmd_xoa_cong_tac.Click += m_cmd_xoa_cong_tac_Click;
             m_cmd_filter.Click += m_cmd_filter_Click;
             m_grv.DoubleClick += m_grv_DoubleClick;
+            m_cmd_chon_file.Click += m_cmd_chon_file_Click;
+        }
+
+        void m_cmd_chon_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f001_import_cong_tac v_frm = new f001_import_cong_tac();
+                v_frm.ShowDialog();
+                load_data_to_grid();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_grv_DoubleClick(object sender, EventArgs e)

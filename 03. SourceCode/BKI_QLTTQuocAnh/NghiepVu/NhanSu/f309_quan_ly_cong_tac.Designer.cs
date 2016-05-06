@@ -85,6 +85,7 @@
             this.m_cmd_sua_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_them_moi_cong_tac = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
@@ -821,6 +822,7 @@
             // panelControl3
             // 
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl3.Controls.Add(this.m_cmd_chon_file);
             this.panelControl3.Controls.Add(this.m_cmd_xoa_cong_tac);
             this.panelControl3.Controls.Add(this.m_cmd_sua_cong_tac);
             this.panelControl3.Controls.Add(this.m_cmd_refresh);
@@ -888,6 +890,17 @@
             this.m_cmd_them_moi_cong_tac.TabIndex = 0;
             this.m_cmd_them_moi_cong_tac.Text = "&Thêm";
             this.m_cmd_them_moi_cong_tac.ToolTip = "Thêm mới công tác cho nhân viên";
+            // 
+            // m_cmd_chon_file
+            // 
+            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chon_file.ImageIndex = 4;
+            this.m_cmd_chon_file.ImageList = this.img_DVMD;
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(240, 0);
+            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
+            this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 33);
+            this.m_cmd_chon_file.TabIndex = 8;
+            this.m_cmd_chon_file.Text = "&Import excel";
             // 
             // f309_quan_ly_cong_tac
             // 
@@ -969,5 +982,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_filter;
         private DevExpress.XtraEditors.DateEdit m_dat_tai_thang;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
     }
 }

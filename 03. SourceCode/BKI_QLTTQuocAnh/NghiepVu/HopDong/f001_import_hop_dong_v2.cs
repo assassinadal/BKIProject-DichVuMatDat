@@ -115,7 +115,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
         {
             foreach(var item in ip_obj)
             {
-                if(item == DBNull.Value || item == null)
+                if(item == DBNull.Value || item == null || item.ToString() == "")
                 {
                     return false;
                 }

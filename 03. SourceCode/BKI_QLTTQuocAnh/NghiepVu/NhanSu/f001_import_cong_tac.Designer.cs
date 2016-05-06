@@ -1,6 +1,6 @@
-﻿namespace BKI_DichVuMatDat.NghiepVu.HopDong
+﻿namespace BKI_DichVuMatDat.NghiepVu.NhanSu
 {
-    partial class f001_import_hop_dong_v2
+    partial class f001_import_cong_tac
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f001_import_hop_dong_v2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f001_import_cong_tac));
             this.label1 = new System.Windows.Forms.Label();
             this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
@@ -38,28 +38,23 @@
             this.m_cmd_tai_file_mau = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_pnl_danh_sach_hop_dong = new DevExpress.XtraEditors.PanelControl();
-            this.m_grc_hop_dong = new DevExpress.XtraGrid.GridControl();
-            this.m_grv_hop_dong = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.m_grc_cong_tac = new DevExpress.XtraGrid.GridControl();
+            this.m_grv_cong_tac = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MA_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MA_LOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MA_CHUC_DANH_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MA_MUC_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MA_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MA_CHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MA_LOAI_LD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LOAI_CONG_TAC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_BAT_DAU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NGAY_KI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MA_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MA_CHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_tooltip_controller = new DevExpress.Utils.ToolTipController(this.components);
             this.m_lbl_thong_bao = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_pnl_danh_sach_hop_dong)).BeginInit();
             this.m_pnl_danh_sach_hop_dong.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc_hop_dong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_hop_dong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc_cong_tac)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_cong_tac)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,7 +66,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(927, 39);
             this.label1.TabIndex = 0;
-            this.label1.Text = "IMPORT HỢP ĐỒNG TỪ EXCEL";
+            this.label1.Text = "IMPORT CÔNG TÁC TỪ EXCEL";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // img_DVMD
@@ -153,46 +148,41 @@
             // 
             // m_pnl_danh_sach_hop_dong
             // 
-            this.m_pnl_danh_sach_hop_dong.Controls.Add(this.m_grc_hop_dong);
+            this.m_pnl_danh_sach_hop_dong.Controls.Add(this.m_grc_cong_tac);
             this.m_pnl_danh_sach_hop_dong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_pnl_danh_sach_hop_dong.Location = new System.Drawing.Point(0, 108);
             this.m_pnl_danh_sach_hop_dong.Name = "m_pnl_danh_sach_hop_dong";
             this.m_pnl_danh_sach_hop_dong.Size = new System.Drawing.Size(927, 368);
             this.m_pnl_danh_sach_hop_dong.TabIndex = 4;
             // 
-            // m_grc_hop_dong
+            // m_grc_cong_tac
             // 
-            this.m_grc_hop_dong.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc_hop_dong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc_hop_dong.Location = new System.Drawing.Point(2, 2);
-            this.m_grc_hop_dong.MainView = this.m_grv_hop_dong;
-            this.m_grc_hop_dong.Name = "m_grc_hop_dong";
-            this.m_grc_hop_dong.Size = new System.Drawing.Size(923, 364);
-            this.m_grc_hop_dong.TabIndex = 0;
-            this.m_grc_hop_dong.ToolTipController = this.m_tooltip_controller;
-            this.m_grc_hop_dong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.m_grv_hop_dong});
+            this.m_grc_cong_tac.Cursor = System.Windows.Forms.Cursors.Default;
+            this.m_grc_cong_tac.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_grc_cong_tac.Location = new System.Drawing.Point(2, 2);
+            this.m_grc_cong_tac.MainView = this.m_grv_cong_tac;
+            this.m_grc_cong_tac.Name = "m_grc_cong_tac";
+            this.m_grc_cong_tac.Size = new System.Drawing.Size(923, 364);
+            this.m_grc_cong_tac.TabIndex = 0;
+            this.m_grc_cong_tac.ToolTipController = this.m_tooltip_controller;
+            this.m_grc_cong_tac.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.m_grv_cong_tac});
             // 
-            // m_grv_hop_dong
+            // m_grv_cong_tac
             // 
-            this.m_grv_hop_dong.Appearance.HeaderPanel.Options.UseBackColor = true;
-            this.m_grv_hop_dong.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.m_grv_cong_tac.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.m_grv_cong_tac.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.STT,
             this.MA_NV,
-            this.MA_HOP_DONG,
-            this.MA_LOAI_HOP_DONG,
-            this.MA_CHUC_DANH_LCD,
-            this.MA_MUC_LCD,
-            this.MA_DON_VI,
-            this.MA_CHUC_VU,
-            this.MA_LOAI_LD,
+            this.LOAI_CONG_TAC,
             this.NGAY_BAT_DAU,
             this.NGAY_KET_THUC,
-            this.NGAY_KI_HOP_DONG});
-            this.m_grv_hop_dong.GridControl = this.m_grc_hop_dong;
-            this.m_grv_hop_dong.Name = "m_grv_hop_dong";
-            this.m_grv_hop_dong.OptionsPrint.AutoWidth = false;
-            this.m_grv_hop_dong.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.MA_DON_VI,
+            this.MA_CHUC_VU});
+            this.m_grv_cong_tac.GridControl = this.m_grc_cong_tac;
+            this.m_grv_cong_tac.Name = "m_grv_cong_tac";
+            this.m_grv_cong_tac.OptionsPrint.AutoWidth = false;
+            this.m_grv_cong_tac.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             // 
             // STT
             // 
@@ -225,110 +215,20 @@
             this.MA_NV.Visible = true;
             this.MA_NV.VisibleIndex = 1;
             // 
-            // MA_HOP_DONG
+            // LOAI_CONG_TAC
             // 
-            this.MA_HOP_DONG.AppearanceCell.Options.UseTextOptions = true;
-            this.MA_HOP_DONG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.MA_HOP_DONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.MA_HOP_DONG.AppearanceHeader.Options.UseFont = true;
-            this.MA_HOP_DONG.AppearanceHeader.Options.UseTextOptions = true;
-            this.MA_HOP_DONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.MA_HOP_DONG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.MA_HOP_DONG.Caption = "MA_HOP_DONG";
-            this.MA_HOP_DONG.FieldName = "MA_HOP_DONG";
-            this.MA_HOP_DONG.Name = "MA_HOP_DONG";
-            this.MA_HOP_DONG.Visible = true;
-            this.MA_HOP_DONG.VisibleIndex = 2;
-            // 
-            // MA_LOAI_HOP_DONG
-            // 
-            this.MA_LOAI_HOP_DONG.AppearanceCell.Options.UseTextOptions = true;
-            this.MA_LOAI_HOP_DONG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.MA_LOAI_HOP_DONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.MA_LOAI_HOP_DONG.AppearanceHeader.Options.UseFont = true;
-            this.MA_LOAI_HOP_DONG.AppearanceHeader.Options.UseTextOptions = true;
-            this.MA_LOAI_HOP_DONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.MA_LOAI_HOP_DONG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.MA_LOAI_HOP_DONG.Caption = "MA_LOAI_HOP_DONG";
-            this.MA_LOAI_HOP_DONG.FieldName = "MA_LOAI_HOP_DONG";
-            this.MA_LOAI_HOP_DONG.Name = "MA_LOAI_HOP_DONG";
-            this.MA_LOAI_HOP_DONG.Visible = true;
-            this.MA_LOAI_HOP_DONG.VisibleIndex = 3;
-            // 
-            // MA_CHUC_DANH_LCD
-            // 
-            this.MA_CHUC_DANH_LCD.AppearanceCell.Options.UseTextOptions = true;
-            this.MA_CHUC_DANH_LCD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.MA_CHUC_DANH_LCD.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.MA_CHUC_DANH_LCD.AppearanceHeader.Options.UseFont = true;
-            this.MA_CHUC_DANH_LCD.AppearanceHeader.Options.UseTextOptions = true;
-            this.MA_CHUC_DANH_LCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.MA_CHUC_DANH_LCD.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.MA_CHUC_DANH_LCD.Caption = "MA_CHUC_DANH_LCD";
-            this.MA_CHUC_DANH_LCD.FieldName = "MA_CHUC_DANH_LCD";
-            this.MA_CHUC_DANH_LCD.Name = "MA_CHUC_DANH_LCD";
-            this.MA_CHUC_DANH_LCD.Visible = true;
-            this.MA_CHUC_DANH_LCD.VisibleIndex = 5;
-            // 
-            // MA_MUC_LCD
-            // 
-            this.MA_MUC_LCD.AppearanceCell.Options.UseTextOptions = true;
-            this.MA_MUC_LCD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.MA_MUC_LCD.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.MA_MUC_LCD.AppearanceHeader.Options.UseFont = true;
-            this.MA_MUC_LCD.AppearanceHeader.Options.UseTextOptions = true;
-            this.MA_MUC_LCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.MA_MUC_LCD.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.MA_MUC_LCD.Caption = "MA_MUC_LCD";
-            this.MA_MUC_LCD.FieldName = "MA_MUC_LCD";
-            this.MA_MUC_LCD.Name = "MA_MUC_LCD";
-            this.MA_MUC_LCD.Visible = true;
-            this.MA_MUC_LCD.VisibleIndex = 6;
-            // 
-            // MA_DON_VI
-            // 
-            this.MA_DON_VI.AppearanceCell.Options.UseTextOptions = true;
-            this.MA_DON_VI.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.MA_DON_VI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.MA_DON_VI.AppearanceHeader.Options.UseFont = true;
-            this.MA_DON_VI.AppearanceHeader.Options.UseTextOptions = true;
-            this.MA_DON_VI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.MA_DON_VI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.MA_DON_VI.Caption = "MA_DON_VI";
-            this.MA_DON_VI.FieldName = "MA_DON_VI";
-            this.MA_DON_VI.Name = "MA_DON_VI";
-            this.MA_DON_VI.Visible = true;
-            this.MA_DON_VI.VisibleIndex = 10;
-            // 
-            // MA_CHUC_VU
-            // 
-            this.MA_CHUC_VU.AppearanceCell.Options.UseTextOptions = true;
-            this.MA_CHUC_VU.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.MA_CHUC_VU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.MA_CHUC_VU.AppearanceHeader.Options.UseFont = true;
-            this.MA_CHUC_VU.AppearanceHeader.Options.UseTextOptions = true;
-            this.MA_CHUC_VU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.MA_CHUC_VU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.MA_CHUC_VU.Caption = "MA_CHUC_VU";
-            this.MA_CHUC_VU.FieldName = "MA_CHUC_VU";
-            this.MA_CHUC_VU.Name = "MA_CHUC_VU";
-            this.MA_CHUC_VU.Visible = true;
-            this.MA_CHUC_VU.VisibleIndex = 11;
-            // 
-            // MA_LOAI_LD
-            // 
-            this.MA_LOAI_LD.AppearanceCell.Options.UseTextOptions = true;
-            this.MA_LOAI_LD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.MA_LOAI_LD.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.MA_LOAI_LD.AppearanceHeader.Options.UseFont = true;
-            this.MA_LOAI_LD.AppearanceHeader.Options.UseTextOptions = true;
-            this.MA_LOAI_LD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.MA_LOAI_LD.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.MA_LOAI_LD.Caption = "MA_LOAI_LAO_DONG";
-            this.MA_LOAI_LD.FieldName = "MA_LOAI_LAO_DONG";
-            this.MA_LOAI_LD.Name = "MA_LOAI_LD";
-            this.MA_LOAI_LD.Visible = true;
-            this.MA_LOAI_LD.VisibleIndex = 4;
+            this.LOAI_CONG_TAC.AppearanceCell.Options.UseTextOptions = true;
+            this.LOAI_CONG_TAC.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.LOAI_CONG_TAC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.LOAI_CONG_TAC.AppearanceHeader.Options.UseFont = true;
+            this.LOAI_CONG_TAC.AppearanceHeader.Options.UseTextOptions = true;
+            this.LOAI_CONG_TAC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.LOAI_CONG_TAC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.LOAI_CONG_TAC.Caption = "LOAI_CONG_TAC";
+            this.LOAI_CONG_TAC.FieldName = "LOAI_CONG_TAC";
+            this.LOAI_CONG_TAC.Name = "LOAI_CONG_TAC";
+            this.LOAI_CONG_TAC.Visible = true;
+            this.LOAI_CONG_TAC.VisibleIndex = 2;
             // 
             // NGAY_BAT_DAU
             // 
@@ -345,14 +245,12 @@
             this.NGAY_BAT_DAU.FieldName = "NGAY_BAT_DAU";
             this.NGAY_BAT_DAU.Name = "NGAY_BAT_DAU";
             this.NGAY_BAT_DAU.Visible = true;
-            this.NGAY_BAT_DAU.VisibleIndex = 7;
+            this.NGAY_BAT_DAU.VisibleIndex = 3;
             // 
             // NGAY_KET_THUC
             // 
             this.NGAY_KET_THUC.AppearanceCell.Options.UseTextOptions = true;
             this.NGAY_KET_THUC.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NGAY_KET_THUC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.NGAY_KET_THUC.AppearanceHeader.Options.UseFont = true;
             this.NGAY_KET_THUC.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAY_KET_THUC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NGAY_KET_THUC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -362,24 +260,37 @@
             this.NGAY_KET_THUC.FieldName = "NGAY_KET_THUC";
             this.NGAY_KET_THUC.Name = "NGAY_KET_THUC";
             this.NGAY_KET_THUC.Visible = true;
-            this.NGAY_KET_THUC.VisibleIndex = 8;
+            this.NGAY_KET_THUC.VisibleIndex = 4;
             // 
-            // NGAY_KI_HOP_DONG
+            // MA_DON_VI
             // 
-            this.NGAY_KI_HOP_DONG.AppearanceCell.Options.UseTextOptions = true;
-            this.NGAY_KI_HOP_DONG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NGAY_KI_HOP_DONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.NGAY_KI_HOP_DONG.AppearanceHeader.Options.UseFont = true;
-            this.NGAY_KI_HOP_DONG.AppearanceHeader.Options.UseTextOptions = true;
-            this.NGAY_KI_HOP_DONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NGAY_KI_HOP_DONG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.NGAY_KI_HOP_DONG.Caption = "NGAY_KI_HOP_DONG";
-            this.NGAY_KI_HOP_DONG.DisplayFormat.FormatString = "dd/MM/yyyy";
-            this.NGAY_KI_HOP_DONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.NGAY_KI_HOP_DONG.FieldName = "NGAY_KI_HOP_DONG";
-            this.NGAY_KI_HOP_DONG.Name = "NGAY_KI_HOP_DONG";
-            this.NGAY_KI_HOP_DONG.Visible = true;
-            this.NGAY_KI_HOP_DONG.VisibleIndex = 9;
+            this.MA_DON_VI.AppearanceCell.Options.UseTextOptions = true;
+            this.MA_DON_VI.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.MA_DON_VI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.MA_DON_VI.AppearanceHeader.Options.UseFont = true;
+            this.MA_DON_VI.AppearanceHeader.Options.UseTextOptions = true;
+            this.MA_DON_VI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MA_DON_VI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.MA_DON_VI.Caption = "MA_DON_VI";
+            this.MA_DON_VI.FieldName = "MA_DON_VI";
+            this.MA_DON_VI.Name = "MA_DON_VI";
+            this.MA_DON_VI.Visible = true;
+            this.MA_DON_VI.VisibleIndex = 5;
+            // 
+            // MA_CHUC_VU
+            // 
+            this.MA_CHUC_VU.AppearanceCell.Options.UseTextOptions = true;
+            this.MA_CHUC_VU.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.MA_CHUC_VU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.MA_CHUC_VU.AppearanceHeader.Options.UseFont = true;
+            this.MA_CHUC_VU.AppearanceHeader.Options.UseTextOptions = true;
+            this.MA_CHUC_VU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MA_CHUC_VU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.MA_CHUC_VU.Caption = "MA_CHUC_VU";
+            this.MA_CHUC_VU.FieldName = "MA_CHUC_VU";
+            this.MA_CHUC_VU.Name = "MA_CHUC_VU";
+            this.MA_CHUC_VU.Visible = true;
+            this.MA_CHUC_VU.VisibleIndex = 6;
             // 
             // m_lbl_thong_bao
             // 
@@ -394,7 +305,7 @@
             this.m_lbl_thong_bao.Text = "Chưa load file";
             this.m_lbl_thong_bao.Visible = false;
             // 
-            // f001_import_hop_dong_v2
+            // f001_import_cong_tac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -403,14 +314,14 @@
             this.Controls.Add(this.m_lbl_thong_bao);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.label1);
-            this.Name = "f001_import_hop_dong_v2";
-            this.Text = "F001 - IMPORT HỢP ĐỒNG EXCEL";
+            this.Name = "f001_import_cong_tac";
+            this.Text = "F001 - IMPORT CÔNG TÁC ";
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_pnl_danh_sach_hop_dong)).EndInit();
             this.m_pnl_danh_sach_hop_dong.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_grc_hop_dong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_hop_dong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc_cong_tac)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_cong_tac)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,20 +337,15 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tai_file_mau;
         private DevExpress.XtraEditors.PanelControl m_pnl_danh_sach_hop_dong;
-        private DevExpress.XtraGrid.GridControl m_grc_hop_dong;
-        private DevExpress.XtraGrid.Views.Grid.GridView m_grv_hop_dong;
+        private DevExpress.XtraGrid.GridControl m_grc_cong_tac;
+        private DevExpress.XtraGrid.Views.Grid.GridView m_grv_cong_tac;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
         private DevExpress.XtraGrid.Columns.GridColumn MA_NV;
-        private DevExpress.XtraGrid.Columns.GridColumn MA_HOP_DONG;
-        private DevExpress.XtraGrid.Columns.GridColumn MA_LOAI_HOP_DONG;
-        private DevExpress.XtraGrid.Columns.GridColumn MA_CHUC_DANH_LCD;
-        private DevExpress.XtraGrid.Columns.GridColumn MA_MUC_LCD;
+        private DevExpress.XtraGrid.Columns.GridColumn LOAI_CONG_TAC;
         private DevExpress.XtraGrid.Columns.GridColumn MA_DON_VI;
         private DevExpress.XtraGrid.Columns.GridColumn MA_CHUC_VU;
-        private DevExpress.XtraGrid.Columns.GridColumn MA_LOAI_LD;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_BAT_DAU;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KET_THUC;
-        private DevExpress.XtraGrid.Columns.GridColumn NGAY_KI_HOP_DONG;
         private DevExpress.Utils.ToolTipController m_tooltip_controller;
         private DevExpress.XtraEditors.LabelControl m_lbl_thong_bao;
     }

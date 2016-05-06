@@ -178,6 +178,7 @@
             this.m_grv.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.m_grv.OptionsView.ColumnAutoWidth = false;
             this.m_grv.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.m_grv.OptionsView.ShowAutoFilterRow = true;
             this.m_grv.OptionsView.ShowFooter = true;
             // 
             // colMA_NV

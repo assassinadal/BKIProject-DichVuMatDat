@@ -547,6 +547,12 @@
     <Compile Include="NghiepVu\F395_nhan_vien_phu_cap_de.designer.cs">
       <DependentUpon>F395_nhan_vien_phu_cap_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\HopDong\f001_import_hop_dong_v2_backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\HopDong\f001_import_hop_dong_v2_backup.Designer.cs">
+      <DependentUpon>f001_import_hop_dong_v2_backup.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\HopDong\f001_import_hop_dong_v2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1285,6 +1291,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f396_tinh_phep_tieu_chuan.resx">
       <DependentUpon>f396_tinh_phep_tieu_chuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\HopDong\f001_import_hop_dong_v2_backup.resx">
+      <DependentUpon>f001_import_hop_dong_v2_backup.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\HopDong\f001_import_hop_dong_v2.resx">
       <DependentUpon>f001_import_hop_dong_v2.cs</DependentUpon>
@@ -2196,6 +2206,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Template\HĐLĐ HOC NGHE.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\IMPORT_HOP_DONG.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

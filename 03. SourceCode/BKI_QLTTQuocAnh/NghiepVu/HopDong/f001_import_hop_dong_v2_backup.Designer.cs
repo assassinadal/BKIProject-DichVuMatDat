@@ -1,6 +1,6 @@
 ﻿namespace BKI_DichVuMatDat.NghiepVu.HopDong
 {
-    partial class f001_import_hop_dong_v2
+    partial class f001_import_hop_dong_v2_backup
     {
         /// <summary>
         /// Required designer variable.
@@ -47,6 +47,8 @@
             this.MA_LOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_CHUC_DANH_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_MUC_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MA_CHUC_DANH_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MA_MUC_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_CHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_LOAI_LD = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -195,6 +197,8 @@
             this.MA_LOAI_HOP_DONG,
             this.MA_CHUC_DANH_LCD,
             this.MA_MUC_LCD,
+            this.MA_CHUC_DANH_LNS,
+            this.MA_MUC_LNS,
             this.MA_DON_VI,
             this.MA_CHUC_VU,
             this.MA_LOAI_LD,
@@ -298,6 +302,36 @@
             this.MA_MUC_LCD.Visible = true;
             this.MA_MUC_LCD.VisibleIndex = 6;
             // 
+            // MA_CHUC_DANH_LNS
+            // 
+            this.MA_CHUC_DANH_LNS.AppearanceCell.Options.UseTextOptions = true;
+            this.MA_CHUC_DANH_LNS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.MA_CHUC_DANH_LNS.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.MA_CHUC_DANH_LNS.AppearanceHeader.Options.UseFont = true;
+            this.MA_CHUC_DANH_LNS.AppearanceHeader.Options.UseTextOptions = true;
+            this.MA_CHUC_DANH_LNS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MA_CHUC_DANH_LNS.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.MA_CHUC_DANH_LNS.Caption = "Mã LNS";
+            this.MA_CHUC_DANH_LNS.FieldName = "MA_CHUC_DANH_LNS";
+            this.MA_CHUC_DANH_LNS.Name = "MA_CHUC_DANH_LNS";
+            this.MA_CHUC_DANH_LNS.Visible = true;
+            this.MA_CHUC_DANH_LNS.VisibleIndex = 10;
+            // 
+            // MA_MUC_LNS
+            // 
+            this.MA_MUC_LNS.AppearanceCell.Options.UseTextOptions = true;
+            this.MA_MUC_LNS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.MA_MUC_LNS.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.MA_MUC_LNS.AppearanceHeader.Options.UseFont = true;
+            this.MA_MUC_LNS.AppearanceHeader.Options.UseTextOptions = true;
+            this.MA_MUC_LNS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MA_MUC_LNS.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.MA_MUC_LNS.Caption = "Mức LNS";
+            this.MA_MUC_LNS.FieldName = "MA_MUC_LUONG_NS";
+            this.MA_MUC_LNS.Name = "MA_MUC_LNS";
+            this.MA_MUC_LNS.Visible = true;
+            this.MA_MUC_LNS.VisibleIndex = 11;
+            // 
             // MA_DON_VI
             // 
             this.MA_DON_VI.AppearanceCell.Options.UseTextOptions = true;
@@ -311,7 +345,7 @@
             this.MA_DON_VI.FieldName = "MA_DON_VI";
             this.MA_DON_VI.Name = "MA_DON_VI";
             this.MA_DON_VI.Visible = true;
-            this.MA_DON_VI.VisibleIndex = 10;
+            this.MA_DON_VI.VisibleIndex = 12;
             // 
             // MA_CHUC_VU
             // 
@@ -326,7 +360,7 @@
             this.MA_CHUC_VU.FieldName = "MA_CHUC_VU";
             this.MA_CHUC_VU.Name = "MA_CHUC_VU";
             this.MA_CHUC_VU.Visible = true;
-            this.MA_CHUC_VU.VisibleIndex = 11;
+            this.MA_CHUC_VU.VisibleIndex = 13;
             // 
             // MA_LOAI_LD
             // 
@@ -435,6 +469,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn MA_LOAI_HOP_DONG;
         private DevExpress.XtraGrid.Columns.GridColumn MA_CHUC_DANH_LCD;
         private DevExpress.XtraGrid.Columns.GridColumn MA_MUC_LCD;
+        private DevExpress.XtraGrid.Columns.GridColumn MA_CHUC_DANH_LNS;
+        private DevExpress.XtraGrid.Columns.GridColumn MA_MUC_LNS;
         private DevExpress.XtraGrid.Columns.GridColumn MA_DON_VI;
         private DevExpress.XtraGrid.Columns.GridColumn MA_CHUC_VU;
         private DevExpress.XtraGrid.Columns.GridColumn MA_LOAI_LD;

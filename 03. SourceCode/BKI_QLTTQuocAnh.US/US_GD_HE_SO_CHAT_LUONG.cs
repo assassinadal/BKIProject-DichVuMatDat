@@ -255,5 +255,14 @@ public class US_GD_HE_SO_CHAT_LUONG : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void FillDatasetHeSoCL(DataSet v_ds, decimal ip_dc_id_nv, decimal ip_dc_thang, decimal ip_dc_nam)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_HSK_get_theo_dk");
+        v_cstore.addDecimalInputParam("@ip_id_nv", ip_dc_id_nv);
+        v_cstore.addDecimalInputParam("@ip_thang", ip_dc_thang);
+        v_cstore.addDecimalInputParam("@ip_nam", ip_dc_nam);
+        v_cstore.fillDataSetByCommand(this, v_ds);
+    }
+}
 }

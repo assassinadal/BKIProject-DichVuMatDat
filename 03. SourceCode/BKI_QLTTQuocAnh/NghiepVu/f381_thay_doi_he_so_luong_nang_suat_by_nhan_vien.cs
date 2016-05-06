@@ -117,10 +117,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_2_grid(decimal ip_dc_id_nv, decimal ip_dc_thang, decimal ip_dc_nam)
         {
             CHRMCommon.make_stt(m_grv_hs_chat_luong);
-            US_DUNG_CHUNG v_us = new US_DUNG_CHUNG();
+            US_GD_HE_SO_CHAT_LUONG v_us = new US_GD_HE_SO_CHAT_LUONG();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-
+            v_us.FillDatasetHeSoCL(v_ds, ip_dc_id_nv, ip_dc_thang, ip_dc_nam);
             //v_us.FillDatasetWithQuery(v_ds,"SELECT * FROM V_GD_HE_SO_CHAT_LUONG WHERE ID_NHAN_VIEN = " + ip_dc_id_nv + " AND THANG = " + ip_dc_thang + " AND NAM = " + ip_dc_nam);
             m_grc_hs_chat_luong.DataSource = v_ds.Tables[0];
         }
@@ -299,9 +299,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 if (check_validate_data_is_ok(m_txt_thang.ToString()) && check_validate_data_is_ok(m_txt_nam.ToString()))
                 {
-                    if (m_sle_chon_nhan_vien.EditValue == null || m_sle_chon_nhan_vien.EditValue == "")
+                    if (m_sle_chon_nhan_vien.EditValue == null)
                     {
-                        load_data_2_grid(CIPConvert.ToDecimal(m_txt_thang.ToString()), CIPConvert.ToDecimal(m_txt_nam.ToString()));
+                        load_data_2_grid(-1,CIPConvert.ToDecimal(m_txt_thang.ToString()), CIPConvert.ToDecimal(m_txt_nam.ToString()));
                     }
                     else
                     {

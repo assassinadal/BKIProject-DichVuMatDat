@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien));
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.NAM = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,14 +45,13 @@
             this.m_grv_hs_chat_luong = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_grc_hs_chat_luong = new DevExpress.XtraGrid.GridControl();
-            this.ImageList = new System.Windows.Forms.ImageList();
-            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.m_cmd_luu_hs = new DevExpress.XtraEditors.SimpleButton();
             this.m_gr_thong_tin_co_ban = new DevExpress.XtraEditors.GroupControl();
             this.m_dat_thang = new DevExpress.XtraEditors.DateEdit();
             this.label3 = new System.Windows.Forms.Label();
-            this.m_txt_hs = new System.Windows.Forms.TextBox();
             this.m_lbl_hs = new System.Windows.Forms.Label();
             this.m_sle_chon_nhan_vien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -61,8 +61,8 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.m_txt_hs = new DevExpress.XtraEditors.TextEdit();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_hs_chat_luong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_hs_chat_luong)).BeginInit();
@@ -75,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_hs.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // m_cmd_insert
@@ -90,6 +91,8 @@
             // 
             // NAM
             // 
+            this.NAM.AppearanceCell.Options.UseTextOptions = true;
+            this.NAM.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NAM.AppearanceHeader.Options.UseTextOptions = true;
             this.NAM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NAM.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -102,6 +105,8 @@
             // 
             // THANG
             // 
+            this.THANG.AppearanceCell.Options.UseTextOptions = true;
+            this.THANG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.THANG.AppearanceHeader.Options.UseTextOptions = true;
             this.THANG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.THANG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -161,6 +166,8 @@
             // 
             // HE_SO_K
             // 
+            this.HE_SO_K.AppearanceCell.Options.UseTextOptions = true;
+            this.HE_SO_K.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.HE_SO_K.AppearanceHeader.Options.UseTextOptions = true;
             this.HE_SO_K.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.HE_SO_K.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -183,6 +190,8 @@
             // 
             // MA_NV
             // 
+            this.MA_NV.AppearanceCell.Options.UseTextOptions = true;
+            this.MA_NV.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MA_NV.AppearanceHeader.Options.UseTextOptions = true;
             this.MA_NV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MA_NV.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -250,7 +259,7 @@
             this.m_grc_hs_chat_luong.Location = new System.Drawing.Point(0, 0);
             this.m_grc_hs_chat_luong.MainView = this.m_grv_hs_chat_luong;
             this.m_grc_hs_chat_luong.Name = "m_grc_hs_chat_luong";
-            this.m_grc_hs_chat_luong.Size = new System.Drawing.Size(1097, 321);
+            this.m_grc_hs_chat_luong.Size = new System.Drawing.Size(1097, 373);
             this.m_grc_hs_chat_luong.TabIndex = 0;
             this.m_grc_hs_chat_luong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_hs_chat_luong});
@@ -314,7 +323,7 @@
             this.panel3.Controls.Add(this.m_cmd_luu_hs);
             this.panel3.Controls.Add(this.m_cmd_search);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 172);
+            this.panel3.Location = new System.Drawing.Point(0, 120);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1097, 44);
             this.panel3.TabIndex = 1;
@@ -333,9 +342,9 @@
             // 
             this.m_gr_thong_tin_co_ban.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_gr_thong_tin_co_ban.Appearance.Options.UseFont = true;
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_txt_hs);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.m_dat_thang);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.label3);
-            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_txt_hs);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.m_lbl_hs);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.m_sle_chon_nhan_vien);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.label1);
@@ -351,8 +360,8 @@
             this.m_dat_thang.EditValue = null;
             this.m_dat_thang.Location = new System.Drawing.Point(119, 59);
             this.m_dat_thang.Name = "m_dat_thang";
-            this.m_dat_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dat_thang.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dat_thang.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.m_dat_thang.Properties.Appearance.Options.UseFont = true;
             this.m_dat_thang.Properties.Appearance.Options.UseForeColor = true;
             this.m_dat_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -365,7 +374,7 @@
             this.m_dat_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.m_dat_thang.Properties.Mask.EditMask = "MM/yyyy";
             this.m_dat_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_dat_thang.Size = new System.Drawing.Size(141, 20);
+            this.m_dat_thang.Size = new System.Drawing.Size(182, 20);
             this.m_dat_thang.TabIndex = 32;
             // 
             // label3
@@ -376,14 +385,6 @@
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 31;
             this.label3.Text = "Chọn tháng (*)";
-            // 
-            // m_txt_hs
-            // 
-            this.m_txt_hs.Location = new System.Drawing.Point(119, 85);
-            this.m_txt_hs.Name = "m_txt_hs";
-            this.m_txt_hs.Size = new System.Drawing.Size(111, 20);
-            this.m_txt_hs.TabIndex = 7;
-            this.m_txt_hs.Text = "0";
             // 
             // m_lbl_hs
             // 
@@ -396,14 +397,13 @@
             // 
             // m_sle_chon_nhan_vien
             // 
-            this.m_sle_chon_nhan_vien.EditValue = "";
             this.m_sle_chon_nhan_vien.Location = new System.Drawing.Point(119, 33);
             this.m_sle_chon_nhan_vien.Name = "m_sle_chon_nhan_vien";
             this.m_sle_chon_nhan_vien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_sle_chon_nhan_vien.Properties.NullText = "";
+            this.m_sle_chon_nhan_vien.Properties.NullText = "-----Chọn nhân viên-----";
             this.m_sle_chon_nhan_vien.Properties.View = this.searchLookUpEdit1View;
-            this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(307, 20);
+            this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(182, 20);
             this.m_sle_chon_nhan_vien.TabIndex = 1;
             // 
             // searchLookUpEdit1View
@@ -463,31 +463,29 @@
             // 
             this.panel2.Controls.Add(this.m_gr_thong_tin_co_ban);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 52);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1097, 120);
             this.panel2.TabIndex = 7;
-            // 
-            // m_lbl_header
-            // 
-            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(1097, 52);
-            this.m_lbl_header.TabIndex = 0;
-            this.m_lbl_header.Text = "THAY ĐỔI HỆ SỐ CHẤT LƯỢNG LƯƠNG NĂNG SUẤT";
-            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.m_grc_hs_chat_luong);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 216);
+            this.panel4.Location = new System.Drawing.Point(0, 164);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1097, 321);
+            this.panel4.Size = new System.Drawing.Size(1097, 373);
             this.panel4.TabIndex = 12;
+            // 
+            // m_txt_hs
+            // 
+            this.m_txt_hs.Location = new System.Drawing.Point(119, 86);
+            this.m_txt_hs.Name = "m_txt_hs";
+            this.m_txt_hs.Properties.Mask.EditMask = "f2";
+            this.m_txt_hs.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.m_txt_hs.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_txt_hs.Size = new System.Drawing.Size(182, 20);
+            this.m_txt_hs.TabIndex = 33;
             // 
             // f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien
             // 
@@ -498,9 +496,8 @@
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.m_lbl_header);
             this.Name = "f381_thay_doi_he_so_luong_nang_suat_by_nhan_vien";
-            this.Text = "F381 - Thay đổi hệ số chất lượng lương năng suất";
+            this.Text = "F381 - Thay đổi hệ số chất lượng";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_hs_chat_luong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_hs_chat_luong)).EndInit();
@@ -514,6 +511,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_hs.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -540,11 +538,9 @@
         private System.Windows.Forms.Panel panel3;
         private DevExpress.XtraEditors.GroupControl m_gr_thong_tin_co_ban;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label m_lbl_header;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chon_nhan_vien;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox m_txt_hs;
         private System.Windows.Forms.Label m_lbl_hs;
         private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraEditors.SimpleButton m_cmd_luu_hs;
@@ -554,5 +550,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.DateEdit m_dat_thang;
         private System.Windows.Forms.Label label3;
+        private DevExpress.XtraEditors.TextEdit m_txt_hs;
     }
 }

@@ -21,6 +21,8 @@ using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraPrinting;
 using Microsoft.Office.Interop;
 using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
+using BKI_DichVuMatDat.BaoCao;
 
 namespace BKI_DichVuMatDat.NghiepVu.HopDong
 {
@@ -488,10 +490,22 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
         }
         private void load_data_from_file_to_grid(string path)
         {
-            var v_data_table_grv = load_data_from_file_to_data_table(path, "NHAP_HOP_DONG");
-            format_data_table(v_data_table_grv);
-            m_grc_hop_dong.DataSource = v_data_table_grv;
-            m_grv_hop_dong.BestFitColumns();
+            SplashScreenManager.ShowForm(typeof(F_wait_form));
+            try
+            {
+                var v_data_table_grv = load_data_from_file_to_data_table(path, "NHAP_HOP_DONG");
+                format_data_table(v_data_table_grv);
+                m_grc_hop_dong.DataSource = v_data_table_grv;
+                m_grv_hop_dong.BestFitColumns();
+            }
+            catch(Exception v_e)
+            {
+                throw;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm();
+            }
         }
         private void grid_to_us_gd_hop_dong(US_GD_HOP_DONG v_us_gd_hd, DataRow data)
         {
@@ -527,13 +541,16 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
 
         private void save_data()
         {
+           
             if(!check_all_is_ok())
             {
                 return;
             }
+            SplashScreenManager.ShowForm(this, typeof(SplashScreen1), true, true, false);
             US_GD_HOP_DONG v_us_gd_hd = new US_GD_HOP_DONG();
             try
             {
+                
                 v_us_gd_hd.BeginTransaction();
                 for(int i = 0; i < m_grv_hop_dong.RowCount; i++)
                 {
@@ -541,6 +558,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                     var data = m_grv_hop_dong.GetDataRow(i);
                     grid_to_us_gd_hop_dong(v_us_gd_hd, data);
                     v_us_gd_hd.Insert();
+                    SplashScreenManager.Default.SendCommand(SplashScreen1.SplashScreenCommand.SetProgress, (int)((decimal)i / (decimal)m_grv_hop_dong.RowCount * 100));
                 }
                 v_us_gd_hd.CommitTransaction();
                 CHRM_BaseMessages.MsgBox_Infor("Đã lưu dữu liệu thành công");
@@ -552,6 +570,10 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                     v_us_gd_hd.Rollback();
                 }
                 throw;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
             }
         }
         private void xuat_excel()

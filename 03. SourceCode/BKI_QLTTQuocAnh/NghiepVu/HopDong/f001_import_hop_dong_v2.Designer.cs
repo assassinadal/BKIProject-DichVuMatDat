@@ -37,7 +37,6 @@
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_tai_file_mau = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.m_lbl_thong_bao = new DevExpress.XtraEditors.LabelControl();
             this.m_pnl_danh_sach_hop_dong = new DevExpress.XtraEditors.PanelControl();
             this.m_grc_hop_dong = new DevExpress.XtraGrid.GridControl();
             this.m_grv_hop_dong = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -54,6 +53,7 @@
             this.NGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_KI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_tooltip_controller = new DevExpress.Utils.ToolTipController(this.components);
+            this.m_lbl_thong_bao = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_pnl_danh_sach_hop_dong)).BeginInit();
@@ -151,18 +151,6 @@
             this.m_cmd_xuat_excel.TabIndex = 3;
             this.m_cmd_xuat_excel.Text = "&Trích xuất";
             // 
-            // m_lbl_thong_bao
-            // 
-            this.m_lbl_thong_bao.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_thong_bao.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_thong_bao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_thong_bao.Location = new System.Drawing.Point(0, 82);
-            this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
-            this.m_lbl_thong_bao.Padding = new System.Windows.Forms.Padding(5);
-            this.m_lbl_thong_bao.Size = new System.Drawing.Size(97, 26);
-            this.m_lbl_thong_bao.TabIndex = 3;
-            this.m_lbl_thong_bao.Text = "Chưa load file";
-            // 
             // m_pnl_danh_sach_hop_dong
             // 
             this.m_pnl_danh_sach_hop_dong.Controls.Add(this.m_grc_hop_dong);
@@ -203,7 +191,6 @@
             this.NGAY_KI_HOP_DONG});
             this.m_grv_hop_dong.GridControl = this.m_grc_hop_dong;
             this.m_grv_hop_dong.Name = "m_grv_hop_dong";
-            this.m_grv_hop_dong.OptionsBehavior.ReadOnly = true;
             this.m_grv_hop_dong.OptionsPrint.AutoWidth = false;
             this.m_grv_hop_dong.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             // 
@@ -394,6 +381,19 @@
             this.NGAY_KI_HOP_DONG.Visible = true;
             this.NGAY_KI_HOP_DONG.VisibleIndex = 9;
             // 
+            // m_lbl_thong_bao
+            // 
+            this.m_lbl_thong_bao.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_thong_bao.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_thong_bao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_thong_bao.Location = new System.Drawing.Point(0, 82);
+            this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
+            this.m_lbl_thong_bao.Padding = new System.Windows.Forms.Padding(5);
+            this.m_lbl_thong_bao.Size = new System.Drawing.Size(97, 26);
+            this.m_lbl_thong_bao.TabIndex = 3;
+            this.m_lbl_thong_bao.Text = "Chưa load file";
+            this.m_lbl_thong_bao.Visible = false;
+            // 
             // f001_import_hop_dong_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,7 +425,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_save;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tai_file_mau;
-        private DevExpress.XtraEditors.LabelControl m_lbl_thong_bao;
         private DevExpress.XtraEditors.PanelControl m_pnl_danh_sach_hop_dong;
         private DevExpress.XtraGrid.GridControl m_grc_hop_dong;
         private DevExpress.XtraGrid.Views.Grid.GridView m_grv_hop_dong;
@@ -442,5 +441,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KET_THUC;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_KI_HOP_DONG;
         private DevExpress.Utils.ToolTipController m_tooltip_controller;
+        private DevExpress.XtraEditors.LabelControl m_lbl_thong_bao;
     }
 }

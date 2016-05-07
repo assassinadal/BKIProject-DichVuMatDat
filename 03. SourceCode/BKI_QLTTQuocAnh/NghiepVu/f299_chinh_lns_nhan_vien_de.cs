@@ -182,18 +182,18 @@ namespace BKI_DichVuMatDat.NghiepVu
                 XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if(m_sle_chuc_danh_lns.EditValue == null)
-            {
-                string v_str_error = "Vui lòng chọn chức danh lương năng suất!";
-                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            if(m_sle_muc_lns.EditValue == null)
-            {
-                string v_str_error = "Vui lòng chọn mức lương năng suất!";
-                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
+            //if(m_sle_chuc_danh_lns.EditValue == null)
+            //{
+            //    string v_str_error = "Vui lòng chọn chức danh lương năng suất!";
+            //    XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return false;
+            //}
+            //if(m_sle_muc_lns.EditValue == null)
+            //{
+            //    string v_str_error = "Vui lòng chọn mức lương năng suất!";
+            //    XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return false;
+            //}
             if(m_dat_ngay_bat_dau.EditValue == null)
             {
                 string v_str_error = "Vui lòng nhập ngày bắt đầu lương năng suất!";
@@ -256,8 +256,16 @@ namespace BKI_DichVuMatDat.NghiepVu
                 m_us.SetNGAY_KET_THUCNull();
             }
 
-            m_us.dcHE_SO = Convert.ToDecimal(m_txt_hs_lns.Text);
-            m_us.dcID_HE_SO_LNS = find_id_hs_lns();
+            m_us.dcHE_SO = Convert.ToDecimal(m_txt_hs_lns.EditValue);
+            if(m_sle_chuc_danh_lns.EditValue != null && m_sle_muc_lns.EditValue != null)
+            {
+                m_us.dcID_HE_SO_LNS = find_id_hs_lns();
+            }
+            else
+            {
+                m_us.SetID_HE_SO_LNSNull();
+            }
+           
             m_us.strLY_DO_CHINH_SUA = m_txt_ly_do.Text;
 
             switch(m_e_form_mode)
@@ -276,9 +284,13 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_sle_chon_nhan_vien.EditValue = m_us.dcID_NHAN_VIEN;
             m_sle_chon_nhan_vien.Enabled = false;
-            US_DM_HE_SO_LUONG_NS v_us = new US_DM_HE_SO_LUONG_NS(m_us.dcID_HE_SO_LNS);
-            m_sle_chuc_danh_lns.EditValue = v_us.dcID_MA_LNS;
-            m_sle_muc_lns.EditValue = v_us.dcID_MUC_LNS;
+            if(!m_us.IsID_HE_SO_LNSNull())
+            {
+                US_DM_HE_SO_LUONG_NS v_us = new US_DM_HE_SO_LUONG_NS(m_us.dcID_HE_SO_LNS);
+                m_sle_chuc_danh_lns.EditValue = v_us.dcID_MA_LNS;
+                m_sle_muc_lns.EditValue = v_us.dcID_MUC_LNS;
+            }
+            
 
             m_dat_ngay_bat_dau.EditValue = m_us.datNGAY_BAT_DAU;
             if(m_us.IsNGAY_KET_THUCNull())
@@ -290,6 +302,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 m_dat_ngay_ket_thuc.EditValue = m_us.datNGAY_KET_THUC;
             }
             m_txt_hs_lns.EditValue = m_us.dcHE_SO;
+            m_txt_ly_do.Text = m_us.strLY_DO_CHINH_SUA;
         }
         private void insert_data_new()
         {

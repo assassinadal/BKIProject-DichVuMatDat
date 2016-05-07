@@ -111,7 +111,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private void focus_row(decimal ip_id_nhan_vien)
         {
-            CHRMCommon.SelectRowInGrid(m_grv, "ID", ip_id_nhan_vien);
+            CHRMCommon.SelectRowInGrid(m_grv, "ID_NHAN_VIEN", ip_id_nhan_vien);
         }
         #endregion
 

@@ -65,6 +65,7 @@
             this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.colLY_DO_CHINH_SUA = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -150,7 +151,8 @@
             this.MA_CHUC_DANH_LNS,
             this.MUC_LNS,
             this.NGAY_BAT_DAU,
-            this.colNGAY_KET_THUC});
+            this.colNGAY_KET_THUC,
+            this.colLY_DO_CHINH_SUA});
             styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Pink;
             styleFormatCondition1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
             styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Firebrick;
@@ -510,6 +512,14 @@
             this.radioButton1.Text = "Tất cả";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // colLY_DO_CHINH_SUA
+            // 
+            this.colLY_DO_CHINH_SUA.Caption = "Lý do chỉnh sửa";
+            this.colLY_DO_CHINH_SUA.FieldName = "LY_DO_CHINH_SUA";
+            this.colLY_DO_CHINH_SUA.Name = "colLY_DO_CHINH_SUA";
+            this.colLY_DO_CHINH_SUA.Visible = true;
+            this.colLY_DO_CHINH_SUA.VisibleIndex = 7;
+            // 
             // f300_chinh_lns_nhan_vien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -579,5 +589,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_filter;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private DevExpress.XtraGrid.Columns.GridColumn colLY_DO_CHINH_SUA;
     }
 }

@@ -154,7 +154,15 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                                             );
             if(!v_bool_is_null)
             {
-                XtraMessageBox.Show("Dữ liệu của nhân viên " + ip_dr[ExcelCongTac.MA_NHAN_VIEN].ToString() + " có ô bị trống!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if(!is_not_null(ip_dr[ExcelCongTac.MA_NHAN_VIEN]))
+                {
+                    XtraMessageBox.Show("Có mã nhân viên bị trống!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    XtraMessageBox.Show("Dữ liệu của nhân viên " + ip_dr[ExcelCongTac.MA_NHAN_VIEN].ToString() + " có ô bị trống!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                
             }
             return v_bool_is_null;
         }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition3 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition4 = new DevExpress.XtraGrid.StyleFormatCondition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f309_quan_ly_cong_tac));
             this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
@@ -81,11 +81,11 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xoa_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_sua_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_them_moi_cong_tac = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
@@ -169,29 +169,29 @@
             this.colNGAY_TIEP_NHAN_VAO_TCT,
             this.colNGAY_CHINH_THUC_TIEP_NHAN,
             this.colNGUOI_BAO_LANH});
-            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Pink;
-            styleFormatCondition1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
-            styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Firebrick;
-            styleFormatCondition1.Appearance.Options.UseBackColor = true;
-            styleFormatCondition1.Appearance.Options.UseFont = true;
-            styleFormatCondition1.Appearance.Options.UseForeColor = true;
-            styleFormatCondition1.ApplyToRow = true;
-            styleFormatCondition1.Column = this.colNGAY_KET_THUC;
-            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition1.Expression = "[NGAY_KET_THUC] <= Today()  And IsNullOrEmpty([NGAY_KET_THUC]) == False";
-            styleFormatCondition1.Name = "HET_HAN";
-            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.Honeydew;
-            styleFormatCondition2.Appearance.ForeColor = System.Drawing.Color.Green;
-            styleFormatCondition2.Appearance.Options.UseBackColor = true;
-            styleFormatCondition2.Appearance.Options.UseForeColor = true;
-            styleFormatCondition2.Column = this.colNGAY_KET_THUC;
-            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.GreaterOrEqual;
-            styleFormatCondition2.Enabled = false;
-            styleFormatCondition2.Expression = "[NGAY_KET_THUC] >= Today()   Or IsNullOrEmpty([NGAY_KET_THUC]) == True";
-            styleFormatCondition2.Name = "CON_HAN";
+            styleFormatCondition3.Appearance.BackColor = System.Drawing.Color.Pink;
+            styleFormatCondition3.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
+            styleFormatCondition3.Appearance.ForeColor = System.Drawing.Color.Firebrick;
+            styleFormatCondition3.Appearance.Options.UseBackColor = true;
+            styleFormatCondition3.Appearance.Options.UseFont = true;
+            styleFormatCondition3.Appearance.Options.UseForeColor = true;
+            styleFormatCondition3.ApplyToRow = true;
+            styleFormatCondition3.Column = this.colNGAY_KET_THUC;
+            styleFormatCondition3.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition3.Expression = "[NGAY_KET_THUC] <= Today()  And IsNullOrEmpty([NGAY_KET_THUC]) == False";
+            styleFormatCondition3.Name = "HET_HAN";
+            styleFormatCondition4.Appearance.BackColor = System.Drawing.Color.Honeydew;
+            styleFormatCondition4.Appearance.ForeColor = System.Drawing.Color.Green;
+            styleFormatCondition4.Appearance.Options.UseBackColor = true;
+            styleFormatCondition4.Appearance.Options.UseForeColor = true;
+            styleFormatCondition4.Column = this.colNGAY_KET_THUC;
+            styleFormatCondition4.Condition = DevExpress.XtraGrid.FormatConditionEnum.GreaterOrEqual;
+            styleFormatCondition4.Enabled = false;
+            styleFormatCondition4.Expression = "[NGAY_KET_THUC] >= Today()   Or IsNullOrEmpty([NGAY_KET_THUC]) == True";
+            styleFormatCondition4.Name = "CON_HAN";
             this.m_grv.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition1,
-            styleFormatCondition2});
+            styleFormatCondition3,
+            styleFormatCondition4});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
             this.m_grv.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
@@ -802,10 +802,10 @@
             this.radioButton2.Checked = true;
             this.radioButton2.Location = new System.Drawing.Point(80, 31);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(84, 17);
+            this.radioButton2.Size = new System.Drawing.Size(135, 17);
             this.radioButton2.TabIndex = 0;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Còn hiệu lực";
+            this.radioButton2.Text = "Có hiệu lực trong tháng";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
@@ -832,6 +832,17 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(809, 33);
             this.panelControl3.TabIndex = 5;
+            // 
+            // m_cmd_chon_file
+            // 
+            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chon_file.ImageIndex = 4;
+            this.m_cmd_chon_file.ImageList = this.img_DVMD;
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(240, 0);
+            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
+            this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 33);
+            this.m_cmd_chon_file.TabIndex = 8;
+            this.m_cmd_chon_file.Text = "&Import excel";
             // 
             // m_cmd_xoa_cong_tac
             // 
@@ -890,17 +901,6 @@
             this.m_cmd_them_moi_cong_tac.TabIndex = 0;
             this.m_cmd_them_moi_cong_tac.Text = "&Thêm";
             this.m_cmd_them_moi_cong_tac.ToolTip = "Thêm mới công tác cho nhân viên";
-            // 
-            // m_cmd_chon_file
-            // 
-            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chon_file.ImageIndex = 4;
-            this.m_cmd_chon_file.ImageList = this.img_DVMD;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(240, 0);
-            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
-            this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 33);
-            this.m_cmd_chon_file.TabIndex = 8;
-            this.m_cmd_chon_file.Text = "&Import excel";
             // 
             // f309_quan_ly_cong_tac
             // 

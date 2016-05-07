@@ -139,7 +139,14 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                                             );
             if(!v_bool_is_null)
             {
-                XtraMessageBox.Show("Dữ liệu của nhân viên " + ip_dr[ExcelLNS.MA_NHAN_VIEN].ToString() + " có ô bị trống!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if(!is_not_null(ip_dr[ExcelLNS.MA_NHAN_VIEN]))
+                {
+                    XtraMessageBox.Show("Có mã nhân viên bị trống!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    XtraMessageBox.Show("Dữ liệu của nhân viên " + ip_dr[ExcelLNS.MA_NHAN_VIEN].ToString() + " có ô bị trống!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             return v_bool_is_null;
         }
@@ -330,7 +337,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             if(ExcelDataSet != null && ExcelDataSet.Rows.Count > 0)
             {
                 //string SheetName = ExcelDataSet.Rows[0]["TABLE_NAME"].ToString(); // get sheetname
-                ExcelCommand.CommandText = "SELECT * From [" + SheetName + "] WHERE [" + ExcelLNS.MA_NHAN_VIEN + "] IS NOT NULL";
+                ExcelCommand.CommandText = "SELECT * From [" + SheetName + "]";// WHERE [" + ExcelLNS.MA_NHAN_VIEN + "] IS NOT NULL";
                 OleDbDataAdapter ExcelAdapter = new OleDbDataAdapter(ExcelCommand);
                 ExcelAdapter.SelectCommand = ExcelCommand;
                 ExcelAdapter.Fill(dt);

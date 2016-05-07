@@ -227,12 +227,24 @@ namespace BKI_DichVuMatDat.NghiepVu
                         XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
+                    if(!m_us.KiemTraThoiGianVoiLuongCungHopLeForUpdate(m_us.dcID, m_dat_ngay_bat_dau.DateTime.Date, v_dat_ngay_ket_thuc))
+                    {
+                        string v_str_error = "Trong hệ thống, đã tồn tại bản ghi LƯƠNG CỨNG của nhân viên có hiệu lực trong khoảng thời gian này rồi!!";
+                        XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
                     break;
                 case DataEntryFormMode.InsertDataState:
                     DateTime v_dat_ngay_ket_thuc_insert = m_dat_ngay_ket_thuc.EditValue == null ? new DateTime(2100, 1, 1).Date : m_dat_ngay_ket_thuc.DateTime.Date;
                     if(!m_us.KiemTraThoiGianHeSoLNSForInsert(Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue), m_dat_ngay_bat_dau.DateTime.Date, v_dat_ngay_ket_thuc_insert))
                     {
                         string v_str_error = "Trong hệ thống, đã tồn tại bản ghi hệ số LNS của nhân viên có hiệu lực trong khoảng thời gian này rồi!!";
+                        XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                    if(!m_us.KiemTraThoiGianVoiLuongCungHopLeForInsert(Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue), m_dat_ngay_bat_dau.DateTime.Date, v_dat_ngay_ket_thuc_insert))
+                    {
+                        string v_str_error = "Trong hệ thống, đã tồn tại bản ghi LƯƠNG CỨNG của nhân viên có hiệu lực trong khoảng thời gian này rồi!!";
                         XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }

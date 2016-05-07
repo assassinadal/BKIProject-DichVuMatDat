@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f300_chinh_lns_nhan_vien));
             this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -153,19 +153,19 @@
             this.NGAY_BAT_DAU,
             this.colNGAY_KET_THUC,
             this.colLY_DO_CHINH_SUA});
-            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Pink;
-            styleFormatCondition1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
-            styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Firebrick;
-            styleFormatCondition1.Appearance.Options.UseBackColor = true;
-            styleFormatCondition1.Appearance.Options.UseFont = true;
-            styleFormatCondition1.Appearance.Options.UseForeColor = true;
-            styleFormatCondition1.ApplyToRow = true;
-            styleFormatCondition1.Column = this.colNGAY_KET_THUC;
-            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition1.Expression = "[NGAY_KET_THUC]  < Today() And IsNullOrEmpty([NGAY_KET_THUC]) == False";
-            styleFormatCondition1.Name = "HET_HAN";
+            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.Pink;
+            styleFormatCondition2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
+            styleFormatCondition2.Appearance.ForeColor = System.Drawing.Color.Firebrick;
+            styleFormatCondition2.Appearance.Options.UseBackColor = true;
+            styleFormatCondition2.Appearance.Options.UseFont = true;
+            styleFormatCondition2.Appearance.Options.UseForeColor = true;
+            styleFormatCondition2.ApplyToRow = true;
+            styleFormatCondition2.Column = this.colNGAY_KET_THUC;
+            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition2.Expression = "[NGAY_KET_THUC]  < Today() And IsNullOrEmpty([NGAY_KET_THUC]) == False";
+            styleFormatCondition2.Name = "HET_HAN";
             this.m_grv.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition1});
+            styleFormatCondition2});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
             this.m_grv.OptionsBehavior.ReadOnly = true;
@@ -495,10 +495,10 @@
             this.radioButton2.Checked = true;
             this.radioButton2.Location = new System.Drawing.Point(80, 31);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(84, 17);
+            this.radioButton2.Size = new System.Drawing.Size(135, 17);
             this.radioButton2.TabIndex = 0;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Còn hiệu lực";
+            this.radioButton2.Text = "Có hiệu lực trong tháng";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1

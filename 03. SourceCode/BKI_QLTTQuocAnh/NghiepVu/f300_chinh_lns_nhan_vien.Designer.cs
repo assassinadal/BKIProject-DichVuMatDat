@@ -29,20 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f300_chinh_lns_nhan_vien));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.m_tab_co_lns = new DevExpress.XtraTab.XtraTabPage();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HE_SO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_CHUC_DANH_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MUC_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_BAT_DAU = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_tab_k_lns = new DevExpress.XtraTab.XtraTabPage();
             this.m_grc_khs = new DevExpress.XtraGrid.GridControl();
             this.m_grv_khs = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -53,6 +54,7 @@
             this.colTEN_CHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLOAI_LAO_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
@@ -61,7 +63,6 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_dat_tai_thang = new DevExpress.XtraEditors.DateEdit();
             this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
@@ -134,27 +135,40 @@
             // m_grv
             // 
             this.m_grv.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ID,
+            this.colID,
             this.MA_NV,
             this.HO_TEN,
             this.HE_SO,
             this.MA_CHUC_DANH_LNS,
             this.MUC_LNS,
             this.NGAY_BAT_DAU,
-            this.NGAY_KET_THUC});
+            this.colNGAY_KET_THUC});
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Pink;
+            styleFormatCondition1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
+            styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Firebrick;
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
+            styleFormatCondition1.Appearance.Options.UseFont = true;
+            styleFormatCondition1.Appearance.Options.UseForeColor = true;
+            styleFormatCondition1.ApplyToRow = true;
+            styleFormatCondition1.Column = this.colNGAY_KET_THUC;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition1.Expression = "[NGAY_KET_THUC]  < Today() And IsNullOrEmpty([NGAY_KET_THUC]) == False";
+            styleFormatCondition1.Name = "HET_HAN";
+            this.m_grv.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            styleFormatCondition1});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
             this.m_grv.OptionsBehavior.ReadOnly = true;
             this.m_grv.OptionsView.ShowAutoFilterRow = true;
             this.m_grv.OptionsView.ShowFooter = true;
             // 
-            // ID
+            // colID
             // 
-            this.ID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID.AppearanceHeader.Options.UseFont = true;
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
+            this.colID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colID.AppearanceHeader.Options.UseFont = true;
+            this.colID.Caption = "ID";
+            this.colID.FieldName = "ID";
+            this.colID.Name = "colID";
             // 
             // MA_NV
             // 
@@ -224,22 +238,22 @@
             this.NGAY_BAT_DAU.VisibleIndex = 5;
             this.NGAY_BAT_DAU.Width = 129;
             // 
-            // NGAY_KET_THUC
+            // colNGAY_KET_THUC
             // 
-            this.NGAY_KET_THUC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NGAY_KET_THUC.AppearanceHeader.Options.UseFont = true;
-            this.NGAY_KET_THUC.Caption = "Ngày kết thúc";
-            this.NGAY_KET_THUC.FieldName = "NGAY_KET_THUC";
-            this.NGAY_KET_THUC.Name = "NGAY_KET_THUC";
-            this.NGAY_KET_THUC.Visible = true;
-            this.NGAY_KET_THUC.VisibleIndex = 6;
-            this.NGAY_KET_THUC.Width = 143;
+            this.colNGAY_KET_THUC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colNGAY_KET_THUC.AppearanceHeader.Options.UseFont = true;
+            this.colNGAY_KET_THUC.Caption = "Ngày kết thúc";
+            this.colNGAY_KET_THUC.FieldName = "NGAY_KET_THUC";
+            this.colNGAY_KET_THUC.Name = "colNGAY_KET_THUC";
+            this.colNGAY_KET_THUC.Visible = true;
+            this.colNGAY_KET_THUC.VisibleIndex = 6;
+            this.colNGAY_KET_THUC.Width = 143;
             // 
             // m_tab_k_lns
             // 
             this.m_tab_k_lns.Controls.Add(this.m_grc_khs);
             this.m_tab_k_lns.Name = "m_tab_k_lns";
-            this.m_tab_k_lns.Size = new System.Drawing.Size(901, 338);
+            this.m_tab_k_lns.Size = new System.Drawing.Size(913, 294);
             this.m_tab_k_lns.Text = "NHÂN VIÊN KHÔNG CÓ LƯƠNG NĂNG SUẤT";
             // 
             // m_grc_khs
@@ -249,7 +263,7 @@
             this.m_grc_khs.Location = new System.Drawing.Point(0, 0);
             this.m_grc_khs.MainView = this.m_grv_khs;
             this.m_grc_khs.Name = "m_grc_khs";
-            this.m_grc_khs.Size = new System.Drawing.Size(901, 338);
+            this.m_grc_khs.Size = new System.Drawing.Size(913, 294);
             this.m_grc_khs.TabIndex = 3;
             this.m_grc_khs.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_khs});
@@ -347,6 +361,21 @@
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(919, 34);
             this.m_pnl_out_place_dm.TabIndex = 3;
+            // 
+            // m_cmd_refresh
+            // 
+            this.m_cmd_refresh.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_refresh.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.m_cmd_refresh.Appearance.Options.UseFont = true;
+            this.m_cmd_refresh.Appearance.Options.UseForeColor = true;
+            this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_refresh.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_refresh.Image")));
+            this.m_cmd_refresh.Location = new System.Drawing.Point(809, 0);
+            this.m_cmd_refresh.Name = "m_cmd_refresh";
+            this.m_cmd_refresh.Size = new System.Drawing.Size(110, 34);
+            this.m_cmd_refresh.TabIndex = 10;
+            this.m_cmd_refresh.Text = "Làm mới";
+            this.m_cmd_refresh.ToolTip = "Làm mới dữ liệu đơn vị và nhân viên thuộc đơn vị đó";
             // 
             // m_cmd_chon_file
             // 
@@ -451,21 +480,6 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextToControlDistance = 0;
             this.layoutControlItem2.TextVisible = false;
-            // 
-            // m_cmd_refresh
-            // 
-            this.m_cmd_refresh.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_refresh.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            this.m_cmd_refresh.Appearance.Options.UseFont = true;
-            this.m_cmd_refresh.Appearance.Options.UseForeColor = true;
-            this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_refresh.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_refresh.Image")));
-            this.m_cmd_refresh.Location = new System.Drawing.Point(809, 0);
-            this.m_cmd_refresh.Name = "m_cmd_refresh";
-            this.m_cmd_refresh.Size = new System.Drawing.Size(110, 34);
-            this.m_cmd_refresh.TabIndex = 10;
-            this.m_cmd_refresh.Text = "Làm mới";
-            this.m_cmd_refresh.ToolTip = "Làm mới dữ liệu đơn vị và nhân viên thuộc đơn vị đó";
             // 
             // panelControl1
             // 
@@ -580,14 +594,14 @@
         private DevExpress.XtraTab.XtraTabPage m_tab_co_lns;
         private DevExpress.XtraGrid.GridControl m_grc;
         private DevExpress.XtraGrid.Views.Grid.GridView m_grv;
-        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn MA_NV;
         private DevExpress.XtraGrid.Columns.GridColumn HO_TEN;
         private DevExpress.XtraGrid.Columns.GridColumn HE_SO;
         private DevExpress.XtraGrid.Columns.GridColumn MA_CHUC_DANH_LNS;
         private DevExpress.XtraGrid.Columns.GridColumn MUC_LNS;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_BAT_DAU;
-        private DevExpress.XtraGrid.Columns.GridColumn NGAY_KET_THUC;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGAY_KET_THUC;
         private DevExpress.XtraTab.XtraTabPage m_tab_k_lns;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraGrid.GridControl m_grc_khs;

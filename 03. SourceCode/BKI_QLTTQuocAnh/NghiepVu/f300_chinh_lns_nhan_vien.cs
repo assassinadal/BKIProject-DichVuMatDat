@@ -165,6 +165,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 f002_import_he_so_lns v_frm = new f002_import_he_so_lns();
                 v_frm.ShowDialog();
                 load_data_2_grv_k_hs_lns();
+                load_data_2_grid_lns();
             }
             catch(Exception v_e)
             {
@@ -178,6 +179,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 case "m_tab_co_lns":
                     m_e_tab_mode = tab_mode.co_lns;
+                     m_cmd_delete.Visible = true;
+                    m_cmd_update.Visible = true;
                     load_data_2_grid_lns();
                     break;
                 case "m_tab_k_lns":

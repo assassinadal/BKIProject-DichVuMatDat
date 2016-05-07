@@ -157,6 +157,16 @@ namespace BKI_DichVuMatDat
                         CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + m_grv.GetDataRow(i)["MA_NV"].ToString() + "  đã tồn tại. Vui lòng kiểm tra lại thông tin!");
                         return false;
                     }
+                    if(m_grv.GetDataRow(i)["HO_DEM"] == DBNull.Value || m_grv.GetDataRow(i)["HO_DEM"].ToString() == "")
+                    {
+                        CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + m_grv.GetDataRow(i)["MA_NV"].ToString() + "  có cột HO_DEM trống. Vui lòng kiểm tra lại thông tin!");
+                        return false;
+                    }
+                    if(m_grv.GetDataRow(i)["TEN"] == DBNull.Value || m_grv.GetDataRow(i)["TEN"].ToString() == "")
+                    {
+                        CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + m_grv.GetDataRow(i)["MA_NV"].ToString() + "  có cột TEN trống. Vui lòng kiểm tra lại thông tin!");
+                        return false;
+                    }
                 }
                 else { j++; }
             }
@@ -224,12 +234,13 @@ namespace BKI_DichVuMatDat
                 }
                 else
                 {
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                    
                     //F503_IMPORT_EXCEL.da_hoan_thanh = true;
                     m_lbl_check.Text = "Đã lưu dữ liệu";
                     return;
                 }
             }
+            CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
         }
 
         private bool checked_data_row_is_not_null(DataRow dataRow)
@@ -277,7 +288,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-
+                CHRMCommon.ExportExcel(m_grv);
             }
             catch (Exception v_e)
             {

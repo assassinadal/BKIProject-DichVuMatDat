@@ -21,7 +21,7 @@ using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
 using DevExpress.XtraEditors;
-
+using System.Linq;
 
 namespace BKI_DichVuMatDat
 {
@@ -221,7 +221,8 @@ namespace BKI_DichVuMatDat
             }
             con.Close();
             //format_data_header(dt);
-            ip_grc.DataSource = dt;
+            DataTable v_dt_result = dt.Rows.Cast<DataRow>().Where(row => !row.ItemArray.All(field => field is System.DBNull || string.IsNullOrEmpty(field.ToString()) == true)).CopyToDataTable();
+            ip_grc.DataSource = v_dt_result;
         }
 
         public static void load_xls_to_gridview(string ip_str_path, DevExpress.XtraGrid.GridControl ip_grc)

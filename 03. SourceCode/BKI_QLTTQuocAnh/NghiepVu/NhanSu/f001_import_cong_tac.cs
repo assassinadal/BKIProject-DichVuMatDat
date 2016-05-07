@@ -375,13 +375,14 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             if(ExcelDataSet != null && ExcelDataSet.Rows.Count > 0)
             {
                 //string SheetName = ExcelDataSet.Rows[0]["TABLE_NAME"].ToString(); // get sheetname
-                ExcelCommand.CommandText = "SELECT * From [" + SheetName + "] WHERE [" + ExcelCongTac.MA_NHAN_VIEN + "] IS NOT NULL";
+                ExcelCommand.CommandText = "SELECT * From [" + SheetName + "]"; //WHERE [" + ExcelCongTac.MA_NHAN_VIEN + "] IS NOT NULL";
                 OleDbDataAdapter ExcelAdapter = new OleDbDataAdapter(ExcelCommand);
                 ExcelAdapter.SelectCommand = ExcelCommand;
                 ExcelAdapter.Fill(dt);
             }
             con.Close();
-            return dt;
+            DataTable v_dt_result = dt.Rows.Cast<DataRow>().Where(row => !row.ItemArray.All(field => field is System.DBNull || string.IsNullOrEmpty(field.ToString()) == true)).CopyToDataTable();
+            return v_dt_result;
         }
         private void set_init_form_load()
         {

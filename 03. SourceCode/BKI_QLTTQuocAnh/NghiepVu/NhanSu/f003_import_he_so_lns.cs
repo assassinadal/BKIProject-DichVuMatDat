@@ -336,7 +336,8 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 ExcelAdapter.Fill(dt);
             }
             con.Close();
-            return dt;
+            DataTable v_dt_result = dt.Rows.Cast<DataRow>().Where(row => !row.ItemArray.All(field => field is System.DBNull || string.IsNullOrEmpty(field.ToString()) == true)).CopyToDataTable();
+            return v_dt_result;
         }
         private void set_init_form_load()
         {

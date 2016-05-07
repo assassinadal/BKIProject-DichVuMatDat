@@ -1,6 +1,6 @@
 ﻿namespace BKI_DichVuMatDat.NghiepVu.HopDong
 {
-    partial class f001_import_hop_dong_v2
+    partial class f002_import_hop_dong_v2
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f001_import_hop_dong_v2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f002_import_hop_dong_v2));
             this.label1 = new System.Windows.Forms.Label();
             this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
@@ -259,8 +259,6 @@
             // 
             this.MA_CHUC_DANH_LCD.AppearanceCell.Options.UseTextOptions = true;
             this.MA_CHUC_DANH_LCD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.MA_CHUC_DANH_LCD.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.MA_CHUC_DANH_LCD.AppearanceHeader.Options.UseFont = true;
             this.MA_CHUC_DANH_LCD.AppearanceHeader.Options.UseTextOptions = true;
             this.MA_CHUC_DANH_LCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MA_CHUC_DANH_LCD.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -274,8 +272,6 @@
             // 
             this.MA_MUC_LCD.AppearanceCell.Options.UseTextOptions = true;
             this.MA_MUC_LCD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.MA_MUC_LCD.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.MA_MUC_LCD.AppearanceHeader.Options.UseFont = true;
             this.MA_MUC_LCD.AppearanceHeader.Options.UseTextOptions = true;
             this.MA_MUC_LCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MA_MUC_LCD.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -351,8 +347,6 @@
             // 
             this.NGAY_KET_THUC.AppearanceCell.Options.UseTextOptions = true;
             this.NGAY_KET_THUC.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NGAY_KET_THUC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.NGAY_KET_THUC.AppearanceHeader.Options.UseFont = true;
             this.NGAY_KET_THUC.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAY_KET_THUC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NGAY_KET_THUC.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -394,7 +388,7 @@
             this.m_lbl_thong_bao.Text = "Chưa load file";
             this.m_lbl_thong_bao.Visible = false;
             // 
-            // f001_import_hop_dong_v2
+            // f002_import_hop_dong_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -403,8 +397,8 @@
             this.Controls.Add(this.m_lbl_thong_bao);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.label1);
-            this.Name = "f001_import_hop_dong_v2";
-            this.Text = "F001 - IMPORT HỢP ĐỒNG EXCEL";
+            this.Name = "f002_import_hop_dong_v2";
+            this.Text = "F002 - IMPORT HỢP ĐỒNG EXCEL";
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_pnl_danh_sach_hop_dong)).EndInit();

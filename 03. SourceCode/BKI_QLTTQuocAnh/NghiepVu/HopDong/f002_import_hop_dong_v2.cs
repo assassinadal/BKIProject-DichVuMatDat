@@ -26,12 +26,12 @@ using BKI_DichVuMatDat.BaoCao;
 
 namespace BKI_DichVuMatDat.NghiepVu.HopDong
 {
-    public partial class f001_import_hop_dong_v2 : Form
+    public partial class f002_import_hop_dong_v2 : Form
     {
 
         #region Public Interfaces
 
-        public f001_import_hop_dong_v2()
+        public f002_import_hop_dong_v2()
         {
             InitializeComponent();
             format_control();
@@ -188,6 +188,10 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
         }
         private bool ma_lcd_dung_dinh_dang(DataRow ip_dr)
         {
+            if(!is_not_null(ip_dr[ExcelHopDong.MA_CHUC_DANH_LCD]))
+            {
+                return true;
+            }
             var v_str_ma_lcd = ip_dr[ExcelHopDong.MA_CHUC_DANH_LCD].ToString();
             var v_bool_is_exist = m_dt_ma_lcd.AsEnumerable().Any(x => x.Field<string>(CM_DM_TU_DIEN.MA_TU_DIEN) == v_str_ma_lcd);
             if(!v_bool_is_exist)
@@ -198,6 +202,10 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
         }
         private bool muc_lcd_dung_dinh_dang(DataRow ip_dr)
         {
+            if(!is_not_null(ip_dr[ExcelHopDong.MA_MUC_LCD]))
+            {
+                return true;
+            }
             var v_str_muc_lcd = ip_dr[ExcelHopDong.MA_MUC_LCD].ToString();
             var v_bool_is_exist = m_dt_muc_lcd.AsEnumerable().Any(x => x.Field<string>(CM_DM_TU_DIEN.MA_TU_DIEN) == v_str_muc_lcd);
             if(!v_bool_is_exist)
@@ -212,8 +220,6 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                                             , ip_dr[ExcelHopDong.MA_HOP_DONG]
                                             , ip_dr[ExcelHopDong.MA_LOAI_HOP_DONG]
                                             , ip_dr[ExcelHopDong.MA_LOAI_LAO_DONG]
-                                            , ip_dr[ExcelHopDong.MA_CHUC_DANH_LCD]
-                                            , ip_dr[ExcelHopDong.MA_MUC_LCD]
                                             , ip_dr[ExcelHopDong.NGAY_BAT_DAU]
                                             , ip_dr[ExcelHopDong.MA_DON_VI]
                                             , ip_dr[ExcelHopDong.MA_CHUC_VU]
@@ -223,6 +229,21 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                 XtraMessageBox.Show("Dữ liệu của nhân viên " + ip_dr[ExcelHopDong.MA_NHAN_VIEN].ToString() + " có ô bị trống!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return v_bool_is_null;
+        }
+        private bool ngay_bat_dau_nho_hon_ngay_ket_thuc(DataRow ip_dr)
+        {
+            if(ip_dr[ExcelHopDong.NGAY_KET_THUC] == DBNull.Value || ip_dr[ExcelHopDong.NGAY_KET_THUC].ToString() == "")
+            {
+                return true;
+            }
+            DateTime v_dat_ngay_bat_dau = Convert.ToDateTime(ip_dr[ExcelHopDong.NGAY_BAT_DAU]);
+            DateTime v_dat_ngay_ket_thuc = Convert.ToDateTime(ip_dr[ExcelHopDong.NGAY_KET_THUC]);
+            if(v_dat_ngay_bat_dau.Date >= v_dat_ngay_ket_thuc.Date)
+            {
+                XtraMessageBox.Show("Dòng nhân viên "+ ip_dr[ExcelHopDong.MA_NHAN_VIEN].ToString() +" ngày bắt đầu phải nhỏ hơn ngày kết thúc!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
         }
         private bool check_client_one_row(DataRow ip_dr)
         {
@@ -238,6 +259,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                     || !ma_nhan_vien_khong_trung_lap(ip_dr)
                     || !ma_don_vi_dung_dinh_dang(ip_dr)
                     || !ma_chuc_dung_dinh_dang(ip_dr)
+                    || !ngay_bat_dau_nho_hon_ngay_ket_thuc(ip_dr)
                 )
             {
                 return false;
@@ -513,9 +535,19 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             v_us_gd_hd.dcID_LOAI_HOP_DONG = find_id_loai_hop_dong_by_ma(data[ExcelHopDong.MA_LOAI_HOP_DONG].ToString());
             v_us_gd_hd.dcID_CHUC_VU = find_id_chuc_vu(data[ExcelHopDong.MA_CHUC_VU].ToString());
             v_us_gd_hd.dcID_DON_VI = find_id_don_vi(data[ExcelHopDong.MA_DON_VI].ToString());
-            v_us_gd_hd.dcID_LUONG_CHE_DO = find_id_lcd_by_ma_lcd(data[ExcelHopDong.MA_CHUC_DANH_LCD].ToString(), data[ExcelHopDong.MA_MUC_LCD].ToString());
+            if(!is_not_null(data[ExcelHopDong.MA_CHUC_DANH_LCD]) || !is_not_null(data[ExcelHopDong.MA_MUC_LCD]))
+            {
+                v_us_gd_hd.SetID_LUONG_CHE_DONull();
+                v_us_gd_hd.dcSO_TIEN_LCD = 0;
+            }
+            else
+            {
+                v_us_gd_hd.dcID_LUONG_CHE_DO = find_id_lcd_by_ma_lcd(data[ExcelHopDong.MA_CHUC_DANH_LCD].ToString(), data[ExcelHopDong.MA_MUC_LCD].ToString());
+                v_us_gd_hd.dcSO_TIEN_LCD = find_so_tien_lcd(find_id_lcd_by_ma_lcd(data[ExcelHopDong.MA_CHUC_DANH_LCD].ToString(), data[ExcelHopDong.MA_MUC_LCD].ToString()));
+            }
+            
             v_us_gd_hd.dcID_LOAI_LAO_DONG = find_id_tu_dien_by_ma_tu_dien(data[ExcelHopDong.MA_LOAI_LAO_DONG].ToString());
-            v_us_gd_hd.dcSO_TIEN_LCD = find_so_tien_lcd(find_id_lcd_by_ma_lcd(data[ExcelHopDong.MA_CHUC_DANH_LCD].ToString(), data[ExcelHopDong.MA_MUC_LCD].ToString()));
+            
             v_us_gd_hd.strMA_HOP_DONG = data[ExcelHopDong.MA_HOP_DONG].ToString();
             v_us_gd_hd.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             v_us_gd_hd.datNGAY_BAT_DAU = WinFormControls.FormatPostingDate(data[ExcelHopDong.NGAY_BAT_DAU].ToString());
@@ -541,7 +573,11 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
 
         private void save_data()
         {
-           
+            if(m_grv_hop_dong.RowCount < 1)
+            {
+                XtraMessageBox.Show("Chưa có dữ liệu để lưu!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if(!check_all_is_ok())
             {
                 return;
@@ -561,7 +597,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                     SplashScreenManager.Default.SendCommand(SplashScreen1.SplashScreenCommand.SetProgress, (int)((decimal)i / (decimal)m_grv_hop_dong.RowCount * 100));
                 }
                 v_us_gd_hd.CommitTransaction();
-                CHRM_BaseMessages.MsgBox_Infor("Đã lưu dữu liệu thành công");
+                CHRM_BaseMessages.MsgBox_Infor("Đã lưu dữ liệu thành công");
             }
             catch(Exception)
             {
@@ -676,7 +712,8 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             }
             catch(Exception v_e)
             {
-                CSystemLog_301.ExceptionHandle(v_e);
+                XtraMessageBox.Show("Không lấy dữ liệu được từ File Excel Import. Bạn kiểm tra lại File Excel Import nhé!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         private void F001_import_hop_dong_Load(object sender, EventArgs e)

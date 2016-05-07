@@ -301,7 +301,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             try
             {
-                f001_import_hop_dong_v2 v_f = new f001_import_hop_dong_v2();
+                f002_import_hop_dong_v2 v_f = new f002_import_hop_dong_v2();
                 v_f.ShowDialog();
                 load_data_to_grid();
                 m_grv.ActiveFilterString = "NGAY_LAP = " + DateTime.Now.Date;

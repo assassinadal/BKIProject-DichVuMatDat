@@ -1,6 +1,6 @@
 ﻿namespace BKI_DichVuMatDat.NghiepVu.NhanSu
 {
-    partial class f002_import_he_so_lns
+    partial class f003_import_he_so_lns
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f002_import_he_so_lns));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f003_import_he_so_lns));
             this.label1 = new System.Windows.Forms.Label();
             this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
@@ -303,7 +303,7 @@
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.label1);
             this.Name = "f002_import_he_so_lns";
-            this.Text = "F001 - IMPORT HỆ SỐ LNS";
+            this.Text = "F003 - IMPORT HỆ SỐ LNS";
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_pnl_danh_sach_hop_dong)).EndInit();

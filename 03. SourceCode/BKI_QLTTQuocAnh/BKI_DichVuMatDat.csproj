@@ -445,11 +445,11 @@
     <Compile Include="NghiepVu\f299_chinh_lns_nhan_vien_de.Designer.cs">
       <DependentUpon>f299_chinh_lns_nhan_vien_de.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\NhanSu\f002_import_he_so_lns.cs">
+    <Compile Include="NghiepVu\NhanSu\f003_import_he_so_lns.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NghiepVu\NhanSu\f002_import_he_so_lns.Designer.cs">
-      <DependentUpon>f002_import_he_so_lns.cs</DependentUpon>
+    <Compile Include="NghiepVu\NhanSu\f003_import_he_so_lns.Designer.cs">
+      <DependentUpon>f003_import_he_so_lns.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\f300_chinh_lns_nhan_vien.cs">
       <SubType>Form</SubType>
@@ -553,11 +553,11 @@
     <Compile Include="NghiepVu\F395_nhan_vien_phu_cap_de.designer.cs">
       <DependentUpon>F395_nhan_vien_phu_cap_de.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\HopDong\f001_import_hop_dong_v2.cs">
+    <Compile Include="NghiepVu\HopDong\f002_import_hop_dong_v2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NghiepVu\HopDong\f001_import_hop_dong_v2.Designer.cs">
-      <DependentUpon>f001_import_hop_dong_v2.cs</DependentUpon>
+    <Compile Include="NghiepVu\HopDong\f002_import_hop_dong_v2.Designer.cs">
+      <DependentUpon>f002_import_hop_dong_v2.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\Luong\f303_cac_khoan_tien_khac.cs">
       <SubType>Form</SubType>
@@ -1229,8 +1229,8 @@
     <EmbeddedResource Include="NghiepVu\f299_chinh_lns_nhan_vien_de.resx">
       <DependentUpon>f299_chinh_lns_nhan_vien_de.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\NhanSu\f002_import_he_so_lns.resx">
-      <DependentUpon>f002_import_he_so_lns.cs</DependentUpon>
+    <EmbeddedResource Include="NghiepVu\NhanSu\f003_import_he_so_lns.resx">
+      <DependentUpon>f003_import_he_so_lns.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f300_chinh_lns_nhan_vien.resx">
@@ -1254,8 +1254,8 @@
     <EmbeddedResource Include="NghiepVu\f396_tinh_phep_tieu_chuan.resx">
       <DependentUpon>f396_tinh_phep_tieu_chuan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\HopDong\f001_import_hop_dong_v2.resx">
-      <DependentUpon>f001_import_hop_dong_v2.cs</DependentUpon>
+    <EmbeddedResource Include="NghiepVu\HopDong\f002_import_hop_dong_v2.resx">
+      <DependentUpon>f002_import_hop_dong_v2.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\NhanSu\f001_import_cong_tac.resx">

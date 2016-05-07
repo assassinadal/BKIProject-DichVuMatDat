@@ -158,6 +158,21 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
             return v_bool_is_null;
         }
+        private bool ngay_bat_dau_nho_hon_ngay_ket_thuc(DataRow ip_dr)
+        {
+            if(ip_dr[ExcelCongTac.NGAY_KET_THUC] == DBNull.Value || ip_dr[ExcelCongTac.NGAY_KET_THUC].ToString() == "")
+            {
+                return true;
+            }
+            DateTime v_dat_ngay_bat_dau = Convert.ToDateTime(ip_dr[ExcelCongTac.NGAY_BAT_DAU]);
+            DateTime v_dat_ngay_ket_thuc = Convert.ToDateTime(ip_dr[ExcelCongTac.NGAY_KET_THUC]);
+            if(v_dat_ngay_bat_dau.Date >= v_dat_ngay_ket_thuc.Date)
+            {
+                XtraMessageBox.Show("Dòng nhân viên " + ip_dr[ExcelCongTac.MA_NHAN_VIEN].ToString() + " ngày bắt đầu phải nhỏ hơn ngày kết thúc!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
         private bool check_client_one_row(DataRow ip_dr)
         {
             if(!check_not_null(ip_dr))
@@ -168,6 +183,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                     || !ma_nhan_vien_khong_trung_lap(ip_dr)
                     || !ma_don_vi_dung_dinh_dang(ip_dr)
                     || !ma_chuc_dung_dinh_dang(ip_dr)
+                    || !ngay_bat_dau_nho_hon_ngay_ket_thuc(ip_dr)
                 )
             {
                 return false;
@@ -403,6 +419,11 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
 
         private void save_data()
         {
+            if(m_grv_cong_tac.RowCount < 1)
+            {
+                XtraMessageBox.Show("Chưa có dữ liệu để lưu!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if(!check_all_is_ok())
             {
                 return;
@@ -424,7 +445,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 v_us_gd_ct.CommitTransaction();
                 //Sau do phai cap nhat lai so ho so, chua biet lam
                 
-                CHRM_BaseMessages.MsgBox_Infor("Đã lưu dữu liệu thành công");
+                CHRM_BaseMessages.MsgBox_Infor("Đã lưu dữ liệu thành công");
             }
             catch(Exception)
             {
@@ -539,7 +560,8 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
             catch(Exception v_e)
             {
-                CSystemLog_301.ExceptionHandle(v_e);
+                XtraMessageBox.Show("Có lỗi xảy ra, dữ liệu chưa được lưu. Bạn xem lại dữ liệu trên File Excel nhé", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         private void F001_import_hop_dong_Load(object sender, EventArgs e)

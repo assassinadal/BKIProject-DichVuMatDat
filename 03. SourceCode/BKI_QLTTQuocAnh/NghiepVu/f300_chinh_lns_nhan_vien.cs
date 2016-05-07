@@ -162,7 +162,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                f002_import_he_so_lns v_frm = new f002_import_he_so_lns();
+                f003_import_he_so_lns v_frm = new f003_import_he_so_lns();
                 v_frm.ShowDialog();
                 load_data_2_grv_k_hs_lns();
                 load_data_2_grid_lns();

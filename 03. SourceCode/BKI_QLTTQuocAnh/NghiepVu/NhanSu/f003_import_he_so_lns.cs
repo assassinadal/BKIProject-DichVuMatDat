@@ -207,10 +207,25 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
             return v_bool_hop_le;
         }
+        private bool check_thoi_gian_voi_luong_cung_Insert(DataRow ip_dr)
+        {
+            US_GD_HE_SO_LNS v_us_check = new US_GD_HE_SO_LNS();
+            decimal v_dc_id_nhan_vien = find_id_nv_by_ma_nv(ip_dr[ExcelLNS.MA_NHAN_VIEN].ToString());
+            var v_dat_ngay_bat_dau = Convert.ToDateTime(ip_dr[ExcelLNS.NGAY_BAT_DAU]).Date;
+            var v_dat_ngay_ket_thuc = ip_dr[ExcelLNS.NGAY_KET_THUC] == DBNull.Value ? new DateTime(2100, 01, 01).Date : Convert.ToDateTime(ip_dr[ExcelLNS.NGAY_KET_THUC]);
+            if(!v_us_check.KiemTraThoiGianVoiLuongCungHopLeForInsert(v_dc_id_nhan_vien, v_dat_ngay_bat_dau, v_dat_ngay_ket_thuc))
+            {
+                string v_str_error = "Trong hệ thống, đã tồn tại bản ghi LƯƠNG CỨNG của nhân viên "+ip_dr[ExcelLNS.MA_NHAN_VIEN].ToString()+" có hiệu lực trong khoảng thời gian này rồi!!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
         private bool check_logic_one_row(DataRow ip_dr)
         {
             if(!check_ma_nhan_vien_ton_tai(ip_dr)
                 || !check_thoi_gian_he_so_lns_Insert(ip_dr)
+                || !check_thoi_gian_voi_luong_cung_Insert(ip_dr)
                 )
             {
                 return false;

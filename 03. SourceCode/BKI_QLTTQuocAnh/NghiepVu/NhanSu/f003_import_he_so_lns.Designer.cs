@@ -293,7 +293,7 @@
             this.m_lbl_thong_bao.Text = "Chưa load file";
             this.m_lbl_thong_bao.Visible = false;
             // 
-            // f002_import_he_so_lns
+            // f003_import_he_so_lns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -302,7 +302,7 @@
             this.Controls.Add(this.m_lbl_thong_bao);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.label1);
-            this.Name = "f002_import_he_so_lns";
+            this.Name = "f003_import_he_so_lns";
             this.Text = "F003 - IMPORT HỆ SỐ LNS";
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
             this.m_pnl_out_place_dm.ResumeLayout(false);

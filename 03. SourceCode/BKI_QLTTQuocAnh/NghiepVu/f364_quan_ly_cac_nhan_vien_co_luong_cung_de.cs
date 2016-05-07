@@ -129,7 +129,30 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.FillDataset(v_ds);
             return v_ds;
         }
-
+        private bool kiem_tra_thoi_gian_hop_le_voi_lns_Insert()
+        {
+            US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG();
+            var v_dat_tu_ngay = m_dat_ngay_bat_dau.DateTime.Date;
+            var v_dat_den_ngay = m_dat_ngay_ket_thuc.EditValue == null ? new DateTime(2100, 1, 1).Date : m_dat_ngay_ket_thuc.DateTime.Date;
+            if(!v_us.KiemTraThoiGianVoiHeSoLNSForInsert(Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue), v_dat_tu_ngay, v_dat_den_ngay))
+            {
+                XtraMessageBox.Show("Không thêm lương cứng được vì nhân viên đã có hệ số LNS có hiệu lực trong khoảng thời gian này rồi!","THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+        private bool kiem_tra_thoi_gian_hop_le_voi_lns_Update()
+        {
+            US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG();
+            var v_dat_tu_ngay = m_dat_ngay_bat_dau.DateTime.Date;
+            var v_dat_den_ngay = m_dat_ngay_ket_thuc.EditValue == null ? new DateTime(2100, 1, 1).Date : m_dat_ngay_ket_thuc.DateTime.Date;
+            if(!v_us.KiemTraThoiGianVoiHeSoLNSForUpdate(m_us_gd_luong_cung.dcID, v_dat_tu_ngay, v_dat_den_ngay))
+            {
+                XtraMessageBox.Show("Không sửa lương cứng được vì nhân viên đã có hệ số LNS có hiệu lực trong khoảng thời gian này rồi!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
         private bool check_validate_data()
         {
             DateTime v = m_dat_ngay_ket_thuc.DateTime;
@@ -155,6 +178,21 @@ namespace BKI_DichVuMatDat.NghiepVu
                 string v_str_error = "Ngày kết thúc phải lớn hơn ngày bắt đầu!";
                 XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+            }
+            switch(m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    if(!kiem_tra_thoi_gian_hop_le_voi_lns_Insert())
+                    {
+                        return false;
+                    }
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    if(!kiem_tra_thoi_gian_hop_le_voi_lns_Update())
+                    {
+                        return false;
+                    }
+                    break;
             }
             return true;
         }

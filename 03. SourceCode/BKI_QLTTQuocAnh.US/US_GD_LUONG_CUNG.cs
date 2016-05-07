@@ -303,5 +303,30 @@ namespace BKI_DichVuMatDat.US
             v_sp.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
             v_sp.fillDataSetByCommand(this, ip_ds);
         }
+
+        public bool KiemTraThoiGianVoiHeSoLNSForInsert(decimal ip_dc_id_nhan_vien, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_LC_kiem_tra_thoi_gian_hop_le_voi_lns_ForInsert");
+            v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            v_cstore.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+            v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+
+            SqlParameter v_yn = v_cstore.addNVarcharOutputParam("@op_str_hop_le_yn", "");
+            v_cstore.ExecuteCommand(this);
+
+            return v_yn.Value.ToString() == "Y" ? true : false;
+        }
+        public bool KiemTraThoiGianVoiHeSoLNSForUpdate(decimal ip_dc_id_gd_luong_cung, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_LC_kiem_tra_thoi_gian_hop_le_voi_lns_ForUpdate");
+            v_cstore.addDecimalInputParam("@ip_dc_id_gd_luong_cung", ip_dc_id_gd_luong_cung);
+            v_cstore.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+            v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+
+            SqlParameter v_yn = v_cstore.addNVarcharOutputParam("@op_str_hop_le_yn", "");
+            v_cstore.ExecuteCommand(this);
+
+            return v_yn.Value.ToString() == "Y" ? true : false;
+        }
     }
 }

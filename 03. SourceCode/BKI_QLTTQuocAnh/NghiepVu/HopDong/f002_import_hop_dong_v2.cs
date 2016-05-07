@@ -245,6 +245,18 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             }
             return true;
         }
+        private bool check_chuc_vu_thuoc_don_vi(DataRow ip_dr)
+        {
+            var v_str_ma_chuc_vu = ip_dr[ExcelHopDong.MA_CHUC_VU].ToString();
+            var v_dc_id_don_vi = find_id_don_vi(ip_dr[ExcelHopDong.MA_DON_VI].ToString());
+            DataRow v_dt_row_chuc_vu = m_dt_chuc_vu.AsEnumerable().Where(x => x.Field<string>(DM_CHUC_VU.MA_CHUC_VU) == v_str_ma_chuc_vu).FirstOrDefault();
+            if(Convert.ToDecimal(v_dt_row_chuc_vu[DM_CHUC_VU.ID_DON_VI]) != v_dc_id_don_vi)
+            {
+                XtraMessageBox.Show("Dòng nhân viên " + ip_dr[ExcelHopDong.MA_NHAN_VIEN].ToString() + " có chức vụ không thuộc đơn vị. Bạn kiểm tra lại nhé!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
         private bool check_client_one_row(DataRow ip_dr)
         {
             if(!check_not_null(ip_dr))
@@ -260,6 +272,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                     || !ma_don_vi_dung_dinh_dang(ip_dr)
                     || !ma_chuc_dung_dinh_dang(ip_dr)
                     || !ngay_bat_dau_nho_hon_ngay_ket_thuc(ip_dr)
+                    || !check_chuc_vu_thuoc_don_vi(ip_dr)
                 )
             {
                 return false;

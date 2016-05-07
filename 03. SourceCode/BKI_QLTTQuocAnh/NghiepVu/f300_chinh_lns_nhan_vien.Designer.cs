@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f300_chinh_lns_nhan_vien));
+            this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.m_tab_co_lns = new DevExpress.XtraTab.XtraTabPage();
@@ -43,16 +44,12 @@
             this.MA_CHUC_DANH_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MUC_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_BAT_DAU = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_tab_k_lns = new DevExpress.XtraTab.XtraTabPage();
             this.m_grc_khs = new DevExpress.XtraGrid.GridControl();
             this.m_grv_khs = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTEN_CHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLOAI_LAO_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
@@ -88,6 +85,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_thang.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_thang.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // colNGAY_KET_THUC
+            // 
+            this.colNGAY_KET_THUC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colNGAY_KET_THUC.AppearanceHeader.Options.UseFont = true;
+            this.colNGAY_KET_THUC.Caption = "Ngày kết thúc";
+            this.colNGAY_KET_THUC.FieldName = "NGAY_KET_THUC";
+            this.colNGAY_KET_THUC.Name = "colNGAY_KET_THUC";
+            this.colNGAY_KET_THUC.Visible = true;
+            this.colNGAY_KET_THUC.VisibleIndex = 6;
+            this.colNGAY_KET_THUC.Width = 143;
             // 
             // layoutControl1
             // 
@@ -238,17 +246,6 @@
             this.NGAY_BAT_DAU.VisibleIndex = 5;
             this.NGAY_BAT_DAU.Width = 129;
             // 
-            // colNGAY_KET_THUC
-            // 
-            this.colNGAY_KET_THUC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colNGAY_KET_THUC.AppearanceHeader.Options.UseFont = true;
-            this.colNGAY_KET_THUC.Caption = "Ngày kết thúc";
-            this.colNGAY_KET_THUC.FieldName = "NGAY_KET_THUC";
-            this.colNGAY_KET_THUC.Name = "colNGAY_KET_THUC";
-            this.colNGAY_KET_THUC.Visible = true;
-            this.colNGAY_KET_THUC.VisibleIndex = 6;
-            this.colNGAY_KET_THUC.Width = 143;
-            // 
             // m_tab_k_lns
             // 
             this.m_tab_k_lns.Controls.Add(this.m_grc_khs);
@@ -273,10 +270,7 @@
             this.m_grv_khs.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.colMA_NV,
-            this.colHO_TEN,
-            this.colTEN_DON_VI,
-            this.colTEN_CHUC_VU,
-            this.colLOAI_LAO_DONG});
+            this.colHO_TEN});
             this.m_grv_khs.GridControl = this.m_grc_khs;
             this.m_grv_khs.Name = "m_grv_khs";
             this.m_grv_khs.OptionsBehavior.ReadOnly = true;
@@ -301,6 +295,8 @@
             this.colMA_NV.Caption = "Mã nhân viên";
             this.colMA_NV.FieldName = "MA_NV";
             this.colMA_NV.Name = "colMA_NV";
+            this.colMA_NV.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MA_NV", "SL: {0:n0}")});
             this.colMA_NV.Visible = true;
             this.colMA_NV.VisibleIndex = 0;
             this.colMA_NV.Width = 96;
@@ -315,39 +311,6 @@
             this.colHO_TEN.Visible = true;
             this.colHO_TEN.VisibleIndex = 1;
             this.colHO_TEN.Width = 260;
-            // 
-            // colTEN_DON_VI
-            // 
-            this.colTEN_DON_VI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colTEN_DON_VI.AppearanceHeader.Options.UseFont = true;
-            this.colTEN_DON_VI.Caption = "Tên đơn vị";
-            this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
-            this.colTEN_DON_VI.Name = "colTEN_DON_VI";
-            this.colTEN_DON_VI.Visible = true;
-            this.colTEN_DON_VI.VisibleIndex = 2;
-            this.colTEN_DON_VI.Width = 184;
-            // 
-            // colTEN_CHUC_VU
-            // 
-            this.colTEN_CHUC_VU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colTEN_CHUC_VU.AppearanceHeader.Options.UseFont = true;
-            this.colTEN_CHUC_VU.Caption = "Tên chức vụ";
-            this.colTEN_CHUC_VU.FieldName = "TEN_CHUC_VU";
-            this.colTEN_CHUC_VU.Name = "colTEN_CHUC_VU";
-            this.colTEN_CHUC_VU.Visible = true;
-            this.colTEN_CHUC_VU.VisibleIndex = 3;
-            this.colTEN_CHUC_VU.Width = 229;
-            // 
-            // colLOAI_LAO_DONG
-            // 
-            this.colLOAI_LAO_DONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colLOAI_LAO_DONG.AppearanceHeader.Options.UseFont = true;
-            this.colLOAI_LAO_DONG.Caption = "Loại lao động";
-            this.colLOAI_LAO_DONG.FieldName = "LOAI_LAO_DONG";
-            this.colLOAI_LAO_DONG.Name = "colLOAI_LAO_DONG";
-            this.colLOAI_LAO_DONG.Visible = true;
-            this.colLOAI_LAO_DONG.VisibleIndex = 4;
-            this.colLOAI_LAO_DONG.Width = 135;
             // 
             // m_pnl_out_place_dm
             // 
@@ -609,9 +572,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn colMA_NV;
         private DevExpress.XtraGrid.Columns.GridColumn colHO_TEN;
-        private DevExpress.XtraGrid.Columns.GridColumn colTEN_DON_VI;
-        private DevExpress.XtraGrid.Columns.GridColumn colTEN_CHUC_VU;
-        private DevExpress.XtraGrid.Columns.GridColumn colLOAI_LAO_DONG;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
         private DevExpress.XtraEditors.SimpleButton m_cmd_refresh;
         private DevExpress.XtraEditors.PanelControl panelControl1;

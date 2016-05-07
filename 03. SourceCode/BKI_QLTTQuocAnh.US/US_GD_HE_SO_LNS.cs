@@ -397,5 +397,14 @@ namespace BKI_DichVuMatDat.US
             v_cstore.fillDataSetByCommand(this, v_ds);
             return v_ds.Tables[0];
         }
+
+        public DataTable LayDanhSachNhanVienChuaCoLNS()
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_LNS_danh_sach_nhan_vien_khong_co_lns_GetAll");
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_cstore.fillDataSetByCommand(this, v_ds);
+            return v_ds.Tables[0];
+        }
     }
 }

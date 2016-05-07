@@ -89,12 +89,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private void load_data_2_grv_k_hs_lns()
         {
-            US_V_GD_KHONG_HE_SO_LNS v_us = new US_V_GD_KHONG_HE_SO_LNS();
-            DS_V_GD_KHONG_HE_SO_LNS v_ds = new DS_V_GD_KHONG_HE_SO_LNS();
-            v_ds.EnforceConstraints = false;
-            v_us.FillDataset(v_ds);
-
-            m_grc_khs.DataSource = v_ds.Tables[0];
+            US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS();
+            m_grc_khs.DataSource = v_us.LayDanhSachNhanVienChuaCoLNS();
         }
 
         //Action

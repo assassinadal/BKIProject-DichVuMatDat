@@ -176,6 +176,12 @@ namespace BKI_DichVuMatDat.NghiepVu
         //Check data
         private bool check_data_is_ok()
         {
+            if(m_sle_chon_nhan_vien.EditValue == null)
+            {
+                string v_str_error = "Vui lòng chọn nhân viên!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             if(m_sle_chuc_danh_lns.EditValue == null)
             {
                 string v_str_error = "Vui lòng chọn chức danh lương năng suất!";

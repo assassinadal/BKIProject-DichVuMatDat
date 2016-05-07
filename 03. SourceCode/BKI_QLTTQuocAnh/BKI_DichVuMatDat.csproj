@@ -451,10 +451,10 @@
     <Compile Include="NghiepVu\NhanSu\f002_import_he_so_lns.Designer.cs">
       <DependentUpon>f002_import_he_so_lns.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\NhanSu\f300_chinh_lns_nhan_vien.cs">
+    <Compile Include="NghiepVu\f300_chinh_lns_nhan_vien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NghiepVu\NhanSu\f300_chinh_lns_nhan_vien.Designer.cs">
+    <Compile Include="NghiepVu\f300_chinh_lns_nhan_vien.Designer.cs">
       <DependentUpon>f300_chinh_lns_nhan_vien.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\f314_dang_ky_giam_tru_nguoi_phu_thuoc_xls.cs">
@@ -1233,7 +1233,7 @@
       <DependentUpon>f002_import_he_so_lns.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\NhanSu\f300_chinh_lns_nhan_vien.resx">
+    <EmbeddedResource Include="NghiepVu\f300_chinh_lns_nhan_vien.resx">
       <DependentUpon>f300_chinh_lns_nhan_vien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f320_lap_hop_dong.resx">

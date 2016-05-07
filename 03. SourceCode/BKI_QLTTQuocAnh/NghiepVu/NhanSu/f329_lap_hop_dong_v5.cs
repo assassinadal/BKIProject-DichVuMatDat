@@ -148,7 +148,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             v_cwr.AddFindAndReplace("<ngay_hien_tai>", DateTime.Now.Day.ToString());
             v_cwr.AddFindAndReplace("<thang_hien_tai>", DateTime.Now.Month.ToString());
             v_cwr.AddFindAndReplace("<nam_hien_tai>", DateTime.Now.Year.ToString());
-
+            v_cwr.AddFindAndReplace("<don_vi>", ip_datarow["TEN_DON_VI"].ToString());
             
 
             v_cwr.Export2Word();

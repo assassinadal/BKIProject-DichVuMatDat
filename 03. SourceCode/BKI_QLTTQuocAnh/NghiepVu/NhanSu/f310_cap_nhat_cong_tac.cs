@@ -336,7 +336,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         //
         private void setup_header_text(string ip_str_caption)
         {
-            m_lbl_header.Text = ip_str_caption;
+            Text = ip_str_caption;
         }
         private void setup_read_only(params SearchLookUpEdit[] ref_controls)
         {
@@ -352,7 +352,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private void setup_form_for_them_moi_qua_trinh_cong_tac()
         {
-            setup_header_text("THÊM MỚI CÔNG TÁC CHO NHÂN VIÊN");
+            setup_header_text("F310 - Thêm mới công tác");
             load_data_2_sle_nhan_vien();
             m_e_loai_cap_nhat = e_loai_cap_nhat.THEM_MOI;
         }
@@ -361,7 +361,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             US_GD_CONG_TAC v_us_ct = new US_GD_CONG_TAC(ip_dc_id_gd_cong_tac);
             m_e_loai_cap_nhat = e_loai_cap_nhat.UPDATE;
 
-            setup_header_text("SỬA CÔNG TÁC");
+            setup_header_text("F310 - Sửa công tác");
             setup_read_only(m_sle_chon_nhan_vien);
             load_data_2_sle_nhan_vien();
 

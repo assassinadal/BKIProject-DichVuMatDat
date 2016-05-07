@@ -60,7 +60,6 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_lbl_header = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_nhan_vien.Properties)).BeginInit();
@@ -99,11 +98,11 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.layoutControl1.Controls.Add(this.m_sle_muc_lns);
             this.layoutControl1.Controls.Add(this.m_sle_chuc_danh_lns);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 30);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(573, 243, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(425, 227);
+            this.layoutControl1.Size = new System.Drawing.Size(409, 224);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -117,7 +116,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_sle_chon_nhan_vien.Properties.NullText = "--Chọn nhân viên--";
             this.m_sle_chon_nhan_vien.Properties.ValueMember = "ID";
             this.m_sle_chon_nhan_vien.Properties.View = this.gridView1;
-            this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(316, 20);
+            this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(300, 20);
             this.m_sle_chon_nhan_vien.StyleController = this.layoutControl1;
             this.m_sle_chon_nhan_vien.TabIndex = 0;
             // 
@@ -170,7 +169,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_cmd_luu.AutoWidthInLayoutControl = true;
             this.m_cmd_luu.ImageIndex = 6;
             this.m_cmd_luu.ImageList = this.img_DVMD;
-            this.m_cmd_luu.Location = new System.Drawing.Point(336, 180);
+            this.m_cmd_luu.Location = new System.Drawing.Point(320, 180);
             this.m_cmd_luu.Name = "m_cmd_luu";
             this.m_cmd_luu.Size = new System.Drawing.Size(77, 32);
             this.m_cmd_luu.StyleController = this.layoutControl1;
@@ -196,7 +195,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             // 
             this.m_txt_ly_do.Location = new System.Drawing.Point(97, 156);
             this.m_txt_ly_do.Name = "m_txt_ly_do";
-            this.m_txt_ly_do.Size = new System.Drawing.Size(316, 20);
+            this.m_txt_ly_do.Size = new System.Drawing.Size(300, 20);
             this.m_txt_ly_do.StyleController = this.layoutControl1;
             this.m_txt_ly_do.TabIndex = 6;
             // 
@@ -209,7 +208,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_dat_ngay_ket_thuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(316, 20);
+            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(300, 20);
             this.m_dat_ngay_ket_thuc.StyleController = this.layoutControl1;
             this.m_dat_ngay_ket_thuc.TabIndex = 5;
             // 
@@ -222,7 +221,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_dat_ngay_bat_dau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dat_ngay_bat_dau.Size = new System.Drawing.Size(316, 20);
+            this.m_dat_ngay_bat_dau.Size = new System.Drawing.Size(300, 20);
             this.m_dat_ngay_bat_dau.StyleController = this.layoutControl1;
             this.m_dat_ngay_bat_dau.TabIndex = 4;
             // 
@@ -239,7 +238,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_txt_hs_lns.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.m_txt_hs_lns.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_hs_lns.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_txt_hs_lns.Size = new System.Drawing.Size(316, 20);
+            this.m_txt_hs_lns.Size = new System.Drawing.Size(300, 20);
             this.m_txt_hs_lns.StyleController = this.layoutControl1;
             this.m_txt_hs_lns.TabIndex = 3;
             // 
@@ -251,7 +250,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_muc_lns.Properties.NullText = "--Mức LNS--";
             this.m_sle_muc_lns.Properties.View = this.searchLookUpEdit2View;
-            this.m_sle_muc_lns.Size = new System.Drawing.Size(316, 20);
+            this.m_sle_muc_lns.Size = new System.Drawing.Size(300, 20);
             this.m_sle_muc_lns.StyleController = this.layoutControl1;
             this.m_sle_muc_lns.TabIndex = 2;
             // 
@@ -270,7 +269,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_chuc_danh_lns.Properties.NullText = "--Mã LNS--";
             this.m_sle_chuc_danh_lns.Properties.View = this.searchLookUpEdit1View;
-            this.m_sle_chuc_danh_lns.Size = new System.Drawing.Size(316, 20);
+            this.m_sle_chuc_danh_lns.Size = new System.Drawing.Size(300, 20);
             this.m_sle_chuc_danh_lns.StyleController = this.layoutControl1;
             this.m_sle_chuc_danh_lns.TabIndex = 1;
             // 
@@ -298,7 +297,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.layoutControlItem5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(425, 227);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(409, 224);
             this.layoutControlGroup1.Text = "Root";
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -308,7 +307,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.layoutControlItem6.CustomizationFormText = "Hệ số";
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(405, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(389, 24);
             this.layoutControlItem6.Text = "Hệ số LNS (*)";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(82, 13);
             // 
@@ -318,7 +317,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.layoutControlItem7.CustomizationFormText = "Ngày bắt đầu";
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(405, 24);
+            this.layoutControlItem7.Size = new System.Drawing.Size(389, 24);
             this.layoutControlItem7.Text = "Ngày bắt đầu (*)";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(82, 13);
             // 
@@ -328,7 +327,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.layoutControlItem9.CustomizationFormText = "Lý do chỉnh sửa";
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 144);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(405, 24);
+            this.layoutControlItem9.Size = new System.Drawing.Size(389, 24);
             this.layoutControlItem9.Text = "Lý do chỉnh sửa";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(82, 13);
             // 
@@ -339,7 +338,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 168);
             this.emptySpaceItem2.MinSize = new System.Drawing.Size(104, 24);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(324, 39);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(308, 36);
             this.emptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem2.Text = "emptySpaceItem2";
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -349,11 +348,11 @@ namespace BKI_DichVuMatDat.NghiepVu
             // 
             this.layoutControlItem2.Control = this.m_cmd_luu;
             this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem2.Location = new System.Drawing.Point(324, 168);
+            this.layoutControlItem2.Location = new System.Drawing.Point(308, 168);
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(81, 36);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(81, 36);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(81, 39);
+            this.layoutControlItem2.Size = new System.Drawing.Size(81, 36);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "layoutControlItem2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -366,7 +365,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.layoutControlItem3.CustomizationFormText = "Nhân viên (*)";
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(405, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(389, 24);
             this.layoutControlItem3.Text = "Nhân viên (*)";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(82, 13);
             // 
@@ -376,7 +375,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.layoutControlItem8.CustomizationFormText = "Ngày kết thúc";
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(405, 24);
+            this.layoutControlItem8.Size = new System.Drawing.Size(389, 24);
             this.layoutControlItem8.Text = "Ngày kết thúc";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(82, 13);
             // 
@@ -386,7 +385,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.layoutControlItem4.CustomizationFormText = "Chức danh";
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(405, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(389, 24);
             this.layoutControlItem4.Text = "Mã LNS";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(82, 13);
             // 
@@ -396,30 +395,16 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.layoutControlItem5.CustomizationFormText = "Mức";
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(405, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(389, 24);
             this.layoutControlItem5.Text = "Mức LNS";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(82, 13);
-            // 
-            // m_lbl_header
-            // 
-            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Padding = new System.Windows.Forms.Padding(10, 5, 0, 0);
-            this.m_lbl_header.Size = new System.Drawing.Size(425, 30);
-            this.m_lbl_header.TabIndex = 0;
-            this.m_lbl_header.Text = "CẬP NHẬT HỆ SỐ LNS";
-            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // f299_chinh_lns_nhan_vien_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 257);
+            this.ClientSize = new System.Drawing.Size(409, 224);
             this.Controls.Add(this.layoutControl1);
-            this.Controls.Add(this.m_lbl_header);
             this.Name = "f299_chinh_lns_nhan_vien_de";
             this.Text = "F299 - Cập nhật lương năng suất nhân viên";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -465,7 +450,6 @@ namespace BKI_DichVuMatDat.NghiepVu
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraEditors.SimpleButton m_cmd_luu;
         private DevExpress.Utils.ImageCollection img_DVMD;
-        private System.Windows.Forms.Label m_lbl_header;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chon_nhan_vien;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colID;

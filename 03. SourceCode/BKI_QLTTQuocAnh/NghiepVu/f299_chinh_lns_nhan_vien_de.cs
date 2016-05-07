@@ -34,7 +34,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         public void display_4_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            m_lbl_header.Text = "THÊM MỚI HỆ SỐ LNS";
+            Text = "THÊM MỚI HỆ SỐ LNS";
             ShowDialog();
         }
 
@@ -43,7 +43,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_us = ip_us;
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_2_form();
-            m_lbl_header.Text = "SỬA HỆ SỐ LNS";
+            Text = "SỬA HỆ SỐ LNS";
             ShowDialog();
         }
         #endregion

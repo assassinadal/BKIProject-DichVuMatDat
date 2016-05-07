@@ -76,6 +76,7 @@
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_tai_file_excel_mau = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_ma_nv_tiep_theo = new DevExpress.XtraEditors.SimpleButton();
+            this.colHO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -164,7 +165,8 @@
             this.colNGAY_VAO_HANG_KHONG,
             this.colNGAY_TIEP_NHAN_VAO_TCT,
             this.colNGAY_CHINH_THUC_TIEP_NHAN,
-            this.colNGUOI_BAO_LANH});
+            this.colNGUOI_BAO_LANH,
+            this.colHO_TEN});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
             this.m_grv.OptionsBehavior.ReadOnly = true;
@@ -214,8 +216,6 @@
             this.colHO_DEM.MinWidth = 100;
             this.colHO_DEM.Name = "colHO_DEM";
             this.colHO_DEM.OptionsColumn.AllowEdit = false;
-            this.colHO_DEM.Visible = true;
-            this.colHO_DEM.VisibleIndex = 1;
             this.colHO_DEM.Width = 100;
             // 
             // colTEN
@@ -230,8 +230,6 @@
             this.colTEN.MinWidth = 100;
             this.colTEN.Name = "colTEN";
             this.colTEN.OptionsColumn.AllowEdit = false;
-            this.colTEN.Visible = true;
-            this.colTEN.VisibleIndex = 2;
             this.colTEN.Width = 100;
             // 
             // colGT
@@ -247,7 +245,7 @@
             this.colGT.OptionsColumn.AllowEdit = false;
             this.colGT.OptionsColumn.ReadOnly = true;
             this.colGT.Visible = true;
-            this.colGT.VisibleIndex = 3;
+            this.colGT.VisibleIndex = 2;
             this.colGT.Width = 100;
             // 
             // colEMAIL
@@ -262,7 +260,7 @@
             this.colEMAIL.Name = "colEMAIL";
             this.colEMAIL.OptionsColumn.AllowEdit = false;
             this.colEMAIL.Visible = true;
-            this.colEMAIL.VisibleIndex = 4;
+            this.colEMAIL.VisibleIndex = 3;
             this.colEMAIL.Width = 100;
             // 
             // colSDT
@@ -277,7 +275,7 @@
             this.colSDT.Name = "colSDT";
             this.colSDT.OptionsColumn.AllowEdit = false;
             this.colSDT.Visible = true;
-            this.colSDT.VisibleIndex = 5;
+            this.colSDT.VisibleIndex = 4;
             this.colSDT.Width = 100;
             // 
             // colSO_TAI_KHOAN
@@ -292,7 +290,7 @@
             this.colSO_TAI_KHOAN.Name = "colSO_TAI_KHOAN";
             this.colSO_TAI_KHOAN.OptionsColumn.AllowEdit = false;
             this.colSO_TAI_KHOAN.Visible = true;
-            this.colSO_TAI_KHOAN.VisibleIndex = 6;
+            this.colSO_TAI_KHOAN.VisibleIndex = 5;
             this.colSO_TAI_KHOAN.Width = 100;
             // 
             // colNGAN_HANG
@@ -307,7 +305,7 @@
             this.colNGAN_HANG.Name = "colNGAN_HANG";
             this.colNGAN_HANG.OptionsColumn.AllowEdit = false;
             this.colNGAN_HANG.Visible = true;
-            this.colNGAN_HANG.VisibleIndex = 7;
+            this.colNGAN_HANG.VisibleIndex = 6;
             this.colNGAN_HANG.Width = 100;
             // 
             // colNGAY_CAP_THE
@@ -322,7 +320,7 @@
             this.colNGAY_CAP_THE.Name = "colNGAY_CAP_THE";
             this.colNGAY_CAP_THE.OptionsColumn.AllowEdit = false;
             this.colNGAY_CAP_THE.Visible = true;
-            this.colNGAY_CAP_THE.VisibleIndex = 8;
+            this.colNGAY_CAP_THE.VisibleIndex = 7;
             this.colNGAY_CAP_THE.Width = 100;
             // 
             // colNGAY_HET_HAN_THE
@@ -337,7 +335,7 @@
             this.colNGAY_HET_HAN_THE.Name = "colNGAY_HET_HAN_THE";
             this.colNGAY_HET_HAN_THE.OptionsColumn.AllowEdit = false;
             this.colNGAY_HET_HAN_THE.Visible = true;
-            this.colNGAY_HET_HAN_THE.VisibleIndex = 9;
+            this.colNGAY_HET_HAN_THE.VisibleIndex = 8;
             this.colNGAY_HET_HAN_THE.Width = 100;
             // 
             // colNGAY_SINH
@@ -352,7 +350,7 @@
             this.colNGAY_SINH.Name = "colNGAY_SINH";
             this.colNGAY_SINH.OptionsColumn.AllowEdit = false;
             this.colNGAY_SINH.Visible = true;
-            this.colNGAY_SINH.VisibleIndex = 10;
+            this.colNGAY_SINH.VisibleIndex = 9;
             this.colNGAY_SINH.Width = 100;
             // 
             // colHON_NHAN
@@ -367,7 +365,7 @@
             this.colHON_NHAN.Name = "colHON_NHAN";
             this.colHON_NHAN.OptionsColumn.AllowEdit = false;
             this.colHON_NHAN.Visible = true;
-            this.colHON_NHAN.VisibleIndex = 11;
+            this.colHON_NHAN.VisibleIndex = 10;
             this.colHON_NHAN.Width = 100;
             // 
             // colSO_CMT
@@ -382,7 +380,7 @@
             this.colSO_CMT.Name = "colSO_CMT";
             this.colSO_CMT.OptionsColumn.AllowEdit = false;
             this.colSO_CMT.Visible = true;
-            this.colSO_CMT.VisibleIndex = 12;
+            this.colSO_CMT.VisibleIndex = 11;
             this.colSO_CMT.Width = 100;
             // 
             // colNGAY_CAP
@@ -397,7 +395,7 @@
             this.colNGAY_CAP.Name = "colNGAY_CAP";
             this.colNGAY_CAP.OptionsColumn.AllowEdit = false;
             this.colNGAY_CAP.Visible = true;
-            this.colNGAY_CAP.VisibleIndex = 13;
+            this.colNGAY_CAP.VisibleIndex = 12;
             this.colNGAY_CAP.Width = 100;
             // 
             // colNOI_CAP
@@ -412,7 +410,7 @@
             this.colNOI_CAP.Name = "colNOI_CAP";
             this.colNOI_CAP.OptionsColumn.AllowEdit = false;
             this.colNOI_CAP.Visible = true;
-            this.colNOI_CAP.VisibleIndex = 14;
+            this.colNOI_CAP.VisibleIndex = 13;
             this.colNOI_CAP.Width = 100;
             // 
             // colQUOC_TICH
@@ -427,7 +425,7 @@
             this.colQUOC_TICH.Name = "colQUOC_TICH";
             this.colQUOC_TICH.OptionsColumn.AllowEdit = false;
             this.colQUOC_TICH.Visible = true;
-            this.colQUOC_TICH.VisibleIndex = 15;
+            this.colQUOC_TICH.VisibleIndex = 14;
             this.colQUOC_TICH.Width = 100;
             // 
             // colDAN_TOC
@@ -442,7 +440,7 @@
             this.colDAN_TOC.Name = "colDAN_TOC";
             this.colDAN_TOC.OptionsColumn.AllowEdit = false;
             this.colDAN_TOC.Visible = true;
-            this.colDAN_TOC.VisibleIndex = 16;
+            this.colDAN_TOC.VisibleIndex = 15;
             this.colDAN_TOC.Width = 100;
             // 
             // colTON_GIAO
@@ -457,7 +455,7 @@
             this.colTON_GIAO.Name = "colTON_GIAO";
             this.colTON_GIAO.OptionsColumn.AllowEdit = false;
             this.colTON_GIAO.Visible = true;
-            this.colTON_GIAO.VisibleIndex = 17;
+            this.colTON_GIAO.VisibleIndex = 16;
             this.colTON_GIAO.Width = 100;
             // 
             // colNOI_SINH
@@ -472,7 +470,7 @@
             this.colNOI_SINH.Name = "colNOI_SINH";
             this.colNOI_SINH.OptionsColumn.AllowEdit = false;
             this.colNOI_SINH.Visible = true;
-            this.colNOI_SINH.VisibleIndex = 18;
+            this.colNOI_SINH.VisibleIndex = 17;
             this.colNOI_SINH.Width = 100;
             // 
             // colQUE_QUAN
@@ -487,7 +485,7 @@
             this.colQUE_QUAN.Name = "colQUE_QUAN";
             this.colQUE_QUAN.OptionsColumn.AllowEdit = false;
             this.colQUE_QUAN.Visible = true;
-            this.colQUE_QUAN.VisibleIndex = 19;
+            this.colQUE_QUAN.VisibleIndex = 18;
             this.colQUE_QUAN.Width = 100;
             // 
             // colDIA_CHI_THUONG_TRU
@@ -502,7 +500,7 @@
             this.colDIA_CHI_THUONG_TRU.Name = "colDIA_CHI_THUONG_TRU";
             this.colDIA_CHI_THUONG_TRU.OptionsColumn.AllowEdit = false;
             this.colDIA_CHI_THUONG_TRU.Visible = true;
-            this.colDIA_CHI_THUONG_TRU.VisibleIndex = 20;
+            this.colDIA_CHI_THUONG_TRU.VisibleIndex = 19;
             this.colDIA_CHI_THUONG_TRU.Width = 100;
             // 
             // colDIA_CHI_TAM_TRU
@@ -517,7 +515,7 @@
             this.colDIA_CHI_TAM_TRU.Name = "colDIA_CHI_TAM_TRU";
             this.colDIA_CHI_TAM_TRU.OptionsColumn.AllowEdit = false;
             this.colDIA_CHI_TAM_TRU.Visible = true;
-            this.colDIA_CHI_TAM_TRU.VisibleIndex = 21;
+            this.colDIA_CHI_TAM_TRU.VisibleIndex = 20;
             this.colDIA_CHI_TAM_TRU.Width = 100;
             // 
             // colDIA_CHI_LIEN_LAC
@@ -532,7 +530,7 @@
             this.colDIA_CHI_LIEN_LAC.Name = "colDIA_CHI_LIEN_LAC";
             this.colDIA_CHI_LIEN_LAC.OptionsColumn.AllowEdit = false;
             this.colDIA_CHI_LIEN_LAC.Visible = true;
-            this.colDIA_CHI_LIEN_LAC.VisibleIndex = 22;
+            this.colDIA_CHI_LIEN_LAC.VisibleIndex = 21;
             this.colDIA_CHI_LIEN_LAC.Width = 100;
             // 
             // colMA_SO_THUE_CA_NHAN
@@ -547,7 +545,7 @@
             this.colMA_SO_THUE_CA_NHAN.Name = "colMA_SO_THUE_CA_NHAN";
             this.colMA_SO_THUE_CA_NHAN.OptionsColumn.AllowEdit = false;
             this.colMA_SO_THUE_CA_NHAN.Visible = true;
-            this.colMA_SO_THUE_CA_NHAN.VisibleIndex = 23;
+            this.colMA_SO_THUE_CA_NHAN.VisibleIndex = 22;
             this.colMA_SO_THUE_CA_NHAN.Width = 100;
             // 
             // colCHUYEN_MON
@@ -562,7 +560,7 @@
             this.colCHUYEN_MON.Name = "colCHUYEN_MON";
             this.colCHUYEN_MON.OptionsColumn.AllowEdit = false;
             this.colCHUYEN_MON.Visible = true;
-            this.colCHUYEN_MON.VisibleIndex = 25;
+            this.colCHUYEN_MON.VisibleIndex = 24;
             this.colCHUYEN_MON.Width = 100;
             // 
             // colTRINH_DO_VAN_HOA
@@ -577,7 +575,7 @@
             this.colTRINH_DO_VAN_HOA.Name = "colTRINH_DO_VAN_HOA";
             this.colTRINH_DO_VAN_HOA.OptionsColumn.AllowEdit = false;
             this.colTRINH_DO_VAN_HOA.Visible = true;
-            this.colTRINH_DO_VAN_HOA.VisibleIndex = 24;
+            this.colTRINH_DO_VAN_HOA.VisibleIndex = 23;
             this.colTRINH_DO_VAN_HOA.Width = 100;
             // 
             // colNAM_TOT_NGHIEP
@@ -592,7 +590,7 @@
             this.colNAM_TOT_NGHIEP.Name = "colNAM_TOT_NGHIEP";
             this.colNAM_TOT_NGHIEP.OptionsColumn.AllowEdit = false;
             this.colNAM_TOT_NGHIEP.Visible = true;
-            this.colNAM_TOT_NGHIEP.VisibleIndex = 26;
+            this.colNAM_TOT_NGHIEP.VisibleIndex = 25;
             this.colNAM_TOT_NGHIEP.Width = 100;
             // 
             // colTOT_NGHIEP_TAI
@@ -607,7 +605,7 @@
             this.colTOT_NGHIEP_TAI.Name = "colTOT_NGHIEP_TAI";
             this.colTOT_NGHIEP_TAI.OptionsColumn.AllowEdit = false;
             this.colTOT_NGHIEP_TAI.Visible = true;
-            this.colTOT_NGHIEP_TAI.VisibleIndex = 27;
+            this.colTOT_NGHIEP_TAI.VisibleIndex = 26;
             this.colTOT_NGHIEP_TAI.Width = 100;
             // 
             // colNGAY_VAO_HANG_KHONG
@@ -622,7 +620,7 @@
             this.colNGAY_VAO_HANG_KHONG.Name = "colNGAY_VAO_HANG_KHONG";
             this.colNGAY_VAO_HANG_KHONG.OptionsColumn.AllowEdit = false;
             this.colNGAY_VAO_HANG_KHONG.Visible = true;
-            this.colNGAY_VAO_HANG_KHONG.VisibleIndex = 28;
+            this.colNGAY_VAO_HANG_KHONG.VisibleIndex = 27;
             this.colNGAY_VAO_HANG_KHONG.Width = 100;
             // 
             // colNGAY_TIEP_NHAN_VAO_TCT
@@ -637,7 +635,7 @@
             this.colNGAY_TIEP_NHAN_VAO_TCT.Name = "colNGAY_TIEP_NHAN_VAO_TCT";
             this.colNGAY_TIEP_NHAN_VAO_TCT.OptionsColumn.AllowEdit = false;
             this.colNGAY_TIEP_NHAN_VAO_TCT.Visible = true;
-            this.colNGAY_TIEP_NHAN_VAO_TCT.VisibleIndex = 29;
+            this.colNGAY_TIEP_NHAN_VAO_TCT.VisibleIndex = 28;
             this.colNGAY_TIEP_NHAN_VAO_TCT.Width = 100;
             // 
             // colNGAY_CHINH_THUC_TIEP_NHAN
@@ -652,7 +650,7 @@
             this.colNGAY_CHINH_THUC_TIEP_NHAN.Name = "colNGAY_CHINH_THUC_TIEP_NHAN";
             this.colNGAY_CHINH_THUC_TIEP_NHAN.OptionsColumn.AllowEdit = false;
             this.colNGAY_CHINH_THUC_TIEP_NHAN.Visible = true;
-            this.colNGAY_CHINH_THUC_TIEP_NHAN.VisibleIndex = 30;
+            this.colNGAY_CHINH_THUC_TIEP_NHAN.VisibleIndex = 29;
             this.colNGAY_CHINH_THUC_TIEP_NHAN.Width = 100;
             // 
             // colNGUOI_BAO_LANH
@@ -665,7 +663,7 @@
             this.colNGUOI_BAO_LANH.FieldName = "NGUOI_BAO_LANH";
             this.colNGUOI_BAO_LANH.Name = "colNGUOI_BAO_LANH";
             this.colNGUOI_BAO_LANH.Visible = true;
-            this.colNGUOI_BAO_LANH.VisibleIndex = 31;
+            this.colNGUOI_BAO_LANH.VisibleIndex = 30;
             this.colNGUOI_BAO_LANH.Width = 20;
             // 
             // panelControl3
@@ -762,6 +760,15 @@
             this.m_cmd_ma_nv_tiep_theo.TabIndex = 28;
             this.m_cmd_ma_nv_tiep_theo.Text = "Tra cứu \r\nmã nhân viên tiếp theo";
             // 
+            // colHO_TEN
+            // 
+            this.colHO_TEN.Caption = "Họ tên";
+            this.colHO_TEN.FieldName = "HO_TEN";
+            this.colHO_TEN.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.colHO_TEN.Name = "colHO_TEN";
+            this.colHO_TEN.Visible = true;
+            this.colHO_TEN.VisibleIndex = 1;
+            // 
             // f151_Danh_sach_nhan_vien_master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -835,5 +842,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tai_file_excel_mau;
         private DevExpress.Utils.ImageCollection img_DVMD;
+        private DevExpress.XtraGrid.Columns.GridColumn colHO_TEN;
     }
 }

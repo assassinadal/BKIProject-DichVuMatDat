@@ -122,11 +122,9 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void load_data_to_grid()
         {
-            US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
-            DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
-            v_ds.Clear();
-            v_us.FillDataset(v_ds);
-            m_grc.DataSource = v_ds.Tables[0];
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            v_us.LayDanhSachNhanVien();
+            m_grc.DataSource = v_us.LayDanhSachNhanVien();
         }
 
         private void load_data_to_grid(decimal ip_dc_id_nhan_vien)

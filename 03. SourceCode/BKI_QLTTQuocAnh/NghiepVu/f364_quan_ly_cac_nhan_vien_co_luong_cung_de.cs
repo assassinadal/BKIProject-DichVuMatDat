@@ -32,7 +32,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         public void display_4_update(US_GD_LUONG_CUNG ip_us)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
-            this.m_lbl_header.Text = "SỬA THÔNG TIN LƯƠNG CỨNG";
+            //this.m_lbl_header.Text = "SỬA THÔNG TIN LƯƠNG CỨNG";
             m_us_gd_luong_cung = ip_us;
             us_obj_2_form();
             this.ShowDialog();
@@ -41,16 +41,17 @@ namespace BKI_DichVuMatDat.NghiepVu
         public void display_4_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            this.m_lbl_header.Text = "THÊM THÔNG TIN LƯƠNG CỨNG";
-            clear_data_in_form();
+            //this.m_lbl_header.Text = "THÊM THÔNG TIN LƯƠNG CỨNG";
+            //clear_data_in_form();
             this.ShowDialog();
 
         }
         public void display_4_insert(decimal ip_id_nv)
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            this.m_lbl_header.Text = "THÊM THÔNG TIN LƯƠNG CỨNG";
+            //this.m_lbl_header.Text = "THÊM THÔNG TIN LƯƠNG CỨNG";
             m_sle_chon_nhan_vien.EditValue = ip_id_nv;
+            m_sle_chon_nhan_vien.Enabled = false;
             this.m_txt_so_tien.Text = "";
             this.m_txt_ghi_chu.Text = "";
             this.ShowDialog();
@@ -72,10 +73,17 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void us_obj_2_form()
         {
             m_dat_ngay_bat_dau.EditValue = m_us_gd_luong_cung.datNGAY_BAT_DAU;
-            m_dat_ngay_ket_thuc.EditValue = m_us_gd_luong_cung.datNGAY_KET_THUC;
+            if (m_us_gd_luong_cung.datNGAY_KET_THUC != new DateTime(1900,1,1))
+            {
+                m_dat_ngay_ket_thuc.EditValue = m_us_gd_luong_cung.datNGAY_KET_THUC;
+            }
+            else
+            {
+                m_dat_ngay_ket_thuc.EditValue = null;
+            }
             m_sle_chon_nhan_vien.EditValue = m_us_gd_luong_cung.dcID_NHAN_VIEN;
             m_txt_so_tien.Text = m_us_gd_luong_cung.dcSO_TIEN.ToString();
-            CHRMCommon.format_text_2_money(m_txt_so_tien);
+            //CHRMCommon.format_text_2_money(m_txt_so_tien);
             m_txt_ghi_chu.Text = m_us_gd_luong_cung.strGHI_CHU;
         }
 
@@ -124,9 +132,28 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private bool check_validate_data()
         {
+            DateTime v = m_dat_ngay_ket_thuc.DateTime;
             if (m_sle_chon_nhan_vien.EditValue == null)
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NHAN_VIEN);
+                return false;
+            }
+            else if (m_txt_so_tien.Text.Trim() == "")
+            {
+                string v_str_error = "Bạn chưa nhập số tiền lương cứng!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (m_dat_ngay_bat_dau.EditValue == null)
+            {
+                string v_str_error = "Bạn chưa nhập ngày bắt đầu!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (m_dat_ngay_ket_thuc.DateTime != DateTime.MinValue && m_dat_ngay_bat_dau.DateTime >= m_dat_ngay_ket_thuc.DateTime)
+            {
+                string v_str_error = "Ngày kết thúc phải lớn hơn ngày bắt đầu!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -153,7 +180,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             ip_us.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.DateTime.Date;
             if (m_dat_ngay_ket_thuc.EditValue == null)
             {
-                ip_us.datNGAY_KET_THUC = m_dat_ngay_bat_dau.DateTime.Date.AddYears(45);
+                ip_us.IsNGAY_KET_THUCNull();
             }
             else
             {
@@ -225,12 +252,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
 
-        private void clear_data_in_form()
-        {
-            m_sle_chon_nhan_vien.EditValue = null;
-            m_txt_ghi_chu.Text = "";
-            m_txt_so_tien.Text = "";
-        }
+        //private void clear_data_in_form()
+        //{
+        //    m_sle_chon_nhan_vien.EditValue = null;
+        //    m_txt_ghi_chu.Text = "";
+        //    m_txt_so_tien.Text = "";
+        //}
 
 
         #endregion
@@ -246,7 +273,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.Load += f364_quan_ly_cac_nhan_vien_co_luong_cung_de_Load;
             this.KeyDown += f364_quan_ly_cac_nhan_vien_co_luong_cung_de_KeyDown;
             this.FormClosed += f364_quan_ly_cac_nhan_vien_co_luong_cung_de_FormClosed;
-            this.m_txt_so_tien.Leave += m_txt_so_tien_Leave;
+            //this.m_txt_so_tien.Leave += m_txt_so_tien_Leave;
             this.m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
             this.m_cmd_save.Click += m_cmd_save_Click;
             this.m_cmd_exit.Click += m_cmd_exit_Click;
@@ -319,27 +346,28 @@ namespace BKI_DichVuMatDat.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        void m_txt_so_tien_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                if (m_txt_so_tien.Text != "")
-                {
-                    CHRMCommon.format_text_2_money(m_txt_so_tien);
-                }
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+        //void m_txt_so_tien_Leave(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (m_txt_so_tien.Text != "")
+        //        {
+        //            CHRMCommon.format_text_2_money(m_txt_so_tien);
+        //        }
+        //    }
+        //    catch (Exception v_e)
+        //    {
+        //        CSystemLog_301.ExceptionHandle(v_e);
+        //    }
+        //}
+
         void m_sle_chon_nhan_vien_EditValueChanged(object sender, EventArgs e)
         {
             try
             {
                 if (m_sle_chon_nhan_vien.EditValue == null)
                 {
-                    clear_data_in_form();
+                    return;
                 }
                 else
                 {
@@ -365,27 +393,27 @@ namespace BKI_DichVuMatDat.NghiepVu
                                 m_us_gd_luong_cung = new US_GD_LUONG_CUNG(id_gd);
                                 us_obj_2_form();
                             }
-                            else
-                            {
-                                clear_data_in_form();
-                            }
+                            //else
+                            //{
+                            //    clear_data_in_form();
+                            //}
                         }
-                        else
-                        {
-                            if (m_lbl_header.Text != "SỬA THÔNG TIN LƯƠNG CỨNG")
-                            {
-                                if (CHRM_BaseMessages.MsgBox_Confirm("Hiện tại nhân viên này đã có lương cứng. Bạn có muốn cập nhật thông tin?") == true)
-                                {
-                                    m_e_form_mode = DataEntryFormMode.UpdateDataState;
-                                    m_us_gd_luong_cung = new US_GD_LUONG_CUNG(id_gd);
-                                    us_obj_2_form();
-                                }
-                            }
-                            else
-                            {
-                                return;
-                            }
-                        }
+                        //else
+                        //{
+                        //    if (m_lbl_header.Text != "SỬA THÔNG TIN LƯƠNG CỨNG")
+                        //    {
+                        //        if (CHRM_BaseMessages.MsgBox_Confirm("Hiện tại nhân viên này đã có lương cứng. Bạn có muốn cập nhật thông tin?") == true)
+                        //        {
+                        //            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+                        //            m_us_gd_luong_cung = new US_GD_LUONG_CUNG(id_gd);
+                        //            us_obj_2_form();
+                        //        }
+                        //    }
+                        //    else
+                        //    {
+                        //        return;
+                        //    }
+                        //}
                     }
                 }
             }

@@ -334,5 +334,11 @@ namespace BKI_DichVuMatDat.US
             v_cstore.fillDataSetByCommand(this, v_ds);
             return v_ds;
         }
+
+        public void FillDatasetTTLD(DataSet v_ds)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_TTLD_get_all");
+            v_cstore.fillDataSetByCommand(this, v_ds);
+        }
     }
 }

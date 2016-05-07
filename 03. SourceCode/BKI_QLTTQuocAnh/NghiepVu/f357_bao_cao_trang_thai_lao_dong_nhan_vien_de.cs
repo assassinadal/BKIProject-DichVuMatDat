@@ -29,6 +29,13 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             v_id_gd_trang_thai_lao_dong_moi_tao = m_id_gd_trang_thai_lao_dong_moi_tao;
         }
+
+        internal void display_4_insert()
+        {
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.ShowDialog();
+        }
+
         public void display_4_update(US_GD_TRANG_THAI_LAO_DONG ip_us)
         {
             this.Text = "F357 - CẬP NHẬT TRẠNG THÁI LAO ĐỘNG CỦA NHÂN VIÊN";
@@ -38,19 +45,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_chon_nhan_vien.Enabled = false;
             m_id_gd_trang_thai_lao_dong_4_update = ip_us.dcID;
             m_sle_chon_trang_thai_lao_dong.EditValue = ip_us.dcID_TRANG_THAI_LAO_DONG;
-            if (ip_us.datNGAY_AP_DUNG == null)
-            {
-                m_dat_ngay_ap_dung.EditValue = DateTime.Now.Date;
-            }
-            else
-            {
-                m_dat_ngay_ap_dung.EditValue = ip_us.datNGAY_AP_DUNG;
-            }
-            if (ip_us.datNGAY_KET_THUC == null)
-            {
-                m_dat_ngay_ket_thuc.EditValue = m_dat_ngay_ap_dung.DateTime.AddDays(1);
-            }
-            else
+            m_dat_ngay_ap_dung.EditValue = ip_us.datNGAY_AP_DUNG;
+            if (ip_us.datNGAY_KET_THUC != new DateTime(1900,1,1))
             {
                 m_dat_ngay_ket_thuc.EditValue = ip_us.datNGAY_KET_THUC;
             }
@@ -238,7 +234,10 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us_gd_trang_thai_lao_dong.dcID_NHAN_VIEN = (decimal)m_sle_chon_nhan_vien.EditValue;
             v_us_gd_trang_thai_lao_dong.dcID_TRANG_THAI_LAO_DONG = (decimal)m_sle_chon_trang_thai_lao_dong.EditValue;
             v_us_gd_trang_thai_lao_dong.datNGAY_AP_DUNG = m_dat_ngay_ap_dung.DateTime.Date;
-            v_us_gd_trang_thai_lao_dong.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.DateTime.Date;
+            if (m_dat_ngay_ket_thuc.DateTime != DateTime.MinValue)
+            {
+                v_us_gd_trang_thai_lao_dong.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.DateTime.Date;
+            }
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
                 v_us_gd_trang_thai_lao_dong.datNGAY_LAP = DateTime.Now.Date;
@@ -315,14 +314,6 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us_gd_trang_thai_lao_dong.CommitTransaction();
                         m_id_gd_trang_thai_lao_dong_moi_tao = v_us_gd_trang_thai_lao_dong.dcID;
                         CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
-                        if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_THEM_DU_LIEU_THANH_CONG_TIEP_TUC_INSERT_YN) == true)
-                        {
-                            refresh_form();
-                        }
-                        else
-                        {
-                            this.Close();
-                        }
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         v_us_gd_trang_thai_lao_dong.dcID = m_id_gd_trang_thai_lao_dong_4_update;
@@ -360,26 +351,27 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return false;
             }
 
-            if (m_sle_chon_trang_thai_lao_dong.EditValue == null)
+            else if (m_sle_chon_trang_thai_lao_dong.EditValue == null)
             {
-                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_TRANG_THAI_LAO_DONG);
+                string v_str_error = "Bạn chưa nhập trạng thái lao động cho nhân viên!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            if (m_dat_ngay_ap_dung.EditValue == null)
+            else if (m_dat_ngay_ap_dung.EditValue == null)
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NGAY_AP_DUNG);
                 return false;
             }
 
-            if (m_dat_ngay_ket_thuc.EditValue == null & ((decimal)m_sle_chon_nhan_vien.EditValue == 9))
+            //if (m_dat_ngay_ket_thuc.EditValue == null & ((decimal)m_sle_chon_nhan_vien.EditValue == 9))
+            //{
+            //    CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NGAY_KET_THUC);
+            //    return false;
+            //}
+            else if (m_dat_ngay_ket_thuc.DateTime !=DateTime.MinValue && m_dat_ngay_ket_thuc.DateTime <= m_dat_ngay_ap_dung.DateTime)
             {
-                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NGAY_KET_THUC);
-                return false;
-            }
-            if (m_dat_ngay_ket_thuc.DateTime < m_dat_ngay_ap_dung.DateTime)
-            {
-                CHRM_BaseMessages.MsgBox_Error("Ngày kết thúc phải lớn hơn ngày áp dụng ");
+                CHRM_BaseMessages.MsgBox_Error("Ngày kết thúc phải lớn hơn ngày bắt đầu!");
                 return false;
             }
             return true;

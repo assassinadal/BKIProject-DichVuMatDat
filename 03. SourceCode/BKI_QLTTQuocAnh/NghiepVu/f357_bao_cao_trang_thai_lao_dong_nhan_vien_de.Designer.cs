@@ -329,7 +329,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(530, 28);
             this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextToControlDistance = 0;
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem5
@@ -359,7 +358,7 @@
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 76);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(530, 24);
-            this.layoutControlItem7.Text = "Ngày áp dụng";
+            this.layoutControlItem7.Text = "Ngày bắt đầu";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(75, 13);
             // 
             // emptySpaceItem2
@@ -400,7 +399,6 @@
             this.m_layout_chon_nhan_vien.Size = new System.Drawing.Size(267, 42);
             this.m_layout_chon_nhan_vien.Text = "Chọn nhân viên";
             this.m_layout_chon_nhan_vien.TextSize = new System.Drawing.Size(75, 13);
-            this.m_layout_chon_nhan_vien.TextToControlDistance = 5;
             // 
             // layoutControlItem2
             // 
@@ -410,7 +408,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(267, 42);
             this.layoutControlItem2.Text = "Chọn nhân viên";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(75, 13);
-            this.layoutControlItem2.TextToControlDistance = 5;
             // 
             // layoutControlItem3
             // 
@@ -420,7 +417,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(267, 42);
             this.layoutControlItem3.Text = "Chọn nhân viên";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(75, 13);
-            this.layoutControlItem3.TextToControlDistance = 5;
             // 
             // layoutControlItem4
             // 
@@ -430,7 +426,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(267, 42);
             this.layoutControlItem4.Text = "Chọn nhân viên";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(75, 13);
-            this.layoutControlItem4.TextToControlDistance = 5;
             // 
             // f357_bao_cao_trang_thai_lao_dong_nhan_vien_de
             // 

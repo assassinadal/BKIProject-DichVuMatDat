@@ -53,15 +53,20 @@
             this.colTEN_CHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLOAI_LAO_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
+            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_lbl_ten_dv = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.m_dat_tai_thang = new DevExpress.XtraEditors.DateEdit();
+            this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -76,8 +81,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_lbl_ten_dv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_thang.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_thang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -85,20 +93,20 @@
             this.layoutControl1.Controls.Add(this.xtraTabControl1);
             this.layoutControl1.Controls.Add(this.m_pnl_out_place_dm);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 86);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(435, 233, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(931, 458);
+            this.layoutControl1.Size = new System.Drawing.Size(931, 372);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Location = new System.Drawing.Point(12, 80);
+            this.xtraTabControl1.Location = new System.Drawing.Point(6, 44);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.m_tab_co_lns;
-            this.xtraTabControl1.Size = new System.Drawing.Size(907, 366);
+            this.xtraTabControl1.Size = new System.Drawing.Size(919, 322);
             this.xtraTabControl1.TabIndex = 6;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.m_tab_co_lns,
@@ -108,7 +116,7 @@
             // 
             this.m_tab_co_lns.Controls.Add(this.m_grc);
             this.m_tab_co_lns.Name = "m_tab_co_lns";
-            this.m_tab_co_lns.Size = new System.Drawing.Size(901, 338);
+            this.m_tab_co_lns.Size = new System.Drawing.Size(913, 294);
             this.m_tab_co_lns.Text = "NHÂN VIÊN CÓ LƯƠNG NĂNG SUẤT";
             // 
             // m_grc
@@ -118,7 +126,7 @@
             this.m_grc.Location = new System.Drawing.Point(0, 0);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(901, 338);
+            this.m_grc.Size = new System.Drawing.Size(913, 294);
             this.m_grc.TabIndex = 6;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
@@ -136,6 +144,7 @@
             this.NGAY_KET_THUC});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
+            this.m_grv.OptionsBehavior.ReadOnly = true;
             this.m_grv.OptionsView.ShowAutoFilterRow = true;
             this.m_grv.OptionsView.ShowFooter = true;
             // 
@@ -328,29 +337,27 @@
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_refresh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_file);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(12, 40);
-            this.m_pnl_out_place_dm.MaximumSize = new System.Drawing.Size(0, 36);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(6, 6);
+            this.m_pnl_out_place_dm.MaximumSize = new System.Drawing.Size(0, 34);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
-            this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(907, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(919, 34);
             this.m_pnl_out_place_dm.TabIndex = 3;
             // 
-            // m_cmd_delete
+            // m_cmd_chon_file
             // 
-            this.m_cmd_delete.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cmd_delete.Appearance.Options.UseFont = true;
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_delete.ImageIndex = 8;
-            this.m_cmd_delete.ImageList = this.img_DVMD;
-            this.m_cmd_delete.Location = new System.Drawing.Point(154, 4);
-            this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(75, 28);
-            this.m_cmd_delete.TabIndex = 0;
-            this.m_cmd_delete.Text = "&Xóa";
+            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chon_file.ImageIndex = 4;
+            this.m_cmd_chon_file.ImageList = this.img_DVMD;
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(225, 0);
+            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
+            this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 34);
+            this.m_cmd_chon_file.TabIndex = 9;
+            this.m_cmd_chon_file.Text = "&Import excel";
             // 
             // img_DVMD
             // 
@@ -367,6 +374,19 @@
             this.img_DVMD.Images.SetKeyName(9, "file_edit.png");
             this.img_DVMD.Images.SetKeyName(10, "file_search.png");
             // 
+            // m_cmd_delete
+            // 
+            this.m_cmd_delete.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_delete.Appearance.Options.UseFont = true;
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_delete.ImageIndex = 8;
+            this.m_cmd_delete.ImageList = this.img_DVMD;
+            this.m_cmd_delete.Location = new System.Drawing.Point(150, 0);
+            this.m_cmd_delete.Name = "m_cmd_delete";
+            this.m_cmd_delete.Size = new System.Drawing.Size(75, 34);
+            this.m_cmd_delete.TabIndex = 0;
+            this.m_cmd_delete.Text = "&Xóa";
+            // 
             // m_cmd_update
             // 
             this.m_cmd_update.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -374,9 +394,9 @@
             this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_update.ImageIndex = 9;
             this.m_cmd_update.ImageList = this.img_DVMD;
-            this.m_cmd_update.Location = new System.Drawing.Point(79, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(75, 0);
             this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(75, 28);
+            this.m_cmd_update.Size = new System.Drawing.Size(75, 34);
             this.m_cmd_update.TabIndex = 1;
             this.m_cmd_update.Text = "&Sửa";
             // 
@@ -387,9 +407,9 @@
             this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_insert.ImageIndex = 7;
             this.m_cmd_insert.ImageList = this.img_DVMD;
-            this.m_cmd_insert.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(0, 0);
             this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(75, 28);
+            this.m_cmd_insert.Size = new System.Drawing.Size(75, 34);
             this.m_cmd_insert.TabIndex = 2;
             this.m_cmd_insert.Text = "&Thêm";
             // 
@@ -400,11 +420,11 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem3,
-            this.m_lbl_ten_dv,
             this.layoutControlItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(931, 458);
+            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(931, 372);
             this.layoutControlGroup1.Text = "Root";
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -412,50 +432,106 @@
             // 
             this.layoutControlItem3.Control = this.m_pnl_out_place_dm;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 28);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(911, 40);
+            this.layoutControlItem3.Size = new System.Drawing.Size(923, 38);
             this.layoutControlItem3.Text = "layoutControlItem3";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextToControlDistance = 0;
             this.layoutControlItem3.TextVisible = false;
             // 
-            // m_lbl_ten_dv
-            // 
-            this.m_lbl_ten_dv.AllowHotTrack = false;
-            this.m_lbl_ten_dv.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_ten_dv.AppearanceItemCaption.Options.UseFont = true;
-            this.m_lbl_ten_dv.CustomizationFormText = "TEN_DON_VI";
-            this.m_lbl_ten_dv.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_ten_dv.Name = "m_lbl_ten_dv";
-            this.m_lbl_ten_dv.Size = new System.Drawing.Size(911, 28);
-            this.m_lbl_ten_dv.Text = "TEN_DON_VI";
-            this.m_lbl_ten_dv.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.m_lbl_ten_dv.TextSize = new System.Drawing.Size(134, 24);
-            this.m_lbl_ten_dv.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.xtraTabControl1;
             this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 68);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 38);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(911, 370);
+            this.layoutControlItem2.Size = new System.Drawing.Size(923, 326);
             this.layoutControlItem2.Text = "layoutControlItem2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextToControlDistance = 0;
             this.layoutControlItem2.TextVisible = false;
             // 
-            // m_cmd_chon_file
+            // m_cmd_refresh
             // 
-            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chon_file.ImageIndex = 4;
-            this.m_cmd_chon_file.ImageList = this.img_DVMD;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(229, 4);
-            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
-            this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 28);
-            this.m_cmd_chon_file.TabIndex = 9;
-            this.m_cmd_chon_file.Text = "&Import excel";
+            this.m_cmd_refresh.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_refresh.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.m_cmd_refresh.Appearance.Options.UseFont = true;
+            this.m_cmd_refresh.Appearance.Options.UseForeColor = true;
+            this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_refresh.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_refresh.Image")));
+            this.m_cmd_refresh.Location = new System.Drawing.Point(809, 0);
+            this.m_cmd_refresh.Name = "m_cmd_refresh";
+            this.m_cmd_refresh.Size = new System.Drawing.Size(110, 34);
+            this.m_cmd_refresh.TabIndex = 10;
+            this.m_cmd_refresh.Text = "Làm mới";
+            this.m_cmd_refresh.ToolTip = "Làm mới dữ liệu đơn vị và nhân viên thuộc đơn vị đó";
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.m_dat_tai_thang);
+            this.panelControl1.Controls.Add(this.m_cmd_filter);
+            this.panelControl1.Controls.Add(this.radioButton2);
+            this.panelControl1.Controls.Add(this.radioButton1);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(931, 86);
+            this.panelControl1.TabIndex = 5;
+            // 
+            // m_dat_tai_thang
+            // 
+            this.m_dat_tai_thang.EditValue = null;
+            this.m_dat_tai_thang.Location = new System.Drawing.Point(12, 5);
+            this.m_dat_tai_thang.Name = "m_dat_tai_thang";
+            this.m_dat_tai_thang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_tai_thang.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_dat_tai_thang.Properties.DisplayFormat.FormatString = "MM/yyyy";
+            this.m_dat_tai_thang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_tai_thang.Properties.EditFormat.FormatString = "MM/yyyy";
+            this.m_dat_tai_thang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.m_dat_tai_thang.Properties.Mask.EditMask = "MM/yyyy";
+            this.m_dat_tai_thang.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_dat_tai_thang.Properties.NullText = "--Chọn tháng--";
+            this.m_dat_tai_thang.Size = new System.Drawing.Size(129, 20);
+            this.m_dat_tai_thang.TabIndex = 2;
+            // 
+            // m_cmd_filter
+            // 
+            this.m_cmd_filter.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_filter.Appearance.Options.UseFont = true;
+            this.m_cmd_filter.ImageIndex = 10;
+            this.m_cmd_filter.ImageList = this.img_DVMD;
+            this.m_cmd_filter.Location = new System.Drawing.Point(12, 49);
+            this.m_cmd_filter.Name = "m_cmd_filter";
+            this.m_cmd_filter.Size = new System.Drawing.Size(80, 33);
+            this.m_cmd_filter.TabIndex = 1;
+            this.m_cmd_filter.Text = "&Lọc";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(80, 31);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(84, 17);
+            this.radioButton2.TabIndex = 0;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Còn hiệu lực";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(12, 31);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(56, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Tất cả";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // f300_chinh_lns_nhan_vien
             // 
@@ -463,8 +539,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(931, 458);
             this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.panelControl1);
             this.Name = "f300_chinh_lns_nhan_vien";
-            this.Text = "F300 - Điều chỉnh lương năng suất nhân viên";
+            this.Text = "F300 - Quản lý hệ số LNS nhân viên";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
@@ -479,8 +556,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_lbl_ten_dv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_thang.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_thang.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -490,7 +571,6 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.Utils.ImageCollection img_DVMD;
-        private DevExpress.XtraLayout.SimpleLabelItem m_lbl_ten_dv;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_update;
@@ -519,5 +599,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTEN_CHUC_VU;
         private DevExpress.XtraGrid.Columns.GridColumn colLOAI_LAO_DONG;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_refresh;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.DateEdit m_dat_tai_thang;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_filter;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

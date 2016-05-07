@@ -362,31 +362,40 @@ namespace BKI_DichVuMatDat.US
             return v_ds;
         }
 
-        public bool KiemTraNgayThang(decimal ip_dc_id_he_so_lns, DateTime ip_dat_ngay_bat_dau, DateTime ip_dat_ngay_ket_thuc)
+        public bool KiemTraThoiGianHeSoLNSForInsert(decimal ip_dc_id_nhan_vien, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
         {
-            CStoredProc v_cstore = new CStoredProc("PR_KIEM_TRA_NGAY_THANG_HS_LNS");
-            v_cstore.addDecimalInputParam("@ID_GD_HE_SO_LNS", ip_dc_id_he_so_lns);
-            v_cstore.addDatetimeInputParam("@IP_NGAY_BAT_DAU", ip_dat_ngay_bat_dau);
-            v_cstore.addDatetimeInputParam("@IP_NGAY_KET_THUC", ip_dat_ngay_ket_thuc);
+            CStoredProc v_cstore = new CStoredProc("pr_LNS_kiem_tra_thoi_gian_he_so_lns_hop_le_for_insert");
+            v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+            v_cstore.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+            v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
 
-            decimal v_check = -1;
-
-            SqlParameter v_op_str = v_cstore.addDecimalOutputParam("@CHECK", v_check);
-            //v_op_str.DbType = DbType.Decimal;
-
+            SqlParameter v_yn = v_cstore.addNVarcharOutputParam("@op_str_hop_le_yn", "");
             v_cstore.ExecuteCommand(this);
 
-            v_check = Convert.ToDecimal(v_op_str.Value.ToString());
+            return v_yn.Value.ToString() == "Y" ? true : false;
+        }
+        public bool KiemTraThoiGianHeSoLNSForUpdate(decimal ip_dc_id_gd_he_so_lns, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_LNS_kiem_tra_thoi_gian_he_so_lns_hop_le_for_update");
+            v_cstore.addDecimalInputParam("@ip_dc_id_gd_he_so_lns", ip_dc_id_gd_he_so_lns);
+            v_cstore.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+            v_cstore.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
 
-            if (v_check == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            SqlParameter v_yn = v_cstore.addNVarcharOutputParam("@op_str_hop_le_yn", "");
+            v_cstore.ExecuteCommand(this);
 
+            return v_yn.Value.ToString() == "Y" ? true : false;
+        }
+        public DataTable LayDanhSachHeSoLNS(string ip_str_filter, decimal ip_dc_thang, decimal ip_dc_nam)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_LNS_danh_sach_he_so_lns_GetAll");
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add(new DataTable());
+            v_cstore.addNVarcharInputParam("@ip_str_option", ip_str_filter);
+            v_cstore.addDecimalInputParam("@thang", ip_dc_thang);
+            v_cstore.addDecimalInputParam("@nam", ip_dc_nam);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+            return v_ds.Tables[0];
         }
     }
 }

@@ -202,6 +202,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                     US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS(Convert.ToDecimal(v_dr["ID"].ToString()));
                     v_us.Delete();
                     load_data_2_grid_lns();
+                    XtraMessageBox.Show("Đã xóa thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch(Exception v_e)

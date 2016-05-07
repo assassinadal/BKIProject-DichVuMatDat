@@ -261,7 +261,7 @@ namespace BKI_DichVuMatDat
             try
             {
                 SplashScreenManager.ShowForm(typeof(F_wait_form));
-                WinFormControls.openTemplate(CONST_EXCEL_TEMPLATE.DANH_SACH_NHAN_VIEN_TEMPLATE);
+                WinFormControls.openTemplate_v2(CONST_EXCEL_TEMPLATE.DANH_SACH_NHAN_VIEN_TEMPLATE);
             }
             catch (Exception v_e)
             {

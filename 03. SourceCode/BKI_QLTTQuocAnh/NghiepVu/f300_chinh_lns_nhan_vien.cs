@@ -103,6 +103,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
         private void update_click()
         {
+            if(m_grv.FocusedRowHandle < 0)
+            {
+                XtraMessageBox.Show("Bạn cần chọn dòng dữ liệu để sửa!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             DataRow v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
             US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS(Convert.ToDecimal(v_dr["ID"].ToString()));
             f299_chinh_lns_nhan_vien_de v_frm = new f299_chinh_lns_nhan_vien_de();
@@ -195,6 +200,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
+                if(m_grv.FocusedRowHandle < 0)
+                {
+                    XtraMessageBox.Show("Bạn cần chọn dòng dữ liệu để xóa!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 DialogResult v_confirm = default(DialogResult);
                 v_confirm = XtraMessageBox.Show("BẠN CÓ THỰC SỰ MUỐN XÓA LƯƠNG NĂNG SUẤT CỦA NHÂN VIÊN NÀY ?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                 if(v_confirm == DialogResult.Yes)

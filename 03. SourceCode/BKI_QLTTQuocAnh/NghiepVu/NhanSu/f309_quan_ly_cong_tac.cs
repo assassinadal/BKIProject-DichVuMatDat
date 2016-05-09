@@ -137,6 +137,10 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         }
         private void xoa_cong_tac()
         {
+            if(!is_nhan_vien_seleted())
+            {
+                return;
+            }
             var v_dlg_confirm = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa công tác (việc này chỉ nên thực hiện khi bạn cập nhật nhầm công tác cho nhân viên)!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
             if(v_dlg_confirm == System.Windows.Forms.DialogResult.Yes)
             {

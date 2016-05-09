@@ -63,6 +63,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -236,7 +237,8 @@
             this.sle_col_TEN,
             this.sle_col_GIOI_TINH,
             this.sle_col_SDT,
-            this.sle_col_DIA_CHI_LIEN_LAC});
+            this.sle_col_DIA_CHI_LIEN_LAC,
+            this.gridColumn1});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -261,22 +263,20 @@
             this.sle_col_HO_DEM.Caption = "Họ đệm";
             this.sle_col_HO_DEM.FieldName = "HO_DEM";
             this.sle_col_HO_DEM.Name = "sle_col_HO_DEM";
-            this.sle_col_HO_DEM.Visible = true;
-            this.sle_col_HO_DEM.VisibleIndex = 1;
             // 
             // sle_col_TEN
             // 
             this.sle_col_TEN.Caption = "Tên";
             this.sle_col_TEN.FieldName = "TEN";
             this.sle_col_TEN.Name = "sle_col_TEN";
-            this.sle_col_TEN.Visible = true;
-            this.sle_col_TEN.VisibleIndex = 2;
             // 
             // sle_col_GIOI_TINH
             // 
             this.sle_col_GIOI_TINH.Caption = "Giới tính";
-            this.sle_col_GIOI_TINH.FieldName = "GT";
+            this.sle_col_GIOI_TINH.FieldName = "GIOI_TINH_TEXT";
             this.sle_col_GIOI_TINH.Name = "sle_col_GIOI_TINH";
+            this.sle_col_GIOI_TINH.Visible = true;
+            this.sle_col_GIOI_TINH.VisibleIndex = 2;
             // 
             // sle_col_SDT
             // 
@@ -427,6 +427,14 @@
             this.layoutControlItem4.Text = "Chọn nhân viên";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(75, 13);
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Họ tên";
+            this.gridColumn1.FieldName = "HO_TEN";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            // 
             // f357_bao_cao_trang_thai_lao_dong_nhan_vien_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,5 +510,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraEditors.LabelControl m_lbl_header;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

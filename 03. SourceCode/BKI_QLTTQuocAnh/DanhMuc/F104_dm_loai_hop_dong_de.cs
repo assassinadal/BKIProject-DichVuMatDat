@@ -168,8 +168,9 @@ namespace BKI_DichVuMatDat.DanhMuc
                             break;
                     }
                     CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
+                    this.Close();
                 }
-                this.Close();
+                
             }
             catch (Exception v_e)
             {

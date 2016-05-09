@@ -172,7 +172,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
             catch (Exception v_e)
             {
-                CHRM_BaseMessages.MsgBox_Warning("NHÂN VIÊN ĐÃ CÓ HỢP ĐỒNG ! KHÔNG THỂ XÓA !");
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 

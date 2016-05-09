@@ -32,6 +32,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         public f329_lap_hop_dong_v5(DateTime ip_datetime, bool ip_trang_thai_filter)
         {
             InitializeComponent();
+            radioButton1.Checked = true;
             set_define_events();
             string v_str = ip_datetime.ToString("MM/dd/yyyy");
             string v_str_ngay_hien_tai = DateTime.Now.ToString("MM/dd/yyyy");

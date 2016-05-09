@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f300_chinh_lns_nhan_vien));
             this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -44,6 +44,7 @@
             this.MA_CHUC_DANH_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MUC_LNS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAY_BAT_DAU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLY_DO_CHINH_SUA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_tab_k_lns = new DevExpress.XtraTab.XtraTabPage();
             this.m_grc_khs = new DevExpress.XtraGrid.GridControl();
             this.m_grv_khs = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -65,7 +66,6 @@
             this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.colLY_DO_CHINH_SUA = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -153,19 +153,19 @@
             this.NGAY_BAT_DAU,
             this.colNGAY_KET_THUC,
             this.colLY_DO_CHINH_SUA});
-            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.Pink;
-            styleFormatCondition2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
-            styleFormatCondition2.Appearance.ForeColor = System.Drawing.Color.Firebrick;
-            styleFormatCondition2.Appearance.Options.UseBackColor = true;
-            styleFormatCondition2.Appearance.Options.UseFont = true;
-            styleFormatCondition2.Appearance.Options.UseForeColor = true;
-            styleFormatCondition2.ApplyToRow = true;
-            styleFormatCondition2.Column = this.colNGAY_KET_THUC;
-            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition2.Expression = "[NGAY_KET_THUC]  < Today() And IsNullOrEmpty([NGAY_KET_THUC]) == False";
-            styleFormatCondition2.Name = "HET_HAN";
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Pink;
+            styleFormatCondition1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
+            styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Firebrick;
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
+            styleFormatCondition1.Appearance.Options.UseFont = true;
+            styleFormatCondition1.Appearance.Options.UseForeColor = true;
+            styleFormatCondition1.ApplyToRow = true;
+            styleFormatCondition1.Column = this.colNGAY_KET_THUC;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition1.Expression = "[NGAY_KET_THUC]  < Today() And IsNullOrEmpty([NGAY_KET_THUC]) == False";
+            styleFormatCondition1.Name = "HET_HAN";
             this.m_grv.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition2});
+            styleFormatCondition1});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
             this.m_grv.OptionsBehavior.ReadOnly = true;
@@ -247,6 +247,16 @@
             this.NGAY_BAT_DAU.Visible = true;
             this.NGAY_BAT_DAU.VisibleIndex = 5;
             this.NGAY_BAT_DAU.Width = 129;
+            // 
+            // colLY_DO_CHINH_SUA
+            // 
+            this.colLY_DO_CHINH_SUA.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colLY_DO_CHINH_SUA.AppearanceHeader.Options.UseFont = true;
+            this.colLY_DO_CHINH_SUA.Caption = "Lý do chỉnh sửa";
+            this.colLY_DO_CHINH_SUA.FieldName = "LY_DO_CHINH_SUA";
+            this.colLY_DO_CHINH_SUA.Name = "colLY_DO_CHINH_SUA";
+            this.colLY_DO_CHINH_SUA.Visible = true;
+            this.colLY_DO_CHINH_SUA.VisibleIndex = 7;
             // 
             // m_tab_k_lns
             // 
@@ -431,7 +441,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(923, 38);
             this.layoutControlItem3.Text = "layoutControlItem3";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextToControlDistance = 0;
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem2
@@ -443,7 +452,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(923, 326);
             this.layoutControlItem2.Text = "layoutControlItem2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextToControlDistance = 0;
             this.layoutControlItem2.TextVisible = false;
             // 
             // panelControl1
@@ -511,14 +519,6 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Tất cả";
             this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // colLY_DO_CHINH_SUA
-            // 
-            this.colLY_DO_CHINH_SUA.Caption = "Lý do chỉnh sửa";
-            this.colLY_DO_CHINH_SUA.FieldName = "LY_DO_CHINH_SUA";
-            this.colLY_DO_CHINH_SUA.Name = "colLY_DO_CHINH_SUA";
-            this.colLY_DO_CHINH_SUA.Visible = true;
-            this.colLY_DO_CHINH_SUA.VisibleIndex = 7;
             // 
             // f300_chinh_lns_nhan_vien
             // 

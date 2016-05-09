@@ -120,15 +120,11 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void load_data_2_sle_chon_nhan_vien()
         {
-            US_V_DM_NHAN_VIEN v_us = new US_V_DM_NHAN_VIEN();
-            DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
-            v_us.FillDataset(v_ds);
-
-            m_sle_chon_nhan_vien.Properties.DataSource = v_ds.V_DM_NHAN_VIEN;
-            m_sle_chon_nhan_vien.Properties.ValueMember = V_DM_NHAN_VIEN.ID;
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            DS_DM_NHAN_VIEN v_ds = new DS_DM_NHAN_VIEN();
+            m_sle_chon_nhan_vien.Properties.DataSource = v_us.LayDanhSachNhanVien();
             m_sle_chon_nhan_vien.Properties.DisplayMember = V_DM_NHAN_VIEN.HO_TEN;
-
-            m_sle_chon_nhan_vien.Properties.PopulateViewColumns();
+            m_sle_chon_nhan_vien.Properties.ValueMember = V_DM_NHAN_VIEN.ID;
             m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
@@ -292,28 +288,10 @@ namespace BKI_DichVuMatDat.NghiepVu
                         form_2_us_obj(v_us_gd_trang_thai_lao_dong);
                         v_us_gd_trang_thai_lao_dong.BeginTransaction();
                         v_us_gd_trang_thai_lao_dong.Insert();
-
-                        //decimal v_id_loai_trang_thai_lao_dong = 0;
-                        //v_id_loai_trang_thai_lao_dong = find_id_loai_trang_thai_lao_dong((decimal)m_sle_chon_trang_thai_lao_dong.EditValue);
-
-                        //if (v_id_loai_trang_thai_lao_dong == CONST_ID_LOAI_TRANG_THAI_LAO_DONG.NGHI_VIEC)
-                        //{
-                        //    decimal v_id_gd_hd_hien_tai_cua_nhan_vien = 0;
-                        //    v_id_gd_hd_hien_tai_cua_nhan_vien = find_id_gd_hop_dong_by_id_nhan_vien((decimal)m_sle_chon_nhan_vien.EditValue);
-
-                        //    if (v_id_gd_hd_hien_tai_cua_nhan_vien != -1)
-                        //    {
-                        //        US_GD_HOP_DONG v_us_gd_hop_dong = new US_GD_HOP_DONG(v_id_gd_hd_hien_tai_cua_nhan_vien);
-                        //        v_us_gd_hop_dong.datNGAY_KET_THUC = m_dat_ngay_ap_dung.DateTime.Date;
-                        //        v_us_gd_hop_dong.UseTransOfUSObject(v_us_gd_trang_thai_lao_dong);
-                        //        v_us_gd_hop_dong.Update();
-                        //    }
-
-                        //}
-
                         v_us_gd_trang_thai_lao_dong.CommitTransaction();
                         m_id_gd_trang_thai_lao_dong_moi_tao = v_us_gd_trang_thai_lao_dong.dcID;
                         CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);
+                        this.Close();
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         v_us_gd_trang_thai_lao_dong.dcID = m_id_gd_trang_thai_lao_dong_4_update;
@@ -360,7 +338,8 @@ namespace BKI_DichVuMatDat.NghiepVu
 
             else if (m_dat_ngay_ap_dung.EditValue == null)
             {
-                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_CHON_NGAY_AP_DUNG);
+                string v_str_error = "Bạn chưa nhập ngày bắt đầu!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

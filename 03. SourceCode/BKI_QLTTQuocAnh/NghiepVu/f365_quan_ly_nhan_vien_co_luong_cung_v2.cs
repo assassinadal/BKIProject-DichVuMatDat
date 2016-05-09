@@ -295,9 +295,8 @@ namespace BKI_DichVuMatDat.NghiepVu
                     decimal v_id = CIPConvert.ToDecimal(v_dr[GD_LUONG_CUNG.ID]);
                     //
                     US_GD_LUONG_CUNG v_us = new US_GD_LUONG_CUNG(v_id);
-                    v_us.strDA_XOA = "Y";
                     v_us.BeginTransaction();
-                    v_us.Update();
+                    v_us.Delete();
                     v_us.CommitTransaction();
                     CHRM_BaseMessages.MsgBox_Infor("Đã xóa dữ liệu thành công");
                     load_data_2_grid();

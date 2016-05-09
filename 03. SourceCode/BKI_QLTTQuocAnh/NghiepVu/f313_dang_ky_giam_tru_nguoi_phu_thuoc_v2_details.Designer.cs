@@ -85,6 +85,8 @@
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -162,7 +164,6 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(725, 1);
             this.layoutControlItem5.Text = "layoutControlItem5";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(50, 20);
-            this.layoutControlItem5.TextToControlDistance = 5;
             // 
             // searchLookUpEdit1View
             // 
@@ -326,7 +327,9 @@
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
-            this.gridColumn4});
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -351,16 +354,12 @@
             this.gridColumn3.Caption = "Họ đệm";
             this.gridColumn3.FieldName = "HO_DEM";
             this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Tên";
             this.gridColumn4.FieldName = "TEN";
             this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
             // 
             // m_txt_quoc_gia
             // 
@@ -677,6 +676,22 @@
             this.layoutControlItem7.Text = "Tháng kết thúc";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(134, 13);
             // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Họ tên";
+            this.gridColumn5.FieldName = "HO_TEN";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 1;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Giới tính";
+            this.gridColumn6.FieldName = "GIOI_TINH_TEXT";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 2;
+            // 
             // f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -786,5 +801,7 @@
         private DevExpress.XtraEditors.DateEdit m_dat_ngay_bat_dau;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
     }
 }

@@ -169,8 +169,10 @@
             // sle_cnv_GIOI_TINH
             // 
             this.sle_cnv_GIOI_TINH.Caption = "Giới tính";
-            this.sle_cnv_GIOI_TINH.FieldName = "GT";
+            this.sle_cnv_GIOI_TINH.FieldName = "GIOI_TINH_TEXT";
             this.sle_cnv_GIOI_TINH.Name = "sle_cnv_GIOI_TINH";
+            this.sle_cnv_GIOI_TINH.Visible = true;
+            this.sle_cnv_GIOI_TINH.VisibleIndex = 2;
             // 
             // sle_cnv_SDT
             // 

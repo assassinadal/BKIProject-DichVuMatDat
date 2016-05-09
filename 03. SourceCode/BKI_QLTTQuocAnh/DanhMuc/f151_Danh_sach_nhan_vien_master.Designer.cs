@@ -68,6 +68,7 @@
             this.colNGAY_TIEP_NHAN_VAO_TCT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY_CHINH_THUC_TIEP_NHAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGUOI_BAO_LANH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
             this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
@@ -76,7 +77,6 @@
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_tai_file_excel_mau = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_ma_nv_tiep_theo = new DevExpress.XtraEditors.SimpleButton();
-            this.colHO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -239,7 +239,7 @@
             this.colGT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colGT.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colGT.Caption = "Giới tính";
-            this.colGT.FieldName = "GT";
+            this.colGT.FieldName = "GIOI_TINH_TEXT";
             this.colGT.MinWidth = 100;
             this.colGT.Name = "colGT";
             this.colGT.OptionsColumn.AllowEdit = false;
@@ -666,6 +666,15 @@
             this.colNGUOI_BAO_LANH.VisibleIndex = 30;
             this.colNGUOI_BAO_LANH.Width = 20;
             // 
+            // colHO_TEN
+            // 
+            this.colHO_TEN.Caption = "Họ tên";
+            this.colHO_TEN.FieldName = "HO_TEN";
+            this.colHO_TEN.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.colHO_TEN.Name = "colHO_TEN";
+            this.colHO_TEN.Visible = true;
+            this.colHO_TEN.VisibleIndex = 1;
+            // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.m_cmd_them);
@@ -759,15 +768,6 @@
             this.m_cmd_ma_nv_tiep_theo.Size = new System.Drawing.Size(146, 32);
             this.m_cmd_ma_nv_tiep_theo.TabIndex = 28;
             this.m_cmd_ma_nv_tiep_theo.Text = "Tra cứu \r\nmã nhân viên tiếp theo";
-            // 
-            // colHO_TEN
-            // 
-            this.colHO_TEN.Caption = "Họ tên";
-            this.colHO_TEN.FieldName = "HO_TEN";
-            this.colHO_TEN.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.colHO_TEN.Name = "colHO_TEN";
-            this.colHO_TEN.Visible = true;
-            this.colHO_TEN.VisibleIndex = 1;
             // 
             // f151_Danh_sach_nhan_vien_master
             // 

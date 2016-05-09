@@ -582,7 +582,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
             catch(Exception v_e)
             {
-                XtraMessageBox.Show("Có lỗi xảy ra, dữ liệu chưa được lưu. Bạn xem lại dữ liệu trên File Excel nhé", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                XtraMessageBox.Show("Không lấy dữ liệu được từ File Excel Import. Bạn kiểm tra lại File Excel Import nhé!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 //CSystemLog_301.ExceptionHandle(v_e);
             }
         }

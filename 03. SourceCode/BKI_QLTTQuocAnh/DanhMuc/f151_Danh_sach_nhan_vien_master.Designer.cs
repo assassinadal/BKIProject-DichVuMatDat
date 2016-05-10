@@ -75,7 +75,6 @@
             this.m_cmd_sua = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_tai_file_excel_mau = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_ma_nv_tiep_theo = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -677,12 +676,11 @@
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.m_cmd_them);
-            this.panelControl3.Controls.Add(this.m_cmd_sua);
-            this.panelControl3.Controls.Add(this.m_cmd_delete);
-            this.panelControl3.Controls.Add(this.m_cmd_chon_file);
-            this.panelControl3.Controls.Add(this.m_cmd_tai_file_excel_mau);
             this.panelControl3.Controls.Add(this.m_cmd_ma_nv_tiep_theo);
+            this.panelControl3.Controls.Add(this.m_cmd_chon_file);
+            this.panelControl3.Controls.Add(this.m_cmd_delete);
+            this.panelControl3.Controls.Add(this.m_cmd_sua);
+            this.panelControl3.Controls.Add(this.m_cmd_them);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(0, 46);
             this.panelControl3.Name = "panelControl3";
@@ -691,10 +689,10 @@
             // 
             // m_cmd_them
             // 
-            this.m_cmd_them.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_them.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_them.ImageIndex = 7;
             this.m_cmd_them.ImageList = this.img_DVMD;
-            this.m_cmd_them.Location = new System.Drawing.Point(669, 2);
+            this.m_cmd_them.Location = new System.Drawing.Point(2, 2);
             this.m_cmd_them.Name = "m_cmd_them";
             this.m_cmd_them.Size = new System.Drawing.Size(75, 32);
             this.m_cmd_them.TabIndex = 3;
@@ -717,24 +715,24 @@
             // 
             // m_cmd_sua
             // 
-            this.m_cmd_sua.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_sua.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_sua.ImageIndex = 9;
             this.m_cmd_sua.ImageList = this.img_DVMD;
-            this.m_cmd_sua.Location = new System.Drawing.Point(744, 2);
+            this.m_cmd_sua.Location = new System.Drawing.Point(77, 2);
             this.m_cmd_sua.Name = "m_cmd_sua";
             this.m_cmd_sua.Size = new System.Drawing.Size(75, 32);
-            this.m_cmd_sua.TabIndex = 4;
+            this.m_cmd_sua.TabIndex = 37;
             this.m_cmd_sua.Text = "Sửa";
             // 
             // m_cmd_delete
             // 
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_delete.ImageIndex = 8;
             this.m_cmd_delete.ImageList = this.img_DVMD;
-            this.m_cmd_delete.Location = new System.Drawing.Point(819, 2);
+            this.m_cmd_delete.Location = new System.Drawing.Point(152, 2);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(75, 32);
-            this.m_cmd_delete.TabIndex = 31;
+            this.m_cmd_delete.TabIndex = 38;
             this.m_cmd_delete.Text = "&Xóa";
             // 
             // m_cmd_chon_file
@@ -742,31 +740,20 @@
             this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_chon_file.ImageIndex = 4;
             this.m_cmd_chon_file.ImageList = this.img_DVMD;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(158, 2);
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(227, 2);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 32);
-            this.m_cmd_chon_file.TabIndex = 30;
+            this.m_cmd_chon_file.TabIndex = 39;
             this.m_cmd_chon_file.Text = "&Import excel";
-            // 
-            // m_cmd_tai_file_excel_mau
-            // 
-            this.m_cmd_tai_file_excel_mau.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_tai_file_excel_mau.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tai_file_excel_mau.Image")));
-            this.m_cmd_tai_file_excel_mau.Location = new System.Drawing.Point(148, 2);
-            this.m_cmd_tai_file_excel_mau.Name = "m_cmd_tai_file_excel_mau";
-            this.m_cmd_tai_file_excel_mau.Size = new System.Drawing.Size(10, 32);
-            this.m_cmd_tai_file_excel_mau.TabIndex = 29;
-            this.m_cmd_tai_file_excel_mau.Text = "Tải file excel mẫu";
-            this.m_cmd_tai_file_excel_mau.Visible = false;
             // 
             // m_cmd_ma_nv_tiep_theo
             // 
             this.m_cmd_ma_nv_tiep_theo.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_ma_nv_tiep_theo.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_ma_nv_tiep_theo.Image")));
-            this.m_cmd_ma_nv_tiep_theo.Location = new System.Drawing.Point(2, 2);
+            this.m_cmd_ma_nv_tiep_theo.Location = new System.Drawing.Point(327, 2);
             this.m_cmd_ma_nv_tiep_theo.Name = "m_cmd_ma_nv_tiep_theo";
             this.m_cmd_ma_nv_tiep_theo.Size = new System.Drawing.Size(146, 32);
-            this.m_cmd_ma_nv_tiep_theo.TabIndex = 28;
+            this.m_cmd_ma_nv_tiep_theo.TabIndex = 40;
             this.m_cmd_ma_nv_tiep_theo.Text = "Tra cứu \r\nmã nhân viên tiếp theo";
             // 
             // f151_Danh_sach_nhan_vien_master
@@ -800,10 +787,7 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_sua;
         private DevExpress.XtraEditors.SimpleButton m_cmd_them;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_ma_nv_tiep_theo;
         private DevExpress.XtraGrid.GridControl m_grc;
         private DevExpress.XtraGrid.Views.Grid.GridView m_grv;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
@@ -839,9 +823,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colNGAY_TIEP_NHAN_VAO_TCT;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAY_CHINH_THUC_TIEP_NHAN;
         private DevExpress.XtraGrid.Columns.GridColumn colNGUOI_BAO_LANH;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_tai_file_excel_mau;
         private DevExpress.Utils.ImageCollection img_DVMD;
         private DevExpress.XtraGrid.Columns.GridColumn colHO_TEN;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_ma_nv_tiep_theo;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_sua;
     }
 }

@@ -30,7 +30,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         public void DisplayForPresent(ref int m_trang_thai_buoc_1)
         {
             m_cmd_sua.Enabled = false;
-            m_cmd_tai_file_excel_mau.Enabled = false;
+            //m_cmd_tai_file_excel_mau.Enabled = false;
             m_cmd_chon_file.Enabled = false;
             this.CenterToScreen();
             this.ShowDialog();
@@ -42,7 +42,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_cmd_ma_nv_tiep_theo.Enabled = false;
             m_cmd_them.Enabled = false;
             m_cmd_sua.Enabled = false;
-            m_cmd_tai_file_excel_mau.Enabled = false;
+            //m_cmd_tai_file_excel_mau.Enabled = false;
             m_cmd_chon_file.Enabled = false;
             m_id_nhan_vien = ip_dc_id_nhan_vien;
             this.CenterToScreen();
@@ -157,7 +157,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             this.Load += f150_Danh_sach_nhan_vien_master_Load;
             m_cmd_ma_nv_tiep_theo.Click += m_cmd_ma_nv_tiep_theo_Click;
-            m_cmd_tai_file_excel_mau.Click += m_cmd_tai_file_excel_mau_Click;
+            //m_cmd_tai_file_excel_mau.Click += m_cmd_tai_file_excel_mau_Click;
             m_cmd_chon_file.Click += m_cmd_chon_file_Click;
             m_cmd_them.Click += m_cmd_them_Click;
             m_cmd_sua.Click += m_cmd_sua_Click;
@@ -172,7 +172,8 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
             catch (Exception v_e)
             {
-                CSystemLog_301.ExceptionHandle(v_e);
+                XtraMessageBox.Show("Bạn không thể xóa nhân viên này vì nhân viên đã có các thông tin về hợp đồng, công tác, LNS rồi!","THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                //CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -200,22 +201,22 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
-        void m_cmd_tai_file_excel_mau_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SplashScreenManager.ShowForm(typeof(F_wait_form));
-                WinFormControls.openTemplate_v2(CONST_EXCEL_TEMPLATE.DANH_SACH_NHAN_VIEN_TEMPLATE);
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-            finally
-            {
-                SplashScreenManager.CloseForm();
-            }
-        }
+        //void m_cmd_tai_file_excel_mau_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        SplashScreenManager.ShowForm(typeof(F_wait_form));
+        //        WinFormControls.openTemplate_v2(CONST_EXCEL_TEMPLATE.DANH_SACH_NHAN_VIEN_TEMPLATE);
+        //    }
+        //    catch (Exception v_e)
+        //    {
+        //        CSystemLog_301.ExceptionHandle(v_e);
+        //    }
+        //    finally
+        //    {
+        //        SplashScreenManager.CloseForm();
+        //    }
+        //}
 
         void m_cmd_chon_file_Click(object sender, EventArgs e)
         {

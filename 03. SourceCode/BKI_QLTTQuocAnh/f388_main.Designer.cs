@@ -1404,7 +1404,6 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_quan_ly_giam_tru_phu_thuoc);
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem5);
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_quan_ly_khong_dong_bh);
-            this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_tinh_phep_tieu_chuan);
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_chuyen_trang_thai_LD);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Quản lý nghiệp vụ nhân sự";

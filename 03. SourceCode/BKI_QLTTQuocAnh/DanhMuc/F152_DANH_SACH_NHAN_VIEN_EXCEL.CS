@@ -112,14 +112,18 @@ namespace BKI_DichVuMatDat
             //v_ds_nhan_vien.Tables.Add(new DataTable());
             if (dataRow["MA_NV"] == null || dataRow["MA_NV"].ToString() == "")
             {
+                XtraMessageBox.Show("Có ô mã nhân viên bị trống!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
             DS_DM_NHAN_VIEN v_ds_nhan_vien = new DS_DM_NHAN_VIEN();
             v_us.FillDataset(v_ds_nhan_vien, " where MA_NV= '" + dataRow["MA_NV"].ToString() + "'");
             //v_usdc.FillDatasetWithQuery(v_ds_nhan_vien, "select * from DM_NHAN_VIEN where MA_NV=" + dataRow["MA_NV"].ToString());
-            if (v_ds_nhan_vien.Tables[0].Rows.Count > 0)
+            if (v_ds_nhan_vien.Tables[0].Rows.Count > 0){
+                CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + dataRow["MA_NV"].ToString() + "  đã tồn tại. Vui lòng kiểm tra lại thông tin!");
                 return false;
+            }
+                
             else
             {
                 return true;
@@ -166,7 +170,7 @@ namespace BKI_DichVuMatDat
                 {
                     if (!check_ma_nhan_vien_is_ok(m_grv.GetDataRow(i)))
                     {
-                        CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + m_grv.GetDataRow(i)["MA_NV"].ToString() + "  đã tồn tại. Vui lòng kiểm tra lại thông tin!");
+                        
                         return false;
                     }
                     if(m_grv.GetDataRow(i)["HO_DEM"] == DBNull.Value || m_grv.GetDataRow(i)["HO_DEM"].ToString() == "")

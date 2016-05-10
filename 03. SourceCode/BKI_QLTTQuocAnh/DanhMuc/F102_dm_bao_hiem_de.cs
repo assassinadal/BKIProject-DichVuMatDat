@@ -13,6 +13,7 @@ using BKI_DichVuMatDat.DS;
 using BKI_DichVuMatDat.DS.CDBNames;
 
 using IP.Core.IPCommon;
+using DevExpress.XtraEditors;
 
 namespace BKI_DichVuMatDat.DanhMuc
 {
@@ -89,7 +90,25 @@ namespace BKI_DichVuMatDat.DanhMuc
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TI_LE);
                 return false;
             }
+            if (check_ma_bh_da_ton_tai())
+            {
+                string v_str_error = "Mã loại bảo hiểm đã tồn tại!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return true;
+        }
+
+        private bool check_ma_bh_da_ton_tai()
+        {
+            US_DM_BAO_HIEM v_us = new US_DM_BAO_HIEM();
+            DS_DM_BAO_HIEM v_ds = new DS_DM_BAO_HIEM();
+            v_us.FillDataset(v_ds, "where ma_bh = N'" + m_txt_ma_bao_hiem.Text + "'");
+            if (m_us.strMA_BH != m_txt_ma_bao_hiem.Text && v_ds.Tables[0].Rows.Count != 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         #endregion
@@ -122,6 +141,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                     {
                         m_us.Update();
                     }
+                    XtraMessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); 
                     this.Close();
                 }
             }

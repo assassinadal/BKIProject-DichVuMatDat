@@ -40,7 +40,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             this.m_grv_dm_luong_che_do.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
             this.m_grv_dm_luong_che_do.OptionsPrint.AutoWidth = false;
-            set_define_events();
+            //set_define_events();
             this.KeyPreview = true;
         }
 
@@ -87,13 +87,13 @@ namespace BKI_DichVuMatDat.DanhMuc
         }
         #endregion
 
-        private void set_define_events()
-        {
-            this.Load += F106_dm_luong_che_do_Load;
-            m_cmd_insert.Click += m_cmd_insert_Click;
-            m_cmd_update.Click += m_cmd_update_Click;
-            m_cmd_delete.Click += m_cmd_delete_Click;
-        }
+        //private void set_define_events()
+        //{
+        //    this.Load += F106_dm_luong_che_do_Load;
+        //    m_cmd_insert.Click += m_cmd_insert_Click;
+        //    m_cmd_update.Click += m_cmd_update_Click;
+        //    m_cmd_delete.Click += m_cmd_delete_Click;
+        //}
 
         void F106_dm_luong_che_do_Load(object sender, EventArgs e)
         {

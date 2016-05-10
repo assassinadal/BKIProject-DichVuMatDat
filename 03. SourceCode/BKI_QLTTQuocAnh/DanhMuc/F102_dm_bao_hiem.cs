@@ -99,6 +99,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                 if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_LOAI_BAO_HIEM) == true)
                 {
                     v_us.Delete();
+                    XtraMessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); 
                     load_data_2_grid();
                 }
             }

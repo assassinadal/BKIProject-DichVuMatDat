@@ -47,6 +47,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void set_initial_form_load()
         {
+            CHRMCommon.make_stt(m_grv_dm_phu_cap);
             load_data_2_grid();
         }
         private void focus_new_row_created(decimal ip_dc_id_dm_dv)

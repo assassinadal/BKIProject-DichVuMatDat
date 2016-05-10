@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 using IP.Core.IPCommon;
 using BKI_DichVuMatDat.US;
+using BKI_DichVuMatDat.DS;
 using DevExpress.XtraEditors;
 
 namespace BKI_DichVuMatDat.DanhMuc
@@ -81,8 +82,14 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private bool check_ma_loai_hd_da_ton_tai()
         {
-
-            return true;
+            US_DM_LOAI_HOP_DONG v_us = new US_DM_LOAI_HOP_DONG();
+            DS_DM_LOAI_HOP_DONG v_ds = new DS_DM_LOAI_HOP_DONG();
+            v_us.FillDataset(v_ds, "where ma_loai_hop_dong = N'" + m_txt_ma_loai_hop_dong.Text + "'");
+            if (m_us.strMA_LOAI_HOP_DONG != m_txt_ma_loai_hop_dong.Text && v_ds.Tables[0].Rows.Count !=0)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void us_to_form(US_DM_LOAI_HOP_DONG m_us)

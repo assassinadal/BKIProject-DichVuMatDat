@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F106_dm_luong_che_do));
             this.m_grc_dm_luong_che_do = new DevExpress.XtraGrid.GridControl();
             this.m_grv_dm_luong_che_do = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -45,7 +44,7 @@
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_luong_che_do)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_luong_che_do)).BeginInit();
             this.panel1.SuspendLayout();
@@ -208,6 +207,7 @@
             this.m_cmd_delete.Size = new System.Drawing.Size(116, 41);
             this.m_cmd_delete.TabIndex = 36;
             this.m_cmd_delete.Text = "&Xóa";
+            this.m_cmd_delete.Click += new System.EventHandler(this.m_cmd_delete_Click);
             // 
             // m_cmd_xuat_excel
             // 
@@ -218,6 +218,7 @@
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 41);
             this.m_cmd_xuat_excel.TabIndex = 35;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
+            this.m_cmd_xuat_excel.Visible = false;
             // 
             // panel3
             // 
@@ -265,6 +266,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "F106_dm_luong_che_do";
             this.Text = "F106 - DANH MỤC LƯƠNG CHẾ ĐỘ";
+            this.Load += new System.EventHandler(this.F106_dm_luong_che_do_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_luong_che_do)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_luong_che_do)).EndInit();
             this.panel1.ResumeLayout(false);

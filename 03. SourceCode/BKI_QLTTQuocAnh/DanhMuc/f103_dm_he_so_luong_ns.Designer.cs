@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F103_dm_he_so_luong_ns));
             this.m_grc_dm_he_so_luong_ns = new DevExpress.XtraGrid.GridControl();
             this.m_grv_dm_he_so_luong_ns = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -44,7 +43,7 @@
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_he_so_luong_ns)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_he_so_luong_ns)).BeginInit();
@@ -223,6 +222,7 @@
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 41);
             this.m_cmd_xuat_excel.TabIndex = 31;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
+            this.m_cmd_xuat_excel.Visible = false;
             // 
             // imageList1
             // 
@@ -270,6 +270,7 @@
             this.Controls.Add(this.m_lbl_header);
             this.Name = "F103_dm_he_so_luong_ns";
             this.Text = "F103 - DANH MỤC HỆ SỐ LƯƠNG NĂNG SUẤT";
+            this.Load += new System.EventHandler(this.F103_dm_he_so_luong_ns_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_he_so_luong_ns)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_he_so_luong_ns)).EndInit();
             this.panel1.ResumeLayout(false);

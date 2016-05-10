@@ -28,29 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F107_dm_phu_cap_de));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_exit = new DevExpress.XtraEditors.SimpleButton();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_gr_thong_tin_co_ban = new DevExpress.XtraEditors.GroupControl();
             this.m_search_lookup_edit_loai_phu_cap = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.m_txt_ti_le = new System.Windows.Forms.TextBox();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.m_txt_doi_tuong_huong = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.m_txt_doi_tuong_huong = new DevExpress.XtraEditors.TextEdit();
+            this.m_txt_ti_le = new DevExpress.XtraEditors.TextEdit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_co_ban)).BeginInit();
             this.m_gr_thong_tin_co_ban.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_search_lookup_edit_loai_phu_cap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_doi_tuong_huong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_ti_le.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // m_lbl_header
@@ -136,10 +137,10 @@
             // 
             this.m_gr_thong_tin_co_ban.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_gr_thong_tin_co_ban.Appearance.Options.UseFont = true;
-            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_search_lookup_edit_loai_phu_cap);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.m_txt_ti_le);
-            this.m_gr_thong_tin_co_ban.Controls.Add(this.label1);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.m_txt_doi_tuong_huong);
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_search_lookup_edit_loai_phu_cap);
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.label1);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.label6);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.label7);
             this.m_gr_thong_tin_co_ban.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -156,7 +157,7 @@
             this.m_search_lookup_edit_loai_phu_cap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_search_lookup_edit_loai_phu_cap.Properties.DisplayMember = "TEN";
-            this.m_search_lookup_edit_loai_phu_cap.Properties.NullText = "";
+            this.m_search_lookup_edit_loai_phu_cap.Properties.NullText = "-----Chọn loại phụ cấp-----";
             this.m_search_lookup_edit_loai_phu_cap.Properties.ValueMember = "ID";
             this.m_search_lookup_edit_loai_phu_cap.Properties.View = this.searchLookUpEdit1View;
             this.m_search_lookup_edit_loai_phu_cap.Size = new System.Drawing.Size(258, 20);
@@ -171,12 +172,13 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // m_txt_ti_le
+            // gridColumn1
             // 
-            this.m_txt_ti_le.Location = new System.Drawing.Point(110, 84);
-            this.m_txt_ti_le.Name = "m_txt_ti_le";
-            this.m_txt_ti_le.Size = new System.Drawing.Size(258, 20);
-            this.m_txt_ti_le.TabIndex = 6;
+            this.gridColumn1.Caption = "LOẠI PHỤ CẤP";
+            this.gridColumn1.FieldName = "TEN";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
             // 
             // label1
             // 
@@ -186,13 +188,6 @@
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tỷ lệ(*)";
-            // 
-            // m_txt_doi_tuong_huong
-            // 
-            this.m_txt_doi_tuong_huong.Location = new System.Drawing.Point(110, 58);
-            this.m_txt_doi_tuong_huong.Name = "m_txt_doi_tuong_huong";
-            this.m_txt_doi_tuong_huong.Size = new System.Drawing.Size(258, 20);
-            this.m_txt_doi_tuong_huong.TabIndex = 4;
             // 
             // label6
             // 
@@ -212,13 +207,22 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Loại phụ cấp";
             // 
-            // gridColumn1
+            // m_txt_doi_tuong_huong
             // 
-            this.gridColumn1.Caption = "LOẠI PHỤ CẤP";
-            this.gridColumn1.FieldName = "TEN";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.m_txt_doi_tuong_huong.Location = new System.Drawing.Point(110, 58);
+            this.m_txt_doi_tuong_huong.Name = "m_txt_doi_tuong_huong";
+            this.m_txt_doi_tuong_huong.Size = new System.Drawing.Size(258, 20);
+            this.m_txt_doi_tuong_huong.TabIndex = 8;
+            // 
+            // m_txt_ti_le
+            // 
+            this.m_txt_ti_le.Location = new System.Drawing.Point(110, 84);
+            this.m_txt_ti_le.Name = "m_txt_ti_le";
+            this.m_txt_ti_le.Properties.Mask.EditMask = "n2";
+            this.m_txt_ti_le.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.m_txt_ti_le.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_txt_ti_le.Size = new System.Drawing.Size(258, 20);
+            this.m_txt_ti_le.TabIndex = 9;
             // 
             // F107_dm_phu_cap_de
             // 
@@ -237,6 +241,8 @@
             this.m_gr_thong_tin_co_ban.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_search_lookup_edit_loai_phu_cap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_doi_tuong_huong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_ti_le.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -250,13 +256,13 @@
         internal System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.GroupControl m_gr_thong_tin_co_ban;
-        private System.Windows.Forms.TextBox m_txt_doi_tuong_huong;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox m_txt_ti_le;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SearchLookUpEdit m_search_lookup_edit_loai_phu_cap;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.TextEdit m_txt_ti_le;
+        private DevExpress.XtraEditors.TextEdit m_txt_doi_tuong_huong;
     }
 }

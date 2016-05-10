@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F106_dm_luong_che_do_de));
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -36,20 +35,27 @@
             this.m_cmd_exit = new DevExpress.XtraEditors.SimpleButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_gr_thong_tin_co_ban = new DevExpress.XtraEditors.GroupControl();
-            this.m_txt_so_tien = new System.Windows.Forms.TextBox();
-            this.m_txt_ma_lcd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_sle_muc_lcd = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.m_sle_ma_lcd = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.m_txt_so_tien = new DevExpress.XtraEditors.TextEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_gr_thong_tin_co_ban)).BeginInit();
             this.m_gr_thong_tin_co_ban.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_muc_lcd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_sle_ma_lcd.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_so_tien.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // m_lbl_header
@@ -109,7 +115,7 @@
             this.m_gr_thong_tin_co_ban.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_gr_thong_tin_co_ban.Appearance.Options.UseFont = true;
             this.m_gr_thong_tin_co_ban.Controls.Add(this.m_txt_so_tien);
-            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_txt_ma_lcd);
+            this.m_gr_thong_tin_co_ban.Controls.Add(this.m_sle_ma_lcd);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.label7);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.label1);
             this.m_gr_thong_tin_co_ban.Controls.Add(this.m_sle_muc_lcd);
@@ -120,20 +126,6 @@
             this.m_gr_thong_tin_co_ban.Size = new System.Drawing.Size(419, 127);
             this.m_gr_thong_tin_co_ban.TabIndex = 1;
             this.m_gr_thong_tin_co_ban.Text = "ĐIỀN THÔNG TIN";
-            // 
-            // m_txt_so_tien
-            // 
-            this.m_txt_so_tien.Location = new System.Drawing.Point(127, 84);
-            this.m_txt_so_tien.Name = "m_txt_so_tien";
-            this.m_txt_so_tien.Size = new System.Drawing.Size(256, 20);
-            this.m_txt_so_tien.TabIndex = 8;
-            // 
-            // m_txt_ma_lcd
-            // 
-            this.m_txt_ma_lcd.Location = new System.Drawing.Point(127, 32);
-            this.m_txt_ma_lcd.Name = "m_txt_ma_lcd";
-            this.m_txt_ma_lcd.Size = new System.Drawing.Size(256, 20);
-            this.m_txt_ma_lcd.TabIndex = 1;
             // 
             // label7
             // 
@@ -155,12 +147,11 @@
             // 
             // m_sle_muc_lcd
             // 
-            this.m_sle_muc_lcd.EditValue = "";
             this.m_sle_muc_lcd.Location = new System.Drawing.Point(127, 58);
             this.m_sle_muc_lcd.Name = "m_sle_muc_lcd";
             this.m_sle_muc_lcd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_sle_muc_lcd.Properties.NullText = "";
+            this.m_sle_muc_lcd.Properties.NullText = "-----Chọn mức lương chế độ-----";
             this.m_sle_muc_lcd.Properties.View = this.gridView1;
             this.m_sle_muc_lcd.Size = new System.Drawing.Size(256, 20);
             this.m_sle_muc_lcd.TabIndex = 6;
@@ -208,6 +199,61 @@
             this.imageList1.Images.SetKeyName(20, "");
             this.imageList1.Images.SetKeyName(21, "");
             // 
+            // m_sle_ma_lcd
+            // 
+            this.m_sle_ma_lcd.Location = new System.Drawing.Point(127, 28);
+            this.m_sle_ma_lcd.Name = "m_sle_ma_lcd";
+            this.m_sle_ma_lcd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.m_sle_ma_lcd.Properties.NullText = "-----Chọn mã lương chế độ-----";
+            this.m_sle_ma_lcd.Properties.View = this.gridView2;
+            this.m_sle_ma_lcd.Size = new System.Drawing.Size(256, 20);
+            this.m_sle_ma_lcd.TabIndex = 9;
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // m_txt_so_tien
+            // 
+            this.m_txt_so_tien.Location = new System.Drawing.Point(127, 87);
+            this.m_txt_so_tien.Name = "m_txt_so_tien";
+            this.m_txt_so_tien.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.m_txt_so_tien.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.m_txt_so_tien.Size = new System.Drawing.Size(256, 20);
+            this.m_txt_so_tien.TabIndex = 10;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Mã lương chế độ";
+            this.gridColumn1.FieldName = "MA_TU_DIEN";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Tên gọi";
+            this.gridColumn2.FieldName = "TEN";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Ghi chú";
+            this.gridColumn3.FieldName = "GHI_CHU";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
             // F106_dm_luong_che_do_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,6 +271,9 @@
             this.m_gr_thong_tin_co_ban.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_muc_lcd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_sle_ma_lcd.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_txt_so_tien.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -235,15 +284,19 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.GroupControl m_gr_thong_tin_co_ban;
-        private System.Windows.Forms.TextBox m_txt_ma_lcd;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_muc_lcd;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox m_txt_so_tien;
         private DevExpress.XtraEditors.SimpleButton m_cmd_save;
         private DevExpress.XtraEditors.SimpleButton m_cmd_exit;
         internal System.Windows.Forms.ImageList imageList1;
+        private DevExpress.XtraEditors.SearchLookUpEdit m_sle_ma_lcd;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.TextEdit m_txt_so_tien;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

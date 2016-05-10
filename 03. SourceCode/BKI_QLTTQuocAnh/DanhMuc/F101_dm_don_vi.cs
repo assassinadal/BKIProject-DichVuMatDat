@@ -62,9 +62,9 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_tree_don_vi.ExpandAll();
         }
         private decimal get_id_phong_ban()
-        {
+                {
             return Convert.ToDecimal(m_tree_don_vi.FocusedNode.GetValue("ID"));
-        }
+                }
         #endregion
 
         private void set_define_events()
@@ -104,8 +104,8 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                
-            }
+
+                }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);

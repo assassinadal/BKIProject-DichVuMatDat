@@ -126,26 +126,18 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_phu_cap.Insert();
                         v_us_dm_phu_cap.CommitTransaction();
                         m_id_dm_phu_cap_moi_tao = v_us_dm_phu_cap.dcID;
-                        if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_INSER_DM_PHU_CAP_THANH_CONG_TIEP_TUC_INSERT_YN) == true)
-                        {
-                            refresh_form();
-                        }
-                        else
-                        {
-                            this.Close();
-                        }
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         v_us_dm_phu_cap.dcID = m_id_dm_phu_cap_4_update;
                         v_us_dm_phu_cap.BeginTransaction();
                         v_us_dm_phu_cap.Update();
                         v_us_dm_phu_cap.CommitTransaction();
-                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
-                        this.Close();
                         break;
                     default:
                         break;
                 }
+                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
+                this.Close();
             }
             catch (Exception v_e)
             {

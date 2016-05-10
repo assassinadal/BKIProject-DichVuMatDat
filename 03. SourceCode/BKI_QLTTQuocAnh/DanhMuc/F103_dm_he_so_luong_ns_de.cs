@@ -16,6 +16,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 {
     public partial class F103_dm_he_so_luong_ns_de : Form
     {
+        US_DM_HE_SO_LUONG_NS m_us = new US_DM_HE_SO_LUONG_NS();
         public F103_dm_he_so_luong_ns_de()
         {
             InitializeComponent();
@@ -39,10 +40,11 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_lbl_header.Text = "SỬA HỆ SỐ LƯƠNG NĂNG SUẤT";
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_id_dm_he_so_luong_ns_4_update = ip_us.dcID;
-            m_txt_ma_luong_ns.Text = ip_us.dcID_MA_LNS.ToString();
+            m_sle_ma_lns.EditValue = ip_us.dcID_MA_LNS.ToString();
             m_sle_muc_lns.EditValue = ip_us.dcID_MUC_LNS.ToString();
             m_txt_he_so_luong_ns.Text = ip_us.dcHE_SO.ToString();
-            m_txt_loai_lao_dong.Text = ip_us.dcID_LOAI_LAO_DONG.ToString();
+            //m_txt_loai_lao_dong.Text = ip_us.dcID_LOAI_LAO_DONG.ToString();
+            m_us = ip_us;
             this.CenterToScreen();
             this.ShowDialog();
         }
@@ -64,6 +66,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void set_initial_form_load()
         {
+            load_data_2_sle_ma_lns();
             load_data_2_sle_muc_lns();
         }
 
@@ -75,6 +78,15 @@ namespace BKI_DichVuMatDat.DanhMuc
             v_us.FillDatasetByIdLoaiTuDien(v_ds, m_id_muc_hs_lns_trong_loai_td);
 
             return v_ds;
+        }
+
+        private void load_data_2_sle_ma_lns()
+        {
+            m_sle_ma_lns.Properties.DataSource = load_data_2_cm_dm_tu_dien(CONST_ID_LOAI_TU_DIEN.MA_HS_LNS).CM_DM_TU_DIEN;
+            m_sle_ma_lns.Properties.ValueMember = CM_DM_TU_DIEN.ID;
+            m_sle_ma_lns.Properties.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_sle_ma_lns.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            m_sle_ma_lns.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
 
         private void load_data_2_sle_muc_lns()
@@ -112,7 +124,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         
         private bool check_validate_data()
         {
-            if (m_txt_ma_luong_ns.Text.Trim() == "")
+            if (m_sle_ma_lns.EditValue == null)
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_MA_LNS);
                 return false;
@@ -127,21 +139,36 @@ namespace BKI_DichVuMatDat.DanhMuc
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_HE_SO_LNS);
                 return false;
             }
-            if (m_txt_loai_lao_dong.Text.Trim() == "")
+            if (check_ma_muc_da_ton_tai())
             {
-                CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_LOAI_LAO_DONG);
+                string v_str_error = "Loại lương năng suất đã tồn tại!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
         }
 
+        private bool check_ma_muc_da_ton_tai()
+        {
+            US_DM_HE_SO_LUONG_NS v_us = new US_DM_HE_SO_LUONG_NS();
+            DS_DM_HE_SO_LUONG_NS v_ds = new DS_DM_HE_SO_LUONG_NS();
+            decimal v_id_ma = CIPConvert.ToDecimal(m_sle_ma_lns.EditValue);
+            decimal v_id_muc = CIPConvert.ToDecimal(m_sle_muc_lns.EditValue);
+            v_us.FillDataset(v_ds, "where id_ma_lns = " + v_id_ma + "and id_muc_lns =" + v_id_muc);
+            if ((m_us.dcID_MA_LNS != v_id_ma || m_us.dcID_MUC_LNS != v_id_muc) && v_ds.Tables[0].Rows.Count != 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         //save data
         private void form_2_us_obj(US_DM_HE_SO_LUONG_NS ip_us)
         {
-            ip_us.dcID_MA_LNS = CIPConvert.ToDecimal(m_txt_ma_luong_ns.Text.Trim());
+            ip_us.dcID_MA_LNS = CIPConvert.ToDecimal(m_sle_ma_lns.EditValue);
             ip_us.dcID_MUC_LNS = CIPConvert.ToDecimal(m_sle_muc_lns.EditValue);
             ip_us.dcHE_SO = CIPConvert.ToDecimal(m_txt_he_so_luong_ns.Text.Trim());
-            ip_us.dcID_LOAI_LAO_DONG = CIPConvert.ToDecimal(m_txt_loai_lao_dong.Text.Trim());
+            //ip_us.dcID_LOAI_LAO_DONG = CIPConvert.ToDecimal(m_txt_loai_lao_dong.Text.Trim());
         }
 
         private void save_data()
@@ -158,26 +185,18 @@ namespace BKI_DichVuMatDat.DanhMuc
                         v_us_dm_he_so_luong_ns.Insert();
                         v_us_dm_he_so_luong_ns.CommitTransaction();
                         m_id_dm_he_so_luong_ns_moi_tao = v_us_dm_he_so_luong_ns.dcID;
-                        if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_INSER_DM_HS_LNS_THANH_CONG_TIEP_TUC_INSERT_YN) == true)
-                        {
-                            refresh_form();
-                        }
-                        else
-                        {
-                            this.Close();
-                        }
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         v_us_dm_he_so_luong_ns.dcID = m_id_dm_he_so_luong_ns_4_update;
                         v_us_dm_he_so_luong_ns.BeginTransaction();
                         v_us_dm_he_so_luong_ns.Update();
                         v_us_dm_he_so_luong_ns.CommitTransaction();
-                        CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
-                        this.Close();
                         break;
                     default:
                         break;
                 }
+                CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
+                this.Close();
             }
             catch (Exception v_e)
             {
@@ -187,10 +206,10 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void refresh_form()
         {
-            m_txt_ma_luong_ns.Text = "";
+            m_sle_ma_lns.EditValue = null;
             m_sle_muc_lns.EditValue = null;
             m_txt_he_so_luong_ns.BackColor = Color.White;
-            m_txt_loai_lao_dong.Text = "";
+            //m_txt_loai_lao_dong.Text = "";
         }
         #endregion
         private void set_define_events()

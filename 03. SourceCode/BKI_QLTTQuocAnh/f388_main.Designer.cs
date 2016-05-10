@@ -835,7 +835,7 @@
             // 
             // m_cmd_quan_ly_khong_dong_bh
             // 
-            this.m_cmd_quan_ly_khong_dong_bh.Caption = "Nhân viên không đóng bảo hiểm";
+            this.m_cmd_quan_ly_khong_dong_bh.Caption = "Quản lý  không đóng bảo hiểm";
             this.m_cmd_quan_ly_khong_dong_bh.Id = 63;
             this.m_cmd_quan_ly_khong_dong_bh.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_nhan_vien_ko_bao_hiem;
             this.m_cmd_quan_ly_khong_dong_bh.Name = "m_cmd_quan_ly_khong_dong_bh";
@@ -1056,7 +1056,7 @@
             // 
             // barButtonItem5
             // 
-            this.barButtonItem5.Caption = "Phụ cấp trách nhiệm";
+            this.barButtonItem5.Caption = "Quản lý phụ cấp trách nhiệm";
             this.barButtonItem5.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_bang_luong_nv_;
             this.barButtonItem5.Id = 91;
             this.barButtonItem5.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_bang_luong_nv_;
@@ -1193,7 +1193,7 @@
             // 
             // m_cmd_ds_nhan_vien
             // 
-            this.m_cmd_ds_nhan_vien.Caption = "Danh sách nhân viên";
+            this.m_cmd_ds_nhan_vien.Caption = "Quản lý danh sách nhân viên";
             this.m_cmd_ds_nhan_vien.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_ds_nhan_vien.Glyph")));
             this.m_cmd_ds_nhan_vien.Id = 110;
             this.m_cmd_ds_nhan_vien.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_ds_nhan_vien.LargeGlyph")));
@@ -1222,7 +1222,7 @@
             // 
             // m_cmd_quan_ly_giam_tru_phu_thuoc
             // 
-            this.m_cmd_quan_ly_giam_tru_phu_thuoc.Caption = "Giảm trừ phụ thuộc";
+            this.m_cmd_quan_ly_giam_tru_phu_thuoc.Caption = "Quản lý người phụ thuộc";
             this.m_cmd_quan_ly_giam_tru_phu_thuoc.Id = 113;
             this.m_cmd_quan_ly_giam_tru_phu_thuoc.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_thong_ke_nhan_su_theo_don_vi_;
             this.m_cmd_quan_ly_giam_tru_phu_thuoc.Name = "m_cmd_quan_ly_giam_tru_phu_thuoc";
@@ -1328,7 +1328,7 @@
             // 
             // m_cmd_chuyen_trang_thai_LD
             // 
-            this.m_cmd_chuyen_trang_thai_LD.Caption = "Quản lý trạng thái";
+            this.m_cmd_chuyen_trang_thai_LD.Caption = "Quản lý trạng thái nhân viên";
             this.m_cmd_chuyen_trang_thai_LD.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_chuyen_trang_thai_lao_dong_;
             this.m_cmd_chuyen_trang_thai_LD.Id = 142;
             this.m_cmd_chuyen_trang_thai_LD.Name = "m_cmd_chuyen_trang_thai_LD";
@@ -1397,6 +1397,8 @@
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_ds_nhan_vien);
+            this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_lap_hd_v2);
+            this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_quan_ly_vi_tri_cong_tac);
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_len_luong_cho_nv);
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_quan_ly_luong_cung);
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_quan_ly_giam_tru_phu_thuoc);
@@ -1405,21 +1407,21 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_tinh_phep_tieu_chuan);
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_chuyen_trang_thai_LD);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            this.ribbonPageGroup7.Text = "Thông tin nhân viên";
+            this.ribbonPageGroup7.Text = "Quản lý nghiệp vụ nhân sự";
             // 
             // ribbonPageGroup5
             // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.m_cmd_lap_hd_v2);
             this.ribbonPageGroup5.ItemLinks.Add(this.m_cmd_lap_hop_dong);
             this.ribbonPageGroup5.ItemLinks.Add(this.m_cmd_hd_thay_doi_lns);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Hợp đồng";
+            this.ribbonPageGroup5.Visible = false;
             // 
             // ribbonPageGroup8
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.m_cmd_quan_ly_vi_tri_cong_tac);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "Công tác";
+            this.ribbonPageGroup8.Visible = false;
             // 
             // ribbonPageGroup10
             // 

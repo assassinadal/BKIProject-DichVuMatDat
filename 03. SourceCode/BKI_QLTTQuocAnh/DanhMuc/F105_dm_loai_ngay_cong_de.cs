@@ -48,7 +48,6 @@ namespace BKI_DichVuMatDat.DanhMuc
         internal void DisplayForInsert()
         {
             this.Text = "F105 - Thêm loại ngày công";
-            m_lbl_header.Text = "THÊM LOẠI NGÀY CÔNG";
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.CenterToScreen();
             this.ShowDialog();
@@ -57,7 +56,6 @@ namespace BKI_DichVuMatDat.DanhMuc
         internal void DisplayForUpdate(US.US_DM_LOAI_NGAY_CONG v_us)
         {
             this.Text = "F105 - Sửa loại ngày công";
-            m_lbl_header.Text = "SỬA LOẠI NGÀY CÔNG";
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_us = v_us;
             us_to_form(m_us);
@@ -84,12 +82,12 @@ namespace BKI_DichVuMatDat.DanhMuc
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TEN_LOAI_NGAY_CONG);
                 return false;
             }
-            if (m_txt_ti_le_lns.Text == null || m_txt_ti_le_lns.Text == "")
+            if (m_txt_ti_le_lns.EditValue == null)
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TI_LE_LNS);
                 return false;
             }
-            if (m_txt_ti_le_lcd.Text == null || m_txt_ti_le_lcd.Text == "")
+            if (m_txt_ti_le_lcd.EditValue == null)
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TI_LE_LCD);
                 return false;
@@ -101,22 +99,22 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             m_txt_ma_ngay_cong.Text = m_us.strMA_NGAY_CONG;
             m_txt_ten_ngay_cong.Text = m_us.strTEN_NGAY_CONG;
-            m_txt_ti_le_lns.Text = m_us.dcTI_LE_LNS.ToString();
-            m_txt_ti_le_lcd.Text = m_us.dcTI_LE_LCD.ToString();
+            m_txt_ti_le_lns.EditValue = m_us.dcTI_LE_LNS;
+            m_txt_ti_le_lcd.EditValue = m_us.dcTI_LE_LCD;
         }
 
         private void form_to_us(US_DM_LOAI_NGAY_CONG m_us)
         {
             m_us.strMA_NGAY_CONG = m_txt_ma_ngay_cong.Text;
             m_us.strTEN_NGAY_CONG = m_txt_ten_ngay_cong.Text;
-            m_us.dcTI_LE_LNS = CIPConvert.ToDecimal(m_txt_ti_le_lns.Text);
-            m_us.dcTI_LE_LCD = CIPConvert.ToDecimal(m_txt_ti_le_lcd.Text);
+            m_us.dcTI_LE_LNS = CIPConvert.ToDecimal(m_txt_ti_le_lns.EditValue);
+            m_us.dcTI_LE_LCD = CIPConvert.ToDecimal(m_txt_ti_le_lcd.EditValue);
         }
         #endregion
 
         private void F105_dm_loai_ngay_cong_de_Load(object sender, EventArgs e)
         {
-            FormatControl.SetVisibleSimpleButton(this);
+            //FormatControl.SetVisibleSimpleButton(this);
         }
 
         private void m_cmd_save_Click(object sender, EventArgs e)

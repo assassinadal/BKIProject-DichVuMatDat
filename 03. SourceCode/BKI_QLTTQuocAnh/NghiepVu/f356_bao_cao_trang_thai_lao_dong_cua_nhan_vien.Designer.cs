@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien));
             this.TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.m_lbl_header = new DevExpress.XtraEditors.LabelControl();
             this.m_pnl_filter = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection();
+            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_sle_chon_trang_thai_lao_dong = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -79,18 +79,6 @@
             // 
             this.gridView2.Name = "gridView2";
             // 
-            // m_lbl_header
-            // 
-            this.m_lbl_header.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_header.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Padding = new System.Windows.Forms.Padding(5);
-            this.m_lbl_header.Size = new System.Drawing.Size(556, 34);
-            this.m_lbl_header.TabIndex = 0;
-            this.m_lbl_header.Text = "DANH SÁCH NHÂN VIÊN THEO TRẠNG THÁI LAO ĐỘNG";
-            // 
             // m_pnl_filter
             // 
             this.m_pnl_filter.Controls.Add(this.m_cmd_delete);
@@ -98,7 +86,7 @@
             this.m_pnl_filter.Controls.Add(this.m_sle_chon_trang_thai_lao_dong);
             this.m_pnl_filter.Controls.Add(this.m_cmd_insert);
             this.m_pnl_filter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_pnl_filter.Location = new System.Drawing.Point(0, 34);
+            this.m_pnl_filter.Location = new System.Drawing.Point(0, 0);
             this.m_pnl_filter.Name = "m_pnl_filter";
             this.m_pnl_filter.Padding = new System.Windows.Forms.Padding(2);
             this.m_pnl_filter.Size = new System.Drawing.Size(1161, 40);
@@ -109,9 +97,9 @@
             this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_delete.ImageIndex = 8;
             this.m_cmd_delete.ImageList = this.img_DVMD;
-            this.m_cmd_delete.Location = new System.Drawing.Point(252, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(218, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(75, 32);
+            this.m_cmd_delete.Size = new System.Drawing.Size(101, 32);
             this.m_cmd_delete.TabIndex = 14;
             this.m_cmd_delete.Text = "&Xóa";
             // 
@@ -135,11 +123,11 @@
             this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_update.ImageIndex = 9;
             this.m_cmd_update.ImageList = this.img_DVMD;
-            this.m_cmd_update.Location = new System.Drawing.Point(128, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(116, 4);
             this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(124, 32);
+            this.m_cmd_update.Size = new System.Drawing.Size(102, 32);
             this.m_cmd_update.TabIndex = 13;
-            this.m_cmd_update.Text = "&Sửa thông tin";
+            this.m_cmd_update.Text = "&Sửa ";
             this.m_cmd_update.ToolTip = "Dùng khi nhập sai thông tin";
             // 
             // m_sle_chon_trang_thai_lao_dong
@@ -189,19 +177,19 @@
             this.m_cmd_insert.ImageList = this.img_DVMD;
             this.m_cmd_insert.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(124, 32);
+            this.m_cmd_insert.Size = new System.Drawing.Size(112, 32);
             this.m_cmd_insert.TabIndex = 4;
-            this.m_cmd_insert.Text = "&Thêm trạng thái";
+            this.m_cmd_insert.Text = "&Thêm ";
             this.m_cmd_insert.ToolTip = "Thay đổi trạng thái nhân viên từ đang làm việc sang nghỉ tạm thời hoặc ngược lại";
             // 
             // m_grc_bao_cao_trang_thai_lao_dong_nhan_vien
             // 
             this.m_grc_bao_cao_trang_thai_lao_dong_nhan_vien.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc_bao_cao_trang_thai_lao_dong_nhan_vien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc_bao_cao_trang_thai_lao_dong_nhan_vien.Location = new System.Drawing.Point(0, 74);
+            this.m_grc_bao_cao_trang_thai_lao_dong_nhan_vien.Location = new System.Drawing.Point(0, 40);
             this.m_grc_bao_cao_trang_thai_lao_dong_nhan_vien.MainView = this.m_grv_bao_cao_trang_thai_lao_dong_nhan_vien;
             this.m_grc_bao_cao_trang_thai_lao_dong_nhan_vien.Name = "m_grc_bao_cao_trang_thai_lao_dong_nhan_vien";
-            this.m_grc_bao_cao_trang_thai_lao_dong_nhan_vien.Size = new System.Drawing.Size(1161, 453);
+            this.m_grc_bao_cao_trang_thai_lao_dong_nhan_vien.Size = new System.Drawing.Size(1161, 487);
             this.m_grc_bao_cao_trang_thai_lao_dong_nhan_vien.TabIndex = 12;
             this.m_grc_bao_cao_trang_thai_lao_dong_nhan_vien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_bao_cao_trang_thai_lao_dong_nhan_vien});
@@ -364,9 +352,8 @@
             this.ClientSize = new System.Drawing.Size(1161, 527);
             this.Controls.Add(this.m_grc_bao_cao_trang_thai_lao_dong_nhan_vien);
             this.Controls.Add(this.m_pnl_filter);
-            this.Controls.Add(this.m_lbl_header);
             this.Name = "f356_bao_cao_trang_thai_lao_dong_cua_nhan_vien";
-            this.Text = "F356 - Trạng thái lao động của nhân viên ở thời điểm hiện tại";
+            this.Text = "F356 - Trạng thái lao động của nhân viên";
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_pnl_filter)).EndInit();
             this.m_pnl_filter.ResumeLayout(false);
@@ -376,14 +363,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_bao_cao_trang_thai_lao_dong_nhan_vien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_bao_cao_trang_thai_lao_dong_nhan_vien)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private DevExpress.XtraGrid.Columns.GridColumn TEN;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraEditors.LabelControl m_lbl_header;
         private DevExpress.XtraEditors.PanelControl m_pnl_filter;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chon_trang_thai_lao_dong;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;

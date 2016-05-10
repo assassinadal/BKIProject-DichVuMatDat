@@ -157,20 +157,35 @@ namespace BKI_DichVuMatDat.DanhMuc
                 if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_THONG_TIN_DA_CHON_TREN_LUOI) ==  true)
                 {
                     DataRow v_dr = m_grv_dm_luong_che_do.GetDataRow(m_grv_dm_luong_che_do.FocusedRowHandle);
-                    decimal v_id_don_vi = CIPConvert.ToDecimal(v_dr["ID"]);
-
-                    US_DM_DON_VI v_us = new US_DM_DON_VI(v_id_don_vi);
+                    decimal v_id_lcd = CIPConvert.ToDecimal(v_dr["ID"]);
+                    if (check_lcd_dang_su_dung(v_id_lcd))
+                    {
+                        string v_str_error = "Không thể xóa loại lương chế độ đang được sử dụng!";
+                        XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    US_DM_LUONG_CHE_DO v_us = new US_DM_LUONG_CHE_DO(v_id_lcd);
                     v_us.BeginTransaction();
                     v_us.Delete();
                     v_us.CommitTransaction();
+                    XtraMessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); 
                     load_data_2_grid();
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_XOA_DU_LIEU_THANH_CONG);
                 }
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private bool check_lcd_dang_su_dung(decimal ip_id_lcd)
+        {
+            US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
+            DS_GD_HOP_DONG v_ds = new DS_GD_HOP_DONG();
+            v_us.FillDataset(v_ds, "where id_luong_che_do =" + ip_id_lcd);
+            if (v_ds.Tables[0].Rows.Count == 0)
+                return false;
+            return true;
         }
 
     }

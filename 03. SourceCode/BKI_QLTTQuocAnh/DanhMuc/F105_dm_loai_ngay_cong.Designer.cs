@@ -186,7 +186,6 @@
             this.m_cmd_insert.Size = new System.Drawing.Size(116, 39);
             this.m_cmd_insert.TabIndex = 30;
             this.m_cmd_insert.Text = "&Thêm";
-            this.m_cmd_insert.Visible = false;
             this.m_cmd_insert.Click += new System.EventHandler(this.m_cmd_insert_Click);
             // 
             // m_cmd_update
@@ -198,8 +197,7 @@
             this.m_cmd_update.Size = new System.Drawing.Size(116, 39);
             this.m_cmd_update.TabIndex = 29;
             this.m_cmd_update.Text = "&Sửa";
-            this.m_cmd_update.Visible = false;
-            this.m_cmd_update.Click += new System.EventHandler(this.m_cmd_delete_Click);
+            this.m_cmd_update.Click += new System.EventHandler(this.m_cmd_update_Click);
             // 
             // m_cmd_delete
             // 
@@ -210,7 +208,7 @@
             this.m_cmd_delete.Size = new System.Drawing.Size(116, 39);
             this.m_cmd_delete.TabIndex = 28;
             this.m_cmd_delete.Text = "&Xóa";
-            this.m_cmd_delete.Visible = false;
+            this.m_cmd_delete.Click += new System.EventHandler(this.m_cmd_delete_Click);
             // 
             // m_cmd_xuat_excel
             // 
@@ -221,7 +219,6 @@
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 39);
             this.m_cmd_xuat_excel.TabIndex = 27;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
-            this.m_cmd_xuat_excel.Visible = false;
             // 
             // imageList1
             // 

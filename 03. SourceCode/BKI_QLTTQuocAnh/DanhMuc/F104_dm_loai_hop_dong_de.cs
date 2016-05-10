@@ -70,6 +70,18 @@ namespace BKI_DichVuMatDat.DanhMuc
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_SO_TIEN);
                 return false;
             }
+            if (check_ma_loai_hd_da_ton_tai())
+            {
+                string v_str_error = "Mã loại hợp đồng đã tồn tại!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+        private bool check_ma_loai_hd_da_ton_tai()
+        {
+
             return true;
         }
 

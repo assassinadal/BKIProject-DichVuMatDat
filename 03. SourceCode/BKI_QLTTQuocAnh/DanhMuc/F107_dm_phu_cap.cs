@@ -157,18 +157,34 @@ namespace BKI_DichVuMatDat.DanhMuc
                 {
                     DataRow v_dr = m_grv_dm_phu_cap.GetDataRow(m_grv_dm_phu_cap.FocusedRowHandle);
                     decimal v_id_phu_cap = CIPConvert.ToDecimal(v_dr["ID"]);
+                    if (check_loai_pc_dang_su_dung(v_id_phu_cap))
+                    {
+                        string v_str_error = " Không thể xóa loại phụ cấp đang được sử dụng!";
+                        XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     US_DM_PHU_CAP v_us = new US_DM_PHU_CAP(v_id_phu_cap);
                     v_us.BeginTransaction();
                     v_us.Delete();
                     v_us.CommitTransaction();
+                    XtraMessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); 
                     load_data_2_grid();
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_XOA_DU_LIEU_THANH_CONG);
                 }
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private bool check_loai_pc_dang_su_dung(decimal ip_id_loai_pc)
+        {
+            US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP();
+            DS_GD_NHAN_VIEN_PHU_CAP v_ds = new DS_GD_NHAN_VIEN_PHU_CAP();
+            v_us.FillDataset(v_ds, "where id_phu_cap =" + ip_id_loai_pc);
+            if (v_ds.Tables[0].Rows.Count == 0)
+                return false;
+            return true;
         }
     }
 }

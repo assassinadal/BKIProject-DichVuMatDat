@@ -118,24 +118,17 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void m_cmd_delete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //Lay ID cua dong muon xoa
-                DataRow v_dr = m_grv_dm_loai_ngay_cong.GetDataRow(m_grv_dm_loai_ngay_cong.FocusedRowHandle);
-                decimal v_id = CIPConvert.ToDecimal(v_dr[DM_LOAI_NGAY_CONG.ID]);
 
-                US_DM_LOAI_NGAY_CONG v_us = new US_DM_LOAI_NGAY_CONG(v_id);
-                if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_LOAI_NGAY_CONG) == true)
-                {
-                    v_us.Delete();
-                    load_data_2_grid();
-                }
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
         }
 
+        private bool check_loai_ngay_cong_dang_su_dung(decimal ip_id_loai_ngay_cong)
+        {
+            US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
+            DS_GD_CHAM_CONG v_ds = new DS_GD_CHAM_CONG();
+            v_us.FillDataset(v_ds, "where id_loai_ngay_cong =" + ip_id_loai_ngay_cong);
+            if (v_ds.Tables[0].Rows.Count == 0)
+                return false;
+            return true;
+        }
     }
 }

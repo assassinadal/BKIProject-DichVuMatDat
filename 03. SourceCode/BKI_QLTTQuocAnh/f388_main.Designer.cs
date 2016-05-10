@@ -208,6 +208,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_tu_dien = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -346,9 +347,10 @@
             this.m_cmd_lap_hd_v2,
             this.m_cmd_hd_thay_doi_lns,
             this.barButtonItem9,
-            this.m_cmd_chuyen_trang_thai_LD});
+            this.m_cmd_chuyen_trang_thai_LD,
+            this.m_cmd_tu_dien});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 143;
+            this.ribbon.MaxItemId = 144;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -722,6 +724,7 @@
             this.m_cmd_quan_ly_qd.Name = "m_cmd_quan_ly_qd";
             this.m_cmd_quan_ly_qd.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.m_cmd_quan_ly_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_nhan_vien_loai_lao_dong
             // 
@@ -1381,6 +1384,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem9);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_cm_dm_thu_tu_don_vi);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_quan_ly_qd);
+            this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_tu_dien);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // ribbonPage3
@@ -2143,6 +2147,13 @@
             this.barButtonItem8.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // m_cmd_tu_dien
+            // 
+            this.m_cmd_tu_dien.Caption = "Từ điển";
+            this.m_cmd_tu_dien.Id = 143;
+            this.m_cmd_tu_dien.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_cham_cong;
+            this.m_cmd_tu_dien.Name = "m_cmd_tu_dien";
+            // 
             // f388_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2375,5 +2386,6 @@
         private System.Windows.Forms.Label m_lbl_so_nv_da_ket_thuc_ct;
         private System.Windows.Forms.Label m_lbl_so_nv_sap_het_han_hd;
         private DevExpress.XtraBars.BarButtonItem m_cmd_chuyen_trang_thai_LD;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_tu_dien;
     }
 }

@@ -386,6 +386,7 @@ namespace BKI_DichVuMatDat
             m_cmd_dm_tham_so.ItemClick += m_cmd_dm_tham_so_ItemClick;
             m_cmd_them_nhan_vien_nhanh.ItemClick += m_cmd_them_nhan_vien_nhanh_ItemClick;
             m_cmd_cm_dm_thu_tu_don_vi.ItemClick += m_cmd_cm_dm_thu_tu_don_vi_ItemClick;
+            m_cmd_tu_dien.ItemClick += m_cmd_tu_dien_ItemClick;
             //Bao cao
             m_cmd_bang_luong_nv.ItemClick += m_cmd_bang_luong_nv_ItemClick;
             m_cmd_bc_hs_bs_hs_athk.ItemClick += m_cmd_bc_hs_bs_hs_athk_ItemClick;
@@ -413,6 +414,21 @@ namespace BKI_DichVuMatDat
             m_cmd_ds_chot_bang_luong.ItemClick += m_cmd_ds_chot_bang_luong_ItemClick;
             m_cmd_bc_hs.ItemClick += m_cmd_bc_hs_ItemClick;
             m_cmd_qtt_2016.ItemClick += m_cmd_qtt_2016_ItemClick;
+        }
+
+        private void m_cmd_tu_dien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f100_TuDien v_f = new f100_TuDien();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_lbl_nv_da_nghi_viec_DoubleClick(object sender, EventArgs e)

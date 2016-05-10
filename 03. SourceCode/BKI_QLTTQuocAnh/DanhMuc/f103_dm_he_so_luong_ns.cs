@@ -153,14 +153,19 @@ namespace BKI_DichVuMatDat.DanhMuc
                 if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_THONG_TIN_DA_CHON_TREN_LUOI) == true)
                 {
                     DataRow v_dr = m_grv_dm_he_so_luong_ns.GetDataRow(m_grv_dm_he_so_luong_ns.FocusedRowHandle);
-                    decimal v_id_don_vi = CIPConvert.ToDecimal(v_dr["ID"]);
-
-                    US_DM_DON_VI v_us = new US_DM_DON_VI(v_id_don_vi);
+                    decimal v_id_lns = CIPConvert.ToDecimal(v_dr["ID"]);
+                    if (check_lns_dang_su_dung(v_id_lns))
+                    {
+                        string v_str_error = " Không thể xóa loại lương năng suất đang được sử dụng!";
+                        XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    US_DM_HE_SO_LUONG_NS v_us = new US_DM_HE_SO_LUONG_NS(v_id_lns);
                     v_us.BeginTransaction();
                     v_us.Delete();
                     v_us.CommitTransaction();
+                    XtraMessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); 
                     load_data_2_grid();
-                    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_XOA_DU_LIEU_THANH_CONG);
                 }
             }
             catch (Exception v_e)
@@ -169,6 +174,15 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
+        private bool check_lns_dang_su_dung(decimal ip_id_lns)
+        {
+            US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS();
+            DS_GD_HE_SO_LNS v_ds = new DS_GD_HE_SO_LNS();
+            v_us.FillDataset(v_ds, "where id_he_so_lns =" + ip_id_lns);
+            if (v_ds.Tables[0].Rows.Count == 0)
+                return false;
+            return true;
+        }
     }
          
 }

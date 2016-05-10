@@ -132,7 +132,7 @@
             this.sle_cnv_GIOI_TINH.FieldName = "GIOI_TINH_TEXT";
             this.sle_cnv_GIOI_TINH.Name = "sle_cnv_GIOI_TINH";
             this.sle_cnv_GIOI_TINH.Visible = true;
-            this.sle_cnv_GIOI_TINH.VisibleIndex = 3;
+            this.sle_cnv_GIOI_TINH.VisibleIndex = 2;
             // 
             // sle_cnv_SDT
             // 
@@ -279,7 +279,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "F395_nhan_vien_phu_cap_de";
-            this.Text = "F395 - Chi tiết nhân phụ cấp";
+            this.Text = "F395 - Chi tiết phụ cấp";
             this.Load += new System.EventHandler(this.F393_nhan_vien_phu_cap_de_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

@@ -83,15 +83,21 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                //Lay ID cua dong du lieu can xoa
+                //Lay dong du lieu can xoa
                 DataRow v_dr = m_grv_dm_loai_hop_dong.GetDataRow(m_grv_dm_loai_hop_dong.FocusedRowHandle);
                 //Lay ID cua dong du lieu tren
                 decimal v_id = CIPConvert.ToDecimal(v_dr[DM_LOAI_HOP_DONG.ID]);
-
-                US_DM_LOAI_HOP_DONG v_us = new US_DM_LOAI_HOP_DONG(v_id);
                 if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_LOAI_HOP_DONG) == true)
                 {
+                    if (check_loai_hd_dang_su_dung(v_id))
+                    {
+                        string v_str_error = " Không thể xóa loại hợp đồng đang được sử dụng!";
+                        XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    US_DM_LOAI_HOP_DONG v_us = new US_DM_LOAI_HOP_DONG(v_id);
                     v_us.Delete();
+                    XtraMessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); 
                     load_data_2_grid();
                 }
             }
@@ -99,6 +105,16 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private bool check_loai_hd_dang_su_dung(decimal ip_id_loai_hd)
+        {
+            US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
+            DS_GD_HOP_DONG v_ds = new DS_GD_HOP_DONG();
+            v_us.FillDataset(v_ds, "where id_loai_hop_dong =" + ip_id_loai_hd);
+            if (v_ds.Tables[0].Rows.Count == 0)
+                return false;
+            return true;
         }
 
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F103_dm_he_so_luong_ns));
             this.m_grc_dm_he_so_luong_ns = new DevExpress.XtraGrid.GridControl();
             this.m_grv_dm_he_so_luong_ns = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -43,7 +44,7 @@
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_he_so_luong_ns)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_he_so_luong_ns)).BeginInit();
@@ -154,8 +155,6 @@
             this.c_loai_lao_dong.Caption = "Loại Lao Động";
             this.c_loai_lao_dong.FieldName = "TEN";
             this.c_loai_lao_dong.Name = "c_loai_lao_dong";
-            this.c_loai_lao_dong.Visible = true;
-            this.c_loai_lao_dong.VisibleIndex = 4;
             this.c_loai_lao_dong.Width = 319;
             // 
             // m_lbl_header
@@ -191,7 +190,6 @@
             this.m_cmd_insert.Size = new System.Drawing.Size(116, 41);
             this.m_cmd_insert.TabIndex = 34;
             this.m_cmd_insert.Text = "&Thêm";
-            this.m_cmd_insert.Visible = false;
             this.m_cmd_insert.Click += new System.EventHandler(this.m_cmd_insert_Click);
             // 
             // m_cmd_update
@@ -203,7 +201,6 @@
             this.m_cmd_update.Size = new System.Drawing.Size(116, 41);
             this.m_cmd_update.TabIndex = 33;
             this.m_cmd_update.Text = "&Sửa";
-            this.m_cmd_update.Visible = false;
             this.m_cmd_update.Click += new System.EventHandler(this.m_cmd_update_Click);
             // 
             // m_cmd_delete
@@ -215,7 +212,6 @@
             this.m_cmd_delete.Size = new System.Drawing.Size(116, 41);
             this.m_cmd_delete.TabIndex = 32;
             this.m_cmd_delete.Text = "&Xóa";
-            this.m_cmd_delete.Visible = false;
             this.m_cmd_delete.Click += new System.EventHandler(this.m_cmd_delete_Click);
             // 
             // m_cmd_xuat_excel
@@ -227,7 +223,6 @@
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 41);
             this.m_cmd_xuat_excel.TabIndex = 31;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
-            this.m_cmd_xuat_excel.Visible = false;
             // 
             // imageList1
             // 

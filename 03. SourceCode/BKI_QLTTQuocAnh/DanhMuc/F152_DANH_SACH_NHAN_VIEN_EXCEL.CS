@@ -13,6 +13,7 @@ using IP.Core.IPCommon;
 using BKI_DichVuMatDat.NghiepVu;
 using DevExpress.XtraSplashScreen;
 using BKI_DichVuMatDat.BaoCao;
+using DevExpress.XtraEditors;
 
 namespace BKI_DichVuMatDat
 {
@@ -124,7 +125,18 @@ namespace BKI_DichVuMatDat
                 return true;
             }
         }
-
+        private bool ma_nhan_vien_khong_trung_lap(DataRow ip_dr)
+        {
+            DataTable v_dt_source = (DataTable)m_grc.DataSource;
+            var v_str_ma_nhan_vien = ip_dr["MA_NV"].ToString();
+            var v_count_nv = v_dt_source.AsEnumerable().Count(x => x.Field<string>("MA_NV") == v_str_ma_nhan_vien);
+            bool v_bool = v_count_nv == 1;
+            if(!v_bool)
+            {
+                XtraMessageBox.Show("Mã nhân viên " + v_str_ma_nhan_vien + " bị trùng lặp trong File Excel!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return v_bool;
+        }
         private bool checked_du_lieu_is_ok()
         {// chưa check, mới check số dòng >0
             //int i;
@@ -165,6 +177,10 @@ namespace BKI_DichVuMatDat
                     if(m_grv.GetDataRow(i)["TEN"] == DBNull.Value || m_grv.GetDataRow(i)["TEN"].ToString() == "")
                     {
                         CHRM_BaseMessages.MsgBox_Error("Mã nhân viên " + m_grv.GetDataRow(i)["MA_NV"].ToString() + "  có cột TEN trống. Vui lòng kiểm tra lại thông tin!");
+                        return false;
+                    }
+                    if(!ma_nhan_vien_khong_trung_lap(m_grv.GetDataRow(i)))
+                    {
                         return false;
                     }
                 }
@@ -214,7 +230,6 @@ namespace BKI_DichVuMatDat
             if (m_txt_path != "")
             {
                 m_grc.DataSource = null;
-                m_lbl_check.Text = "Chưa lưu dữ liệu";
                 WinFormControls.load_xls_to_gridview_v3(m_txt_path, m_grc, "NHAP_LIEU");
             }
         }
@@ -305,7 +320,8 @@ namespace BKI_DichVuMatDat
             }
             catch (Exception v_e)
             {
-                CSystemLog_301.ExceptionHandle(v_e);
+                XtraMessageBox.Show("Không lấy dữ liệu được từ File Excel Import. Bạn kiểm tra lại File Excel Import nhé!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //CSystemLog_301.ExceptionHandle(v_e);
             }
             finally
             {

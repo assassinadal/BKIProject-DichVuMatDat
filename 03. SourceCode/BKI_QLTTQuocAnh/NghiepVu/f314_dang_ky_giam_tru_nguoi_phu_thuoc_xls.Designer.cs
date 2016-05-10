@@ -32,8 +32,6 @@
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_cmd_tai_file_mau = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -77,8 +75,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.m_prb = new DevExpress.XtraEditors.ProgressBarControl();
             this.m_bgw = new System.ComponentModel.BackgroundWorker();
+            this.m_cmd_import_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_save = new DevExpress.XtraEditors.SimpleButton();
             this.m_pnl_out_place_dm.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
@@ -88,19 +87,19 @@
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_import_excel);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_tai_file_mau);
             this.m_pnl_out_place_dm.Controls.Add(this.panel2);
-            this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 414);
+            this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 0);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1028, 43);
-            this.m_pnl_out_place_dm.TabIndex = 3;
+            this.m_pnl_out_place_dm.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.m_cmd_tai_file_mau);
-            this.panel2.Controls.Add(this.m_cmd_import_excel);
-            this.panel2.Controls.Add(this.m_cmd_save);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(674, 4);
             this.panel2.Name = "panel2";
@@ -109,44 +108,23 @@
             // 
             // m_cmd_tai_file_mau
             // 
-            this.m_cmd_tai_file_mau.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_tai_file_mau.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_tai_file_mau.Image = global::BKI_DichVuMatDat.Properties.Resources.Benjigarner_Softdimension_Excel;
-            this.m_cmd_tai_file_mau.Location = new System.Drawing.Point(3, 0);
+            this.m_cmd_tai_file_mau.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_tai_file_mau.Name = "m_cmd_tai_file_mau";
             this.m_cmd_tai_file_mau.Size = new System.Drawing.Size(111, 35);
-            this.m_cmd_tai_file_mau.TabIndex = 24;
+            this.m_cmd_tai_file_mau.TabIndex = 0;
             this.m_cmd_tai_file_mau.Text = "&Tải file mẫu";
-            // 
-            // m_cmd_import_excel
-            // 
-            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_import_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_excel.Image")));
-            this.m_cmd_import_excel.Location = new System.Drawing.Point(114, 0);
-            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
-            this.m_cmd_import_excel.Size = new System.Drawing.Size(118, 35);
-            this.m_cmd_import_excel.TabIndex = 23;
-            this.m_cmd_import_excel.Text = "&Import Excel";
-            // 
-            // m_cmd_save
-            // 
-            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_save.Enabled = false;
-            this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
-            this.m_cmd_save.Location = new System.Drawing.Point(232, 0);
-            this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(118, 35);
-            this.m_cmd_save.TabIndex = 22;
-            this.m_cmd_save.Text = "&Lưu";
             // 
             // m_grc
             // 
             this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc.Location = new System.Drawing.Point(0, 0);
+            this.m_grc.Location = new System.Drawing.Point(0, 43);
             this.m_grc.MainView = this.m_grv1;
             this.m_grc.Name = "m_grc";
             this.m_grc.Size = new System.Drawing.Size(1028, 414);
-            this.m_grc.TabIndex = 11;
+            this.m_grc.TabIndex = 1;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv1,
             this.m_grv});
@@ -553,6 +531,27 @@
             this.m_bgw.WorkerReportsProgress = true;
             this.m_bgw.WorkerSupportsCancellation = true;
             // 
+            // m_cmd_import_excel
+            // 
+            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_import_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_import_excel.Image")));
+            this.m_cmd_import_excel.Location = new System.Drawing.Point(115, 4);
+            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
+            this.m_cmd_import_excel.Size = new System.Drawing.Size(118, 35);
+            this.m_cmd_import_excel.TabIndex = 1;
+            this.m_cmd_import_excel.Text = "&Import Excel";
+            // 
+            // m_cmd_save
+            // 
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_save.Enabled = false;
+            this.m_cmd_save.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_save.Image")));
+            this.m_cmd_save.Location = new System.Drawing.Point(233, 4);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(118, 35);
+            this.m_cmd_save.TabIndex = 2;
+            this.m_cmd_save.Text = "&Lưu";
+            // 
             // f314_dang_ky_giam_tru_nguoi_phu_thuoc_xls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,7 +565,6 @@
             this.Text = "F314 - Import excel danh sách giảm trừ phụ thuộc";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.m_pnl_out_place_dm.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
@@ -582,8 +580,6 @@
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.SimpleButton m_cmd_tai_file_mau;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_import_excel;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_save;
         private DevExpress.XtraGrid.GridControl m_grc;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView m_grv1;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
@@ -627,5 +623,7 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.ProgressBarControl m_prb;
         private System.ComponentModel.BackgroundWorker m_bgw;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_save;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_import_excel;
     }
 }

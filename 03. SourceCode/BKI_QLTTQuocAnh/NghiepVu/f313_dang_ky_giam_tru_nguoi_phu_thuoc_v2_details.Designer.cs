@@ -52,6 +52,8 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_txt_quoc_gia = new System.Windows.Forms.TextBox();
             this.m_txt_thanh_pho = new System.Windows.Forms.TextBox();
             this.m_txt_quan = new System.Windows.Forms.TextBox();
@@ -85,8 +87,6 @@
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -131,7 +131,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 384);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(758, 44);
-            this.panel3.TabIndex = 14;
+            this.panel3.TabIndex = 1;
             // 
             // m_cmd_save
             // 
@@ -140,7 +140,7 @@
             this.m_cmd_save.Location = new System.Drawing.Point(526, 0);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(116, 44);
-            this.m_cmd_save.TabIndex = 22;
+            this.m_cmd_save.TabIndex = 0;
             this.m_cmd_save.Text = "&Lưu";
             this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
             // 
@@ -151,7 +151,7 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(642, 0);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(116, 44);
-            this.m_cmd_exit.TabIndex = 20;
+            this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "&Thoát";
             this.m_cmd_exit.Visible = false;
             this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
@@ -164,6 +164,7 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(725, 1);
             this.layoutControlItem5.Text = "layoutControlItem5";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(50, 20);
+            this.layoutControlItem5.TextToControlDistance = 5;
             // 
             // searchLookUpEdit1View
             // 
@@ -258,7 +259,7 @@
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(789, 208, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
             this.layoutControl1.Size = new System.Drawing.Size(758, 384);
-            this.layoutControl1.TabIndex = 15;
+            this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // m_dat_ngay_ket_thuc
@@ -275,7 +276,7 @@
             this.m_dat_ngay_ket_thuc.Properties.NullText = "--Chưa cập nhật--";
             this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(218, 20);
             this.m_dat_ngay_ket_thuc.StyleController = this.layoutControl1;
-            this.m_dat_ngay_ket_thuc.TabIndex = 26;
+            this.m_dat_ngay_ket_thuc.TabIndex = 15;
             // 
             // m_dat_ngay_bat_dau
             // 
@@ -291,7 +292,7 @@
             this.m_dat_ngay_bat_dau.Properties.NullText = "--Chưa cập nhật--";
             this.m_dat_ngay_bat_dau.Size = new System.Drawing.Size(214, 20);
             this.m_dat_ngay_bat_dau.StyleController = this.layoutControl1;
-            this.m_dat_ngay_bat_dau.TabIndex = 25;
+            this.m_dat_ngay_bat_dau.TabIndex = 14;
             // 
             // m_dat_ngay_sinh_npt
             // 
@@ -305,7 +306,7 @@
             this.m_dat_ngay_sinh_npt.Properties.NullText = "--Chưa cập nhật--";
             this.m_dat_ngay_sinh_npt.Size = new System.Drawing.Size(218, 20);
             this.m_dat_ngay_sinh_npt.StyleController = this.layoutControl1;
-            this.m_dat_ngay_sinh_npt.TabIndex = 24;
+            this.m_dat_ngay_sinh_npt.TabIndex = 3;
             // 
             // m_sle_chon_nhan_vien
             // 
@@ -319,7 +320,7 @@
             this.m_sle_chon_nhan_vien.Properties.View = this.gridView1;
             this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(214, 20);
             this.m_sle_chon_nhan_vien.StyleController = this.layoutControl1;
-            this.m_sle_chon_nhan_vien.TabIndex = 16;
+            this.m_sle_chon_nhan_vien.TabIndex = 0;
             // 
             // gridView1
             // 
@@ -361,82 +362,98 @@
             this.gridColumn4.FieldName = "TEN";
             this.gridColumn4.Name = "gridColumn4";
             // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Họ tên";
+            this.gridColumn5.FieldName = "HO_TEN";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 1;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Giới tính";
+            this.gridColumn6.FieldName = "GIOI_TINH_TEXT";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 2;
+            // 
             // m_txt_quoc_gia
             // 
             this.m_txt_quoc_gia.Location = new System.Drawing.Point(516, 273);
             this.m_txt_quoc_gia.Name = "m_txt_quoc_gia";
             this.m_txt_quoc_gia.Size = new System.Drawing.Size(218, 20);
-            this.m_txt_quoc_gia.TabIndex = 23;
+            this.m_txt_quoc_gia.TabIndex = 13;
             // 
             // m_txt_thanh_pho
             // 
             this.m_txt_thanh_pho.Location = new System.Drawing.Point(161, 273);
             this.m_txt_thanh_pho.Name = "m_txt_thanh_pho";
             this.m_txt_thanh_pho.Size = new System.Drawing.Size(214, 20);
-            this.m_txt_thanh_pho.TabIndex = 22;
+            this.m_txt_thanh_pho.TabIndex = 12;
             // 
             // m_txt_quan
             // 
             this.m_txt_quan.Location = new System.Drawing.Point(516, 249);
             this.m_txt_quan.Name = "m_txt_quan";
             this.m_txt_quan.Size = new System.Drawing.Size(218, 20);
-            this.m_txt_quan.TabIndex = 21;
+            this.m_txt_quan.TabIndex = 11;
             // 
             // m_txt_phuong
             // 
             this.m_txt_phuong.Location = new System.Drawing.Point(161, 249);
             this.m_txt_phuong.Name = "m_txt_phuong";
             this.m_txt_phuong.Size = new System.Drawing.Size(214, 20);
-            this.m_txt_phuong.TabIndex = 20;
+            this.m_txt_phuong.TabIndex = 10;
             // 
             // m_txt_so
             // 
             this.m_txt_so.Location = new System.Drawing.Point(516, 225);
             this.m_txt_so.Name = "m_txt_so";
             this.m_txt_so.Size = new System.Drawing.Size(218, 20);
-            this.m_txt_so.TabIndex = 19;
+            this.m_txt_so.TabIndex = 9;
             // 
             // m_txt_quyen_so
             // 
             this.m_txt_quyen_so.Location = new System.Drawing.Point(161, 225);
             this.m_txt_quyen_so.Name = "m_txt_quyen_so";
             this.m_txt_quyen_so.Size = new System.Drawing.Size(214, 20);
-            this.m_txt_quyen_so.TabIndex = 18;
+            this.m_txt_quyen_so.TabIndex = 8;
             // 
             // m_txt_quan_he
             // 
             this.m_txt_quan_he.Location = new System.Drawing.Point(516, 158);
             this.m_txt_quan_he.Name = "m_txt_quan_he";
             this.m_txt_quan_he.Size = new System.Drawing.Size(218, 20);
-            this.m_txt_quan_he.TabIndex = 13;
+            this.m_txt_quan_he.TabIndex = 7;
             // 
             // m_txt_quoc_tich_npt
             // 
             this.m_txt_quoc_tich_npt.Location = new System.Drawing.Point(161, 158);
             this.m_txt_quoc_tich_npt.Name = "m_txt_quoc_tich_npt";
             this.m_txt_quoc_tich_npt.Size = new System.Drawing.Size(214, 20);
-            this.m_txt_quoc_tich_npt.TabIndex = 12;
+            this.m_txt_quoc_tich_npt.TabIndex = 6;
             // 
             // m_txt_CMND_npt
             // 
             this.m_txt_CMND_npt.Location = new System.Drawing.Point(516, 134);
             this.m_txt_CMND_npt.Name = "m_txt_CMND_npt";
             this.m_txt_CMND_npt.Size = new System.Drawing.Size(218, 20);
-            this.m_txt_CMND_npt.TabIndex = 11;
+            this.m_txt_CMND_npt.TabIndex = 5;
             // 
             // m_txt_mst_phu_thuoc
             // 
             this.m_txt_mst_phu_thuoc.Location = new System.Drawing.Point(161, 134);
             this.m_txt_mst_phu_thuoc.Name = "m_txt_mst_phu_thuoc";
             this.m_txt_mst_phu_thuoc.Size = new System.Drawing.Size(214, 20);
-            this.m_txt_mst_phu_thuoc.TabIndex = 10;
+            this.m_txt_mst_phu_thuoc.TabIndex = 4;
             // 
             // m_txt_ho_ten_nguoi_phu_thuoc
             // 
             this.m_txt_ho_ten_nguoi_phu_thuoc.Location = new System.Drawing.Point(161, 110);
             this.m_txt_ho_ten_nguoi_phu_thuoc.Name = "m_txt_ho_ten_nguoi_phu_thuoc";
             this.m_txt_ho_ten_nguoi_phu_thuoc.Size = new System.Drawing.Size(214, 20);
-            this.m_txt_ho_ten_nguoi_phu_thuoc.TabIndex = 8;
+            this.m_txt_ho_ten_nguoi_phu_thuoc.TabIndex = 2;
             // 
             // m_txt_mst_nhan_vien
             // 
@@ -444,7 +461,7 @@
             this.m_txt_mst_nhan_vien.Name = "m_txt_mst_nhan_vien";
             this.m_txt_mst_nhan_vien.ReadOnly = true;
             this.m_txt_mst_nhan_vien.Size = new System.Drawing.Size(218, 20);
-            this.m_txt_mst_nhan_vien.TabIndex = 6;
+            this.m_txt_mst_nhan_vien.TabIndex = 1;
             // 
             // layoutControlGroup1
             // 
@@ -675,22 +692,6 @@
             this.layoutControlItem7.Size = new System.Drawing.Size(359, 24);
             this.layoutControlItem7.Text = "Tháng kết thúc";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(134, 13);
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Họ tên";
-            this.gridColumn5.FieldName = "HO_TEN";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 1;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Giới tính";
-            this.gridColumn6.FieldName = "GIOI_TINH_TEXT";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
             // 
             // f313_dang_ky_giam_tru_nguoi_phu_thuoc_v2_details
             // 

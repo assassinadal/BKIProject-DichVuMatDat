@@ -63,15 +63,15 @@ namespace BKI_DichVuMatDat.BaoCao.TongHop
             switch(ip_str_focused_column_name)
             {
                 case CONST_COL_PHAN_LOAI_LD_NAME.TONG_SO_HD:
-                    v_str_filter = "[ID_DON_VI] = "+ip_dc_id_don_vi + 
-                                            " and NGAY_BAT_DAU <= #"+ m_dat_tai_ngay.DateTime.ToString("MM/dd/yyyy") +"#"+
+                    v_str_filter = "[ID_DON_VI] = " + ip_dc_id_don_vi +
+                                            " and NGAY_BAT_DAU <= #" + m_dat_tai_ngay.DateTime.ToString("MM/dd/yyyy") + "#" +
                                             " and (NGAY_KET_THUC IS NULL or NGAY_KET_THUC > #" + m_dat_tai_ngay.DateTime.ToString("MM/dd/yyyy") + "#" + ")";
                     v_frm_hd.display_for_phan_loai_lao_dong(v_str_filter);
                     break;
                 case CONST_COL_PHAN_LOAI_LD_NAME.HDHV:
-                    v_str_filter = "[ID_DON_VI] = "+ip_dc_id_don_vi +
+                    v_str_filter = "[ID_DON_VI] = " + ip_dc_id_don_vi +
                                             "and ID_LOAI_HOP_DONG = " + CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC +
-                                            " and NGAY_BAT_DAU <= #"+ m_dat_tai_ngay.DateTime.ToString("MM/dd/yyyy") +"#"+
+                                            " and NGAY_BAT_DAU <= #" + m_dat_tai_ngay.DateTime.ToString("MM/dd/yyyy") + "#" +
                                             " and (NGAY_KET_THUC IS NULL or NGAY_KET_THUC > #" + m_dat_tai_ngay.DateTime.ToString("MM/dd/yyyy") + "#" + ")";
                     v_frm_hd.display_for_phan_loai_lao_dong(v_str_filter);
                     break;
@@ -168,6 +168,26 @@ namespace BKI_DichVuMatDat.BaoCao.TongHop
             Load += f400_rptth_phan_loai_lao_dong_Load;
             m_cmd_fillter.Click += m_cmd_fillter_Click;
             m_tree_don_vi.DoubleClick += m_tree_don_vi_DoubleClick;
+            m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
+        }
+
+        void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+                saveFileDialog1.RestoreDirectory = true;
+                if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    m_tree_don_vi.ExportToXls(saveFileDialog1.FileName);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Trích xuất dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_tree_don_vi_DoubleClick(object sender, EventArgs e)

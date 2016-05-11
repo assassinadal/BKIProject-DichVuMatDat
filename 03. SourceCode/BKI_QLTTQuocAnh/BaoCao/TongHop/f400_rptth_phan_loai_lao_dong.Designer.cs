@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f400_rptth_phan_loai_lao_dong));
             this.m_tree_don_vi = new DevExpress.XtraTreeList.TreeList();
             this.colTEN_DON_VI = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -58,11 +59,15 @@
             this.m_cmd_fillter = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.m_dat_tai_ngay = new DevExpress.XtraEditors.DateEdit();
+            this.colSO_THU_TU = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.img_DVMD = new DevExpress.Utils.ImageCollection();
+            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_tree_don_vi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_ngay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_ngay.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
             this.SuspendLayout();
             // 
             // m_tree_don_vi
@@ -98,7 +103,8 @@
             this.colT51to55,
             this.colT55,
             this.colNAM,
-            this.colNU});
+            this.colNU,
+            this.colSO_THU_TU});
             this.m_tree_don_vi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_tree_don_vi.Location = new System.Drawing.Point(0, 46);
             this.m_tree_don_vi.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -111,6 +117,7 @@
             this.m_tree_don_vi.OptionsSelection.EnableAppearanceFocusedRow = false;
             this.m_tree_don_vi.OptionsSelection.UseIndicatorForSelection = true;
             this.m_tree_don_vi.OptionsView.ShowIndicator = false;
+            this.m_tree_don_vi.OptionsView.ShowSummaryFooter = true;
             this.m_tree_don_vi.Size = new System.Drawing.Size(891, 465);
             this.m_tree_don_vi.TabIndex = 2;
             // 
@@ -154,6 +161,7 @@
             // 
             // colTONG_SO_HD
             // 
+            this.colTONG_SO_HD.AllNodesSummary = true;
             this.colTONG_SO_HD.AppearanceCell.BackColor = System.Drawing.Color.WhiteSmoke;
             this.colTONG_SO_HD.AppearanceCell.Options.UseBackColor = true;
             this.colTONG_SO_HD.AppearanceHeader.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -166,12 +174,16 @@
             this.colTONG_SO_HD.Caption = "TỔNG SỐ";
             this.colTONG_SO_HD.FieldName = "TONG_SO_HD";
             this.colTONG_SO_HD.Name = "colTONG_SO_HD";
+            this.colTONG_SO_HD.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colTONG_SO_HD.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colTONG_SO_HD.SummaryFooterStrFormat = "{0:n0}";
             this.colTONG_SO_HD.Visible = true;
-            this.colTONG_SO_HD.VisibleIndex = 2;
+            this.colTONG_SO_HD.VisibleIndex = 3;
             this.colTONG_SO_HD.Width = 60;
             // 
             // colHDKX
             // 
+            this.colHDKX.AllNodesSummary = true;
             this.colHDKX.AppearanceCell.BackColor = System.Drawing.Color.WhiteSmoke;
             this.colHDKX.AppearanceCell.Options.UseBackColor = true;
             this.colHDKX.AppearanceHeader.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -182,12 +194,16 @@
             this.colHDKX.Caption = "HDKX";
             this.colHDKX.FieldName = "HDKX";
             this.colHDKX.Name = "colHDKX";
+            this.colHDKX.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colHDKX.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colHDKX.SummaryFooterStrFormat = "{0:n0}";
             this.colHDKX.Visible = true;
-            this.colHDKX.VisibleIndex = 3;
+            this.colHDKX.VisibleIndex = 4;
             this.colHDKX.Width = 36;
             // 
             // colHD3N
             // 
+            this.colHD3N.AllNodesSummary = true;
             this.colHD3N.AppearanceCell.BackColor = System.Drawing.Color.WhiteSmoke;
             this.colHD3N.AppearanceCell.Options.UseBackColor = true;
             this.colHD3N.AppearanceHeader.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -198,12 +214,16 @@
             this.colHD3N.Caption = "HD3N";
             this.colHD3N.FieldName = "HD3N";
             this.colHD3N.Name = "colHD3N";
+            this.colHD3N.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colHD3N.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colHD3N.SummaryFooterStrFormat = "{0:n0}";
             this.colHD3N.Visible = true;
-            this.colHD3N.VisibleIndex = 4;
+            this.colHD3N.VisibleIndex = 5;
             this.colHD3N.Width = 37;
             // 
             // colHD1N
             // 
+            this.colHD1N.AllNodesSummary = true;
             this.colHD1N.AppearanceCell.BackColor = System.Drawing.Color.WhiteSmoke;
             this.colHD1N.AppearanceCell.Options.UseBackColor = true;
             this.colHD1N.AppearanceHeader.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -214,12 +234,16 @@
             this.colHD1N.Caption = "HD1N";
             this.colHD1N.FieldName = "HD1N";
             this.colHD1N.Name = "colHD1N";
+            this.colHD1N.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colHD1N.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colHD1N.SummaryFooterStrFormat = "{0:n0}";
             this.colHD1N.Visible = true;
-            this.colHD1N.VisibleIndex = 5;
+            this.colHD1N.VisibleIndex = 6;
             this.colHD1N.Width = 37;
             // 
             // colHD1N2016
             // 
+            this.colHD1N2016.AllNodesSummary = true;
             this.colHD1N2016.AppearanceCell.BackColor = System.Drawing.Color.WhiteSmoke;
             this.colHD1N2016.AppearanceCell.Options.UseBackColor = true;
             this.colHD1N2016.AppearanceHeader.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -230,12 +254,16 @@
             this.colHD1N2016.Caption = "HD1N2016";
             this.colHD1N2016.FieldName = "HD1N2016";
             this.colHD1N2016.Name = "colHD1N2016";
+            this.colHD1N2016.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colHD1N2016.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colHD1N2016.SummaryFooterStrFormat = "{0:n0}";
             this.colHD1N2016.Visible = true;
-            this.colHD1N2016.VisibleIndex = 6;
+            this.colHD1N2016.VisibleIndex = 7;
             this.colHD1N2016.Width = 63;
             // 
             // colHDTV
             // 
+            this.colHDTV.AllNodesSummary = true;
             this.colHDTV.AppearanceCell.BackColor = System.Drawing.Color.WhiteSmoke;
             this.colHDTV.AppearanceCell.Options.UseBackColor = true;
             this.colHDTV.AppearanceHeader.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -246,12 +274,16 @@
             this.colHDTV.Caption = "HDTV";
             this.colHDTV.FieldName = "HDTV";
             this.colHDTV.Name = "colHDTV";
+            this.colHDTV.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colHDTV.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colHDTV.SummaryFooterStrFormat = "{0:n0}";
             this.colHDTV.Visible = true;
-            this.colHDTV.VisibleIndex = 7;
+            this.colHDTV.VisibleIndex = 8;
             this.colHDTV.Width = 34;
             // 
             // colHDHV
             // 
+            this.colHDHV.AllNodesSummary = true;
             this.colHDHV.AppearanceCell.BackColor = System.Drawing.Color.WhiteSmoke;
             this.colHDHV.AppearanceCell.Options.UseBackColor = true;
             this.colHDHV.AppearanceHeader.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -262,12 +294,16 @@
             this.colHDHV.Caption = "HDHV";
             this.colHDHV.FieldName = "HDHV";
             this.colHDHV.Name = "colHDHV";
+            this.colHDHV.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colHDHV.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colHDHV.SummaryFooterStrFormat = "{0:n0}";
             this.colHDHV.Visible = true;
-            this.colHDHV.VisibleIndex = 8;
+            this.colHDHV.VisibleIndex = 9;
             this.colHDHV.Width = 41;
             // 
             // colSAU_DAI_HOC
             // 
+            this.colSAU_DAI_HOC.AllNodesSummary = true;
             this.colSAU_DAI_HOC.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.colSAU_DAI_HOC.AppearanceCell.Options.UseBackColor = true;
             this.colSAU_DAI_HOC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -278,12 +314,16 @@
             this.colSAU_DAI_HOC.Caption = "Sau đại học";
             this.colSAU_DAI_HOC.FieldName = "SAU_DAI_HOC";
             this.colSAU_DAI_HOC.Name = "colSAU_DAI_HOC";
+            this.colSAU_DAI_HOC.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colSAU_DAI_HOC.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colSAU_DAI_HOC.SummaryFooterStrFormat = "{0:n0}";
             this.colSAU_DAI_HOC.Visible = true;
-            this.colSAU_DAI_HOC.VisibleIndex = 9;
+            this.colSAU_DAI_HOC.VisibleIndex = 10;
             this.colSAU_DAI_HOC.Width = 40;
             // 
             // colDAI_HOC
             // 
+            this.colDAI_HOC.AllNodesSummary = true;
             this.colDAI_HOC.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.colDAI_HOC.AppearanceCell.Options.UseBackColor = true;
             this.colDAI_HOC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -294,12 +334,16 @@
             this.colDAI_HOC.Caption = "Đại học";
             this.colDAI_HOC.FieldName = "DAI_HOC";
             this.colDAI_HOC.Name = "colDAI_HOC";
+            this.colDAI_HOC.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colDAI_HOC.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colDAI_HOC.SummaryFooterStrFormat = "{0:n0}";
             this.colDAI_HOC.Visible = true;
-            this.colDAI_HOC.VisibleIndex = 10;
+            this.colDAI_HOC.VisibleIndex = 11;
             this.colDAI_HOC.Width = 47;
             // 
             // colCAO_DANG
             // 
+            this.colCAO_DANG.AllNodesSummary = true;
             this.colCAO_DANG.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.colCAO_DANG.AppearanceCell.Options.UseBackColor = true;
             this.colCAO_DANG.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -310,12 +354,16 @@
             this.colCAO_DANG.Caption = "Cao đẳng";
             this.colCAO_DANG.FieldName = "CAO_DANG";
             this.colCAO_DANG.Name = "colCAO_DANG";
+            this.colCAO_DANG.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colCAO_DANG.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colCAO_DANG.SummaryFooterStrFormat = "{0:n0}";
             this.colCAO_DANG.Visible = true;
-            this.colCAO_DANG.VisibleIndex = 11;
+            this.colCAO_DANG.VisibleIndex = 12;
             this.colCAO_DANG.Width = 61;
             // 
             // colTRUNG_CAP
             // 
+            this.colTRUNG_CAP.AllNodesSummary = true;
             this.colTRUNG_CAP.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.colTRUNG_CAP.AppearanceCell.Options.UseBackColor = true;
             this.colTRUNG_CAP.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -326,12 +374,16 @@
             this.colTRUNG_CAP.Caption = "Trung cấp";
             this.colTRUNG_CAP.FieldName = "TRUNG_CAP";
             this.colTRUNG_CAP.Name = "colTRUNG_CAP";
+            this.colTRUNG_CAP.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colTRUNG_CAP.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colTRUNG_CAP.SummaryFooterStrFormat = "{0:n0}";
             this.colTRUNG_CAP.Visible = true;
-            this.colTRUNG_CAP.VisibleIndex = 12;
+            this.colTRUNG_CAP.VisibleIndex = 13;
             this.colTRUNG_CAP.Width = 59;
             // 
             // colKHAC
             // 
+            this.colKHAC.AllNodesSummary = true;
             this.colKHAC.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.colKHAC.AppearanceCell.Options.UseBackColor = true;
             this.colKHAC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -342,12 +394,16 @@
             this.colKHAC.Caption = "Bằng nghề, sơ cấp, PTTH";
             this.colKHAC.FieldName = "KHAC";
             this.colKHAC.Name = "colKHAC";
+            this.colKHAC.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colKHAC.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colKHAC.SummaryFooterStrFormat = "{0:n0}";
             this.colKHAC.Visible = true;
-            this.colKHAC.VisibleIndex = 13;
+            this.colKHAC.VisibleIndex = 14;
             this.colKHAC.Width = 42;
             // 
             // colT26
             // 
+            this.colT26.AllNodesSummary = true;
             this.colT26.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.colT26.AppearanceCell.Options.UseBackColor = true;
             this.colT26.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -358,12 +414,16 @@
             this.colT26.Caption = "<26";
             this.colT26.FieldName = "T26";
             this.colT26.Name = "colT26";
+            this.colT26.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT26.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT26.SummaryFooterStrFormat = "{0:n0}";
             this.colT26.Visible = true;
-            this.colT26.VisibleIndex = 14;
+            this.colT26.VisibleIndex = 15;
             this.colT26.Width = 34;
             // 
             // colT26to30
             // 
+            this.colT26to30.AllNodesSummary = true;
             this.colT26to30.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.colT26to30.AppearanceCell.Options.UseBackColor = true;
             this.colT26to30.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -374,12 +434,16 @@
             this.colT26to30.Caption = "26-30";
             this.colT26to30.FieldName = "T26to30";
             this.colT26to30.Name = "colT26to30";
+            this.colT26to30.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT26to30.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT26to30.SummaryFooterStrFormat = "{0:n0}";
             this.colT26to30.Visible = true;
-            this.colT26to30.VisibleIndex = 15;
+            this.colT26to30.VisibleIndex = 16;
             this.colT26to30.Width = 39;
             // 
             // colT31to35
             // 
+            this.colT31to35.AllNodesSummary = true;
             this.colT31to35.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.colT31to35.AppearanceCell.Options.UseBackColor = true;
             this.colT31to35.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -390,12 +454,16 @@
             this.colT31to35.Caption = "31-35";
             this.colT31to35.FieldName = "T31to35";
             this.colT31to35.Name = "colT31to35";
+            this.colT31to35.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT31to35.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT31to35.SummaryFooterStrFormat = "{0:n0}";
             this.colT31to35.Visible = true;
-            this.colT31to35.VisibleIndex = 16;
+            this.colT31to35.VisibleIndex = 17;
             this.colT31to35.Width = 30;
             // 
             // colT36to40
             // 
+            this.colT36to40.AllNodesSummary = true;
             this.colT36to40.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.colT36to40.AppearanceCell.Options.UseBackColor = true;
             this.colT36to40.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -406,12 +474,16 @@
             this.colT36to40.Caption = "36-40";
             this.colT36to40.FieldName = "T36to40";
             this.colT36to40.Name = "colT36to40";
+            this.colT36to40.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT36to40.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT36to40.SummaryFooterStrFormat = "{0:n0}";
             this.colT36to40.Visible = true;
-            this.colT36to40.VisibleIndex = 17;
+            this.colT36to40.VisibleIndex = 18;
             this.colT36to40.Width = 44;
             // 
             // colT41to45
             // 
+            this.colT41to45.AllNodesSummary = true;
             this.colT41to45.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.colT41to45.AppearanceCell.Options.UseBackColor = true;
             this.colT41to45.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -422,12 +494,16 @@
             this.colT41to45.Caption = "41-45";
             this.colT41to45.FieldName = "T41to45";
             this.colT41to45.Name = "colT41to45";
+            this.colT41to45.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT41to45.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT41to45.SummaryFooterStrFormat = "{0:n0}";
             this.colT41to45.Visible = true;
-            this.colT41to45.VisibleIndex = 18;
+            this.colT41to45.VisibleIndex = 19;
             this.colT41to45.Width = 45;
             // 
             // colT46to50
             // 
+            this.colT46to50.AllNodesSummary = true;
             this.colT46to50.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.colT46to50.AppearanceCell.Options.UseBackColor = true;
             this.colT46to50.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -438,12 +514,16 @@
             this.colT46to50.Caption = "46-50";
             this.colT46to50.FieldName = "T46to50";
             this.colT46to50.Name = "colT46to50";
+            this.colT46to50.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT46to50.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT46to50.SummaryFooterStrFormat = "{0:n0}";
             this.colT46to50.Visible = true;
-            this.colT46to50.VisibleIndex = 19;
+            this.colT46to50.VisibleIndex = 20;
             this.colT46to50.Width = 37;
             // 
             // colT51to55
             // 
+            this.colT51to55.AllNodesSummary = true;
             this.colT51to55.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.colT51to55.AppearanceCell.Options.UseBackColor = true;
             this.colT51to55.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -454,12 +534,16 @@
             this.colT51to55.Caption = "51-55";
             this.colT51to55.FieldName = "T51to55";
             this.colT51to55.Name = "colT51to55";
+            this.colT51to55.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT51to55.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT51to55.SummaryFooterStrFormat = "{0:n0}";
             this.colT51to55.Visible = true;
-            this.colT51to55.VisibleIndex = 20;
+            this.colT51to55.VisibleIndex = 21;
             this.colT51to55.Width = 45;
             // 
             // colT55
             // 
+            this.colT55.AllNodesSummary = true;
             this.colT55.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.colT55.AppearanceCell.Options.UseBackColor = true;
             this.colT55.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -470,28 +554,40 @@
             this.colT55.Caption = ">55";
             this.colT55.FieldName = "T55";
             this.colT55.Name = "colT55";
+            this.colT55.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT55.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colT55.SummaryFooterStrFormat = "{0:n0}";
             this.colT55.Visible = true;
-            this.colT55.VisibleIndex = 21;
+            this.colT55.VisibleIndex = 22;
             this.colT55.Width = 32;
             // 
             // colNAM
             // 
+            this.colNAM.AllNodesSummary = true;
             this.colNAM.Caption = "Nam";
             this.colNAM.FieldName = "NAM";
             this.colNAM.Name = "colNAM";
+            this.colNAM.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colNAM.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colNAM.SummaryFooterStrFormat = "{0:n0}";
             this.colNAM.Visible = true;
-            this.colNAM.VisibleIndex = 22;
+            this.colNAM.VisibleIndex = 23;
             // 
             // colNU
             // 
+            this.colNU.AllNodesSummary = true;
             this.colNU.Caption = "Nữ";
             this.colNU.FieldName = "NU";
             this.colNU.Name = "colNU";
+            this.colNU.RowFooterSummary = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colNU.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colNU.SummaryFooterStrFormat = "{0:n0}";
             this.colNU.Visible = true;
-            this.colNU.VisibleIndex = 23;
+            this.colNU.VisibleIndex = 24;
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.m_cmd_xuat_excel);
             this.panelControl1.Controls.Add(this.m_cmd_fillter);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.m_dat_tai_ngay);
@@ -532,6 +628,45 @@
             this.m_dat_tai_ngay.Size = new System.Drawing.Size(117, 20);
             this.m_dat_tai_ngay.TabIndex = 0;
             // 
+            // colSO_THU_TU
+            // 
+            this.colSO_THU_TU.Caption = "Thứ tự hiển thị";
+            this.colSO_THU_TU.FieldName = "Thứ tự hiển thị";
+            this.colSO_THU_TU.Name = "colSO_THU_TU";
+            this.colSO_THU_TU.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
+            this.colSO_THU_TU.SortOrder = System.Windows.Forms.SortOrder.Ascending;
+            this.colSO_THU_TU.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.colSO_THU_TU.SummaryFooterStrFormat = "{0:n0}";
+            this.colSO_THU_TU.Visible = true;
+            this.colSO_THU_TU.VisibleIndex = 2;
+            // 
+            // img_DVMD
+            // 
+            this.img_DVMD.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("img_DVMD.ImageStream")));
+            this.img_DVMD.Images.SetKeyName(0, "Excel-icon.png");
+            this.img_DVMD.Images.SetKeyName(1, "excel-xls-icon.png");
+            this.img_DVMD.Images.SetKeyName(2, "exit-16.ico");
+            this.img_DVMD.Images.SetKeyName(3, "image.png");
+            this.img_DVMD.Images.SetKeyName(4, "Microsoft Excel.png");
+            this.img_DVMD.Images.SetKeyName(5, "calculator.png");
+            this.img_DVMD.Images.SetKeyName(6, "diskette.png");
+            this.img_DVMD.Images.SetKeyName(7, "file_add.png");
+            this.img_DVMD.Images.SetKeyName(8, "file_delete.png");
+            this.img_DVMD.Images.SetKeyName(9, "file_edit.png");
+            this.img_DVMD.Images.SetKeyName(10, "file_search.png");
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.m_cmd_xuat_excel.Appearance.Options.UseFont = true;
+            this.m_cmd_xuat_excel.ImageIndex = 0;
+            this.m_cmd_xuat_excel.ImageList = this.img_DVMD;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(271, 6);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(107, 25);
+            this.m_cmd_xuat_excel.TabIndex = 4;
+            this.m_cmd_xuat_excel.Text = "&Xuất báo cáo";
+            // 
             // f400_rptth_phan_loai_lao_dong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -547,6 +682,7 @@
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_ngay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_tai_ngay.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -583,6 +719,9 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_fillter;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colNAM;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colNU;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colSO_THU_TU;
+        private DevExpress.Utils.ImageCollection img_DVMD;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
 
     }
 }

@@ -420,6 +420,12 @@
     <Compile Include="BaoCao\ThuNhapKhac\f492_bao_cao_cac_he_so.Designer.cs">
       <DependentUpon>f492_bao_cao_cac_he_so.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\TongHop\f400_rptth_phan_loai_lao_dong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\TongHop\f400_rptth_phan_loai_lao_dong.Designer.cs">
+      <DependentUpon>f400_rptth_phan_loai_lao_dong.cs</DependentUpon>
+    </Compile>
     <Compile Include="CONFIRM\msg003_hien_thi_danh_sach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1243,6 +1249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F110_dm_chuc_vu_de.resx">
       <DependentUpon>F110_dm_chuc_vu_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\TongHop\f400_rptth_phan_loai_lao_dong.resx">
+      <DependentUpon>f400_rptth_phan_loai_lao_dong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f299_chinh_lns_nhan_vien_de.resx">
       <DependentUpon>f299_chinh_lns_nhan_vien_de.cs</DependentUpon>

@@ -36,7 +36,6 @@
             this.pivotGridField1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField2 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField3 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField5 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField6 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.m_dat_tai_ngay = new DevExpress.XtraEditors.DateEdit();
@@ -105,7 +104,6 @@
             this.pivotGridField1,
             this.pivotGridField2,
             this.pivotGridField3,
-            this.pivotGridField4,
             this.pivotGridField5,
             this.pivotGridField6});
             this.m_pvg_main.Location = new System.Drawing.Point(12, 78);
@@ -137,20 +135,12 @@
             this.pivotGridField3.FieldName = "GT";
             this.pivotGridField3.Name = "pivotGridField3";
             // 
-            // pivotGridField4
-            // 
-            this.pivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
-            this.pivotGridField4.AreaIndex = 2;
-            this.pivotGridField4.Caption = "Quốc tịch";
-            this.pivotGridField4.FieldName = "QUOC_TICH";
-            this.pivotGridField4.Name = "pivotGridField4";
-            // 
             // pivotGridField5
             // 
             this.pivotGridField5.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
-            this.pivotGridField5.AreaIndex = 3;
-            this.pivotGridField5.Caption = "Trình độ văn hóa";
-            this.pivotGridField5.FieldName = "TRINH_DO_VAN_HOA";
+            this.pivotGridField5.AreaIndex = 2;
+            this.pivotGridField5.Caption = "Chuyên môn";
+            this.pivotGridField5.FieldName = "CHUYEN_MON";
             this.pivotGridField5.Name = "pivotGridField5";
             // 
             // pivotGridField6
@@ -214,6 +204,7 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(639, 291);
             this.layoutControlItem3.Text = "layoutControlItem3";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextToControlDistance = 0;
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
@@ -228,6 +219,7 @@
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.Text = "layoutControlItem4";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextToControlDistance = 0;
             this.layoutControlItem4.TextVisible = false;
             // 
             // emptySpaceItem1
@@ -259,6 +251,7 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(107, 42);
             this.layoutControlItem2.Text = "layoutControlItem2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextToControlDistance = 0;
             this.layoutControlItem2.TextVisible = false;
             // 
             // emptySpaceItem3
@@ -311,7 +304,6 @@
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField1;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField2;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField3;
-        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField4;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField5;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField6;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;

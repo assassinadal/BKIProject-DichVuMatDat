@@ -2157,12 +2157,12 @@
             this.barButtonItem8.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // m_cmd_chuc_vu
+            // m_cmd_tu_dien
             // 
-            this.m_cmd_chuc_vu.Caption = "Chức vụ";
-            this.m_cmd_chuc_vu.Id = 144;
-            this.m_cmd_chuc_vu.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_nhom_nhan_vien;
-            this.m_cmd_chuc_vu.Name = "m_cmd_chuc_vu";
+            this.m_cmd_tu_dien.Caption = "Từ điển";
+            this.m_cmd_tu_dien.Id = 143;
+            this.m_cmd_tu_dien.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_cham_cong;
+            this.m_cmd_tu_dien.Name = "m_cmd_tu_dien";
             // 
             // f388_main
             // 

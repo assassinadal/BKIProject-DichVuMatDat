@@ -4,6 +4,31 @@ using System.Text;
 
 namespace BKI_DichVuMatDat.US
 {
+    public class CONST_COL_PHAN_LOAI_LD_NAME
+    {
+        public const string TONG_SO_HD = "colTONG_SO_HD";
+        public const string HDHV = "colHDHV";
+        public const string HDTV = "colHDTV";
+        public const string HDKX = "colHDKX";
+        public const string HD1N = "colHD1N";
+        public const string HD1N2016 = "colHD1N2016";
+        public const string HD3N = "colHD3N";
+        public const string T26 = "colT26";
+        public const string T26to30 = "colT26to30";
+        public const string T31to35 = "colT31to35";
+        public const string T36to40 = "colT36to40";
+        public const string T41to45 = "colT41to45";
+        public const string T46to50 = "colT46to50";
+        public const string T51to55 = "colT51to55";
+        public const string T55 = "colT55";
+        public const string NAM = "colNAM";
+        public const string NU = "colNU";
+        public const string SAU_DAI_HOC = "colSAU_DAI_HOC";
+        public const string DAI_HOC = "colDAI_HOC";
+        public const string CAO_DANG = "colCAO_DANG";
+        public const string TRUNG_CAP = "colTRUNG_CAP";
+        public const string KHAC = "colKHAC";
+    }
     public class CONST_EXCEL_TEMPLATE
     {
         public const string CHAM_CONG_TEMPLATE = "ChamCong.xlsx";

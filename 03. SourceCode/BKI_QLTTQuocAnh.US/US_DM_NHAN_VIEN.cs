@@ -823,10 +823,20 @@ namespace BKI_DichVuMatDat.US
         }
 
 
-        
 
 
 
+        public DataTable BangPhanLoaiLaoDong(DateTime ip_dat_tai_ngay)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_RPTTH_phan_loai_nhan_vien");
+            v_sp.addDatetimeInputParam("@ip_dat_tai_ngay", ip_dat_tai_ngay);
+
+            DataSet v_ds_op = new DataSet();
+            v_ds_op.Tables.Add();
+
+            v_sp.fillDataSetByCommand(this, v_ds_op);
+            return v_ds_op.Tables[0];
+        }
 
 
 

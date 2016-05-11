@@ -24,6 +24,8 @@ using BKI_DichVuMatDat.NghiepVu.Luong;
 using BKI_DichVuMatDat.NghiepVu.NhanSu;
 using BKI_DichVuMatDat.NghiepVu.HopDong;
 using BKI_DichVuMatDat.BaoCao.Luong;
+using BKI_DichVuMatDat.BaoCao.TongHop;
+using DevExpress.XtraSplashScreen;
 //using BKI_DichVuMatDat.BaoCao.Luong;
 
 namespace BKI_DichVuMatDat
@@ -1594,10 +1596,16 @@ namespace BKI_DichVuMatDat
         private void m_cmd_tk_ns_dv_ItemClick(object sender, ItemClickEventArgs e)
         {
             //F420_Bao_cao_nhan_su_theo_don_vi v_f = new F420_Bao_cao_nhan_su_theo_don_vi();
-            f410_bao_cao_so_luong_chat_luong_lao_dong v_frm = new f410_bao_cao_so_luong_chat_luong_lao_dong();
-            if (IsExistFormName(v_frm)) return;
+            //f410_bao_cao_so_luong_chat_luong_lao_dong v_frm = new f410_bao_cao_so_luong_chat_luong_lao_dong();
+            //if (IsExistFormName(v_frm)) return;
+            //v_frm.MdiParent = this;
+            //v_frm.Show();
+            SplashScreenManager.ShowForm(typeof(F_wait_form));
+            f400_rptth_phan_loai_lao_dong v_frm = new f400_rptth_phan_loai_lao_dong();
+            if(IsExistFormName(v_frm)) return;
             v_frm.MdiParent = this;
             v_frm.Show();
+            SplashScreenManager.CloseForm();
         }
 
         private void m_cmd_tk_ns_tong_hop_ItemClick(object sender, ItemClickEventArgs e)

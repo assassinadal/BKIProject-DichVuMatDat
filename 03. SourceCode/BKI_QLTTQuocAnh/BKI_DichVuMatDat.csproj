@@ -432,6 +432,12 @@
     <Compile Include="DanhMuc\F110_dm_chuc_vu.Designer.cs">
       <DependentUpon>F110_dm_chuc_vu.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\F110_dm_chuc_vu_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\F110_dm_chuc_vu_de.Designer.cs">
+      <DependentUpon>F110_dm_chuc_vu_de.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\F153_dm_nguoi_bao_lanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1234,6 +1240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F110_dm_chuc_vu.resx">
       <DependentUpon>F110_dm_chuc_vu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\F110_dm_chuc_vu_de.resx">
+      <DependentUpon>F110_dm_chuc_vu_de.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f299_chinh_lns_nhan_vien_de.resx">
       <DependentUpon>f299_chinh_lns_nhan_vien_de.cs</DependentUpon>

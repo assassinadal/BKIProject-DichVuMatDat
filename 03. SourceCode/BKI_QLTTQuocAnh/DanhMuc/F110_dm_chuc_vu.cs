@@ -54,6 +54,47 @@ namespace BKI_DichVuMatDat.DanhMuc
             v_us.FillDataset(v_ds, "where id_don_vi =" + v_id_don_vi);
             m_grc.DataSource = v_ds.Tables[0];
         }
+
+        private bool check_validate_data(decimal ip_id_chuc_vu)
+        {
+            if (check_ct_dang_su_dung(ip_id_chuc_vu))
+            {
+                string v_str_error = "Hiện đang có hợp đồng làm việc tại vị trí này.\nKhông thể xóa!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (check_hd_dang_su_dung(ip_id_chuc_vu))
+            {
+                string v_str_error = "Hiện đang có công tác tại vị trí này. Không thể xóa!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+        private bool check_ct_dang_su_dung(decimal ip_id_chuc_vu)
+        {
+            US_GD_CONG_TAC v_us_ct = new US_GD_CONG_TAC();
+            DS_GD_CONG_TAC v_ds_ct = new DS_GD_CONG_TAC();
+            v_us_ct.FillDataset(v_ds_ct, "where id_vi_tri = " + ip_id_chuc_vu);
+            if (v_ds_ct.Tables[0].Rows.Count == 0)
+            {
+                return false;
+            }
+            else return true;
+        }
+
+        private bool check_hd_dang_su_dung(decimal ip_id_chuc_vu)
+        {
+            US_GD_HOP_DONG v_us_hd = new US_GD_HOP_DONG();
+            DS_GD_HOP_DONG v_ds_hd = new DS_GD_HOP_DONG();
+            v_us_hd.FillDataset(v_ds_hd, "where id_chuc_vu =" + ip_id_chuc_vu);
+            if (v_ds_hd.Tables[0].Rows.Count == 0)
+            {
+                return false;
+            }
+            else return true;
+        }
         #endregion
 
         #region Event Handler
@@ -68,17 +109,56 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         void m_cmd_delete_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                decimal v_id_chuc_vu = CIPConvert.ToDecimal(m_grv.GetDataRow(m_grv.FocusedRowHandle)[DM_CHUC_VU.ID]);
+                if (check_validate_data(v_id_chuc_vu))
+                {
+                    string v_str_confirm = "Bạn có chắn chắn muốn xóa chức vụ này?";
+                    DialogResult v_dialog = XtraMessageBox.Show(v_str_confirm, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (v_dialog == DialogResult.Yes)
+                    {
+                        US_DM_CHUC_VU v_us = new US_DM_CHUC_VU(v_id_chuc_vu);
+                        v_us.Delete();
+                        XtraMessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        load_data_to_grid();
+                    }                   
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_update_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                F110_dm_chuc_vu_de v_f = new F110_dm_chuc_vu_de();
+                decimal v_id_chuc_vu = CIPConvert.ToDecimal(m_grv.GetDataRow(m_grv.FocusedRowHandle)[DM_CHUC_VU.ID]);
+                US_DM_CHUC_VU v_us = new US_DM_CHUC_VU(v_id_chuc_vu);
+                v_f.display_for_update(v_us);
+                load_data_to_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_insert_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                F110_dm_chuc_vu_de v_f = new F110_dm_chuc_vu_de();
+                v_f.display_for_insert();
+                load_data_to_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_tree_don_vi_Click(object sender, EventArgs e)

@@ -38,14 +38,13 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_tree_don_vi)).BeginInit();
@@ -125,12 +124,11 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.m_cmd_xuat_excel);
-            this.panelControl2.Controls.Add(this.m_cmd_delete);
-            this.panelControl2.Controls.Add(this.m_cmd_update);
             this.panelControl2.Controls.Add(this.m_cmd_insert);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(2, 2);
+            this.panelControl2.Controls.Add(this.m_cmd_update);
+            this.panelControl2.Controls.Add(this.m_cmd_delete);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl2.Location = new System.Drawing.Point(2, 338);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(631, 40);
             this.panelControl2.TabIndex = 0;
@@ -139,7 +137,7 @@
             // 
             this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc.Location = new System.Drawing.Point(2, 42);
+            this.m_grc.Location = new System.Drawing.Point(2, 2);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
             this.m_grc.Size = new System.Drawing.Size(631, 336);
@@ -158,51 +156,8 @@
             this.gridColumn4});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_excel.Image")));
-            this.m_cmd_xuat_excel.ImageIndex = 3;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(302, 2);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(100, 36);
-            this.m_cmd_xuat_excel.TabIndex = 33;
-            this.m_cmd_xuat_excel.Text = "&Xuất Excel";
-            this.m_cmd_xuat_excel.Visible = false;
-            // 
-            // m_cmd_delete
-            // 
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
-            this.m_cmd_delete.ImageIndex = 8;
-            this.m_cmd_delete.Location = new System.Drawing.Point(202, 2);
-            this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(100, 36);
-            this.m_cmd_delete.TabIndex = 32;
-            this.m_cmd_delete.Text = "&Xóa";
-            // 
-            // m_cmd_update
-            // 
-            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
-            this.m_cmd_update.ImageIndex = 9;
-            this.m_cmd_update.Location = new System.Drawing.Point(102, 2);
-            this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(100, 36);
-            this.m_cmd_update.TabIndex = 31;
-            this.m_cmd_update.Text = "&Sửa";
-            // 
-            // m_cmd_insert
-            // 
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
-            this.m_cmd_insert.ImageIndex = 7;
-            this.m_cmd_insert.Location = new System.Drawing.Point(2, 2);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(100, 36);
-            this.m_cmd_insert.TabIndex = 30;
-            this.m_cmd_insert.Text = "&Thêm";
+            this.m_grv.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn3, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // gridColumn1
             // 
@@ -225,6 +180,8 @@
             this.gridColumn3.Caption = "Số thứ tự";
             this.gridColumn3.FieldName = "SO_THU_TU";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumn3.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             // 
@@ -235,6 +192,39 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
+            // 
+            // m_cmd_delete
+            // 
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
+            this.m_cmd_delete.ImageIndex = 7;
+            this.m_cmd_delete.Location = new System.Drawing.Point(519, 2);
+            this.m_cmd_delete.Name = "m_cmd_delete";
+            this.m_cmd_delete.Size = new System.Drawing.Size(110, 36);
+            this.m_cmd_delete.TabIndex = 38;
+            this.m_cmd_delete.Text = "&Xóa";
+            // 
+            // m_cmd_update
+            // 
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
+            this.m_cmd_update.ImageIndex = 9;
+            this.m_cmd_update.Location = new System.Drawing.Point(409, 2);
+            this.m_cmd_update.Name = "m_cmd_update";
+            this.m_cmd_update.Size = new System.Drawing.Size(110, 36);
+            this.m_cmd_update.TabIndex = 39;
+            this.m_cmd_update.Text = "&Sửa";
+            // 
+            // m_cmd_insert
+            // 
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
+            this.m_cmd_insert.ImageIndex = 7;
+            this.m_cmd_insert.Location = new System.Drawing.Point(299, 2);
+            this.m_cmd_insert.Name = "m_cmd_insert";
+            this.m_cmd_insert.Size = new System.Drawing.Size(110, 36);
+            this.m_cmd_insert.TabIndex = 40;
+            this.m_cmd_insert.Text = "&Thêm";
             // 
             // F110_dm_chuc_vu
             // 
@@ -267,14 +257,13 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn colMA_DON_VI;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colSO_LUONG_NS_DANG_CONG_TAC;
         private DevExpress.XtraTreeList.TreeList m_tree_don_vi;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_update;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_update;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
 
     }
 }

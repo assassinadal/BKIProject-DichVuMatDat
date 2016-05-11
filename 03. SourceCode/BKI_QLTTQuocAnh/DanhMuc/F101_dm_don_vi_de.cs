@@ -137,13 +137,19 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             if (m_txt_ma_dv.Text == "")
             {
-                string v_str_error = "Bạn chưa nhập mã đơn vị";
+                string v_str_error = "Bạn chưa nhập mã đơn vị!";
                 XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (m_txt_ten_dv.Text == "")
+            else if (m_txt_ten_dv.Text == "")
             {
                 CHRM_BaseMessages.MsgBox_Error(CONST_ID_MSGBOX.ERROR_CHUA_NHAP_TEN_DON_VI);
+                return false;
+            }
+            else if (m_txt_thu_tu.Text == "")
+            {
+                string v_str_error = "Bạn chưa nhập thứ tự!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (check_ma_don_vi_is_exist())
@@ -168,7 +174,6 @@ namespace BKI_DichVuMatDat.DanhMuc
                 m_us_dm_dv.dcID_DON_VI_CAP_TREN = CIPConvert.ToDecimal(m_sle_chon_dv_cap_tren.EditValue);
             }
             m_us_dm_dv.strTEN_DON_VI = m_txt_ten_dv.Text.Trim();
-            //m_us_dm_dv.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_sle_loai_dv.EditValue);
             m_us_dm_dv.dcSO_THU_TU = CIPConvert.ToDecimal(m_txt_thu_tu.Text);
         }
 

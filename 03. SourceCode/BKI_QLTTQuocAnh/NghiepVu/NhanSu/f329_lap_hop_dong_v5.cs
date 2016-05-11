@@ -51,6 +51,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             radioButton1.Checked = true;
             m_grv.ActiveFilterString = ip_str_filter;
+            panelControl1.Visible = false;
             ShowDialog();
         }
         #endregion

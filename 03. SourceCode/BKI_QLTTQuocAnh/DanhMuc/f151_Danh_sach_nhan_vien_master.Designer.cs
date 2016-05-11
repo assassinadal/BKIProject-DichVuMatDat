@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f151_Danh_sach_nhan_vien_master));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,7 +71,7 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_ma_nv_tiep_theo = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
+            this.img_DVMD = new DevExpress.Utils.ImageCollection();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_sua = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
@@ -569,7 +568,7 @@
             this.colTRINH_DO_VAN_HOA.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colTRINH_DO_VAN_HOA.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colTRINH_DO_VAN_HOA.Caption = "Trình độ văn hóa";
-            this.colTRINH_DO_VAN_HOA.FieldName = "TRINH_DO_VAN_HOA";
+            this.colTRINH_DO_VAN_HOA.FieldName = "TEN_TRINH_DO_VAN_HOA";
             this.colTRINH_DO_VAN_HOA.MinWidth = 100;
             this.colTRINH_DO_VAN_HOA.Name = "colTRINH_DO_VAN_HOA";
             this.colTRINH_DO_VAN_HOA.OptionsColumn.AllowEdit = false;

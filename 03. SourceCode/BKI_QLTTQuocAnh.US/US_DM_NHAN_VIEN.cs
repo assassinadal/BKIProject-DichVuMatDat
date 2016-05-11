@@ -776,6 +776,45 @@ namespace BKI_DichVuMatDat.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+        public DataTable RPT_lay_danh_sach_nhan_vien_theo_chuyen_mon(string ip_option_chuyen_mon, DateTime ip_dat_tai_ngay, decimal ip_dc_id_don_vi)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_rptth_lay_danh_sach_nhan_vien_theo_chuyen_mon");
+            v_cstore.addDatetimeInputParam("@ip_dat_tai_ngay", ip_dat_tai_ngay);
+            v_cstore.addNVarcharInputParam("@ip_str_trinh_do_van_hoa", ip_option_chuyen_mon);
+            v_cstore.addDecimalInputParam("@ip_dc_id_don_vi", ip_dc_id_don_vi);
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+
+            v_cstore.fillDataSetByCommand(this, v_ds);
+
+            return v_ds.Tables[0];
+        }
+        public DataTable RPT_lay_danh_sach_nhan_vien_theo_gioi_tinh(string ip_option_gioi_tinh, DateTime ip_dat_tai_ngay, decimal ip_dc_id_don_vi)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_rptth_lay_danh_sach_nhan_vien_theo_gioi_tinh");
+            v_cstore.addDatetimeInputParam("@ip_dat_tai_ngay", ip_dat_tai_ngay);
+            v_cstore.addNVarcharInputParam("@ip_str_gioi_tinh", ip_option_gioi_tinh);
+            v_cstore.addDecimalInputParam("@ip_dc_id_don_vi", ip_dc_id_don_vi);
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+
+            v_cstore.fillDataSetByCommand(this, v_ds);
+
+            return v_ds.Tables[0];
+        }
+        public DataTable RPT_lay_danh_sach_nhan_vien_theo_do_tuoi(string ip_option_do_tuoi, DateTime ip_dat_tai_ngay, decimal ip_dc_id_don_vi)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_rptth_lay_danh_sach_nhan_vien_theo_do_tuoi");
+            v_cstore.addDatetimeInputParam("@ip_dat_tai_ngay", ip_dat_tai_ngay);
+            v_cstore.addNVarcharInputParam("@ip_str_do_tuoi", ip_option_do_tuoi);
+            v_cstore.addDecimalInputParam("@ip_dc_id_don_vi", ip_dc_id_don_vi);
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+
+            v_cstore.fillDataSetByCommand(this, v_ds);
+
+            return v_ds.Tables[0];
+        }
         public DataTable LayDanhSachNhanVien()
         {
             CStoredProc v_cstore = new CStoredProc("pr_NS_danh_sach_nhan_vien_GetAll_V2");

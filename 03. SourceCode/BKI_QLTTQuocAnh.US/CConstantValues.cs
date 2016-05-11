@@ -104,6 +104,7 @@ namespace BKI_DichVuMatDat.US
         public const decimal HOP_DONG_MOT_NAM = 6;
         public const decimal HOP_DONG_3_NAM = 7;
         public const decimal HOP_DONG_KHONG_XAC_DINH = 8;
+        public const decimal HOP_DONG_1N_2016 = 13;
     }
 
     public class CONST_ID_LUONG_CUNG_HSLNS_LCD

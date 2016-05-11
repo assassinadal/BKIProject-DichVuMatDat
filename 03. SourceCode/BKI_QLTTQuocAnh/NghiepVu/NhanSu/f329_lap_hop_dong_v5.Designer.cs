@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f329_lap_hop_dong_v5));
             this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -159,19 +159,19 @@
             this.colLOAI_HOP_DONG,
             this.colID_DON_VI,
             this.colID_CHUC_VU});
-            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Pink;
-            styleFormatCondition1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
-            styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Firebrick;
-            styleFormatCondition1.Appearance.Options.UseBackColor = true;
-            styleFormatCondition1.Appearance.Options.UseFont = true;
-            styleFormatCondition1.Appearance.Options.UseForeColor = true;
-            styleFormatCondition1.ApplyToRow = true;
-            styleFormatCondition1.Column = this.colNGAY_KET_THUC;
-            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition1.Expression = "[NGAY_KET_THUC]  < Today() And IsNullOrEmpty([NGAY_KET_THUC]) == False";
-            styleFormatCondition1.Name = "HET_HAN";
+            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.Pink;
+            styleFormatCondition2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
+            styleFormatCondition2.Appearance.ForeColor = System.Drawing.Color.Firebrick;
+            styleFormatCondition2.Appearance.Options.UseBackColor = true;
+            styleFormatCondition2.Appearance.Options.UseFont = true;
+            styleFormatCondition2.Appearance.Options.UseForeColor = true;
+            styleFormatCondition2.ApplyToRow = true;
+            styleFormatCondition2.Column = this.colNGAY_KET_THUC;
+            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition2.Expression = "[NGAY_KET_THUC]  < Today() And IsNullOrEmpty([NGAY_KET_THUC]) == False";
+            styleFormatCondition2.Name = "HET_HAN";
             this.m_grv.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition1});
+            styleFormatCondition2});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
             this.m_grv.OptionsBehavior.ReadOnly = true;
@@ -677,6 +677,7 @@
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl3);
             this.Name = "f329_lap_hop_dong_v5";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F329 - Quản lý danh sách hợp đồng";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);

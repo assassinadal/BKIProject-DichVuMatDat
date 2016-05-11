@@ -52,6 +52,8 @@
             this.colT46to50 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colT51to55 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colT55 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colNAM = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colNU = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_fillter = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -94,7 +96,9 @@
             this.colT41to45,
             this.colT46to50,
             this.colT51to55,
-            this.colT55});
+            this.colT55,
+            this.colNAM,
+            this.colNU});
             this.m_tree_don_vi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_tree_don_vi.Location = new System.Drawing.Point(0, 46);
             this.m_tree_don_vi.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -470,6 +474,22 @@
             this.colT55.VisibleIndex = 21;
             this.colT55.Width = 32;
             // 
+            // colNAM
+            // 
+            this.colNAM.Caption = "Nam";
+            this.colNAM.FieldName = "NAM";
+            this.colNAM.Name = "colNAM";
+            this.colNAM.Visible = true;
+            this.colNAM.VisibleIndex = 22;
+            // 
+            // colNU
+            // 
+            this.colNU.Caption = "Nữ";
+            this.colNU.FieldName = "NU";
+            this.colNU.Name = "colNU";
+            this.colNU.Visible = true;
+            this.colNU.VisibleIndex = 23;
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.m_cmd_fillter);
@@ -561,6 +581,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.DateEdit m_dat_tai_ngay;
         private DevExpress.XtraEditors.SimpleButton m_cmd_fillter;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colNAM;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colNU;
 
     }
 }

@@ -24,9 +24,31 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             InitializeComponent();
             format_controls();
+            load_data_to_grid();
         }
 
         #region Public Interface
+        public void display_for_phan_loai_gioi_tinh(string ip_str_op_filter, DateTime ip_dat_tai_ngay, decimal ip_dc_id_don_vi)
+        {
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            m_grc.DataSource = v_us.RPT_lay_danh_sach_nhan_vien_theo_gioi_tinh(ip_str_op_filter, ip_dat_tai_ngay, ip_dc_id_don_vi);
+            panelControl3.Visible = false;
+            ShowDialog();
+        }
+        public void display_for_phan_loai_do_tuoi(string ip_str_op_filter, DateTime ip_dat_tai_ngay, decimal ip_dc_id_don_vi)
+        {
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            m_grc.DataSource = v_us.RPT_lay_danh_sach_nhan_vien_theo_do_tuoi(ip_str_op_filter, ip_dat_tai_ngay, ip_dc_id_don_vi);
+            panelControl3.Visible = false;
+            ShowDialog();
+        }
+        public void display_for_phan_loai_lao_dong(string ip_str_op_filter, DateTime ip_dat_tai_ngay, decimal ip_dc_id_don_vi)
+        {
+            US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            m_grc.DataSource = v_us.RPT_lay_danh_sach_nhan_vien_theo_chuyen_mon(ip_str_op_filter, ip_dat_tai_ngay, ip_dc_id_don_vi);
+            panelControl3.Visible = false;
+            ShowDialog();
+        }
         public void DisplayForPresent(ref int m_trang_thai_buoc_1)
         {
             m_cmd_sua.Enabled = false;
@@ -54,7 +76,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             f150_danh_muc_nhan_su_v2 v_f = new f150_danh_muc_nhan_su_v2();
             v_f.DisplayForInsert();
             load_data_to_grid();
-            if (v_f.id_nv_new != -1)
+            if(v_f.id_nv_new != -1)
             {
                 focus_row(v_f.id_nv_new);
             }
@@ -110,14 +132,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void set_init_form_load()
         {
-            if (m_id_nhan_vien > 0)
-            {
-                load_data_to_grid(m_id_nhan_vien);
-            }
-            else
-            {
-                load_data_to_grid();
-            }
+           
         }
 
         private void load_data_to_grid()
@@ -141,7 +156,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             //XtraMessageBox.Show(i_strMsg, "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
             DialogResult v_confirm = default(DialogResult);
             v_confirm = XtraMessageBox.Show("BẠN CÓ THỰC SỰ MUỐN XÓA DỮ LIỆU NÀY ?", "XÁC NHẬN LẠI", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-            if (v_confirm == DialogResult.Yes)
+            if(v_confirm == DialogResult.Yes)
             {
                 DataRow v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
                 US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN(CIPConvert.ToDecimal(v_dr["ID"].ToString()));
@@ -170,9 +185,9 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 delete_click();
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
-                XtraMessageBox.Show("Bạn không thể xóa nhân viên này vì nhân viên đã có các thông tin về hợp đồng, công tác, LNS rồi!","THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                XtraMessageBox.Show("Bạn không thể xóa nhân viên này vì nhân viên đã có các thông tin về hợp đồng, công tác, LNS rồi!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 //CSystemLog_301.ExceptionHandle(v_e);
             }
         }
@@ -183,7 +198,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 set_init_form_load();
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -195,7 +210,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 CHRM_BaseMessages.MsgBox_Infor("Mã nhân viên tiếp theo là : " + CHRMCommon.gen_ma_nhan_vien());
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -224,7 +239,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 import_excel();
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -236,7 +251,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             {
                 insert_click();
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -253,7 +268,7 @@ namespace BKI_DichVuMatDat.DanhMuc
                 load_data_to_grid();
                 focus_row(CIPConvert.ToDecimal(v_dr["ID"].ToString()));
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }

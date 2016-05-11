@@ -70,12 +70,12 @@
             this.colNGUOI_BAO_LANH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO_TEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
-            this.m_cmd_sua = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_ma_nv_tiep_theo = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
+            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
+            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_sua = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -114,7 +114,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 82);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(896, 335);
+            this.panelControl2.Size = new System.Drawing.Size(896, 521);
             this.panelControl2.TabIndex = 2;
             // 
             // m_grc
@@ -124,7 +124,7 @@
             this.m_grc.Location = new System.Drawing.Point(2, 2);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(892, 331);
+            this.m_grc.Size = new System.Drawing.Size(892, 517);
             this.m_grc.TabIndex = 2;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
@@ -687,16 +687,26 @@
             this.panelControl3.Size = new System.Drawing.Size(896, 36);
             this.panelControl3.TabIndex = 3;
             // 
-            // m_cmd_them
+            // m_cmd_ma_nv_tiep_theo
             // 
-            this.m_cmd_them.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_them.ImageIndex = 7;
-            this.m_cmd_them.ImageList = this.img_DVMD;
-            this.m_cmd_them.Location = new System.Drawing.Point(2, 2);
-            this.m_cmd_them.Name = "m_cmd_them";
-            this.m_cmd_them.Size = new System.Drawing.Size(75, 32);
-            this.m_cmd_them.TabIndex = 3;
-            this.m_cmd_them.Text = "Thêm";
+            this.m_cmd_ma_nv_tiep_theo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_ma_nv_tiep_theo.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_ma_nv_tiep_theo.Image")));
+            this.m_cmd_ma_nv_tiep_theo.Location = new System.Drawing.Point(327, 2);
+            this.m_cmd_ma_nv_tiep_theo.Name = "m_cmd_ma_nv_tiep_theo";
+            this.m_cmd_ma_nv_tiep_theo.Size = new System.Drawing.Size(146, 32);
+            this.m_cmd_ma_nv_tiep_theo.TabIndex = 40;
+            this.m_cmd_ma_nv_tiep_theo.Text = "Tra cứu \r\nmã nhân viên tiếp theo";
+            // 
+            // m_cmd_chon_file
+            // 
+            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chon_file.ImageIndex = 4;
+            this.m_cmd_chon_file.ImageList = this.img_DVMD;
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(227, 2);
+            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
+            this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 32);
+            this.m_cmd_chon_file.TabIndex = 39;
+            this.m_cmd_chon_file.Text = "&Import excel";
             // 
             // img_DVMD
             // 
@@ -713,17 +723,6 @@
             this.img_DVMD.Images.SetKeyName(9, "file_edit.png");
             this.img_DVMD.Images.SetKeyName(10, "file_search.png");
             // 
-            // m_cmd_sua
-            // 
-            this.m_cmd_sua.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_sua.ImageIndex = 9;
-            this.m_cmd_sua.ImageList = this.img_DVMD;
-            this.m_cmd_sua.Location = new System.Drawing.Point(77, 2);
-            this.m_cmd_sua.Name = "m_cmd_sua";
-            this.m_cmd_sua.Size = new System.Drawing.Size(75, 32);
-            this.m_cmd_sua.TabIndex = 37;
-            this.m_cmd_sua.Text = "Sửa";
-            // 
             // m_cmd_delete
             // 
             this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
@@ -735,32 +734,33 @@
             this.m_cmd_delete.TabIndex = 38;
             this.m_cmd_delete.Text = "&Xóa";
             // 
-            // m_cmd_chon_file
+            // m_cmd_sua
             // 
-            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chon_file.ImageIndex = 4;
-            this.m_cmd_chon_file.ImageList = this.img_DVMD;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(227, 2);
-            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
-            this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 32);
-            this.m_cmd_chon_file.TabIndex = 39;
-            this.m_cmd_chon_file.Text = "&Import excel";
+            this.m_cmd_sua.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_sua.ImageIndex = 9;
+            this.m_cmd_sua.ImageList = this.img_DVMD;
+            this.m_cmd_sua.Location = new System.Drawing.Point(77, 2);
+            this.m_cmd_sua.Name = "m_cmd_sua";
+            this.m_cmd_sua.Size = new System.Drawing.Size(75, 32);
+            this.m_cmd_sua.TabIndex = 37;
+            this.m_cmd_sua.Text = "Sửa";
             // 
-            // m_cmd_ma_nv_tiep_theo
+            // m_cmd_them
             // 
-            this.m_cmd_ma_nv_tiep_theo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_ma_nv_tiep_theo.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_ma_nv_tiep_theo.Image")));
-            this.m_cmd_ma_nv_tiep_theo.Location = new System.Drawing.Point(327, 2);
-            this.m_cmd_ma_nv_tiep_theo.Name = "m_cmd_ma_nv_tiep_theo";
-            this.m_cmd_ma_nv_tiep_theo.Size = new System.Drawing.Size(146, 32);
-            this.m_cmd_ma_nv_tiep_theo.TabIndex = 40;
-            this.m_cmd_ma_nv_tiep_theo.Text = "Tra cứu \r\nmã nhân viên tiếp theo";
+            this.m_cmd_them.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_them.ImageIndex = 7;
+            this.m_cmd_them.ImageList = this.img_DVMD;
+            this.m_cmd_them.Location = new System.Drawing.Point(2, 2);
+            this.m_cmd_them.Name = "m_cmd_them";
+            this.m_cmd_them.Size = new System.Drawing.Size(75, 32);
+            this.m_cmd_them.TabIndex = 3;
+            this.m_cmd_them.Text = "Thêm";
             // 
             // f151_Danh_sach_nhan_vien_master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 417);
+            this.ClientSize = new System.Drawing.Size(896, 603);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl1);

@@ -23,15 +23,13 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             InitializeComponent();
             format_controls();
-            m_txt_thang.Text = DateTime.Now.Month.ToString();
-            m_txt_nam.Text = DateTime.Now.Year.ToString();
+            m_dat_thang.DateTime = DateTime.Now.Date;
         }
         public void hien_thi_ra_soat_tinh_luong(decimal ip_dc_thang, decimal ip_dc_nam)
         {
             load_data_2_grid(ip_dc_thang, ip_dc_nam);
             m_band_tham_so_bang_luong_thang.ActiveFilterString = "[DU_DIEU_KIEN] = '0'";
-            m_txt_thang.Text = ip_dc_thang.ToString();
-            m_txt_nam.Text = ip_dc_nam.ToString();
+            m_dat_thang.DateTime = new DateTime((int)ip_dc_nam, (int)ip_dc_thang, 1).Date;
             ShowDialog();
         }
         #region Members
@@ -46,6 +44,14 @@ namespace BKI_DichVuMatDat.BaoCao
             //FormatControl.SetVisibleSimpleButton(this);
             set_define_events();
             this.KeyPreview = true;
+        }
+        private decimal lay_thang()
+        {
+            return Convert.ToDecimal(m_dat_thang.DateTime.Month);
+        }
+        private decimal lay_nam()
+        {
+            return Convert.ToDecimal(m_dat_thang.DateTime.Year);
         }
         private void load_data_2_grid(decimal ip_dc_thang, decimal ip_dc_nam)
         {
@@ -98,8 +104,8 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
-                decimal v_dc_thang = CIPConvert.ToDecimal(m_txt_thang.Text.Trim());
-                decimal v_dc_nam = CIPConvert.ToDecimal(m_txt_nam.Text.Trim());
+                decimal v_dc_thang = lay_thang();
+                decimal v_dc_nam = lay_nam();
                 if (v_dc_thang <= 12 && v_dc_thang >= 0 && v_dc_nam >= 0)
                     load_data_2_grid(v_dc_thang, v_dc_nam);
                 else

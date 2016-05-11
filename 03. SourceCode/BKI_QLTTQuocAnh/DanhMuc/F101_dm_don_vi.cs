@@ -62,9 +62,9 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_tree_don_vi.ExpandAll();
         }
         private decimal get_id_phong_ban()
-                {
+        {
             return Convert.ToDecimal(m_tree_don_vi.FocusedNode.GetValue("ID"));
-                }
+        }
         #endregion
 
         private void set_define_events()
@@ -91,8 +91,9 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                
-
+                F101_dm_don_vi_de v_f = new F101_dm_don_vi_de();
+                v_f.display_4_insert();
+                load_data_2_tree();
             }
             catch (Exception v_e)
             {
@@ -104,8 +105,12 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-
-                }
+                F101_dm_don_vi_de v_f = new F101_dm_don_vi_de();
+                decimal v_id_don_vi = CIPConvert.ToDecimal(m_tree_don_vi.FocusedNode.GetValue("ID"));
+                US_DM_DON_VI v_us = new US_DM_DON_VI(v_id_don_vi);
+                v_f.display_4_update(v_us);
+                load_data_2_tree();
+            }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
@@ -116,18 +121,19 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                //if (CHRM_BaseMessages.MsgBox_Confirm(CONST_ID_MSGBOX.QUESTION_XAC_NHAN_XOA_DU_LIEU) == true)
-                //{
-                //    DataRow v_dr = m_tree_don_vi.GetDataRow(m_grv_dm_don_vi.FocusedRowHandle);
-                //    decimal v_id_don_vi = CIPConvert.ToDecimal(v_dr["ID"]);
-
-                //    US_DM_DON_VI v_us = new US_DM_DON_VI(v_id_don_vi);
-                //    v_us.BeginTransaction();
-                //    v_us.Delete();
-                //    v_us.CommitTransaction();
-                //    load_data_2_grid();
-                //    CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_DU_LIEU_DA_DUOC_CAP_NHAT);
-                //}
+                decimal v_id_don_vi = CIPConvert.ToDecimal(m_tree_don_vi.FocusedNode.GetValue("ID"));
+                if (check_validate_data(v_id_don_vi))
+                {
+                    string v_str_confirm = "Bạn có chắc chắn muốn xóa đơn vị này?";
+                    DialogResult v_dialog = XtraMessageBox.Show(v_str_confirm, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if ( v_dialog == DialogResult.Yes)
+                    {
+                        US_DM_DON_VI v_us = new US_DM_DON_VI(v_id_don_vi);
+                        v_us.Delete();
+                        XtraMessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        load_data_2_tree();
+                    }               
+                }
             }
             catch (Exception v_e)
             {
@@ -135,5 +141,63 @@ namespace BKI_DichVuMatDat.DanhMuc
             }
         }
 
+        private bool check_validate_data(decimal ip_id_don_vi)
+        {
+            if (check_ct_dang_su_dung(ip_id_don_vi))
+            {
+                string v_str_error = "Hiện có nhân viên đang công tác tại đơn vị này. Không thể xóa!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (check_hd_dang_su_dung(ip_id_don_vi))
+            {
+                string v_str_error = "Hiện có nhân viên đang có hợp đồng tại đơn vị này. Không thể xóa!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (check_cv_dang_su_dung(ip_id_don_vi))
+            {
+                string v_str_error = "Hiện có chức vụ đang thuộc đơn vị này. Không thể xóa!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+        private bool check_ct_dang_su_dung(decimal ip_id_don_vi)
+        {
+            US_GD_CONG_TAC v_us_ct = new US_GD_CONG_TAC();
+            DS_GD_CONG_TAC v_ds_ct = new DS_GD_CONG_TAC();
+            v_us_ct.FillDataset(v_ds_ct, "where id_don_vi = " + ip_id_don_vi);
+            if (v_ds_ct.Tables[0].Rows.Count == 0)
+            {
+                return false;
+            }
+            else return true;
+        }
+
+        private bool check_hd_dang_su_dung(decimal ip_id_don_vi)
+        {
+            US_GD_HOP_DONG v_us_hd = new US_GD_HOP_DONG();
+            DS_GD_HOP_DONG v_ds_hd = new DS_GD_HOP_DONG();
+            v_us_hd.FillDataset(v_ds_hd, "where id_don_vi =" + ip_id_don_vi);
+            if (v_ds_hd.Tables[0].Rows.Count == 0)
+            {
+                return false;
+            }
+            else return true;
+        }
+
+        private bool check_cv_dang_su_dung(decimal ip_id_don_vi)
+        {
+            US_DM_CHUC_VU v_us = new US_DM_CHUC_VU();
+            DS_DM_CHUC_VU v_ds = new DS_DM_CHUC_VU();
+            v_us.FillDataset(v_ds, "where id_don_vi = " + ip_id_don_vi);
+            if (v_ds.Tables[0].Rows.Count == 0)
+            {
+                return false;
+            }
+            else return true;
+        }
     }
 }

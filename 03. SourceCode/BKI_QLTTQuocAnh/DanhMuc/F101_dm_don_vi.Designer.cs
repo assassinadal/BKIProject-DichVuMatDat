@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F101_dm_don_vi));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
+            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,14 +43,10 @@
             this.colID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colMA_DON_VI = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colSO_LUONG_NS_DANG_CONG_TAC = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_tree_don_vi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,6 +60,54 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(510, 33);
             this.panel1.TabIndex = 2;
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.ImageIndex = 3;
+            this.m_cmd_xuat_excel.ImageList = this.img_DVMD;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(252, 0);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(84, 33);
+            this.m_cmd_xuat_excel.TabIndex = 29;
+            this.m_cmd_xuat_excel.Text = "&Xuất Excel";
+            // 
+            // img_DVMD
+            // 
+            this.img_DVMD.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("img_DVMD.ImageStream")));
+            this.img_DVMD.Images.SetKeyName(0, "Excel-icon.png");
+            this.img_DVMD.Images.SetKeyName(1, "excel-xls-icon.png");
+            this.img_DVMD.Images.SetKeyName(2, "exit-16.ico");
+            this.img_DVMD.Images.SetKeyName(3, "image.png");
+            this.img_DVMD.Images.SetKeyName(4, "Microsoft Excel.png");
+            this.img_DVMD.Images.SetKeyName(5, "calculator.png");
+            this.img_DVMD.Images.SetKeyName(6, "diskette.png");
+            this.img_DVMD.Images.SetKeyName(7, "file_add.png");
+            this.img_DVMD.Images.SetKeyName(8, "file_delete.png");
+            this.img_DVMD.Images.SetKeyName(9, "file_edit.png");
+            this.img_DVMD.Images.SetKeyName(10, "file_search.png");
+            // 
+            // m_cmd_delete
+            // 
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_delete.ImageIndex = 8;
+            this.m_cmd_delete.ImageList = this.img_DVMD;
+            this.m_cmd_delete.Location = new System.Drawing.Point(168, 0);
+            this.m_cmd_delete.Name = "m_cmd_delete";
+            this.m_cmd_delete.Size = new System.Drawing.Size(84, 33);
+            this.m_cmd_delete.TabIndex = 28;
+            this.m_cmd_delete.Text = "&Xóa";
+            // 
+            // m_cmd_update
+            // 
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_update.ImageIndex = 9;
+            this.m_cmd_update.ImageList = this.img_DVMD;
+            this.m_cmd_update.Location = new System.Drawing.Point(84, 0);
+            this.m_cmd_update.Name = "m_cmd_update";
+            this.m_cmd_update.Size = new System.Drawing.Size(84, 33);
+            this.m_cmd_update.TabIndex = 27;
+            this.m_cmd_update.Text = "&Sửa";
             // 
             // m_cmd_insert
             // 
@@ -164,57 +212,11 @@
             this.colSO_LUONG_NS_DANG_CONG_TAC.FieldName = "SO_LUONG_NS_DANG_CONG_TAC";
             this.colSO_LUONG_NS_DANG_CONG_TAC.Name = "colSO_LUONG_NS_DANG_CONG_TAC";
             this.colSO_LUONG_NS_DANG_CONG_TAC.OptionsColumn.ReadOnly = true;
+            this.colSO_LUONG_NS_DANG_CONG_TAC.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
+            this.colSO_LUONG_NS_DANG_CONG_TAC.SortOrder = System.Windows.Forms.SortOrder.Ascending;
             this.colSO_LUONG_NS_DANG_CONG_TAC.Visible = true;
             this.colSO_LUONG_NS_DANG_CONG_TAC.VisibleIndex = 2;
             this.colSO_LUONG_NS_DANG_CONG_TAC.Width = 119;
-            // 
-            // m_cmd_update
-            // 
-            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_update.ImageIndex = 9;
-            this.m_cmd_update.ImageList = this.img_DVMD;
-            this.m_cmd_update.Location = new System.Drawing.Point(84, 0);
-            this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(84, 33);
-            this.m_cmd_update.TabIndex = 27;
-            this.m_cmd_update.Text = "&Sửa";
-            // 
-            // m_cmd_delete
-            // 
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_delete.ImageIndex = 8;
-            this.m_cmd_delete.ImageList = this.img_DVMD;
-            this.m_cmd_delete.Location = new System.Drawing.Point(168, 0);
-            this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(84, 33);
-            this.m_cmd_delete.TabIndex = 28;
-            this.m_cmd_delete.Text = "&Xóa";
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_excel.ImageIndex = 3;
-            this.m_cmd_xuat_excel.ImageList = this.img_DVMD;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(252, 0);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(84, 33);
-            this.m_cmd_xuat_excel.TabIndex = 29;
-            this.m_cmd_xuat_excel.Text = "&Xuất Excel";
-            // 
-            // img_DVMD
-            // 
-            this.img_DVMD.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("img_DVMD.ImageStream")));
-            this.img_DVMD.Images.SetKeyName(0, "Excel-icon.png");
-            this.img_DVMD.Images.SetKeyName(1, "excel-xls-icon.png");
-            this.img_DVMD.Images.SetKeyName(2, "exit-16.ico");
-            this.img_DVMD.Images.SetKeyName(3, "image.png");
-            this.img_DVMD.Images.SetKeyName(4, "Microsoft Excel.png");
-            this.img_DVMD.Images.SetKeyName(5, "calculator.png");
-            this.img_DVMD.Images.SetKeyName(6, "diskette.png");
-            this.img_DVMD.Images.SetKeyName(7, "file_add.png");
-            this.img_DVMD.Images.SetKeyName(8, "file_delete.png");
-            this.img_DVMD.Images.SetKeyName(9, "file_edit.png");
-            this.img_DVMD.Images.SetKeyName(10, "file_search.png");
             // 
             // F101_dm_don_vi
             // 
@@ -226,9 +228,9 @@
             this.Name = "F101_dm_don_vi";
             this.Text = "F101 - Danh mục đơn vị";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_tree_don_vi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
             this.ResumeLayout(false);
 
         }

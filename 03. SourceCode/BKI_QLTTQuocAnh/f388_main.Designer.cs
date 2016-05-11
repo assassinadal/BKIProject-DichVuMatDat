@@ -136,6 +136,7 @@
             this.m_cmd_hd_thay_doi_lns = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_chuyen_trang_thai_LD = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_tu_dien = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -208,7 +209,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.m_cmd_tu_dien = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_chuc_vu = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -348,9 +349,10 @@
             this.m_cmd_hd_thay_doi_lns,
             this.barButtonItem9,
             this.m_cmd_chuyen_trang_thai_LD,
-            this.m_cmd_tu_dien});
+            this.m_cmd_tu_dien,
+            this.m_cmd_chuc_vu});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 144;
+            this.ribbon.MaxItemId = 145;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1338,6 +1340,13 @@
             this.m_cmd_chuyen_trang_thai_LD.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // m_cmd_tu_dien
+            // 
+            this.m_cmd_tu_dien.Caption = "Từ điển";
+            this.m_cmd_tu_dien.Id = 143;
+            this.m_cmd_tu_dien.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_cham_cong;
+            this.m_cmd_tu_dien.Name = "m_cmd_tu_dien";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1379,6 +1388,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_luong_che_do);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_phu_cap);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_danh_muc_don_vi);
+            this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_chuc_vu);
             this.ribbonPageGroup3.ItemLinks.Add(this.c_cmd_danh_muc_bao_hiem);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_dm_nhan_vien);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem9);
@@ -2147,12 +2157,12 @@
             this.barButtonItem8.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // m_cmd_tu_dien
+            // m_cmd_chuc_vu
             // 
-            this.m_cmd_tu_dien.Caption = "Từ điển";
-            this.m_cmd_tu_dien.Id = 143;
-            this.m_cmd_tu_dien.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_cham_cong;
-            this.m_cmd_tu_dien.Name = "m_cmd_tu_dien";
+            this.m_cmd_chuc_vu.Caption = "Chức vụ";
+            this.m_cmd_chuc_vu.Id = 144;
+            this.m_cmd_chuc_vu.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_nhom_nhan_vien;
+            this.m_cmd_chuc_vu.Name = "m_cmd_chuc_vu";
             // 
             // f388_main
             // 
@@ -2387,5 +2397,6 @@
         private System.Windows.Forms.Label m_lbl_so_nv_sap_het_han_hd;
         private DevExpress.XtraBars.BarButtonItem m_cmd_chuyen_trang_thai_LD;
         private DevExpress.XtraBars.BarButtonItem m_cmd_tu_dien;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_chuc_vu;
     }
 }

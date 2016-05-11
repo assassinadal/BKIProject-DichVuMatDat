@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_V_DM_CHUC_VU" targetNamespace="http://tempuri.org/DS_V_DM_CHUC_VU.xsd" xmlns:mstns="http://tempuri.org/DS_V_DM_CHUC_VU.xsd" xmlns="http://tempuri.org/DS_V_DM_CHUC_VU.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DVMDConnectionString6" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DVMDConnectionString6 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_DichVuMatDat.DS.Properties.Settings.GlobalReference.Default.DVMDConnectionString6" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_DM_CHUC_VUTableAdapter" GeneratorDataComponentClassName="V_DM_CHUC_VUTableAdapter" Name="V_DM_CHUC_VU" UserDataComponentName="V_DM_CHUC_VUTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DVMDConnectionString6 (Settings)" DbObjectName="DVMD.dbo.V_DM_CHUC_VU" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, MA_CHUC_VU, TEN_CHUC_VU, SO_THU_TU, ID_DON_VI, ID_LOAI_CHUC_VU, GHI_CHU, TEN_DON_VI, THU_TU_DON_VI, ID_DON_VI_CAP_TREN, MA_DON_VI FROM dbo.V_DM_CHUC_VU</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="MA_CHUC_VU" DataSetColumn="MA_CHUC_VU" />
+              <Mapping SourceColumn="TEN_CHUC_VU" DataSetColumn="TEN_CHUC_VU" />
+              <Mapping SourceColumn="SO_THU_TU" DataSetColumn="SO_THU_TU" />
+              <Mapping SourceColumn="ID_DON_VI" DataSetColumn="ID_DON_VI" />
+              <Mapping SourceColumn="ID_LOAI_CHUC_VU" DataSetColumn="ID_LOAI_CHUC_VU" />
+              <Mapping SourceColumn="GHI_CHU" DataSetColumn="GHI_CHU" />
+              <Mapping SourceColumn="TEN_DON_VI" DataSetColumn="TEN_DON_VI" />
+              <Mapping SourceColumn="THU_TU_DON_VI" DataSetColumn="THU_TU_DON_VI" />
+              <Mapping SourceColumn="ID_DON_VI_CAP_TREN" DataSetColumn="ID_DON_VI_CAP_TREN" />
+              <Mapping SourceColumn="MA_DON_VI" DataSetColumn="MA_DON_VI" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_V_DM_CHUC_VU" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_DM_CHUC_VU" msprop:Generator_UserDSName="DS_V_DM_CHUC_VU">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_DM_CHUC_VU" msprop:Generator_TableClassName="V_DM_CHUC_VUDataTable" msprop:Generator_TableVarName="tableV_DM_CHUC_VU" msprop:Generator_TablePropName="V_DM_CHUC_VU" msprop:Generator_RowDeletingName="V_DM_CHUC_VURowDeleting" msprop:Generator_RowChangingName="V_DM_CHUC_VURowChanging" msprop:Generator_RowEvHandlerName="V_DM_CHUC_VURowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_CHUC_VURowDeleted" msprop:Generator_UserTableName="V_DM_CHUC_VU" msprop:Generator_RowChangedName="V_DM_CHUC_VURowChanged" msprop:Generator_RowEvArgName="V_DM_CHUC_VURowChangeEvent" msprop:Generator_RowClassName="V_DM_CHUC_VURow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="MA_CHUC_VU" msprop:Generator_ColumnVarNameInTable="columnMA_CHUC_VU" msprop:Generator_ColumnPropNameInRow="MA_CHUC_VU" msprop:Generator_ColumnPropNameInTable="MA_CHUC_VUColumn" msprop:Generator_UserColumnName="MA_CHUC_VU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_CHUC_VU" msprop:Generator_ColumnVarNameInTable="columnTEN_CHUC_VU" msprop:Generator_ColumnPropNameInRow="TEN_CHUC_VU" msprop:Generator_ColumnPropNameInTable="TEN_CHUC_VUColumn" msprop:Generator_UserColumnName="TEN_CHUC_VU">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SO_THU_TU" msprop:Generator_ColumnVarNameInTable="columnSO_THU_TU" msprop:Generator_ColumnPropNameInRow="SO_THU_TU" msprop:Generator_ColumnPropNameInTable="SO_THU_TUColumn" msprop:Generator_UserColumnName="SO_THU_TU" type="xs:decimal" />
+              <xs:element name="ID_DON_VI" msprop:Generator_ColumnVarNameInTable="columnID_DON_VI" msprop:Generator_ColumnPropNameInRow="ID_DON_VI" msprop:Generator_ColumnPropNameInTable="ID_DON_VIColumn" msprop:Generator_UserColumnName="ID_DON_VI" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_LOAI_CHUC_VU" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_CHUC_VU" msprop:Generator_ColumnPropNameInRow="ID_LOAI_CHUC_VU" msprop:Generator_ColumnPropNameInTable="ID_LOAI_CHUC_VUColumn" msprop:Generator_UserColumnName="ID_LOAI_CHUC_VU" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GHI_CHU" msprop:Generator_ColumnVarNameInTable="columnGHI_CHU" msprop:Generator_ColumnPropNameInRow="GHI_CHU" msprop:Generator_ColumnPropNameInTable="GHI_CHUColumn" msprop:Generator_UserColumnName="GHI_CHU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_DON_VI" msprop:Generator_ColumnVarNameInTable="columnTEN_DON_VI" msprop:Generator_ColumnPropNameInRow="TEN_DON_VI" msprop:Generator_ColumnPropNameInTable="TEN_DON_VIColumn" msprop:Generator_UserColumnName="TEN_DON_VI">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="THU_TU_DON_VI" msprop:Generator_ColumnVarNameInTable="columnTHU_TU_DON_VI" msprop:Generator_ColumnPropNameInRow="THU_TU_DON_VI" msprop:Generator_ColumnPropNameInTable="THU_TU_DON_VIColumn" msprop:Generator_UserColumnName="THU_TU_DON_VI" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_DON_VI_CAP_TREN" msprop:Generator_ColumnVarNameInTable="columnID_DON_VI_CAP_TREN" msprop:Generator_ColumnPropNameInRow="ID_DON_VI_CAP_TREN" msprop:Generator_ColumnPropNameInTable="ID_DON_VI_CAP_TRENColumn" msprop:Generator_UserColumnName="ID_DON_VI_CAP_TREN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MA_DON_VI" msprop:Generator_ColumnVarNameInTable="columnMA_DON_VI" msprop:Generator_ColumnPropNameInRow="MA_DON_VI" msprop:Generator_ColumnPropNameInTable="MA_DON_VIColumn" msprop:Generator_UserColumnName="MA_DON_VI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_DM_CHUC_VU" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

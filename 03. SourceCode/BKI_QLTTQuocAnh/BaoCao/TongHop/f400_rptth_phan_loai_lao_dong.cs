@@ -1,4 +1,5 @@
 ﻿using BKI_DichVuMatDat.DS.CDBNames;
+using BKI_DichVuMatDat.NghiepVu.NhanSu;
 using BKI_DichVuMatDat.US;
 using DevExpress.XtraSplashScreen;
 using IP.Core.IPCommon;
@@ -57,6 +58,13 @@ namespace BKI_DichVuMatDat.BaoCao.TongHop
         {
             switch(ip_str_focused_column_name)
             {
+                case CONST_COL_PHAN_LOAI_LD_NAME.TONG_SO_HD:
+                    f329_lap_hop_dong_v5 v_frm = new f329_lap_hop_dong_v5();
+                    string v_str_filter = "[ID_DON_VI] = "+ip_dc_id_don_vi + 
+                                            " and NGAY_BAT_DAU <= #"+ m_dat_tai_ngay.DateTime.ToString("MM/dd/yyyy") +"#"+
+                                            " and (NGAY_KET_THUC IS NULL or NGAY_KET_THUC > #" + m_dat_tai_ngay.DateTime.ToString("MM/dd/yyyy") + "#" + ")";
+                    v_frm.display_for_phan_loai_lao_dong(v_str_filter);
+                    break;
                 default:
                     break;
             }

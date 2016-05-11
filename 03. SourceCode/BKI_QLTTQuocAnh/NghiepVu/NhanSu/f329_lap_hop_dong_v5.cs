@@ -27,8 +27,8 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             InitializeComponent();
             set_define_events();
+            m_dat_tai_thang.DateTime = DateTime.Now.Date;
         }
-
         public f329_lap_hop_dong_v5(DateTime ip_datetime, bool ip_trang_thai_filter)
         {
             InitializeComponent();
@@ -46,6 +46,12 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
             this.CenterToParent();
             this.ShowDialog();
+        }
+        public void display_for_phan_loai_lao_dong(string ip_str_filter)
+        {
+            radioButton1.Checked = true;
+            m_grv.ActiveFilterString = ip_str_filter;
+            ShowDialog();
         }
         #endregion
 
@@ -89,7 +95,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         private void set_initial_form_load()
         {
             load_data_cau_hinh_in();
-            m_dat_tai_thang.DateTime = DateTime.Now.Date;
+            
             US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
 
             load_data_to_grid();

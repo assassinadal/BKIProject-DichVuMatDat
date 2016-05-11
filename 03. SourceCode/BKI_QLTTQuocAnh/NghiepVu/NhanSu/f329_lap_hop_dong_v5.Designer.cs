@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f329_lap_hop_dong_v5));
             this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,7 +61,7 @@
             this.colLOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
+            this.img_DVMD = new DevExpress.Utils.ImageCollection();
             this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_print = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
@@ -74,6 +73,8 @@
             this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.colID_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colID_CHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
@@ -155,7 +156,9 @@
             this.colNGAY_CAP_CMT,
             this.colNOI_CAP,
             this.colGHI_CHU,
-            this.colLOAI_HOP_DONG});
+            this.colLOAI_HOP_DONG,
+            this.colID_DON_VI,
+            this.colID_CHUC_VU});
             styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Pink;
             styleFormatCondition1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
             styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Firebrick;
@@ -653,6 +656,18 @@
             this.radioButton1.Text = "Tất cả";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // colID_DON_VI
+            // 
+            this.colID_DON_VI.Caption = "ID_DON_VI";
+            this.colID_DON_VI.FieldName = "ID_DON_VI";
+            this.colID_DON_VI.Name = "colID_DON_VI";
+            // 
+            // colID_CHUC_VU
+            // 
+            this.colID_CHUC_VU.Caption = "ID_CHUC_VU";
+            this.colID_CHUC_VU.FieldName = "ID_CHUC_VU";
+            this.colID_CHUC_VU.Name = "colID_CHUC_VU";
+            // 
             // f329_lap_hop_dong_v5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -724,5 +739,7 @@
         private DevExpress.XtraEditors.DateEdit m_dat_tai_thang;
         private DevExpress.XtraGrid.Columns.GridColumn colGHI_CHU;
         private DevExpress.XtraGrid.Columns.GridColumn colLOAI_HOP_DONG;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_DON_VI;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_CHUC_VU;
     }
 }

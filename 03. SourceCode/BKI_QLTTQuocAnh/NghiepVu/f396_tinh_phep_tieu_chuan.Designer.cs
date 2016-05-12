@@ -249,6 +249,7 @@
             this.gridColumn4.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn4.Caption = "Chức vụ";
             this.gridColumn4.FieldName = "CHUC_VU";
+            this.gridColumn4.FieldNameSortGroup = "THU_TU_CHUC_VU";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
@@ -311,6 +312,7 @@
             this.gridColumn8.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn8.Caption = "Đơn vị";
             this.gridColumn8.FieldName = "TEN_DON_VI";
+            this.gridColumn8.FieldNameSortGroup = "THU_TU_DON_VI";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 2;

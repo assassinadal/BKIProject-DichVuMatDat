@@ -34,6 +34,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             InitializeComponent();
             radioButton1.Checked = true;
             set_define_events();
+            m_dat_tai_thang.DateTime = DateTime.Now.Date;
             string v_str = ip_datetime.ToString("MM/dd/yyyy");
             string v_str_ngay_hien_tai = DateTime.Now.ToString("MM/dd/yyyy");
             if(ip_trang_thai_filter == true)
@@ -47,6 +48,49 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             this.CenterToParent();
             this.ShowDialog();
         }
+
+        public f329_lap_hop_dong_v5(string ip_ten_dv, DateTime m_dat_tu_ngay, DateTime m_dat_den_ngay, int ip_index_col)
+        {
+            InitializeComponent();
+            radioButton1.Checked = true;
+            set_define_events();
+            m_dat_tai_thang.DateTime = DateTime.Now.Date;
+            string v_str_tu_ngay = m_dat_tu_ngay.ToString("MM/dd/yyyy");
+            string v_str_den_ngay = m_dat_den_ngay.ToString("MM/dd/yyyy");
+            string v_filter_dv = "[TEN_DON_VI] = '" + ip_ten_dv + "'";
+            filter_danh_sach_hop_dong(v_filter_dv, v_str_tu_ngay, v_str_den_ngay, ip_index_col);
+            this.CenterToParent();
+            this.ShowDialog();
+        }
+
+        private void filter_danh_sach_hop_dong(string v_filter_dv, string v_str_tu_ngay, string v_str_den_ngay, int ip_index_col)
+        {
+            string v_filter_ngay_bd = "";
+            string v_filter_ngay_kt = "";
+            if (ip_index_col == 1)
+            {
+                v_filter_ngay_bd = "[NGAY_BAT_DAU] < #" + v_str_tu_ngay + "#";
+                v_filter_ngay_kt = "([NGAY_KET_THUC] IS NULL OR [NGAY_KET_THUC] >= #" + v_str_tu_ngay + "#)";
+                m_grv.ActiveFilterString = v_filter_dv + "AND" + v_filter_ngay_bd + "AND" + v_filter_ngay_kt;
+            }
+            else if (ip_index_col == 4)
+            {
+                v_filter_ngay_bd = "[NGAY_BAT_DAU] < #" + v_str_den_ngay + "#";
+                v_filter_ngay_kt = "([NGAY_KET_THUC] IS NULL OR [NGAY_KET_THUC] >= #" + v_str_den_ngay + "#)";
+                m_grv.ActiveFilterString = v_filter_dv + "AND" + v_filter_ngay_bd + "AND" + v_filter_ngay_kt;
+            }
+            else if (ip_index_col == 2)
+            {
+                v_filter_ngay_bd = "[NGAY_BAT_DAU] >= #" + v_str_tu_ngay + "# AND [NGAY_BAT_DAU] <= #" + v_str_den_ngay + "#";
+                m_grv.ActiveFilterString = v_filter_dv + "AND" + v_filter_ngay_bd;
+            }
+            else if (ip_index_col == 3)
+            {
+                v_filter_ngay_kt = "[NGAY_KET_THUC] >= #" + v_str_tu_ngay + "# AND [NGAY_KET_THUC] <= #" + v_str_den_ngay + "#";
+                m_grv.ActiveFilterString = v_filter_dv + "AND" + v_filter_ngay_kt;
+            }
+        }
+
         public void display_for_phan_loai_lao_dong(string ip_str_filter)
         {
             radioButton1.Checked = true;
@@ -60,6 +104,12 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         string m_output_path;
         DataRow m_dt_row;
         DS_CM_DM_TU_DIEN m_ds_cau_hinh_in = new DS_CM_DM_TU_DIEN();
+        private decimal ip_id_don_vi;
+        private DateTime dateTime;
+        private string v_str_ten_dv;
+        private DateTime dateTime1;
+        private DateTime dateTime2;
+        private int v_index_column;
         #endregion
 
         #region Private Method

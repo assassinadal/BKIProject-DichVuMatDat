@@ -590,5 +590,18 @@ public class US_GD_HOP_DONG : US_Object
         v_cstore.fillDataSetByCommand(this, v_ds);
         return v_ds;
     }
+
+
+
+    public DataSet FillDatasetBCTangGiamLD(DateTime ip_tu_ngay, DateTime ip_den_ngay)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_bc_tang_giam_lao_dong");
+        v_cstore.addDatetimeInputParam("@ip_tu_ngay", ip_tu_ngay);
+        v_cstore.addDatetimeInputParam("@ip_den_ngay", ip_den_ngay);
+        DataSet v_ds = new DataSet();
+        v_ds.Tables.Add(new DataTable());
+        v_cstore.fillDataSetByCommand(this, v_ds);
+        return v_ds;
+    }
 }
 }

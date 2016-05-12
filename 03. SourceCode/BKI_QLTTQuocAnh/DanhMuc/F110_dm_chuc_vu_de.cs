@@ -35,6 +35,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         internal void display_for_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.CenterToParent();
             this.ShowDialog();
         }
 
@@ -44,6 +45,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_us = ip_us;
             us_to_form(ip_us);
             m_sle_don_vi.Enabled = false;
+            this.CenterToParent();
             this.ShowDialog();
         }
         #endregion

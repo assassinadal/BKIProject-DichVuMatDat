@@ -63,7 +63,7 @@
             this.m_cmd_dm_loai_hop_dong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_loai_ngay_cong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_thue = new DevExpress.XtraBars.BarButtonItem();
-            this.m_cmd_dat_hs_lns_lcd = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_phep_tieu_chuan = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_quan_ly_vi_tri_cong_tac = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_he_so_luong_ns = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_dm_luong_che_do = new DevExpress.XtraBars.BarButtonItem();
@@ -276,7 +276,7 @@
             this.m_cmd_dm_loai_hop_dong,
             this.m_cmd_dm_loai_ngay_cong,
             this.m_cmd_dm_thue,
-            this.m_cmd_dat_hs_lns_lcd,
+            this.m_cmd_phep_tieu_chuan,
             this.m_cmd_quan_ly_vi_tri_cong_tac,
             this.m_cmd_dm_he_so_luong_ns,
             this.m_cmd_dm_luong_che_do,
@@ -670,16 +670,15 @@
             this.m_cmd_dm_thue.Name = "m_cmd_dm_thue";
             this.m_cmd_dm_thue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_dm_thue_ItemClick);
             // 
-            // m_cmd_dat_hs_lns_lcd
+            // m_cmd_phep_tieu_chuan
             // 
-            this.m_cmd_dat_hs_lns_lcd.Caption = "Đặt hệ số LNS, LCĐ";
-            this.m_cmd_dat_hs_lns_lcd.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_dat_hs_lns_lcd.Glyph")));
-            this.m_cmd_dat_hs_lns_lcd.Id = 44;
-            this.m_cmd_dat_hs_lns_lcd.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_dat_he_so_LNS_;
-            this.m_cmd_dat_hs_lns_lcd.Name = "m_cmd_dat_hs_lns_lcd";
-            this.m_cmd_dat_hs_lns_lcd.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.m_cmd_phep_tieu_chuan.Caption = "Phép tiêu chuẩn";
+            this.m_cmd_phep_tieu_chuan.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_phep_tieu_chuan.Glyph")));
+            this.m_cmd_phep_tieu_chuan.Id = 44;
+            this.m_cmd_phep_tieu_chuan.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_dat_he_so_LNS_;
+            this.m_cmd_phep_tieu_chuan.Name = "m_cmd_phep_tieu_chuan";
+            this.m_cmd_phep_tieu_chuan.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.m_cmd_dat_hs_lns_lcd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_quan_ly_vi_tri_cong_tac
             // 
@@ -1424,6 +1423,7 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem5);
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_quan_ly_khong_dong_bh);
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_chuyen_trang_thai_LD);
+            this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_phep_tieu_chuan);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Quản lý nghiệp vụ nhân sự";
             // 
@@ -1444,7 +1444,6 @@
             // ribbonPageGroup10
             // 
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_nhan_vien_loai_lao_dong);
-            this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_dat_hs_lns_lcd);
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_dang_ky_bao_hiem_y_te);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Khác";
@@ -2260,7 +2259,7 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_loai_hop_dong;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_loai_ngay_cong;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_thue;
-        private DevExpress.XtraBars.BarButtonItem m_cmd_dat_hs_lns_lcd;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_phep_tieu_chuan;
         private DevExpress.XtraBars.BarButtonItem m_cmd_quan_ly_vi_tri_cong_tac;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_he_so_luong_ns;
         private DevExpress.XtraBars.BarButtonItem m_cmd_dm_luong_che_do;

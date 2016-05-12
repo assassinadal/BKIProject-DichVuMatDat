@@ -40,7 +40,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             DataSet v_ds = new DataSet();
             US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
             v_ds.Tables.Add(new DataTable());
-            v_us.FillDatasetNgayPhepTieuChuan(v_ds, m_dat_nam.DateTime.Year.ToString(), -1);
+            v_us.FillDatasetNgayPhepTieuChuan(v_ds, m_dat_nam.DateTime.Date, -1);
             m_grc_phep_tieu_chuan.DataSource = v_ds.Tables[0];
         }
         #endregion
@@ -76,6 +76,18 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
         }
         #endregion
+
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CHRMCommon.ExportExcel(gridView1);
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         
 

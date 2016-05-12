@@ -362,7 +362,7 @@ namespace BKI_DichVuMatDat
             m_cmd_cham_cong_nv.ItemClick += m_cmd_cham_cong_nv_ItemClick;
             m_cmd_lap_hop_dong.ItemClick += m_cmd_lap_hop_dong_ItemClick;
             m_cmd_len_luong_cho_nv.ItemClick += m_cmd_len_luong_cho_nv_ItemClick;
-            m_cmd_dat_hs_lns_lcd.ItemClick += m_cmd_dat_hs_lns_lcd_ItemClick;
+            m_cmd_phep_tieu_chuan.ItemClick += m_cmd_dat_hs_lns_lcd_ItemClick;
             m_cmd_quan_ly_qd.ItemClick += m_cmd_quan_ly_qd_ItemClick;
             m_cmd_hs_chat_luong_xls.ItemClick += m_cmd_them_hs_chat_luong_ItemClick;
             m_cmd_hs_chat_luong_by_nv.ItemClick += m_cmd_hs_chat_luong_by_nv_ItemClick;
@@ -1260,12 +1260,10 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f340_dat_hs_lns_lcd v_frm = new f340_dat_hs_lns_lcd();
-                //f341_dat_he_so_lns_lcd_v2 v_frm = new f341_dat_he_so_lns_lcd_v2();
-                if (IsExistFormName(v_frm)) return;
-
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                f396_tinh_phep_tieu_chuan v_f = new f396_tinh_phep_tieu_chuan();
+                if(IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
             }
             catch (Exception v_e)
             {

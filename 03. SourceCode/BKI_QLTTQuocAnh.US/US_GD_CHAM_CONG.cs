@@ -249,11 +249,10 @@ namespace BKI_DichVuMatDat.US
         }
         #endregion
 
-        public void FillDatasetNgayPhepTieuChuan(DataSet v_ds, string ip_nam_tinh_phep, decimal ip_id_nhan_vien)
+        public void FillDatasetNgayPhepTieuChuan(DataSet v_ds, DateTime ip_nam_tinh_phep, decimal ip_id_nhan_vien)
         {
             CStoredProc v_cstore = new CStoredProc("PR_GET_PHEP_TIEU_CHUAN");
-            v_cstore.addNVarcharInputParam("@nam_tinh_phep", ip_nam_tinh_phep);
-            v_cstore.addDecimalInputParam("@dc_id_nhan_vien", ip_id_nhan_vien);
+            v_cstore.addDatetimeInputParam("@DAT_NAM_TINH_PHEP", ip_nam_tinh_phep);
             v_cstore.fillDataSetByCommand(this, v_ds);
         }
 

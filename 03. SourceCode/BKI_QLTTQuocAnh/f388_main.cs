@@ -1598,12 +1598,10 @@ namespace BKI_DichVuMatDat
             //if (IsExistFormName(v_frm)) return;
             //v_frm.MdiParent = this;
             //v_frm.Show();
-            SplashScreenManager.ShowForm(typeof(F_wait_form));
             f400_rptth_phan_loai_lao_dong v_frm = new f400_rptth_phan_loai_lao_dong();
-            if(IsExistFormName(v_frm)) { SplashScreenManager.ShowForm(typeof(F_wait_form)); return; }
+            if(IsExistFormName(v_frm)) { return; }
             v_frm.MdiParent = this;
             v_frm.Show();
-            SplashScreenManager.CloseForm();
         }
 
         private void m_cmd_tk_ns_tong_hop_ItemClick(object sender, ItemClickEventArgs e)

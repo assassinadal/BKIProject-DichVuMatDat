@@ -1097,11 +1097,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                //BackupDB v_frm = new BackupDB();
-                //if(IsExistFormName(v_frm)) return;
+                frm_backup_restore v_frm = new frm_backup_restore();
+                if(IsExistFormName(v_frm)) return;
 
-                //v_frm.MdiParent = this;
-                //v_frm.Show();
+                v_frm.MdiParent = this;
+                v_frm.Show();
             }
             catch (Exception v_e)
             {

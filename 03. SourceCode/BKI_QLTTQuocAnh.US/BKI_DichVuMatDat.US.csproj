@@ -92,6 +92,7 @@
     <Compile Include="US_GD_THU_NHAP_KHAC.cs" />
     <Compile Include="US_GD_TIEN_THUONG_NHAN_VIEN.cs" />
     <Compile Include="US_GD_TRANG_THAI_LAO_DONG.cs" />
+    <Compile Include="US_HT_BACKUP_HISTORY.cs" />
     <Compile Include="US_HT_FORM.cs" />
     <Compile Include="US_HT_NHOM_NGUOI_SU_DUNG.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_CHO_NHOM.cs" />

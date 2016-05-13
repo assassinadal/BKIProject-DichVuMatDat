@@ -18,7 +18,7 @@ using System.Data.OleDb;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.Utils.Menu;
 using System.IO;
-using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop;
 using System.Reflection;
 using DevExpress.XtraEditors;
 using System.Linq;

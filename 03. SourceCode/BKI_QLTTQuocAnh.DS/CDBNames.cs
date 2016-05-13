@@ -5,6 +5,15 @@ using System.Text;
 namespace BKI_DichVuMatDat.DS.CDBNames
 {
     #region HE_THONG
+    public class HT_BACKUP_HISTORY
+    {
+        public const string ID = "ID";
+        public const string NGUOI_BACKUP = "NGUOI_BACKUP";
+        public const string NGAY_BACKUP = "NGAY_BACKUP";
+        public const string NOI_LUU = "NOI_LUU";
+        public const string TEN_FILE = "TEN_FILE";
+        public const string GhI_CHU = "GhI_CHU";
+    }
     public class HT_FORM
     {
         public const string ID = "ID";

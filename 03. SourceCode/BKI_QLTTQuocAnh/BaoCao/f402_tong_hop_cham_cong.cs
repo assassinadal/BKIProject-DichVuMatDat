@@ -15,7 +15,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraPivotGrid;
-using Excel = Microsoft.Office.Interop.Excel;
+using ExcelR = Microsoft.Office.Interop.Excel;
 
 
 namespace BKI_DichVuMatDat.BaoCao
@@ -102,10 +102,10 @@ namespace BKI_DichVuMatDat.BaoCao
                 {
                     m_pv.ExportToXls(dest_file);
                     XtraMessageBox.Show("Đã lưu báo cáo tại " + dest_file+"\nFile sẽ tự động mở ngay sau đây!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    var excel = new Excel.Application();
+                    var excel = new ExcelR.Application();
                     excel.Visible = true;
-                    Excel.Workbooks books = excel.Workbooks;
-                    Excel.Workbook openexcel = books.Open(dest_file);
+                    ExcelR.Workbooks books = excel.Workbooks;
+                    ExcelR.Workbook openexcel = books.Open(dest_file);
                     this.Close();
                 }
             }

@@ -1680,7 +1680,7 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f435_bao_cao_lao_dong_nuoc_ngoai v_f = new f435_bao_cao_lao_dong_nuoc_ngoai();
+                frm419_bao_cao_thay_doi_cong_tac v_f = new frm419_bao_cao_thay_doi_cong_tac();
                 if(IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f388_main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_doi_mat_khau = new DevExpress.XtraBars.BarButtonItem();
@@ -164,10 +163,10 @@
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.m_pn_sap_ket_thuc_ttld = new DevExpress.XtraEditors.PanelControl();
@@ -975,7 +974,7 @@
             // 
             // m_cmd_tk_lao_dong_nuoc_ngoai
             // 
-            this.m_cmd_tk_lao_dong_nuoc_ngoai.Caption = "Thống kê lao động nước ngoài";
+            this.m_cmd_tk_lao_dong_nuoc_ngoai.Caption = "Biến động công tác";
             this.m_cmd_tk_lao_dong_nuoc_ngoai.Id = 79;
             this.m_cmd_tk_lao_dong_nuoc_ngoai.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_nhom_nhan_vien;
             this.m_cmd_tk_lao_dong_nuoc_ngoai.Name = "m_cmd_tk_lao_dong_nuoc_ngoai";
@@ -1543,6 +1542,7 @@
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_tk_ns_dv);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_bc_tang_giam_ld);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_tk_hop_dong);
+            this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_tk_lao_dong_nuoc_ngoai);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_thong_ke_nhan_vien);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_bc_qua_trinh_ct);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_card_nhan_vien);
@@ -1551,7 +1551,6 @@
             // 
             // ribbonPageGroup18
             // 
-            this.ribbonPageGroup18.ItemLinks.Add(this.m_cmd_tk_lao_dong_nuoc_ngoai);
             this.ribbonPageGroup18.ItemLinks.Add(this.m_cmd_thong_tin_nhan_vien);
             this.ribbonPageGroup18.ItemLinks.Add(this.m_cmd_bao_cao_nhan_su_bo_nhiem);
             this.ribbonPageGroup18.ItemLinks.Add(this.m_cmd_bao_cao_hs_lns_lcd_nhan_vien);

@@ -859,7 +859,7 @@
             // 
             // m_cmd_tk_hop_dong
             // 
-            this.m_cmd_tk_hop_dong.Caption = "Báo cáo biến động hợp đồng";
+            this.m_cmd_tk_hop_dong.Caption = "Biến động hệ số LNS";
             this.m_cmd_tk_hop_dong.Glyph = global::BKI_DichVuMatDat.Properties.Resources.Hopstarter_Soft_Scraps_User_Group1;
             this.m_cmd_tk_hop_dong.Id = 65;
             this.m_cmd_tk_hop_dong.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_thong_ke_nhan_su_theo_don_vi_;
@@ -966,7 +966,7 @@
             // 
             // m_cmd_bc_tang_giam_ld
             // 
-            this.m_cmd_bc_tang_giam_ld.Caption = "Báo cáo biến động hợp đồng";
+            this.m_cmd_bc_tang_giam_ld.Caption = "Biến động hợp đồng";
             this.m_cmd_bc_tang_giam_ld.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_quan_ly_vi_tri_cong_tac_;
             this.m_cmd_bc_tang_giam_ld.Id = 78;
             this.m_cmd_bc_tang_giam_ld.Name = "m_cmd_bc_tang_giam_ld";
@@ -1542,6 +1542,7 @@
             // 
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_tk_ns_dv);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_bc_tang_giam_ld);
+            this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_tk_hop_dong);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_thong_ke_nhan_vien);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_bc_qua_trinh_ct);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_card_nhan_vien);
@@ -1550,7 +1551,6 @@
             // 
             // ribbonPageGroup18
             // 
-            this.ribbonPageGroup18.ItemLinks.Add(this.m_cmd_tk_hop_dong);
             this.ribbonPageGroup18.ItemLinks.Add(this.m_cmd_tk_lao_dong_nuoc_ngoai);
             this.ribbonPageGroup18.ItemLinks.Add(this.m_cmd_thong_tin_nhan_vien);
             this.ribbonPageGroup18.ItemLinks.Add(this.m_cmd_bao_cao_nhan_su_bo_nhiem);

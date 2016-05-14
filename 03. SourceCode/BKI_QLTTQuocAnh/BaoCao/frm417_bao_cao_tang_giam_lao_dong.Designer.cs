@@ -39,9 +39,9 @@
             this.m_tree_list = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn4 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn5 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_den_ngay.Properties.CalendarTimeProperties)).BeginInit();
@@ -180,15 +180,6 @@
             this.treeListColumn2.VisibleIndex = 1;
             this.treeListColumn2.Width = 133;
             // 
-            // treeListColumn3
-            // 
-            this.treeListColumn3.Caption = "Cuối kỳ";
-            this.treeListColumn3.FieldName = "SO_LUONG_CUOI_KY";
-            this.treeListColumn3.Name = "treeListColumn3";
-            this.treeListColumn3.Visible = true;
-            this.treeListColumn3.VisibleIndex = 4;
-            this.treeListColumn3.Width = 134;
-            // 
             // treeListColumn4
             // 
             this.treeListColumn4.Caption = "Số lượng tăng";
@@ -207,6 +198,15 @@
             this.treeListColumn5.VisibleIndex = 3;
             this.treeListColumn5.Width = 133;
             // 
+            // treeListColumn3
+            // 
+            this.treeListColumn3.Caption = "Cuối kỳ";
+            this.treeListColumn3.FieldName = "SO_LUONG_CUOI_KY";
+            this.treeListColumn3.Name = "treeListColumn3";
+            this.treeListColumn3.Visible = true;
+            this.treeListColumn3.VisibleIndex = 4;
+            this.treeListColumn3.Width = 134;
+            // 
             // frm417_bao_cao_tang_giam_lao_dong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,7 +215,7 @@
             this.Controls.Add(this.m_tree_list);
             this.Controls.Add(this.panelControl1);
             this.Name = "frm417_bao_cao_tang_giam_lao_dong";
-            this.Text = "F417 - Báo cáo tăng giảm lao động";
+            this.Text = "F417 - Báo cáo biến động hợp đồng";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

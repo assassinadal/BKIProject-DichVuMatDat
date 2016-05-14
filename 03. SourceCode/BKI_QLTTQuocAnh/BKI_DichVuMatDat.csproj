@@ -411,6 +411,12 @@
     <Compile Include="BaoCao\f492_quyet_toan_thue_TNCN.Designer.cs">
       <DependentUpon>f492_quyet_toan_thue_TNCN.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\frm418_bao_cao_bien_dong_hs_lns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\frm418_bao_cao_bien_dong_hs_lns.Designer.cs">
+      <DependentUpon>frm418_bao_cao_bien_dong_hs_lns.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\Luong\f495_thong_tin_chot_bang_luong_thang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1257,6 +1263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f492_quyet_toan_thue_TNCN.resx">
       <DependentUpon>f492_quyet_toan_thue_TNCN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\frm418_bao_cao_bien_dong_hs_lns.resx">
+      <DependentUpon>frm418_bao_cao_bien_dong_hs_lns.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\Luong\f495_thong_tin_chot_bang_luong_thang.resx">
       <DependentUpon>f495_thong_tin_chot_bang_luong_thang.cs</DependentUpon>

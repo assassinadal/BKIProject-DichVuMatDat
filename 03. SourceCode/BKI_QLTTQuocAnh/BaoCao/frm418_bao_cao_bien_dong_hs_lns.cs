@@ -15,10 +15,10 @@ using BKI_DichVuMatDat.NghiepVu.NhanSu;
 
 namespace BKI_DichVuMatDat.BaoCao
 {
-    public partial class frm417_bao_cao_tang_giam_lao_dong : Form
+    public partial class frm418_bao_cao_bien_dong_hs_lns : Form
     {
         #region Public Interface
-        public frm417_bao_cao_tang_giam_lao_dong()
+        public frm418_bao_cao_bien_dong_hs_lns()
         {
             InitializeComponent();
             set_initial_form_load();
@@ -35,11 +35,10 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void load_data_to_grid()
         {
-            US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
-            DataTable v_dt= v_us.FillDatasetBCTangGiamLD( m_dat_tu_ngay.DateTime, m_dat_den_ngay.DateTime).Tables[0];
-            m_tree_list.ParentFieldName = DM_DON_VI.ID_DON_VI_CAP_TREN;
-            m_tree_list.DataSource = v_dt;
-            m_tree_list.ExpandAll();
+            US_GD_HE_SO_LNS v_us = new US_GD_HE_SO_LNS();
+            DataTable v_dt = v_us.FillDatasetBCBienDong(m_dat_tu_ngay.DateTime, m_dat_den_ngay.DateTime);
+            m_grc.DataSource = v_dt;
+            CHRMCommon.make_stt(m_grv);
         }
 
         #endregion
@@ -50,33 +49,18 @@ namespace BKI_DichVuMatDat.BaoCao
             this.Load += frm417_bao_cao_tang_giam_lao_dong_Load;
             m_cmd_search.Click += m_cmd_search_Click;
             m_cmd_export.Click += m_cmd_export_Click;
-            m_tree_list.DoubleClick += m_tree_list_DoubleClick;
-        }
-
-        void m_tree_list_DoubleClick(object sender, EventArgs e)
-        {
-            try
-            {
-                string v_str_ten_dv = m_tree_list.FocusedNode.GetValue("TEN_DON_VI").ToString();
-                int v_index_column = m_tree_list.Columns.IndexOf(m_tree_list.FocusedColumn);
-                f329_lap_hop_dong_v5 v_f = new f329_lap_hop_dong_v5(v_str_ten_dv, m_dat_tu_ngay.DateTime, m_dat_den_ngay.DateTime, v_index_column);
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
         }
 
         void m_cmd_export_Click(object sender, EventArgs e)
         {
             try
             {
-                string op_file_name = "Báo cáo biến động hợp đồng";
+                string op_file_name = "Báo cáo thay đổi LNS";
                 string dest_file = WinFormControls.saveFileDialog(op_file_name);
-                if (dest_file !="")
+                if(dest_file != "")
                 {
-                    m_tree_list.ExportToXlsx(dest_file);
-                    XtraMessageBox.Show("Đã lưu báo cáo tại " + dest_file+"\nFile sẽ tự động mở ngay sau đây!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    m_grv.ExportToXlsx(dest_file);
+                    XtraMessageBox.Show("Đã lưu báo cáo tại " + dest_file + "\nFile sẽ tự động mở ngay sau đây!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     var excel = new Microsoft.Office.Interop.Excel.Application();
                     excel.Visible = true;
                     Microsoft.Office.Interop.Excel.Workbooks books = excel.Workbooks;
@@ -84,7 +68,7 @@ namespace BKI_DichVuMatDat.BaoCao
                     this.Close();
                 }
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -96,7 +80,7 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 load_data_to_grid();
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -108,12 +92,12 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 load_data_to_grid();
             }
-            catch (Exception v_e)
+            catch(Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        
-        #endregion 
+
+        #endregion
     }
 }

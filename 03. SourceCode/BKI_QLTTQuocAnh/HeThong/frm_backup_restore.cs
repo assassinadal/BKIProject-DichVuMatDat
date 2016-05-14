@@ -32,8 +32,9 @@ namespace BKI_DichVuMatDat.HeThong
             Server myServer = new Server(conn);
             return myServer;
         }
-        private void BackupDataBase(string databaseName, string destinationPath)
+        private void BackupDataBase(string databaseName)
         {
+            var destinationPath = "HRM_PVMD_v" + DateTime.Now.Year + "." + DateTime.Now.Month + "." + DateTime.Now.Day + "." + DateTime.Now.Hour + "h." + DateTime.Now.Minute + "p.bak";
             Server myServer = GetServer();
             Backup backup = new Backup();
             backup.Action = BackupActionType.Database;
@@ -47,14 +48,28 @@ namespace BKI_DichVuMatDat.HeThong
             backup.LogTruncation = BackupTruncateLogType.Truncate;
             // Perform backup.
             US_HT_BACKUP_HISTORY v_us = new US_HT_BACKUP_HISTORY();
-            v_us.strNGUOI_BACKUP = CAppContext_201.getCurrentUserName();
-            v_us.datNGAY_BACKUP = DateTime.Now.Date;
-            v_us.strNOI_LUU = destinationPath;
-            v_us.Insert();
-            backup.SqlBackup(myServer);
-            
-            //v_us.strTEN_FILE = 
-            //v_us.strNGUOI_BACKUP = CAppContext201.get
+            try
+            {
+
+                v_us.BeginTransaction();
+                v_us.strNGUOI_BACKUP = CAppContext_201.getCurrentUserName();
+                v_us.datNGAY_BACKUP = DateTime.Now.Date;
+                v_us.strNOI_LUU = destinationPath;
+                v_us.Insert();
+                
+                v_us.CommitTransaction();
+                backup.SqlBackup(myServer);
+            }
+            catch(Exception)
+            {
+                if(v_us.is_having_transaction())
+                {
+                    v_us.Rollback();
+                }
+                throw;
+            }
+
+            XtraMessageBox.Show("Sao lưu File : +" + destinationPath + " thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void RestoreDataBase(string BackupFilePath,
@@ -76,7 +91,7 @@ namespace BKI_DichVuMatDat.HeThong
             //myRestore.SqlRestore(myServer);
             //currentDb = myServer.Databases[destinationDatabaseName];
             //currentDb.SetOnline();
-            
+
             Restore rstDatabase = new Restore();
             rstDatabase.Action = RestoreActionType.Database;
             rstDatabase.Database = destinationDatabaseName;
@@ -120,17 +135,15 @@ namespace BKI_DichVuMatDat.HeThong
                 var v_dgl_confirm = XtraMessageBox.Show("Bạn có chắc chắn muốn sao lưu dữ liệu hiện tại?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(v_dgl_confirm == System.Windows.Forms.DialogResult.Yes)
                 {
-                    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-                    saveFileDialog1.Filter = "bak files *.bak|*.bak";
+                    //SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                    //saveFileDialog1.Filter = "bak files *.bak|*.bak";
                     ///saveFileDialog1.RestoreDirectory = true;
                     ///
-                    saveFileDialog1.FileName = "HRM_PVMD_v" + DateTime.Now.Year + "_" + DateTime.Now.Month + "_" + DateTime.Now.Day + "_" + DateTime.Now.Hour + "h_" + DateTime.Now.Minute+"p";
-                    if(saveFileDialog1.ShowDialog() == DialogResult.OK)
-                    {
-                        BackupDataBase(dbName, saveFileDialog1.FileName);
-                        XtraMessageBox.Show("Backup thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        load_data_to_grid();
-                    }
+                    //saveFileDialog1.FileName = "HRM_PVMD_v" + DateTime.Now.Year + "_" + DateTime.Now.Month + "_" + DateTime.Now.Day + "_" + DateTime.Now.Hour + "h_" + DateTime.Now.Minute+"p";
+
+                    BackupDataBase(dbName);
+
+                    load_data_to_grid();
                 }
             }
             catch(Exception v_e)
@@ -163,17 +176,10 @@ namespace BKI_DichVuMatDat.HeThong
                 var v_dgl_confirm = XtraMessageBox.Show("Bạn có chắc chắn muốn phục hồi dữ liệu đã sao lưu trước đó?\nViệc phục hồi sẽ đưu dữ liệu về phiên bản bạn chọn!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(v_dgl_confirm == System.Windows.Forms.DialogResult.Yes)
                 {
-                    OpenFileDialog saveFileDialog1 = new OpenFileDialog();
-                    saveFileDialog1.Filter = "bak files *.bak|*.bak";
-                    ///saveFileDialog1.RestoreDirectory = true;
-                    ///
-                    saveFileDialog1.CheckPathExists = false;
-                    if(saveFileDialog1.ShowDialog() == DialogResult.OK)
-                    {
-                        RestoreDataBase(saveFileDialog1.FileName, dbName);
-                        XtraMessageBox.Show("Phục hồi dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        load_data_to_grid();
-                    }
+                    var dbPathToRestore = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "NOI_LUU").ToString();
+                    RestoreDataBase(dbPathToRestore, dbName);
+                    XtraMessageBox.Show("Phục hồi dữ liệu " + dbPathToRestore + " thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    load_data_to_grid();
                 }
             }
             catch(Exception v_e)

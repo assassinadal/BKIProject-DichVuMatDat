@@ -864,7 +864,6 @@
             this.m_cmd_tk_hop_dong.Id = 65;
             this.m_cmd_tk_hop_dong.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_thong_ke_nhan_su_theo_don_vi_;
             this.m_cmd_tk_hop_dong.Name = "m_cmd_tk_hop_dong";
-            this.m_cmd_tk_hop_dong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_tk_ns_tong_hop_ItemClick);
             // 
             // m_cmd_bc_hs_bs_hs_athk
             // 

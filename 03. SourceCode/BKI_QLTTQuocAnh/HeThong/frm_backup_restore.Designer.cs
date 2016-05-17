@@ -123,7 +123,7 @@
             this.colNOI_LUU.AppearanceHeader.Options.UseTextOptions = true;
             this.colNOI_LUU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colNOI_LUU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colNOI_LUU.Caption = "Nơi lưu trữ";
+            this.colNOI_LUU.Caption = "Tên File";
             this.colNOI_LUU.FieldName = "NOI_LUU";
             this.colNOI_LUU.Name = "colNOI_LUU";
             this.colNOI_LUU.Visible = true;

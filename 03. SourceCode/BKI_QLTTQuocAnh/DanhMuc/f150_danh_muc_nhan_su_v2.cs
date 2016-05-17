@@ -210,8 +210,8 @@ namespace BKI_DichVuMatDat.DanhMuc
             if (m_dat_ngay_sinh.Text != null && m_dat_ngay_sinh.Text != "")
             {
                 decimal v_so_tuoi = 0;
-                m_us.tinh_tuoi_nhan_vien(ip_dat_ngay_sinh, ref v_so_tuoi);
-                m_txt_tuoi_nv.Text = v_so_tuoi.ToString();
+                //m_us.tinh_tuoi_nhan_vien(ip_dat_ngay_sinh, ref v_so_tuoi);
+                m_txt_tuoi_nv.EditValue = CHRMCommon.TinhTuoi(ip_dat_ngay_sinh.Date);
             }
             else
             {

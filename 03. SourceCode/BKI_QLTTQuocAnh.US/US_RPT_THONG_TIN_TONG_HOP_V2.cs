@@ -699,6 +699,18 @@ namespace BKI_DichVuMatDat.US
             v_cstore.addDecimalInputParam("@ip_int_nam", ip_dc_nam);
             v_cstore.fillDataSetByCommand(this, ip_ds);
         }
+        public DataTable HienThiBangLuongCacThang(DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay, decimal ip_dc_id_nhan_vien)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_QTT_bang_luong_cac_thang");
+            v_cstore.addDatetimeInputParam("@ngay_bat_dau", ip_dat_tu_ngay);
+            v_cstore.addDatetimeInputParam("@ngay_ket_thuc", ip_dat_den_ngay);
+            v_cstore.addDecimalInputParam("@id_nhan_vien", ip_dc_id_nhan_vien);
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+            v_cstore.fillDataSetByCommand(this, v_ds);
+
+            return v_ds.Tables[0];
+        }
         public void HienThiBaoCao(DataSet ip_ds, decimal ip_dc_thang, decimal ip_dc_nam)
         {
             CStoredProc v_cstore = new CStoredProc("pr_TL_bao_cao_tong_hop_SelectAll");

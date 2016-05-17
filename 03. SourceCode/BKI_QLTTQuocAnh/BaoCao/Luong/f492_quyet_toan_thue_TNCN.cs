@@ -13,20 +13,13 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using IP.Core.IPCommon;
 using DevExpress.XtraSplashScreen;
+using BKI_DichVuMatDat.BaoCao.Luong;
 
 namespace BKI_DichVuMatDat.BaoCao
 {
-    public partial class f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru : Form
+    public partial class f492_quyet_toan_thue_TNCN : Form
     {
-        decimal v_dc_tong_thu_nhap = 0;
-        decimal v_dc_tong_thu_nhap_trong_bang_luong = 0;
-        decimal v_dc_tong_thu_nhap_ngoai_bang_luong = 0;
-        decimal v_dc_tong_giam_tru = 0;
-        decimal v_dc_tong_thu_nhap_chiu_thue = 0;
-        decimal v_dc_tong_so_TTN_phai_nop = 0;
-        decimal v_dc_TTN_da_nop = 0;
-        decimal v_dc_TTN_con_phai_nop = 0;
-        public f490_rpt_ke_khai_thu_nhap_va_thue_thu_nhap_da_khau_tru()
+        public f492_quyet_toan_thue_TNCN()
         {
             InitializeComponent();
         }
@@ -35,8 +28,8 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
-                m_dat_tu_thang.DateTime = new DateTime(2015, 01, 01);
-                m_dat_den_thang.DateTime = new DateTime(2015, 12, 31);
+                m_dat_tu_thang.DateTime = DateTime.Now.AddMonths(-DateTime.Now.Month + 1).AddDays(-DateTime.Now.Day + 1).Date;
+                m_dat_den_thang.DateTime = DateTime.Now.Date;
                 load_data_to_grid();
             }
             catch(Exception v_e)
@@ -50,9 +43,7 @@ namespace BKI_DichVuMatDat.BaoCao
             US_RPT_LUONG_V2 v_us = new US_RPT_LUONG_V2();
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add(new DataTable());
-            //m_dat_tu_thang.DateTime = new DateTime(2015,06,01);
-            //m_dat_den_thang.DateTime = new DateTime(2015, 12,31);
-            v_us.FillDatasetProcBangKeKhaiThuNhap(v_ds, m_dat_tu_thang.DateTime, m_dat_den_thang.DateTime);
+            v_us.FillDatasetProcBangKeKhaiThuNhap2016(v_ds, m_dat_tu_thang.DateTime, m_dat_den_thang.DateTime);
             m_grc_tong_hop.DataSource = v_ds.Tables[0];
             if(v_ds.Tables[0].Rows.Count != 0)
             {
@@ -106,57 +97,9 @@ namespace BKI_DichVuMatDat.BaoCao
 
         private void format_grid()
         {
-
-            //m_adv_tong_hop.OptionsView.ColumnAutoWidth = true;
-
-            //foreach(DevExpress.XtraGrid.Columns.GridColumn col in ((DevExpress.XtraGrid.Views.Base.ColumnView)m_grc_tong_hop.Views[0]).Columns)
-            //{
-            //    col.MaxWidth = 90;
-            //    col.MinWidth = 90;
-
-            //}
-            //    DON_VI.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            //gridBand1.Width = 393;
-            //HO_TEN.Width = 100;
-            //m_adv_tong_hop.OptionsView.AllowHtmlDrawHeaders = true;
-            //m_adv_tong_hop.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            //m_adv_tong_hop.ColumnPanelRowHeight = 40;
-            //m_adv_tong_hop.OptionsView.RowAutoHeight = true;
-            //m_adv_tong_hop.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            var list_label = GetAll(groupBox1, typeof(TextBox));
-            foreach(var item in list_label)
-            {
-                item.Font = new Font("Tahoma", 10, FontStyle.Bold);
-                item.ForeColor = Color.Maroon;
-            }
             m_lbl_nam_2.Text = m_dat_tu_thang.DateTime.Year.ToString();
             m_lbl_nam_2.ForeColor = Color.Maroon;
             m_lbl_nam_2.Font = new Font("Tahoma", 18, FontStyle.Bold);
-        }
-
-
-        public IEnumerable<Control> GetAll(Control control, Type type)
-        {
-            var controls = control.Controls.Cast<Control>();
-
-            return controls.SelectMany(ctrl => GetAll(ctrl, type))
-                                      .Concat(controls)
-                                      .Where(c => c.GetType() == type);
-        }
-
-        private void m_txt_nam_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            try
-            {
-                if(!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
         }
 
 
@@ -169,10 +112,7 @@ namespace BKI_DichVuMatDat.BaoCao
                 GridHitInfo info = view.CalcHitInfo(pt);
                 if(info.InRow || info.InRowCell)
                 {
-                    DataRow v_dr_grv = m_adv_tong_hop.GetDataRow(m_adv_tong_hop.FocusedRowHandle);
-                    decimal v_id_nhan_vien = CIPConvert.ToDecimal(v_dr_grv["ID_NHAN_VIEN"].ToString());
-                    f490_rpt_ke_khai_thu_nhap_detail v_f = new f490_rpt_ke_khai_thu_nhap_detail();
-                    v_f.DisplayForPresent(v_id_nhan_vien, m_dat_tu_thang.DateTime, m_dat_den_thang.DateTime);
+                   
                 }
             }
             catch(Exception v_e)
@@ -185,9 +125,9 @@ namespace BKI_DichVuMatDat.BaoCao
         {
             try
             {
-                GridView view = (GridView)sender;
-                Point pt = view.GridControl.PointToClient(Control.MousePosition);
-                DoRowDoubleClick(view, pt);
+                //GridView view = (GridView)sender;
+                //Point pt = view.GridControl.PointToClient(Control.MousePosition);
+                //DoRowDoubleClick(view, pt);
             }
             catch(Exception v_e)
             {
@@ -230,6 +170,22 @@ namespace BKI_DichVuMatDat.BaoCao
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void m_grc_tong_hop_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow v_dr_grv = m_adv_tong_hop.GetDataRow(m_adv_tong_hop.FocusedRowHandle);
+                decimal v_id_nhan_vien = CIPConvert.ToDecimal(v_dr_grv["ID_NHAN_VIEN"].ToString());
+                f489_rpt_qtt_ke_khai_detail v_frm = new f489_rpt_qtt_ke_khai_detail();
+                v_frm.DisplayForQTT(m_dat_tu_thang.DateTime.Date, m_dat_den_thang.DateTime.Date, v_id_nhan_vien);
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+           
         }
     }
 }

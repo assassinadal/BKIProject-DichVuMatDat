@@ -18,6 +18,14 @@ namespace BKI_DichVuMatDat
 {
     class CHRMCommon
     {
+        public static int TinhTuoi(DateTime ip_dat_ngay_sinh)
+        {
+            int ageInYrs = DateTime.Now.Year - ip_dat_ngay_sinh.Year;
+            if(DateTime.Now.Month < ip_dat_ngay_sinh.Month || (DateTime.Now.Month == ip_dat_ngay_sinh.Month && DateTime.Now.Day < ip_dat_ngay_sinh.Day))
+                ageInYrs--;
+
+            return ageInYrs;
+        }
         public static void SelectRowInGrid(GridView pview, string pColumnName, decimal pValue)
         {
 

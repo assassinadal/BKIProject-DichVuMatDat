@@ -329,6 +329,7 @@
             this.m_grc_tong_hop.TabIndex = 14;
             this.m_grc_tong_hop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_adv_tong_hop});
+            this.m_grc_tong_hop.DoubleClick += new System.EventHandler(this.m_grc_tong_hop_DoubleClick);
             // 
             // m_adv_tong_hop
             // 
@@ -1962,7 +1963,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand42;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand43;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand41;
-        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
         private DevExpress.Utils.ImageCollection imageCollection;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

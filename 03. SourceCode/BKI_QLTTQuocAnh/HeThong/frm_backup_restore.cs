@@ -14,6 +14,8 @@ using DevExpress.XtraEditors;
 using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Common;
 using IP.Core.IPSystemAdmin;
+using DevExpress.XtraSplashScreen;
+using BKI_DichVuMatDat.BaoCao;
 namespace BKI_DichVuMatDat.HeThong
 {
     public partial class frm_backup_restore : Form
@@ -34,6 +36,7 @@ namespace BKI_DichVuMatDat.HeThong
         }
         private void BackupDataBase(string databaseName)
         {
+            SplashScreenManager.ShowForm(typeof(F_wait_form));
             var destinationPath = "HRM_PVMD_v" + DateTime.Now.Year + "." + DateTime.Now.Month + "." + DateTime.Now.Day + "." + DateTime.Now.Hour + "h." + DateTime.Now.Minute + "p.bak";
             Server myServer = GetServer();
             Backup backup = new Backup();
@@ -50,56 +53,65 @@ namespace BKI_DichVuMatDat.HeThong
             US_HT_BACKUP_HISTORY v_us = new US_HT_BACKUP_HISTORY();
             try
             {
-
-                v_us.BeginTransaction();
                 v_us.strNGUOI_BACKUP = CAppContext_201.getCurrentUserName();
                 v_us.datNGAY_BACKUP = DateTime.Now.Date;
                 v_us.strNOI_LUU = destinationPath;
                 v_us.Insert();
-                
-                v_us.CommitTransaction();
                 backup.SqlBackup(myServer);
             }
             catch(Exception)
             {
-                if(v_us.is_having_transaction())
-                {
-                    v_us.Rollback();
-                }
                 throw;
             }
-
-            XtraMessageBox.Show("Sao lưu File : +" + destinationPath + " thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            finally
+            {
+                SplashScreenManager.CloseForm();
+            }
+            XtraMessageBox.Show("Sao lưu File : " + destinationPath + " thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void RestoreDataBase(string BackupFilePath,
             string destinationDatabaseName)
         {
-            Server myServer = GetServer();
-            //Restore myRestore = new Restore();
-            //myRestore.Database = destinationDatabaseName;
-            //Database currentDb = myServer.Databases[destinationDatabaseName];
-            //if(currentDb != null)
-            //    myServer.KillAllProcesses(destinationDatabaseName);
-            //myRestore.Devices.AddDevice(BackupFilePath, DeviceType.File);
-            //string DataFileLocation = DatabaseFolder + "\\" + destinationDatabaseName + ".mdf";
-            //string LogFileLocation = DatabaseFolder + "\\" + destinationDatabaseName + "_log.ldf";
-            //myRestore.RelocateFiles.Add(new RelocateFile(DatabaseFileName, DataFileLocation));
-            //myRestore.RelocateFiles.Add(new RelocateFile(DatabaseLogFileName, LogFileLocation));
-            //myRestore.ReplaceDatabase = true;
-            //myRestore.PercentCompleteNotification = 10;
-            //myRestore.SqlRestore(myServer);
-            //currentDb = myServer.Databases[destinationDatabaseName];
-            //currentDb.SetOnline();
+            SplashScreenManager.ShowForm(typeof(F_wait_form));
+            try
+            {
+                Server myServer = GetServer();
+                //Restore myRestore = new Restore();
+                //myRestore.Database = destinationDatabaseName;
+                //Database currentDb = myServer.Databases[destinationDatabaseName];
+                //if(currentDb != null)
+                //    myServer.KillAllProcesses(destinationDatabaseName);
+                //myRestore.Devices.AddDevice(BackupFilePath, DeviceType.File);
+                //string DataFileLocation = DatabaseFolder + "\\" + destinationDatabaseName + ".mdf";
+                //string LogFileLocation = DatabaseFolder + "\\" + destinationDatabaseName + "_log.ldf";
+                //myRestore.RelocateFiles.Add(new RelocateFile(DatabaseFileName, DataFileLocation));
+                //myRestore.RelocateFiles.Add(new RelocateFile(DatabaseLogFileName, LogFileLocation));
+                //myRestore.ReplaceDatabase = true;
+                //myRestore.PercentCompleteNotification = 10;
+                //myRestore.SqlRestore(myServer);
+                //currentDb = myServer.Databases[destinationDatabaseName];
+                //currentDb.SetOnline();
 
-            Restore rstDatabase = new Restore();
-            rstDatabase.Action = RestoreActionType.Database;
-            rstDatabase.Database = destinationDatabaseName;
-            myServer.KillAllProcesses(destinationDatabaseName);
-            BackupDeviceItem bkpDevice = new BackupDeviceItem(BackupFilePath, DeviceType.File);
-            rstDatabase.Devices.Add(bkpDevice);
-            rstDatabase.ReplaceDatabase = true;
-            rstDatabase.SqlRestore(myServer);
+                Restore rstDatabase = new Restore();
+                rstDatabase.Action = RestoreActionType.Database;
+                rstDatabase.Database = destinationDatabaseName;
+                myServer.KillAllProcesses(destinationDatabaseName);
+                BackupDeviceItem bkpDevice = new BackupDeviceItem(BackupFilePath, DeviceType.File);
+                rstDatabase.Devices.Add(bkpDevice);
+                rstDatabase.ReplaceDatabase = true;
+                rstDatabase.SqlRestore(myServer);
+
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+
+            finally
+            {
+                SplashScreenManager.CloseForm();
+            }
         }
 
         //private void CreateLogin (string sqlLoginName, string sqlLoginPassword, string databaseName)

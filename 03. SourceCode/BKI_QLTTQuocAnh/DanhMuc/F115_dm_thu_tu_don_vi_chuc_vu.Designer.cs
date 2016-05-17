@@ -38,9 +38,7 @@
             this.SoTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.m_lbl_header = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
@@ -52,7 +50,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_thu_tu_don_vi_chuc_vu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_thu_tu_don_vi_chuc_vu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -87,23 +84,21 @@
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.m_grc_dm_thu_tu_don_vi_chuc_vu);
-            this.layoutControl1.Controls.Add(this.m_lbl_header);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 37);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(690, 368);
+            this.layoutControl1.Size = new System.Drawing.Size(690, 331);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // m_grc_dm_thu_tu_don_vi_chuc_vu
             // 
             this.m_grc_dm_thu_tu_don_vi_chuc_vu.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grc_dm_thu_tu_don_vi_chuc_vu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc_dm_thu_tu_don_vi_chuc_vu.Location = new System.Drawing.Point(12, 40);
+            this.m_grc_dm_thu_tu_don_vi_chuc_vu.Location = new System.Drawing.Point(12, 12);
             this.m_grc_dm_thu_tu_don_vi_chuc_vu.MainView = this.m_grv_dm_thu_tu_don_vi_chuc_vu;
             this.m_grc_dm_thu_tu_don_vi_chuc_vu.Name = "m_grc_dm_thu_tu_don_vi_chuc_vu";
-            this.m_grc_dm_thu_tu_don_vi_chuc_vu.Size = new System.Drawing.Size(666, 316);
+            this.m_grc_dm_thu_tu_don_vi_chuc_vu.Size = new System.Drawing.Size(666, 307);
             this.m_grc_dm_thu_tu_don_vi_chuc_vu.TabIndex = 5;
             this.m_grc_dm_thu_tu_don_vi_chuc_vu.TabStop = false;
             this.m_grc_dm_thu_tu_don_vi_chuc_vu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -173,50 +168,26 @@
             this.STT.VisibleIndex = 2;
             this.STT.Width = 305;
             // 
-            // m_lbl_header
-            // 
-            this.m_lbl_header.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_header.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(12, 12);
-            this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(248, 24);
-            this.m_lbl_header.StyleController = this.layoutControl1;
-            this.m_lbl_header.TabIndex = 4;
-            this.m_lbl_header.Text = "THỨ TỰ ĐƠN VỊ CHỨC VỤ";
-            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
             this.layoutControlItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(690, 368);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(690, 331);
             this.layoutControlGroup1.Text = "layoutControlGroup1";
             this.layoutControlGroup1.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.m_lbl_header;
-            this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(670, 28);
-            this.layoutControlItem1.Text = "layoutControlItem1";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextToControlDistance = 0;
-            this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.m_grc_dm_thu_tu_don_vi_chuc_vu;
             this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 28);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(670, 320);
+            this.layoutControlItem2.Size = new System.Drawing.Size(670, 311);
             this.layoutControlItem2.Text = "layoutControlItem2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextToControlDistance = 0;
@@ -224,21 +195,21 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.m_cmd_insert);
-            this.panel1.Controls.Add(this.m_cmd_update);
-            this.panel1.Controls.Add(this.m_cmd_delete);
             this.panel1.Controls.Add(this.m_cmd_xuat_excel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 331);
+            this.panel1.Controls.Add(this.m_cmd_delete);
+            this.panel1.Controls.Add(this.m_cmd_update);
+            this.panel1.Controls.Add(this.m_cmd_insert);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(690, 37);
             this.panel1.TabIndex = 5;
             // 
             // m_cmd_insert
             // 
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_insert.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_insert.Image")));
-            this.m_cmd_insert.Location = new System.Drawing.Point(226, 0);
+            this.m_cmd_insert.Location = new System.Drawing.Point(0, 0);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(116, 37);
             this.m_cmd_insert.TabIndex = 30;
@@ -246,32 +217,32 @@
             // 
             // m_cmd_update
             // 
-            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_update.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_update.Image")));
-            this.m_cmd_update.Location = new System.Drawing.Point(342, 0);
+            this.m_cmd_update.Location = new System.Drawing.Point(116, 0);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(116, 37);
-            this.m_cmd_update.TabIndex = 29;
+            this.m_cmd_update.TabIndex = 31;
             this.m_cmd_update.Text = "&Sửa";
             // 
             // m_cmd_delete
             // 
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
-            this.m_cmd_delete.Location = new System.Drawing.Point(458, 0);
+            this.m_cmd_delete.Location = new System.Drawing.Point(232, 0);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(116, 37);
-            this.m_cmd_delete.TabIndex = 28;
+            this.m_cmd_delete.TabIndex = 32;
             this.m_cmd_delete.Text = "&Xóa";
             // 
             // m_cmd_xuat_excel
             // 
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_xuat_excel.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xuat_excel.Image")));
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(574, 0);
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(348, 0);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(116, 37);
-            this.m_cmd_xuat_excel.TabIndex = 27;
+            this.m_cmd_xuat_excel.TabIndex = 33;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
             this.m_cmd_xuat_excel.Visible = false;
             // 
@@ -280,8 +251,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 368);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.panel1);
             this.Name = "F115_dm_thu_tu_don_vi_chuc_vu";
             this.Text = "F115 - Thứ tự đơn vị chức vụ";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -289,7 +260,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_dm_thu_tu_don_vi_chuc_vu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_thu_tu_don_vi_chuc_vu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -300,9 +270,7 @@
 
         internal System.Windows.Forms.ImageList imageList1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.LabelControl m_lbl_header;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraGrid.GridControl m_grc_dm_thu_tu_don_vi_chuc_vu;
         private DevExpress.XtraGrid.Views.Grid.GridView m_grv_dm_thu_tu_don_vi_chuc_vu;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
@@ -312,8 +280,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn STT;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_update;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_update;
     }
 }

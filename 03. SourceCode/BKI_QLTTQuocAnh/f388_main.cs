@@ -361,7 +361,7 @@ namespace BKI_DichVuMatDat
             //Nghiệp vụ
             m_cmd_cham_cong_nv.ItemClick += m_cmd_cham_cong_nv_ItemClick;
             m_cmd_lap_hop_dong.ItemClick += m_cmd_lap_hop_dong_ItemClick;
-            m_cmd_len_luong_cho_nv.ItemClick += m_cmd_len_luong_cho_nv_ItemClick;
+            m_cmd_quan_ly_lns.ItemClick += m_cmd_len_luong_cho_nv_ItemClick;
             m_cmd_phep_tieu_chuan.ItemClick += m_cmd_dat_hs_lns_lcd_ItemClick;
             m_cmd_quan_ly_qd.ItemClick += m_cmd_quan_ly_qd_ItemClick;
             m_cmd_hs_chat_luong_xls.ItemClick += m_cmd_them_hs_chat_luong_ItemClick;
@@ -395,9 +395,9 @@ namespace BKI_DichVuMatDat
             m_cmd_bc_hs_bs_hs_athk.ItemClick += m_cmd_bc_hs_bs_hs_athk_ItemClick;
             m_cmd_bc_cac_thang_da_chot_bang_luong.ItemClick += m_cmd_bc_cac_thang_da_chot_bang_luong_ItemClick;
             m_cmd_luong_theo_don_vi.ItemClick += m_cmd_luong_theo_don_vi_ItemClick;
-            m_cmd_chuyen_trang_thai_LD.ItemClick += m_cmd_chuyen_trang_thai_LD_ItemClick;
+            m_cmd_trang_thai_lao_dong.ItemClick += m_cmd_chuyen_trang_thai_LD_ItemClick;
             m_cmd_bao_cao_tong_hop.ItemClick += m_cmd_bao_cao_tong_hop_ItemClick;
-            m_cmd_bc_tang_giam_ld.ItemClick += m_cmd_bc_tang_giam_ld_ItemClick;
+            m_cmd_bc_bien_dong_hd.ItemClick += m_cmd_bc_tang_giam_ld_ItemClick;
             m_cmd_bao_cao_hs_lns_lcd_nhan_vien.ItemClick += m_cmd_bao_cao_hs_lns_lcd_nhan_vien_ItemClick;
             m_cmd_bao_cao_nhan_su_bo_nhiem.ItemClick += m_cmd_bao_cao_nhan_su_bo_nhiem_ItemClick;
             m_cmd_thong_ke_nhan_vien.ItemClick += m_cmd_thong_ke_nhan_vien_ItemClick;
@@ -407,7 +407,7 @@ namespace BKI_DichVuMatDat
             m_cmd_cham_cong_lam_them.ItemClick += m_cmd_cham_cong_lam_them_ItemClick;
             m_cmd_quy_trinh_tinh_luong.ItemClick += m_cmd_quy_trinh_tinh_luong_ItemClick;
             m_cmd_he_so_bang_luong_thang.ItemClick += m_cmd_tham_so_bang_luong_ItemClick;
-            m_cmd_bao_cao_tong_hop_v2.ItemClick += m_cmd_bao_cao_tong_hop_v2_ItemClick;
+            m_cmd_quan_ly_luong.ItemClick += m_cmd_bao_cao_tong_hop_v2_ItemClick;
             m_cmd_danh_sach_hop_dong.ItemClick += m_cmd_danh_sach_hop_dong_ItemClick;
             m_cmd_bao_cao_dieu_kien_tinh_luong.ItemClick += m_cmd_bao_cao_dieu_kien_tinh_luong_ItemClick;
             m_cmd_bc_athk_bsl_lt.ItemClick += m_cmd_bc_athk_bsl_lt_ItemClick;
@@ -417,7 +417,7 @@ namespace BKI_DichVuMatDat
             m_cmd_ds_chot_bang_luong.ItemClick += m_cmd_ds_chot_bang_luong_ItemClick;
             m_cmd_bc_hs.ItemClick += m_cmd_bc_hs_ItemClick;
             m_cmd_qtt_2016.ItemClick += m_cmd_qtt_2016_ItemClick;
-            m_cmd_tk_hop_dong.ItemClick += m_cmd_tk_hop_dong_ItemClick;
+            m_cmd_bc_bien_dong_lns.ItemClick += m_cmd_tk_hop_dong_ItemClick;
         }
 
         void m_cmd_tk_hop_dong_ItemClick(object sender, ItemClickEventArgs e)

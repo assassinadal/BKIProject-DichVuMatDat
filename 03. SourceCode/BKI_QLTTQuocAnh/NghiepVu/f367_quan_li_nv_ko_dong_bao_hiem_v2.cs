@@ -36,7 +36,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Private methods
         private void format_controls()
         {
-            FormatControl.SetVisibleSimpleButton(this);
+            //FormatControl.SetVisibleSimpleButton(this);
             this.m_grv_luong_cung_cua_nhan_vien.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
             this.m_grv_luong_cung_cua_nhan_vien.OptionsPrint.AutoWidth = false;
             set_define_events();

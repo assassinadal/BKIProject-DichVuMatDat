@@ -71,7 +71,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void format_controls()
         {
-            FormatControl.SetVisibleSimpleButton(this);
+            //FormatControl.SetVisibleSimpleButton(this);
             this.m_grv_bao_cao_trang_thai_lao_dong_nhan_vien.OptionsPrint.AutoWidth = false;
             set_define_events();
             this.KeyPreview = true;

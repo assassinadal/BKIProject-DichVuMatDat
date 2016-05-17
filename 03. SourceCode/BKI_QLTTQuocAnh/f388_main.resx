@@ -276,7 +276,7 @@
         /wBqkiSvivDUAgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="m_cmd_len_luong_cho_nv.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="m_cmd_quan_ly_lns.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAA90RVh0VGl0
         bGUAVXA7QXJyb3c7yF4oFAAABsxJREFUWEfFlnlQVVUcxy+YSzVqaWrTTH9Y/zRNNfWHU6YVOmmrOuVW
@@ -548,7 +548,7 @@
         K1be6f8D7R8bleevx1tLIwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="c_cmd_danh_muc_bao_hiem.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="m_cmd_bao_hiem.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABJ0RVh0VGl0
         bGUAQ29udGVudDtCb29rn/uVhAAAAnRJREFUOE99k/1LU1EcxnW+p/0lgc6KMLEMexFWKIliy6VYy2Yt
@@ -732,7 +732,7 @@
         Ou0qwfloNysV9Y4cYeT2RxcTqCZRMbKIynpUNqMzi7G2BVR8QojFLxErpYC5aZnAAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="m_cmd_dm_nhan_vien.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="m_cmd_nguoi_bao_lanh.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAADJ0RVh0VGl0
         bGUAQ3VzdG9tZXI7RW1wbG95ZWU7UGVyc29uO0NvbnRhY3Q7VXNlcjtDbGllbnR+ETboAAADKElEQVQ4

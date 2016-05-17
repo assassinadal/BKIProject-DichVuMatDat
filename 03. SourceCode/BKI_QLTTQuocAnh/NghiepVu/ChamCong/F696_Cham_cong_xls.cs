@@ -27,7 +27,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         public F696_Cham_cong_xls()
         {
             InitializeComponent();
-            FormatControl.SetVisibleSimpleButton(this);
+            //FormatControl.SetVisibleSimpleButton(this);
             this.m_grv.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
             this.m_grv.OptionsPrint.AutoWidth = false;
             set_initial_form_load();

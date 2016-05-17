@@ -26,7 +26,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void F104_dm_loai_hop_dong_Load(object sender, EventArgs e)
         {
-            FormatControl.SetVisibleSimpleButton(this);
+            //FormatControl.SetVisibleSimpleButton(this);
             this.m_grv_dm_loai_hop_dong.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
             this.m_grv_dm_loai_hop_dong.OptionsPrint.AutoWidth = false;
             load_data_2_grid();

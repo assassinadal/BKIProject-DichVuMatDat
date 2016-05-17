@@ -124,7 +124,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void format_controls()
         {
-            FormatControl.SetVisibleSimpleButton(this);
+            //FormatControl.SetVisibleSimpleButton(this);
             set_define_events();
             this.KeyPreview = true;
             CenterToScreen();

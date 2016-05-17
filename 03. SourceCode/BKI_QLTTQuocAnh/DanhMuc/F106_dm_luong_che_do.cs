@@ -46,7 +46,7 @@ namespace BKI_DichVuMatDat.DanhMuc
 
         private void set_initial_form_load()
         {
-            FormatControl.SetVisibleSimpleButton(this);
+            //FormatControl.SetVisibleSimpleButton(this);
             load_data_2_grid();
         }
 

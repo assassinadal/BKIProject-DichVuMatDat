@@ -40,7 +40,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Private methods
         private void format_controls()
         {
-            FormatControl.SetVisibleSimpleButton(this);
+            //FormatControl.SetVisibleSimpleButton(this);
             this.m_grv_hs_chat_luong.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(WinFormControls.m_grv_PopupMenuShowing);
             this.m_grv_hs_chat_luong.OptionsPrint.AutoWidth = false;
             set_define_events();

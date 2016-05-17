@@ -22,7 +22,7 @@ Public Class BaseMessages
 
     Private Shared m_DataSet As New DatasetMsg
     Private Shared m_dsUser As New Users_DataSet
-    Private Const c_strUserFileName As String = "NumOfMessage.XML"
+    Private Const c_strUserFileName As String = "XML_MESSAGE\NumOfMessage.XML"
     Private Const c_InfoMsgString As String = "Thông báo"
     Private Const c_ErrorMsgString As String = "Thông báo lỗi"
     Private Const c_ConfirmMsgString As String = "Xác nhận lại"
@@ -66,7 +66,7 @@ Public Class BaseMessages
     End Sub
     Private Shared Sub LoadMessagesData(ByVal i_NumOFMsg As Decimal)
         Dim v_strWhere As String
-        Dim v_FileName As String = AppDomain.CurrentDomain.SetupInformation.ApplicationBase
+        Dim v_FileName As String = AppDomain.CurrentDomain.SetupInformation.ApplicationBase & "XML_MESSAGE\"
         v_strWhere = "(FromNum <= " & i_NumOFMsg & ") and (" & i_NumOFMsg & " < ToNum)"
         Dim v_dvUserData As New DataView(m_dsUser.Users_DataSet, v_strWhere, "", DataViewRowState.CurrentRows)
         If v_dvUserData.Count > 0 Then

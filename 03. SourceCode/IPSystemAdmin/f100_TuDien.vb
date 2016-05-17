@@ -1,5 +1,5 @@
 ﻿Option Strict On
-Option Explicit On 
+Option Explicit On
 
 Imports IP.Core.IPException
 Imports IP.Core.IPCommon
@@ -19,7 +19,7 @@ Public Class f100_TuDien
         InitializeComponent()
 
         'Add any initialization after the InitializeComponent() call
-       formatControls()
+        formatControls()
     End Sub
 
     'Form overrides dispose to clean up the component list.
@@ -141,128 +141,128 @@ Public Class f100_TuDien
 #End Region
 
 #Region "Data structure"
-   private enum ColNumber 
+    Private Enum ColNumber
         ID = 1
-        TEN_OUTLINE  = 2
+        TEN_OUTLINE = 2
         MA_TU_DIEN = 3
         TEN = 4
-   End Enum
+    End Enum
 
-    private enum TreeLevel
+    Private Enum TreeLevel
         LOAI_TU_DIEN = 0
         GIA_TRI_TU_DIEN = 1
     End Enum
 
-    private const ALL_SELECTED as Decimal = - 1
+    Private Const ALL_SELECTED As Decimal = -1
 #End Region
 
 #Region "Class Members"
-    private m_LoaiTuDien_CouldBe_Changed as Boolean = true
-    private m_MaLoaiTuDien_Fixed as String 
-    private m_ds_loai_tu_dien as DS_CM_DM_LOAI_TD
-    private m_ds_tu_dien as DS_CM_DM_TU_DIEN
+    Private m_LoaiTuDien_CouldBe_Changed As Boolean = True
+    Private m_MaLoaiTuDien_Fixed As String
+    Private m_ds_loai_tu_dien As DS_CM_DM_LOAI_TD
+    Private m_ds_tu_dien As DS_CM_DM_TU_DIEN
 #End Region
 
-    
+
 
 
 #Region "PRIVATE"
-    
-    private function getTenLoaiTuDien ( byval i_dcIDLoaiTD as Decimal) as String
-        static v_objTenLoaiHSTable as CListOfDataFromDB
-        if v_objTenLoaiHSTable is nothing then
-            v_objTenLoaiHSTable = new CListOfDataFromDB(me.m_ds_loai_tu_dien, "ID", "TEN_LOAI")
+
+    Private Function getTenLoaiTuDien(ByVal i_dcIDLoaiTD As Decimal) As String
+        Static v_objTenLoaiHSTable As CListOfDataFromDB
+        If v_objTenLoaiHSTable Is Nothing Then
+            v_objTenLoaiHSTable = New CListOfDataFromDB(Me.m_ds_loai_tu_dien, "ID", "TEN_LOAI")
         End If
-        return convert.ToString(v_objTenLoaiHSTable(i_dcIDLoaiTD))
+        Return Convert.ToString(v_objTenLoaiHSTable(i_dcIDLoaiTD))
     End Function
 
-    Private function  isMaTuDienRow( byval i_row as Integer) as boolean
-        return m_fg.Rows(i_row).Node.Level = treelevel.GIA_TRI_TU_DIEN
-    End function 
-   
-    private sub setLevelOfRow(byval i_level as treelevel, byval i_grid_row_index as integer)
-        m_fg.Rows(i_grid_row_index).IsNode =True
+    Private Function isMaTuDienRow(ByVal i_row As Integer) As Boolean
+        Return m_fg.Rows(i_row).Node.Level = TreeLevel.GIA_TRI_TU_DIEN
+    End Function
+
+    Private Sub setLevelOfRow(ByVal i_level As TreeLevel, ByVal i_grid_row_index As Integer)
+        m_fg.Rows(i_grid_row_index).IsNode = True
         m_fg.Rows(i_grid_row_index).Node.Level = i_level
 
-    End Sub 
+    End Sub
 
 
-    private sub TuDienDataRow_2_GridRow( byval i_dr_tu_dien as DataRow, byval i_grid_row_index as Integer)
-        m_fg(i_grid_row_index, colnumber.ID)  = cnull.RowNVLDecimal(i_dr_tu_dien, "ID")
-        m_fg(i_grid_row_index, colnumber.MA_TU_DIEN)  = cnull.RowNVLString(i_dr_tu_dien, "MA_TU_DIEN")
-        m_fg(i_grid_row_index, colnumber.TEN)  = cnull.RowNVLString(i_dr_tu_dien, "TEN")
-        m_fg(i_grid_row_index, colnumber.TEN_OUTLINE)  = cnull.RowNVLString(i_dr_tu_dien, "TEN_NGAN")
-        m_fg.rows(i_grid_row_index).UserData = i_dr_tu_dien
-        setLevelOfRow( TreeLevel.GIA_TRI_TU_DIEN, i_grid_row_index)    
-    End sub
+    Private Sub TuDienDataRow_2_GridRow(ByVal i_dr_tu_dien As DataRow, ByVal i_grid_row_index As Integer)
+        m_fg(i_grid_row_index, ColNumber.ID) = CNull.RowNVLDecimal(i_dr_tu_dien, "ID")
+        m_fg(i_grid_row_index, ColNumber.MA_TU_DIEN) = CNull.RowNVLString(i_dr_tu_dien, "MA_TU_DIEN")
+        m_fg(i_grid_row_index, ColNumber.TEN) = CNull.RowNVLString(i_dr_tu_dien, "TEN")
+        m_fg(i_grid_row_index, ColNumber.TEN_OUTLINE) = CNull.RowNVLString(i_dr_tu_dien, "TEN_NGAN")
+        m_fg.Rows(i_grid_row_index).UserData = i_dr_tu_dien
+        setLevelOfRow(TreeLevel.GIA_TRI_TU_DIEN, i_grid_row_index)
+    End Sub
 
 
 
-    private sub loadData_fromDB_toDatasets()
-        dim v_us_tu_dien as New  US_CM_DM_TU_DIEN
-        try
-            v_us_tu_dien.BeginTransaction
-            me.m_ds_tu_dien = new DS_CM_DM_TU_DIEN
+    Private Sub loadData_fromDB_toDatasets()
+        Dim v_us_tu_dien As New US_CM_DM_TU_DIEN
+        Try
+            v_us_tu_dien.BeginTransaction()
+            Me.m_ds_tu_dien = New DS_CM_DM_TU_DIEN
             v_us_tu_dien.FillDataset(m_ds_tu_dien)
 
-            dim v_us_loai_tu_dien as new  US_CM_DM_LOAI_TD
+            Dim v_us_loai_tu_dien As New US_CM_DM_LOAI_TD
             v_us_loai_tu_dien.UseTransOfUSObject(v_us_tu_dien)
-            me.m_ds_loai_tu_dien = new DS_CM_DM_LOAI_TD()
+            Me.m_ds_loai_tu_dien = New DS_CM_DM_LOAI_TD()
             v_us_loai_tu_dien.FillDataset(m_ds_loai_tu_dien)
 
-            v_us_tu_dien.CommitTransaction
+            v_us_tu_dien.CommitTransaction()
         Catch v_e As Exception
-            v_us_tu_dien.Rollback
+            v_us_tu_dien.Rollback()
             Dim v_handler As New CDBExceptionHandler(v_e, New CDBClientDBExceptionInterpret())
             v_handler.showErrorMessage()
         End Try
     End Sub
 
-    private sub loadCBO_LoaiTD()
-        TRY 
-            removehandler m_cboLoaiTDFilter.SelectedIndexChanged, addressof m_cboLoaiTDFilter_SelectedIndexChanged
+    Private Sub loadCBO_LoaiTD()
+        Try
+            RemoveHandler m_cboLoaiTDFilter.SelectedIndexChanged, AddressOf m_cboLoaiTDFilter_SelectedIndexChanged
             Dim v_arrlist As New ArrayList()
-            Dim v_dr_all As DataRow = me.m_ds_loai_tu_dien.CM_DM_LOAI_TD.NewRow()
-            if me.m_LoaiTuDien_CouldBe_Changed then 
+            Dim v_dr_all As DataRow = Me.m_ds_loai_tu_dien.CM_DM_LOAI_TD.NewRow()
+            If Me.m_LoaiTuDien_CouldBe_Changed Then
                 v_arrlist.Add(v_dr_all)
                 v_dr_all("TEN_LOAI") = "Tất cả các loại"
                 v_dr_all("ID") = ALL_SELECTED
                 Dim v_datarow As DataRow
-                For Each v_datarow In me.m_ds_loai_tu_dien.CM_DM_LOAI_TD
+                For Each v_datarow In Me.m_ds_loai_tu_dien.CM_DM_LOAI_TD
                     v_arrlist.Add(v_datarow)
                 Next
-            else ' chỉ được 1 loại duy nhất
-                dim v_dv as new DataView(m_ds_loai_tu_dien.CM_DM_LOAI_TD)
-                v_dv.RowFilter = "MA_LOAI = " & "'" &  me.m_MaLoaiTuDien_Fixed  & "'"
-                dim v_drv as datarowview
-                for each v_drv in v_dv 
+            Else ' chỉ được 1 loại duy nhất
+                Dim v_dv As New DataView(m_ds_loai_tu_dien.CM_DM_LOAI_TD)
+                v_dv.RowFilter = "MA_LOAI = " & "'" & Me.m_MaLoaiTuDien_Fixed & "'"
+                Dim v_drv As DataRowView
+                For Each v_drv In v_dv
                     v_arrlist.Add(v_drv.Row)
-                Next                
-            end if
+                Next
+            End If
             m_cboLoaiTDFilter.DataSource = v_arrlist
-            m_cboloaitdfilter.ValueMember ="ID"
+            m_cboLoaiTDFilter.ValueMember = "ID"
             m_cboLoaiTDFilter.DisplayMember = "TEN_LOAI"
-            
-            m_cboloaitdfilter.SelectedIndex  = 0
-            me.m_cboLoaiTDFilter_SelectedIndexChanged( m_cboloaitdfilter, nothing)
 
-        CATCH V_E As Exception 
-            csystemlog_301.ExceptionHandle(v_e)
-        finally
-            addhandler m_cboLoaiTDFilter.SelectedIndexChanged, addressof m_cboLoaiTDFilter_SelectedIndexChanged
-        end try
+            m_cboLoaiTDFilter.SelectedIndex = 0
+            Me.m_cboLoaiTDFilter_SelectedIndexChanged(m_cboLoaiTDFilter, Nothing)
+
+        Catch V_E As Exception
+            CSystemLog_301.ExceptionHandle(V_E)
+        Finally
+            AddHandler m_cboLoaiTDFilter.SelectedIndexChanged, AddressOf m_cboLoaiTDFilter_SelectedIndexChanged
+        End Try
     End Sub
 
-    private sub formatControls()
+    Private Sub formatControls()
         CControlFormat.setFormStyle(Me)
         Me.KeyPreview = True
         m_fg.AllowEditing = False
         CControlFormat.setC1FlexFormat(m_fg)
-        cgridutils.AddSearch_Handlers(m_fg)
-        cgridutils.AddTree_Toogle_Handlers(m_fg)
+        CGridUtils.AddSearch_Handlers(m_fg)
+        CGridUtils.AddTree_Toogle_Handlers(m_fg)
         m_fg.Tree.Column = ColNumber.TEN_OUTLINE
         m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf
-   
+
     End Sub
 
 
@@ -371,13 +371,16 @@ Public Class f100_TuDien
         Try
             Dim v_CalledForm As New f102_TuDien_DE
             v_usTuDien.BeginTransaction()
-            If v_usTuDien.isUpdatable() Then
-                If v_CalledForm.UpdateObj(v_usTuDien) = DialogResult.OK Then
-                    v_usTuDien.Me2DataRow(v_drTuDien)
-                    Me.TuDienDataRow_2_GridRow(v_drTuDien, m_fg.Row)
-                End If
+            'If v_usTuDien.isUpdatable() Then
+            If v_CalledForm.UpdateObj(v_usTuDien) = DialogResult.OK Then
+                'v_usTuDien.Me2DataRow(v_drTuDien)
+                'Me.TuDienDataRow_2_GridRow(v_drTuDien, m_fg.Row)
+                
             End If
+            'End If
             v_usTuDien.CommitTransaction()
+            loadData_fromDB_toDatasets()
+            loadData_fromDatasets_toGrid(Convert.ToDecimal(m_cboLoaiTDFilter.SelectedValue))
         Catch v_e As System.Exception
             v_usTuDien.Rollback()
             Dim v_ErrHandler As New CDBExceptionHandler(v_e, New CDBClientDBExceptionInterpret)
@@ -393,10 +396,10 @@ Public Class f100_TuDien
         v_usTuDien.DataRow2Me(v_drTuDien)
         Try
             v_usTuDien.BeginTransaction()
-            If v_usTuDien.isUpdatable() Then
-                v_usTuDien.Delete()
-                m_fg.Rows.Remove(m_fg.Row)
-            End If
+            'If v_usTuDien.isUpdatable() Then
+            v_usTuDien.Delete()
+            m_fg.Rows.Remove(m_fg.Row)
+            'End If
             v_usTuDien.CommitTransaction()
         Catch v_e As System.Exception
             v_usTuDien.Rollback()
@@ -425,11 +428,11 @@ Public Class f100_TuDien
         Catch v_e As Exception
             CSystemLog_301.ExceptionHandle(v_e)
         End Try
-    End Sub    
-    
+    End Sub
+
     Private Sub f100_TuDien_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
-       try 
-            me.loadData_fromDB_toDatasets
+        Try
+            Me.loadData_fromDB_toDatasets()
             Me.loadCBO_LoaiTD()
             CGridUtils.stand_on_TopLeft_Cell(m_fg)
             If Not Me.m_LoaiTuDien_CouldBe_Changed Then
@@ -439,9 +442,9 @@ Public Class f100_TuDien
                 m_cboLoaiTDFilter.Top = -100
             End If
         Catch v_e As Exception
-            csystemlog_301.ExceptionHandle(v_e)
-       End Try
-    End Sub 
+            CSystemLog_301.ExceptionHandle(v_e)
+        End Try
+    End Sub
 
     Private Sub m_cboLoaiTDFilter_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles m_cboLoaiTDFilter.SelectedIndexChanged
         Try

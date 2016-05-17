@@ -185,7 +185,7 @@ namespace BKI_DichVuMatDat.HeThong
         {
             try
             {
-                var v_dgl_confirm = XtraMessageBox.Show("Bạn có chắc chắn muốn phục hồi dữ liệu đã sao lưu trước đó?\nViệc phục hồi sẽ đưu dữ liệu về phiên bản bạn chọn!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var v_dgl_confirm = XtraMessageBox.Show("Bạn có chắc chắn muốn phục hồi dữ liệu đã sao lưu trước đó?\nViệc phục hồi sẽ đưu dữ liệu về phiên bản bạn chọn!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
                 if(v_dgl_confirm == System.Windows.Forms.DialogResult.Yes)
                 {
                     var dbPathToRestore = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "NOI_LUU").ToString();

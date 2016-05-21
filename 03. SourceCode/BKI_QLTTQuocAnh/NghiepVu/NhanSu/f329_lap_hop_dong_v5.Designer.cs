@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f329_lap_hop_dong_v5));
             this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,9 +60,11 @@
             this.colNOI_CAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGHI_CHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colID_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colID_CHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection();
+            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_print = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
@@ -73,8 +76,6 @@
             this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.colID_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colID_CHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
@@ -479,6 +480,18 @@
             this.colLOAI_HOP_DONG.FieldName = "LOAI_HOP_DONG";
             this.colLOAI_HOP_DONG.Name = "colLOAI_HOP_DONG";
             // 
+            // colID_DON_VI
+            // 
+            this.colID_DON_VI.Caption = "ID_DON_VI";
+            this.colID_DON_VI.FieldName = "ID_DON_VI";
+            this.colID_DON_VI.Name = "colID_DON_VI";
+            // 
+            // colID_CHUC_VU
+            // 
+            this.colID_CHUC_VU.Caption = "ID_CHUC_VU";
+            this.colID_CHUC_VU.FieldName = "ID_CHUC_VU";
+            this.colID_CHUC_VU.Name = "colID_CHUC_VU";
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.m_cmd_chon_file);
@@ -555,7 +568,6 @@
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(91, 32);
             this.m_cmd_xuat_excel.TabIndex = 3;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
-            this.m_cmd_xuat_excel.Visible = false;
             // 
             // m_cmd_delete
             // 
@@ -627,7 +639,7 @@
             this.m_cmd_filter.Appearance.Options.UseFont = true;
             this.m_cmd_filter.ImageIndex = 10;
             this.m_cmd_filter.ImageList = this.img_DVMD;
-            this.m_cmd_filter.Location = new System.Drawing.Point(12, 51);
+            this.m_cmd_filter.Location = new System.Drawing.Point(12, 49);
             this.m_cmd_filter.Name = "m_cmd_filter";
             this.m_cmd_filter.Size = new System.Drawing.Size(80, 33);
             this.m_cmd_filter.TabIndex = 1;
@@ -655,18 +667,6 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Tất cả";
             this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // colID_DON_VI
-            // 
-            this.colID_DON_VI.Caption = "ID_DON_VI";
-            this.colID_DON_VI.FieldName = "ID_DON_VI";
-            this.colID_DON_VI.Name = "colID_DON_VI";
-            // 
-            // colID_CHUC_VU
-            // 
-            this.colID_CHUC_VU.Caption = "ID_CHUC_VU";
-            this.colID_CHUC_VU.FieldName = "ID_CHUC_VU";
-            this.colID_CHUC_VU.Name = "colID_CHUC_VU";
             // 
             // f329_lap_hop_dong_v5
             // 

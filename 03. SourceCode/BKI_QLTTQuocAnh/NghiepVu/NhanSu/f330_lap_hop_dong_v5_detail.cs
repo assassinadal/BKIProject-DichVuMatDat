@@ -25,11 +25,12 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             InitializeComponent();
             set_initial_form_load();
         }
-        public void display_for_insert()
+        public decimal display_for_insert()
         {
             Text = "F330 - Thêm mới hợp đồng";
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.ShowDialog();
+            return m_us_gd_hd.dcID;
         }
         public void display_for_update(DataRow v_dr)
         {
@@ -52,8 +53,8 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         #region Private Method
         private void set_initial_form_load()
         {
-            m_dat_ngay_bat_dau.DateTime = DateTime.Now.Date;
-            m_dat_ngay_ky.DateTime = DateTime.Now.Date;
+            //m_dat_ngay_bat_dau.DateTime = DateTime.Now.Date;
+            //m_dat_ngay_ky.DateTime = DateTime.Now.Date;
             load_data_to_sle_nhan_vien();
             load_data_to_sle_loai_hop_dong();
             load_data_to_sle_loai_lao_dong();
@@ -97,6 +98,49 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             {
                 m_sle_chuc_vu.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_CHUC_VU]);
             }
+            m_sle_mo_ta_cv.Properties.ForceInitialize();
+
+            //m_sle_mo_ta_cv.Text = v_dr["GHI_CHU"].ToString();
+            m_sle_mo_ta_cv.EditValue = m_sle_mo_ta_cv.Properties.GetKeyValueByDisplayText(v_dr["GHI_CHU"].ToString());
+            if(v_dr[V_GD_HOP_DONG_V3.ID_LUONG_CHE_DO] != DBNull.Value)
+            {
+                m_sle_ma_lcd.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_MA_LCD]);
+                m_sle_muc_lcd.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_MUC_LCD]);
+            }
+            m_txt_so_tien_lcd.EditValue = v_dr["SO_TIEN_LCD_THUC_TE"];
+        }
+        private void dr_hop_dong_cuoi_to_form(DataRow v_dr)
+        {
+            //m_sle_chon_nhan_vien.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_NHAN_VIEN]);
+            m_sle_loai_hop_dong.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_LOAI_HOP_DONG]);
+            m_sle_loai_lao_dong.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_LOAI_LAO_DONG]);
+            //m_txt_ma_hd.Text = v_dr[V_GD_HOP_DONG_V3.MA_HOP_DONG].ToString();
+            //if(v_dr[V_GD_HOP_DONG_V3.NGAY_KY_HOP_DONG] != DBNull.Value)
+            //{
+            //    m_dat_ngay_ky.EditValue = Convert.ToDateTime(v_dr[V_GD_HOP_DONG_V3.NGAY_KY_HOP_DONG]);
+            //}
+            //else
+            //{
+            //    m_dat_ngay_ky.EditValue = null;
+            //}
+
+            //m_dat_ngay_bat_dau.DateTime = Convert.ToDateTime(v_dr[V_GD_HOP_DONG_V3.NGAY_BAT_DAU]);
+            //if(v_dr[V_GD_HOP_DONG_V3.NGAY_KET_THUC] != DBNull.Value)
+            //{
+            //    m_dat_ngay_ket_thuc.DateTime = Convert.ToDateTime(v_dr[V_GD_HOP_DONG_V3.NGAY_KET_THUC]);
+            //}
+            //else
+            //{
+            //    m_dat_ngay_ket_thuc.EditValue = null;
+            //}
+            if(v_dr[V_GD_HOP_DONG_V3.ID_DON_VI] != DBNull.Value)
+            {
+                m_sle_don_vi.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_DON_VI]);
+            }
+            if(v_dr[V_GD_HOP_DONG_V3.ID_CHUC_VU] != DBNull.Value)
+            {
+                m_sle_chuc_vu.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_CHUC_VU]);
+            }
 
             m_sle_mo_ta_cv.Text = v_dr[V_GD_HOP_DONG_V3.GHI_CHU].ToString();
             if(v_dr[V_GD_HOP_DONG_V3.ID_LUONG_CHE_DO] != DBNull.Value)
@@ -106,7 +150,6 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
             m_txt_so_tien_lcd.EditValue = v_dr["SO_TIEN_LCD_THUC_TE"];
         }
-
         //Load data
         private void load_data_to_sle_nhan_vien()
         {
@@ -475,6 +518,42 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_dat_ngay_bat_dau.EditValueChanged += m_dat_ngay_bat_dau_EditValueChanged;
             m_sle_chon_nhan_vien.CustomDisplayText += m_sle_chon_nhan_vien_CustomDisplayText;
             m_sle_loai_hop_dong.EditValueChanged += m_sle_loai_hop_dong_EditValueChanged;
+            m_sle_chon_nhan_vien.EditValueChanged += m_sle_chon_nhan_vien_EditValueChanged;
+        }
+
+        void m_sle_chon_nhan_vien_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(m_e_form_mode != DataEntryFormMode.InsertDataState)
+                {
+                    return;
+                }
+                if(m_sle_chon_nhan_vien.EditValue == null)
+                {
+                    return;
+                }
+                US_GD_HOP_DONG v_us_hd = new US_GD_HOP_DONG();
+                DataRow v_dr_hd_cuoi = v_us_hd.LayHopDongCuoiCungNhanVien(Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                if(v_dr_hd_cuoi != null)
+                {
+                    var v_dlg_confirm = XtraMessageBox.Show("Nhân viên đã có hợp đồng rồi. Bạn có muốn sử dụng dữ liệu của hợp đồng gần đây nhất để thêm mới hợp đồng cho nhân viên này?", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if(v_dlg_confirm == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        dr_hop_dong_cuoi_to_form(v_dr_hd_cuoi);
+                        if(m_sle_mo_ta_cv.IsPopupOpen)
+                        {
+                            m_sle_mo_ta_cv.ClosePopup();
+                        }
+
+                        m_sle_chon_nhan_vien.Focus();
+                    }
+                }
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_sle_loai_hop_dong_EditValueChanged(object sender, EventArgs e)

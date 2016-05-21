@@ -603,5 +603,19 @@ public class US_GD_HOP_DONG : US_Object
         v_cstore.fillDataSetByCommand(this, v_ds);
         return v_ds;
     }
+
+    public DataRow LayHopDongCuoiCungNhanVien(decimal ip_dc_id_nhan_vien)
+    {
+        DataSet v_ds = new DataSet();
+        v_ds.Tables.Add();
+        CStoredProc v_cstore = new CStoredProc("pr_HD_hop_dong_nhan_vien_cuoi_cung_Get");
+        v_cstore.addDecimalInputParam("@ip_dc_id_nhan_vien", ip_dc_id_nhan_vien);
+        v_cstore.fillDataSetByCommand(this, v_ds);
+        if(v_ds.Tables[0].Rows.Count == 0)
+        {
+            return null;
+        }
+        return v_ds.Tables[0].Rows[0];
+    }
 }
 }

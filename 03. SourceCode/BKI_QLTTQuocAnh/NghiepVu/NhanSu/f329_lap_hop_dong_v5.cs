@@ -358,6 +358,19 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_cmd_refresh.Click += m_cmd_refresh_Click;
             m_cmd_chon_file.Click += M_cmd_chon_file_Click;
             m_cmd_filter.Click += m_cmd_filter_Click;
+            m_grv.FocusedRowChanged += m_grv_FocusedRowChanged;
+        }
+
+        void m_grv_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            try
+            {
+                //m_grv.SelectRow(e.FocusedRowHandle);
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_filter_Click(object sender, EventArgs e)
@@ -464,6 +477,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                     f330_lap_hop_dong_v5_detail v_f = new f330_lap_hop_dong_v5_detail();
                     v_f.display_for_update(v_dr);
                     load_data_to_grid();
+                    CHRMCommon.SelectRowInGrid(m_grv, "ID", Convert.ToDecimal(v_dr["ID"]));
                 }
                 else
                 {
@@ -482,9 +496,9 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             try
             {
                 f330_lap_hop_dong_v5_detail v_f = new f330_lap_hop_dong_v5_detail();
-                v_f.display_for_insert();
+                var v_dc_id_insert = v_f.display_for_insert();
                 load_data_to_grid();
-
+                CHRMCommon.SelectRowInGrid(m_grv, "ID", v_dc_id_insert);
             }
             catch(Exception v_e)
             {

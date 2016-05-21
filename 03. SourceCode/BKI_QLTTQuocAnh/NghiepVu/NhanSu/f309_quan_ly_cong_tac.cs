@@ -164,6 +164,19 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_cmd_filter.Click += m_cmd_filter_Click;
             m_grv.DoubleClick += m_grv_DoubleClick;
             m_cmd_chon_file.Click += m_cmd_chon_file_Click;
+            m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
+        }
+
+        void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CHRMCommon.ExportExcel(m_grv);
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_chon_file_Click(object sender, EventArgs e)

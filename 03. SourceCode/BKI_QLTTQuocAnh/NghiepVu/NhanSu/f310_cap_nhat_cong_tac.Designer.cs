@@ -101,7 +101,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 201);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(423, 36);
-            this.panel1.TabIndex = 3;
+            this.panel1.TabIndex = 1;
             // 
             // m_cmd_save
             // 
@@ -110,7 +110,7 @@
             this.m_cmd_save.Location = new System.Drawing.Point(191, 0);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(116, 36);
-            this.m_cmd_save.TabIndex = 24;
+            this.m_cmd_save.TabIndex = 0;
             this.m_cmd_save.Text = "&Lưu";
             // 
             // m_cmd_exit
@@ -120,7 +120,7 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(307, 0);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(116, 36);
-            this.m_cmd_exit.TabIndex = 23;
+            this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "&Thoát";
             // 
             // layoutControl1
@@ -137,7 +137,7 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
             this.layoutControl1.Size = new System.Drawing.Size(423, 201);
-            this.layoutControl1.TabIndex = 4;
+            this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // m_txt_so_ho_so
@@ -150,7 +150,7 @@
             this.m_txt_so_ho_so.Properties.ReadOnly = true;
             this.m_txt_so_ho_so.Size = new System.Drawing.Size(314, 20);
             this.m_txt_so_ho_so.StyleController = this.layoutControl1;
-            this.m_txt_so_ho_so.TabIndex = 11;
+            this.m_txt_so_ho_so.TabIndex = 4;
             // 
             // m_dat_ngay_ket_thuc
             // 
@@ -163,7 +163,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(314, 20);
             this.m_dat_ngay_ket_thuc.StyleController = this.layoutControl1;
-            this.m_dat_ngay_ket_thuc.TabIndex = 10;
+            this.m_dat_ngay_ket_thuc.TabIndex = 6;
             // 
             // m_dat_ngay_bat_dau
             // 
@@ -176,7 +176,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_dat_ngay_bat_dau.Size = new System.Drawing.Size(314, 20);
             this.m_dat_ngay_bat_dau.StyleController = this.layoutControl1;
-            this.m_dat_ngay_bat_dau.TabIndex = 9;
+            this.m_dat_ngay_bat_dau.TabIndex = 5;
             // 
             // m_sle_chon_vi_tri
             // 
@@ -190,7 +190,7 @@
             this.m_sle_chon_vi_tri.Properties.View = this.gridView3;
             this.m_sle_chon_vi_tri.Size = new System.Drawing.Size(314, 20);
             this.m_sle_chon_vi_tri.StyleController = this.layoutControl1;
-            this.m_sle_chon_vi_tri.TabIndex = 5;
+            this.m_sle_chon_vi_tri.TabIndex = 3;
             // 
             // gridView3
             // 
@@ -244,7 +244,7 @@
             this.m_sle_chon_don_vi.Properties.View = this.gridView2;
             this.m_sle_chon_don_vi.Size = new System.Drawing.Size(314, 20);
             this.m_sle_chon_don_vi.StyleController = this.layoutControl1;
-            this.m_sle_chon_don_vi.TabIndex = 5;
+            this.m_sle_chon_don_vi.TabIndex = 2;
             // 
             // gridView2
             // 
@@ -291,7 +291,7 @@
             this.m_sle_chon_nhan_vien.Properties.View = this.searchLookUpEdit1View;
             this.m_sle_chon_nhan_vien.Size = new System.Drawing.Size(314, 20);
             this.m_sle_chon_nhan_vien.StyleController = this.layoutControl1;
-            this.m_sle_chon_nhan_vien.TabIndex = 5;
+            this.m_sle_chon_nhan_vien.TabIndex = 0;
             // 
             // searchLookUpEdit1View
             // 
@@ -347,7 +347,7 @@
             this.m_sle_chon_loai_cong_tac.Properties.View = this.gridView4;
             this.m_sle_chon_loai_cong_tac.Size = new System.Drawing.Size(314, 20);
             this.m_sle_chon_loai_cong_tac.StyleController = this.layoutControl1;
-            this.m_sle_chon_loai_cong_tac.TabIndex = 6;
+            this.m_sle_chon_loai_cong_tac.TabIndex = 1;
             // 
             // gridView4
             // 

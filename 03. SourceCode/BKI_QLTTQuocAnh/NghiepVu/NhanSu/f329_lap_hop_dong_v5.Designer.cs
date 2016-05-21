@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f329_lap_hop_dong_v5));
             this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -104,7 +104,7 @@
             this.colNGAY_KET_THUC.Name = "colNGAY_KET_THUC";
             this.colNGAY_KET_THUC.OptionsColumn.AllowEdit = false;
             this.colNGAY_KET_THUC.Visible = true;
-            this.colNGAY_KET_THUC.VisibleIndex = 6;
+            this.colNGAY_KET_THUC.VisibleIndex = 5;
             this.colNGAY_KET_THUC.Width = 91;
             // 
             // panelControl2
@@ -160,26 +160,24 @@
             this.colLOAI_HOP_DONG,
             this.colID_DON_VI,
             this.colID_CHUC_VU});
-            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.Pink;
-            styleFormatCondition2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
-            styleFormatCondition2.Appearance.ForeColor = System.Drawing.Color.Firebrick;
-            styleFormatCondition2.Appearance.Options.UseBackColor = true;
-            styleFormatCondition2.Appearance.Options.UseFont = true;
-            styleFormatCondition2.Appearance.Options.UseForeColor = true;
-            styleFormatCondition2.ApplyToRow = true;
-            styleFormatCondition2.Column = this.colNGAY_KET_THUC;
-            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition2.Expression = "[NGAY_KET_THUC]  < Today() And IsNullOrEmpty([NGAY_KET_THUC]) == False";
-            styleFormatCondition2.Name = "HET_HAN";
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Pink;
+            styleFormatCondition1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
+            styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Firebrick;
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
+            styleFormatCondition1.Appearance.Options.UseFont = true;
+            styleFormatCondition1.Appearance.Options.UseForeColor = true;
+            styleFormatCondition1.ApplyToRow = true;
+            styleFormatCondition1.Column = this.colNGAY_KET_THUC;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition1.Expression = "[NGAY_KET_THUC]  < Today() And IsNullOrEmpty([NGAY_KET_THUC]) == False";
+            styleFormatCondition1.Name = "HET_HAN";
             this.m_grv.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition2});
+            styleFormatCondition1});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
             this.m_grv.OptionsBehavior.ReadOnly = true;
             this.m_grv.OptionsFind.AllowFindPanel = false;
             this.m_grv.OptionsFind.AlwaysVisible = true;
-            this.m_grv.OptionsSelection.MultiSelect = true;
-            this.m_grv.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.m_grv.OptionsView.ColumnAutoWidth = false;
             this.m_grv.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.m_grv.OptionsView.ShowAutoFilterRow = true;
@@ -200,7 +198,7 @@
             this.colMA_NV.Name = "colMA_NV";
             this.colMA_NV.OptionsColumn.AllowEdit = false;
             this.colMA_NV.Visible = true;
-            this.colMA_NV.VisibleIndex = 3;
+            this.colMA_NV.VisibleIndex = 2;
             this.colMA_NV.Width = 63;
             // 
             // colHO_TEN
@@ -216,7 +214,7 @@
             this.colHO_TEN.Name = "colHO_TEN";
             this.colHO_TEN.OptionsColumn.AllowEdit = false;
             this.colHO_TEN.Visible = true;
-            this.colHO_TEN.VisibleIndex = 4;
+            this.colHO_TEN.VisibleIndex = 3;
             this.colHO_TEN.Width = 145;
             // 
             // colMA_HOP_DONG
@@ -234,7 +232,7 @@
             this.colMA_HOP_DONG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MA_HOP_DONG", "SL: {0:n0}")});
             this.colMA_HOP_DONG.Visible = true;
-            this.colMA_HOP_DONG.VisibleIndex = 2;
+            this.colMA_HOP_DONG.VisibleIndex = 1;
             this.colMA_HOP_DONG.Width = 58;
             // 
             // colMA_LOAI_HOP_DONG
@@ -250,7 +248,7 @@
             this.colMA_LOAI_HOP_DONG.Name = "colMA_LOAI_HOP_DONG";
             this.colMA_LOAI_HOP_DONG.OptionsColumn.AllowEdit = false;
             this.colMA_LOAI_HOP_DONG.Visible = true;
-            this.colMA_LOAI_HOP_DONG.VisibleIndex = 1;
+            this.colMA_LOAI_HOP_DONG.VisibleIndex = 0;
             this.colMA_LOAI_HOP_DONG.Width = 72;
             // 
             // colNGAY_BAT_DAU
@@ -268,7 +266,7 @@
             this.colNGAY_BAT_DAU.Name = "colNGAY_BAT_DAU";
             this.colNGAY_BAT_DAU.OptionsColumn.AllowEdit = false;
             this.colNGAY_BAT_DAU.Visible = true;
-            this.colNGAY_BAT_DAU.VisibleIndex = 5;
+            this.colNGAY_BAT_DAU.VisibleIndex = 4;
             this.colNGAY_BAT_DAU.Width = 91;
             // 
             // colNGAY_KY_HOP_DONG
@@ -286,7 +284,7 @@
             this.colNGAY_KY_HOP_DONG.Name = "colNGAY_KY_HOP_DONG";
             this.colNGAY_KY_HOP_DONG.OptionsColumn.AllowEdit = false;
             this.colNGAY_KY_HOP_DONG.Visible = true;
-            this.colNGAY_KY_HOP_DONG.VisibleIndex = 7;
+            this.colNGAY_KY_HOP_DONG.VisibleIndex = 6;
             // 
             // colMA_LCD
             // 
@@ -299,7 +297,7 @@
             this.colMA_LCD.FieldName = "MA_LCD";
             this.colMA_LCD.Name = "colMA_LCD";
             this.colMA_LCD.Visible = true;
-            this.colMA_LCD.VisibleIndex = 8;
+            this.colMA_LCD.VisibleIndex = 7;
             this.colMA_LCD.Width = 60;
             // 
             // colMUC_LCD
@@ -313,7 +311,7 @@
             this.colMUC_LCD.FieldName = "MUC_LCD";
             this.colMUC_LCD.Name = "colMUC_LCD";
             this.colMUC_LCD.Visible = true;
-            this.colMUC_LCD.VisibleIndex = 9;
+            this.colMUC_LCD.VisibleIndex = 8;
             this.colMUC_LCD.Width = 67;
             // 
             // colTEN_CHUC_VU
@@ -331,7 +329,7 @@
             this.colTEN_CHUC_VU.Name = "colTEN_CHUC_VU";
             this.colTEN_CHUC_VU.OptionsColumn.AllowEdit = false;
             this.colTEN_CHUC_VU.Visible = true;
-            this.colTEN_CHUC_VU.VisibleIndex = 12;
+            this.colTEN_CHUC_VU.VisibleIndex = 11;
             this.colTEN_CHUC_VU.Width = 114;
             // 
             // colSO_TIEN_LCD_THUC_TE
@@ -349,7 +347,7 @@
             this.colSO_TIEN_LCD_THUC_TE.FieldName = "SO_TIEN_LCD_THUC_TE";
             this.colSO_TIEN_LCD_THUC_TE.Name = "colSO_TIEN_LCD_THUC_TE";
             this.colSO_TIEN_LCD_THUC_TE.Visible = true;
-            this.colSO_TIEN_LCD_THUC_TE.VisibleIndex = 11;
+            this.colSO_TIEN_LCD_THUC_TE.VisibleIndex = 10;
             this.colSO_TIEN_LCD_THUC_TE.Width = 85;
             // 
             // colTEN_DON_VI
@@ -363,7 +361,7 @@
             this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
             this.colTEN_DON_VI.Name = "colTEN_DON_VI";
             this.colTEN_DON_VI.Visible = true;
-            this.colTEN_DON_VI.VisibleIndex = 13;
+            this.colTEN_DON_VI.VisibleIndex = 12;
             // 
             // colSO_TIEN_MAC_DINH_LCD
             // 
@@ -378,7 +376,7 @@
             this.colSO_TIEN_MAC_DINH_LCD.FieldName = "SO_TIEN_MAC_DINH_LCD";
             this.colSO_TIEN_MAC_DINH_LCD.Name = "colSO_TIEN_MAC_DINH_LCD";
             this.colSO_TIEN_MAC_DINH_LCD.Visible = true;
-            this.colSO_TIEN_MAC_DINH_LCD.VisibleIndex = 10;
+            this.colSO_TIEN_MAC_DINH_LCD.VisibleIndex = 9;
             this.colSO_TIEN_MAC_DINH_LCD.Width = 125;
             // 
             // colNGAY_LAP
@@ -392,7 +390,7 @@
             this.colNGAY_LAP.FieldName = "NGAY_LAP";
             this.colNGAY_LAP.Name = "colNGAY_LAP";
             this.colNGAY_LAP.Visible = true;
-            this.colNGAY_LAP.VisibleIndex = 15;
+            this.colNGAY_LAP.VisibleIndex = 14;
             // 
             // colLOAI_LAO_DONG
             // 
@@ -405,7 +403,7 @@
             this.colLOAI_LAO_DONG.FieldName = "LOAI_LAO_DONG";
             this.colLOAI_LAO_DONG.Name = "colLOAI_LAO_DONG";
             this.colLOAI_LAO_DONG.Visible = true;
-            this.colLOAI_LAO_DONG.VisibleIndex = 14;
+            this.colLOAI_LAO_DONG.VisibleIndex = 13;
             // 
             // colID_LOAI_HOP_DONG
             // 
@@ -472,7 +470,7 @@
             this.colGHI_CHU.FieldName = "GHI_CHU";
             this.colGHI_CHU.Name = "colGHI_CHU";
             this.colGHI_CHU.Visible = true;
-            this.colGHI_CHU.VisibleIndex = 16;
+            this.colGHI_CHU.VisibleIndex = 15;
             // 
             // colLOAI_HOP_DONG
             // 
@@ -676,6 +674,7 @@
             this.ClientSize = new System.Drawing.Size(871, 559);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl3);
+            this.KeyPreview = true;
             this.Name = "f329_lap_hop_dong_v5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F329 - Quản lý danh sách hợp đồng";

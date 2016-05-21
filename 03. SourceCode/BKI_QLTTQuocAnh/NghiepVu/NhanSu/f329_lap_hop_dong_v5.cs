@@ -347,7 +347,69 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         #endregion
 
         //EVENTS
-
+        private void insert_data()
+        {
+            f330_lap_hop_dong_v5_detail v_f = new f330_lap_hop_dong_v5_detail();
+            var v_dc_id_insert = v_f.display_for_insert();
+            load_data_to_grid();
+            CHRMCommon.SelectRowInGrid(m_grv, "ID", v_dc_id_insert);
+        }
+        private void update_data()
+        {
+            int[] v_selected_row = m_grv.GetSelectedRows();
+            if(v_selected_row.Length > 1)
+            {
+                XtraMessageBox.Show("Bạn chỉ được chọn 1 dòng để sửa!", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+            int v_focused_row = m_grv.FocusedRowHandle;
+            if(v_focused_row >= 0)
+            {
+                var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
+                f330_lap_hop_dong_v5_detail v_f = new f330_lap_hop_dong_v5_detail();
+                v_f.display_for_update(v_dr);
+                load_data_to_grid();
+                CHRMCommon.SelectRowInGrid(m_grv, "ID", Convert.ToDecimal(v_dr["ID"]));
+            }
+            else
+            {
+                string v_str_error = "Bạn chưa chọn dòng dữ liệu để sửa!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void delete_data()
+        {
+            int[] v_selected_row = m_grv.GetSelectedRows();
+            if(v_selected_row.Length > 1)
+            {
+                XtraMessageBox.Show("Bạn chỉ được chọn 1 dòng để xóa!", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+            int v_focused_row = m_grv.FocusedRowHandle;
+            if(v_focused_row >= 0)
+            {
+                string v_str_confirm = "Bạn có chắc chắn muốn xóa hợp đồng này?\nViệc xóa hợp đồng chỉ nên thực hiện khi bạn cập nhật sai.\nViệc xóa hợp đồng có thể ảnh hưởng tới các dữ liệu tiền lương đã tính trước đó!";
+                DialogResult v_dialog = XtraMessageBox.Show(v_str_confirm, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                if(v_dialog == DialogResult.Yes)
+                {
+                    decimal v_id_hop_dong = Convert.ToDecimal(m_grv.GetRowCellValue(v_focused_row, "ID"));
+                    US_GD_HOP_DONG v_us = new US_GD_HOP_DONG(v_id_hop_dong);
+                    v_us.Delete();
+                    XtraMessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    load_data_to_grid();
+                }
+            }
+            else
+            {
+                string v_str_error = "Bạn chưa chọn hợp đồng để xóa!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void refresh_data()
+        {
+            load_data_to_grid();
+            XtraMessageBox.Show("Làm mới dữ liệu thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
         private void set_define_events()
         {
             this.Load += f327_lap_hop_dong_v5_Load;
@@ -359,6 +421,48 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_cmd_chon_file.Click += M_cmd_chon_file_Click;
             m_cmd_filter.Click += m_cmd_filter_Click;
             m_grv.FocusedRowChanged += m_grv_FocusedRowChanged;
+            KeyDown += f329_lap_hop_dong_v5_KeyDown;
+            m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
+        }
+
+        void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CHRMCommon.ExportExcel(m_grv);
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void f329_lap_hop_dong_v5_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                switch(e.KeyCode)
+                {
+                    case Keys.F1:
+                        insert_data();
+                        break;
+                    case Keys.F2:
+                        update_data();
+                        break;
+                    case Keys.F3:
+                        delete_data();
+                        break;
+                    case Keys.F5:
+                        refresh_data();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_grv_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -404,7 +508,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             try
             {
-                load_data_to_grid();
+                refresh_data();
             }
             catch(Exception v_e)
             {
@@ -416,7 +520,17 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             try
             {
-                in_hop_dong_process();
+                if(m_grv.OptionsSelection.MultiSelect)
+                {
+                    in_hop_dong_process();
+                    m_grv.OptionsSelection.MultiSelect = false;
+                }
+                else
+                {
+                    XtraMessageBox.Show("Chọn các hợp đồng muốn in rồi ấn In hợp đồng!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    m_grv.OptionsSelection.MultiSelect = true;
+                    m_grv.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+                }
             }
             catch(Exception v_e)
             {
@@ -428,31 +542,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             try
             {
-                int[] v_selected_row = m_grv.GetSelectedRows();
-                if(v_selected_row.Length > 1)
-                {
-                    XtraMessageBox.Show("Bạn chỉ được chọn 1 dòng để xóa!", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    return;
-                }
-                int v_focused_row = m_grv.FocusedRowHandle;
-                if(v_focused_row >= 0)
-                {
-                    string v_str_confirm = "Bạn có chắc chắn muốn xóa hợp đồng này?\nViệc xóa hợp đồng chỉ nên thực hiện khi bạn cập nhật sai.\nViệc xóa hợp đồng có thể ảnh hưởng tới các dữ liệu tiền lương đã tính trước đó!";
-                    DialogResult v_dialog = XtraMessageBox.Show(v_str_confirm, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
-                    if(v_dialog == DialogResult.Yes)
-                    {
-                        decimal v_id_hop_dong = Convert.ToDecimal(m_grv.GetRowCellValue(v_focused_row, "ID"));
-                        US_GD_HOP_DONG v_us = new US_GD_HOP_DONG(v_id_hop_dong);
-                        v_us.Delete();
-                        XtraMessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        load_data_to_grid();
-                    }
-                }
-                else
-                {
-                    string v_str_error = "Bạn chưa chọn hợp đồng để xóa!";
-                    XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                delete_data();
             }
             catch(Exception v_e)
             {
@@ -464,26 +554,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             try
             {
-                int[] v_selected_row = m_grv.GetSelectedRows();
-                if(v_selected_row.Length > 1)
-                {
-                    XtraMessageBox.Show("Bạn chỉ được chọn 1 dòng để sửa!", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    return;
-                }
-                int v_focused_row = m_grv.FocusedRowHandle;
-                if(v_focused_row >= 0)
-                {
-                    var v_dr = m_grv.GetDataRow(m_grv.FocusedRowHandle);
-                    f330_lap_hop_dong_v5_detail v_f = new f330_lap_hop_dong_v5_detail();
-                    v_f.display_for_update(v_dr);
-                    load_data_to_grid();
-                    CHRMCommon.SelectRowInGrid(m_grv, "ID", Convert.ToDecimal(v_dr["ID"]));
-                }
-                else
-                {
-                    string v_str_error = "Bạn chưa chọn dòng dữ liệu để sửa!";
-                    XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                update_data();
             }
             catch(Exception v_e)
             {
@@ -495,10 +566,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             try
             {
-                f330_lap_hop_dong_v5_detail v_f = new f330_lap_hop_dong_v5_detail();
-                var v_dc_id_insert = v_f.display_for_insert();
-                load_data_to_grid();
-                CHRMCommon.SelectRowInGrid(m_grv, "ID", v_dc_id_insert);
+                insert_data();
             }
             catch(Exception v_e)
             {

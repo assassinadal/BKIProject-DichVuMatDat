@@ -117,8 +117,8 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_sle_chon_nhan_vien.Properties.ValueMember = V_DM_NHAN_VIEN.ID;
 
             // m_sle_chon_nhan_vien.Properties.DataSource = v_ds.Tables[0];
-            m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+            //m_sle_chon_nhan_vien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            //m_sle_chon_nhan_vien.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
         }
         private void load_data_to_sle_loai_hop_dong()
         {

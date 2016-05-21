@@ -15,6 +15,7 @@ using IP.Core.IPUserService;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 using BKI_DichVuMatDat.BaoCao;
+using BKI_DichVuMatDat.COMMON;
 
 namespace BKI_DichVuMatDat.DanhMuc
 {
@@ -208,7 +209,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             try
             {
-                CHRM_BaseMessages.MsgBox_Infor("Mã nhân viên tiếp theo là : " + CHRMCommon.gen_ma_nhan_vien());
+                CHRM_BaseMessages.MsgBox_Infor("Mã nhân viên tiếp theo là : " + ExecuteFuntion.LayMaNhanVienTiepTheo());
             }
             catch(Exception v_e)
             {

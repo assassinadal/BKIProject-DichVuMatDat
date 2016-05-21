@@ -98,5 +98,13 @@ namespace BKI_DichVuMatDat.COMMON
 
             return v_bol_result;
         }
+
+        public static decimal LayMaNhanVienTiepTheo()
+        {
+            var v_str_result = ExecuteFuntionSql("FN_NS_GEN_MA_NV_NEXT");
+            var v_dc_result = Convert.ToDecimal(v_str_result);
+
+            return v_dc_result;
+        }
     }
 }

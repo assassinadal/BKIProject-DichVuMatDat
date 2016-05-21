@@ -12,6 +12,7 @@ using BKI_DichVuMatDat.US;
 using IP.Core.IPCommon;
 using BKI_DichVuMatDat.DS.CDBNames;
 using BKI_DichVuMatDat.NghiepVu;
+using BKI_DichVuMatDat.COMMON;
 
 namespace BKI_DichVuMatDat.DanhMuc
 {
@@ -28,6 +29,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             Text = "F150 - Thêm mới nhân viên";
+            m_txt_ma_nv.Text = ExecuteFuntion.LayMaNhanVienTiepTheo().ToString();
             this.CenterToScreen();
             this.ShowDialog();
         }
@@ -36,7 +38,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             Text = "F150 - Thêm mới nhân viên";
-            m_txt_ma_nv.Text = CHRMCommon.gen_ma_nhan_vien();
+            m_txt_ma_nv.Text = ExecuteFuntion.LayMaNhanVienTiepTheo().ToString();
             this.CenterToScreen();
             this.ShowDialog();
             m_trang_thai_buoc_1_sau_hien_thi = m_trang_thai_buoc_1_sau_hien_thi_f150_v2;

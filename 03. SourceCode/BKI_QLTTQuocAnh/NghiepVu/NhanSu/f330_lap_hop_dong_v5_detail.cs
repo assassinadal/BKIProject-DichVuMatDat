@@ -199,9 +199,9 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
             DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
             v_us.FillDatasetByIdLoaiTuDien(v_ds, CONST_ID_LOAI_TU_DIEN.MO_TA_CONG_VIEC);
-            m_sle_ma_lcd.Properties.DataSource = v_ds.Tables[0];
-            m_sle_ma_lcd.Properties.DisplayMember = CM_DM_TU_DIEN.TEN;
-            m_sle_ma_lcd.Properties.ValueMember = CM_DM_TU_DIEN.ID;
+            m_sle_mo_ta_cv.Properties.DataSource = v_ds.Tables[0];
+            m_sle_mo_ta_cv.Properties.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_sle_mo_ta_cv.Properties.ValueMember = CM_DM_TU_DIEN.ID;
         }
         private DataRow get_luong_cd_theo_ma_muc()
         {
@@ -473,6 +473,42 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_sle_ma_lcd.EditValueChanged += m_sle_ma_lcd_EditValueChanged;
             m_sle_muc_lcd.EditValueChanged += m_sle_muc_lcd_EditValueChanged;
             m_dat_ngay_bat_dau.EditValueChanged += m_dat_ngay_bat_dau_EditValueChanged;
+            m_sle_chon_nhan_vien.CustomDisplayText += m_sle_chon_nhan_vien_CustomDisplayText;
+            m_sle_loai_hop_dong.EditValueChanged += m_sle_loai_hop_dong_EditValueChanged;
+        }
+
+        void m_sle_loai_hop_dong_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(m_dat_ngay_bat_dau.EditValue != null)
+                {
+                    m_dat_ngay_ket_thuc.EditValue = default_ngay_ket_thuc();
+                }
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_sle_chon_nhan_vien_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            try
+            {
+                var v_sle = sender as SearchLookUpEdit;
+                if(v_sle.EditValue == null)
+                {
+                    return;
+                }
+                var x = (DataTable)v_sle.Properties.DataSource;
+                var y = x.Rows[v_sle.Properties.GetIndexByKeyValue(v_sle.EditValue)][DM_NHAN_VIEN.MA_NV];
+                e.DisplayText = y + " - " + e.DisplayText;
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_dat_ngay_bat_dau_EditValueChanged(object sender, EventArgs e)

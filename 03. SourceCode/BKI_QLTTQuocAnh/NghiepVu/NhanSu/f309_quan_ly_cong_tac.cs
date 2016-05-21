@@ -165,6 +165,35 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_grv.DoubleClick += m_grv_DoubleClick;
             m_cmd_chon_file.Click += m_cmd_chon_file_Click;
             m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
+            KeyDown += f309_quan_ly_cong_tac_KeyDown;
+        }
+
+        void f309_quan_ly_cong_tac_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                switch(e.KeyCode)
+                {
+                    case Keys.F1:
+                        them_moi_cong_tac();
+                        break;
+                    case Keys.F2:
+                        sua_cong_tac();
+                        break;
+                    case Keys.F3:
+                        xoa_cong_tac();
+                        break;
+                    case Keys.F5:
+                        refresh_data();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_xuat_excel_Click(object sender, EventArgs e)

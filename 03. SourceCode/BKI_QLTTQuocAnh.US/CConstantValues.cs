@@ -167,6 +167,7 @@ namespace BKI_DichVuMatDat.US
         public const decimal KHOAN_TIEN_KHAC = 19;
         public const int TRINH_DO_CHUYEN_MON = 20;
         public const int CAU_HINH_IN_HD = 22;
+        public const int MO_TA_CONG_VIEC = 23;
     }
 
     public static class CONST_ID_LOAI_CONG_TAC

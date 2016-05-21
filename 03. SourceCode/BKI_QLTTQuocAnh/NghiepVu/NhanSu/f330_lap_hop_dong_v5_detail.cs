@@ -27,11 +27,13 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         }
         public void display_for_insert()
         {
+            Text = "F330 - Thêm mới hợp đồng";
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.ShowDialog();
         }
         public void display_for_update(DataRow v_dr)
         {
+            Text = "F330 - Cập nhật hợp đồng";
             US_GD_HOP_DONG v_us = new US_GD_HOP_DONG(CIPConvert.ToDecimal(v_dr[GD_HOP_DONG.ID]));
             m_us_gd_hd = v_us;
             m_sle_chon_nhan_vien.Enabled = false;
@@ -59,6 +61,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_sle_don_vi.EditValueChanged += m_sle_don_vi_EditValueChanged;
             load_data_to_sle_ma_lcd();
             load_data_to_sle_muc_lcd();
+            load_data_to_mo_ta_cv();
             set_defines_event();
         }
 
@@ -86,9 +89,16 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             {
                 m_dat_ngay_ket_thuc.EditValue = null;
             }
-            m_sle_don_vi.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_DON_VI]);
-            m_sle_chuc_vu.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_CHUC_VU]);
-            m_txt_mo_ta_cv.Text = v_dr[V_GD_HOP_DONG_V3.GHI_CHU].ToString();
+            if(v_dr[V_GD_HOP_DONG_V3.ID_DON_VI] != DBNull.Value)
+            {
+                m_sle_don_vi.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_DON_VI]);
+            }
+            if(v_dr[V_GD_HOP_DONG_V3.ID_CHUC_VU] != DBNull.Value)
+            {
+                m_sle_chuc_vu.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_CHUC_VU]);
+            }
+
+            m_sle_mo_ta_cv.Text = v_dr[V_GD_HOP_DONG_V3.GHI_CHU].ToString();
             if(v_dr[V_GD_HOP_DONG_V3.ID_LUONG_CHE_DO] != DBNull.Value)
             {
                 m_sle_ma_lcd.EditValue = Convert.ToDecimal(v_dr[V_GD_HOP_DONG_V3.ID_MA_LCD]);
@@ -184,7 +194,15 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
 
             else m_txt_so_tien_lcd.EditValue = v_dr["SO_TIEN"];
         }
-
+        private void load_data_to_mo_ta_cv()
+        {
+            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
+            v_us.FillDatasetByIdLoaiTuDien(v_ds, CONST_ID_LOAI_TU_DIEN.MO_TA_CONG_VIEC);
+            m_sle_ma_lcd.Properties.DataSource = v_ds.Tables[0];
+            m_sle_ma_lcd.Properties.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_sle_ma_lcd.Properties.ValueMember = CM_DM_TU_DIEN.ID;
+        }
         private DataRow get_luong_cd_theo_ma_muc()
         {
             US_DM_LUONG_CHE_DO v_us = new US_DM_LUONG_CHE_DO();
@@ -198,6 +216,45 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 return null;
             else return v_ds.Tables[0].Rows[0];
         }
+
+        //
+        private DateTime? default_ngay_ket_thuc()
+        {
+            if(m_sle_loai_hop_dong.EditValue == null)
+            {
+                return null;
+            }
+
+            decimal v_dc_id_loai_hop_dong = Convert.ToDecimal(m_sle_loai_hop_dong.EditValue);
+            DateTime? v_dat_ngay_ket_thuc = null;
+            if(v_dc_id_loai_hop_dong == CONST_ID_LOAI_HOP_DONG.HOP_DONG_1N_2016)
+            {
+                v_dat_ngay_ket_thuc = m_dat_ngay_bat_dau.DateTime.Date.AddYears(1).Date;
+            }
+            if(v_dc_id_loai_hop_dong == CONST_ID_LOAI_HOP_DONG.HOP_DONG_3_NAM)
+            {
+                v_dat_ngay_ket_thuc = m_dat_ngay_bat_dau.DateTime.Date.AddYears(3).Date;
+            }
+            if(v_dc_id_loai_hop_dong == CONST_ID_LOAI_HOP_DONG.HOP_DONG_HOC_VIEC)
+            {
+                v_dat_ngay_ket_thuc = null;
+            }
+            if(v_dc_id_loai_hop_dong == CONST_ID_LOAI_HOP_DONG.HOP_DONG_KHONG_XAC_DINH)
+            {
+                v_dat_ngay_ket_thuc = null;
+            }
+            if(v_dc_id_loai_hop_dong == CONST_ID_LOAI_HOP_DONG.HOP_DONG_MOT_NAM)
+            {
+                v_dat_ngay_ket_thuc = m_dat_ngay_bat_dau.DateTime.Date.AddYears(1).Date;
+            }
+            if(v_dc_id_loai_hop_dong == CONST_ID_LOAI_HOP_DONG.HOP_DONG_THU_VIEC)
+            {
+                v_dat_ngay_ket_thuc = m_dat_ngay_bat_dau.DateTime.Date.AddMonths(1).Date;
+            }
+
+            return v_dat_ngay_ket_thuc;
+        }
+
 
         //Check routines
         private bool check_hop_le()
@@ -222,12 +279,12 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if(m_txt_ma_hd.Text.Trim() == "")
-            {
-                string v_str_error = "Bạn chưa nhập mã hợp đồng!";
-                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
+            //if(m_txt_ma_hd.Text.Trim() == "")
+            //{
+            //    string v_str_error = "Bạn chưa nhập mã hợp đồng!";
+            //    XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return false;
+            //}
             if(m_sle_loai_lao_dong.EditValue == null)
             {
                 string v_str_error = "Bạn chưa chọn loại lao động!";
@@ -359,7 +416,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
             m_us_gd_hd.dcID_DON_VI = Convert.ToDecimal(m_sle_don_vi.EditValue);
             m_us_gd_hd.dcID_CHUC_VU = Convert.ToDecimal(m_sle_chuc_vu.EditValue);
-            m_us_gd_hd.strGHI_CHU = m_txt_mo_ta_cv.Text;
+            m_us_gd_hd.strGHI_CHU = m_sle_mo_ta_cv.Text;
             if(m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
                 m_us_gd_hd.datNGAY_LAP = DateTime.Now.Date;
@@ -415,6 +472,19 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             m_cmd_save.Click += m_cmd_save_Click;
             m_sle_ma_lcd.EditValueChanged += m_sle_ma_lcd_EditValueChanged;
             m_sle_muc_lcd.EditValueChanged += m_sle_muc_lcd_EditValueChanged;
+            m_dat_ngay_bat_dau.EditValueChanged += m_dat_ngay_bat_dau_EditValueChanged;
+        }
+
+        void m_dat_ngay_bat_dau_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                m_dat_ngay_ket_thuc.EditValue = default_ngay_ket_thuc();
+            }
+            catch(Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_sle_don_vi_EditValueChanged(object sender, EventArgs e)

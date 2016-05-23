@@ -42,7 +42,6 @@
             this.m_grv_hop_dong = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MA_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_LOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_CHUC_DANH_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MA_MUC_LCD = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -179,7 +178,6 @@
             this.m_grv_hop_dong.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.STT,
             this.MA_NV,
-            this.MA_HOP_DONG,
             this.MA_LOAI_HOP_DONG,
             this.MA_CHUC_DANH_LCD,
             this.MA_MUC_LCD,
@@ -223,22 +221,7 @@
             this.MA_NV.FieldName = "MA_NHAN_VIEN";
             this.MA_NV.Name = "MA_NV";
             this.MA_NV.Visible = true;
-            this.MA_NV.VisibleIndex = 1;
-            // 
-            // MA_HOP_DONG
-            // 
-            this.MA_HOP_DONG.AppearanceCell.Options.UseTextOptions = true;
-            this.MA_HOP_DONG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.MA_HOP_DONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.MA_HOP_DONG.AppearanceHeader.Options.UseFont = true;
-            this.MA_HOP_DONG.AppearanceHeader.Options.UseTextOptions = true;
-            this.MA_HOP_DONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.MA_HOP_DONG.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.MA_HOP_DONG.Caption = "MA_HOP_DONG";
-            this.MA_HOP_DONG.FieldName = "MA_HOP_DONG";
-            this.MA_HOP_DONG.Name = "MA_HOP_DONG";
-            this.MA_HOP_DONG.Visible = true;
-            this.MA_HOP_DONG.VisibleIndex = 2;
+            this.MA_NV.VisibleIndex = 2;
             // 
             // MA_LOAI_HOP_DONG
             // 
@@ -253,7 +236,7 @@
             this.MA_LOAI_HOP_DONG.FieldName = "MA_LOAI_HOP_DONG";
             this.MA_LOAI_HOP_DONG.Name = "MA_LOAI_HOP_DONG";
             this.MA_LOAI_HOP_DONG.Visible = true;
-            this.MA_LOAI_HOP_DONG.VisibleIndex = 3;
+            this.MA_LOAI_HOP_DONG.VisibleIndex = 1;
             // 
             // MA_CHUC_DANH_LCD
             // 
@@ -266,7 +249,7 @@
             this.MA_CHUC_DANH_LCD.FieldName = "MA_CHUC_DANH_LCD";
             this.MA_CHUC_DANH_LCD.Name = "MA_CHUC_DANH_LCD";
             this.MA_CHUC_DANH_LCD.Visible = true;
-            this.MA_CHUC_DANH_LCD.VisibleIndex = 5;
+            this.MA_CHUC_DANH_LCD.VisibleIndex = 3;
             // 
             // MA_MUC_LCD
             // 
@@ -279,7 +262,7 @@
             this.MA_MUC_LCD.FieldName = "MA_MUC_LCD";
             this.MA_MUC_LCD.Name = "MA_MUC_LCD";
             this.MA_MUC_LCD.Visible = true;
-            this.MA_MUC_LCD.VisibleIndex = 6;
+            this.MA_MUC_LCD.VisibleIndex = 4;
             // 
             // MA_DON_VI
             // 
@@ -294,7 +277,7 @@
             this.MA_DON_VI.FieldName = "MA_DON_VI";
             this.MA_DON_VI.Name = "MA_DON_VI";
             this.MA_DON_VI.Visible = true;
-            this.MA_DON_VI.VisibleIndex = 10;
+            this.MA_DON_VI.VisibleIndex = 9;
             // 
             // MA_CHUC_VU
             // 
@@ -309,7 +292,7 @@
             this.MA_CHUC_VU.FieldName = "MA_CHUC_VU";
             this.MA_CHUC_VU.Name = "MA_CHUC_VU";
             this.MA_CHUC_VU.Visible = true;
-            this.MA_CHUC_VU.VisibleIndex = 11;
+            this.MA_CHUC_VU.VisibleIndex = 10;
             // 
             // MA_LOAI_LD
             // 
@@ -324,7 +307,7 @@
             this.MA_LOAI_LD.FieldName = "MA_LOAI_LAO_DONG";
             this.MA_LOAI_LD.Name = "MA_LOAI_LD";
             this.MA_LOAI_LD.Visible = true;
-            this.MA_LOAI_LD.VisibleIndex = 4;
+            this.MA_LOAI_LD.VisibleIndex = 8;
             // 
             // NGAY_BAT_DAU
             // 
@@ -341,7 +324,7 @@
             this.NGAY_BAT_DAU.FieldName = "NGAY_BAT_DAU";
             this.NGAY_BAT_DAU.Name = "NGAY_BAT_DAU";
             this.NGAY_BAT_DAU.Visible = true;
-            this.NGAY_BAT_DAU.VisibleIndex = 7;
+            this.NGAY_BAT_DAU.VisibleIndex = 5;
             // 
             // NGAY_KET_THUC
             // 
@@ -356,7 +339,7 @@
             this.NGAY_KET_THUC.FieldName = "NGAY_KET_THUC";
             this.NGAY_KET_THUC.Name = "NGAY_KET_THUC";
             this.NGAY_KET_THUC.Visible = true;
-            this.NGAY_KET_THUC.VisibleIndex = 8;
+            this.NGAY_KET_THUC.VisibleIndex = 6;
             // 
             // NGAY_KI_HOP_DONG
             // 
@@ -373,7 +356,7 @@
             this.NGAY_KI_HOP_DONG.FieldName = "NGAY_KI_HOP_DONG";
             this.NGAY_KI_HOP_DONG.Name = "NGAY_KI_HOP_DONG";
             this.NGAY_KI_HOP_DONG.Visible = true;
-            this.NGAY_KI_HOP_DONG.VisibleIndex = 9;
+            this.NGAY_KI_HOP_DONG.VisibleIndex = 7;
             // 
             // m_lbl_thong_bao
             // 
@@ -424,7 +407,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView m_grv_hop_dong;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
         private DevExpress.XtraGrid.Columns.GridColumn MA_NV;
-        private DevExpress.XtraGrid.Columns.GridColumn MA_HOP_DONG;
         private DevExpress.XtraGrid.Columns.GridColumn MA_LOAI_HOP_DONG;
         private DevExpress.XtraGrid.Columns.GridColumn MA_CHUC_DANH_LCD;
         private DevExpress.XtraGrid.Columns.GridColumn MA_MUC_LCD;

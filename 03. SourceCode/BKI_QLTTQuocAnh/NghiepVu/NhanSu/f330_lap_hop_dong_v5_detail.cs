@@ -480,13 +480,32 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 switch(m_e_form_mode)
                 {
                     case DataEntryFormMode.InsertDataState:
+                        m_us_gd_hd.BeginTransaction();
                         m_us_gd_hd.Insert();
+
                         //var v_dlg = XtraMessageBox.Show("Thêm hợp đồng mới thành công.\nBạn có muốn cập nhật công tác cho nhân viên này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         //if(v_dlg == System.Windows.Forms.DialogResult.Yes)
                         //{
                         //    f309_quan_ly_cong_tac v_frm = new f309_quan_ly_cong_tac();
                         //    v_frm.display_after_insert_hop_dong(ExecuteFuntion.LayMaNhanVien(m_us_gd_hd.dcID_NHAN_VIEN));
                         //}
+                        if(!ExecuteFuntion.KiemTraNhanVienCoCongTac(m_us_gd_hd.dcID_NHAN_VIEN))
+                        {
+                            XtraMessageBox.Show("Nhân viên chưa có công tác, hệ thống sẽ tự động cập nhật công tác theo hợp đồng!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            US_GD_CONG_TAC v_us = new US_GD_CONG_TAC();
+                            v_us.dcID_DON_VI = m_us_gd_hd.dcID_DON_VI;
+                            v_us.dcID_LOAI_CONG_TAC = CONST_ID_LOAI_CONG_TAC.CHINH_THUC;
+                            v_us.dcID_NHAN_VIEN = m_us_gd_hd.dcID_NHAN_VIEN;
+                            v_us.dcID_VI_TRI = m_us_gd_hd.dcID_CHUC_VU;
+                            v_us.dcSO_HO_SO = ExecuteFuntion.GetSoHoSoNext(m_us_gd_hd.dcID_DON_VI, m_us_gd_hd.dcID_CHUC_VU, m_us_gd_hd.dcID_NHAN_VIEN);
+                            v_us.strDA_XOA = "N";
+                            v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
+                            v_us.datNGAY_LAP = DateTime.Now.Date;
+                            v_us.datNGAY_BAT_DAU = m_us_gd_hd.datNGAY_BAT_DAU;
+                            v_us.UseTransOfUSObject(m_us_gd_hd);
+                            v_us.Insert();
+                        }
+                        m_us_gd_hd.CommitTransaction();
                         XtraMessageBox.Show("Thêm hợp đồng mới thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case DataEntryFormMode.UpdateDataState:

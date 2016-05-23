@@ -106,5 +106,18 @@ namespace BKI_DichVuMatDat.COMMON
 
             return v_dc_result;
         }
+        public static bool KiemTraNhanVienCoCongTac(decimal ip_dc_id_nhan_vien)
+        {
+            var v_str_result = ExecuteFuntionSql("fn_CT_kiem_tra_nhan_vien_co_cong_tac", ip_dc_id_nhan_vien);
+
+            if(v_str_result == "Y")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

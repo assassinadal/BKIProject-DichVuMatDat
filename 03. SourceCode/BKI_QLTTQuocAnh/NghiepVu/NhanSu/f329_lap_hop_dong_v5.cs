@@ -67,24 +67,24 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             string v_filter_ngay_bd = "";
             string v_filter_ngay_kt = "";
-            if (ip_index_col == 1)
+            if(ip_index_col == 1)
             {
                 v_filter_ngay_bd = "[NGAY_BAT_DAU] < #" + v_str_tu_ngay + "#";
                 v_filter_ngay_kt = "([NGAY_KET_THUC] IS NULL OR [NGAY_KET_THUC] >= #" + v_str_tu_ngay + "#)";
                 m_grv.ActiveFilterString = v_filter_dv + "AND" + v_filter_ngay_bd + "AND" + v_filter_ngay_kt;
             }
-            else if (ip_index_col == 4)
+            else if(ip_index_col == 4)
             {
                 v_filter_ngay_bd = "[NGAY_BAT_DAU] < #" + v_str_den_ngay + "#";
                 v_filter_ngay_kt = "([NGAY_KET_THUC] IS NULL OR [NGAY_KET_THUC] >= #" + v_str_den_ngay + "#)";
                 m_grv.ActiveFilterString = v_filter_dv + "AND" + v_filter_ngay_bd + "AND" + v_filter_ngay_kt;
             }
-            else if (ip_index_col == 2)
+            else if(ip_index_col == 2)
             {
                 v_filter_ngay_bd = "[NGAY_BAT_DAU] >= #" + v_str_tu_ngay + "# AND [NGAY_BAT_DAU] <= #" + v_str_den_ngay + "#";
                 m_grv.ActiveFilterString = v_filter_dv + "AND" + v_filter_ngay_bd;
             }
-            else if (ip_index_col == 3)
+            else if(ip_index_col == 3)
             {
                 v_filter_ngay_kt = "[NGAY_KET_THUC] >= #" + v_str_tu_ngay + "# AND [NGAY_KET_THUC] <= #" + v_str_den_ngay + "#";
                 m_grv.ActiveFilterString = v_filter_dv + "AND" + v_filter_ngay_kt;
@@ -142,11 +142,13 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
         {
             US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
             m_grc.DataSource = v_us.LayDanhSachHopDong(get_option_filter(), get_thang(), get_nam());
+
+            CHRMCommon.make_stt(m_grv);
         }
         private void set_initial_form_load()
         {
             load_data_cau_hinh_in();
-            
+
             US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
 
             load_data_to_grid();
@@ -340,7 +342,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                         SplashScreenManager.CloseForm(false);
                     }
 
-                    
+
                 }
             }
         }
@@ -424,12 +426,45 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             KeyDown += f329_lap_hop_dong_v5_KeyDown;
             m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
         }
-
+        private void xuat_excel()
+        {
+            int[] v_rows_selected = m_grv.GetSelectedRows();
+            DataTable v_dt_temp = ((DataTable)m_grc.DataSource);
+            var v_dt_source_export = v_dt_temp.Clone();
+            foreach(var v_i_row_index in v_rows_selected)
+            {
+                var v_dr_to_add = m_grv.GetDataRow(v_i_row_index);
+                v_dt_source_export.ImportRow(v_dr_to_add);
+            }
+            m_grc_only_export.DataSource = v_dt_source_export;
+            m_grv_only_export.OptionsView.ShowFooter = false;
+            CHRMCommon.make_stt(m_grv_only_export);
+            CHRMCommon.ExportExcel(m_grv_only_export);
+        }
         void m_cmd_xuat_excel_Click(object sender, EventArgs e)
         {
             try
             {
-                CHRMCommon.ExportExcel(m_grv);
+                //var v_dlg_confirm = XtraMessageBox.Show("Lựa chọn các xuất EXCEL:\n- YES - Chọn Yes để xuất toàn bộ dữ liệu\n NO - Chọn No để xuất các hợp đồng đã chọn (tick)", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //if(v_dlg_confirm == System.Windows.Forms.DialogResult.Yes)
+                //{
+                //    CHRMCommon.ExportExcel(m_grv);
+                //}
+                //else
+                //{
+
+                //}
+                if(m_grv.OptionsSelection.MultiSelect)
+                {
+                    xuat_excel();
+                    m_grv.OptionsSelection.MultiSelect = false;
+                }
+                else
+                {
+                    XtraMessageBox.Show("Chọn các hợp đồng muốn Xuất Excel rồi ấn Xuất Excel!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    m_grv.OptionsSelection.MultiSelect = true;
+                    m_grv.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+                }
             }
             catch(Exception v_e)
             {

@@ -29,10 +29,45 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition3 = new DevExpress.XtraGrid.StyleFormatCondition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f329_lap_hop_dong_v5));
             this.colNGAY_KET_THUC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.m_grc_only_export = new DevExpress.XtraGrid.GridControl();
+            this.m_grv_only_export = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_grc = new DevExpress.XtraGrid.GridControl();
             this.m_grv = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,11 +97,14 @@
             this.colLOAI_HOP_DONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colID_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colID_CHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMA_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMA_CHUC_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
-            this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_print = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
@@ -78,6 +116,8 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc_only_export)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_only_export)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -104,8 +144,26 @@
             this.colNGAY_KET_THUC.Name = "colNGAY_KET_THUC";
             this.colNGAY_KET_THUC.OptionsColumn.AllowEdit = false;
             this.colNGAY_KET_THUC.Visible = true;
-            this.colNGAY_KET_THUC.VisibleIndex = 5;
+            this.colNGAY_KET_THUC.VisibleIndex = 9;
             this.colNGAY_KET_THUC.Width = 91;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn6.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn6.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn6.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn6.Caption = "Ngày kết thúc";
+            this.gridColumn6.FieldName = "NGAY_KET_THUC";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 9;
+            this.gridColumn6.Width = 91;
             // 
             // panelControl2
             // 
@@ -117,10 +175,421 @@
             this.panelControl2.Size = new System.Drawing.Size(871, 471);
             this.panelControl2.TabIndex = 8;
             // 
+            // m_grc_only_export
+            // 
+            this.m_grc_only_export.Cursor = System.Windows.Forms.Cursors.Default;
+            this.m_grc_only_export.Location = new System.Drawing.Point(706, 12);
+            this.m_grc_only_export.MainView = this.m_grv_only_export;
+            this.m_grc_only_export.Name = "m_grc_only_export";
+            this.m_grc_only_export.Size = new System.Drawing.Size(136, 68);
+            this.m_grc_only_export.TabIndex = 2;
+            this.m_grc_only_export.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.m_grv_only_export});
+            this.m_grc_only_export.Visible = false;
+            // 
+            // m_grv_only_export
+            // 
+            this.m_grv_only_export.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12,
+            this.gridColumn13,
+            this.gridColumn14,
+            this.gridColumn15,
+            this.gridColumn16,
+            this.gridColumn17,
+            this.gridColumn18,
+            this.gridColumn19,
+            this.gridColumn20,
+            this.gridColumn21,
+            this.gridColumn22,
+            this.gridColumn23,
+            this.gridColumn24,
+            this.gridColumn25,
+            this.gridColumn26,
+            this.gridColumn27,
+            this.gridColumn28,
+            this.gridColumn29,
+            this.gridColumn30,
+            this.gridColumn31});
+            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.Pink;
+            styleFormatCondition2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
+            styleFormatCondition2.Appearance.ForeColor = System.Drawing.Color.Firebrick;
+            styleFormatCondition2.Appearance.Options.UseBackColor = true;
+            styleFormatCondition2.Appearance.Options.UseFont = true;
+            styleFormatCondition2.Appearance.Options.UseForeColor = true;
+            styleFormatCondition2.ApplyToRow = true;
+            styleFormatCondition2.Column = this.gridColumn6;
+            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition2.Expression = "[NGAY_KET_THUC]  < Today() And IsNullOrEmpty([NGAY_KET_THUC]) == False";
+            this.m_grv_only_export.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            styleFormatCondition2});
+            this.m_grv_only_export.GridControl = this.m_grc_only_export;
+            this.m_grv_only_export.Name = "m_grv_only_export";
+            this.m_grv_only_export.OptionsBehavior.ReadOnly = true;
+            this.m_grv_only_export.OptionsFind.AllowFindPanel = false;
+            this.m_grv_only_export.OptionsFind.AlwaysVisible = true;
+            this.m_grv_only_export.OptionsView.ColumnAutoWidth = false;
+            this.m_grv_only_export.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.m_grv_only_export.OptionsView.ShowAutoFilterRow = true;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn1.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn1.Caption = "Mã NV";
+            this.gridColumn1.FieldName = "MA_NV";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 2;
+            this.gridColumn1.Width = 63;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn2.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn2.Caption = "Họ tên";
+            this.gridColumn2.FieldName = "HO_TEN";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 3;
+            this.gridColumn2.Width = 145;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn3.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn3.Caption = "Mã HĐ";
+            this.gridColumn3.FieldName = "MA_HOP_DONG";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 18;
+            this.gridColumn3.Width = 58;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn4.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn4.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn4.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn4.Caption = "Loại HĐ";
+            this.gridColumn4.FieldName = "MA_LOAI_HOP_DONG";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
+            this.gridColumn4.Width = 72;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn5.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn5.Caption = "Ngày bắt đầu";
+            this.gridColumn5.FieldName = "NGAY_BAT_DAU";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 8;
+            this.gridColumn5.Width = 91;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn7.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn7.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn7.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn7.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn7.Caption = "Ngày ký";
+            this.gridColumn7.FieldName = "NGAY_KY_HOP_DONG";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 10;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn8.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn8.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn8.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn8.Caption = "Mã LCD";
+            this.gridColumn8.FieldName = "MA_LCD";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 4;
+            this.gridColumn8.Width = 60;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn9.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn9.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn9.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn9.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn9.Caption = "Mức LCD";
+            this.gridColumn9.FieldName = "MUC_LCD";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 5;
+            this.gridColumn9.Width = 67;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn10.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn10.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn10.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn10.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn10.Caption = "Chức vụ";
+            this.gridColumn10.FieldName = "TEN_CHUC_VU";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 17;
+            this.gridColumn10.Width = 114;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn11.AppearanceHeader.ForeColor = System.Drawing.Color.Green;
+            this.gridColumn11.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn11.AppearanceHeader.Options.UseForeColor = true;
+            this.gridColumn11.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn11.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn11.Caption = "LCĐ thực";
+            this.gridColumn11.DisplayFormat.FormatString = "n0";
+            this.gridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn11.FieldName = "SO_TIEN_LCD_THUC_TE";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 7;
+            this.gridColumn11.Width = 85;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn12.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn12.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn12.Caption = "Đơn vị";
+            this.gridColumn12.FieldName = "TEN_DON_VI";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 16;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn13.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn13.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn13.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn13.Caption = "LCĐ theo mã mức";
+            this.gridColumn13.DisplayFormat.FormatString = "n0";
+            this.gridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn13.FieldName = "SO_TIEN_MAC_DINH_LCD";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 6;
+            this.gridColumn13.Width = 125;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn14.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn14.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn14.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn14.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn14.Caption = "Ngày lập vào phần mềm";
+            this.gridColumn14.FieldName = "NGAY_LAP";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 14;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn15.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn15.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn15.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn15.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn15.Caption = "Loại LĐ";
+            this.gridColumn15.FieldName = "LOAI_LAO_DONG";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 11;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "colID_LOAI_HOP_DONG";
+            this.gridColumn16.FieldName = "ID_LOAI_HOP_DONG";
+            this.gridColumn16.Name = "gridColumn16";
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "QUOC_TICH";
+            this.gridColumn17.FieldName = "QUOC_TICH";
+            this.gridColumn17.Name = "gridColumn17";
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "Ngày sinh nhân viên";
+            this.gridColumn18.FieldName = "NGAY_SINH_NV";
+            this.gridColumn18.Name = "gridColumn18";
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "QUE_QUAN";
+            this.gridColumn19.FieldName = "QUE_QUAN";
+            this.gridColumn19.Name = "gridColumn19";
+            // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "CHUYEN_MON";
+            this.gridColumn20.FieldName = "CHUYEN_MON";
+            this.gridColumn20.Name = "gridColumn20";
+            // 
+            // gridColumn21
+            // 
+            this.gridColumn21.Caption = "Địa chỉ thường trú";
+            this.gridColumn21.FieldName = "DIA_CHI_THUONG_TRU";
+            this.gridColumn21.Name = "gridColumn21";
+            // 
+            // gridColumn22
+            // 
+            this.gridColumn22.Caption = "SO_CMT";
+            this.gridColumn22.FieldName = "SO_CMT";
+            this.gridColumn22.Name = "gridColumn22";
+            // 
+            // gridColumn23
+            // 
+            this.gridColumn23.Caption = "NGAY_CAP_CMT";
+            this.gridColumn23.FieldName = "NGAY_CAP_CMT";
+            this.gridColumn23.Name = "gridColumn23";
+            // 
+            // gridColumn24
+            // 
+            this.gridColumn24.Caption = "NOI_CAP";
+            this.gridColumn24.FieldName = "NOI_CAP";
+            this.gridColumn24.Name = "gridColumn24";
+            // 
+            // gridColumn25
+            // 
+            this.gridColumn25.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn25.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn25.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn25.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn25.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn25.Caption = "Mô tả CV";
+            this.gridColumn25.FieldName = "GHI_CHU";
+            this.gridColumn25.Name = "gridColumn25";
+            this.gridColumn25.Visible = true;
+            this.gridColumn25.VisibleIndex = 15;
+            // 
+            // gridColumn26
+            // 
+            this.gridColumn26.Caption = "LOAI_HOP_DONG";
+            this.gridColumn26.FieldName = "LOAI_HOP_DONG";
+            this.gridColumn26.Name = "gridColumn26";
+            // 
+            // gridColumn27
+            // 
+            this.gridColumn27.Caption = "ID_DON_VI";
+            this.gridColumn27.FieldName = "ID_DON_VI";
+            this.gridColumn27.Name = "gridColumn27";
+            // 
+            // gridColumn28
+            // 
+            this.gridColumn28.Caption = "ID_CHUC_VU";
+            this.gridColumn28.FieldName = "ID_CHUC_VU";
+            this.gridColumn28.Name = "gridColumn28";
+            // 
+            // gridColumn29
+            // 
+            this.gridColumn29.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn29.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn29.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn29.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn29.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn29.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn29.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn29.Caption = "STT";
+            this.gridColumn29.FieldName = "STT";
+            this.gridColumn29.Name = "gridColumn29";
+            this.gridColumn29.Visible = true;
+            this.gridColumn29.VisibleIndex = 0;
+            this.gridColumn29.Width = 41;
+            // 
+            // gridColumn30
+            // 
+            this.gridColumn30.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn30.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn30.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn30.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn30.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn30.Caption = "Mã đơn vị";
+            this.gridColumn30.FieldName = "MA_DON_VI";
+            this.gridColumn30.Name = "gridColumn30";
+            this.gridColumn30.Visible = true;
+            this.gridColumn30.VisibleIndex = 12;
+            // 
+            // gridColumn31
+            // 
+            this.gridColumn31.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn31.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn31.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn31.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn31.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn31.Caption = "Mã chức vụ";
+            this.gridColumn31.FieldName = "MA_CHUC_VU";
+            this.gridColumn31.Name = "gridColumn31";
+            this.gridColumn31.Visible = true;
+            this.gridColumn31.VisibleIndex = 13;
+            // 
             // m_grc
             // 
             this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.RelationName = "Level1";
+            this.m_grc.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.m_grc.Location = new System.Drawing.Point(2, 42);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
@@ -159,20 +628,22 @@
             this.colGHI_CHU,
             this.colLOAI_HOP_DONG,
             this.colID_DON_VI,
-            this.colID_CHUC_VU});
-            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Pink;
-            styleFormatCondition1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
-            styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Firebrick;
-            styleFormatCondition1.Appearance.Options.UseBackColor = true;
-            styleFormatCondition1.Appearance.Options.UseFont = true;
-            styleFormatCondition1.Appearance.Options.UseForeColor = true;
-            styleFormatCondition1.ApplyToRow = true;
-            styleFormatCondition1.Column = this.colNGAY_KET_THUC;
-            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition1.Expression = "[NGAY_KET_THUC]  < Today() And IsNullOrEmpty([NGAY_KET_THUC]) == False";
-            styleFormatCondition1.Name = "HET_HAN";
+            this.colID_CHUC_VU,
+            this.STT,
+            this.colMA_DON_VI,
+            this.colMA_CHUC_VU});
+            styleFormatCondition3.Appearance.BackColor = System.Drawing.Color.Pink;
+            styleFormatCondition3.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
+            styleFormatCondition3.Appearance.ForeColor = System.Drawing.Color.Firebrick;
+            styleFormatCondition3.Appearance.Options.UseBackColor = true;
+            styleFormatCondition3.Appearance.Options.UseFont = true;
+            styleFormatCondition3.Appearance.Options.UseForeColor = true;
+            styleFormatCondition3.ApplyToRow = true;
+            styleFormatCondition3.Column = this.colNGAY_KET_THUC;
+            styleFormatCondition3.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition3.Expression = "[NGAY_KET_THUC]  < Today() And IsNullOrEmpty([NGAY_KET_THUC]) == False";
             this.m_grv.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition1});
+            styleFormatCondition3});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
             this.m_grv.OptionsBehavior.ReadOnly = true;
@@ -219,8 +690,6 @@
             // 
             // colMA_HOP_DONG
             // 
-            this.colMA_HOP_DONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colMA_HOP_DONG.AppearanceHeader.Options.UseFont = true;
             this.colMA_HOP_DONG.AppearanceHeader.Options.UseTextOptions = true;
             this.colMA_HOP_DONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMA_HOP_DONG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -232,7 +701,7 @@
             this.colMA_HOP_DONG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MA_HOP_DONG", "SL: {0:n0}")});
             this.colMA_HOP_DONG.Visible = true;
-            this.colMA_HOP_DONG.VisibleIndex = 1;
+            this.colMA_HOP_DONG.VisibleIndex = 18;
             this.colMA_HOP_DONG.Width = 58;
             // 
             // colMA_LOAI_HOP_DONG
@@ -248,7 +717,7 @@
             this.colMA_LOAI_HOP_DONG.Name = "colMA_LOAI_HOP_DONG";
             this.colMA_LOAI_HOP_DONG.OptionsColumn.AllowEdit = false;
             this.colMA_LOAI_HOP_DONG.Visible = true;
-            this.colMA_LOAI_HOP_DONG.VisibleIndex = 0;
+            this.colMA_LOAI_HOP_DONG.VisibleIndex = 1;
             this.colMA_LOAI_HOP_DONG.Width = 72;
             // 
             // colNGAY_BAT_DAU
@@ -266,7 +735,7 @@
             this.colNGAY_BAT_DAU.Name = "colNGAY_BAT_DAU";
             this.colNGAY_BAT_DAU.OptionsColumn.AllowEdit = false;
             this.colNGAY_BAT_DAU.Visible = true;
-            this.colNGAY_BAT_DAU.VisibleIndex = 4;
+            this.colNGAY_BAT_DAU.VisibleIndex = 8;
             this.colNGAY_BAT_DAU.Width = 91;
             // 
             // colNGAY_KY_HOP_DONG
@@ -284,7 +753,7 @@
             this.colNGAY_KY_HOP_DONG.Name = "colNGAY_KY_HOP_DONG";
             this.colNGAY_KY_HOP_DONG.OptionsColumn.AllowEdit = false;
             this.colNGAY_KY_HOP_DONG.Visible = true;
-            this.colNGAY_KY_HOP_DONG.VisibleIndex = 6;
+            this.colNGAY_KY_HOP_DONG.VisibleIndex = 10;
             // 
             // colMA_LCD
             // 
@@ -297,7 +766,7 @@
             this.colMA_LCD.FieldName = "MA_LCD";
             this.colMA_LCD.Name = "colMA_LCD";
             this.colMA_LCD.Visible = true;
-            this.colMA_LCD.VisibleIndex = 7;
+            this.colMA_LCD.VisibleIndex = 4;
             this.colMA_LCD.Width = 60;
             // 
             // colMUC_LCD
@@ -311,15 +780,13 @@
             this.colMUC_LCD.FieldName = "MUC_LCD";
             this.colMUC_LCD.Name = "colMUC_LCD";
             this.colMUC_LCD.Visible = true;
-            this.colMUC_LCD.VisibleIndex = 8;
+            this.colMUC_LCD.VisibleIndex = 5;
             this.colMUC_LCD.Width = 67;
             // 
             // colTEN_CHUC_VU
             // 
             this.colTEN_CHUC_VU.AppearanceCell.Options.UseTextOptions = true;
             this.colTEN_CHUC_VU.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colTEN_CHUC_VU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colTEN_CHUC_VU.AppearanceHeader.Options.UseFont = true;
             this.colTEN_CHUC_VU.AppearanceHeader.Options.UseTextOptions = true;
             this.colTEN_CHUC_VU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTEN_CHUC_VU.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -329,7 +796,7 @@
             this.colTEN_CHUC_VU.Name = "colTEN_CHUC_VU";
             this.colTEN_CHUC_VU.OptionsColumn.AllowEdit = false;
             this.colTEN_CHUC_VU.Visible = true;
-            this.colTEN_CHUC_VU.VisibleIndex = 11;
+            this.colTEN_CHUC_VU.VisibleIndex = 17;
             this.colTEN_CHUC_VU.Width = 114;
             // 
             // colSO_TIEN_LCD_THUC_TE
@@ -347,13 +814,11 @@
             this.colSO_TIEN_LCD_THUC_TE.FieldName = "SO_TIEN_LCD_THUC_TE";
             this.colSO_TIEN_LCD_THUC_TE.Name = "colSO_TIEN_LCD_THUC_TE";
             this.colSO_TIEN_LCD_THUC_TE.Visible = true;
-            this.colSO_TIEN_LCD_THUC_TE.VisibleIndex = 10;
+            this.colSO_TIEN_LCD_THUC_TE.VisibleIndex = 7;
             this.colSO_TIEN_LCD_THUC_TE.Width = 85;
             // 
             // colTEN_DON_VI
             // 
-            this.colTEN_DON_VI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colTEN_DON_VI.AppearanceHeader.Options.UseFont = true;
             this.colTEN_DON_VI.AppearanceHeader.Options.UseTextOptions = true;
             this.colTEN_DON_VI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTEN_DON_VI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -361,7 +826,7 @@
             this.colTEN_DON_VI.FieldName = "TEN_DON_VI";
             this.colTEN_DON_VI.Name = "colTEN_DON_VI";
             this.colTEN_DON_VI.Visible = true;
-            this.colTEN_DON_VI.VisibleIndex = 12;
+            this.colTEN_DON_VI.VisibleIndex = 16;
             // 
             // colSO_TIEN_MAC_DINH_LCD
             // 
@@ -376,7 +841,7 @@
             this.colSO_TIEN_MAC_DINH_LCD.FieldName = "SO_TIEN_MAC_DINH_LCD";
             this.colSO_TIEN_MAC_DINH_LCD.Name = "colSO_TIEN_MAC_DINH_LCD";
             this.colSO_TIEN_MAC_DINH_LCD.Visible = true;
-            this.colSO_TIEN_MAC_DINH_LCD.VisibleIndex = 9;
+            this.colSO_TIEN_MAC_DINH_LCD.VisibleIndex = 6;
             this.colSO_TIEN_MAC_DINH_LCD.Width = 125;
             // 
             // colNGAY_LAP
@@ -403,7 +868,7 @@
             this.colLOAI_LAO_DONG.FieldName = "LOAI_LAO_DONG";
             this.colLOAI_LAO_DONG.Name = "colLOAI_LAO_DONG";
             this.colLOAI_LAO_DONG.Visible = true;
-            this.colLOAI_LAO_DONG.VisibleIndex = 13;
+            this.colLOAI_LAO_DONG.VisibleIndex = 11;
             // 
             // colID_LOAI_HOP_DONG
             // 
@@ -490,11 +955,53 @@
             this.colID_CHUC_VU.FieldName = "ID_CHUC_VU";
             this.colID_CHUC_VU.Name = "colID_CHUC_VU";
             // 
+            // STT
+            // 
+            this.STT.AppearanceCell.Options.UseTextOptions = true;
+            this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.STT.AppearanceHeader.Options.UseFont = true;
+            this.STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.STT.Caption = "STT";
+            this.STT.FieldName = "STT";
+            this.STT.Name = "STT";
+            this.STT.Visible = true;
+            this.STT.VisibleIndex = 0;
+            this.STT.Width = 41;
+            // 
+            // colMA_DON_VI
+            // 
+            this.colMA_DON_VI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colMA_DON_VI.AppearanceHeader.Options.UseFont = true;
+            this.colMA_DON_VI.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMA_DON_VI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMA_DON_VI.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colMA_DON_VI.Caption = "Mã đơn vị";
+            this.colMA_DON_VI.FieldName = "MA_DON_VI";
+            this.colMA_DON_VI.Name = "colMA_DON_VI";
+            this.colMA_DON_VI.Visible = true;
+            this.colMA_DON_VI.VisibleIndex = 12;
+            // 
+            // colMA_CHUC_VU
+            // 
+            this.colMA_CHUC_VU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colMA_CHUC_VU.AppearanceHeader.Options.UseFont = true;
+            this.colMA_CHUC_VU.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMA_CHUC_VU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMA_CHUC_VU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colMA_CHUC_VU.Caption = "Mã chức vụ";
+            this.colMA_CHUC_VU.FieldName = "MA_CHUC_VU";
+            this.colMA_CHUC_VU.Name = "colMA_CHUC_VU";
+            this.colMA_CHUC_VU.Visible = true;
+            this.colMA_CHUC_VU.VisibleIndex = 13;
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.m_cmd_chon_file);
-            this.panelControl1.Controls.Add(this.m_cmd_refresh);
             this.panelControl1.Controls.Add(this.m_cmd_print);
+            this.panelControl1.Controls.Add(this.m_cmd_refresh);
             this.panelControl1.Controls.Add(this.m_cmd_xuat_excel);
             this.panelControl1.Controls.Add(this.m_cmd_delete);
             this.panelControl1.Controls.Add(this.m_cmd_update);
@@ -514,7 +1021,7 @@
             this.m_cmd_chon_file.Location = new System.Drawing.Point(411, 4);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 32);
-            this.m_cmd_chon_file.TabIndex = 5;
+            this.m_cmd_chon_file.TabIndex = 9;
             this.m_cmd_chon_file.Text = "&Import excel";
             // 
             // img_DVMD
@@ -532,6 +1039,17 @@
             this.img_DVMD.Images.SetKeyName(9, "file_edit.png");
             this.img_DVMD.Images.SetKeyName(10, "file_search.png");
             // 
+            // m_cmd_print
+            // 
+            this.m_cmd_print.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_print.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_print.Image")));
+            this.m_cmd_print.ImageList = this.img_DVMD;
+            this.m_cmd_print.Location = new System.Drawing.Point(320, 4);
+            this.m_cmd_print.Name = "m_cmd_print";
+            this.m_cmd_print.Size = new System.Drawing.Size(91, 32);
+            this.m_cmd_print.TabIndex = 8;
+            this.m_cmd_print.Text = "&In hợp đồng";
+            // 
             // m_cmd_refresh
             // 
             this.m_cmd_refresh.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -544,17 +1062,6 @@
             this.m_cmd_refresh.TabIndex = 6;
             this.m_cmd_refresh.Text = "Làm mới";
             this.m_cmd_refresh.ToolTip = "Làm mới dữ liệu đơn vị và nhân viên thuộc đơn vị đó";
-            // 
-            // m_cmd_print
-            // 
-            this.m_cmd_print.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_print.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_print.Image")));
-            this.m_cmd_print.ImageList = this.img_DVMD;
-            this.m_cmd_print.Location = new System.Drawing.Point(320, 4);
-            this.m_cmd_print.Name = "m_cmd_print";
-            this.m_cmd_print.Size = new System.Drawing.Size(91, 32);
-            this.m_cmd_print.TabIndex = 4;
-            this.m_cmd_print.Text = "&In hợp đồng";
             // 
             // m_cmd_xuat_excel
             // 
@@ -602,6 +1109,7 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.m_grc_only_export);
             this.panelControl3.Controls.Add(this.m_dat_tai_thang);
             this.panelControl3.Controls.Add(this.m_cmd_filter);
             this.panelControl3.Controls.Add(this.radioButton2);
@@ -680,6 +1188,8 @@
             this.Text = "F329 - Quản lý danh sách hợp đồng";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_grc_only_export)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_only_export)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -717,12 +1227,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colNGAY_LAP;
         private DevExpress.XtraGrid.Columns.GridColumn colLOAI_LAO_DONG;
         private DevExpress.Utils.ImageCollection img_DVMD;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_print;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_update;
         private DevExpress.XtraEditors.SimpleButton m_cmd_refresh;
-        private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
         private DevExpress.XtraGrid.Columns.GridColumn colID_LOAI_HOP_DONG;
         private DevExpress.XtraGrid.Columns.GridColumn colQUOC_TICH;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAY_SINH_NV;
@@ -741,5 +1249,43 @@
         private DevExpress.XtraGrid.Columns.GridColumn colLOAI_HOP_DONG;
         private DevExpress.XtraGrid.Columns.GridColumn colID_DON_VI;
         private DevExpress.XtraGrid.Columns.GridColumn colID_CHUC_VU;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_print;
+        private DevExpress.XtraGrid.Columns.GridColumn STT;
+        private DevExpress.XtraGrid.Columns.GridColumn colMA_DON_VI;
+        private DevExpress.XtraGrid.Columns.GridColumn colMA_CHUC_VU;
+        private DevExpress.XtraGrid.GridControl m_grc_only_export;
+        private DevExpress.XtraGrid.Views.Grid.GridView m_grv_only_export;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
     }
 }

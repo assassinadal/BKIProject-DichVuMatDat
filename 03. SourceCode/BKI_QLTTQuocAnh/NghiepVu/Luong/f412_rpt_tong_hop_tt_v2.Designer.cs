@@ -651,6 +651,9 @@
             this.m_adv_tong_hop.OptionsBehavior.AutoExpandAllGroups = true;
             this.m_adv_tong_hop.OptionsBehavior.CopyToClipboardWithColumnHeaders = false;
             this.m_adv_tong_hop.OptionsBehavior.ReadOnly = true;
+            this.m_adv_tong_hop.OptionsFind.AlwaysVisible = true;
+            this.m_adv_tong_hop.OptionsFind.FindDelay = 100;
+            this.m_adv_tong_hop.OptionsFind.FindNullPrompt = "Tìm kiếm...";
             this.m_adv_tong_hop.OptionsPrint.AllowMultilineHeaders = true;
             this.m_adv_tong_hop.OptionsPrint.PrintHeader = false;
             this.m_adv_tong_hop.OptionsView.ColumnAutoWidth = false;

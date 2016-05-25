@@ -58,13 +58,11 @@ namespace BKI_DichVuMatDat.NghiepVu
             string targetPath = WinFormControls.saveFileDialog(ip_file_name);
             if (targetPath != "")
             {
-                US_GD_CHAM_CONG v_us = new US_GD_CHAM_CONG();
                 DataSet v_ds = new DataSet();
                 v_ds.Tables.Add(new DataTable());
-                //v_us.get_bang_cham_cong(v_ds, m_txt_thang.Text, m_txt_nam.Text);
-                v_us.get_bang_cham_cong(v_ds, m_dat_chon_thang.DateTime.Month.ToString(), m_dat_chon_thang.DateTime.Year.ToString());
-                //DateTime v_dat_bat_dau = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1);
-                //DateTime v_dat_ket_thuc = new DateTime(int.Parse(m_txt_nam.Text), int.Parse(m_txt_thang.Text), 1).AddMonths(1);
+                v_ds.Tables[0].Columns.Add("MA_NV");
+                v_ds.Tables[0].Columns.Add("HO_TEN");
+                //v_us.get_bang_cham_cong(v_ds, m_dat_chon_thang.DateTime.Month.ToString(), m_dat_chon_thang.DateTime.Year.ToString());
                 int thang = Convert.ToInt16(m_dat_chon_thang.DateTime.Month.ToString());
                 int nam = Convert.ToInt16(m_dat_chon_thang.DateTime.Year.ToString());
                 DateTime v_dat_bat_dau = new DateTime(nam, thang, 1);
@@ -220,12 +218,29 @@ namespace BKI_DichVuMatDat.NghiepVu
                 return false;
             else if (check_ma_nv_duplicate())
                 return false;
+            else if (check_ma_nv_trong())
+                return false;
             else if (check_ma_nv_ko_ton_tai())
                 return false;
             else if (check_ngay_cong_ko_ton_tai())
                 return false;
             return true;
 
+        }
+
+        private bool check_ma_nv_trong()
+        {
+            for (int i = 0; i < m_grv.RowCount; i++)
+            {
+                var v_dr = m_grv.GetDataRow(i);
+                if (v_dr["MA_NV"].ToString() == "")
+                {
+                    string v_str_error = "Dòng số " + (i+2) + " trong file excel trống mã nhân viên.\nVui lòng kiểm tra lại!";
+                    XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+            }
+            return false;
         }
 
         private bool check_ma_nv_duplicate()
@@ -352,7 +367,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.m_pn.Visible = false;
             this.m_cmd_nhap_cham_cong.Text = "Lưu chấm công";
             //this.m_cmd_nhap_cham_cong.Enabled = false;
-            XtraMessageBox.Show("Lưu thành công!");
+            XtraMessageBox.Show("Lưu thành công!","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Information);
             //m_grc.DataSource = null; 
             set_trang_thai_cham_cong();
         }

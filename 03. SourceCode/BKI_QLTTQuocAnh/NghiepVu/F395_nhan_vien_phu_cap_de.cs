@@ -30,6 +30,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 load_data_2_sle_nhan_vien();
                 load_data_2_sle_phu_cap();
+                m_txt_thang.Text = DateTime.Now.Month.ToString() ;
+                m_txt_nam.Text = DateTime.Now.Year.ToString(); 
             }
             catch (Exception v_e)
             {
@@ -69,9 +71,46 @@ namespace BKI_DichVuMatDat.NghiepVu
             {
                 CHRM_BaseMessages.MsgBox_Error("Chưa chọn chức vụ hưởng phụ cấp");
                 return false;
+            }            
+            else if (m_txt_thang.Text.Trim() == "" || m_txt_nam.Text.Trim() =="")
+            {
+                string v_str_error = "Vui lòng nhập thời gian áp dụng!";
+                DevExpress.XtraEditors.XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (decimal.Parse(m_txt_thang.Text) > 12 || decimal.Parse(m_txt_thang.Text) < 1 || decimal.Parse(m_txt_nam.Text) <0)
+            {
+                string v_str_error = "Thời gian nhập vào không hợp lệ!";
+                DevExpress.XtraEditors.XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (check_nv_dang_co_phu_cap())
+            {
+                string v_str_error = "Nhân viên hiện đã có phụ cấp.\nVui lòng kiểm tra lại!";
+                DevExpress.XtraEditors.XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             return true;
         }
+
+        private bool check_nv_dang_co_phu_cap()
+        {
+            DS_V_GD_NHAN_VIEN_PHU_CAP_V2 v_ds = new DS_V_GD_NHAN_VIEN_PHU_CAP_V2();
+            US_V_GD_NHAN_VIEN_PHU_CAP_V2 v_us = new US_V_GD_NHAN_VIEN_PHU_CAP_V2();
+            v_us.FillDataset(v_ds, "where id_nhan_vien = " + m_sle_nhan_vien.EditValue.ToString());
+            if (v_ds.Tables[0].Rows.Count != 0 && (m_txt_thang.Text != m_us.dcTHANG_AP_DUNG.ToString() || m_txt_nam.Text != m_us.dcNAM_AP_DUNG.ToString()))
+            {
+                for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
+                {
+                    string v_thang_bd = v_ds.Tables[0].Rows[i]["THANG_AP_DUNG"].ToString();
+                    string v_nam_bd = v_ds.Tables[0].Rows[i]["NAM_AP_DUNG"].ToString();
+                    if (m_txt_thang.Text == v_thang_bd && m_txt_nam.Text == v_nam_bd)
+                        return true;
+                }
+            }
+            return false;
+        }
+
         private DS_V_DM_NHAN_VIEN load_data_2_ds_v_dm_nv()
         {
             DS_V_DM_NHAN_VIEN v_ds = new DS_V_DM_NHAN_VIEN();
@@ -145,6 +184,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_us.dcID_NHAN_VIEN = Convert.ToDecimal(m_sle_nhan_vien.EditValue);
             m_us.dcID_PHU_CAP = Convert.ToDecimal(m_sle_phu_cap.EditValue);
+            m_us.dcTHANG_AP_DUNG = decimal.Parse(m_txt_thang.Text);
+            m_us.dcNAM_AP_DUNG = decimal.Parse(m_txt_nam.Text);
             m_us.strDA_XOA = "N";
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
@@ -162,6 +203,8 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_sle_nhan_vien.EditValue = m_us.dcID_NHAN_VIEN;
             m_sle_phu_cap.EditValue = m_us.dcID_PHU_CAP;
+            m_txt_thang.Text = m_us.dcTHANG_AP_DUNG.ToString();
+            m_txt_nam.Text =m_us.dcNAM_AP_DUNG.ToString();
         }
 
         internal void display_for_update(US_GD_NHAN_VIEN_PHU_CAP v_us)

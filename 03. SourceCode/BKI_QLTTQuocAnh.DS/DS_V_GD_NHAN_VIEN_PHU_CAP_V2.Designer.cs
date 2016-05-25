@@ -403,6 +403,10 @@ namespace BKI_DichVuMatDat.DS {
             
             private global::System.Data.DataColumn columnID_LOAI_PHU_CAP;
             
+            private global::System.Data.DataColumn columnTHANG_AP_DUNG;
+            
+            private global::System.Data.DataColumn columnNAM_AP_DUNG;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public V_GD_NHAN_VIEN_PHU_CAP_V2DataTable() {
@@ -934,6 +938,22 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn THANG_AP_DUNGColumn {
+                get {
+                    return this.columnTHANG_AP_DUNG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NAM_AP_DUNGColumn {
+                get {
+                    return this.columnNAM_AP_DUNG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1031,7 +1051,9 @@ namespace BKI_DichVuMatDat.DS {
                         string NGUOI_SUA_PHU_CAP, 
                         string DOI_TUONG_HUONG_PHU_CAP, 
                         decimal TI_LE, 
-                        decimal ID_LOAI_PHU_CAP) {
+                        decimal ID_LOAI_PHU_CAP, 
+                        int THANG_AP_DUNG, 
+                        int NAM_AP_DUNG) {
                 V_GD_NHAN_VIEN_PHU_CAP_V2Row rowV_GD_NHAN_VIEN_PHU_CAP_V2Row = ((V_GD_NHAN_VIEN_PHU_CAP_V2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -1095,7 +1117,9 @@ namespace BKI_DichVuMatDat.DS {
                         NGUOI_SUA_PHU_CAP,
                         DOI_TUONG_HUONG_PHU_CAP,
                         TI_LE,
-                        ID_LOAI_PHU_CAP};
+                        ID_LOAI_PHU_CAP,
+                        THANG_AP_DUNG,
+                        NAM_AP_DUNG};
                 rowV_GD_NHAN_VIEN_PHU_CAP_V2Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_GD_NHAN_VIEN_PHU_CAP_V2Row);
                 return rowV_GD_NHAN_VIEN_PHU_CAP_V2Row;
@@ -1180,6 +1204,8 @@ namespace BKI_DichVuMatDat.DS {
                 this.columnDOI_TUONG_HUONG_PHU_CAP = base.Columns["DOI_TUONG_HUONG_PHU_CAP"];
                 this.columnTI_LE = base.Columns["TI_LE"];
                 this.columnID_LOAI_PHU_CAP = base.Columns["ID_LOAI_PHU_CAP"];
+                this.columnTHANG_AP_DUNG = base.Columns["THANG_AP_DUNG"];
+                this.columnNAM_AP_DUNG = base.Columns["NAM_AP_DUNG"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1309,6 +1335,10 @@ namespace BKI_DichVuMatDat.DS {
                 base.Columns.Add(this.columnTI_LE);
                 this.columnID_LOAI_PHU_CAP = new global::System.Data.DataColumn("ID_LOAI_PHU_CAP", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_LOAI_PHU_CAP);
+                this.columnTHANG_AP_DUNG = new global::System.Data.DataColumn("THANG_AP_DUNG", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTHANG_AP_DUNG);
+                this.columnNAM_AP_DUNG = new global::System.Data.DataColumn("NAM_AP_DUNG", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNAM_AP_DUNG);
                 this.columnID.AllowDBNull = false;
                 this.columnID_NHAN_VIEN.AllowDBNull = false;
                 this.columnNGUOI_LAP.MaxLength = 250;
@@ -2487,6 +2517,40 @@ namespace BKI_DichVuMatDat.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int THANG_AP_DUNG {
+                get {
+                    try {
+                        return ((int)(this[this.tableV_GD_NHAN_VIEN_PHU_CAP_V2.THANG_AP_DUNGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'THANG_AP_DUNG\' in table \'V_GD_NHAN_VIEN_PHU_CAP_V2\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_GD_NHAN_VIEN_PHU_CAP_V2.THANG_AP_DUNGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int NAM_AP_DUNG {
+                get {
+                    try {
+                        return ((int)(this[this.tableV_GD_NHAN_VIEN_PHU_CAP_V2.NAM_AP_DUNGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NAM_AP_DUNG\' in table \'V_GD_NHAN_VIEN_PHU_CAP_V2\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableV_GD_NHAN_VIEN_PHU_CAP_V2.NAM_AP_DUNGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsID_QUYET_DINHNull() {
                 return this.IsNull(this.tableV_GD_NHAN_VIEN_PHU_CAP_V2.ID_QUYET_DINHColumn);
             }
@@ -3156,6 +3220,30 @@ namespace BKI_DichVuMatDat.DS {
             public void SetID_LOAI_PHU_CAPNull() {
                 this[this.tableV_GD_NHAN_VIEN_PHU_CAP_V2.ID_LOAI_PHU_CAPColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTHANG_AP_DUNGNull() {
+                return this.IsNull(this.tableV_GD_NHAN_VIEN_PHU_CAP_V2.THANG_AP_DUNGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTHANG_AP_DUNGNull() {
+                this[this.tableV_GD_NHAN_VIEN_PHU_CAP_V2.THANG_AP_DUNGColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNAM_AP_DUNGNull() {
+                return this.IsNull(this.tableV_GD_NHAN_VIEN_PHU_CAP_V2.NAM_AP_DUNGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNAM_AP_DUNGNull() {
+                this[this.tableV_GD_NHAN_VIEN_PHU_CAP_V2.NAM_AP_DUNGColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -3379,6 +3467,8 @@ namespace BKI_DichVuMatDat.DS.DS_V_GD_NHAN_VIEN_PHU_CAP_V2TableAdapters {
             tableMapping.ColumnMappings.Add("DOI_TUONG_HUONG_PHU_CAP", "DOI_TUONG_HUONG_PHU_CAP");
             tableMapping.ColumnMappings.Add("TI_LE", "TI_LE");
             tableMapping.ColumnMappings.Add("ID_LOAI_PHU_CAP", "ID_LOAI_PHU_CAP");
+            tableMapping.ColumnMappings.Add("THANG_AP_DUNG", "THANG_AP_DUNG");
+            tableMapping.ColumnMappings.Add("NAM_AP_DUNG", "NAM_AP_DUNG");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -3386,7 +3476,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_GD_NHAN_VIEN_PHU_CAP_V2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BKI_DichVuMatDat.DS.Properties.Settings.Default.DVMDConnectionString6;
+            this._connection.ConnectionString = global::BKI_DichVuMatDat.DS.Properties.Settings.Default.BKI_DVMDConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3395,7 +3485,7 @@ namespace BKI_DichVuMatDat.DS.DS_V_GD_NHAN_VIEN_PHU_CAP_V2TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID, ID_NHAN_VIEN, ID_QUYET_DINH, ID_DON_VI, NGAY_BAT_DAU, NGAY_KET_THUC, NGAY_LAP, NGAY_SUA, NGUOI_LAP, NGUOI_SUA, DA_XOA, ID_LOAI_CONG_TAC, ID_VI_TRI, SO_HO_SO, TEN_DON_VI, MA_DON_VI, LOAI_CONG_TAC, CHUC_DANH, MA_NV, HO_DEM, TEN, HO_TEN, GIOI_TINH, EMAIL, SDT, SO_TAI_KHOAN, NGAN_HANG, NGAY_CAP_THE, NGAY_HET_HAN_THE, NGAY_SINH, HON_NHAN, SO_CMT, NGAY_CAP, NOI_CAP, QUOC_TICH, DAN_TOC, TON_GIAO, NOI_SINH, QUE_QUAN, DIA_CHI_THUONG_TRU, DIA_CHI_TAM_TRU, DIA_CHI_LIEN_LAC, MA_SO_THUE_CA_NHAN, CHUYEN_MON, TRINH_DO_VAN_HOA, NAM_TOT_NGHIEP, TOT_NGHIEP_TAI, NGAY_VAO_HANG_KHONG, NGAY_TIEP_NHAN_VAO_TCT, NGAY_CHINH_THUC_TIEP_NHAN, NGUOI_BAO_LANH, MA_TRA_CUU, THU_TU_CHUC_VU, ID_NV_PC, ID_PHU_CAP, NGAY_LAP_PHU_CAP, NGUOI_LAP_PHU_CAP, NGAY_SUA_PHU_CAP, NGUOI_SUA_PHU_CAP, DOI_TUONG_HUONG_PHU_CAP, TI_LE, ID_LOAI_PHU_CAP FROM dbo.V_GD_NHAN_VIEN_PHU_CAP_V2";
+            this._commandCollection[0].CommandText = @"SELECT ID, ID_NHAN_VIEN, ID_QUYET_DINH, ID_DON_VI, NGAY_BAT_DAU, NGAY_KET_THUC, NGAY_LAP, NGAY_SUA, NGUOI_LAP, NGUOI_SUA, DA_XOA, ID_LOAI_CONG_TAC, ID_VI_TRI, SO_HO_SO, TEN_DON_VI, MA_DON_VI, LOAI_CONG_TAC, CHUC_DANH, MA_NV, HO_DEM, TEN, HO_TEN, GIOI_TINH, EMAIL, SDT, SO_TAI_KHOAN, NGAN_HANG, NGAY_CAP_THE, NGAY_HET_HAN_THE, NGAY_SINH, HON_NHAN, SO_CMT, NGAY_CAP, NOI_CAP, QUOC_TICH, DAN_TOC, TON_GIAO, NOI_SINH, QUE_QUAN, DIA_CHI_THUONG_TRU, DIA_CHI_TAM_TRU, DIA_CHI_LIEN_LAC, MA_SO_THUE_CA_NHAN, CHUYEN_MON, TRINH_DO_VAN_HOA, NAM_TOT_NGHIEP, TOT_NGHIEP_TAI, NGAY_VAO_HANG_KHONG, NGAY_TIEP_NHAN_VAO_TCT, NGAY_CHINH_THUC_TIEP_NHAN, NGUOI_BAO_LANH, MA_TRA_CUU, THU_TU_CHUC_VU, ID_NV_PC, ID_PHU_CAP, NGAY_LAP_PHU_CAP, NGUOI_LAP_PHU_CAP, NGAY_SUA_PHU_CAP, NGUOI_SUA_PHU_CAP, DOI_TUONG_HUONG_PHU_CAP, TI_LE, ID_LOAI_PHU_CAP, THANG_AP_DUNG, NAM_AP_DUNG FROM dbo.V_GD_NHAN_VIEN_PHU_CAP_V2";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

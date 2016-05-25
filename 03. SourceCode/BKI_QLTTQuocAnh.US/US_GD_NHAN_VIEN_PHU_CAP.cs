@@ -188,6 +188,50 @@ public class US_GD_NHAN_VIEN_PHU_CAP : US_Object
 		pm_objDR["NGAY_SUA"] = System.Convert.DBNull;
 	}
 
+    public decimal dcTHANG_AP_DUNG
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "THANG_AP_DUNG", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["THANG_AP_DUNG"] = value;
+        }
+    }
+
+    public bool IsTHANG_AP_DUNGNull()
+    {
+        return pm_objDR.IsNull("THANG_AP_DUNG");
+    }
+
+    public void SetTHANG_AP_DUNGNull()
+    {
+        pm_objDR["THANG_AP_DUNG"] = System.Convert.DBNull;
+    }
+
+    public decimal dcNAM_AP_DUNG
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "NAM_AP_DUNG", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["NAM_AP_DUNG"] = value;
+        }
+    }
+
+    public bool IsNAM_AP_DUNGNull()
+    {
+        return pm_objDR.IsNull("NAM_AP_DUNG");
+    }
+
+    public void SetNAM_AP_DUNGNull()
+    {
+        pm_objDR["NAM_AP_DUNG"] = System.Convert.DBNull;
+    }
+
 	public string strDA_XOA 
 	{
 		get 

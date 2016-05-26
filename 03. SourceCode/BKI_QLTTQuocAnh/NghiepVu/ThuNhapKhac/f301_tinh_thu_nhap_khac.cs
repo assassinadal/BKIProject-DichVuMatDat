@@ -103,6 +103,16 @@ namespace BKI_DichVuMatDat.NghiepVu
         }
 
         //Import Excel
+        private bool la_so_thap_phan(decimal ip_dc_number)
+        {
+            var chenh_lech = ip_dc_number - Math.Round(ip_dc_number, MidpointRounding.AwayFromZero);
+            if( chenh_lech != 0)
+            {
+                return true;
+            }
+            return false;
+
+        }
         private void fill_data_2_grid(string ip_path_excel)
         {
             try
@@ -115,6 +125,21 @@ namespace BKI_DichVuMatDat.NghiepVu
                 m_grc_main.DataSource = null;
                 WinFormControls.load_xls_to_gridview_v2(ip_path_excel, m_grc_main);
                 set_grid_dang_soan_thao();
+                for(int i = 0; i < m_grv_main.RowCount; i++)
+                {
+                    var v_dr = m_grv_main.GetDataRow(i);
+                    var v_dc_thanh_tien = Convert.ToDecimal(v_dr[CONST_COLUMN_NAME_IMPORT_TNK.THANH_TIEN]);
+                    var v_dc_thue = Convert.ToDecimal(v_dr[CONST_COLUMN_NAME_IMPORT_TNK.THUE_PHAI_NOP]);
+                    var v_dc_thuc_linh = Convert.ToDecimal(v_dr[CONST_COLUMN_NAME_IMPORT_TNK.THUC_LINH]);
+
+                    if(la_so_thap_phan(v_dc_thanh_tien) || la_so_thap_phan(v_dc_thuc_linh) || la_so_thap_phan(v_dc_thue))
+                    {
+                        splashScreenManager1.CloseWaitForm();
+                        XtraMessageBox.Show("File Excel chưa được làm tròn số tiền (Vẫn còn số thập phân)! Dữ liệu import sẽ bị xóa.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        m_grc_main.DataSource = null;
+                        return;
+                    }
+                }
             }
             catch(Exception)
             {
@@ -122,7 +147,10 @@ namespace BKI_DichVuMatDat.NghiepVu
             }
             finally
             {
-                splashScreenManager1.CloseWaitForm();
+                if(splashScreenManager1.IsSplashFormVisible)
+                {
+                    splashScreenManager1.CloseWaitForm();
+                }
             }
         }
 

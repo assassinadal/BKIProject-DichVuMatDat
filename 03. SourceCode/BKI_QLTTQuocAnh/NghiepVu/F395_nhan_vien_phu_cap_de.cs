@@ -219,7 +219,7 @@ namespace BKI_DichVuMatDat.NghiepVu
             m_sle_nhan_vien.EditValue = m_us.dcID_NHAN_VIEN;
             m_sle_phu_cap.EditValue = m_us.dcID_PHU_CAP;
             m_txt_thang.Text = m_us.dcTHANG_AP_DUNG.ToString();
-            m_txt_nam.Text =m_us.dcNAM_AP_DUNG.ToString();
+            m_txt_nam.Text = m_us.dcNAM_AP_DUNG.ToString();
             m_chk_hieu_luc.Checked = m_us.strDA_XOA == "N" ? true : false;
         }
 

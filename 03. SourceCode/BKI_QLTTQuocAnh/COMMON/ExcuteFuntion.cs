@@ -119,5 +119,31 @@ namespace BKI_DichVuMatDat.COMMON
                 return false;
             }
         }
+        public static bool KiemTraPhuCapForUpdate(decimal ip_dc_id_gd_phu_cap, decimal ip_dc_id_nhan_vien, string DA_XOA)
+        {
+            var v_str_result = ExecuteFuntionSql("fn_PCTN_kiem_tra_phu_cap_for_update",ip_dc_id_gd_phu_cap, ip_dc_id_nhan_vien, DA_XOA);
+
+            if(v_str_result == "Y")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool KiemTraPhuCapForInsert(decimal ip_dc_id_nhan_vien)
+        {
+            var v_str_result = ExecuteFuntionSql("fn_PCTN_kiem_tra_phu_cap_for_insert", ip_dc_id_nhan_vien);
+
+            if(v_str_result == "Y")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

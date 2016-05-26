@@ -60,19 +60,20 @@
             this.colCO_HE_SO_K = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colCO_LUONG_CUNG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colCO_HE_SO_LNS = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colTRANG_THAI_HOP_DONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colCO_LUONG_CHE_DO = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colID = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colCO_DON_VI_CONG_TAC = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colCO_LOAI_LAO_DONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colCO_DONG_BAO_HIEM = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colSO_NGAY_LAM_THEM = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colSO_LUONG_PHU_THUOC = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colSO_NGAY_LAM_THEM = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colCO_DON_VI_CONG_TAC = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colID = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colTRANG_THAI_HOP_DONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colTRANG_THAI_RPT_TTTH = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colTRANG_THAI_RPT_LUONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -87,6 +88,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -106,11 +109,9 @@
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl1.Controls.Add(this.m_dat_thang);
-            this.panelControl1.Controls.Add(this.panel2);
-            this.panelControl1.Controls.Add(this.label3);
-            this.panelControl1.Controls.Add(this.m_cmd_loc);
             this.panelControl1.Controls.Add(this.m_gd_tham_so_bang_luong_thang);
+            this.panelControl1.Controls.Add(this.panelControl2);
+            this.panelControl1.Controls.Add(this.panel2);
             this.panelControl1.Location = new System.Drawing.Point(12, 12);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(961, 502);
@@ -119,7 +120,7 @@
             // m_dat_thang
             // 
             this.m_dat_thang.EditValue = null;
-            this.m_dat_thang.Location = new System.Drawing.Point(20, 38);
+            this.m_dat_thang.Location = new System.Drawing.Point(7, 6);
             this.m_dat_thang.Name = "m_dat_thang";
             this.m_dat_thang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.m_dat_thang.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
@@ -171,7 +172,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(468, 44);
+            this.label3.Location = new System.Drawing.Point(455, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(220, 13);
             this.label3.TabIndex = 20;
@@ -182,7 +183,7 @@
             // 
             this.m_cmd_loc.ImageIndex = 10;
             this.m_cmd_loc.ImageList = this.img_DVMD;
-            this.m_cmd_loc.Location = new System.Drawing.Point(167, 39);
+            this.m_cmd_loc.Location = new System.Drawing.Point(154, 4);
             this.m_cmd_loc.Name = "m_cmd_loc";
             this.m_cmd_loc.Size = new System.Drawing.Size(94, 28);
             this.m_cmd_loc.StyleController = this.layoutControl1;
@@ -207,13 +208,14 @@
             // m_gd_tham_so_bang_luong_thang
             // 
             this.m_gd_tham_so_bang_luong_thang.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_gd_tham_so_bang_luong_thang.Location = new System.Drawing.Point(-5, 71);
+            this.m_gd_tham_so_bang_luong_thang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_gd_tham_so_bang_luong_thang.Location = new System.Drawing.Point(2, 75);
             this.m_gd_tham_so_bang_luong_thang.MainView = this.m_band_tham_so_bang_luong_thang;
             this.m_gd_tham_so_bang_luong_thang.Name = "m_gd_tham_so_bang_luong_thang";
             this.m_gd_tham_so_bang_luong_thang.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemCheckEdit2});
-            this.m_gd_tham_so_bang_luong_thang.Size = new System.Drawing.Size(961, 408);
+            this.m_gd_tham_so_bang_luong_thang.Size = new System.Drawing.Size(957, 425);
             this.m_gd_tham_so_bang_luong_thang.TabIndex = 0;
             this.m_gd_tham_so_bang_luong_thang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_band_tham_so_bang_luong_thang});
@@ -418,18 +420,6 @@
             this.colCO_HE_SO_LNS.Visible = true;
             this.colCO_HE_SO_LNS.Width = 73;
             // 
-            // colTRANG_THAI_HOP_DONG
-            // 
-            this.colTRANG_THAI_HOP_DONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colTRANG_THAI_HOP_DONG.AppearanceHeader.Options.UseFont = true;
-            this.colTRANG_THAI_HOP_DONG.Caption = "Trạng thái hợp đồng";
-            this.colTRANG_THAI_HOP_DONG.ColumnEdit = this.repositoryItemCheckEdit1;
-            this.colTRANG_THAI_HOP_DONG.FieldName = "TRANG_THAI_HOP_DONG";
-            this.colTRANG_THAI_HOP_DONG.Name = "colTRANG_THAI_HOP_DONG";
-            this.colTRANG_THAI_HOP_DONG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
-            this.colTRANG_THAI_HOP_DONG.Width = 66;
-            // 
             // colCO_LUONG_CHE_DO
             // 
             this.colCO_LUONG_CHE_DO.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -442,28 +432,6 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
             this.colCO_LUONG_CHE_DO.Visible = true;
             this.colCO_LUONG_CHE_DO.Width = 62;
-            // 
-            // colID
-            // 
-            this.colID.AppearanceHeader.BackColor = System.Drawing.SystemColors.Highlight;
-            this.colID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colID.AppearanceHeader.Options.UseBackColor = true;
-            this.colID.AppearanceHeader.Options.UseFont = true;
-            this.colID.Caption = "ID";
-            this.colID.FieldName = "ID";
-            this.colID.Name = "colID";
-            this.colID.Width = 34;
-            // 
-            // colCO_DON_VI_CONG_TAC
-            // 
-            this.colCO_DON_VI_CONG_TAC.Caption = "Đơn vị";
-            this.colCO_DON_VI_CONG_TAC.ColumnEdit = this.repositoryItemCheckEdit1;
-            this.colCO_DON_VI_CONG_TAC.FieldName = "CO_DON_VI_CONG_TAC";
-            this.colCO_DON_VI_CONG_TAC.Name = "colCO_DON_VI_CONG_TAC";
-            this.colCO_DON_VI_CONG_TAC.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "CO_DON_VI_CONG_TAC", "", 1)});
-            this.colCO_DON_VI_CONG_TAC.Visible = true;
-            this.colCO_DON_VI_CONG_TAC.Width = 83;
             // 
             // colCO_LOAI_LAO_DONG
             // 
@@ -489,6 +457,14 @@
             this.colCO_DONG_BAO_HIEM.Visible = true;
             this.colCO_DONG_BAO_HIEM.Width = 62;
             // 
+            // colSO_LUONG_PHU_THUOC
+            // 
+            this.colSO_LUONG_PHU_THUOC.Caption = "Số lượng phụ thuộc";
+            this.colSO_LUONG_PHU_THUOC.FieldName = "SO_LUONG_PHU_THUOC";
+            this.colSO_LUONG_PHU_THUOC.Name = "colSO_LUONG_PHU_THUOC";
+            this.colSO_LUONG_PHU_THUOC.Visible = true;
+            this.colSO_LUONG_PHU_THUOC.Width = 72;
+            // 
             // colSO_NGAY_LAM_THEM
             // 
             this.colSO_NGAY_LAM_THEM.Caption = "Số ngày làm thêm";
@@ -497,13 +473,39 @@
             this.colSO_NGAY_LAM_THEM.Visible = true;
             this.colSO_NGAY_LAM_THEM.Width = 66;
             // 
-            // colSO_LUONG_PHU_THUOC
+            // colCO_DON_VI_CONG_TAC
             // 
-            this.colSO_LUONG_PHU_THUOC.Caption = "Số lượng phụ thuộc";
-            this.colSO_LUONG_PHU_THUOC.FieldName = "SO_LUONG_PHU_THUOC";
-            this.colSO_LUONG_PHU_THUOC.Name = "colSO_LUONG_PHU_THUOC";
-            this.colSO_LUONG_PHU_THUOC.Visible = true;
-            this.colSO_LUONG_PHU_THUOC.Width = 72;
+            this.colCO_DON_VI_CONG_TAC.Caption = "Đơn vị";
+            this.colCO_DON_VI_CONG_TAC.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colCO_DON_VI_CONG_TAC.FieldName = "CO_DON_VI_CONG_TAC";
+            this.colCO_DON_VI_CONG_TAC.Name = "colCO_DON_VI_CONG_TAC";
+            this.colCO_DON_VI_CONG_TAC.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "CO_DON_VI_CONG_TAC", "", 1)});
+            this.colCO_DON_VI_CONG_TAC.Visible = true;
+            this.colCO_DON_VI_CONG_TAC.Width = 83;
+            // 
+            // colID
+            // 
+            this.colID.AppearanceHeader.BackColor = System.Drawing.SystemColors.Highlight;
+            this.colID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colID.AppearanceHeader.Options.UseBackColor = true;
+            this.colID.AppearanceHeader.Options.UseFont = true;
+            this.colID.Caption = "ID";
+            this.colID.FieldName = "ID";
+            this.colID.Name = "colID";
+            this.colID.Width = 34;
+            // 
+            // colTRANG_THAI_HOP_DONG
+            // 
+            this.colTRANG_THAI_HOP_DONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colTRANG_THAI_HOP_DONG.AppearanceHeader.Options.UseFont = true;
+            this.colTRANG_THAI_HOP_DONG.Caption = "Trạng thái hợp đồng";
+            this.colTRANG_THAI_HOP_DONG.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colTRANG_THAI_HOP_DONG.FieldName = "TRANG_THAI_HOP_DONG";
+            this.colTRANG_THAI_HOP_DONG.Name = "colTRANG_THAI_HOP_DONG";
+            this.colTRANG_THAI_HOP_DONG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
+            this.colTRANG_THAI_HOP_DONG.Width = 66;
             // 
             // colTRANG_THAI_RPT_TTTH
             // 
@@ -559,6 +561,17 @@
             this.layoutControlItem1.TextToControlDistance = 0;
             this.layoutControlItem1.TextVisible = false;
             // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.label3);
+            this.panelControl2.Controls.Add(this.m_dat_thang);
+            this.panelControl2.Controls.Add(this.m_cmd_loc);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl2.Location = new System.Drawing.Point(2, 35);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(957, 40);
+            this.panelControl2.TabIndex = 27;
+            // 
             // F401_he_so_bao_cao_luong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,7 +584,6 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_dat_thang.Properties)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -583,6 +595,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
+            this.panelControl2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -625,5 +640,6 @@
         private System.Windows.Forms.TextBox m_txt_search;
         private DevExpress.Utils.ImageCollection img_DVMD;
         private DevExpress.XtraEditors.DateEdit m_dat_thang;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
     }
 }

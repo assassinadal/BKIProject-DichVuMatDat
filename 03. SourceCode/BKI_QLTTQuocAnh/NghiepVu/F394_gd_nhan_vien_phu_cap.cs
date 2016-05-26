@@ -52,7 +52,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                 if (v_index_dr >= 0 )
                 {
                     var v_dr = m_grv.GetDataRow(v_index_dr);
-                    US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP(CIPConvert.ToDecimal(v_dr["ID_NV_PC"]));
+                    US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP(CIPConvert.ToDecimal(v_dr["ID"]));
                     v_f.display_for_update(v_us);
                     load_data_2_grid();
                 }
@@ -72,10 +72,11 @@ namespace BKI_DichVuMatDat.NghiepVu
         private void load_data_2_grid()
         {
             CHRMCommon.make_stt(m_grv);
-            DS_V_GD_NHAN_VIEN_PHU_CAP_V2 v_ds = new DS_V_GD_NHAN_VIEN_PHU_CAP_V2();
-            US_V_GD_NHAN_VIEN_PHU_CAP_V2 v_us = new US_V_GD_NHAN_VIEN_PHU_CAP_V2();
-            v_us.FillDataset(v_ds);
-            m_grc.DataSource = v_ds.Tables[0];
+            //DS_V_GD_NHAN_VIEN_PHU_CAP_V2 v_ds = new DS_V_GD_NHAN_VIEN_PHU_CAP_V2();
+            //US_V_GD_NHAN_VIEN_PHU_CAP_V2 v_us = new US_V_GD_NHAN_VIEN_PHU_CAP_V2();
+            US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP();
+
+            m_grc.DataSource = v_us.LayDanhSach();
         }
 
      
@@ -105,11 +106,11 @@ namespace BKI_DichVuMatDat.NghiepVu
                     DialogResult v_dialog = XtraMessageBox.Show(v_str_confirm, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (v_dialog == DialogResult.Yes)
                     {
-                        US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP(CIPConvert.ToDecimal(m_grv.GetDataRow(v_index_dr)["ID_NV_PC"]));
-                        v_us.datNGAY_SUA = DateTime.Now;
-                        v_us.strNGUOI_SUA = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserName();
-                        v_us.strDA_XOA = "Y";
-                        v_us.Update();
+                        US_GD_NHAN_VIEN_PHU_CAP v_us = new US_GD_NHAN_VIEN_PHU_CAP(CIPConvert.ToDecimal(m_grv.GetDataRow(v_index_dr)["ID"]));
+                        //v_us.datNGAY_SUA = DateTime.Now;
+                        //v_us.strNGUOI_SUA = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserName();
+                        //v_us.strDA_XOA = "Y";
+                        v_us.Delete();
                         XtraMessageBox.Show("Đã xóa thành công phụ cấp!");
                         load_data_2_grid();
                     }                   

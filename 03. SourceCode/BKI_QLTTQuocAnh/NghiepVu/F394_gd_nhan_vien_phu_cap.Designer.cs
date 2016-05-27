@@ -126,6 +126,8 @@
             this.m_grv.Name = "m_grv";
             this.m_grv.OptionsBehavior.ReadOnly = true;
             this.m_grv.OptionsFind.AlwaysVisible = true;
+            this.m_grv.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.m_grv.OptionsSelection.EnableAppearanceFocusedRow = false;
             this.m_grv.OptionsView.ShowFooter = true;
             // 
             // STT

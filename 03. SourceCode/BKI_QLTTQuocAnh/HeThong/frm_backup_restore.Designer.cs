@@ -61,7 +61,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(740, 396);
-            this.gridControl1.TabIndex = 0;
+            this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -162,7 +162,7 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(740, 44);
-            this.panelControl1.TabIndex = 1;
+            this.panelControl1.TabIndex = 0;
             // 
             // m_cmd_phuc_hoi
             // 
@@ -174,7 +174,7 @@
             this.m_cmd_phuc_hoi.Location = new System.Drawing.Point(140, 2);
             this.m_cmd_phuc_hoi.Name = "m_cmd_phuc_hoi";
             this.m_cmd_phuc_hoi.Size = new System.Drawing.Size(138, 40);
-            this.m_cmd_phuc_hoi.TabIndex = 2;
+            this.m_cmd_phuc_hoi.TabIndex = 1;
             this.m_cmd_phuc_hoi.Text = "Phục hồi dữ liệu";
             this.m_cmd_phuc_hoi.Click += new System.EventHandler(this.m_cmd_phuc_hoi_Click);
             // 
@@ -203,7 +203,7 @@
             this.m_cmd_backup.Location = new System.Drawing.Point(2, 2);
             this.m_cmd_backup.Name = "m_cmd_backup";
             this.m_cmd_backup.Size = new System.Drawing.Size(138, 40);
-            this.m_cmd_backup.TabIndex = 1;
+            this.m_cmd_backup.TabIndex = 0;
             this.m_cmd_backup.Text = "Sao lưu dữ liệu";
             this.m_cmd_backup.Click += new System.EventHandler(this.m_cmd_backup_Click);
             // 
@@ -214,7 +214,7 @@
             this.panelControl2.Location = new System.Drawing.Point(0, 44);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(740, 30);
-            this.panelControl2.TabIndex = 2;
+            this.panelControl2.TabIndex = 1;
             // 
             // labelControl1
             // 

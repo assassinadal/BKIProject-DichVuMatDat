@@ -327,7 +327,7 @@ namespace BKI_DichVuMatDat
             this.m_cbo_nhom_quyen.Location = new System.Drawing.Point(119, 147);
             this.m_cbo_nhom_quyen.Name = "m_cbo_nhom_quyen";
             this.m_cbo_nhom_quyen.Size = new System.Drawing.Size(224, 21);
-            this.m_cbo_nhom_quyen.TabIndex = 12;
+            this.m_cbo_nhom_quyen.TabIndex = 16;
             // 
             // label9
             // 
@@ -362,7 +362,7 @@ namespace BKI_DichVuMatDat
             this.label10.Location = new System.Drawing.Point(6, 147);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(83, 16);
-            this.label10.TabIndex = 11;
+            this.label10.TabIndex = 15;
             this.label10.Text = "Thuộc nhóm";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -402,7 +402,7 @@ namespace BKI_DichVuMatDat
 		#endregion
 		#region Private Methods
 		private void format_controls(){
-			CControlFormat.setFormStyle(this, new CAppContext_201(), IPFormStyle.DialogForm);		
+			//CControlFormat.setFormStyle(this, new CAppContext_201(), IPFormStyle.DialogForm);		
 			m_cbo_trang_thai.SelectedIndex = 0;						
 			set_define_events();
 		}

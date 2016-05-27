@@ -50,7 +50,7 @@
             this.label1.Location = new System.Drawing.Point(12, 95);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 3;
             this.label1.Text = "Chọn quyền";
             // 
             // m_cbo_nhom_quyen
@@ -60,7 +60,7 @@
             this.m_cbo_nhom_quyen.Location = new System.Drawing.Point(122, 87);
             this.m_cbo_nhom_quyen.Name = "m_cbo_nhom_quyen";
             this.m_cbo_nhom_quyen.Size = new System.Drawing.Size(147, 21);
-            this.m_cbo_nhom_quyen.TabIndex = 1;
+            this.m_cbo_nhom_quyen.TabIndex = 4;
             // 
             // m_txt_form
             // 
@@ -70,7 +70,7 @@
             this.m_txt_form.Name = "m_txt_form";
             this.m_txt_form.ReadOnly = true;
             this.m_txt_form.Size = new System.Drawing.Size(207, 20);
-            this.m_txt_form.TabIndex = 2;
+            this.m_txt_form.TabIndex = 1;
             // 
             // label2
             // 
@@ -78,7 +78,7 @@
             this.label2.Location = new System.Drawing.Point(12, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Chọn form";
             // 
             // label3
@@ -87,7 +87,7 @@
             this.label3.Location = new System.Drawing.Point(12, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 13);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 5;
             this.label3.Text = "Chọn chức năng";
             // 
             // m_cbo_chuc_nang
@@ -97,7 +97,7 @@
             this.m_cbo_chuc_nang.Location = new System.Drawing.Point(122, 132);
             this.m_cbo_chuc_nang.Name = "m_cbo_chuc_nang";
             this.m_cbo_chuc_nang.Size = new System.Drawing.Size(147, 21);
-            this.m_cbo_chuc_nang.TabIndex = 5;
+            this.m_cbo_chuc_nang.TabIndex = 6;
             // 
             // m_pnl_out_place_dm
             // 
@@ -108,7 +108,7 @@
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(449, 36);
-            this.m_pnl_out_place_dm.TabIndex = 6;
+            this.m_pnl_out_place_dm.TabIndex = 7;
             // 
             // m_cmd_save
             // 

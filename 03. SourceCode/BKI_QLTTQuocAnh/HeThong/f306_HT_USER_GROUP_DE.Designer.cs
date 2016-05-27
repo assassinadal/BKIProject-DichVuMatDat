@@ -35,58 +35,60 @@
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.m_pnl_out_place_dm.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_lbl_mess
             // 
             this.m_lbl_mess.AutoSize = true;
             this.m_lbl_mess.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_mess.Location = new System.Drawing.Point(-9, 130);
+            this.m_lbl_mess.Location = new System.Drawing.Point(-9, 121);
             this.m_lbl_mess.Name = "m_lbl_mess";
-            this.m_lbl_mess.Size = new System.Drawing.Size(0, 14);
-            this.m_lbl_mess.TabIndex = 15;
+            this.m_lbl_mess.Size = new System.Drawing.Size(0, 13);
+            this.m_lbl_mess.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(140, 29);
+            this.label7.Location = new System.Drawing.Point(141, 25);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(19, 14);
-            this.label7.TabIndex = 14;
+            this.label7.Size = new System.Drawing.Size(19, 13);
+            this.label7.TabIndex = 1;
             this.label7.Text = "(*)";
             // 
             // m_txt_mo_ta
             // 
-            this.m_txt_mo_ta.Location = new System.Drawing.Point(165, 52);
+            this.m_txt_mo_ta.Location = new System.Drawing.Point(166, 46);
             this.m_txt_mo_ta.Multiline = true;
             this.m_txt_mo_ta.Name = "m_txt_mo_ta";
-            this.m_txt_mo_ta.Size = new System.Drawing.Size(245, 76);
-            this.m_txt_mo_ta.TabIndex = 13;
+            this.m_txt_mo_ta.Size = new System.Drawing.Size(245, 71);
+            this.m_txt_mo_ta.TabIndex = 4;
             // 
             // m_lbl_mo_ta
             // 
             this.m_lbl_mo_ta.AutoSize = true;
-            this.m_lbl_mo_ta.Location = new System.Drawing.Point(6, 55);
+            this.m_lbl_mo_ta.Location = new System.Drawing.Point(7, 49);
             this.m_lbl_mo_ta.Name = "m_lbl_mo_ta";
-            this.m_lbl_mo_ta.Size = new System.Drawing.Size(33, 14);
-            this.m_lbl_mo_ta.TabIndex = 12;
+            this.m_lbl_mo_ta.Size = new System.Drawing.Size(34, 13);
+            this.m_lbl_mo_ta.TabIndex = 3;
             this.m_lbl_mo_ta.Text = "Mô tả";
             // 
             // m_txt_ten_nhom
             // 
-            this.m_txt_ten_nhom.Location = new System.Drawing.Point(165, 26);
+            this.m_txt_ten_nhom.Location = new System.Drawing.Point(166, 22);
             this.m_txt_ten_nhom.Name = "m_txt_ten_nhom";
             this.m_txt_ten_nhom.Size = new System.Drawing.Size(245, 20);
-            this.m_txt_ten_nhom.TabIndex = 11;
+            this.m_txt_ten_nhom.TabIndex = 2;
             // 
             // m_lbl_ten_nhom
             // 
             this.m_lbl_ten_nhom.AutoSize = true;
-            this.m_lbl_ten_nhom.Location = new System.Drawing.Point(6, 29);
+            this.m_lbl_ten_nhom.Location = new System.Drawing.Point(7, 25);
             this.m_lbl_ten_nhom.Name = "m_lbl_ten_nhom";
-            this.m_lbl_ten_nhom.Size = new System.Drawing.Size(128, 14);
-            this.m_lbl_ten_nhom.TabIndex = 10;
+            this.m_lbl_ten_nhom.Size = new System.Drawing.Size(125, 13);
+            this.m_lbl_ten_nhom.TabIndex = 0;
             this.m_lbl_ten_nhom.Text = "Tên nhóm người sử dụng";
             // 
             // ImageList
@@ -121,11 +123,11 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 168);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 156);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(419, 39);
-            this.m_pnl_out_place_dm.TabIndex = 24;
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(419, 36);
+            this.m_pnl_out_place_dm.TabIndex = 1;
             // 
             // m_cmd_save
             // 
@@ -138,7 +140,7 @@
             this.m_cmd_save.ImageList = this.ImageList;
             this.m_cmd_save.Location = new System.Drawing.Point(239, 4);
             this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(88, 31);
+            this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 0;
             this.m_cmd_save.Text = "&Lưu";
             this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
@@ -155,25 +157,36 @@
             this.m_cmd_exit.ImageList = this.ImageList;
             this.m_cmd_exit.Location = new System.Drawing.Point(327, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 31);
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.m_txt_mo_ta);
+            this.panel1.Controls.Add(this.m_lbl_ten_nhom);
+            this.panel1.Controls.Add(this.m_txt_ten_nhom);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.m_lbl_mo_ta);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(419, 156);
+            this.panel1.TabIndex = 0;
+            // 
             // f306_HT_USER_GROUP_DE
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 207);
+            this.ClientSize = new System.Drawing.Size(419, 192);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_lbl_mess);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.m_txt_mo_ta);
-            this.Controls.Add(this.m_lbl_mo_ta);
-            this.Controls.Add(this.m_txt_ten_nhom);
-            this.Controls.Add(this.m_lbl_ten_nhom);
             this.Name = "f306_HT_USER_GROUP_DE";
             this.Text = "Cập nhật nhóm người sử dụng";
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +204,6 @@
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        private System.Windows.Forms.Panel panel1;
     }
 }

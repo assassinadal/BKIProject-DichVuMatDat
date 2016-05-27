@@ -74,7 +74,7 @@ namespace BKI_DichVuMatDat.HeThong {
         }
 
         private void format_control() {
-            CControlFormat.setFormStyle(this, new CAppContext_201());
+            //CControlFormat.setFormStyle(this, new CAppContext_201());
             m_cmd_exit.Visible = false;
         }
 

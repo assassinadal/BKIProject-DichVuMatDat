@@ -92,7 +92,7 @@
             this.groupBox2.Location = new System.Drawing.Point(324, 54);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 239);
-            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quyền đã cấp";
             // 
@@ -102,7 +102,7 @@
             this.m_lbox_quyen_da_cap.Location = new System.Drawing.Point(6, 20);
             this.m_lbox_quyen_da_cap.Name = "m_lbox_quyen_da_cap";
             this.m_lbox_quyen_da_cap.Size = new System.Drawing.Size(188, 212);
-            this.m_lbox_quyen_da_cap.TabIndex = 1;
+            this.m_lbox_quyen_da_cap.TabIndex = 0;
             this.m_lbox_quyen_da_cap.SelectedIndexChanged += new System.EventHandler(this.m_lbox_quyen_da_cap_SelectedIndexChanged);
             // 
             // m_cmd_left_2_right
@@ -115,7 +115,7 @@
             this.m_cmd_left_2_right.Location = new System.Drawing.Point(231, 73);
             this.m_cmd_left_2_right.Name = "m_cmd_left_2_right";
             this.m_cmd_left_2_right.Size = new System.Drawing.Size(75, 28);
-            this.m_cmd_left_2_right.TabIndex = 9;
+            this.m_cmd_left_2_right.TabIndex = 3;
             this.m_cmd_left_2_right.Text = ">";
             this.m_cmd_left_2_right.Click += new System.EventHandler(this.m_cmd_left_2_right_Click);
             // 
@@ -129,7 +129,7 @@
             this.m_cmd_left_2_right_all.Location = new System.Drawing.Point(231, 107);
             this.m_cmd_left_2_right_all.Name = "m_cmd_left_2_right_all";
             this.m_cmd_left_2_right_all.Size = new System.Drawing.Size(75, 28);
-            this.m_cmd_left_2_right_all.TabIndex = 10;
+            this.m_cmd_left_2_right_all.TabIndex = 4;
             this.m_cmd_left_2_right_all.Text = ">>";
             this.m_cmd_left_2_right_all.Click += new System.EventHandler(this.m_cmd_left_2_right_all_Click);
             // 
@@ -143,7 +143,7 @@
             this.m_cmd_right_2_left.Location = new System.Drawing.Point(231, 223);
             this.m_cmd_right_2_left.Name = "m_cmd_right_2_left";
             this.m_cmd_right_2_left.Size = new System.Drawing.Size(75, 28);
-            this.m_cmd_right_2_left.TabIndex = 11;
+            this.m_cmd_right_2_left.TabIndex = 5;
             this.m_cmd_right_2_left.Text = "<";
             this.m_cmd_right_2_left.Click += new System.EventHandler(this.m_cmd_right_2_left_Click);
             // 
@@ -157,7 +157,7 @@
             this.m_cmd_right_2_left_all.Location = new System.Drawing.Point(231, 257);
             this.m_cmd_right_2_left_all.Name = "m_cmd_right_2_left_all";
             this.m_cmd_right_2_left_all.Size = new System.Drawing.Size(75, 28);
-            this.m_cmd_right_2_left_all.TabIndex = 12;
+            this.m_cmd_right_2_left_all.TabIndex = 6;
             this.m_cmd_right_2_left_all.Text = "<<";
             this.m_cmd_right_2_left_all.Click += new System.EventHandler(this.m_cmd_right_2_left_all_Click);
             // 
@@ -197,7 +197,7 @@
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(536, 37);
-            this.m_pnl_out_place_dm.TabIndex = 13;
+            this.m_pnl_out_place_dm.TabIndex = 8;
             // 
             // m_cmd_save
             // 

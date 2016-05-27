@@ -23,7 +23,7 @@ namespace BKI_DichVuMatDat.HeThong
         }
 
         private void format_control() {
-            CControlFormat.setFormStyle(this, new CAppContext_201());
+            //CControlFormat.setFormStyle(this, new CAppContext_201());
         }
 
         US_HT_PHAN_QUYEN_HE_THONG m_us = new US_HT_PHAN_QUYEN_HE_THONG();

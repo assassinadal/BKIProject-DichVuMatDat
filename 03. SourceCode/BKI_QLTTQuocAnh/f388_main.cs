@@ -611,36 +611,36 @@ namespace BKI_DichVuMatDat
             //            , v_ngay_cuoi_cung_cua_thang_hien_tai.Date, this);
         }
 
-        private void m_lbl_canh_bao_het_han_luong_che_do_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                f419_bao_cao_hs_lns_lcd_v2 v_f = new f419_bao_cao_hs_lns_lcd_v2();
-                DateTime v_ngay_hien_tai = DateTime.Now.Date;
-                //DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
-                v_f.display_nv_het_han_lcd(v_ngay_hien_tai, this);
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
+        //private void m_lbl_canh_bao_het_han_luong_che_do_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        f419_bao_cao_hs_lns_lcd_v2 v_f = new f419_bao_cao_hs_lns_lcd_v2();
+        //        DateTime v_ngay_hien_tai = DateTime.Now.Date;
+        //        //DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
+        //        v_f.display_nv_het_han_lcd(v_ngay_hien_tai, this);
+        //    }
+        //    catch(Exception v_e)
+        //    {
+        //        CSystemLog_301.ExceptionHandle(v_e);
+        //    }
 
-        }
+        //}
 
-        private void m_lbl_canh_bao_het_han_hs_lns_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                f419_bao_cao_hs_lns_lcd_v2 v_f = new f419_bao_cao_hs_lns_lcd_v2();
-                DateTime v_ngay_hien_tai = DateTime.Now.Date;
-                //DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
-                v_f.display_nv_het_han_hs_lns(v_ngay_hien_tai, this);
-            }
-            catch(Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+        //private void m_lbl_canh_bao_het_han_hs_lns_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        f419_bao_cao_hs_lns_lcd_v2 v_f = new f419_bao_cao_hs_lns_lcd_v2();
+        //        DateTime v_ngay_hien_tai = DateTime.Now.Date;
+        //        //DateTime v_ngay_hien_tai = Convert.ToDateTime("2045 - 06 - 01 00:00:00.000");
+        //        v_f.display_nv_het_han_hs_lns(v_ngay_hien_tai, this);
+        //    }
+        //    catch(Exception v_e)
+        //    {
+        //        CSystemLog_301.ExceptionHandle(v_e);
+        //    }
+        //}
 
         private void M_lbl_nv_nghi_tam_thoi_DoubleClick(object sender, EventArgs e)
         {
@@ -837,11 +837,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                f301_quy_trinh_tinh_luong v_frm = new f301_quy_trinh_tinh_luong();
-                if(IsExistFormName(v_frm)) return;
+                //f301_quy_trinh_tinh_luong v_frm = new f301_quy_trinh_tinh_luong();
+                //if(IsExistFormName(v_frm)) return;
 
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
             }
             catch(Exception v_e)
             {
@@ -969,11 +969,11 @@ namespace BKI_DichVuMatDat
             try
             {
                 //f419_bao_cao_hs_lns_lcd_cua_nhan_vien v_frm = new f419_bao_cao_hs_lns_lcd_cua_nhan_vien();
-                f419_bao_cao_hs_lns_lcd_v2 v_frm = new f419_bao_cao_hs_lns_lcd_v2();
-                if(IsExistFormName(v_frm)) return;
+                //f419_bao_cao_hs_lns_lcd_v2 v_frm = new f419_bao_cao_hs_lns_lcd_v2();
+                //if(IsExistFormName(v_frm)) return;
 
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
             }
             catch(Exception v_e)
             {
@@ -1081,11 +1081,11 @@ namespace BKI_DichVuMatDat
         {
             try
             {
-                F430_bao_cao_cac_thang_da_chot_bang_luong v_frm = new F430_bao_cao_cac_thang_da_chot_bang_luong();
-                if(IsExistFormName(v_frm)) return;
+                //F430_bao_cao_cac_thang_da_chot_bang_luong v_frm = new F430_bao_cao_cac_thang_da_chot_bang_luong();
+                //if(IsExistFormName(v_frm)) return;
 
-                v_frm.MdiParent = this;
-                v_frm.Show();
+                //v_frm.MdiParent = this;
+                //v_frm.Show();
             }
             catch(Exception v_e)
             {

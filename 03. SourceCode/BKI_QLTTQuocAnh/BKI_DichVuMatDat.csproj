@@ -387,12 +387,6 @@
     <Compile Include="BaoCao\f410_bao_cao_so_luong_chat_luong_lao_dong.Designer.cs">
       <DependentUpon>f410_bao_cao_so_luong_chat_luong_lao_dong.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaoCao\f419_bao_cao_hs_lns_lcd_v2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCao\f419_bao_cao_hs_lns_lcd_v2.Designer.cs">
-      <DependentUpon>f419_bao_cao_hs_lns_lcd_v2.cs</DependentUpon>
-    </Compile>
     <Compile Include="BaoCao\F421_BAO_CAO_THONG_KE_TONG_HOP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -648,12 +642,6 @@
     <Compile Include="NghiepVu\Luong\f413_rpt_tong_hop_thong_tin.Designer.cs">
       <DependentUpon>f413_rpt_tong_hop_thong_tin.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaoCao\f419_bao_cao_hs_lns_lcd_cua_nhan_vien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCao\f419_bao_cao_hs_lns_lcd_cua_nhan_vien.Designer.cs">
-      <DependentUpon>f419_bao_cao_hs_lns_lcd_cua_nhan_vien.cs</DependentUpon>
-    </Compile>
     <Compile Include="BaoCao\F420_Bao_cao_nhan_su_theo_don_vi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -677,12 +665,6 @@
     </Compile>
     <Compile Include="BaoCao\F425_Bao_cao_nhan_su_tong_hop.Designer.cs">
       <DependentUpon>F425_Bao_cao_nhan_su_tong_hop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\F430_bao_cao_cac_thang_da_chot_bang_luong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCao\F430_bao_cao_cac_thang_da_chot_bang_luong.Designer.cs">
-      <DependentUpon>F430_bao_cao_cac_thang_da_chot_bang_luong.cs</DependentUpon>
     </Compile>
     <Compile Include="BaoCao\f435_bao_cao_lao_dong_nuoc_ngoai.cs">
       <SubType>Form</SubType>
@@ -947,24 +929,6 @@
     </Compile>
     <Compile Include="FormatControl\FormatControl.cs" />
     <Compile Include="HeThong\collection.cs" />
-    <Compile Include="HeThong\f301_quy_trinh_tinh_luong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HeThong\f301_quy_trinh_tinh_luong.Designer.cs">
-      <DependentUpon>f301_quy_trinh_tinh_luong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HeThong\f301_quy_trinh_tinh_luong_v2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HeThong\f301_quy_trinh_tinh_luong_v2.Designer.cs">
-      <DependentUpon>f301_quy_trinh_tinh_luong_v2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HeThong\f301_quy_trinh_tinh_luong_v3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HeThong\f301_quy_trinh_tinh_luong_v3.Designer.cs">
-      <DependentUpon>f301_quy_trinh_tinh_luong_v3.cs</DependentUpon>
-    </Compile>
     <Compile Include="HeThong\f306_HT_USER_GROUP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1794,9 +1758,6 @@
     <EmbeddedResource Include="BaoCao\f410_bao_cao_so_luong_chat_luong_lao_dong.resx">
       <DependentUpon>f410_bao_cao_so_luong_chat_luong_lao_dong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\f419_bao_cao_hs_lns_lcd_v2.resx">
-      <DependentUpon>f419_bao_cao_hs_lns_lcd_v2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </EmbeddedResource>
@@ -1854,9 +1815,6 @@
     <EmbeddedResource Include="NghiepVu\Luong\f413_rpt_tong_hop_thong_tin.resx">
       <DependentUpon>f413_rpt_tong_hop_thong_tin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\f419_bao_cao_hs_lns_lcd_cua_nhan_vien.resx">
-      <DependentUpon>f419_bao_cao_hs_lns_lcd_cua_nhan_vien.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F420_Bao_cao_nhan_su_theo_don_vi.resx">
       <DependentUpon>F420_Bao_cao_nhan_su_theo_don_vi.cs</DependentUpon>
     </EmbeddedResource>
@@ -1868,9 +1826,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F425_Bao_cao_nhan_su_tong_hop.resx">
       <DependentUpon>F425_Bao_cao_nhan_su_tong_hop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\F430_bao_cao_cac_thang_da_chot_bang_luong.resx">
-      <DependentUpon>F430_bao_cao_cac_thang_da_chot_bang_luong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f435_bao_cao_lao_dong_nuoc_ngoai.resx">
       <DependentUpon>f435_bao_cao_lao_dong_nuoc_ngoai.cs</DependentUpon>
@@ -1985,15 +1940,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F152_DANH_SACH_NHAN_VIEN_EXCEL.resx">
       <DependentUpon>F152_DANH_SACH_NHAN_VIEN_EXCEL.CS</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HeThong\f301_quy_trinh_tinh_luong.resx">
-      <DependentUpon>f301_quy_trinh_tinh_luong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HeThong\f301_quy_trinh_tinh_luong_v2.resx">
-      <DependentUpon>f301_quy_trinh_tinh_luong_v2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HeThong\f301_quy_trinh_tinh_luong_v3.resx">
-      <DependentUpon>f301_quy_trinh_tinh_luong_v3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f306_HT_USER_GROUP.resx">
       <DependentUpon>f306_HT_USER_GROUP.cs</DependentUpon>

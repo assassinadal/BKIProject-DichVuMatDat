@@ -43,11 +43,11 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 193);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 179);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(425, 39);
-            this.m_pnl_out_place_dm.TabIndex = 7;
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(425, 36);
+            this.m_pnl_out_place_dm.TabIndex = 4;
             // 
             // m_cmd_save
             // 
@@ -59,7 +59,7 @@
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.Location = new System.Drawing.Point(245, 4);
             this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(88, 31);
+            this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 0;
             this.m_cmd_save.Text = "&Lưu";
             this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
@@ -74,7 +74,7 @@
             this.m_cmd_exit.ImageIndex = 11;
             this.m_cmd_exit.Location = new System.Drawing.Point(333, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 31);
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Trở về (Esc)";
             this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
@@ -82,41 +82,41 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 39);
+            this.label1.Location = new System.Drawing.Point(22, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 14);
-            this.label1.TabIndex = 8;
+            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.TabIndex = 0;
             this.label1.Text = "Mã phân quyền";
             // 
             // m_txt_ma_phan_quyen
             // 
-            this.m_txt_ma_phan_quyen.Location = new System.Drawing.Point(109, 31);
+            this.m_txt_ma_phan_quyen.Location = new System.Drawing.Point(109, 29);
             this.m_txt_ma_phan_quyen.Name = "m_txt_ma_phan_quyen";
             this.m_txt_ma_phan_quyen.Size = new System.Drawing.Size(294, 20);
-            this.m_txt_ma_phan_quyen.TabIndex = 9;
+            this.m_txt_ma_phan_quyen.TabIndex = 1;
             // 
             // m_txt_ghi_chu
             // 
-            this.m_txt_ghi_chu.Location = new System.Drawing.Point(109, 84);
+            this.m_txt_ghi_chu.Location = new System.Drawing.Point(109, 78);
             this.m_txt_ghi_chu.Multiline = true;
             this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
-            this.m_txt_ghi_chu.Size = new System.Drawing.Size(294, 65);
-            this.m_txt_ghi_chu.TabIndex = 11;
+            this.m_txt_ghi_chu.Size = new System.Drawing.Size(294, 61);
+            this.m_txt_ghi_chu.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 87);
+            this.label2.Location = new System.Drawing.Point(22, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 14);
-            this.label2.TabIndex = 10;
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 2;
             this.label2.Text = "Ghi chú";
             // 
             // f992_phan_quyen_he_thong_de
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 232);
+            this.ClientSize = new System.Drawing.Size(425, 215);
             this.Controls.Add(this.m_txt_ghi_chu);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.m_txt_ma_phan_quyen);

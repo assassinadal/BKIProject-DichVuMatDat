@@ -35,7 +35,7 @@ namespace BKI_DichVuMatDat.HeThong
 
         #region  Private Methods
         private void format_control() {
-            CControlFormat.setFormStyle(this, new CAppContext_201());
+            //CControlFormat.setFormStyle(this, new CAppContext_201());
             set_define_events();              
         }
         private void load_data_to_cbo_tai_khoan() {

@@ -34,7 +34,7 @@ namespace BKI_DichVuMatDat.HeThong
 
         private void format_control()
         {
-            CControlFormat.setFormStyle(this, new CAppContext_201());
+            //CControlFormat.setFormStyle(this, new CAppContext_201());
         }
 
         private void m_cmd_exit_Click(object sender, EventArgs e)

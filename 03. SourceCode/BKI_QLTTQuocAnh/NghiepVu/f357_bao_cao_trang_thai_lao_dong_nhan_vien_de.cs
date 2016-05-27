@@ -94,7 +94,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void format_controls()
         {
-            FormatControl.SetVisibleSimpleButton(this);
+            //FormatControl.SetVisibleSimpleButton(this);
             set_define_events();
             this.KeyPreview = true;
         }

@@ -54,6 +54,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             m_date_goi_y = Convert.ToDateTime(editValue);
+            m_dat_thang.EditValue = editValue;
             this.ShowDialog();
         }
         #endregion
@@ -67,7 +68,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Private Methods
         private void format_controls()
         {
-            FormatControl.SetVisibleSimpleButton(this);
+            //FormatControl.SetVisibleSimpleButton(this);
             set_define_events();
             this.CenterToScreen();
             this.KeyPreview = true;

@@ -44,9 +44,9 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.KeyPreview = true;
         }
 
-        private void insert_gd_phu_thuoc_details(DataRow v_dr)
+        private void insert_gd_phu_thuoc_details(DataRow v_dr, US_GD_PHU_THUOC_DETAILS v_us)
         {
-            US_GD_PHU_THUOC_DETAILS v_us = new US_GD_PHU_THUOC_DETAILS();
+            //US_GD_PHU_THUOC_DETAILS v_us = new US_GD_PHU_THUOC_DETAILS();
             v_us.dcID_GD_PHU_THUOC = get_id_by_ma_nhan_vien(v_dr[0].ToString());
             v_us.strHO_TEN_NGUOI_PHU_THUOC = v_dr[3].ToString();
             if (v_dr[4].ToString().Trim() !="")
@@ -68,7 +68,8 @@ namespace BKI_DichVuMatDat.NghiepVu
             v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
             v_us.datNGAY_LAP = DateTime.Now;
             v_us.strDA_XOA = "N";
-            v_us.Insert();                 
+            v_us.Insert();
+            v_us.ClearAllFields();     
         }
 
         private DateTime convert_datetime(string ip_date)
@@ -129,7 +130,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private bool check_du_lieu_hop_le()
         {
-            if (m_grv.DataRowCount > 0)
+            if(m_grv1.RowCount > 0)
             { }
             else
             {
@@ -219,18 +220,25 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         void m_bgw_DoWork(object sender, DoWorkEventArgs e)
         {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            US_GD_PHU_THUOC_DETAILS v_us_trans = new US_GD_PHU_THUOC_DETAILS();
             try
             {
-                BackgroundWorker worker = sender as BackgroundWorker;
+                v_us_trans.BeginTransaction();
                 for (int i = 0; i < m_grv1.RowCount; i++)
                 {
                     var v_dr = m_grv1.GetDataRow(i);
-                    insert_gd_phu_thuoc_details(v_dr);
+                    insert_gd_phu_thuoc_details(v_dr, v_us_trans);
                     worker.ReportProgress((i + 1) * 100 / m_grv1.RowCount);
-                } 
+                }
+                v_us_trans.CommitTransaction();
             }
             catch (Exception v_e)
             {
+                if(v_us_trans.is_having_transaction())
+                {
+                    v_us_trans.Rollback();
+                }
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }

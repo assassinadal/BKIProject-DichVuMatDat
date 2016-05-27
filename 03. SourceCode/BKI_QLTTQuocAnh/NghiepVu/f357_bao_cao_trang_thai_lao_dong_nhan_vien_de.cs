@@ -20,8 +20,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         #region Public interface
         public void display_4_insert(ref decimal v_id_gd_trang_thai_lao_dong_moi_tao)
         {
-            this.Text = "F357 - THAY ĐỔI TRẠNG THÁI LAO ĐỘNG CỦA NHÂN VIÊN";
-            m_lbl_header.Text = "Thay đổi trạng thái lao động của nhân viên";
+            this.Text = "F357 - THÊM MỚI trạng thái lao động";
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             m_dat_ngay_ap_dung.EditValue = m_ngay_goi_y;
             this.CenterToScreen();
@@ -38,8 +37,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         public void display_4_update(US_GD_TRANG_THAI_LAO_DONG ip_us)
         {
-            this.Text = "F357 - CẬP NHẬT TRẠNG THÁI LAO ĐỘNG CỦA NHÂN VIÊN";
-            m_lbl_header.Text = "Cập nhật trạng thái lao động của nhân viên";
+            this.Text = "F357 - SỬA trạng thái lao động";
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_sle_chon_nhan_vien.EditValue = ip_us.dcID_NHAN_VIEN;
             m_sle_chon_nhan_vien.Enabled = false;
@@ -54,27 +52,27 @@ namespace BKI_DichVuMatDat.NghiepVu
             this.CenterToScreen();
             this.ShowDialog();
         }
-        public void display_4_thay_doi_trang_thai(ref decimal v_id_gd_trang_thai_lao_dong_moi_tao, decimal id_nv)
-        {
-            this.Text = "F357 - THAY ĐỔI TRẠNG THÁI LAO ĐỘNG CỦA NHÂN VIÊN";
-            m_lbl_header.Text = "Thay đổi trạng thái lao động của nhân viên";
-            m_e_form_mode = DataEntryFormMode.InsertDataState;
-            m_sle_chon_nhan_vien.EditValue = id_nv;
-            m_dat_ngay_ap_dung.EditValue = m_ngay_goi_y;
-            this.CenterToScreen();
-            this.ShowDialog();
-            v_id_gd_trang_thai_lao_dong_moi_tao = m_id_gd_trang_thai_lao_dong_moi_tao;
-        }
-        public void display_4_thay_doi_trang_thai(decimal ip_id_nv)
-        {
-            this.Text = "F357 - THAY ĐỔI TRẠNG THÁI LAO ĐỘNG CỦA NHÂN VIÊN";
-            m_lbl_header.Text = "Thay đổi trạng thái lao động của nhân viên";
-            m_e_form_mode = DataEntryFormMode.InsertDataState;
-            m_sle_chon_nhan_vien.EditValue = ip_id_nv;
-            m_dat_ngay_ap_dung.EditValue = m_ngay_goi_y;
-            this.CenterToScreen();
-            this.ShowDialog();
-        }
+        //public void display_4_thay_doi_trang_thai(ref decimal v_id_gd_trang_thai_lao_dong_moi_tao, decimal id_nv)
+        //{
+        //    this.Text = "F357 - THAY ĐỔI TRẠNG THÁI LAO ĐỘNG CỦA NHÂN VIÊN";
+        //    m_lbl_header.Text = "Thay đổi trạng thái lao động của nhân viên";
+        //    m_e_form_mode = DataEntryFormMode.InsertDataState;
+        //    m_sle_chon_nhan_vien.EditValue = id_nv;
+        //    m_dat_ngay_ap_dung.EditValue = m_ngay_goi_y;
+        //    this.CenterToScreen();
+        //    this.ShowDialog();
+        //    v_id_gd_trang_thai_lao_dong_moi_tao = m_id_gd_trang_thai_lao_dong_moi_tao;
+        //}
+        //public void display_4_thay_doi_trang_thai(decimal ip_id_nv)
+        //{
+        //    this.Text = "F357 - THAY ĐỔI TRẠNG THÁI LAO ĐỘNG CỦA NHÂN VIÊN";
+        //    m_lbl_header.Text = "Thay đổi trạng thái lao động của nhân viên";
+        //    m_e_form_mode = DataEntryFormMode.InsertDataState;
+        //    m_sle_chon_nhan_vien.EditValue = ip_id_nv;
+        //    m_dat_ngay_ap_dung.EditValue = m_ngay_goi_y;
+        //    this.CenterToScreen();
+        //    this.ShowDialog();
+        //}
 
         #endregion
 

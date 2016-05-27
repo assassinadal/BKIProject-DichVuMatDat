@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f363_quan_ly_cac_nhan_vien_co_luong_cung));
-            this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.m_dat_ngay_ket_thuc = new System.Windows.Forms.DateTimePicker();
@@ -89,24 +88,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_luong_cung_cua_nhan_vien)).BeginInit();
             this.SuspendLayout();
             // 
-            // m_lbl_header
-            // 
-            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(1216, 52);
-            this.m_lbl_header.TabIndex = 0;
-            this.m_lbl_header.Text = "QUẢN LÝ CÁC NHÂN VIÊN CÓ LƯƠNG CỨNG";
-            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.groupControl1);
             this.panel1.Controls.Add(this.m_gr_thong_tin_co_ban);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 52);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1216, 117);
             this.panel1.TabIndex = 1;
@@ -305,7 +292,7 @@
             // 
             this.panel2.Controls.Add(this.m_cmd_luu_tien_luong);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 169);
+            this.panel2.Location = new System.Drawing.Point(0, 117);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1216, 43);
             this.panel2.TabIndex = 2;
@@ -378,9 +365,9 @@
             // 
             this.panel4.Controls.Add(this.m_grc_luong_cung_cua_nhan_vien);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 212);
+            this.panel4.Location = new System.Drawing.Point(0, 160);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1216, 320);
+            this.panel4.Size = new System.Drawing.Size(1216, 372);
             this.panel4.TabIndex = 6;
             // 
             // m_grc_luong_cung_cua_nhan_vien
@@ -390,7 +377,7 @@
             this.m_grc_luong_cung_cua_nhan_vien.Location = new System.Drawing.Point(0, 0);
             this.m_grc_luong_cung_cua_nhan_vien.MainView = this.m_grv_luong_cung_cua_nhan_vien;
             this.m_grc_luong_cung_cua_nhan_vien.Name = "m_grc_luong_cung_cua_nhan_vien";
-            this.m_grc_luong_cung_cua_nhan_vien.Size = new System.Drawing.Size(1216, 320);
+            this.m_grc_luong_cung_cua_nhan_vien.Size = new System.Drawing.Size(1216, 372);
             this.m_grc_luong_cung_cua_nhan_vien.TabIndex = 0;
             this.m_grc_luong_cung_cua_nhan_vien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_luong_cung_cua_nhan_vien});
@@ -607,7 +594,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.m_lbl_header);
             this.Name = "f363_quan_ly_cac_nhan_vien_co_luong_cung";
             this.Text = "F363 - Quản lý các nhân viên có lương cứng";
             this.panel1.ResumeLayout(false);
@@ -630,7 +616,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label m_lbl_header;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

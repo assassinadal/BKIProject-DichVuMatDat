@@ -52,7 +52,6 @@
             this.m_cmd_xoa = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
-            this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
@@ -73,7 +72,6 @@
             // 
             this.panel2.Controls.Add(this.m_grc);
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.m_lbl_header);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -84,10 +82,10 @@
             // 
             this.m_grc.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc.Location = new System.Drawing.Point(0, 87);
+            this.m_grc.Location = new System.Drawing.Point(0, 32);
             this.m_grc.MainView = this.m_grv;
             this.m_grc.Name = "m_grc";
-            this.m_grc.Size = new System.Drawing.Size(873, 331);
+            this.m_grc.Size = new System.Drawing.Size(873, 386);
             this.m_grc.TabIndex = 3;
             this.m_grc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv});
@@ -269,7 +267,7 @@
             this.panel1.Controls.Add(this.m_cmd_update);
             this.panel1.Controls.Add(this.m_cmd_them);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 55);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(873, 32);
             this.panel1.TabIndex = 1;
@@ -335,18 +333,6 @@
             this.m_cmd_them.TabIndex = 10;
             this.m_cmd_them.Text = "&Thêm";
             // 
-            // m_lbl_header
-            // 
-            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(873, 55);
-            this.m_lbl_header.TabIndex = 2;
-            this.m_lbl_header.Text = "QUẢN LÝ PHỤ CẤP TRÁCH NHIỆM";
-            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // F394_gd_nhan_vien_phu_cap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,7 +340,7 @@
             this.ClientSize = new System.Drawing.Size(873, 418);
             this.Controls.Add(this.panel2);
             this.Name = "F394_gd_nhan_vien_phu_cap";
-            this.Text = "F394 -  Phụ cấp trách nhiệm";
+            this.Text = "F394 -  Quản lý Phụ cấp trách nhiệm";
             this.Load += new System.EventHandler(this.F393_gd_nhan_vien_phu_cap_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).EndInit();
@@ -368,7 +354,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label m_lbl_header;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_them;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xoa;

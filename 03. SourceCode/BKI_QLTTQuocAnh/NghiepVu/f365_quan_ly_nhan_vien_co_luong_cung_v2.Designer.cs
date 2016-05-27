@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f365_quan_ly_nhan_vien_co_luong_cung_v2));
-            this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
+            this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_update = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_insert = new DevExpress.XtraEditors.SimpleButton();
             this.m_grc_luong_cung_cua_nhan_vien = new DevExpress.XtraGrid.GridControl();
             this.m_grv_luong_cung_cua_nhan_vien = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,24 +52,11 @@
             this.NGAY_SUA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGUOI_SUA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GHI_CHU = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_luong_cung_cua_nhan_vien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_luong_cung_cua_nhan_vien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
             this.SuspendLayout();
-            // 
-            // m_lbl_header
-            // 
-            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(863, 52);
-            this.m_lbl_header.TabIndex = 1;
-            this.m_lbl_header.Text = "QUẢN LÝ CÁC NHÂN VIÊN CÓ LƯƠNG CỨNG";
-            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
@@ -78,45 +65,12 @@
             this.panel3.Controls.Add(this.m_cmd_update);
             this.panel3.Controls.Add(this.m_cmd_insert);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 52);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.MaximumSize = new System.Drawing.Size(0, 36);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(2);
             this.panel3.Size = new System.Drawing.Size(863, 36);
             this.panel3.TabIndex = 4;
-            // 
-            // m_cmd_insert
-            // 
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_insert.ImageIndex = 7;
-            this.m_cmd_insert.ImageList = this.img_DVMD;
-            this.m_cmd_insert.Location = new System.Drawing.Point(2, 2);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(75, 32);
-            this.m_cmd_insert.TabIndex = 0;
-            this.m_cmd_insert.Text = "&Thêm";
-            // 
-            // m_cmd_update
-            // 
-            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_update.ImageIndex = 9;
-            this.m_cmd_update.ImageList = this.img_DVMD;
-            this.m_cmd_update.Location = new System.Drawing.Point(77, 2);
-            this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(75, 32);
-            this.m_cmd_update.TabIndex = 1;
-            this.m_cmd_update.Text = "&Sửa";
-            // 
-            // m_cmd_delete
-            // 
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_delete.ImageIndex = 8;
-            this.m_cmd_delete.ImageList = this.img_DVMD;
-            this.m_cmd_delete.Location = new System.Drawing.Point(152, 2);
-            this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(75, 32);
-            this.m_cmd_delete.TabIndex = 2;
-            this.m_cmd_delete.Text = "&Xóa";
             // 
             // m_cmd_xuat_excel
             // 
@@ -129,14 +83,62 @@
             this.m_cmd_xuat_excel.TabIndex = 3;
             this.m_cmd_xuat_excel.Text = "&Xuất Excel";
             // 
+            // img_DVMD
+            // 
+            this.img_DVMD.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("img_DVMD.ImageStream")));
+            this.img_DVMD.Images.SetKeyName(0, "Excel-icon.png");
+            this.img_DVMD.Images.SetKeyName(1, "excel-xls-icon.png");
+            this.img_DVMD.Images.SetKeyName(2, "exit-16.ico");
+            this.img_DVMD.Images.SetKeyName(3, "image.png");
+            this.img_DVMD.Images.SetKeyName(4, "Microsoft Excel.png");
+            this.img_DVMD.Images.SetKeyName(5, "calculator.png");
+            this.img_DVMD.Images.SetKeyName(6, "diskette.png");
+            this.img_DVMD.Images.SetKeyName(7, "file_add.png");
+            this.img_DVMD.Images.SetKeyName(8, "file_delete.png");
+            this.img_DVMD.Images.SetKeyName(9, "file_edit.png");
+            this.img_DVMD.Images.SetKeyName(10, "file_search.png");
+            // 
+            // m_cmd_delete
+            // 
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_delete.ImageIndex = 8;
+            this.m_cmd_delete.ImageList = this.img_DVMD;
+            this.m_cmd_delete.Location = new System.Drawing.Point(152, 2);
+            this.m_cmd_delete.Name = "m_cmd_delete";
+            this.m_cmd_delete.Size = new System.Drawing.Size(75, 32);
+            this.m_cmd_delete.TabIndex = 2;
+            this.m_cmd_delete.Text = "&Xóa";
+            // 
+            // m_cmd_update
+            // 
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_update.ImageIndex = 9;
+            this.m_cmd_update.ImageList = this.img_DVMD;
+            this.m_cmd_update.Location = new System.Drawing.Point(77, 2);
+            this.m_cmd_update.Name = "m_cmd_update";
+            this.m_cmd_update.Size = new System.Drawing.Size(75, 32);
+            this.m_cmd_update.TabIndex = 1;
+            this.m_cmd_update.Text = "&Sửa";
+            // 
+            // m_cmd_insert
+            // 
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_insert.ImageIndex = 7;
+            this.m_cmd_insert.ImageList = this.img_DVMD;
+            this.m_cmd_insert.Location = new System.Drawing.Point(2, 2);
+            this.m_cmd_insert.Name = "m_cmd_insert";
+            this.m_cmd_insert.Size = new System.Drawing.Size(75, 32);
+            this.m_cmd_insert.TabIndex = 0;
+            this.m_cmd_insert.Text = "&Thêm";
+            // 
             // m_grc_luong_cung_cua_nhan_vien
             // 
             this.m_grc_luong_cung_cua_nhan_vien.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grc_luong_cung_cua_nhan_vien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grc_luong_cung_cua_nhan_vien.Location = new System.Drawing.Point(0, 88);
+            this.m_grc_luong_cung_cua_nhan_vien.Location = new System.Drawing.Point(0, 36);
             this.m_grc_luong_cung_cua_nhan_vien.MainView = this.m_grv_luong_cung_cua_nhan_vien;
             this.m_grc_luong_cung_cua_nhan_vien.Name = "m_grc_luong_cung_cua_nhan_vien";
-            this.m_grc_luong_cung_cua_nhan_vien.Size = new System.Drawing.Size(863, 368);
+            this.m_grc_luong_cung_cua_nhan_vien.Size = new System.Drawing.Size(863, 420);
             this.m_grc_luong_cung_cua_nhan_vien.TabIndex = 5;
             this.m_grc_luong_cung_cua_nhan_vien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.m_grv_luong_cung_cua_nhan_vien});
@@ -344,21 +346,6 @@
             this.GHI_CHU.Visible = true;
             this.GHI_CHU.VisibleIndex = 11;
             // 
-            // img_DVMD
-            // 
-            this.img_DVMD.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("img_DVMD.ImageStream")));
-            this.img_DVMD.Images.SetKeyName(0, "Excel-icon.png");
-            this.img_DVMD.Images.SetKeyName(1, "excel-xls-icon.png");
-            this.img_DVMD.Images.SetKeyName(2, "exit-16.ico");
-            this.img_DVMD.Images.SetKeyName(3, "image.png");
-            this.img_DVMD.Images.SetKeyName(4, "Microsoft Excel.png");
-            this.img_DVMD.Images.SetKeyName(5, "calculator.png");
-            this.img_DVMD.Images.SetKeyName(6, "diskette.png");
-            this.img_DVMD.Images.SetKeyName(7, "file_add.png");
-            this.img_DVMD.Images.SetKeyName(8, "file_delete.png");
-            this.img_DVMD.Images.SetKeyName(9, "file_edit.png");
-            this.img_DVMD.Images.SetKeyName(10, "file_search.png");
-            // 
             // f365_quan_ly_nhan_vien_co_luong_cung_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,20 +353,18 @@
             this.ClientSize = new System.Drawing.Size(863, 456);
             this.Controls.Add(this.m_grc_luong_cung_cua_nhan_vien);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.m_lbl_header);
             this.Name = "f365_quan_ly_nhan_vien_co_luong_cung_v2";
-            this.Text = "F365 - Quản lý nhân viên có lương cứng";
+            this.Text = "F365 - Quản lý Lương cứng";
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_luong_cung_cua_nhan_vien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_luong_cung_cua_nhan_vien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label m_lbl_header;
         private System.Windows.Forms.Panel panel3;
         private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
         private DevExpress.XtraEditors.SimpleButton m_cmd_update;

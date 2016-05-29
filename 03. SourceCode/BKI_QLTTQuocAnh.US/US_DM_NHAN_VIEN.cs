@@ -825,12 +825,13 @@ namespace BKI_DichVuMatDat.US
 
             return v_ds.Tables[0];
         }
-        public DataTable LayDanhSachMaTraCuu()
+        public DataTable LayDanhSachMaTraCuu(decimal ip_dc_id_don_vi, decimal ip_dc_id_chuc_danh)
         {
             CStoredProc v_cstore = new CStoredProc("pr_NV_card_nhan_vien_GetAll");
             DataSet v_ds = new DataSet();
             v_ds.Tables.Add();
-
+            v_cstore.addDecimalInputParam("@ip_dc_id_don_vi", ip_dc_id_don_vi);
+            v_cstore.addDecimalInputParam("@ip_dc_id_chuc_vu", ip_dc_id_chuc_danh);
             v_cstore.fillDataSetByCommand(this, v_ds);
 
             return v_ds.Tables[0];

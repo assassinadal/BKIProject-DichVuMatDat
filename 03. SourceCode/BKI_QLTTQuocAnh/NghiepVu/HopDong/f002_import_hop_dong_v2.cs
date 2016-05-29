@@ -500,7 +500,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
         private DataTable load_data_from_file_to_data_table(string ip_str_path, string ip_name_sheet_import)
         {
             string conStr = "";
-            //string SheetName = ip_name_sheet_import + "$";
+            string SheetName = ip_name_sheet_import + "$";
            
             conStr = ConfigurationManager.ConnectionStrings["Excel07ConString"].ConnectionString;
             conStr = String.Format(conStr, ip_str_path, "Yes");
@@ -513,7 +513,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             DataTable dt = new DataTable();
             if(ExcelDataSet != null && ExcelDataSet.Rows.Count > 0)
             {
-                string SheetName = ExcelDataSet.Rows[0]["TABLE_NAME"].ToString(); // get sheetname
+                //string SheetName = ExcelDataSet.Rows[0]["TABLE_NAME"].ToString(); // get sheetname
                 ExcelCommand.CommandText = "SELECT * From [" + SheetName + "]";// WHERE [" + ExcelHopDong.MA_NHAN_VIEN + "] IS NOT NULL";
                 OleDbDataAdapter ExcelAdapter = new OleDbDataAdapter(ExcelCommand);
                 ExcelAdapter.SelectCommand = ExcelCommand;
@@ -603,17 +603,16 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             }
             SplashScreenManager.ShowForm(this, typeof(SplashScreen1), true, true, false);
             US_GD_HOP_DONG v_us_gd_hd = new US_GD_HOP_DONG();
+            int v_i_row = 0;
             try
             {
-                
-                v_us_gd_hd.BeginTransaction();
-                for(int i = 0; i < m_grv_hop_dong.RowCount; i++)
+                for(v_i_row = 0; v_i_row < m_grv_hop_dong.RowCount; v_i_row++)
                 {
                     v_us_gd_hd.ClearAllFields();
-                    var data = m_grv_hop_dong.GetDataRow(i);
+                    var data = m_grv_hop_dong.GetDataRow(v_i_row);
                     grid_to_us_gd_hop_dong(v_us_gd_hd, data);
+                    v_us_gd_hd.BeginTransaction();
                     v_us_gd_hd.Insert();
-
                     if(!ExecuteFuntion.KiemTraNhanVienCoCongTac(v_us_gd_hd.dcID_NHAN_VIEN))
                     {
                         US_GD_CONG_TAC v_us = new US_GD_CONG_TAC();
@@ -621,18 +620,19 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                         v_us.dcID_LOAI_CONG_TAC = CONST_ID_LOAI_CONG_TAC.CHINH_THUC;
                         v_us.dcID_NHAN_VIEN = v_us_gd_hd.dcID_NHAN_VIEN;
                         v_us.dcID_VI_TRI = v_us_gd_hd.dcID_CHUC_VU;
-                        //v_us.dcSO_HO_SO = ExecuteFuntion.GetSoHoSoNext(v_us_gd_hd.dcID_DON_VI, v_us_gd_hd.dcID_CHUC_VU, v_us_gd_hd.dcID_NHAN_VIEN);
+                        v_us.dcSO_HO_SO = ExecuteFuntion.GetSoHoSoNext(v_us_gd_hd.dcID_DON_VI, v_us_gd_hd.dcID_CHUC_VU, v_us_gd_hd.dcID_NHAN_VIEN);
                         v_us.strDA_XOA = "N";
                         v_us.strNGUOI_LAP = CAppContext_201.getCurrentUserName();
                         v_us.datNGAY_LAP = DateTime.Now.Date;
                         v_us.datNGAY_BAT_DAU = v_us_gd_hd.datNGAY_BAT_DAU;
                         v_us.UseTransOfUSObject(v_us_gd_hd);
                         v_us.Insert();
+                        throw new Exception();
                     }
-
-                    SplashScreenManager.Default.SendCommand(SplashScreen1.SplashScreenCommand.SetProgress, (int)((decimal)i / (decimal)m_grv_hop_dong.RowCount * 100));
+                    v_us_gd_hd.CommitTransaction();
+                    SplashScreenManager.Default.SendCommand(SplashScreen1.SplashScreenCommand.SetProgress, (int)((decimal)v_i_row / (decimal)m_grv_hop_dong.RowCount * 100));
                 }
-                v_us_gd_hd.CommitTransaction();
+                
                 CHRM_BaseMessages.MsgBox_Infor("Đã lưu dữ liệu thành công");
             }
             catch(Exception)
@@ -641,7 +641,14 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                 {
                     v_us_gd_hd.Rollback();
                 }
-                throw;
+                if(v_i_row >= 1)
+                {
+                    throw new Exception("Có lỗi xảy ra. Dữ liệu lưu chưa thành công!\nĐã lưu thành công đến dòng thứ " + v_i_row + " với mã nhân viên " + m_grv_hop_dong.GetRowCellValue(v_i_row - 1, ExcelHopDong.MA_NHAN_VIEN).ToString());
+                }
+                else
+                {
+                    throw new Exception("Có lỗi xảy ra. Dữ liệu lưu chưa được lưu!");
+                }
             }
             finally
             {
@@ -704,7 +711,7 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
             }
             catch(Exception v_e)
             {
-                XtraMessageBox.Show("Có lỗi xảy ra, dữ liệu chưa được lưu. Bạn xem lại dữ liệu trên File Excel nhé", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                XtraMessageBox.Show(v_e.Message, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 //CSystemLog_301.ExceptionHandle(v_e);
             }
         }

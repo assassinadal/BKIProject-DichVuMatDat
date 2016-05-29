@@ -81,12 +81,12 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xoa_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_sua_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_them_moi_cong_tac = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
@@ -835,6 +835,29 @@
             this.panelControl3.Size = new System.Drawing.Size(809, 33);
             this.panelControl3.TabIndex = 5;
             // 
+            // m_cmd_chon_file
+            // 
+            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chon_file.ImageIndex = 4;
+            this.m_cmd_chon_file.ImageList = this.img_DVMD;
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(331, 0);
+            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
+            this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 33);
+            this.m_cmd_chon_file.TabIndex = 12;
+            this.m_cmd_chon_file.Text = "&Import excel";
+            this.m_cmd_chon_file.Visible = false;
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.ImageIndex = 0;
+            this.m_cmd_xuat_excel.ImageList = this.img_DVMD;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(240, 0);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(91, 33);
+            this.m_cmd_xuat_excel.TabIndex = 11;
+            this.m_cmd_xuat_excel.Text = "&Xuất Excel";
+            // 
             // m_cmd_xoa_cong_tac
             // 
             this.m_cmd_xoa_cong_tac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -892,28 +915,6 @@
             this.m_cmd_them_moi_cong_tac.TabIndex = 0;
             this.m_cmd_them_moi_cong_tac.Text = "&Thêm";
             this.m_cmd_them_moi_cong_tac.ToolTip = "Thêm mới công tác cho nhân viên";
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_excel.ImageIndex = 0;
-            this.m_cmd_xuat_excel.ImageList = this.img_DVMD;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(240, 0);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(91, 33);
-            this.m_cmd_xuat_excel.TabIndex = 11;
-            this.m_cmd_xuat_excel.Text = "&Xuất Excel";
-            // 
-            // m_cmd_chon_file
-            // 
-            this.m_cmd_chon_file.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chon_file.ImageIndex = 4;
-            this.m_cmd_chon_file.ImageList = this.img_DVMD;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(331, 0);
-            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
-            this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 33);
-            this.m_cmd_chon_file.TabIndex = 12;
-            this.m_cmd_chon_file.Text = "&Import excel";
             // 
             // f309_quan_ly_cong_tac
             // 

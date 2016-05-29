@@ -436,7 +436,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
             v_us_gd_ct.datNGAY_LAP = DateTime.Now.Date;
             v_us_gd_ct.strDA_XOA = "N";
-            //v_us_gd_ct.dcSO_HO_SO = ExecuteFuntion.GetSoHoSoNext(v_us_gd_ct.dcID_DON_VI, v_us_gd_ct.dcID_VI_TRI, v_us_gd_ct.dcID_NHAN_VIEN);
+            v_us_gd_ct.dcSO_HO_SO = ExecuteFuntion.GetSoHoSoNext(v_us_gd_ct.dcID_DON_VI, v_us_gd_ct.dcID_VI_TRI, v_us_gd_ct.dcID_NHAN_VIEN);
         }
 
         private void save_data()
@@ -452,19 +452,21 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
             SplashScreenManager.ShowForm(this, typeof(SplashScreen1), true, true, false);
             US_GD_CONG_TAC v_us_gd_ct = new US_GD_CONG_TAC();
+            int v_i_row = 0;
             try
             {
 
-                v_us_gd_ct.BeginTransaction();
-                for(int i = 0; i < m_grv_cong_tac.RowCount; i++)
+                for(v_i_row = 0; v_i_row < m_grv_cong_tac.RowCount; v_i_row++)
                 {
+                    v_us_gd_ct.BeginTransaction();
                     v_us_gd_ct.ClearAllFields();
-                    var data = m_grv_cong_tac.GetDataRow(i);
+                    var data = m_grv_cong_tac.GetDataRow(v_i_row);
                     grid_to_us_gd_cong_tac(v_us_gd_ct, data);
                     v_us_gd_ct.Insert();
-                    SplashScreenManager.Default.SendCommand(SplashScreen1.SplashScreenCommand.SetProgress, (int)((decimal)i / (decimal)m_grv_cong_tac.RowCount * 100));
+                    v_us_gd_ct.CommitTransaction();
+                    SplashScreenManager.Default.SendCommand(SplashScreen1.SplashScreenCommand.SetProgress, (int)((decimal)v_i_row / (decimal)m_grv_cong_tac.RowCount * 100));
                 }
-                v_us_gd_ct.CommitTransaction();
+                
                 //Sau do phai cap nhat lai so ho so, chua biet lam
                 
                 CHRM_BaseMessages.MsgBox_Infor("Đã lưu dữ liệu thành công");
@@ -474,6 +476,14 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
                 if(v_us_gd_ct.is_having_transaction())
                 {
                     v_us_gd_ct.Rollback();
+                }
+                if(v_i_row >= 1)
+                {
+                    throw new Exception("Có lỗi xảy ra. Dữ liệu lưu chưa thành công!\nĐã lưu thành công đến dòng thứ " + v_i_row + " với mã nhân viên " + m_grv_cong_tac.GetRowCellValue(v_i_row - 1, ExcelCongTac.MA_NHAN_VIEN).ToString());
+                }
+                else
+                {
+                    throw new Exception("Có lỗi xảy ra. Dữ liệu lưu chưa được lưu!");
                 }
                 throw;
             }
@@ -538,7 +548,7 @@ namespace BKI_DichVuMatDat.NghiepVu.NhanSu
             }
             catch(Exception v_e)
             {
-                XtraMessageBox.Show("Có lỗi xảy ra, dữ liệu chưa được lưu. Bạn xem lại dữ liệu trên File Excel nhé", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                XtraMessageBox.Show(v_e.Message, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 //CSystemLog_301.ExceptionHandle(v_e);
             }
         }

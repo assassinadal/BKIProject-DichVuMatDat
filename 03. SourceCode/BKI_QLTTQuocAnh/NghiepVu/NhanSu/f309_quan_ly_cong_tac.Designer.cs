@@ -845,7 +845,6 @@
             this.m_cmd_chon_file.Size = new System.Drawing.Size(100, 33);
             this.m_cmd_chon_file.TabIndex = 12;
             this.m_cmd_chon_file.Text = "&Import excel";
-            this.m_cmd_chon_file.Visible = false;
             // 
             // m_cmd_xuat_excel
             // 

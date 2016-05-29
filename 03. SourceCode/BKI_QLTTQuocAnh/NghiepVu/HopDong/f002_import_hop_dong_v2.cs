@@ -627,7 +627,6 @@ namespace BKI_DichVuMatDat.NghiepVu.HopDong
                         v_us.datNGAY_BAT_DAU = v_us_gd_hd.datNGAY_BAT_DAU;
                         v_us.UseTransOfUSObject(v_us_gd_hd);
                         v_us.Insert();
-                        throw new Exception();
                     }
                     v_us_gd_hd.CommitTransaction();
                     SplashScreenManager.Default.SendCommand(SplashScreen1.SplashScreenCommand.SetProgress, (int)((decimal)v_i_row / (decimal)m_grv_hop_dong.RowCount * 100));

@@ -265,7 +265,7 @@ namespace BKI_DichVuMatDat.NghiepVu
                         v_us_gd_luong_cung = new US_GD_LUONG_CUNG();
                         form_2_us_luong_cung(v_us_gd_luong_cung);
                         v_us_gd_luong_cung.BeginTransaction();
-                        cho_gd_da_co_da_xoa_Y(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
+                        //cho_gd_da_co_da_xoa_Y(CIPConvert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
                         v_us_gd_luong_cung.Insert();
                         v_us_gd_luong_cung.CommitTransaction();
                         CHRM_BaseMessages.MsgBox_Infor(CONST_ID_MSGBOX.INFOR_LUU_DU_LIEU_THANH_CONG);

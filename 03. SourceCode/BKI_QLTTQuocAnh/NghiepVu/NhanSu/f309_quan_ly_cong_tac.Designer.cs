@@ -87,6 +87,7 @@
             this.m_cmd_sua_cong_tac = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_them_moi_cong_tac = new DevExpress.XtraEditors.SimpleButton();
+            this.colSO_HO_SO = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_DVMD)).BeginInit();
@@ -169,7 +170,8 @@
             this.colNGAY_VAO_HANG_KHONG,
             this.colNGAY_TIEP_NHAN_VAO_TCT,
             this.colNGAY_CHINH_THUC_TIEP_NHAN,
-            this.colNGUOI_BAO_LANH});
+            this.colNGUOI_BAO_LANH,
+            this.colSO_HO_SO});
             styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Pink;
             styleFormatCondition1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
             styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Firebrick;
@@ -915,6 +917,14 @@
             this.m_cmd_them_moi_cong_tac.Text = "&Thêm";
             this.m_cmd_them_moi_cong_tac.ToolTip = "Thêm mới công tác cho nhân viên";
             // 
+            // colSO_HO_SO
+            // 
+            this.colSO_HO_SO.Caption = "Số hồ sơ";
+            this.colSO_HO_SO.FieldName = "SO_HO_SO";
+            this.colSO_HO_SO.Name = "colSO_HO_SO";
+            this.colSO_HO_SO.Visible = true;
+            this.colSO_HO_SO.VisibleIndex = 8;
+            // 
             // f309_quan_ly_cong_tac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -997,5 +1007,6 @@
         private DevExpress.XtraEditors.DateEdit m_dat_tai_thang;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_excel;
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
+        private DevExpress.XtraGrid.Columns.GridColumn colSO_HO_SO;
     }
 }

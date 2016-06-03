@@ -200,7 +200,12 @@ namespace BKI_DichVuMatDat.NghiepVu
             ip_us.strDA_XOA = "N";
             if(m_e_loai_cap_nhat == e_loai_cap_nhat.THEM_MOI)
             {
-                ip_us.dcSO_HO_SO = ExecuteFuntion.GetSoHoSoNext(ip_us.dcID_DON_VI, ip_us.dcID_VI_TRI, ip_us.dcID_NHAN_VIEN);
+                //ip_us.dcSO_HO_SO = ExecuteFuntion.GetSoHoSoNext(ip_us.dcID_DON_VI, ip_us.dcID_VI_TRI, ip_us.dcID_NHAN_VIEN);
+                ip_us.dcSO_HO_SO = Convert.ToDecimal(m_txt_so_ho_so.EditValue);
+            }
+            else
+            {
+                ip_us.dcSO_HO_SO = Convert.ToDecimal(m_txt_so_ho_so.EditValue);
             }
         }
         private void us_2_form(US_GD_CONG_TAC ip_us)

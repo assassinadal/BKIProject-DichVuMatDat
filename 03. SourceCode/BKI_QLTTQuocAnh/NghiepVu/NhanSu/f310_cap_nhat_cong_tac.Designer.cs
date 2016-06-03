@@ -147,7 +147,6 @@
             this.m_txt_so_ho_so.Properties.Mask.EditMask = "n0";
             this.m_txt_so_ho_so.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.m_txt_so_ho_so.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.m_txt_so_ho_so.Properties.ReadOnly = true;
             this.m_txt_so_ho_so.Size = new System.Drawing.Size(314, 20);
             this.m_txt_so_ho_so.StyleController = this.layoutControl1;
             this.m_txt_so_ho_so.TabIndex = 4;

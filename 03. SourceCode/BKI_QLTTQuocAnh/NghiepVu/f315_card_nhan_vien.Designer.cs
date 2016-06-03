@@ -33,16 +33,11 @@
             this.m_grc_main = new DevExpress.XtraGrid.GridControl();
             this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
             this.colID = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.layoutViewField_colID = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.colMA_TRA_CUU = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.layoutViewField_colMA_TRA_CUU = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.colHO_TEN = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.layoutViewField_colHO_TEN = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.colNGAY_SINH = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.layoutViewField_colNGAY_SINH = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.colSO_CMT = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.layoutViewField_colSO_CMT = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
+            this.colMA_NV = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -59,20 +54,28 @@
             this.MA_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.m_cmd_xuat_pdf = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
+            this.layoutViewField_colNGAY_SINH = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewField_colSO_CMT = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewField_colMA_TRA_CUU = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewField_layoutViewColumn1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewField_colHO_TEN = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewField_colID = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colMA_TRA_CUU)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colHO_TEN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colNGAY_SINH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colSO_CMT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_vi_tri.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_don_vi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colNGAY_SINH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colSO_CMT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colMA_TRA_CUU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colHO_TEN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colID)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -104,7 +107,8 @@
             this.colMA_TRA_CUU,
             this.colHO_TEN,
             this.colNGAY_SINH,
-            this.colSO_CMT});
+            this.colSO_CMT,
+            this.colMA_NV});
             this.layoutView1.GridControl = this.m_grc_main;
             this.layoutView1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutViewField_colID});
@@ -124,16 +128,6 @@
             this.colID.LayoutViewField = this.layoutViewField_colID;
             this.colID.Name = "colID";
             // 
-            // layoutViewField_colID
-            // 
-            this.layoutViewField_colID.EditorPreferredWidth = 378;
-            this.layoutViewField_colID.Location = new System.Drawing.Point(0, 0);
-            this.layoutViewField_colID.Name = "layoutViewField_colID";
-            this.layoutViewField_colID.Size = new System.Drawing.Size(419, 136);
-            this.layoutViewField_colID.TextLocation = DevExpress.Utils.Locations.Default;
-            this.layoutViewField_colID.TextSize = new System.Drawing.Size(56, 20);
-            this.layoutViewField_colID.TextToControlDistance = 5;
-            // 
             // colMA_TRA_CUU
             // 
             this.colMA_TRA_CUU.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
@@ -144,17 +138,6 @@
             this.colMA_TRA_CUU.FieldName = "MA_TRA_CUU";
             this.colMA_TRA_CUU.LayoutViewField = this.layoutViewField_colMA_TRA_CUU;
             this.colMA_TRA_CUU.Name = "colMA_TRA_CUU";
-            // 
-            // layoutViewField_colMA_TRA_CUU
-            // 
-            this.layoutViewField_colMA_TRA_CUU.EditorPreferredWidth = 314;
-            this.layoutViewField_colMA_TRA_CUU.Location = new System.Drawing.Point(0, 0);
-            this.layoutViewField_colMA_TRA_CUU.Name = "layoutViewField_colMA_TRA_CUU";
-            this.layoutViewField_colMA_TRA_CUU.Size = new System.Drawing.Size(403, 34);
-            this.layoutViewField_colMA_TRA_CUU.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
-            this.layoutViewField_colMA_TRA_CUU.TextLocation = DevExpress.Utils.Locations.Default;
-            this.layoutViewField_colMA_TRA_CUU.TextSize = new System.Drawing.Size(80, 30);
-            this.layoutViewField_colMA_TRA_CUU.TextToControlDistance = 5;
             // 
             // colHO_TEN
             // 
@@ -168,17 +151,6 @@
             this.colHO_TEN.Name = "colHO_TEN";
             this.colHO_TEN.OptionsColumn.ReadOnly = true;
             // 
-            // layoutViewField_colHO_TEN
-            // 
-            this.layoutViewField_colHO_TEN.EditorPreferredWidth = 314;
-            this.layoutViewField_colHO_TEN.Location = new System.Drawing.Point(0, 34);
-            this.layoutViewField_colHO_TEN.Name = "layoutViewField_colHO_TEN";
-            this.layoutViewField_colHO_TEN.Size = new System.Drawing.Size(403, 34);
-            this.layoutViewField_colHO_TEN.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
-            this.layoutViewField_colHO_TEN.TextLocation = DevExpress.Utils.Locations.Default;
-            this.layoutViewField_colHO_TEN.TextSize = new System.Drawing.Size(80, 30);
-            this.layoutViewField_colHO_TEN.TextToControlDistance = 5;
-            // 
             // colNGAY_SINH
             // 
             this.colNGAY_SINH.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -189,17 +161,6 @@
             this.colNGAY_SINH.FieldName = "NGAY_SINH";
             this.colNGAY_SINH.LayoutViewField = this.layoutViewField_colNGAY_SINH;
             this.colNGAY_SINH.Name = "colNGAY_SINH";
-            // 
-            // layoutViewField_colNGAY_SINH
-            // 
-            this.layoutViewField_colNGAY_SINH.EditorPreferredWidth = 314;
-            this.layoutViewField_colNGAY_SINH.Location = new System.Drawing.Point(0, 68);
-            this.layoutViewField_colNGAY_SINH.Name = "layoutViewField_colNGAY_SINH";
-            this.layoutViewField_colNGAY_SINH.Size = new System.Drawing.Size(403, 34);
-            this.layoutViewField_colNGAY_SINH.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
-            this.layoutViewField_colNGAY_SINH.TextLocation = DevExpress.Utils.Locations.Default;
-            this.layoutViewField_colNGAY_SINH.TextSize = new System.Drawing.Size(80, 30);
-            this.layoutViewField_colNGAY_SINH.TextToControlDistance = 5;
             // 
             // colSO_CMT
             // 
@@ -212,33 +173,16 @@
             this.colSO_CMT.LayoutViewField = this.layoutViewField_colSO_CMT;
             this.colSO_CMT.Name = "colSO_CMT";
             // 
-            // layoutViewField_colSO_CMT
+            // colMA_NV
             // 
-            this.layoutViewField_colSO_CMT.EditorPreferredWidth = 314;
-            this.layoutViewField_colSO_CMT.Location = new System.Drawing.Point(0, 102);
-            this.layoutViewField_colSO_CMT.Name = "layoutViewField_colSO_CMT";
-            this.layoutViewField_colSO_CMT.Size = new System.Drawing.Size(403, 34);
-            this.layoutViewField_colSO_CMT.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.SupportHorzAlignment;
-            this.layoutViewField_colSO_CMT.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
-            this.layoutViewField_colSO_CMT.TextLocation = DevExpress.Utils.Locations.Default;
-            this.layoutViewField_colSO_CMT.TextSize = new System.Drawing.Size(80, 30);
-            this.layoutViewField_colSO_CMT.TextToControlDistance = 5;
-            // 
-            // layoutViewCard1
-            // 
-            this.layoutViewCard1.CustomizationFormText = "TemplateCard";
-            this.layoutViewCard1.ExpandButtonLocation = DevExpress.Utils.GroupElementLocation.AfterText;
-            this.layoutViewCard1.GroupBordersVisible = false;
-            this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutViewField_colHO_TEN,
-            this.layoutViewField_colNGAY_SINH,
-            this.layoutViewField_colSO_CMT,
-            this.layoutViewField_colMA_TRA_CUU});
-            this.layoutViewCard1.Name = "layoutViewCard1";
-            this.layoutViewCard1.OptionsItemText.TextToControlDistance = 6;
-            this.layoutViewCard1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutViewCard1.Text = "TemplateCard";
-            this.layoutViewCard1.TextLocation = DevExpress.Utils.Locations.Default;
+            this.colMA_NV.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.colMA_NV.AppearanceCell.Options.UseFont = true;
+            this.colMA_NV.AppearanceCell.Options.UseTextOptions = true;
+            this.colMA_NV.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMA_NV.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.colMA_NV.FieldName = "MA_NV";
+            this.colMA_NV.LayoutViewField = this.layoutViewField_layoutViewColumn1;
+            this.colMA_NV.Name = "colMA_NV";
             // 
             // panelControl1
             // 
@@ -289,7 +233,7 @@
             this.m_sle_chon_vi_tri.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.m_sle_chon_vi_tri.Properties.DisplayMember = "TEN_CHUC_VU";
-            this.m_sle_chon_vi_tri.Properties.NullText = "--Chọn vị trí--";
+            this.m_sle_chon_vi_tri.Properties.NullText = "--Tất cả chức vụ--";
             this.m_sle_chon_vi_tri.Properties.ValueMember = "ID";
             this.m_sle_chon_vi_tri.Properties.View = this.gridView3;
             this.m_sle_chon_vi_tri.Size = new System.Drawing.Size(314, 20);
@@ -392,6 +336,90 @@
             this.m_cmd_xuat_pdf.Text = "Xuất PDF";
             this.m_cmd_xuat_pdf.Click += new System.EventHandler(this.m_cmd_xuat_pdf_Click);
             // 
+            // layoutViewCard1
+            // 
+            this.layoutViewCard1.CustomizationFormText = "TemplateCard";
+            this.layoutViewCard1.ExpandButtonLocation = DevExpress.Utils.GroupElementLocation.AfterText;
+            this.layoutViewCard1.GroupBordersVisible = false;
+            this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutViewField_colNGAY_SINH,
+            this.layoutViewField_colSO_CMT,
+            this.layoutViewField_colMA_TRA_CUU,
+            this.layoutViewField_layoutViewColumn1,
+            this.layoutViewField_colHO_TEN});
+            this.layoutViewCard1.Name = "layoutViewCard1";
+            this.layoutViewCard1.OptionsItemText.TextToControlDistance = 6;
+            this.layoutViewCard1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.layoutViewCard1.Text = "TemplateCard";
+            this.layoutViewCard1.TextLocation = DevExpress.Utils.Locations.Default;
+            // 
+            // layoutViewField_colNGAY_SINH
+            // 
+            this.layoutViewField_colNGAY_SINH.EditorPreferredWidth = 314;
+            this.layoutViewField_colNGAY_SINH.Location = new System.Drawing.Point(0, 68);
+            this.layoutViewField_colNGAY_SINH.Name = "layoutViewField_colNGAY_SINH";
+            this.layoutViewField_colNGAY_SINH.Size = new System.Drawing.Size(403, 34);
+            this.layoutViewField_colNGAY_SINH.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutViewField_colNGAY_SINH.TextLocation = DevExpress.Utils.Locations.Default;
+            this.layoutViewField_colNGAY_SINH.TextSize = new System.Drawing.Size(80, 30);
+            this.layoutViewField_colNGAY_SINH.TextToControlDistance = 5;
+            // 
+            // layoutViewField_colSO_CMT
+            // 
+            this.layoutViewField_colSO_CMT.EditorPreferredWidth = 314;
+            this.layoutViewField_colSO_CMT.Location = new System.Drawing.Point(0, 102);
+            this.layoutViewField_colSO_CMT.Name = "layoutViewField_colSO_CMT";
+            this.layoutViewField_colSO_CMT.Size = new System.Drawing.Size(403, 34);
+            this.layoutViewField_colSO_CMT.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.SupportHorzAlignment;
+            this.layoutViewField_colSO_CMT.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutViewField_colSO_CMT.TextLocation = DevExpress.Utils.Locations.Default;
+            this.layoutViewField_colSO_CMT.TextSize = new System.Drawing.Size(80, 30);
+            this.layoutViewField_colSO_CMT.TextToControlDistance = 5;
+            // 
+            // layoutViewField_colMA_TRA_CUU
+            // 
+            this.layoutViewField_colMA_TRA_CUU.EditorPreferredWidth = 222;
+            this.layoutViewField_colMA_TRA_CUU.Location = new System.Drawing.Point(0, 0);
+            this.layoutViewField_colMA_TRA_CUU.Name = "layoutViewField_colMA_TRA_CUU";
+            this.layoutViewField_colMA_TRA_CUU.Size = new System.Drawing.Size(311, 34);
+            this.layoutViewField_colMA_TRA_CUU.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutViewField_colMA_TRA_CUU.TextLocation = DevExpress.Utils.Locations.Default;
+            this.layoutViewField_colMA_TRA_CUU.TextSize = new System.Drawing.Size(80, 30);
+            this.layoutViewField_colMA_TRA_CUU.TextToControlDistance = 5;
+            // 
+            // layoutViewField_layoutViewColumn1
+            // 
+            this.layoutViewField_layoutViewColumn1.EditorPreferredWidth = 88;
+            this.layoutViewField_layoutViewColumn1.Location = new System.Drawing.Point(311, 0);
+            this.layoutViewField_layoutViewColumn1.Name = "layoutViewField_layoutViewColumn1";
+            this.layoutViewField_layoutViewColumn1.Size = new System.Drawing.Size(92, 34);
+            this.layoutViewField_layoutViewColumn1.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutViewField_layoutViewColumn1.TextLocation = DevExpress.Utils.Locations.Default;
+            this.layoutViewField_layoutViewColumn1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutViewField_layoutViewColumn1.TextToControlDistance = 0;
+            this.layoutViewField_layoutViewColumn1.TextVisible = false;
+            // 
+            // layoutViewField_colHO_TEN
+            // 
+            this.layoutViewField_colHO_TEN.EditorPreferredWidth = 314;
+            this.layoutViewField_colHO_TEN.Location = new System.Drawing.Point(0, 34);
+            this.layoutViewField_colHO_TEN.Name = "layoutViewField_colHO_TEN";
+            this.layoutViewField_colHO_TEN.Size = new System.Drawing.Size(403, 34);
+            this.layoutViewField_colHO_TEN.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutViewField_colHO_TEN.TextLocation = DevExpress.Utils.Locations.Default;
+            this.layoutViewField_colHO_TEN.TextSize = new System.Drawing.Size(80, 30);
+            this.layoutViewField_colHO_TEN.TextToControlDistance = 5;
+            // 
+            // layoutViewField_colID
+            // 
+            this.layoutViewField_colID.EditorPreferredWidth = 378;
+            this.layoutViewField_colID.Location = new System.Drawing.Point(0, 0);
+            this.layoutViewField_colID.Name = "layoutViewField_colID";
+            this.layoutViewField_colID.Size = new System.Drawing.Size(403, 136);
+            this.layoutViewField_colID.TextLocation = DevExpress.Utils.Locations.Default;
+            this.layoutViewField_colID.TextSize = new System.Drawing.Size(56, 20);
+            this.layoutViewField_colID.TextToControlDistance = 5;
+            // 
             // f315_card_nhan_vien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,12 +433,6 @@
             this.Load += new System.EventHandler(this.f315_card_nhan_vien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_grc_main)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colMA_TRA_CUU)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colHO_TEN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colNGAY_SINH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colSO_CMT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -418,6 +440,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_sle_chon_don_vi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colNGAY_SINH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colSO_CMT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colMA_TRA_CUU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colHO_TEN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colID)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -433,12 +462,6 @@
         private DevExpress.XtraGrid.Columns.LayoutViewColumn colHO_TEN;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn colNGAY_SINH;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn colSO_CMT;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colID;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colMA_TRA_CUU;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colHO_TEN;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colNGAY_SINH;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colSO_CMT;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton m_cmd_xuat_pdf;
         private DevExpress.XtraEditors.SearchLookUpEdit m_sle_chon_vi_tri;
@@ -455,5 +478,13 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_filter;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn colMA_NV;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colID;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colMA_TRA_CUU;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colHO_TEN;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colNGAY_SINH;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colSO_CMT;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
     }
 }

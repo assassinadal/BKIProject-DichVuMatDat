@@ -466,6 +466,12 @@
     <Compile Include="DanhMuc\F110_dm_chuc_vu_de.Designer.cs">
       <DependentUpon>F110_dm_chuc_vu_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\F153_DANH_SACH_NHAN_VIEN_THEO_PHONG_BAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\F153_DANH_SACH_NHAN_VIEN_THEO_PHONG_BAN.Designer.cs">
+      <DependentUpon>F153_DANH_SACH_NHAN_VIEN_THEO_PHONG_BAN.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\F153_dm_nguoi_bao_lanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -740,7 +746,6 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1254,6 +1259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\TongHop\f400_rptth_phan_loai_lao_dong.resx">
       <DependentUpon>f400_rptth_phan_loai_lao_dong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\F153_DANH_SACH_NHAN_VIEN_THEO_PHONG_BAN.resx">
+      <DependentUpon>F153_DANH_SACH_NHAN_VIEN_THEO_PHONG_BAN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\frm_backup_restore.resx">
       <DependentUpon>frm_backup_restore.cs</DependentUpon>

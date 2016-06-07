@@ -10,6 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IP.Core.IPCommon;
+using BKI_DichVuMatDat.XtraReport;
+
+
 namespace BKI_DichVuMatDat.NghiepVu
 {
     public partial class f315_card_nhan_vien : Form
@@ -17,9 +20,16 @@ namespace BKI_DichVuMatDat.NghiepVu
         public f315_card_nhan_vien()
         {
             InitializeComponent();
-            load_danh_sach_don_vi();
-
+            format_controls();
         }
+
+        private void format_controls()
+        {
+            load_danh_sach_don_vi();
+            CenterToScreen();
+            set_define_events();
+        }
+
         private decimal get_id_don_vi()
         {
             if(m_sle_chon_don_vi.EditValue == null)
@@ -40,6 +50,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
             m_grc_main.DataSource = v_us.LayDanhSachMaTraCuu(get_id_don_vi(), get_id_chuc_vu());
+            m_grc.DataSource = v_us.LayDanhSachMaTraCuu(get_id_don_vi(), get_id_chuc_vu());
         }
         private void f315_card_nhan_vien_Load(object sender, EventArgs e)
         {
@@ -61,6 +72,61 @@ namespace BKI_DichVuMatDat.NghiepVu
                 //layoutView1.ExportToPdf(saveFileDialog1.FileName);
                 //DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
             }
+        }
+
+        private void set_define_events()
+        {
+            this.Load += F315_card_nhan_vien_Load;
+            m_cmd_filter.Click += m_cmd_filter_Click;
+            m_cmd_xuat_pdf.Click += m_cmd_xuat_pdf_Click;
+            m_cmd_xuat_excel.Click += M_cmd_xuat_excel_Click;
+            m_tab_controll.SelectedPageChanged += M_tab_controll_SelectedPageChanged;
+        }
+
+        private void M_tab_controll_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            switch (e.Page.Name)
+            {
+                case "xtraTabPage1":
+                    m_cmd_xuat_excel.Visible = false;
+                    m_cmd_xuat_pdf.Visible = true;
+                    break;
+                case "xtraTabPage2":
+                    m_cmd_xuat_excel.Visible = true;
+                    m_cmd_xuat_pdf.Visible = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void M_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ReportHelper.ExportXLS(m_grc, "DANH SÁCH CARD NHÂN VIÊN", "DS_CARD NV");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void F315_card_nhan_vien_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                set_init_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void set_init_form_load()
+        {
+
         }
 
         private void m_cmd_filter_Click(object sender, EventArgs e)

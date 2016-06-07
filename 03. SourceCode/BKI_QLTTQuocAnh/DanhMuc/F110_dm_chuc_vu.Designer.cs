@@ -45,6 +45,7 @@
             this.colMA_DON_VI = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colSO_LUONG_NS_DANG_CONG_TAC = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.m_tree_don_vi = new DevExpress.XtraTreeList.TreeList();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
@@ -84,7 +85,8 @@
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
-            this.gridColumn4});
+            this.gridColumn4,
+            this.gridColumn5});
             this.m_grv.GridControl = this.m_grc;
             this.m_grv.Name = "m_grv";
             this.m_grv.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
@@ -226,6 +228,14 @@
             this.m_tree_don_vi.Size = new System.Drawing.Size(255, 380);
             this.m_tree_don_vi.TabIndex = 2;
             // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Loại chức vụ";
+            this.gridColumn5.FieldName = "LOAI_CHUC_VU";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            // 
             // F110_dm_chuc_vu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,6 +274,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_insert;
         private DevExpress.XtraEditors.SimpleButton m_cmd_update;
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
-
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
     }
 }

@@ -22,6 +22,7 @@ namespace BKI_DichVuMatDat.DanhMuc
     {
         #region Members
         US_DM_CHUC_VU m_us = new US_DM_CHUC_VU();
+        
         DataEntryFormMode m_e_form_mode;
         #endregion
 
@@ -53,8 +54,19 @@ namespace BKI_DichVuMatDat.DanhMuc
         #region Private Method
         private void set_initial_form_load()
         {
+            load_data_to_sle_loai_chuc_vu();
             load_data_to_sle_don_vi();
             set_define_events();
+        }
+
+        private void load_data_to_sle_loai_chuc_vu()
+        {
+            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
+            v_us.FillDataset(v_ds,"WHERE ID_LOAI_TU_DIEN = 21");
+            m_sle_loai_chuc_vu.Properties.ValueMember = CM_DM_TU_DIEN.ID;
+            m_sle_loai_chuc_vu.Properties.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_sle_loai_chuc_vu.Properties.DataSource = v_ds.Tables[0];
         }
 
         private void load_data_to_sle_don_vi()
@@ -70,6 +82,7 @@ namespace BKI_DichVuMatDat.DanhMuc
         private void us_to_form(US_DM_CHUC_VU ip_us)
         {
             m_sle_don_vi.EditValue = ip_us.dcID_DON_VI;
+            m_sle_loai_chuc_vu.EditValue = ip_us.dcID_LOAI_CHUC_VU;
             m_txt_ma_chuc_vu.Text = ip_us.strMA_CHUC_VU;
             m_txt_ten_chuc_vu.Text = ip_us.strTEN_CHUC_VU;
             m_txt_thu_tu.Text = ip_us.dcSO_THU_TU.ToString();
@@ -81,6 +94,12 @@ namespace BKI_DichVuMatDat.DanhMuc
             if (m_sle_don_vi.EditValue == null)
             {
                 string v_str_error = "Bạn chưa chọn đơn vị!";
+                XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (m_sle_loai_chuc_vu.EditValue == null)
+            {
+                string v_str_error = "Bạn chưa chọn loại chức vụ!";
                 XtraMessageBox.Show(v_str_error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
@@ -147,6 +166,7 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_us.strTEN_CHUC_VU = m_txt_ten_chuc_vu.Text;
             m_us.dcSO_THU_TU = CIPConvert.ToDecimal(m_txt_thu_tu.Text);        
             m_us.dcID_DON_VI = CIPConvert.ToDecimal(m_sle_don_vi.EditValue);
+            m_us.dcID_LOAI_CHUC_VU = CIPConvert.ToDecimal(m_sle_loai_chuc_vu.EditValue);
             m_us.strGHI_CHU = m_txt_ghi_chu.Text;
         }
         #endregion

@@ -1814,7 +1814,8 @@ namespace BKI_DichVuMatDat
             try
             {
                 //F115_dm_thu_tu_don_vi_chuc_vu v_f = new F115_dm_thu_tu_don_vi_chuc_vu
-                f311_danh_sach_nhan_vien_theo_don_vi v_f = new f311_danh_sach_nhan_vien_theo_don_vi();
+                //f311_danh_sach_nhan_vien_theo_don_vi v_f = new f311_danh_sach_nhan_vien_theo_don_vi();
+                F153_DANH_SACH_NHAN_VIEN_THEO_PHONG_BAN v_f = new F153_DANH_SACH_NHAN_VIEN_THEO_PHONG_BAN();
                 if(IsExistFormName(v_f)) return;
                 v_f.MdiParent = this;
                 v_f.Show();

@@ -51,6 +51,7 @@
             this.colMA_NV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO_DEM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGIOI_TINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEMAIL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSO_TAI_KHOAN = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -76,7 +77,6 @@
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_tai_file_excel_mau = new DevExpress.XtraEditors.SimpleButton();
-            this.colGIOI_TINH = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grc)).BeginInit();
@@ -91,7 +91,7 @@
             this.colDIA_CHI_LIEN_LAC.FieldName = "DIA_CHI_LIEN_LAC";
             this.colDIA_CHI_LIEN_LAC.Name = "colDIA_CHI_LIEN_LAC";
             this.colDIA_CHI_LIEN_LAC.Visible = true;
-            this.colDIA_CHI_LIEN_LAC.VisibleIndex = 12;
+            this.colDIA_CHI_LIEN_LAC.VisibleIndex = 23;
             this.colDIA_CHI_LIEN_LAC.Width = 34;
             // 
             // colMA_SO_THUE_CA_NHAN
@@ -100,7 +100,7 @@
             this.colMA_SO_THUE_CA_NHAN.FieldName = "MA_SO_THUE_CA_NHAN";
             this.colMA_SO_THUE_CA_NHAN.Name = "colMA_SO_THUE_CA_NHAN";
             this.colMA_SO_THUE_CA_NHAN.Visible = true;
-            this.colMA_SO_THUE_CA_NHAN.VisibleIndex = 13;
+            this.colMA_SO_THUE_CA_NHAN.VisibleIndex = 24;
             this.colMA_SO_THUE_CA_NHAN.Width = 34;
             // 
             // colCHUYEN_MON
@@ -109,7 +109,7 @@
             this.colCHUYEN_MON.FieldName = "CHUYEN_MON";
             this.colCHUYEN_MON.Name = "colCHUYEN_MON";
             this.colCHUYEN_MON.Visible = true;
-            this.colCHUYEN_MON.VisibleIndex = 14;
+            this.colCHUYEN_MON.VisibleIndex = 26;
             this.colCHUYEN_MON.Width = 34;
             // 
             // colTRINH_DO_VAN_HOA
@@ -118,7 +118,7 @@
             this.colTRINH_DO_VAN_HOA.FieldName = "TRINH_DO_VAN_HOA";
             this.colTRINH_DO_VAN_HOA.Name = "colTRINH_DO_VAN_HOA";
             this.colTRINH_DO_VAN_HOA.Visible = true;
-            this.colTRINH_DO_VAN_HOA.VisibleIndex = 15;
+            this.colTRINH_DO_VAN_HOA.VisibleIndex = 25;
             this.colTRINH_DO_VAN_HOA.Width = 72;
             // 
             // colNAM_TOT_NGHIEP
@@ -127,7 +127,7 @@
             this.colNAM_TOT_NGHIEP.FieldName = "NAM_TOT_NGHIEP";
             this.colNAM_TOT_NGHIEP.Name = "colNAM_TOT_NGHIEP";
             this.colNAM_TOT_NGHIEP.Visible = true;
-            this.colNAM_TOT_NGHIEP.VisibleIndex = 31;
+            this.colNAM_TOT_NGHIEP.VisibleIndex = 27;
             this.colNAM_TOT_NGHIEP.Width = 27;
             // 
             // colTOT_NGHIEP_TAI
@@ -136,34 +136,40 @@
             this.colTOT_NGHIEP_TAI.FieldName = "TOT_NGHIEP_TAI";
             this.colTOT_NGHIEP_TAI.Name = "colTOT_NGHIEP_TAI";
             this.colTOT_NGHIEP_TAI.Visible = true;
-            this.colTOT_NGHIEP_TAI.VisibleIndex = 32;
+            this.colTOT_NGHIEP_TAI.VisibleIndex = 28;
             this.colTOT_NGHIEP_TAI.Width = 27;
             // 
             // colNGAY_VAO_HANG_KHONG
             // 
             this.colNGAY_VAO_HANG_KHONG.Caption = "Ngày vào hàng không";
+            this.colNGAY_VAO_HANG_KHONG.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.colNGAY_VAO_HANG_KHONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colNGAY_VAO_HANG_KHONG.FieldName = "NGAY_VAO_HANG_KHONG";
             this.colNGAY_VAO_HANG_KHONG.Name = "colNGAY_VAO_HANG_KHONG";
             this.colNGAY_VAO_HANG_KHONG.Visible = true;
-            this.colNGAY_VAO_HANG_KHONG.VisibleIndex = 16;
+            this.colNGAY_VAO_HANG_KHONG.VisibleIndex = 29;
             this.colNGAY_VAO_HANG_KHONG.Width = 85;
             // 
             // colNGAY_TIEP_NHAN_VAO_TCT
             // 
             this.colNGAY_TIEP_NHAN_VAO_TCT.Caption = "Ngày tiếp nhận vào tổng công ty";
+            this.colNGAY_TIEP_NHAN_VAO_TCT.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.colNGAY_TIEP_NHAN_VAO_TCT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colNGAY_TIEP_NHAN_VAO_TCT.FieldName = "NGAY_TIEP_NHAN_VAO_TCT";
             this.colNGAY_TIEP_NHAN_VAO_TCT.Name = "colNGAY_TIEP_NHAN_VAO_TCT";
             this.colNGAY_TIEP_NHAN_VAO_TCT.Visible = true;
-            this.colNGAY_TIEP_NHAN_VAO_TCT.VisibleIndex = 17;
+            this.colNGAY_TIEP_NHAN_VAO_TCT.VisibleIndex = 30;
             this.colNGAY_TIEP_NHAN_VAO_TCT.Width = 48;
             // 
             // colNGAY_CHINH_THUC_TIEP_NHAN
             // 
             this.colNGAY_CHINH_THUC_TIEP_NHAN.Caption = "Ngày chính thức tiếp nhận";
+            this.colNGAY_CHINH_THUC_TIEP_NHAN.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.colNGAY_CHINH_THUC_TIEP_NHAN.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colNGAY_CHINH_THUC_TIEP_NHAN.FieldName = "NGAY_CHINH_THUC_TIEP_NHAN";
             this.colNGAY_CHINH_THUC_TIEP_NHAN.Name = "colNGAY_CHINH_THUC_TIEP_NHAN";
             this.colNGAY_CHINH_THUC_TIEP_NHAN.Visible = true;
-            this.colNGAY_CHINH_THUC_TIEP_NHAN.VisibleIndex = 18;
+            this.colNGAY_CHINH_THUC_TIEP_NHAN.VisibleIndex = 31;
             this.colNGAY_CHINH_THUC_TIEP_NHAN.Width = 41;
             // 
             // colDIA_CHI_TAM_TRU
@@ -172,7 +178,7 @@
             this.colDIA_CHI_TAM_TRU.FieldName = "DIA_CHI_TAM_TRU";
             this.colDIA_CHI_TAM_TRU.Name = "colDIA_CHI_TAM_TRU";
             this.colDIA_CHI_TAM_TRU.Visible = true;
-            this.colDIA_CHI_TAM_TRU.VisibleIndex = 11;
+            this.colDIA_CHI_TAM_TRU.VisibleIndex = 22;
             this.colDIA_CHI_TAM_TRU.Width = 34;
             // 
             // colHO_TEN
@@ -258,8 +264,8 @@
             this.colDIA_CHI_TAM_TRU,
             this.colDIA_CHI_LIEN_LAC,
             this.colMA_SO_THUE_CA_NHAN,
-            this.colCHUYEN_MON,
             this.colTRINH_DO_VAN_HOA,
+            this.colCHUYEN_MON,
             this.colNAM_TOT_NGHIEP,
             this.colTOT_NGHIEP_TAI,
             this.colNGAY_VAO_HANG_KHONG,
@@ -313,6 +319,14 @@
             this.colTEN.VisibleIndex = 3;
             this.colTEN.Width = 31;
             // 
+            // colGIOI_TINH
+            // 
+            this.colGIOI_TINH.Caption = "Giới tính";
+            this.colGIOI_TINH.FieldName = "GIOI_TINH";
+            this.colGIOI_TINH.Name = "colGIOI_TINH";
+            this.colGIOI_TINH.Visible = true;
+            this.colGIOI_TINH.VisibleIndex = 4;
+            // 
             // colEMAIL
             // 
             this.colEMAIL.Caption = "Email";
@@ -346,34 +360,40 @@
             this.colNGAN_HANG.FieldName = "NGAN_HANG";
             this.colNGAN_HANG.Name = "colNGAN_HANG";
             this.colNGAN_HANG.Visible = true;
-            this.colNGAN_HANG.VisibleIndex = 20;
+            this.colNGAN_HANG.VisibleIndex = 8;
             this.colNGAN_HANG.Width = 27;
             // 
             // colNGAY_CAP_THE
             // 
             this.colNGAY_CAP_THE.Caption = "Ngày cấp thẻ";
+            this.colNGAY_CAP_THE.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.colNGAY_CAP_THE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colNGAY_CAP_THE.FieldName = "NGAY_CAP_THE";
             this.colNGAY_CAP_THE.Name = "colNGAY_CAP_THE";
             this.colNGAY_CAP_THE.Visible = true;
-            this.colNGAY_CAP_THE.VisibleIndex = 21;
+            this.colNGAY_CAP_THE.VisibleIndex = 9;
             this.colNGAY_CAP_THE.Width = 27;
             // 
             // colNGAY_HET_HAN_THE
             // 
             this.colNGAY_HET_HAN_THE.Caption = "Hết hạn thẻ";
+            this.colNGAY_HET_HAN_THE.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.colNGAY_HET_HAN_THE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colNGAY_HET_HAN_THE.FieldName = "NGAY_HET_HAN_THE";
             this.colNGAY_HET_HAN_THE.Name = "colNGAY_HET_HAN_THE";
             this.colNGAY_HET_HAN_THE.Visible = true;
-            this.colNGAY_HET_HAN_THE.VisibleIndex = 22;
+            this.colNGAY_HET_HAN_THE.VisibleIndex = 10;
             this.colNGAY_HET_HAN_THE.Width = 27;
             // 
             // colNGAY_SINH
             // 
             this.colNGAY_SINH.Caption = "Ngày sinh";
+            this.colNGAY_SINH.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.colNGAY_SINH.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colNGAY_SINH.FieldName = "NGAY_SINH";
             this.colNGAY_SINH.Name = "colNGAY_SINH";
             this.colNGAY_SINH.Visible = true;
-            this.colNGAY_SINH.VisibleIndex = 23;
+            this.colNGAY_SINH.VisibleIndex = 11;
             this.colNGAY_SINH.Width = 27;
             // 
             // colHON_NHAN
@@ -382,7 +402,7 @@
             this.colHON_NHAN.FieldName = "HON_NHAN";
             this.colHON_NHAN.Name = "colHON_NHAN";
             this.colHON_NHAN.Visible = true;
-            this.colHON_NHAN.VisibleIndex = 24;
+            this.colHON_NHAN.VisibleIndex = 12;
             this.colHON_NHAN.Width = 27;
             // 
             // colSO_CMT
@@ -391,16 +411,18 @@
             this.colSO_CMT.FieldName = "SO_CMT";
             this.colSO_CMT.Name = "colSO_CMT";
             this.colSO_CMT.Visible = true;
-            this.colSO_CMT.VisibleIndex = 8;
+            this.colSO_CMT.VisibleIndex = 13;
             this.colSO_CMT.Width = 34;
             // 
             // colNGAY_CAP
             // 
             this.colNGAY_CAP.Caption = "Ngày cấp";
+            this.colNGAY_CAP.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.colNGAY_CAP.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colNGAY_CAP.FieldName = "NGAY_CAP";
             this.colNGAY_CAP.Name = "colNGAY_CAP";
             this.colNGAY_CAP.Visible = true;
-            this.colNGAY_CAP.VisibleIndex = 25;
+            this.colNGAY_CAP.VisibleIndex = 14;
             this.colNGAY_CAP.Width = 27;
             // 
             // colNOI_CAP
@@ -409,7 +431,7 @@
             this.colNOI_CAP.FieldName = "NOI_CAP";
             this.colNOI_CAP.Name = "colNOI_CAP";
             this.colNOI_CAP.Visible = true;
-            this.colNOI_CAP.VisibleIndex = 26;
+            this.colNOI_CAP.VisibleIndex = 15;
             this.colNOI_CAP.Width = 27;
             // 
             // colQUOC_TICH
@@ -418,7 +440,7 @@
             this.colQUOC_TICH.FieldName = "QUOC_TICH";
             this.colQUOC_TICH.Name = "colQUOC_TICH";
             this.colQUOC_TICH.Visible = true;
-            this.colQUOC_TICH.VisibleIndex = 27;
+            this.colQUOC_TICH.VisibleIndex = 16;
             this.colQUOC_TICH.Width = 27;
             // 
             // colDAN_TOC
@@ -427,7 +449,7 @@
             this.colDAN_TOC.FieldName = "DAN_TOC";
             this.colDAN_TOC.Name = "colDAN_TOC";
             this.colDAN_TOC.Visible = true;
-            this.colDAN_TOC.VisibleIndex = 28;
+            this.colDAN_TOC.VisibleIndex = 17;
             this.colDAN_TOC.Width = 27;
             // 
             // colTON_GIAO
@@ -436,7 +458,7 @@
             this.colTON_GIAO.FieldName = "TON_GIAO";
             this.colTON_GIAO.Name = "colTON_GIAO";
             this.colTON_GIAO.Visible = true;
-            this.colTON_GIAO.VisibleIndex = 29;
+            this.colTON_GIAO.VisibleIndex = 18;
             this.colTON_GIAO.Width = 27;
             // 
             // colNOI_SINH
@@ -445,7 +467,7 @@
             this.colNOI_SINH.FieldName = "NOI_SINH";
             this.colNOI_SINH.Name = "colNOI_SINH";
             this.colNOI_SINH.Visible = true;
-            this.colNOI_SINH.VisibleIndex = 30;
+            this.colNOI_SINH.VisibleIndex = 19;
             this.colNOI_SINH.Width = 27;
             // 
             // colQUE_QUAN
@@ -454,7 +476,7 @@
             this.colQUE_QUAN.FieldName = "QUE_QUAN";
             this.colQUE_QUAN.Name = "colQUE_QUAN";
             this.colQUE_QUAN.Visible = true;
-            this.colQUE_QUAN.VisibleIndex = 9;
+            this.colQUE_QUAN.VisibleIndex = 20;
             this.colQUE_QUAN.Width = 34;
             // 
             // colDIA_CHI_THUONG_TRU
@@ -463,7 +485,7 @@
             this.colDIA_CHI_THUONG_TRU.FieldName = "DIA_CHI_THUONG_TRU";
             this.colDIA_CHI_THUONG_TRU.Name = "colDIA_CHI_THUONG_TRU";
             this.colDIA_CHI_THUONG_TRU.Visible = true;
-            this.colDIA_CHI_THUONG_TRU.VisibleIndex = 10;
+            this.colDIA_CHI_THUONG_TRU.VisibleIndex = 21;
             this.colDIA_CHI_THUONG_TRU.Width = 34;
             // 
             // colNGUOI_BAO_LANH
@@ -471,8 +493,6 @@
             this.colNGUOI_BAO_LANH.Caption = "Người bảo lãnh";
             this.colNGUOI_BAO_LANH.FieldName = "NGUOI_BAO_LANH";
             this.colNGUOI_BAO_LANH.Name = "colNGUOI_BAO_LANH";
-            this.colNGUOI_BAO_LANH.Visible = true;
-            this.colNGUOI_BAO_LANH.VisibleIndex = 19;
             // 
             // colTEN_DON_VI
             // 
@@ -560,14 +580,6 @@
             this.m_cmd_tai_file_excel_mau.Size = new System.Drawing.Size(100, 32);
             this.m_cmd_tai_file_excel_mau.TabIndex = 5;
             this.m_cmd_tai_file_excel_mau.Text = "&Tải file mẫu";
-            // 
-            // colGIOI_TINH
-            // 
-            this.colGIOI_TINH.Caption = "Giới tính";
-            this.colGIOI_TINH.FieldName = "GIOI_TINH";
-            this.colGIOI_TINH.Name = "colGIOI_TINH";
-            this.colGIOI_TINH.Visible = true;
-            this.colGIOI_TINH.VisibleIndex = 4;
             // 
             // F152_DANH_SACH_NHAN_VIEN_EXCEL
             // 

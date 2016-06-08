@@ -1170,13 +1170,12 @@
             // 
             // m_cmd_cm_dm_thu_tu_don_vi
             // 
-            this.m_cmd_cm_dm_thu_tu_don_vi.Caption = "Nhân viên theo đơn vị";
+            this.m_cmd_cm_dm_thu_tu_don_vi.Caption = "Quản lý DS NV theo đơn vị";
             this.m_cmd_cm_dm_thu_tu_don_vi.Glyph = ((System.Drawing.Image)(resources.GetObject("m_cmd_cm_dm_thu_tu_don_vi.Glyph")));
             this.m_cmd_cm_dm_thu_tu_don_vi.Id = 107;
             this.m_cmd_cm_dm_thu_tu_don_vi.Name = "m_cmd_cm_dm_thu_tu_don_vi";
             this.m_cmd_cm_dm_thu_tu_don_vi.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.m_cmd_cm_dm_thu_tu_don_vi.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.m_cmd_cm_dm_thu_tu_don_vi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_cm_dm_thu_tu_don_vi_ItemClick);
             // 
             // m_cmd_so_ngay_lam_them
@@ -1400,7 +1399,6 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_chuc_vu);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_bao_hiem);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem9);
-            this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_cm_dm_thu_tu_don_vi);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_quan_ly_qd);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_tu_dien);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
@@ -1419,6 +1417,7 @@
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_ds_nhan_vien);
+            this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_cm_dm_thu_tu_don_vi);
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_lap_hd_v2);
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_quan_ly_vi_tri_cong_tac);
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_quan_ly_lns);

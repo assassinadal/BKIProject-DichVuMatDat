@@ -126,7 +126,7 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void set_init_form_load()
         {
-
+            m_cmd_xuat_excel.Visible = false;
         }
 
         private void m_cmd_filter_Click(object sender, EventArgs e)

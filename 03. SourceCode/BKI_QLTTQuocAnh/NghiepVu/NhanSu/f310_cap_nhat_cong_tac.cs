@@ -396,10 +396,10 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             try
             {
-                if(m_e_loai_cap_nhat == e_loai_cap_nhat.THEM_MOI)
-                {
+                //if(m_e_loai_cap_nhat == e_loai_cap_nhat.THEM_MOI)
+                //{
                     m_txt_so_ho_so.EditValue = ExecuteFuntion.GetSoHoSoNext(Convert.ToDecimal(m_sle_chon_don_vi.EditValue), Convert.ToDecimal(m_sle_chon_vi_tri.EditValue), Convert.ToDecimal(m_sle_chon_nhan_vien.EditValue));
-                }
+                //}
             }
             catch(Exception v_e)
             {

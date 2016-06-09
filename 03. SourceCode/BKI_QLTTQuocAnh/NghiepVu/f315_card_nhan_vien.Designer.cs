@@ -354,7 +354,6 @@
             this.layoutView1.OptionsPrint.PrintMode = DevExpress.XtraGrid.Views.Layout.LayoutViewPrintMode.MultiRow;
             this.layoutView1.OptionsView.CardsAlignment = DevExpress.XtraGrid.Views.Layout.CardsAlignment.Near;
             this.layoutView1.OptionsView.ShowCardCaption = false;
-            this.layoutView1.OptionsView.ShowHeaderPanel = false;
             this.layoutView1.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.MultiRow;
             this.layoutView1.TemplateCard = this.layoutViewCard1;
             // 
@@ -733,7 +732,7 @@
             this.layoutViewField_colID.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_colID.Name = "layoutViewField_colID";
             this.layoutViewField_colID.Padding = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
-            this.layoutViewField_colID.Size = new System.Drawing.Size(585, 280);
+            this.layoutViewField_colID.Size = new System.Drawing.Size(583, 280);
             this.layoutViewField_colID.Spacing = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
             this.layoutViewField_colID.TextLocation = DevExpress.Utils.Locations.Default;
             this.layoutViewField_colID.TextSize = new System.Drawing.Size(56, 20);

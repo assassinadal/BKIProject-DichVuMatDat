@@ -63,15 +63,15 @@ namespace BKI_DichVuMatDat.NghiepVu
 
         private void m_cmd_xuat_pdf_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
-            saveFileDialog1.RestoreDirectory = true;
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
+            //SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            //saveFileDialog1.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
+            //saveFileDialog1.RestoreDirectory = true;
+            //if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            //{
                 layoutView1.ShowPrintPreview();
                 //layoutView1.ExportToPdf(saveFileDialog1.FileName);
                 //DevExpress.XtraEditors.XtraMessageBox.Show("Lưu báo cáo thành công");
-            }
+            //}
         }
 
         private void set_define_events()
@@ -154,7 +154,7 @@ namespace BKI_DichVuMatDat.NghiepVu
         {
             US_DM_DON_VI v_us = new US_DM_DON_VI();
             DS_DM_DON_VI v_ds = new DS_DM_DON_VI();
-            v_us.FillDataset(v_ds);
+            v_us.FillDataset(v_ds, "order by SO_THU_TU");
             m_sle_chon_don_vi.Properties.DataSource = v_ds.Tables[0];
         }
        

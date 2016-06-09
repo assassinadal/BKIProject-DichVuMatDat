@@ -35,6 +35,8 @@ Public Class CWordReport
             Me.FindAndReplace(v_str_find, v_str_replace)
         Next
         m_objWordDocument.Save()
+        m_objWordDocument.Close()
+
         'If i_b_show Then
         '    'm_objWordlApp.Visible = True
         '    Unmount()

@@ -837,6 +837,18 @@ namespace BKI_DichVuMatDat.US
             return v_ds.Tables[0];
         }
 
+        public DataTable LayDanhSachNVTheoPhongBan(decimal ip_dc_id_don_vi, decimal ip_dc_id_chuc_danh)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_NV_nhan_vien_theo_phong_ban_GetAll");
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+            v_cstore.addDecimalInputParam("@ip_dc_id_don_vi", ip_dc_id_don_vi);
+            v_cstore.addDecimalInputParam("@ip_dc_id_chuc_vu", ip_dc_id_chuc_danh);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+
+            return v_ds.Tables[0];
+        }
+
         public void LayDanhSachNhanVienKemChucVuDonVi(DataSet op_ds)
         {
             CStoredProc v_cstore = new CStoredProc("pr_NS_danh_sach_nhan_vien_GetAll");

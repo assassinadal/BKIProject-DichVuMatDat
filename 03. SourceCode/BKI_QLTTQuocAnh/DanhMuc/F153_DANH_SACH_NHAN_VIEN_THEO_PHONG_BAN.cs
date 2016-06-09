@@ -42,8 +42,8 @@ namespace BKI_DichVuMatDat.DanhMuc
         private void load_data_to_grid()
         {
             US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
-            m_grc.DataSource = v_us.LayDanhSachMaTraCuu(get_id_don_vi(), get_id_chuc_vu());
-            m_grc.DataSource = v_us.LayDanhSachMaTraCuu(get_id_don_vi(), get_id_chuc_vu());
+            m_grc.DataSource = v_us.LayDanhSachNVTheoPhongBan(get_id_don_vi(), get_id_chuc_vu());
+            //m_grc.DataSource = v_us.LayDanhSachNVTheoPhongBan(get_id_don_vi(), get_id_chuc_vu());
             CHRMCommon.make_stt(m_grv);
         }
 

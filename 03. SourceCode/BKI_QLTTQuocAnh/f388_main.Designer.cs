@@ -138,6 +138,7 @@
             this.m_cmd_trang_thai_lao_dong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_tu_dien = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_chuc_vu = new DevExpress.XtraBars.BarButtonItem();
+            this.m_btn_bien_dong_nhan_su = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -211,7 +212,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.m_btn_bien_dong_nhan_su = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -1357,6 +1357,15 @@
             this.m_cmd_chuc_vu.LargeGlyph = global::BKI_DichVuMatDat.Properties.Resources.icon_nhan_vien;
             this.m_cmd_chuc_vu.Name = "m_cmd_chuc_vu";
             // 
+            // m_btn_bien_dong_nhan_su
+            // 
+            this.m_btn_bien_dong_nhan_su.Caption = "Biến động nhân sự theo tháng";
+            this.m_btn_bien_dong_nhan_su.Glyph = global::BKI_DichVuMatDat.Properties.Resources.icon_loai_lao_dong_;
+            this.m_btn_bien_dong_nhan_su.Id = 146;
+            this.m_btn_bien_dong_nhan_su.Name = "m_btn_bien_dong_nhan_su";
+            this.m_btn_bien_dong_nhan_su.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -2175,12 +2184,6 @@
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // m_btn_bien_dong_nhan_su
-            // 
-            this.m_btn_bien_dong_nhan_su.Caption = "barButtonItem5";
-            this.m_btn_bien_dong_nhan_su.Id = 146;
-            this.m_btn_bien_dong_nhan_su.Name = "m_btn_bien_dong_nhan_su";
             // 
             // f388_main
             // 

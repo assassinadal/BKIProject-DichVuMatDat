@@ -101,10 +101,13 @@ namespace BKI_DichVuMatDat.US
             }
         }
 
+      
         public bool IsMA_HOP_DONGNull()
         {
             return pm_objDR.IsNull("MA_HOP_DONG");
         }
+
+      
 
         public void SetMA_HOP_DONGNull()
         {
@@ -648,5 +651,72 @@ namespace BKI_DichVuMatDat.US
             v_cstore.fillDataSetByCommand(this, v_ds);
             return v_ds;
         }
+
+        public DataTable lay_danh_sach_nhan_su_dau_ky(int month, int year)
+        {
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+            CStoredProc v_cstore = new CStoredProc("pr_BC_nhan_su_dau_ky");
+            v_cstore.addDecimalInputParam("@thang", month);
+            v_cstore.addDecimalInputParam("@nam", year);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+            return v_ds.Tables[0];
+        }
+
+        public DataTable lay_danh_sach_nhan_su_cuoi_ky(int month, int year)
+        {
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+            CStoredProc v_cstore = new CStoredProc("pr_BC_nhan_su_cuoi_ky");
+            v_cstore.addDecimalInputParam("@thang", month);
+            v_cstore.addDecimalInputParam("@nam", year);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+            return v_ds.Tables[0];
+        }
+
+        public DataTable lay_danh_sach_nhan_su_tang_trong_ky(int month, int year)
+        {
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+            CStoredProc v_cstore = new CStoredProc("pr_BC_nhan_su_tang_trong_ky");
+            v_cstore.addDecimalInputParam("@thang", month);
+            v_cstore.addDecimalInputParam("@nam", year);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+            return v_ds.Tables[0];
+        }
+
+        public DataTable lay_danh_sach_nhan_su_giam_trong_ky(int month, int year)
+        {
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+            CStoredProc v_cstore = new CStoredProc("pr_BC_nhan_su_giam_trong_ky");
+            v_cstore.addDecimalInputParam("@thang", month);
+            v_cstore.addDecimalInputParam("@nam", year);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+            return v_ds.Tables[0];
+        }
+
+        public DataTable lay_danh_sach_nhan_su_chuyen_doi(int month, int year)
+        {
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+            CStoredProc v_cstore = new CStoredProc("pr_BC_nhan_su_chuyen_hop_dong_trong_ky");
+            v_cstore.addDecimalInputParam("@thang", month);
+            v_cstore.addDecimalInputParam("@nam", year);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+            return v_ds.Tables[0];
+        }
+
+        public DataTable lay_danh_sach_hoc_viec_trong_ky(int month, int year)
+        {
+            DataSet v_ds = new DataSet();
+            v_ds.Tables.Add();
+            CStoredProc v_cstore = new CStoredProc("pr_BC_nhan_su_hoc_viec_trong_ky");
+            v_cstore.addDecimalInputParam("@thang", month);
+            v_cstore.addDecimalInputParam("@nam", year);
+            v_cstore.fillDataSetByCommand(this, v_ds);
+            return v_ds.Tables[0];
+        }
+
     }
 }

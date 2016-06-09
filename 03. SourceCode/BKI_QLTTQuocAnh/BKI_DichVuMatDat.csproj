@@ -399,6 +399,12 @@
     <Compile Include="BaoCao\f447_thong_ke_nhan_vien_ee.Designer.cs">
       <DependentUpon>f447_thong_ke_nhan_vien_ee.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\f454_bien_dong_nhan_su.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f454_bien_dong_nhan_su.Designer.cs">
+      <DependentUpon>f454_bien_dong_nhan_su.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\F460_DANH_SACH_NHAN_VIEN_DANG_HOAT_DONG_O_CONG_TY.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -752,7 +758,6 @@
     </Compile>
     <Compile Include="BKI_DVMDDataSet.cs">
       <DependentUpon>BKI_DVMDDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BKI_DVMDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1242,6 +1247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f447_thong_ke_nhan_vien_ee.resx">
       <DependentUpon>f447_thong_ke_nhan_vien_ee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f454_bien_dong_nhan_su.resx">
+      <DependentUpon>f454_bien_dong_nhan_su.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f468_bao_cao_trang_thai_lao_dong.resx">
       <DependentUpon>f468_bao_cao_trang_thai_lao_dong.cs</DependentUpon>

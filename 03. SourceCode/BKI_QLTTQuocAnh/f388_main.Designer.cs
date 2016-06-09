@@ -211,6 +211,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_btn_bien_dong_nhan_su = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -351,9 +352,10 @@
             this.barButtonItem9,
             this.m_cmd_trang_thai_lao_dong,
             this.m_cmd_tu_dien,
-            this.m_cmd_chuc_vu});
+            this.m_cmd_chuc_vu,
+            this.m_btn_bien_dong_nhan_su});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 146;
+            this.ribbon.MaxItemId = 147;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1548,6 +1550,7 @@
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_bc_qua_trinh_ct);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_card_nhan_vien);
             this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_nguoi_bao_lanh);
+            this.ribbonPageGroup12.ItemLinks.Add(this.m_btn_bien_dong_nhan_su);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Báo cáo nhân sự";
             // 
@@ -2173,6 +2176,12 @@
             this.barButtonItem8.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // m_btn_bien_dong_nhan_su
+            // 
+            this.m_btn_bien_dong_nhan_su.Caption = "barButtonItem5";
+            this.m_btn_bien_dong_nhan_su.Id = 146;
+            this.m_btn_bien_dong_nhan_su.Name = "m_btn_bien_dong_nhan_su";
+            // 
             // f388_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2408,5 +2417,6 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_tu_dien;
         private DevExpress.XtraBars.BarButtonItem m_cmd_chuc_vu;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
+        private DevExpress.XtraBars.BarButtonItem m_btn_bien_dong_nhan_su;
     }
 }

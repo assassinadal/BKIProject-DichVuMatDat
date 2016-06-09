@@ -412,12 +412,28 @@ namespace BKI_DichVuMatDat
             m_cmd_bao_cao_dieu_kien_tinh_luong.ItemClick += m_cmd_bao_cao_dieu_kien_tinh_luong_ItemClick;
             m_cmd_bc_athk_bsl_lt.ItemClick += m_cmd_bc_athk_bsl_lt_ItemClick;
             m_cmd_bc_hop_dong_het_han.ItemClick += m_cmd_bc_hop_dong_het_han_ItemClick;
+            m_btn_bien_dong_nhan_su.ItemClick += M_btn_bien_dong_nhan_su_ItemClick;
             //Thu nhap khac
             m_cmd_quan_ly_quy_tnk.ItemClick += m_cmd_quan_ly_quy_tnk_ItemClick;
             m_cmd_ds_chot_bang_luong.ItemClick += m_cmd_ds_chot_bang_luong_ItemClick;
             m_cmd_bc_hs.ItemClick += m_cmd_bc_hs_ItemClick;
             m_cmd_qtt_2016.ItemClick += m_cmd_qtt_2016_ItemClick;
             m_cmd_bc_bien_dong_lns.ItemClick += m_cmd_tk_hop_dong_ItemClick;
+        }
+
+        private void M_btn_bien_dong_nhan_su_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                f454_bien_dong_nhan_su v_f = new f454_bien_dong_nhan_su();
+                if (IsExistFormName(v_f)) return;
+                v_f.MdiParent = this;
+                v_f.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_tk_hop_dong_ItemClick(object sender, ItemClickEventArgs e)

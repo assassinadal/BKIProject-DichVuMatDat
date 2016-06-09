@@ -172,9 +172,10 @@ namespace BKI_DichVuMatDat.BaoCao
                     CHRM_BaseMessages.MsgBox_Error("Chọn tháng để xem");
                     return;
                 }
-                m_lbl_header.Text = "BIẾN ĐỘNG NHÂN SỰ THÁNG " + m_date.Month + "/" + m_date.Year;
+               
                 m_e_view_mode = ViewMode.DauKy;
                 m_date = m_dat_chon_thang.DateTime;
+                m_lbl_header.Text = "BIẾN ĐỘNG NHÂN SỰ THÁNG " + m_date.Month + "/" + m_date.Year;
 
                 load_data_to_data_table();
                 load_data_to_grid(m_e_view_mode);

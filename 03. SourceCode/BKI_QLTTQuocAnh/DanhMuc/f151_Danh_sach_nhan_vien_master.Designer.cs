@@ -75,6 +75,7 @@
             this.m_cmd_delete = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_sua = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_them = new DevExpress.XtraEditors.SimpleButton();
+            this.m_cmd_refresh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -672,9 +673,11 @@
             this.colHO_TEN.Name = "colHO_TEN";
             this.colHO_TEN.Visible = true;
             this.colHO_TEN.VisibleIndex = 1;
+            this.colHO_TEN.Width = 142;
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.m_cmd_refresh);
             this.panelControl3.Controls.Add(this.m_cmd_ma_nv_tiep_theo);
             this.panelControl3.Controls.Add(this.m_cmd_chon_file);
             this.panelControl3.Controls.Add(this.m_cmd_delete);
@@ -755,6 +758,17 @@
             this.m_cmd_them.TabIndex = 3;
             this.m_cmd_them.Text = "Thêm";
             // 
+            // m_cmd_refresh
+            // 
+            this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_refresh.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_refresh.Image")));
+            this.m_cmd_refresh.ImageList = this.img_DVMD;
+            this.m_cmd_refresh.Location = new System.Drawing.Point(803, 2);
+            this.m_cmd_refresh.Name = "m_cmd_refresh";
+            this.m_cmd_refresh.Size = new System.Drawing.Size(91, 32);
+            this.m_cmd_refresh.TabIndex = 41;
+            this.m_cmd_refresh.Text = "&Làm mới";
+            // 
             // f151_Danh_sach_nhan_vien_master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -828,5 +842,6 @@
         private DevExpress.XtraEditors.SimpleButton m_cmd_chon_file;
         private DevExpress.XtraEditors.SimpleButton m_cmd_delete;
         private DevExpress.XtraEditors.SimpleButton m_cmd_sua;
+        private DevExpress.XtraEditors.SimpleButton m_cmd_refresh;
     }
 }

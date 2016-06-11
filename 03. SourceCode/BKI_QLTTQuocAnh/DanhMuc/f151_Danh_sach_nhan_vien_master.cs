@@ -178,6 +178,19 @@ namespace BKI_DichVuMatDat.DanhMuc
             m_cmd_them.Click += m_cmd_them_Click;
             m_cmd_sua.Click += m_cmd_sua_Click;
             m_cmd_delete.Click += M_cmd_delete_Click;
+            m_cmd_refresh.Click += M_cmd_refresh_Click;
+        }
+
+        private void M_cmd_refresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_to_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void M_cmd_delete_Click(object sender, EventArgs e)

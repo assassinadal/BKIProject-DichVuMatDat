@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F153_DANH_SACH_NHAN_VIEN_THEO_PHONG_BAN));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -116,7 +115,7 @@
             this.TEN_DON_VI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_xuat_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.img_DVMD = new DevExpress.Utils.ImageCollection(this.components);
+            this.img_DVMD = new DevExpress.Utils.ImageCollection();
             this.m_cmd_chon_file = new DevExpress.XtraEditors.SimpleButton();
             this.m_cmd_filter = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -1204,7 +1203,7 @@
             this.colTRINH_DO_VAN_HOA.Name = "colTRINH_DO_VAN_HOA";
             this.colTRINH_DO_VAN_HOA.OptionsColumn.AllowEdit = false;
             this.colTRINH_DO_VAN_HOA.Visible = true;
-            this.colTRINH_DO_VAN_HOA.VisibleIndex = 25;
+            this.colTRINH_DO_VAN_HOA.VisibleIndex = 26;
             this.colTRINH_DO_VAN_HOA.Width = 100;
             // 
             // colNAM_TOT_NGHIEP
@@ -1512,8 +1511,11 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
             this.emptySpaceItem2.Location = new System.Drawing.Point(10, 48);
+            this.emptySpaceItem2.MaxSize = new System.Drawing.Size(75, 40);
+            this.emptySpaceItem2.MinSize = new System.Drawing.Size(75, 40);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(75, 40);
+            this.emptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem2.Text = "emptySpaceItem2";
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 

@@ -128,10 +128,21 @@ namespace BKI_DichVuMatDat.NghiepVu
                 for(int i = 0; i < m_grv_main.RowCount; i++)
                 {
                     var v_dr = m_grv_main.GetDataRow(i);
-                    var v_dc_thanh_tien = Convert.ToDecimal(v_dr[CONST_COLUMN_NAME_IMPORT_TNK.THANH_TIEN]);
-                    var v_dc_thue = Convert.ToDecimal(v_dr[CONST_COLUMN_NAME_IMPORT_TNK.THUE_PHAI_NOP]);
-                    var v_dc_thuc_linh = Convert.ToDecimal(v_dr[CONST_COLUMN_NAME_IMPORT_TNK.THUC_LINH]);
-
+                    decimal v_dc_thanh_tien = 0;
+                    decimal v_dc_thue = 0;
+                    decimal v_dc_thuc_linh = 0;
+                    if (v_dr[CONST_COLUMN_NAME_IMPORT_TNK.THANH_TIEN] != DBNull.Value)
+                    {
+                        v_dc_thanh_tien = Convert.ToDecimal(v_dr[CONST_COLUMN_NAME_IMPORT_TNK.THANH_TIEN]);
+                    }
+                    if (v_dr[CONST_COLUMN_NAME_IMPORT_TNK.THUE_PHAI_NOP] != DBNull.Value)
+                    {
+                        v_dc_thue = Convert.ToDecimal(v_dr[CONST_COLUMN_NAME_IMPORT_TNK.THUE_PHAI_NOP]);
+                    }
+                    if (v_dr[CONST_COLUMN_NAME_IMPORT_TNK.THUC_LINH] != DBNull.Value)
+                    {
+                        v_dc_thuc_linh = Convert.ToDecimal(v_dr[CONST_COLUMN_NAME_IMPORT_TNK.THUC_LINH]);
+                    }
                     if(la_so_thap_phan(v_dc_thanh_tien) || la_so_thap_phan(v_dc_thuc_linh) || la_so_thap_phan(v_dc_thue))
                     {
                         splashScreenManager1.CloseWaitForm();

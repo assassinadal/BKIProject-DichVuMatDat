@@ -493,6 +493,8 @@
             this.colNGUOI_BAO_LANH.Caption = "Người bảo lãnh";
             this.colNGUOI_BAO_LANH.FieldName = "NGUOI_BAO_LANH";
             this.colNGUOI_BAO_LANH.Name = "colNGUOI_BAO_LANH";
+            this.colNGUOI_BAO_LANH.Visible = true;
+            this.colNGUOI_BAO_LANH.VisibleIndex = 32;
             // 
             // colTEN_DON_VI
             // 

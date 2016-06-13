@@ -154,6 +154,8 @@ namespace BKI_DichVuMatDat
         private US_DM_NHAN_VIEN gan_du_lieu_cho_us_dm_nhan_vien(DataRow dataRow)
         {
             US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
+            if(m_e_form_mode == DataEntryFormMode.UpdateDataState) v_us = new US_DM_NHAN_VIEN(ExecuteFuntion.LayNhanVienID(dataRow["MA_NV"].ToString()));
+            
             if (dataRow["NGAY_CAP"] != DBNull.Value || !string.IsNullOrEmpty(dataRow["NGAY_CAP"].ToString()))
                 v_us.datNGAY_CAP = WinFormControls.FormatPostingDate(dataRow["NGAY_CAP"].ToString());
 
@@ -202,8 +204,8 @@ namespace BKI_DichVuMatDat
             v_us.strTON_GIAO = dataRow["TON_GIAO"].ToString();
             v_us.strTOT_NGHIEP_TAI = dataRow["TOT_NGHIEP_TAI"].ToString();
             v_us.strTRINH_DO_VAN_HOA = find_id_cm_dm_tu_dien_by_trinh_do_van_hoa(dataRow["TRINH_DO_VAN_HOA"].ToString().Trim());
-
-            if (m_e_form_mode == DataEntryFormMode.UpdateDataState) v_us.dcID = ExecuteFuntion.LayNhanVienID(v_us.strMA_NV);
+            v_us.strNGUOI_BAO_LANH = dataRow["NGUOI_BAO_LANH"].ToString();
+            
             return v_us;
         }
 
@@ -329,13 +331,14 @@ namespace BKI_DichVuMatDat
         private void save_data()
         {
             US_DM_NHAN_VIEN v_us_trans = new US_DM_NHAN_VIEN();
+            int i = 0;
             try
             {
                 
                 SplashScreenManager.ShowForm(typeof(F_wait_form));
-
+                
                 v_us_trans.BeginTransaction();
-                for (int i = 0; i < m_grv.RowCount; i++)
+                for (i = 0; i < m_grv.RowCount; i++)
                 {
                     US_DM_NHAN_VIEN v_us = new US_DM_NHAN_VIEN();
                     switch (m_e_form_mode)
@@ -361,6 +364,7 @@ namespace BKI_DichVuMatDat
             }
             catch (Exception v_e)
             {
+                XtraMessageBox.Show(i.ToString());
                 if (v_us_trans.is_having_transaction())
                 {
                     v_us_trans.Rollback();
